@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -168,6 +168,46 @@ public class PublisherClientTest {
               .addAllTextEvents(new ArrayList<String>())
               .build();
       client.publishEvents(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void publishTest() throws Exception {
+    PublishResponse expectedResponse = PublishResponse.newBuilder().build();
+    mockPublisher.addResponse(expectedResponse);
+
+    PublishRequest request =
+        PublishRequest.newBuilder().setMessageBus("messageBus-1690749703").build();
+
+    PublishResponse actualResponse = client.publish(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPublisher.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PublishRequest actualRequest = ((PublishRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getMessageBus(), actualRequest.getMessageBus());
+    Assert.assertEquals(request.getProtoMessage(), actualRequest.getProtoMessage());
+    Assert.assertEquals(request.getJsonMessage(), actualRequest.getJsonMessage());
+    Assert.assertEquals(request.getAvroMessage(), actualRequest.getAvroMessage());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void publishExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPublisher.addException(exception);
+
+    try {
+      PublishRequest request =
+          PublishRequest.newBuilder().setMessageBus("messageBus-1690749703").build();
+      client.publish(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

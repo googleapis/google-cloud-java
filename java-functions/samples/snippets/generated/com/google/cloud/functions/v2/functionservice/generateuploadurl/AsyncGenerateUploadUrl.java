@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.functions.v2.samples;
 // [START cloudfunctions_v2_generated_FunctionService_GenerateUploadUrl_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.functions.v2.CryptoKeyName;
+import com.google.cloud.functions.v2.Environment;
 import com.google.cloud.functions.v2.FunctionServiceClient;
 import com.google.cloud.functions.v2.GenerateUploadUrlRequest;
 import com.google.cloud.functions.v2.GenerateUploadUrlResponse;
@@ -43,6 +44,7 @@ public class AsyncGenerateUploadUrl {
               .setKmsKeyName(
                   CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setEnvironment(Environment.forNumber(0))
               .build();
       ApiFuture<GenerateUploadUrlResponse> future =
           functionServiceClient.generateUploadUrlCallable().futureCall(request);

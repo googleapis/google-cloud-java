@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.cloud.compute.v1.MachineImageList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyMachineImageRequest;
+import com.google.cloud.compute.v1.SetLabelsMachineImageRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsMachineImageRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
@@ -80,6 +81,15 @@ public abstract class MachineImagesStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyMachineImageRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<SetLabelsMachineImageRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsOperationCallable()");
+  }
+
+  public UnaryCallable<SetLabelsMachineImageRequest, Operation> setLabelsCallable() {
+    throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
   }
 
   public UnaryCallable<TestIamPermissionsMachineImageRequest, TestPermissionsResponse>

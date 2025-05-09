@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import static com.google.cloud.compute.v1.RegionInstanceGroupManagersClient.List
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagersClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagersClient.ListPerInstanceConfigsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -59,8 +58,12 @@ import com.google.cloud.compute.v1.RegionInstanceGroupManagersListErrorsResponse
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstanceConfigsResp;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
 import com.google.cloud.compute.v1.ResizeRegionInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.ResumeInstancesRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.SetTargetPoolsRegionInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.StartInstancesRegionInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.StopInstancesRegionInstanceGroupManagerRequest;
+import com.google.cloud.compute.v1.SuspendInstancesRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -78,7 +81,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroupManagersStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -1039,6 +1041,70 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
               .build();
 
   private static final ApiMethodDescriptor<
+          ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+      resumeInstancesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/ResumeInstances")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ResumeInstancesRegionInstanceGroupManagerRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/resumeInstances",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ResumeInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ResumeInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionInstanceGroupManagersResumeInstancesRequestResource",
+                                      request
+                                          .getRegionInstanceGroupManagersResumeInstancesRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ResumeInstancesRegionInstanceGroupManagerRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<
           SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateMethodDescriptor =
           ApiMethodDescriptor
@@ -1154,6 +1220,196 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       .build())
               .setOperationSnapshotFactory(
                   (SetTargetPoolsRegionInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          StartInstancesRegionInstanceGroupManagerRequest, Operation>
+      startInstancesMethodDescriptor =
+          ApiMethodDescriptor
+              .<StartInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/StartInstances")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<StartInstancesRegionInstanceGroupManagerRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/startInstances",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionInstanceGroupManagersStartInstancesRequestResource",
+                                      request
+                                          .getRegionInstanceGroupManagersStartInstancesRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StartInstancesRegionInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          StopInstancesRegionInstanceGroupManagerRequest, Operation>
+      stopInstancesMethodDescriptor =
+          ApiMethodDescriptor
+              .<StopInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/StopInstances")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<StopInstancesRegionInstanceGroupManagerRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/stopInstances",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StopInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StopInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionInstanceGroupManagersStopInstancesRequestResource",
+                                      request
+                                          .getRegionInstanceGroupManagersStopInstancesRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StopInstancesRegionInstanceGroupManagerRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+      suspendInstancesMethodDescriptor =
+          ApiMethodDescriptor
+              .<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.RegionInstanceGroupManagers/SuspendInstances")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<SuspendInstancesRegionInstanceGroupManagerRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}/suspendInstances",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SuspendInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "instanceGroupManager", request.getInstanceGroupManager());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SuspendInstancesRegionInstanceGroupManagerRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionInstanceGroupManagersSuspendInstancesRequestResource",
+                                      request
+                                          .getRegionInstanceGroupManagersSuspendInstancesRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SuspendInstancesRegionInstanceGroupManagerRequest request,
+                      Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getRegion());
@@ -1308,6 +1564,11 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
   private final UnaryCallable<ResizeRegionInstanceGroupManagerRequest, Operation> resizeCallable;
   private final OperationCallable<ResizeRegionInstanceGroupManagerRequest, Operation, Operation>
       resizeOperationCallable;
+  private final UnaryCallable<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+      resumeInstancesCallable;
+  private final OperationCallable<
+          ResumeInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationCallable;
   private final UnaryCallable<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateCallable;
   private final OperationCallable<
@@ -1318,6 +1579,21 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
   private final OperationCallable<
           SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
       setTargetPoolsOperationCallable;
+  private final UnaryCallable<StartInstancesRegionInstanceGroupManagerRequest, Operation>
+      startInstancesCallable;
+  private final OperationCallable<
+          StartInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationCallable;
+  private final UnaryCallable<StopInstancesRegionInstanceGroupManagerRequest, Operation>
+      stopInstancesCallable;
+  private final OperationCallable<
+          StopInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationCallable;
+  private final UnaryCallable<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+      suspendInstancesCallable;
+  private final OperationCallable<
+          SuspendInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationCallable;
   private final UnaryCallable<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
       updatePerInstanceConfigsCallable;
   private final OperationCallable<
@@ -1645,6 +1921,23 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+        resumeInstancesTransportSettings =
+            HttpJsonCallSettings
+                .<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
+                .setMethodDescriptor(resumeInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
         setInstanceTemplateTransportSettings =
             HttpJsonCallSettings
@@ -1667,6 +1960,57 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
             HttpJsonCallSettings
                 .<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>newBuilder()
                 .setMethodDescriptor(setTargetPoolsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<StartInstancesRegionInstanceGroupManagerRequest, Operation>
+        startInstancesTransportSettings =
+            HttpJsonCallSettings
+                .<StartInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
+                .setMethodDescriptor(startInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<StopInstancesRegionInstanceGroupManagerRequest, Operation>
+        stopInstancesTransportSettings =
+            HttpJsonCallSettings
+                .<StopInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
+                .setMethodDescriptor(stopInstancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+        suspendInstancesTransportSettings =
+            HttpJsonCallSettings
+                .<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>newBuilder()
+                .setMethodDescriptor(suspendInstancesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -1839,6 +2183,15 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
             settings.resizeOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.resumeInstancesCallable =
+        callableFactory.createUnaryCallable(
+            resumeInstancesTransportSettings, settings.resumeInstancesSettings(), clientContext);
+    this.resumeInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            resumeInstancesTransportSettings,
+            settings.resumeInstancesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setInstanceTemplateCallable =
         callableFactory.createUnaryCallable(
             setInstanceTemplateTransportSettings,
@@ -1857,6 +2210,33 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
         callableFactory.createOperationCallable(
             setTargetPoolsTransportSettings,
             settings.setTargetPoolsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.startInstancesCallable =
+        callableFactory.createUnaryCallable(
+            startInstancesTransportSettings, settings.startInstancesSettings(), clientContext);
+    this.startInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            startInstancesTransportSettings,
+            settings.startInstancesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.stopInstancesCallable =
+        callableFactory.createUnaryCallable(
+            stopInstancesTransportSettings, settings.stopInstancesSettings(), clientContext);
+    this.stopInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            stopInstancesTransportSettings,
+            settings.stopInstancesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.suspendInstancesCallable =
+        callableFactory.createUnaryCallable(
+            suspendInstancesTransportSettings, settings.suspendInstancesSettings(), clientContext);
+    this.suspendInstancesOperationCallable =
+        callableFactory.createOperationCallable(
+            suspendInstancesTransportSettings,
+            settings.suspendInstancesOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.updatePerInstanceConfigsCallable =
@@ -1894,8 +2274,12 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
     methodDescriptors.add(patchPerInstanceConfigsMethodDescriptor);
     methodDescriptors.add(recreateInstancesMethodDescriptor);
     methodDescriptors.add(resizeMethodDescriptor);
+    methodDescriptors.add(resumeInstancesMethodDescriptor);
     methodDescriptors.add(setInstanceTemplateMethodDescriptor);
     methodDescriptors.add(setTargetPoolsMethodDescriptor);
+    methodDescriptors.add(startInstancesMethodDescriptor);
+    methodDescriptors.add(stopInstancesMethodDescriptor);
+    methodDescriptors.add(suspendInstancesMethodDescriptor);
     methodDescriptors.add(updatePerInstanceConfigsMethodDescriptor);
     return methodDescriptors;
   }
@@ -2094,6 +2478,18 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
   }
 
   @Override
+  public UnaryCallable<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+      resumeInstancesCallable() {
+    return resumeInstancesCallable;
+  }
+
+  @Override
+  public OperationCallable<ResumeInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationCallable() {
+    return resumeInstancesOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateCallable() {
     return setInstanceTemplateCallable;
@@ -2116,6 +2512,42 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
   public OperationCallable<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
       setTargetPoolsOperationCallable() {
     return setTargetPoolsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartInstancesRegionInstanceGroupManagerRequest, Operation>
+      startInstancesCallable() {
+    return startInstancesCallable;
+  }
+
+  @Override
+  public OperationCallable<StartInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationCallable() {
+    return startInstancesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopInstancesRegionInstanceGroupManagerRequest, Operation>
+      stopInstancesCallable() {
+    return stopInstancesCallable;
+  }
+
+  @Override
+  public OperationCallable<StopInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationCallable() {
+    return stopInstancesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+      suspendInstancesCallable() {
+    return suspendInstancesCallable;
+  }
+
+  @Override
+  public OperationCallable<SuspendInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationCallable() {
+    return suspendInstancesOperationCallable;
   }
 
   @Override

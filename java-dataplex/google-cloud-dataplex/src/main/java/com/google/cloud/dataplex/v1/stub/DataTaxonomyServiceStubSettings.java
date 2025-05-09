@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import static com.google.cloud.dataplex.v1.DataTaxonomyServiceClient.ListLocatio
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -83,9 +84,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -102,7 +103,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDataTaxonomy to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDataTaxonomy:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -119,12 +122,52 @@ import org.threeten.bp.Duration;
  *             .getDataTaxonomySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DataTaxonomyServiceStubSettings dataTaxonomyServiceSettings =
  *     dataTaxonomyServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDataTaxonomy:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DataTaxonomyServiceStubSettings.Builder dataTaxonomyServiceSettingsBuilder =
+ *     DataTaxonomyServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * dataTaxonomyServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomyServiceStubSettings> {
   /** The default scopes of the service. */
@@ -220,9 +263,7 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
 
             @Override
             public Iterable<DataTaxonomy> extractResources(ListDataTaxonomiesResponse payload) {
-              return payload.getDataTaxonomiesList() == null
-                  ? ImmutableList.<DataTaxonomy>of()
-                  : payload.getDataTaxonomiesList();
+              return payload.getDataTaxonomiesList();
             }
           };
 
@@ -267,9 +308,7 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
             @Override
             public Iterable<DataAttributeBinding> extractResources(
                 ListDataAttributeBindingsResponse payload) {
-              return payload.getDataAttributeBindingsList() == null
-                  ? ImmutableList.<DataAttributeBinding>of()
-                  : payload.getDataAttributeBindingsList();
+              return payload.getDataAttributeBindingsList();
             }
           };
 
@@ -307,9 +346,7 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
 
             @Override
             public Iterable<DataAttribute> extractResources(ListDataAttributesResponse payload) {
-              return payload.getDataAttributesList() == null
-                  ? ImmutableList.<DataAttribute>of()
-                  : payload.getDataAttributesList();
+              return payload.getDataAttributesList();
             }
           };
 
@@ -343,9 +380,7 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -436,7 +471,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
             }
           };
 
-  /** Returns the object with the settings used for calls to createDataTaxonomy. */
+  /**
+   * Returns the object with the settings used for calls to createDataTaxonomy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateDataTaxonomyRequest, Operation> createDataTaxonomySettings() {
     return createDataTaxonomySettings;
   }
@@ -447,7 +487,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return createDataTaxonomyOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateDataTaxonomy. */
+  /**
+   * Returns the object with the settings used for calls to updateDataTaxonomy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateDataTaxonomyRequest, Operation> updateDataTaxonomySettings() {
     return updateDataTaxonomySettings;
   }
@@ -458,7 +503,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return updateDataTaxonomyOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteDataTaxonomy. */
+  /**
+   * Returns the object with the settings used for calls to deleteDataTaxonomy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteDataTaxonomyRequest, Operation> deleteDataTaxonomySettings() {
     return deleteDataTaxonomySettings;
   }
@@ -469,19 +519,34 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return deleteDataTaxonomyOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to listDataTaxonomies. */
+  /**
+   * Returns the object with the settings used for calls to listDataTaxonomies.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, ListDataTaxonomiesPagedResponse>
       listDataTaxonomiesSettings() {
     return listDataTaxonomiesSettings;
   }
 
-  /** Returns the object with the settings used for calls to getDataTaxonomy. */
+  /**
+   * Returns the object with the settings used for calls to getDataTaxonomy.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetDataTaxonomyRequest, DataTaxonomy> getDataTaxonomySettings() {
     return getDataTaxonomySettings;
   }
 
-  /** Returns the object with the settings used for calls to createDataAttributeBinding. */
+  /**
+   * Returns the object with the settings used for calls to createDataAttributeBinding.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateDataAttributeBindingRequest, Operation>
       createDataAttributeBindingSettings() {
     return createDataAttributeBindingSettings;
@@ -494,7 +559,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return createDataAttributeBindingOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateDataAttributeBinding. */
+  /**
+   * Returns the object with the settings used for calls to updateDataAttributeBinding.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateDataAttributeBindingRequest, Operation>
       updateDataAttributeBindingSettings() {
     return updateDataAttributeBindingSettings;
@@ -507,7 +577,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return updateDataAttributeBindingOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteDataAttributeBinding. */
+  /**
+   * Returns the object with the settings used for calls to deleteDataAttributeBinding.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteDataAttributeBindingRequest, Operation>
       deleteDataAttributeBindingSettings() {
     return deleteDataAttributeBindingSettings;
@@ -519,7 +594,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return deleteDataAttributeBindingOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to listDataAttributeBindings. */
+  /**
+   * Returns the object with the settings used for calls to listDataAttributeBindings.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListDataAttributeBindingsRequest,
           ListDataAttributeBindingsResponse,
@@ -528,13 +608,23 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return listDataAttributeBindingsSettings;
   }
 
-  /** Returns the object with the settings used for calls to getDataAttributeBinding. */
+  /**
+   * Returns the object with the settings used for calls to getDataAttributeBinding.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetDataAttributeBindingRequest, DataAttributeBinding>
       getDataAttributeBindingSettings() {
     return getDataAttributeBindingSettings;
   }
 
-  /** Returns the object with the settings used for calls to createDataAttribute. */
+  /**
+   * Returns the object with the settings used for calls to createDataAttribute.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateDataAttributeRequest, Operation> createDataAttributeSettings() {
     return createDataAttributeSettings;
   }
@@ -545,7 +635,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return createDataAttributeOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateDataAttribute. */
+  /**
+   * Returns the object with the settings used for calls to updateDataAttribute.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateDataAttributeRequest, Operation> updateDataAttributeSettings() {
     return updateDataAttributeSettings;
   }
@@ -556,7 +651,12 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return updateDataAttributeOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteDataAttribute. */
+  /**
+   * Returns the object with the settings used for calls to deleteDataAttribute.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteDataAttributeRequest, Operation> deleteDataAttributeSettings() {
     return deleteDataAttributeSettings;
   }
@@ -567,14 +667,24 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return deleteDataAttributeOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to listDataAttributes. */
+  /**
+   * Returns the object with the settings used for calls to listDataAttributes.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListDataAttributesRequest, ListDataAttributesResponse, ListDataAttributesPagedResponse>
       listDataAttributesSettings() {
     return listDataAttributesSettings;
   }
 
-  /** Returns the object with the settings used for calls to getDataAttribute. */
+  /**
+   * Returns the object with the settings used for calls to getDataAttribute.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetDataAttributeRequest, DataAttribute> getDataAttributeSettings() {
     return getDataAttributeSettings;
   }
@@ -606,12 +716,19 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dataplex";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dataplex.googleapis.com:443";
   }
@@ -650,7 +767,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -659,7 +775,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -948,7 +1063,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -961,7 +1075,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1069,13 +1182,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1093,13 +1206,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1117,13 +1230,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1142,13 +1255,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1167,13 +1280,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1192,13 +1305,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1216,13 +1329,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1240,13 +1353,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1264,13 +1377,13 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1291,107 +1404,140 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to createDataTaxonomy. */
+    /**
+     * Returns the builder for the settings used for calls to createDataTaxonomy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateDataTaxonomyRequest, Operation>
         createDataTaxonomySettings() {
       return createDataTaxonomySettings;
     }
 
     /** Returns the builder for the settings used for calls to createDataTaxonomy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDataTaxonomyRequest, DataTaxonomy, OperationMetadata>
         createDataTaxonomyOperationSettings() {
       return createDataTaxonomyOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateDataTaxonomy. */
+    /**
+     * Returns the builder for the settings used for calls to updateDataTaxonomy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateDataTaxonomyRequest, Operation>
         updateDataTaxonomySettings() {
       return updateDataTaxonomySettings;
     }
 
     /** Returns the builder for the settings used for calls to updateDataTaxonomy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDataTaxonomyRequest, DataTaxonomy, OperationMetadata>
         updateDataTaxonomyOperationSettings() {
       return updateDataTaxonomyOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataTaxonomy. */
+    /**
+     * Returns the builder for the settings used for calls to deleteDataTaxonomy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteDataTaxonomyRequest, Operation>
         deleteDataTaxonomySettings() {
       return deleteDataTaxonomySettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteDataTaxonomy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDataTaxonomyRequest, Empty, OperationMetadata>
         deleteDataTaxonomyOperationSettings() {
       return deleteDataTaxonomyOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listDataTaxonomies. */
+    /**
+     * Returns the builder for the settings used for calls to listDataTaxonomies.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, ListDataTaxonomiesPagedResponse>
         listDataTaxonomiesSettings() {
       return listDataTaxonomiesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getDataTaxonomy. */
+    /**
+     * Returns the builder for the settings used for calls to getDataTaxonomy.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetDataTaxonomyRequest, DataTaxonomy>
         getDataTaxonomySettings() {
       return getDataTaxonomySettings;
     }
 
-    /** Returns the builder for the settings used for calls to createDataAttributeBinding. */
+    /**
+     * Returns the builder for the settings used for calls to createDataAttributeBinding.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateDataAttributeBindingRequest, Operation>
         createDataAttributeBindingSettings() {
       return createDataAttributeBindingSettings;
     }
 
     /** Returns the builder for the settings used for calls to createDataAttributeBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDataAttributeBindingRequest, DataAttributeBinding, OperationMetadata>
         createDataAttributeBindingOperationSettings() {
       return createDataAttributeBindingOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateDataAttributeBinding. */
+    /**
+     * Returns the builder for the settings used for calls to updateDataAttributeBinding.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateDataAttributeBindingRequest, Operation>
         updateDataAttributeBindingSettings() {
       return updateDataAttributeBindingSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateDataAttributeBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDataAttributeBindingRequest, DataAttributeBinding, OperationMetadata>
         updateDataAttributeBindingOperationSettings() {
       return updateDataAttributeBindingOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataAttributeBinding. */
+    /**
+     * Returns the builder for the settings used for calls to deleteDataAttributeBinding.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteDataAttributeBindingRequest, Operation>
         deleteDataAttributeBindingSettings() {
       return deleteDataAttributeBindingSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteDataAttributeBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteDataAttributeBindingRequest, Empty, OperationMetadata>
         deleteDataAttributeBindingOperationSettings() {
       return deleteDataAttributeBindingOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listDataAttributeBindings. */
+    /**
+     * Returns the builder for the settings used for calls to listDataAttributeBindings.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListDataAttributeBindingsRequest,
             ListDataAttributeBindingsResponse,
@@ -1400,64 +1546,88 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
       return listDataAttributeBindingsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getDataAttributeBinding. */
+    /**
+     * Returns the builder for the settings used for calls to getDataAttributeBinding.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetDataAttributeBindingRequest, DataAttributeBinding>
         getDataAttributeBindingSettings() {
       return getDataAttributeBindingSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createDataAttribute. */
+    /**
+     * Returns the builder for the settings used for calls to createDataAttribute.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateDataAttributeRequest, Operation>
         createDataAttributeSettings() {
       return createDataAttributeSettings;
     }
 
     /** Returns the builder for the settings used for calls to createDataAttribute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDataAttributeRequest, DataAttribute, OperationMetadata>
         createDataAttributeOperationSettings() {
       return createDataAttributeOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateDataAttribute. */
+    /**
+     * Returns the builder for the settings used for calls to updateDataAttribute.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateDataAttributeRequest, Operation>
         updateDataAttributeSettings() {
       return updateDataAttributeSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateDataAttribute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDataAttributeRequest, DataAttribute, OperationMetadata>
         updateDataAttributeOperationSettings() {
       return updateDataAttributeOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteDataAttribute. */
+    /**
+     * Returns the builder for the settings used for calls to deleteDataAttribute.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteDataAttributeRequest, Operation>
         deleteDataAttributeSettings() {
       return deleteDataAttributeSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteDataAttribute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDataAttributeRequest, Empty, OperationMetadata>
         deleteDataAttributeOperationSettings() {
       return deleteDataAttributeOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listDataAttributes. */
+    /**
+     * Returns the builder for the settings used for calls to listDataAttributes.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListDataAttributesRequest, ListDataAttributesResponse, ListDataAttributesPagedResponse>
         listDataAttributesSettings() {
       return listDataAttributesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getDataAttribute. */
+    /**
+     * Returns the builder for the settings used for calls to getDataAttribute.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetDataAttributeRequest, DataAttribute>
         getDataAttributeSettings() {
       return getDataAttributeSettings;

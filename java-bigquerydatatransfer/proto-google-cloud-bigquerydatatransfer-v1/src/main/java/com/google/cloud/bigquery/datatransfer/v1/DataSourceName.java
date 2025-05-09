@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -78,12 +77,10 @@ public class DataSourceName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectDataSourceBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationDataSourceBuilder newProjectLocationDataSourceBuilder() {
     return new ProjectLocationDataSourceBuilder();
   }
@@ -96,12 +93,10 @@ public class DataSourceName implements ResourceName {
     return newBuilder().setProject(project).setDataSource(dataSource).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DataSourceName ofProjectDataSourceName(String project, String dataSource) {
     return newBuilder().setProject(project).setDataSource(dataSource).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DataSourceName ofProjectLocationDataSourceName(
       String project, String location, String dataSource) {
     return newProjectLocationDataSourceBuilder()
@@ -115,12 +110,10 @@ public class DataSourceName implements ResourceName {
     return newBuilder().setProject(project).setDataSource(dataSource).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectDataSourceName(String project, String dataSource) {
     return newBuilder().setProject(project).setDataSource(dataSource).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDataSourceName(
       String project, String location, String dataSource) {
     return newProjectLocationDataSourceBuilder()
@@ -238,7 +231,8 @@ public class DataSourceName implements ResourceName {
     private Builder(DataSourceName dataSourceName) {
       Preconditions.checkArgument(
           Objects.equals(dataSourceName.pathTemplate, PROJECT_DATA_SOURCE),
-          "toBuilder is only supported when DataSourceName has the pattern of projects/{project}/dataSources/{data_source}");
+          "toBuilder is only supported when DataSourceName has the pattern of"
+              + " projects/{project}/dataSources/{data_source}");
       this.project = dataSourceName.project;
       this.dataSource = dataSourceName.dataSource;
     }
@@ -249,7 +243,6 @@ public class DataSourceName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/dataSources/{data_source}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationDataSourceBuilder {
     private String project;
     private String location;

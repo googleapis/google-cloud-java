@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -824,7 +824,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
-  @Ignore
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void setIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -882,7 +882,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
-  @Ignore
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void getIamPolicyTest() throws Exception {
     Policy expectedResponse =
@@ -938,7 +938,7 @@ public class ServiceManagerClientHttpJsonTest {
     }
   }
 
-  @Ignore
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void testIamPermissionsTest() throws Exception {
     TestIamPermissionsResponse expectedResponse =

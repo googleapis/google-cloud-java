@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1208,6 +1208,19 @@ public final class ArtifactRegistryGrpc {
     return ArtifactRegistryStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ArtifactRegistryBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ArtifactRegistryBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ArtifactRegistryBlockingV2Stub>() {
+          @java.lang.Override
+          public ArtifactRegistryBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ArtifactRegistryBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ArtifactRegistryBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2093,6 +2106,370 @@ public final class ArtifactRegistryGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ArtifactRegistry.
+   *
+   * <pre>
+   * The Artifact Registry API service.
+   * Artifact Registry is an artifact management system for storing artifacts
+   * from different package management systems.
+   * The resources managed by this API are:
+   * * Repositories, which group packages and their data.
+   * * Packages, which group versions and their tags.
+   * * Versions, which are specific forms of a package.
+   * * Tags, which represent alternative names for versions.
+   * * Files, which contain content and are optionally associated with a Package
+   *   or Version.
+   * </pre>
+   */
+  public static final class ArtifactRegistryBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ArtifactRegistryBlockingV2Stub> {
+    private ArtifactRegistryBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ArtifactRegistryBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ArtifactRegistryBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Apt artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importAptArtifacts(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportAptArtifactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports Yum (RPM) artifacts. The returned Operation will complete once the
+     * resources are imported. Package, Version, and File resources are created
+     * based on the imported artifacts. Imported artifacts that conflict with
+     * existing resources are ignored.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importYumArtifacts(
+        com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportYumArtifactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists repositories.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ListRepositoriesResponse listRepositories(
+        com.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRepositoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a repository.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.Repository getRepository(
+        com.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a repository. The returned Operation will finish once the
+     * repository has been created. Its response will be the created Repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRepository(
+        com.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a repository.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.Repository updateRepository(
+        com.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a repository and all of its contents. The returned Operation will
+     * finish once the repository has been deleted. It will not have any Operation
+     * metadata and will return a google.protobuf.Empty response.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRepository(
+        com.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists packages.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ListPackagesResponse listPackages(
+        com.google.devtools.artifactregistry.v1beta2.ListPackagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPackagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a package.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.Package getPackage(
+        com.google.devtools.artifactregistry.v1beta2.GetPackageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPackageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a package and all of its versions and tags. The returned operation
+     * will complete once the package has been deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePackage(
+        com.google.devtools.artifactregistry.v1beta2.DeletePackageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePackageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists versions.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ListVersionsResponse listVersions(
+        com.google.devtools.artifactregistry.v1beta2.ListVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a version
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.Version getVersion(
+        com.google.devtools.artifactregistry.v1beta2.GetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a version and all of its content. The returned operation will
+     * complete once the version has been deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVersion(
+        com.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists files.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ListFilesResponse listFiles(
+        com.google.devtools.artifactregistry.v1beta2.ListFilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a file.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.File getFile(
+        com.google.devtools.artifactregistry.v1beta2.GetFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists tags.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ListTagsResponse listTags(
+        com.google.devtools.artifactregistry.v1beta2.ListTagsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a tag.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.Tag getTag(
+        com.google.devtools.artifactregistry.v1beta2.GetTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a tag.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.Tag createTag(
+        com.google.devtools.artifactregistry.v1beta2.CreateTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a tag.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.Tag updateTag(
+        com.google.devtools.artifactregistry.v1beta2.UpdateTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a tag.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTag(
+        com.google.devtools.artifactregistry.v1beta2.DeleteTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the IAM policy for a given resource.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM policy for a given resource.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tests if the caller has a list of permissions on a resource.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the Settings for the Project.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ProjectSettings getProjectSettings(
+        com.google.devtools.artifactregistry.v1beta2.GetProjectSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProjectSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Settings for the Project.
+     * </pre>
+     */
+    public com.google.devtools.artifactregistry.v1beta2.ProjectSettings updateProjectSettings(
+        com.google.devtools.artifactregistry.v1beta2.UpdateProjectSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProjectSettingsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ArtifactRegistry.
    *
    * <pre>
    * The Artifact Registry API service.

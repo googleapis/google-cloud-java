@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,19 +67,436 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the TpuClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListNodes</td>
+ *      <td><p> Lists nodes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNodes(ListNodesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listNodes(LocationName parent)
+ *           <li><p> listNodes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNodesPagedCallable()
+ *           <li><p> listNodesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetNode</td>
+ *      <td><p> Gets the details of a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getNode(GetNodeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getNode(NodeName name)
+ *           <li><p> getNode(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateNode</td>
+ *      <td><p> Creates a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createNodeAsync(CreateNodeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createNodeAsync(LocationName parent, Node node, String nodeId)
+ *           <li><p> createNodeAsync(String parent, Node node, String nodeId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createNodeOperationCallable()
+ *           <li><p> createNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteNode</td>
+ *      <td><p> Deletes a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteNodeAsync(DeleteNodeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteNodeAsync(NodeName name)
+ *           <li><p> deleteNodeAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteNodeOperationCallable()
+ *           <li><p> deleteNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StopNode</td>
+ *      <td><p> Stops a node. This operation is only available with single TPU nodes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopNodeAsync(StopNodeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopNodeOperationCallable()
+ *           <li><p> stopNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StartNode</td>
+ *      <td><p> Starts a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startNodeAsync(StartNodeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startNodeOperationCallable()
+ *           <li><p> startNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateNode</td>
+ *      <td><p> Updates the configurations of a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateNodeAsync(UpdateNodeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateNodeAsync(Node node, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateNodeOperationCallable()
+ *           <li><p> updateNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PerformMaintenance</td>
+ *      <td><p> Perform manual maintenance on a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceAsync(PerformMaintenanceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceOperationCallable()
+ *           <li><p> performMaintenanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListQueuedResources</td>
+ *      <td><p> Lists queued resources.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQueuedResources(ListQueuedResourcesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQueuedResources(LocationName parent)
+ *           <li><p> listQueuedResources(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQueuedResourcesPagedCallable()
+ *           <li><p> listQueuedResourcesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQueuedResource</td>
+ *      <td><p> Gets details of a queued resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQueuedResource(GetQueuedResourceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQueuedResource(QueuedResourceName name)
+ *           <li><p> getQueuedResource(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQueuedResource</td>
+ *      <td><p> Creates a QueuedResource TPU instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQueuedResourceAsync(CreateQueuedResourceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createQueuedResourceAsync(LocationName parent, QueuedResource queuedResource, String queuedResourceId)
+ *           <li><p> createQueuedResourceAsync(String parent, QueuedResource queuedResource, String queuedResourceId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQueuedResourceOperationCallable()
+ *           <li><p> createQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQueuedResource</td>
+ *      <td><p> Deletes a QueuedResource TPU instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQueuedResourceAsync(DeleteQueuedResourceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteQueuedResourceAsync(QueuedResourceName name)
+ *           <li><p> deleteQueuedResourceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQueuedResourceOperationCallable()
+ *           <li><p> deleteQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ResetQueuedResource</td>
+ *      <td><p> Resets a QueuedResource TPU instance</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resetQueuedResourceAsync(ResetQueuedResourceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> resetQueuedResourceAsync(QueuedResourceName name)
+ *           <li><p> resetQueuedResourceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resetQueuedResourceOperationCallable()
+ *           <li><p> resetQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PerformMaintenanceQueuedResource</td>
+ *      <td><p> Perform manual maintenance on specific nodes of a QueuedResource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceQueuedResourceAsync(PerformMaintenanceQueuedResourceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> performMaintenanceQueuedResourceOperationCallable()
+ *           <li><p> performMaintenanceQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateServiceIdentity</td>
+ *      <td><p> Generates the Cloud TPU service identity for the project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateServiceIdentity(GenerateServiceIdentityRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateServiceIdentityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAcceleratorTypes</td>
+ *      <td><p> Lists accelerator types supported by this API.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAcceleratorTypes(ListAcceleratorTypesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAcceleratorTypes(LocationName parent)
+ *           <li><p> listAcceleratorTypes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAcceleratorTypesPagedCallable()
+ *           <li><p> listAcceleratorTypesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAcceleratorType</td>
+ *      <td><p> Gets AcceleratorType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAcceleratorType(GetAcceleratorTypeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAcceleratorType(AcceleratorTypeName name)
+ *           <li><p> getAcceleratorType(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAcceleratorTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRuntimeVersions</td>
+ *      <td><p> Lists runtime versions supported by this API.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRuntimeVersions(ListRuntimeVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRuntimeVersions(LocationName parent)
+ *           <li><p> listRuntimeVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRuntimeVersionsPagedCallable()
+ *           <li><p> listRuntimeVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRuntimeVersion</td>
+ *      <td><p> Gets a runtime version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRuntimeVersion(GetRuntimeVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRuntimeVersion(RuntimeVersionName name)
+ *           <li><p> getRuntimeVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRuntimeVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGuestAttributes</td>
+ *      <td><p> Retrieves the guest attributes for the node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGuestAttributes(GetGuestAttributesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGuestAttributesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListReservations</td>
+ *      <td><p> Retrieves the reservations for the given project in the given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listReservations(ListReservationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listReservationsPagedCallable()
+ *           <li><p> listReservationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SimulateMaintenanceEvent</td>
+ *      <td><p> Simulates a maintenance event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> simulateMaintenanceEventAsync(SimulateMaintenanceEventRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> simulateMaintenanceEventOperationCallable()
+ *           <li><p> simulateMaintenanceEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -1035,6 +1452,91 @@ public class TpuClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform manual maintenance on a node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceRequest request =
+   *       PerformMaintenanceRequest.newBuilder()
+   *           .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .build();
+   *   Node response = tpuClient.performMaintenanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Node, OperationMetadata> performMaintenanceAsync(
+      PerformMaintenanceRequest request) {
+    return performMaintenanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform manual maintenance on a node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceRequest request =
+   *       PerformMaintenanceRequest.newBuilder()
+   *           .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .build();
+   *   OperationFuture<Node, OperationMetadata> future =
+   *       tpuClient.performMaintenanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Node response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PerformMaintenanceRequest, Node, OperationMetadata>
+      performMaintenanceOperationCallable() {
+    return stub.performMaintenanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform manual maintenance on a node.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceRequest request =
+   *       PerformMaintenanceRequest.newBuilder()
+   *           .setName(NodeName.of("[PROJECT]", "[LOCATION]", "[NODE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = tpuClient.performMaintenanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PerformMaintenanceRequest, Operation> performMaintenanceCallable() {
+    return stub.performMaintenanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists queued resources.
    *
    * <p>Sample code:
@@ -1789,6 +2291,100 @@ public class TpuClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform manual maintenance on specific nodes of a QueuedResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceQueuedResourceRequest request =
+   *       PerformMaintenanceQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .addAllNodeNames(new ArrayList<String>())
+   *           .build();
+   *   QueuedResource response = tpuClient.performMaintenanceQueuedResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceAsync(PerformMaintenanceQueuedResourceRequest request) {
+    return performMaintenanceQueuedResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform manual maintenance on specific nodes of a QueuedResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceQueuedResourceRequest request =
+   *       PerformMaintenanceQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .addAllNodeNames(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<QueuedResource, OperationMetadata> future =
+   *       tpuClient.performMaintenanceQueuedResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QueuedResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceOperationCallable() {
+    return stub.performMaintenanceQueuedResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform manual maintenance on specific nodes of a QueuedResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   PerformMaintenanceQueuedResourceRequest request =
+   *       PerformMaintenanceQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .addAllNodeNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       tpuClient.performMaintenanceQueuedResourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceCallable() {
+    return stub.performMaintenanceQueuedResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Generates the Cloud TPU service identity for the project.
    *
    * <p>Sample code:
@@ -2485,6 +3081,109 @@ public class TpuClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves the reservations for the given project in the given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Reservation element : tpuClient.listReservations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReservationsPagedResponse listReservations(ListReservationsRequest request) {
+    return listReservationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the reservations for the given project in the given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Reservation> future = tpuClient.listReservationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Reservation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
+      listReservationsPagedCallable() {
+    return stub.listReservationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the reservations for the given project in the given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListReservationsRequest request =
+   *       ListReservationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListReservationsResponse response = tpuClient.listReservationsCallable().call(request);
+   *     for (Reservation element : response.getReservationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
+      listReservationsCallable() {
+    return stub.listReservationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Simulates a maintenance event.
    *
    * <p>Sample code:
@@ -3071,6 +3770,83 @@ public class TpuClient implements BackgroundResource {
     protected ListRuntimeVersionsFixedSizeCollection createCollection(
         List<ListRuntimeVersionsPage> pages, int collectionSize) {
       return new ListRuntimeVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListReservationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListReservationsRequest,
+          ListReservationsResponse,
+          Reservation,
+          ListReservationsPage,
+          ListReservationsFixedSizeCollection> {
+
+    public static ApiFuture<ListReservationsPagedResponse> createAsync(
+        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        ApiFuture<ListReservationsResponse> futureResponse) {
+      ApiFuture<ListReservationsPage> futurePage =
+          ListReservationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListReservationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListReservationsPagedResponse(ListReservationsPage page) {
+      super(page, ListReservationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListReservationsPage
+      extends AbstractPage<
+          ListReservationsRequest, ListReservationsResponse, Reservation, ListReservationsPage> {
+
+    private ListReservationsPage(
+        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        ListReservationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListReservationsPage createEmptyPage() {
+      return new ListReservationsPage(null, null);
+    }
+
+    @Override
+    protected ListReservationsPage createPage(
+        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        ListReservationsResponse response) {
+      return new ListReservationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListReservationsPage> createPageAsync(
+        PageContext<ListReservationsRequest, ListReservationsResponse, Reservation> context,
+        ApiFuture<ListReservationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListReservationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListReservationsRequest,
+          ListReservationsResponse,
+          Reservation,
+          ListReservationsPage,
+          ListReservationsFixedSizeCollection> {
+
+    private ListReservationsFixedSizeCollection(
+        List<ListReservationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListReservationsFixedSizeCollection createEmptyCollection() {
+      return new ListReservationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListReservationsFixedSizeCollection createCollection(
+        List<ListReservationsPage> pages, int collectionSize) {
+      return new ListReservationsFixedSizeCollection(pages, collectionSize);
     }
   }
 

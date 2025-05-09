@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,6 +193,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -201,6 +202,13 @@ public class CloudFilestoreManagerClientTest {
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
             .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
+            .setReplication(Replication.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setCustomPerformanceSupported(true)
+            .setPerformanceConfig(Instance.PerformanceConfig.newBuilder().build())
+            .setPerformanceLimits(Instance.PerformanceLimits.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setDeletionProtectionReason("deletionProtectionReason-1655366037")
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -247,6 +255,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -255,6 +264,13 @@ public class CloudFilestoreManagerClientTest {
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
             .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
+            .setReplication(Replication.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setCustomPerformanceSupported(true)
+            .setPerformanceConfig(Instance.PerformanceConfig.newBuilder().build())
+            .setPerformanceLimits(Instance.PerformanceLimits.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setDeletionProtectionReason("deletionProtectionReason-1655366037")
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -301,6 +317,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -309,6 +326,13 @@ public class CloudFilestoreManagerClientTest {
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
             .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
+            .setReplication(Replication.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setCustomPerformanceSupported(true)
+            .setPerformanceConfig(Instance.PerformanceConfig.newBuilder().build())
+            .setPerformanceLimits(Instance.PerformanceLimits.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setDeletionProtectionReason("deletionProtectionReason-1655366037")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -369,6 +393,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -377,6 +402,13 @@ public class CloudFilestoreManagerClientTest {
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
             .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
+            .setReplication(Replication.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setCustomPerformanceSupported(true)
+            .setPerformanceConfig(Instance.PerformanceConfig.newBuilder().build())
+            .setPerformanceLimits(Instance.PerformanceLimits.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setDeletionProtectionReason("deletionProtectionReason-1655366037")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -437,6 +469,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -445,6 +478,13 @@ public class CloudFilestoreManagerClientTest {
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
             .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
+            .setReplication(Replication.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setCustomPerformanceSupported(true)
+            .setPerformanceConfig(Instance.PerformanceConfig.newBuilder().build())
+            .setPerformanceLimits(Instance.PerformanceLimits.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setDeletionProtectionReason("deletionProtectionReason-1655366037")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -502,6 +542,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -510,6 +551,13 @@ public class CloudFilestoreManagerClientTest {
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
             .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
+            .setReplication(Replication.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setCustomPerformanceSupported(true)
+            .setPerformanceConfig(Instance.PerformanceConfig.newBuilder().build())
+            .setPerformanceLimits(Instance.PerformanceLimits.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setDeletionProtectionReason("deletionProtectionReason-1655366037")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -575,6 +623,7 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
             .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .setMaxCapacityGb(220559397)
@@ -583,6 +632,13 @@ public class CloudFilestoreManagerClientTest {
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
             .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
+            .setReplication(Replication.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setCustomPerformanceSupported(true)
+            .setPerformanceConfig(Instance.PerformanceConfig.newBuilder().build())
+            .setPerformanceLimits(Instance.PerformanceLimits.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setDeletionProtectionReason("deletionProtectionReason-1655366037")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -625,6 +681,85 @@ public class CloudFilestoreManagerClientTest {
               .setTargetSnapshotId("targetSnapshotId-2099459472")
               .build();
       client.revertInstanceAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void promoteReplicaTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDescription("description-1724546052")
+            .setStatusMessage("statusMessage-958704715")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllFileShares(new ArrayList<FileShareConfig>())
+            .addAllNetworks(new ArrayList<NetworkConfig>())
+            .setEtag("etag3123477")
+            .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
+            .setMaxCapacityGb(220559397)
+            .setCapacityStepSizeGb(18315979)
+            .setMaxShareCount(-1758695852)
+            .setCapacityGb(-1923585408)
+            .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
+            .setReplication(Replication.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setCustomPerformanceSupported(true)
+            .setPerformanceConfig(Instance.PerformanceConfig.newBuilder().build())
+            .setPerformanceLimits(Instance.PerformanceLimits.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setDeletionProtectionReason("deletionProtectionReason-1655366037")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("promoteReplicaTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudFilestoreManager.addResponse(resultOperation);
+
+    PromoteReplicaRequest request =
+        PromoteReplicaRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setPeerInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .build();
+
+    Instance actualResponse = client.promoteReplicaAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PromoteReplicaRequest actualRequest = ((PromoteReplicaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getPeerInstance(), actualRequest.getPeerInstance());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void promoteReplicaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      PromoteReplicaRequest request =
+          PromoteReplicaRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .setPeerInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .build();
+      client.promoteReplicaAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -815,6 +950,7 @@ public class CloudFilestoreManagerClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setFilesystemUsedBytes(387235709)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -858,6 +994,7 @@ public class CloudFilestoreManagerClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setFilesystemUsedBytes(387235709)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -901,6 +1038,7 @@ public class CloudFilestoreManagerClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setFilesystemUsedBytes(387235709)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -958,6 +1096,7 @@ public class CloudFilestoreManagerClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setFilesystemUsedBytes(387235709)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1099,6 +1238,7 @@ public class CloudFilestoreManagerClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setFilesystemUsedBytes(387235709)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1245,7 +1385,9 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -1293,7 +1435,9 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -1341,7 +1485,9 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1403,7 +1549,9 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1549,7 +1697,9 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setKmsKeyName("kmsKeyName412586233")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -42,6 +46,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,6 +54,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -103,14 +109,17 @@ public class FeatureOnlineStoreServiceClientTest {
 
   @Test
   public void fetchFeatureValuesTest() throws Exception {
-    FetchFeatureValuesResponse expectedResponse = FetchFeatureValuesResponse.newBuilder().build();
+    FetchFeatureValuesResponse expectedResponse =
+        FetchFeatureValuesResponse.newBuilder()
+            .setDataKey(FeatureViewDataKey.newBuilder().build())
+            .build();
     mockFeatureOnlineStoreService.addResponse(expectedResponse);
 
     FeatureViewName featureView =
         FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
-    String id = "id3355";
+    FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
 
-    FetchFeatureValuesResponse actualResponse = client.fetchFeatureValues(featureView, id);
+    FetchFeatureValuesResponse actualResponse = client.fetchFeatureValues(featureView, dataKey);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockFeatureOnlineStoreService.getRequests();
@@ -118,7 +127,7 @@ public class FeatureOnlineStoreServiceClientTest {
     FetchFeatureValuesRequest actualRequest = ((FetchFeatureValuesRequest) actualRequests.get(0));
 
     Assert.assertEquals(featureView.toString(), actualRequest.getFeatureView());
-    Assert.assertEquals(id, actualRequest.getId());
+    Assert.assertEquals(dataKey, actualRequest.getDataKey());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -133,8 +142,8 @@ public class FeatureOnlineStoreServiceClientTest {
     try {
       FeatureViewName featureView =
           FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
-      String id = "id3355";
-      client.fetchFeatureValues(featureView, id);
+      FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
+      client.fetchFeatureValues(featureView, dataKey);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -143,13 +152,16 @@ public class FeatureOnlineStoreServiceClientTest {
 
   @Test
   public void fetchFeatureValuesTest2() throws Exception {
-    FetchFeatureValuesResponse expectedResponse = FetchFeatureValuesResponse.newBuilder().build();
+    FetchFeatureValuesResponse expectedResponse =
+        FetchFeatureValuesResponse.newBuilder()
+            .setDataKey(FeatureViewDataKey.newBuilder().build())
+            .build();
     mockFeatureOnlineStoreService.addResponse(expectedResponse);
 
     String featureView = "featureView-376914245";
-    String id = "id3355";
+    FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
 
-    FetchFeatureValuesResponse actualResponse = client.fetchFeatureValues(featureView, id);
+    FetchFeatureValuesResponse actualResponse = client.fetchFeatureValues(featureView, dataKey);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockFeatureOnlineStoreService.getRequests();
@@ -157,7 +169,7 @@ public class FeatureOnlineStoreServiceClientTest {
     FetchFeatureValuesRequest actualRequest = ((FetchFeatureValuesRequest) actualRequests.get(0));
 
     Assert.assertEquals(featureView, actualRequest.getFeatureView());
-    Assert.assertEquals(id, actualRequest.getId());
+    Assert.assertEquals(dataKey, actualRequest.getDataKey());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -171,11 +183,80 @@ public class FeatureOnlineStoreServiceClientTest {
 
     try {
       String featureView = "featureView-376914245";
-      String id = "id3355";
-      client.fetchFeatureValues(featureView, id);
+      FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
+      client.fetchFeatureValues(featureView, dataKey);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamingFetchFeatureValuesTest() throws Exception {
+    StreamingFetchFeatureValuesResponse expectedResponse =
+        StreamingFetchFeatureValuesResponse.newBuilder()
+            .setStatus(Status.newBuilder().build())
+            .addAllData(new ArrayList<FetchFeatureValuesResponse>())
+            .addAllDataKeysWithError(new ArrayList<FeatureViewDataKey>())
+            .build();
+    mockFeatureOnlineStoreService.addResponse(expectedResponse);
+    StreamingFetchFeatureValuesRequest request =
+        StreamingFetchFeatureValuesRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .addAllDataKeys(new ArrayList<FeatureViewDataKey>())
+            .setDataFormat(FeatureViewDataFormat.forNumber(0))
+            .build();
+
+    MockStreamObserver<StreamingFetchFeatureValuesResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+        callable = client.streamingFetchFeatureValuesCallable();
+    ApiStreamObserver<StreamingFetchFeatureValuesRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<StreamingFetchFeatureValuesResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamingFetchFeatureValuesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureOnlineStoreService.addException(exception);
+    StreamingFetchFeatureValuesRequest request =
+        StreamingFetchFeatureValuesRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .addAllDataKeys(new ArrayList<FeatureViewDataKey>())
+            .setDataFormat(FeatureViewDataFormat.forNumber(0))
+            .build();
+
+    MockStreamObserver<StreamingFetchFeatureValuesResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+        callable = client.streamingFetchFeatureValuesCallable();
+    ApiStreamObserver<StreamingFetchFeatureValuesRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<StreamingFetchFeatureValuesResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -233,6 +314,74 @@ public class FeatureOnlineStoreServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void featureViewDirectWriteTest() throws Exception {
+    FeatureViewDirectWriteResponse expectedResponse =
+        FeatureViewDirectWriteResponse.newBuilder()
+            .setStatus(Status.newBuilder().build())
+            .addAllWriteResponses(new ArrayList<FeatureViewDirectWriteResponse.WriteResponse>())
+            .build();
+    mockFeatureOnlineStoreService.addResponse(expectedResponse);
+    FeatureViewDirectWriteRequest request =
+        FeatureViewDirectWriteRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .addAllDataKeyAndFeatureValues(
+                new ArrayList<FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>())
+            .build();
+
+    MockStreamObserver<FeatureViewDirectWriteResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse> callable =
+        client.featureViewDirectWriteCallable();
+    ApiStreamObserver<FeatureViewDirectWriteRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<FeatureViewDirectWriteResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void featureViewDirectWriteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeatureOnlineStoreService.addException(exception);
+    FeatureViewDirectWriteRequest request =
+        FeatureViewDirectWriteRequest.newBuilder()
+            .setFeatureView(
+                FeatureViewName.of(
+                        "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+                    .toString())
+            .addAllDataKeyAndFeatureValues(
+                new ArrayList<FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>())
+            .build();
+
+    MockStreamObserver<FeatureViewDirectWriteResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse> callable =
+        client.featureViewDirectWriteCallable();
+    ApiStreamObserver<FeatureViewDirectWriteRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<FeatureViewDirectWriteResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

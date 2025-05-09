@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -216,6 +216,19 @@ public final class ExecutionsGrpc {
     return ExecutionsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ExecutionsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ExecutionsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ExecutionsBlockingV2Stub>() {
+          @java.lang.Override
+          public ExecutionsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ExecutionsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ExecutionsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -271,7 +284,8 @@ public final class ExecutionsGrpc {
      *
      *
      * <pre>
-     * Lists Executions from a Job.
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
      * </pre>
      */
     default void listExecutions(
@@ -363,7 +377,8 @@ public final class ExecutionsGrpc {
      *
      *
      * <pre>
-     * Lists Executions from a Job.
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
      * </pre>
      */
     public void listExecutions(
@@ -416,6 +431,79 @@ public final class ExecutionsGrpc {
    * Cloud Run Execution Control Plane API.
    * </pre>
    */
+  public static final class ExecutionsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ExecutionsBlockingV2Stub> {
+    private ExecutionsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ExecutionsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ExecutionsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an Execution.
+     * </pre>
+     */
+    public com.google.cloud.run.v2.Execution getExecution(
+        com.google.cloud.run.v2.GetExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
+     * </pre>
+     */
+    public com.google.cloud.run.v2.ListExecutionsResponse listExecutions(
+        com.google.cloud.run.v2.ListExecutionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExecutionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Execution.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteExecution(
+        com.google.cloud.run.v2.DeleteExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an Execution.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelExecution(
+        com.google.cloud.run.v2.CancelExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelExecutionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Executions.
+   *
+   * <pre>
+   * Cloud Run Execution Control Plane API.
+   * </pre>
+   */
   public static final class ExecutionsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ExecutionsBlockingStub> {
     private ExecutionsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -445,7 +533,8 @@ public final class ExecutionsGrpc {
      *
      *
      * <pre>
-     * Lists Executions from a Job.
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
      * </pre>
      */
     public com.google.cloud.run.v2.ListExecutionsResponse listExecutions(
@@ -516,7 +605,8 @@ public final class ExecutionsGrpc {
      *
      *
      * <pre>
-     * Lists Executions from a Job.
+     * Lists Executions from a Job. Results are sorted by creation time,
+     * descending.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

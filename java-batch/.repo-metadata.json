@@ -5,7 +5,7 @@
   "api_description": "n/a",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-batch/latest/overview",
   "release_level": "preview",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-batch",

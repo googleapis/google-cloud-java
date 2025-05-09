@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ import javax.annotation.Generated;
  *     LocalInventoryServiceClient.create()) {
  *   InsertLocalInventoryRequest request =
  *       InsertLocalInventoryRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setLocalInventory(LocalInventory.newBuilder().build())
  *           .build();
  *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
@@ -62,19 +62,70 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocalInventories</td>
+ *      <td><p> Lists the `LocalInventory` resources for the given product in your merchant account. The response might contain fewer items than specified by `pageSize`. If `pageToken` was returned in previous request, it can be used to obtain additional results.
+ * <p>  `LocalInventory` resources are listed per product for a given account.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocalInventories(ListLocalInventoriesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listLocalInventories(ProductName parent)
+ *           <li><p> listLocalInventories(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocalInventoriesPagedCallable()
+ *           <li><p> listLocalInventoriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> InsertLocalInventory</td>
+ *      <td><p> Inserts a `LocalInventory` resource to a product in your merchant account.
+ * <p>  Replaces the full `LocalInventory` resource if an entry with the same [`storeCode`][google.shopping.merchant.inventories.v1beta.LocalInventory.store_code] already exists for the product.
+ * <p>  It might take up to 30 minutes for the new or updated `LocalInventory` resource to appear in products.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> insertLocalInventory(InsertLocalInventoryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> insertLocalInventoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteLocalInventory</td>
+ *      <td><p> Deletes the specified `LocalInventory` from the given product in your merchant account. It might take a up to an hour for the `LocalInventory` to be deleted from the specific product. Once you have received a successful delete response, wait for that period before attempting a delete again.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteLocalInventory(DeleteLocalInventoryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteLocalInventory(LocalInventoryName name)
+ *           <li><p> deleteLocalInventory(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteLocalInventoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -201,7 +252,45 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (LocalInventoryServiceClient localInventoryServiceClient =
    *     LocalInventoryServiceClient.create()) {
-   *   String parent = "parent-995424086";
+   *   ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+   *   for (LocalInventory element :
+   *       localInventoryServiceClient.listLocalInventories(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The `name` of the parent product to list local inventories for. Format:
+   *     `accounts/{account}/products/{product}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocalInventoriesPagedResponse listLocalInventories(ProductName parent) {
+    ListLocalInventoriesRequest request =
+        ListLocalInventoriesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listLocalInventories(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the `LocalInventory` resources for the given product in your merchant account. The
+   * response might contain fewer items than specified by `pageSize`. If `pageToken` was returned in
+   * previous request, it can be used to obtain additional results.
+   *
+   * <p>`LocalInventory` resources are listed per product for a given account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LocalInventoryServiceClient localInventoryServiceClient =
+   *     LocalInventoryServiceClient.create()) {
+   *   String parent = ProductName.of("[ACCOUNT]", "[PRODUCT]").toString();
    *   for (LocalInventory element :
    *       localInventoryServiceClient.listLocalInventories(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -239,7 +328,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   ListLocalInventoriesRequest request =
    *       ListLocalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -278,7 +367,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   ListLocalInventoriesRequest request =
    *       ListLocalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -316,7 +405,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   ListLocalInventoriesRequest request =
    *       ListLocalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -364,7 +453,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   InsertLocalInventoryRequest request =
    *       InsertLocalInventoryRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setLocalInventory(LocalInventory.newBuilder().build())
    *           .build();
    *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
@@ -401,7 +490,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   InsertLocalInventoryRequest request =
    *       InsertLocalInventoryRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setLocalInventory(LocalInventory.newBuilder().build())
    *           .build();
    *   ApiFuture<LocalInventory> future =

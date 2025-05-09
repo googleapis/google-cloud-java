@@ -1,5 +1,664 @@
 # Changelog
 
+## 3.63.0 (2025-05-06)
+
+### Features
+
+* A new field `system_labels` is added to message `google.cloud.aiplatform.v1beta1.DeployRequest` ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* add gemini_request_read_config field to AssembleDataRequest and AssessDataRequest in aiplatform v1beta ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* allow customers to set encryption_spec for context caching ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* Expose llm parser to public v1 proto to prepare for GA ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* new fields `ref` and `defs` are added to message `.google.cloud.aiplatform.v1.Schema` ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* new fields `ref` and `defs` are added to message `.google.cloud.aiplatform.v1beta1.Schema` ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+
+### Bug Fixes
+
+* Deprecate election category HARM_CATEGORY_CIVIC_INTEGRITY ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* Deprecate election category HARM_CATEGORY_CIVIC_INTEGRITY ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+* update an outdated URL ([0f9d110](https://github.com/googleapis/google-cloud-java/commit/0f9d1103fa25bf1edc735f5958364f2dea027b1d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#11531](https://github.com/googleapis/google-cloud-java/issues/11531)) ([5f9a9e7](https://github.com/googleapis/google-cloud-java/commit/5f9a9e73df5e44ae38a8d18780873b7896d31c04))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#11561](https://github.com/googleapis/google-cloud-java/issues/11561)) ([9e84230](https://github.com/googleapis/google-cloud-java/commit/9e842300aa2e3e654785cc929aef0d6bb9a1a0a9))
+
+
+## 3.60.0 (2025-02-26)
+
+### Features
+
+* add Model Garden deploy API ([3b77c45](https://github.com/googleapis/google-cloud-java/commit/3b77c45dd479115cd42120df80b4fd481ab69796))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#11456](https://github.com/googleapis/google-cloud-java/issues/11456)) ([6b0ad6f](https://github.com/googleapis/google-cloud-java/commit/6b0ad6f8243cc60de7ee608237fa61445f0b0526))
+
+
+## 3.59.0 (2025-02-11)
+
+### Features
+
+* A new field `response_id` is added to message `.google.cloud.aiplatform.v1.GenerateContentResponse` ([8791ef3](https://github.com/googleapis/google-cloud-java/commit/8791ef355f3fa958841aa43e6c5c55db062f7688))
+* Add additional Probe options to v1 model.proto ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* add Notebooks Runtime Software Configuration ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* add Notebooks Runtime Software Configuration ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* Add rag_files_count to RagCorpus to count number of associated files ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* Add RolloutOptions to DeployedModel in v1beta1 endpoint.proto, add additional Probe options in v1beta1 model.proto ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+* EvaluateDataset API v1beta1 initial release ([dab28be](https://github.com/googleapis/google-cloud-java/commit/dab28bed1ae8708046774a50765c0d3a00bbf65d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#11426](https://github.com/googleapis/google-cloud-java/issues/11426)) ([afdc294](https://github.com/googleapis/google-cloud-java/commit/afdc2944304a077ce4cbdd8c7675f1ca707b2be0))
+
+
+## 3.58.0 (2025-01-29)
+
+### Features
+
+* add Context Cache to v1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Add machine_spec, data_persistent_disk_spec, network_spec, euc_config, shielded_vm_config to `.google.cloud.aiplatform.v1beta1.NotebookRuntime` ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Add machine_spec, data_persistent_disk_spec, network_spec, euc_config, shielded_vm_config to message `.google.cloud.aiplatform.v1.NotebookRuntime` ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add optimized config in v1 API ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add per-modality token count break downs for GenAI APIs ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add per-modality token count break downs for GenAI APIs ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add retrieval_config to ToolConfig v1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* add retrieval_config to ToolConfig v1beta1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Add speculative decoding spec to DeployedModel proto ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* enable FeatureGroup IAM Methods in v1beta1 API version ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* enable FeatureView Service Account in v1 API version ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* enable UpdateFeatureMonitor in v1beta1 API version ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Expose code execution tool API to v1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Model Registry Checkpoint API ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Model Registry Checkpoint API ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Reasoning Engine v1 GAPIC release ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+* Remove autorater config related visibility v1beta1 ([87de77d](https://github.com/googleapis/google-cloud-java/commit/87de77d00b5bb8bcea1046a412288386e65bba0d))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#11410](https://github.com/googleapis/google-cloud-java/issues/11410)) ([34dfd0d](https://github.com/googleapis/google-cloud-java/commit/34dfd0dc9c5ca042aca0778e8d34b2ca072bfeb1))
+
+
+## 3.57.0 (2025-01-09)
+
+### Features
+
+* add a new thought field in content proto ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* add Model Garden deploy API ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#11382](https://github.com/googleapis/google-cloud-java/issues/11382)) ([a4fd23c](https://github.com/googleapis/google-cloud-java/commit/a4fd23ce1dfa364959de1e97e3b769996f3c7d0d))
+
+
+## 3.56.0 (2024-12-13)
+
+### Features
+
+* A new field `list_all_versions` to `ListPublisherModelsRequest` ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* A new value `NVIDIA_H100_MEGA_80GB` is added to enum `AcceleratorType` ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* A new value `NVIDIA_H100_MEGA_80GB` is added to enum `AcceleratorType` ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add a v1 UpdateEndpointLongRunning API ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add CustomEnvironmentSpec to NotebookExecutionJob ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add CustomEnvironmentSpec to NotebookExecutionJob ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add LLM parser proto to API ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add new `Status` field to DeployedModel in Endpoint ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add new `Status` field to DeployedModel in Endpoint ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add Tool.GoogleSearch ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add Vertex RAG service proto to v1 ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add workbench_runtime and kernel_name to NotebookExecutionJob ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* add workbench_runtime and kernel_name to NotebookExecutionJob ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* enable FeatureGroup Service Account and IAM methods ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* Trajectory eval metrics added to evaluation service proto ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+
+### Bug Fixes
+
+* A comment for field `api_key_config` in message `.google.cloud.aiplatform.v1beta1.JiraSource` is changed ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* A comment for field `class_method` in message `.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest` is changed (from steam_query to stream_query) ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* Added support for multiple `class_methods` in QueryReasoningEngine ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#11349](https://github.com/googleapis/google-cloud-java/issues/11349)) ([9bb6334](https://github.com/googleapis/google-cloud-java/commit/9bb6334458fdec53ba9fdec501de534d6516f102))
+
+
+## 3.55.0 (2024-11-18)
+
+### Features
+
+* add a `nfs_mounts` to RaySpec in PersistentResource API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add BatchCreateFeatures rpc to feature_registry_service.proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add BatchCreateFeatures rpc to feature_registry_service.proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add BYOSA field to tuning_job ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add BYOSA field to tuning_job ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add code execution tool API ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add fast_tryout_enabled to FasterDeploymentConfig message in aiplatform v1beta1 endpoint.proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add fast_tryout_enabled to FasterDeploymentConfig v1 proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* Add Feature Monitoring API to Feature Store ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add StopNotebookRuntime method ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add StopNotebookRuntime method ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add system labels field to model garden deployments ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add system labels field to model garden deployments ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* add UpdateEndpointLongRunning API in v1beta1 version ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* added support for specifying function response type in `FunctionDeclaration` ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* COMET added to evaluation service proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+* metricX added to evaluation service proto ([bee5fa4](https://github.com/googleapis/google-cloud-java/commit/bee5fa4d897e8a9b6c08ac8511a8503524a88dc0))
+
+
+
+## 3.54.0 (2024-10-28)
+
+### Features
+
+* add `text` field for Grounding metadata support chunk output ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* add audio_timestamp to GenerationConfig ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* add new PscInterfaceConfig field to custom_job.proto ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+* Introduce DefaultRuntime to PipelineJob ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+### Bug Fixes
+
+* A comment for field `partner_model_tuning_spec` in message `.google.cloud.aiplatform.v1beta1.TuningJob` is changed ([492696e](https://github.com/googleapis/google-cloud-java/commit/492696e60625b654cd57b06c54c19ebabe46bda1))
+
+
+
+## 3.53.0 (2024-10-09)
+
+### Features
+
+* add a dynamic retrieval API ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add a dynamic retrieval API ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add continuous sync option in feature_view.proto ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add enable_secure_private_service_connect in service attachment ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add new `PscInterfaceConfig` field to `pipeline_job.proto` ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add partner_model_tuning_spec to TuningJob ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+* add psc_automation_configs to DeployIndex v1 ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+### Bug Fixes
+
+* annotate PipelineJob and PipelineTaskRerunConfig fields as optional ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+
+
+## 3.51.0 (2024-09-26)
+
+### Features
+
+* A new field `any_of` is added to message `.google.cloud.aiplatform.v1.Schema` ([58f6346](https://github.com/googleapis/google-cloud-java/commit/58f6346b3b0101741c8d5410d54105e647766e7e))
+* A new field `any_of` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([58f6346](https://github.com/googleapis/google-cloud-java/commit/58f6346b3b0101741c8d5410d54105e647766e7e))
+* A new field `generation_config` is added to message `.google.cloud.aiplatform.v1.CountTokensRequest` ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* A new field `generation_config` is added to message `.google.cloud.aiplatform.v1beta1.CountTokensRequest` ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* A new field `property_ordering` is added to message `.google.cloud.aiplatform.v1.Schema` ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* A new field `property_ordering` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* A new field `response_logprbs` is added to message `.google.cloud.aiplatform.v1.GenerationConfig` ([58f6346](https://github.com/googleapis/google-cloud-java/commit/58f6346b3b0101741c8d5410d54105e647766e7e))
+* A new field `response_logprbs` is added to message `.google.cloud.aiplatform.v1beta1.GenerationConfig` ([58f6346](https://github.com/googleapis/google-cloud-java/commit/58f6346b3b0101741c8d5410d54105e647766e7e))
+* Add CIVIC_INTEGRITY category to SafetySettings for prediction service ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* Add CIVIC_INTEGRITY category to SafetySettings for prediction service ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add file_id to SharePointSource ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add FLEX_START to Scheduling.strategy ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add FLEX_START to Scheduling.strategy ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add more configurability to feature_group.proto ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add more configurability to feature_group.proto ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add new `PipelineTaskRerunConfig` field to `pipeline_job.proto` ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add OFF to HarmBlockThreshold ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add OFF to HarmBlockThreshold ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add Pinecone and Vector Search integration for Vertex RAG ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add psc_automation_configs to DeployIndex v1beta1 ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add share_point_sources to SharePointSources ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add TunedModelRef and RebaseTunedModel Api for Vertex GenAiTuningService ([058e805](https://github.com/googleapis/google-cloud-java/commit/058e805c925a32c31fa35056535036e056c178f1))
+* add TunedModelRef and RebaseTunedModel Api for Vertex GenAiTuningService ([058e805](https://github.com/googleapis/google-cloud-java/commit/058e805c925a32c31fa35056535036e056c178f1))
+* add v1 NotebookExecutionJob to Schedule ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* add Vector DB config for Vertex RAG (Weaviate + FeatureStore) ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+* returns usage metadata for context caching ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
+## 3.50.0 (2024-09-11)
+
+### Features
+
+* add max_wait_duration to Scheduling ([7f98418](https://github.com/googleapis/google-cloud-java/commit/7f9841895b1fbc1dfdedee6123c1fa78ead1367a))
+* add max_wait_duration to Scheduling ([7f98418](https://github.com/googleapis/google-cloud-java/commit/7f9841895b1fbc1dfdedee6123c1fa78ead1367a))
+
+
+
+## 3.49.0 (2024-08-21)
+
+### Features
+
+* A new field `satisfies_pzs` is added to message `.google.cloud.aiplatform.v1.BatchPredictionJob` ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* A new message `RoutingConfig` is added ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* add evaluation service proto to v1 ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* add pointwise and pairwise metrics to evaluation service ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* add reservation affinity proto ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* add reservation affinity proto ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* Allow v1 api calls for some dataset_service, llm_utility_service, and prediction_service apis without project and location ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* Allow v1beta1 api calls for some dataset_service, llm_utility_service, and prediction_service apis without project and location ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* release advanced parsing options for rag files ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
+## 3.48.0 (2024-07-31)
+
+### Features
+
+* A new field `score` is added to message `.google.cloud.aiplatform.v1.Candidate` ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* A new message `ApiAuth` is added ([ec77898](https://github.com/googleapis/google-cloud-java/commit/ec77898b951324f9de4ddc4e85229b84b2dd81ca))
+* add model and contents fields to ComputeTokensRequest v1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* add model and contents fields to ComputeTokensRequest v1beta1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* add UpdateDeploymentResourcePool method to DeploymentResourcePoolService v1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+* add UpdateDeploymentResourcePool method to DeploymentResourcePoolService v1beta1 ([f4a2a5a](https://github.com/googleapis/google-cloud-java/commit/f4a2a5ae3f2771343e09af1933ba4a9ee28edcd6))
+
+
+
+## 3.47.0 (2024-06-27)
+
+### Features
+
+* add enum value MALFORMED_FUNCTION_CALL to `.google.cloud.aiplatform.v1beta1.content.Candidate.FinishReason` ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+* add MALFORMED_FUNCTION_CALL to FinishReason ([666a3ac](https://github.com/googleapis/google-cloud-java/commit/666a3ac8cd0cb45da3555a1bef8dfe3edf57d257))
+
+
+
+## 3.46.0 (None)
+
+* No change
+
+
+## 3.45.0 (2024-05-23)
+
+### Features
+
+* Added the v1beta1 version of the GenAI Tuning Service ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+
+
+
+## 3.44.0 (2024-05-08)
+
+### Features
+
+* An existing method `ChatCompletions` is removed from service `PredictionService`
+* An existing message `ChatCompletionsRequest` is removed
+* A new field `app_id` is added to message `.google.cloud.aiplatform.v1beta1.RuntimeConfig` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `create_notebook_execution_job_request` is added to message `.google.cloud.aiplatform.v1beta1.Schedule` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `custom_environment_spec` is added to message `.google.cloud.aiplatform.v1beta1.NotebookExecutionJob` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `deploy_task_name` is added to message `.google.cloud.aiplatform.v1.PublisherModel` ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A new field `deploy_task_name` is added to message `.google.cloud.aiplatform.v1beta1.PublisherModel` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `direct_notebook_source` is added to message `.google.cloud.aiplatform.v1beta1.NotebookExecutionJob` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `failed_rag_files_count` is added to message `.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `fine_tune` is added to message `.google.cloud.aiplatform.v1beta1.PublisherModel` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `import_rag_files_config` is added to message `.google.cloud.aiplatform.v1beta1.ImportRagFilesOperationMetadata` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `invalid_sparse_record_count` is added to message `.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `private_service_connect_config` is added to message `.google.cloud.aiplatform.v1.Endpoint` ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A new field `private_service_connect_config` is added to message `.google.cloud.aiplatform.v1beta1.Endpoint` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `rag_resources` is added to message `.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `rag_resources` is added to message `.google.cloud.aiplatform.v1beta1.VertexRagStore` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `search_entry_point` is added to message `.google.cloud.aiplatform.v1.GroundingMetadata` ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A new field `search_entry_point` is added to message `.google.cloud.aiplatform.v1beta1.GroundingMetadata` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `skipped_rag_files_count` is added to message `.google.cloud.aiplatform.v1beta1.ImportRagFilesResponse` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `valid_sparse_record_count` is added to message `.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `vector_distance_threshold` is added to message `.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new field `vector_distance_threshold` is added to message `.google.cloud.aiplatform.v1beta1.VertexRagStore` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new message `CreateNotebookExecutionJobRequest` is added ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new message `CustomEnvironmentSpec` is added ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new message `DirectNotebookSource` is added ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new message `RagResource` is added ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new message `RagResource` is added ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new message `SearchEntryPoint` is added ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new message `SearchEntryPoint` is added ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A new message `UpdateDatasetVersionRequest` is added ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new method `UpdateDatasetVersion` is added to service `DatasetService` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new value `INVALID_TOKEN_VALUE` is added to enum `RecordErrorType` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A new value `INVALID_TOKEN_VALUE` is added to enum `RecordErrorType` ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A new value `TPU_V5_LITEPOD` is added to enum `AcceleratorType` ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* add NotebookExecutionJob resource and APIs to public v1beta1 client library ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* An existing message `ChatCompletionsRequest` is removed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* An existing method `ChatCompletions` is removed from service `PredictionService` ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for enum value `EMBEDDING_SIZE_MISMATCH` in enum `RecordErrorType` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `base_model` in message `.google.cloud.aiplatform.v1.TuningJob` is changed ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A comment for field `big_query` in message `.google.cloud.aiplatform.v1beta1.FeatureGroup` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `distance` in message `.google.cloud.aiplatform.v1beta1.FindNeighborsResponse` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `epoch_count` in message `.google.cloud.aiplatform.v1.SupervisedHyperParameters` is changed ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A comment for field `feature_vector` in message `.google.cloud.aiplatform.v1beta1.IndexDatapoint` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `file_input_gcs_bucket` in message `.google.cloud.aiplatform.v1beta1.RuntimeConfig` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `file_output_gcs_bucket` in message `.google.cloud.aiplatform.v1beta1.RuntimeConfig` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `gcs_notebook_source` in message `.google.cloud.aiplatform.v1beta1.NotebookExecutionJob` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `gcs_output_uri` in message `.google.cloud.aiplatform.v1beta1.NotebookExecutionJob` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `gcs_source` in message `.google.cloud.aiplatform.v1beta1.RagFile` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `learning_rate_multiplier` in message `.google.cloud.aiplatform.v1.SupervisedHyperParameters` is changed ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A comment for field `name` in message `.google.cloud.aiplatform.v1.NotebookRuntimeTemplate` is changed ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A comment for field `name` in message `.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `parent` in message `.google.cloud.aiplatform.v1.CreateFeatureGroupRequest` is changed ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A comment for field `parent` in message `.google.cloud.aiplatform.v1beta1.CreateFeatureGroupRequest` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `rag_corpora` in message `.google.cloud.aiplatform.v1beta1.RetrieveContextsRequest` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `rag_corpora` in message `.google.cloud.aiplatform.v1beta1.VertexRagStore` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `rouge_type` in message `.google.cloud.aiplatform.v1beta1.RougeSpec` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `serving_config_name` in message `.google.cloud.aiplatform.v1beta1.RuntimeConfig` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+* A comment for field `training_dataset_uri` in message `.google.cloud.aiplatform.v1.SupervisedTuningSpec` is changed ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A comment for field `tuned_model_display_name` in message `.google.cloud.aiplatform.v1.TuningJob` is changed ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A comment for field `validation_dataset_uri` in message `.google.cloud.aiplatform.v1.SupervisedTuningSpec` is changed ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+* A comment for field `vectors_count` in message `.google.cloud.aiplatform.v1beta1.IndexStats` is changed ([6b1e9fa](https://github.com/googleapis/google-cloud-java/commit/6b1e9fa513ee0674712d117ff12c384c6bc3c959))
+
+
+
+## 3.43.0 (2024-04-25)
+
+### Features
+
+* delete the deprecated field for model monitor
+* An existing field `rag_context_recall_input` is removed from message `.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest`
+* An existing field `response_recall_result` is removed from message `.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse`
+* An existing field `rag_context_recall_result` is removed from message `.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse`
+* An existing message `ResponseRecallInput` is removed
+* An existing message `ResponseRecallInstance` is removed
+* An existing message `ResponseRecallSpec` is removed
+* An existing message `ResponseRecallResult` is removed
+* Changed field behavior for an existing field `context` in message `.google.cloud.aiplatform.v1beta1.QuestionAnsweringQualityInstance`
+* Changed field behavior for an existing field `context` in message `.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInstance`
+* An existing message `RagContextRecallInput` is removed
+* An existing message `RagContextRecallInstance` is removed
+* An existing message `RagContextRecallSpec` is removed
+* An existing message `RagContextRecallResult` is removed
+* An existing message `NoAuth` is removed
+* An existing field `response_recall_input` is removed from message `.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest`
+* A new enum `HarmBlockMethod` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new enum `HarmBlockMethod` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `default` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `default` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `disable_explanations` is added to message `.google.cloud.aiplatform.v1.DeployedModel` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `frequency_penalty` is added to message `.google.cloud.aiplatform.v1.GenerationConfig` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `frequency_penalty` is added to message `.google.cloud.aiplatform.v1beta1.GenerationConfig` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `index_config` is added to message `.google.cloud.aiplatform.v1beta1.FeatureView` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `max_items` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `max_items` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `max_length` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `max_length` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `max_properties` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `max_properties` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `maximum` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `maximum` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `method` is added to message `.google.cloud.aiplatform.v1.SafetySetting` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `method` is added to message `.google.cloud.aiplatform.v1beta1.SafetySetting` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `min_items` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `min_items` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `min_length` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `min_length` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `min_properties` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `min_properties` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `minimum` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `minimum` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `pattern` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `pattern` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `persistent_resource_id` is added to message `.google.cloud.aiplatform.v1.CustomJobSpec` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `presence_penalty` is added to message `.google.cloud.aiplatform.v1.GenerationConfig` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `presence_penalty` is added to message `.google.cloud.aiplatform.v1beta1.GenerationConfig` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `response_mime_type` is added to message `.google.cloud.aiplatform.v1.GenerationConfig` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `response_mime_type` is added to message `.google.cloud.aiplatform.v1beta1.GenerationConfig` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `retrieval_queries` is added to message `.google.cloud.aiplatform.v1beta1.GroundingMetadata` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `retrieved_context` is added to message `.google.cloud.aiplatform.v1beta1.GroundingAttribution` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `system_instruction` is added to message `.google.cloud.aiplatform.v1.GenerateContentRequest` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `system_instruction` is added to message `.google.cloud.aiplatform.v1beta1.GenerateContentRequest` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `title` is added to message `.google.cloud.aiplatform.v1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `title` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new field `vertex_rag_store` is added to message `.google.cloud.aiplatform.v1beta1.Retrieval` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ChatCompletionsRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `CreatePersistentResourceOperationMetadata` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `CreatePersistentResourceRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `CreateRagCorpusOperationMetadata` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `CreateRagCorpusRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `DeletePersistentResourceRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `DeleteRagCorpusRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `DeleteRagFileRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `DirectUploadSource` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `GetPersistentResourceRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `GetRagCorpusRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `GetRagFileRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `GoogleDriveSource` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ImportRagFilesConfig` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ImportRagFilesOperationMetadata` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ImportRagFilesRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ImportRagFilesResponse` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `IndexConfig` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ListPersistentResourcesRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ListPersistentResourcesResponse` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ListRagCorporaRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ListRagCorporaResponse` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ListRagFilesRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ListRagFilesResponse` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `PersistentResource` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RagContexts` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RagCorpus` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RagFile` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RagFileChunkingConfig` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RagQuery` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RaySpec` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RebootPersistentResourceOperationMetadata` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RebootPersistentResourceRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ResourcePool` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ResourceRuntime` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ResourceRuntimeSpec` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RetrieveContextsRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RetrieveContextsResponse` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `RetrievedContext` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `ServiceAccountSpec` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `UpdatePersistentResourceOperationMetadata` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `UpdatePersistentResourceRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `UploadRagFileConfig` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `UploadRagFileRequest` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `UploadRagFileResponse` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new message `VertexRagStore` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new method `ChatCompletions` is added to service `PredictionService` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new resource_definition `aiplatform.googleapis.com/PersistentResource` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new resource_definition `aiplatform.googleapis.com/RagCorpus` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new resource_definition `aiplatform.googleapis.com/RagFile` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new service `PersistentResourceService` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new service `VertexRagDataService` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new service `VertexRagService` is added ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new value `BLOCKLIST` is added to enum `BlockedReason` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new value `BLOCKLIST` is added to enum `BlockedReason` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new value `PROHIBITED_CONTENT` is added to enum `BlockedReason` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* A new value `PROHIBITED_CONTENT` is added to enum `BlockedReason` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* add model_monitor resource and APIs to public v1beta1 client library ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+* add NotebookRuntime resource and APIs to public v1 client library ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* add NotebookRuntime resource and APIs to public v1beta1 client library ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* add Persistent Resource reboot api call to v1beta1 ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* GenAiTuningService aiplatform v1 initial release ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing field `rag_context_recall_input` is removed from message `.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing field `rag_context_recall_result` is removed from message `.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing field `response_recall_input` is removed from message `.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing field `response_recall_result` is removed from message `.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `NoAuth` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `RagContextRecallInput` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `RagContextRecallInstance` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `RagContextRecallResult` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `RagContextRecallSpec` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `ResponseRecallInput` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `ResponseRecallInstance` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `ResponseRecallResult` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* An existing message `ResponseRecallSpec` is removed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* Changed field behavior for an existing field `context` in message `.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInstance` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* Changed field behavior for an existing field `context` in message `.google.cloud.aiplatform.v1beta1.QuestionAnsweringQualityInstance` ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* delete the deprecated field for model monitor ([f6dbac7](https://github.com/googleapis/google-cloud-java/commit/f6dbac748c5feea83eb917c4f6827787d27a69a9))
+* A comment for field `service_account` in message `.google.cloud.aiplatform.v1beta1.ServiceAccountSpec` is changed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* documentation updates ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* Documentation updates ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+
+
+
+## 3.42.0 (2024-04-04)
+
+* No change
+
+
+## 3.40.0 (2024-03-28)
+
+### Features
+
+* Add data_key field in feature online store service ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* Add dedicated_serving_endpoint ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* Add index_config field ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* Add Optimized feature store proto ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* add Vertex AI extension registry and execution related API and services to v1beta1 client ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* Evaluation Service aiplatform v1beta1 initial release ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* Update comment for `name` and `parameters` in message `.google.cloud.aiplatform.v1beta1.FunctionDeclaration` ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+
+
+
+## 3.39.0 (2024-03-22)
+
+### Features
+
+* An existing field `preflight_validations` is removed from message `.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest`
+* A new enum `HarmSeverity` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new enum `HarmSeverity` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `base_model_source` is added to message `.google.cloud.aiplatform.v1.Model` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `base_model_source` is added to message `.google.cloud.aiplatform.v1beta1.Model` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `display_name` is added to message `.google.cloud.aiplatform.v1.DatasetVersion` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `display_name` is added to message `.google.cloud.aiplatform.v1beta1.DatasetVersion` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `google_search_retrieval` is added to message `.google.cloud.aiplatform.v1.Tool` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `grounding_metadata` is added to message `.google.cloud.aiplatform.v1.Candidate` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `metadata` is added to message `.google.cloud.aiplatform.v1.DatasetVersion` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `metadata` is added to message `.google.cloud.aiplatform.v1beta1.DatasetVersion` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `preflight_validations` is added to message `.google.cloud.aiplatform.v1beta1.PipelineJob` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `probability_score` is added to message `.google.cloud.aiplatform.v1.SafetyRating` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `probability_score` is added to message `.google.cloud.aiplatform.v1beta1.SafetyRating` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `progress_message` is added to message `.google.cloud.aiplatform.v1beta1.CreatePersistentResourceOperationMetadata` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `progress_message` is added to message `.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceOperationMetadata` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `project_number` is added to message `.google.cloud.aiplatform.v1.FeatureView` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `project_number` is added to message `.google.cloud.aiplatform.v1beta1.FeatureView` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `retrieval` is added to message `.google.cloud.aiplatform.v1.Tool` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `severity_score` is added to message `.google.cloud.aiplatform.v1.SafetyRating` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `severity_score` is added to message `.google.cloud.aiplatform.v1beta1.SafetyRating` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `severity` is added to message `.google.cloud.aiplatform.v1.SafetyRating` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `severity` is added to message `.google.cloud.aiplatform.v1beta1.SafetyRating` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `sync_summary` is added to message `.google.cloud.aiplatform.v1.FeatureViewSync` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new field `sync_summary` is added to message `.google.cloud.aiplatform.v1beta1.FeatureViewSync` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `BaseModelSource` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `BaseModelSource` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `BatchCancelPipelineJobsOperationMetadata` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `BatchCancelPipelineJobsRequest` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `BatchCancelPipelineJobsResponse` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `BatchDeletePipelineJobsRequest` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `BatchDeletePipelineJobsResponse` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `GenieSource` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `GenieSource` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `GoogleSearchRetrieval` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `GroundingAttribution` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `GroundingMetadata` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `ModelGardenSource` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `ModelGardenSource` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `Retrieval` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `Segment` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `SyncSummary` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `SyncSummary` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new message `VertexAISearch` is added ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new method `BatchCancelPipelineJobs` is added to service `PipelineService` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new method `BatchDeletePipelineJobs` is added to service `PipelineService` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `BLOCKLIST` is added to enum `FinishReason` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `BLOCKLIST` is added to enum `FinishReason` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `NOT_EQUAL` is added to enum `Operator` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `NOT_EQUAL` is added to enum `Operator` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `NVIDIA_H100_80GB` is added to enum `AcceleratorType` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `PROHIBITED_CONTENT` is added to enum `FinishReason` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `PROHIBITED_CONTENT` is added to enum `FinishReason` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `SPII` is added to enum `FinishReason` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A new value `SPII` is added to enum `FinishReason` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* add function_calling_config to ToolConfig ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* add tool_config to GenerateContentRequest ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* add v1beta1 StreamingFetchFeatureValues API ([43b143a](https://github.com/googleapis/google-cloud-java/commit/43b143a3db8c20484289b3cbb7c7cee0815078a0))
+* Reasoning Engine v1beta1 GAPIC release ([d514d9a](https://github.com/googleapis/google-cloud-java/commit/d514d9a31c38829bca636af5f1d94e7143e4db5c))
+* An existing field `preflight_validations` is removed from message `.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest` ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* Update the description for reasoning engine ([b5e8e3d](https://github.com/googleapis/google-cloud-java/commit/b5e8e3d989558a941897d7eedf196778bf0629ad))
+* various documentation improvements ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* various documentation improvements ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
+## 3.38.0 (2024-03-06)
+
+### Features
+
+* Update docs for FeatureView Service Agents ([#10420](https://github.com/googleapis/google-cloud-java/issues/10420)) ([282ea4f](https://github.com/googleapis/google-cloud-java/commit/282ea4f36bf2977c038cad90e20c6c44aa133e72))
+
+
+
+## 3.37.0 (2024-02-20)
+
+### Features
+
+* Add Grounding feature to PredictionService.GenerateContent ([#10358](https://github.com/googleapis/google-cloud-java/issues/10358)) ([0ee1383](https://github.com/googleapis/google-cloud-java/commit/0ee13836cad20260d744c4604a3c4cd68f817e74))
+
+
+
+## 3.36.0 (2024-02-09)
+
+### Features
+
+* Add generateContent Unary API for aiplatform_v1 ([#10319](https://github.com/googleapis/google-cloud-java/issues/10319)) ([08700f2](https://github.com/googleapis/google-cloud-java/commit/08700f26d7db4c880e96786786936f42051f1bca))
+* add SearchNearestEntities rpc to FeatureOnlineStoreService in aiplatform v1 ([#10347](https://github.com/googleapis/google-cloud-java/issues/10347)) ([e9c48d9](https://github.com/googleapis/google-cloud-java/commit/e9c48d9b25f4c39c9f22ace1c00acb24ff6a288d))
+
+
+
+## 3.35.0 (2024-01-23)
+
+### Features
+
+* Fix rpc tensorboard_service.proto definitions for BatchCreateTensorboardTimeSeries and BatchReadTensorboardTimeSeriesData ([#10221](https://github.com/googleapis/google-cloud-java/issues/10221))
+* Fix rpc tensorboard_service.proto definitions for BatchCreateTensorboardTimeSeries and BatchReadTensorboardTimeSeriesData ([#10221](https://github.com/googleapis/google-cloud-java/issues/10221)) ([90a9033](https://github.com/googleapis/google-cloud-java/commit/90a9033eba3cd4242cc75dddff11d60fec92b0a6))
+
+
+
+## 3.34.0 (2024-01-10)
+
+* No change
+
+
+## 3.33.0 (2023-12-12)
+
+### Features
+
+* add Content ([#10116](https://github.com/googleapis/google-cloud-java/issues/10116)) ([b6c07b9](https://github.com/googleapis/google-cloud-java/commit/b6c07b96a10c1d1920138b8eae06385af14823f1))
+
+
+
+## 3.32.0 (2023-12-04)
+
+### Features
+
+* add ComputeTokens and CountTokens API ([5352821](https://github.com/googleapis/google-cloud-java/commit/5352821b5cc151131728a072adeb3f146edee9fc))
+* add ComputeTokens API ([#10053](https://github.com/googleapis/google-cloud-java/issues/10053)) ([5352821](https://github.com/googleapis/google-cloud-java/commit/5352821b5cc151131728a072adeb3f146edee9fc))
+* add deployment_timeout to UploadModel ModelContainerSpec ([5352821](https://github.com/googleapis/google-cloud-java/commit/5352821b5cc151131728a072adeb3f146edee9fc))
+* add deployment_timeout to UploadModel ModelContainerSpec ([5352821](https://github.com/googleapis/google-cloud-java/commit/5352821b5cc151131728a072adeb3f146edee9fc))
+* add grpc_ports to UploadModel ModelContainerSpec ([#10065](https://github.com/googleapis/google-cloud-java/issues/10065)) ([de32d7a](https://github.com/googleapis/google-cloud-java/commit/de32d7a5c7738761b2cb30fb30b6b53836c9556c))
+* add grpc_ports to UploadModel ModelContainerSpec ([#10091](https://github.com/googleapis/google-cloud-java/issues/10091)) ([eeb5108](https://github.com/googleapis/google-cloud-java/commit/eeb510862b36a32523b385deda0b7a5207d052b6))
+* add protected_artifact_location_id to CustomJob ([5352821](https://github.com/googleapis/google-cloud-java/commit/5352821b5cc151131728a072adeb3f146edee9fc))
+* add protected_artifact_location_id to CustomJob ([5352821](https://github.com/googleapis/google-cloud-java/commit/5352821b5cc151131728a072adeb3f146edee9fc))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
+## 3.31.0 (2023-11-06)
+
+### Features
+
+* add Optimized to FeatureOnlineStore ([#10040](https://github.com/googleapis/google-cloud-java/issues/10040)) ([cc0e248](https://github.com/googleapis/google-cloud-java/commit/cc0e248a9ee4658dbd3b2649d01381df218b4419))
+* Adding new fields for concurrent explanations ([#10016](https://github.com/googleapis/google-cloud-java/issues/10016)) ([d80aa3c](https://github.com/googleapis/google-cloud-java/commit/d80aa3c6cb96bbe8a16827b81699a15979cceed4))
+* change CreateFeature metadata ([#10029](https://github.com/googleapis/google-cloud-java/issues/10029)) ([5067fe4](https://github.com/googleapis/google-cloud-java/commit/5067fe49e688515268104f55dfc74ee74ef1a9b5))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.1 ([#10014](https://github.com/googleapis/google-cloud-java/issues/10014)) ([7b1b742](https://github.com/googleapis/google-cloud-java/commit/7b1b742dab21139398032549fb03e127b1a03841))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.19.0 ([#10018](https://github.com/googleapis/google-cloud-java/issues/10018)) ([d9b705a](https://github.com/googleapis/google-cloud-java/commit/d9b705aaed8ea4447c7a02d5c54300f8909a30b1))
+
+
+## 3.30.0 (2023-10-25)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.0 ([#9969](https://github.com/googleapis/google-cloud-java/issues/9969)) ([9e2be39](https://github.com/googleapis/google-cloud-java/commit/9e2be39c5b2d7764421325f65a6d0d06351fcda5))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#9984](https://github.com/googleapis/google-cloud-java/issues/9984)) ([9814dc0](https://github.com/googleapis/google-cloud-java/commit/9814dc092ad7edb7b1b21f87fa48d76a2423d731))
+
+
 ## 3.29.0 (2023-10-11)
 
 ### Features

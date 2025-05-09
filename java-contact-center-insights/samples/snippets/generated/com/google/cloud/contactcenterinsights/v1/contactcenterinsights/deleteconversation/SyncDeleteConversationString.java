@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,10 @@ public class SyncDeleteConversationString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ContactCenterInsightsClient contactCenterInsightsClient =
         ContactCenterInsightsClient.create()) {
-      String name = ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString();
+      String name =
+          ConversationName.ofProjectLocationConversationName(
+                  "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+              .toString();
       contactCenterInsightsClient.deleteConversation(name);
     }
   }

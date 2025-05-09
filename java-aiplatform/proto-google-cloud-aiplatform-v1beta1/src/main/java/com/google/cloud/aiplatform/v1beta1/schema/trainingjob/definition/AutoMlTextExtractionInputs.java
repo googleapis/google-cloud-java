@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_extraction.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 /**
@@ -28,6 +29,7 @@ public final class AutoMlTextExtractionInputs extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtractionInputs)
     AutoMlTextExtractionInputsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlTextExtractionInputs.newBuilder() to construct.
   private AutoMlTextExtractionInputs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -236,6 +238,7 @@ public final class AutoMlTextExtractionInputs extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtractionInputs}

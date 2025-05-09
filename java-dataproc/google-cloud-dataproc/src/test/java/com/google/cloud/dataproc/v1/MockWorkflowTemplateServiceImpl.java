@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,8 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateWorkflowTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method CreateWorkflowTemplate, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   WorkflowTemplate.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +117,8 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method InstantiateWorkflowTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method InstantiateWorkflowTemplate, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -138,7 +140,8 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method InstantiateInlineWorkflowTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method InstantiateInlineWorkflowTemplate,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -159,7 +162,8 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateWorkflowTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateWorkflowTemplate, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   WorkflowTemplate.class.getName(),
                   Exception.class.getName())));
@@ -181,7 +185,8 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListWorkflowTemplates, expected %s or %s",
+                  "Unrecognized response type %s for method ListWorkflowTemplates, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListWorkflowTemplatesResponse.class.getName(),
                   Exception.class.getName())));
@@ -202,7 +207,8 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteWorkflowTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteWorkflowTemplate, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

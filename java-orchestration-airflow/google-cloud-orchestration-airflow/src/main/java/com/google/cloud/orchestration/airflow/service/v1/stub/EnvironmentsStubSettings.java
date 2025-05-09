@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,14 @@
 package com.google.cloud.orchestration.airflow.service.v1.stub;
 
 import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListUserWorkloadsConfigMapsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListUserWorkloadsSecretsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListWorkloadsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -47,18 +51,32 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverRequest;
 import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverResponse;
 import com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesRequest;
 import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesResponse;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
@@ -69,6 +87,10 @@ import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandRequest;
 import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap;
+import com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -76,9 +98,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -95,7 +117,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getEnvironment to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getEnvironment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -112,9 +136,46 @@ import org.threeten.bp.Duration;
  *             .getEnvironmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * EnvironmentsStubSettings environmentsSettings = environmentsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createEnvironment:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EnvironmentsStubSettings.Builder environmentsSettingsBuilder =
+ *     EnvironmentsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * environmentsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -142,6 +203,38 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       stopAirflowCommandSettings;
   private final UnaryCallSettings<PollAirflowCommandRequest, PollAirflowCommandResponse>
       pollAirflowCommandSettings;
+  private final PagedCallSettings<
+          ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
+      listWorkloadsSettings;
+  private final UnaryCallSettings<CheckUpgradeRequest, Operation> checkUpgradeSettings;
+  private final OperationCallSettings<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationSettings;
+  private final UnaryCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretSettings;
+  private final UnaryCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretSettings;
+  private final PagedCallSettings<
+          ListUserWorkloadsSecretsRequest,
+          ListUserWorkloadsSecretsResponse,
+          ListUserWorkloadsSecretsPagedResponse>
+      listUserWorkloadsSecretsSettings;
+  private final UnaryCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretSettings;
+  private final UnaryCallSettings<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretSettings;
+  private final UnaryCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapSettings;
+  private final UnaryCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapSettings;
+  private final PagedCallSettings<
+          ListUserWorkloadsConfigMapsRequest,
+          ListUserWorkloadsConfigMapsResponse,
+          ListUserWorkloadsConfigMapsPagedResponse>
+      listUserWorkloadsConfigMapsSettings;
+  private final UnaryCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapSettings;
+  private final UnaryCallSettings<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapSettings;
   private final UnaryCallSettings<SaveSnapshotRequest, Operation> saveSnapshotSettings;
   private final OperationCallSettings<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
       saveSnapshotOperationSettings;
@@ -189,9 +282,138 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
             @Override
             public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
-              return payload.getEnvironmentsList() == null
-                  ? ImmutableList.<Environment>of()
-                  : payload.getEnvironmentsList();
+              return payload.getEnvironmentsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsResponse.ComposerWorkload>
+      LIST_WORKLOADS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListWorkloadsRequest,
+              ListWorkloadsResponse,
+              ListWorkloadsResponse.ComposerWorkload>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWorkloadsRequest injectToken(ListWorkloadsRequest payload, String token) {
+              return ListWorkloadsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWorkloadsRequest injectPageSize(ListWorkloadsRequest payload, int pageSize) {
+              return ListWorkloadsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWorkloadsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWorkloadsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ListWorkloadsResponse.ComposerWorkload> extractResources(
+                ListWorkloadsResponse payload) {
+              return payload.getWorkloadsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse, UserWorkloadsSecret>
+      LIST_USER_WORKLOADS_SECRETS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUserWorkloadsSecretsRequest,
+              ListUserWorkloadsSecretsResponse,
+              UserWorkloadsSecret>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUserWorkloadsSecretsRequest injectToken(
+                ListUserWorkloadsSecretsRequest payload, String token) {
+              return ListUserWorkloadsSecretsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListUserWorkloadsSecretsRequest injectPageSize(
+                ListUserWorkloadsSecretsRequest payload, int pageSize) {
+              return ListUserWorkloadsSecretsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUserWorkloadsSecretsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUserWorkloadsSecretsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UserWorkloadsSecret> extractResources(
+                ListUserWorkloadsSecretsResponse payload) {
+              return payload.getUserWorkloadsSecretsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListUserWorkloadsConfigMapsRequest,
+          ListUserWorkloadsConfigMapsResponse,
+          UserWorkloadsConfigMap>
+      LIST_USER_WORKLOADS_CONFIG_MAPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUserWorkloadsConfigMapsRequest,
+              ListUserWorkloadsConfigMapsResponse,
+              UserWorkloadsConfigMap>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUserWorkloadsConfigMapsRequest injectToken(
+                ListUserWorkloadsConfigMapsRequest payload, String token) {
+              return ListUserWorkloadsConfigMapsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListUserWorkloadsConfigMapsRequest injectPageSize(
+                ListUserWorkloadsConfigMapsRequest payload, int pageSize) {
+              return ListUserWorkloadsConfigMapsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUserWorkloadsConfigMapsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUserWorkloadsConfigMapsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UserWorkloadsConfigMap> extractResources(
+                ListUserWorkloadsConfigMapsResponse payload) {
+              return payload.getUserWorkloadsConfigMapsList();
             }
           };
 
@@ -211,6 +433,86 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
                       PageContext.create(
                           callable, LIST_ENVIRONMENTS_PAGE_STR_DESC, request, context);
               return ListEnvironmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
+      LIST_WORKLOADS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>() {
+            @Override
+            public ApiFuture<ListWorkloadsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> callable,
+                ListWorkloadsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWorkloadsResponse> futureResponse) {
+              PageContext<
+                      ListWorkloadsRequest,
+                      ListWorkloadsResponse,
+                      ListWorkloadsResponse.ComposerWorkload>
+                  pageContext =
+                      PageContext.create(callable, LIST_WORKLOADS_PAGE_STR_DESC, request, context);
+              return ListWorkloadsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUserWorkloadsSecretsRequest,
+          ListUserWorkloadsSecretsResponse,
+          ListUserWorkloadsSecretsPagedResponse>
+      LIST_USER_WORKLOADS_SECRETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUserWorkloadsSecretsRequest,
+              ListUserWorkloadsSecretsResponse,
+              ListUserWorkloadsSecretsPagedResponse>() {
+            @Override
+            public ApiFuture<ListUserWorkloadsSecretsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+                    callable,
+                ListUserWorkloadsSecretsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUserWorkloadsSecretsResponse> futureResponse) {
+              PageContext<
+                      ListUserWorkloadsSecretsRequest,
+                      ListUserWorkloadsSecretsResponse,
+                      UserWorkloadsSecret>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_USER_WORKLOADS_SECRETS_PAGE_STR_DESC, request, context);
+              return ListUserWorkloadsSecretsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUserWorkloadsConfigMapsRequest,
+          ListUserWorkloadsConfigMapsResponse,
+          ListUserWorkloadsConfigMapsPagedResponse>
+      LIST_USER_WORKLOADS_CONFIG_MAPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUserWorkloadsConfigMapsRequest,
+              ListUserWorkloadsConfigMapsResponse,
+              ListUserWorkloadsConfigMapsPagedResponse>() {
+            @Override
+            public ApiFuture<ListUserWorkloadsConfigMapsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+                    callable,
+                ListUserWorkloadsConfigMapsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUserWorkloadsConfigMapsResponse> futureResponse) {
+              PageContext<
+                      ListUserWorkloadsConfigMapsRequest,
+                      ListUserWorkloadsConfigMapsResponse,
+                      UserWorkloadsConfigMap>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_USER_WORKLOADS_CONFIG_MAPS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListUserWorkloadsConfigMapsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -277,6 +579,89 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     return pollAirflowCommandSettings;
   }
 
+  /** Returns the object with the settings used for calls to listWorkloads. */
+  public PagedCallSettings<ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
+      listWorkloadsSettings() {
+    return listWorkloadsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to checkUpgrade. */
+  public UnaryCallSettings<CheckUpgradeRequest, Operation> checkUpgradeSettings() {
+    return checkUpgradeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to checkUpgrade. */
+  public OperationCallSettings<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationSettings() {
+    return checkUpgradeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createUserWorkloadsSecret. */
+  public UnaryCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretSettings() {
+    return createUserWorkloadsSecretSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUserWorkloadsSecret. */
+  public UnaryCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretSettings() {
+    return getUserWorkloadsSecretSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUserWorkloadsSecrets. */
+  public PagedCallSettings<
+          ListUserWorkloadsSecretsRequest,
+          ListUserWorkloadsSecretsResponse,
+          ListUserWorkloadsSecretsPagedResponse>
+      listUserWorkloadsSecretsSettings() {
+    return listUserWorkloadsSecretsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateUserWorkloadsSecret. */
+  public UnaryCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretSettings() {
+    return updateUserWorkloadsSecretSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserWorkloadsSecret. */
+  public UnaryCallSettings<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretSettings() {
+    return deleteUserWorkloadsSecretSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createUserWorkloadsConfigMap. */
+  public UnaryCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapSettings() {
+    return createUserWorkloadsConfigMapSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUserWorkloadsConfigMap. */
+  public UnaryCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapSettings() {
+    return getUserWorkloadsConfigMapSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUserWorkloadsConfigMaps. */
+  public PagedCallSettings<
+          ListUserWorkloadsConfigMapsRequest,
+          ListUserWorkloadsConfigMapsResponse,
+          ListUserWorkloadsConfigMapsPagedResponse>
+      listUserWorkloadsConfigMapsSettings() {
+    return listUserWorkloadsConfigMapsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateUserWorkloadsConfigMap. */
+  public UnaryCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapSettings() {
+    return updateUserWorkloadsConfigMapSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserWorkloadsConfigMap. */
+  public UnaryCallSettings<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapSettings() {
+    return deleteUserWorkloadsConfigMapSettings;
+  }
+
   /** Returns the object with the settings used for calls to saveSnapshot. */
   public UnaryCallSettings<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
     return saveSnapshotSettings;
@@ -332,12 +717,19 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "composer";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "composer.googleapis.com:443";
   }
@@ -376,7 +768,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -385,7 +776,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -436,6 +826,23 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     executeAirflowCommandSettings = settingsBuilder.executeAirflowCommandSettings().build();
     stopAirflowCommandSettings = settingsBuilder.stopAirflowCommandSettings().build();
     pollAirflowCommandSettings = settingsBuilder.pollAirflowCommandSettings().build();
+    listWorkloadsSettings = settingsBuilder.listWorkloadsSettings().build();
+    checkUpgradeSettings = settingsBuilder.checkUpgradeSettings().build();
+    checkUpgradeOperationSettings = settingsBuilder.checkUpgradeOperationSettings().build();
+    createUserWorkloadsSecretSettings = settingsBuilder.createUserWorkloadsSecretSettings().build();
+    getUserWorkloadsSecretSettings = settingsBuilder.getUserWorkloadsSecretSettings().build();
+    listUserWorkloadsSecretsSettings = settingsBuilder.listUserWorkloadsSecretsSettings().build();
+    updateUserWorkloadsSecretSettings = settingsBuilder.updateUserWorkloadsSecretSettings().build();
+    deleteUserWorkloadsSecretSettings = settingsBuilder.deleteUserWorkloadsSecretSettings().build();
+    createUserWorkloadsConfigMapSettings =
+        settingsBuilder.createUserWorkloadsConfigMapSettings().build();
+    getUserWorkloadsConfigMapSettings = settingsBuilder.getUserWorkloadsConfigMapSettings().build();
+    listUserWorkloadsConfigMapsSettings =
+        settingsBuilder.listUserWorkloadsConfigMapsSettings().build();
+    updateUserWorkloadsConfigMapSettings =
+        settingsBuilder.updateUserWorkloadsConfigMapSettings().build();
+    deleteUserWorkloadsConfigMapSettings =
+        settingsBuilder.deleteUserWorkloadsConfigMapSettings().build();
     saveSnapshotSettings = settingsBuilder.saveSnapshotSettings().build();
     saveSnapshotOperationSettings = settingsBuilder.saveSnapshotOperationSettings().build();
     loadSnapshotSettings = settingsBuilder.loadSnapshotSettings().build();
@@ -474,6 +881,42 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
         stopAirflowCommandSettings;
     private final UnaryCallSettings.Builder<PollAirflowCommandRequest, PollAirflowCommandResponse>
         pollAirflowCommandSettings;
+    private final PagedCallSettings.Builder<
+            ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
+        listWorkloadsSettings;
+    private final UnaryCallSettings.Builder<CheckUpgradeRequest, Operation> checkUpgradeSettings;
+    private final OperationCallSettings.Builder<
+            CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+        checkUpgradeOperationSettings;
+    private final UnaryCallSettings.Builder<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        createUserWorkloadsSecretSettings;
+    private final UnaryCallSettings.Builder<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        getUserWorkloadsSecretSettings;
+    private final PagedCallSettings.Builder<
+            ListUserWorkloadsSecretsRequest,
+            ListUserWorkloadsSecretsResponse,
+            ListUserWorkloadsSecretsPagedResponse>
+        listUserWorkloadsSecretsSettings;
+    private final UnaryCallSettings.Builder<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        updateUserWorkloadsSecretSettings;
+    private final UnaryCallSettings.Builder<DeleteUserWorkloadsSecretRequest, Empty>
+        deleteUserWorkloadsSecretSettings;
+    private final UnaryCallSettings.Builder<
+            CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        createUserWorkloadsConfigMapSettings;
+    private final UnaryCallSettings.Builder<
+            GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        getUserWorkloadsConfigMapSettings;
+    private final PagedCallSettings.Builder<
+            ListUserWorkloadsConfigMapsRequest,
+            ListUserWorkloadsConfigMapsResponse,
+            ListUserWorkloadsConfigMapsPagedResponse>
+        listUserWorkloadsConfigMapsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        updateUserWorkloadsConfigMapSettings;
+    private final UnaryCallSettings.Builder<DeleteUserWorkloadsConfigMapRequest, Empty>
+        deleteUserWorkloadsConfigMapSettings;
     private final UnaryCallSettings.Builder<SaveSnapshotRequest, Operation> saveSnapshotSettings;
     private final OperationCallSettings.Builder<
             SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
@@ -528,6 +971,21 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       executeAirflowCommandSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stopAirflowCommandSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pollAirflowCommandSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listWorkloadsSettings = PagedCallSettings.newBuilder(LIST_WORKLOADS_PAGE_STR_FACT);
+      checkUpgradeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      checkUpgradeOperationSettings = OperationCallSettings.newBuilder();
+      createUserWorkloadsSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getUserWorkloadsSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listUserWorkloadsSecretsSettings =
+          PagedCallSettings.newBuilder(LIST_USER_WORKLOADS_SECRETS_PAGE_STR_FACT);
+      updateUserWorkloadsSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteUserWorkloadsSecretSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createUserWorkloadsConfigMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getUserWorkloadsConfigMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listUserWorkloadsConfigMapsSettings =
+          PagedCallSettings.newBuilder(LIST_USER_WORKLOADS_CONFIG_MAPS_PAGE_STR_FACT);
+      updateUserWorkloadsConfigMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteUserWorkloadsConfigMapSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       saveSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       saveSnapshotOperationSettings = OperationCallSettings.newBuilder();
       loadSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -546,6 +1004,18 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               executeAirflowCommandSettings,
               stopAirflowCommandSettings,
               pollAirflowCommandSettings,
+              listWorkloadsSettings,
+              checkUpgradeSettings,
+              createUserWorkloadsSecretSettings,
+              getUserWorkloadsSecretSettings,
+              listUserWorkloadsSecretsSettings,
+              updateUserWorkloadsSecretSettings,
+              deleteUserWorkloadsSecretSettings,
+              createUserWorkloadsConfigMapSettings,
+              getUserWorkloadsConfigMapSettings,
+              listUserWorkloadsConfigMapsSettings,
+              updateUserWorkloadsConfigMapSettings,
+              deleteUserWorkloadsConfigMapSettings,
               saveSnapshotSettings,
               loadSnapshotSettings,
               databaseFailoverSettings,
@@ -567,6 +1037,23 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       executeAirflowCommandSettings = settings.executeAirflowCommandSettings.toBuilder();
       stopAirflowCommandSettings = settings.stopAirflowCommandSettings.toBuilder();
       pollAirflowCommandSettings = settings.pollAirflowCommandSettings.toBuilder();
+      listWorkloadsSettings = settings.listWorkloadsSettings.toBuilder();
+      checkUpgradeSettings = settings.checkUpgradeSettings.toBuilder();
+      checkUpgradeOperationSettings = settings.checkUpgradeOperationSettings.toBuilder();
+      createUserWorkloadsSecretSettings = settings.createUserWorkloadsSecretSettings.toBuilder();
+      getUserWorkloadsSecretSettings = settings.getUserWorkloadsSecretSettings.toBuilder();
+      listUserWorkloadsSecretsSettings = settings.listUserWorkloadsSecretsSettings.toBuilder();
+      updateUserWorkloadsSecretSettings = settings.updateUserWorkloadsSecretSettings.toBuilder();
+      deleteUserWorkloadsSecretSettings = settings.deleteUserWorkloadsSecretSettings.toBuilder();
+      createUserWorkloadsConfigMapSettings =
+          settings.createUserWorkloadsConfigMapSettings.toBuilder();
+      getUserWorkloadsConfigMapSettings = settings.getUserWorkloadsConfigMapSettings.toBuilder();
+      listUserWorkloadsConfigMapsSettings =
+          settings.listUserWorkloadsConfigMapsSettings.toBuilder();
+      updateUserWorkloadsConfigMapSettings =
+          settings.updateUserWorkloadsConfigMapSettings.toBuilder();
+      deleteUserWorkloadsConfigMapSettings =
+          settings.deleteUserWorkloadsConfigMapSettings.toBuilder();
       saveSnapshotSettings = settings.saveSnapshotSettings.toBuilder();
       saveSnapshotOperationSettings = settings.saveSnapshotOperationSettings.toBuilder();
       loadSnapshotSettings = settings.loadSnapshotSettings.toBuilder();
@@ -585,6 +1072,18 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               executeAirflowCommandSettings,
               stopAirflowCommandSettings,
               pollAirflowCommandSettings,
+              listWorkloadsSettings,
+              checkUpgradeSettings,
+              createUserWorkloadsSecretSettings,
+              getUserWorkloadsSecretSettings,
+              listUserWorkloadsSecretsSettings,
+              updateUserWorkloadsSecretSettings,
+              deleteUserWorkloadsSecretSettings,
+              createUserWorkloadsConfigMapSettings,
+              getUserWorkloadsConfigMapSettings,
+              listUserWorkloadsConfigMapsSettings,
+              updateUserWorkloadsConfigMapSettings,
+              deleteUserWorkloadsConfigMapSettings,
               saveSnapshotSettings,
               loadSnapshotSettings,
               databaseFailoverSettings,
@@ -597,7 +1096,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -610,7 +1108,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -659,6 +1156,66 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .listWorkloadsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .checkUpgradeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createUserWorkloadsSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getUserWorkloadsSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listUserWorkloadsSecretsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateUserWorkloadsSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteUserWorkloadsSecretSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createUserWorkloadsConfigMapSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getUserWorkloadsConfigMapSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listUserWorkloadsConfigMapsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateUserWorkloadsConfigMapSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteUserWorkloadsConfigMapSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .saveSnapshotSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -693,13 +1250,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -717,13 +1274,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -741,13 +1298,37 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .checkUpgradeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CheckUpgradeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(CheckUpgradeResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -765,13 +1346,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -789,13 +1370,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -813,13 +1394,13 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -847,8 +1428,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEnvironmentRequest, Environment, OperationMetadata>
         createEnvironmentOperationSettings() {
       return createEnvironmentOperationSettings;
@@ -873,8 +1452,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateEnvironmentRequest, Environment, OperationMetadata>
         updateEnvironmentOperationSettings() {
       return updateEnvironmentOperationSettings;
@@ -887,8 +1464,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings() {
       return deleteEnvironmentOperationSettings;
@@ -912,14 +1487,97 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       return pollAirflowCommandSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listWorkloads. */
+    public PagedCallSettings.Builder<
+            ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
+        listWorkloadsSettings() {
+      return listWorkloadsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkUpgrade. */
+    public UnaryCallSettings.Builder<CheckUpgradeRequest, Operation> checkUpgradeSettings() {
+      return checkUpgradeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkUpgrade. */
+    public OperationCallSettings.Builder<
+            CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+        checkUpgradeOperationSettings() {
+      return checkUpgradeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createUserWorkloadsSecret. */
+    public UnaryCallSettings.Builder<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        createUserWorkloadsSecretSettings() {
+      return createUserWorkloadsSecretSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUserWorkloadsSecret. */
+    public UnaryCallSettings.Builder<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        getUserWorkloadsSecretSettings() {
+      return getUserWorkloadsSecretSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUserWorkloadsSecrets. */
+    public PagedCallSettings.Builder<
+            ListUserWorkloadsSecretsRequest,
+            ListUserWorkloadsSecretsResponse,
+            ListUserWorkloadsSecretsPagedResponse>
+        listUserWorkloadsSecretsSettings() {
+      return listUserWorkloadsSecretsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateUserWorkloadsSecret. */
+    public UnaryCallSettings.Builder<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        updateUserWorkloadsSecretSettings() {
+      return updateUserWorkloadsSecretSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserWorkloadsSecret. */
+    public UnaryCallSettings.Builder<DeleteUserWorkloadsSecretRequest, Empty>
+        deleteUserWorkloadsSecretSettings() {
+      return deleteUserWorkloadsSecretSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createUserWorkloadsConfigMap. */
+    public UnaryCallSettings.Builder<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        createUserWorkloadsConfigMapSettings() {
+      return createUserWorkloadsConfigMapSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUserWorkloadsConfigMap. */
+    public UnaryCallSettings.Builder<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        getUserWorkloadsConfigMapSettings() {
+      return getUserWorkloadsConfigMapSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUserWorkloadsConfigMaps. */
+    public PagedCallSettings.Builder<
+            ListUserWorkloadsConfigMapsRequest,
+            ListUserWorkloadsConfigMapsResponse,
+            ListUserWorkloadsConfigMapsPagedResponse>
+        listUserWorkloadsConfigMapsSettings() {
+      return listUserWorkloadsConfigMapsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateUserWorkloadsConfigMap. */
+    public UnaryCallSettings.Builder<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        updateUserWorkloadsConfigMapSettings() {
+      return updateUserWorkloadsConfigMapSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserWorkloadsConfigMap. */
+    public UnaryCallSettings.Builder<DeleteUserWorkloadsConfigMapRequest, Empty>
+        deleteUserWorkloadsConfigMapSettings() {
+      return deleteUserWorkloadsConfigMapSettings;
+    }
+
     /** Returns the builder for the settings used for calls to saveSnapshot. */
     public UnaryCallSettings.Builder<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
       return saveSnapshotSettings;
     }
 
     /** Returns the builder for the settings used for calls to saveSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
         saveSnapshotOperationSettings() {
@@ -932,8 +1590,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to loadSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
         loadSnapshotOperationSettings() {
@@ -947,8 +1603,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to databaseFailover. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
         databaseFailoverOperationSettings() {

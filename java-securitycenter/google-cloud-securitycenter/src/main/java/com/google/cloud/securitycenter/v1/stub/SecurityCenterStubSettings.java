@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,18 +19,25 @@ package com.google.cloud.securitycenter.v1.stub;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAttackPathsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListResourceValueConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListValuedResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -57,29 +64,42 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.securitycenter.v1.AttackPath;
+import com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsRequest;
+import com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsResponse;
 import com.google.cloud.securitycenter.v1.BigQueryExport;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest;
 import com.google.cloud.securitycenter.v1.BulkMuteFindingsResponse;
 import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.CreateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.DeleteEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.DeleteResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.EffectiveEventThreatDetectionCustomModule;
 import com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule;
+import com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModule;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.GetEffectiveEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.GetEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.GetResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.GetSimulationRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
+import com.google.cloud.securitycenter.v1.GetValuedResourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsResponse;
 import com.google.cloud.securitycenter.v1.GroupFindingsRequest;
@@ -87,41 +107,62 @@ import com.google.cloud.securitycenter.v1.GroupFindingsResponse;
 import com.google.cloud.securitycenter.v1.GroupResult;
 import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
+import com.google.cloud.securitycenter.v1.ListAttackPathsRequest;
+import com.google.cloud.securitycenter.v1.ListAttackPathsResponse;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
+import com.google.cloud.securitycenter.v1.ListDescendantEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListDescendantEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEffectiveEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEffectiveEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
+import com.google.cloud.securitycenter.v1.ListResourceValueConfigsRequest;
+import com.google.cloud.securitycenter.v1.ListResourceValueConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
 import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
+import com.google.cloud.securitycenter.v1.ListValuedResourcesRequest;
+import com.google.cloud.securitycenter.v1.ListValuedResourcesResponse;
 import com.google.cloud.securitycenter.v1.MuteConfig;
 import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
+import com.google.cloud.securitycenter.v1.ResourceValueConfig;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
 import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse;
+import com.google.cloud.securitycenter.v1.Simulation;
 import com.google.cloud.securitycenter.v1.Source;
 import com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.UpdateEventThreatDetectionCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest;
 import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.UpdateResourceValueConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
+import com.google.cloud.securitycenter.v1.ValidateEventThreatDetectionCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.ValidateEventThreatDetectionCustomModuleResponse;
+import com.google.cloud.securitycenter.v1.ValuedResource;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -134,9 +175,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -154,8 +195,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createSecurityHealthAnalyticsCustomModule to 30
- * seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createSecurityHealthAnalyticsCustomModule:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -172,9 +214,46 @@ import org.threeten.bp.Duration;
  *             .createSecurityHealthAnalyticsCustomModuleSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SecurityCenterStubSettings securityCenterSettings = securityCenterSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for bulkMuteFindings:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * SecurityCenterStubSettings.Builder securityCenterSettingsBuilder =
+ *     SecurityCenterStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * securityCenterSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -199,6 +278,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       deleteNotificationConfigSettings;
   private final UnaryCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
       deleteSecurityHealthAnalyticsCustomModuleSettings;
+  private final UnaryCallSettings<GetSimulationRequest, Simulation> getSimulationSettings;
+  private final UnaryCallSettings<GetValuedResourceRequest, ValuedResource>
+      getValuedResourceSettings;
   private final UnaryCallSettings<GetBigQueryExportRequest, BigQueryExport>
       getBigQueryExportSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -258,6 +340,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleSettings;
   private final UnaryCallSettings<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemSettings;
   private final UnaryCallSettings<UpdateFindingRequest, Finding> updateFindingSettings;
@@ -280,6 +366,60 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final PagedCallSettings<
           ListBigQueryExportsRequest, ListBigQueryExportsResponse, ListBigQueryExportsPagedResponse>
       listBigQueryExportsSettings;
+  private final UnaryCallSettings<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleSettings;
+  private final UnaryCallSettings<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleSettings;
+  private final UnaryCallSettings<
+          GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleSettings;
+  private final PagedCallSettings<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse,
+          ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+      listDescendantEventThreatDetectionCustomModulesSettings;
+  private final PagedCallSettings<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse,
+          ListEventThreatDetectionCustomModulesPagedResponse>
+      listEventThreatDetectionCustomModulesSettings;
+  private final UnaryCallSettings<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleSettings;
+  private final UnaryCallSettings<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleSettings;
+  private final UnaryCallSettings<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleSettings;
+  private final PagedCallSettings<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse,
+          ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+      listEffectiveEventThreatDetectionCustomModulesSettings;
+  private final UnaryCallSettings<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsSettings;
+  private final UnaryCallSettings<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigSettings;
+  private final UnaryCallSettings<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigSettings;
+  private final PagedCallSettings<
+          ListResourceValueConfigsRequest,
+          ListResourceValueConfigsResponse,
+          ListResourceValueConfigsPagedResponse>
+      listResourceValueConfigsSettings;
+  private final UnaryCallSettings<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigSettings;
+  private final PagedCallSettings<
+          ListValuedResourcesRequest, ListValuedResourcesResponse, ListValuedResourcesPagedResponse>
+      listValuedResourcesSettings;
+  private final PagedCallSettings<
+          ListAttackPathsRequest, ListAttackPathsResponse, ListAttackPathsPagedResponse>
+      listAttackPathsSettings;
 
   private static final PagedListDescriptor<GroupAssetsRequest, GroupAssetsResponse, GroupResult>
       GROUP_ASSETS_PAGE_STR_DESC =
@@ -311,9 +451,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<GroupResult> extractResources(GroupAssetsResponse payload) {
-              return payload.getGroupByResultsList() == null
-                  ? ImmutableList.<GroupResult>of()
-                  : payload.getGroupByResultsList();
+              return payload.getGroupByResultsList();
             }
           };
 
@@ -347,9 +485,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<GroupResult> extractResources(GroupFindingsResponse payload) {
-              return payload.getGroupByResultsList() == null
-                  ? ImmutableList.<GroupResult>of()
-                  : payload.getGroupByResultsList();
+              return payload.getGroupByResultsList();
             }
           };
 
@@ -386,9 +522,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<ListAssetsResponse.ListAssetsResult> extractResources(
                 ListAssetsResponse payload) {
-              return payload.getListAssetsResultsList() == null
-                  ? ImmutableList.<ListAssetsResponse.ListAssetsResult>of()
-                  : payload.getListAssetsResultsList();
+              return payload.getListAssetsResultsList();
             }
           };
 
@@ -437,9 +571,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<SecurityHealthAnalyticsCustomModule> extractResources(
                 ListDescendantSecurityHealthAnalyticsCustomModulesResponse payload) {
-              return payload.getSecurityHealthAnalyticsCustomModulesList() == null
-                  ? ImmutableList.<SecurityHealthAnalyticsCustomModule>of()
-                  : payload.getSecurityHealthAnalyticsCustomModulesList();
+              return payload.getSecurityHealthAnalyticsCustomModulesList();
             }
           };
 
@@ -478,9 +610,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<ListFindingsResponse.ListFindingsResult> extractResources(
                 ListFindingsResponse payload) {
-              return payload.getListFindingsResultsList() == null
-                  ? ImmutableList.<ListFindingsResponse.ListFindingsResult>of()
-                  : payload.getListFindingsResultsList();
+              return payload.getListFindingsResultsList();
             }
           };
 
@@ -517,9 +647,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<MuteConfig> extractResources(ListMuteConfigsResponse payload) {
-              return payload.getMuteConfigsList() == null
-                  ? ImmutableList.<MuteConfig>of()
-                  : payload.getMuteConfigsList();
+              return payload.getMuteConfigsList();
             }
           };
 
@@ -562,9 +690,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<NotificationConfig> extractResources(
                 ListNotificationConfigsResponse payload) {
-              return payload.getNotificationConfigsList() == null
-                  ? ImmutableList.<NotificationConfig>of()
-                  : payload.getNotificationConfigsList();
+              return payload.getNotificationConfigsList();
             }
           };
 
@@ -613,9 +739,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<EffectiveSecurityHealthAnalyticsCustomModule> extractResources(
                 ListEffectiveSecurityHealthAnalyticsCustomModulesResponse payload) {
-              return payload.getEffectiveSecurityHealthAnalyticsCustomModulesList() == null
-                  ? ImmutableList.<EffectiveSecurityHealthAnalyticsCustomModule>of()
-                  : payload.getEffectiveSecurityHealthAnalyticsCustomModulesList();
+              return payload.getEffectiveSecurityHealthAnalyticsCustomModulesList();
             }
           };
 
@@ -664,9 +788,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<SecurityHealthAnalyticsCustomModule> extractResources(
                 ListSecurityHealthAnalyticsCustomModulesResponse payload) {
-              return payload.getSecurityHealthAnalyticsCustomModulesList() == null
-                  ? ImmutableList.<SecurityHealthAnalyticsCustomModule>of()
-                  : payload.getSecurityHealthAnalyticsCustomModulesList();
+              return payload.getSecurityHealthAnalyticsCustomModulesList();
             }
           };
 
@@ -700,9 +822,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<Source> extractResources(ListSourcesResponse payload) {
-              return payload.getSourcesList() == null
-                  ? ImmutableList.<Source>of()
-                  : payload.getSourcesList();
+              return payload.getSourcesList();
             }
           };
 
@@ -740,9 +860,272 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<BigQueryExport> extractResources(ListBigQueryExportsResponse payload) {
-              return payload.getBigQueryExportsList() == null
-                  ? ImmutableList.<BigQueryExport>of()
-                  : payload.getBigQueryExportsList();
+              return payload.getBigQueryExportsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse,
+          EventThreatDetectionCustomModule>
+      LIST_DESCENDANT_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDescendantEventThreatDetectionCustomModulesRequest,
+              ListDescendantEventThreatDetectionCustomModulesResponse,
+              EventThreatDetectionCustomModule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDescendantEventThreatDetectionCustomModulesRequest injectToken(
+                ListDescendantEventThreatDetectionCustomModulesRequest payload, String token) {
+              return ListDescendantEventThreatDetectionCustomModulesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDescendantEventThreatDetectionCustomModulesRequest injectPageSize(
+                ListDescendantEventThreatDetectionCustomModulesRequest payload, int pageSize) {
+              return ListDescendantEventThreatDetectionCustomModulesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListDescendantEventThreatDetectionCustomModulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                ListDescendantEventThreatDetectionCustomModulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EventThreatDetectionCustomModule> extractResources(
+                ListDescendantEventThreatDetectionCustomModulesResponse payload) {
+              return payload.getEventThreatDetectionCustomModulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse,
+          EventThreatDetectionCustomModule>
+      LIST_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEventThreatDetectionCustomModulesRequest,
+              ListEventThreatDetectionCustomModulesResponse,
+              EventThreatDetectionCustomModule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEventThreatDetectionCustomModulesRequest injectToken(
+                ListEventThreatDetectionCustomModulesRequest payload, String token) {
+              return ListEventThreatDetectionCustomModulesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListEventThreatDetectionCustomModulesRequest injectPageSize(
+                ListEventThreatDetectionCustomModulesRequest payload, int pageSize) {
+              return ListEventThreatDetectionCustomModulesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEventThreatDetectionCustomModulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEventThreatDetectionCustomModulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EventThreatDetectionCustomModule> extractResources(
+                ListEventThreatDetectionCustomModulesResponse payload) {
+              return payload.getEventThreatDetectionCustomModulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse,
+          EffectiveEventThreatDetectionCustomModule>
+      LIST_EFFECTIVE_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEffectiveEventThreatDetectionCustomModulesRequest,
+              ListEffectiveEventThreatDetectionCustomModulesResponse,
+              EffectiveEventThreatDetectionCustomModule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEffectiveEventThreatDetectionCustomModulesRequest injectToken(
+                ListEffectiveEventThreatDetectionCustomModulesRequest payload, String token) {
+              return ListEffectiveEventThreatDetectionCustomModulesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListEffectiveEventThreatDetectionCustomModulesRequest injectPageSize(
+                ListEffectiveEventThreatDetectionCustomModulesRequest payload, int pageSize) {
+              return ListEffectiveEventThreatDetectionCustomModulesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListEffectiveEventThreatDetectionCustomModulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                ListEffectiveEventThreatDetectionCustomModulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EffectiveEventThreatDetectionCustomModule> extractResources(
+                ListEffectiveEventThreatDetectionCustomModulesResponse payload) {
+              return payload.getEffectiveEventThreatDetectionCustomModulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListResourceValueConfigsRequest, ListResourceValueConfigsResponse, ResourceValueConfig>
+      LIST_RESOURCE_VALUE_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListResourceValueConfigsRequest,
+              ListResourceValueConfigsResponse,
+              ResourceValueConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListResourceValueConfigsRequest injectToken(
+                ListResourceValueConfigsRequest payload, String token) {
+              return ListResourceValueConfigsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListResourceValueConfigsRequest injectPageSize(
+                ListResourceValueConfigsRequest payload, int pageSize) {
+              return ListResourceValueConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListResourceValueConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListResourceValueConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ResourceValueConfig> extractResources(
+                ListResourceValueConfigsResponse payload) {
+              return payload.getResourceValueConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>
+      LIST_VALUED_RESOURCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListValuedResourcesRequest injectToken(
+                ListValuedResourcesRequest payload, String token) {
+              return ListValuedResourcesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListValuedResourcesRequest injectPageSize(
+                ListValuedResourcesRequest payload, int pageSize) {
+              return ListValuedResourcesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListValuedResourcesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListValuedResourcesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ValuedResource> extractResources(ListValuedResourcesResponse payload) {
+              return payload.getValuedResourcesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAttackPathsRequest, ListAttackPathsResponse, AttackPath>
+      LIST_ATTACK_PATHS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAttackPathsRequest, ListAttackPathsResponse, AttackPath>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAttackPathsRequest injectToken(
+                ListAttackPathsRequest payload, String token) {
+              return ListAttackPathsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAttackPathsRequest injectPageSize(
+                ListAttackPathsRequest payload, int pageSize) {
+              return ListAttackPathsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAttackPathsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAttackPathsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AttackPath> extractResources(ListAttackPathsResponse payload) {
+              return payload.getAttackPathsList();
             }
           };
 
@@ -1006,6 +1389,175 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse,
+          ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+      LIST_DESCENDANT_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDescendantEventThreatDetectionCustomModulesRequest,
+              ListDescendantEventThreatDetectionCustomModulesResponse,
+              ListDescendantEventThreatDetectionCustomModulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListDescendantEventThreatDetectionCustomModulesRequest,
+                            ListDescendantEventThreatDetectionCustomModulesResponse>
+                        callable,
+                    ListDescendantEventThreatDetectionCustomModulesRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListDescendantEventThreatDetectionCustomModulesResponse>
+                        futureResponse) {
+              PageContext<
+                      ListDescendantEventThreatDetectionCustomModulesRequest,
+                      ListDescendantEventThreatDetectionCustomModulesResponse,
+                      EventThreatDetectionCustomModule>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_DESCENDANT_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListDescendantEventThreatDetectionCustomModulesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse,
+          ListEventThreatDetectionCustomModulesPagedResponse>
+      LIST_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEventThreatDetectionCustomModulesRequest,
+              ListEventThreatDetectionCustomModulesResponse,
+              ListEventThreatDetectionCustomModulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEventThreatDetectionCustomModulesPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListEventThreatDetectionCustomModulesRequest,
+                            ListEventThreatDetectionCustomModulesResponse>
+                        callable,
+                    ListEventThreatDetectionCustomModulesRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListEventThreatDetectionCustomModulesResponse> futureResponse) {
+              PageContext<
+                      ListEventThreatDetectionCustomModulesRequest,
+                      ListEventThreatDetectionCustomModulesResponse,
+                      EventThreatDetectionCustomModule>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListEventThreatDetectionCustomModulesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse,
+          ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+      LIST_EFFECTIVE_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEffectiveEventThreatDetectionCustomModulesRequest,
+              ListEffectiveEventThreatDetectionCustomModulesResponse,
+              ListEffectiveEventThreatDetectionCustomModulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListEffectiveEventThreatDetectionCustomModulesRequest,
+                            ListEffectiveEventThreatDetectionCustomModulesResponse>
+                        callable,
+                    ListEffectiveEventThreatDetectionCustomModulesRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListEffectiveEventThreatDetectionCustomModulesResponse>
+                        futureResponse) {
+              PageContext<
+                      ListEffectiveEventThreatDetectionCustomModulesRequest,
+                      ListEffectiveEventThreatDetectionCustomModulesResponse,
+                      EffectiveEventThreatDetectionCustomModule>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_EFFECTIVE_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListEffectiveEventThreatDetectionCustomModulesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListResourceValueConfigsRequest,
+          ListResourceValueConfigsResponse,
+          ListResourceValueConfigsPagedResponse>
+      LIST_RESOURCE_VALUE_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListResourceValueConfigsRequest,
+              ListResourceValueConfigsResponse,
+              ListResourceValueConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListResourceValueConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListResourceValueConfigsRequest, ListResourceValueConfigsResponse>
+                    callable,
+                ListResourceValueConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListResourceValueConfigsResponse> futureResponse) {
+              PageContext<
+                      ListResourceValueConfigsRequest,
+                      ListResourceValueConfigsResponse,
+                      ResourceValueConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RESOURCE_VALUE_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListResourceValueConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListValuedResourcesRequest, ListValuedResourcesResponse, ListValuedResourcesPagedResponse>
+      LIST_VALUED_RESOURCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListValuedResourcesRequest,
+              ListValuedResourcesResponse,
+              ListValuedResourcesPagedResponse>() {
+            @Override
+            public ApiFuture<ListValuedResourcesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListValuedResourcesRequest, ListValuedResourcesResponse> callable,
+                ListValuedResourcesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListValuedResourcesResponse> futureResponse) {
+              PageContext<ListValuedResourcesRequest, ListValuedResourcesResponse, ValuedResource>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_VALUED_RESOURCES_PAGE_STR_DESC, request, context);
+              return ListValuedResourcesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAttackPathsRequest, ListAttackPathsResponse, ListAttackPathsPagedResponse>
+      LIST_ATTACK_PATHS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAttackPathsRequest, ListAttackPathsResponse, ListAttackPathsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAttackPathsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAttackPathsRequest, ListAttackPathsResponse> callable,
+                ListAttackPathsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAttackPathsResponse> futureResponse) {
+              PageContext<ListAttackPathsRequest, ListAttackPathsResponse, AttackPath> pageContext =
+                  PageContext.create(callable, LIST_ATTACK_PATHS_PAGE_STR_DESC, request, context);
+              return ListAttackPathsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to bulkMuteFindings. */
   public UnaryCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsSettings() {
     return bulkMuteFindingsSettings;
@@ -1066,6 +1618,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   public UnaryCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
       deleteSecurityHealthAnalyticsCustomModuleSettings() {
     return deleteSecurityHealthAnalyticsCustomModuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSimulation. */
+  public UnaryCallSettings<GetSimulationRequest, Simulation> getSimulationSettings() {
+    return getSimulationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getValuedResource. */
+  public UnaryCallSettings<GetValuedResourceRequest, ValuedResource> getValuedResourceSettings() {
+    return getValuedResourceSettings;
   }
 
   /** Returns the object with the settings used for calls to getBigQueryExport. */
@@ -1249,6 +1811,17 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return testIamPermissionsSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * simulateSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleSettings() {
+    return simulateSecurityHealthAnalyticsCustomModuleSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateExternalSystem. */
   public UnaryCallSettings<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemSettings() {
@@ -1322,6 +1895,144 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return listBigQueryExportsSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to createEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<
+          CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      createEventThreatDetectionCustomModuleSettings() {
+    return createEventThreatDetectionCustomModuleSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to deleteEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+      deleteEventThreatDetectionCustomModuleSettings() {
+    return deleteEventThreatDetectionCustomModuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEventThreatDetectionCustomModule. */
+  public UnaryCallSettings<
+          GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      getEventThreatDetectionCustomModuleSettings() {
+    return getEventThreatDetectionCustomModuleSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listDescendantEventThreatDetectionCustomModules.
+   */
+  public PagedCallSettings<
+          ListDescendantEventThreatDetectionCustomModulesRequest,
+          ListDescendantEventThreatDetectionCustomModulesResponse,
+          ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+      listDescendantEventThreatDetectionCustomModulesSettings() {
+    return listDescendantEventThreatDetectionCustomModulesSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to listEventThreatDetectionCustomModules.
+   */
+  public PagedCallSettings<
+          ListEventThreatDetectionCustomModulesRequest,
+          ListEventThreatDetectionCustomModulesResponse,
+          ListEventThreatDetectionCustomModulesPagedResponse>
+      listEventThreatDetectionCustomModulesSettings() {
+    return listEventThreatDetectionCustomModulesSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to updateEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<
+          UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+      updateEventThreatDetectionCustomModuleSettings() {
+    return updateEventThreatDetectionCustomModuleSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * validateEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<
+          ValidateEventThreatDetectionCustomModuleRequest,
+          ValidateEventThreatDetectionCustomModuleResponse>
+      validateEventThreatDetectionCustomModuleSettings() {
+    return validateEventThreatDetectionCustomModuleSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * getEffectiveEventThreatDetectionCustomModule.
+   */
+  public UnaryCallSettings<
+          GetEffectiveEventThreatDetectionCustomModuleRequest,
+          EffectiveEventThreatDetectionCustomModule>
+      getEffectiveEventThreatDetectionCustomModuleSettings() {
+    return getEffectiveEventThreatDetectionCustomModuleSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listEffectiveEventThreatDetectionCustomModules.
+   */
+  public PagedCallSettings<
+          ListEffectiveEventThreatDetectionCustomModulesRequest,
+          ListEffectiveEventThreatDetectionCustomModulesResponse,
+          ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+      listEffectiveEventThreatDetectionCustomModulesSettings() {
+    return listEffectiveEventThreatDetectionCustomModulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateResourceValueConfigs. */
+  public UnaryCallSettings<
+          BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+      batchCreateResourceValueConfigsSettings() {
+    return batchCreateResourceValueConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteResourceValueConfig. */
+  public UnaryCallSettings<DeleteResourceValueConfigRequest, Empty>
+      deleteResourceValueConfigSettings() {
+    return deleteResourceValueConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getResourceValueConfig. */
+  public UnaryCallSettings<GetResourceValueConfigRequest, ResourceValueConfig>
+      getResourceValueConfigSettings() {
+    return getResourceValueConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listResourceValueConfigs. */
+  public PagedCallSettings<
+          ListResourceValueConfigsRequest,
+          ListResourceValueConfigsResponse,
+          ListResourceValueConfigsPagedResponse>
+      listResourceValueConfigsSettings() {
+    return listResourceValueConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateResourceValueConfig. */
+  public UnaryCallSettings<UpdateResourceValueConfigRequest, ResourceValueConfig>
+      updateResourceValueConfigSettings() {
+    return updateResourceValueConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listValuedResources. */
+  public PagedCallSettings<
+          ListValuedResourcesRequest, ListValuedResourcesResponse, ListValuedResourcesPagedResponse>
+      listValuedResourcesSettings() {
+    return listValuedResourcesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAttackPaths. */
+  public PagedCallSettings<
+          ListAttackPathsRequest, ListAttackPathsResponse, ListAttackPathsPagedResponse>
+      listAttackPathsSettings() {
+    return listAttackPathsSettings;
+  }
+
   public SecurityCenterStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1338,12 +2049,19 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "securitycenter";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "securitycenter.googleapis.com:443";
   }
@@ -1382,7 +2100,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1391,7 +2108,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1440,6 +2156,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     deleteNotificationConfigSettings = settingsBuilder.deleteNotificationConfigSettings().build();
     deleteSecurityHealthAnalyticsCustomModuleSettings =
         settingsBuilder.deleteSecurityHealthAnalyticsCustomModuleSettings().build();
+    getSimulationSettings = settingsBuilder.getSimulationSettings().build();
+    getValuedResourceSettings = settingsBuilder.getValuedResourceSettings().build();
     getBigQueryExportSettings = settingsBuilder.getBigQueryExportSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     getMuteConfigSettings = settingsBuilder.getMuteConfigSettings().build();
@@ -1470,6 +2188,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     setMuteSettings = settingsBuilder.setMuteSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    simulateSecurityHealthAnalyticsCustomModuleSettings =
+        settingsBuilder.simulateSecurityHealthAnalyticsCustomModuleSettings().build();
     updateExternalSystemSettings = settingsBuilder.updateExternalSystemSettings().build();
     updateFindingSettings = settingsBuilder.updateFindingSettings().build();
     updateMuteConfigSettings = settingsBuilder.updateMuteConfigSettings().build();
@@ -1484,6 +2204,32 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     deleteBigQueryExportSettings = settingsBuilder.deleteBigQueryExportSettings().build();
     updateBigQueryExportSettings = settingsBuilder.updateBigQueryExportSettings().build();
     listBigQueryExportsSettings = settingsBuilder.listBigQueryExportsSettings().build();
+    createEventThreatDetectionCustomModuleSettings =
+        settingsBuilder.createEventThreatDetectionCustomModuleSettings().build();
+    deleteEventThreatDetectionCustomModuleSettings =
+        settingsBuilder.deleteEventThreatDetectionCustomModuleSettings().build();
+    getEventThreatDetectionCustomModuleSettings =
+        settingsBuilder.getEventThreatDetectionCustomModuleSettings().build();
+    listDescendantEventThreatDetectionCustomModulesSettings =
+        settingsBuilder.listDescendantEventThreatDetectionCustomModulesSettings().build();
+    listEventThreatDetectionCustomModulesSettings =
+        settingsBuilder.listEventThreatDetectionCustomModulesSettings().build();
+    updateEventThreatDetectionCustomModuleSettings =
+        settingsBuilder.updateEventThreatDetectionCustomModuleSettings().build();
+    validateEventThreatDetectionCustomModuleSettings =
+        settingsBuilder.validateEventThreatDetectionCustomModuleSettings().build();
+    getEffectiveEventThreatDetectionCustomModuleSettings =
+        settingsBuilder.getEffectiveEventThreatDetectionCustomModuleSettings().build();
+    listEffectiveEventThreatDetectionCustomModulesSettings =
+        settingsBuilder.listEffectiveEventThreatDetectionCustomModulesSettings().build();
+    batchCreateResourceValueConfigsSettings =
+        settingsBuilder.batchCreateResourceValueConfigsSettings().build();
+    deleteResourceValueConfigSettings = settingsBuilder.deleteResourceValueConfigSettings().build();
+    getResourceValueConfigSettings = settingsBuilder.getResourceValueConfigSettings().build();
+    listResourceValueConfigsSettings = settingsBuilder.listResourceValueConfigsSettings().build();
+    updateResourceValueConfigSettings = settingsBuilder.updateResourceValueConfigSettings().build();
+    listValuedResourcesSettings = settingsBuilder.listValuedResourcesSettings().build();
+    listAttackPathsSettings = settingsBuilder.listAttackPathsSettings().build();
   }
 
   /** Builder for SecurityCenterStubSettings. */
@@ -1509,6 +2255,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         deleteNotificationConfigSettings;
     private final UnaryCallSettings.Builder<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
         deleteSecurityHealthAnalyticsCustomModuleSettings;
+    private final UnaryCallSettings.Builder<GetSimulationRequest, Simulation> getSimulationSettings;
+    private final UnaryCallSettings.Builder<GetValuedResourceRequest, ValuedResource>
+        getValuedResourceSettings;
     private final UnaryCallSettings.Builder<GetBigQueryExportRequest, BigQueryExport>
         getBigQueryExportSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -1574,6 +2323,10 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<
+            SimulateSecurityHealthAnalyticsCustomModuleRequest,
+            SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        simulateSecurityHealthAnalyticsCustomModuleSettings;
     private final UnaryCallSettings.Builder<UpdateExternalSystemRequest, ExternalSystem>
         updateExternalSystemSettings;
     private final UnaryCallSettings.Builder<UpdateFindingRequest, Finding> updateFindingSettings;
@@ -1600,6 +2353,62 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             ListBigQueryExportsResponse,
             ListBigQueryExportsPagedResponse>
         listBigQueryExportsSettings;
+    private final UnaryCallSettings.Builder<
+            CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        createEventThreatDetectionCustomModuleSettings;
+    private final UnaryCallSettings.Builder<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+        deleteEventThreatDetectionCustomModuleSettings;
+    private final UnaryCallSettings.Builder<
+            GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        getEventThreatDetectionCustomModuleSettings;
+    private final PagedCallSettings.Builder<
+            ListDescendantEventThreatDetectionCustomModulesRequest,
+            ListDescendantEventThreatDetectionCustomModulesResponse,
+            ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+        listDescendantEventThreatDetectionCustomModulesSettings;
+    private final PagedCallSettings.Builder<
+            ListEventThreatDetectionCustomModulesRequest,
+            ListEventThreatDetectionCustomModulesResponse,
+            ListEventThreatDetectionCustomModulesPagedResponse>
+        listEventThreatDetectionCustomModulesSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        updateEventThreatDetectionCustomModuleSettings;
+    private final UnaryCallSettings.Builder<
+            ValidateEventThreatDetectionCustomModuleRequest,
+            ValidateEventThreatDetectionCustomModuleResponse>
+        validateEventThreatDetectionCustomModuleSettings;
+    private final UnaryCallSettings.Builder<
+            GetEffectiveEventThreatDetectionCustomModuleRequest,
+            EffectiveEventThreatDetectionCustomModule>
+        getEffectiveEventThreatDetectionCustomModuleSettings;
+    private final PagedCallSettings.Builder<
+            ListEffectiveEventThreatDetectionCustomModulesRequest,
+            ListEffectiveEventThreatDetectionCustomModulesResponse,
+            ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+        listEffectiveEventThreatDetectionCustomModulesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+        batchCreateResourceValueConfigsSettings;
+    private final UnaryCallSettings.Builder<DeleteResourceValueConfigRequest, Empty>
+        deleteResourceValueConfigSettings;
+    private final UnaryCallSettings.Builder<GetResourceValueConfigRequest, ResourceValueConfig>
+        getResourceValueConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListResourceValueConfigsRequest,
+            ListResourceValueConfigsResponse,
+            ListResourceValueConfigsPagedResponse>
+        listResourceValueConfigsSettings;
+    private final UnaryCallSettings.Builder<UpdateResourceValueConfigRequest, ResourceValueConfig>
+        updateResourceValueConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListValuedResourcesRequest,
+            ListValuedResourcesResponse,
+            ListValuedResourcesPagedResponse>
+        listValuedResourcesSettings;
+    private final PagedCallSettings.Builder<
+            ListAttackPathsRequest, ListAttackPathsResponse, ListAttackPathsPagedResponse>
+        listAttackPathsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1633,40 +2442,40 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(480000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(480000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(480000L))
-              .setTotalTimeout(Duration.ofMillis(480000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(480000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(480000L))
               .build();
       definitions.put("retry_policy_3_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(480000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(480000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(480000L))
-              .setTotalTimeout(Duration.ofMillis(480000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(480000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(480000L))
               .build();
       definitions.put("no_retry_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1691,6 +2500,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       deleteNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSecurityHealthAnalyticsCustomModuleSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSimulationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getValuedResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBigQueryExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1723,6 +2534,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       setMuteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      simulateSecurityHealthAnalyticsCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateExternalSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1737,6 +2550,34 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       updateBigQueryExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBigQueryExportsSettings =
           PagedCallSettings.newBuilder(LIST_BIG_QUERY_EXPORTS_PAGE_STR_FACT);
+      createEventThreatDetectionCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteEventThreatDetectionCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getEventThreatDetectionCustomModuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDescendantEventThreatDetectionCustomModulesSettings =
+          PagedCallSettings.newBuilder(
+              LIST_DESCENDANT_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_FACT);
+      listEventThreatDetectionCustomModulesSettings =
+          PagedCallSettings.newBuilder(LIST_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_FACT);
+      updateEventThreatDetectionCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      validateEventThreatDetectionCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getEffectiveEventThreatDetectionCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listEffectiveEventThreatDetectionCustomModulesSettings =
+          PagedCallSettings.newBuilder(
+              LIST_EFFECTIVE_EVENT_THREAT_DETECTION_CUSTOM_MODULES_PAGE_STR_FACT);
+      batchCreateResourceValueConfigsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteResourceValueConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getResourceValueConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listResourceValueConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_RESOURCE_VALUE_CONFIGS_PAGE_STR_FACT);
+      updateResourceValueConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listValuedResourcesSettings =
+          PagedCallSettings.newBuilder(LIST_VALUED_RESOURCES_PAGE_STR_FACT);
+      listAttackPathsSettings = PagedCallSettings.newBuilder(LIST_ATTACK_PATHS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1749,6 +2590,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               deleteMuteConfigSettings,
               deleteNotificationConfigSettings,
               deleteSecurityHealthAnalyticsCustomModuleSettings,
+              getSimulationSettings,
+              getValuedResourceSettings,
               getBigQueryExportSettings,
               getIamPolicySettings,
               getMuteConfigSettings,
@@ -1772,6 +2615,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               setMuteSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
+              simulateSecurityHealthAnalyticsCustomModuleSettings,
               updateExternalSystemSettings,
               updateFindingSettings,
               updateMuteConfigSettings,
@@ -1783,7 +2627,23 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               createBigQueryExportSettings,
               deleteBigQueryExportSettings,
               updateBigQueryExportSettings,
-              listBigQueryExportsSettings);
+              listBigQueryExportsSettings,
+              createEventThreatDetectionCustomModuleSettings,
+              deleteEventThreatDetectionCustomModuleSettings,
+              getEventThreatDetectionCustomModuleSettings,
+              listDescendantEventThreatDetectionCustomModulesSettings,
+              listEventThreatDetectionCustomModulesSettings,
+              updateEventThreatDetectionCustomModuleSettings,
+              validateEventThreatDetectionCustomModuleSettings,
+              getEffectiveEventThreatDetectionCustomModuleSettings,
+              listEffectiveEventThreatDetectionCustomModulesSettings,
+              batchCreateResourceValueConfigsSettings,
+              deleteResourceValueConfigSettings,
+              getResourceValueConfigSettings,
+              listResourceValueConfigsSettings,
+              updateResourceValueConfigSettings,
+              listValuedResourcesSettings,
+              listAttackPathsSettings);
       initDefaults(this);
     }
 
@@ -1802,6 +2662,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       deleteNotificationConfigSettings = settings.deleteNotificationConfigSettings.toBuilder();
       deleteSecurityHealthAnalyticsCustomModuleSettings =
           settings.deleteSecurityHealthAnalyticsCustomModuleSettings.toBuilder();
+      getSimulationSettings = settings.getSimulationSettings.toBuilder();
+      getValuedResourceSettings = settings.getValuedResourceSettings.toBuilder();
       getBigQueryExportSettings = settings.getBigQueryExportSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       getMuteConfigSettings = settings.getMuteConfigSettings.toBuilder();
@@ -1831,6 +2693,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       setMuteSettings = settings.setMuteSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      simulateSecurityHealthAnalyticsCustomModuleSettings =
+          settings.simulateSecurityHealthAnalyticsCustomModuleSettings.toBuilder();
       updateExternalSystemSettings = settings.updateExternalSystemSettings.toBuilder();
       updateFindingSettings = settings.updateFindingSettings.toBuilder();
       updateMuteConfigSettings = settings.updateMuteConfigSettings.toBuilder();
@@ -1844,6 +2708,32 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       deleteBigQueryExportSettings = settings.deleteBigQueryExportSettings.toBuilder();
       updateBigQueryExportSettings = settings.updateBigQueryExportSettings.toBuilder();
       listBigQueryExportsSettings = settings.listBigQueryExportsSettings.toBuilder();
+      createEventThreatDetectionCustomModuleSettings =
+          settings.createEventThreatDetectionCustomModuleSettings.toBuilder();
+      deleteEventThreatDetectionCustomModuleSettings =
+          settings.deleteEventThreatDetectionCustomModuleSettings.toBuilder();
+      getEventThreatDetectionCustomModuleSettings =
+          settings.getEventThreatDetectionCustomModuleSettings.toBuilder();
+      listDescendantEventThreatDetectionCustomModulesSettings =
+          settings.listDescendantEventThreatDetectionCustomModulesSettings.toBuilder();
+      listEventThreatDetectionCustomModulesSettings =
+          settings.listEventThreatDetectionCustomModulesSettings.toBuilder();
+      updateEventThreatDetectionCustomModuleSettings =
+          settings.updateEventThreatDetectionCustomModuleSettings.toBuilder();
+      validateEventThreatDetectionCustomModuleSettings =
+          settings.validateEventThreatDetectionCustomModuleSettings.toBuilder();
+      getEffectiveEventThreatDetectionCustomModuleSettings =
+          settings.getEffectiveEventThreatDetectionCustomModuleSettings.toBuilder();
+      listEffectiveEventThreatDetectionCustomModulesSettings =
+          settings.listEffectiveEventThreatDetectionCustomModulesSettings.toBuilder();
+      batchCreateResourceValueConfigsSettings =
+          settings.batchCreateResourceValueConfigsSettings.toBuilder();
+      deleteResourceValueConfigSettings = settings.deleteResourceValueConfigSettings.toBuilder();
+      getResourceValueConfigSettings = settings.getResourceValueConfigSettings.toBuilder();
+      listResourceValueConfigsSettings = settings.listResourceValueConfigsSettings.toBuilder();
+      updateResourceValueConfigSettings = settings.updateResourceValueConfigSettings.toBuilder();
+      listValuedResourcesSettings = settings.listValuedResourcesSettings.toBuilder();
+      listAttackPathsSettings = settings.listAttackPathsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1856,6 +2746,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               deleteMuteConfigSettings,
               deleteNotificationConfigSettings,
               deleteSecurityHealthAnalyticsCustomModuleSettings,
+              getSimulationSettings,
+              getValuedResourceSettings,
               getBigQueryExportSettings,
               getIamPolicySettings,
               getMuteConfigSettings,
@@ -1879,6 +2771,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               setMuteSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
+              simulateSecurityHealthAnalyticsCustomModuleSettings,
               updateExternalSystemSettings,
               updateFindingSettings,
               updateMuteConfigSettings,
@@ -1890,7 +2783,23 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               createBigQueryExportSettings,
               deleteBigQueryExportSettings,
               updateBigQueryExportSettings,
-              listBigQueryExportsSettings);
+              listBigQueryExportsSettings,
+              createEventThreatDetectionCustomModuleSettings,
+              deleteEventThreatDetectionCustomModuleSettings,
+              getEventThreatDetectionCustomModuleSettings,
+              listDescendantEventThreatDetectionCustomModulesSettings,
+              listEventThreatDetectionCustomModulesSettings,
+              updateEventThreatDetectionCustomModuleSettings,
+              validateEventThreatDetectionCustomModuleSettings,
+              getEffectiveEventThreatDetectionCustomModuleSettings,
+              listEffectiveEventThreatDetectionCustomModulesSettings,
+              batchCreateResourceValueConfigsSettings,
+              deleteResourceValueConfigSettings,
+              getResourceValueConfigSettings,
+              listResourceValueConfigsSettings,
+              updateResourceValueConfigSettings,
+              listValuedResourcesSettings,
+              listAttackPathsSettings);
     }
 
     private static Builder createDefault() {
@@ -1899,7 +2808,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1912,7 +2820,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1964,6 +2871,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .deleteSecurityHealthAnalyticsCustomModuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getSimulationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getValuedResourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getBigQueryExportSettings()
@@ -2081,6 +2998,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .simulateSecurityHealthAnalyticsCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .updateExternalSystemSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -2141,6 +3063,86 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .createEventThreatDetectionCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteEventThreatDetectionCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getEventThreatDetectionCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listDescendantEventThreatDetectionCustomModulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listEventThreatDetectionCustomModulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateEventThreatDetectionCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .validateEventThreatDetectionCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getEffectiveEventThreatDetectionCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listEffectiveEventThreatDetectionCustomModulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateResourceValueConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteResourceValueConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getResourceValueConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listResourceValueConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateResourceValueConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listValuedResourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAttackPathsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .bulkMuteFindingsOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -2155,13 +3157,13 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2180,13 +3182,13 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -2214,8 +3216,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     }
 
     /** Returns the builder for the settings used for calls to bulkMuteFindings. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
         bulkMuteFindingsOperationSettings() {
       return bulkMuteFindingsOperationSettings;
@@ -2271,6 +3271,17 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     public UnaryCallSettings.Builder<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
         deleteSecurityHealthAnalyticsCustomModuleSettings() {
       return deleteSecurityHealthAnalyticsCustomModuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSimulation. */
+    public UnaryCallSettings.Builder<GetSimulationRequest, Simulation> getSimulationSettings() {
+      return getSimulationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getValuedResource. */
+    public UnaryCallSettings.Builder<GetValuedResourceRequest, ValuedResource>
+        getValuedResourceSettings() {
+      return getValuedResourceSettings;
     }
 
     /** Returns the builder for the settings used for calls to getBigQueryExport. */
@@ -2435,8 +3446,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     }
 
     /** Returns the builder for the settings used for calls to runAssetDiscovery. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
         runAssetDiscoveryOperationSettings() {
       return runAssetDiscoveryOperationSettings;
@@ -2461,6 +3470,17 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * simulateSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            SimulateSecurityHealthAnalyticsCustomModuleRequest,
+            SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        simulateSecurityHealthAnalyticsCustomModuleSettings() {
+      return simulateSecurityHealthAnalyticsCustomModuleSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateExternalSystem. */
@@ -2538,6 +3558,151 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             ListBigQueryExportsPagedResponse>
         listBigQueryExportsSettings() {
       return listBigQueryExportsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * createEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            CreateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        createEventThreatDetectionCustomModuleSettings() {
+      return createEventThreatDetectionCustomModuleSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<DeleteEventThreatDetectionCustomModuleRequest, Empty>
+        deleteEventThreatDetectionCustomModuleSettings() {
+      return deleteEventThreatDetectionCustomModuleSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            GetEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        getEventThreatDetectionCustomModuleSettings() {
+      return getEventThreatDetectionCustomModuleSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listDescendantEventThreatDetectionCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListDescendantEventThreatDetectionCustomModulesRequest,
+            ListDescendantEventThreatDetectionCustomModulesResponse,
+            ListDescendantEventThreatDetectionCustomModulesPagedResponse>
+        listDescendantEventThreatDetectionCustomModulesSettings() {
+      return listDescendantEventThreatDetectionCustomModulesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to listEventThreatDetectionCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListEventThreatDetectionCustomModulesRequest,
+            ListEventThreatDetectionCustomModulesResponse,
+            ListEventThreatDetectionCustomModulesPagedResponse>
+        listEventThreatDetectionCustomModulesSettings() {
+      return listEventThreatDetectionCustomModulesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updateEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateEventThreatDetectionCustomModuleRequest, EventThreatDetectionCustomModule>
+        updateEventThreatDetectionCustomModuleSettings() {
+      return updateEventThreatDetectionCustomModuleSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * validateEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            ValidateEventThreatDetectionCustomModuleRequest,
+            ValidateEventThreatDetectionCustomModuleResponse>
+        validateEventThreatDetectionCustomModuleSettings() {
+      return validateEventThreatDetectionCustomModuleSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getEffectiveEventThreatDetectionCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            GetEffectiveEventThreatDetectionCustomModuleRequest,
+            EffectiveEventThreatDetectionCustomModule>
+        getEffectiveEventThreatDetectionCustomModuleSettings() {
+      return getEffectiveEventThreatDetectionCustomModuleSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listEffectiveEventThreatDetectionCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListEffectiveEventThreatDetectionCustomModulesRequest,
+            ListEffectiveEventThreatDetectionCustomModulesResponse,
+            ListEffectiveEventThreatDetectionCustomModulesPagedResponse>
+        listEffectiveEventThreatDetectionCustomModulesSettings() {
+      return listEffectiveEventThreatDetectionCustomModulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateResourceValueConfigs. */
+    public UnaryCallSettings.Builder<
+            BatchCreateResourceValueConfigsRequest, BatchCreateResourceValueConfigsResponse>
+        batchCreateResourceValueConfigsSettings() {
+      return batchCreateResourceValueConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteResourceValueConfig. */
+    public UnaryCallSettings.Builder<DeleteResourceValueConfigRequest, Empty>
+        deleteResourceValueConfigSettings() {
+      return deleteResourceValueConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getResourceValueConfig. */
+    public UnaryCallSettings.Builder<GetResourceValueConfigRequest, ResourceValueConfig>
+        getResourceValueConfigSettings() {
+      return getResourceValueConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listResourceValueConfigs. */
+    public PagedCallSettings.Builder<
+            ListResourceValueConfigsRequest,
+            ListResourceValueConfigsResponse,
+            ListResourceValueConfigsPagedResponse>
+        listResourceValueConfigsSettings() {
+      return listResourceValueConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateResourceValueConfig. */
+    public UnaryCallSettings.Builder<UpdateResourceValueConfigRequest, ResourceValueConfig>
+        updateResourceValueConfigSettings() {
+      return updateResourceValueConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listValuedResources. */
+    public PagedCallSettings.Builder<
+            ListValuedResourcesRequest,
+            ListValuedResourcesResponse,
+            ListValuedResourcesPagedResponse>
+        listValuedResourcesSettings() {
+      return listValuedResourcesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAttackPaths. */
+    public PagedCallSettings.Builder<
+            ListAttackPathsRequest, ListAttackPathsResponse, ListAttackPathsPagedResponse>
+        listAttackPathsSettings() {
+      return listAttackPathsSettings;
     }
 
     @Override

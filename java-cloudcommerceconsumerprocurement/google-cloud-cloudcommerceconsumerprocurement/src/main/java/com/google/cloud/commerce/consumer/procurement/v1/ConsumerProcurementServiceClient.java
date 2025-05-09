@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,19 +67,98 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PlaceOrder</td>
+ *      <td><p> Creates a new [Order][google.cloud.commerce.consumer.procurement.v1.Order].
+ * <p>  This API only supports GCP spend-based committed use discounts specified by GCP documentation.
+ * <p>  The returned long-running operation is in-progress until the backend completes the creation of the resource. Once completed, the order is in [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1.OrderState.ORDER_STATE_ACTIVE]. In case of failure, the order resource will be removed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> placeOrderAsync(PlaceOrderRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> placeOrderOperationCallable()
+ *           <li><p> placeOrderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetOrder</td>
+ *      <td><p> Returns the requested [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getOrder(GetOrderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getOrder(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getOrderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListOrders</td>
+ *      <td><p> Lists [Order][google.cloud.commerce.consumer.procurement.v1.Order] resources that the user has access to, within the scope of the parent resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOrders(ListOrdersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listOrders(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOrdersPagedCallable()
+ *           <li><p> listOrdersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ModifyOrder</td>
+ *      <td><p> Modifies an existing [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> modifyOrderAsync(ModifyOrderRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> modifyOrderOperationCallable()
+ *           <li><p> modifyOrderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelOrder</td>
+ *      <td><p> Cancels an existing [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product procured in the Order will be cancelled.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelOrderAsync(CancelOrderRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelOrderOperationCallable()
+ *           <li><p> cancelOrderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -556,6 +635,190 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListOrdersRequest, ListOrdersResponse> listOrdersCallable() {
     return stub.listOrdersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies an existing [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
+   *     ConsumerProcurementServiceClient.create()) {
+   *   ModifyOrderRequest request =
+   *       ModifyOrderRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllModifications(new ArrayList<ModifyOrderRequest.Modification>())
+   *           .setDisplayName("displayName1714148973")
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   Order response = consumerProcurementServiceClient.modifyOrderAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Order, ModifyOrderMetadata> modifyOrderAsync(
+      ModifyOrderRequest request) {
+    return modifyOrderOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies an existing [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
+   *     ConsumerProcurementServiceClient.create()) {
+   *   ModifyOrderRequest request =
+   *       ModifyOrderRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllModifications(new ArrayList<ModifyOrderRequest.Modification>())
+   *           .setDisplayName("displayName1714148973")
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Order, ModifyOrderMetadata> future =
+   *       consumerProcurementServiceClient.modifyOrderOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Order response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ModifyOrderRequest, Order, ModifyOrderMetadata>
+      modifyOrderOperationCallable() {
+    return stub.modifyOrderOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies an existing [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
+   *     ConsumerProcurementServiceClient.create()) {
+   *   ModifyOrderRequest request =
+   *       ModifyOrderRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllModifications(new ArrayList<ModifyOrderRequest.Modification>())
+   *           .setDisplayName("displayName1714148973")
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       consumerProcurementServiceClient.modifyOrderCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ModifyOrderRequest, Operation> modifyOrderCallable() {
+    return stub.modifyOrderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an existing [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product
+   * procured in the Order will be cancelled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
+   *     ConsumerProcurementServiceClient.create()) {
+   *   CancelOrderRequest request =
+   *       CancelOrderRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
+   *   Order response = consumerProcurementServiceClient.cancelOrderAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Order, CancelOrderMetadata> cancelOrderAsync(
+      CancelOrderRequest request) {
+    return cancelOrderOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an existing [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product
+   * procured in the Order will be cancelled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
+   *     ConsumerProcurementServiceClient.create()) {
+   *   CancelOrderRequest request =
+   *       CancelOrderRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
+   *   OperationFuture<Order, CancelOrderMetadata> future =
+   *       consumerProcurementServiceClient.cancelOrderOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Order response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CancelOrderRequest, Order, CancelOrderMetadata>
+      cancelOrderOperationCallable() {
+    return stub.cancelOrderOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an existing [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product
+   * procured in the Order will be cancelled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConsumerProcurementServiceClient consumerProcurementServiceClient =
+   *     ConsumerProcurementServiceClient.create()) {
+   *   CancelOrderRequest request =
+   *       CancelOrderRequest.newBuilder().setName("name3373707").setEtag("etag3123477").build();
+   *   ApiFuture<Operation> future =
+   *       consumerProcurementServiceClient.cancelOrderCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable() {
+    return stub.cancelOrderCallable();
   }
 
   @Override

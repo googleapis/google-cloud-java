@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -946,6 +946,19 @@ public final class OsConfigServiceGrpc {
     return OsConfigServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static OsConfigServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<OsConfigServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OsConfigServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public OsConfigServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OsConfigServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return OsConfigServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1629,6 +1642,273 @@ public final class OsConfigServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service OsConfigService.
+   *
+   * <pre>
+   * OS Config API
+   * The OS Config service is a server-side component that you can use to
+   * manage package installations and patch jobs for virtual machine instances.
+   * </pre>
+   */
+  public static final class OsConfigServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<OsConfigServiceBlockingV2Stub> {
+    private OsConfigServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected OsConfigServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new OsConfigServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Patch VM instances by creating and running a patch job.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob executePatchJob(
+        com.google.cloud.osconfig.v1beta.PatchJobs.ExecutePatchJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExecutePatchJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the patch job. This can be used to track the progress of an
+     * ongoing patch job or review the details of completed jobs.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob getPatchJob(
+        com.google.cloud.osconfig.v1beta.PatchJobs.GetPatchJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPatchJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancel a patch job. The patch job must be active. Canceled patch jobs
+     * cannot be restarted.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob cancelPatchJob(
+        com.google.cloud.osconfig.v1beta.PatchJobs.CancelPatchJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelPatchJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a list of patch jobs.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsResponse listPatchJobs(
+        com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPatchJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a list of instance details for a given patch job.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsResponse
+        listPatchJobInstanceDetails(
+            com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPatchJobInstanceDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an OS Config patch deployment.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment createPatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.CreatePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get an OS Config patch deployment.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment getPatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.GetPatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a page of OS Config patch deployments.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsResponse
+        listPatchDeployments(
+            com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPatchDeploymentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an OS Config patch deployment.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.DeletePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an OS Config patch deployment.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment updatePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment to "PAUSED".
+     * Patch deployment in paused state doesn't generate patch jobs.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment pausePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPausePatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Change state of patch deployment back to "ACTIVE".
+     * Patch deployment in active state continues to generate patch jobs.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment resumePatchDeployment(
+        com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumePatchDeploymentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an OS Config guest policy.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy createGuestPolicy(
+        com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGuestPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get an OS Config guest policy.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy getGuestPolicy(
+        com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGuestPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a page of OS Config guest policies.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse
+        listGuestPolicies(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGuestPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update an OS Config guest policy.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy updateGuestPolicy(
+        com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGuestPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an OS Config guest policy.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteGuestPolicy(
+        com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGuestPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup the effective guest policy that applies to a VM instance. This
+     * lookup merges all policies that are assigned to the instance ancestry.
+     * </pre>
+     */
+    public com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy
+        lookupEffectiveGuestPolicy(
+            com.google.cloud.osconfig.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupEffectiveGuestPolicyMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service OsConfigService.
    *
    * <pre>
    * OS Config API

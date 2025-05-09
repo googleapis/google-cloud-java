@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocat
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.QueryHubStatusPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -68,7 +68,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getHub to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getHub:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -84,9 +86,45 @@ import javax.annotation.Generated;
  *             .getHubSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * HubServiceSettings hubServiceSettings = hubServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createHub:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * HubServiceSettings.Builder hubServiceSettingsBuilder = HubServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * hubServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -140,6 +178,13 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
   public PagedCallSettings<ListHubSpokesRequest, ListHubSpokesResponse, ListHubSpokesPagedResponse>
       listHubSpokesSettings() {
     return ((HubServiceStubSettings) getStubSettings()).listHubSpokesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to queryHubStatus. */
+  public PagedCallSettings<
+          QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+      queryHubStatusSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).queryHubStatusSettings();
   }
 
   /** Returns the object with the settings used for calls to listSpokes. */
@@ -197,6 +242,30 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     return ((HubServiceStubSettings) getStubSettings()).acceptHubSpokeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to acceptSpokeUpdate. */
+  public UnaryCallSettings<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).acceptSpokeUpdateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to acceptSpokeUpdate. */
+  public OperationCallSettings<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).acceptSpokeUpdateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rejectSpokeUpdate. */
+  public UnaryCallSettings<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).rejectSpokeUpdateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rejectSpokeUpdate. */
+  public OperationCallSettings<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).rejectSpokeUpdateOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteSpoke. */
   public UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
     return ((HubServiceStubSettings) getStubSettings()).deleteSpokeSettings();
@@ -240,6 +309,17 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
   public PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings() {
     return ((HubServiceStubSettings) getStubSettings()).listGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGroup. */
+  public UnaryCallSettings<UpdateGroupRequest, Operation> updateGroupSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).updateGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGroup. */
+  public OperationCallSettings<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).updateGroupOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -302,7 +382,6 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     return HubServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return HubServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -416,6 +495,13 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
       return getStubSettingsBuilder().listHubSpokesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to queryHubStatus. */
+    public PagedCallSettings.Builder<
+            QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+        queryHubStatusSettings() {
+      return getStubSettingsBuilder().queryHubStatusSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listSpokes. */
     public PagedCallSettings.Builder<ListSpokesRequest, ListSpokesResponse, ListSpokesPagedResponse>
         listSpokesSettings() {
@@ -473,6 +559,32 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
       return getStubSettingsBuilder().acceptHubSpokeOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to acceptSpokeUpdate. */
+    public UnaryCallSettings.Builder<AcceptSpokeUpdateRequest, Operation>
+        acceptSpokeUpdateSettings() {
+      return getStubSettingsBuilder().acceptSpokeUpdateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to acceptSpokeUpdate. */
+    public OperationCallSettings.Builder<
+            AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+        acceptSpokeUpdateOperationSettings() {
+      return getStubSettingsBuilder().acceptSpokeUpdateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rejectSpokeUpdate. */
+    public UnaryCallSettings.Builder<RejectSpokeUpdateRequest, Operation>
+        rejectSpokeUpdateSettings() {
+      return getStubSettingsBuilder().rejectSpokeUpdateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rejectSpokeUpdate. */
+    public OperationCallSettings.Builder<
+            RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+        rejectSpokeUpdateOperationSettings() {
+      return getStubSettingsBuilder().rejectSpokeUpdateOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteSpoke. */
     public UnaryCallSettings.Builder<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
       return getStubSettingsBuilder().deleteSpokeSettings();
@@ -516,6 +628,17 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     public PagedCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings() {
       return getStubSettingsBuilder().listGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGroup. */
+    public UnaryCallSettings.Builder<UpdateGroupRequest, Operation> updateGroupSettings() {
+      return getStubSettingsBuilder().updateGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGroup. */
+    public OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
+        updateGroupOperationSettings() {
+      return getStubSettingsBuilder().updateGroupOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import static com.google.cloud.compute.v1.InstancesClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.InstancesClient.ListReferrersPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -52,7 +51,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -68,9 +69,45 @@ import javax.annotation.Generated;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * InstancesSettings instancesSettings = instancesSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addAccessConfig:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * InstancesSettings.Builder instancesSettingsBuilder = InstancesSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * instancesSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -225,6 +262,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).listReferrersSettings();
   }
 
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceSettings() {
+    return ((InstancesStubSettings) getStubSettings()).performMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).performMaintenanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to removeResourcePolicies. */
   public UnaryCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesSettings() {
@@ -235,6 +284,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   public OperationCallSettings<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).removeResourcePoliciesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public UnaryCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultySettings() {
+    return ((InstancesStubSettings) getStubSettings()).reportHostAsFaultySettings();
+  }
+
+  /** Returns the object with the settings used for calls to reportHostAsFaulty. */
+  public OperationCallSettings<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).reportHostAsFaultyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to reset. */
@@ -372,6 +433,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   public OperationCallSettings<SetSchedulingInstanceRequest, Operation, Operation>
       setSchedulingOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).setSchedulingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyInstanceRequest, Operation>
+      setSecurityPolicySettings() {
+    return ((InstancesStubSettings) getStubSettings()).setSecurityPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setServiceAccount. */
@@ -567,7 +640,6 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return InstancesStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return InstancesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -783,6 +855,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().listReferrersSettings();
     }
 
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation>
+        performMaintenanceSettings() {
+      return getStubSettingsBuilder().performMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().performMaintenanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to removeResourcePolicies. */
     public UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesSettings() {
@@ -794,6 +878,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
             RemoveResourcePoliciesInstanceRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings() {
       return getStubSettingsBuilder().removeResourcePoliciesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public UnaryCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultySettings() {
+      return getStubSettingsBuilder().reportHostAsFaultySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to reportHostAsFaulty. */
+    public OperationCallSettings.Builder<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+        reportHostAsFaultyOperationSettings() {
+      return getStubSettingsBuilder().reportHostAsFaultyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to reset. */
@@ -933,6 +1029,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     public OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
         setSchedulingOperationSettings() {
       return getStubSettingsBuilder().setSchedulingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation>
+        setSecurityPolicySettings() {
+      return getStubSettingsBuilder().setSecurityPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setServiceAccount. */

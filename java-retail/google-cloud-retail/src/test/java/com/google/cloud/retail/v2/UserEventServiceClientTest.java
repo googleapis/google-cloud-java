@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class UserEventServiceClientTest {
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private static MockUserEventService mockUserEventService;
   private LocalChannelProvider channelProvider;
@@ -57,9 +58,11 @@ public class UserEventServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockUserEventService = new MockUserEventService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockUserEventService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockUserEventService, mockLocations));
     mockServiceHelper.start();
   }
 

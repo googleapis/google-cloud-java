@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -386,6 +386,19 @@ public final class ContentServiceGrpc {
     return ContentServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ContentServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ContentServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContentServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ContentServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContentServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ContentServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -730,6 +743,142 @@ public final class ContentServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ContentService.
+   *
+   * <pre>
+   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * </pre>
+   */
+  public static final class ContentServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ContentServiceBlockingV2Stub> {
+    private ContentServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ContentServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ContentServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a content.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Content createContent(
+        com.google.cloud.dataplex.v1.CreateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a content. Only supports full resource update.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Content updateContent(
+        com.google.cloud.dataplex.v1.UpdateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a content.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteContent(
+        com.google.cloud.dataplex.v1.DeleteContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a content resource.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.Content getContent(
+        com.google.cloud.dataplex.v1.GetContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a contentitem resource. A `NOT_FOUND`
+     * error is returned if the resource does not exist. An empty policy is
+     * returned if the resource exists but does not have a policy set on it.
+     * Caller must have Google IAM `dataplex.content.getIamPolicy` permission
+     * on the resource.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified contentitem resource.
+     * Replaces any existing policy.
+     * Caller must have Google IAM `dataplex.content.setIamPolicy` permission
+     * on the resource.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the caller's permissions on a resource.
+     * If the resource does not exist, an empty set of
+     * permissions is returned (a `NOT_FOUND` error is not returned).
+     * A caller is not required to have Google IAM permission to make this
+     * request.
+     * Note: This operation is designed to be used for building permission-aware
+     * UIs and command-line tools, not for authorization checking. This operation
+     * may "fail open" without warning.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List content.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.ListContentResponse listContent(
+        com.google.cloud.dataplex.v1.ListContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListContentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ContentService.
    *
    * <pre>
    * ContentService manages Notebook and SQL Scripts for Dataplex.

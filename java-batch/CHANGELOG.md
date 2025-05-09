@@ -1,5 +1,270 @@
 # Changelog
 
+## 0.62.0 (2025-05-06)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#11531](https://github.com/googleapis/google-cloud-java/issues/11531)) ([5f9a9e7](https://github.com/googleapis/google-cloud-java/commit/5f9a9e73df5e44ae38a8d18780873b7896d31c04))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#11561](https://github.com/googleapis/google-cloud-java/issues/11561)) ([9e84230](https://github.com/googleapis/google-cloud-java/commit/9e842300aa2e3e654785cc929aef0d6bb9a1a0a9))
+
+
+## 0.59.0 (2025-02-26)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#11456](https://github.com/googleapis/google-cloud-java/issues/11456)) ([6b0ad6f](https://github.com/googleapis/google-cloud-java/commit/6b0ad6f8243cc60de7ee608237fa61445f0b0526))
+
+
+## 0.58.0 (2025-02-11)
+
+### Features
+
+* promote cancel job API to GA ([8791ef3](https://github.com/googleapis/google-cloud-java/commit/8791ef355f3fa958841aa43e6c5c55db062f7688))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#11426](https://github.com/googleapis/google-cloud-java/issues/11426)) ([afdc294](https://github.com/googleapis/google-cloud-java/commit/afdc2944304a077ce4cbdd8c7675f1ca707b2be0))
+
+
+## 0.57.0 (2025-01-29)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#11410](https://github.com/googleapis/google-cloud-java/issues/11410)) ([34dfd0d](https://github.com/googleapis/google-cloud-java/commit/34dfd0dc9c5ca042aca0778e8d34b2ca072bfeb1))
+
+
+## 0.56.0 (2025-01-09)
+
+### Bug Fixes
+
+* fix a few broken references in documentation ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+* fix broken references in comments ([b68c98c](https://github.com/googleapis/google-cloud-java/commit/b68c98c14e4de0d1f5755bc306278ee16d2c55ce))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#11382](https://github.com/googleapis/google-cloud-java/issues/11382)) ([a4fd23c](https://github.com/googleapis/google-cloud-java/commit/a4fd23ce1dfa364959de1e97e3b769996f3c7d0d))
+
+
+## 0.55.0 (2024-12-13)
+
+### Bug Fixes
+
+* clarify options for logs ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* clarify options for logs ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* Rephrase reservation field doc ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* Rephrase reservation field doc ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* Update reservation field to include NO_RESERVATION ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+* Update reservation field to include NO_RESERVATION ([bb9536e](https://github.com/googleapis/google-cloud-java/commit/bb9536e7b488e7b541937df521afdb49eac595c9))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#11349](https://github.com/googleapis/google-cloud-java/issues/11349)) ([9bb6334](https://github.com/googleapis/google-cloud-java/commit/9bb6334458fdec53ba9fdec501de534d6516f102))
+
+
+## 0.54.0 (2024-11-18)
+
+* No change
+
+
+## 0.53.0 (2024-10-28)
+
+* No change
+
+
+## 0.52.0 (2024-10-09)
+
+### Bug Fixes
+
+* Clarify Batch only supports global custom instance template now ([30455f7](https://github.com/googleapis/google-cloud-java/commit/30455f78e0aa9343d7db83d7a1a736ffd7a2b7e6))
+
+
+
+## 0.50.0 (2024-09-26)
+
+### Features
+
+* A new value `CANCELLATION_IN_PROGRESS` is added to enum `State` ([3ec9def](https://github.com/googleapis/google-cloud-java/commit/3ec9def10f1270d55da6495d873a4569f42ecf3f))
+
+
+
+## 0.49.0 (2024-09-11)
+
+* No change
+
+
+## 0.48.0 (2024-08-21)
+
+### Features
+
+* add block_project_ssh_keys field to the v1alpha job API to block project level ssh keys access to Batch created VMs ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+### Bug Fixes
+
+* Batch CentOS images and HPC CentOS images are EOS ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* Batch CentOS images and HPC CentOS images are EOS ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+* clarify tasks success criteria for background runnable ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* clarify tasks success criteria for background runnable ([acba70b](https://github.com/googleapis/google-cloud-java/commit/acba70b2d64eb3d511e30dd6804477a39ae2311a))
+* Refine usage scope for fields `task_execution` and `task_state` in StatusEvent ([21cf7c6](https://github.com/googleapis/google-cloud-java/commit/21cf7c6bb982dcaede5906be0ca55de1aeaf2b79))
+
+
+
+## 0.47.0 (2024-07-31)
+
+* No change
+
+
+## 0.46.0 (2024-06-27)
+
+### Features
+
+* add a install_ops_agent field to InstancePolicyOrTemplate for Ops Agent support ([564c369](https://github.com/googleapis/google-cloud-java/commit/564c3692bc8d22f4f5acdcbfb60be0582bd08d53))
+* Documentation improvements ([4be1db5](https://github.com/googleapis/google-cloud-java/commit/4be1db5cfca842d85e167b8ed033ebcbcbd758dd))
+
+
+
+## 0.45.0 (None)
+
+* No change
+
+
+## 0.44.0 (2024-05-23)
+
+### Features
+
+* Add UpdateJob API to update the job spec, only task_count is supported now ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* Update description on allowed_locations in LocationPolicy field ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+* Refine description for field `task_execution` ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* Refine description for field `task_execution` ([bc33620](https://github.com/googleapis/google-cloud-java/commit/bc3362098020d9cac65a47fc467ce258519dfa90))
+* updated comments ([46fa9ba](https://github.com/googleapis/google-cloud-java/commit/46fa9ba2eb614ba41ab527e13b0c400fe54b58e0))
+
+
+
+## 0.43.0 (2024-05-08)
+
+### Features
+
+* Update description on allowed_locations in LocationPolicy field ([8179bb9](https://github.com/googleapis/google-cloud-java/commit/8179bb98325eee54b44f44622e0157429539ec50))
+
+
+
+## 0.42.0 (2024-04-25)
+
+### Features
+
+* Added optional flag of an existing field `limit`, `consumed`, `carryover` in ResourceAllowance
+* add a service_account field to taskGroup for service account support ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+* Added optional flag of an existing field `limit`, `consumed`, `carryover` in ResourceAllowance ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+* A comment for field `max_run_duration` in message `.google.cloud.batch.v1alpha.TaskSpec` and `.google.cloud.batch.v1.TaskSpec` is changed ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* add non-negative restriction comment for usage_resource_allowance.spec.limit.limit exposed on v1alpha ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* add non-negative restriction comment for usage_resource_allowance.spec.limit.limit exposed on v1alpha ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* state one Resource Allowance per region per project limitation on v1alpha ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* state one Resource Allowance per region per project limitation on v1alpha ([5423c11](https://github.com/googleapis/google-cloud-java/commit/5423c116cb584c4fdccc8538f1dfe6607f00341f))
+* update comments on ServiceAccount email and scopes fields ([a1e72bb](https://github.com/googleapis/google-cloud-java/commit/a1e72bb1f08d20ff2580ccd1b280c77fa49dbdeb))
+
+
+
+## 0.41.0 (2024-04-04)
+
+* No change
+
+
+## 0.39.0 (2024-03-28)
+
+### Features
+
+* onboard Resource Allowance API methods on v1alpha ([11b0068](https://github.com/googleapis/google-cloud-java/commit/11b006884eb99a9426cc06c25f1689a7708d4869))
+
+
+
+## 0.38.0 (2024-03-22)
+
+### Features
+
+* changed retry settings for UpdateJob ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* changed retry settings for UpdateJob ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
+## 0.37.0 (2024-03-06)
+
+### Features
+
+* Remove UUID specification in comment ([#10408](https://github.com/googleapis/google-cloud-java/issues/10408)) ([391f4f0](https://github.com/googleapis/google-cloud-java/commit/391f4f08da31e026ab7ab08b3118438bac4afd57))
+
+
+
+## 0.36.0 (2024-02-20)
+
+### Features
+
+* refine proto comment for run_as_non_root ([#10404](https://github.com/googleapis/google-cloud-java/issues/10404)) ([05acf2d](https://github.com/googleapis/google-cloud-java/commit/05acf2d7f7013851268174810821b0892a9cee5e))
+
+
+
+## 0.35.0 (2024-02-09)
+
+* No change
+
+
+## 0.34.0 (2024-01-23)
+
+### Features
+
+* remove deprecated field enableOslogin ([#10257](https://github.com/googleapis/google-cloud-java/issues/10257))
+* remove deprecated field enableOslogin ([#10257](https://github.com/googleapis/google-cloud-java/issues/10257)) ([2da4e3e](https://github.com/googleapis/google-cloud-java/commit/2da4e3e19fba34f129e8d0972cfab6b3a6d4d2f7))
+* Polish the field descriptions for enableImageStreaming and CloudLoggingOptions ([#10275](https://github.com/googleapis/google-cloud-java/issues/10275)) ([a95b354](https://github.com/googleapis/google-cloud-java/commit/a95b354af5fa16bf7517876949fd6d1a72aa6b5d))
+
+
+
+## 0.33.0 (2024-01-10)
+
+### Features
+
+* Add `tags` field in Job's AllocationPolicy field in v1alpha ([#10206](https://github.com/googleapis/google-cloud-java/issues/10206)) ([4bcdc24](https://github.com/googleapis/google-cloud-java/commit/4bcdc24592c9195de73d65deed36585c0e82db22))
+
+
+
+## 0.32.0 (2023-12-12)
+
+* No change
+
+
+## 0.31.0 (2023-12-04)
+
+### Features
+
+* add a CloudLoggingOption and use_generic_task_monitored_resource fields for users to opt out new batch monitored resource in cloud logging ([#10056](https://github.com/googleapis/google-cloud-java/issues/10056)) ([a9830d9](https://github.com/googleapis/google-cloud-java/commit/a9830d9373cad9d2235ed93a625ebee886ff6ff0))
+* add a CloudLoggingOption and use_generic_task_monitored_resource fields for users to opt out new batch monitored resource in cloud logging ([#10073](https://github.com/googleapis/google-cloud-java/issues/10073)) ([5c91759](https://github.com/googleapis/google-cloud-java/commit/5c91759a2067bb7bf8d6ffe26f5aeef07c9cbb0a))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
+## 0.30.0 (2023-11-06)
+
+### Features
+
+* update default max parallel tasks per job ([#10011](https://github.com/googleapis/google-cloud-java/issues/10011)) ([4edc21b](https://github.com/googleapis/google-cloud-java/commit/4edc21bc0e54f9b52eb367beac2d438197f23432))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.1 ([#10014](https://github.com/googleapis/google-cloud-java/issues/10014)) ([7b1b742](https://github.com/googleapis/google-cloud-java/commit/7b1b742dab21139398032549fb03e127b1a03841))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.19.0 ([#10018](https://github.com/googleapis/google-cloud-java/issues/10018)) ([d9b705a](https://github.com/googleapis/google-cloud-java/commit/d9b705aaed8ea4447c7a02d5c54300f8909a30b1))
+
+
+## 0.29.0 (2023-10-25)
+
+### Features
+
+* expose display_name to batch v1 API ([#9967](https://github.com/googleapis/google-cloud-java/issues/9967)) ([934c929](https://github.com/googleapis/google-cloud-java/commit/934c92940ec76f96aa71b13249a81cde58bab5ee))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.0 ([#9969](https://github.com/googleapis/google-cloud-java/issues/9969)) ([9e2be39](https://github.com/googleapis/google-cloud-java/commit/9e2be39c5b2d7764421325f65a6d0d06351fcda5))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#9984](https://github.com/googleapis/google-cloud-java/issues/9984)) ([9814dc0](https://github.com/googleapis/google-cloud-java/commit/9814dc092ad7edb7b1b21f87fa48d76a2423d731))
+
+
 ## 0.28.0 (2023-10-11)
 
 ### Features

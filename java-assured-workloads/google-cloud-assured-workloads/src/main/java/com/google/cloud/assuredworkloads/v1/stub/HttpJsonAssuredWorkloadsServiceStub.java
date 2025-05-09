@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.assuredworkloads.v1.stub;
 import static com.google.cloud.assuredworkloads.v1.AssuredWorkloadsServiceClient.ListWorkloadsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -70,7 +69,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
@@ -550,20 +548,23 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
   @Override
   public UnaryCallable<ListViolationsRequest, ListViolationsResponse> listViolationsCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: listViolationsCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: listViolationsCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public UnaryCallable<GetViolationRequest, Violation> getViolationCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: getViolationCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: getViolationCallable(). REST transport is not implemented for this method"
+            + " yet.");
   }
 
   @Override
   public UnaryCallable<AcknowledgeViolationRequest, AcknowledgeViolationResponse>
       acknowledgeViolationCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: acknowledgeViolationCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: acknowledgeViolationCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override

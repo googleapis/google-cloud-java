@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.maps.mapsplatformdatasets.v1;
 
+import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.FetchDatasetErrorsPagedResponse;
 import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.ListDatasetsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -32,6 +33,7 @@ import com.google.maps.mapsplatformdatasets.v1.stub.HttpJsonMapsPlatformDatasets
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -88,7 +90,7 @@ public class MapsPlatformDatasetsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -143,7 +145,7 @@ public class MapsPlatformDatasetsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -198,7 +200,7 @@ public class MapsPlatformDatasetsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -213,7 +215,7 @@ public class MapsPlatformDatasetsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -254,7 +256,7 @@ public class MapsPlatformDatasetsClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setVersionId("versionId-1407102957")
               .addAllUsage(new ArrayList<Usage>())
-              .setStatus(Status.newBuilder().build())
+              .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -277,7 +279,7 @@ public class MapsPlatformDatasetsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -330,7 +332,7 @@ public class MapsPlatformDatasetsClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -368,6 +370,106 @@ public class MapsPlatformDatasetsClientHttpJsonTest {
     try {
       String name = "projects/project-2277/datasets/dataset-2277";
       client.getDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchDatasetErrorsTest() throws Exception {
+    Status responsesElement = Status.newBuilder().build();
+    FetchDatasetErrorsResponse expectedResponse =
+        FetchDatasetErrorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllErrors(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DatasetName dataset = DatasetName.of("[PROJECT]", "[DATASET]");
+
+    FetchDatasetErrorsPagedResponse pagedListResponse = client.fetchDatasetErrors(dataset);
+
+    List<Status> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getErrorsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchDatasetErrorsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetName dataset = DatasetName.of("[PROJECT]", "[DATASET]");
+      client.fetchDatasetErrors(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchDatasetErrorsTest2() throws Exception {
+    Status responsesElement = Status.newBuilder().build();
+    FetchDatasetErrorsResponse expectedResponse =
+        FetchDatasetErrorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllErrors(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String dataset = "projects/project-7384/datasets/dataset-7384";
+
+    FetchDatasetErrorsPagedResponse pagedListResponse = client.fetchDatasetErrors(dataset);
+
+    List<Status> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getErrorsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchDatasetErrorsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String dataset = "projects/project-7384/datasets/dataset-7384";
+      client.fetchDatasetErrors(dataset);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

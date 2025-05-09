@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,19 +68,218 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDataScan</td>
+ *      <td><p> Creates a DataScan resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDataScanAsync(CreateDataScanRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createDataScanAsync(LocationName parent, DataScan dataScan, String dataScanId)
+ *           <li><p> createDataScanAsync(String parent, DataScan dataScan, String dataScanId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDataScanOperationCallable()
+ *           <li><p> createDataScanCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDataScan</td>
+ *      <td><p> Updates a DataScan resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDataScanAsync(UpdateDataScanRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDataScanAsync(DataScan dataScan, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDataScanOperationCallable()
+ *           <li><p> updateDataScanCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDataScan</td>
+ *      <td><p> Deletes a DataScan resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDataScanAsync(DeleteDataScanRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteDataScanAsync(DataScanName name)
+ *           <li><p> deleteDataScanAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDataScanOperationCallable()
+ *           <li><p> deleteDataScanCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDataScan</td>
+ *      <td><p> Gets a DataScan resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDataScan(GetDataScanRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDataScan(DataScanName name)
+ *           <li><p> getDataScan(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDataScanCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDataScans</td>
+ *      <td><p> Lists DataScans.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDataScans(ListDataScansRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDataScans(LocationName parent)
+ *           <li><p> listDataScans(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDataScansPagedCallable()
+ *           <li><p> listDataScansCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunDataScan</td>
+ *      <td><p> Runs an on-demand execution of a DataScan</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runDataScan(RunDataScanRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> runDataScan(DataScanName name)
+ *           <li><p> runDataScan(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runDataScanCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDataScanJob</td>
+ *      <td><p> Gets a DataScanJob resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDataScanJob(GetDataScanJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDataScanJob(DataScanJobName name)
+ *           <li><p> getDataScanJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDataScanJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDataScanJobs</td>
+ *      <td><p> Lists DataScanJobs under the given DataScan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDataScanJobs(ListDataScanJobsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDataScanJobs(DataScanName parent)
+ *           <li><p> listDataScanJobs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDataScanJobsPagedCallable()
+ *           <li><p> listDataScanJobsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateDataQualityRules</td>
+ *      <td><p> Generates recommended data quality rules based on the results of a data profiling scan.
+ * <p>  Use the recommendations to build rules for a data quality scan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateDataQualityRules(GenerateDataQualityRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> generateDataQualityRules(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateDataQualityRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -423,7 +622,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param dataScan Required. DataScan resource to be updated.
    *     <p>Only fields specified in `update_mask` are updated.
-   * @param updateMask Required. Mask of fields to update.
+   * @param updateMask Optional. Mask of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataScan, OperationMetadata> updateDataScanAsync(
@@ -600,6 +799,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   dataScanServiceClient.deleteDataScanAsync(request).get();
    * }
@@ -629,6 +829,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       dataScanServiceClient.deleteDataScanOperationCallable().futureCall(request);
@@ -658,6 +859,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *   DeleteDataScanRequest request =
    *       DeleteDataScanRequest.newBuilder()
    *           .setName(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataScanServiceClient.deleteDataScanCallable().futureCall(request);
@@ -1363,6 +1565,101 @@ public class DataScanServiceClient implements BackgroundResource {
   public final UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsResponse>
       listDataScanJobsCallable() {
     return stub.listDataScanJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   String name = "name3373707";
+   *   GenerateDataQualityRulesResponse response =
+   *       dataScanServiceClient.generateDataQualityRules(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name must be one of the following:
+   *     <ul>
+   *       <li>The name of a data scan with at least one successful, completed data profiling job
+   *       <li>The name of a successful, completed data profiling job (a data scan job where the job
+   *           type is data profiling)
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateDataQualityRulesResponse generateDataQualityRules(String name) {
+    GenerateDataQualityRulesRequest request =
+        GenerateDataQualityRulesRequest.newBuilder().setName(name).build();
+    return generateDataQualityRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   GenerateDataQualityRulesRequest request =
+   *       GenerateDataQualityRulesRequest.newBuilder().setName("name3373707").build();
+   *   GenerateDataQualityRulesResponse response =
+   *       dataScanServiceClient.generateDataQualityRules(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateDataQualityRulesResponse generateDataQualityRules(
+      GenerateDataQualityRulesRequest request) {
+    return generateDataQualityRulesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates recommended data quality rules based on the results of a data profiling scan.
+   *
+   * <p>Use the recommendations to build rules for a data quality scan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   GenerateDataQualityRulesRequest request =
+   *       GenerateDataQualityRulesRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<GenerateDataQualityRulesResponse> future =
+   *       dataScanServiceClient.generateDataQualityRulesCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateDataQualityRulesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesCallable() {
+    return stub.generateDataQualityRulesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

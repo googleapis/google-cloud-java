@@ -5,7 +5,7 @@
   "api_description": "helps you customize who receives notifications by providing your own list of contacts in many Google Cloud services.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-essential-contacts/latest/overview",
   "release_level": "stable",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-essential-contacts",

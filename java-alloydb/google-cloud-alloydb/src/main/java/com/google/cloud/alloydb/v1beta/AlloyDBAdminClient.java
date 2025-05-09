@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,19 +65,739 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the AlloyDBAdminClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListClusters</td>
+ *      <td><p> Lists Clusters in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listClusters(ListClustersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listClusters(LocationName parent)
+ *           <li><p> listClusters(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listClustersPagedCallable()
+ *           <li><p> listClustersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetCluster</td>
+ *      <td><p> Gets details of a single Cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getCluster(GetClusterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getCluster(ClusterName name)
+ *           <li><p> getCluster(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCluster</td>
+ *      <td><p> Creates a new Cluster in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createClusterAsync(CreateClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createClusterAsync(LocationName parent, Cluster cluster, String clusterId)
+ *           <li><p> createClusterAsync(String parent, Cluster cluster, String clusterId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createClusterOperationCallable()
+ *           <li><p> createClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCluster</td>
+ *      <td><p> Updates the parameters of a single Cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateClusterAsync(UpdateClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateClusterAsync(Cluster cluster, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateClusterOperationCallable()
+ *           <li><p> updateClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportCluster</td>
+ *      <td><p> Exports data from the cluster. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportClusterAsync(ExportClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> exportClusterAsync(ClusterName name, GcsDestination gcsDestination, String database, ExportClusterRequest.CsvExportOptions csvExportOptions, ExportClusterRequest.SqlExportOptions sqlExportOptions)
+ *           <li><p> exportClusterAsync(String name, GcsDestination gcsDestination, String database, ExportClusterRequest.CsvExportOptions csvExportOptions, ExportClusterRequest.SqlExportOptions sqlExportOptions)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportClusterOperationCallable()
+ *           <li><p> exportClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpgradeCluster</td>
+ *      <td><p> Upgrades a single Cluster. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterAsync(UpgradeClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterAsync(ClusterName name, DatabaseVersion version)
+ *           <li><p> upgradeClusterAsync(String name, DatabaseVersion version)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterOperationCallable()
+ *           <li><p> upgradeClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteCluster</td>
+ *      <td><p> Deletes a single Cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteClusterAsync(DeleteClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteClusterAsync(ClusterName name)
+ *           <li><p> deleteClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteClusterOperationCallable()
+ *           <li><p> deleteClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PromoteCluster</td>
+ *      <td><p> Promotes a SECONDARY cluster. This turns down replication from the PRIMARY cluster and promotes a secondary cluster into its own standalone cluster. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> promoteClusterAsync(PromoteClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> promoteClusterAsync(ClusterName name)
+ *           <li><p> promoteClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> promoteClusterOperationCallable()
+ *           <li><p> promoteClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SwitchoverCluster</td>
+ *      <td><p> Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this newly promoted cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> switchoverClusterAsync(SwitchoverClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> switchoverClusterAsync(ClusterName name)
+ *           <li><p> switchoverClusterAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> switchoverClusterOperationCallable()
+ *           <li><p> switchoverClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RestoreCluster</td>
+ *      <td><p> Creates a new Cluster in a given project and location, with a volume restored from the provided source, either a backup ID or a point-in-time and a source cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restoreClusterAsync(RestoreClusterRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restoreClusterOperationCallable()
+ *           <li><p> restoreClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSecondaryCluster</td>
+ *      <td><p> Creates a cluster of type SECONDARY in the given location using the primary cluster as the source.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSecondaryClusterAsync(CreateSecondaryClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createSecondaryClusterAsync(LocationName parent, Cluster cluster, String clusterId)
+ *           <li><p> createSecondaryClusterAsync(String parent, Cluster cluster, String clusterId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSecondaryClusterOperationCallable()
+ *           <li><p> createSecondaryClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListInstances</td>
+ *      <td><p> Lists Instances in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listInstances(ListInstancesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listInstances(ClusterName parent)
+ *           <li><p> listInstances(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listInstancesPagedCallable()
+ *           <li><p> listInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetInstance</td>
+ *      <td><p> Gets details of a single Instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getInstance(GetInstanceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getInstance(InstanceName name)
+ *           <li><p> getInstance(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateInstance</td>
+ *      <td><p> Creates a new Instance in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createInstanceAsync(CreateInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createInstanceAsync(ClusterName parent, Instance instance, String instanceId)
+ *           <li><p> createInstanceAsync(String parent, Instance instance, String instanceId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createInstanceOperationCallable()
+ *           <li><p> createInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSecondaryInstance</td>
+ *      <td><p> Creates a new SECONDARY Instance in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSecondaryInstanceAsync(CreateSecondaryInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createSecondaryInstanceAsync(ClusterName parent, Instance instance, String instanceId)
+ *           <li><p> createSecondaryInstanceAsync(String parent, Instance instance, String instanceId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSecondaryInstanceOperationCallable()
+ *           <li><p> createSecondaryInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateInstances</td>
+ *      <td><p> Creates new instances under the given project, location and cluster. There can be only one primary instance in a cluster. If the primary instance exists in the cluster as well as this request, then API will throw an error. The primary instance should exist before any read pool instance is created. If the primary instance is a part of the request payload, then the API will take care of creating instances in the correct order. This method is here to support Google-internal use cases, and is not meant for external customers to consume. Please do not start relying on it; its behavior is subject to change without notice.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateInstancesAsync(BatchCreateInstancesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateInstancesOperationCallable()
+ *           <li><p> batchCreateInstancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateInstance</td>
+ *      <td><p> Updates the parameters of a single Instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateInstanceAsync(UpdateInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateInstanceAsync(Instance instance, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateInstanceOperationCallable()
+ *           <li><p> updateInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteInstance</td>
+ *      <td><p> Deletes a single Instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteInstanceAsync(DeleteInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteInstanceAsync(InstanceName name)
+ *           <li><p> deleteInstanceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteInstanceOperationCallable()
+ *           <li><p> deleteInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FailoverInstance</td>
+ *      <td><p> Forces a Failover for a highly available instance. Failover promotes the HA standby instance as the new primary. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> failoverInstanceAsync(FailoverInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> failoverInstanceAsync(InstanceName name)
+ *           <li><p> failoverInstanceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> failoverInstanceOperationCallable()
+ *           <li><p> failoverInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> InjectFault</td>
+ *      <td><p> Injects fault in an instance. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> injectFaultAsync(InjectFaultRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> injectFaultAsync(InjectFaultRequest.FaultType faultType, InstanceName name)
+ *           <li><p> injectFaultAsync(InjectFaultRequest.FaultType faultType, String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> injectFaultOperationCallable()
+ *           <li><p> injectFaultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RestartInstance</td>
+ *      <td><p> Restart an Instance in a cluster. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restartInstanceAsync(RestartInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> restartInstanceAsync(InstanceName name)
+ *           <li><p> restartInstanceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restartInstanceOperationCallable()
+ *           <li><p> restartInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecuteSql</td>
+ *      <td><p> Executes a SQL statement in a database inside an AlloyDB instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> executeSql(ExecuteSqlRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> executeSql(InstanceName instance, String database, String user, String sqlStatement, String password)
+ *           <li><p> executeSql(String instance, String database, String user, String sqlStatement, String password)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executeSqlCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBackups</td>
+ *      <td><p> Lists Backups in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBackups(ListBackupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBackups(LocationName parent)
+ *           <li><p> listBackups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBackupsPagedCallable()
+ *           <li><p> listBackupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBackup</td>
+ *      <td><p> Gets details of a single Backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBackup(GetBackupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBackup(BackupName name)
+ *           <li><p> getBackup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateBackup</td>
+ *      <td><p> Creates a new Backup in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createBackupAsync(CreateBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createBackupAsync(LocationName parent, Backup backup, String backupId)
+ *           <li><p> createBackupAsync(String parent, Backup backup, String backupId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createBackupOperationCallable()
+ *           <li><p> createBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBackup</td>
+ *      <td><p> Updates the parameters of a single Backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBackupAsync(UpdateBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupAsync(Backup backup, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupOperationCallable()
+ *           <li><p> updateBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBackup</td>
+ *      <td><p> Deletes a single Backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBackupAsync(DeleteBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupAsync(BackupName name)
+ *           <li><p> deleteBackupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupOperationCallable()
+ *           <li><p> deleteBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSupportedDatabaseFlags</td>
+ *      <td><p> Lists SupportedDatabaseFlags for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSupportedDatabaseFlags(ListSupportedDatabaseFlagsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSupportedDatabaseFlags(LocationName parent)
+ *           <li><p> listSupportedDatabaseFlags(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSupportedDatabaseFlagsPagedCallable()
+ *           <li><p> listSupportedDatabaseFlagsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateClientCertificate</td>
+ *      <td><p> Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to change without notice, so do not rely on its behavior remaining constant. Future changes will not break AlloyDB connectors or the Auth Proxy client.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateClientCertificate(GenerateClientCertificateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> generateClientCertificate(ClusterName parent)
+ *           <li><p> generateClientCertificate(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateClientCertificateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetConnectionInfo</td>
+ *      <td><p> Get instance metadata used for a connection.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getConnectionInfo(GetConnectionInfoRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getConnectionInfo(InstanceName parent)
+ *           <li><p> getConnectionInfo(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getConnectionInfoCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListUsers</td>
+ *      <td><p> Lists Users in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listUsers(ListUsersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listUsers(ClusterName parent)
+ *           <li><p> listUsers(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listUsersPagedCallable()
+ *           <li><p> listUsersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetUser</td>
+ *      <td><p> Gets details of a single User.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getUser(GetUserRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getUser(UserName name)
+ *           <li><p> getUser(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getUserCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateUser</td>
+ *      <td><p> Creates a new User in a given project, location, and cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createUser(CreateUserRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createUser(ClusterName parent, User user, String userId)
+ *           <li><p> createUser(String parent, User user, String userId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createUserCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateUser</td>
+ *      <td><p> Updates the parameters of a single User.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateUser(UpdateUserRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateUser(User user, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateUserCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteUser</td>
+ *      <td><p> Deletes a single User.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteUser(DeleteUserRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteUser(UserName name)
+ *           <li><p> deleteUser(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteUserCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDatabases</td>
+ *      <td><p> Lists Databases in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDatabases(ListDatabasesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDatabases(ClusterName parent)
+ *           <li><p> listDatabases(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDatabasesPagedCallable()
+ *           <li><p> listDatabasesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -795,6 +1515,366 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+   *   String database = "database1789464955";
+   *   ExportClusterRequest.CsvExportOptions csvExportOptions =
+   *       ExportClusterRequest.CsvExportOptions.newBuilder().build();
+   *   ExportClusterRequest.SqlExportOptions sqlExportOptions =
+   *       ExportClusterRequest.SqlExportOptions.newBuilder().build();
+   *   ExportClusterResponse response =
+   *       alloyDBAdminClient
+   *           .exportClusterAsync(
+   *               name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param gcsDestination Required. Option to export data to cloud storage.
+   * @param database Required. Name of the database where the export command will be executed. Note
+   *     - Value provided should be the same as expected from `SELECT current_database();` and NOT
+   *     as a resource reference.
+   * @param csvExportOptions Options for exporting data in CSV format. Required field to be set for
+   *     CSV file type.
+   * @param sqlExportOptions Options for exporting data in SQL format. Required field to be set for
+   *     SQL file type.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportClusterResponse, OperationMetadata> exportClusterAsync(
+      ClusterName name,
+      GcsDestination gcsDestination,
+      String database,
+      ExportClusterRequest.CsvExportOptions csvExportOptions,
+      ExportClusterRequest.SqlExportOptions sqlExportOptions) {
+    ExportClusterRequest request =
+        ExportClusterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setGcsDestination(gcsDestination)
+            .setDatabase(database)
+            .setCsvExportOptions(csvExportOptions)
+            .setSqlExportOptions(sqlExportOptions)
+            .build();
+    return exportClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+   *   String database = "database1789464955";
+   *   ExportClusterRequest.CsvExportOptions csvExportOptions =
+   *       ExportClusterRequest.CsvExportOptions.newBuilder().build();
+   *   ExportClusterRequest.SqlExportOptions sqlExportOptions =
+   *       ExportClusterRequest.SqlExportOptions.newBuilder().build();
+   *   ExportClusterResponse response =
+   *       alloyDBAdminClient
+   *           .exportClusterAsync(
+   *               name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param gcsDestination Required. Option to export data to cloud storage.
+   * @param database Required. Name of the database where the export command will be executed. Note
+   *     - Value provided should be the same as expected from `SELECT current_database();` and NOT
+   *     as a resource reference.
+   * @param csvExportOptions Options for exporting data in CSV format. Required field to be set for
+   *     CSV file type.
+   * @param sqlExportOptions Options for exporting data in SQL format. Required field to be set for
+   *     SQL file type.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportClusterResponse, OperationMetadata> exportClusterAsync(
+      String name,
+      GcsDestination gcsDestination,
+      String database,
+      ExportClusterRequest.CsvExportOptions csvExportOptions,
+      ExportClusterRequest.SqlExportOptions sqlExportOptions) {
+    ExportClusterRequest request =
+        ExportClusterRequest.newBuilder()
+            .setName(name)
+            .setGcsDestination(gcsDestination)
+            .setDatabase(database)
+            .setCsvExportOptions(csvExportOptions)
+            .setSqlExportOptions(sqlExportOptions)
+            .build();
+    return exportClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExportClusterRequest request =
+   *       ExportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setDatabase("database1789464955")
+   *           .build();
+   *   ExportClusterResponse response = alloyDBAdminClient.exportClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportClusterResponse, OperationMetadata> exportClusterAsync(
+      ExportClusterRequest request) {
+    return exportClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExportClusterRequest request =
+   *       ExportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setDatabase("database1789464955")
+   *           .build();
+   *   OperationFuture<ExportClusterResponse, OperationMetadata> future =
+   *       alloyDBAdminClient.exportClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportClusterResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable() {
+    return stub.exportClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExportClusterRequest request =
+   *       ExportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setDatabase("database1789464955")
+   *           .build();
+   *   ApiFuture<Operation> future = alloyDBAdminClient.exportClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
+    return stub.exportClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   DatabaseVersion version = DatabaseVersion.forNumber(0);
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(name, version).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param version Required. The version the cluster is going to be upgraded to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      ClusterName name, DatabaseVersion version) {
+    UpgradeClusterRequest request =
+        UpgradeClusterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setVersion(version)
+            .build();
+    return upgradeClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   DatabaseVersion version = DatabaseVersion.forNumber(0);
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(name, version).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param version Required. The version the cluster is going to be upgraded to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      String name, DatabaseVersion version) {
+    UpgradeClusterRequest request =
+        UpgradeClusterRequest.newBuilder().setName(name).setVersion(version).build();
+    return upgradeClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      UpgradeClusterRequest request) {
+    return upgradeClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<UpgradeClusterResponse, OperationMetadata> future =
+   *       alloyDBAdminClient.upgradeClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   UpgradeClusterResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    return stub.upgradeClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future = alloyDBAdminClient.upgradeClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    return stub.upgradeClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single Cluster.
    *
    * <p>Sample code:
@@ -1097,6 +2177,166 @@ public class AlloyDBAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<PromoteClusterRequest, Operation> promoteClusterCallable() {
     return stub.promoteClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   Cluster response = alloyDBAdminClient.switchoverClusterAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     Cluster.name field
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, OperationMetadata> switchoverClusterAsync(
+      ClusterName name) {
+    SwitchoverClusterRequest request =
+        SwitchoverClusterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return switchoverClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   Cluster response = alloyDBAdminClient.switchoverClusterAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource. For the required format, see the comment on the
+   *     Cluster.name field
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, OperationMetadata> switchoverClusterAsync(String name) {
+    SwitchoverClusterRequest request = SwitchoverClusterRequest.newBuilder().setName(name).build();
+    return switchoverClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   SwitchoverClusterRequest request =
+   *       SwitchoverClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Cluster response = alloyDBAdminClient.switchoverClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Cluster, OperationMetadata> switchoverClusterAsync(
+      SwitchoverClusterRequest request) {
+    return switchoverClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   SwitchoverClusterRequest request =
+   *       SwitchoverClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Cluster, OperationMetadata> future =
+   *       alloyDBAdminClient.switchoverClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationCallable() {
+    return stub.switchoverClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Switches the roles of PRIMARY and SECONDARY clusters without any data loss. This promotes the
+   * SECONDARY cluster to PRIMARY and sets up the original PRIMARY cluster to replicate from this
+   * newly promoted cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   SwitchoverClusterRequest request =
+   *       SwitchoverClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       alloyDBAdminClient.switchoverClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SwitchoverClusterRequest, Operation> switchoverClusterCallable() {
+    return stub.switchoverClusterCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2807,6 +4047,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllNodeIds(new ArrayList<String>())
    *           .build();
    *   Instance response = alloyDBAdminClient.restartInstanceAsync(request).get();
    * }
@@ -2839,6 +4080,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllNodeIds(new ArrayList<String>())
    *           .build();
    *   OperationFuture<Instance, OperationMetadata> future =
    *       alloyDBAdminClient.restartInstanceOperationCallable().futureCall(request);
@@ -2871,6 +4113,7 @@ public class AlloyDBAdminClient implements BackgroundResource {
    *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .addAllNodeIds(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       alloyDBAdminClient.restartInstanceCallable().futureCall(request);
@@ -2881,6 +4124,167 @@ public class AlloyDBAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<RestartInstanceRequest, Operation> restartInstanceCallable() {
     return stub.restartInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement in a database inside an AlloyDB instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+   *   String database = "database1789464955";
+   *   String user = "user3599307";
+   *   String sqlStatement = "sqlStatement937767745";
+   *   String password = "password1216985755";
+   *   ExecuteSqlResponse response =
+   *       alloyDBAdminClient.executeSql(instance, database, user, sqlStatement, password);
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The instance where the SQL will be executed. For the required format,
+   *     see the comment on the Instance.name field.
+   * @param database Required. Name of the database where the query will be executed. Note - Value
+   *     provided should be the same as expected from `SELECT current_database();` and NOT as a
+   *     resource reference.
+   * @param user Required. Database user to be used for executing the SQL. Note - Value provided
+   *     should be the same as expected from `SELECT current_user;` and NOT as a resource reference.
+   * @param sqlStatement Required. SQL statement to execute on database. Any valid statement is
+   *     permitted, including DDL, DML, DQL statements.
+   * @param password Optional. The database native user’s password.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(
+      InstanceName instance, String database, String user, String sqlStatement, String password) {
+    ExecuteSqlRequest request =
+        ExecuteSqlRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setDatabase(database)
+            .setUser(user)
+            .setSqlStatement(sqlStatement)
+            .setPassword(password)
+            .build();
+    return executeSql(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement in a database inside an AlloyDB instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String instance =
+   *       InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString();
+   *   String database = "database1789464955";
+   *   String user = "user3599307";
+   *   String sqlStatement = "sqlStatement937767745";
+   *   String password = "password1216985755";
+   *   ExecuteSqlResponse response =
+   *       alloyDBAdminClient.executeSql(instance, database, user, sqlStatement, password);
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The instance where the SQL will be executed. For the required format,
+   *     see the comment on the Instance.name field.
+   * @param database Required. Name of the database where the query will be executed. Note - Value
+   *     provided should be the same as expected from `SELECT current_database();` and NOT as a
+   *     resource reference.
+   * @param user Required. Database user to be used for executing the SQL. Note - Value provided
+   *     should be the same as expected from `SELECT current_user;` and NOT as a resource reference.
+   * @param sqlStatement Required. SQL statement to execute on database. Any valid statement is
+   *     permitted, including DDL, DML, DQL statements.
+   * @param password Optional. The database native user’s password.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(
+      String instance, String database, String user, String sqlStatement, String password) {
+    ExecuteSqlRequest request =
+        ExecuteSqlRequest.newBuilder()
+            .setInstance(instance)
+            .setDatabase(database)
+            .setUser(user)
+            .setSqlStatement(sqlStatement)
+            .setPassword(password)
+            .build();
+    return executeSql(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement in a database inside an AlloyDB instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExecuteSqlRequest request =
+   *       ExecuteSqlRequest.newBuilder()
+   *           .setInstance(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setDatabase("database1789464955")
+   *           .setUser("user3599307")
+   *           .setSqlStatement("sqlStatement937767745")
+   *           .build();
+   *   ExecuteSqlResponse response = alloyDBAdminClient.executeSql(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteSqlResponse executeSql(ExecuteSqlRequest request) {
+    return executeSqlCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a SQL statement in a database inside an AlloyDB instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExecuteSqlRequest request =
+   *       ExecuteSqlRequest.newBuilder()
+   *           .setInstance(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setDatabase("database1789464955")
+   *           .setUser("user3599307")
+   *           .setSqlStatement("sqlStatement937767745")
+   *           .build();
+   *   ApiFuture<ExecuteSqlResponse> future =
+   *       alloyDBAdminClient.executeSqlCallable().futureCall(request);
+   *   // Do something.
+   *   ExecuteSqlResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    return stub.executeSqlCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4659,6 +6063,171 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists Databases in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   for (Database element : alloyDBAdminClient.listDatabases(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListDatabasesRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabasesPagedResponse listDatabases(ClusterName parent) {
+    ListDatabasesRequest request =
+        ListDatabasesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDatabases(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Databases in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   for (Database element : alloyDBAdminClient.listDatabases(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListDatabasesRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabasesPagedResponse listDatabases(String parent) {
+    ListDatabasesRequest request = ListDatabasesRequest.newBuilder().setParent(parent).build();
+    return listDatabases(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Databases in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ListDatabasesRequest request =
+   *       ListDatabasesRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Database element : alloyDBAdminClient.listDatabases(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabasesPagedResponse listDatabases(ListDatabasesRequest request) {
+    return listDatabasesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Databases in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ListDatabasesRequest request =
+   *       ListDatabasesRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Database> future =
+   *       alloyDBAdminClient.listDatabasesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Database element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable() {
+    return stub.listDatabasesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Databases in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ListDatabasesRequest request =
+   *       ListDatabasesRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListDatabasesResponse response = alloyDBAdminClient.listDatabasesCallable().call(request);
+   *     for (Database element : response.getDatabasesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
+    return stub.listDatabasesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -5224,6 +6793,82 @@ public class AlloyDBAdminClient implements BackgroundResource {
     protected ListUsersFixedSizeCollection createCollection(
         List<ListUsersPage> pages, int collectionSize) {
       return new ListUsersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDatabasesPagedResponse
+      extends AbstractPagedListResponse<
+          ListDatabasesRequest,
+          ListDatabasesResponse,
+          Database,
+          ListDatabasesPage,
+          ListDatabasesFixedSizeCollection> {
+
+    public static ApiFuture<ListDatabasesPagedResponse> createAsync(
+        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        ApiFuture<ListDatabasesResponse> futureResponse) {
+      ApiFuture<ListDatabasesPage> futurePage =
+          ListDatabasesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDatabasesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDatabasesPagedResponse(ListDatabasesPage page) {
+      super(page, ListDatabasesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDatabasesPage
+      extends AbstractPage<
+          ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage> {
+
+    private ListDatabasesPage(
+        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        ListDatabasesResponse response) {
+      super(context, response);
+    }
+
+    private static ListDatabasesPage createEmptyPage() {
+      return new ListDatabasesPage(null, null);
+    }
+
+    @Override
+    protected ListDatabasesPage createPage(
+        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        ListDatabasesResponse response) {
+      return new ListDatabasesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDatabasesPage> createPageAsync(
+        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        ApiFuture<ListDatabasesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDatabasesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDatabasesRequest,
+          ListDatabasesResponse,
+          Database,
+          ListDatabasesPage,
+          ListDatabasesFixedSizeCollection> {
+
+    private ListDatabasesFixedSizeCollection(List<ListDatabasesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDatabasesFixedSizeCollection createEmptyCollection() {
+      return new ListDatabasesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDatabasesFixedSizeCollection createCollection(
+        List<ListDatabasesPage> pages, int collectionSize) {
+      return new ListDatabasesFixedSizeCollection(pages, collectionSize);
     }
   }
 

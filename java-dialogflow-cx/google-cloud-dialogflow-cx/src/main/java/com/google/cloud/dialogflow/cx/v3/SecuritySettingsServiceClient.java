@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,19 +64,138 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSecuritySettings</td>
+ *      <td><p> Create security settings in the specified location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSecuritySettings(CreateSecuritySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createSecuritySettings(LocationName parent, SecuritySettings securitySettings)
+ *           <li><p> createSecuritySettings(String parent, SecuritySettings securitySettings)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSecuritySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSecuritySettings</td>
+ *      <td><p> Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings]. The returned settings may be stale by up to 1 minute.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSecuritySettings(GetSecuritySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSecuritySettings(SecuritySettingsName name)
+ *           <li><p> getSecuritySettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSecuritySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSecuritySettings</td>
+ *      <td><p> Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSecuritySettings(UpdateSecuritySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSecuritySettings(SecuritySettings securitySettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSecuritySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSecuritySettings</td>
+ *      <td><p> Returns the list of all security settings in the specified location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSecuritySettings(ListSecuritySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSecuritySettings(LocationName parent)
+ *           <li><p> listSecuritySettings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSecuritySettingsPagedCallable()
+ *           <li><p> listSecuritySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSecuritySettings</td>
+ *      <td><p> Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSecuritySettings(DeleteSecuritySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSecuritySettings(SecuritySettingsName name)
+ *           <li><p> deleteSecuritySettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSecuritySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -208,7 +327,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The location to create an
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @param securitySettings Required. The security settings to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -245,7 +364,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *
    * @param parent Required. The location to create an
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @param securitySettings Required. The security settings to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -341,8 +460,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the settings. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+   * @param name Required. Resource name of the settings. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecuritySettings getSecuritySettings(SecuritySettingsName name) {
@@ -374,8 +493,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name of the settings. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;security settings ID&gt;`.
+   * @param name Required. Resource name of the settings. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecuritySettings getSecuritySettings(String name) {
@@ -570,7 +689,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location to list all security settings for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecuritySettingsPagedResponse listSecuritySettings(LocationName parent) {
@@ -604,7 +723,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The location to list all security settings for. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecuritySettingsPagedResponse listSecuritySettings(String parent) {
@@ -745,8 +864,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to delete. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
-   *     Settings ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecuritySettings(SecuritySettingsName name) {
@@ -779,8 +897,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] to delete. Format:
-   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
-   *     Settings ID&gt;`.
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecuritySettings(String name) {

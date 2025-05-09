@@ -13,8 +13,23 @@
             "CreateCluster": {
               "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
             },
+            "CreateExternalAccessRule": {
+              "methods": ["createExternalAccessRuleAsync", "createExternalAccessRuleAsync", "createExternalAccessRuleAsync", "createExternalAccessRuleOperationCallable", "createExternalAccessRuleCallable"]
+            },
+            "CreateExternalAddress": {
+              "methods": ["createExternalAddressAsync", "createExternalAddressAsync", "createExternalAddressAsync", "createExternalAddressOperationCallable", "createExternalAddressCallable"]
+            },
             "CreateHcxActivationKey": {
               "methods": ["createHcxActivationKeyAsync", "createHcxActivationKeyAsync", "createHcxActivationKeyAsync", "createHcxActivationKeyOperationCallable", "createHcxActivationKeyCallable"]
+            },
+            "CreateLoggingServer": {
+              "methods": ["createLoggingServerAsync", "createLoggingServerAsync", "createLoggingServerAsync", "createLoggingServerOperationCallable", "createLoggingServerCallable"]
+            },
+            "CreateManagementDnsZoneBinding": {
+              "methods": ["createManagementDnsZoneBindingAsync", "createManagementDnsZoneBindingAsync", "createManagementDnsZoneBindingAsync", "createManagementDnsZoneBindingOperationCallable", "createManagementDnsZoneBindingCallable"]
+            },
+            "CreateNetworkPeering": {
+              "methods": ["createNetworkPeeringAsync", "createNetworkPeeringAsync", "createNetworkPeeringAsync", "createNetworkPeeringOperationCallable", "createNetworkPeeringCallable"]
             },
             "CreateNetworkPolicy": {
               "methods": ["createNetworkPolicyAsync", "createNetworkPolicyAsync", "createNetworkPolicyAsync", "createNetworkPolicyOperationCallable", "createNetworkPolicyCallable"]
@@ -31,6 +46,21 @@
             "DeleteCluster": {
               "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
             },
+            "DeleteExternalAccessRule": {
+              "methods": ["deleteExternalAccessRuleAsync", "deleteExternalAccessRuleAsync", "deleteExternalAccessRuleAsync", "deleteExternalAccessRuleOperationCallable", "deleteExternalAccessRuleCallable"]
+            },
+            "DeleteExternalAddress": {
+              "methods": ["deleteExternalAddressAsync", "deleteExternalAddressAsync", "deleteExternalAddressAsync", "deleteExternalAddressOperationCallable", "deleteExternalAddressCallable"]
+            },
+            "DeleteLoggingServer": {
+              "methods": ["deleteLoggingServerAsync", "deleteLoggingServerAsync", "deleteLoggingServerAsync", "deleteLoggingServerOperationCallable", "deleteLoggingServerCallable"]
+            },
+            "DeleteManagementDnsZoneBinding": {
+              "methods": ["deleteManagementDnsZoneBindingAsync", "deleteManagementDnsZoneBindingAsync", "deleteManagementDnsZoneBindingAsync", "deleteManagementDnsZoneBindingOperationCallable", "deleteManagementDnsZoneBindingCallable"]
+            },
+            "DeleteNetworkPeering": {
+              "methods": ["deleteNetworkPeeringAsync", "deleteNetworkPeeringAsync", "deleteNetworkPeeringAsync", "deleteNetworkPeeringOperationCallable", "deleteNetworkPeeringCallable"]
+            },
             "DeleteNetworkPolicy": {
               "methods": ["deleteNetworkPolicyAsync", "deleteNetworkPolicyAsync", "deleteNetworkPolicyAsync", "deleteNetworkPolicyOperationCallable", "deleteNetworkPolicyCallable"]
             },
@@ -43,8 +73,23 @@
             "DeleteVmwareEngineNetwork": {
               "methods": ["deleteVmwareEngineNetworkAsync", "deleteVmwareEngineNetworkAsync", "deleteVmwareEngineNetworkAsync", "deleteVmwareEngineNetworkOperationCallable", "deleteVmwareEngineNetworkCallable"]
             },
+            "FetchNetworkPolicyExternalAddresses": {
+              "methods": ["fetchNetworkPolicyExternalAddresses", "fetchNetworkPolicyExternalAddresses", "fetchNetworkPolicyExternalAddresses", "fetchNetworkPolicyExternalAddressesPagedCallable", "fetchNetworkPolicyExternalAddressesCallable"]
+            },
             "GetCluster": {
               "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetDnsBindPermission": {
+              "methods": ["getDnsBindPermission", "getDnsBindPermission", "getDnsBindPermission", "getDnsBindPermissionCallable"]
+            },
+            "GetDnsForwarding": {
+              "methods": ["getDnsForwarding", "getDnsForwarding", "getDnsForwarding", "getDnsForwardingCallable"]
+            },
+            "GetExternalAccessRule": {
+              "methods": ["getExternalAccessRule", "getExternalAccessRule", "getExternalAccessRule", "getExternalAccessRuleCallable"]
+            },
+            "GetExternalAddress": {
+              "methods": ["getExternalAddress", "getExternalAddress", "getExternalAddress", "getExternalAddressCallable"]
             },
             "GetHcxActivationKey": {
               "methods": ["getHcxActivationKey", "getHcxActivationKey", "getHcxActivationKey", "getHcxActivationKeyCallable"]
@@ -55,8 +100,20 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetLoggingServer": {
+              "methods": ["getLoggingServer", "getLoggingServer", "getLoggingServer", "getLoggingServerCallable"]
+            },
+            "GetManagementDnsZoneBinding": {
+              "methods": ["getManagementDnsZoneBinding", "getManagementDnsZoneBinding", "getManagementDnsZoneBinding", "getManagementDnsZoneBindingCallable"]
+            },
+            "GetNetworkPeering": {
+              "methods": ["getNetworkPeering", "getNetworkPeering", "getNetworkPeering", "getNetworkPeeringCallable"]
+            },
             "GetNetworkPolicy": {
               "methods": ["getNetworkPolicy", "getNetworkPolicy", "getNetworkPolicy", "getNetworkPolicyCallable"]
+            },
+            "GetNode": {
+              "methods": ["getNode", "getNode", "getNode", "getNodeCallable"]
             },
             "GetNodeType": {
               "methods": ["getNodeType", "getNodeType", "getNodeType", "getNodeTypeCallable"]
@@ -73,8 +130,17 @@
             "GetVmwareEngineNetwork": {
               "methods": ["getVmwareEngineNetwork", "getVmwareEngineNetwork", "getVmwareEngineNetwork", "getVmwareEngineNetworkCallable"]
             },
+            "GrantDnsBindPermission": {
+              "methods": ["grantDnsBindPermissionAsync", "grantDnsBindPermissionAsync", "grantDnsBindPermissionAsync", "grantDnsBindPermissionOperationCallable", "grantDnsBindPermissionCallable"]
+            },
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "ListExternalAccessRules": {
+              "methods": ["listExternalAccessRules", "listExternalAccessRules", "listExternalAccessRules", "listExternalAccessRulesPagedCallable", "listExternalAccessRulesCallable"]
+            },
+            "ListExternalAddresses": {
+              "methods": ["listExternalAddresses", "listExternalAddresses", "listExternalAddresses", "listExternalAddressesPagedCallable", "listExternalAddressesCallable"]
             },
             "ListHcxActivationKeys": {
               "methods": ["listHcxActivationKeys", "listHcxActivationKeys", "listHcxActivationKeys", "listHcxActivationKeysPagedCallable", "listHcxActivationKeysCallable"]
@@ -82,11 +148,26 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListLoggingServers": {
+              "methods": ["listLoggingServers", "listLoggingServers", "listLoggingServers", "listLoggingServersPagedCallable", "listLoggingServersCallable"]
+            },
+            "ListManagementDnsZoneBindings": {
+              "methods": ["listManagementDnsZoneBindings", "listManagementDnsZoneBindings", "listManagementDnsZoneBindings", "listManagementDnsZoneBindingsPagedCallable", "listManagementDnsZoneBindingsCallable"]
+            },
+            "ListNetworkPeerings": {
+              "methods": ["listNetworkPeerings", "listNetworkPeerings", "listNetworkPeerings", "listNetworkPeeringsPagedCallable", "listNetworkPeeringsCallable"]
+            },
             "ListNetworkPolicies": {
               "methods": ["listNetworkPolicies", "listNetworkPolicies", "listNetworkPolicies", "listNetworkPoliciesPagedCallable", "listNetworkPoliciesCallable"]
             },
             "ListNodeTypes": {
               "methods": ["listNodeTypes", "listNodeTypes", "listNodeTypes", "listNodeTypesPagedCallable", "listNodeTypesCallable"]
+            },
+            "ListNodes": {
+              "methods": ["listNodes", "listNodes", "listNodes", "listNodesPagedCallable", "listNodesCallable"]
+            },
+            "ListPeeringRoutes": {
+              "methods": ["listPeeringRoutes", "listPeeringRoutes", "listPeeringRoutes", "listPeeringRoutesPagedCallable", "listPeeringRoutesCallable"]
             },
             "ListPrivateClouds": {
               "methods": ["listPrivateClouds", "listPrivateClouds", "listPrivateClouds", "listPrivateCloudsPagedCallable", "listPrivateCloudsCallable"]
@@ -103,11 +184,17 @@
             "ListVmwareEngineNetworks": {
               "methods": ["listVmwareEngineNetworks", "listVmwareEngineNetworks", "listVmwareEngineNetworks", "listVmwareEngineNetworksPagedCallable", "listVmwareEngineNetworksCallable"]
             },
+            "RepairManagementDnsZoneBinding": {
+              "methods": ["repairManagementDnsZoneBindingAsync", "repairManagementDnsZoneBindingAsync", "repairManagementDnsZoneBindingAsync", "repairManagementDnsZoneBindingOperationCallable", "repairManagementDnsZoneBindingCallable"]
+            },
             "ResetNsxCredentials": {
               "methods": ["resetNsxCredentialsAsync", "resetNsxCredentialsAsync", "resetNsxCredentialsAsync", "resetNsxCredentialsOperationCallable", "resetNsxCredentialsCallable"]
             },
             "ResetVcenterCredentials": {
               "methods": ["resetVcenterCredentialsAsync", "resetVcenterCredentialsAsync", "resetVcenterCredentialsAsync", "resetVcenterCredentialsOperationCallable", "resetVcenterCredentialsCallable"]
+            },
+            "RevokeDnsBindPermission": {
+              "methods": ["revokeDnsBindPermissionAsync", "revokeDnsBindPermissionAsync", "revokeDnsBindPermissionAsync", "revokeDnsBindPermissionOperationCallable", "revokeDnsBindPermissionCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
@@ -126,6 +213,24 @@
             },
             "UpdateCluster": {
               "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            },
+            "UpdateDnsForwarding": {
+              "methods": ["updateDnsForwardingAsync", "updateDnsForwardingAsync", "updateDnsForwardingOperationCallable", "updateDnsForwardingCallable"]
+            },
+            "UpdateExternalAccessRule": {
+              "methods": ["updateExternalAccessRuleAsync", "updateExternalAccessRuleAsync", "updateExternalAccessRuleOperationCallable", "updateExternalAccessRuleCallable"]
+            },
+            "UpdateExternalAddress": {
+              "methods": ["updateExternalAddressAsync", "updateExternalAddressAsync", "updateExternalAddressOperationCallable", "updateExternalAddressCallable"]
+            },
+            "UpdateLoggingServer": {
+              "methods": ["updateLoggingServerAsync", "updateLoggingServerAsync", "updateLoggingServerOperationCallable", "updateLoggingServerCallable"]
+            },
+            "UpdateManagementDnsZoneBinding": {
+              "methods": ["updateManagementDnsZoneBindingAsync", "updateManagementDnsZoneBindingAsync", "updateManagementDnsZoneBindingOperationCallable", "updateManagementDnsZoneBindingCallable"]
+            },
+            "UpdateNetworkPeering": {
+              "methods": ["updateNetworkPeeringAsync", "updateNetworkPeeringAsync", "updateNetworkPeeringOperationCallable", "updateNetworkPeeringCallable"]
             },
             "UpdateNetworkPolicy": {
               "methods": ["updateNetworkPolicyAsync", "updateNetworkPolicyAsync", "updateNetworkPolicyOperationCallable", "updateNetworkPolicyCallable"]

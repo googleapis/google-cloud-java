@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -156,7 +156,7 @@ message BatchPredictionJob {
     // [excluded_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.excluded_fields]
     // must be empty.
     //
-    // The input must be JSONL with objects at each line, CSV, BigQuery
+    // The input must be JSONL with objects at each line, BigQuery
     // or TfRecord.
     repeated string included_fields = 3;
 
@@ -171,7 +171,7 @@ message BatchPredictionJob {
     // [included_fields][google.cloud.aiplatform.v1beta1.BatchPredictionJob.InstanceConfig.included_fields]
     // must be empty.
     //
-    // The input must be JSONL with objects at each line, CSV, BigQuery
+    // The input must be JSONL with objects at each line, BigQuery
     // or TfRecord.
     repeated string excluded_fields = 4;
   }
@@ -474,4 +474,10 @@ message BatchPredictionJob {
   //
   // User can disable container logging by setting this flag to true.
   bool disable_container_logging = 34;
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 36 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 37 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

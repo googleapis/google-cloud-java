@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.tpu.v2;
 import static com.google.cloud.tpu.v2.TpuClient.ListAcceleratorTypesPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListNodesPagedResponse;
+import static com.google.cloud.tpu.v2.TpuClient.ListQueuedResourcesPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -199,6 +200,7 @@ public class TpuClientHttpJsonTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -263,6 +265,7 @@ public class TpuClientHttpJsonTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -327,6 +330,7 @@ public class TpuClientHttpJsonTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -400,6 +404,7 @@ public class TpuClientHttpJsonTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -563,6 +568,7 @@ public class TpuClientHttpJsonTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -638,6 +644,7 @@ public class TpuClientHttpJsonTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -713,6 +720,7 @@ public class TpuClientHttpJsonTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -745,6 +753,7 @@ public class TpuClientHttpJsonTest {
             .setHealthDescription("healthDescription1231837184")
             .setRuntimeVersion("runtimeVersion602071520")
             .setNetworkConfig(NetworkConfig.newBuilder().build())
+            .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
             .setCidrBlock("cidrBlock1646183801")
             .setServiceAccount(ServiceAccount.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -797,6 +806,7 @@ public class TpuClientHttpJsonTest {
               .setHealthDescription("healthDescription1231837184")
               .setRuntimeVersion("runtimeVersion602071520")
               .setNetworkConfig(NetworkConfig.newBuilder().build())
+              .addAllNetworkConfigs(new ArrayList<NetworkConfig>())
               .setCidrBlock("cidrBlock1646183801")
               .setServiceAccount(ServiceAccount.newBuilder().build())
               .setCreateTime(Timestamp.newBuilder().build())
@@ -815,6 +825,529 @@ public class TpuClientHttpJsonTest {
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateNodeAsync(node, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listQueuedResourcesTest() throws Exception {
+    QueuedResource responsesElement = QueuedResource.newBuilder().build();
+    ListQueuedResourcesResponse expectedResponse =
+        ListQueuedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQueuedResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListQueuedResourcesPagedResponse pagedListResponse = client.listQueuedResources(parent);
+
+    List<QueuedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQueuedResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQueuedResourcesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listQueuedResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQueuedResourcesTest2() throws Exception {
+    QueuedResource responsesElement = QueuedResource.newBuilder().build();
+    ListQueuedResourcesResponse expectedResponse =
+        ListQueuedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQueuedResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListQueuedResourcesPagedResponse pagedListResponse = client.listQueuedResources(parent);
+
+    List<QueuedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQueuedResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQueuedResourcesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listQueuedResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQueuedResourceTest() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueuedResourceName name = QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+
+    QueuedResource actualResponse = client.getQueuedResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQueuedResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueuedResourceName name =
+          QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+      client.getQueuedResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQueuedResourceTest2() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1976/locations/location-1976/queuedResources/queuedResource-1976";
+
+    QueuedResource actualResponse = client.getQueuedResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQueuedResourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1976/locations/location-1976/queuedResources/queuedResource-1976";
+      client.getQueuedResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQueuedResourceTest() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    QueuedResource queuedResource = QueuedResource.newBuilder().build();
+    String queuedResourceId = "queuedResourceId437646236";
+
+    QueuedResource actualResponse =
+        client.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQueuedResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      QueuedResource queuedResource = QueuedResource.newBuilder().build();
+      String queuedResourceId = "queuedResourceId437646236";
+      client.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createQueuedResourceTest2() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    QueuedResource queuedResource = QueuedResource.newBuilder().build();
+    String queuedResourceId = "queuedResourceId437646236";
+
+    QueuedResource actualResponse =
+        client.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQueuedResourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      QueuedResource queuedResource = QueuedResource.newBuilder().build();
+      String queuedResourceId = "queuedResourceId437646236";
+      client.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteQueuedResourceTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    QueuedResourceName name = QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+
+    client.deleteQueuedResourceAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQueuedResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueuedResourceName name =
+          QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+      client.deleteQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteQueuedResourceTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1976/locations/location-1976/queuedResources/queuedResource-1976";
+
+    client.deleteQueuedResourceAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQueuedResourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1976/locations/location-1976/queuedResources/queuedResource-1976";
+      client.deleteQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void resetQueuedResourceTest() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("resetQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    QueuedResourceName name = QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+
+    QueuedResource actualResponse = client.resetQueuedResourceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resetQueuedResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueuedResourceName name =
+          QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+      client.resetQueuedResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void resetQueuedResourceTest2() throws Exception {
+    QueuedResource expectedResponse =
+        QueuedResource.newBuilder()
+            .setName(
+                QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setQueueingPolicy(QueuedResource.QueueingPolicy.newBuilder().build())
+            .setState(QueuedResourceState.newBuilder().build())
+            .setReservationName("reservationName-337941385")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("resetQueuedResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1976/locations/location-1976/queuedResources/queuedResource-1976";
+
+    QueuedResource actualResponse = client.resetQueuedResourceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resetQueuedResourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1976/locations/location-1976/queuedResources/queuedResource-1976";
+      client.resetQueuedResourceAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

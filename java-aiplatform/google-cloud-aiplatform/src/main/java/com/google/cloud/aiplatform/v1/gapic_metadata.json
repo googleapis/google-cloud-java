@@ -78,6 +78,51 @@
             },
             "UpdateDataset": {
               "methods": ["updateDataset", "updateDataset", "updateDatasetCallable"]
+            },
+            "UpdateDatasetVersion": {
+              "methods": ["updateDatasetVersion", "updateDatasetVersion", "updateDatasetVersionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DeploymentResourcePoolService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DeploymentResourcePoolServiceClient",
+          "rpcs": {
+            "CreateDeploymentResourcePool": {
+              "methods": ["createDeploymentResourcePoolAsync", "createDeploymentResourcePoolAsync", "createDeploymentResourcePoolAsync", "createDeploymentResourcePoolOperationCallable", "createDeploymentResourcePoolCallable"]
+            },
+            "DeleteDeploymentResourcePool": {
+              "methods": ["deleteDeploymentResourcePoolAsync", "deleteDeploymentResourcePoolAsync", "deleteDeploymentResourcePoolAsync", "deleteDeploymentResourcePoolOperationCallable", "deleteDeploymentResourcePoolCallable"]
+            },
+            "GetDeploymentResourcePool": {
+              "methods": ["getDeploymentResourcePool", "getDeploymentResourcePool", "getDeploymentResourcePool", "getDeploymentResourcePoolCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDeploymentResourcePools": {
+              "methods": ["listDeploymentResourcePools", "listDeploymentResourcePools", "listDeploymentResourcePools", "listDeploymentResourcePoolsPagedCallable", "listDeploymentResourcePoolsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "QueryDeployedModels": {
+              "methods": ["queryDeployedModels", "queryDeployedModels", "queryDeployedModelsPagedCallable", "queryDeployedModelsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateDeploymentResourcePool": {
+              "methods": ["updateDeploymentResourcePoolAsync", "updateDeploymentResourcePoolAsync", "updateDeploymentResourcePoolOperationCallable", "updateDeploymentResourcePoolCallable"]
             }
           }
         }
@@ -126,6 +171,186 @@
             },
             "UpdateEndpoint": {
               "methods": ["updateEndpoint", "updateEndpoint", "updateEndpointCallable"]
+            },
+            "UpdateEndpointLongRunning": {
+              "methods": ["updateEndpointLongRunningAsync", "updateEndpointLongRunningAsync", "updateEndpointLongRunningOperationCallable", "updateEndpointLongRunningCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EvaluationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EvaluationServiceClient",
+          "rpcs": {
+            "EvaluateInstances": {
+              "methods": ["evaluateInstances", "evaluateInstancesCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "FeatureOnlineStoreAdminService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeatureOnlineStoreAdminServiceClient",
+          "rpcs": {
+            "CreateFeatureOnlineStore": {
+              "methods": ["createFeatureOnlineStoreAsync", "createFeatureOnlineStoreAsync", "createFeatureOnlineStoreAsync", "createFeatureOnlineStoreOperationCallable", "createFeatureOnlineStoreCallable"]
+            },
+            "CreateFeatureView": {
+              "methods": ["createFeatureViewAsync", "createFeatureViewAsync", "createFeatureViewAsync", "createFeatureViewOperationCallable", "createFeatureViewCallable"]
+            },
+            "DeleteFeatureOnlineStore": {
+              "methods": ["deleteFeatureOnlineStoreAsync", "deleteFeatureOnlineStoreAsync", "deleteFeatureOnlineStoreAsync", "deleteFeatureOnlineStoreOperationCallable", "deleteFeatureOnlineStoreCallable"]
+            },
+            "DeleteFeatureView": {
+              "methods": ["deleteFeatureViewAsync", "deleteFeatureViewAsync", "deleteFeatureViewAsync", "deleteFeatureViewOperationCallable", "deleteFeatureViewCallable"]
+            },
+            "GetFeatureOnlineStore": {
+              "methods": ["getFeatureOnlineStore", "getFeatureOnlineStore", "getFeatureOnlineStore", "getFeatureOnlineStoreCallable"]
+            },
+            "GetFeatureView": {
+              "methods": ["getFeatureView", "getFeatureView", "getFeatureView", "getFeatureViewCallable"]
+            },
+            "GetFeatureViewSync": {
+              "methods": ["getFeatureViewSync", "getFeatureViewSync", "getFeatureViewSync", "getFeatureViewSyncCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListFeatureOnlineStores": {
+              "methods": ["listFeatureOnlineStores", "listFeatureOnlineStores", "listFeatureOnlineStores", "listFeatureOnlineStoresPagedCallable", "listFeatureOnlineStoresCallable"]
+            },
+            "ListFeatureViewSyncs": {
+              "methods": ["listFeatureViewSyncs", "listFeatureViewSyncs", "listFeatureViewSyncs", "listFeatureViewSyncsPagedCallable", "listFeatureViewSyncsCallable"]
+            },
+            "ListFeatureViews": {
+              "methods": ["listFeatureViews", "listFeatureViews", "listFeatureViews", "listFeatureViewsPagedCallable", "listFeatureViewsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SyncFeatureView": {
+              "methods": ["syncFeatureView", "syncFeatureView", "syncFeatureView", "syncFeatureViewCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateFeatureOnlineStore": {
+              "methods": ["updateFeatureOnlineStoreAsync", "updateFeatureOnlineStoreAsync", "updateFeatureOnlineStoreOperationCallable", "updateFeatureOnlineStoreCallable"]
+            },
+            "UpdateFeatureView": {
+              "methods": ["updateFeatureViewAsync", "updateFeatureViewAsync", "updateFeatureViewOperationCallable", "updateFeatureViewCallable"]
+            }
+          }
+        }
+      }
+    },
+    "FeatureOnlineStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeatureOnlineStoreServiceClient",
+          "rpcs": {
+            "FetchFeatureValues": {
+              "methods": ["fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValuesCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SearchNearestEntities": {
+              "methods": ["searchNearestEntities", "searchNearestEntitiesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "FeatureRegistryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeatureRegistryServiceClient",
+          "rpcs": {
+            "BatchCreateFeatures": {
+              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
+            },
+            "CreateFeature": {
+              "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
+            },
+            "CreateFeatureGroup": {
+              "methods": ["createFeatureGroupAsync", "createFeatureGroupAsync", "createFeatureGroupAsync", "createFeatureGroupOperationCallable", "createFeatureGroupCallable"]
+            },
+            "DeleteFeature": {
+              "methods": ["deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureAsync", "deleteFeatureOperationCallable", "deleteFeatureCallable"]
+            },
+            "DeleteFeatureGroup": {
+              "methods": ["deleteFeatureGroupAsync", "deleteFeatureGroupAsync", "deleteFeatureGroupAsync", "deleteFeatureGroupOperationCallable", "deleteFeatureGroupCallable"]
+            },
+            "GetFeature": {
+              "methods": ["getFeature", "getFeature", "getFeature", "getFeatureCallable"]
+            },
+            "GetFeatureGroup": {
+              "methods": ["getFeatureGroup", "getFeatureGroup", "getFeatureGroup", "getFeatureGroupCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListFeatureGroups": {
+              "methods": ["listFeatureGroups", "listFeatureGroups", "listFeatureGroups", "listFeatureGroupsPagedCallable", "listFeatureGroupsCallable"]
+            },
+            "ListFeatures": {
+              "methods": ["listFeatures", "listFeatures", "listFeatures", "listFeatures", "listFeaturesPagedCallable", "listFeaturesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateFeature": {
+              "methods": ["updateFeatureAsync", "updateFeatureAsync", "updateFeatureOperationCallable", "updateFeatureCallable"]
+            },
+            "UpdateFeatureGroup": {
+              "methods": ["updateFeatureGroupAsync", "updateFeatureGroupAsync", "updateFeatureGroupOperationCallable", "updateFeatureGroupCallable"]
             }
           }
         }
@@ -170,7 +395,7 @@
           "libraryClient": "FeaturestoreServiceClient",
           "rpcs": {
             "BatchCreateFeatures": {
-              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
+              "methods": ["batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesAsync", "batchCreateFeaturesOperationCallable", "batchCreateFeaturesCallable"]
             },
             "BatchReadFeatureValues": {
               "methods": ["batchReadFeatureValuesAsync", "batchReadFeatureValuesAsync", "batchReadFeatureValuesAsync", "batchReadFeatureValuesOperationCallable", "batchReadFeatureValuesCallable"]
@@ -179,7 +404,7 @@
               "methods": ["createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeAsync", "createEntityTypeOperationCallable", "createEntityTypeCallable"]
             },
             "CreateFeature": {
-              "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
+              "methods": ["createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureAsync", "createFeatureOperationCallable", "createFeatureCallable"]
             },
             "CreateFeaturestore": {
               "methods": ["createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreAsync", "createFeaturestoreOperationCallable", "createFeaturestoreCallable"]
@@ -221,7 +446,7 @@
               "methods": ["listEntityTypes", "listEntityTypes", "listEntityTypes", "listEntityTypesPagedCallable", "listEntityTypesCallable"]
             },
             "ListFeatures": {
-              "methods": ["listFeatures", "listFeatures", "listFeatures", "listFeaturesPagedCallable", "listFeaturesCallable"]
+              "methods": ["listFeatures", "listFeatures", "listFeatures", "listFeatures", "listFeaturesPagedCallable", "listFeaturesCallable"]
             },
             "ListFeaturestores": {
               "methods": ["listFeaturestores", "listFeaturestores", "listFeaturestores", "listFeaturestoresPagedCallable", "listFeaturestoresCallable"]
@@ -246,6 +471,84 @@
             },
             "UpdateFeaturestore": {
               "methods": ["updateFeaturestoreAsync", "updateFeaturestoreAsync", "updateFeaturestoreOperationCallable", "updateFeaturestoreCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GenAiCacheService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenAiCacheServiceClient",
+          "rpcs": {
+            "CreateCachedContent": {
+              "methods": ["createCachedContent", "createCachedContent", "createCachedContent", "createCachedContentCallable"]
+            },
+            "DeleteCachedContent": {
+              "methods": ["deleteCachedContent", "deleteCachedContent", "deleteCachedContent", "deleteCachedContentCallable"]
+            },
+            "GetCachedContent": {
+              "methods": ["getCachedContent", "getCachedContent", "getCachedContent", "getCachedContentCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCachedContents": {
+              "methods": ["listCachedContents", "listCachedContents", "listCachedContents", "listCachedContentsPagedCallable", "listCachedContentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateCachedContent": {
+              "methods": ["updateCachedContent", "updateCachedContent", "updateCachedContentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GenAiTuningService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenAiTuningServiceClient",
+          "rpcs": {
+            "CancelTuningJob": {
+              "methods": ["cancelTuningJob", "cancelTuningJob", "cancelTuningJob", "cancelTuningJobCallable"]
+            },
+            "CreateTuningJob": {
+              "methods": ["createTuningJob", "createTuningJob", "createTuningJob", "createTuningJobCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTuningJob": {
+              "methods": ["getTuningJob", "getTuningJob", "getTuningJob", "getTuningJobCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTuningJobs": {
+              "methods": ["listTuningJobs", "listTuningJobs", "listTuningJobs", "listTuningJobsPagedCallable", "listTuningJobsCallable"]
+            },
+            "RebaseTunedModel": {
+              "methods": ["rebaseTunedModelAsync", "rebaseTunedModelAsync", "rebaseTunedModelAsync", "rebaseTunedModelOperationCallable", "rebaseTunedModelCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -473,6 +776,36 @@
         }
       }
     },
+    "LlmUtilityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LlmUtilityServiceClient",
+          "rpcs": {
+            "ComputeTokens": {
+              "methods": ["computeTokens", "computeTokens", "computeTokens", "computeTokensCallable"]
+            },
+            "CountTokens": {
+              "methods": ["countTokens", "countTokens", "countTokens", "countTokensCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "MatchService": {
       "clients": {
         "grpc": {
@@ -653,6 +986,33 @@
         }
       }
     },
+    "ModelGardenService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ModelGardenServiceClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPublisherModel": {
+              "methods": ["getPublisherModel", "getPublisherModel", "getPublisherModel", "getPublisherModelCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "ModelService": {
       "clients": {
         "grpc": {
@@ -703,6 +1063,9 @@
             "ListModelEvaluations": {
               "methods": ["listModelEvaluations", "listModelEvaluations", "listModelEvaluations", "listModelEvaluationsPagedCallable", "listModelEvaluationsCallable"]
             },
+            "ListModelVersionCheckpoints": {
+              "methods": ["listModelVersionCheckpoints", "listModelVersionCheckpoints", "listModelVersionCheckpoints", "listModelVersionCheckpointsPagedCallable", "listModelVersionCheckpointsCallable"]
+            },
             "ListModelVersions": {
               "methods": ["listModelVersions", "listModelVersions", "listModelVersions", "listModelVersionsPagedCallable", "listModelVersionsCallable"]
             },
@@ -731,28 +1094,115 @@
         }
       }
     },
-    "ModelGardenService": {
+    "NotebookService": {
       "clients": {
         "grpc": {
-          "libraryClient": "ModelGardenServiceClient",
+          "libraryClient": "NotebookServiceClient",
           "rpcs": {
+            "AssignNotebookRuntime": {
+              "methods": ["assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeOperationCallable", "assignNotebookRuntimeCallable"]
+            },
+            "CreateNotebookExecutionJob": {
+              "methods": ["createNotebookExecutionJobAsync", "createNotebookExecutionJobAsync", "createNotebookExecutionJobAsync", "createNotebookExecutionJobOperationCallable", "createNotebookExecutionJobCallable"]
+            },
+            "CreateNotebookRuntimeTemplate": {
+              "methods": ["createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateOperationCallable", "createNotebookRuntimeTemplateCallable"]
+            },
+            "DeleteNotebookExecutionJob": {
+              "methods": ["deleteNotebookExecutionJobAsync", "deleteNotebookExecutionJobAsync", "deleteNotebookExecutionJobAsync", "deleteNotebookExecutionJobOperationCallable", "deleteNotebookExecutionJobCallable"]
+            },
+            "DeleteNotebookRuntime": {
+              "methods": ["deleteNotebookRuntimeAsync", "deleteNotebookRuntimeAsync", "deleteNotebookRuntimeAsync", "deleteNotebookRuntimeOperationCallable", "deleteNotebookRuntimeCallable"]
+            },
+            "DeleteNotebookRuntimeTemplate": {
+              "methods": ["deleteNotebookRuntimeTemplateAsync", "deleteNotebookRuntimeTemplateAsync", "deleteNotebookRuntimeTemplateAsync", "deleteNotebookRuntimeTemplateOperationCallable", "deleteNotebookRuntimeTemplateCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
-            "GetPublisherModel": {
-              "methods": ["getPublisherModel", "getPublisherModel", "getPublisherModel", "getPublisherModelCallable"]
+            "GetNotebookExecutionJob": {
+              "methods": ["getNotebookExecutionJob", "getNotebookExecutionJob", "getNotebookExecutionJob", "getNotebookExecutionJobCallable"]
+            },
+            "GetNotebookRuntime": {
+              "methods": ["getNotebookRuntime", "getNotebookRuntime", "getNotebookRuntime", "getNotebookRuntimeCallable"]
+            },
+            "GetNotebookRuntimeTemplate": {
+              "methods": ["getNotebookRuntimeTemplate", "getNotebookRuntimeTemplate", "getNotebookRuntimeTemplate", "getNotebookRuntimeTemplateCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListNotebookExecutionJobs": {
+              "methods": ["listNotebookExecutionJobs", "listNotebookExecutionJobs", "listNotebookExecutionJobs", "listNotebookExecutionJobsPagedCallable", "listNotebookExecutionJobsCallable"]
+            },
+            "ListNotebookRuntimeTemplates": {
+              "methods": ["listNotebookRuntimeTemplates", "listNotebookRuntimeTemplates", "listNotebookRuntimeTemplates", "listNotebookRuntimeTemplatesPagedCallable", "listNotebookRuntimeTemplatesCallable"]
+            },
+            "ListNotebookRuntimes": {
+              "methods": ["listNotebookRuntimes", "listNotebookRuntimes", "listNotebookRuntimes", "listNotebookRuntimesPagedCallable", "listNotebookRuntimesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StartNotebookRuntime": {
+              "methods": ["startNotebookRuntimeAsync", "startNotebookRuntimeAsync", "startNotebookRuntimeAsync", "startNotebookRuntimeOperationCallable", "startNotebookRuntimeCallable"]
+            },
+            "StopNotebookRuntime": {
+              "methods": ["stopNotebookRuntimeAsync", "stopNotebookRuntimeAsync", "stopNotebookRuntimeAsync", "stopNotebookRuntimeOperationCallable", "stopNotebookRuntimeCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateNotebookRuntimeTemplate": {
+              "methods": ["updateNotebookRuntimeTemplate", "updateNotebookRuntimeTemplate", "updateNotebookRuntimeTemplateCallable"]
+            },
+            "UpgradeNotebookRuntime": {
+              "methods": ["upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeOperationCallable", "upgradeNotebookRuntimeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PersistentResourceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PersistentResourceServiceClient",
+          "rpcs": {
+            "CreatePersistentResource": {
+              "methods": ["createPersistentResourceAsync", "createPersistentResourceAsync", "createPersistentResourceAsync", "createPersistentResourceOperationCallable", "createPersistentResourceCallable"]
+            },
+            "DeletePersistentResource": {
+              "methods": ["deletePersistentResourceAsync", "deletePersistentResourceAsync", "deletePersistentResourceAsync", "deletePersistentResourceOperationCallable", "deletePersistentResourceCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPersistentResource": {
+              "methods": ["getPersistentResource", "getPersistentResource", "getPersistentResource", "getPersistentResourceCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPersistentResources": {
+              "methods": ["listPersistentResources", "listPersistentResources", "listPersistentResources", "listPersistentResourcesPagedCallable", "listPersistentResourcesCallable"]
+            },
+            "RebootPersistentResource": {
+              "methods": ["rebootPersistentResourceAsync", "rebootPersistentResourceAsync", "rebootPersistentResourceAsync", "rebootPersistentResourceOperationCallable", "rebootPersistentResourceCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdatePersistentResource": {
+              "methods": ["updatePersistentResourceAsync", "updatePersistentResourceAsync", "updatePersistentResourceOperationCallable", "updatePersistentResourceCallable"]
             }
           }
         }
@@ -763,6 +1213,12 @@
         "grpc": {
           "libraryClient": "PipelineServiceClient",
           "rpcs": {
+            "BatchCancelPipelineJobs": {
+              "methods": ["batchCancelPipelineJobsAsync", "batchCancelPipelineJobsAsync", "batchCancelPipelineJobsAsync", "batchCancelPipelineJobsOperationCallable", "batchCancelPipelineJobsCallable"]
+            },
+            "BatchDeletePipelineJobs": {
+              "methods": ["batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsOperationCallable", "batchDeletePipelineJobsCallable"]
+            },
             "CancelPipelineJob": {
               "methods": ["cancelPipelineJob", "cancelPipelineJob", "cancelPipelineJob", "cancelPipelineJobCallable"]
             },
@@ -817,8 +1273,17 @@
         "grpc": {
           "libraryClient": "PredictionServiceClient",
           "rpcs": {
+            "DirectPredict": {
+              "methods": ["directPredict", "directPredictCallable"]
+            },
+            "DirectRawPredict": {
+              "methods": ["directRawPredict", "directRawPredictCallable"]
+            },
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]
+            },
+            "GenerateContent": {
+              "methods": ["generateContent", "generateContent", "generateContentCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -841,8 +1306,95 @@
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
+            "StreamDirectPredict": {
+              "methods": ["streamDirectPredictCallable"]
+            },
+            "StreamDirectRawPredict": {
+              "methods": ["streamDirectRawPredictCallable"]
+            },
+            "StreamGenerateContent": {
+              "methods": ["streamGenerateContentCallable"]
+            },
+            "StreamRawPredict": {
+              "methods": ["streamRawPredictCallable"]
+            },
+            "StreamingPredict": {
+              "methods": ["streamingPredictCallable"]
+            },
+            "StreamingRawPredict": {
+              "methods": ["streamingRawPredictCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReasoningEngineExecutionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReasoningEngineExecutionServiceClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "QueryReasoningEngine": {
+              "methods": ["queryReasoningEngine", "queryReasoningEngineCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StreamQueryReasoningEngine": {
+              "methods": ["streamQueryReasoningEngineCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReasoningEngineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReasoningEngineServiceClient",
+          "rpcs": {
+            "CreateReasoningEngine": {
+              "methods": ["createReasoningEngineAsync", "createReasoningEngineAsync", "createReasoningEngineAsync", "createReasoningEngineOperationCallable", "createReasoningEngineCallable"]
+            },
+            "DeleteReasoningEngine": {
+              "methods": ["deleteReasoningEngineAsync", "deleteReasoningEngineAsync", "deleteReasoningEngineAsync", "deleteReasoningEngineOperationCallable", "deleteReasoningEngineCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetReasoningEngine": {
+              "methods": ["getReasoningEngine", "getReasoningEngine", "getReasoningEngine", "getReasoningEngineCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListReasoningEngines": {
+              "methods": ["listReasoningEngines", "listReasoningEngines", "listReasoningEngines", "listReasoningEnginesPagedCallable", "listReasoningEnginesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateReasoningEngine": {
+              "methods": ["updateReasoningEngineAsync", "updateReasoningEngineAsync", "updateReasoningEngineOperationCallable", "updateReasoningEngineCallable"]
             }
           }
         }
@@ -1041,6 +1593,93 @@
             },
             "WriteTensorboardRunData": {
               "methods": ["writeTensorboardRunData", "writeTensorboardRunData", "writeTensorboardRunData", "writeTensorboardRunDataCallable"]
+            }
+          }
+        }
+      }
+    },
+    "VertexRagDataService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VertexRagDataServiceClient",
+          "rpcs": {
+            "CreateRagCorpus": {
+              "methods": ["createRagCorpusAsync", "createRagCorpusAsync", "createRagCorpusAsync", "createRagCorpusOperationCallable", "createRagCorpusCallable"]
+            },
+            "DeleteRagCorpus": {
+              "methods": ["deleteRagCorpusAsync", "deleteRagCorpusAsync", "deleteRagCorpusAsync", "deleteRagCorpusOperationCallable", "deleteRagCorpusCallable"]
+            },
+            "DeleteRagFile": {
+              "methods": ["deleteRagFileAsync", "deleteRagFileAsync", "deleteRagFileAsync", "deleteRagFileOperationCallable", "deleteRagFileCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRagCorpus": {
+              "methods": ["getRagCorpus", "getRagCorpus", "getRagCorpus", "getRagCorpusCallable"]
+            },
+            "GetRagFile": {
+              "methods": ["getRagFile", "getRagFile", "getRagFile", "getRagFileCallable"]
+            },
+            "ImportRagFiles": {
+              "methods": ["importRagFilesAsync", "importRagFilesAsync", "importRagFilesAsync", "importRagFilesOperationCallable", "importRagFilesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRagCorpora": {
+              "methods": ["listRagCorpora", "listRagCorpora", "listRagCorpora", "listRagCorporaPagedCallable", "listRagCorporaCallable"]
+            },
+            "ListRagFiles": {
+              "methods": ["listRagFiles", "listRagFiles", "listRagFiles", "listRagFilesPagedCallable", "listRagFilesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateRagCorpus": {
+              "methods": ["updateRagCorpusAsync", "updateRagCorpusAsync", "updateRagCorpusOperationCallable", "updateRagCorpusCallable"]
+            },
+            "UploadRagFile": {
+              "methods": ["uploadRagFile", "uploadRagFile", "uploadRagFile", "uploadRagFileCallable"]
+            }
+          }
+        }
+      }
+    },
+    "VertexRagService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VertexRagServiceClient",
+          "rpcs": {
+            "AugmentPrompt": {
+              "methods": ["augmentPrompt", "augmentPrompt", "augmentPrompt", "augmentPromptCallable"]
+            },
+            "CorroborateContent": {
+              "methods": ["corroborateContent", "corroborateContent", "corroborateContent", "corroborateContentCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RetrieveContexts": {
+              "methods": ["retrieveContexts", "retrieveContexts", "retrieveContexts", "retrieveContextsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

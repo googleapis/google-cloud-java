@@ -5,13 +5,13 @@
   "api_description": "allows you to secure your government workloads and accelerate your path to running compliant workloads on Google Cloud with Assured Workloads for Government.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-assured-workloads/latest/overview",
   "release_level": "stable",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-assured-workloads",
   "distribution_name": "com.google.cloud:google-cloud-assured-workloads",
   "api_id": "assuredworkloads.googleapis.com",
-  "requires_billing": true,
   "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
   "rest_documentation": "https://cloud.google.com/assured-workloads/docs/reference/rest"
 }

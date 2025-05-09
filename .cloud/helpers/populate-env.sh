@@ -30,6 +30,7 @@ pushd "$helperDir/.." >/dev/null
 source ./helpers/common.sh
 allModules=$(listAllModules)
 activeModules=$(getActiveTerraformModules)
+OLD_IFS="$IFS"
 IFS=','
 for module in $allModules; do
   friendlyName=$(getFriendlyOutputName "$module")
@@ -39,5 +40,6 @@ for module in $allModules; do
 
   modifyEnvironment "$module"
 done
+IFS="$OLD_IFS"
 
 popd >/dev/null

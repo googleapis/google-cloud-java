@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransfer
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -155,9 +156,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -174,7 +175,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getCustomer to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getCustomer:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -191,10 +194,47 @@ import org.threeten.bp.Duration;
  *             .getCustomerSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CloudChannelServiceStubSettings cloudChannelServiceSettings =
  *     cloudChannelServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for provisionCloudIdentity:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CloudChannelServiceStubSettings.Builder cloudChannelServiceSettingsBuilder =
+ *     CloudChannelServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * cloudChannelServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -377,9 +417,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Customer> extractResources(ListCustomersResponse payload) {
-              return payload.getCustomersList() == null
-                  ? ImmutableList.<Customer>of()
-                  : payload.getCustomersList();
+              return payload.getCustomersList();
             }
           };
 
@@ -417,9 +455,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Entitlement> extractResources(ListEntitlementsResponse payload) {
-              return payload.getEntitlementsList() == null
-                  ? ImmutableList.<Entitlement>of()
-                  : payload.getEntitlementsList();
+              return payload.getEntitlementsList();
             }
           };
 
@@ -458,9 +494,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<TransferableSku> extractResources(
                 ListTransferableSkusResponse payload) {
-              return payload.getTransferableSkusList() == null
-                  ? ImmutableList.<TransferableSku>of()
-                  : payload.getTransferableSkusList();
+              return payload.getTransferableSkusList();
             }
           };
 
@@ -501,9 +535,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<TransferableOffer> extractResources(
                 ListTransferableOffersResponse payload) {
-              return payload.getTransferableOffersList() == null
-                  ? ImmutableList.<TransferableOffer>of()
-                  : payload.getTransferableOffersList();
+              return payload.getTransferableOffersList();
             }
           };
 
@@ -546,9 +578,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<ChannelPartnerLink> extractResources(
                 ListChannelPartnerLinksResponse payload) {
-              return payload.getChannelPartnerLinksList() == null
-                  ? ImmutableList.<ChannelPartnerLink>of()
-                  : payload.getChannelPartnerLinksList();
+              return payload.getChannelPartnerLinksList();
             }
           };
 
@@ -595,9 +625,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<CustomerRepricingConfig> extractResources(
                 ListCustomerRepricingConfigsResponse payload) {
-              return payload.getCustomerRepricingConfigsList() == null
-                  ? ImmutableList.<CustomerRepricingConfig>of()
-                  : payload.getCustomerRepricingConfigsList();
+              return payload.getCustomerRepricingConfigsList();
             }
           };
 
@@ -644,9 +672,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<ChannelPartnerRepricingConfig> extractResources(
                 ListChannelPartnerRepricingConfigsResponse payload) {
-              return payload.getChannelPartnerRepricingConfigsList() == null
-                  ? ImmutableList.<ChannelPartnerRepricingConfig>of()
-                  : payload.getChannelPartnerRepricingConfigsList();
+              return payload.getChannelPartnerRepricingConfigsList();
             }
           };
 
@@ -680,9 +706,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<SkuGroup> extractResources(ListSkuGroupsResponse payload) {
-              return payload.getSkuGroupsList() == null
-                  ? ImmutableList.<SkuGroup>of()
-                  : payload.getSkuGroupsList();
+              return payload.getSkuGroupsList();
             }
           };
 
@@ -725,9 +749,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<BillableSku> extractResources(
                 ListSkuGroupBillableSkusResponse payload) {
-              return payload.getBillableSkusList() == null
-                  ? ImmutableList.<BillableSku>of()
-                  : payload.getBillableSkusList();
+              return payload.getBillableSkusList();
             }
           };
 
@@ -761,9 +783,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Product> extractResources(ListProductsResponse payload) {
-              return payload.getProductsList() == null
-                  ? ImmutableList.<Product>of()
-                  : payload.getProductsList();
+              return payload.getProductsList();
             }
           };
 
@@ -797,9 +817,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Sku> extractResources(ListSkusResponse payload) {
-              return payload.getSkusList() == null
-                  ? ImmutableList.<Sku>of()
-                  : payload.getSkusList();
+              return payload.getSkusList();
             }
           };
 
@@ -833,9 +851,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<Offer> extractResources(ListOffersResponse payload) {
-              return payload.getOffersList() == null
-                  ? ImmutableList.<Offer>of()
-                  : payload.getOffersList();
+              return payload.getOffersList();
             }
           };
 
@@ -873,9 +889,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<PurchasableSku> extractResources(ListPurchasableSkusResponse payload) {
-              return payload.getPurchasableSkusList() == null
-                  ? ImmutableList.<PurchasableSku>of()
-                  : payload.getPurchasableSkusList();
+              return payload.getPurchasableSkusList();
             }
           };
 
@@ -914,9 +928,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<PurchasableOffer> extractResources(
                 ListPurchasableOffersResponse payload) {
-              return payload.getPurchasableOffersList() == null
-                  ? ImmutableList.<PurchasableOffer>of()
-                  : payload.getPurchasableOffersList();
+              return payload.getPurchasableOffersList();
             }
           };
 
@@ -952,9 +964,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
             @Override
             public Iterable<String> extractResources(ListSubscribersResponse payload) {
-              return payload.getServiceAccountsList() == null
-                  ? ImmutableList.<String>of()
-                  : payload.getServiceAccountsList();
+              return payload.getServiceAccountsList();
             }
           };
 
@@ -995,9 +1005,7 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             @Override
             public Iterable<EntitlementChange> extractResources(
                 ListEntitlementChangesResponse payload) {
-              return payload.getEntitlementChangesList() == null
-                  ? ImmutableList.<EntitlementChange>of()
-                  : payload.getEntitlementChangesList();
+              return payload.getEntitlementChangesList();
             }
           };
 
@@ -1757,12 +1765,19 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "cloudchannel";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "cloudchannel.googleapis.com:443";
   }
@@ -1801,7 +1816,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1810,7 +1824,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -2120,21 +2133,21 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -2412,7 +2425,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -2425,7 +2437,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -2693,13 +2704,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2717,13 +2728,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2741,13 +2752,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2765,13 +2776,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2788,13 +2799,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2812,13 +2823,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2836,13 +2847,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2860,13 +2871,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2884,13 +2895,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2909,13 +2920,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2934,13 +2945,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -3007,8 +3018,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to provisionCloudIdentity. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ProvisionCloudIdentityRequest, Customer, OperationMetadata>
         provisionCloudIdentityOperationSettings() {
       return provisionCloudIdentityOperationSettings;
@@ -3051,8 +3060,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to createEntitlement. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEntitlementRequest, Entitlement, OperationMetadata>
         createEntitlementOperationSettings() {
       return createEntitlementOperationSettings;
@@ -3065,8 +3072,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to changeParameters. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ChangeParametersRequest, Entitlement, OperationMetadata>
         changeParametersOperationSettings() {
       return changeParametersOperationSettings;
@@ -3079,8 +3084,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to changeRenewalSettings. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ChangeRenewalSettingsRequest, Entitlement, OperationMetadata>
         changeRenewalSettingsOperationSettings() {
@@ -3093,8 +3096,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to changeOffer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ChangeOfferRequest, Entitlement, OperationMetadata>
         changeOfferOperationSettings() {
       return changeOfferOperationSettings;
@@ -3107,8 +3108,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to startPaidService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartPaidServiceRequest, Entitlement, OperationMetadata>
         startPaidServiceOperationSettings() {
       return startPaidServiceOperationSettings;
@@ -3121,8 +3120,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to suspendEntitlement. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SuspendEntitlementRequest, Entitlement, OperationMetadata>
         suspendEntitlementOperationSettings() {
       return suspendEntitlementOperationSettings;
@@ -3135,8 +3132,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to cancelEntitlement. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CancelEntitlementRequest, Empty, OperationMetadata>
         cancelEntitlementOperationSettings() {
       return cancelEntitlementOperationSettings;
@@ -3149,8 +3144,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to activateEntitlement. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ActivateEntitlementRequest, Entitlement, OperationMetadata>
         activateEntitlementOperationSettings() {
       return activateEntitlementOperationSettings;
@@ -3163,8 +3156,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to transferEntitlements. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             TransferEntitlementsRequest, TransferEntitlementsResponse, OperationMetadata>
         transferEntitlementsOperationSettings() {
@@ -3178,8 +3169,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to transferEntitlementsToGoogle. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             TransferEntitlementsToGoogleRequest, Empty, OperationMetadata>
         transferEntitlementsToGoogleOperationSettings() {

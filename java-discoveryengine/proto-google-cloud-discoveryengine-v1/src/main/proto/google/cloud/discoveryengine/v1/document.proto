@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package google.cloud.discoveryengine.v1;
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+import "google/rpc/status.proto";
 
 option csharp_namespace = "Google.Cloud.DiscoveryEngine.V1";
 option go_package = "cloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discoveryenginepb";
@@ -53,7 +55,7 @@ message Document {
 
       // The URI of the content. Only Cloud Storage URIs (e.g.
       // `gs://bucket-name/path/to/file`) are supported. The maximum file size
-      // is 100 MB.
+      // is 2.5 MB for text-based formats, 200 MB for other formats.
       string uri = 3;
     }
 
@@ -67,6 +69,21 @@ message Document {
     //
     // See https://www.iana.org/assignments/media-types/media-types.xhtml.
     string mime_type = 1;
+  }
+
+  // Index status of the document.
+  message IndexStatus {
+    // The time when the document was indexed.
+    // If this field is populated, it means the document has been indexed.
+    google.protobuf.Timestamp index_time = 1;
+
+    // A sample of errors encountered while indexing the document.
+    // If this field is populated, the document is not indexed due to errors.
+    repeated google.rpc.Status error_samples = 2;
+
+    // Immutable. The message indicates the document index is in progress.
+    // If this field is populated, the document index is pending.
+    string pending_message = 3 [(google.api.field_behavior) = IMMUTABLE];
   }
 
   // Data representation. One of
@@ -96,7 +113,7 @@ message Document {
   // Immutable. The identifier of the document.
   //
   // Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-  // standard with a length limit of 63 characters.
+  // standard with a length limit of 128 characters.
   string id = 2 [(google.api.field_behavior) = IMMUTABLE];
 
   // The identifier of the schema located in the same data store.
@@ -118,4 +135,21 @@ message Document {
   // It contains derived data that are not in the original input document.
   google.protobuf.Struct derived_struct_data = 6
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The last time the document was indexed. If this field is set,
+  // the document could be returned in search results.
+  //
+  // This field is OUTPUT_ONLY. If this field is not populated, it means the
+  // document has never been indexed.
+  google.protobuf.Timestamp index_time = 13
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The index status of the document.
+  //
+  // * If document is indexed successfully, the index_time field is populated.
+  // * Otherwise, if document is not indexed due to errors, the error_samples
+  //   field is populated.
+  // * Otherwise, if document's index is in progress, the pending_message field
+  //   is populated.
+  IndexStatus index_status = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

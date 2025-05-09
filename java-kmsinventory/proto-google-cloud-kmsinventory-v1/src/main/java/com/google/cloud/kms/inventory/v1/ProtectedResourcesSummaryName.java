@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.kms.inventory.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -98,12 +97,10 @@ public class ProtectedResourcesSummaryName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationKeyRingCryptoKeyBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationKeyRingCryptoKeyCryptoKeyVersionBuilder
       newProjectLocationKeyRingCryptoKeyCryptoKeyVersionBuilder() {
     return new ProjectLocationKeyRingCryptoKeyCryptoKeyVersionBuilder();
@@ -123,7 +120,6 @@ public class ProtectedResourcesSummaryName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ProtectedResourcesSummaryName ofProjectLocationKeyRingCryptoKeyName(
       String project, String location, String keyRing, String cryptoKey) {
     return newBuilder()
@@ -134,7 +130,6 @@ public class ProtectedResourcesSummaryName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ProtectedResourcesSummaryName ofProjectLocationKeyRingCryptoKeyCryptoKeyVersionName(
       String project, String location, String keyRing, String cryptoKey, String cryptoKeyVersion) {
     return newProjectLocationKeyRingCryptoKeyCryptoKeyVersionBuilder()
@@ -156,7 +151,6 @@ public class ProtectedResourcesSummaryName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationKeyRingCryptoKeyName(
       String project, String location, String keyRing, String cryptoKey) {
     return newBuilder()
@@ -168,7 +162,6 @@ public class ProtectedResourcesSummaryName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationKeyRingCryptoKeyCryptoKeyVersionName(
       String project, String location, String keyRing, String cryptoKey, String cryptoKeyVersion) {
     return newProjectLocationKeyRingCryptoKeyCryptoKeyVersionBuilder()
@@ -354,7 +347,8 @@ public class ProtectedResourcesSummaryName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               protectedResourcesSummaryName.pathTemplate, PROJECT_LOCATION_KEY_RING_CRYPTO_KEY),
-          "toBuilder is only supported when ProtectedResourcesSummaryName has the pattern of projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/protectedResourcesSummary");
+          "toBuilder is only supported when ProtectedResourcesSummaryName has the pattern of"
+              + " projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/protectedResourcesSummary");
       this.project = protectedResourcesSummaryName.project;
       this.location = protectedResourcesSummaryName.location;
       this.keyRing = protectedResourcesSummaryName.keyRing;
@@ -370,7 +364,6 @@ public class ProtectedResourcesSummaryName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}/protectedResourcesSummary.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationKeyRingCryptoKeyCryptoKeyVersionBuilder {
     private String project;
     private String location;

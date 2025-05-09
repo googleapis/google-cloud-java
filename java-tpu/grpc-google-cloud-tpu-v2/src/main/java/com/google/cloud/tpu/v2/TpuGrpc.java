@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -317,6 +317,225 @@ public final class TpuGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.ListQueuedResourcesRequest,
+          com.google.cloud.tpu.v2.ListQueuedResourcesResponse>
+      getListQueuedResourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListQueuedResources",
+      requestType = com.google.cloud.tpu.v2.ListQueuedResourcesRequest.class,
+      responseType = com.google.cloud.tpu.v2.ListQueuedResourcesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.ListQueuedResourcesRequest,
+          com.google.cloud.tpu.v2.ListQueuedResourcesResponse>
+      getListQueuedResourcesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tpu.v2.ListQueuedResourcesRequest,
+            com.google.cloud.tpu.v2.ListQueuedResourcesResponse>
+        getListQueuedResourcesMethod;
+    if ((getListQueuedResourcesMethod = TpuGrpc.getListQueuedResourcesMethod) == null) {
+      synchronized (TpuGrpc.class) {
+        if ((getListQueuedResourcesMethod = TpuGrpc.getListQueuedResourcesMethod) == null) {
+          TpuGrpc.getListQueuedResourcesMethod =
+              getListQueuedResourcesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tpu.v2.ListQueuedResourcesRequest,
+                          com.google.cloud.tpu.v2.ListQueuedResourcesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListQueuedResources"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tpu.v2.ListQueuedResourcesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tpu.v2.ListQueuedResourcesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new TpuMethodDescriptorSupplier("ListQueuedResources"))
+                      .build();
+        }
+      }
+    }
+    return getListQueuedResourcesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.GetQueuedResourceRequest, com.google.cloud.tpu.v2.QueuedResource>
+      getGetQueuedResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetQueuedResource",
+      requestType = com.google.cloud.tpu.v2.GetQueuedResourceRequest.class,
+      responseType = com.google.cloud.tpu.v2.QueuedResource.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.GetQueuedResourceRequest, com.google.cloud.tpu.v2.QueuedResource>
+      getGetQueuedResourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tpu.v2.GetQueuedResourceRequest,
+            com.google.cloud.tpu.v2.QueuedResource>
+        getGetQueuedResourceMethod;
+    if ((getGetQueuedResourceMethod = TpuGrpc.getGetQueuedResourceMethod) == null) {
+      synchronized (TpuGrpc.class) {
+        if ((getGetQueuedResourceMethod = TpuGrpc.getGetQueuedResourceMethod) == null) {
+          TpuGrpc.getGetQueuedResourceMethod =
+              getGetQueuedResourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tpu.v2.GetQueuedResourceRequest,
+                          com.google.cloud.tpu.v2.QueuedResource>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetQueuedResource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tpu.v2.GetQueuedResourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tpu.v2.QueuedResource.getDefaultInstance()))
+                      .setSchemaDescriptor(new TpuMethodDescriptorSupplier("GetQueuedResource"))
+                      .build();
+        }
+      }
+    }
+    return getGetQueuedResourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.CreateQueuedResourceRequest, com.google.longrunning.Operation>
+      getCreateQueuedResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateQueuedResource",
+      requestType = com.google.cloud.tpu.v2.CreateQueuedResourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.CreateQueuedResourceRequest, com.google.longrunning.Operation>
+      getCreateQueuedResourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tpu.v2.CreateQueuedResourceRequest, com.google.longrunning.Operation>
+        getCreateQueuedResourceMethod;
+    if ((getCreateQueuedResourceMethod = TpuGrpc.getCreateQueuedResourceMethod) == null) {
+      synchronized (TpuGrpc.class) {
+        if ((getCreateQueuedResourceMethod = TpuGrpc.getCreateQueuedResourceMethod) == null) {
+          TpuGrpc.getCreateQueuedResourceMethod =
+              getCreateQueuedResourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tpu.v2.CreateQueuedResourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateQueuedResource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tpu.v2.CreateQueuedResourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new TpuMethodDescriptorSupplier("CreateQueuedResource"))
+                      .build();
+        }
+      }
+    }
+    return getCreateQueuedResourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.DeleteQueuedResourceRequest, com.google.longrunning.Operation>
+      getDeleteQueuedResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteQueuedResource",
+      requestType = com.google.cloud.tpu.v2.DeleteQueuedResourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.DeleteQueuedResourceRequest, com.google.longrunning.Operation>
+      getDeleteQueuedResourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tpu.v2.DeleteQueuedResourceRequest, com.google.longrunning.Operation>
+        getDeleteQueuedResourceMethod;
+    if ((getDeleteQueuedResourceMethod = TpuGrpc.getDeleteQueuedResourceMethod) == null) {
+      synchronized (TpuGrpc.class) {
+        if ((getDeleteQueuedResourceMethod = TpuGrpc.getDeleteQueuedResourceMethod) == null) {
+          TpuGrpc.getDeleteQueuedResourceMethod =
+              getDeleteQueuedResourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tpu.v2.DeleteQueuedResourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteQueuedResource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tpu.v2.DeleteQueuedResourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new TpuMethodDescriptorSupplier("DeleteQueuedResource"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteQueuedResourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.ResetQueuedResourceRequest, com.google.longrunning.Operation>
+      getResetQueuedResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResetQueuedResource",
+      requestType = com.google.cloud.tpu.v2.ResetQueuedResourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tpu.v2.ResetQueuedResourceRequest, com.google.longrunning.Operation>
+      getResetQueuedResourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tpu.v2.ResetQueuedResourceRequest, com.google.longrunning.Operation>
+        getResetQueuedResourceMethod;
+    if ((getResetQueuedResourceMethod = TpuGrpc.getResetQueuedResourceMethod) == null) {
+      synchronized (TpuGrpc.class) {
+        if ((getResetQueuedResourceMethod = TpuGrpc.getResetQueuedResourceMethod) == null) {
+          TpuGrpc.getResetQueuedResourceMethod =
+              getResetQueuedResourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tpu.v2.ResetQueuedResourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ResetQueuedResource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tpu.v2.ResetQueuedResourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new TpuMethodDescriptorSupplier("ResetQueuedResource"))
+                      .build();
+        }
+      }
+    }
+    return getResetQueuedResourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tpu.v2.GenerateServiceIdentityRequest,
           com.google.cloud.tpu.v2.GenerateServiceIdentityResponse>
       getGenerateServiceIdentityMethod;
@@ -604,6 +823,19 @@ public final class TpuGrpc {
     return TpuStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TpuBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TpuBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TpuBlockingV2Stub>() {
+          @java.lang.Override
+          public TpuBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TpuBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TpuBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -729,6 +961,77 @@ public final class TpuGrpc {
         com.google.cloud.tpu.v2.UpdateNodeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateNodeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists queued resources.
+     * </pre>
+     */
+    default void listQueuedResources(
+        com.google.cloud.tpu.v2.ListQueuedResourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tpu.v2.ListQueuedResourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListQueuedResourcesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a queued resource.
+     * </pre>
+     */
+    default void getQueuedResource(
+        com.google.cloud.tpu.v2.GetQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tpu.v2.QueuedResource> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetQueuedResourceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a QueuedResource TPU instance.
+     * </pre>
+     */
+    default void createQueuedResource(
+        com.google.cloud.tpu.v2.CreateQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateQueuedResourceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QueuedResource TPU instance.
+     * </pre>
+     */
+    default void deleteQueuedResource(
+        com.google.cloud.tpu.v2.DeleteQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteQueuedResourceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    default void resetQueuedResource(
+        com.google.cloud.tpu.v2.ResetQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResetQueuedResourceMethod(), responseObserver);
     }
 
     /**
@@ -956,6 +1259,87 @@ public final class TpuGrpc {
      *
      *
      * <pre>
+     * Lists queued resources.
+     * </pre>
+     */
+    public void listQueuedResources(
+        com.google.cloud.tpu.v2.ListQueuedResourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tpu.v2.ListQueuedResourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListQueuedResourcesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a queued resource.
+     * </pre>
+     */
+    public void getQueuedResource(
+        com.google.cloud.tpu.v2.GetQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tpu.v2.QueuedResource> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetQueuedResourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a QueuedResource TPU instance.
+     * </pre>
+     */
+    public void createQueuedResource(
+        com.google.cloud.tpu.v2.CreateQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateQueuedResourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QueuedResource TPU instance.
+     * </pre>
+     */
+    public void deleteQueuedResource(
+        com.google.cloud.tpu.v2.DeleteQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteQueuedResourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    public void resetQueuedResource(
+        com.google.cloud.tpu.v2.ResetQueuedResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResetQueuedResourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates the Cloud TPU service identity for the project.
      * </pre>
      */
@@ -1061,6 +1445,259 @@ public final class TpuGrpc {
    * TPU API v2
    * </pre>
    */
+  public static final class TpuBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TpuBlockingV2Stub> {
+    private TpuBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TpuBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TpuBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists nodes.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListNodesResponse listNodes(
+        com.google.cloud.tpu.v2.ListNodesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a node.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.Node getNode(com.google.cloud.tpu.v2.GetNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNode(
+        com.google.cloud.tpu.v2.CreateNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNode(
+        com.google.cloud.tpu.v2.DeleteNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a node. This operation is only available with single TPU nodes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopNode(
+        com.google.cloud.tpu.v2.StopNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startNode(
+        com.google.cloud.tpu.v2.StartNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the configurations of a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateNode(
+        com.google.cloud.tpu.v2.UpdateNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists queued resources.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListQueuedResourcesResponse listQueuedResources(
+        com.google.cloud.tpu.v2.ListQueuedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQueuedResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a queued resource.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.QueuedResource getQueuedResource(
+        com.google.cloud.tpu.v2.GetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a QueuedResource TPU instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createQueuedResource(
+        com.google.cloud.tpu.v2.CreateQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QueuedResource TPU instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteQueuedResource(
+        com.google.cloud.tpu.v2.DeleteQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    public com.google.longrunning.Operation resetQueuedResource(
+        com.google.cloud.tpu.v2.ResetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResetQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates the Cloud TPU service identity for the project.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.GenerateServiceIdentityResponse generateServiceIdentity(
+        com.google.cloud.tpu.v2.GenerateServiceIdentityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateServiceIdentityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists accelerator types supported by this API.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListAcceleratorTypesResponse listAcceleratorTypes(
+        com.google.cloud.tpu.v2.ListAcceleratorTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAcceleratorTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets AcceleratorType.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.AcceleratorType getAcceleratorType(
+        com.google.cloud.tpu.v2.GetAcceleratorTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAcceleratorTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists runtime versions supported by this API.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListRuntimeVersionsResponse listRuntimeVersions(
+        com.google.cloud.tpu.v2.ListRuntimeVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRuntimeVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a runtime version.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.RuntimeVersion getRuntimeVersion(
+        com.google.cloud.tpu.v2.GetRuntimeVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRuntimeVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the guest attributes for the node.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.GetGuestAttributesResponse getGuestAttributes(
+        com.google.cloud.tpu.v2.GetGuestAttributesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGuestAttributesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Tpu.
+   *
+   * <pre>
+   * Manages TPU nodes and other resources
+   * TPU API v2
+   * </pre>
+   */
   public static final class TpuBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<TpuBlockingStub> {
     private TpuBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1160,6 +1797,71 @@ public final class TpuGrpc {
         com.google.cloud.tpu.v2.UpdateNodeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists queued resources.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListQueuedResourcesResponse listQueuedResources(
+        com.google.cloud.tpu.v2.ListQueuedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQueuedResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a queued resource.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.QueuedResource getQueuedResource(
+        com.google.cloud.tpu.v2.GetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a QueuedResource TPU instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createQueuedResource(
+        com.google.cloud.tpu.v2.CreateQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QueuedResource TPU instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteQueuedResource(
+        com.google.cloud.tpu.v2.DeleteQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    public com.google.longrunning.Operation resetQueuedResource(
+        com.google.cloud.tpu.v2.ResetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResetQueuedResourceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1355,6 +2057,73 @@ public final class TpuGrpc {
      *
      *
      * <pre>
+     * Lists queued resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.tpu.v2.ListQueuedResourcesResponse>
+        listQueuedResources(com.google.cloud.tpu.v2.ListQueuedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListQueuedResourcesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a queued resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.tpu.v2.QueuedResource>
+        getQueuedResource(com.google.cloud.tpu.v2.GetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetQueuedResourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a QueuedResource TPU instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createQueuedResource(com.google.cloud.tpu.v2.CreateQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateQueuedResourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QueuedResource TPU instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteQueuedResource(com.google.cloud.tpu.v2.DeleteQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteQueuedResourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        resetQueuedResource(com.google.cloud.tpu.v2.ResetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResetQueuedResourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates the Cloud TPU service identity for the project.
      * </pre>
      */
@@ -1443,12 +2212,17 @@ public final class TpuGrpc {
   private static final int METHODID_STOP_NODE = 4;
   private static final int METHODID_START_NODE = 5;
   private static final int METHODID_UPDATE_NODE = 6;
-  private static final int METHODID_GENERATE_SERVICE_IDENTITY = 7;
-  private static final int METHODID_LIST_ACCELERATOR_TYPES = 8;
-  private static final int METHODID_GET_ACCELERATOR_TYPE = 9;
-  private static final int METHODID_LIST_RUNTIME_VERSIONS = 10;
-  private static final int METHODID_GET_RUNTIME_VERSION = 11;
-  private static final int METHODID_GET_GUEST_ATTRIBUTES = 12;
+  private static final int METHODID_LIST_QUEUED_RESOURCES = 7;
+  private static final int METHODID_GET_QUEUED_RESOURCE = 8;
+  private static final int METHODID_CREATE_QUEUED_RESOURCE = 9;
+  private static final int METHODID_DELETE_QUEUED_RESOURCE = 10;
+  private static final int METHODID_RESET_QUEUED_RESOURCE = 11;
+  private static final int METHODID_GENERATE_SERVICE_IDENTITY = 12;
+  private static final int METHODID_LIST_ACCELERATOR_TYPES = 13;
+  private static final int METHODID_GET_ACCELERATOR_TYPE = 14;
+  private static final int METHODID_LIST_RUNTIME_VERSIONS = 15;
+  private static final int METHODID_GET_RUNTIME_VERSION = 16;
+  private static final int METHODID_GET_GUEST_ATTRIBUTES = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1501,6 +2275,33 @@ public final class TpuGrpc {
         case METHODID_UPDATE_NODE:
           serviceImpl.updateNode(
               (com.google.cloud.tpu.v2.UpdateNodeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_QUEUED_RESOURCES:
+          serviceImpl.listQueuedResources(
+              (com.google.cloud.tpu.v2.ListQueuedResourcesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.tpu.v2.ListQueuedResourcesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_QUEUED_RESOURCE:
+          serviceImpl.getQueuedResource(
+              (com.google.cloud.tpu.v2.GetQueuedResourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.tpu.v2.QueuedResource>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_QUEUED_RESOURCE:
+          serviceImpl.createQueuedResource(
+              (com.google.cloud.tpu.v2.CreateQueuedResourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_QUEUED_RESOURCE:
+          serviceImpl.deleteQueuedResource(
+              (com.google.cloud.tpu.v2.DeleteQueuedResourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESET_QUEUED_RESOURCE:
+          serviceImpl.resetQueuedResource(
+              (com.google.cloud.tpu.v2.ResetQueuedResourceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GENERATE_SERVICE_IDENTITY:
@@ -1600,6 +2401,37 @@ public final class TpuGrpc {
                     com.google.cloud.tpu.v2.UpdateNodeRequest, com.google.longrunning.Operation>(
                     service, METHODID_UPDATE_NODE)))
         .addMethod(
+            getListQueuedResourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v2.ListQueuedResourcesRequest,
+                    com.google.cloud.tpu.v2.ListQueuedResourcesResponse>(
+                    service, METHODID_LIST_QUEUED_RESOURCES)))
+        .addMethod(
+            getGetQueuedResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v2.GetQueuedResourceRequest,
+                    com.google.cloud.tpu.v2.QueuedResource>(service, METHODID_GET_QUEUED_RESOURCE)))
+        .addMethod(
+            getCreateQueuedResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v2.CreateQueuedResourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_QUEUED_RESOURCE)))
+        .addMethod(
+            getDeleteQueuedResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v2.DeleteQueuedResourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_QUEUED_RESOURCE)))
+        .addMethod(
+            getResetQueuedResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v2.ResetQueuedResourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESET_QUEUED_RESOURCE)))
+        .addMethod(
             getGenerateServiceIdentityMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1696,6 +2528,11 @@ public final class TpuGrpc {
                       .addMethod(getStopNodeMethod())
                       .addMethod(getStartNodeMethod())
                       .addMethod(getUpdateNodeMethod())
+                      .addMethod(getListQueuedResourcesMethod())
+                      .addMethod(getGetQueuedResourceMethod())
+                      .addMethod(getCreateQueuedResourceMethod())
+                      .addMethod(getDeleteQueuedResourceMethod())
+                      .addMethod(getResetQueuedResourceMethod())
                       .addMethod(getGenerateServiceIdentityMethod())
                       .addMethod(getListAcceleratorTypesMethod())
                       .addMethod(getGetAcceleratorTypeMethod())

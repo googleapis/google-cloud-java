@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -191,6 +191,19 @@ public final class AnswerRecordsGrpc {
     return AnswerRecordsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AnswerRecordsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AnswerRecordsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AnswerRecordsBlockingV2Stub>() {
+          @java.lang.Override
+          public AnswerRecordsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AnswerRecordsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AnswerRecordsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -371,6 +384,69 @@ public final class AnswerRecordsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AnswerRecords.
+   *
+   * <pre>
+   * Service for managing
+   * [AnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecord].
+   * </pre>
+   */
+  public static final class AnswerRecordsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AnswerRecordsBlockingV2Stub> {
+    private AnswerRecordsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AnswerRecordsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AnswerRecordsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated.
+     * Retrieves a specific answer record.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.dialogflow.v2beta1.AnswerRecord getAnswerRecord(
+        com.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAnswerRecordMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all answer records in the specified project in reverse
+     * chronological order.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsResponse listAnswerRecords(
+        com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAnswerRecordsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified answer record.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.AnswerRecord updateAnswerRecord(
+        com.google.cloud.dialogflow.v2beta1.UpdateAnswerRecordRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAnswerRecordMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AnswerRecords.
    *
    * <pre>
    * Service for managing

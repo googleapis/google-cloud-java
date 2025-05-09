@@ -15,6 +15,10 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
     # Skip the template files
     continue
   fi
+  if [[ "${pomFile}" =~ .*java-samples.* ]]; then
+    echo "Skipping version check for java-samples directory"
+    continue
+  fi
 
   if grep -n '<version>.*</version>' "$pomFile" | grep -v 'x-version-update'; then
     echo "Found version declaration(s) without x-version-update in: $pomFile"

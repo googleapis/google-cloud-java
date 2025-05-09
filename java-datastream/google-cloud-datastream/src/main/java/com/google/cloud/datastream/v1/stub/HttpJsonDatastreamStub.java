@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import static com.google.cloud.datastream.v1.DatastreamClient.ListStreamObjectsP
 import static com.google.cloud.datastream.v1.DatastreamClient.ListStreamsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -73,6 +72,7 @@ import com.google.cloud.datastream.v1.LookupStreamObjectRequest;
 import com.google.cloud.datastream.v1.OperationMetadata;
 import com.google.cloud.datastream.v1.PrivateConnection;
 import com.google.cloud.datastream.v1.Route;
+import com.google.cloud.datastream.v1.RunStreamRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobResponse;
 import com.google.cloud.datastream.v1.StopBackfillJobRequest;
@@ -104,7 +104,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonDatastreamStub extends DatastreamStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
@@ -562,6 +561,45 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                   (DeleteStreamRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
+
+  private static final ApiMethodDescriptor<RunStreamRequest, Operation> runStreamMethodDescriptor =
+      ApiMethodDescriptor.<RunStreamRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.datastream.v1.Datastream/RunStream")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<RunStreamRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/streams/*}:run",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<RunStreamRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<RunStreamRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (RunStreamRequest request, Operation response) ->
+                  HttpJsonOperationSnapshot.create(response))
+          .build();
 
   private static final ApiMethodDescriptor<GetStreamObjectRequest, StreamObject>
       getStreamObjectMethodDescriptor =
@@ -1192,6 +1230,9 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
   private final UnaryCallable<DeleteStreamRequest, Operation> deleteStreamCallable;
   private final OperationCallable<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationCallable;
+  private final UnaryCallable<RunStreamRequest, Operation> runStreamCallable;
+  private final OperationCallable<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationCallable;
   private final UnaryCallable<GetStreamObjectRequest, StreamObject> getStreamObjectCallable;
   private final UnaryCallable<LookupStreamObjectRequest, StreamObject> lookupStreamObjectCallable;
   private final UnaryCallable<ListStreamObjectsRequest, ListStreamObjectsResponse>
@@ -1427,6 +1468,17 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
     HttpJsonCallSettings<DeleteStreamRequest, Operation> deleteStreamTransportSettings =
         HttpJsonCallSettings.<DeleteStreamRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteStreamMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<RunStreamRequest, Operation> runStreamTransportSettings =
+        HttpJsonCallSettings.<RunStreamRequest, Operation>newBuilder()
+            .setMethodDescriptor(runStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -1712,6 +1764,15 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
             settings.deleteStreamOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.runStreamCallable =
+        callableFactory.createUnaryCallable(
+            runStreamTransportSettings, settings.runStreamSettings(), clientContext);
+    this.runStreamOperationCallable =
+        callableFactory.createOperationCallable(
+            runStreamTransportSettings,
+            settings.runStreamOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getStreamObjectCallable =
         callableFactory.createUnaryCallable(
             getStreamObjectTransportSettings, settings.getStreamObjectSettings(), clientContext);
@@ -1834,6 +1895,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
     methodDescriptors.add(createStreamMethodDescriptor);
     methodDescriptors.add(updateStreamMethodDescriptor);
     methodDescriptors.add(deleteStreamMethodDescriptor);
+    methodDescriptors.add(runStreamMethodDescriptor);
     methodDescriptors.add(getStreamObjectMethodDescriptor);
     methodDescriptors.add(lookupStreamObjectMethodDescriptor);
     methodDescriptors.add(listStreamObjectsMethodDescriptor);
@@ -1963,6 +2025,17 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
   public OperationCallable<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationCallable() {
     return deleteStreamOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunStreamRequest, Operation> runStreamCallable() {
+    return runStreamCallable;
+  }
+
+  @Override
+  public OperationCallable<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationCallable() {
+    return runStreamOperationCallable;
   }
 
   @Override

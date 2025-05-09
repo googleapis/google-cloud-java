@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -183,6 +185,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -243,6 +247,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexService.addResponse(expectedResponse);
 
@@ -292,6 +298,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexService.addResponse(expectedResponse);
 
@@ -429,6 +437,8 @@ public class IndexServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setIndexStats(IndexStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -566,6 +576,7 @@ public class IndexServiceClientTest {
         UpsertDatapointsRequest.newBuilder()
             .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
             .addAllDatapoints(new ArrayList<IndexDatapoint>())
+            .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
     UpsertDatapointsResponse actualResponse = client.upsertDatapoints(request);
@@ -577,6 +588,7 @@ public class IndexServiceClientTest {
 
     Assert.assertEquals(request.getIndex(), actualRequest.getIndex());
     Assert.assertEquals(request.getDatapointsList(), actualRequest.getDatapointsList());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -593,6 +605,7 @@ public class IndexServiceClientTest {
           UpsertDatapointsRequest.newBuilder()
               .setIndex(IndexName.of("[PROJECT]", "[LOCATION]", "[INDEX]").toString())
               .addAllDatapoints(new ArrayList<IndexDatapoint>())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.upsertDatapoints(request);
       Assert.fail("No exception raised");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,15 +36,21 @@ import com.google.cloud.aiplatform.v1beta1.DeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployModelResponse;
 import com.google.cloud.aiplatform.v1beta1.Endpoint;
+import com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.GetEndpointRequest;
 import com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelRequest;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelResponse;
+import com.google.cloud.aiplatform.v1beta1.PublisherModelConfig;
+import com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelResponse;
+import com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateEndpointOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -112,6 +118,17 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningMethodDescriptor =
+          MethodDescriptor.<UpdateEndpointLongRunningRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.EndpointService/UpdateEndpointLongRunning")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEndpointLongRunningRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteEndpointRequest, Operation>
       deleteEndpointMethodDescriptor =
           MethodDescriptor.<DeleteEndpointRequest, Operation>newBuilder()
@@ -149,6 +166,29 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MutateDeployedModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigMethodDescriptor =
+          MethodDescriptor.<SetPublisherModelConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.EndpointService/SetPublisherModelConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SetPublisherModelConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigMethodDescriptor =
+          MethodDescriptor.<FetchPublisherModelConfigRequest, PublisherModelConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.EndpointService/FetchPublisherModelConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchPublisherModelConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PublisherModelConfig.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -205,6 +245,11 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
   private final UnaryCallable<ListEndpointsRequest, ListEndpointsPagedResponse>
       listEndpointsPagedCallable;
   private final UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable;
+  private final UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable;
+  private final OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable;
   private final UnaryCallable<DeleteEndpointRequest, Operation> deleteEndpointCallable;
   private final OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationCallable;
@@ -222,6 +267,15 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           MutateDeployedModelResponse,
           MutateDeployedModelOperationMetadata>
       mutateDeployedModelOperationCallable;
+  private final UnaryCallable<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigCallable;
+  private final OperationCallable<
+          SetPublisherModelConfigRequest,
+          PublisherModelConfig,
+          SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigOperationCallable;
+  private final UnaryCallable<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -315,6 +369,17 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningTransportSettings =
+            GrpcCallSettings.<UpdateEndpointLongRunningRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateEndpointLongRunningMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("endpoint.name", String.valueOf(request.getEndpoint().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteEndpointRequest, Operation> deleteEndpointTransportSettings =
         GrpcCallSettings.<DeleteEndpointRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEndpointMethodDescriptor)
@@ -355,6 +420,28 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SetPublisherModelConfigRequest, Operation>
+        setPublisherModelConfigTransportSettings =
+            GrpcCallSettings.<SetPublisherModelConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(setPublisherModelConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<FetchPublisherModelConfigRequest, PublisherModelConfig>
+        fetchPublisherModelConfigTransportSettings =
+            GrpcCallSettings.<FetchPublisherModelConfigRequest, PublisherModelConfig>newBuilder()
+                .setMethodDescriptor(fetchPublisherModelConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -428,6 +515,17 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
     this.updateEndpointCallable =
         callableFactory.createUnaryCallable(
             updateEndpointTransportSettings, settings.updateEndpointSettings(), clientContext);
+    this.updateEndpointLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            updateEndpointLongRunningTransportSettings,
+            settings.updateEndpointLongRunningSettings(),
+            clientContext);
+    this.updateEndpointLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            updateEndpointLongRunningTransportSettings,
+            settings.updateEndpointLongRunningOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteEndpointCallable =
         callableFactory.createUnaryCallable(
             deleteEndpointTransportSettings, settings.deleteEndpointSettings(), clientContext);
@@ -466,6 +564,22 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
             settings.mutateDeployedModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.setPublisherModelConfigCallable =
+        callableFactory.createUnaryCallable(
+            setPublisherModelConfigTransportSettings,
+            settings.setPublisherModelConfigSettings(),
+            clientContext);
+    this.setPublisherModelConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            setPublisherModelConfigTransportSettings,
+            settings.setPublisherModelConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.fetchPublisherModelConfigCallable =
+        callableFactory.createUnaryCallable(
+            fetchPublisherModelConfigTransportSettings,
+            settings.fetchPublisherModelConfigSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -528,6 +642,19 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
   }
 
   @Override
+  public UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable() {
+    return updateEndpointLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable() {
+    return updateEndpointLongRunningOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteEndpointRequest, Operation> deleteEndpointCallable() {
     return deleteEndpointCallable;
   }
@@ -573,6 +700,27 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
           MutateDeployedModelOperationMetadata>
       mutateDeployedModelOperationCallable() {
     return mutateDeployedModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigCallable() {
+    return setPublisherModelConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          SetPublisherModelConfigRequest,
+          PublisherModelConfig,
+          SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigOperationCallable() {
+    return setPublisherModelConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigCallable() {
+    return fetchPublisherModelConfigCallable;
   }
 
   @Override

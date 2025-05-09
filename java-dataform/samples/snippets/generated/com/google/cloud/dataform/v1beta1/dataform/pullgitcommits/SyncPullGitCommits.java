@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ package com.google.cloud.dataform.v1beta1.samples;
 import com.google.cloud.dataform.v1beta1.CommitAuthor;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.PullGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PullGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 
 public class SyncPullGitCommits {
 
@@ -44,7 +44,7 @@ public class SyncPullGitCommits {
               .setRemoteBranch("remoteBranch-533119608")
               .setAuthor(CommitAuthor.newBuilder().build())
               .build();
-      dataformClient.pullGitCommits(request);
+      PullGitCommitsResponse response = dataformClient.pullGitCommits(request);
     }
   }
 }

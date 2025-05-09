@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,19 +73,304 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateEndpoint</td>
+ *      <td><p> Creates an Endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createEndpointAsync(CreateEndpointRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createEndpointAsync(LocationName parent, Endpoint endpoint)
+ *           <li><p> createEndpointAsync(String parent, Endpoint endpoint)
+ *           <li><p> createEndpointAsync(LocationName parent, Endpoint endpoint, String endpointId)
+ *           <li><p> createEndpointAsync(String parent, Endpoint endpoint, String endpointId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createEndpointOperationCallable()
+ *           <li><p> createEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetEndpoint</td>
+ *      <td><p> Gets an Endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEndpoint(GetEndpointRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEndpoint(EndpointName name)
+ *           <li><p> getEndpoint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListEndpoints</td>
+ *      <td><p> Lists Endpoints in a Location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listEndpoints(ListEndpointsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listEndpoints(LocationName parent)
+ *           <li><p> listEndpoints(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listEndpointsPagedCallable()
+ *           <li><p> listEndpointsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateEndpoint</td>
+ *      <td><p> Updates an Endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateEndpoint(UpdateEndpointRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateEndpoint(Endpoint endpoint, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateEndpointLongRunning</td>
+ *      <td><p> Updates an Endpoint with a long running operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateEndpointLongRunningAsync(UpdateEndpointLongRunningRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateEndpointLongRunningAsync(Endpoint endpoint)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateEndpointLongRunningOperationCallable()
+ *           <li><p> updateEndpointLongRunningCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteEndpoint</td>
+ *      <td><p> Deletes an Endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteEndpointAsync(DeleteEndpointRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteEndpointAsync(EndpointName name)
+ *           <li><p> deleteEndpointAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteEndpointOperationCallable()
+ *           <li><p> deleteEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeployModel</td>
+ *      <td><p> Deploys a Model into this Endpoint, creating a DeployedModel within it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deployModelAsync(DeployModelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deployModelAsync(EndpointName endpoint, DeployedModel deployedModel, Map&lt;String, Integer&gt; trafficSplit)
+ *           <li><p> deployModelAsync(String endpoint, DeployedModel deployedModel, Map&lt;String, Integer&gt; trafficSplit)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deployModelOperationCallable()
+ *           <li><p> deployModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UndeployModel</td>
+ *      <td><p> Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources it's using.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> undeployModelAsync(UndeployModelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> undeployModelAsync(EndpointName endpoint, String deployedModelId, Map&lt;String, Integer&gt; trafficSplit)
+ *           <li><p> undeployModelAsync(String endpoint, String deployedModelId, Map&lt;String, Integer&gt; trafficSplit)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> undeployModelOperationCallable()
+ *           <li><p> undeployModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MutateDeployedModel</td>
+ *      <td><p> Updates an existing deployed model. Updatable fields include `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and `enable_container_logging` (v1beta1 only).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> mutateDeployedModelAsync(MutateDeployedModelRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> mutateDeployedModelAsync(EndpointName endpoint, DeployedModel deployedModel, FieldMask updateMask)
+ *           <li><p> mutateDeployedModelAsync(String endpoint, DeployedModel deployedModel, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> mutateDeployedModelOperationCallable()
+ *           <li><p> mutateDeployedModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetPublisherModelConfig</td>
+ *      <td><p> Sets (creates or updates) configs of publisher models. For example, sets the request/response logging config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setPublisherModelConfigAsync(SetPublisherModelConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setPublisherModelConfigAsync(EndpointName name, PublisherModelConfig publisherModelConfig)
+ *           <li><p> setPublisherModelConfigAsync(String name, PublisherModelConfig publisherModelConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setPublisherModelConfigOperationCallable()
+ *           <li><p> setPublisherModelConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchPublisherModelConfig</td>
+ *      <td><p> Fetches the configs of publisher models.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchPublisherModelConfig(FetchPublisherModelConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchPublisherModelConfig(EndpointName name)
+ *           <li><p> fetchPublisherModelConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchPublisherModelConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -817,6 +1102,124 @@ public class EndpointServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     return stub.updateEndpointCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Endpoint with a long running operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   Endpoint endpoint = Endpoint.newBuilder().build();
+   *   Endpoint response = endpointServiceClient.updateEndpointLongRunningAsync(endpoint).get();
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The Endpoint which replaces the resource on the server. Currently we
+   *     only support updating the `client_connection_config` field, all the other fields' update
+   *     will be blocked.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningAsync(Endpoint endpoint) {
+    UpdateEndpointLongRunningRequest request =
+        UpdateEndpointLongRunningRequest.newBuilder().setEndpoint(endpoint).build();
+    return updateEndpointLongRunningAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Endpoint with a long running operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   UpdateEndpointLongRunningRequest request =
+   *       UpdateEndpointLongRunningRequest.newBuilder()
+   *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .build();
+   *   Endpoint response = endpointServiceClient.updateEndpointLongRunningAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningAsync(UpdateEndpointLongRunningRequest request) {
+    return updateEndpointLongRunningOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Endpoint with a long running operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   UpdateEndpointLongRunningRequest request =
+   *       UpdateEndpointLongRunningRequest.newBuilder()
+   *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Endpoint, UpdateEndpointOperationMetadata> future =
+   *       endpointServiceClient.updateEndpointLongRunningOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Endpoint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable() {
+    return stub.updateEndpointLongRunningOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an Endpoint with a long running operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   UpdateEndpointLongRunningRequest request =
+   *       UpdateEndpointLongRunningRequest.newBuilder()
+   *           .setEndpoint(Endpoint.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       endpointServiceClient.updateEndpointLongRunningCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable() {
+    return stub.updateEndpointLongRunningCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1598,6 +2001,314 @@ public class EndpointServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<MutateDeployedModelRequest, Operation> mutateDeployedModelCallable() {
     return stub.mutateDeployedModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets (creates or updates) configs of publisher models. For example, sets the request/response
+   * logging config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   EndpointName name =
+   *       EndpointName.ofProjectLocationPublisherModelName(
+   *           "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+   *   PublisherModelConfig publisherModelConfig = PublisherModelConfig.newBuilder().build();
+   *   PublisherModelConfig response =
+   *       endpointServiceClient.setPublisherModelConfigAsync(name, publisherModelConfig).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the publisher model, in the format of
+   *     `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`.
+   * @param publisherModelConfig Required. The publisher model config.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PublisherModelConfig, SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigAsync(EndpointName name, PublisherModelConfig publisherModelConfig) {
+    SetPublisherModelConfigRequest request =
+        SetPublisherModelConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPublisherModelConfig(publisherModelConfig)
+            .build();
+    return setPublisherModelConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets (creates or updates) configs of publisher models. For example, sets the request/response
+   * logging config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   String name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
+   *   PublisherModelConfig publisherModelConfig = PublisherModelConfig.newBuilder().build();
+   *   PublisherModelConfig response =
+   *       endpointServiceClient.setPublisherModelConfigAsync(name, publisherModelConfig).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the publisher model, in the format of
+   *     `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`.
+   * @param publisherModelConfig Required. The publisher model config.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PublisherModelConfig, SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigAsync(String name, PublisherModelConfig publisherModelConfig) {
+    SetPublisherModelConfigRequest request =
+        SetPublisherModelConfigRequest.newBuilder()
+            .setName(name)
+            .setPublisherModelConfig(publisherModelConfig)
+            .build();
+    return setPublisherModelConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets (creates or updates) configs of publisher models. For example, sets the request/response
+   * logging config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   SetPublisherModelConfigRequest request =
+   *       SetPublisherModelConfigRequest.newBuilder()
+   *           .setName(
+   *               EndpointName.ofProjectLocationPublisherModelName(
+   *                       "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]")
+   *                   .toString())
+   *           .setPublisherModelConfig(PublisherModelConfig.newBuilder().build())
+   *           .build();
+   *   PublisherModelConfig response =
+   *       endpointServiceClient.setPublisherModelConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PublisherModelConfig, SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigAsync(SetPublisherModelConfigRequest request) {
+    return setPublisherModelConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets (creates or updates) configs of publisher models. For example, sets the request/response
+   * logging config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   SetPublisherModelConfigRequest request =
+   *       SetPublisherModelConfigRequest.newBuilder()
+   *           .setName(
+   *               EndpointName.ofProjectLocationPublisherModelName(
+   *                       "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]")
+   *                   .toString())
+   *           .setPublisherModelConfig(PublisherModelConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<PublisherModelConfig, SetPublisherModelConfigOperationMetadata> future =
+   *       endpointServiceClient.setPublisherModelConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PublisherModelConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SetPublisherModelConfigRequest,
+          PublisherModelConfig,
+          SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigOperationCallable() {
+    return stub.setPublisherModelConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets (creates or updates) configs of publisher models. For example, sets the request/response
+   * logging config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   SetPublisherModelConfigRequest request =
+   *       SetPublisherModelConfigRequest.newBuilder()
+   *           .setName(
+   *               EndpointName.ofProjectLocationPublisherModelName(
+   *                       "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]")
+   *                   .toString())
+   *           .setPublisherModelConfig(PublisherModelConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       endpointServiceClient.setPublisherModelConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigCallable() {
+    return stub.setPublisherModelConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the configs of publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   EndpointName name =
+   *       EndpointName.ofProjectLocationPublisherModelName(
+   *           "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+   *   PublisherModelConfig response = endpointServiceClient.fetchPublisherModelConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the publisher model, in the format of
+   *     `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelConfig fetchPublisherModelConfig(EndpointName name) {
+    FetchPublisherModelConfigRequest request =
+        FetchPublisherModelConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return fetchPublisherModelConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the configs of publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   String name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
+   *   PublisherModelConfig response = endpointServiceClient.fetchPublisherModelConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the publisher model, in the format of
+   *     `projects/{project}/locations/{location}/publishers/{publisher}/models/{model}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelConfig fetchPublisherModelConfig(String name) {
+    FetchPublisherModelConfigRequest request =
+        FetchPublisherModelConfigRequest.newBuilder().setName(name).build();
+    return fetchPublisherModelConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the configs of publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   FetchPublisherModelConfigRequest request =
+   *       FetchPublisherModelConfigRequest.newBuilder()
+   *           .setName(
+   *               EndpointName.ofProjectLocationPublisherModelName(
+   *                       "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]")
+   *                   .toString())
+   *           .build();
+   *   PublisherModelConfig response = endpointServiceClient.fetchPublisherModelConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelConfig fetchPublisherModelConfig(
+      FetchPublisherModelConfigRequest request) {
+    return fetchPublisherModelConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the configs of publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   FetchPublisherModelConfigRequest request =
+   *       FetchPublisherModelConfigRequest.newBuilder()
+   *           .setName(
+   *               EndpointName.ofProjectLocationPublisherModelName(
+   *                       "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<PublisherModelConfig> future =
+   *       endpointServiceClient.fetchPublisherModelConfigCallable().futureCall(request);
+   *   // Do something.
+   *   PublisherModelConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigCallable() {
+    return stub.fetchPublisherModelConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import "google/cloud/aiplatform/v1beta1/deployed_model_ref.proto";
 import "google/cloud/aiplatform/v1beta1/encryption_spec.proto";
 import "google/cloud/aiplatform/v1beta1/env_var.proto";
 import "google/cloud/aiplatform/v1beta1/explanation.proto";
+import "google/protobuf/duration.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -103,6 +104,18 @@ message Model {
     ];
   }
 
+  // User input field to specify the base model source. Currently it only
+  // supports specifing the Model Garden models and Genie models.
+  message BaseModelSource {
+    oneof source {
+      // Source information of Model Garden models.
+      ModelGardenSource model_garden_source = 1;
+
+      // Information about the base model of Genie models.
+      GenieSource genie_source = 2;
+    }
+  }
+
   // Identifies a type of Model's prediction resources.
   enum DeploymentResourcesType {
     // Should not be used.
@@ -167,6 +180,9 @@ message Model {
   // The description of this version.
   string version_description = 30;
 
+  // The default checkpoint id of a model version.
+  string default_checkpoint_id = 53;
+
   // The schemata that describe formats of the Model's predictions and
   // explanations as given and returned via
   // [PredictionService.Predict][google.cloud.aiplatform.v1beta1.PredictionService.Predict]
@@ -210,12 +226,12 @@ message Model {
   // deploying this Model. The specification is ingested upon
   // [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel],
   // and all binaries it contains are copied and stored internally by Vertex AI.
-  // Not present for AutoML Models or Large Models.
+  // Not required for AutoML Models.
   ModelContainerSpec container_spec = 9
       [(google.api.field_behavior) = INPUT_ONLY];
 
   // Immutable. The path to the directory containing the Model artifact and any
-  // of its supporting files. Not present for AutoML Models or Large Models.
+  // of its supporting files. Not required for AutoML Models.
   string artifact_uri = 26 [(google.api.field_behavior) = IMMUTABLE];
 
   // Output only. When this Model is deployed, its prediction resources are
@@ -395,7 +411,8 @@ message Model {
   EncryptionSpec encryption_spec = 24;
 
   // Output only. Source of a model. It can either be automl training pipeline,
-  // custom training pipeline, BigQuery ML, or existing Vertex AI Model.
+  // custom training pipeline, BigQuery ML, or saved and tuned from Genie or
+  // Model Garden.
   ModelSourceInfo model_source_info = 38
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -409,6 +426,23 @@ message Model {
   // is
   // `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
   string metadata_artifact = 44 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. User input field to specify the base model source. Currently it
+  // only supports specifing the Model Garden models and Genie models.
+  BaseModelSource base_model_source = 50
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 51 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 52 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. Output only. The checkpoints of the model.
+  repeated Checkpoint checkpoints = 57 [
+    (google.api.field_behavior) = OUTPUT_ONLY,
+    (google.api.field_behavior) = OPTIONAL
+  ];
 }
 
 // Contains information about the Large Model.
@@ -417,6 +451,26 @@ message LargeModelReference {
   // "chat-bison", "text-bison". Or model name with version ID, like
   // "chat-bison@001", "text-bison@005", etc.
   string name = 1 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Contains information about the source of the models generated from Model
+// Garden.
+message ModelGardenSource {
+  // Required. The model garden source model resource name.
+  string public_model_name = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. The model garden source model version ID.
+  string version_id = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Whether to avoid pulling the model from the HF cache.
+  bool skip_hf_model_cache = 4 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Contains information about the source of the models generated from Generative
+// AI Studio.
+message GenieSource {
+  // Required. The public base model URI.
+  string base_model_uri = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Contains the schemata used in Model's predictions and explanations via
@@ -693,6 +747,35 @@ message ModelContainerSpec {
   //   [`AIP_DEPLOYED_MODEL_ID` environment
   //   variable](https://cloud.google.com/vertex-ai/docs/predictions/custom-container-requirements#aip-variables).)
   string health_route = 7 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Immutable. List of ports to expose from the container. Vertex AI sends gRPC
+  // prediction requests that it receives to the first port on this list. Vertex
+  // AI also sends liveness and health checks to this port.
+  //
+  // If you do not specify this field, gRPC requests to the container will be
+  // disabled.
+  //
+  // Vertex AI does not use ports other than the first one listed. This field
+  // corresponds to the `ports` field of the Kubernetes Containers v1 core API.
+  repeated Port grpc_ports = 9 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Immutable. Deployment timeout.
+  // Limit for deployment timeout is 2 hours.
+  google.protobuf.Duration deployment_timeout = 10
+      [(google.api.field_behavior) = IMMUTABLE];
+
+  // Immutable. The amount of the VM memory to reserve as the shared memory for
+  // the model in megabytes.
+  int64 shared_memory_size_mb = 11 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Immutable. Specification for Kubernetes startup probe.
+  Probe startup_probe = 12 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Immutable. Specification for Kubernetes readiness probe.
+  Probe health_probe = 13 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Immutable. Specification for Kubernetes liveness probe.
+  Probe liveness_probe = 14 [(google.api.field_behavior) = IMMUTABLE];
 }
 
 // Represents a network port in a container.
@@ -705,6 +788,10 @@ message Port {
 // Detail description of the source information of the model.
 message ModelSourceInfo {
   // Source of the model.
+  // Different from `objective` field, this `ModelSourceType` enum
+  // indicates the source from which the model was accessed or obtained,
+  // whereas the `objective` indicates the overall aim or function of this
+  // model.
   enum ModelSourceType {
     // Should not be used.
     MODEL_SOURCE_TYPE_UNSPECIFIED = 0;
@@ -723,6 +810,12 @@ message ModelSourceInfo {
 
     // The Model is saved or tuned from Genie.
     GENIE = 5;
+
+    // The Model is uploaded by text embedding finetuning pipeline.
+    CUSTOM_TEXT_EMBEDDING = 6;
+
+    // The Model is saved or tuned from Marketplace.
+    MARKETPLACE = 7;
   }
 
   // Type of the model source.
@@ -732,4 +825,134 @@ message ModelSourceInfo {
   // [source_type][google.cloud.aiplatform.v1beta1.ModelSourceInfo.source_type]
   // pertains to the original.
   bool copy = 2;
+}
+
+// Probe describes a health check to be performed against a container to
+// determine whether it is alive or ready to receive traffic.
+message Probe {
+  // ExecAction specifies a command to execute.
+  message ExecAction {
+    // Command is the command line to execute inside the container, the working
+    // directory for the command is root ('/') in the container's filesystem.
+    // The command is simply exec'd, it is not run inside a shell, so
+    // traditional shell instructions ('|', etc) won't work. To use a shell, you
+    // need to explicitly call out to that shell. Exit status of 0 is treated as
+    // live/healthy and non-zero is unhealthy.
+    repeated string command = 1;
+  }
+
+  // HttpGetAction describes an action based on HTTP Get requests.
+  message HttpGetAction {
+    // Path to access on the HTTP server.
+    string path = 1;
+
+    // Number of the port to access on the container.
+    // Number must be in the range 1 to 65535.
+    int32 port = 2;
+
+    // Host name to connect to, defaults to the model serving container's IP.
+    // You probably want to set "Host" in httpHeaders instead.
+    string host = 3;
+
+    // Scheme to use for connecting to the host.
+    // Defaults to HTTP. Acceptable values are "HTTP" or "HTTPS".
+    string scheme = 4;
+
+    // Custom headers to set in the request. HTTP allows repeated headers.
+    repeated HttpHeader http_headers = 5;
+  }
+
+  // GrpcAction checks the health of a container using a gRPC service.
+  message GrpcAction {
+    // Port number of the gRPC service. Number must be in the range 1 to 65535.
+    int32 port = 1;
+
+    // Service is the name of the service to place in the gRPC
+    // HealthCheckRequest (see
+    // https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+    //
+    // If this is not specified, the default behavior is defined by gRPC.
+    string service = 2;
+  }
+
+  // TcpSocketAction probes the health of a container by opening a TCP socket
+  // connection.
+  message TcpSocketAction {
+    // Number of the port to access on the container.
+    // Number must be in the range 1 to 65535.
+    int32 port = 1;
+
+    // Optional: Host name to connect to, defaults to the model serving
+    // container's IP.
+    string host = 2;
+  }
+
+  // HttpHeader describes a custom header to be used in HTTP probes
+  message HttpHeader {
+    // The header field name.
+    // This will be canonicalized upon output, so case-variant names will be
+    // understood as the same header.
+    string name = 1;
+
+    // The header field value
+    string value = 2;
+  }
+
+  oneof probe_type {
+    // ExecAction probes the health of a container by executing a command.
+    ExecAction exec = 1;
+
+    // HttpGetAction probes the health of a container by sending an HTTP GET
+    // request.
+    HttpGetAction http_get = 4;
+
+    // GrpcAction probes the health of a container by sending a gRPC request.
+    GrpcAction grpc = 5;
+
+    // TcpSocketAction probes the health of a container by opening a TCP socket
+    // connection.
+    TcpSocketAction tcp_socket = 6;
+  }
+
+  // How often (in seconds) to perform the probe. Default to 10 seconds.
+  // Minimum value is 1. Must be less than timeout_seconds.
+  //
+  // Maps to Kubernetes probe argument 'periodSeconds'.
+  int32 period_seconds = 2;
+
+  // Number of seconds after which the probe times out. Defaults to 1 second.
+  // Minimum value is 1. Must be greater or equal to period_seconds.
+  //
+  // Maps to Kubernetes probe argument 'timeoutSeconds'.
+  int32 timeout_seconds = 3;
+
+  // Number of consecutive failures before the probe is considered failed.
+  // Defaults to 3. Minimum value is 1.
+  //
+  // Maps to Kubernetes probe argument 'failureThreshold'.
+  int32 failure_threshold = 7;
+
+  // Number of consecutive successes before the probe is considered successful.
+  // Defaults to 1. Minimum value is 1.
+  //
+  // Maps to Kubernetes probe argument 'successThreshold'.
+  int32 success_threshold = 8;
+
+  // Number of seconds to wait before starting the probe. Defaults to 0.
+  // Minimum value is 0.
+  //
+  // Maps to Kubernetes probe argument 'initialDelaySeconds'.
+  int32 initial_delay_seconds = 9;
+}
+
+// Describes the machine learning model version checkpoint.
+message Checkpoint {
+  // The ID of the checkpoint.
+  string checkpoint_id = 1;
+
+  // The epoch of the checkpoint.
+  int64 epoch = 2;
+
+  // The step of the checkpoint.
+  int64 step = 3;
 }

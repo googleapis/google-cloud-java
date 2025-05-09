@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.23.0</version>
+      <version>26.59.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -32,32 +32,31 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-speech</artifactId>
   </dependency>
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-speech:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>4.23.0</version>
+  <version>4.56.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-speech:4.23.0'
+implementation 'com.google.cloud:google-cloud-speech:4.56.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.23.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.56.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -137,7 +136,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Cloud Speech uses gRPC for the transport layer.
+Cloud Speech uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -231,7 +230,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-speech.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-speech/4.19.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-speech/4.56.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

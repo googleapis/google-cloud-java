@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,6 +100,8 @@ public class ConversationModelsClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllDatasets(new ArrayList<InputDataset>())
             .setLanguageCode("languageCode-2092349083")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -159,6 +161,8 @@ public class ConversationModelsClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllDatasets(new ArrayList<InputDataset>())
             .setLanguageCode("languageCode-2092349083")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockService.addResponse(expectedResponse);
 

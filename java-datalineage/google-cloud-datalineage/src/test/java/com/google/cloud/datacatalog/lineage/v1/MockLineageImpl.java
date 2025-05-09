@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,6 +58,29 @@ public class MockLineageImpl extends LineageImplBase {
   public void reset() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
+  }
+
+  @Override
+  public void processOpenLineageRunEvent(
+      ProcessOpenLineageRunEventRequest request,
+      StreamObserver<ProcessOpenLineageRunEventResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProcessOpenLineageRunEventResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ProcessOpenLineageRunEventResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ProcessOpenLineageRunEvent, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProcessOpenLineageRunEventResponse.class.getName(),
+                  Exception.class.getName())));
+    }
   }
 
   @Override
@@ -385,7 +408,8 @@ public class MockLineageImpl extends LineageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchSearchLinkProcesses, expected %s or %s",
+                  "Unrecognized response type %s for method BatchSearchLinkProcesses, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchSearchLinkProcessesResponse.class.getName(),
                   Exception.class.getName())));

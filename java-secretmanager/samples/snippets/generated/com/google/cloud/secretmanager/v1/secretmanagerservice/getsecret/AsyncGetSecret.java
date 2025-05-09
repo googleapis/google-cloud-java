@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class AsyncGetSecret {
         SecretManagerServiceClient.create()) {
       GetSecretRequest request =
           GetSecretRequest.newBuilder()
-              .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+              .setName(SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]").toString())
               .build();
       ApiFuture<Secret> future = secretManagerServiceClient.getSecretCallable().futureCall(request);
       // Do something.

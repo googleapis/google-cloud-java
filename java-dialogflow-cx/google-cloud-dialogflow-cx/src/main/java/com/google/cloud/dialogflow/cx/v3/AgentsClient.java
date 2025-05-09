@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,19 +66,246 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the AgentsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAgents</td>
+ *      <td><p> Returns the list of all agents in the specified location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAgents(ListAgentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAgents(LocationName parent)
+ *           <li><p> listAgents(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAgentsPagedCallable()
+ *           <li><p> listAgentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAgent</td>
+ *      <td><p> Retrieves the specified agent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAgent(GetAgentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAgent(AgentName name)
+ *           <li><p> getAgent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAgent</td>
+ *      <td><p> Creates an agent in the specified location.
+ * <p>  Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAgent(CreateAgentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAgent(LocationName parent, Agent agent)
+ *           <li><p> createAgent(String parent, Agent agent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAgent</td>
+ *      <td><p> Updates the specified agent.
+ * <p>  Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAgent(UpdateAgentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAgent(Agent agent, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAgent</td>
+ *      <td><p> Deletes the specified agent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAgent(DeleteAgentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteAgent(AgentName name)
+ *           <li><p> deleteAgent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportAgent</td>
+ *      <td><p> Exports the specified agent to a binary file.
+ * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
+ * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportAgentAsync(ExportAgentRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportAgentOperationCallable()
+ *           <li><p> exportAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RestoreAgent</td>
+ *      <td><p> Restores the specified agent from a binary file.
+ * <p>  Replaces the current agent with a new one. Note that all existing resources in agent (e.g. intents, entity types, flows) will be removed.
+ * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
+ * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+ * <p>  Note: You should always train flows prior to sending them queries. See the [training documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restoreAgentAsync(RestoreAgentRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restoreAgentOperationCallable()
+ *           <li><p> restoreAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ValidateAgent</td>
+ *      <td><p> Validates the specified agent and creates or updates validation results. The agent in draft version is validated. Please call this API after the training is completed to get the complete validation results.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> validateAgent(ValidateAgentRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> validateAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAgentValidationResult</td>
+ *      <td><p> Gets the latest agent validation result. Agent validation is performed when ValidateAgent is called.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAgentValidationResult(GetAgentValidationResultRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAgentValidationResult(AgentValidationResultName name)
+ *           <li><p> getAgentValidationResult(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAgentValidationResultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGenerativeSettings</td>
+ *      <td><p> Gets the generative settings for the agent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGenerativeSettings(GetGenerativeSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getGenerativeSettings(AgentGenerativeSettingsName name, String languageCode)
+ *           <li><p> getGenerativeSettings(String name, String languageCode)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGenerativeSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGenerativeSettings</td>
+ *      <td><p> Updates the generative settings for the agent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGenerativeSettings(UpdateGenerativeSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateGenerativeSettings(GenerativeSettings generativeSettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGenerativeSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -224,8 +451,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location to list all agents for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param parent Required. The location to list all agents for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAgentsPagedResponse listAgents(LocationName parent) {
@@ -254,8 +481,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location to list all agents for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param parent Required. The location to list all agents for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAgentsPagedResponse listAgents(String parent) {
@@ -382,8 +609,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the agent. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param name Required. The name of the agent. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(AgentName name) {
@@ -410,8 +637,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the agent. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param name Required. The name of the agent. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent getAgent(String name) {
@@ -496,8 +723,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location to create a agent for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param parent Required. The location to create a agent for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @param agent Required. The agent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -532,8 +759,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The location to create a agent for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;`.
+   * @param parent Required. The location to create a agent for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @param agent Required. The agent to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -720,8 +947,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the agent to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param name Required. The name of the agent to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(AgentName name) {
@@ -748,8 +975,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the agent to delete. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
+   * @param name Required. The name of the agent to delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteAgent(String name) {
@@ -1150,8 +1377,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The agent name. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/validationResult`.
+   * @param name Required. The agent name. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AgentValidationResult getAgentValidationResult(AgentValidationResultName name) {
@@ -1181,8 +1408,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The agent name. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/validationResult`.
+   * @param name Required. The agent name. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AgentValidationResult getAgentValidationResult(String name) {
@@ -1275,8 +1502,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/generativeSettings`.
+   * @param name Required. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generativeSettings`.
    * @param languageCode Required. Language code of the generative settings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1309,8 +1536,8 @@ public class AgentsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/generativeSettings`.
+   * @param name Required. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/generativeSettings`.
    * @param languageCode Required. Language code of the generative settings.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

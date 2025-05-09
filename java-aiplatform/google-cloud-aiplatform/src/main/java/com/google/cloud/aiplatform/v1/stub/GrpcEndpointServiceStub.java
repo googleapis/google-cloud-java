@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,8 @@ import com.google.cloud.aiplatform.v1.MutateDeployedModelResponse;
 import com.google.cloud.aiplatform.v1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1.UndeployModelResponse;
+import com.google.cloud.aiplatform.v1.UpdateEndpointLongRunningRequest;
+import com.google.cloud.aiplatform.v1.UpdateEndpointOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpdateEndpointRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -108,6 +110,17 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEndpointRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningMethodDescriptor =
+          MethodDescriptor.<UpdateEndpointLongRunningRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.EndpointService/UpdateEndpointLongRunning")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEndpointLongRunningRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<DeleteEndpointRequest, Operation>
@@ -202,6 +215,11 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
   private final UnaryCallable<ListEndpointsRequest, ListEndpointsPagedResponse>
       listEndpointsPagedCallable;
   private final UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable;
+  private final UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable;
+  private final OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable;
   private final UnaryCallable<DeleteEndpointRequest, Operation> deleteEndpointCallable;
   private final OperationCallable<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationCallable;
@@ -312,6 +330,17 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningTransportSettings =
+            GrpcCallSettings.<UpdateEndpointLongRunningRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateEndpointLongRunningMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("endpoint.name", String.valueOf(request.getEndpoint().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteEndpointRequest, Operation> deleteEndpointTransportSettings =
         GrpcCallSettings.<DeleteEndpointRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEndpointMethodDescriptor)
@@ -425,6 +454,17 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
     this.updateEndpointCallable =
         callableFactory.createUnaryCallable(
             updateEndpointTransportSettings, settings.updateEndpointSettings(), clientContext);
+    this.updateEndpointLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            updateEndpointLongRunningTransportSettings,
+            settings.updateEndpointLongRunningSettings(),
+            clientContext);
+    this.updateEndpointLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            updateEndpointLongRunningTransportSettings,
+            settings.updateEndpointLongRunningOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteEndpointCallable =
         callableFactory.createUnaryCallable(
             deleteEndpointTransportSettings, settings.deleteEndpointSettings(), clientContext);
@@ -522,6 +562,19 @@ public class GrpcEndpointServiceStub extends EndpointServiceStub {
   @Override
   public UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     return updateEndpointCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningCallable() {
+    return updateEndpointLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationCallable() {
+    return updateEndpointLongRunningOperationCallable;
   }
 
   @Override

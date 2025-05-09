@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,10 +22,12 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListDnsAuthorizationsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListLocationsPagedResponse;
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListTrustConfigsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -61,17 +63,20 @@ import com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
 import com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateRequest;
 import com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.GetTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest;
@@ -82,11 +87,15 @@ import com.google.cloud.certificatemanager.v1.ListCertificatesRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificatesResponse;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
+import com.google.cloud.certificatemanager.v1.TrustConfig;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -98,9 +107,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -118,7 +127,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getCertificate to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getCertificate:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -135,10 +146,47 @@ import org.threeten.bp.Duration;
  *             .getCertificateSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CertificateManagerStubSettings certificateManagerSettings =
  *     certificateManagerSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createCertificate:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CertificateManagerStubSettings.Builder certificateManagerSettingsBuilder =
+ *     CertificateManagerStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * certificateManagerSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -239,6 +287,19 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
       deleteCertificateIssuanceConfigOperationSettings;
   private final PagedCallSettings<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+      listTrustConfigsSettings;
+  private final UnaryCallSettings<GetTrustConfigRequest, TrustConfig> getTrustConfigSettings;
+  private final UnaryCallSettings<CreateTrustConfigRequest, Operation> createTrustConfigSettings;
+  private final OperationCallSettings<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationSettings;
+  private final UnaryCallSettings<UpdateTrustConfigRequest, Operation> updateTrustConfigSettings;
+  private final OperationCallSettings<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationSettings;
+  private final UnaryCallSettings<DeleteTrustConfigRequest, Operation> deleteTrustConfigSettings;
+  private final OperationCallSettings<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationSettings;
+  private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
@@ -277,9 +338,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
 
             @Override
             public Iterable<Certificate> extractResources(ListCertificatesResponse payload) {
-              return payload.getCertificatesList() == null
-                  ? ImmutableList.<Certificate>of()
-                  : payload.getCertificatesList();
+              return payload.getCertificatesList();
             }
           };
 
@@ -317,9 +376,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
 
             @Override
             public Iterable<CertificateMap> extractResources(ListCertificateMapsResponse payload) {
-              return payload.getCertificateMapsList() == null
-                  ? ImmutableList.<CertificateMap>of()
-                  : payload.getCertificateMapsList();
+              return payload.getCertificateMapsList();
             }
           };
 
@@ -364,9 +421,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             @Override
             public Iterable<CertificateMapEntry> extractResources(
                 ListCertificateMapEntriesResponse payload) {
-              return payload.getCertificateMapEntriesList() == null
-                  ? ImmutableList.<CertificateMapEntry>of()
-                  : payload.getCertificateMapEntriesList();
+              return payload.getCertificateMapEntriesList();
             }
           };
 
@@ -405,9 +460,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             @Override
             public Iterable<DnsAuthorization> extractResources(
                 ListDnsAuthorizationsResponse payload) {
-              return payload.getDnsAuthorizationsList() == null
-                  ? ImmutableList.<DnsAuthorization>of()
-                  : payload.getDnsAuthorizationsList();
+              return payload.getDnsAuthorizationsList();
             }
           };
 
@@ -454,9 +507,45 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             @Override
             public Iterable<CertificateIssuanceConfig> extractResources(
                 ListCertificateIssuanceConfigsResponse payload) {
-              return payload.getCertificateIssuanceConfigsList() == null
-                  ? ImmutableList.<CertificateIssuanceConfig>of()
-                  : payload.getCertificateIssuanceConfigsList();
+              return payload.getCertificateIssuanceConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig>
+      LIST_TRUST_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTrustConfigsRequest injectToken(
+                ListTrustConfigsRequest payload, String token) {
+              return ListTrustConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTrustConfigsRequest injectPageSize(
+                ListTrustConfigsRequest payload, int pageSize) {
+              return ListTrustConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTrustConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTrustConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TrustConfig> extractResources(ListTrustConfigsResponse payload) {
+              return payload.getTrustConfigsList();
             }
           };
 
@@ -490,9 +579,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -618,6 +705,25 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
                           context);
               return ListCertificateIssuanceConfigsPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+      LIST_TRUST_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTrustConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsResponse> callable,
+                ListTrustConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTrustConfigsResponse> futureResponse) {
+              PageContext<ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TRUST_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListTrustConfigsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -872,6 +978,51 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     return deleteCertificateIssuanceConfigOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listTrustConfigs. */
+  public PagedCallSettings<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+      listTrustConfigsSettings() {
+    return listTrustConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTrustConfig. */
+  public UnaryCallSettings<GetTrustConfigRequest, TrustConfig> getTrustConfigSettings() {
+    return getTrustConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTrustConfig. */
+  public UnaryCallSettings<CreateTrustConfigRequest, Operation> createTrustConfigSettings() {
+    return createTrustConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTrustConfig. */
+  public OperationCallSettings<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationSettings() {
+    return createTrustConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTrustConfig. */
+  public UnaryCallSettings<UpdateTrustConfigRequest, Operation> updateTrustConfigSettings() {
+    return updateTrustConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTrustConfig. */
+  public OperationCallSettings<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationSettings() {
+    return updateTrustConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTrustConfig. */
+  public UnaryCallSettings<DeleteTrustConfigRequest, Operation> deleteTrustConfigSettings() {
+    return deleteTrustConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTrustConfig. */
+  public OperationCallSettings<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationSettings() {
+    return deleteTrustConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -899,12 +1050,19 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "certificatemanager";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "certificatemanager.googleapis.com:443";
   }
@@ -943,7 +1101,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -952,7 +1109,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1045,6 +1201,17 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
         settingsBuilder.deleteCertificateIssuanceConfigSettings().build();
     deleteCertificateIssuanceConfigOperationSettings =
         settingsBuilder.deleteCertificateIssuanceConfigOperationSettings().build();
+    listTrustConfigsSettings = settingsBuilder.listTrustConfigsSettings().build();
+    getTrustConfigSettings = settingsBuilder.getTrustConfigSettings().build();
+    createTrustConfigSettings = settingsBuilder.createTrustConfigSettings().build();
+    createTrustConfigOperationSettings =
+        settingsBuilder.createTrustConfigOperationSettings().build();
+    updateTrustConfigSettings = settingsBuilder.updateTrustConfigSettings().build();
+    updateTrustConfigOperationSettings =
+        settingsBuilder.updateTrustConfigOperationSettings().build();
+    deleteTrustConfigSettings = settingsBuilder.deleteTrustConfigSettings().build();
+    deleteTrustConfigOperationSettings =
+        settingsBuilder.deleteTrustConfigOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1157,6 +1324,25 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
         deleteCertificateIssuanceConfigOperationSettings;
     private final PagedCallSettings.Builder<
+            ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+        listTrustConfigsSettings;
+    private final UnaryCallSettings.Builder<GetTrustConfigRequest, TrustConfig>
+        getTrustConfigSettings;
+    private final UnaryCallSettings.Builder<CreateTrustConfigRequest, Operation>
+        createTrustConfigSettings;
+    private final OperationCallSettings.Builder<
+            CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+        createTrustConfigOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateTrustConfigRequest, Operation>
+        updateTrustConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+        updateTrustConfigOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteTrustConfigRequest, Operation>
+        deleteTrustConfigSettings;
+    private final OperationCallSettings.Builder<DeleteTrustConfigRequest, Empty, OperationMetadata>
+        deleteTrustConfigOperationSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -1180,13 +1366,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -1243,6 +1429,14 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       createCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
       deleteCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
+      listTrustConfigsSettings = PagedCallSettings.newBuilder(LIST_TRUST_CONFIGS_PAGE_STR_FACT);
+      getTrustConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTrustConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTrustConfigOperationSettings = OperationCallSettings.newBuilder();
+      updateTrustConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateTrustConfigOperationSettings = OperationCallSettings.newBuilder();
+      deleteTrustConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTrustConfigOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1272,6 +1466,11 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               getCertificateIssuanceConfigSettings,
               createCertificateIssuanceConfigSettings,
               deleteCertificateIssuanceConfigSettings,
+              listTrustConfigsSettings,
+              getTrustConfigSettings,
+              createTrustConfigSettings,
+              updateTrustConfigSettings,
+              deleteTrustConfigSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1333,6 +1532,14 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           settings.deleteCertificateIssuanceConfigSettings.toBuilder();
       deleteCertificateIssuanceConfigOperationSettings =
           settings.deleteCertificateIssuanceConfigOperationSettings.toBuilder();
+      listTrustConfigsSettings = settings.listTrustConfigsSettings.toBuilder();
+      getTrustConfigSettings = settings.getTrustConfigSettings.toBuilder();
+      createTrustConfigSettings = settings.createTrustConfigSettings.toBuilder();
+      createTrustConfigOperationSettings = settings.createTrustConfigOperationSettings.toBuilder();
+      updateTrustConfigSettings = settings.updateTrustConfigSettings.toBuilder();
+      updateTrustConfigOperationSettings = settings.updateTrustConfigOperationSettings.toBuilder();
+      deleteTrustConfigSettings = settings.deleteTrustConfigSettings.toBuilder();
+      deleteTrustConfigOperationSettings = settings.deleteTrustConfigOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1362,6 +1569,11 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               getCertificateIssuanceConfigSettings,
               createCertificateIssuanceConfigSettings,
               deleteCertificateIssuanceConfigSettings,
+              listTrustConfigsSettings,
+              getTrustConfigSettings,
+              createTrustConfigSettings,
+              updateTrustConfigSettings,
+              deleteTrustConfigSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1372,7 +1584,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1385,7 +1596,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1514,6 +1724,31 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listTrustConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getTrustConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createTrustConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateTrustConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteTrustConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1538,13 +1773,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1562,13 +1797,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1586,13 +1821,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1610,13 +1845,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1634,13 +1869,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1658,13 +1893,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1683,13 +1918,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1708,13 +1943,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1733,13 +1968,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1757,13 +1992,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1781,13 +2016,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1805,13 +2040,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1831,13 +2066,13 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1856,13 +2091,85 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createTrustConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateTrustConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TrustConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateTrustConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateTrustConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TrustConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteTrustConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTrustConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1902,8 +2209,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createCertificate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCertificateRequest, Certificate, OperationMetadata>
         createCertificateOperationSettings() {
       return createCertificateOperationSettings;
@@ -1916,8 +2221,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to updateCertificate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateCertificateRequest, Certificate, OperationMetadata>
         updateCertificateOperationSettings() {
       return updateCertificateOperationSettings;
@@ -1930,8 +2233,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCertificateRequest, Empty, OperationMetadata>
         deleteCertificateOperationSettings() {
       return deleteCertificateOperationSettings;
@@ -1959,8 +2260,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createCertificateMap. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCertificateMapRequest, CertificateMap, OperationMetadata>
         createCertificateMapOperationSettings() {
@@ -1974,8 +2273,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to updateCertificateMap. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCertificateMapRequest, CertificateMap, OperationMetadata>
         updateCertificateMapOperationSettings() {
@@ -1989,8 +2286,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificateMap. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCertificateMapRequest, Empty, OperationMetadata>
         deleteCertificateMapOperationSettings() {
       return deleteCertificateMapOperationSettings;
@@ -2018,8 +2313,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createCertificateMapEntry. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCertificateMapEntryRequest, CertificateMapEntry, OperationMetadata>
         createCertificateMapEntryOperationSettings() {
@@ -2033,8 +2326,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to updateCertificateMapEntry. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCertificateMapEntryRequest, CertificateMapEntry, OperationMetadata>
         updateCertificateMapEntryOperationSettings() {
@@ -2048,8 +2339,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificateMapEntry. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCertificateMapEntryRequest, Empty, OperationMetadata>
         deleteCertificateMapEntryOperationSettings() {
       return deleteCertificateMapEntryOperationSettings;
@@ -2077,8 +2366,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createDnsAuthorization. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDnsAuthorizationRequest, DnsAuthorization, OperationMetadata>
         createDnsAuthorizationOperationSettings() {
@@ -2092,8 +2379,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to updateDnsAuthorization. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDnsAuthorizationRequest, DnsAuthorization, OperationMetadata>
         updateDnsAuthorizationOperationSettings() {
@@ -2107,8 +2392,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteDnsAuthorization. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
         deleteDnsAuthorizationOperationSettings() {
       return deleteDnsAuthorizationOperationSettings;
@@ -2136,8 +2419,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createCertificateIssuanceConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
         createCertificateIssuanceConfigOperationSettings() {
@@ -2151,12 +2432,58 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificateIssuanceConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
         deleteCertificateIssuanceConfigOperationSettings() {
       return deleteCertificateIssuanceConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTrustConfigs. */
+    public PagedCallSettings.Builder<
+            ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+        listTrustConfigsSettings() {
+      return listTrustConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTrustConfig. */
+    public UnaryCallSettings.Builder<GetTrustConfigRequest, TrustConfig> getTrustConfigSettings() {
+      return getTrustConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTrustConfig. */
+    public UnaryCallSettings.Builder<CreateTrustConfigRequest, Operation>
+        createTrustConfigSettings() {
+      return createTrustConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTrustConfig. */
+    public OperationCallSettings.Builder<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+        createTrustConfigOperationSettings() {
+      return createTrustConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTrustConfig. */
+    public UnaryCallSettings.Builder<UpdateTrustConfigRequest, Operation>
+        updateTrustConfigSettings() {
+      return updateTrustConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTrustConfig. */
+    public OperationCallSettings.Builder<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+        updateTrustConfigOperationSettings() {
+      return updateTrustConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTrustConfig. */
+    public UnaryCallSettings.Builder<DeleteTrustConfigRequest, Operation>
+        deleteTrustConfigSettings() {
+      return deleteTrustConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTrustConfig. */
+    public OperationCallSettings.Builder<DeleteTrustConfigRequest, Empty, OperationMetadata>
+        deleteTrustConfigOperationSettings() {
+      return deleteTrustConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

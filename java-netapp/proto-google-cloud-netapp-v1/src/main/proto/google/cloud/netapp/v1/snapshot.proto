@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -92,9 +92,10 @@ message CreateSnapshotRequest {
   // Required. A snapshot resource
   Snapshot snapshot = 2 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. ID of the snapshot to create.
-  // This value must start with a lowercase letter followed by up to 62
-  // lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
+  // Required. ID of the snapshot to create. Must be unique within the parent
+  // resource. Must contain only letters, numbers and hyphen, with the first
+  // character a letter, the last a letter or a
+  // number, and a 63 character maximum.
   string snapshot_id = 3 [(google.api.field_behavior) = REQUIRED];
 }
 
@@ -124,6 +125,8 @@ message Snapshot {
   option (google.api.resource) = {
     type: "netapp.googleapis.com/Snapshot"
     pattern: "projects/{project}/locations/{location}/volumes/{volume}/snapshots/{snapshot}"
+    plural: "snapshots"
+    singular: "snapshot"
   };
 
   // The Snapshot States
@@ -150,10 +153,10 @@ message Snapshot {
     ERROR = 6;
   }
 
-  // Output only. The resource name of the snapshot.
+  // Identifier. The resource name of the snapshot.
   // Format:
   // `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+  string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
   // Output only. The snapshot state.
   State state = 2 [(google.api.field_behavior) = OUTPUT_ONLY];

@@ -17,6 +17,10 @@ MANIFEST
 
 .flattened-pom.xml
 
+# Vim files
+*.swp
+*.swo
+
 # Python utilities
 __pycache__/
 *.py[cod]

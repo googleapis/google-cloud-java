@@ -118,14 +118,23 @@
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
+            "GenerateStatelessSuggestion": {
+              "methods": ["generateStatelessSuggestion", "generateStatelessSuggestionCallable"]
+            },
             "GenerateStatelessSummary": {
               "methods": ["generateStatelessSummary", "generateStatelessSummaryCallable"]
+            },
+            "GenerateSuggestions": {
+              "methods": ["generateSuggestions", "generateSuggestions", "generateSuggestions", "generateSuggestionsCallable"]
             },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "IngestContextReferences": {
+              "methods": ["ingestContextReferences", "ingestContextReferences", "ingestContextReferences", "ingestContextReferencesCallable"]
             },
             "ListConversations": {
               "methods": ["listConversations", "listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
@@ -213,6 +222,27 @@
             },
             "UpdateDocument": {
               "methods": ["updateDocumentAsync", "updateDocumentAsync", "updateDocumentAsync", "updateDocumentOperationCallable", "updateDocumentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EncryptionSpecService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EncryptionSpecServiceClient",
+          "rpcs": {
+            "GetEncryptionSpec": {
+              "methods": ["getEncryptionSpec", "getEncryptionSpec", "getEncryptionSpec", "getEncryptionSpecCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "InitializeEncryptionSpec": {
+              "methods": ["initializeEncryptionSpecAsync", "initializeEncryptionSpecAsync", "initializeEncryptionSpecOperationCallable", "initializeEncryptionSpecCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             }
           }
         }
@@ -312,6 +342,36 @@
             },
             "UpdateFulfillment": {
               "methods": ["updateFulfillment", "updateFulfillment", "updateFulfillmentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Generators": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeneratorsClient",
+          "rpcs": {
+            "CreateGenerator": {
+              "methods": ["createGenerator", "createGenerator", "createGenerator", "createGeneratorCallable"]
+            },
+            "DeleteGenerator": {
+              "methods": ["deleteGenerator", "deleteGenerator", "deleteGenerator", "deleteGeneratorCallable"]
+            },
+            "GetGenerator": {
+              "methods": ["getGenerator", "getGenerator", "getGenerator", "getGeneratorCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListGenerators": {
+              "methods": ["listGenerators", "listGenerators", "listGenerators", "listGeneratorsPagedCallable", "listGeneratorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateGenerator": {
+              "methods": ["updateGenerator", "updateGenerator", "updateGeneratorCallable"]
             }
           }
         }
@@ -421,11 +481,41 @@
             "SuggestFaqAnswers": {
               "methods": ["suggestFaqAnswers", "suggestFaqAnswers", "suggestFaqAnswers", "suggestFaqAnswersCallable"]
             },
+            "SuggestKnowledgeAssist": {
+              "methods": ["suggestKnowledgeAssist", "suggestKnowledgeAssistCallable"]
+            },
             "SuggestSmartReplies": {
               "methods": ["suggestSmartReplies", "suggestSmartReplies", "suggestSmartReplies", "suggestSmartRepliesCallable"]
             },
             "UpdateParticipant": {
               "methods": ["updateParticipant", "updateParticipant", "updateParticipantCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PhoneNumbers": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PhoneNumbersClient",
+          "rpcs": {
+            "DeletePhoneNumber": {
+              "methods": ["deletePhoneNumber", "deletePhoneNumber", "deletePhoneNumber", "deletePhoneNumberCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPhoneNumbers": {
+              "methods": ["listPhoneNumbers", "listPhoneNumbers", "listPhoneNumbers", "listPhoneNumbers", "listPhoneNumbersPagedCallable", "listPhoneNumbersCallable"]
+            },
+            "UndeletePhoneNumber": {
+              "methods": ["undeletePhoneNumber", "undeletePhoneNumber", "undeletePhoneNumber", "undeletePhoneNumberCallable"]
+            },
+            "UpdatePhoneNumber": {
+              "methods": ["updatePhoneNumber", "updatePhoneNumber", "updatePhoneNumberCallable"]
             }
           }
         }
@@ -477,6 +567,36 @@
             },
             "UpdateSessionEntityType": {
               "methods": ["updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityType", "updateSessionEntityTypeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SipTrunks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SipTrunksClient",
+          "rpcs": {
+            "CreateSipTrunk": {
+              "methods": ["createSipTrunk", "createSipTrunk", "createSipTrunk", "createSipTrunkCallable"]
+            },
+            "DeleteSipTrunk": {
+              "methods": ["deleteSipTrunk", "deleteSipTrunk", "deleteSipTrunk", "deleteSipTrunkCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSipTrunk": {
+              "methods": ["getSipTrunk", "getSipTrunk", "getSipTrunk", "getSipTrunkCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListSipTrunks": {
+              "methods": ["listSipTrunks", "listSipTrunks", "listSipTrunks", "listSipTrunksPagedCallable", "listSipTrunksCallable"]
+            },
+            "UpdateSipTrunk": {
+              "methods": ["updateSipTrunk", "updateSipTrunk", "updateSipTrunkCallable"]
             }
           }
         }

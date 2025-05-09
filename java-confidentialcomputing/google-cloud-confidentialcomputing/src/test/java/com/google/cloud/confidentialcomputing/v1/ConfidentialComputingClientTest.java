@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -196,6 +196,7 @@ public class ConfidentialComputingClientTest {
             .setTpmAttestation(TpmAttestation.newBuilder().build())
             .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
             .setTokenOptions(TokenOptions.newBuilder().build())
+            .setAttester("attester542920370")
             .build();
 
     VerifyAttestationResponse actualResponse = client.verifyAttestation(request);
@@ -205,12 +206,15 @@ public class ConfidentialComputingClientTest {
     Assert.assertEquals(1, actualRequests.size());
     VerifyAttestationRequest actualRequest = ((VerifyAttestationRequest) actualRequests.get(0));
 
+    Assert.assertEquals(request.getTdCcel(), actualRequest.getTdCcel());
+    Assert.assertEquals(request.getSevSnpAttestation(), actualRequest.getSevSnpAttestation());
     Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
     Assert.assertEquals(request.getGcpCredentials(), actualRequest.getGcpCredentials());
     Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());
     Assert.assertEquals(
         request.getConfidentialSpaceInfo(), actualRequest.getConfidentialSpaceInfo());
     Assert.assertEquals(request.getTokenOptions(), actualRequest.getTokenOptions());
+    Assert.assertEquals(request.getAttester(), actualRequest.getAttester());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -230,6 +234,7 @@ public class ConfidentialComputingClientTest {
               .setTpmAttestation(TpmAttestation.newBuilder().build())
               .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
               .setTokenOptions(TokenOptions.newBuilder().build())
+              .setAttester("attester542920370")
               .build();
       client.verifyAttestation(request);
       Assert.fail("No exception raised");

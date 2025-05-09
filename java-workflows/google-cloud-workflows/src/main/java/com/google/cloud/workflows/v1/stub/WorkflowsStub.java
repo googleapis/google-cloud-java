@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.workflows.v1.stub;
 
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListLocationsPagedResponse;
+import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowRevisionsPagedResponse;
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -29,6 +30,8 @@ import com.google.cloud.location.Location;
 import com.google.cloud.workflows.v1.CreateWorkflowRequest;
 import com.google.cloud.workflows.v1.DeleteWorkflowRequest;
 import com.google.cloud.workflows.v1.GetWorkflowRequest;
+import com.google.cloud.workflows.v1.ListWorkflowRevisionsRequest;
+import com.google.cloud.workflows.v1.ListWorkflowRevisionsResponse;
 import com.google.cloud.workflows.v1.ListWorkflowsRequest;
 import com.google.cloud.workflows.v1.ListWorkflowsResponse;
 import com.google.cloud.workflows.v1.OperationMetadata;
@@ -94,6 +97,17 @@ public abstract class WorkflowsStub implements BackgroundResource {
 
   public UnaryCallable<UpdateWorkflowRequest, Operation> updateWorkflowCallable() {
     throw new UnsupportedOperationException("Not implemented: updateWorkflowCallable()");
+  }
+
+  public UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsPagedResponse>
+      listWorkflowRevisionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listWorkflowRevisionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListWorkflowRevisionsRequest, ListWorkflowRevisionsResponse>
+      listWorkflowRevisionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listWorkflowRevisionsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

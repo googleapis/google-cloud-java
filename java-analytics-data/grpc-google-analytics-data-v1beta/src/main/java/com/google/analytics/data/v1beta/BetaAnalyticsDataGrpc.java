@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -369,6 +369,202 @@ public final class BetaAnalyticsDataGrpc {
     return getCheckCompatibilityMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.CreateAudienceExportRequest,
+          com.google.longrunning.Operation>
+      getCreateAudienceExportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAudienceExport",
+      requestType = com.google.analytics.data.v1beta.CreateAudienceExportRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.CreateAudienceExportRequest,
+          com.google.longrunning.Operation>
+      getCreateAudienceExportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1beta.CreateAudienceExportRequest,
+            com.google.longrunning.Operation>
+        getCreateAudienceExportMethod;
+    if ((getCreateAudienceExportMethod = BetaAnalyticsDataGrpc.getCreateAudienceExportMethod)
+        == null) {
+      synchronized (BetaAnalyticsDataGrpc.class) {
+        if ((getCreateAudienceExportMethod = BetaAnalyticsDataGrpc.getCreateAudienceExportMethod)
+            == null) {
+          BetaAnalyticsDataGrpc.getCreateAudienceExportMethod =
+              getCreateAudienceExportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1beta.CreateAudienceExportRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAudienceExport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.CreateAudienceExportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BetaAnalyticsDataMethodDescriptorSupplier("CreateAudienceExport"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAudienceExportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.QueryAudienceExportRequest,
+          com.google.analytics.data.v1beta.QueryAudienceExportResponse>
+      getQueryAudienceExportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryAudienceExport",
+      requestType = com.google.analytics.data.v1beta.QueryAudienceExportRequest.class,
+      responseType = com.google.analytics.data.v1beta.QueryAudienceExportResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.QueryAudienceExportRequest,
+          com.google.analytics.data.v1beta.QueryAudienceExportResponse>
+      getQueryAudienceExportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1beta.QueryAudienceExportRequest,
+            com.google.analytics.data.v1beta.QueryAudienceExportResponse>
+        getQueryAudienceExportMethod;
+    if ((getQueryAudienceExportMethod = BetaAnalyticsDataGrpc.getQueryAudienceExportMethod)
+        == null) {
+      synchronized (BetaAnalyticsDataGrpc.class) {
+        if ((getQueryAudienceExportMethod = BetaAnalyticsDataGrpc.getQueryAudienceExportMethod)
+            == null) {
+          BetaAnalyticsDataGrpc.getQueryAudienceExportMethod =
+              getQueryAudienceExportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1beta.QueryAudienceExportRequest,
+                          com.google.analytics.data.v1beta.QueryAudienceExportResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "QueryAudienceExport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.QueryAudienceExportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.QueryAudienceExportResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BetaAnalyticsDataMethodDescriptorSupplier("QueryAudienceExport"))
+                      .build();
+        }
+      }
+    }
+    return getQueryAudienceExportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.GetAudienceExportRequest,
+          com.google.analytics.data.v1beta.AudienceExport>
+      getGetAudienceExportMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAudienceExport",
+      requestType = com.google.analytics.data.v1beta.GetAudienceExportRequest.class,
+      responseType = com.google.analytics.data.v1beta.AudienceExport.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.GetAudienceExportRequest,
+          com.google.analytics.data.v1beta.AudienceExport>
+      getGetAudienceExportMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1beta.GetAudienceExportRequest,
+            com.google.analytics.data.v1beta.AudienceExport>
+        getGetAudienceExportMethod;
+    if ((getGetAudienceExportMethod = BetaAnalyticsDataGrpc.getGetAudienceExportMethod) == null) {
+      synchronized (BetaAnalyticsDataGrpc.class) {
+        if ((getGetAudienceExportMethod = BetaAnalyticsDataGrpc.getGetAudienceExportMethod)
+            == null) {
+          BetaAnalyticsDataGrpc.getGetAudienceExportMethod =
+              getGetAudienceExportMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1beta.GetAudienceExportRequest,
+                          com.google.analytics.data.v1beta.AudienceExport>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAudienceExport"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.GetAudienceExportRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.AudienceExport.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BetaAnalyticsDataMethodDescriptorSupplier("GetAudienceExport"))
+                      .build();
+        }
+      }
+    }
+    return getGetAudienceExportMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.ListAudienceExportsRequest,
+          com.google.analytics.data.v1beta.ListAudienceExportsResponse>
+      getListAudienceExportsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAudienceExports",
+      requestType = com.google.analytics.data.v1beta.ListAudienceExportsRequest.class,
+      responseType = com.google.analytics.data.v1beta.ListAudienceExportsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1beta.ListAudienceExportsRequest,
+          com.google.analytics.data.v1beta.ListAudienceExportsResponse>
+      getListAudienceExportsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1beta.ListAudienceExportsRequest,
+            com.google.analytics.data.v1beta.ListAudienceExportsResponse>
+        getListAudienceExportsMethod;
+    if ((getListAudienceExportsMethod = BetaAnalyticsDataGrpc.getListAudienceExportsMethod)
+        == null) {
+      synchronized (BetaAnalyticsDataGrpc.class) {
+        if ((getListAudienceExportsMethod = BetaAnalyticsDataGrpc.getListAudienceExportsMethod)
+            == null) {
+          BetaAnalyticsDataGrpc.getListAudienceExportsMethod =
+              getListAudienceExportsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1beta.ListAudienceExportsRequest,
+                          com.google.analytics.data.v1beta.ListAudienceExportsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAudienceExports"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.ListAudienceExportsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1beta.ListAudienceExportsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BetaAnalyticsDataMethodDescriptorSupplier("ListAudienceExports"))
+                      .build();
+        }
+      }
+    }
+    return getListAudienceExportsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BetaAnalyticsDataStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BetaAnalyticsDataStub> factory =
@@ -380,6 +576,19 @@ public final class BetaAnalyticsDataGrpc {
           }
         };
     return BetaAnalyticsDataStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BetaAnalyticsDataBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BetaAnalyticsDataBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BetaAnalyticsDataBlockingV2Stub>() {
+          @java.lang.Override
+          public BetaAnalyticsDataBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BetaAnalyticsDataBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BetaAnalyticsDataBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -466,7 +675,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     default void batchRunReports(
@@ -482,7 +691,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     default void batchRunPivotReports(
@@ -499,7 +708,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -557,6 +766,121 @@ public final class BetaAnalyticsDataGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCheckCompatibilityMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an audience export for later retrieval. This method quickly returns
+     * the audience export's resource name and initiates a long running
+     * asynchronous request to form an audience export. To export the users in an
+     * audience export, first create the audience export through this method and
+     * then send the audience resource name to the `QueryAudienceExport` method.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * An audience export is a snapshot of the users currently in the audience at
+     * the time of audience export creation. Creating audience exports for one
+     * audience on different days will return different results as users enter and
+     * exit the audience.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572. Audience exports
+     * contain the users in each audience.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    default void createAudienceExport(
+        com.google.analytics.data.v1beta.CreateAudienceExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAudienceExportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an audience export of users. After creating an audience, the
+     * users are not immediately available for exporting. First, a request to
+     * `CreateAudienceExport` is necessary to create an audience export of users,
+     * and then second, this method is used to retrieve the users in the audience
+     * export.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    default void queryAudienceExport(
+        com.google.analytics.data.v1beta.QueryAudienceExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.QueryAudienceExportResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getQueryAudienceExportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific audience export. This method
+     * can be used to understand an audience export after it has been created.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    default void getAudienceExport(
+        com.google.analytics.data.v1beta.GetAudienceExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.AudienceExport>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAudienceExportMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all audience exports for a property. This method can be used for you
+     * to find and reuse existing audience exports rather than creating
+     * unnecessary new audience exports. The same audience can have multiple
+     * audience exports that represent the export of users that were in an
+     * audience on different days.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    default void listAudienceExports(
+        com.google.analytics.data.v1beta.ListAudienceExportsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.ListAudienceExportsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAudienceExportsMethod(), responseObserver);
     }
   }
 
@@ -645,7 +969,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public void batchRunReports(
@@ -663,7 +987,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public void batchRunPivotReports(
@@ -682,7 +1006,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -747,10 +1071,390 @@ public final class BetaAnalyticsDataGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an audience export for later retrieval. This method quickly returns
+     * the audience export's resource name and initiates a long running
+     * asynchronous request to form an audience export. To export the users in an
+     * audience export, first create the audience export through this method and
+     * then send the audience resource name to the `QueryAudienceExport` method.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * An audience export is a snapshot of the users currently in the audience at
+     * the time of audience export creation. Creating audience exports for one
+     * audience on different days will return different results as users enter and
+     * exit the audience.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572. Audience exports
+     * contain the users in each audience.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public void createAudienceExport(
+        com.google.analytics.data.v1beta.CreateAudienceExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAudienceExportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an audience export of users. After creating an audience, the
+     * users are not immediately available for exporting. First, a request to
+     * `CreateAudienceExport` is necessary to create an audience export of users,
+     * and then second, this method is used to retrieve the users in the audience
+     * export.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public void queryAudienceExport(
+        com.google.analytics.data.v1beta.QueryAudienceExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.QueryAudienceExportResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryAudienceExportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific audience export. This method
+     * can be used to understand an audience export after it has been created.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public void getAudienceExport(
+        com.google.analytics.data.v1beta.GetAudienceExportRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.AudienceExport>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAudienceExportMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all audience exports for a property. This method can be used for you
+     * to find and reuse existing audience exports rather than creating
+     * unnecessary new audience exports. The same audience can have multiple
+     * audience exports that represent the export of users that were in an
+     * audience on different days.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public void listAudienceExports(
+        com.google.analytics.data.v1beta.ListAudienceExportsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.ListAudienceExportsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAudienceExportsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BetaAnalyticsData.
+   *
+   * <pre>
+   * Google Analytics reporting data service.
+   * </pre>
+   */
+  public static final class BetaAnalyticsDataBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BetaAnalyticsDataBlockingV2Stub> {
+    private BetaAnalyticsDataBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BetaAnalyticsDataBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BetaAnalyticsDataBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of your Google Analytics event data. Reports
+     * contain statistics derived from data collected by the Google Analytics
+     * tracking code. The data returned from the API is as a table with columns
+     * for the requested dimensions and metrics. Metrics are individual
+     * measurements of user activity on your property, such as active users or
+     * event count. Dimensions break down metrics across some common criteria,
+     * such as country or event name.
+     * For a guide to constructing requests &amp; understanding responses, see
+     * [Creating a
+     * Report](https://developers.google.com/analytics/devguides/reporting/data/v1/basics).
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.RunReportResponse runReport(
+        com.google.analytics.data.v1beta.RunReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized pivot report of your Google Analytics event data.
+     * Pivot reports are more advanced and expressive formats than regular
+     * reports. In a pivot report, dimensions are only visible if they are
+     * included in a pivot. Multiple pivots can be specified to further dissect
+     * your data.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.RunPivotReportResponse runPivotReport(
+        com.google.analytics.data.v1beta.RunPivotReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunPivotReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns multiple reports in a batch. All reports must be for the same
+     * Google Analytics property.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.BatchRunReportsResponse batchRunReports(
+        com.google.analytics.data.v1beta.BatchRunReportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchRunReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns multiple pivot reports in a batch. All reports must be for the same
+     * Google Analytics property.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.BatchRunPivotReportsResponse batchRunPivotReports(
+        com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchRunPivotReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for dimensions and metrics available in reporting methods.
+     * Used to explore the dimensions and metrics. In this method, a Google
+     * Analytics property identifier is specified in the request, and
+     * the metadata response includes Custom dimensions and metrics as well as
+     * Universal metadata.
+     * For example if a custom metric with parameter name `levels_unlocked` is
+     * registered to a property, the Metadata response will contain
+     * `customEvent:levels_unlocked`. Universal metadata are dimensions and
+     * metrics applicable to any property such as `country` and `totalUsers`.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.Metadata getMetadata(
+        com.google.analytics.data.v1beta.GetMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of realtime event data for your property.
+     * Events appear in realtime reports seconds after they have been sent to
+     * the Google Analytics. Realtime reports show events and usage data for the
+     * periods of time ranging from the present moment to 30 minutes ago (up to
+     * 60 minutes for Google Analytics 360 properties).
+     * For a guide to constructing realtime requests &amp; understanding responses,
+     * see [Creating a Realtime
+     * Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics).
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.RunRealtimeReportResponse runRealtimeReport(
+        com.google.analytics.data.v1beta.RunRealtimeReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunRealtimeReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This compatibility method lists dimensions and metrics that can be added to
+     * a report request and maintain compatibility. This method fails if the
+     * request's dimensions and metrics are incompatible.
+     * In Google Analytics, reports fail if they request incompatible dimensions
+     * and/or metrics; in that case, you will need to remove dimensions and/or
+     * metrics from the incompatible report until the report is compatible.
+     * The Realtime and Core reports have different compatibility rules. This
+     * method checks compatibility for Core reports.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.CheckCompatibilityResponse checkCompatibility(
+        com.google.analytics.data.v1beta.CheckCompatibilityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckCompatibilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an audience export for later retrieval. This method quickly returns
+     * the audience export's resource name and initiates a long running
+     * asynchronous request to form an audience export. To export the users in an
+     * audience export, first create the audience export through this method and
+     * then send the audience resource name to the `QueryAudienceExport` method.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * An audience export is a snapshot of the users currently in the audience at
+     * the time of audience export creation. Creating audience exports for one
+     * audience on different days will return different results as users enter and
+     * exit the audience.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572. Audience exports
+     * contain the users in each audience.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAudienceExport(
+        com.google.analytics.data.v1beta.CreateAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an audience export of users. After creating an audience, the
+     * users are not immediately available for exporting. First, a request to
+     * `CreateAudienceExport` is necessary to create an audience export of users,
+     * and then second, this method is used to retrieve the users in the audience
+     * export.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.QueryAudienceExportResponse queryAudienceExport(
+        com.google.analytics.data.v1beta.QueryAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific audience export. This method
+     * can be used to understand an audience export after it has been created.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.AudienceExport getAudienceExport(
+        com.google.analytics.data.v1beta.GetAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all audience exports for a property. This method can be used for you
+     * to find and reuse existing audience exports rather than creating
+     * unnecessary new audience exports. The same audience can have multiple
+     * audience exports that represent the export of users that were in an
+     * audience on different days.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.ListAudienceExportsResponse listAudienceExports(
+        com.google.analytics.data.v1beta.ListAudienceExportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAudienceExportsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BetaAnalyticsData.
    *
    * <pre>
    * Google Analytics reporting data service.
@@ -813,7 +1517,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunReportsResponse batchRunReports(
@@ -827,7 +1531,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.analytics.data.v1beta.BatchRunPivotReportsResponse batchRunPivotReports(
@@ -842,7 +1546,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -895,6 +1599,114 @@ public final class BetaAnalyticsDataGrpc {
         com.google.analytics.data.v1beta.CheckCompatibilityRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCheckCompatibilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an audience export for later retrieval. This method quickly returns
+     * the audience export's resource name and initiates a long running
+     * asynchronous request to form an audience export. To export the users in an
+     * audience export, first create the audience export through this method and
+     * then send the audience resource name to the `QueryAudienceExport` method.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * An audience export is a snapshot of the users currently in the audience at
+     * the time of audience export creation. Creating audience exports for one
+     * audience on different days will return different results as users enter and
+     * exit the audience.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572. Audience exports
+     * contain the users in each audience.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAudienceExport(
+        com.google.analytics.data.v1beta.CreateAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an audience export of users. After creating an audience, the
+     * users are not immediately available for exporting. First, a request to
+     * `CreateAudienceExport` is necessary to create an audience export of users,
+     * and then second, this method is used to retrieve the users in the audience
+     * export.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.QueryAudienceExportResponse queryAudienceExport(
+        com.google.analytics.data.v1beta.QueryAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific audience export. This method
+     * can be used to understand an audience export after it has been created.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.AudienceExport getAudienceExport(
+        com.google.analytics.data.v1beta.GetAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAudienceExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all audience exports for a property. This method can be used for you
+     * to find and reuse existing audience exports rather than creating
+     * unnecessary new audience exports. The same audience can have multiple
+     * audience exports that represent the export of users that were in an
+     * audience on different days.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.analytics.data.v1beta.ListAudienceExportsResponse listAudienceExports(
+        com.google.analytics.data.v1beta.ListAudienceExportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAudienceExportsMethod(), getCallOptions(), request);
     }
   }
 
@@ -963,7 +1775,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -978,7 +1790,7 @@ public final class BetaAnalyticsDataGrpc {
      *
      * <pre>
      * Returns multiple pivot reports in a batch. All reports must be for the same
-     * GA4 Property.
+     * Google Analytics property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -994,7 +1806,7 @@ public final class BetaAnalyticsDataGrpc {
      * <pre>
      * Returns metadata for dimensions and metrics available in reporting methods.
      * Used to explore the dimensions and metrics. In this method, a Google
-     * Analytics GA4 Property Identifier is specified in the request, and
+     * Analytics property identifier is specified in the request, and
      * the metadata response includes Custom dimensions and metrics as well as
      * Universal metadata.
      * For example if a custom metric with parameter name `levels_unlocked` is
@@ -1051,6 +1863,117 @@ public final class BetaAnalyticsDataGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCheckCompatibilityMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an audience export for later retrieval. This method quickly returns
+     * the audience export's resource name and initiates a long running
+     * asynchronous request to form an audience export. To export the users in an
+     * audience export, first create the audience export through this method and
+     * then send the audience resource name to the `QueryAudienceExport` method.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * An audience export is a snapshot of the users currently in the audience at
+     * the time of audience export creation. Creating audience exports for one
+     * audience on different days will return different results as users enter and
+     * exit the audience.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572. Audience exports
+     * contain the users in each audience.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAudienceExport(com.google.analytics.data.v1beta.CreateAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAudienceExportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves an audience export of users. After creating an audience, the
+     * users are not immediately available for exporting. First, a request to
+     * `CreateAudienceExport` is necessary to create an audience export of users,
+     * and then second, this method is used to retrieve the users in the audience
+     * export.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audiences in Google Analytics 4 allow you to segment your users in the ways
+     * that are important to your business. To learn more, see
+     * https://support.google.com/analytics/answer/9267572.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1beta.QueryAudienceExportResponse>
+        queryAudienceExport(com.google.analytics.data.v1beta.QueryAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryAudienceExportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets configuration metadata about a specific audience export. This method
+     * can be used to understand an audience export after it has been created.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1beta.AudienceExport>
+        getAudienceExport(com.google.analytics.data.v1beta.GetAudienceExportRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAudienceExportMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all audience exports for a property. This method can be used for you
+     * to find and reuse existing audience exports rather than creating
+     * unnecessary new audience exports. The same audience can have multiple
+     * audience exports that represent the export of users that were in an
+     * audience on different days.
+     * See [Creating an Audience
+     * Export](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
+     * for an introduction to Audience Exports with examples.
+     * Audience Export APIs have some methods at alpha and other methods at beta
+     * stability. The intention is to advance methods to beta stability after some
+     * feedback and adoption. To give your feedback on this API, complete the
+     * [Google Analytics Audience Export API
+     * Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1beta.ListAudienceExportsResponse>
+        listAudienceExports(com.google.analytics.data.v1beta.ListAudienceExportsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAudienceExportsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_REPORT = 0;
@@ -1060,6 +1983,10 @@ public final class BetaAnalyticsDataGrpc {
   private static final int METHODID_GET_METADATA = 4;
   private static final int METHODID_RUN_REALTIME_REPORT = 5;
   private static final int METHODID_CHECK_COMPATIBILITY = 6;
+  private static final int METHODID_CREATE_AUDIENCE_EXPORT = 7;
+  private static final int METHODID_QUERY_AUDIENCE_EXPORT = 8;
+  private static final int METHODID_GET_AUDIENCE_EXPORT = 9;
+  private static final int METHODID_LIST_AUDIENCE_EXPORTS = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1122,6 +2049,31 @@ public final class BetaAnalyticsDataGrpc {
               (com.google.analytics.data.v1beta.CheckCompatibilityRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1beta.CheckCompatibilityResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_AUDIENCE_EXPORT:
+          serviceImpl.createAudienceExport(
+              (com.google.analytics.data.v1beta.CreateAudienceExportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_QUERY_AUDIENCE_EXPORT:
+          serviceImpl.queryAudienceExport(
+              (com.google.analytics.data.v1beta.QueryAudienceExportRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1beta.QueryAudienceExportResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUDIENCE_EXPORT:
+          serviceImpl.getAudienceExport(
+              (com.google.analytics.data.v1beta.GetAudienceExportRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.AudienceExport>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUDIENCE_EXPORTS:
+          serviceImpl.listAudienceExports(
+              (com.google.analytics.data.v1beta.ListAudienceExportsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.data.v1beta.ListAudienceExportsResponse>)
                   responseObserver);
           break;
         default:
@@ -1190,6 +2142,33 @@ public final class BetaAnalyticsDataGrpc {
                     com.google.analytics.data.v1beta.CheckCompatibilityRequest,
                     com.google.analytics.data.v1beta.CheckCompatibilityResponse>(
                     service, METHODID_CHECK_COMPATIBILITY)))
+        .addMethod(
+            getCreateAudienceExportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.CreateAudienceExportRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AUDIENCE_EXPORT)))
+        .addMethod(
+            getQueryAudienceExportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.QueryAudienceExportRequest,
+                    com.google.analytics.data.v1beta.QueryAudienceExportResponse>(
+                    service, METHODID_QUERY_AUDIENCE_EXPORT)))
+        .addMethod(
+            getGetAudienceExportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.GetAudienceExportRequest,
+                    com.google.analytics.data.v1beta.AudienceExport>(
+                    service, METHODID_GET_AUDIENCE_EXPORT)))
+        .addMethod(
+            getListAudienceExportsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.ListAudienceExportsRequest,
+                    com.google.analytics.data.v1beta.ListAudienceExportsResponse>(
+                    service, METHODID_LIST_AUDIENCE_EXPORTS)))
         .build();
   }
 
@@ -1248,6 +2227,10 @@ public final class BetaAnalyticsDataGrpc {
                       .addMethod(getGetMetadataMethod())
                       .addMethod(getRunRealtimeReportMethod())
                       .addMethod(getCheckCompatibilityMethod())
+                      .addMethod(getCreateAudienceExportMethod())
+                      .addMethod(getQueryAudienceExportMethod())
+                      .addMethod(getGetAudienceExportMethod())
+                      .addMethod(getListAudienceExportsMethod())
                       .build();
         }
       }

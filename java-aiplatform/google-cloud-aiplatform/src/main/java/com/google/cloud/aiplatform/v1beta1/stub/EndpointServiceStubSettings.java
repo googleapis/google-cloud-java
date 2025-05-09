@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.aiplatform.v1beta1.EndpointServiceClient.ListLoca
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -53,15 +54,21 @@ import com.google.cloud.aiplatform.v1beta1.DeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployModelResponse;
 import com.google.cloud.aiplatform.v1beta1.Endpoint;
+import com.google.cloud.aiplatform.v1beta1.FetchPublisherModelConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.GetEndpointRequest;
 import com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelRequest;
 import com.google.cloud.aiplatform.v1beta1.MutateDeployedModelResponse;
+import com.google.cloud.aiplatform.v1beta1.PublisherModelConfig;
+import com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.SetPublisherModelConfigRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1beta1.UndeployModelResponse;
+import com.google.cloud.aiplatform.v1beta1.UpdateEndpointLongRunningRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateEndpointOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -79,9 +86,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -98,7 +105,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getEndpoint to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getEndpoint:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -115,9 +124,46 @@ import org.threeten.bp.Duration;
  *             .getEndpointSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * EndpointServiceStubSettings endpointServiceSettings = endpointServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createEndpoint:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EndpointServiceStubSettings.Builder endpointServiceSettingsBuilder =
+ *     EndpointServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * endpointServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -136,6 +182,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>
       listEndpointsSettings;
   private final UnaryCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointSettings;
+  private final UnaryCallSettings<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningSettings;
+  private final OperationCallSettings<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationSettings;
   private final UnaryCallSettings<DeleteEndpointRequest, Operation> deleteEndpointSettings;
   private final OperationCallSettings<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
       deleteEndpointOperationSettings;
@@ -154,6 +205,15 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           MutateDeployedModelResponse,
           MutateDeployedModelOperationMetadata>
       mutateDeployedModelOperationSettings;
+  private final UnaryCallSettings<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigSettings;
+  private final OperationCallSettings<
+          SetPublisherModelConfigRequest,
+          PublisherModelConfig,
+          SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigOperationSettings;
+  private final UnaryCallSettings<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -193,9 +253,7 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
 
             @Override
             public Iterable<Endpoint> extractResources(ListEndpointsResponse payload) {
-              return payload.getEndpointsList() == null
-                  ? ImmutableList.<Endpoint>of()
-                  : payload.getEndpointsList();
+              return payload.getEndpointsList();
             }
           };
 
@@ -229,9 +287,7 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -296,6 +352,19 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     return updateEndpointSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateEndpointLongRunning. */
+  public UnaryCallSettings<UpdateEndpointLongRunningRequest, Operation>
+      updateEndpointLongRunningSettings() {
+    return updateEndpointLongRunningSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEndpointLongRunning. */
+  public OperationCallSettings<
+          UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+      updateEndpointLongRunningOperationSettings() {
+    return updateEndpointLongRunningOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteEndpoint. */
   public UnaryCallSettings<DeleteEndpointRequest, Operation> deleteEndpointSettings() {
     return deleteEndpointSettings;
@@ -345,6 +414,27 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     return mutateDeployedModelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setPublisherModelConfig. */
+  public UnaryCallSettings<SetPublisherModelConfigRequest, Operation>
+      setPublisherModelConfigSettings() {
+    return setPublisherModelConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setPublisherModelConfig. */
+  public OperationCallSettings<
+          SetPublisherModelConfigRequest,
+          PublisherModelConfig,
+          SetPublisherModelConfigOperationMetadata>
+      setPublisherModelConfigOperationSettings() {
+    return setPublisherModelConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchPublisherModelConfig. */
+  public UnaryCallSettings<FetchPublisherModelConfigRequest, PublisherModelConfig>
+      fetchPublisherModelConfigSettings() {
+    return fetchPublisherModelConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -383,12 +473,19 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "aiplatform";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }
@@ -420,7 +517,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -452,6 +548,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     getEndpointSettings = settingsBuilder.getEndpointSettings().build();
     listEndpointsSettings = settingsBuilder.listEndpointsSettings().build();
     updateEndpointSettings = settingsBuilder.updateEndpointSettings().build();
+    updateEndpointLongRunningSettings = settingsBuilder.updateEndpointLongRunningSettings().build();
+    updateEndpointLongRunningOperationSettings =
+        settingsBuilder.updateEndpointLongRunningOperationSettings().build();
     deleteEndpointSettings = settingsBuilder.deleteEndpointSettings().build();
     deleteEndpointOperationSettings = settingsBuilder.deleteEndpointOperationSettings().build();
     deployModelSettings = settingsBuilder.deployModelSettings().build();
@@ -461,6 +560,10 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     mutateDeployedModelSettings = settingsBuilder.mutateDeployedModelSettings().build();
     mutateDeployedModelOperationSettings =
         settingsBuilder.mutateDeployedModelOperationSettings().build();
+    setPublisherModelConfigSettings = settingsBuilder.setPublisherModelConfigSettings().build();
+    setPublisherModelConfigOperationSettings =
+        settingsBuilder.setPublisherModelConfigOperationSettings().build();
+    fetchPublisherModelConfigSettings = settingsBuilder.fetchPublisherModelConfigSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -481,6 +584,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
             ListEndpointsRequest, ListEndpointsResponse, ListEndpointsPagedResponse>
         listEndpointsSettings;
     private final UnaryCallSettings.Builder<UpdateEndpointRequest, Endpoint> updateEndpointSettings;
+    private final UnaryCallSettings.Builder<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningSettings;
+    private final OperationCallSettings.Builder<
+            UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+        updateEndpointLongRunningOperationSettings;
     private final UnaryCallSettings.Builder<DeleteEndpointRequest, Operation>
         deleteEndpointSettings;
     private final OperationCallSettings.Builder<
@@ -501,6 +609,15 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
             MutateDeployedModelResponse,
             MutateDeployedModelOperationMetadata>
         mutateDeployedModelOperationSettings;
+    private final UnaryCallSettings.Builder<SetPublisherModelConfigRequest, Operation>
+        setPublisherModelConfigSettings;
+    private final OperationCallSettings.Builder<
+            SetPublisherModelConfigRequest,
+            PublisherModelConfig,
+            SetPublisherModelConfigOperationMetadata>
+        setPublisherModelConfigOperationSettings;
+    private final UnaryCallSettings.Builder<FetchPublisherModelConfigRequest, PublisherModelConfig>
+        fetchPublisherModelConfigSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -528,10 +645,10 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(5000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(5000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(5000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -551,6 +668,8 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       getEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEndpointsSettings = PagedCallSettings.newBuilder(LIST_ENDPOINTS_PAGE_STR_FACT);
       updateEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEndpointLongRunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEndpointLongRunningOperationSettings = OperationCallSettings.newBuilder();
       deleteEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEndpointOperationSettings = OperationCallSettings.newBuilder();
       deployModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -559,6 +678,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       undeployModelOperationSettings = OperationCallSettings.newBuilder();
       mutateDeployedModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       mutateDeployedModelOperationSettings = OperationCallSettings.newBuilder();
+      setPublisherModelConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setPublisherModelConfigOperationSettings = OperationCallSettings.newBuilder();
+      fetchPublisherModelConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -571,10 +693,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               getEndpointSettings,
               listEndpointsSettings,
               updateEndpointSettings,
+              updateEndpointLongRunningSettings,
               deleteEndpointSettings,
               deployModelSettings,
               undeployModelSettings,
               mutateDeployedModelSettings,
+              setPublisherModelConfigSettings,
+              fetchPublisherModelConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -591,6 +716,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       getEndpointSettings = settings.getEndpointSettings.toBuilder();
       listEndpointsSettings = settings.listEndpointsSettings.toBuilder();
       updateEndpointSettings = settings.updateEndpointSettings.toBuilder();
+      updateEndpointLongRunningSettings = settings.updateEndpointLongRunningSettings.toBuilder();
+      updateEndpointLongRunningOperationSettings =
+          settings.updateEndpointLongRunningOperationSettings.toBuilder();
       deleteEndpointSettings = settings.deleteEndpointSettings.toBuilder();
       deleteEndpointOperationSettings = settings.deleteEndpointOperationSettings.toBuilder();
       deployModelSettings = settings.deployModelSettings.toBuilder();
@@ -600,6 +728,10 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       mutateDeployedModelSettings = settings.mutateDeployedModelSettings.toBuilder();
       mutateDeployedModelOperationSettings =
           settings.mutateDeployedModelOperationSettings.toBuilder();
+      setPublisherModelConfigSettings = settings.setPublisherModelConfigSettings.toBuilder();
+      setPublisherModelConfigOperationSettings =
+          settings.setPublisherModelConfigOperationSettings.toBuilder();
+      fetchPublisherModelConfigSettings = settings.fetchPublisherModelConfigSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -612,10 +744,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               getEndpointSettings,
               listEndpointsSettings,
               updateEndpointSettings,
+              updateEndpointLongRunningSettings,
               deleteEndpointSettings,
               deployModelSettings,
               undeployModelSettings,
               mutateDeployedModelSettings,
+              setPublisherModelConfigSettings,
+              fetchPublisherModelConfigSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -629,7 +764,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -658,6 +792,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateEndpointLongRunningSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteEndpointSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -674,6 +813,16 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
 
       builder
           .mutateDeployedModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setPublisherModelConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchPublisherModelConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -718,13 +867,39 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateEndpointLongRunningOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateEndpointLongRunningRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Endpoint.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateEndpointOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -742,13 +917,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -766,13 +941,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -791,13 +966,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -817,13 +992,38 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .setPublisherModelConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetPublisherModelConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PublisherModelConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  SetPublisherModelConfigOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -850,8 +1050,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createEndpoint. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
         createEndpointOperationSettings() {
@@ -875,14 +1073,25 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       return updateEndpointSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateEndpointLongRunning. */
+    public UnaryCallSettings.Builder<UpdateEndpointLongRunningRequest, Operation>
+        updateEndpointLongRunningSettings() {
+      return updateEndpointLongRunningSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEndpointLongRunning. */
+    public OperationCallSettings.Builder<
+            UpdateEndpointLongRunningRequest, Endpoint, UpdateEndpointOperationMetadata>
+        updateEndpointLongRunningOperationSettings() {
+      return updateEndpointLongRunningOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteEndpoint. */
     public UnaryCallSettings.Builder<DeleteEndpointRequest, Operation> deleteEndpointSettings() {
       return deleteEndpointSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteEndpoint. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
         deleteEndpointOperationSettings() {
       return deleteEndpointOperationSettings;
@@ -894,8 +1103,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deployModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeployModelRequest, DeployModelResponse, DeployModelOperationMetadata>
         deployModelOperationSettings() {
@@ -908,8 +1115,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to undeployModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
         undeployModelOperationSettings() {
@@ -923,14 +1128,33 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to mutateDeployedModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             MutateDeployedModelRequest,
             MutateDeployedModelResponse,
             MutateDeployedModelOperationMetadata>
         mutateDeployedModelOperationSettings() {
       return mutateDeployedModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setPublisherModelConfig. */
+    public UnaryCallSettings.Builder<SetPublisherModelConfigRequest, Operation>
+        setPublisherModelConfigSettings() {
+      return setPublisherModelConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setPublisherModelConfig. */
+    public OperationCallSettings.Builder<
+            SetPublisherModelConfigRequest,
+            PublisherModelConfig,
+            SetPublisherModelConfigOperationMetadata>
+        setPublisherModelConfigOperationSettings() {
+      return setPublisherModelConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchPublisherModelConfig. */
+    public UnaryCallSettings.Builder<FetchPublisherModelConfigRequest, PublisherModelConfig>
+        fetchPublisherModelConfigSettings() {
+      return fetchPublisherModelConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

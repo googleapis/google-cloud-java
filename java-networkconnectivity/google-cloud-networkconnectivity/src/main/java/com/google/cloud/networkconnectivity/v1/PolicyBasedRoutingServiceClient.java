@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,19 +71,166 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPolicyBasedRoutes</td>
+ *      <td><p> Lists policy-based routes in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPolicyBasedRoutes(ListPolicyBasedRoutesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPolicyBasedRoutes(LocationName parent)
+ *           <li><p> listPolicyBasedRoutes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPolicyBasedRoutesPagedCallable()
+ *           <li><p> listPolicyBasedRoutesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPolicyBasedRoute</td>
+ *      <td><p> Gets details of a single policy-based route.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPolicyBasedRoute(GetPolicyBasedRouteRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPolicyBasedRoute(PolicyBasedRouteName name)
+ *           <li><p> getPolicyBasedRoute(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPolicyBasedRouteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreatePolicyBasedRoute</td>
+ *      <td><p> Creates a new policy-based route in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createPolicyBasedRouteAsync(CreatePolicyBasedRouteRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createPolicyBasedRouteAsync(LocationName parent, PolicyBasedRoute policyBasedRoute, String policyBasedRouteId)
+ *           <li><p> createPolicyBasedRouteAsync(String parent, PolicyBasedRoute policyBasedRoute, String policyBasedRouteId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createPolicyBasedRouteOperationCallable()
+ *           <li><p> createPolicyBasedRouteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeletePolicyBasedRoute</td>
+ *      <td><p> Deletes a single policy-based route.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deletePolicyBasedRouteAsync(DeletePolicyBasedRouteRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deletePolicyBasedRouteAsync(PolicyBasedRouteName name)
+ *           <li><p> deletePolicyBasedRouteAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deletePolicyBasedRouteOperationCallable()
+ *           <li><p> deletePolicyBasedRouteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -191,7 +338,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -224,7 +371,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -255,7 +402,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -292,7 +439,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -328,7 +475,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -371,7 +518,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single PolicyBasedRoute.
+   * Gets details of a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -401,7 +548,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single PolicyBasedRoute.
+   * Gets details of a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -429,7 +576,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single PolicyBasedRoute.
+   * Gets details of a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -458,7 +605,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single PolicyBasedRoute.
+   * Gets details of a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -488,7 +635,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -511,8 +658,14 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource's name of the PolicyBasedRoute.
-   * @param policyBasedRoute Required. Initial values for a new Policy Based Route.
-   * @param policyBasedRouteId Required. Unique id for the Policy Based Route to create.
+   * @param policyBasedRoute Required. Initial values for a new policy-based route.
+   * @param policyBasedRouteId Required. Unique id for the policy-based route to create. Provided by
+   *     the client when the resource is created. The name must comply with
+   *     https://google.aip.dev/122#resource-id-segments. Specifically, the name must be 1-63
+   *     characters long and match the regular expression [a-z]([a-z0-9-]&#42;[a-z0-9])?. The first
+   *     character must be a lowercase letter, and all following characters (except for the last
+   *     character) must be a dash, lowercase letter, or digit. The last character must be a
+   *     lowercase letter or digit.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBasedRoute, OperationMetadata> createPolicyBasedRouteAsync(
@@ -528,7 +681,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -551,8 +704,14 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource's name of the PolicyBasedRoute.
-   * @param policyBasedRoute Required. Initial values for a new Policy Based Route.
-   * @param policyBasedRouteId Required. Unique id for the Policy Based Route to create.
+   * @param policyBasedRoute Required. Initial values for a new policy-based route.
+   * @param policyBasedRouteId Required. Unique id for the policy-based route to create. Provided by
+   *     the client when the resource is created. The name must comply with
+   *     https://google.aip.dev/122#resource-id-segments. Specifically, the name must be 1-63
+   *     characters long and match the regular expression [a-z]([a-z0-9-]&#42;[a-z0-9])?. The first
+   *     character must be a lowercase letter, and all following characters (except for the last
+   *     character) must be a dash, lowercase letter, or digit. The last character must be a
+   *     lowercase letter or digit.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBasedRoute, OperationMetadata> createPolicyBasedRouteAsync(
@@ -568,7 +727,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -602,7 +761,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -637,7 +796,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -670,7 +829,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -687,7 +846,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the PolicyBasedRoute resource to delete.
+   * @param name Required. Name of the policy-based route resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePolicyBasedRouteAsync(
@@ -701,7 +860,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -718,7 +877,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the PolicyBasedRoute resource to delete.
+   * @param name Required. Name of the policy-based route resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePolicyBasedRouteAsync(String name) {
@@ -729,7 +888,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -760,7 +919,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -793,7 +952,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *

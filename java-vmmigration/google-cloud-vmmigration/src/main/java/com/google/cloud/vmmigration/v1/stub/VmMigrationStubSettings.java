@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListUtilizationR
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -142,9 +143,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -161,7 +162,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getSource to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getSource:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -178,9 +181,46 @@ import org.threeten.bp.Duration;
  *             .getSourceSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * VmMigrationStubSettings vmMigrationSettings = vmMigrationSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createSource:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * VmMigrationStubSettings.Builder vmMigrationSettingsBuilder =
+ *     VmMigrationStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * vmMigrationSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -369,9 +409,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<Source> extractResources(ListSourcesResponse payload) {
-              return payload.getSourcesList() == null
-                  ? ImmutableList.<Source>of()
-                  : payload.getSourcesList();
+              return payload.getSourcesList();
             }
           };
 
@@ -412,9 +450,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             @Override
             public Iterable<UtilizationReport> extractResources(
                 ListUtilizationReportsResponse payload) {
-              return payload.getUtilizationReportsList() == null
-                  ? ImmutableList.<UtilizationReport>of()
-                  : payload.getUtilizationReportsList();
+              return payload.getUtilizationReportsList();
             }
           };
 
@@ -459,9 +495,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             @Override
             public Iterable<DatacenterConnector> extractResources(
                 ListDatacenterConnectorsResponse payload) {
-              return payload.getDatacenterConnectorsList() == null
-                  ? ImmutableList.<DatacenterConnector>of()
-                  : payload.getDatacenterConnectorsList();
+              return payload.getDatacenterConnectorsList();
             }
           };
 
@@ -499,9 +533,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<MigratingVm> extractResources(ListMigratingVmsResponse payload) {
-              return payload.getMigratingVmsList() == null
-                  ? ImmutableList.<MigratingVm>of()
-                  : payload.getMigratingVmsList();
+              return payload.getMigratingVmsList();
             }
           };
 
@@ -535,9 +567,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<CloneJob> extractResources(ListCloneJobsResponse payload) {
-              return payload.getCloneJobsList() == null
-                  ? ImmutableList.<CloneJob>of()
-                  : payload.getCloneJobsList();
+              return payload.getCloneJobsList();
             }
           };
 
@@ -574,9 +604,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<CutoverJob> extractResources(ListCutoverJobsResponse payload) {
-              return payload.getCutoverJobsList() == null
-                  ? ImmutableList.<CutoverJob>of()
-                  : payload.getCutoverJobsList();
+              return payload.getCutoverJobsList();
             }
           };
 
@@ -610,9 +638,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<Group> extractResources(ListGroupsResponse payload) {
-              return payload.getGroupsList() == null
-                  ? ImmutableList.<Group>of()
-                  : payload.getGroupsList();
+              return payload.getGroupsList();
             }
           };
 
@@ -650,9 +676,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<TargetProject> extractResources(ListTargetProjectsResponse payload) {
-              return payload.getTargetProjectsList() == null
-                  ? ImmutableList.<TargetProject>of()
-                  : payload.getTargetProjectsList();
+              return payload.getTargetProjectsList();
             }
           };
 
@@ -691,9 +715,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             @Override
             public Iterable<ReplicationCycle> extractResources(
                 ListReplicationCyclesResponse payload) {
-              return payload.getReplicationCyclesList() == null
-                  ? ImmutableList.<ReplicationCycle>of()
-                  : payload.getReplicationCyclesList();
+              return payload.getReplicationCyclesList();
             }
           };
 
@@ -727,9 +749,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -1387,12 +1407,19 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "vmmigration";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "vmmigration.googleapis.com:443";
   }
@@ -1431,7 +1458,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1440,7 +1466,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1766,26 +1791,26 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(900000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(900000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(900000L))
-              .setTotalTimeout(Duration.ofMillis(900000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(900000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(900000L))
               .build();
       definitions.put("no_retry_2_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -2075,7 +2100,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -2088,7 +2112,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -2351,13 +2374,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2375,13 +2398,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2399,13 +2422,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2423,13 +2446,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2447,13 +2470,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2472,13 +2495,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2497,13 +2520,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2521,13 +2544,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2545,13 +2568,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2569,13 +2592,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2593,13 +2616,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2617,13 +2640,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2641,13 +2664,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2665,13 +2688,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2690,13 +2713,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2714,13 +2737,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2738,13 +2761,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2762,13 +2785,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2786,13 +2809,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2809,13 +2832,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2832,13 +2855,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2855,13 +2878,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2880,13 +2903,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2905,13 +2928,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2929,13 +2952,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2953,13 +2976,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -2977,13 +3000,13 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -3022,8 +3045,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSourceRequest, Source, OperationMetadata>
         createSourceOperationSettings() {
       return createSourceOperationSettings;
@@ -3035,8 +3056,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSourceRequest, Source, OperationMetadata>
         updateSourceOperationSettings() {
       return updateSourceOperationSettings;
@@ -3048,8 +3067,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSourceRequest, Empty, OperationMetadata>
         deleteSourceOperationSettings() {
       return deleteSourceOperationSettings;
@@ -3083,8 +3100,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createUtilizationReport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateUtilizationReportRequest, UtilizationReport, OperationMetadata>
         createUtilizationReportOperationSettings() {
@@ -3098,8 +3113,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteUtilizationReport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteUtilizationReportRequest, Empty, OperationMetadata>
         deleteUtilizationReportOperationSettings() {
       return deleteUtilizationReportOperationSettings;
@@ -3127,8 +3140,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createDatacenterConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDatacenterConnectorRequest, DatacenterConnector, OperationMetadata>
         createDatacenterConnectorOperationSettings() {
@@ -3142,8 +3153,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteDatacenterConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
         deleteDatacenterConnectorOperationSettings() {
       return deleteDatacenterConnectorOperationSettings;
@@ -3156,8 +3165,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to upgradeAppliance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
         upgradeApplianceOperationSettings() {
@@ -3171,8 +3178,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createMigratingVm. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateMigratingVmRequest, MigratingVm, OperationMetadata>
         createMigratingVmOperationSettings() {
       return createMigratingVmOperationSettings;
@@ -3197,8 +3202,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateMigratingVm. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateMigratingVmRequest, MigratingVm, OperationMetadata>
         updateMigratingVmOperationSettings() {
       return updateMigratingVmOperationSettings;
@@ -3211,8 +3214,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteMigratingVm. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteMigratingVmRequest, Empty, OperationMetadata>
         deleteMigratingVmOperationSettings() {
       return deleteMigratingVmOperationSettings;
@@ -3224,8 +3225,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to startMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StartMigrationRequest, StartMigrationResponse, OperationMetadata>
         startMigrationOperationSettings() {
@@ -3238,8 +3237,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to resumeMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ResumeMigrationRequest, ResumeMigrationResponse, OperationMetadata>
         resumeMigrationOperationSettings() {
@@ -3252,8 +3249,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to pauseMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PauseMigrationRequest, PauseMigrationResponse, OperationMetadata>
         pauseMigrationOperationSettings() {
@@ -3267,8 +3262,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to finalizeMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
         finalizeMigrationOperationSettings() {
@@ -3281,8 +3274,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createCloneJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCloneJobRequest, CloneJob, OperationMetadata>
         createCloneJobOperationSettings() {
       return createCloneJobOperationSettings;
@@ -3294,8 +3285,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to cancelCloneJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CancelCloneJobRequest, CancelCloneJobResponse, OperationMetadata>
         cancelCloneJobOperationSettings() {
@@ -3321,8 +3310,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createCutoverJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCutoverJobRequest, CutoverJob, OperationMetadata>
         createCutoverJobOperationSettings() {
       return createCutoverJobOperationSettings;
@@ -3335,8 +3322,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to cancelCutoverJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CancelCutoverJobRequest, CancelCutoverJobResponse, OperationMetadata>
         cancelCutoverJobOperationSettings() {
@@ -3372,8 +3357,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateGroupRequest, Group, OperationMetadata>
         createGroupOperationSettings() {
       return createGroupOperationSettings;
@@ -3385,8 +3368,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
         updateGroupOperationSettings() {
       return updateGroupOperationSettings;
@@ -3398,8 +3379,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteGroupRequest, Empty, OperationMetadata>
         deleteGroupOperationSettings() {
       return deleteGroupOperationSettings;
@@ -3412,8 +3391,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to addGroupMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AddGroupMigrationRequest, AddGroupMigrationResponse, OperationMetadata>
         addGroupMigrationOperationSettings() {
@@ -3427,8 +3404,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to removeGroupMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RemoveGroupMigrationRequest, RemoveGroupMigrationResponse, OperationMetadata>
         removeGroupMigrationOperationSettings() {
@@ -3455,8 +3430,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createTargetProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTargetProjectRequest, TargetProject, OperationMetadata>
         createTargetProjectOperationSettings() {
@@ -3470,8 +3443,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateTargetProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateTargetProjectRequest, TargetProject, OperationMetadata>
         updateTargetProjectOperationSettings() {
@@ -3485,8 +3456,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteTargetProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTargetProjectRequest, Empty, OperationMetadata>
         deleteTargetProjectOperationSettings() {
       return deleteTargetProjectOperationSettings;

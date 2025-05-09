@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1028,6 +1028,19 @@ public final class SpeechGrpc {
     return SpeechStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SpeechBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SpeechBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SpeechBlockingV2Stub>() {
+          @java.lang.Override
+          public SpeechBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SpeechBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SpeechBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1811,6 +1824,336 @@ public final class SpeechGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Speech.
+   *
+   * <pre>
+   * Enables speech transcription and resource management.
+   * </pre>
+   */
+  public static final class SpeechBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SpeechBlockingV2Stub> {
+    private SpeechBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SpeechBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SpeechBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Recognizer][google.cloud.speech.v2.Recognizer].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRecognizer(
+        com.google.cloud.speech.v2.CreateRecognizerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRecognizerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Recognizers.
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.ListRecognizersResponse listRecognizers(
+        com.google.cloud.speech.v2.ListRecognizersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRecognizersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested
+     * [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
+     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't
+     * exist.
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.Recognizer getRecognizer(
+        com.google.cloud.speech.v2.GetRecognizerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRecognizerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [Recognizer][google.cloud.speech.v2.Recognizer].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRecognizer(
+        com.google.cloud.speech.v2.UpdateRecognizerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRecognizerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the [Recognizer][google.cloud.speech.v2.Recognizer].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRecognizer(
+        com.google.cloud.speech.v2.DeleteRecognizerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRecognizerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeletes the [Recognizer][google.cloud.speech.v2.Recognizer].
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeleteRecognizer(
+        com.google.cloud.speech.v2.UndeleteRecognizerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteRecognizerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs synchronous Speech recognition: receive results after all audio
+     * has been sent and processed.
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.RecognizeResponse recognize(
+        com.google.cloud.speech.v2.RecognizeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRecognizeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech recognition: receive results while
+     * sending audio. This method is only available via the gRPC API (not REST).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.speech.v2.StreamingRecognizeRequest,
+            com.google.cloud.speech.v2.StreamingRecognizeResponse>
+        streamingRecognize() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingRecognizeMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs batch asynchronous speech recognition: send a request with N
+     * audio files and receive a long running operation that can be polled to see
+     * when the transcriptions are finished.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchRecognize(
+        com.google.cloud.speech.v2.BatchRecognizeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchRecognizeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested [Config][google.cloud.speech.v2.Config].
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.Config getConfig(
+        com.google.cloud.speech.v2.GetConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [Config][google.cloud.speech.v2.Config].
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.Config updateConfig(
+        com.google.cloud.speech.v2.UpdateConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [CustomClass][google.cloud.speech.v2.CustomClass].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCustomClass(
+        com.google.cloud.speech.v2.CreateCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomClasses.
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.ListCustomClassesResponse listCustomClasses(
+        com.google.cloud.speech.v2.ListCustomClassesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomClassesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested
+     * [CustomClass][google.cloud.speech.v2.CustomClass].
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.CustomClass getCustomClass(
+        com.google.cloud.speech.v2.GetCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [CustomClass][google.cloud.speech.v2.CustomClass].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCustomClass(
+        com.google.cloud.speech.v2.UpdateCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the [CustomClass][google.cloud.speech.v2.CustomClass].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCustomClass(
+        com.google.cloud.speech.v2.DeleteCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeletes the [CustomClass][google.cloud.speech.v2.CustomClass].
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeleteCustomClass(
+        com.google.cloud.speech.v2.UndeleteCustomClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteCustomClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [PhraseSet][google.cloud.speech.v2.PhraseSet].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPhraseSet(
+        com.google.cloud.speech.v2.CreatePhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists PhraseSets.
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.ListPhraseSetsResponse listPhraseSets(
+        com.google.cloud.speech.v2.ListPhraseSetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPhraseSetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested
+     * [PhraseSet][google.cloud.speech.v2.PhraseSet].
+     * </pre>
+     */
+    public com.google.cloud.speech.v2.PhraseSet getPhraseSet(
+        com.google.cloud.speech.v2.GetPhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [PhraseSet][google.cloud.speech.v2.PhraseSet].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePhraseSet(
+        com.google.cloud.speech.v2.UpdatePhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the [PhraseSet][google.cloud.speech.v2.PhraseSet].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePhraseSet(
+        com.google.cloud.speech.v2.DeletePhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePhraseSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeletes the [PhraseSet][google.cloud.speech.v2.PhraseSet].
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeletePhraseSet(
+        com.google.cloud.speech.v2.UndeletePhraseSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeletePhraseSetMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Speech.
    *
    * <pre>
    * Enables speech transcription and resource management.

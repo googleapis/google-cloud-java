@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/cloud/dialogflow/cx/v3beta1/advanced_settings.proto";
 import "google/cloud/dialogflow/cx/v3beta1/audio_config.proto";
+import "google/cloud/dialogflow/cx/v3beta1/bigquery_export.proto";
 import "google/cloud/dialogflow/cx/v3beta1/flow.proto";
 import "google/cloud/dialogflow/cx/v3beta1/generative_settings.proto";
 import "google/longrunning/operations.proto";
@@ -29,7 +30,6 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/struct.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.Cx.V3Beta1";
 option go_package = "cloud.google.com/go/dialogflow/cx/apiv3beta1/cxpb;cxpb";
 option java_multiple_files = true;
@@ -37,6 +37,10 @@ option java_outer_classname = "AgentProto";
 option java_package = "com.google.cloud.dialogflow.cx.v3beta1";
 option objc_class_prefix = "DF";
 option ruby_package = "Google::Cloud::Dialogflow::CX::V3beta1";
+option (google.api.resource_definition) = {
+  type: "secretmanager.googleapis.com/SecretVersion"
+  pattern: "projects/{project}/secrets/{secret}/versions/{version}"
+};
 
 // Service for managing [Agents][google.cloud.dialogflow.cx.v3beta1.Agent].
 service Agents {
@@ -230,10 +234,38 @@ message Agent {
       repeated string branches = 5;
     }
 
+    // Integration settings for a Git service hosted on Cloud Run.
+    message GitConnectionSettings {
+      // Required. Display name for the repository
+      string display_name = 1 [(google.api.field_behavior) = REQUIRED];
+
+      // Required. Git server reporitory URI.
+      string repository_uri = 2 [(google.api.field_behavior) = REQUIRED];
+
+      // Required. Default branch of the repository.
+      string tracking_branch = 3 [(google.api.field_behavior) = REQUIRED];
+
+      // Optional. List of branches configured for the repository.
+      repeated string branches = 4 [(google.api.field_behavior) = OPTIONAL];
+
+      // Support auth types.
+      oneof git_authentication {
+        // The name of the SecretManager secret version resource storing the
+        // git access token.
+        // Format: `projects/{project}/secrets/{secret}/versions/{version}`
+        string access_token_secret = 5 [(google.api.resource_reference) = {
+          type: "secretmanager.googleapis.com/SecretVersion"
+        }];
+      }
+    }
+
     // The git settings to specific systems.
     oneof git_settings {
       // GitHub settings.
       GithubSettings github_settings = 1;
+
+      // Git connection settings.
+      GitConnectionSettings git_connection_settings = 2;
     }
   }
 
@@ -245,13 +277,64 @@ message Agent {
     string engine = 1 [(google.api.field_behavior) = REQUIRED];
   }
 
+  // Settings for answer feedback collection.
+  message AnswerFeedbackSettings {
+    // Optional. If enabled, end users will be able to provide
+    // [answer feedback][google.cloud.dialogflow.cx.v3beta1.AnswerFeedback] to
+    // Dialogflow responses. Feature works only if interaction logging is
+    // enabled in the Dialogflow agent.
+    bool enable_answer_feedback = 1 [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // Settings for end user personalization.
+  message PersonalizationSettings {
+    // Optional. Default end user metadata, used when processing DetectIntent
+    // requests. Recommended to be filled as a template instead of hard-coded
+    // value, for example { "age": "$session.params.age" }. The data will be
+    // merged with the
+    // [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+    // in
+    // [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+    // during query processing.
+    google.protobuf.Struct default_end_user_metadata = 1
+        [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // Settings for custom client certificates.
+  message ClientCertificateSettings {
+    // Required. The ssl certificate encoded in PEM format. This string must
+    // include the begin header and end footer lines.
+    string ssl_certificate = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Required. The name of the SecretManager secret version resource storing
+    // the private key encoded in PEM format. Format:
+    // `projects/{project}/secrets/{secret}/versions/{version}`
+    string private_key = 2 [
+      (google.api.field_behavior) = REQUIRED,
+      (google.api.resource_reference) = {
+        type: "secretmanager.googleapis.com/SecretVersion"
+      }
+    ];
+
+    // Optional. The name of the SecretManager secret version resource storing
+    // the passphrase. 'passphrase' should be left unset if the private key is
+    // not encrypted.
+    // Format: `projects/{project}/secrets/{secret}/versions/{version}`
+    string passphrase = 3 [
+      (google.api.field_behavior) = OPTIONAL,
+      (google.api.resource_reference) = {
+        type: "secretmanager.googleapis.com/SecretVersion"
+      }
+    ];
+  }
+
   // The unique identifier of the agent.
   // Required for the
   // [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
   // method.
   // [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
   // populates the name automatically.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+  // Format: `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>`.
   string name = 1;
 
   // Required. The human-readable name of the agent, unique within the location.
@@ -291,19 +374,36 @@ message Agent {
   // Speech recognition related settings.
   SpeechToTextSettings speech_to_text_settings = 13;
 
-  // Immutable. Name of the start flow in this agent. A start flow will be
-  // automatically created when the agent is created, and can only be deleted by
-  // deleting the agent. Format: `projects/<Project ID>/locations/<Location
-  // ID>/agents/<Agent ID>/flows/<Flow ID>`.
-  string start_flow = 16 [
-    (google.api.field_behavior) = IMMUTABLE,
-    (google.api.resource_reference) = { type: "dialogflow.googleapis.com/Flow" }
-  ];
+  // The resource to start the conversations with for the agent.
+  oneof session_entry_resource {
+    // Name of the start flow in this agent. A start flow will be automatically
+    // created when the agent is created, and can only be deleted by deleting
+    // the agent.
+    // Format:
+    // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
+    // Currently only the default start flow with id
+    // "00000000-0000-0000-0000-000000000000" is allowed.
+    string start_flow = 16 [(google.api.resource_reference) = {
+      type: "dialogflow.googleapis.com/Flow"
+    }];
+
+    // Name of the start playbook in this agent. A start playbook will be
+    // automatically created when the agent is created, and can only be deleted
+    // by deleting the agent.
+    // Format:
+    // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/playbooks/<PlaybookID>`.
+    // Currently only the
+    //  default playbook with id
+    //  "00000000-0000-0000-0000-000000000000" is allowed.
+    string start_playbook = 39 [(google.api.resource_reference) = {
+      type: "dialogflow.googleapis.com/Playbook"
+    }];
+  }
 
   // Name of the
   // [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings]
-  // reference for the agent. Format: `projects/<Project ID>/locations/<Location
-  // ID>/securitySettings/<Security Settings ID>`.
+  // reference for the agent. Format:
+  // `projects/<ProjectID>/locations/<LocationID>/securitySettings/<SecuritySettingsID>`.
   string security_settings = 17 [(google.api.resource_reference) = {
     type: "dialogflow.googleapis.com/SecuritySettings"
   }];
@@ -318,6 +418,11 @@ message Agent {
   // requests.
   bool enable_spell_correction = 20;
 
+  // Optional. Enable training multi-lingual models for this agent. These models
+  // will be trained on all the languages supported by the agent.
+  bool enable_multi_language_training = 40
+      [(google.api.field_behavior) = OPTIONAL];
+
   // Indicates whether the agent is locked for changes. If the agent is locked,
   // modifications to the agent will be rejected except for [RestoreAgent][].
   bool locked = 27;
@@ -329,19 +434,53 @@ message Agent {
   // Git integration settings for this agent.
   GitIntegrationSettings git_integration_settings = 30;
 
+  // Optional. The BigQuery export settings for this agent. The conversation
+  // data will be exported to BigQuery tables if it is enabled. By default,
+  // BigQuery export settings will not be exported with agent. You need to set
+  // [include_bigquery_export_settings][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest.include_bigquery_export_settings]
+  // to include it in the exported agent.
+  BigQueryExportSettings bigquery_export_settings = 29
+      [(google.api.field_behavior) = OPTIONAL];
+
   // Settings on instructing the speech synthesizer on how to generate the
   // output audio content.
   TextToSpeechSettings text_to_speech_settings = 31;
 
   // Gen App Builder-related agent-level settings.
   optional GenAppBuilderSettings gen_app_builder_settings = 33;
+
+  // Optional. Answer feedback collection settings.
+  AnswerFeedbackSettings answer_feedback_settings = 38
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Settings for end user personalization.
+  PersonalizationSettings personalization_settings = 42
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Settings for custom client certificates.
+  ClientCertificateSettings client_certificate_settings = 43
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Output only. A read only boolean field reflecting Zone Separation
+  // status of the agent.
+  optional bool satisfies_pzs = 45 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_behavior) = OUTPUT_ONLY
+  ];
+
+  // Optional. Output only. A read only boolean field reflecting Zone Isolation
+  // status of the agent.
+  optional bool satisfies_pzi = 46 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_behavior) = OUTPUT_ONLY
+  ];
 }
 
 // The request message for
 // [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
 message ListAgentsRequest {
   // Required. The location to list all agents for.
-  // Format: `projects/<Project ID>/locations/<Location ID>`.
+  // Format: `projects/<ProjectID>/locations/<LocationID>`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -373,7 +512,7 @@ message ListAgentsResponse {
 // [Agents.GetAgent][google.cloud.dialogflow.cx.v3beta1.Agents.GetAgent].
 message GetAgentRequest {
   // Required. The name of the agent.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+  // Format: `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -386,7 +525,7 @@ message GetAgentRequest {
 // [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent].
 message CreateAgentRequest {
   // Required. The location to create a agent for.
-  // Format: `projects/<Project ID>/locations/<Location ID>`.
+  // Format: `projects/<ProjectID>/locations/<LocationID>`.
   string parent = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -413,7 +552,7 @@ message UpdateAgentRequest {
 // [Agents.DeleteAgent][google.cloud.dialogflow.cx.v3beta1.Agents.DeleteAgent].
 message DeleteAgentRequest {
   // Required. The name of the agent to delete.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+  // Format: `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -447,7 +586,7 @@ message ExportAgentRequest {
   }
 
   // Required. The name of the agent to export.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+  // Format: `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -472,8 +611,8 @@ message ExportAgentRequest {
   DataFormat data_format = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Environment name. If not set, draft environment is assumed.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/environments/<Environment ID>`.
+  // Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/environments/<EnvironmentID>`.
   string environment = 5 [
     (google.api.field_behavior) = OPTIONAL,
     (google.api.resource_reference) = {
@@ -536,7 +675,7 @@ message RestoreAgentRequest {
   }
 
   // Required. The name of the agent to restore into.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+  // Format: `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -572,7 +711,7 @@ message RestoreAgentRequest {
 // [Agents.ValidateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ValidateAgent].
 message ValidateAgentRequest {
   // Required. The agent to validate.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+  // Format: `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -588,8 +727,8 @@ message ValidateAgentRequest {
 // [Agents.GetAgentValidationResult][google.cloud.dialogflow.cx.v3beta1.Agents.GetAgentValidationResult].
 message GetAgentValidationResultRequest {
   // Required. The agent name.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/validationResult`.
+  // Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/validationResult`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
@@ -610,8 +749,8 @@ message AgentValidationResult {
   };
 
   // The unique identifier of the agent validation result.
-  // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-  // ID>/validationResult`.
+  // Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/validationResult`.
   string name = 1;
 
   // Contains all flow validation results.
@@ -622,8 +761,8 @@ message AgentValidationResult {
 // [GetGenerativeSettings][google.cloud.dialogflow.cx.v3beta1.Agents.GetGenerativeSettings]
 // RPC.
 message GetGenerativeSettingsRequest {
-  // Required. Format: `projects/<Project ID>/locations/<Location
-  // ID>/agents/<Agent ID>/generativeSettings`.
+  // Required. Format:
+  // `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/generativeSettings`.
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {

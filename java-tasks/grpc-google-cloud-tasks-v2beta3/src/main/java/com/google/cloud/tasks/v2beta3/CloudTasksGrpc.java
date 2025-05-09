@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -704,52 +704,6 @@ public final class CloudTasksGrpc {
     return getRunTaskMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.BufferTaskRequest,
-          com.google.cloud.tasks.v2beta3.BufferTaskResponse>
-      getBufferTaskMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BufferTask",
-      requestType = com.google.cloud.tasks.v2beta3.BufferTaskRequest.class,
-      responseType = com.google.cloud.tasks.v2beta3.BufferTaskResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.cloud.tasks.v2beta3.BufferTaskRequest,
-          com.google.cloud.tasks.v2beta3.BufferTaskResponse>
-      getBufferTaskMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.cloud.tasks.v2beta3.BufferTaskRequest,
-            com.google.cloud.tasks.v2beta3.BufferTaskResponse>
-        getBufferTaskMethod;
-    if ((getBufferTaskMethod = CloudTasksGrpc.getBufferTaskMethod) == null) {
-      synchronized (CloudTasksGrpc.class) {
-        if ((getBufferTaskMethod = CloudTasksGrpc.getBufferTaskMethod) == null) {
-          CloudTasksGrpc.getBufferTaskMethod =
-              getBufferTaskMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.cloud.tasks.v2beta3.BufferTaskRequest,
-                          com.google.cloud.tasks.v2beta3.BufferTaskResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BufferTask"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.tasks.v2beta3.BufferTaskRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.cloud.tasks.v2beta3.BufferTaskResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(new CloudTasksMethodDescriptorSupplier("BufferTask"))
-                      .build();
-        }
-      }
-    }
-    return getBufferTaskMethod;
-  }
-
   /** Creates a new async stub that supports all call types for the service */
   public static CloudTasksStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudTasksStub> factory =
@@ -760,6 +714,19 @@ public final class CloudTasksGrpc {
           }
         };
     return CloudTasksStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudTasksBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudTasksBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudTasksBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudTasksBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudTasksBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudTasksBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1118,30 +1085,6 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.RunTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates and buffers a new task without the need to explicitly define a Task
-     * message. The queue must have [HTTP
-     * target][google.cloud.tasks.v2beta3.HttpTarget]. To create the task with a
-     * custom ID, use the following format and set TASK_ID to your desired ID:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
-     * To create the task with an automatically generated ID, use the following
-     * format:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
-     * Note: This feature is in its experimental stage. You must request access to
-     * the API through the [Cloud Tasks BufferTask Experiment Signup
-     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-     * </pre>
-     */
-    default void bufferTask(
-        com.google.cloud.tasks.v2beta3.BufferTaskRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.BufferTaskResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBufferTaskMethod(), responseObserver);
     }
   }
 
@@ -1521,35 +1464,339 @@ public final class CloudTasksGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request, responseObserver);
     }
+  }
+
+  /**
+   * A stub to allow clients to do synchronous rpc calls to service CloudTasks.
+   *
+   * <pre>
+   * Cloud Tasks allows developers to manage the execution of background
+   * work in their applications.
+   * </pre>
+   */
+  public static final class CloudTasksBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudTasksBlockingV2Stub> {
+    private CloudTasksBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudTasksBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudTasksBlockingV2Stub(channel, callOptions);
+    }
 
     /**
      *
      *
      * <pre>
-     * Creates and buffers a new task without the need to explicitly define a Task
-     * message. The queue must have [HTTP
-     * target][google.cloud.tasks.v2beta3.HttpTarget]. To create the task with a
-     * custom ID, use the following format and set TASK_ID to your desired ID:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
-     * To create the task with an automatically generated ID, use the following
-     * format:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
-     * Note: This feature is in its experimental stage. You must request access to
-     * the API through the [Cloud Tasks BufferTask Experiment Signup
-     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
+     * Lists queues.
+     * Queues are returned in lexicographical order.
      * </pre>
      */
-    public void bufferTask(
-        com.google.cloud.tasks.v2beta3.BufferTaskRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.BufferTaskResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getBufferTaskMethod(), getCallOptions()), request, responseObserver);
+    public com.google.cloud.tasks.v2beta3.ListQueuesResponse listQueues(
+        com.google.cloud.tasks.v2beta3.ListQueuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQueuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a queue.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Queue getQueue(
+        com.google.cloud.tasks.v2beta3.GetQueueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQueueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a queue.
+     * Queues created with this method allow tasks to live for a maximum of 31
+     * days. After a task is 31 days old, the task will be deleted regardless of
+     * whether it was dispatched or not.
+     * WARNING: Using this method may have unintended side effects if you are
+     * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
+     * Read
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Queue createQueue(
+        com.google.cloud.tasks.v2beta3.CreateQueueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQueueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a queue.
+     * This method creates the queue if it does not exist and updates
+     * the queue if it does exist.
+     * Queues created with this method allow tasks to live for a maximum of 31
+     * days. After a task is 31 days old, the task will be deleted regardless of
+     * whether it was dispatched or not.
+     * WARNING: Using this method may have unintended side effects if you are
+     * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
+     * Read
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Queue updateQueue(
+        com.google.cloud.tasks.v2beta3.UpdateQueueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQueueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a queue.
+     * This command will delete the queue even if it has tasks in it.
+     * Note: If you delete a queue, a queue with the same name can't be created
+     * for 7 days.
+     * WARNING: Using this method may have unintended side effects if you are
+     * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
+     * Read
+     * [Overview of Queue Management and
+     * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using
+     * this method.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteQueue(
+        com.google.cloud.tasks.v2beta3.DeleteQueueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQueueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Purges a queue by deleting all of its tasks.
+     * All tasks created before this method is called are permanently deleted.
+     * Purge operations can take up to one minute to take effect. Tasks
+     * might be dispatched before the purge takes effect. A purge is irreversible.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Queue purgeQueue(
+        com.google.cloud.tasks.v2beta3.PurgeQueueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeQueueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the queue.
+     * If a queue is paused then the system will stop dispatching tasks
+     * until the queue is resumed via
+     * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue]. Tasks can
+     * still be added when the queue is paused. A queue is paused if its
+     * [state][google.cloud.tasks.v2beta3.Queue.state] is
+     * [PAUSED][google.cloud.tasks.v2beta3.Queue.State.PAUSED].
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Queue pauseQueue(
+        com.google.cloud.tasks.v2beta3.PauseQueueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseQueueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resume a queue.
+     * This method resumes a queue after it has been
+     * [PAUSED][google.cloud.tasks.v2beta3.Queue.State.PAUSED] or
+     * [DISABLED][google.cloud.tasks.v2beta3.Queue.State.DISABLED]. The state of a
+     * queue is stored in the queue's
+     * [state][google.cloud.tasks.v2beta3.Queue.state]; after calling this method
+     * it will be set to
+     * [RUNNING][google.cloud.tasks.v2beta3.Queue.State.RUNNING].
+     * WARNING: Resuming many high-QPS queues at the same time can
+     * lead to target overloading. If you are resuming high-QPS
+     * queues, follow the 500/50/5 pattern described in
+     * [Managing Cloud Tasks Scaling
+     * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Queue resumeQueue(
+        com.google.cloud.tasks.v2beta3.ResumeQueueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeQueueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a
+     * [Queue][google.cloud.tasks.v2beta3.Queue]. Returns an empty policy if the
+     * resource exists and does not have a policy set.
+     * Authorization requires the following
+     * [Google IAM](https://cloud.google.com/iam) permission on the specified
+     * resource parent:
+     * * `cloudtasks.queues.getIamPolicy`
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy for a
+     * [Queue][google.cloud.tasks.v2beta3.Queue]. Replaces any existing policy.
+     * Note: The Cloud Console does not check queue-level IAM permissions yet.
+     * Project-level permissions are required to use the Cloud Console.
+     * Authorization requires the following
+     * [Google IAM](https://cloud.google.com/iam) permission on the specified
+     * resource parent:
+     * * `cloudtasks.queues.setIamPolicy`
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on a
+     * [Queue][google.cloud.tasks.v2beta3.Queue]. If the resource does not exist,
+     * this will return an empty set of permissions, not a
+     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] error.
+     * Note: This operation is designed to be used for building permission-aware
+     * UIs and command-line tools, not for authorization checking. This operation
+     * may "fail open" without warning.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the tasks in a queue.
+     * By default, only the [BASIC][google.cloud.tasks.v2beta3.Task.View.BASIC]
+     * view is retrieved due to performance considerations;
+     * [response_view][google.cloud.tasks.v2beta3.ListTasksRequest.response_view]
+     * controls the subset of information which is returned.
+     * The tasks may be returned in any order. The ordering may change at any
+     * time.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.ListTasksResponse listTasks(
+        com.google.cloud.tasks.v2beta3.ListTasksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a task.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Task getTask(
+        com.google.cloud.tasks.v2beta3.GetTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a task and adds it to a queue.
+     * Tasks cannot be updated after creation; there is no UpdateTask command.
+     * * The maximum task size is 100KB.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Task createTask(
+        com.google.cloud.tasks.v2beta3.CreateTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a task.
+     * A task can be deleted if it is scheduled or dispatched. A task
+     * cannot be deleted if it has executed successfully or permanently
+     * failed.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTask(
+        com.google.cloud.tasks.v2beta3.DeleteTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Forces a task to run now.
+     * When this method is called, Cloud Tasks will dispatch the task, even if
+     * the task is already running, the queue has reached its
+     * [RateLimits][google.cloud.tasks.v2beta3.RateLimits] or is
+     * [PAUSED][google.cloud.tasks.v2beta3.Queue.State.PAUSED].
+     * This command is meant to be used for manual debugging. For
+     * example, [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask] can be
+     * used to retry a failed task after a fix has been made or to manually force
+     * a task to be dispatched now.
+     * The dispatched task is returned. That is, the task that is returned
+     * contains the [status][Task.status] after the task is dispatched but
+     * before the task is received by its target.
+     * If Cloud Tasks receives a successful response from the task's
+     * target, then the task will be deleted; otherwise the task's
+     * [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] will be
+     * reset to the time that
+     * [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask] was called plus
+     * the retry delay specified in the queue's
+     * [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+     * [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask] returns
+     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] when it is called on a
+     * task that has already succeeded or permanently failed.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta3.Task runTask(
+        com.google.cloud.tasks.v2beta3.RunTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunTaskMethod(), getCallOptions(), request);
     }
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service CloudTasks.
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudTasks.
    *
    * <pre>
    * Cloud Tasks allows developers to manage the execution of background
@@ -1874,29 +2121,6 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta3.RunTaskRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates and buffers a new task without the need to explicitly define a Task
-     * message. The queue must have [HTTP
-     * target][google.cloud.tasks.v2beta3.HttpTarget]. To create the task with a
-     * custom ID, use the following format and set TASK_ID to your desired ID:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
-     * To create the task with an automatically generated ID, use the following
-     * format:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
-     * Note: This feature is in its experimental stage. You must request access to
-     * the API through the [Cloud Tasks BufferTask Experiment Signup
-     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-     * </pre>
-     */
-    public com.google.cloud.tasks.v2beta3.BufferTaskResponse bufferTask(
-        com.google.cloud.tasks.v2beta3.BufferTaskRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBufferTaskMethod(), getCallOptions(), request);
     }
   }
 
@@ -2231,30 +2455,6 @@ public final class CloudTasksGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request);
     }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates and buffers a new task without the need to explicitly define a Task
-     * message. The queue must have [HTTP
-     * target][google.cloud.tasks.v2beta3.HttpTarget]. To create the task with a
-     * custom ID, use the following format and set TASK_ID to your desired ID:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
-     * To create the task with an automatically generated ID, use the following
-     * format:
-     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
-     * Note: This feature is in its experimental stage. You must request access to
-     * the API through the [Cloud Tasks BufferTask Experiment Signup
-     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.cloud.tasks.v2beta3.BufferTaskResponse>
-        bufferTask(com.google.cloud.tasks.v2beta3.BufferTaskRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getBufferTaskMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_LIST_QUEUES = 0;
@@ -2273,7 +2473,6 @@ public final class CloudTasksGrpc {
   private static final int METHODID_CREATE_TASK = 13;
   private static final int METHODID_DELETE_TASK = 14;
   private static final int METHODID_RUN_TASK = 15;
-  private static final int METHODID_BUFFER_TASK = 16;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2374,12 +2573,6 @@ public final class CloudTasksGrpc {
           serviceImpl.runTask(
               (com.google.cloud.tasks.v2beta3.RunTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.Task>) responseObserver);
-          break;
-        case METHODID_BUFFER_TASK:
-          serviceImpl.bufferTask(
-              (com.google.cloud.tasks.v2beta3.BufferTaskRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta3.BufferTaskResponse>)
-                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2496,13 +2689,6 @@ public final class CloudTasksGrpc {
                 new MethodHandlers<
                     com.google.cloud.tasks.v2beta3.RunTaskRequest,
                     com.google.cloud.tasks.v2beta3.Task>(service, METHODID_RUN_TASK)))
-        .addMethod(
-            getBufferTaskMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.cloud.tasks.v2beta3.BufferTaskRequest,
-                    com.google.cloud.tasks.v2beta3.BufferTaskResponse>(
-                    service, METHODID_BUFFER_TASK)))
         .build();
   }
 
@@ -2570,7 +2756,6 @@ public final class CloudTasksGrpc {
                       .addMethod(getCreateTaskMethod())
                       .addMethod(getDeleteTaskMethod())
                       .addMethod(getRunTaskMethod())
-                      .addMethod(getBufferTaskMethod())
                       .build();
         }
       }

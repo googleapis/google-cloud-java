@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ syntax = "proto3";
 
 package google.cloud.discoveryengine.v1;
 
+import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 
 option csharp_namespace = "Google.Cloud.DiscoveryEngine.V1";
@@ -32,15 +33,104 @@ option (google.api.resource_definition) = {
   pattern: "projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}"
 };
 option (google.api.resource_definition) = {
-  type: "discoveryengine.googleapis.com/DataStore"
-  pattern: "projects/{project}/locations/{location}/dataStores/{data_store}"
-  pattern: "projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}"
+  type: "discoveryengine.googleapis.com/Collection"
+  pattern: "projects/{project}/locations/{location}/collections/{collection}"
 };
 option (google.api.resource_definition) = {
-  type: "discoveryengine.googleapis.com/ServingConfig"
-  pattern: "projects/{project}/locations/{location}/dataStores/{data_store}/servingConfigs/{serving_config}"
-  pattern: "projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config}"
+  type: "discoveryengine.googleapis.com/Location"
+  pattern: "projects/{project}/locations/{location}"
 };
+option (google.api.resource_definition) = {
+  type: "discoveryengine.googleapis.com/GroundingConfig"
+  pattern: "projects/{project}/locations/{location}/groundingConfigs/{grounding_config}"
+};
+option (google.api.resource_definition) = {
+  type: "discoveryengine.googleapis.com/RankingConfig"
+  pattern: "projects/{project}/locations/{location}/rankingConfigs/{ranking_config}"
+};
+option (google.api.resource_definition) = {
+  type: "healthcare.googleapis.com/FhirStore"
+  pattern: "projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}"
+};
+option (google.api.resource_definition) = {
+  type: "healthcare.googleapis.com/FhirResource"
+  pattern: "projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}"
+};
+
+// The industry vertical associated with the
+// [DataStore][google.cloud.discoveryengine.v1.DataStore].
+enum IndustryVertical {
+  // Value used when unset.
+  INDUSTRY_VERTICAL_UNSPECIFIED = 0;
+
+  // The generic vertical for documents that are not specific to any industry
+  // vertical.
+  GENERIC = 1;
+
+  // The media industry vertical.
+  MEDIA = 2;
+
+  // The healthcare FHIR vertical.
+  HEALTHCARE_FHIR = 7;
+}
+
+// The type of solution.
+enum SolutionType {
+  // Default value.
+  SOLUTION_TYPE_UNSPECIFIED = 0;
+
+  // Used for Recommendations AI.
+  SOLUTION_TYPE_RECOMMENDATION = 1;
+
+  // Used for Discovery Search.
+  SOLUTION_TYPE_SEARCH = 2;
+
+  // Used for use cases related to the Generative AI agent.
+  SOLUTION_TYPE_CHAT = 3;
+
+  // Used for use cases related to the Generative Chat agent.
+  // It's used for Generative chat engine only, the associated data stores
+  // must enrolled with `SOLUTION_TYPE_CHAT` solution.
+  SOLUTION_TYPE_GENERATIVE_CHAT = 4;
+}
+
+// Defines a further subdivision of `SolutionType`.
+// Specifically applies to
+// [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1.SolutionType.SOLUTION_TYPE_SEARCH].
+enum SearchUseCase {
+  // Value used when unset. Will not occur in CSS.
+  SEARCH_USE_CASE_UNSPECIFIED = 0;
+
+  // Search use case. Expects the traffic has a non-empty
+  // [query][google.cloud.discoveryengine.v1.SearchRequest.query].
+  SEARCH_USE_CASE_SEARCH = 1;
+
+  // Browse use case. Expects the traffic has an empty
+  // [query][google.cloud.discoveryengine.v1.SearchRequest.query].
+  SEARCH_USE_CASE_BROWSE = 2;
+}
+
+// Tiers of search features. Different tiers might have different
+// pricing. To learn more, check the pricing documentation.
+enum SearchTier {
+  // Default value when the enum is unspecified. This is invalid to use.
+  SEARCH_TIER_UNSPECIFIED = 0;
+
+  // Standard tier.
+  SEARCH_TIER_STANDARD = 1;
+
+  // Enterprise tier.
+  SEARCH_TIER_ENTERPRISE = 2;
+}
+
+// Add-on that provides additional functionality for search.
+enum SearchAddOn {
+  // Default value when the enum is unspecified. This is invalid to use.
+  SEARCH_ADD_ON_UNSPECIFIED = 0;
+
+  // Large language model add-on.
+  SEARCH_ADD_ON_LLM = 1;
+}
 
 // A floating point interval.
 message Interval {
@@ -125,4 +215,38 @@ message UserInfo {
   // [UserEvent.direct_user_request][google.cloud.discoveryengine.v1.UserEvent.direct_user_request]
   // is set.
   string user_agent = 2;
+
+  // Optional. IANA time zone, e.g. Europe/Budapest.
+  string time_zone = 3 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Double list.
+message DoubleList {
+  // Double values.
+  repeated double values = 1;
+}
+
+// Promotion proto includes uri and other helping information to display the
+// promotion.
+message SearchLinkPromotion {
+  // Required. The title of the promotion.
+  // Maximum length: 160 characters.
+  string title = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. The URL for the page the user wants to promote. Must be set for
+  // site search. For other verticals, this is optional.
+  string uri = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The promotion thumbnail image url.
+  string image_uri = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The Promotion description.
+  // Maximum length: 200 characters.
+  string description = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The enabled promotion will be returned for any serving configs
+  // associated with the parent of the control this promotion is attached to.
+  //
+  // This flag is used for basic site search only.
+  bool enabled = 5 [(google.api.field_behavior) = OPTIONAL];
 }

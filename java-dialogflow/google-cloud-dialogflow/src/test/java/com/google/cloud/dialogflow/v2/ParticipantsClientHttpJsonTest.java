@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -485,9 +485,9 @@ public class ParticipantsClientHttpJsonTest {
     ParticipantName participant =
         ParticipantName.ofProjectConversationParticipantName(
             "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
-    EventInput eventInput = EventInput.newBuilder().build();
+    AudioInput audioInput = AudioInput.newBuilder().build();
 
-    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, eventInput);
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, audioInput);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -516,6 +516,62 @@ public class ParticipantsClientHttpJsonTest {
       ParticipantName participant =
           ParticipantName.ofProjectConversationParticipantName(
               "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+      AudioInput audioInput = AudioInput.newBuilder().build();
+      client.analyzeContent(participant, audioInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeContentTest2() throws Exception {
+    AnalyzeContentResponse expectedResponse =
+        AnalyzeContentResponse.newBuilder()
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ParticipantName participant =
+        ParticipantName.ofProjectConversationParticipantName(
+            "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
+    EventInput eventInput = EventInput.newBuilder().build();
+
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, eventInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void analyzeContentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ParticipantName participant =
+          ParticipantName.ofProjectConversationParticipantName(
+              "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
       EventInput eventInput = EventInput.newBuilder().build();
       client.analyzeContent(participant, eventInput);
       Assert.fail("No exception raised");
@@ -525,7 +581,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentTest2() throws Exception {
+  public void analyzeContentTest3() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -562,7 +618,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest2() throws Exception {
+  public void analyzeContentExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -581,7 +637,61 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentTest3() throws Exception {
+  public void analyzeContentTest4() throws Exception {
+    AnalyzeContentResponse expectedResponse =
+        AnalyzeContentResponse.newBuilder()
+            .setReplyText("replyText-433699017")
+            .setReplyAudio(OutputAudio.newBuilder().build())
+            .setAutomatedAgentReply(AutomatedAgentReply.newBuilder().build())
+            .setMessage(Message.newBuilder().build())
+            .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
+            .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
+            .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String participant =
+        "projects/project-8054/conversations/conversation-8054/participants/participant-8054";
+    AudioInput audioInput = AudioInput.newBuilder().build();
+
+    AnalyzeContentResponse actualResponse = client.analyzeContent(participant, audioInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void analyzeContentExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String participant =
+          "projects/project-8054/conversations/conversation-8054/participants/participant-8054";
+      AudioInput audioInput = AudioInput.newBuilder().build();
+      client.analyzeContent(participant, audioInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeContentTest5() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -617,7 +727,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest3() throws Exception {
+  public void analyzeContentExceptionTest5() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -635,7 +745,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentTest4() throws Exception {
+  public void analyzeContentTest6() throws Exception {
     AnalyzeContentResponse expectedResponse =
         AnalyzeContentResponse.newBuilder()
             .setReplyText("replyText-433699017")
@@ -671,7 +781,7 @@ public class ParticipantsClientHttpJsonTest {
   }
 
   @Test
-  public void analyzeContentExceptionTest4() throws Exception {
+  public void analyzeContentExceptionTest6() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -988,6 +1098,76 @@ public class ParticipantsClientHttpJsonTest {
       String parent =
           "projects/project-4961/conversations/conversation-4961/participants/participant-4961";
       client.suggestSmartReplies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void suggestKnowledgeAssistTest() throws Exception {
+    SuggestKnowledgeAssistResponse expectedResponse =
+        SuggestKnowledgeAssistResponse.newBuilder()
+            .setKnowledgeAssistAnswer(KnowledgeAssistAnswer.newBuilder().build())
+            .setLatestMessage("latestMessage-1424305536")
+            .setContextSize(1116903569)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SuggestKnowledgeAssistRequest request =
+        SuggestKnowledgeAssistRequest.newBuilder()
+            .setParent(
+                ParticipantName.ofProjectConversationParticipantName(
+                        "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                    .toString())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+            .build();
+
+    SuggestKnowledgeAssistResponse actualResponse = client.suggestKnowledgeAssist(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void suggestKnowledgeAssistExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SuggestKnowledgeAssistRequest request =
+          SuggestKnowledgeAssistRequest.newBuilder()
+              .setParent(
+                  ParticipantName.ofProjectConversationParticipantName(
+                          "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                      .toString())
+              .setLatestMessage(
+                  MessageName.ofProjectConversationMessageName(
+                          "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                      .toString())
+              .setContextSize(1116903569)
+              .setPreviousSuggestedQuery("previousSuggestedQuery-1914206660")
+              .build();
+      client.suggestKnowledgeAssist(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

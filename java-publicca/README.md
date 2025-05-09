@@ -1,15 +1,12 @@
-# Google Public Certificate Authority Client for Java
+# Google Public Certificate Authority API Client for Java
 
-Java idiomatic client for [Public Certificate Authority][product-docs].
+Java idiomatic client for [Public Certificate Authority API][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
 
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
-
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
 
 
 ## Quickstart
@@ -23,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.23.0</version>
+      <version>26.59.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -35,32 +32,31 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-publicca</artifactId>
   </dependency>
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-publicca:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-publicca</artifactId>
-  <version>0.25.0</version>
+  <version>0.58.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-publicca:0.25.0'
+implementation 'com.google.cloud:google-cloud-publicca:0.58.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-publicca" % "0.25.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-publicca" % "0.58.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -68,14 +64,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Public Certificate Authority APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Public Certificate Authority API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Public Certificate Authority API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Public Certificate Authority API API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the Public Certificate Authority [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google Public Certificate Authority.
+You will need a [Google Cloud Platform Console][developer-console] project with the Public Certificate Authority API [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Public Certificate Authority API.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -85,13 +81,13 @@ You will need to [enable billing][enable-billing] to use Google Public Certifica
 You'll need to obtain the `google-cloud-publicca` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-publicca` as a dependency in your code.
 
-## About Public Certificate Authority
+## About Public Certificate Authority API
 
 
-[Public Certificate Authority][product-docs] Certificate Manager's Public Certificate Authority (CA) functionality allows you to provision and deploy widely trusted X.509 certificates after validating that the certificate requester controls the domains.
+[Public Certificate Authority API][product-docs] The Public Certificate Authority API may be used to create and manage ACME external account binding keys associated with Google Trust Services' publicly trusted certificate authority.
 
-See the [Public Certificate Authority client library docs][javadocs] to learn how to
-use this Public Certificate Authority Client Library.
+See the [Public Certificate Authority API client library docs][javadocs] to learn how to
+use this Public Certificate Authority API Client Library.
 
 
 
@@ -104,7 +100,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Public Certificate Authority uses gRPC for the transport layer.
+Public Certificate Authority API uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -156,9 +152,6 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
-
 
 ## Contributing
 
@@ -187,7 +180,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/certificate-manager/docs/public-ca/
+[product-docs]: https://cloud.google.com/certificate-manager/docs/public-ca
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-publicca/latest/overview
 [kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
 [kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
@@ -199,9 +192,9 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
-[stability-image]: https://img.shields.io/badge/stability-preview-yellow
+[stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-publicca.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-publicca/0.21.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-publicca/0.58.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

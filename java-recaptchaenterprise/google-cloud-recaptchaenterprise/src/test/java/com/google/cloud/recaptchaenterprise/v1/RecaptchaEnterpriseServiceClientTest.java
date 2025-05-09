@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.recaptchaenterprise.v1;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -37,9 +38,12 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.recaptchaenterprise.v1.AccountDefenderAssessment;
 import com.google.recaptchaenterprise.v1.AccountVerificationInfo;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
+import com.google.recaptchaenterprise.v1.AssessmentEnvironment;
 import com.google.recaptchaenterprise.v1.AssessmentName;
 import com.google.recaptchaenterprise.v1.ChallengeMetrics;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
@@ -57,10 +61,13 @@ import com.google.recaptchaenterprise.v1.FraudSignals;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -70,11 +77,16 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.PhoneFraudAssessment;
 import com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification;
 import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.RiskAnalysis;
@@ -155,6 +167,8 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setFirewallPolicyAssessment(FirewallPolicyAssessment.newBuilder().build())
             .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .setFraudSignals(FraudSignals.newBuilder().build())
+            .setPhoneFraudAssessment(PhoneFraudAssessment.newBuilder().build())
+            .setAssessmentEnvironment(AssessmentEnvironment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -206,6 +220,8 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setFirewallPolicyAssessment(FirewallPolicyAssessment.newBuilder().build())
             .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .setFraudSignals(FraudSignals.newBuilder().build())
+            .setPhoneFraudAssessment(PhoneFraudAssessment.newBuilder().build())
+            .setAssessmentEnvironment(AssessmentEnvironment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -833,6 +849,246 @@ public class RecaptchaEnterpriseServiceClientTest {
   }
 
   @Test
+  public void addIpOverrideTest() throws Exception {
+    AddIpOverrideResponse expectedResponse = AddIpOverrideResponse.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+    IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+
+    AddIpOverrideResponse actualResponse = client.addIpOverride(name, ipOverrideData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddIpOverrideRequest actualRequest = ((AddIpOverrideRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(ipOverrideData, actualRequest.getIpOverrideData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addIpOverrideExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+      IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+      client.addIpOverride(name, ipOverrideData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addIpOverrideTest2() throws Exception {
+    AddIpOverrideResponse expectedResponse = AddIpOverrideResponse.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+
+    AddIpOverrideResponse actualResponse = client.addIpOverride(name, ipOverrideData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddIpOverrideRequest actualRequest = ((AddIpOverrideRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(ipOverrideData, actualRequest.getIpOverrideData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addIpOverrideExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+      client.addIpOverride(name, ipOverrideData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeIpOverrideTest() throws Exception {
+    RemoveIpOverrideResponse expectedResponse = RemoveIpOverrideResponse.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+    IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+
+    RemoveIpOverrideResponse actualResponse = client.removeIpOverride(name, ipOverrideData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveIpOverrideRequest actualRequest = ((RemoveIpOverrideRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(ipOverrideData, actualRequest.getIpOverrideData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeIpOverrideExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+      IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+      client.removeIpOverride(name, ipOverrideData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeIpOverrideTest2() throws Exception {
+    RemoveIpOverrideResponse expectedResponse = RemoveIpOverrideResponse.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+
+    RemoveIpOverrideResponse actualResponse = client.removeIpOverride(name, ipOverrideData);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveIpOverrideRequest actualRequest = ((RemoveIpOverrideRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(ipOverrideData, actualRequest.getIpOverrideData());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeIpOverrideExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+      client.removeIpOverride(name, ipOverrideData);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIpOverridesTest() throws Exception {
+    IpOverrideData responsesElement = IpOverrideData.newBuilder().build();
+    ListIpOverridesResponse expectedResponse =
+        ListIpOverridesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIpOverrides(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    KeyName parent = KeyName.of("[PROJECT]", "[KEY]");
+
+    ListIpOverridesPagedResponse pagedListResponse = client.listIpOverrides(parent);
+
+    List<IpOverrideData> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getIpOverridesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListIpOverridesRequest actualRequest = ((ListIpOverridesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listIpOverridesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      KeyName parent = KeyName.of("[PROJECT]", "[KEY]");
+      client.listIpOverrides(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIpOverridesTest2() throws Exception {
+    IpOverrideData responsesElement = IpOverrideData.newBuilder().build();
+    ListIpOverridesResponse expectedResponse =
+        ListIpOverridesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIpOverrides(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListIpOverridesPagedResponse pagedListResponse = client.listIpOverrides(parent);
+
+    List<IpOverrideData> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getIpOverridesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListIpOverridesRequest actualRequest = ((ListIpOverridesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listIpOverridesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listIpOverrides(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getMetricsTest() throws Exception {
     Metrics expectedResponse =
         Metrics.newBuilder()
@@ -1297,6 +1553,86 @@ public class RecaptchaEnterpriseServiceClientTest {
   }
 
   @Test
+  public void reorderFirewallPoliciesTest() throws Exception {
+    ReorderFirewallPoliciesResponse expectedResponse =
+        ReorderFirewallPoliciesResponse.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    List<String> names = new ArrayList<>();
+
+    ReorderFirewallPoliciesResponse actualResponse = client.reorderFirewallPolicies(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReorderFirewallPoliciesRequest actualRequest =
+        ((ReorderFirewallPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void reorderFirewallPoliciesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      List<String> names = new ArrayList<>();
+      client.reorderFirewallPolicies(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void reorderFirewallPoliciesTest2() throws Exception {
+    ReorderFirewallPoliciesResponse expectedResponse =
+        ReorderFirewallPoliciesResponse.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    List<String> names = new ArrayList<>();
+
+    ReorderFirewallPoliciesResponse actualResponse = client.reorderFirewallPolicies(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReorderFirewallPoliciesRequest actualRequest =
+        ((ReorderFirewallPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void reorderFirewallPoliciesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> names = new ArrayList<>();
+      client.reorderFirewallPolicies(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listRelatedAccountGroupsTest() throws Exception {
     RelatedAccountGroup responsesElement = RelatedAccountGroup.newBuilder().build();
     ListRelatedAccountGroupsResponse expectedResponse =
@@ -1499,8 +1835,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    RelatedAccountGroupName project =
-        RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+    ProjectName project = ProjectName.of("[PROJECT]");
     ByteString hashedAccountId = ByteString.EMPTY;
 
     SearchRelatedAccountGroupMembershipsPagedResponse pagedListResponse =
@@ -1532,8 +1867,7 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      RelatedAccountGroupName project =
-          RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+      ProjectName project = ProjectName.of("[PROJECT]");
       ByteString hashedAccountId = ByteString.EMPTY;
       client.searchRelatedAccountGroupMemberships(project, hashedAccountId);
       Assert.fail("No exception raised");

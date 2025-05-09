@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,11 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCancelPipelineJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchDeletePipelineJobsResponse;
 import com.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest;
 import com.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest;
 import com.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest;
@@ -170,6 +175,17 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<BatchDeletePipelineJobsRequest, Operation>
+      batchDeletePipelineJobsMethodDescriptor =
+          MethodDescriptor.<BatchDeletePipelineJobsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.PipelineService/BatchDeletePipelineJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeletePipelineJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CancelPipelineJobRequest, Empty>
       cancelPipelineJobMethodDescriptor =
           MethodDescriptor.<CancelPipelineJobRequest, Empty>newBuilder()
@@ -179,6 +195,17 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelPipelineJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsMethodDescriptor =
+          MethodDescriptor.<BatchCancelPipelineJobsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.PipelineService/BatchCancelPipelineJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCancelPipelineJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -249,7 +276,19 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
   private final UnaryCallable<DeletePipelineJobRequest, Operation> deletePipelineJobCallable;
   private final OperationCallable<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
       deletePipelineJobOperationCallable;
+  private final UnaryCallable<BatchDeletePipelineJobsRequest, Operation>
+      batchDeletePipelineJobsCallable;
+  private final OperationCallable<
+          BatchDeletePipelineJobsRequest, BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsOperationCallable;
   private final UnaryCallable<CancelPipelineJobRequest, Empty> cancelPipelineJobCallable;
+  private final UnaryCallable<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsCallable;
+  private final OperationCallable<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -399,6 +438,17 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<BatchDeletePipelineJobsRequest, Operation>
+        batchDeletePipelineJobsTransportSettings =
+            GrpcCallSettings.<BatchDeletePipelineJobsRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchDeletePipelineJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CancelPipelineJobRequest, Empty> cancelPipelineJobTransportSettings =
         GrpcCallSettings.<CancelPipelineJobRequest, Empty>newBuilder()
             .setMethodDescriptor(cancelPipelineJobMethodDescriptor)
@@ -409,6 +459,17 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<BatchCancelPipelineJobsRequest, Operation>
+        batchCancelPipelineJobsTransportSettings =
+            GrpcCallSettings.<BatchCancelPipelineJobsRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchCancelPipelineJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -522,11 +583,33 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
             settings.deletePipelineJobOperationSettings(),
             clientContext,
             operationsStub);
+    this.batchDeletePipelineJobsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeletePipelineJobsTransportSettings,
+            settings.batchDeletePipelineJobsSettings(),
+            clientContext);
+    this.batchDeletePipelineJobsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeletePipelineJobsTransportSettings,
+            settings.batchDeletePipelineJobsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.cancelPipelineJobCallable =
         callableFactory.createUnaryCallable(
             cancelPipelineJobTransportSettings,
             settings.cancelPipelineJobSettings(),
             clientContext);
+    this.batchCancelPipelineJobsCallable =
+        callableFactory.createUnaryCallable(
+            batchCancelPipelineJobsTransportSettings,
+            settings.batchCancelPipelineJobsSettings(),
+            clientContext);
+    this.batchCancelPipelineJobsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchCancelPipelineJobsTransportSettings,
+            settings.batchCancelPipelineJobsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -629,8 +712,36 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
   }
 
   @Override
+  public UnaryCallable<BatchDeletePipelineJobsRequest, Operation>
+      batchDeletePipelineJobsCallable() {
+    return batchDeletePipelineJobsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchDeletePipelineJobsRequest, BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsOperationCallable() {
+    return batchDeletePipelineJobsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CancelPipelineJobRequest, Empty> cancelPipelineJobCallable() {
     return cancelPipelineJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsCallable() {
+    return batchCancelPipelineJobsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationCallable() {
+    return batchCancelPipelineJobsOperationCallable;
   }
 
   @Override

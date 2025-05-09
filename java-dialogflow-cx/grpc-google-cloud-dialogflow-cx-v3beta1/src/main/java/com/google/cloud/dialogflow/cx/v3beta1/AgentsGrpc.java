@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -554,6 +554,19 @@ public final class AgentsGrpc {
     return AgentsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AgentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AgentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AgentsBlockingV2Stub>() {
+          @java.lang.Override
+          public AgentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AgentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AgentsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1023,6 +1036,196 @@ public final class AgentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Agents.
+   *
+   * <pre>
+   * Service for managing [Agents][google.cloud.dialogflow.cx.v3beta1.Agent].
+   * </pre>
+   */
+  public static final class AgentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AgentsBlockingV2Stub> {
+    private AgentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AgentsBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AgentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all agents in the specified location.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListAgentsResponse listAgents(
+        com.google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAgentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent getAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an agent in the specified location.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent createAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent updateAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified agent to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`:
+     * [ExportAgentResponse][google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores the specified agent from a binary file.
+     * Replaces the current agent with a new one. Note that all existing resources
+     * in agent (e.g. intents, entity types, flows) will be removed.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified agent and creates or updates validation results.
+     * The agent in draft version is validated. Please call this API after the
+     * training is completed to get the complete validation results.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult validateAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest agent validation result. Agent validation is performed
+     * when ValidateAgent is called.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult getAgentValidationResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAgentValidationResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the generative settings for the agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings getGenerativeSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGenerativeSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the generative settings for the agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings updateGenerativeSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGenerativeSettingsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Agents.
    *
    * <pre>
    * Service for managing [Agents][google.cloud.dialogflow.cx.v3beta1.Agent].

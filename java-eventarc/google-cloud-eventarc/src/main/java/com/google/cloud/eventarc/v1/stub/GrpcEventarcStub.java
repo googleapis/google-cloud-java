@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,12 @@ package com.google.cloud.eventarc.v1.stub;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListGoogleApiSourcesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusesPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListPipelinesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -34,29 +39,59 @@ import com.google.cloud.eventarc.v1.Channel;
 import com.google.cloud.eventarc.v1.ChannelConnection;
 import com.google.cloud.eventarc.v1.CreateChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.CreateChannelRequest;
+import com.google.cloud.eventarc.v1.CreateEnrollmentRequest;
+import com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest;
+import com.google.cloud.eventarc.v1.CreateMessageBusRequest;
+import com.google.cloud.eventarc.v1.CreatePipelineRequest;
 import com.google.cloud.eventarc.v1.CreateTriggerRequest;
 import com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.DeleteChannelRequest;
+import com.google.cloud.eventarc.v1.DeleteEnrollmentRequest;
+import com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest;
+import com.google.cloud.eventarc.v1.DeleteMessageBusRequest;
+import com.google.cloud.eventarc.v1.DeletePipelineRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
+import com.google.cloud.eventarc.v1.Enrollment;
 import com.google.cloud.eventarc.v1.GetChannelConnectionRequest;
 import com.google.cloud.eventarc.v1.GetChannelRequest;
+import com.google.cloud.eventarc.v1.GetEnrollmentRequest;
+import com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest;
 import com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest;
+import com.google.cloud.eventarc.v1.GetMessageBusRequest;
+import com.google.cloud.eventarc.v1.GetPipelineRequest;
 import com.google.cloud.eventarc.v1.GetProviderRequest;
 import com.google.cloud.eventarc.v1.GetTriggerRequest;
+import com.google.cloud.eventarc.v1.GoogleApiSource;
 import com.google.cloud.eventarc.v1.GoogleChannelConfig;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsRequest;
 import com.google.cloud.eventarc.v1.ListChannelConnectionsResponse;
 import com.google.cloud.eventarc.v1.ListChannelsRequest;
 import com.google.cloud.eventarc.v1.ListChannelsResponse;
+import com.google.cloud.eventarc.v1.ListEnrollmentsRequest;
+import com.google.cloud.eventarc.v1.ListEnrollmentsResponse;
+import com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest;
+import com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse;
+import com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest;
+import com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse;
+import com.google.cloud.eventarc.v1.ListMessageBusesRequest;
+import com.google.cloud.eventarc.v1.ListMessageBusesResponse;
+import com.google.cloud.eventarc.v1.ListPipelinesRequest;
+import com.google.cloud.eventarc.v1.ListPipelinesResponse;
 import com.google.cloud.eventarc.v1.ListProvidersRequest;
 import com.google.cloud.eventarc.v1.ListProvidersResponse;
 import com.google.cloud.eventarc.v1.ListTriggersRequest;
 import com.google.cloud.eventarc.v1.ListTriggersResponse;
+import com.google.cloud.eventarc.v1.MessageBus;
 import com.google.cloud.eventarc.v1.OperationMetadata;
+import com.google.cloud.eventarc.v1.Pipeline;
 import com.google.cloud.eventarc.v1.Provider;
 import com.google.cloud.eventarc.v1.Trigger;
 import com.google.cloud.eventarc.v1.UpdateChannelRequest;
+import com.google.cloud.eventarc.v1.UpdateEnrollmentRequest;
+import com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest;
 import com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest;
+import com.google.cloud.eventarc.v1.UpdateMessageBusRequest;
+import com.google.cloud.eventarc.v1.UpdatePipelineRequest;
 import com.google.cloud.eventarc.v1.UpdateTriggerRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -263,6 +298,221 @@ public class GrpcEventarcStub extends EventarcStub {
                   ProtoUtils.marshaller(GoogleChannelConfig.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetMessageBusRequest, MessageBus>
+      getMessageBusMethodDescriptor =
+          MethodDescriptor.<GetMessageBusRequest, MessageBus>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetMessageBus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMessageBusRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MessageBus.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListMessageBusesRequest, ListMessageBusesResponse>
+      listMessageBusesMethodDescriptor =
+          MethodDescriptor.<ListMessageBusesRequest, ListMessageBusesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/ListMessageBuses")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMessageBusesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMessageBusesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>
+      listMessageBusEnrollmentsMethodDescriptor =
+          MethodDescriptor
+              .<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/ListMessageBusEnrollments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMessageBusEnrollmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMessageBusEnrollmentsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateMessageBusRequest, Operation>
+      createMessageBusMethodDescriptor =
+          MethodDescriptor.<CreateMessageBusRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/CreateMessageBus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateMessageBusRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateMessageBusRequest, Operation>
+      updateMessageBusMethodDescriptor =
+          MethodDescriptor.<UpdateMessageBusRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/UpdateMessageBus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateMessageBusRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteMessageBusRequest, Operation>
+      deleteMessageBusMethodDescriptor =
+          MethodDescriptor.<DeleteMessageBusRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/DeleteMessageBus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteMessageBusRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetEnrollmentRequest, Enrollment>
+      getEnrollmentMethodDescriptor =
+          MethodDescriptor.<GetEnrollmentRequest, Enrollment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetEnrollment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEnrollmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Enrollment.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListEnrollmentsRequest, ListEnrollmentsResponse>
+      listEnrollmentsMethodDescriptor =
+          MethodDescriptor.<ListEnrollmentsRequest, ListEnrollmentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/ListEnrollments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListEnrollmentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListEnrollmentsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateEnrollmentRequest, Operation>
+      createEnrollmentMethodDescriptor =
+          MethodDescriptor.<CreateEnrollmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/CreateEnrollment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEnrollmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateEnrollmentRequest, Operation>
+      updateEnrollmentMethodDescriptor =
+          MethodDescriptor.<UpdateEnrollmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/UpdateEnrollment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEnrollmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteEnrollmentRequest, Operation>
+      deleteEnrollmentMethodDescriptor =
+          MethodDescriptor.<DeleteEnrollmentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/DeleteEnrollment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEnrollmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetPipelineRequest, Pipeline> getPipelineMethodDescriptor =
+      MethodDescriptor.<GetPipelineRequest, Pipeline>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetPipeline")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetPipelineRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Pipeline.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListPipelinesRequest, ListPipelinesResponse>
+      listPipelinesMethodDescriptor =
+          MethodDescriptor.<ListPipelinesRequest, ListPipelinesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/ListPipelines")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPipelinesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPipelinesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreatePipelineRequest, Operation>
+      createPipelineMethodDescriptor =
+          MethodDescriptor.<CreatePipelineRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/CreatePipeline")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreatePipelineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdatePipelineRequest, Operation>
+      updatePipelineMethodDescriptor =
+          MethodDescriptor.<UpdatePipelineRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/UpdatePipeline")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdatePipelineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeletePipelineRequest, Operation>
+      deletePipelineMethodDescriptor =
+          MethodDescriptor.<DeletePipelineRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/DeletePipeline")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeletePipelineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetGoogleApiSourceRequest, GoogleApiSource>
+      getGoogleApiSourceMethodDescriptor =
+          MethodDescriptor.<GetGoogleApiSourceRequest, GoogleApiSource>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/GetGoogleApiSource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGoogleApiSourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(GoogleApiSource.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>
+      listGoogleApiSourcesMethodDescriptor =
+          MethodDescriptor.<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/ListGoogleApiSources")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGoogleApiSourcesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGoogleApiSourcesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateGoogleApiSourceRequest, Operation>
+      createGoogleApiSourceMethodDescriptor =
+          MethodDescriptor.<CreateGoogleApiSourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/CreateGoogleApiSource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateGoogleApiSourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateGoogleApiSourceRequest, Operation>
+      updateGoogleApiSourceMethodDescriptor =
+          MethodDescriptor.<UpdateGoogleApiSourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/UpdateGoogleApiSource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateGoogleApiSourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteGoogleApiSourceRequest, Operation>
+      deleteGoogleApiSourceMethodDescriptor =
+          MethodDescriptor.<DeleteGoogleApiSourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.eventarc.v1.Eventarc/DeleteGoogleApiSource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteGoogleApiSourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -359,6 +609,70 @@ public class GrpcEventarcStub extends EventarcStub {
       getGoogleChannelConfigCallable;
   private final UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
       updateGoogleChannelConfigCallable;
+  private final UnaryCallable<GetMessageBusRequest, MessageBus> getMessageBusCallable;
+  private final UnaryCallable<ListMessageBusesRequest, ListMessageBusesResponse>
+      listMessageBusesCallable;
+  private final UnaryCallable<ListMessageBusesRequest, ListMessageBusesPagedResponse>
+      listMessageBusesPagedCallable;
+  private final UnaryCallable<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>
+      listMessageBusEnrollmentsCallable;
+  private final UnaryCallable<
+          ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsPagedResponse>
+      listMessageBusEnrollmentsPagedCallable;
+  private final UnaryCallable<CreateMessageBusRequest, Operation> createMessageBusCallable;
+  private final OperationCallable<CreateMessageBusRequest, MessageBus, OperationMetadata>
+      createMessageBusOperationCallable;
+  private final UnaryCallable<UpdateMessageBusRequest, Operation> updateMessageBusCallable;
+  private final OperationCallable<UpdateMessageBusRequest, MessageBus, OperationMetadata>
+      updateMessageBusOperationCallable;
+  private final UnaryCallable<DeleteMessageBusRequest, Operation> deleteMessageBusCallable;
+  private final OperationCallable<DeleteMessageBusRequest, MessageBus, OperationMetadata>
+      deleteMessageBusOperationCallable;
+  private final UnaryCallable<GetEnrollmentRequest, Enrollment> getEnrollmentCallable;
+  private final UnaryCallable<ListEnrollmentsRequest, ListEnrollmentsResponse>
+      listEnrollmentsCallable;
+  private final UnaryCallable<ListEnrollmentsRequest, ListEnrollmentsPagedResponse>
+      listEnrollmentsPagedCallable;
+  private final UnaryCallable<CreateEnrollmentRequest, Operation> createEnrollmentCallable;
+  private final OperationCallable<CreateEnrollmentRequest, Enrollment, OperationMetadata>
+      createEnrollmentOperationCallable;
+  private final UnaryCallable<UpdateEnrollmentRequest, Operation> updateEnrollmentCallable;
+  private final OperationCallable<UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+      updateEnrollmentOperationCallable;
+  private final UnaryCallable<DeleteEnrollmentRequest, Operation> deleteEnrollmentCallable;
+  private final OperationCallable<DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+      deleteEnrollmentOperationCallable;
+  private final UnaryCallable<GetPipelineRequest, Pipeline> getPipelineCallable;
+  private final UnaryCallable<ListPipelinesRequest, ListPipelinesResponse> listPipelinesCallable;
+  private final UnaryCallable<ListPipelinesRequest, ListPipelinesPagedResponse>
+      listPipelinesPagedCallable;
+  private final UnaryCallable<CreatePipelineRequest, Operation> createPipelineCallable;
+  private final OperationCallable<CreatePipelineRequest, Pipeline, OperationMetadata>
+      createPipelineOperationCallable;
+  private final UnaryCallable<UpdatePipelineRequest, Operation> updatePipelineCallable;
+  private final OperationCallable<UpdatePipelineRequest, Pipeline, OperationMetadata>
+      updatePipelineOperationCallable;
+  private final UnaryCallable<DeletePipelineRequest, Operation> deletePipelineCallable;
+  private final OperationCallable<DeletePipelineRequest, Pipeline, OperationMetadata>
+      deletePipelineOperationCallable;
+  private final UnaryCallable<GetGoogleApiSourceRequest, GoogleApiSource>
+      getGoogleApiSourceCallable;
+  private final UnaryCallable<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>
+      listGoogleApiSourcesCallable;
+  private final UnaryCallable<ListGoogleApiSourcesRequest, ListGoogleApiSourcesPagedResponse>
+      listGoogleApiSourcesPagedCallable;
+  private final UnaryCallable<CreateGoogleApiSourceRequest, Operation>
+      createGoogleApiSourceCallable;
+  private final OperationCallable<CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      createGoogleApiSourceOperationCallable;
+  private final UnaryCallable<UpdateGoogleApiSourceRequest, Operation>
+      updateGoogleApiSourceCallable;
+  private final OperationCallable<UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      updateGoogleApiSourceOperationCallable;
+  private final UnaryCallable<DeleteGoogleApiSourceRequest, Operation>
+      deleteGoogleApiSourceCallable;
+  private final OperationCallable<DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      deleteGoogleApiSourceOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -596,6 +910,228 @@ public class GrpcEventarcStub extends EventarcStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetMessageBusRequest, MessageBus> getMessageBusTransportSettings =
+        GrpcCallSettings.<GetMessageBusRequest, MessageBus>newBuilder()
+            .setMethodDescriptor(getMessageBusMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListMessageBusesRequest, ListMessageBusesResponse>
+        listMessageBusesTransportSettings =
+            GrpcCallSettings.<ListMessageBusesRequest, ListMessageBusesResponse>newBuilder()
+                .setMethodDescriptor(listMessageBusesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>
+        listMessageBusEnrollmentsTransportSettings =
+            GrpcCallSettings
+                .<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>newBuilder()
+                .setMethodDescriptor(listMessageBusEnrollmentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateMessageBusRequest, Operation> createMessageBusTransportSettings =
+        GrpcCallSettings.<CreateMessageBusRequest, Operation>newBuilder()
+            .setMethodDescriptor(createMessageBusMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateMessageBusRequest, Operation> updateMessageBusTransportSettings =
+        GrpcCallSettings.<UpdateMessageBusRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMessageBusMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "message_bus.name", String.valueOf(request.getMessageBus().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteMessageBusRequest, Operation> deleteMessageBusTransportSettings =
+        GrpcCallSettings.<DeleteMessageBusRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteMessageBusMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetEnrollmentRequest, Enrollment> getEnrollmentTransportSettings =
+        GrpcCallSettings.<GetEnrollmentRequest, Enrollment>newBuilder()
+            .setMethodDescriptor(getEnrollmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListEnrollmentsRequest, ListEnrollmentsResponse>
+        listEnrollmentsTransportSettings =
+            GrpcCallSettings.<ListEnrollmentsRequest, ListEnrollmentsResponse>newBuilder()
+                .setMethodDescriptor(listEnrollmentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateEnrollmentRequest, Operation> createEnrollmentTransportSettings =
+        GrpcCallSettings.<CreateEnrollmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(createEnrollmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateEnrollmentRequest, Operation> updateEnrollmentTransportSettings =
+        GrpcCallSettings.<UpdateEnrollmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateEnrollmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("enrollment.name", String.valueOf(request.getEnrollment().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteEnrollmentRequest, Operation> deleteEnrollmentTransportSettings =
+        GrpcCallSettings.<DeleteEnrollmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteEnrollmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetPipelineRequest, Pipeline> getPipelineTransportSettings =
+        GrpcCallSettings.<GetPipelineRequest, Pipeline>newBuilder()
+            .setMethodDescriptor(getPipelineMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListPipelinesRequest, ListPipelinesResponse> listPipelinesTransportSettings =
+        GrpcCallSettings.<ListPipelinesRequest, ListPipelinesResponse>newBuilder()
+            .setMethodDescriptor(listPipelinesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreatePipelineRequest, Operation> createPipelineTransportSettings =
+        GrpcCallSettings.<CreatePipelineRequest, Operation>newBuilder()
+            .setMethodDescriptor(createPipelineMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdatePipelineRequest, Operation> updatePipelineTransportSettings =
+        GrpcCallSettings.<UpdatePipelineRequest, Operation>newBuilder()
+            .setMethodDescriptor(updatePipelineMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("pipeline.name", String.valueOf(request.getPipeline().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeletePipelineRequest, Operation> deletePipelineTransportSettings =
+        GrpcCallSettings.<DeletePipelineRequest, Operation>newBuilder()
+            .setMethodDescriptor(deletePipelineMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetGoogleApiSourceRequest, GoogleApiSource>
+        getGoogleApiSourceTransportSettings =
+            GrpcCallSettings.<GetGoogleApiSourceRequest, GoogleApiSource>newBuilder()
+                .setMethodDescriptor(getGoogleApiSourceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>
+        listGoogleApiSourcesTransportSettings =
+            GrpcCallSettings.<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>newBuilder()
+                .setMethodDescriptor(listGoogleApiSourcesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateGoogleApiSourceRequest, Operation>
+        createGoogleApiSourceTransportSettings =
+            GrpcCallSettings.<CreateGoogleApiSourceRequest, Operation>newBuilder()
+                .setMethodDescriptor(createGoogleApiSourceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateGoogleApiSourceRequest, Operation>
+        updateGoogleApiSourceTransportSettings =
+            GrpcCallSettings.<UpdateGoogleApiSourceRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGoogleApiSourceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "google_api_source.name",
+                          String.valueOf(request.getGoogleApiSource().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteGoogleApiSourceRequest, Operation>
+        deleteGoogleApiSourceTransportSettings =
+            GrpcCallSettings.<DeleteGoogleApiSourceRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGoogleApiSourceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -776,6 +1312,172 @@ public class GrpcEventarcStub extends EventarcStub {
             updateGoogleChannelConfigTransportSettings,
             settings.updateGoogleChannelConfigSettings(),
             clientContext);
+    this.getMessageBusCallable =
+        callableFactory.createUnaryCallable(
+            getMessageBusTransportSettings, settings.getMessageBusSettings(), clientContext);
+    this.listMessageBusesCallable =
+        callableFactory.createUnaryCallable(
+            listMessageBusesTransportSettings, settings.listMessageBusesSettings(), clientContext);
+    this.listMessageBusesPagedCallable =
+        callableFactory.createPagedCallable(
+            listMessageBusesTransportSettings, settings.listMessageBusesSettings(), clientContext);
+    this.listMessageBusEnrollmentsCallable =
+        callableFactory.createUnaryCallable(
+            listMessageBusEnrollmentsTransportSettings,
+            settings.listMessageBusEnrollmentsSettings(),
+            clientContext);
+    this.listMessageBusEnrollmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMessageBusEnrollmentsTransportSettings,
+            settings.listMessageBusEnrollmentsSettings(),
+            clientContext);
+    this.createMessageBusCallable =
+        callableFactory.createUnaryCallable(
+            createMessageBusTransportSettings, settings.createMessageBusSettings(), clientContext);
+    this.createMessageBusOperationCallable =
+        callableFactory.createOperationCallable(
+            createMessageBusTransportSettings,
+            settings.createMessageBusOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateMessageBusCallable =
+        callableFactory.createUnaryCallable(
+            updateMessageBusTransportSettings, settings.updateMessageBusSettings(), clientContext);
+    this.updateMessageBusOperationCallable =
+        callableFactory.createOperationCallable(
+            updateMessageBusTransportSettings,
+            settings.updateMessageBusOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteMessageBusCallable =
+        callableFactory.createUnaryCallable(
+            deleteMessageBusTransportSettings, settings.deleteMessageBusSettings(), clientContext);
+    this.deleteMessageBusOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteMessageBusTransportSettings,
+            settings.deleteMessageBusOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getEnrollmentCallable =
+        callableFactory.createUnaryCallable(
+            getEnrollmentTransportSettings, settings.getEnrollmentSettings(), clientContext);
+    this.listEnrollmentsCallable =
+        callableFactory.createUnaryCallable(
+            listEnrollmentsTransportSettings, settings.listEnrollmentsSettings(), clientContext);
+    this.listEnrollmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listEnrollmentsTransportSettings, settings.listEnrollmentsSettings(), clientContext);
+    this.createEnrollmentCallable =
+        callableFactory.createUnaryCallable(
+            createEnrollmentTransportSettings, settings.createEnrollmentSettings(), clientContext);
+    this.createEnrollmentOperationCallable =
+        callableFactory.createOperationCallable(
+            createEnrollmentTransportSettings,
+            settings.createEnrollmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateEnrollmentCallable =
+        callableFactory.createUnaryCallable(
+            updateEnrollmentTransportSettings, settings.updateEnrollmentSettings(), clientContext);
+    this.updateEnrollmentOperationCallable =
+        callableFactory.createOperationCallable(
+            updateEnrollmentTransportSettings,
+            settings.updateEnrollmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteEnrollmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteEnrollmentTransportSettings, settings.deleteEnrollmentSettings(), clientContext);
+    this.deleteEnrollmentOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteEnrollmentTransportSettings,
+            settings.deleteEnrollmentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getPipelineCallable =
+        callableFactory.createUnaryCallable(
+            getPipelineTransportSettings, settings.getPipelineSettings(), clientContext);
+    this.listPipelinesCallable =
+        callableFactory.createUnaryCallable(
+            listPipelinesTransportSettings, settings.listPipelinesSettings(), clientContext);
+    this.listPipelinesPagedCallable =
+        callableFactory.createPagedCallable(
+            listPipelinesTransportSettings, settings.listPipelinesSettings(), clientContext);
+    this.createPipelineCallable =
+        callableFactory.createUnaryCallable(
+            createPipelineTransportSettings, settings.createPipelineSettings(), clientContext);
+    this.createPipelineOperationCallable =
+        callableFactory.createOperationCallable(
+            createPipelineTransportSettings,
+            settings.createPipelineOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updatePipelineCallable =
+        callableFactory.createUnaryCallable(
+            updatePipelineTransportSettings, settings.updatePipelineSettings(), clientContext);
+    this.updatePipelineOperationCallable =
+        callableFactory.createOperationCallable(
+            updatePipelineTransportSettings,
+            settings.updatePipelineOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deletePipelineCallable =
+        callableFactory.createUnaryCallable(
+            deletePipelineTransportSettings, settings.deletePipelineSettings(), clientContext);
+    this.deletePipelineOperationCallable =
+        callableFactory.createOperationCallable(
+            deletePipelineTransportSettings,
+            settings.deletePipelineOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getGoogleApiSourceCallable =
+        callableFactory.createUnaryCallable(
+            getGoogleApiSourceTransportSettings,
+            settings.getGoogleApiSourceSettings(),
+            clientContext);
+    this.listGoogleApiSourcesCallable =
+        callableFactory.createUnaryCallable(
+            listGoogleApiSourcesTransportSettings,
+            settings.listGoogleApiSourcesSettings(),
+            clientContext);
+    this.listGoogleApiSourcesPagedCallable =
+        callableFactory.createPagedCallable(
+            listGoogleApiSourcesTransportSettings,
+            settings.listGoogleApiSourcesSettings(),
+            clientContext);
+    this.createGoogleApiSourceCallable =
+        callableFactory.createUnaryCallable(
+            createGoogleApiSourceTransportSettings,
+            settings.createGoogleApiSourceSettings(),
+            clientContext);
+    this.createGoogleApiSourceOperationCallable =
+        callableFactory.createOperationCallable(
+            createGoogleApiSourceTransportSettings,
+            settings.createGoogleApiSourceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateGoogleApiSourceCallable =
+        callableFactory.createUnaryCallable(
+            updateGoogleApiSourceTransportSettings,
+            settings.updateGoogleApiSourceSettings(),
+            clientContext);
+    this.updateGoogleApiSourceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGoogleApiSourceTransportSettings,
+            settings.updateGoogleApiSourceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteGoogleApiSourceCallable =
+        callableFactory.createUnaryCallable(
+            deleteGoogleApiSourceTransportSettings,
+            settings.deleteGoogleApiSourceSettings(),
+            clientContext);
+    this.deleteGoogleApiSourceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGoogleApiSourceTransportSettings,
+            settings.deleteGoogleApiSourceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -969,6 +1671,216 @@ public class GrpcEventarcStub extends EventarcStub {
   public UnaryCallable<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
       updateGoogleChannelConfigCallable() {
     return updateGoogleChannelConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMessageBusRequest, MessageBus> getMessageBusCallable() {
+    return getMessageBusCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMessageBusesRequest, ListMessageBusesResponse>
+      listMessageBusesCallable() {
+    return listMessageBusesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMessageBusesRequest, ListMessageBusesPagedResponse>
+      listMessageBusesPagedCallable() {
+    return listMessageBusesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>
+      listMessageBusEnrollmentsCallable() {
+    return listMessageBusEnrollmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsPagedResponse>
+      listMessageBusEnrollmentsPagedCallable() {
+    return listMessageBusEnrollmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMessageBusRequest, Operation> createMessageBusCallable() {
+    return createMessageBusCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateMessageBusRequest, MessageBus, OperationMetadata>
+      createMessageBusOperationCallable() {
+    return createMessageBusOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMessageBusRequest, Operation> updateMessageBusCallable() {
+    return updateMessageBusCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateMessageBusRequest, MessageBus, OperationMetadata>
+      updateMessageBusOperationCallable() {
+    return updateMessageBusOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMessageBusRequest, Operation> deleteMessageBusCallable() {
+    return deleteMessageBusCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteMessageBusRequest, MessageBus, OperationMetadata>
+      deleteMessageBusOperationCallable() {
+    return deleteMessageBusOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEnrollmentRequest, Enrollment> getEnrollmentCallable() {
+    return getEnrollmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEnrollmentsRequest, ListEnrollmentsResponse> listEnrollmentsCallable() {
+    return listEnrollmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEnrollmentsRequest, ListEnrollmentsPagedResponse>
+      listEnrollmentsPagedCallable() {
+    return listEnrollmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateEnrollmentRequest, Operation> createEnrollmentCallable() {
+    return createEnrollmentCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateEnrollmentRequest, Enrollment, OperationMetadata>
+      createEnrollmentOperationCallable() {
+    return createEnrollmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEnrollmentRequest, Operation> updateEnrollmentCallable() {
+    return updateEnrollmentCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+      updateEnrollmentOperationCallable() {
+    return updateEnrollmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEnrollmentRequest, Operation> deleteEnrollmentCallable() {
+    return deleteEnrollmentCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+      deleteEnrollmentOperationCallable() {
+    return deleteEnrollmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPipelineRequest, Pipeline> getPipelineCallable() {
+    return getPipelineCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPipelinesRequest, ListPipelinesResponse> listPipelinesCallable() {
+    return listPipelinesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPipelinesRequest, ListPipelinesPagedResponse>
+      listPipelinesPagedCallable() {
+    return listPipelinesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreatePipelineRequest, Operation> createPipelineCallable() {
+    return createPipelineCallable;
+  }
+
+  @Override
+  public OperationCallable<CreatePipelineRequest, Pipeline, OperationMetadata>
+      createPipelineOperationCallable() {
+    return createPipelineOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePipelineRequest, Operation> updatePipelineCallable() {
+    return updatePipelineCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdatePipelineRequest, Pipeline, OperationMetadata>
+      updatePipelineOperationCallable() {
+    return updatePipelineOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeletePipelineRequest, Operation> deletePipelineCallable() {
+    return deletePipelineCallable;
+  }
+
+  @Override
+  public OperationCallable<DeletePipelineRequest, Pipeline, OperationMetadata>
+      deletePipelineOperationCallable() {
+    return deletePipelineOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGoogleApiSourceRequest, GoogleApiSource> getGoogleApiSourceCallable() {
+    return getGoogleApiSourceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>
+      listGoogleApiSourcesCallable() {
+    return listGoogleApiSourcesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGoogleApiSourcesRequest, ListGoogleApiSourcesPagedResponse>
+      listGoogleApiSourcesPagedCallable() {
+    return listGoogleApiSourcesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateGoogleApiSourceRequest, Operation> createGoogleApiSourceCallable() {
+    return createGoogleApiSourceCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      createGoogleApiSourceOperationCallable() {
+    return createGoogleApiSourceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGoogleApiSourceRequest, Operation> updateGoogleApiSourceCallable() {
+    return updateGoogleApiSourceCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      updateGoogleApiSourceOperationCallable() {
+    return updateGoogleApiSourceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteGoogleApiSourceRequest, Operation> deleteGoogleApiSourceCallable() {
+    return deleteGoogleApiSourceCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      deleteGoogleApiSourceOperationCallable() {
+    return deleteGoogleApiSourceOperationCallable;
   }
 
   @Override

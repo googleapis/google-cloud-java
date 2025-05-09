@@ -5,13 +5,13 @@
   "api_description": " helps users detect and visualize patterns in their contact center data.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-contact-center-insights/latest/overview",
   "release_level": "stable",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-contact-center-insights",
   "distribution_name": "com.google.cloud:google-cloud-contact-center-insights",
   "api_id": "contactcenterinsights.googleapis.com",
-  "requires_billing": true,
   "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
   "codeowner_team": "@googleapis/api-contact-center-insights"
 }

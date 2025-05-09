@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.api.cloudquotas.v1",
+  "libraryPackage": "com.google.api.cloudquotas.v1",
+  "services": {
+    "CloudQuotas": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudQuotasClient",
+          "rpcs": {
+            "CreateQuotaPreference": {
+              "methods": ["createQuotaPreference", "createQuotaPreference", "createQuotaPreference", "createQuotaPreference", "createQuotaPreference", "createQuotaPreferenceCallable"]
+            },
+            "GetQuotaInfo": {
+              "methods": ["getQuotaInfo", "getQuotaInfo", "getQuotaInfo", "getQuotaInfoCallable"]
+            },
+            "GetQuotaPreference": {
+              "methods": ["getQuotaPreference", "getQuotaPreference", "getQuotaPreference", "getQuotaPreferenceCallable"]
+            },
+            "ListQuotaInfos": {
+              "methods": ["listQuotaInfos", "listQuotaInfos", "listQuotaInfos", "listQuotaInfosPagedCallable", "listQuotaInfosCallable"]
+            },
+            "ListQuotaPreferences": {
+              "methods": ["listQuotaPreferences", "listQuotaPreferences", "listQuotaPreferences", "listQuotaPreferencesPagedCallable", "listQuotaPreferencesCallable"]
+            },
+            "UpdateQuotaPreference": {
+              "methods": ["updateQuotaPreference", "updateQuotaPreference", "updateQuotaPreferenceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

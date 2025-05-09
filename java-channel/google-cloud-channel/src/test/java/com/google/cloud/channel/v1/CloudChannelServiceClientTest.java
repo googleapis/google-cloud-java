@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -273,6 +273,7 @@ public class CloudChannelServiceClientTest {
         CheckCloudIdentityAccountsExistRequest.newBuilder()
             .setParent("parent-995424086")
             .setDomain("domain-1326197564")
+            .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
             .build();
 
     CheckCloudIdentityAccountsExistResponse actualResponse =
@@ -286,6 +287,7 @@ public class CloudChannelServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getDomain(), actualRequest.getDomain());
+    Assert.assertEquals(request.getPrimaryAdminEmail(), actualRequest.getPrimaryAdminEmail());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -302,6 +304,7 @@ public class CloudChannelServiceClientTest {
           CheckCloudIdentityAccountsExistRequest.newBuilder()
               .setParent("parent-995424086")
               .setDomain("domain-1326197564")
+              .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
               .build();
       client.checkCloudIdentityAccountsExist(request);
       Assert.fail("No exception raised");
@@ -534,6 +537,7 @@ public class CloudChannelServiceClientTest {
 
     Assert.assertEquals(request.getDomain(), actualRequest.getDomain());
     Assert.assertEquals(request.getCloudIdentityId(), actualRequest.getCloudIdentityId());
+    Assert.assertEquals(request.getPrimaryAdminEmail(), actualRequest.getPrimaryAdminEmail());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getAuthToken(), actualRequest.getAuthToken());
     Assert.assertEquals(request.getOverwriteIfExists(), actualRequest.getOverwriteIfExists());

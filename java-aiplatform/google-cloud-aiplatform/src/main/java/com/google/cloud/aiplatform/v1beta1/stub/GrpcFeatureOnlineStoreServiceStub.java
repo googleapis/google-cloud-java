@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,13 +23,18 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -67,6 +72,20 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(FetchFeatureValuesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesMethodDescriptor =
+          MethodDescriptor
+              .<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService/StreamingFetchFeatureValues")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamingFetchFeatureValuesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StreamingFetchFeatureValuesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesMethodDescriptor =
           MethodDescriptor.<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>newBuilder()
@@ -77,6 +96,20 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(SearchNearestEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchNearestEntitiesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteMethodDescriptor =
+          MethodDescriptor
+              .<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService/FeatureViewDirectWrite")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FeatureViewDirectWriteRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FeatureViewDirectWriteResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -127,8 +160,13 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
 
   private final UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable;
+  private final BidiStreamingCallable<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesCallable;
   private final UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable;
+  private final BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -194,11 +232,36 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+        streamingFetchFeatureValuesTransportSettings =
+            GrpcCallSettings
+                .<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+                    newBuilder()
+                .setMethodDescriptor(streamingFetchFeatureValuesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("feature_view", String.valueOf(request.getFeatureView()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesTransportSettings =
             GrpcCallSettings
                 .<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>newBuilder()
                 .setMethodDescriptor(searchNearestEntitiesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("feature_view", String.valueOf(request.getFeatureView()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteTransportSettings =
+            GrpcCallSettings
+                .<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>newBuilder()
+                .setMethodDescriptor(featureViewDirectWriteMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -263,10 +326,20 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
             fetchFeatureValuesTransportSettings,
             settings.fetchFeatureValuesSettings(),
             clientContext);
+    this.streamingFetchFeatureValuesCallable =
+        callableFactory.createBidiStreamingCallable(
+            streamingFetchFeatureValuesTransportSettings,
+            settings.streamingFetchFeatureValuesSettings(),
+            clientContext);
     this.searchNearestEntitiesCallable =
         callableFactory.createUnaryCallable(
             searchNearestEntitiesTransportSettings,
             settings.searchNearestEntitiesSettings(),
+            clientContext);
+    this.featureViewDirectWriteCallable =
+        callableFactory.createBidiStreamingCallable(
+            featureViewDirectWriteTransportSettings,
+            settings.featureViewDirectWriteSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -304,9 +377,22 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
   }
 
   @Override
+  public BidiStreamingCallable<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesCallable() {
+    return streamingFetchFeatureValuesCallable;
+  }
+
+  @Override
   public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable() {
     return searchNearestEntitiesCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable() {
+    return featureViewDirectWriteCallable;
   }
 
   @Override

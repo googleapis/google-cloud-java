@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,6 +84,7 @@ public class SpeechClientHttpJsonTest {
             .setTotalBilledTime(Duration.newBuilder().build())
             .setSpeechAdaptationInfo(SpeechAdaptationInfo.newBuilder().build())
             .setRequestId(37109963)
+            .setUsingLegacyModels(true)
             .build();
     mockService.addResponse(expectedResponse);
 

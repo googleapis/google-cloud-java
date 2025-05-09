@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.cloud.bigquery.reservation.v1.CreateReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest;
+import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.GetReservationRequest;
@@ -91,6 +92,10 @@ public abstract class ReservationServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateReservationCallable()");
+  }
+
+  public UnaryCallable<FailoverReservationRequest, Reservation> failoverReservationCallable() {
+    throw new UnsupportedOperationException("Not implemented: failoverReservationCallable()");
   }
 
   public UnaryCallable<CreateCapacityCommitmentRequest, CapacityCommitment>

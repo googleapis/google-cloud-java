@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 public interface ClientConnectorServiceOperationMetadataOrBuilder
@@ -37,6 +38,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -50,6 +52,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public interface ClientConnectorServiceOperationMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
+
   /**
    *
    *

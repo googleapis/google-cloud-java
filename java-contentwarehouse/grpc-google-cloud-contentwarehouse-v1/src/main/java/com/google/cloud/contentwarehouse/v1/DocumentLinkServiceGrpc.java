@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -241,6 +241,19 @@ public final class DocumentLinkServiceGrpc {
     return DocumentLinkServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DocumentLinkServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DocumentLinkServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DocumentLinkServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DocumentLinkServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DocumentLinkServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DocumentLinkServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -446,6 +459,80 @@ public final class DocumentLinkServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DocumentLinkService.
+   *
+   * <pre>
+   * This service lets you manage document-links.
+   * Document-Links are treated as sub-resources under source documents.
+   * </pre>
+   */
+  public static final class DocumentLinkServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DocumentLinkServiceBlockingV2Stub> {
+    private DocumentLinkServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DocumentLinkServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DocumentLinkServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return all target document-links from the document.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.ListLinkedTargetsResponse listLinkedTargets(
+        com.google.cloud.contentwarehouse.v1.ListLinkedTargetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLinkedTargetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return all source document-links from the document.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.ListLinkedSourcesResponse listLinkedSources(
+        com.google.cloud.contentwarehouse.v1.ListLinkedSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLinkedSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a link between a source document and a target document.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.DocumentLink createDocumentLink(
+        com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDocumentLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove the link between the source and target documents.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDocumentLink(
+        com.google.cloud.contentwarehouse.v1.DeleteDocumentLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDocumentLinkMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DocumentLinkService.
    *
    * <pre>
    * This service lets you manage document-links.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.JobRunName;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
+import java.util.ArrayList;
 
 public class AsyncTerminateJobRun {
 
@@ -47,6 +48,7 @@ public class AsyncTerminateJobRun {
                           "[ROLLOUT]",
                           "[JOB_RUN]")
                       .toString())
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       ApiFuture<TerminateJobRunResponse> future =
           cloudDeployClient.terminateJobRunCallable().futureCall(request);

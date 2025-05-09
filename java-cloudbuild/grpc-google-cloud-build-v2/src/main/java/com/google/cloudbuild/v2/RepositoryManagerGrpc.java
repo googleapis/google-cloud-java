@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -682,6 +682,19 @@ public final class RepositoryManagerGrpc {
     return RepositoryManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RepositoryManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RepositoryManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RepositoryManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public RepositoryManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RepositoryManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RepositoryManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1192,6 +1205,210 @@ public final class RepositoryManagerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RepositoryManager.
+   *
+   * <pre>
+   * Manages connections to source code repositories.
+   * </pre>
+   */
+  public static final class RepositoryManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RepositoryManagerBlockingV2Stub> {
+    private RepositoryManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RepositoryManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RepositoryManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Connection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createConnection(
+        com.google.cloudbuild.v2.CreateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single connection.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.Connection getConnection(
+        com.google.cloudbuild.v2.GetConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Connections in a given project and location.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.ListConnectionsResponse listConnections(
+        com.google.cloudbuild.v2.ListConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single connection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateConnection(
+        com.google.cloudbuild.v2.UpdateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single connection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteConnection(
+        com.google.cloudbuild.v2.DeleteConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRepository(
+        com.google.cloudbuild.v2.CreateRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates multiple repositories inside a connection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateRepositories(
+        com.google.cloudbuild.v2.BatchCreateRepositoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateRepositoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single repository.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.Repository getRepository(
+        com.google.cloudbuild.v2.GetRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Repositories in a given connection.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.ListRepositoriesResponse listRepositories(
+        com.google.cloudbuild.v2.ListRepositoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRepositoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single repository.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRepository(
+        com.google.cloudbuild.v2.DeleteRepositoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches read/write token of a given repository.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.FetchReadWriteTokenResponse fetchReadWriteToken(
+        com.google.cloudbuild.v2.FetchReadWriteTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchReadWriteTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches read token of a given repository.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.FetchReadTokenResponse fetchReadToken(
+        com.google.cloudbuild.v2.FetchReadTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchReadTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * FetchLinkableRepositories get repositories from SCM that are
+     * accessible and could be added to the connection.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse fetchLinkableRepositories(
+        com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchLinkableRepositoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch the list of branches or tags for a given repository.
+     * </pre>
+     */
+    public com.google.cloudbuild.v2.FetchGitRefsResponse fetchGitRefs(
+        com.google.cloudbuild.v2.FetchGitRefsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchGitRefsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service RepositoryManager.
    *
    * <pre>
    * Manages connections to source code repositories.

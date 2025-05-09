@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2152,6 +2152,19 @@ public final class VmMigrationGrpc {
     return VmMigrationStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VmMigrationBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VmMigrationBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VmMigrationBlockingV2Stub>() {
+          @java.lang.Override
+          public VmMigrationBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VmMigrationBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VmMigrationBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3676,6 +3689,649 @@ public final class VmMigrationGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VmMigration.
+   *
+   * <pre>
+   * VM Migration Service
+   * </pre>
+   */
+  public static final class VmMigrationBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VmMigrationBlockingV2Stub> {
+    private VmMigrationBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VmMigrationBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VmMigrationBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Sources in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListSourcesResponse listSources(
+        com.google.cloud.vmmigration.v1.ListSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Source.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.Source getSource(
+        com.google.cloud.vmmigration.v1.GetSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Source in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSource(
+        com.google.cloud.vmmigration.v1.CreateSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSource(
+        com.google.cloud.vmmigration.v1.UpdateSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSource(
+        com.google.cloud.vmmigration.v1.DeleteSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List remote source's inventory of VMs.
+     * The remote source is the onprem vCenter (remote in the sense it's not in
+     * Compute Engine). The inventory describes the list of existing VMs in that
+     * source. Note that this operation lists the VMs on the remote source, as
+     * opposed to listing the MigratingVms resources in the vmmigration service.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.FetchInventoryResponse fetchInventory(
+        com.google.cloud.vmmigration.v1.FetchInventoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchInventoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Utilization Reports of the given Source.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListUtilizationReportsResponse listUtilizationReports(
+        com.google.cloud.vmmigration.v1.ListUtilizationReportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUtilizationReportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single Utilization Report.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.UtilizationReport getUtilizationReport(
+        com.google.cloud.vmmigration.v1.GetUtilizationReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUtilizationReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new UtilizationReport.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createUtilizationReport(
+        com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUtilizationReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Utilization Report.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteUtilizationReport(
+        com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUtilizationReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatacenterConnectors in a given Source.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse
+        listDatacenterConnectors(
+            com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatacenterConnectorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DatacenterConnector.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.DatacenterConnector getDatacenterConnector(
+        com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatacenterConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DatacenterConnector in a given Source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDatacenterConnector(
+        com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatacenterConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DatacenterConnector.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDatacenterConnector(
+        com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatacenterConnectorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades the appliance relate to this DatacenterConnector to the in-place
+     * updateable version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeAppliance(
+        com.google.cloud.vmmigration.v1.UpgradeApplianceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpgradeApplianceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new MigratingVm in a given Source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMigratingVm(
+        com.google.cloud.vmmigration.v1.CreateMigratingVmRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMigratingVmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists MigratingVms in a given Source.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListMigratingVmsResponse listMigratingVms(
+        com.google.cloud.vmmigration.v1.ListMigratingVmsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMigratingVmsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single MigratingVm.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.MigratingVm getMigratingVm(
+        com.google.cloud.vmmigration.v1.GetMigratingVmRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMigratingVmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single MigratingVm.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMigratingVm(
+        com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMigratingVmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single MigratingVm.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMigratingVm(
+        com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMigratingVmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts migration for a VM. Starts the process of uploading
+     * data and creating snapshots, in replication cycles scheduled by the policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startMigration(
+        com.google.cloud.vmmigration.v1.StartMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a migration for a VM. When called on a paused migration, will start
+     * the process of uploading data and creating snapshots; when called on a
+     * completed cut-over migration, will update the migration to active state and
+     * start the process of uploading data and creating snapshots.
+     * </pre>
+     */
+    public com.google.longrunning.Operation resumeMigration(
+        com.google.cloud.vmmigration.v1.ResumeMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a migration for a VM. If cycle tasks are running they will be
+     * cancelled, preserving source task data. Further replication cycles will not
+     * be triggered while the VM is paused.
+     * </pre>
+     */
+    public com.google.longrunning.Operation pauseMigration(
+        com.google.cloud.vmmigration.v1.PauseMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks a migration as completed, deleting migration resources that are no
+     * longer being used. Only applicable after cutover is done.
+     * </pre>
+     */
+    public com.google.longrunning.Operation finalizeMigration(
+        com.google.cloud.vmmigration.v1.FinalizeMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFinalizeMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a Clone of a specific migrating VM.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCloneJob(
+        com.google.cloud.vmmigration.v1.CreateCloneJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCloneJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the cancellation of a running clone job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelCloneJob(
+        com.google.cloud.vmmigration.v1.CancelCloneJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelCloneJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CloneJobs of a given migrating VM.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListCloneJobsResponse listCloneJobs(
+        com.google.cloud.vmmigration.v1.ListCloneJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCloneJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CloneJob.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.CloneJob getCloneJob(
+        com.google.cloud.vmmigration.v1.GetCloneJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCloneJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates a Cutover of a specific migrating VM.
+     * The returned LRO is completed when the cutover job resource is created
+     * and the job is initiated.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCutoverJob(
+        com.google.cloud.vmmigration.v1.CreateCutoverJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCutoverJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Initiates the cancellation of a running cutover job.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelCutoverJob(
+        com.google.cloud.vmmigration.v1.CancelCutoverJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelCutoverJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CutoverJobs of a given migrating VM.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListCutoverJobsResponse listCutoverJobs(
+        com.google.cloud.vmmigration.v1.ListCutoverJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCutoverJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CutoverJob.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.CutoverJob getCutoverJob(
+        com.google.cloud.vmmigration.v1.GetCutoverJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCutoverJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Groups in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListGroupsResponse listGroups(
+        com.google.cloud.vmmigration.v1.ListGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Group.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.Group getGroup(
+        com.google.cloud.vmmigration.v1.GetGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Group in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGroup(
+        com.google.cloud.vmmigration.v1.CreateGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGroup(
+        com.google.cloud.vmmigration.v1.UpdateGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGroup(
+        com.google.cloud.vmmigration.v1.DeleteGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a MigratingVm to a Group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addGroupMigration(
+        com.google.cloud.vmmigration.v1.AddGroupMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddGroupMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a MigratingVm from a Group.
+     * </pre>
+     */
+    public com.google.longrunning.Operation removeGroupMigration(
+        com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveGroupMigrationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TargetProjects in a given project.
+     * NOTE: TargetProject is a global resource; hence the only supported value
+     * for location is `global`.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListTargetProjectsResponse listTargetProjects(
+        com.google.cloud.vmmigration.v1.ListTargetProjectsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTargetProjectsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TargetProject.
+     * NOTE: TargetProject is a global resource; hence the only supported value
+     * for location is `global`.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.TargetProject getTargetProject(
+        com.google.cloud.vmmigration.v1.GetTargetProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTargetProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TargetProject in a given project.
+     * NOTE: TargetProject is a global resource; hence the only supported value
+     * for location is `global`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTargetProject(
+        com.google.cloud.vmmigration.v1.CreateTargetProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTargetProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single TargetProject.
+     * NOTE: TargetProject is a global resource; hence the only supported value
+     * for location is `global`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTargetProject(
+        com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTargetProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TargetProject.
+     * NOTE: TargetProject is a global resource; hence the only supported value
+     * for location is `global`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTargetProject(
+        com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTargetProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ReplicationCycles in a given MigratingVM.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse listReplicationCycles(
+        com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReplicationCyclesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ReplicationCycle.
+     * </pre>
+     */
+    public com.google.cloud.vmmigration.v1.ReplicationCycle getReplicationCycle(
+        com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReplicationCycleMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service VmMigration.
    *
    * <pre>
    * VM Migration Service

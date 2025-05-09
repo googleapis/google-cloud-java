@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.orgpolicy.v2;
 
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPagedResponse;
+import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -52,7 +53,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getPolicy to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getPolicy:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -68,10 +71,21 @@ import javax.annotation.Generated;
  *             .getPolicySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * OrgPolicySettings orgPolicySettings = orgPolicySettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
@@ -114,6 +128,38 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
     return ((OrgPolicyStubSettings) getStubSettings()).deletePolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to createCustomConstraint. */
+  public UnaryCallSettings<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).createCustomConstraintSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomConstraint. */
+  public UnaryCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).updateCustomConstraintSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getCustomConstraint. */
+  public UnaryCallSettings<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).getCustomConstraintSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listCustomConstraints. */
+  public PagedCallSettings<
+          ListCustomConstraintsRequest,
+          ListCustomConstraintsResponse,
+          ListCustomConstraintsPagedResponse>
+      listCustomConstraintsSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).listCustomConstraintsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomConstraint. */
+  public UnaryCallSettings<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintSettings() {
+    return ((OrgPolicyStubSettings) getStubSettings()).deleteCustomConstraintSettings();
+  }
+
   public static final OrgPolicySettings create(OrgPolicyStubSettings stub) throws IOException {
     return new OrgPolicySettings.Builder(stub.toBuilder()).build();
   }
@@ -154,7 +200,6 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
     return OrgPolicyStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return OrgPolicyStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -165,7 +210,6 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -207,7 +251,6 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
       return new Builder(OrgPolicyStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(OrgPolicyStubSettings.newHttpJsonBuilder());
     }
@@ -266,6 +309,39 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
     /** Returns the builder for the settings used for calls to deletePolicy. */
     public UnaryCallSettings.Builder<DeletePolicyRequest, Empty> deletePolicySettings() {
       return getStubSettingsBuilder().deletePolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomConstraint. */
+    public UnaryCallSettings.Builder<CreateCustomConstraintRequest, CustomConstraint>
+        createCustomConstraintSettings() {
+      return getStubSettingsBuilder().createCustomConstraintSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomConstraint. */
+    public UnaryCallSettings.Builder<UpdateCustomConstraintRequest, CustomConstraint>
+        updateCustomConstraintSettings() {
+      return getStubSettingsBuilder().updateCustomConstraintSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomConstraint. */
+    public UnaryCallSettings.Builder<GetCustomConstraintRequest, CustomConstraint>
+        getCustomConstraintSettings() {
+      return getStubSettingsBuilder().getCustomConstraintSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomConstraints. */
+    public PagedCallSettings.Builder<
+            ListCustomConstraintsRequest,
+            ListCustomConstraintsResponse,
+            ListCustomConstraintsPagedResponse>
+        listCustomConstraintsSettings() {
+      return getStubSettingsBuilder().listCustomConstraintsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomConstraint. */
+    public UnaryCallSettings.Builder<DeleteCustomConstraintRequest, Empty>
+        deleteCustomConstraintSettings() {
+      return getStubSettingsBuilder().deleteCustomConstraintSettings();
     }
 
     @Override

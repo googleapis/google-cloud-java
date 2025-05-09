@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 public interface CreateClientConnectorServiceRequestOrBuilder
@@ -38,6 +39,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    * @return The clientConnectorServiceId.
    */
   java.lang.String getClientConnectorServiceId();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    * @return Whether the clientConnectorService field is set.
    */
   boolean hasClientConnectorService();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    */
   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       getClientConnectorService();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

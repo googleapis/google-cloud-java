@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -697,6 +698,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setName(
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -747,6 +749,7 @@ public class DataScanServiceClientHttpJsonTest {
             .setName(
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -886,6 +889,50 @@ public class DataScanServiceClientHttpJsonTest {
     try {
       String parent = "projects/project-881/locations/location-881/dataScans/dataScan-881";
       client.listDataScanJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateDataQualityRulesTest() throws Exception {
+    GenerateDataQualityRulesResponse expectedResponse =
+        GenerateDataQualityRulesResponse.newBuilder()
+            .addAllRule(new ArrayList<DataQualityRule>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-1806/locations/location-1806/dataScans/dataScan-1806";
+
+    GenerateDataQualityRulesResponse actualResponse = client.generateDataQualityRules(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateDataQualityRulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1806/locations/location-1806/dataScans/dataScan-1806";
+      client.generateDataQualityRules(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

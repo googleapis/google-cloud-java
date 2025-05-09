@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,15 @@ import com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse;
 import com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2beta1.Conversation;
 import com.google.cloud.dialogflow.v2beta1.CreateConversationRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest;
 import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse;
+import com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateSuggestionsResponse;
 import com.google.cloud.dialogflow.v2beta1.GetConversationRequest;
+import com.google.cloud.dialogflow.v2beta1.IngestContextReferencesRequest;
+import com.google.cloud.dialogflow.v2beta1.IngestContextReferencesResponse;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2beta1.ListMessagesRequest;
@@ -77,6 +83,11 @@ public abstract class ConversationsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: completeConversationCallable()");
   }
 
+  public UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable() {
+    throw new UnsupportedOperationException("Not implemented: ingestContextReferencesCallable()");
+  }
+
   public UnaryCallable<BatchCreateMessagesRequest, BatchCreateMessagesResponse>
       batchCreateMessagesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchCreateMessagesCallable()");
@@ -101,8 +112,19 @@ public abstract class ConversationsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: generateStatelessSummaryCallable()");
   }
 
+  public UnaryCallable<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: generateStatelessSuggestionCallable()");
+  }
+
   public UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse> searchKnowledgeCallable() {
     throw new UnsupportedOperationException("Not implemented: searchKnowledgeCallable()");
+  }
+
+  public UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateSuggestionsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

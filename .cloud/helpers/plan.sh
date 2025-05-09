@@ -44,6 +44,7 @@ else
   modules=$(listAllModules)
 fi
 echo "Planning around modules $modules"
+OLD_IFS="$IFS"
 IFS=','
 for module in $modules; do
   # Only include modules with a .cloud subdirectory in the generated config.
@@ -52,6 +53,7 @@ for module in $modules; do
     source "../$module/.cloud/preplan.sh" generated.auto.tfvars
   fi
 done
+IFS="$OLD_IFS"
 
 terraform fmt -list=false generated.auto.tfvars
 terraform plan -out generated.tfplan

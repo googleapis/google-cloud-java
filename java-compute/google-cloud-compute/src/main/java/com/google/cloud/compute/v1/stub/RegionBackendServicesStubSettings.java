@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,11 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.RegionBackendServicesClient.ListUsablePagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -47,25 +48,30 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.BackendService;
 import com.google.cloud.compute.v1.BackendServiceGroupHealth;
 import com.google.cloud.compute.v1.BackendServiceList;
+import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.DeleteRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.GetRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.ListRegionBackendServicesRequest;
+import com.google.cloud.compute.v1.ListUsableRegionBackendServicesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionBackendServiceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionBackendServiceRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -82,7 +88,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -99,10 +107,47 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * RegionBackendServicesStubSettings regionBackendServicesSettings =
  *     regionBackendServicesSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for delete:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * RegionBackendServicesStubSettings.Builder regionBackendServicesSettingsBuilder =
+ *     RegionBackendServicesStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * regionBackendServicesSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -129,11 +174,22 @@ public class RegionBackendServicesStubSettings
   private final PagedCallSettings<
           ListRegionBackendServicesRequest, BackendServiceList, ListPagedResponse>
       listSettings;
+  private final PagedCallSettings<
+          ListUsableRegionBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+      listUsableSettings;
   private final UnaryCallSettings<PatchRegionBackendServiceRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRegionBackendServiceRequest, Operation, Operation>
       patchOperationSettings;
   private final UnaryCallSettings<SetIamPolicyRegionBackendServiceRequest, Policy>
       setIamPolicySettings;
+  private final UnaryCallSettings<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+      setSecurityPolicySettings;
+  private final OperationCallSettings<
+          SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateRegionBackendServiceRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateRegionBackendServiceRequest, Operation, Operation>
       updateOperationSettings;
@@ -176,9 +232,49 @@ public class RegionBackendServicesStubSettings
 
             @Override
             public Iterable<BackendService> extractResources(BackendServiceList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<BackendService>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListUsableRegionBackendServicesRequest, BackendServiceListUsable, BackendService>
+      LIST_USABLE_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUsableRegionBackendServicesRequest, BackendServiceListUsable, BackendService>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsableRegionBackendServicesRequest injectToken(
+                ListUsableRegionBackendServicesRequest payload, String token) {
+              return ListUsableRegionBackendServicesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListUsableRegionBackendServicesRequest injectPageSize(
+                ListUsableRegionBackendServicesRequest payload, int pageSize) {
+              return ListUsableRegionBackendServicesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsableRegionBackendServicesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(BackendServiceListUsable payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackendService> extractResources(BackendServiceListUsable payload) {
+              return payload.getItemsList();
             }
           };
 
@@ -196,6 +292,30 @@ public class RegionBackendServicesStubSettings
               PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService>
                   pageContext = PageContext.create(callable, LIST_PAGE_STR_DESC, request, context);
               return ListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUsableRegionBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+      LIST_USABLE_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsableRegionBackendServicesRequest,
+              BackendServiceListUsable,
+              ListUsablePagedResponse>() {
+            @Override
+            public ApiFuture<ListUsablePagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsableRegionBackendServicesRequest, BackendServiceListUsable>
+                    callable,
+                ListUsableRegionBackendServicesRequest request,
+                ApiCallContext context,
+                ApiFuture<BackendServiceListUsable> futureResponse) {
+              PageContext<
+                      ListUsableRegionBackendServicesRequest,
+                      BackendServiceListUsable,
+                      BackendService>
+                  pageContext =
+                      PageContext.create(callable, LIST_USABLE_PAGE_STR_DESC, request, context);
+              return ListUsablePagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -243,6 +363,13 @@ public class RegionBackendServicesStubSettings
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableRegionBackendServicesRequest, BackendServiceListUsable, ListUsablePagedResponse>
+      listUsableSettings() {
+    return listUsableSettings;
+  }
+
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchRegionBackendServiceRequest, Operation> patchSettings() {
     return patchSettings;
@@ -257,6 +384,24 @@ public class RegionBackendServicesStubSettings
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRegionBackendServiceRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+      setSecurityPolicySettings() {
+    return setSecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return setSecurityPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -281,12 +426,19 @@ public class RegionBackendServicesStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -318,7 +470,6 @@ public class RegionBackendServicesStubSettings
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -354,9 +505,14 @@ public class RegionBackendServicesStubSettings
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    listUsableSettings = settingsBuilder.listUsableSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
+    setSecurityPolicyOperationSettings =
+        settingsBuilder.setSecurityPolicyOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -385,6 +541,11 @@ public class RegionBackendServicesStubSettings
     private final PagedCallSettings.Builder<
             ListRegionBackendServicesRequest, BackendServiceList, ListPagedResponse>
         listSettings;
+    private final PagedCallSettings.Builder<
+            ListUsableRegionBackendServicesRequest,
+            BackendServiceListUsable,
+            ListUsablePagedResponse>
+        listUsableSettings;
     private final UnaryCallSettings.Builder<PatchRegionBackendServiceRequest, Operation>
         patchSettings;
     private final OperationCallSettings.Builder<
@@ -392,6 +553,14 @@ public class RegionBackendServicesStubSettings
         patchOperationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRegionBackendServiceRequest, Policy>
         setIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+        setSecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateRegionBackendServiceRequest, Operation>
         updateSettings;
     private final OperationCallSettings.Builder<
@@ -420,21 +589,21 @@ public class RegionBackendServicesStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -455,9 +624,13 @@ public class RegionBackendServicesStubSettings
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      listUsableSettings = PagedCallSettings.newBuilder(LIST_USABLE_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -469,8 +642,11 @@ public class RegionBackendServicesStubSettings
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              listUsableSettings,
               patchSettings,
               setIamPolicySettings,
+              setSecurityPolicySettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -486,9 +662,13 @@ public class RegionBackendServicesStubSettings
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      listUsableSettings = settings.listUsableSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
+      setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -500,8 +680,11 @@ public class RegionBackendServicesStubSettings
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              listUsableSettings,
               patchSettings,
               setIamPolicySettings,
+              setSecurityPolicySettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -511,7 +694,6 @@ public class RegionBackendServicesStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -550,12 +732,27 @@ public class RegionBackendServicesStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listUsableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .patchSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setSecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -580,13 +777,13 @@ public class RegionBackendServicesStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -605,13 +802,13 @@ public class RegionBackendServicesStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -630,13 +827,38 @@ public class RegionBackendServicesStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setSecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetSecurityPolicyRegionBackendServiceRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -655,13 +877,13 @@ public class RegionBackendServicesStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -689,8 +911,6 @@ public class RegionBackendServicesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRegionBackendServiceRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -721,8 +941,6 @@ public class RegionBackendServicesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertRegionBackendServiceRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -735,14 +953,21 @@ public class RegionBackendServicesStubSettings
       return listSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableRegionBackendServicesRequest,
+            BackendServiceListUsable,
+            ListUsablePagedResponse>
+        listUsableSettings() {
+      return listUsableSettings;
+    }
+
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchRegionBackendServiceRequest, Operation> patchSettings() {
       return patchSettings;
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchRegionBackendServiceRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
@@ -754,6 +979,26 @@ public class RegionBackendServicesStubSettings
       return setIamPolicySettings;
     }
 
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyRegionBackendServiceRequest, Operation>
+        setSecurityPolicySettings() {
+      return setSecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<
+            SetSecurityPolicyRegionBackendServiceRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return setSecurityPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionBackendServiceRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to update. */
     public UnaryCallSettings.Builder<UpdateRegionBackendServiceRequest, Operation>
         updateSettings() {
@@ -761,8 +1006,6 @@ public class RegionBackendServicesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to update. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRegionBackendServiceRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;

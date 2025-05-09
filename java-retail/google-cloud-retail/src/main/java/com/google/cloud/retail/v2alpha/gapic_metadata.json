@@ -5,6 +5,33 @@
   "protoPackage": "google.cloud.retail.v2alpha",
   "libraryPackage": "com.google.cloud.retail.v2alpha",
   "services": {
+    "AnalyticsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AnalyticsServiceClient",
+          "rpcs": {
+            "ExportAnalyticsMetrics": {
+              "methods": ["exportAnalyticsMetricsAsync", "exportAnalyticsMetricsOperationCallable", "exportAnalyticsMetricsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "BranchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BranchServiceClient",
+          "rpcs": {
+            "GetBranch": {
+              "methods": ["getBranch", "getBranch", "getBranch", "getBranchCallable"]
+            },
+            "ListBranches": {
+              "methods": ["listBranches", "listBranches", "listBranches", "listBranchesCallable"]
+            }
+          }
+        }
+      }
+    },
     "CatalogService": {
       "clients": {
         "grpc": {
@@ -84,6 +111,42 @@
             },
             "UpdateControl": {
               "methods": ["updateControl", "updateControl", "updateControlCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ConversationalSearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversationalSearchServiceClient",
+          "rpcs": {
+            "ConversationalSearch": {
+              "methods": ["conversationalSearchCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GenerativeQuestionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenerativeQuestionServiceClient",
+          "rpcs": {
+            "BatchUpdateGenerativeQuestionConfigs": {
+              "methods": ["batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigsCallable"]
+            },
+            "GetGenerativeQuestionsFeatureConfig": {
+              "methods": ["getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfigCallable"]
+            },
+            "ListGenerativeQuestionConfigs": {
+              "methods": ["listGenerativeQuestionConfigs", "listGenerativeQuestionConfigs", "listGenerativeQuestionConfigs", "listGenerativeQuestionConfigsCallable"]
+            },
+            "UpdateGenerativeQuestionConfig": {
+              "methods": ["updateGenerativeQuestionConfig", "updateGenerativeQuestionConfig", "updateGenerativeQuestionConfigCallable"]
+            },
+            "UpdateGenerativeQuestionsFeatureConfig": {
+              "methods": ["updateGenerativeQuestionsFeatureConfig", "updateGenerativeQuestionsFeatureConfig", "updateGenerativeQuestionsFeatureConfigCallable"]
             }
           }
         }
@@ -169,6 +232,9 @@
             "DeleteProduct": {
               "methods": ["deleteProduct", "deleteProduct", "deleteProduct", "deleteProductCallable"]
             },
+            "ExportProducts": {
+              "methods": ["exportProductsAsync", "exportProductsOperationCallable", "exportProductsCallable"]
+            },
             "GetProduct": {
               "methods": ["getProduct", "getProduct", "getProduct", "getProductCallable"]
             },
@@ -192,6 +258,39 @@
             },
             "UpdateProduct": {
               "methods": ["updateProduct", "updateProduct", "updateProductCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProjectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectServiceClient",
+          "rpcs": {
+            "AcceptTerms": {
+              "methods": ["acceptTerms", "acceptTerms", "acceptTerms", "acceptTermsCallable"]
+            },
+            "EnrollSolution": {
+              "methods": ["enrollSolutionAsync", "enrollSolutionOperationCallable", "enrollSolutionCallable"]
+            },
+            "GetAlertConfig": {
+              "methods": ["getAlertConfig", "getAlertConfig", "getAlertConfig", "getAlertConfigCallable"]
+            },
+            "GetLoggingConfig": {
+              "methods": ["getLoggingConfig", "getLoggingConfig", "getLoggingConfig", "getLoggingConfigCallable"]
+            },
+            "GetProject": {
+              "methods": ["getProject", "getProject", "getProject", "getProjectCallable"]
+            },
+            "ListEnrolledSolutions": {
+              "methods": ["listEnrolledSolutions", "listEnrolledSolutions", "listEnrolledSolutions", "listEnrolledSolutionsCallable"]
+            },
+            "UpdateAlertConfig": {
+              "methods": ["updateAlertConfig", "updateAlertConfig", "updateAlertConfigCallable"]
+            },
+            "UpdateLoggingConfig": {
+              "methods": ["updateLoggingConfig", "updateLoggingConfig", "updateLoggingConfigCallable"]
             }
           }
         }
@@ -246,6 +345,9 @@
           "rpcs": {
             "CollectUserEvent": {
               "methods": ["collectUserEvent", "collectUserEventCallable"]
+            },
+            "ExportUserEvents": {
+              "methods": ["exportUserEventsAsync", "exportUserEventsOperationCallable", "exportUserEventsCallable"]
             },
             "ImportUserEvents": {
               "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]

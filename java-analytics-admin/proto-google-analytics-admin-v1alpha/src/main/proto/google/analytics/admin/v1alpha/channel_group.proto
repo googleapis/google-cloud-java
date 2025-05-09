@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -142,11 +142,20 @@ message ChannelGroup {
   // The description of the Channel Group. Max length of 256 characters.
   string description = 3;
 
-  // Required. The grouping rules of channels. Maximum number of rules is 25.
+  // Required. The grouping rules of channels. Maximum number of rules is 50.
   repeated GroupingRule grouping_rule = 4
       [(google.api.field_behavior) = REQUIRED];
 
-  // Output only. Default Channel Group defined by Google, which cannot be
-  // updated.
+  // Output only. If true, then this channel group is the Default Channel Group
+  // predefined by Google Analytics. Display name and grouping rules cannot be
+  // updated for this channel group.
   bool system_defined = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. If true, this channel group will be used as the default channel
+  // group for reports. Only one channel group can be set as `primary` at any
+  // time. If the `primary` field gets set on a channel group, it will get unset
+  // on the previous primary channel group.
+  //
+  // The Google Analytics predefined channel group is the primary by default.
+  bool primary = 6 [(google.api.field_behavior) = OPTIONAL];
 }

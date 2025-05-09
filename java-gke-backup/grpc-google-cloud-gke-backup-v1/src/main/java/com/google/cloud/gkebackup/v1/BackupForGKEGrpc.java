@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -256,6 +256,341 @@ public final class BackupForGKEGrpc {
       }
     }
     return getDeleteBackupPlanMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.CreateBackupChannelRequest,
+          com.google.longrunning.Operation>
+      getCreateBackupChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBackupChannel",
+      requestType = com.google.cloud.gkebackup.v1.CreateBackupChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.CreateBackupChannelRequest,
+          com.google.longrunning.Operation>
+      getCreateBackupChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.CreateBackupChannelRequest,
+            com.google.longrunning.Operation>
+        getCreateBackupChannelMethod;
+    if ((getCreateBackupChannelMethod = BackupForGKEGrpc.getCreateBackupChannelMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getCreateBackupChannelMethod = BackupForGKEGrpc.getCreateBackupChannelMethod)
+            == null) {
+          BackupForGKEGrpc.getCreateBackupChannelMethod =
+              getCreateBackupChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.CreateBackupChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateBackupChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.CreateBackupChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("CreateBackupChannel"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBackupChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.ListBackupChannelsRequest,
+          com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>
+      getListBackupChannelsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackupChannels",
+      requestType = com.google.cloud.gkebackup.v1.ListBackupChannelsRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.ListBackupChannelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.ListBackupChannelsRequest,
+          com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>
+      getListBackupChannelsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.ListBackupChannelsRequest,
+            com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>
+        getListBackupChannelsMethod;
+    if ((getListBackupChannelsMethod = BackupForGKEGrpc.getListBackupChannelsMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getListBackupChannelsMethod = BackupForGKEGrpc.getListBackupChannelsMethod) == null) {
+          BackupForGKEGrpc.getListBackupChannelsMethod =
+              getListBackupChannelsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.ListBackupChannelsRequest,
+                          com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackupChannels"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.ListBackupChannelsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.ListBackupChannelsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("ListBackupChannels"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupChannelsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetBackupChannelRequest,
+          com.google.cloud.gkebackup.v1.BackupChannel>
+      getGetBackupChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupChannel",
+      requestType = com.google.cloud.gkebackup.v1.GetBackupChannelRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.BackupChannel.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetBackupChannelRequest,
+          com.google.cloud.gkebackup.v1.BackupChannel>
+      getGetBackupChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.GetBackupChannelRequest,
+            com.google.cloud.gkebackup.v1.BackupChannel>
+        getGetBackupChannelMethod;
+    if ((getGetBackupChannelMethod = BackupForGKEGrpc.getGetBackupChannelMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getGetBackupChannelMethod = BackupForGKEGrpc.getGetBackupChannelMethod) == null) {
+          BackupForGKEGrpc.getGetBackupChannelMethod =
+              getGetBackupChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.GetBackupChannelRequest,
+                          com.google.cloud.gkebackup.v1.BackupChannel>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBackupChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.GetBackupChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.BackupChannel.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("GetBackupChannel"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest,
+          com.google.longrunning.Operation>
+      getUpdateBackupChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBackupChannel",
+      requestType = com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest,
+          com.google.longrunning.Operation>
+      getUpdateBackupChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest,
+            com.google.longrunning.Operation>
+        getUpdateBackupChannelMethod;
+    if ((getUpdateBackupChannelMethod = BackupForGKEGrpc.getUpdateBackupChannelMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getUpdateBackupChannelMethod = BackupForGKEGrpc.getUpdateBackupChannelMethod)
+            == null) {
+          BackupForGKEGrpc.getUpdateBackupChannelMethod =
+              getUpdateBackupChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateBackupChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("UpdateBackupChannel"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest,
+          com.google.longrunning.Operation>
+      getDeleteBackupChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBackupChannel",
+      requestType = com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest,
+          com.google.longrunning.Operation>
+      getDeleteBackupChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest,
+            com.google.longrunning.Operation>
+        getDeleteBackupChannelMethod;
+    if ((getDeleteBackupChannelMethod = BackupForGKEGrpc.getDeleteBackupChannelMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getDeleteBackupChannelMethod = BackupForGKEGrpc.getDeleteBackupChannelMethod)
+            == null) {
+          BackupForGKEGrpc.getDeleteBackupChannelMethod =
+              getDeleteBackupChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteBackupChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("DeleteBackupChannel"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBackupChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest,
+          com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>
+      getListBackupPlanBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackupPlanBindings",
+      requestType = com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest,
+          com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>
+      getListBackupPlanBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest,
+            com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>
+        getListBackupPlanBindingsMethod;
+    if ((getListBackupPlanBindingsMethod = BackupForGKEGrpc.getListBackupPlanBindingsMethod)
+        == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getListBackupPlanBindingsMethod = BackupForGKEGrpc.getListBackupPlanBindingsMethod)
+            == null) {
+          BackupForGKEGrpc.getListBackupPlanBindingsMethod =
+              getListBackupPlanBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest,
+                          com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListBackupPlanBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("ListBackupPlanBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupPlanBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest,
+          com.google.cloud.gkebackup.v1.BackupPlanBinding>
+      getGetBackupPlanBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupPlanBinding",
+      requestType = com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.BackupPlanBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest,
+          com.google.cloud.gkebackup.v1.BackupPlanBinding>
+      getGetBackupPlanBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest,
+            com.google.cloud.gkebackup.v1.BackupPlanBinding>
+        getGetBackupPlanBindingMethod;
+    if ((getGetBackupPlanBindingMethod = BackupForGKEGrpc.getGetBackupPlanBindingMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getGetBackupPlanBindingMethod = BackupForGKEGrpc.getGetBackupPlanBindingMethod)
+            == null) {
+          BackupForGKEGrpc.getGetBackupPlanBindingMethod =
+              getGetBackupPlanBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest,
+                          com.google.cloud.gkebackup.v1.BackupPlanBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetBackupPlanBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.BackupPlanBinding.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("GetBackupPlanBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupPlanBindingMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -790,6 +1125,345 @@ public final class BackupForGKEGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest,
+          com.google.longrunning.Operation>
+      getCreateRestoreChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRestoreChannel",
+      requestType = com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest,
+          com.google.longrunning.Operation>
+      getCreateRestoreChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest,
+            com.google.longrunning.Operation>
+        getCreateRestoreChannelMethod;
+    if ((getCreateRestoreChannelMethod = BackupForGKEGrpc.getCreateRestoreChannelMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getCreateRestoreChannelMethod = BackupForGKEGrpc.getCreateRestoreChannelMethod)
+            == null) {
+          BackupForGKEGrpc.getCreateRestoreChannelMethod =
+              getCreateRestoreChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateRestoreChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("CreateRestoreChannel"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRestoreChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest,
+          com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>
+      getListRestoreChannelsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRestoreChannels",
+      requestType = com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest,
+          com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>
+      getListRestoreChannelsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest,
+            com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>
+        getListRestoreChannelsMethod;
+    if ((getListRestoreChannelsMethod = BackupForGKEGrpc.getListRestoreChannelsMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getListRestoreChannelsMethod = BackupForGKEGrpc.getListRestoreChannelsMethod)
+            == null) {
+          BackupForGKEGrpc.getListRestoreChannelsMethod =
+              getListRestoreChannelsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest,
+                          com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListRestoreChannels"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("ListRestoreChannels"))
+                      .build();
+        }
+      }
+    }
+    return getListRestoreChannelsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetRestoreChannelRequest,
+          com.google.cloud.gkebackup.v1.RestoreChannel>
+      getGetRestoreChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRestoreChannel",
+      requestType = com.google.cloud.gkebackup.v1.GetRestoreChannelRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.RestoreChannel.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetRestoreChannelRequest,
+          com.google.cloud.gkebackup.v1.RestoreChannel>
+      getGetRestoreChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.GetRestoreChannelRequest,
+            com.google.cloud.gkebackup.v1.RestoreChannel>
+        getGetRestoreChannelMethod;
+    if ((getGetRestoreChannelMethod = BackupForGKEGrpc.getGetRestoreChannelMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getGetRestoreChannelMethod = BackupForGKEGrpc.getGetRestoreChannelMethod) == null) {
+          BackupForGKEGrpc.getGetRestoreChannelMethod =
+              getGetRestoreChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.GetRestoreChannelRequest,
+                          com.google.cloud.gkebackup.v1.RestoreChannel>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRestoreChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.GetRestoreChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.RestoreChannel.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("GetRestoreChannel"))
+                      .build();
+        }
+      }
+    }
+    return getGetRestoreChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest,
+          com.google.longrunning.Operation>
+      getUpdateRestoreChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRestoreChannel",
+      requestType = com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest,
+          com.google.longrunning.Operation>
+      getUpdateRestoreChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest,
+            com.google.longrunning.Operation>
+        getUpdateRestoreChannelMethod;
+    if ((getUpdateRestoreChannelMethod = BackupForGKEGrpc.getUpdateRestoreChannelMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getUpdateRestoreChannelMethod = BackupForGKEGrpc.getUpdateRestoreChannelMethod)
+            == null) {
+          BackupForGKEGrpc.getUpdateRestoreChannelMethod =
+              getUpdateRestoreChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateRestoreChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("UpdateRestoreChannel"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRestoreChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest,
+          com.google.longrunning.Operation>
+      getDeleteRestoreChannelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRestoreChannel",
+      requestType = com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest,
+          com.google.longrunning.Operation>
+      getDeleteRestoreChannelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest,
+            com.google.longrunning.Operation>
+        getDeleteRestoreChannelMethod;
+    if ((getDeleteRestoreChannelMethod = BackupForGKEGrpc.getDeleteRestoreChannelMethod) == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getDeleteRestoreChannelMethod = BackupForGKEGrpc.getDeleteRestoreChannelMethod)
+            == null) {
+          BackupForGKEGrpc.getDeleteRestoreChannelMethod =
+              getDeleteRestoreChannelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteRestoreChannel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("DeleteRestoreChannel"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRestoreChannelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest,
+          com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>
+      getListRestorePlanBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRestorePlanBindings",
+      requestType = com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest,
+          com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>
+      getListRestorePlanBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest,
+            com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>
+        getListRestorePlanBindingsMethod;
+    if ((getListRestorePlanBindingsMethod = BackupForGKEGrpc.getListRestorePlanBindingsMethod)
+        == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getListRestorePlanBindingsMethod = BackupForGKEGrpc.getListRestorePlanBindingsMethod)
+            == null) {
+          BackupForGKEGrpc.getListRestorePlanBindingsMethod =
+              getListRestorePlanBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest,
+                          com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListRestorePlanBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("ListRestorePlanBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListRestorePlanBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest,
+          com.google.cloud.gkebackup.v1.RestorePlanBinding>
+      getGetRestorePlanBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRestorePlanBinding",
+      requestType = com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.RestorePlanBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest,
+          com.google.cloud.gkebackup.v1.RestorePlanBinding>
+      getGetRestorePlanBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest,
+            com.google.cloud.gkebackup.v1.RestorePlanBinding>
+        getGetRestorePlanBindingMethod;
+    if ((getGetRestorePlanBindingMethod = BackupForGKEGrpc.getGetRestorePlanBindingMethod)
+        == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getGetRestorePlanBindingMethod = BackupForGKEGrpc.getGetRestorePlanBindingMethod)
+            == null) {
+          BackupForGKEGrpc.getGetRestorePlanBindingMethod =
+              getGetRestorePlanBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest,
+                          com.google.cloud.gkebackup.v1.RestorePlanBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetRestorePlanBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.RestorePlanBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("GetRestorePlanBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetRestorePlanBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.gkebackup.v1.CreateRestoreRequest, com.google.longrunning.Operation>
       getCreateRestoreMethod;
 
@@ -1098,6 +1772,57 @@ public final class BackupForGKEGrpc {
     return getGetVolumeRestoreMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+      getGetBackupIndexDownloadUrlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupIndexDownloadUrl",
+      requestType = com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+      getGetBackupIndexDownloadUrlMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+        getGetBackupIndexDownloadUrlMethod;
+    if ((getGetBackupIndexDownloadUrlMethod = BackupForGKEGrpc.getGetBackupIndexDownloadUrlMethod)
+        == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getGetBackupIndexDownloadUrlMethod =
+                BackupForGKEGrpc.getGetBackupIndexDownloadUrlMethod)
+            == null) {
+          BackupForGKEGrpc.getGetBackupIndexDownloadUrlMethod =
+              getGetBackupIndexDownloadUrlMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+                          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetBackupIndexDownloadUrl"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("GetBackupIndexDownloadUrl"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupIndexDownloadUrlMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BackupForGKEStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BackupForGKEStub> factory =
@@ -1109,6 +1834,19 @@ public final class BackupForGKEGrpc {
           }
         };
     return BackupForGKEStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BackupForGKEBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BackupForGKEBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BackupForGKEBlockingV2Stub>() {
+          @java.lang.Override
+          public BackupForGKEBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BackupForGKEBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BackupForGKEBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1218,6 +1956,107 @@ public final class BackupForGKEGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteBackupPlanMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new BackupChannel in a given location.
+     * </pre>
+     */
+    default void createBackupChannel(
+        com.google.cloud.gkebackup.v1.CreateBackupChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateBackupChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupChannels in a given location.
+     * </pre>
+     */
+    default void listBackupChannels(
+        com.google.cloud.gkebackup.v1.ListBackupChannelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupChannelsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupChannel.
+     * </pre>
+     */
+    default void getBackupChannel(
+        com.google.cloud.gkebackup.v1.GetBackupChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.BackupChannel> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupChannel.
+     * </pre>
+     */
+    default void updateBackupChannel(
+        com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBackupChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing BackupChannel.
+     * </pre>
+     */
+    default void deleteBackupChannel(
+        com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBackupChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanBindings in a given location.
+     * </pre>
+     */
+    default void listBackupPlanBindings(
+        com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupPlanBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupPlanBinding.
+     * </pre>
+     */
+    default void getBackupPlanBinding(
+        com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.BackupPlanBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupPlanBindingMethod(), responseObserver);
     }
 
     /**
@@ -1394,6 +2233,108 @@ public final class BackupForGKEGrpc {
      *
      *
      * <pre>
+     * Creates a new RestoreChannel in a given location.
+     * </pre>
+     */
+    default void createRestoreChannel(
+        com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRestoreChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreChannels in a given location.
+     * </pre>
+     */
+    default void listRestoreChannels(
+        com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRestoreChannelsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestoreChannel.
+     * </pre>
+     */
+    default void getRestoreChannel(
+        com.google.cloud.gkebackup.v1.GetRestoreChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.RestoreChannel>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRestoreChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a RestoreChannel.
+     * </pre>
+     */
+    default void updateRestoreChannel(
+        com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRestoreChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing RestoreChannel.
+     * </pre>
+     */
+    default void deleteRestoreChannel(
+        com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRestoreChannelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestorePlanBindings in a given location.
+     * </pre>
+     */
+    default void listRestorePlanBindings(
+        com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRestorePlanBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestorePlanBinding.
+     * </pre>
+     */
+    default void getRestorePlanBinding(
+        com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.RestorePlanBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRestorePlanBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Restore for the given RestorePlan.
      * </pre>
      */
@@ -1487,6 +2428,21 @@ public final class BackupForGKEGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.VolumeRestore> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetVolumeRestoreMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    default void getBackupIndexDownloadUrl(
+        com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupIndexDownloadUrlMethod(), responseObserver);
     }
   }
 
@@ -1603,6 +2559,121 @@ public final class BackupForGKEGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteBackupPlanMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new BackupChannel in a given location.
+     * </pre>
+     */
+    public void createBackupChannel(
+        com.google.cloud.gkebackup.v1.CreateBackupChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBackupChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupChannels in a given location.
+     * </pre>
+     */
+    public void listBackupChannels(
+        com.google.cloud.gkebackup.v1.ListBackupChannelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupChannelsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupChannel.
+     * </pre>
+     */
+    public void getBackupChannel(
+        com.google.cloud.gkebackup.v1.GetBackupChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.BackupChannel> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupChannel.
+     * </pre>
+     */
+    public void updateBackupChannel(
+        com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing BackupChannel.
+     * </pre>
+     */
+    public void deleteBackupChannel(
+        com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanBindings in a given location.
+     * </pre>
+     */
+    public void listBackupPlanBindings(
+        com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupPlanBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupPlanBinding.
+     * </pre>
+     */
+    public void getBackupPlanBinding(
+        com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.BackupPlanBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupPlanBindingMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1804,6 +2875,122 @@ public final class BackupForGKEGrpc {
      *
      *
      * <pre>
+     * Creates a new RestoreChannel in a given location.
+     * </pre>
+     */
+    public void createRestoreChannel(
+        com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRestoreChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreChannels in a given location.
+     * </pre>
+     */
+    public void listRestoreChannels(
+        com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRestoreChannelsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestoreChannel.
+     * </pre>
+     */
+    public void getRestoreChannel(
+        com.google.cloud.gkebackup.v1.GetRestoreChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.RestoreChannel>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRestoreChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a RestoreChannel.
+     * </pre>
+     */
+    public void updateRestoreChannel(
+        com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRestoreChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing RestoreChannel.
+     * </pre>
+     */
+    public void deleteRestoreChannel(
+        com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRestoreChannelMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestorePlanBindings in a given location.
+     * </pre>
+     */
+    public void listRestorePlanBindings(
+        com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRestorePlanBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestorePlanBinding.
+     * </pre>
+     */
+    public void getRestorePlanBinding(
+        com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.RestorePlanBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRestorePlanBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Restore for the given RestorePlan.
      * </pre>
      */
@@ -1911,6 +3098,23 @@ public final class BackupForGKEGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    public void getBackupIndexDownloadUrl(
+        com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupIndexDownloadUrlMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1921,16 +3125,16 @@ public final class BackupForGKEGrpc {
    * manage backup and restore operations for their GKE clusters.
    * </pre>
    */
-  public static final class BackupForGKEBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<BackupForGKEBlockingStub> {
-    private BackupForGKEBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class BackupForGKEBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BackupForGKEBlockingV2Stub> {
+    private BackupForGKEBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected BackupForGKEBlockingStub build(
+    protected BackupForGKEBlockingV2Stub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new BackupForGKEBlockingStub(channel, callOptions);
+      return new BackupForGKEBlockingV2Stub(channel, callOptions);
     }
 
     /**
@@ -1996,6 +3200,97 @@ public final class BackupForGKEGrpc {
         com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new BackupChannel in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupChannel(
+        com.google.cloud.gkebackup.v1.CreateBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupChannels in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListBackupChannelsResponse listBackupChannels(
+        com.google.cloud.gkebackup.v1.ListBackupChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupChannel.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.BackupChannel getBackupChannel(
+        com.google.cloud.gkebackup.v1.GetBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupChannel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupChannel(
+        com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing BackupChannel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupChannel(
+        com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanBindings in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse listBackupPlanBindings(
+        com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPlanBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupPlanBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.BackupPlanBinding getBackupPlanBinding(
+        com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPlanBindingMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2158,6 +3453,97 @@ public final class BackupForGKEGrpc {
      *
      *
      * <pre>
+     * Creates a new RestoreChannel in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestoreChannel(
+        com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRestoreChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreChannels in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse listRestoreChannels(
+        com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestoreChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestoreChannel.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreChannel getRestoreChannel(
+        com.google.cloud.gkebackup.v1.GetRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestoreChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a RestoreChannel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRestoreChannel(
+        com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRestoreChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing RestoreChannel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestoreChannel(
+        com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRestoreChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestorePlanBindings in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse listRestorePlanBindings(
+        com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestorePlanBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestorePlanBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.RestorePlanBinding getRestorePlanBinding(
+        com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestorePlanBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Restore for the given RestorePlan.
      * </pre>
      */
@@ -2243,6 +3629,549 @@ public final class BackupForGKEGrpc {
         com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetVolumeRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse
+        getBackupIndexDownloadUrl(
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupIndexDownloadUrlMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BackupForGKE.
+   *
+   * <pre>
+   * BackupForGKE allows Kubernetes administrators to configure, execute, and
+   * manage backup and restore operations for their GKE clusters.
+   * </pre>
+   */
+  public static final class BackupForGKEBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<BackupForGKEBlockingStub> {
+    private BackupForGKEBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BackupForGKEBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BackupForGKEBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new BackupPlan in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupPlan(
+        com.google.cloud.gkebackup.v1.CreateBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlans in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListBackupPlansResponse listBackupPlans(
+        com.google.cloud.gkebackup.v1.ListBackupPlansRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPlansMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupPlan.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.BackupPlan getBackupPlan(
+        com.google.cloud.gkebackup.v1.GetBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPlan(
+        com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupPlan(
+        com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new BackupChannel in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupChannel(
+        com.google.cloud.gkebackup.v1.CreateBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupChannels in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListBackupChannelsResponse listBackupChannels(
+        com.google.cloud.gkebackup.v1.ListBackupChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupChannel.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.BackupChannel getBackupChannel(
+        com.google.cloud.gkebackup.v1.GetBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupChannel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupChannel(
+        com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing BackupChannel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupChannel(
+        com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanBindings in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse listBackupPlanBindings(
+        com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPlanBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupPlanBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.BackupPlanBinding getBackupPlanBinding(
+        com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPlanBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Backup for the given BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.cloud.gkebackup.v1.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Backups for a given BackupPlan.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListBackupsResponse listBackups(
+        com.google.cloud.gkebackup.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single Backup.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.Backup getBackup(
+        com.google.cloud.gkebackup.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackup(
+        com.google.cloud.gkebackup.v1.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing Backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.gkebackup.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the VolumeBackups for a given Backup.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListVolumeBackupsResponse listVolumeBackups(
+        com.google.cloud.gkebackup.v1.ListVolumeBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVolumeBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single VolumeBackup.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeBackup getVolumeBackup(
+        com.google.cloud.gkebackup.v1.GetVolumeBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVolumeBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestorePlan in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestorePlan(
+        com.google.cloud.gkebackup.v1.CreateRestorePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRestorePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestorePlans in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListRestorePlansResponse listRestorePlans(
+        com.google.cloud.gkebackup.v1.ListRestorePlansRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestorePlansMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestorePlan.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.RestorePlan getRestorePlan(
+        com.google.cloud.gkebackup.v1.GetRestorePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestorePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a RestorePlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRestorePlan(
+        com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRestorePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing RestorePlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestorePlan(
+        com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRestorePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestoreChannel in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestoreChannel(
+        com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRestoreChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreChannels in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse listRestoreChannels(
+        com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestoreChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestoreChannel.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.RestoreChannel getRestoreChannel(
+        com.google.cloud.gkebackup.v1.GetRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestoreChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a RestoreChannel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRestoreChannel(
+        com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRestoreChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing RestoreChannel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestoreChannel(
+        com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRestoreChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestorePlanBindings in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse listRestorePlanBindings(
+        com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestorePlanBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestorePlanBinding.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.RestorePlanBinding getRestorePlanBinding(
+        com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestorePlanBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Restore for the given RestorePlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestore(
+        com.google.cloud.gkebackup.v1.CreateRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Restores for a given RestorePlan.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListRestoresResponse listRestores(
+        com.google.cloud.gkebackup.v1.ListRestoresRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestoresMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the details of a single Restore.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.Restore getRestore(
+        com.google.cloud.gkebackup.v1.GetRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Restore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRestore(
+        com.google.cloud.gkebackup.v1.UpdateRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing Restore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestore(
+        com.google.cloud.gkebackup.v1.DeleteRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the VolumeRestores for a given Restore.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse listVolumeRestores(
+        com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVolumeRestoresMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single VolumeRestore.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeRestore getVolumeRestore(
+        com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVolumeRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse
+        getBackupIndexDownloadUrl(
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupIndexDownloadUrlMethod(), getCallOptions(), request);
     }
   }
 
@@ -2331,6 +4260,102 @@ public final class BackupForGKEGrpc {
         deleteBackupPlan(com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBackupPlanMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new BackupChannel in a given location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createBackupChannel(com.google.cloud.gkebackup.v1.CreateBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBackupChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupChannels in a given location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>
+        listBackupChannels(com.google.cloud.gkebackup.v1.ListBackupChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupChannelsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupChannel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.BackupChannel>
+        getBackupChannel(com.google.cloud.gkebackup.v1.GetBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupChannel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBackupChannel(com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBackupChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing BackupChannel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteBackupChannel(com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBackupChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlanBindings in a given location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>
+        listBackupPlanBindings(
+            com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupPlanBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupPlanBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.BackupPlanBinding>
+        getBackupPlanBinding(com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupPlanBindingMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2498,6 +4523,102 @@ public final class BackupForGKEGrpc {
      *
      *
      * <pre>
+     * Creates a new RestoreChannel in a given location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createRestoreChannel(com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRestoreChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestoreChannels in a given location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>
+        listRestoreChannels(com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRestoreChannelsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestoreChannel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.RestoreChannel>
+        getRestoreChannel(com.google.cloud.gkebackup.v1.GetRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRestoreChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a RestoreChannel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateRestoreChannel(com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRestoreChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing RestoreChannel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteRestoreChannel(com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRestoreChannelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestorePlanBindings in a given location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>
+        listRestorePlanBindings(
+            com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRestorePlanBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestorePlanBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.RestorePlanBinding>
+        getRestorePlanBinding(com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRestorePlanBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Restore for the given RestorePlan.
      * </pre>
      */
@@ -2587,6 +4708,21 @@ public final class BackupForGKEGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetVolumeRestoreMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+        getBackupIndexDownloadUrl(
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupIndexDownloadUrlMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_BACKUP_PLAN = 0;
@@ -2594,25 +4730,40 @@ public final class BackupForGKEGrpc {
   private static final int METHODID_GET_BACKUP_PLAN = 2;
   private static final int METHODID_UPDATE_BACKUP_PLAN = 3;
   private static final int METHODID_DELETE_BACKUP_PLAN = 4;
-  private static final int METHODID_CREATE_BACKUP = 5;
-  private static final int METHODID_LIST_BACKUPS = 6;
-  private static final int METHODID_GET_BACKUP = 7;
-  private static final int METHODID_UPDATE_BACKUP = 8;
-  private static final int METHODID_DELETE_BACKUP = 9;
-  private static final int METHODID_LIST_VOLUME_BACKUPS = 10;
-  private static final int METHODID_GET_VOLUME_BACKUP = 11;
-  private static final int METHODID_CREATE_RESTORE_PLAN = 12;
-  private static final int METHODID_LIST_RESTORE_PLANS = 13;
-  private static final int METHODID_GET_RESTORE_PLAN = 14;
-  private static final int METHODID_UPDATE_RESTORE_PLAN = 15;
-  private static final int METHODID_DELETE_RESTORE_PLAN = 16;
-  private static final int METHODID_CREATE_RESTORE = 17;
-  private static final int METHODID_LIST_RESTORES = 18;
-  private static final int METHODID_GET_RESTORE = 19;
-  private static final int METHODID_UPDATE_RESTORE = 20;
-  private static final int METHODID_DELETE_RESTORE = 21;
-  private static final int METHODID_LIST_VOLUME_RESTORES = 22;
-  private static final int METHODID_GET_VOLUME_RESTORE = 23;
+  private static final int METHODID_CREATE_BACKUP_CHANNEL = 5;
+  private static final int METHODID_LIST_BACKUP_CHANNELS = 6;
+  private static final int METHODID_GET_BACKUP_CHANNEL = 7;
+  private static final int METHODID_UPDATE_BACKUP_CHANNEL = 8;
+  private static final int METHODID_DELETE_BACKUP_CHANNEL = 9;
+  private static final int METHODID_LIST_BACKUP_PLAN_BINDINGS = 10;
+  private static final int METHODID_GET_BACKUP_PLAN_BINDING = 11;
+  private static final int METHODID_CREATE_BACKUP = 12;
+  private static final int METHODID_LIST_BACKUPS = 13;
+  private static final int METHODID_GET_BACKUP = 14;
+  private static final int METHODID_UPDATE_BACKUP = 15;
+  private static final int METHODID_DELETE_BACKUP = 16;
+  private static final int METHODID_LIST_VOLUME_BACKUPS = 17;
+  private static final int METHODID_GET_VOLUME_BACKUP = 18;
+  private static final int METHODID_CREATE_RESTORE_PLAN = 19;
+  private static final int METHODID_LIST_RESTORE_PLANS = 20;
+  private static final int METHODID_GET_RESTORE_PLAN = 21;
+  private static final int METHODID_UPDATE_RESTORE_PLAN = 22;
+  private static final int METHODID_DELETE_RESTORE_PLAN = 23;
+  private static final int METHODID_CREATE_RESTORE_CHANNEL = 24;
+  private static final int METHODID_LIST_RESTORE_CHANNELS = 25;
+  private static final int METHODID_GET_RESTORE_CHANNEL = 26;
+  private static final int METHODID_UPDATE_RESTORE_CHANNEL = 27;
+  private static final int METHODID_DELETE_RESTORE_CHANNEL = 28;
+  private static final int METHODID_LIST_RESTORE_PLAN_BINDINGS = 29;
+  private static final int METHODID_GET_RESTORE_PLAN_BINDING = 30;
+  private static final int METHODID_CREATE_RESTORE = 31;
+  private static final int METHODID_LIST_RESTORES = 32;
+  private static final int METHODID_GET_RESTORE = 33;
+  private static final int METHODID_UPDATE_RESTORE = 34;
+  private static final int METHODID_DELETE_RESTORE = 35;
+  private static final int METHODID_LIST_VOLUME_RESTORES = 36;
+  private static final int METHODID_GET_VOLUME_RESTORE = 37;
+  private static final int METHODID_GET_BACKUP_INDEX_DOWNLOAD_URL = 38;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2657,6 +4808,47 @@ public final class BackupForGKEGrpc {
           serviceImpl.deleteBackupPlan(
               (com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_BACKUP_CHANNEL:
+          serviceImpl.createBackupChannel(
+              (com.google.cloud.gkebackup.v1.CreateBackupChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_CHANNELS:
+          serviceImpl.listBackupChannels(
+              (com.google.cloud.gkebackup.v1.ListBackupChannelsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BACKUP_CHANNEL:
+          serviceImpl.getBackupChannel(
+              (com.google.cloud.gkebackup.v1.GetBackupChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.BackupChannel>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_BACKUP_CHANNEL:
+          serviceImpl.updateBackupChannel(
+              (com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP_CHANNEL:
+          serviceImpl.deleteBackupChannel(
+              (com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_PLAN_BINDINGS:
+          serviceImpl.listBackupPlanBindings(
+              (com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BACKUP_PLAN_BINDING:
+          serviceImpl.getBackupPlanBinding(
+              (com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.BackupPlanBinding>)
+                  responseObserver);
           break;
         case METHODID_CREATE_BACKUP:
           serviceImpl.createBackup(
@@ -2723,6 +4915,47 @@ public final class BackupForGKEGrpc {
               (com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_CREATE_RESTORE_CHANNEL:
+          serviceImpl.createRestoreChannel(
+              (com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_RESTORE_CHANNELS:
+          serviceImpl.listRestoreChannels(
+              (com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RESTORE_CHANNEL:
+          serviceImpl.getRestoreChannel(
+              (com.google.cloud.gkebackup.v1.GetRestoreChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.RestoreChannel>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_RESTORE_CHANNEL:
+          serviceImpl.updateRestoreChannel(
+              (com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_RESTORE_CHANNEL:
+          serviceImpl.deleteRestoreChannel(
+              (com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_RESTORE_PLAN_BINDINGS:
+          serviceImpl.listRestorePlanBindings(
+              (com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_RESTORE_PLAN_BINDING:
+          serviceImpl.getRestorePlanBinding(
+              (com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.RestorePlanBinding>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_RESTORE:
           serviceImpl.createRestore(
               (com.google.cloud.gkebackup.v1.CreateRestoreRequest) request,
@@ -2761,6 +4994,13 @@ public final class BackupForGKEGrpc {
           serviceImpl.getVolumeRestore(
               (com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.VolumeRestore>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BACKUP_INDEX_DOWNLOAD_URL:
+          serviceImpl.getBackupIndexDownloadUrl(
+              (com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>)
                   responseObserver);
           break;
         default:
@@ -2812,6 +5052,52 @@ public final class BackupForGKEGrpc {
                 new MethodHandlers<
                     com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP_PLAN)))
+        .addMethod(
+            getCreateBackupChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.CreateBackupChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BACKUP_CHANNEL)))
+        .addMethod(
+            getListBackupChannelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListBackupChannelsRequest,
+                    com.google.cloud.gkebackup.v1.ListBackupChannelsResponse>(
+                    service, METHODID_LIST_BACKUP_CHANNELS)))
+        .addMethod(
+            getGetBackupChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetBackupChannelRequest,
+                    com.google.cloud.gkebackup.v1.BackupChannel>(
+                    service, METHODID_GET_BACKUP_CHANNEL)))
+        .addMethod(
+            getUpdateBackupChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.UpdateBackupChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP_CHANNEL)))
+        .addMethod(
+            getDeleteBackupChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.DeleteBackupChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP_CHANNEL)))
+        .addMethod(
+            getListBackupPlanBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListBackupPlanBindingsRequest,
+                    com.google.cloud.gkebackup.v1.ListBackupPlanBindingsResponse>(
+                    service, METHODID_LIST_BACKUP_PLAN_BINDINGS)))
+        .addMethod(
+            getGetBackupPlanBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetBackupPlanBindingRequest,
+                    com.google.cloud.gkebackup.v1.BackupPlanBinding>(
+                    service, METHODID_GET_BACKUP_PLAN_BINDING)))
         .addMethod(
             getCreateBackupMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2889,6 +5175,52 @@ public final class BackupForGKEGrpc {
                     com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_RESTORE_PLAN)))
         .addMethod(
+            getCreateRestoreChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.CreateRestoreChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_RESTORE_CHANNEL)))
+        .addMethod(
+            getListRestoreChannelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListRestoreChannelsRequest,
+                    com.google.cloud.gkebackup.v1.ListRestoreChannelsResponse>(
+                    service, METHODID_LIST_RESTORE_CHANNELS)))
+        .addMethod(
+            getGetRestoreChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetRestoreChannelRequest,
+                    com.google.cloud.gkebackup.v1.RestoreChannel>(
+                    service, METHODID_GET_RESTORE_CHANNEL)))
+        .addMethod(
+            getUpdateRestoreChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.UpdateRestoreChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_RESTORE_CHANNEL)))
+        .addMethod(
+            getDeleteRestoreChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.DeleteRestoreChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_RESTORE_CHANNEL)))
+        .addMethod(
+            getListRestorePlanBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListRestorePlanBindingsRequest,
+                    com.google.cloud.gkebackup.v1.ListRestorePlanBindingsResponse>(
+                    service, METHODID_LIST_RESTORE_PLAN_BINDINGS)))
+        .addMethod(
+            getGetRestorePlanBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetRestorePlanBindingRequest,
+                    com.google.cloud.gkebackup.v1.RestorePlanBinding>(
+                    service, METHODID_GET_RESTORE_PLAN_BINDING)))
+        .addMethod(
             getCreateRestoreMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2933,6 +5265,13 @@ public final class BackupForGKEGrpc {
                     com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest,
                     com.google.cloud.gkebackup.v1.VolumeRestore>(
                     service, METHODID_GET_VOLUME_RESTORE)))
+        .addMethod(
+            getGetBackupIndexDownloadUrlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+                    com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>(
+                    service, METHODID_GET_BACKUP_INDEX_DOWNLOAD_URL)))
         .build();
   }
 
@@ -2989,6 +5328,13 @@ public final class BackupForGKEGrpc {
                       .addMethod(getGetBackupPlanMethod())
                       .addMethod(getUpdateBackupPlanMethod())
                       .addMethod(getDeleteBackupPlanMethod())
+                      .addMethod(getCreateBackupChannelMethod())
+                      .addMethod(getListBackupChannelsMethod())
+                      .addMethod(getGetBackupChannelMethod())
+                      .addMethod(getUpdateBackupChannelMethod())
+                      .addMethod(getDeleteBackupChannelMethod())
+                      .addMethod(getListBackupPlanBindingsMethod())
+                      .addMethod(getGetBackupPlanBindingMethod())
                       .addMethod(getCreateBackupMethod())
                       .addMethod(getListBackupsMethod())
                       .addMethod(getGetBackupMethod())
@@ -3001,6 +5347,13 @@ public final class BackupForGKEGrpc {
                       .addMethod(getGetRestorePlanMethod())
                       .addMethod(getUpdateRestorePlanMethod())
                       .addMethod(getDeleteRestorePlanMethod())
+                      .addMethod(getCreateRestoreChannelMethod())
+                      .addMethod(getListRestoreChannelsMethod())
+                      .addMethod(getGetRestoreChannelMethod())
+                      .addMethod(getUpdateRestoreChannelMethod())
+                      .addMethod(getDeleteRestoreChannelMethod())
+                      .addMethod(getListRestorePlanBindingsMethod())
+                      .addMethod(getGetRestorePlanBindingMethod())
                       .addMethod(getCreateRestoreMethod())
                       .addMethod(getListRestoresMethod())
                       .addMethod(getGetRestoreMethod())
@@ -3008,6 +5361,7 @@ public final class BackupForGKEGrpc {
                       .addMethod(getDeleteRestoreMethod())
                       .addMethod(getListVolumeRestoresMethod())
                       .addMethod(getGetVolumeRestoreMethod())
+                      .addMethod(getGetBackupIndexDownloadUrlMethod())
                       .build();
         }
       }

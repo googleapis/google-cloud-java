@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,15 @@ package com.google.cloud.config.v1.stub;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -51,28 +54,40 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
+import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
+import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
+import com.google.cloud.config.v1.ExportPreviewResultRequest;
+import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
+import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
+import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
+import com.google.cloud.config.v1.ListPreviewsRequest;
+import com.google.cloud.config.v1.ListPreviewsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
 import com.google.cloud.config.v1.ListRevisionsResponse;
+import com.google.cloud.config.v1.ListTerraformVersionsRequest;
+import com.google.cloud.config.v1.ListTerraformVersionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
+import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
+import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -91,9 +106,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -110,7 +125,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDeployment to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDeployment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -126,9 +143,45 @@ import org.threeten.bp.Duration;
  *             .getDeploymentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ConfigStubSettings configSettings = configSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDeployment:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ConfigStubSettings.Builder configSettingsBuilder = ConfigStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * configSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -171,6 +224,25 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
   private final OperationCallSettings<UnlockDeploymentRequest, Deployment, OperationMetadata>
       unlockDeploymentOperationSettings;
   private final UnaryCallSettings<ExportLockInfoRequest, LockInfo> exportLockInfoSettings;
+  private final UnaryCallSettings<CreatePreviewRequest, Operation> createPreviewSettings;
+  private final OperationCallSettings<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationSettings;
+  private final UnaryCallSettings<GetPreviewRequest, Preview> getPreviewSettings;
+  private final PagedCallSettings<
+          ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+      listPreviewsSettings;
+  private final UnaryCallSettings<DeletePreviewRequest, Operation> deletePreviewSettings;
+  private final OperationCallSettings<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationSettings;
+  private final UnaryCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultSettings;
+  private final PagedCallSettings<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          ListTerraformVersionsPagedResponse>
+      listTerraformVersionsSettings;
+  private final UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -213,9 +285,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Deployment> extractResources(ListDeploymentsResponse payload) {
-              return payload.getDeploymentsList() == null
-                  ? ImmutableList.<Deployment>of()
-                  : payload.getDeploymentsList();
+              return payload.getDeploymentsList();
             }
           };
 
@@ -249,9 +319,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Revision> extractResources(ListRevisionsResponse payload) {
-              return payload.getRevisionsList() == null
-                  ? ImmutableList.<Revision>of()
-                  : payload.getRevisionsList();
+              return payload.getRevisionsList();
             }
           };
 
@@ -285,9 +353,80 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Resource> extractResources(ListResourcesResponse payload) {
-              return payload.getResourcesList() == null
-                  ? ImmutableList.<Resource>of()
-                  : payload.getResourcesList();
+              return payload.getResourcesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListPreviewsRequest, ListPreviewsResponse, Preview>
+      LIST_PREVIEWS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListPreviewsRequest, ListPreviewsResponse, Preview>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPreviewsRequest injectToken(ListPreviewsRequest payload, String token) {
+              return ListPreviewsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPreviewsRequest injectPageSize(ListPreviewsRequest payload, int pageSize) {
+              return ListPreviewsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPreviewsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPreviewsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Preview> extractResources(ListPreviewsResponse payload) {
+              return payload.getPreviewsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+      LIST_TERRAFORM_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTerraformVersionsRequest injectToken(
+                ListTerraformVersionsRequest payload, String token) {
+              return ListTerraformVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTerraformVersionsRequest injectPageSize(
+                ListTerraformVersionsRequest payload, int pageSize) {
+              return ListTerraformVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTerraformVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTerraformVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TerraformVersion> extractResources(
+                ListTerraformVersionsResponse payload) {
+              return payload.getTerraformVersionsList();
             }
           };
 
@@ -321,9 +460,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -375,6 +512,47 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               PageContext<ListResourcesRequest, ListResourcesResponse, Resource> pageContext =
                   PageContext.create(callable, LIST_RESOURCES_PAGE_STR_DESC, request, context);
               return ListResourcesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+      LIST_PREVIEWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>() {
+            @Override
+            public ApiFuture<ListPreviewsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPreviewsRequest, ListPreviewsResponse> callable,
+                ListPreviewsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPreviewsResponse> futureResponse) {
+              PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> pageContext =
+                  PageContext.create(callable, LIST_PREVIEWS_PAGE_STR_DESC, request, context);
+              return ListPreviewsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          ListTerraformVersionsPagedResponse>
+      LIST_TERRAFORM_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTerraformVersionsRequest,
+              ListTerraformVersionsResponse,
+              ListTerraformVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTerraformVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse> callable,
+                ListTerraformVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTerraformVersionsResponse> futureResponse) {
+              PageContext<
+                      ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TERRAFORM_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListTerraformVersionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -511,6 +689,60 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     return exportLockInfoSettings;
   }
 
+  /** Returns the object with the settings used for calls to createPreview. */
+  public UnaryCallSettings<CreatePreviewRequest, Operation> createPreviewSettings() {
+    return createPreviewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createPreview. */
+  public OperationCallSettings<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationSettings() {
+    return createPreviewOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPreview. */
+  public UnaryCallSettings<GetPreviewRequest, Preview> getPreviewSettings() {
+    return getPreviewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPreviews. */
+  public PagedCallSettings<ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+      listPreviewsSettings() {
+    return listPreviewsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePreview. */
+  public UnaryCallSettings<DeletePreviewRequest, Operation> deletePreviewSettings() {
+    return deletePreviewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deletePreview. */
+  public OperationCallSettings<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationSettings() {
+    return deletePreviewOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportPreviewResult. */
+  public UnaryCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultSettings() {
+    return exportPreviewResultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTerraformVersions. */
+  public PagedCallSettings<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          ListTerraformVersionsPagedResponse>
+      listTerraformVersionsSettings() {
+    return listTerraformVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTerraformVersion. */
+  public UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionSettings() {
+    return getTerraformVersionSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -554,12 +786,19 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "config";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "config.googleapis.com:443";
   }
@@ -598,7 +837,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(ConfigStubSettings.class))
@@ -606,7 +844,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(ConfigStubSettings.class))
@@ -663,6 +900,15 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     unlockDeploymentSettings = settingsBuilder.unlockDeploymentSettings().build();
     unlockDeploymentOperationSettings = settingsBuilder.unlockDeploymentOperationSettings().build();
     exportLockInfoSettings = settingsBuilder.exportLockInfoSettings().build();
+    createPreviewSettings = settingsBuilder.createPreviewSettings().build();
+    createPreviewOperationSettings = settingsBuilder.createPreviewOperationSettings().build();
+    getPreviewSettings = settingsBuilder.getPreviewSettings().build();
+    listPreviewsSettings = settingsBuilder.listPreviewsSettings().build();
+    deletePreviewSettings = settingsBuilder.deletePreviewSettings().build();
+    deletePreviewOperationSettings = settingsBuilder.deletePreviewOperationSettings().build();
+    exportPreviewResultSettings = settingsBuilder.exportPreviewResultSettings().build();
+    listTerraformVersionsSettings = settingsBuilder.listTerraformVersionsSettings().build();
+    getTerraformVersionSettings = settingsBuilder.getTerraformVersionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -718,6 +964,25 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             UnlockDeploymentRequest, Deployment, OperationMetadata>
         unlockDeploymentOperationSettings;
     private final UnaryCallSettings.Builder<ExportLockInfoRequest, LockInfo> exportLockInfoSettings;
+    private final UnaryCallSettings.Builder<CreatePreviewRequest, Operation> createPreviewSettings;
+    private final OperationCallSettings.Builder<CreatePreviewRequest, Preview, OperationMetadata>
+        createPreviewOperationSettings;
+    private final UnaryCallSettings.Builder<GetPreviewRequest, Preview> getPreviewSettings;
+    private final PagedCallSettings.Builder<
+            ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+        listPreviewsSettings;
+    private final UnaryCallSettings.Builder<DeletePreviewRequest, Operation> deletePreviewSettings;
+    private final OperationCallSettings.Builder<DeletePreviewRequest, Preview, OperationMetadata>
+        deletePreviewOperationSettings;
+    private final UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
+        exportPreviewResultSettings;
+    private final PagedCallSettings.Builder<
+            ListTerraformVersionsRequest,
+            ListTerraformVersionsResponse,
+            ListTerraformVersionsPagedResponse>
+        listTerraformVersionsSettings;
+    private final UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
+        getTerraformVersionSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -732,7 +997,9 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -741,8 +1008,17 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -774,6 +1050,16 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       unlockDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       unlockDeploymentOperationSettings = OperationCallSettings.newBuilder();
       exportLockInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createPreviewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createPreviewOperationSettings = OperationCallSettings.newBuilder();
+      getPreviewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPreviewsSettings = PagedCallSettings.newBuilder(LIST_PREVIEWS_PAGE_STR_FACT);
+      deletePreviewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deletePreviewOperationSettings = OperationCallSettings.newBuilder();
+      exportPreviewResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listTerraformVersionsSettings =
+          PagedCallSettings.newBuilder(LIST_TERRAFORM_VERSIONS_PAGE_STR_FACT);
+      getTerraformVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -798,6 +1084,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               lockDeploymentSettings,
               unlockDeploymentSettings,
               exportLockInfoSettings,
+              createPreviewSettings,
+              getPreviewSettings,
+              listPreviewsSettings,
+              deletePreviewSettings,
+              exportPreviewResultSettings,
+              listTerraformVersionsSettings,
+              getTerraformVersionSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -830,6 +1123,15 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       unlockDeploymentSettings = settings.unlockDeploymentSettings.toBuilder();
       unlockDeploymentOperationSettings = settings.unlockDeploymentOperationSettings.toBuilder();
       exportLockInfoSettings = settings.exportLockInfoSettings.toBuilder();
+      createPreviewSettings = settings.createPreviewSettings.toBuilder();
+      createPreviewOperationSettings = settings.createPreviewOperationSettings.toBuilder();
+      getPreviewSettings = settings.getPreviewSettings.toBuilder();
+      listPreviewsSettings = settings.listPreviewsSettings.toBuilder();
+      deletePreviewSettings = settings.deletePreviewSettings.toBuilder();
+      deletePreviewOperationSettings = settings.deletePreviewOperationSettings.toBuilder();
+      exportPreviewResultSettings = settings.exportPreviewResultSettings.toBuilder();
+      listTerraformVersionsSettings = settings.listTerraformVersionsSettings.toBuilder();
+      getTerraformVersionSettings = settings.getTerraformVersionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -854,6 +1156,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               lockDeploymentSettings,
               unlockDeploymentSettings,
               exportLockInfoSettings,
+              createPreviewSettings,
+              getPreviewSettings,
+              listPreviewsSettings,
+              deletePreviewSettings,
+              exportPreviewResultSettings,
+              listTerraformVersionsSettings,
+              getTerraformVersionSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -867,7 +1176,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -880,7 +1188,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -890,116 +1197,151 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     private static Builder initDefaults(Builder builder) {
       builder
           .listDeploymentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listRevisionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getRevisionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getResourceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listResourcesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .exportDeploymentStatefileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .exportRevisionStatefileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .importStatefileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteStatefileSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .lockDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .unlockDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .exportLockInfoSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createPreviewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getPreviewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPreviewsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deletePreviewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportPreviewResultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listTerraformVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getTerraformVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listLocationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getLocationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .setIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getIamPolicySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .testIamPermissionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createDeploymentOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateDeploymentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Deployment.class))
@@ -1008,13 +1350,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(300000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(300000L))
                       .setRetryDelayMultiplier(1.3)
-                      .setMaxRetryDelay(Duration.ofMillis(3600000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(3600000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(43200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
                       .build()));
 
       builder
@@ -1022,8 +1364,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateDeploymentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Deployment.class))
@@ -1032,13 +1374,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(300000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(300000L))
                       .setRetryDelayMultiplier(1.3)
-                      .setMaxRetryDelay(Duration.ofMillis(3600000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(3600000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(43200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
                       .build()));
 
       builder
@@ -1046,8 +1388,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteDeploymentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Deployment.class))
@@ -1056,13 +1398,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(300000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(300000L))
                       .setRetryDelayMultiplier(1.3)
-                      .setMaxRetryDelay(Duration.ofMillis(3600000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(3600000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(43200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
                       .build()));
 
       builder
@@ -1070,8 +1412,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<LockDeploymentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Deployment.class))
@@ -1080,13 +1422,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1094,8 +1436,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UnlockDeploymentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Deployment.class))
@@ -1104,13 +1446,61 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createPreviewOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreatePreviewRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Preview.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(300000L))
+                      .setRetryDelayMultiplier(1.3)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(3600000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
+                      .build()));
+
+      builder
+          .deletePreviewOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeletePreviewRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Preview.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(300000L))
+                      .setRetryDelayMultiplier(1.3)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(3600000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(43200000L))
                       .build()));
 
       return builder;
@@ -1150,8 +1540,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDeploymentRequest, Deployment, OperationMetadata>
         createDeploymentOperationSettings() {
       return createDeploymentOperationSettings;
@@ -1164,8 +1552,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDeploymentRequest, Deployment, OperationMetadata>
         updateDeploymentOperationSettings() {
       return updateDeploymentOperationSettings;
@@ -1178,8 +1564,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDeploymentRequest, Deployment, OperationMetadata>
         deleteDeploymentOperationSettings() {
       return deleteDeploymentOperationSettings;
@@ -1237,8 +1621,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to lockDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<LockDeploymentRequest, Deployment, OperationMetadata>
         lockDeploymentOperationSettings() {
       return lockDeploymentOperationSettings;
@@ -1251,8 +1633,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to unlockDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UnlockDeploymentRequest, Deployment, OperationMetadata>
         unlockDeploymentOperationSettings() {
       return unlockDeploymentOperationSettings;
@@ -1261,6 +1641,61 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     /** Returns the builder for the settings used for calls to exportLockInfo. */
     public UnaryCallSettings.Builder<ExportLockInfoRequest, LockInfo> exportLockInfoSettings() {
       return exportLockInfoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPreview. */
+    public UnaryCallSettings.Builder<CreatePreviewRequest, Operation> createPreviewSettings() {
+      return createPreviewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createPreview. */
+    public OperationCallSettings.Builder<CreatePreviewRequest, Preview, OperationMetadata>
+        createPreviewOperationSettings() {
+      return createPreviewOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPreview. */
+    public UnaryCallSettings.Builder<GetPreviewRequest, Preview> getPreviewSettings() {
+      return getPreviewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPreviews. */
+    public PagedCallSettings.Builder<
+            ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+        listPreviewsSettings() {
+      return listPreviewsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePreview. */
+    public UnaryCallSettings.Builder<DeletePreviewRequest, Operation> deletePreviewSettings() {
+      return deletePreviewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deletePreview. */
+    public OperationCallSettings.Builder<DeletePreviewRequest, Preview, OperationMetadata>
+        deletePreviewOperationSettings() {
+      return deletePreviewOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportPreviewResult. */
+    public UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
+        exportPreviewResultSettings() {
+      return exportPreviewResultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTerraformVersions. */
+    public PagedCallSettings.Builder<
+            ListTerraformVersionsRequest,
+            ListTerraformVersionsResponse,
+            ListTerraformVersionsPagedResponse>
+        listTerraformVersionsSettings() {
+      return listTerraformVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTerraformVersion. */
+    public UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
+        getTerraformVersionSettings() {
+      return getTerraformVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

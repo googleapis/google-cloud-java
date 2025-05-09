@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,19 +65,1172 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the NetAppClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListStoragePools</td>
+ *      <td><p> Returns descriptions of all storage pools owned by the caller.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listStoragePools(ListStoragePoolsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listStoragePools(LocationName parent)
+ *           <li><p> listStoragePools(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listStoragePoolsPagedCallable()
+ *           <li><p> listStoragePoolsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateStoragePool</td>
+ *      <td><p> Creates a new storage pool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createStoragePoolAsync(CreateStoragePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createStoragePoolAsync(LocationName parent, StoragePool storagePool, String storagePoolId)
+ *           <li><p> createStoragePoolAsync(String parent, StoragePool storagePool, String storagePoolId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createStoragePoolOperationCallable()
+ *           <li><p> createStoragePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetStoragePool</td>
+ *      <td><p> Returns the description of the specified storage pool by poolId.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getStoragePool(GetStoragePoolRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getStoragePool(StoragePoolName name)
+ *           <li><p> getStoragePool(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getStoragePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateStoragePool</td>
+ *      <td><p> Updates the storage pool properties with the full spec</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateStoragePoolAsync(UpdateStoragePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateStoragePoolAsync(StoragePool storagePool, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateStoragePoolOperationCallable()
+ *           <li><p> updateStoragePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteStoragePool</td>
+ *      <td><p> Warning! This operation will permanently delete the storage pool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteStoragePoolAsync(DeleteStoragePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteStoragePoolAsync(StoragePoolName name)
+ *           <li><p> deleteStoragePoolAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteStoragePoolOperationCallable()
+ *           <li><p> deleteStoragePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ValidateDirectoryService</td>
+ *      <td><p> ValidateDirectoryService does a connectivity check for a directory service policy attached to the storage pool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> validateDirectoryServiceAsync(ValidateDirectoryServiceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> validateDirectoryServiceOperationCallable()
+ *           <li><p> validateDirectoryServiceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SwitchActiveReplicaZone</td>
+ *      <td><p> This operation will switch the active/replica zone for a regional storagePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> switchActiveReplicaZoneAsync(SwitchActiveReplicaZoneRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> switchActiveReplicaZoneOperationCallable()
+ *           <li><p> switchActiveReplicaZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListVolumes</td>
+ *      <td><p> Lists Volumes in a given project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listVolumes(ListVolumesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listVolumes(LocationName parent)
+ *           <li><p> listVolumes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listVolumesPagedCallable()
+ *           <li><p> listVolumesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetVolume</td>
+ *      <td><p> Gets details of a single Volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getVolume(GetVolumeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getVolume(VolumeName name)
+ *           <li><p> getVolume(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getVolumeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateVolume</td>
+ *      <td><p> Creates a new Volume in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createVolumeAsync(CreateVolumeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createVolumeAsync(LocationName parent, Volume volume, String volumeId)
+ *           <li><p> createVolumeAsync(String parent, Volume volume, String volumeId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createVolumeOperationCallable()
+ *           <li><p> createVolumeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateVolume</td>
+ *      <td><p> Updates the parameters of a single Volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateVolumeAsync(UpdateVolumeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateVolumeAsync(Volume volume, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateVolumeOperationCallable()
+ *           <li><p> updateVolumeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteVolume</td>
+ *      <td><p> Deletes a single Volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteVolumeAsync(DeleteVolumeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteVolumeAsync(VolumeName name)
+ *           <li><p> deleteVolumeAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteVolumeOperationCallable()
+ *           <li><p> deleteVolumeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RevertVolume</td>
+ *      <td><p> Revert an existing volume to a specified snapshot. Warning! This operation will permanently revert all changes made after the snapshot was created.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> revertVolumeAsync(RevertVolumeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> revertVolumeOperationCallable()
+ *           <li><p> revertVolumeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSnapshots</td>
+ *      <td><p> Returns descriptions of all snapshots for a volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSnapshots(ListSnapshotsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSnapshots(VolumeName parent)
+ *           <li><p> listSnapshots(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSnapshotsPagedCallable()
+ *           <li><p> listSnapshotsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSnapshot</td>
+ *      <td><p> Describe a snapshot for a volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSnapshot(GetSnapshotRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSnapshot(SnapshotName name)
+ *           <li><p> getSnapshot(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSnapshot</td>
+ *      <td><p> Create a new snapshot for a volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSnapshotAsync(CreateSnapshotRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createSnapshotAsync(VolumeName parent, Snapshot snapshot, String snapshotId)
+ *           <li><p> createSnapshotAsync(String parent, Snapshot snapshot, String snapshotId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSnapshotOperationCallable()
+ *           <li><p> createSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSnapshot</td>
+ *      <td><p> Deletes a snapshot.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSnapshotAsync(DeleteSnapshotRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteSnapshotAsync(SnapshotName name)
+ *           <li><p> deleteSnapshotAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSnapshotOperationCallable()
+ *           <li><p> deleteSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSnapshot</td>
+ *      <td><p> Updates the settings of a specific snapshot.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSnapshotAsync(UpdateSnapshotRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateSnapshotAsync(Snapshot snapshot, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSnapshotOperationCallable()
+ *           <li><p> updateSnapshotCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListActiveDirectories</td>
+ *      <td><p> Lists active directories.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listActiveDirectories(ListActiveDirectoriesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listActiveDirectories(LocationName parent)
+ *           <li><p> listActiveDirectories(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listActiveDirectoriesPagedCallable()
+ *           <li><p> listActiveDirectoriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetActiveDirectory</td>
+ *      <td><p> Describes a specified active directory.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getActiveDirectory(GetActiveDirectoryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getActiveDirectory(ActiveDirectoryName name)
+ *           <li><p> getActiveDirectory(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getActiveDirectoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateActiveDirectory</td>
+ *      <td><p> CreateActiveDirectory Creates the active directory specified in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createActiveDirectoryAsync(CreateActiveDirectoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createActiveDirectoryAsync(LocationName parent, ActiveDirectory activeDirectory, String activeDirectoryId)
+ *           <li><p> createActiveDirectoryAsync(String parent, ActiveDirectory activeDirectory, String activeDirectoryId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createActiveDirectoryOperationCallable()
+ *           <li><p> createActiveDirectoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateActiveDirectory</td>
+ *      <td><p> Update the parameters of an active directories.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateActiveDirectoryAsync(UpdateActiveDirectoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateActiveDirectoryAsync(ActiveDirectory activeDirectory, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateActiveDirectoryOperationCallable()
+ *           <li><p> updateActiveDirectoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteActiveDirectory</td>
+ *      <td><p> Delete the active directory specified in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteActiveDirectoryAsync(DeleteActiveDirectoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteActiveDirectoryAsync(ActiveDirectoryName name)
+ *           <li><p> deleteActiveDirectoryAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteActiveDirectoryOperationCallable()
+ *           <li><p> deleteActiveDirectoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListKmsConfigs</td>
+ *      <td><p> Returns descriptions of all KMS configs owned by the caller.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listKmsConfigs(ListKmsConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listKmsConfigs(LocationName parent)
+ *           <li><p> listKmsConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listKmsConfigsPagedCallable()
+ *           <li><p> listKmsConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateKmsConfig</td>
+ *      <td><p> Creates a new KMS config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createKmsConfigAsync(CreateKmsConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createKmsConfigAsync(LocationName parent, KmsConfig kmsConfig, String kmsConfigId)
+ *           <li><p> createKmsConfigAsync(String parent, KmsConfig kmsConfig, String kmsConfigId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createKmsConfigOperationCallable()
+ *           <li><p> createKmsConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetKmsConfig</td>
+ *      <td><p> Returns the description of the specified KMS config by kms_config_id.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getKmsConfig(GetKmsConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getKmsConfig(KmsConfigName name)
+ *           <li><p> getKmsConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getKmsConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateKmsConfig</td>
+ *      <td><p> Updates the Kms config properties with the full spec</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateKmsConfigAsync(UpdateKmsConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateKmsConfigAsync(KmsConfig kmsConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateKmsConfigOperationCallable()
+ *           <li><p> updateKmsConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EncryptVolumes</td>
+ *      <td><p> Encrypt the existing volumes without CMEK encryption with the desired the KMS config for the whole region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> encryptVolumesAsync(EncryptVolumesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> encryptVolumesOperationCallable()
+ *           <li><p> encryptVolumesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> VerifyKmsConfig</td>
+ *      <td><p> Verifies KMS config reachability.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> verifyKmsConfig(VerifyKmsConfigRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> verifyKmsConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteKmsConfig</td>
+ *      <td><p> Warning! This operation will permanently delete the Kms config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteKmsConfigAsync(DeleteKmsConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteKmsConfigAsync(KmsConfigName name)
+ *           <li><p> deleteKmsConfigAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteKmsConfigOperationCallable()
+ *           <li><p> deleteKmsConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListReplications</td>
+ *      <td><p> Returns descriptions of all replications for a volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listReplications(ListReplicationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listReplications(VolumeName parent)
+ *           <li><p> listReplications(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listReplicationsPagedCallable()
+ *           <li><p> listReplicationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetReplication</td>
+ *      <td><p> Describe a replication for a volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getReplication(GetReplicationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getReplication(ReplicationName name)
+ *           <li><p> getReplication(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getReplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateReplication</td>
+ *      <td><p> Create a new replication for a volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createReplicationAsync(CreateReplicationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createReplicationAsync(VolumeName parent, Replication replication, String replicationId)
+ *           <li><p> createReplicationAsync(String parent, Replication replication, String replicationId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createReplicationOperationCallable()
+ *           <li><p> createReplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteReplication</td>
+ *      <td><p> Deletes a replication.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteReplicationAsync(DeleteReplicationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteReplicationAsync(ReplicationName name)
+ *           <li><p> deleteReplicationAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteReplicationOperationCallable()
+ *           <li><p> deleteReplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateReplication</td>
+ *      <td><p> Updates the settings of a specific replication.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateReplicationAsync(UpdateReplicationRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateReplicationAsync(Replication replication, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateReplicationOperationCallable()
+ *           <li><p> updateReplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StopReplication</td>
+ *      <td><p> Stop Cross Region Replication.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopReplicationAsync(StopReplicationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopReplicationOperationCallable()
+ *           <li><p> stopReplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ResumeReplication</td>
+ *      <td><p> Resume Cross Region Replication.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resumeReplicationAsync(ResumeReplicationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resumeReplicationOperationCallable()
+ *           <li><p> resumeReplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReverseReplicationDirection</td>
+ *      <td><p> Reverses direction of replication. Source becomes destination and destination becomes source.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reverseReplicationDirectionAsync(ReverseReplicationDirectionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reverseReplicationDirectionOperationCallable()
+ *           <li><p> reverseReplicationDirectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EstablishPeering</td>
+ *      <td><p> Establish replication peering.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> establishPeeringAsync(EstablishPeeringRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> establishPeeringOperationCallable()
+ *           <li><p> establishPeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SyncReplication</td>
+ *      <td><p> Syncs the replication. This will invoke one time volume data transfer from source to destination.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> syncReplicationAsync(SyncReplicationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> syncReplicationOperationCallable()
+ *           <li><p> syncReplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateBackupVault</td>
+ *      <td><p> Creates new backup vault</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createBackupVaultAsync(CreateBackupVaultRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createBackupVaultAsync(LocationName parent, BackupVault backupVault, String backupVaultId)
+ *           <li><p> createBackupVaultAsync(String parent, BackupVault backupVault, String backupVaultId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createBackupVaultOperationCallable()
+ *           <li><p> createBackupVaultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBackupVault</td>
+ *      <td><p> Returns the description of the specified backup vault</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBackupVault(GetBackupVaultRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBackupVault(BackupVaultName name)
+ *           <li><p> getBackupVault(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBackupVaultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBackupVaults</td>
+ *      <td><p> Returns list of all available backup vaults.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBackupVaults(ListBackupVaultsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBackupVaults(LocationName parent)
+ *           <li><p> listBackupVaults(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBackupVaultsPagedCallable()
+ *           <li><p> listBackupVaultsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBackupVault</td>
+ *      <td><p> Updates the settings of a specific backup vault.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBackupVaultAsync(UpdateBackupVaultRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupVaultAsync(BackupVault backupVault, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupVaultOperationCallable()
+ *           <li><p> updateBackupVaultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBackupVault</td>
+ *      <td><p> Warning! This operation will permanently delete the backup vault.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBackupVaultAsync(DeleteBackupVaultRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupVaultAsync(BackupVaultName name)
+ *           <li><p> deleteBackupVaultAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupVaultOperationCallable()
+ *           <li><p> deleteBackupVaultCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateBackup</td>
+ *      <td><p> Creates a backup from the volume specified in the request The backup can be created from the given snapshot if specified in the request. If no snapshot specified, there'll be a new snapshot taken to initiate the backup creation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createBackupAsync(CreateBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createBackupAsync(BackupVaultName parent, Backup backup, String backupId)
+ *           <li><p> createBackupAsync(String parent, Backup backup, String backupId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createBackupOperationCallable()
+ *           <li><p> createBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBackup</td>
+ *      <td><p> Returns the description of the specified backup</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBackup(GetBackupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBackup(BackupName name)
+ *           <li><p> getBackup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBackups</td>
+ *      <td><p> Returns descriptions of all backups for a backupVault.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBackups(ListBackupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBackups(BackupVaultName parent)
+ *           <li><p> listBackups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBackupsPagedCallable()
+ *           <li><p> listBackupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBackup</td>
+ *      <td><p> Warning! This operation will permanently delete the backup.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBackupAsync(DeleteBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupAsync(BackupName name)
+ *           <li><p> deleteBackupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupOperationCallable()
+ *           <li><p> deleteBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBackup</td>
+ *      <td><p> Update backup with full spec.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBackupAsync(UpdateBackupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupAsync(Backup backup, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupOperationCallable()
+ *           <li><p> updateBackupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateBackupPolicy</td>
+ *      <td><p> Creates new backup policy</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createBackupPolicyAsync(CreateBackupPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createBackupPolicyAsync(LocationName parent, BackupPolicy backupPolicy, String backupPolicyId)
+ *           <li><p> createBackupPolicyAsync(String parent, BackupPolicy backupPolicy, String backupPolicyId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createBackupPolicyOperationCallable()
+ *           <li><p> createBackupPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetBackupPolicy</td>
+ *      <td><p> Returns the description of the specified backup policy by backup_policy_id.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBackupPolicy(GetBackupPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBackupPolicy(BackupPolicyName name)
+ *           <li><p> getBackupPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBackupPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBackupPolicies</td>
+ *      <td><p> Returns list of all available backup policies.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBackupPolicies(ListBackupPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBackupPolicies(LocationName parent)
+ *           <li><p> listBackupPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBackupPoliciesPagedCallable()
+ *           <li><p> listBackupPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBackupPolicy</td>
+ *      <td><p> Updates settings of a specific backup policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBackupPolicyAsync(UpdateBackupPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupPolicyAsync(BackupPolicy backupPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupPolicyOperationCallable()
+ *           <li><p> updateBackupPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBackupPolicy</td>
+ *      <td><p> Warning! This operation will permanently delete the backup policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBackupPolicyAsync(DeleteBackupPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupPolicyAsync(BackupPolicyName name)
+ *           <li><p> deleteBackupPolicyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBackupPolicyOperationCallable()
+ *           <li><p> deleteBackupPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListQuotaRules</td>
+ *      <td><p> Returns list of all quota rules in a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQuotaRules(ListQuotaRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQuotaRules(VolumeName parent)
+ *           <li><p> listQuotaRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQuotaRulesPagedCallable()
+ *           <li><p> listQuotaRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQuotaRule</td>
+ *      <td><p> Returns details of the specified quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQuotaRule(GetQuotaRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQuotaRule(QuotaRuleName name)
+ *           <li><p> getQuotaRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQuotaRule</td>
+ *      <td><p> Creates a new quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleAsync(CreateQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleAsync(VolumeName parent, QuotaRule quotaRule, String quotaRuleId)
+ *           <li><p> createQuotaRuleAsync(String parent, QuotaRule quotaRule, String quotaRuleId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQuotaRuleOperationCallable()
+ *           <li><p> createQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateQuotaRule</td>
+ *      <td><p> Updates a quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleAsync(UpdateQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleAsync(QuotaRule quotaRule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateQuotaRuleOperationCallable()
+ *           <li><p> updateQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQuotaRule</td>
+ *      <td><p> Deletes a quota rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleAsync(DeleteQuotaRuleRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleAsync(QuotaRuleName name)
+ *           <li><p> deleteQuotaRuleAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQuotaRuleOperationCallable()
+ *           <li><p> deleteQuotaRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -396,8 +1549,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param storagePool Required. The required parameters to create a new storage pool.
-   * @param storagePoolId Required. Id of the requesting storage pool If auto-generating Id
-   *     server-side, remove this field and id from the method_signature of Create RPC
+   * @param storagePoolId Required. Id of the requesting storage pool. Must be unique within the
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
@@ -434,8 +1588,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param storagePool Required. The required parameters to create a new storage pool.
-   * @param storagePoolId Required. Id of the requesting storage pool If auto-generating Id
-   *     server-side, remove this field and id from the method_signature of Create RPC
+   * @param storagePoolId Required. Id of the requesting storage pool. Must be unique within the
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
@@ -915,6 +2070,186 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   netAppClient.validateDirectoryServiceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> validateDirectoryServiceAsync(
+      ValidateDirectoryServiceRequest request) {
+    return validateDirectoryServiceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.validateDirectoryServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return stub.validateDirectoryServiceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ValidateDirectoryService does a connectivity check for a directory service policy attached to
+   * the storage pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ValidateDirectoryServiceRequest request =
+   *       ValidateDirectoryServiceRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setDirectoryServiceType(DirectoryServiceType.forNumber(0))
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.validateDirectoryServiceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return stub.validateDirectoryServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   StoragePool response = netAppClient.switchActiveReplicaZoneAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<StoragePool, OperationMetadata> switchActiveReplicaZoneAsync(
+      SwitchActiveReplicaZoneRequest request) {
+    return switchActiveReplicaZoneOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   OperationFuture<StoragePool, OperationMetadata> future =
+   *       netAppClient.switchActiveReplicaZoneOperationCallable().futureCall(request);
+   *   // Do something.
+   *   StoragePool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable() {
+    return stub.switchActiveReplicaZoneOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This operation will switch the active/replica zone for a regional storagePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SwitchActiveReplicaZoneRequest request =
+   *       SwitchActiveReplicaZoneRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       netAppClient.switchActiveReplicaZoneCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable() {
+    return stub.switchActiveReplicaZoneCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists Volumes in a given project.
    *
    * <p>Sample code:
@@ -1210,8 +2545,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param volume Required. The volume being created.
-   * @param volumeId Required. Id of the requesting volume If auto-generating Id server-side, remove
-   *     this field and Id from the method_signature of Create RPC
+   * @param volumeId Required. Id of the requesting volume. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
@@ -1247,8 +2583,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param volume Required. The volume being created.
-   * @param volumeId Required. Id of the requesting volume If auto-generating Id server-side, remove
-   *     this field and Id from the method_signature of Create RPC
+   * @param volumeId Required. Id of the requesting volume. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
@@ -2010,9 +3347,9 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the snapshots of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param snapshot Required. A snapshot resource
-   * @param snapshotId Required. ID of the snapshot to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param snapshotId Required. ID of the snapshot to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
@@ -2049,9 +3386,9 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the snapshots of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param snapshot Required. A snapshot resource
-   * @param snapshotId Required. ID of the snapshot to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param snapshotId Required. ID of the snapshot to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
@@ -2732,7 +4069,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param activeDirectory Required. Fields of the to be created active directory.
-   * @param activeDirectoryId Required. ID of the active directory to create.
+   * @param activeDirectoryId Required. ID of the active directory to create. Must be unique within
+   *     the parent resource. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter , the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
@@ -2769,7 +4108,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param activeDirectory Required. Fields of the to be created active directory.
-   * @param activeDirectoryId Required. ID of the active directory to create.
+   * @param activeDirectoryId Required. ID of the active directory to create. Must be unique within
+   *     the parent resource. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter , the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
@@ -3345,8 +4686,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param kmsConfig Required. The required parameters to create a new KmsConfig.
-   * @param kmsConfigId Required. Id of the requesting KmsConfig If auto-generating Id server-side,
-   *     remove this field and id from the method_signature of Create RPC
+   * @param kmsConfigId Required. Id of the requesting KmsConfig. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
@@ -3382,8 +4724,9 @@ public class NetAppClient implements BackgroundResource {
    *
    * @param parent Required. Value for parent.
    * @param kmsConfig Required. The required parameters to create a new KmsConfig.
-   * @param kmsConfigId Required. Id of the requesting KmsConfig If auto-generating Id server-side,
-   *     remove this field and id from the method_signature of Create RPC
+   * @param kmsConfigId Required. Id of the requesting KmsConfig. Must be unique within the parent
+   *     resource. Must contain only letters, numbers and hyphen, with the first character a letter,
+   *     the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
@@ -4315,9 +5658,9 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the replications of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param replication Required. A replication resource
-   * @param replicationId Required. ID of the replication to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param replicationId Required. ID of the replication to create. Must be unique within the
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
@@ -4355,9 +5698,9 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. The NetApp volume to create the replications of, in the format
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * @param replication Required. A replication resource
-   * @param replicationId Required. ID of the replication to create. This value must start with a
-   *     lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens, and cannot
-   *     end with a hyphen.
+   * @param replicationId Required. ID of the replication to create. Must be unique within the
+   *     parent resource. Must contain only letters, numbers and hyphen, with the first character a
+   *     letter, the last a letter or a number, and a 63 character maximum.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
@@ -5015,6 +6358,3097 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   Replication response = netAppClient.establishPeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Replication, OperationMetadata> establishPeeringAsync(
+      EstablishPeeringRequest request) {
+    return establishPeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   OperationFuture<Replication, OperationMetadata> future =
+   *       netAppClient.establishPeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Replication response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    return stub.establishPeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Establish replication peering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   EstablishPeeringRequest request =
+   *       EstablishPeeringRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .setPeerClusterName("peerClusterName313022691")
+   *           .setPeerSvmName("peerSvmName1014209619")
+   *           .addAllPeerIpAddresses(new ArrayList<String>())
+   *           .setPeerVolumeName("peerVolumeName1542206407")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.establishPeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    return stub.establishPeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   Replication response = netAppClient.syncReplicationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Replication, OperationMetadata> syncReplicationAsync(
+      SyncReplicationRequest request) {
+    return syncReplicationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Replication, OperationMetadata> future =
+   *       netAppClient.syncReplicationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Replication response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    return stub.syncReplicationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the replication. This will invoke one time volume data transfer from source to
+   * destination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   SyncReplicationRequest request =
+   *       SyncReplicationRequest.newBuilder()
+   *           .setName(
+   *               ReplicationName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[REPLICATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.syncReplicationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    return stub.syncReplicationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   BackupVault backupVault = BackupVault.newBuilder().build();
+   *   String backupVaultId = "backupVaultId-1897432373";
+   *   BackupVault response =
+   *       netAppClient.createBackupVaultAsync(parent, backupVault, backupVaultId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location to create the backup vaults, in the format
+   *     `projects/{project_id}/locations/{location}`
+   * @param backupVault Required. A backupVault resource
+   * @param backupVaultId Required. The ID to use for the backupVault. The ID must be unique within
+   *     the specified location. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
+      LocationName parent, BackupVault backupVault, String backupVaultId) {
+    CreateBackupVaultRequest request =
+        CreateBackupVaultRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBackupVault(backupVault)
+            .setBackupVaultId(backupVaultId)
+            .build();
+    return createBackupVaultAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   BackupVault backupVault = BackupVault.newBuilder().build();
+   *   String backupVaultId = "backupVaultId-1897432373";
+   *   BackupVault response =
+   *       netAppClient.createBackupVaultAsync(parent, backupVault, backupVaultId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location to create the backup vaults, in the format
+   *     `projects/{project_id}/locations/{location}`
+   * @param backupVault Required. A backupVault resource
+   * @param backupVaultId Required. The ID to use for the backupVault. The ID must be unique within
+   *     the specified location. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
+      String parent, BackupVault backupVault, String backupVaultId) {
+    CreateBackupVaultRequest request =
+        CreateBackupVaultRequest.newBuilder()
+            .setParent(parent)
+            .setBackupVault(backupVault)
+            .setBackupVaultId(backupVaultId)
+            .build();
+    return createBackupVaultAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupVaultRequest request =
+   *       CreateBackupVaultRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBackupVaultId("backupVaultId-1897432373")
+   *           .setBackupVault(BackupVault.newBuilder().build())
+   *           .build();
+   *   BackupVault response = netAppClient.createBackupVaultAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
+      CreateBackupVaultRequest request) {
+    return createBackupVaultOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupVaultRequest request =
+   *       CreateBackupVaultRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBackupVaultId("backupVaultId-1897432373")
+   *           .setBackupVault(BackupVault.newBuilder().build())
+   *           .build();
+   *   OperationFuture<BackupVault, OperationMetadata> future =
+   *       netAppClient.createBackupVaultOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BackupVault response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationCallable() {
+    return stub.createBackupVaultOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupVaultRequest request =
+   *       CreateBackupVaultRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBackupVaultId("backupVaultId-1897432373")
+   *           .setBackupVault(BackupVault.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.createBackupVaultCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable() {
+    return stub.createBackupVaultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupVaultName name = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]");
+   *   BackupVault response = netAppClient.getBackupVault(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backupVault resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupVault getBackupVault(BackupVaultName name) {
+    GetBackupVaultRequest request =
+        GetBackupVaultRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBackupVault(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString();
+   *   BackupVault response = netAppClient.getBackupVault(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backupVault resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupVault getBackupVault(String name) {
+    GetBackupVaultRequest request = GetBackupVaultRequest.newBuilder().setName(name).build();
+    return getBackupVault(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetBackupVaultRequest request =
+   *       GetBackupVaultRequest.newBuilder()
+   *           .setName(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .build();
+   *   BackupVault response = netAppClient.getBackupVault(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupVault getBackupVault(GetBackupVaultRequest request) {
+    return getBackupVaultCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup vault
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetBackupVaultRequest request =
+   *       GetBackupVaultRequest.newBuilder()
+   *           .setName(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .build();
+   *   ApiFuture<BackupVault> future = netAppClient.getBackupVaultCallable().futureCall(request);
+   *   // Do something.
+   *   BackupVault response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBackupVaultRequest, BackupVault> getBackupVaultCallable() {
+    return stub.getBackupVaultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup vaults.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (BackupVault element : netAppClient.listBackupVaults(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location for which to retrieve backupVault information, in the
+   *     format `projects/{project_id}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupVaultsPagedResponse listBackupVaults(LocationName parent) {
+    ListBackupVaultsRequest request =
+        ListBackupVaultsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBackupVaults(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup vaults.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (BackupVault element : netAppClient.listBackupVaults(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location for which to retrieve backupVault information, in the
+   *     format `projects/{project_id}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupVaultsPagedResponse listBackupVaults(String parent) {
+    ListBackupVaultsRequest request =
+        ListBackupVaultsRequest.newBuilder().setParent(parent).build();
+    return listBackupVaults(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup vaults.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupVaultsRequest request =
+   *       ListBackupVaultsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (BackupVault element : netAppClient.listBackupVaults(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupVaultsPagedResponse listBackupVaults(ListBackupVaultsRequest request) {
+    return listBackupVaultsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup vaults.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupVaultsRequest request =
+   *       ListBackupVaultsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<BackupVault> future =
+   *       netAppClient.listBackupVaultsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BackupVault element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsPagedResponse>
+      listBackupVaultsPagedCallable() {
+    return stub.listBackupVaultsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup vaults.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupVaultsRequest request =
+   *       ListBackupVaultsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListBackupVaultsResponse response = netAppClient.listBackupVaultsCallable().call(request);
+   *     for (BackupVault element : response.getBackupVaultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsResponse>
+      listBackupVaultsCallable() {
+    return stub.listBackupVaultsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupVault backupVault = BackupVault.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   BackupVault response = netAppClient.updateBackupVaultAsync(backupVault, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param backupVault Required. The backupVault being updated
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     Backup resource to be updated. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask. If the
+   *     user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupVault, OperationMetadata> updateBackupVaultAsync(
+      BackupVault backupVault, FieldMask updateMask) {
+    UpdateBackupVaultRequest request =
+        UpdateBackupVaultRequest.newBuilder()
+            .setBackupVault(backupVault)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateBackupVaultAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupVaultRequest request =
+   *       UpdateBackupVaultRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackupVault(BackupVault.newBuilder().build())
+   *           .build();
+   *   BackupVault response = netAppClient.updateBackupVaultAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupVault, OperationMetadata> updateBackupVaultAsync(
+      UpdateBackupVaultRequest request) {
+    return updateBackupVaultOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupVaultRequest request =
+   *       UpdateBackupVaultRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackupVault(BackupVault.newBuilder().build())
+   *           .build();
+   *   OperationFuture<BackupVault, OperationMetadata> future =
+   *       netAppClient.updateBackupVaultOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BackupVault response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationCallable() {
+    return stub.updateBackupVaultOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the settings of a specific backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupVaultRequest request =
+   *       UpdateBackupVaultRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackupVault(BackupVault.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateBackupVaultCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBackupVaultRequest, Operation> updateBackupVaultCallable() {
+    return stub.updateBackupVaultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupVaultName name = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]");
+   *   netAppClient.deleteBackupVaultAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backupVault resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupVaultAsync(
+      BackupVaultName name) {
+    DeleteBackupVaultRequest request =
+        DeleteBackupVaultRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteBackupVaultAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString();
+   *   netAppClient.deleteBackupVaultAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backupVault resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupVaultAsync(String name) {
+    DeleteBackupVaultRequest request = DeleteBackupVaultRequest.newBuilder().setName(name).build();
+    return deleteBackupVaultAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupVaultRequest request =
+   *       DeleteBackupVaultRequest.newBuilder()
+   *           .setName(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .build();
+   *   netAppClient.deleteBackupVaultAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupVaultAsync(
+      DeleteBackupVaultRequest request) {
+    return deleteBackupVaultOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupVaultRequest request =
+   *       DeleteBackupVaultRequest.newBuilder()
+   *           .setName(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.deleteBackupVaultOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationCallable() {
+    return stub.deleteBackupVaultOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup vault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupVaultRequest request =
+   *       DeleteBackupVaultRequest.newBuilder()
+   *           .setName(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.deleteBackupVaultCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteBackupVaultRequest, Operation> deleteBackupVaultCallable() {
+    return stub.deleteBackupVaultCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a backup from the volume specified in the request The backup can be created from the
+   * given snapshot if specified in the request. If no snapshot specified, there'll be a new
+   * snapshot taken to initiate the backup creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupVaultName parent = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]");
+   *   Backup backup = Backup.newBuilder().build();
+   *   String backupId = "backupId2121930365";
+   *   Backup response = netAppClient.createBackupAsync(parent, backup, backupId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The NetApp backupVault to create the backups of, in the format
+   *     `projects/&#42;/locations/&#42;/backupVaults/{backup_vault_id}`
+   * @param backup Required. A backup resource
+   * @param backupId Required. The ID to use for the backup. The ID must be unique within the
+   *     specified backupVault. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
+      BackupVaultName parent, Backup backup, String backupId) {
+    CreateBackupRequest request =
+        CreateBackupRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBackup(backup)
+            .setBackupId(backupId)
+            .build();
+    return createBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a backup from the volume specified in the request The backup can be created from the
+   * given snapshot if specified in the request. If no snapshot specified, there'll be a new
+   * snapshot taken to initiate the backup creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString();
+   *   Backup backup = Backup.newBuilder().build();
+   *   String backupId = "backupId2121930365";
+   *   Backup response = netAppClient.createBackupAsync(parent, backup, backupId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The NetApp backupVault to create the backups of, in the format
+   *     `projects/&#42;/locations/&#42;/backupVaults/{backup_vault_id}`
+   * @param backup Required. A backup resource
+   * @param backupId Required. The ID to use for the backup. The ID must be unique within the
+   *     specified backupVault. Must contain only letters, numbers and hyphen, with the first
+   *     character a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
+      String parent, Backup backup, String backupId) {
+    CreateBackupRequest request =
+        CreateBackupRequest.newBuilder()
+            .setParent(parent)
+            .setBackup(backup)
+            .setBackupId(backupId)
+            .build();
+    return createBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a backup from the volume specified in the request The backup can be created from the
+   * given snapshot if specified in the request. If no snapshot specified, there'll be a new
+   * snapshot taken to initiate the backup creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupRequest request =
+   *       CreateBackupRequest.newBuilder()
+   *           .setParent(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .setBackupId("backupId2121930365")
+   *           .setBackup(Backup.newBuilder().build())
+   *           .build();
+   *   Backup response = netAppClient.createBackupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
+      CreateBackupRequest request) {
+    return createBackupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a backup from the volume specified in the request The backup can be created from the
+   * given snapshot if specified in the request. If no snapshot specified, there'll be a new
+   * snapshot taken to initiate the backup creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupRequest request =
+   *       CreateBackupRequest.newBuilder()
+   *           .setParent(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .setBackupId("backupId2121930365")
+   *           .setBackup(Backup.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Backup, OperationMetadata> future =
+   *       netAppClient.createBackupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Backup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationCallable() {
+    return stub.createBackupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a backup from the volume specified in the request The backup can be created from the
+   * given snapshot if specified in the request. If no snapshot specified, there'll be a new
+   * snapshot taken to initiate the backup creation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupRequest request =
+   *       CreateBackupRequest.newBuilder()
+   *           .setParent(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .setBackupId("backupId2121930365")
+   *           .setBackup(Backup.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.createBackupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    return stub.createBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]");
+   *   Backup response = netAppClient.getBackup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backup resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(BackupName name) {
+    GetBackupRequest request =
+        GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name =
+   *       BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString();
+   *   Backup response = netAppClient.getBackup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backup resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(String name) {
+    GetBackupRequest request = GetBackupRequest.newBuilder().setName(name).build();
+    return getBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetBackupRequest request =
+   *       GetBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .build();
+   *   Backup response = netAppClient.getBackup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(GetBackupRequest request) {
+    return getBackupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetBackupRequest request =
+   *       GetBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .build();
+   *   ApiFuture<Backup> future = netAppClient.getBackupCallable().futureCall(request);
+   *   // Do something.
+   *   Backup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return stub.getBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns descriptions of all backups for a backupVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupVaultName parent = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]");
+   *   for (Backup element : netAppClient.listBackups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The backupVault for which to retrieve backup information, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`. To retrieve
+   *     backup information for all locations, use "-" for the `{location}` value. To retrieve
+   *     backup information for all backupVaults, use "-" for the `{backup_vault_id}` value. To
+   *     retrieve backup information for a volume, use "-" for the `{backup_vault_id}` value and
+   *     specify volume full name with the filter.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(BackupVaultName parent) {
+    ListBackupsRequest request =
+        ListBackupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBackups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns descriptions of all backups for a backupVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString();
+   *   for (Backup element : netAppClient.listBackups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The backupVault for which to retrieve backup information, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`. To retrieve
+   *     backup information for all locations, use "-" for the `{location}` value. To retrieve
+   *     backup information for all backupVaults, use "-" for the `{backup_vault_id}` value. To
+   *     retrieve backup information for a volume, use "-" for the `{backup_vault_id}` value and
+   *     specify volume full name with the filter.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(String parent) {
+    ListBackupsRequest request = ListBackupsRequest.newBuilder().setParent(parent).build();
+    return listBackups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns descriptions of all backups for a backupVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupsRequest request =
+   *       ListBackupsRequest.newBuilder()
+   *           .setParent(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Backup element : netAppClient.listBackups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(ListBackupsRequest request) {
+    return listBackupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns descriptions of all backups for a backupVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupsRequest request =
+   *       ListBackupsRequest.newBuilder()
+   *           .setParent(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Backup> future = netAppClient.listBackupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Backup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable() {
+    return stub.listBackupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns descriptions of all backups for a backupVault.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupsRequest request =
+   *       ListBackupsRequest.newBuilder()
+   *           .setParent(BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListBackupsResponse response = netAppClient.listBackupsCallable().call(request);
+   *     for (Backup element : response.getBackupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return stub.listBackupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]");
+   *   netAppClient.deleteBackupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backup resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
+    DeleteBackupRequest request =
+        DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name =
+   *       BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString();
+   *   netAppClient.deleteBackupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backup resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(String name) {
+    DeleteBackupRequest request = DeleteBackupRequest.newBuilder().setName(name).build();
+    return deleteBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupRequest request =
+   *       DeleteBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .build();
+   *   netAppClient.deleteBackupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(
+      DeleteBackupRequest request) {
+    return deleteBackupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupRequest request =
+   *       DeleteBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.deleteBackupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable() {
+    return stub.deleteBackupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupRequest request =
+   *       DeleteBackupRequest.newBuilder()
+   *           .setName(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]", "[BACKUP]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.deleteBackupCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    return stub.deleteBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update backup with full spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   Backup backup = Backup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Backup response = netAppClient.updateBackupAsync(backup, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param backup Required. The backup being updated
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     Backup resource to be updated. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask. If the
+   *     user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Backup, OperationMetadata> updateBackupAsync(
+      Backup backup, FieldMask updateMask) {
+    UpdateBackupRequest request =
+        UpdateBackupRequest.newBuilder().setBackup(backup).setUpdateMask(updateMask).build();
+    return updateBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update backup with full spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupRequest request =
+   *       UpdateBackupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackup(Backup.newBuilder().build())
+   *           .build();
+   *   Backup response = netAppClient.updateBackupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Backup, OperationMetadata> updateBackupAsync(
+      UpdateBackupRequest request) {
+    return updateBackupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update backup with full spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupRequest request =
+   *       UpdateBackupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackup(Backup.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Backup, OperationMetadata> future =
+   *       netAppClient.updateBackupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Backup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationCallable() {
+    return stub.updateBackupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update backup with full spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupRequest request =
+   *       UpdateBackupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackup(Backup.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateBackupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable() {
+    return stub.updateBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   BackupPolicy backupPolicy = BackupPolicy.newBuilder().build();
+   *   String backupPolicyId = "backupPolicyId-1278533169";
+   *   BackupPolicy response =
+   *       netAppClient.createBackupPolicyAsync(parent, backupPolicy, backupPolicyId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location to create the backup policies of, in the format
+   *     `projects/{project_id}/locations/{location}`
+   * @param backupPolicy Required. A backupPolicy resource
+   * @param backupPolicyId Required. The ID to use for the backup policy. The ID must be unique
+   *     within the specified location. Must contain only letters, numbers and hyphen, with the
+   *     first character a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(
+      LocationName parent, BackupPolicy backupPolicy, String backupPolicyId) {
+    CreateBackupPolicyRequest request =
+        CreateBackupPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setBackupPolicy(backupPolicy)
+            .setBackupPolicyId(backupPolicyId)
+            .build();
+    return createBackupPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   BackupPolicy backupPolicy = BackupPolicy.newBuilder().build();
+   *   String backupPolicyId = "backupPolicyId-1278533169";
+   *   BackupPolicy response =
+   *       netAppClient.createBackupPolicyAsync(parent, backupPolicy, backupPolicyId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The location to create the backup policies of, in the format
+   *     `projects/{project_id}/locations/{location}`
+   * @param backupPolicy Required. A backupPolicy resource
+   * @param backupPolicyId Required. The ID to use for the backup policy. The ID must be unique
+   *     within the specified location. Must contain only letters, numbers and hyphen, with the
+   *     first character a letter, the last a letter or a number, and a 63 character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(
+      String parent, BackupPolicy backupPolicy, String backupPolicyId) {
+    CreateBackupPolicyRequest request =
+        CreateBackupPolicyRequest.newBuilder()
+            .setParent(parent)
+            .setBackupPolicy(backupPolicy)
+            .setBackupPolicyId(backupPolicyId)
+            .build();
+    return createBackupPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupPolicyRequest request =
+   *       CreateBackupPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBackupPolicy(BackupPolicy.newBuilder().build())
+   *           .setBackupPolicyId("backupPolicyId-1278533169")
+   *           .build();
+   *   BackupPolicy response = netAppClient.createBackupPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(
+      CreateBackupPolicyRequest request) {
+    return createBackupPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupPolicyRequest request =
+   *       CreateBackupPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBackupPolicy(BackupPolicy.newBuilder().build())
+   *           .setBackupPolicyId("backupPolicyId-1278533169")
+   *           .build();
+   *   OperationFuture<BackupPolicy, OperationMetadata> future =
+   *       netAppClient.createBackupPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BackupPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      createBackupPolicyOperationCallable() {
+    return stub.createBackupPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new backup policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateBackupPolicyRequest request =
+   *       CreateBackupPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBackupPolicy(BackupPolicy.newBuilder().build())
+   *           .setBackupPolicyId("backupPolicyId-1278533169")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.createBackupPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateBackupPolicyRequest, Operation> createBackupPolicyCallable() {
+    return stub.createBackupPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup policy by backup_policy_id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupPolicyName name = BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]");
+   *   BackupPolicy response = netAppClient.getBackupPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backupPolicy resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupPolicies/{backup_policy_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupPolicy getBackupPolicy(BackupPolicyName name) {
+    GetBackupPolicyRequest request =
+        GetBackupPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBackupPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup policy by backup_policy_id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]").toString();
+   *   BackupPolicy response = netAppClient.getBackupPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backupPolicy resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupPolicies/{backup_policy_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupPolicy getBackupPolicy(String name) {
+    GetBackupPolicyRequest request = GetBackupPolicyRequest.newBuilder().setName(name).build();
+    return getBackupPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup policy by backup_policy_id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetBackupPolicyRequest request =
+   *       GetBackupPolicyRequest.newBuilder()
+   *           .setName(BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]").toString())
+   *           .build();
+   *   BackupPolicy response = netAppClient.getBackupPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BackupPolicy getBackupPolicy(GetBackupPolicyRequest request) {
+    return getBackupPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the description of the specified backup policy by backup_policy_id.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetBackupPolicyRequest request =
+   *       GetBackupPolicyRequest.newBuilder()
+   *           .setName(BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]").toString())
+   *           .build();
+   *   ApiFuture<BackupPolicy> future = netAppClient.getBackupPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   BackupPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBackupPolicyRequest, BackupPolicy> getBackupPolicyCallable() {
+    return stub.getBackupPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (BackupPolicy element : netAppClient.listBackupPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListBackupPoliciesRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupPoliciesPagedResponse listBackupPolicies(LocationName parent) {
+    ListBackupPoliciesRequest request =
+        ListBackupPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBackupPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (BackupPolicy element : netAppClient.listBackupPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListBackupPoliciesRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupPoliciesPagedResponse listBackupPolicies(String parent) {
+    ListBackupPoliciesRequest request =
+        ListBackupPoliciesRequest.newBuilder().setParent(parent).build();
+    return listBackupPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupPoliciesRequest request =
+   *       ListBackupPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (BackupPolicy element : netAppClient.listBackupPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupPoliciesPagedResponse listBackupPolicies(
+      ListBackupPoliciesRequest request) {
+    return listBackupPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupPoliciesRequest request =
+   *       ListBackupPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<BackupPolicy> future =
+   *       netAppClient.listBackupPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BackupPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupPoliciesRequest, ListBackupPoliciesPagedResponse>
+      listBackupPoliciesPagedCallable() {
+    return stub.listBackupPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all available backup policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupPoliciesRequest request =
+   *       ListBackupPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListBackupPoliciesResponse response =
+   *         netAppClient.listBackupPoliciesCallable().call(request);
+   *     for (BackupPolicy element : response.getBackupPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
+      listBackupPoliciesCallable() {
+    return stub.listBackupPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates settings of a specific backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupPolicy backupPolicy = BackupPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   BackupPolicy response = netAppClient.updateBackupPolicyAsync(backupPolicy, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param backupPolicy Required. The backup policy being updated
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     Backup Policy resource by the update. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupPolicy, OperationMetadata> updateBackupPolicyAsync(
+      BackupPolicy backupPolicy, FieldMask updateMask) {
+    UpdateBackupPolicyRequest request =
+        UpdateBackupPolicyRequest.newBuilder()
+            .setBackupPolicy(backupPolicy)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateBackupPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates settings of a specific backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupPolicyRequest request =
+   *       UpdateBackupPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackupPolicy(BackupPolicy.newBuilder().build())
+   *           .build();
+   *   BackupPolicy response = netAppClient.updateBackupPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BackupPolicy, OperationMetadata> updateBackupPolicyAsync(
+      UpdateBackupPolicyRequest request) {
+    return updateBackupPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates settings of a specific backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupPolicyRequest request =
+   *       UpdateBackupPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackupPolicy(BackupPolicy.newBuilder().build())
+   *           .build();
+   *   OperationFuture<BackupPolicy, OperationMetadata> future =
+   *       netAppClient.updateBackupPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BackupPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      updateBackupPolicyOperationCallable() {
+    return stub.updateBackupPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates settings of a specific backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupPolicyRequest request =
+   *       UpdateBackupPolicyRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBackupPolicy(BackupPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateBackupPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBackupPolicyRequest, Operation> updateBackupPolicyCallable() {
+    return stub.updateBackupPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   BackupPolicyName name = BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]");
+   *   netAppClient.deleteBackupPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backup policy resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupPolicies/{backup_policy_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupPolicyAsync(
+      BackupPolicyName name) {
+    DeleteBackupPolicyRequest request =
+        DeleteBackupPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteBackupPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]").toString();
+   *   netAppClient.deleteBackupPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The backup policy resource name, in the format
+   *     `projects/{project_id}/locations/{location}/backupPolicies/{backup_policy_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupPolicyAsync(String name) {
+    DeleteBackupPolicyRequest request =
+        DeleteBackupPolicyRequest.newBuilder().setName(name).build();
+    return deleteBackupPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupPolicyRequest request =
+   *       DeleteBackupPolicyRequest.newBuilder()
+   *           .setName(BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]").toString())
+   *           .build();
+   *   netAppClient.deleteBackupPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupPolicyAsync(
+      DeleteBackupPolicyRequest request) {
+    return deleteBackupPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupPolicyRequest request =
+   *       DeleteBackupPolicyRequest.newBuilder()
+   *           .setName(BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.deleteBackupPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+      deleteBackupPolicyOperationCallable() {
+    return stub.deleteBackupPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Warning! This operation will permanently delete the backup policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteBackupPolicyRequest request =
+   *       DeleteBackupPolicyRequest.newBuilder()
+   *           .setName(BackupPolicyName.of("[PROJECT]", "[LOCATION]", "[BACKUP_POLICY]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.deleteBackupPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteBackupPolicyRequest, Operation> deleteBackupPolicyCallable() {
+    return stub.deleteBackupPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   for (QuotaRule element : netAppClient.listQuotaRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListQuotaRulesRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(VolumeName parent) {
+    ListQuotaRulesRequest request =
+        ListQuotaRulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listQuotaRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   for (QuotaRule element : netAppClient.listQuotaRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListQuotaRulesRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(String parent) {
+    ListQuotaRulesRequest request = ListQuotaRulesRequest.newBuilder().setParent(parent).build();
+    return listQuotaRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (QuotaRule element : netAppClient.listQuotaRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQuotaRulesPagedResponse listQuotaRules(ListQuotaRulesRequest request) {
+    return listQuotaRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<QuotaRule> future = netAppClient.listQuotaRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QuotaRule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable() {
+    return stub.listQuotaRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns list of all quota rules in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListQuotaRulesRequest request =
+   *       ListQuotaRulesRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListQuotaRulesResponse response = netAppClient.listQuotaRulesCallable().call(request);
+   *     for (QuotaRule element : response.getQuotaRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse>
+      listQuotaRulesCallable() {
+    return stub.listQuotaRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+   *   QuotaRule response = netAppClient.getQuotaRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(QuotaRuleName name) {
+    GetQuotaRuleRequest request =
+        GetQuotaRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getQuotaRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name =
+   *       QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString();
+   *   QuotaRule response = netAppClient.getQuotaRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(String name) {
+    GetQuotaRuleRequest request = GetQuotaRuleRequest.newBuilder().setName(name).build();
+    return getQuotaRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetQuotaRuleRequest request =
+   *       GetQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   QuotaRule response = netAppClient.getQuotaRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QuotaRule getQuotaRule(GetQuotaRuleRequest request) {
+    return getQuotaRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns details of the specified quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetQuotaRuleRequest request =
+   *       GetQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QuotaRule> future = netAppClient.getQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable() {
+    return stub.getQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   VolumeName parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   String quotaRuleId = "quotaRuleId1476739535";
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateQuotaRuleRequest
+   * @param quotaRule Required. Fields of the to be created quota rule.
+   * @param quotaRuleId Required. ID of the quota rule to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      VolumeName parent, QuotaRule quotaRule, String quotaRuleId) {
+    CreateQuotaRuleRequest request =
+        CreateQuotaRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQuotaRule(quotaRule)
+            .setQuotaRuleId(quotaRuleId)
+            .build();
+    return createQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   String quotaRuleId = "quotaRuleId1476739535";
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(parent, quotaRule, quotaRuleId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for CreateQuotaRuleRequest
+   * @param quotaRule Required. Fields of the to be created quota rule.
+   * @param quotaRuleId Required. ID of the quota rule to create. Must be unique within the parent
+   *     resource. Must contain only letters, numbers, underscore and hyphen, with the first
+   *     character a letter or underscore, the last a letter or underscore or a number, and a 63
+   *     character maximum.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      String parent, QuotaRule quotaRule, String quotaRuleId) {
+    CreateQuotaRuleRequest request =
+        CreateQuotaRuleRequest.newBuilder()
+            .setParent(parent)
+            .setQuotaRule(quotaRule)
+            .setQuotaRuleId(quotaRuleId)
+            .build();
+    return createQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   QuotaRule response = netAppClient.createQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
+      CreateQuotaRuleRequest request) {
+    return createQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   OperationFuture<QuotaRule, OperationMetadata> future =
+   *       netAppClient.createQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable() {
+    return stub.createQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   CreateQuotaRuleRequest request =
+   *       CreateQuotaRuleRequest.newBuilder()
+   *           .setParent(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .setQuotaRuleId("quotaRuleId1476739535")
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.createQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable() {
+    return stub.createQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRule quotaRule = QuotaRule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   QuotaRule response = netAppClient.updateQuotaRuleAsync(quotaRule, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param quotaRule Required. The quota rule being updated
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     Quota Rule resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> updateQuotaRuleAsync(
+      QuotaRule quotaRule, FieldMask updateMask) {
+    UpdateQuotaRuleRequest request =
+        UpdateQuotaRuleRequest.newBuilder()
+            .setQuotaRule(quotaRule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   QuotaRule response = netAppClient.updateQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QuotaRule, OperationMetadata> updateQuotaRuleAsync(
+      UpdateQuotaRuleRequest request) {
+    return updateQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   OperationFuture<QuotaRule, OperationMetadata> future =
+   *       netAppClient.updateQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QuotaRule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable() {
+    return stub.updateQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateQuotaRuleRequest request =
+   *       UpdateQuotaRuleRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQuotaRule(QuotaRule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable() {
+    return stub.updateQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   QuotaRuleName name = QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]");
+   *   netAppClient.deleteQuotaRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(QuotaRuleName name) {
+    DeleteQuotaRuleRequest request =
+        DeleteQuotaRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name =
+   *       QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]").toString();
+   *   netAppClient.deleteQuotaRuleAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the quota rule.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(String name) {
+    DeleteQuotaRuleRequest request = DeleteQuotaRuleRequest.newBuilder().setName(name).build();
+    return deleteQuotaRuleAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   netAppClient.deleteQuotaRuleAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(
+      DeleteQuotaRuleRequest request) {
+    return deleteQuotaRuleOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       netAppClient.deleteQuotaRuleOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable() {
+    return stub.deleteQuotaRuleOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a quota rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   DeleteQuotaRuleRequest request =
+   *       DeleteQuotaRuleRequest.newBuilder()
+   *           .setName(
+   *               QuotaRuleName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[QUOTA_RULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.deleteQuotaRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
+    return stub.deleteQuotaRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -5657,6 +10091,312 @@ public class NetAppClient implements BackgroundResource {
     protected ListReplicationsFixedSizeCollection createCollection(
         List<ListReplicationsPage> pages, int collectionSize) {
       return new ListReplicationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupVaultsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupVaultsRequest,
+          ListBackupVaultsResponse,
+          BackupVault,
+          ListBackupVaultsPage,
+          ListBackupVaultsFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupVaultsPagedResponse> createAsync(
+        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
+        ApiFuture<ListBackupVaultsResponse> futureResponse) {
+      ApiFuture<ListBackupVaultsPage> futurePage =
+          ListBackupVaultsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBackupVaultsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBackupVaultsPagedResponse(ListBackupVaultsPage page) {
+      super(page, ListBackupVaultsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupVaultsPage
+      extends AbstractPage<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault, ListBackupVaultsPage> {
+
+    private ListBackupVaultsPage(
+        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
+        ListBackupVaultsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupVaultsPage createEmptyPage() {
+      return new ListBackupVaultsPage(null, null);
+    }
+
+    @Override
+    protected ListBackupVaultsPage createPage(
+        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
+        ListBackupVaultsResponse response) {
+      return new ListBackupVaultsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupVaultsPage> createPageAsync(
+        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
+        ApiFuture<ListBackupVaultsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupVaultsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupVaultsRequest,
+          ListBackupVaultsResponse,
+          BackupVault,
+          ListBackupVaultsPage,
+          ListBackupVaultsFixedSizeCollection> {
+
+    private ListBackupVaultsFixedSizeCollection(
+        List<ListBackupVaultsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupVaultsFixedSizeCollection createEmptyCollection() {
+      return new ListBackupVaultsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupVaultsFixedSizeCollection createCollection(
+        List<ListBackupVaultsPage> pages, int collectionSize) {
+      return new ListBackupVaultsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupsRequest,
+          ListBackupsResponse,
+          Backup,
+          ListBackupsPage,
+          ListBackupsFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupsPagedResponse> createAsync(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ApiFuture<ListBackupsResponse> futureResponse) {
+      ApiFuture<ListBackupsPage> futurePage =
+          ListBackupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListBackupsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListBackupsPagedResponse(ListBackupsPage page) {
+      super(page, ListBackupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupsPage
+      extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
+
+    private ListBackupsPage(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ListBackupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupsPage createEmptyPage() {
+      return new ListBackupsPage(null, null);
+    }
+
+    @Override
+    protected ListBackupsPage createPage(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ListBackupsResponse response) {
+      return new ListBackupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupsPage> createPageAsync(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ApiFuture<ListBackupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupsRequest,
+          ListBackupsResponse,
+          Backup,
+          ListBackupsPage,
+          ListBackupsFixedSizeCollection> {
+
+    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupsFixedSizeCollection createEmptyCollection() {
+      return new ListBackupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupsFixedSizeCollection createCollection(
+        List<ListBackupsPage> pages, int collectionSize) {
+      return new ListBackupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupPoliciesRequest,
+          ListBackupPoliciesResponse,
+          BackupPolicy,
+          ListBackupPoliciesPage,
+          ListBackupPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupPoliciesPagedResponse> createAsync(
+        PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy> context,
+        ApiFuture<ListBackupPoliciesResponse> futureResponse) {
+      ApiFuture<ListBackupPoliciesPage> futurePage =
+          ListBackupPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBackupPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBackupPoliciesPagedResponse(ListBackupPoliciesPage page) {
+      super(page, ListBackupPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupPoliciesPage
+      extends AbstractPage<
+          ListBackupPoliciesRequest,
+          ListBackupPoliciesResponse,
+          BackupPolicy,
+          ListBackupPoliciesPage> {
+
+    private ListBackupPoliciesPage(
+        PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy> context,
+        ListBackupPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupPoliciesPage createEmptyPage() {
+      return new ListBackupPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListBackupPoliciesPage createPage(
+        PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy> context,
+        ListBackupPoliciesResponse response) {
+      return new ListBackupPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupPoliciesPage> createPageAsync(
+        PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy> context,
+        ApiFuture<ListBackupPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupPoliciesRequest,
+          ListBackupPoliciesResponse,
+          BackupPolicy,
+          ListBackupPoliciesPage,
+          ListBackupPoliciesFixedSizeCollection> {
+
+    private ListBackupPoliciesFixedSizeCollection(
+        List<ListBackupPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListBackupPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupPoliciesFixedSizeCollection createCollection(
+        List<ListBackupPoliciesPage> pages, int collectionSize) {
+      return new ListBackupPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListQuotaRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListQuotaRulesRequest,
+          ListQuotaRulesResponse,
+          QuotaRule,
+          ListQuotaRulesPage,
+          ListQuotaRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListQuotaRulesPagedResponse> createAsync(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ApiFuture<ListQuotaRulesResponse> futureResponse) {
+      ApiFuture<ListQuotaRulesPage> futurePage =
+          ListQuotaRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListQuotaRulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListQuotaRulesPagedResponse(ListQuotaRulesPage page) {
+      super(page, ListQuotaRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListQuotaRulesPage
+      extends AbstractPage<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule, ListQuotaRulesPage> {
+
+    private ListQuotaRulesPage(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ListQuotaRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListQuotaRulesPage createEmptyPage() {
+      return new ListQuotaRulesPage(null, null);
+    }
+
+    @Override
+    protected ListQuotaRulesPage createPage(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ListQuotaRulesResponse response) {
+      return new ListQuotaRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListQuotaRulesPage> createPageAsync(
+        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        ApiFuture<ListQuotaRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListQuotaRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListQuotaRulesRequest,
+          ListQuotaRulesResponse,
+          QuotaRule,
+          ListQuotaRulesPage,
+          ListQuotaRulesFixedSizeCollection> {
+
+    private ListQuotaRulesFixedSizeCollection(List<ListQuotaRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListQuotaRulesFixedSizeCollection createEmptyCollection() {
+      return new ListQuotaRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListQuotaRulesFixedSizeCollection createCollection(
+        List<ListQuotaRulesPage> pages, int collectionSize) {
+      return new ListQuotaRulesFixedSizeCollection(pages, collectionSize);
     }
   }
 

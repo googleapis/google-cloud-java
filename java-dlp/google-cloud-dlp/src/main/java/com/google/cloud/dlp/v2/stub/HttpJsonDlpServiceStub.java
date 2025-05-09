@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,19 @@
 
 package com.google.cloud.dlp.v2.stub;
 
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.SearchConnectionsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -37,7 +43,11 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
+import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -45,18 +55,30 @@ import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
+import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.GetTableDataProfileRequest;
 import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
@@ -64,24 +86,42 @@ import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.ListTableDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListTableDataProfilesResponse;
+import com.google.privacy.dlp.v2.ProjectDataProfile;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
+import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
@@ -102,7 +142,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonDlpServiceStub extends DlpServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -275,7 +314,10 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
-                      .setAdditionalPaths("/v2/{parent=locations/*}/infoTypes")
+                      .setAdditionalPaths(
+                          "/v2/{parent=locations/*}/infoTypes",
+                          "/v2/{parent=projects/*/locations/*}/infoTypes",
+                          "/v2/{parent=organizations/*/locations/*}/infoTypes")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -306,7 +348,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateInspectTemplateRequest>newBuilder()
                       .setPath(
-                          "/v2/{parent=organizations/*}/inspectTemplates",
+                          "/v2/{parent=projects/*/locations/*}/inspectTemplates",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<CreateInspectTemplateRequest> serializer =
@@ -317,7 +359,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{parent=organizations/*/locations/*}/inspectTemplates",
                           "/v2/{parent=projects/*}/inspectTemplates",
-                          "/v2/{parent=projects/*/locations/*}/inspectTemplates")
+                          "/v2/{parent=organizations/*}/inspectTemplates")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -347,7 +389,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateInspectTemplateRequest>newBuilder()
                       .setPath(
-                          "/v2/{name=organizations/*/inspectTemplates/*}",
+                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateInspectTemplateRequest> serializer =
@@ -358,7 +400,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{name=organizations/*/locations/*/inspectTemplates/*}",
                           "/v2/{name=projects/*/inspectTemplates/*}",
-                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}")
+                          "/v2/{name=organizations/*/inspectTemplates/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -388,7 +430,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetInspectTemplateRequest>newBuilder()
                       .setPath(
-                          "/v2/{name=organizations/*/inspectTemplates/*}",
+                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetInspectTemplateRequest> serializer =
@@ -399,7 +441,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{name=organizations/*/locations/*/inspectTemplates/*}",
                           "/v2/{name=projects/*/inspectTemplates/*}",
-                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}")
+                          "/v2/{name=organizations/*/inspectTemplates/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -428,7 +470,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListInspectTemplatesRequest>newBuilder()
                       .setPath(
-                          "/v2/{parent=organizations/*}/inspectTemplates",
+                          "/v2/{parent=projects/*/locations/*}/inspectTemplates",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListInspectTemplatesRequest> serializer =
@@ -439,7 +481,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{parent=organizations/*/locations/*}/inspectTemplates",
                           "/v2/{parent=projects/*}/inspectTemplates",
-                          "/v2/{parent=projects/*/locations/*}/inspectTemplates")
+                          "/v2/{parent=organizations/*}/inspectTemplates")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -470,7 +512,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteInspectTemplateRequest>newBuilder()
                       .setPath(
-                          "/v2/{name=organizations/*/inspectTemplates/*}",
+                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInspectTemplateRequest> serializer =
@@ -481,7 +523,7 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .setAdditionalPaths(
                           "/v2/{name=organizations/*/locations/*/inspectTemplates/*}",
                           "/v2/{name=projects/*/inspectTemplates/*}",
-                          "/v2/{name=projects/*/locations/*/inspectTemplates/*}")
+                          "/v2/{name=organizations/*/inspectTemplates/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -974,6 +1016,197 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigMethodDescriptor =
+          ApiMethodDescriptor.<CreateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateDiscoveryConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDiscoveryConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/discoveryConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/discoveryConfigs")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiscoveryConfig>newBuilder()
+                      .setDefaultInstance(DiscoveryConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/UpdateDiscoveryConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDiscoveryConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/discoveryConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/discoveryConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiscoveryConfig>newBuilder()
+                      .setDefaultInstance(DiscoveryConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetDiscoveryConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDiscoveryConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/discoveryConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/discoveryConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiscoveryConfig>newBuilder()
+                      .setDefaultInstance(DiscoveryConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListDiscoveryConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDiscoveryConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/discoveryConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDiscoveryConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/discoveryConfigs")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDiscoveryConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDiscoveryConfigsResponse>newBuilder()
+                      .setDefaultInstance(ListDiscoveryConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDiscoveryConfigRequest, Empty>
+      deleteDiscoveryConfigMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDiscoveryConfigRequest, Empty>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteDiscoveryConfig")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDiscoveryConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/discoveryConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=organizations/*/locations/*/discoveryConfigs/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDiscoveryConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<CreateDlpJobRequest, DlpJob>
       createDlpJobMethodDescriptor =
           ApiMethodDescriptor.<CreateDlpJobRequest, DlpJob>newBuilder()
@@ -1362,6 +1595,383 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
+      listProjectDataProfilesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListProjectDataProfiles")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListProjectDataProfilesRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=organizations/*/locations/*}/projectDataProfiles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListProjectDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{parent=projects/*/locations/*}/projectDataProfiles")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListProjectDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListProjectDataProfilesResponse>newBuilder()
+                      .setDefaultInstance(ListProjectDataProfilesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListTableDataProfilesRequest, ListTableDataProfilesResponse>
+      listTableDataProfilesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListTableDataProfilesRequest, ListTableDataProfilesResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListTableDataProfiles")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListTableDataProfilesRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=organizations/*/locations/*}/tableDataProfiles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTableDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{parent=projects/*/locations/*}/tableDataProfiles")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTableDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListTableDataProfilesResponse>newBuilder()
+                      .setDefaultInstance(ListTableDataProfilesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
+      listColumnDataProfilesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListColumnDataProfiles")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListColumnDataProfilesRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=organizations/*/locations/*}/columnDataProfiles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListColumnDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{parent=projects/*/locations/*}/columnDataProfiles")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListColumnDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListColumnDataProfilesResponse>newBuilder()
+                      .setDefaultInstance(ListColumnDataProfilesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetProjectDataProfileRequest, ProjectDataProfile>
+      getProjectDataProfileMethodDescriptor =
+          ApiMethodDescriptor.<GetProjectDataProfileRequest, ProjectDataProfile>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetProjectDataProfile")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetProjectDataProfileRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/locations/*/projectDataProfiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetProjectDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{name=projects/*/locations/*/projectDataProfiles/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetProjectDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ProjectDataProfile>newBuilder()
+                      .setDefaultInstance(ProjectDataProfile.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListFileStoreDataProfiles")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListFileStoreDataProfilesRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=organizations/*/locations/*}/fileStoreDataProfiles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFileStoreDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=projects/*/locations/*}/fileStoreDataProfiles")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFileStoreDataProfilesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListFileStoreDataProfilesResponse>newBuilder()
+                      .setDefaultInstance(ListFileStoreDataProfilesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileMethodDescriptor =
+          ApiMethodDescriptor.<GetFileStoreDataProfileRequest, FileStoreDataProfile>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetFileStoreDataProfile")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetFileStoreDataProfileRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/locations/*/fileStoreDataProfiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetFileStoreDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=projects/*/locations/*/fileStoreDataProfiles/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetFileStoreDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FileStoreDataProfile>newBuilder()
+                      .setDefaultInstance(FileStoreDataProfile.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileMethodDescriptor =
+          ApiMethodDescriptor.<DeleteFileStoreDataProfileRequest, Empty>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteFileStoreDataProfile")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteFileStoreDataProfileRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/locations/*/fileStoreDataProfiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFileStoreDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{name=projects/*/locations/*/fileStoreDataProfiles/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFileStoreDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetTableDataProfileRequest, TableDataProfile>
+      getTableDataProfileMethodDescriptor =
+          ApiMethodDescriptor.<GetTableDataProfileRequest, TableDataProfile>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetTableDataProfile")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTableDataProfileRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/locations/*/tableDataProfiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTableDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{name=projects/*/locations/*/tableDataProfiles/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTableDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TableDataProfile>newBuilder()
+                      .setDefaultInstance(TableDataProfile.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetColumnDataProfileRequest, ColumnDataProfile>
+      getColumnDataProfileMethodDescriptor =
+          ApiMethodDescriptor.<GetColumnDataProfileRequest, ColumnDataProfile>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetColumnDataProfile")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetColumnDataProfileRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/locations/*/columnDataProfiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetColumnDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{name=projects/*/locations/*/columnDataProfiles/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetColumnDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ColumnDataProfile>newBuilder()
+                      .setDefaultInstance(ColumnDataProfile.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTableDataProfileRequest, Empty>
+      deleteTableDataProfileMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTableDataProfileRequest, Empty>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteTableDataProfile")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTableDataProfileRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=organizations/*/locations/*/tableDataProfiles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTableDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{name=projects/*/locations/*/tableDataProfiles/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTableDataProfileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobMethodDescriptor =
           ApiMethodDescriptor.<HybridInspectDlpJobRequest, HybridInspectResponse>newBuilder()
@@ -1436,6 +2046,229 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateConnectionRequest, Connection>
+      createConnectionMethodDescriptor =
+          ApiMethodDescriptor.<CreateConnectionRequest, Connection>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateConnection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/connections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{parent=organizations/*/locations/*}/connections")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Connection>newBuilder()
+                      .setDefaultInstance(Connection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetConnectionRequest, Connection>
+      getConnectionMethodDescriptor =
+          ApiMethodDescriptor.<GetConnectionRequest, Connection>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetConnection")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/connections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{name=organizations/*/locations/*/connections/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Connection>newBuilder()
+                      .setDefaultInstance(Connection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListConnectionsRequest, ListConnectionsResponse>
+      listConnectionsMethodDescriptor =
+          ApiMethodDescriptor.<ListConnectionsRequest, ListConnectionsResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListConnections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListConnectionsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/connections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{parent=organizations/*/locations/*}/connections")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListConnectionsResponse>newBuilder()
+                      .setDefaultInstance(ListConnectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SearchConnectionsRequest, SearchConnectionsResponse>
+      searchConnectionsMethodDescriptor =
+          ApiMethodDescriptor.<SearchConnectionsRequest, SearchConnectionsResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/SearchConnections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchConnectionsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/connections:search",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{parent=organizations/*/locations/*}/connections:search")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchConnectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchConnectionsResponse>newBuilder()
+                      .setDefaultInstance(SearchConnectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteConnectionRequest, Empty>
+      deleteConnectionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteConnectionRequest, Empty>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteConnection")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/connections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{name=organizations/*/locations/*/connections/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateConnectionRequest, Connection>
+      updateConnectionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateConnectionRequest, Connection>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/UpdateConnection")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateConnectionRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/connections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v2/{name=organizations/*/locations/*/connections/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConnectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Connection>newBuilder()
+                      .setDefaultInstance(Connection.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
   private final UnaryCallable<RedactImageRequest, RedactImageResponse> redactImageCallable;
   private final UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
@@ -1477,6 +2310,17 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
       listJobTriggersPagedCallable;
   private final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable;
   private final UnaryCallable<ActivateJobTriggerRequest, DlpJob> activateJobTriggerCallable;
+  private final UnaryCallable<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigCallable;
+  private final UnaryCallable<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigCallable;
+  private final UnaryCallable<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigCallable;
+  private final UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsCallable;
+  private final UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsPagedCallable;
+  private final UnaryCallable<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigCallable;
   private final UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable;
   private final UnaryCallable<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsCallable;
   private final UnaryCallable<ListDlpJobsRequest, ListDlpJobsPagedResponse>
@@ -1494,9 +2338,49 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
   private final UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesPagedResponse>
       listStoredInfoTypesPagedCallable;
   private final UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable;
+  private final UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
+      listProjectDataProfilesCallable;
+  private final UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesPagedResponse>
+      listProjectDataProfilesPagedCallable;
+  private final UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
+      listTableDataProfilesCallable;
+  private final UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesPagedResponse>
+      listTableDataProfilesPagedCallable;
+  private final UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
+      listColumnDataProfilesCallable;
+  private final UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesPagedResponse>
+      listColumnDataProfilesPagedCallable;
+  private final UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
+      getProjectDataProfileCallable;
+  private final UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable;
+  private final UnaryCallable<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable;
+  private final UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable;
+  private final UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable;
+  private final UnaryCallable<GetTableDataProfileRequest, TableDataProfile>
+      getTableDataProfileCallable;
+  private final UnaryCallable<GetColumnDataProfileRequest, ColumnDataProfile>
+      getColumnDataProfileCallable;
+  private final UnaryCallable<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileCallable;
   private final UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobCallable;
   private final UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable;
+  private final UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable;
+  private final UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable;
+  private final UnaryCallable<ListConnectionsRequest, ListConnectionsResponse>
+      listConnectionsCallable;
+  private final UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
+      listConnectionsPagedCallable;
+  private final UnaryCallable<SearchConnectionsRequest, SearchConnectionsResponse>
+      searchConnectionsCallable;
+  private final UnaryCallable<SearchConnectionsRequest, SearchConnectionsPagedResponse>
+      searchConnectionsPagedCallable;
+  private final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable;
+  private final UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -1800,6 +2684,67 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
+        createDiscoveryConfigTransportSettings =
+            HttpJsonCallSettings.<CreateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(createDiscoveryConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+        updateDiscoveryConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(updateDiscoveryConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
+        getDiscoveryConfigTransportSettings =
+            HttpJsonCallSettings.<GetDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(getDiscoveryConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+        listDiscoveryConfigsTransportSettings =
+            HttpJsonCallSettings
+                .<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>newBuilder()
+                .setMethodDescriptor(listDiscoveryConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteDiscoveryConfigRequest, Empty>
+        deleteDiscoveryConfigTransportSettings =
+            HttpJsonCallSettings.<DeleteDiscoveryConfigRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteDiscoveryConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobTransportSettings =
         HttpJsonCallSettings.<CreateDlpJobRequest, DlpJob>newBuilder()
             .setMethodDescriptor(createDlpJobMethodDescriptor)
@@ -1915,6 +2860,130 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
+        listProjectDataProfilesTransportSettings =
+            HttpJsonCallSettings
+                .<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>newBuilder()
+                .setMethodDescriptor(listProjectDataProfilesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
+        listTableDataProfilesTransportSettings =
+            HttpJsonCallSettings
+                .<ListTableDataProfilesRequest, ListTableDataProfilesResponse>newBuilder()
+                .setMethodDescriptor(listTableDataProfilesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
+        listColumnDataProfilesTransportSettings =
+            HttpJsonCallSettings
+                .<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>newBuilder()
+                .setMethodDescriptor(listColumnDataProfilesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetProjectDataProfileRequest, ProjectDataProfile>
+        getProjectDataProfileTransportSettings =
+            HttpJsonCallSettings.<GetProjectDataProfileRequest, ProjectDataProfile>newBuilder()
+                .setMethodDescriptor(getProjectDataProfileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+        listFileStoreDataProfilesTransportSettings =
+            HttpJsonCallSettings
+                .<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>newBuilder()
+                .setMethodDescriptor(listFileStoreDataProfilesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+        getFileStoreDataProfileTransportSettings =
+            HttpJsonCallSettings.<GetFileStoreDataProfileRequest, FileStoreDataProfile>newBuilder()
+                .setMethodDescriptor(getFileStoreDataProfileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteFileStoreDataProfileRequest, Empty>
+        deleteFileStoreDataProfileTransportSettings =
+            HttpJsonCallSettings.<DeleteFileStoreDataProfileRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteFileStoreDataProfileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetTableDataProfileRequest, TableDataProfile>
+        getTableDataProfileTransportSettings =
+            HttpJsonCallSettings.<GetTableDataProfileRequest, TableDataProfile>newBuilder()
+                .setMethodDescriptor(getTableDataProfileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetColumnDataProfileRequest, ColumnDataProfile>
+        getColumnDataProfileTransportSettings =
+            HttpJsonCallSettings.<GetColumnDataProfileRequest, ColumnDataProfile>newBuilder()
+                .setMethodDescriptor(getColumnDataProfileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteTableDataProfileRequest, Empty>
+        deleteTableDataProfileTransportSettings =
+            HttpJsonCallSettings.<DeleteTableDataProfileRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteTableDataProfileMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobTransportSettings =
             HttpJsonCallSettings.<HybridInspectDlpJobRequest, HybridInspectResponse>newBuilder()
@@ -1930,6 +2999,74 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
     HttpJsonCallSettings<FinishDlpJobRequest, Empty> finishDlpJobTransportSettings =
         HttpJsonCallSettings.<FinishDlpJobRequest, Empty>newBuilder()
             .setMethodDescriptor(finishDlpJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateConnectionRequest, Connection> createConnectionTransportSettings =
+        HttpJsonCallSettings.<CreateConnectionRequest, Connection>newBuilder()
+            .setMethodDescriptor(createConnectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetConnectionRequest, Connection> getConnectionTransportSettings =
+        HttpJsonCallSettings.<GetConnectionRequest, Connection>newBuilder()
+            .setMethodDescriptor(getConnectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListConnectionsRequest, ListConnectionsResponse>
+        listConnectionsTransportSettings =
+            HttpJsonCallSettings.<ListConnectionsRequest, ListConnectionsResponse>newBuilder()
+                .setMethodDescriptor(listConnectionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<SearchConnectionsRequest, SearchConnectionsResponse>
+        searchConnectionsTransportSettings =
+            HttpJsonCallSettings.<SearchConnectionsRequest, SearchConnectionsResponse>newBuilder()
+                .setMethodDescriptor(searchConnectionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteConnectionRequest, Empty> deleteConnectionTransportSettings =
+        HttpJsonCallSettings.<DeleteConnectionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteConnectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateConnectionRequest, Connection> updateConnectionTransportSettings =
+        HttpJsonCallSettings.<UpdateConnectionRequest, Connection>newBuilder()
+            .setMethodDescriptor(updateConnectionMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -2046,6 +3183,36 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
             activateJobTriggerTransportSettings,
             settings.activateJobTriggerSettings(),
             clientContext);
+    this.createDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            createDiscoveryConfigTransportSettings,
+            settings.createDiscoveryConfigSettings(),
+            clientContext);
+    this.updateDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateDiscoveryConfigTransportSettings,
+            settings.updateDiscoveryConfigSettings(),
+            clientContext);
+    this.getDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            getDiscoveryConfigTransportSettings,
+            settings.getDiscoveryConfigSettings(),
+            clientContext);
+    this.listDiscoveryConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listDiscoveryConfigsTransportSettings,
+            settings.listDiscoveryConfigsSettings(),
+            clientContext);
+    this.listDiscoveryConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDiscoveryConfigsTransportSettings,
+            settings.listDiscoveryConfigsSettings(),
+            clientContext);
+    this.deleteDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteDiscoveryConfigTransportSettings,
+            settings.deleteDiscoveryConfigSettings(),
+            clientContext);
     this.createDlpJobCallable =
         callableFactory.createUnaryCallable(
             createDlpJobTransportSettings, settings.createDlpJobSettings(), clientContext);
@@ -2094,6 +3261,76 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
             deleteStoredInfoTypeTransportSettings,
             settings.deleteStoredInfoTypeSettings(),
             clientContext);
+    this.listProjectDataProfilesCallable =
+        callableFactory.createUnaryCallable(
+            listProjectDataProfilesTransportSettings,
+            settings.listProjectDataProfilesSettings(),
+            clientContext);
+    this.listProjectDataProfilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listProjectDataProfilesTransportSettings,
+            settings.listProjectDataProfilesSettings(),
+            clientContext);
+    this.listTableDataProfilesCallable =
+        callableFactory.createUnaryCallable(
+            listTableDataProfilesTransportSettings,
+            settings.listTableDataProfilesSettings(),
+            clientContext);
+    this.listTableDataProfilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listTableDataProfilesTransportSettings,
+            settings.listTableDataProfilesSettings(),
+            clientContext);
+    this.listColumnDataProfilesCallable =
+        callableFactory.createUnaryCallable(
+            listColumnDataProfilesTransportSettings,
+            settings.listColumnDataProfilesSettings(),
+            clientContext);
+    this.listColumnDataProfilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listColumnDataProfilesTransportSettings,
+            settings.listColumnDataProfilesSettings(),
+            clientContext);
+    this.getProjectDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            getProjectDataProfileTransportSettings,
+            settings.getProjectDataProfileSettings(),
+            clientContext);
+    this.listFileStoreDataProfilesCallable =
+        callableFactory.createUnaryCallable(
+            listFileStoreDataProfilesTransportSettings,
+            settings.listFileStoreDataProfilesSettings(),
+            clientContext);
+    this.listFileStoreDataProfilesPagedCallable =
+        callableFactory.createPagedCallable(
+            listFileStoreDataProfilesTransportSettings,
+            settings.listFileStoreDataProfilesSettings(),
+            clientContext);
+    this.getFileStoreDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            getFileStoreDataProfileTransportSettings,
+            settings.getFileStoreDataProfileSettings(),
+            clientContext);
+    this.deleteFileStoreDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            deleteFileStoreDataProfileTransportSettings,
+            settings.deleteFileStoreDataProfileSettings(),
+            clientContext);
+    this.getTableDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            getTableDataProfileTransportSettings,
+            settings.getTableDataProfileSettings(),
+            clientContext);
+    this.getColumnDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            getColumnDataProfileTransportSettings,
+            settings.getColumnDataProfileSettings(),
+            clientContext);
+    this.deleteTableDataProfileCallable =
+        callableFactory.createUnaryCallable(
+            deleteTableDataProfileTransportSettings,
+            settings.deleteTableDataProfileSettings(),
+            clientContext);
     this.hybridInspectDlpJobCallable =
         callableFactory.createUnaryCallable(
             hybridInspectDlpJobTransportSettings,
@@ -2102,6 +3339,34 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
     this.finishDlpJobCallable =
         callableFactory.createUnaryCallable(
             finishDlpJobTransportSettings, settings.finishDlpJobSettings(), clientContext);
+    this.createConnectionCallable =
+        callableFactory.createUnaryCallable(
+            createConnectionTransportSettings, settings.createConnectionSettings(), clientContext);
+    this.getConnectionCallable =
+        callableFactory.createUnaryCallable(
+            getConnectionTransportSettings, settings.getConnectionSettings(), clientContext);
+    this.listConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            listConnectionsTransportSettings, settings.listConnectionsSettings(), clientContext);
+    this.listConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listConnectionsTransportSettings, settings.listConnectionsSettings(), clientContext);
+    this.searchConnectionsCallable =
+        callableFactory.createUnaryCallable(
+            searchConnectionsTransportSettings,
+            settings.searchConnectionsSettings(),
+            clientContext);
+    this.searchConnectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchConnectionsTransportSettings,
+            settings.searchConnectionsSettings(),
+            clientContext);
+    this.deleteConnectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteConnectionTransportSettings, settings.deleteConnectionSettings(), clientContext);
+    this.updateConnectionCallable =
+        callableFactory.createUnaryCallable(
+            updateConnectionTransportSettings, settings.updateConnectionSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2132,6 +3397,11 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
     methodDescriptors.add(listJobTriggersMethodDescriptor);
     methodDescriptors.add(deleteJobTriggerMethodDescriptor);
     methodDescriptors.add(activateJobTriggerMethodDescriptor);
+    methodDescriptors.add(createDiscoveryConfigMethodDescriptor);
+    methodDescriptors.add(updateDiscoveryConfigMethodDescriptor);
+    methodDescriptors.add(getDiscoveryConfigMethodDescriptor);
+    methodDescriptors.add(listDiscoveryConfigsMethodDescriptor);
+    methodDescriptors.add(deleteDiscoveryConfigMethodDescriptor);
     methodDescriptors.add(createDlpJobMethodDescriptor);
     methodDescriptors.add(listDlpJobsMethodDescriptor);
     methodDescriptors.add(getDlpJobMethodDescriptor);
@@ -2142,8 +3412,24 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
     methodDescriptors.add(getStoredInfoTypeMethodDescriptor);
     methodDescriptors.add(listStoredInfoTypesMethodDescriptor);
     methodDescriptors.add(deleteStoredInfoTypeMethodDescriptor);
+    methodDescriptors.add(listProjectDataProfilesMethodDescriptor);
+    methodDescriptors.add(listTableDataProfilesMethodDescriptor);
+    methodDescriptors.add(listColumnDataProfilesMethodDescriptor);
+    methodDescriptors.add(getProjectDataProfileMethodDescriptor);
+    methodDescriptors.add(listFileStoreDataProfilesMethodDescriptor);
+    methodDescriptors.add(getFileStoreDataProfileMethodDescriptor);
+    methodDescriptors.add(deleteFileStoreDataProfileMethodDescriptor);
+    methodDescriptors.add(getTableDataProfileMethodDescriptor);
+    methodDescriptors.add(getColumnDataProfileMethodDescriptor);
+    methodDescriptors.add(deleteTableDataProfileMethodDescriptor);
     methodDescriptors.add(hybridInspectDlpJobMethodDescriptor);
     methodDescriptors.add(finishDlpJobMethodDescriptor);
+    methodDescriptors.add(createConnectionMethodDescriptor);
+    methodDescriptors.add(getConnectionMethodDescriptor);
+    methodDescriptors.add(listConnectionsMethodDescriptor);
+    methodDescriptors.add(searchConnectionsMethodDescriptor);
+    methodDescriptors.add(deleteConnectionMethodDescriptor);
+    methodDescriptors.add(updateConnectionMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2286,6 +3572,40 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
   }
 
   @Override
+  public UnaryCallable<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigCallable() {
+    return createDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigCallable() {
+    return updateDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDiscoveryConfigRequest, DiscoveryConfig> getDiscoveryConfigCallable() {
+    return getDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsCallable() {
+    return listDiscoveryConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsPagedCallable() {
+    return listDiscoveryConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigCallable() {
+    return deleteDiscoveryConfigCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable() {
     return createDlpJobCallable;
   }
@@ -2348,6 +3668,88 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
   }
 
   @Override
+  public UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
+      listProjectDataProfilesCallable() {
+    return listProjectDataProfilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesPagedResponse>
+      listProjectDataProfilesPagedCallable() {
+    return listProjectDataProfilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
+      listTableDataProfilesCallable() {
+    return listTableDataProfilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesPagedResponse>
+      listTableDataProfilesPagedCallable() {
+    return listTableDataProfilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
+      listColumnDataProfilesCallable() {
+    return listColumnDataProfilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesPagedResponse>
+      listColumnDataProfilesPagedCallable() {
+    return listColumnDataProfilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
+      getProjectDataProfileCallable() {
+    return getProjectDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+      listFileStoreDataProfilesCallable() {
+    return listFileStoreDataProfilesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesPagedCallable() {
+    return listFileStoreDataProfilesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileCallable() {
+    return getFileStoreDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileCallable() {
+    return deleteFileStoreDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTableDataProfileRequest, TableDataProfile> getTableDataProfileCallable() {
+    return getTableDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetColumnDataProfileRequest, ColumnDataProfile>
+      getColumnDataProfileCallable() {
+    return getColumnDataProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileCallable() {
+    return deleteTableDataProfileCallable;
+  }
+
+  @Override
   public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobCallable() {
     return hybridInspectDlpJobCallable;
@@ -2356,6 +3758,49 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
   @Override
   public UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
     return finishDlpJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
+    return createConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable() {
+    return getConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> listConnectionsCallable() {
+    return listConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
+      listConnectionsPagedCallable() {
+    return listConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchConnectionsRequest, SearchConnectionsResponse>
+      searchConnectionsCallable() {
+    return searchConnectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchConnectionsRequest, SearchConnectionsPagedResponse>
+      searchConnectionsPagedCallable() {
+    return searchConnectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
+    return deleteConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {
+    return updateConnectionCallable;
   }
 
   @Override

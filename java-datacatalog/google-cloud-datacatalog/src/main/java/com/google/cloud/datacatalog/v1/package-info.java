@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,9 @@
  *
  * <p>======================= DataCatalogClient =======================
  *
- * <p>Service Description: Data Catalog API service allows you to discover, understand, and manage
- * your data.
+ * <p>Service Description: Deprecated: Please use Dataplex Catalog instead.
+ *
+ * <p>Data Catalog API service allows you to discover, understand, and manage your data.
  *
  * <p>Sample for DataCatalogClient:
  *

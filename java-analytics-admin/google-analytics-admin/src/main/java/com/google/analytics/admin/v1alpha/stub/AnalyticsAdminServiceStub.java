@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
 
 package com.google.analytics.admin.v1alpha.stub;
 
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -31,14 +31,18 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventCreateRulesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventEditRulesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -53,29 +57,23 @@ import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AttributionSettings;
 import com.google.analytics.admin.v1alpha.Audience;
-import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
-import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest;
-import com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
+import com.google.analytics.admin.v1alpha.CalculatedMetric;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
@@ -86,22 +84,31 @@ import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
+import com.google.analytics.admin.v1alpha.DataRedactionSettings;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
@@ -109,18 +116,23 @@ import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.EventCreateRule;
+import com.google.analytics.admin.v1alpha.EventEditRule;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -133,10 +145,12 @@ import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
@@ -144,17 +158,22 @@ import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkPropos
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.GetEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetKeyEventRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
+import com.google.analytics.admin.v1alpha.KeyEvent;
 import com.google.analytics.admin.v1alpha.ListAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.ListAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
@@ -167,6 +186,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
@@ -185,26 +206,39 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequ
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest;
 import com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse;
+import com.google.analytics.admin.v1alpha.ListEventEditRulesRequest;
+import com.google.analytics.admin.v1alpha.ListEventEditRulesResponse;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
+import com.google.analytics.admin.v1alpha.ListKeyEventsRequest;
+import com.google.analytics.admin.v1alpha.ListKeyEventsResponse;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse;
+import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest;
+import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
-import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
-import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest;
+import com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse;
+import com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest;
+import com.google.analytics.admin.v1alpha.ReportingDataAnnotation;
+import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
 import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
@@ -213,28 +247,36 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
+import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.UserLink;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -309,59 +351,6 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdatePropertyRequest, Property> updatePropertyCallable() {
     throw new UnsupportedOperationException("Not implemented: updatePropertyCallable()");
-  }
-
-  public UnaryCallable<GetUserLinkRequest, UserLink> getUserLinkCallable() {
-    throw new UnsupportedOperationException("Not implemented: getUserLinkCallable()");
-  }
-
-  public UnaryCallable<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchGetUserLinksCallable()");
-  }
-
-  public UnaryCallable<ListUserLinksRequest, ListUserLinksPagedResponse>
-      listUserLinksPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listUserLinksPagedCallable()");
-  }
-
-  public UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable() {
-    throw new UnsupportedOperationException("Not implemented: listUserLinksCallable()");
-  }
-
-  public UnaryCallable<AuditUserLinksRequest, AuditUserLinksPagedResponse>
-      auditUserLinksPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: auditUserLinksPagedCallable()");
-  }
-
-  public UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> auditUserLinksCallable() {
-    throw new UnsupportedOperationException("Not implemented: auditUserLinksCallable()");
-  }
-
-  public UnaryCallable<CreateUserLinkRequest, UserLink> createUserLinkCallable() {
-    throw new UnsupportedOperationException("Not implemented: createUserLinkCallable()");
-  }
-
-  public UnaryCallable<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchCreateUserLinksCallable()");
-  }
-
-  public UnaryCallable<UpdateUserLinkRequest, UserLink> updateUserLinkCallable() {
-    throw new UnsupportedOperationException("Not implemented: updateUserLinkCallable()");
-  }
-
-  public UnaryCallable<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchUpdateUserLinksCallable()");
-  }
-
-  public UnaryCallable<DeleteUserLinkRequest, Empty> deleteUserLinkCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteUserLinkCallable()");
-  }
-
-  public UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable() {
-    throw new UnsupportedOperationException("Not implemented: batchDeleteUserLinksCallable()");
   }
 
   public UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable() {
@@ -521,32 +510,63 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
         "Not implemented: updateGoogleSignalsSettingsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: createConversionEventCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
       updateConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: updateConversionEventCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetConversionEventRequest, ConversionEvent> getConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: getConversionEventCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteConversionEventCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listConversionEventsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListConversionEventsRequest, ListConversionEventsResponse>
       listConversionEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: listConversionEventsCallable()");
+  }
+
+  public UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: createKeyEventCallable()");
+  }
+
+  public UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKeyEventCallable()");
+  }
+
+  public UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: getKeyEventCallable()");
+  }
+
+  public UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteKeyEventCallable()");
+  }
+
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listKeyEventsPagedCallable()");
+  }
+
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listKeyEventsCallable()");
   }
 
   public UnaryCallable<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
@@ -911,6 +931,10 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
         "Not implemented: fetchAutomatedGa4ConfigurationOptOutCallable()");
   }
 
+  public UnaryCallable<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBigQueryLinkCallable()");
+  }
+
   public UnaryCallable<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkCallable() {
     throw new UnsupportedOperationException("Not implemented: getBigQueryLinkCallable()");
   }
@@ -923,6 +947,14 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
       listBigQueryLinksCallable() {
     throw new UnsupportedOperationException("Not implemented: listBigQueryLinksCallable()");
+  }
+
+  public UnaryCallable<DeleteBigQueryLinkRequest, Empty> deleteBigQueryLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBigQueryLinkCallable()");
+  }
+
+  public UnaryCallable<UpdateBigQueryLinkRequest, BigQueryLink> updateBigQueryLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBigQueryLinkCallable()");
   }
 
   public UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
@@ -1004,6 +1036,194 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEventCreateRuleCallable()");
+  }
+
+  public UnaryCallable<GetEventEditRuleRequest, EventEditRule> getEventEditRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEventEditRuleCallable()");
+  }
+
+  public UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesPagedResponse>
+      listEventEditRulesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEventEditRulesPagedCallable()");
+  }
+
+  public UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesResponse>
+      listEventEditRulesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEventEditRulesCallable()");
+  }
+
+  public UnaryCallable<CreateEventEditRuleRequest, EventEditRule> createEventEditRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEventEditRuleCallable()");
+  }
+
+  public UnaryCallable<UpdateEventEditRuleRequest, EventEditRule> updateEventEditRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateEventEditRuleCallable()");
+  }
+
+  public UnaryCallable<DeleteEventEditRuleRequest, Empty> deleteEventEditRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEventEditRuleCallable()");
+  }
+
+  public UnaryCallable<ReorderEventEditRulesRequest, Empty> reorderEventEditRulesCallable() {
+    throw new UnsupportedOperationException("Not implemented: reorderEventEditRulesCallable()");
+  }
+
+  public UnaryCallable<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDataRedactionSettingsCallable()");
+  }
+
+  public UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDataRedactionSettingsCallable()");
+  }
+
+  public UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric> getCalculatedMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCalculatedMetricCallable()");
+  }
+
+  public UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCalculatedMetricCallable()");
+  }
+
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listCalculatedMetricsPagedCallable()");
+  }
+
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listCalculatedMetricsCallable()");
+  }
+
+  public UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCalculatedMetricCallable()");
+  }
+
+  public UnaryCallable<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteCalculatedMetricCallable()");
+  }
+
+  public UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createRollupPropertyCallable()");
+  }
+
+  public UnaryCallable<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getRollupPropertySourceLinkCallable()");
+  }
+
+  public UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksPagedResponse>
+      listRollupPropertySourceLinksPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRollupPropertySourceLinksPagedCallable()");
+  }
+
+  public UnaryCallable<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+      listRollupPropertySourceLinksCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRollupPropertySourceLinksCallable()");
+  }
+
+  public UnaryCallable<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRollupPropertySourceLinkCallable()");
+  }
+
+  public UnaryCallable<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteRollupPropertySourceLinkCallable()");
+  }
+
+  public UnaryCallable<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+      provisionSubpropertyCallable() {
+    throw new UnsupportedOperationException("Not implemented: provisionSubpropertyCallable()");
+  }
+
+  public UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createSubpropertyEventFilterCallable()");
+  }
+
+  public UnaryCallable<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSubpropertyEventFilterCallable()");
+  }
+
+  public UnaryCallable<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSubpropertyEventFiltersPagedCallable()");
+  }
+
+  public UnaryCallable<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSubpropertyEventFiltersCallable()");
+  }
+
+  public UnaryCallable<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSubpropertyEventFilterCallable()");
+  }
+
+  public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteSubpropertyEventFilterCallable()");
+  }
+
+  public UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createReportingDataAnnotationCallable()");
+  }
+
+  public UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getReportingDataAnnotationCallable()");
+  }
+
+  public UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listReportingDataAnnotationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listReportingDataAnnotationsCallable()");
+  }
+
+  public UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateReportingDataAnnotationCallable()");
+  }
+
+  public UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteReportingDataAnnotationCallable()");
+  }
+
+  public UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionCallable() {
+    throw new UnsupportedOperationException("Not implemented: submitUserDeletionCallable()");
   }
 
   @Override

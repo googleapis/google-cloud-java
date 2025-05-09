@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,6 +91,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -98,6 +100,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -157,6 +161,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -164,6 +170,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -228,6 +236,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -235,6 +245,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -294,6 +306,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -301,6 +315,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -356,6 +372,7 @@ public class ProjectsClientTest {
   public void getTest() throws Exception {
     Project expectedResponse =
         Project.newBuilder()
+            .setCloudArmorTier("cloudArmorTier-120726260")
             .setCommonInstanceMetadata(Metadata.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDefaultNetworkTier("defaultNetworkTier-836540369")
@@ -413,6 +430,7 @@ public class ProjectsClientTest {
   public void getXpnHostTest() throws Exception {
     Project expectedResponse =
         Project.newBuilder()
+            .setCloudArmorTier("cloudArmorTier-120726260")
             .setCommonInstanceMetadata(Metadata.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDefaultNetworkTier("defaultNetworkTier-836540369")
@@ -584,6 +602,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -591,6 +611,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -652,6 +674,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -659,6 +683,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -708,6 +734,81 @@ public class ProjectsClientTest {
   }
 
   @Test
+  public void setCloudArmorTierTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    ProjectsSetCloudArmorTierRequest projectsSetCloudArmorTierRequestResource =
+        ProjectsSetCloudArmorTierRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client.setCloudArmorTierAsync(project, projectsSetCloudArmorTierRequestResource).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setCloudArmorTierExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      ProjectsSetCloudArmorTierRequest projectsSetCloudArmorTierRequestResource =
+          ProjectsSetCloudArmorTierRequest.newBuilder().build();
+      client.setCloudArmorTierAsync(project, projectsSetCloudArmorTierRequestResource).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void setCommonInstanceMetadataTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -720,6 +821,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -727,6 +830,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -789,6 +894,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -796,6 +903,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -864,6 +973,8 @@ public class ProjectsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -871,6 +982,8 @@ public class ProjectsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")

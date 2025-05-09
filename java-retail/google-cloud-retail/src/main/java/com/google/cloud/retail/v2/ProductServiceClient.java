@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,19 +64,265 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the ProductServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateProduct</td>
+ *      <td><p> Creates a [Product][google.cloud.retail.v2.Product].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createProduct(CreateProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createProduct(BranchName parent, Product product, String productId)
+ *           <li><p> createProduct(String parent, Product product, String productId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProduct</td>
+ *      <td><p> Gets a [Product][google.cloud.retail.v2.Product].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProduct(GetProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProduct(ProductName name)
+ *           <li><p> getProduct(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListProducts</td>
+ *      <td><p> Gets a list of [Product][google.cloud.retail.v2.Product]s.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listProducts(ListProductsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listProducts(BranchName parent)
+ *           <li><p> listProducts(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listProductsPagedCallable()
+ *           <li><p> listProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateProduct</td>
+ *      <td><p> Updates a [Product][google.cloud.retail.v2.Product].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateProduct(UpdateProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateProduct(Product product, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteProduct</td>
+ *      <td><p> Deletes a [Product][google.cloud.retail.v2.Product].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteProduct(DeleteProductRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteProduct(ProductName name)
+ *           <li><p> deleteProduct(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteProductCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PurgeProducts</td>
+ *      <td><p> Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s under a branch.
+ * <p>  This process is asynchronous. If the request is valid, the removal will be enqueued and processed offline. Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could take hours to complete. Before the operation completes, some [Product][google.cloud.retail.v2.Product]s may still be returned by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could take hours to complete. To get a sample of [Product][google.cloud.retail.v2.Product]s that would be deleted, set [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force] to false.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> purgeProductsAsync(PurgeProductsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> purgeProductsOperationCallable()
+ *           <li><p> purgeProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportProducts</td>
+ *      <td><p> Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
+ * <p>  Request processing may be synchronous. Non-existing items are created.
+ * <p>  Note that it is possible for a subset of the [Product][google.cloud.retail.v2.Product]s to be successfully updated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importProductsAsync(ImportProductsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importProductsOperationCallable()
+ *           <li><p> importProductsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetInventory</td>
+ *      <td><p> Updates inventory information for a [Product][google.cloud.retail.v2.Product] while respecting the last update timestamps of each inventory field.
+ * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If the request is valid, the update is enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  When inventory is updated with [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct], the specified inventory field value(s) overwrite any existing value(s) while ignoring the last update time for this field. Furthermore, the last update times for the specified inventory fields are overwritten by the times of the [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] or [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] request.
+ * <p>  If no inventory fields are set in [CreateProductRequest.product][google.cloud.retail.v2.CreateProductRequest.product], then any pre-existing inventory information for this product is used.
+ * <p>  If no inventory fields are set in [SetInventoryRequest.set_mask][google.cloud.retail.v2.SetInventoryRequest.set_mask], then any existing inventory information is preserved.
+ * <p>  Pre-existing inventory information can only be updated with [ProductService.SetInventory][google.cloud.retail.v2.ProductService.SetInventory], [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces], and [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+ * <p>  The returned [Operation][google.longrunning.Operation]s is obsolete after one day, and the [GetOperation][google.longrunning.Operations.GetOperation] API returns `NOT_FOUND` afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates are not marked as [done][google.longrunning.Operation.done] until they are obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setInventoryAsync(SetInventoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setInventoryAsync(Product inventory, FieldMask setMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setInventoryOperationCallable()
+ *           <li><p> setInventoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddFulfillmentPlaces</td>
+ *      <td><p> We recommend that you use the [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories] method instead of the [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces] method. [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
+ * <p>  Incrementally adds place IDs to [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+ * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the added place IDs are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates will not be marked as [done][google.longrunning.Operation.done] until being obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addFulfillmentPlacesAsync(AddFulfillmentPlacesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> addFulfillmentPlacesAsync(ProductName product)
+ *           <li><p> addFulfillmentPlacesAsync(String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addFulfillmentPlacesOperationCallable()
+ *           <li><p> addFulfillmentPlacesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RemoveFulfillmentPlaces</td>
+ *      <td><p> We recommend that you use the [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories] method instead of the [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces] method. [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories] achieves the same results but provides more fine-grained control over ingesting local inventory data.
+ * <p>  Incrementally removes place IDs from a [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
+ * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating fulfillment information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, the removed place IDs are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates will not be marked as [done][google.longrunning.Operation.done] until being obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeFulfillmentPlacesAsync(RemoveFulfillmentPlacesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> removeFulfillmentPlacesAsync(ProductName product)
+ *           <li><p> removeFulfillmentPlacesAsync(String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeFulfillmentPlacesOperationCallable()
+ *           <li><p> removeFulfillmentPlacesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddLocalInventories</td>
+ *      <td><p> Updates local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of places, while respecting the last update timestamps of each inventory field.
+ * <p>  This process is asynchronous and does not require the [Product][google.cloud.retail.v2.Product] to exist before updating inventory information. If the request is valid, the update will be enqueued and processed downstream. As a consequence, when a response is returned, updates are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  Local inventory information can only be modified using this method. [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local inventories.
+ * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates will not be marked as [done][google.longrunning.Operation.done] until being obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addLocalInventoriesAsync(AddLocalInventoriesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> addLocalInventoriesAsync(ProductName product)
+ *           <li><p> addLocalInventoriesAsync(String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addLocalInventoriesOperationCallable()
+ *           <li><p> addLocalInventoriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RemoveLocalInventories</td>
+ *      <td><p> Remove local inventory information for a [Product][google.cloud.retail.v2.Product] at a list of places at a removal timestamp.
+ * <p>  This process is asynchronous. If the request is valid, the removal will be enqueued and processed downstream. As a consequence, when a response is returned, removals are not immediately manifested in the [Product][google.cloud.retail.v2.Product] queried by [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+ * <p>  Local inventory information can only be removed using this method. [ProductService.CreateProduct][google.cloud.retail.v2.ProductService.CreateProduct] and [ProductService.UpdateProduct][google.cloud.retail.v2.ProductService.UpdateProduct] has no effect on local inventories.
+ * <p>  The returned [Operation][google.longrunning.Operation]s will be obsolete after 1 day, and [GetOperation][google.longrunning.Operations.GetOperation] API will return NOT_FOUND afterwards.
+ * <p>  If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated with the stale updates will not be marked as [done][google.longrunning.Operation.done] until being obsolete.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeLocalInventoriesAsync(RemoveLocalInventoriesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> removeLocalInventoriesAsync(ProductName product)
+ *           <li><p> removeLocalInventoriesAsync(String product)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeLocalInventoriesOperationCallable()
+ *           <li><p> removeLocalInventoriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -915,6 +1161,137 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s under a branch.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed offline. Depending on the number of [Product][google.cloud.retail.v2.Product]s, this
+   * operation could take hours to complete. Before the operation completes, some
+   * [Product][google.cloud.retail.v2.Product]s may still be returned by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could
+   * take hours to complete. To get a sample of [Product][google.cloud.retail.v2.Product]s that
+   * would be deleted, set
+   * [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force] to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   PurgeProductsRequest request =
+   *       PurgeProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeProductsResponse response = productServiceClient.purgeProductsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeProductsResponse, PurgeProductsMetadata> purgeProductsAsync(
+      PurgeProductsRequest request) {
+    return purgeProductsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s under a branch.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed offline. Depending on the number of [Product][google.cloud.retail.v2.Product]s, this
+   * operation could take hours to complete. Before the operation completes, some
+   * [Product][google.cloud.retail.v2.Product]s may still be returned by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could
+   * take hours to complete. To get a sample of [Product][google.cloud.retail.v2.Product]s that
+   * would be deleted, set
+   * [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force] to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   PurgeProductsRequest request =
+   *       PurgeProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeProductsResponse, PurgeProductsMetadata> future =
+   *       productServiceClient.purgeProductsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeProductsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable() {
+    return stub.purgeProductsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all selected [Product][google.cloud.retail.v2.Product]s under a branch.
+   *
+   * <p>This process is asynchronous. If the request is valid, the removal will be enqueued and
+   * processed offline. Depending on the number of [Product][google.cloud.retail.v2.Product]s, this
+   * operation could take hours to complete. Before the operation completes, some
+   * [Product][google.cloud.retail.v2.Product]s may still be returned by
+   * [ProductService.GetProduct][google.cloud.retail.v2.ProductService.GetProduct] or
+   * [ProductService.ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
+   *
+   * <p>Depending on the number of [Product][google.cloud.retail.v2.Product]s, this operation could
+   * take hours to complete. To get a sample of [Product][google.cloud.retail.v2.Product]s that
+   * would be deleted, set
+   * [PurgeProductsRequest.force][google.cloud.retail.v2.PurgeProductsRequest.force] to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   PurgeProductsRequest request =
+   *       PurgeProductsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       productServiceClient.purgeProductsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    return stub.purgeProductsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Bulk import of multiple [Product][google.cloud.retail.v2.Product]s.
    *
    * <p>Request processing may be synchronous. Non-existing items are created.
@@ -1368,10 +1745,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1430,10 +1808,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1491,10 +1870,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1552,10 +1932,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1613,10 +1994,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
-   * method instead of
-   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces]
+   * method.
    * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1673,10 +2055,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1735,10 +2118,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1796,10 +2180,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1857,10 +2242,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.
@@ -1920,10 +2306,11 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * It is recommended to use the
+   * We recommend that you use the
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
-   * method instead of
-   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * method instead of the
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces]
+   * method.
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
    * achieves the same results but provides more fine-grained control over ingesting local inventory
    * data.

@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.23.0</version>
+      <version>26.59.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -35,32 +35,31 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-errorreporting</artifactId>
   </dependency>
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-errorreporting:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-errorreporting</artifactId>
-  <version>0.149.0-beta</version>
+  <version>0.182.0-beta</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-errorreporting:0.149.0-beta'
+implementation 'com.google.cloud:google-cloud-errorreporting:0.182.0-beta'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.149.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-errorreporting" % "0.182.0-beta"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -104,7 +103,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Error Reporting uses gRPC for the transport layer.
+Error Reporting uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -201,7 +200,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-errorreporting.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-errorreporting/0.145.0-beta
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-errorreporting/0.182.0-beta
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

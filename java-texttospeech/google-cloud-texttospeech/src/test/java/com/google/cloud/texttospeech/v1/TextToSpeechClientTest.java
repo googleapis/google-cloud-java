@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import io.grpc.StatusRuntimeException;
@@ -31,6 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -152,6 +157,53 @@ public class TextToSpeechClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamingSynthesizeTest() throws Exception {
+    StreamingSynthesizeResponse expectedResponse =
+        StreamingSynthesizeResponse.newBuilder().setAudioContent(ByteString.EMPTY).build();
+    mockTextToSpeech.addResponse(expectedResponse);
+    StreamingSynthesizeRequest request = StreamingSynthesizeRequest.newBuilder().build();
+
+    MockStreamObserver<StreamingSynthesizeResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamingSynthesizeRequest, StreamingSynthesizeResponse> callable =
+        client.streamingSynthesizeCallable();
+    ApiStreamObserver<StreamingSynthesizeRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<StreamingSynthesizeResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamingSynthesizeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTextToSpeech.addException(exception);
+    StreamingSynthesizeRequest request = StreamingSynthesizeRequest.newBuilder().build();
+
+    MockStreamObserver<StreamingSynthesizeResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<StreamingSynthesizeRequest, StreamingSynthesizeResponse> callable =
+        client.streamingSynthesizeCallable();
+    ApiStreamObserver<StreamingSynthesizeRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<StreamingSynthesizeResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

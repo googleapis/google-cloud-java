@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public class SyncGetAudienceList {
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
       GetAudienceListRequest request =
           GetAudienceListRequest.newBuilder()
-              .setName(AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]").toString())
+              .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
               .build();
       AudienceList response = alphaAnalyticsDataClient.getAudienceList(request);
     }

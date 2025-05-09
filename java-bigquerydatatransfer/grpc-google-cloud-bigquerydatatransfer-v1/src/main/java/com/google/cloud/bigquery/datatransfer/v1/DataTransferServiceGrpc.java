@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -765,6 +765,55 @@ public final class DataTransferServiceGrpc {
     return getEnrollDataSourcesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest,
+          com.google.protobuf.Empty>
+      getUnenrollDataSourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UnenrollDataSources",
+      requestType = com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest,
+          com.google.protobuf.Empty>
+      getUnenrollDataSourcesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest,
+            com.google.protobuf.Empty>
+        getUnenrollDataSourcesMethod;
+    if ((getUnenrollDataSourcesMethod = DataTransferServiceGrpc.getUnenrollDataSourcesMethod)
+        == null) {
+      synchronized (DataTransferServiceGrpc.class) {
+        if ((getUnenrollDataSourcesMethod = DataTransferServiceGrpc.getUnenrollDataSourcesMethod)
+            == null) {
+          DataTransferServiceGrpc.getUnenrollDataSourcesMethod =
+              getUnenrollDataSourcesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UnenrollDataSources"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataTransferServiceMethodDescriptorSupplier("UnenrollDataSources"))
+                      .build();
+        }
+      }
+    }
+    return getUnenrollDataSourcesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataTransferServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceStub> factory =
@@ -776,6 +825,19 @@ public final class DataTransferServiceGrpc {
           }
         };
     return DataTransferServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataTransferServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataTransferServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DataTransferServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataTransferServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataTransferServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1061,6 +1123,24 @@ public final class DataTransferServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getEnrollDataSourcesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unenroll data sources in a user project. This allows users to remove
+     * transfer configurations for these data sources. They will no longer appear
+     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
+     * UI](https://console.cloud.google.com/bigquery). Data transfers
+     * configurations of unenrolled data sources will not be scheduled.
+     * </pre>
+     */
+    default void unenrollDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUnenrollDataSourcesMethod(), responseObserver);
     }
   }
 
@@ -1376,10 +1456,285 @@ public final class DataTransferServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unenroll data sources in a user project. This allows users to remove
+     * transfer configurations for these data sources. They will no longer appear
+     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
+     * UI](https://console.cloud.google.com/bigquery). Data transfers
+     * configurations of unenrolled data sources will not be scheduled.
+     * </pre>
+     */
+    public void unenrollDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUnenrollDataSourcesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataTransferService.
+   *
+   * <pre>
+   * This API allows users to manage their data transfers into BigQuery.
+   * </pre>
+   */
+  public static final class DataTransferServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataTransferServiceBlockingV2Stub> {
+    private DataTransferServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataTransferServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataTransferServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a supported data source and returns its settings.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.DataSource getDataSource(
+        com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists supported data sources and returns their settings.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse listDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new data transfer configuration.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.TransferConfig createTransferConfig(
+        com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTransferConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a data transfer configuration.
+     * All fields must be set, even if they are not updated.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.TransferConfig updateTransferConfig(
+        com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTransferConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a data transfer configuration, including any associated transfer
+     * runs and logs.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTransferConfig(
+        com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTransferConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a data transfer config.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig(
+        com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTransferConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse
+        listTransferConfigs(
+            com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTransferConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates transfer runs for a time range [start_time, end_time].
+     * For each date - or whatever granularity the data source supports - in the
+     * range, one transfer run is created.
+     * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse
+        scheduleTransferRuns(
+            com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getScheduleTransferRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse
+        startManualTransferRuns(
+            com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartManualTransferRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the particular transfer run.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRun(
+        com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTransferRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified transfer run.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTransferRun(
+        com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTransferRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about running and completed transfer runs.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse listTransferRuns(
+        com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTransferRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns log messages for the transfer run.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse listTransferLogs(
+        com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTransferLogsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns true if valid credentials exist for the given data source and
+     * requesting user.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse checkValidCreds(
+        com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckValidCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enroll data sources in a user project. This allows users to create transfer
+     * configurations for these data sources. They will also appear in the
+     * ListDataSources RPC and as such, will appear in the
+     * [BigQuery UI](https://console.cloud.google.com/bigquery), and the documents
+     * can be found in the public guide for
+     * [BigQuery Web UI](https://cloud.google.com/bigquery/bigquery-web-ui) and
+     * [Data Transfer
+     * Service](https://cloud.google.com/bigquery/docs/working-with-transfers).
+     * </pre>
+     */
+    public com.google.protobuf.Empty enrollDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnrollDataSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unenroll data sources in a user project. This allows users to remove
+     * transfer configurations for these data sources. They will no longer appear
+     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
+     * UI](https://console.cloud.google.com/bigquery). Data transfers
+     * configurations of unenrolled data sources will not be scheduled.
+     * </pre>
+     */
+    public com.google.protobuf.Empty unenrollDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUnenrollDataSourcesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataTransferService.
    *
    * <pre>
    * This API allows users to manage their data transfers into BigQuery.
@@ -1613,6 +1968,23 @@ public final class DataTransferServiceGrpc {
         com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEnrollDataSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unenroll data sources in a user project. This allows users to remove
+     * transfer configurations for these data sources. They will no longer appear
+     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
+     * UI](https://console.cloud.google.com/bigquery). Data transfers
+     * configurations of unenrolled data sources will not be scheduled.
+     * </pre>
+     */
+    public com.google.protobuf.Empty unenrollDataSources(
+        com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUnenrollDataSourcesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1872,6 +2244,24 @@ public final class DataTransferServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getEnrollDataSourcesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unenroll data sources in a user project. This allows users to remove
+     * transfer configurations for these data sources. They will no longer appear
+     * in the ListDataSources RPC and will also no longer appear in the [BigQuery
+     * UI](https://console.cloud.google.com/bigquery). Data transfers
+     * configurations of unenrolled data sources will not be scheduled.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        unenrollDataSources(
+            com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUnenrollDataSourcesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DATA_SOURCE = 0;
@@ -1889,6 +2279,7 @@ public final class DataTransferServiceGrpc {
   private static final int METHODID_LIST_TRANSFER_LOGS = 12;
   private static final int METHODID_CHECK_VALID_CREDS = 13;
   private static final int METHODID_ENROLL_DATA_SOURCES = 14;
+  private static final int METHODID_UNENROLL_DATA_SOURCES = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2002,6 +2393,11 @@ public final class DataTransferServiceGrpc {
         case METHODID_ENROLL_DATA_SOURCES:
           serviceImpl.enrollDataSources(
               (com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UNENROLL_DATA_SOURCES:
+          serviceImpl.unenrollDataSources(
+              (com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -2124,6 +2520,12 @@ public final class DataTransferServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
                     com.google.protobuf.Empty>(service, METHODID_ENROLL_DATA_SOURCES)))
+        .addMethod(
+            getUnenrollDataSourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest,
+                    com.google.protobuf.Empty>(service, METHODID_UNENROLL_DATA_SOURCES)))
         .build();
   }
 
@@ -2190,6 +2592,7 @@ public final class DataTransferServiceGrpc {
                       .addMethod(getListTransferLogsMethod())
                       .addMethod(getCheckValidCredsMethod())
                       .addMethod(getEnrollDataSourcesMethod())
+                      .addMethod(getUnenrollDataSourcesMethod())
                       .build();
         }
       }

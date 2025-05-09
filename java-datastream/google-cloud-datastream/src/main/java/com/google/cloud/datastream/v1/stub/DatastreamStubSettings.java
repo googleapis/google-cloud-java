@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import static com.google.cloud.datastream.v1.DatastreamClient.ListStreamsPagedRe
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -85,6 +86,7 @@ import com.google.cloud.datastream.v1.LookupStreamObjectRequest;
 import com.google.cloud.datastream.v1.OperationMetadata;
 import com.google.cloud.datastream.v1.PrivateConnection;
 import com.google.cloud.datastream.v1.Route;
+import com.google.cloud.datastream.v1.RunStreamRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobResponse;
 import com.google.cloud.datastream.v1.StopBackfillJobRequest;
@@ -104,9 +106,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -123,7 +125,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getConnectionProfile to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getConnectionProfile:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -139,9 +143,45 @@ import org.threeten.bp.Duration;
  *             .getConnectionProfileSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DatastreamStubSettings datastreamSettings = datastreamSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createConnectionProfile:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * DatastreamStubSettings.Builder datastreamSettingsBuilder = DatastreamStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * datastreamSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -186,6 +226,9 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
   private final UnaryCallSettings<DeleteStreamRequest, Operation> deleteStreamSettings;
   private final OperationCallSettings<DeleteStreamRequest, Empty, OperationMetadata>
       deleteStreamOperationSettings;
+  private final UnaryCallSettings<RunStreamRequest, Operation> runStreamSettings;
+  private final OperationCallSettings<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationSettings;
   private final UnaryCallSettings<GetStreamObjectRequest, StreamObject> getStreamObjectSettings;
   private final UnaryCallSettings<LookupStreamObjectRequest, StreamObject>
       lookupStreamObjectSettings;
@@ -266,9 +309,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
             @Override
             public Iterable<ConnectionProfile> extractResources(
                 ListConnectionProfilesResponse payload) {
-              return payload.getConnectionProfilesList() == null
-                  ? ImmutableList.<ConnectionProfile>of()
-                  : payload.getConnectionProfilesList();
+              return payload.getConnectionProfilesList();
             }
           };
 
@@ -302,9 +343,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
 
             @Override
             public Iterable<Stream> extractResources(ListStreamsResponse payload) {
-              return payload.getStreamsList() == null
-                  ? ImmutableList.<Stream>of()
-                  : payload.getStreamsList();
+              return payload.getStreamsList();
             }
           };
 
@@ -342,9 +381,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
 
             @Override
             public Iterable<StreamObject> extractResources(ListStreamObjectsResponse payload) {
-              return payload.getStreamObjectsList() == null
-                  ? ImmutableList.<StreamObject>of()
-                  : payload.getStreamObjectsList();
+              return payload.getStreamObjectsList();
             }
           };
 
@@ -379,9 +416,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
 
             @Override
             public Iterable<String> extractResources(FetchStaticIpsResponse payload) {
-              return payload.getStaticIpsList() == null
-                  ? ImmutableList.<String>of()
-                  : payload.getStaticIpsList();
+              return payload.getStaticIpsList();
             }
           };
 
@@ -422,9 +457,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
             @Override
             public Iterable<PrivateConnection> extractResources(
                 ListPrivateConnectionsResponse payload) {
-              return payload.getPrivateConnectionsList() == null
-                  ? ImmutableList.<PrivateConnection>of()
-                  : payload.getPrivateConnectionsList();
+              return payload.getPrivateConnectionsList();
             }
           };
 
@@ -458,9 +491,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
 
             @Override
             public Iterable<Route> extractResources(ListRoutesResponse payload) {
-              return payload.getRoutesList() == null
-                  ? ImmutableList.<Route>of()
-                  : payload.getRoutesList();
+              return payload.getRoutesList();
             }
           };
 
@@ -494,9 +525,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -744,6 +773,17 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     return deleteStreamOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to runStream. */
+  public UnaryCallSettings<RunStreamRequest, Operation> runStreamSettings() {
+    return runStreamSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runStream. */
+  public OperationCallSettings<RunStreamRequest, Stream, OperationMetadata>
+      runStreamOperationSettings() {
+    return runStreamOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getStreamObject. */
   public UnaryCallSettings<GetStreamObjectRequest, StreamObject> getStreamObjectSettings() {
     return getStreamObjectSettings;
@@ -879,12 +919,19 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "datastream";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "datastream.googleapis.com:443";
   }
@@ -923,7 +970,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -932,7 +978,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -989,6 +1034,8 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     updateStreamOperationSettings = settingsBuilder.updateStreamOperationSettings().build();
     deleteStreamSettings = settingsBuilder.deleteStreamSettings().build();
     deleteStreamOperationSettings = settingsBuilder.deleteStreamOperationSettings().build();
+    runStreamSettings = settingsBuilder.runStreamSettings().build();
+    runStreamOperationSettings = settingsBuilder.runStreamOperationSettings().build();
     getStreamObjectSettings = settingsBuilder.getStreamObjectSettings().build();
     lookupStreamObjectSettings = settingsBuilder.lookupStreamObjectSettings().build();
     listStreamObjectsSettings = settingsBuilder.listStreamObjectsSettings().build();
@@ -1054,6 +1101,9 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     private final UnaryCallSettings.Builder<DeleteStreamRequest, Operation> deleteStreamSettings;
     private final OperationCallSettings.Builder<DeleteStreamRequest, Empty, OperationMetadata>
         deleteStreamOperationSettings;
+    private final UnaryCallSettings.Builder<RunStreamRequest, Operation> runStreamSettings;
+    private final OperationCallSettings.Builder<RunStreamRequest, Stream, OperationMetadata>
+        runStreamOperationSettings;
     private final UnaryCallSettings.Builder<GetStreamObjectRequest, StreamObject>
         getStreamObjectSettings;
     private final UnaryCallSettings.Builder<LookupStreamObjectRequest, StreamObject>
@@ -1120,21 +1170,21 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1165,6 +1215,8 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
       updateStreamOperationSettings = OperationCallSettings.newBuilder();
       deleteStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteStreamOperationSettings = OperationCallSettings.newBuilder();
+      runStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      runStreamOperationSettings = OperationCallSettings.newBuilder();
       getStreamObjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       lookupStreamObjectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listStreamObjectsSettings = PagedCallSettings.newBuilder(LIST_STREAM_OBJECTS_PAGE_STR_FACT);
@@ -1200,6 +1252,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
               createStreamSettings,
               updateStreamSettings,
               deleteStreamSettings,
+              runStreamSettings,
               getStreamObjectSettings,
               lookupStreamObjectSettings,
               listStreamObjectsSettings,
@@ -1242,6 +1295,8 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
       updateStreamOperationSettings = settings.updateStreamOperationSettings.toBuilder();
       deleteStreamSettings = settings.deleteStreamSettings.toBuilder();
       deleteStreamOperationSettings = settings.deleteStreamOperationSettings.toBuilder();
+      runStreamSettings = settings.runStreamSettings.toBuilder();
+      runStreamOperationSettings = settings.runStreamOperationSettings.toBuilder();
       getStreamObjectSettings = settings.getStreamObjectSettings.toBuilder();
       lookupStreamObjectSettings = settings.lookupStreamObjectSettings.toBuilder();
       listStreamObjectsSettings = settings.listStreamObjectsSettings.toBuilder();
@@ -1278,6 +1333,7 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
               createStreamSettings,
               updateStreamSettings,
               deleteStreamSettings,
+              runStreamSettings,
               getStreamObjectSettings,
               lookupStreamObjectSettings,
               listStreamObjectsSettings,
@@ -1302,7 +1358,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1315,7 +1370,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1377,6 +1431,11 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .deleteStreamSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .runStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getStreamObjectSettings()
@@ -1473,13 +1532,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1497,13 +1556,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1521,13 +1580,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1545,13 +1604,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1569,13 +1628,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1593,13 +1652,36 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .runStreamOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<RunStreamRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Stream.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1617,13 +1699,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1641,13 +1723,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1664,13 +1746,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1687,13 +1769,13 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1736,8 +1818,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateConnectionProfileRequest, ConnectionProfile, OperationMetadata>
         createConnectionProfileOperationSettings() {
@@ -1751,8 +1831,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateConnectionProfileRequest, ConnectionProfile, OperationMetadata>
         updateConnectionProfileOperationSettings() {
@@ -1766,8 +1844,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteConnectionProfileRequest, Empty, OperationMetadata>
         deleteConnectionProfileOperationSettings() {
       return deleteConnectionProfileOperationSettings;
@@ -1798,8 +1874,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createStream. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateStreamRequest, Stream, OperationMetadata>
         createStreamOperationSettings() {
       return createStreamOperationSettings;
@@ -1811,8 +1885,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateStream. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateStreamRequest, Stream, OperationMetadata>
         updateStreamOperationSettings() {
       return updateStreamOperationSettings;
@@ -1824,11 +1896,20 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteStream. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteStreamRequest, Empty, OperationMetadata>
         deleteStreamOperationSettings() {
       return deleteStreamOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runStream. */
+    public UnaryCallSettings.Builder<RunStreamRequest, Operation> runStreamSettings() {
+      return runStreamSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runStream. */
+    public OperationCallSettings.Builder<RunStreamRequest, Stream, OperationMetadata>
+        runStreamOperationSettings() {
+      return runStreamOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getStreamObject. */
@@ -1876,8 +1957,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createPrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
         createPrivateConnectionOperationSettings() {
@@ -1906,8 +1985,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deletePrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePrivateConnectionRequest, Empty, OperationMetadata>
         deletePrivateConnectionOperationSettings() {
       return deletePrivateConnectionOperationSettings;
@@ -1919,8 +1996,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createRoute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRouteRequest, Route, OperationMetadata>
         createRouteOperationSettings() {
       return createRouteOperationSettings;
@@ -1943,8 +2018,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteRoute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRouteRequest, Empty, OperationMetadata>
         deleteRouteOperationSettings() {
       return deleteRouteOperationSettings;

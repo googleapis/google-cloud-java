@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,6 +95,19 @@ public final class CaseAttachmentServiceGrpc {
           }
         };
     return CaseAttachmentServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CaseAttachmentServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CaseAttachmentServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CaseAttachmentServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CaseAttachmentServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CaseAttachmentServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CaseAttachmentServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -205,6 +218,40 @@ public final class CaseAttachmentServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CaseAttachmentService.
+   *
+   * <pre>
+   * A service to manage file attachment for Google Cloud support cases.
+   * </pre>
+   */
+  public static final class CaseAttachmentServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CaseAttachmentServiceBlockingV2Stub> {
+    private CaseAttachmentServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CaseAttachmentServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CaseAttachmentServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve all attachments associated with a support case.
+     * </pre>
+     */
+    public com.google.cloud.support.v2.ListAttachmentsResponse listAttachments(
+        com.google.cloud.support.v2.ListAttachmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAttachmentsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CaseAttachmentService.
    *
    * <pre>
    * A service to manage file attachment for Google Cloud support cases.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -284,6 +284,56 @@ public final class ReservationServiceGrpc {
       }
     }
     return getUpdateReservationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+          com.google.cloud.bigquery.reservation.v1.Reservation>
+      getFailoverReservationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FailoverReservation",
+      requestType = com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest.class,
+      responseType = com.google.cloud.bigquery.reservation.v1.Reservation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+          com.google.cloud.bigquery.reservation.v1.Reservation>
+      getFailoverReservationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+            com.google.cloud.bigquery.reservation.v1.Reservation>
+        getFailoverReservationMethod;
+    if ((getFailoverReservationMethod = ReservationServiceGrpc.getFailoverReservationMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getFailoverReservationMethod = ReservationServiceGrpc.getFailoverReservationMethod)
+            == null) {
+          ReservationServiceGrpc.getFailoverReservationMethod =
+              getFailoverReservationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+                          com.google.cloud.bigquery.reservation.v1.Reservation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FailoverReservation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.Reservation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("FailoverReservation"))
+                      .build();
+        }
+      }
+    }
+    return getFailoverReservationMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1095,6 +1145,19 @@ public final class ReservationServiceGrpc {
     return ReservationServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ReservationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ReservationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReservationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ReservationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReservationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ReservationServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1219,6 +1282,25 @@ public final class ReservationServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateReservationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    default void failoverReservation(
+        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFailoverReservationMethod(), responseObserver);
     }
 
     /**
@@ -1721,6 +1803,27 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public void failoverReservation(
+        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFailoverReservationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new capacity commitment resource.
      * </pre>
      */
@@ -2118,6 +2221,440 @@ public final class ReservationServiceGrpc {
    *   `projects/myproject/locations/US/capacityCommitments/id`.
    * </pre>
    */
+  public static final class ReservationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ReservationServiceBlockingV2Stub> {
+    private ReservationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ReservationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ReservationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new reservation resource.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation createReservation(
+        com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the reservations for the project in the specified location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ListReservationsResponse listReservations(
+        com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReservationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the reservation.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation getReservation(
+        com.google.cloud.bigquery.reservation.v1.GetReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a reservation.
+     * Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+     * assignments.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteReservation(
+        com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation resource.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation updateReservation(
+        com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation failoverReservation(
+        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFailoverReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new capacity commitment resource.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.CapacityCommitment createCapacityCommitment(
+        com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCapacityCommitmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the capacity commitments for the admin project.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse
+        listCapacityCommitments(
+            com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCapacityCommitmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the capacity commitment.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitment(
+        com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCapacityCommitmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a capacity commitment. Attempting to delete capacity commitment
+     * before its commitment_end_time will fail with the error code
+     * `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCapacityCommitment(
+        com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCapacityCommitmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing capacity commitment.
+     * Only `plan` and `renewal_plan` fields can be updated.
+     * Plan can only be changed to a plan of a longer commitment period.
+     * Attempting to change to a plan with shorter commitment period will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.CapacityCommitment updateCapacityCommitment(
+        com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCapacityCommitmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Splits capacity commitment to two commitments of the same plan and
+     * `commitment_end_time`.
+     * A common use case is to enable downgrading commitments.
+     * For example, in order to downgrade from 10000 slots to 8000, you might
+     * split a 10000 capacity commitment into commitments of 2000 and 8000. Then,
+     * you delete the first one after the commitment end time passes.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse
+        splitCapacityCommitment(
+            com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSplitCapacityCommitmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Merges capacity commitments of the same plan into a single commitment.
+     * The resulting capacity commitment has the greater commitment_end_time
+     * out of the to-be-merged capacity commitments.
+     * Attempting to merge capacity commitments of different plan will fail
+     * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.CapacityCommitment mergeCapacityCommitments(
+        com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMergeCapacityCommitmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an assignment object which allows the given project to submit jobs
+     * of a certain type using slots from the specified reservation.
+     * Currently a
+     * resource (project, folder, organization) can only have one assignment per
+     * each (job_type, location) combination, and that reservation will be used
+     * for all jobs of the matching type.
+     * Different assignments can be created on different levels of the
+     * projects, folders or organization hierarchy.  During query execution,
+     * the assignment is looked up at the project, folder and organization levels
+     * in that order. The first assignment found is applied to the query.
+     * When creating assignments, it does not matter if other assignments exist at
+     * higher levels.
+     * Example:
+     * * The organization `organizationA` contains two projects, `project1`
+     *   and `project2`.
+     * * Assignments for all three entities (`organizationA`, `project1`, and
+     *   `project2`) could all be created and mapped to the same or different
+     *   reservations.
+     * "None" assignments represent an absence of the assignment. Projects
+     * assigned to None use on-demand pricing. To create a "None" assignment, use
+     * "none" as a reservation_id in the parent. Example parent:
+     * `projects/myproject/locations/US/reservations/none`.
+     * Returns `google.rpc.Code.PERMISSION_DENIED` if user does not have
+     * 'bigquery.admin' permissions on the project using the reservation
+     * and the project that owns this reservation.
+     * Returns `google.rpc.Code.INVALID_ARGUMENT` when location of the assignment
+     * does not match location of the reservation.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Assignment createAssignment(
+        com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists assignments.
+     * Only explicitly created assignments will be returned.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, ListAssignments will just return the above two assignments
+     * for reservation `res1`, and no expansion/merge will happen.
+     * The wildcard "-" can be used for
+     * reservations in the request. In that case all assignments belongs to the
+     * specified project and location will be listed.
+     * **Note** "-" cannot be used for projects nor locations.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse listAssignments(
+        com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssignmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a assignment. No expansion will happen.
+     * Example:
+     * * Organization `organizationA` contains two projects, `project1` and
+     *   `project2`.
+     * * Reservation `res1` exists and was created previously.
+     * * CreateAssignment was used previously to define the following
+     *   associations between entities and reservations: `&lt;organizationA, res1&gt;`
+     *   and `&lt;project1, res1&gt;`
+     * In this example, deletion of the `&lt;organizationA, res1&gt;` assignment won't
+     * affect the other assignment `&lt;project1, res1&gt;`. After said deletion,
+     * queries from `project1` will still use `res1` while queries from
+     * `project2` will switch to use on-demand mode.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAssignment(
+        com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Looks up assignments for a specified resource for a particular
+     * region. If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * **Note** "-" cannot be used for projects
+     * nor locations.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse searchAssignments(
+        com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchAssignmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up assignments for a specified resource for a particular region.
+     * If the request is about a project:
+     * 1. Assignments created on the project will be returned if they exist.
+     * 2. Otherwise assignments created on the closest ancestor will be
+     *    returned.
+     * 3. Assignments for different JobTypes will all be returned.
+     * The same logic applies if the request is about a folder.
+     * If the request is about an organization, then assignments created on the
+     * organization will be returned (organization doesn't have ancestors).
+     * Comparing to ListAssignments, there are some behavior
+     * differences:
+     * 1. permission on the assignee will be verified in this API.
+     * 2. Hierarchy lookup (project-&gt;folder-&gt;organization) happens in this API.
+     * 3. Parent here is `projects/&#42;&#47;locations/&#42;`, instead of
+     *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse
+        searchAllAssignments(
+            com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchAllAssignmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moves an assignment under a new reservation.
+     * This differs from removing an existing assignment and recreating a new one
+     * by providing a transactional change that ensures an assignee always has an
+     * associated reservation.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Assignment moveAssignment(
+        com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing assignment.
+     * Only the `priority` field can be updated.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Assignment updateAssignment(
+        com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAssignmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a BI reservation.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.BiReservation getBiReservation(
+        com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBiReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BI reservation.
+     * Only fields specified in the `field_mask` are updated.
+     * A singleton BI reservation always exists with default size 0.
+     * In order to reserve BI capacity it needs to be updated to an amount
+     * greater than 0. In order to release BI capacity reservation size
+     * must be set to 0.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.BiReservation updateBiReservation(
+        com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBiReservationMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ReservationService.
+   *
+   * <pre>
+   * This API allows users to manage their BigQuery reservations.
+   * A reservation provides computational resource guarantees, in the form of
+   * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
+   * unit of computational power in BigQuery, and serves as the basic unit of
+   * parallelism. In a scan of a multi-partitioned table, a single slot operates
+   * on a single partition of the table. A reservation resource exists as a child
+   * resource of the admin project and location, e.g.:
+   *   `projects/myproject/locations/US/reservations/reservationName`.
+   * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
+   * (in the form of slots) with some committed period of usage. A capacity
+   * commitment resource exists as a child resource of the admin project and
+   * location, e.g.:
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
+   * </pre>
+   */
   public static final class ReservationServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ReservationServiceBlockingStub> {
     private ReservationServiceBlockingStub(
@@ -2196,6 +2733,23 @@ public final class ReservationServiceGrpc {
         com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation failoverReservation(
+        com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFailoverReservationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2625,6 +3179,25 @@ public final class ReservationServiceGrpc {
      *
      *
      * <pre>
+     * Fail over a reservation to the secondary location. The operation should be
+     * done in the current secondary location, which will be promoted to the
+     * new primary location for the reservation.
+     * Attempting to failover a reservation in the current primary location will
+     * fail with the error code `google.rpc.Code.FAILED_PRECONDITION`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.reservation.v1.Reservation>
+        failoverReservation(
+            com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFailoverReservationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new capacity commitment resource.
      * </pre>
      */
@@ -2965,22 +3538,23 @@ public final class ReservationServiceGrpc {
   private static final int METHODID_GET_RESERVATION = 2;
   private static final int METHODID_DELETE_RESERVATION = 3;
   private static final int METHODID_UPDATE_RESERVATION = 4;
-  private static final int METHODID_CREATE_CAPACITY_COMMITMENT = 5;
-  private static final int METHODID_LIST_CAPACITY_COMMITMENTS = 6;
-  private static final int METHODID_GET_CAPACITY_COMMITMENT = 7;
-  private static final int METHODID_DELETE_CAPACITY_COMMITMENT = 8;
-  private static final int METHODID_UPDATE_CAPACITY_COMMITMENT = 9;
-  private static final int METHODID_SPLIT_CAPACITY_COMMITMENT = 10;
-  private static final int METHODID_MERGE_CAPACITY_COMMITMENTS = 11;
-  private static final int METHODID_CREATE_ASSIGNMENT = 12;
-  private static final int METHODID_LIST_ASSIGNMENTS = 13;
-  private static final int METHODID_DELETE_ASSIGNMENT = 14;
-  private static final int METHODID_SEARCH_ASSIGNMENTS = 15;
-  private static final int METHODID_SEARCH_ALL_ASSIGNMENTS = 16;
-  private static final int METHODID_MOVE_ASSIGNMENT = 17;
-  private static final int METHODID_UPDATE_ASSIGNMENT = 18;
-  private static final int METHODID_GET_BI_RESERVATION = 19;
-  private static final int METHODID_UPDATE_BI_RESERVATION = 20;
+  private static final int METHODID_FAILOVER_RESERVATION = 5;
+  private static final int METHODID_CREATE_CAPACITY_COMMITMENT = 6;
+  private static final int METHODID_LIST_CAPACITY_COMMITMENTS = 7;
+  private static final int METHODID_GET_CAPACITY_COMMITMENT = 8;
+  private static final int METHODID_DELETE_CAPACITY_COMMITMENT = 9;
+  private static final int METHODID_UPDATE_CAPACITY_COMMITMENT = 10;
+  private static final int METHODID_SPLIT_CAPACITY_COMMITMENT = 11;
+  private static final int METHODID_MERGE_CAPACITY_COMMITMENTS = 12;
+  private static final int METHODID_CREATE_ASSIGNMENT = 13;
+  private static final int METHODID_LIST_ASSIGNMENTS = 14;
+  private static final int METHODID_DELETE_ASSIGNMENT = 15;
+  private static final int METHODID_SEARCH_ASSIGNMENTS = 16;
+  private static final int METHODID_SEARCH_ALL_ASSIGNMENTS = 17;
+  private static final int METHODID_MOVE_ASSIGNMENT = 18;
+  private static final int METHODID_UPDATE_ASSIGNMENT = 19;
+  private static final int METHODID_GET_BI_RESERVATION = 20;
+  private static final int METHODID_UPDATE_BI_RESERVATION = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3026,6 +3600,12 @@ public final class ReservationServiceGrpc {
         case METHODID_UPDATE_RESERVATION:
           serviceImpl.updateReservation(
               (com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>)
+                  responseObserver);
+          break;
+        case METHODID_FAILOVER_RESERVATION:
+          serviceImpl.failoverReservation(
+              (com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>)
                   responseObserver);
           break;
@@ -3184,6 +3764,13 @@ public final class ReservationServiceGrpc {
                     com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest,
                     com.google.cloud.bigquery.reservation.v1.Reservation>(
                     service, METHODID_UPDATE_RESERVATION)))
+        .addMethod(
+            getFailoverReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest,
+                    com.google.cloud.bigquery.reservation.v1.Reservation>(
+                    service, METHODID_FAILOVER_RESERVATION)))
         .addMethod(
             getCreateCapacityCommitmentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3350,6 +3937,7 @@ public final class ReservationServiceGrpc {
                       .addMethod(getGetReservationMethod())
                       .addMethod(getDeleteReservationMethod())
                       .addMethod(getUpdateReservationMethod())
+                      .addMethod(getFailoverReservationMethod())
                       .addMethod(getCreateCapacityCommitmentMethod())
                       .addMethod(getListCapacityCommitmentsMethod())
                       .addMethod(getGetCapacityCommitmentMethod())

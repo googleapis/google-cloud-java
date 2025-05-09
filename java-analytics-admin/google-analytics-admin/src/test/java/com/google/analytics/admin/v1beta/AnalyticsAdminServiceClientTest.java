@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.List
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -104,6 +105,7 @@ public class AnalyticsAdminServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
+            .setGmpOrganization("gmpOrganization-65424739")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -147,6 +149,7 @@ public class AnalyticsAdminServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
+            .setGmpOrganization("gmpOrganization-65424739")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -314,6 +317,7 @@ public class AnalyticsAdminServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
+            .setGmpOrganization("gmpOrganization-65424739")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -1983,6 +1987,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2029,6 +2034,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2075,6 +2081,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2121,6 +2128,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2163,6 +2171,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2350,6 +2359,386 @@ public class AnalyticsAdminServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listConversionEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createKeyEventTest() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    KeyEvent keyEvent = KeyEvent.newBuilder().build();
+
+    KeyEvent actualResponse = client.createKeyEvent(parent, keyEvent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateKeyEventRequest actualRequest = ((CreateKeyEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(keyEvent, actualRequest.getKeyEvent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createKeyEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      KeyEvent keyEvent = KeyEvent.newBuilder().build();
+      client.createKeyEvent(parent, keyEvent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createKeyEventTest2() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    KeyEvent keyEvent = KeyEvent.newBuilder().build();
+
+    KeyEvent actualResponse = client.createKeyEvent(parent, keyEvent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateKeyEventRequest actualRequest = ((CreateKeyEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(keyEvent, actualRequest.getKeyEvent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createKeyEventExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      KeyEvent keyEvent = KeyEvent.newBuilder().build();
+      client.createKeyEvent(parent, keyEvent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateKeyEventTest() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    KeyEvent keyEvent = KeyEvent.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    KeyEvent actualResponse = client.updateKeyEvent(keyEvent, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateKeyEventRequest actualRequest = ((UpdateKeyEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(keyEvent, actualRequest.getKeyEvent());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateKeyEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      KeyEvent keyEvent = KeyEvent.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateKeyEvent(keyEvent, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getKeyEventTest() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+
+    KeyEvent actualResponse = client.getKeyEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetKeyEventRequest actualRequest = ((GetKeyEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getKeyEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+      client.getKeyEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getKeyEventTest2() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    KeyEvent actualResponse = client.getKeyEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetKeyEventRequest actualRequest = ((GetKeyEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getKeyEventExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getKeyEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteKeyEventTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+
+    client.deleteKeyEvent(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteKeyEventRequest actualRequest = ((DeleteKeyEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteKeyEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+      client.deleteKeyEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteKeyEventTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteKeyEvent(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteKeyEventRequest actualRequest = ((DeleteKeyEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteKeyEventExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteKeyEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listKeyEventsTest() throws Exception {
+    KeyEvent responsesElement = KeyEvent.newBuilder().build();
+    ListKeyEventsResponse expectedResponse =
+        ListKeyEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllKeyEvents(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListKeyEventsPagedResponse pagedListResponse = client.listKeyEvents(parent);
+
+    List<KeyEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKeyEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListKeyEventsRequest actualRequest = ((ListKeyEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listKeyEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listKeyEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listKeyEventsTest2() throws Exception {
+    KeyEvent responsesElement = KeyEvent.newBuilder().build();
+    ListKeyEventsResponse expectedResponse =
+        ListKeyEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllKeyEvents(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListKeyEventsPagedResponse pagedListResponse = client.listKeyEvents(parent);
+
+    List<KeyEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKeyEventsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListKeyEventsRequest actualRequest = ((ListKeyEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listKeyEventsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listKeyEvents(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -3632,6 +4021,8 @@ public class AnalyticsAdminServiceClientTest {
             .setTimeZone("timeZone-2077180903")
             .addAllOrderBys(new ArrayList<AccessOrderBy>())
             .setReturnEntityQuota(true)
+            .setIncludeAllUsers(true)
+            .setExpandGroups(true)
             .build();
 
     RunAccessReportResponse actualResponse = client.runAccessReport(request);
@@ -3652,6 +4043,8 @@ public class AnalyticsAdminServiceClientTest {
     Assert.assertEquals(request.getTimeZone(), actualRequest.getTimeZone());
     Assert.assertEquals(request.getOrderBysList(), actualRequest.getOrderBysList());
     Assert.assertEquals(request.getReturnEntityQuota(), actualRequest.getReturnEntityQuota());
+    Assert.assertEquals(request.getIncludeAllUsers(), actualRequest.getIncludeAllUsers());
+    Assert.assertEquals(request.getExpandGroups(), actualRequest.getExpandGroups());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -3677,6 +4070,8 @@ public class AnalyticsAdminServiceClientTest {
               .setTimeZone("timeZone-2077180903")
               .addAllOrderBys(new ArrayList<AccessOrderBy>())
               .setReturnEntityQuota(true)
+              .setIncludeAllUsers(true)
+              .setExpandGroups(true)
               .build();
       client.runAccessReport(request);
       Assert.fail("No exception raised");

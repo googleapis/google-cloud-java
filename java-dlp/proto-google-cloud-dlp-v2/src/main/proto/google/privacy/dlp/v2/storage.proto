@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,58 +31,85 @@ option ruby_package = "Google::Cloud::Dlp::V2";
 message InfoType {
   // Name of the information type. Either a name of your choosing when
   // creating a CustomInfoType, or one of the names listed
-  // at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-  // a built-in type.  When sending Cloud DLP results to Data Catalog, infoType
-  // names should conform to the pattern `[A-Za-z0-9$_-]{1,64}`.
+  // at
+  // https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference
+  // when specifying a built-in type.  When sending Cloud DLP results to Data
+  // Catalog, infoType names should conform to the pattern
+  // `[A-Za-z0-9$_-]{1,64}`.
   string name = 1;
 
   // Optional version name for this InfoType.
   string version = 2;
+
+  // Optional custom sensitivity for this InfoType.
+  // This only applies to data profiling.
+  SensitivityScore sensitivity_score = 3;
 }
 
-// Score is a summary of all elements in the data profile.
-// A higher number means more sensitive.
+// Score is calculated from of all elements in the data profile.
+// A higher level means the data is more sensitive.
 message SensitivityScore {
-  // Various score levels for resources.
+  // Various sensitivity score levels for resources.
   enum SensitivityScoreLevel {
     // Unused.
     SENSITIVITY_SCORE_UNSPECIFIED = 0;
 
-    // No sensitive information detected. Limited access.
+    // No sensitive information detected. The resource isn't publicly
+    // accessible.
     SENSITIVITY_LOW = 10;
 
-    // Medium risk - PII, potentially sensitive data, or fields with free-text
-    // data that are at higher risk of having intermittent sensitive data.
-    // Consider limiting access.
+    // Unable to determine sensitivity.
+    SENSITIVITY_UNKNOWN = 12;
+
+    // Medium risk. Contains personally identifiable information (PII),
+    // potentially sensitive data, or fields with free-text data that are at a
+    // higher risk of having intermittent sensitive data. Consider limiting
+    // access.
     SENSITIVITY_MODERATE = 20;
 
-    // High risk – SPII may be present. Exfiltration of data may lead to user
-    // data loss. Re-identification of users may be possible. Consider limiting
-    // usage and or removing SPII.
+    // High risk. Sensitive personally identifiable information (SPII) can be
+    // present. Exfiltration of data can lead to user data loss.
+    // Re-identification of users might be possible. Consider limiting usage and
+    // or removing SPII.
     SENSITIVITY_HIGH = 30;
   }
 
-  // The score applied to the resource.
+  // The sensitivity score applied to the resource.
   SensitivityScoreLevel score = 1;
 }
 
-// Categorization of results based on how likely they are to represent a match,
-// based on the number of elements they contain which imply a match.
+// Coarse-grained confidence level of how well a particular finding
+// satisfies the criteria to match a particular infoType.
+//
+// Likelihood is calculated based on the number of signals a
+// finding has that implies that the finding matches the infoType. For
+// example, a string that has an '@' and a '.com' is more likely to be a
+// match for an email address than a string that only has an '@'.
+//
+// In general, the highest likelihood level has the strongest signals that
+// indicate a match. That is, a finding with a high likelihood has a low chance
+// of being a false positive.
+//
+// For more information about each likelihood level
+// and how likelihood works, see [Match
+// likelihood](https://cloud.google.com/sensitive-data-protection/docs/likelihood).
 enum Likelihood {
   // Default value; same as POSSIBLE.
   LIKELIHOOD_UNSPECIFIED = 0;
 
-  // Few matching elements.
+  // Highest chance of a false positive.
   VERY_UNLIKELY = 1;
 
+  // High chance of a false positive.
   UNLIKELY = 2;
 
-  // Some matching elements.
+  // Some matching signals. The default value.
   POSSIBLE = 3;
 
+  // Low chance of a false positive.
   LIKELY = 4;
 
-  // Many matching elements.
+  // Confidence level is high. Lowest chance of a false positive.
   VERY_LIKELY = 5;
 }
 
@@ -120,10 +147,10 @@ message CustomInfoType {
   // Dictionary words containing a large number of characters that are not
   // letters or digits may result in unexpected findings because such characters
   // are treated as whitespace. The
-  // [limits](https://cloud.google.com/dlp/limits) page contains details about
-  // the size limits of dictionaries. For dictionaries that do not fit within
-  // these constraints, consider using `LargeCustomDictionaryConfig` in the
-  // `StoredInfoType` API.
+  // [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+  // contains details about the size limits of dictionaries. For dictionaries
+  // that do not fit within these constraints, consider using
+  // `LargeCustomDictionaryConfig` in the `StoredInfoType` API.
   message Dictionary {
     // Message defining a list of words or phrases to search for in the data.
     message WordList {
@@ -133,6 +160,7 @@ message CustomInfoType {
       repeated string words = 1;
     }
 
+    // The potential places the data can be read from.
     oneof source {
       // List of words or phrases to search for.
       WordList word_list = 1;
@@ -157,15 +185,13 @@ message CustomInfoType {
 
   // Message for detecting output from deidentification transformations
   // such as
-  // [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/dlp/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
+  // [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
   // These types of transformations are
   // those that perform pseudonymization, thereby producing a "surrogate" as
   // output. This should be used in conjunction with a field on the
   // transformation such as `surrogate_info_type`. This CustomInfoType does
   // not support the use of `detection_rules`.
-  message SurrogateType {
-
-  }
+  message SurrogateType {}
 
   // Deprecated; use `InspectionRuleSet` instead. Rule for modifying a
   // `CustomInfoType` to alter behavior under certain circumstances, depending
@@ -179,7 +205,7 @@ message CustomInfoType {
       // if you want to modify the likelihood of an entire column of findngs,
       // set this to 1. For more information, see
       // [Hotword example: Set the match likelihood of a table column]
-      // (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+      // (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
       int32 window_before = 1;
 
       // Number of characters after the finding to consider.
@@ -189,6 +215,7 @@ message CustomInfoType {
     // Message for specifying an adjustment to the likelihood of a finding as
     // part of a detection rule.
     message LikelihoodAdjustment {
+      // How the likelihood will be modified.
       oneof adjustment {
         // Set the likelihood of a finding to a fixed value.
         Likelihood fixed_likelihood = 1;
@@ -223,19 +250,21 @@ message CustomInfoType {
       // For tabular data, if you want to modify the likelihood of an entire
       // column of findngs, see
       // [Hotword example: Set the match likelihood of a table column]
-      // (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+      // (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
       Proximity proximity = 2;
 
       // Likelihood adjustment to apply to all matching findings.
       LikelihoodAdjustment likelihood_adjustment = 3;
     }
 
+    // Type of hotword rule.
     oneof type {
       // Hotword-based detection rule.
       HotwordRule hotword_rule = 1;
     }
   }
 
+  // Type of exclusion rule.
   enum ExclusionType {
     // A finding of this custom info type will not be excluded from results.
     EXCLUSION_TYPE_UNSPECIFIED = 0;
@@ -258,6 +287,7 @@ message CustomInfoType {
   // the rule. Defaults to `VERY_LIKELY` if not specified.
   Likelihood likelihood = 6;
 
+  // Type of custom detector.
   oneof type {
     // A list of phrases to detect as a CustomInfoType.
     Dictionary dictionary = 2;
@@ -282,6 +312,13 @@ message CustomInfoType {
   // If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
   // to be returned. It still can be used for rules matching.
   ExclusionType exclusion_type = 8;
+
+  // Sensitivity for this CustomInfoType. If this CustomInfoType extends an
+  // existing InfoType, the sensitivity here will take precedence over that of
+  // the original InfoType. If unset for a CustomInfoType, it will default to
+  // HIGH.
+  // This only applies to data profiling.
+  SensitivityScore sensitivity_score = 9;
 }
 
 // General identifier of a data field in a storage service.
@@ -330,7 +367,7 @@ enum FileType {
   // scanning attempts to convert the content of the file to utf_8 to scan
   // the file.
   // If you wish to avoid this fall back, specify one or more of the other
-  // FileType's in your storage scan.
+  // file types in your storage scan.
   BINARY_FILE = 1;
 
   // Included file extensions:
@@ -338,24 +375,30 @@ enum FileType {
   //   dat, dot, eml,, epbub, ged, go, h, hh, hpp, hxx, h++, hs, html, htm,
   //   mkd, markdown, m, ml, mli, perl, pl, plist, pm, php, phtml, pht,
   //   properties, py, pyw, rb, rbw, rs, rss,  rc, scala, sh, sql, swift, tex,
-  //   shtml, shtm, xhtml, lhs, ics, ini, java, js, json, kix, kml, ocaml, md,
-  //   txt, text, tsv, vb, vcard, vcs, wml, xcodeproj, xml, xsl, xsd, yml, yaml.
+  //   shtml, shtm, xhtml, lhs, ics, ini, java, js, json, jsonl, kix, kml,
+  //   ocaml, md, txt, text, tsv, vb, vcard, vcs, wml, xcodeproj, xml, xsl, xsd,
+  //   yml, yaml.
   TEXT_FILE = 2;
 
   // Included file extensions:
-  //   bmp, gif, jpg, jpeg, jpe, png.
-  // bytes_limit_per_file has no effect on image files.
-  // Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
+  //   bmp, gif, jpg, jpeg, jpe, png. Setting
+  // [bytes_limit_per_file][google.privacy.dlp.v2.CloudStorageOptions.bytes_limit_per_file]
+  // or
+  // [bytes_limit_per_file_percent][google.privacy.dlp.v2.CloudStorageOptions.bytes_limit_per_file]
+  // has no effect on image files. Image inspection is restricted to the
+  // `global`, `us`, `asia`, and `europe` regions.
   IMAGE = 3;
 
-  // Word files >30 MB will be scanned as binary files.
+  // Microsoft Word files larger than 30 MB will be scanned as binary files.
   // Included file extensions:
-  //   docx, dotx, docm, dotm
+  //   docx, dotx, docm, dotm. Setting `bytes_limit_per_file` or
+  //   `bytes_limit_per_file_percent` has no effect on Word files.
   WORD = 5;
 
-  // PDF files >30 MB will be scanned as binary files.
+  // PDF files larger than 30 MB will be scanned as binary files.
   // Included file extensions:
-  //   pdf
+  //   pdf. Setting `bytes_limit_per_file` or `bytes_limit_per_file_percent`
+  // has no effect on PDF files.
   PDF = 6;
 
   // Included file extensions:
@@ -370,14 +413,16 @@ enum FileType {
   //   tsv
   TSV = 9;
 
-  // Powerpoint files >30 MB will be scanned as binary files.
-  // Included file extensions:
-  //   pptx, pptm, potx, potm, pot
+  // Microsoft PowerPoint files larger than 30 MB will be scanned as binary
+  // files. Included file extensions:
+  //   pptx, pptm, potx, potm, pot. Setting `bytes_limit_per_file` or
+  //   `bytes_limit_per_file_percent` has no effect on PowerPoint files.
   POWERPOINT = 11;
 
-  // Excel files >30 MB will be scanned as binary files.
+  // Microsoft Excel files larger than 30 MB will be scanned as binary files.
   // Included file extensions:
-  //   xlsx, xlsm, xltx, xltm
+  //   xlsx, xlsm, xltx, xltm. Setting `bytes_limit_per_file` or
+  //   `bytes_limit_per_file_percent` has no effect on Excel files.
   EXCEL = 12;
 }
 
@@ -464,6 +509,7 @@ message CloudStorageOptions {
   // in conjunction with bytes_limit_per_file. If not specified, scanning would
   // start from the top.
   enum SampleMethod {
+    // No sampling.
     SAMPLE_METHOD_UNSPECIFIED = 0;
 
     // Scan from the top (default).
@@ -478,16 +524,22 @@ message CloudStorageOptions {
   FileSet file_set = 1;
 
   // Max number of bytes to scan from a file. If a scanned file's size is bigger
-  // than this value then the rest of the bytes are omitted. Only one
-  // of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-  // Cannot be set if de-identification is requested.
+  // than this value then the rest of the bytes are omitted. Only one of
+  // `bytes_limit_per_file` and `bytes_limit_per_file_percent` can be specified.
+  // This field can't be set if de-identification is requested. For certain file
+  // types, setting this field has no effect. For more information, see [Limits
+  // on bytes scanned per
+  // file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
   int64 bytes_limit_per_file = 4;
 
   // Max percentage of bytes to scan from a file. The rest are omitted. The
   // number of bytes scanned is rounded down. Must be between 0 and 100,
-  // inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one
-  // of bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
-  // Cannot be set if de-identification is requested.
+  // inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of
+  // bytes_limit_per_file and bytes_limit_per_file_percent can be specified.
+  // This field can't be set if de-identification is requested. For certain file
+  // types, setting this field has no effect. For more information, see [Limits
+  // on bytes scanned per
+  // file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
   int32 bytes_limit_per_file_percent = 8;
 
   // List of file type groups to include in the scan.
@@ -499,6 +551,7 @@ message CloudStorageOptions {
   // Image inspection is restricted to 'global', 'us', 'asia', and 'europe'.
   repeated FileType file_types = 5;
 
+  // How to sample the data.
   SampleMethod sample_method = 6;
 
   // Limits the number of files to scan to this percentage of the input FileSet.
@@ -516,8 +569,8 @@ message CloudStorageFileSet {
 
 // Message representing a single file or path in Cloud Storage.
 message CloudStoragePath {
-  // A url representing a file or path (no wildcards) in Cloud Storage.
-  // Example: gs://[BUCKET_NAME]/dictionary.txt
+  // A URL representing a file or path (no wildcards) in Cloud Storage.
+  // Example: `gs://[BUCKET_NAME]/dictionary.txt`
   string path = 1;
 }
 
@@ -527,6 +580,7 @@ message BigQueryOptions {
   // in conjunction with either rows_limit or rows_limit_percent. If not
   // specified, rows are scanned in the order BigQuery reads them.
   enum SampleMethod {
+    // No sampling.
     SAMPLE_METHOD_UNSPECIFIED = 0;
 
     // Scan groups of rows in the order BigQuery provides (default). Multiple
@@ -559,15 +613,27 @@ message BigQueryOptions {
   // 100 means no limit. Defaults to 0. Only one of rows_limit and
   // rows_limit_percent can be specified. Cannot be used in conjunction with
   // TimespanConfig.
+  //
+  // Caution: A [known
+  // issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+  // is causing the `rowsLimitPercent` field to behave unexpectedly. We
+  // recommend using `rowsLimit` instead.
   int32 rows_limit_percent = 6;
 
+  // How to sample the data.
   SampleMethod sample_method = 4;
 
   // References to fields excluded from scanning. This allows you to skip
   // inspection of entire columns which you know have no findings.
+  // When inspecting a table, we recommend that you inspect all columns.
+  // Otherwise, findings might be affected because hints from excluded columns
+  // will not be used.
   repeated FieldId excluded_fields = 5;
 
   // Limit scanning only to these fields.
+  // When inspecting a table, we recommend that you inspect all columns.
+  // Otherwise, findings might be affected because hints from excluded columns
+  // will not be used.
   repeated FieldId included_fields = 7;
 }
 
@@ -587,7 +653,7 @@ message StorageConfig {
     // Specification of the field containing the timestamp of scanned items.
     // Used for data sources like Datastore and BigQuery.
     //
-    // <b>For BigQuery</b>
+    // **For BigQuery**
     //
     // If this value is not specified and the table was modified between the
     // given start and end times, the entire table will be scanned. If this
@@ -602,13 +668,11 @@ message StorageConfig {
     // you can use any of the following pseudo-columns as your timestamp field.
     // When used with Cloud DLP, these pseudo-column names are case sensitive.
     //
-    // <ul>
-    // <li><code>_PARTITIONTIME</code></li>
-    // <li><code>_PARTITIONDATE</code></li>
-    // <li><code>_PARTITION_LOAD_TIME</code></li>
-    // </ul>
+    // - `_PARTITIONTIME`
+    // - `_PARTITIONDATE`
+    // - `_PARTITION_LOAD_TIME`
     //
-    // <b>For Datastore</b>
+    // **For Datastore**
     //
     // If this value is specified, then entities are filtered based on the given
     // start and end times. If an entity does not contain the provided timestamp
@@ -616,7 +680,8 @@ message StorageConfig {
     // Valid data types of the provided timestamp property are: `TIMESTAMP`.
     //
     // See the
-    // [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+    // [known
+    // issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
     // related to this operation.
     FieldId timestamp_field = 3;
 
@@ -625,9 +690,21 @@ message StorageConfig {
     // since the last time the JobTrigger executed. This will be based on the
     // time of the execution of the last run of the JobTrigger or the timespan
     // end_time used in the last run of the JobTrigger.
+    //
+    // **For BigQuery**
+    //
+    // Inspect jobs triggered by automatic population will scan data that is at
+    // least three hours old when the job starts. This is because streaming
+    // buffer rows are not read during inspection and reading up to the current
+    // timestamp will result in skipped rows.
+    //
+    // See the [known
+    // issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#recently-streamed-data)
+    // related to this operation.
     bool enable_auto_population_of_timespan_config = 4;
   }
 
+  // Type of storage system to inspect.
   oneof type {
     // Google Cloud Datastore options.
     DatastoreOptions datastore_options = 2;
@@ -642,6 +719,7 @@ message StorageConfig {
     HybridOptions hybrid_options = 9;
   }
 
+  // Configuration of the timespan of the items to include in scanning.
   TimespanConfig timespan_config = 6;
 }
 
@@ -673,6 +751,7 @@ message HybridOptions {
   // No more than 10 labels can be associated with a given finding.
   //
   // Examples:
+  //
   // * `"environment" : "production"`
   // * `"pipeline" : "etl"`
   map<string, string> labels = 3;
@@ -751,9 +830,12 @@ message Key {
 
 // Message for a unique key indicating a record that contains a finding.
 message RecordKey {
+  // Type of key
   oneof type {
+    // BigQuery key
     DatastoreKey datastore_key = 2;
 
+    // Datastore key
     BigQueryKey big_query_key = 3;
   }
 
@@ -768,7 +850,7 @@ message RecordKey {
 // `<project_id>:<dataset_id>.<table_id>` or
 // `<project_id>.<dataset_id>.<table_id>`.
 message BigQueryTable {
-  // The Google Cloud Platform project ID of the project containing the table.
+  // The Google Cloud project ID of the project containing the table.
   // If omitted, project ID is inferred from the API call.
   string project_id = 1;
 
@@ -777,6 +859,16 @@ message BigQueryTable {
 
   // Name of the table.
   string table_id = 3;
+}
+
+// Message defining the location of a BigQuery table with the projectId inferred
+// from the parent project.
+message TableReference {
+  // Dataset ID of the table.
+  string dataset_id = 1;
+
+  // Name of the table.
+  string table_id = 2;
 }
 
 // Message defining a field of a BigQuery table.

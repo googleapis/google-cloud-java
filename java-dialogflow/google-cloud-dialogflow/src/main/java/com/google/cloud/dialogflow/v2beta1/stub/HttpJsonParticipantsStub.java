@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,6 +51,8 @@ import com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest;
@@ -390,6 +392,48 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistMethodDescriptor =
+          ApiMethodDescriptor
+              .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2beta1.Participants/SuggestKnowledgeAssist")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SuggestKnowledgeAssistRequest>newBuilder()
+                      .setPath(
+                          "/v2beta1/{parent=projects/*/conversations/*/participants/*}/suggestions:suggestKnowledgeAssist",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SuggestKnowledgeAssistRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2beta1/{parent=projects/*/locations/*/conversations/*/participants/*}/suggestions:suggestKnowledgeAssist")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SuggestKnowledgeAssistRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SuggestKnowledgeAssistResponse>newBuilder()
+                      .setDefaultInstance(SuggestKnowledgeAssistResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListSuggestionsRequest, ListSuggestionsResponse>
       listSuggestionsMethodDescriptor =
           ApiMethodDescriptor.<ListSuggestionsRequest, ListSuggestionsResponse>newBuilder()
@@ -546,6 +590,8 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
       suggestFaqAnswersCallable;
   private final UnaryCallable<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesCallable;
+  private final UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable;
   private final UnaryCallable<ListSuggestionsRequest, ListSuggestionsResponse>
       listSuggestionsCallable;
   private final UnaryCallable<ListSuggestionsRequest, ListSuggestionsPagedResponse>
@@ -694,6 +740,19 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistTransportSettings =
+            HttpJsonCallSettings
+                .<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>newBuilder()
+                .setMethodDescriptor(suggestKnowledgeAssistMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListSuggestionsRequest, ListSuggestionsResponse>
         listSuggestionsTransportSettings =
             HttpJsonCallSettings.<ListSuggestionsRequest, ListSuggestionsResponse>newBuilder()
@@ -777,6 +836,11 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
             suggestSmartRepliesTransportSettings,
             settings.suggestSmartRepliesSettings(),
             clientContext);
+    this.suggestKnowledgeAssistCallable =
+        callableFactory.createUnaryCallable(
+            suggestKnowledgeAssistTransportSettings,
+            settings.suggestKnowledgeAssistSettings(),
+            clientContext);
     this.listSuggestionsCallable =
         callableFactory.createUnaryCallable(
             listSuggestionsTransportSettings, settings.listSuggestionsSettings(), clientContext);
@@ -813,6 +877,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
     methodDescriptors.add(suggestArticlesMethodDescriptor);
     methodDescriptors.add(suggestFaqAnswersMethodDescriptor);
     methodDescriptors.add(suggestSmartRepliesMethodDescriptor);
+    methodDescriptors.add(suggestKnowledgeAssistMethodDescriptor);
     methodDescriptors.add(listSuggestionsMethodDescriptor);
     methodDescriptors.add(compileSuggestionMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
@@ -870,6 +935,12 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
   }
 
   @Override
+  public UnaryCallable<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistCallable() {
+    return suggestKnowledgeAssistCallable;
+  }
+
+  @Override
   public UnaryCallable<ListSuggestionsRequest, ListSuggestionsResponse> listSuggestionsCallable() {
     return listSuggestionsCallable;
   }
@@ -906,7 +977,8 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
   public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override

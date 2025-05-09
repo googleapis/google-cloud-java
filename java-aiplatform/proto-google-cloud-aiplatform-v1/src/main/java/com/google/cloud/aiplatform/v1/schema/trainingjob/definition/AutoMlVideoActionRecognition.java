@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_action_recognition.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 /**
@@ -35,6 +36,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognition)
     AutoMlVideoActionRecognitionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlVideoActionRecognition.newBuilder() to construct.
   private AutoMlVideoActionRecognition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,10 +69,12 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
                 .AutoMlVideoActionRecognition.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INPUTS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlVideoActionRecognitionInputs
       inputs_;
+
   /**
    *
    *
@@ -86,8 +90,9 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasInputs() {
-    return inputs_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
             .AutoMlVideoActionRecognitionInputs.getDefaultInstance()
         : inputs_;
   }
+
   /**
    *
    *
@@ -145,7 +151,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (inputs_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getInputs());
     }
     getUnknownFields().writeTo(output);
@@ -157,7 +163,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (inputs_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInputs());
     }
     size += getUnknownFields().getSerializedSize();
@@ -321,6 +327,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -358,10 +365,19 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
 
     // Construct using
     // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognition.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getInputsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -419,9 +435,12 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
         com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognition
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.inputs_ = inputsBuilder_ == null ? inputs_ : inputsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -544,6 +563,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
             com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                 .AutoMlVideoActionRecognitionInputsOrBuilder>
         inputsBuilder_;
+
     /**
      *
      *
@@ -560,6 +580,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -585,6 +606,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
         return inputsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -612,6 +634,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +659,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -664,10 +688,13 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       } else {
         inputsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      if (inputs_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +716,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +735,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -730,6 +759,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
             : inputs_;
       }
     }
+
     /**
      *
      *

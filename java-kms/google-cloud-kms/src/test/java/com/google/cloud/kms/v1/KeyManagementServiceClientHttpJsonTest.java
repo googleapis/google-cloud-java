@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -611,6 +611,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -668,6 +669,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -851,6 +853,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -902,6 +905,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1165,6 +1169,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1223,6 +1228,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1627,6 +1633,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1645,6 +1652,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1689,6 +1697,7 @@ public class KeyManagementServiceClientHttpJsonTest {
               .setCryptoKeyBackend(
                   CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCryptoKey(cryptoKey, updateMask);
@@ -1828,6 +1837,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1887,6 +1897,7 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,25 @@
  * A client to Cloud Commerce Consumer Procurement API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
+ *
+ * <p>======================= LicenseManagementServiceClient =======================
+ *
+ * <p>Service Description: Service for managing licenses.
+ *
+ * <p>Sample for LicenseManagementServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LicenseManagementServiceClient licenseManagementServiceClient =
+ *     LicenseManagementServiceClient.create()) {
+ *   String name = "name3373707";
+ *   LicensePool response = licenseManagementServiceClient.getLicensePool(name);
+ * }
+ * }</pre>
  *
  * <p>======================= ConsumerProcurementServiceClient =======================
  *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import static com.google.cloud.compute.v1.InterconnectsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -47,10 +47,12 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInterconnectRequest;
 import com.google.cloud.compute.v1.GetDiagnosticsInterconnectRequest;
 import com.google.cloud.compute.v1.GetInterconnectRequest;
+import com.google.cloud.compute.v1.GetMacsecConfigInterconnectRequest;
 import com.google.cloud.compute.v1.InsertInterconnectRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import com.google.cloud.compute.v1.InterconnectList;
 import com.google.cloud.compute.v1.InterconnectsGetDiagnosticsResponse;
+import com.google.cloud.compute.v1.InterconnectsGetMacsecConfigResponse;
 import com.google.cloud.compute.v1.ListInterconnectsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectRequest;
@@ -60,9 +62,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -79,7 +81,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -96,9 +100,46 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * InterconnectsStubSettings interconnectsSettings = interconnectsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for delete:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * InterconnectsStubSettings.Builder interconnectsSettingsBuilder =
+ *     InterconnectsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * interconnectsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -117,6 +158,9 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
   private final UnaryCallSettings<
           GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsSettings;
+  private final UnaryCallSettings<
+          GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigSettings;
   private final UnaryCallSettings<InsertInterconnectRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertInterconnectRequest, Operation, Operation>
       insertOperationSettings;
@@ -161,9 +205,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
 
             @Override
             public Iterable<Interconnect> extractResources(InterconnectList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<Interconnect>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -204,6 +246,12 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
   public UnaryCallSettings<GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
       getDiagnosticsSettings() {
     return getDiagnosticsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMacsecConfig. */
+  public UnaryCallSettings<GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+      getMacsecConfigSettings() {
+    return getMacsecConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to insert. */
@@ -256,12 +304,19 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -293,7 +348,6 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -325,6 +379,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     getDiagnosticsSettings = settingsBuilder.getDiagnosticsSettings().build();
+    getMacsecConfigSettings = settingsBuilder.getMacsecConfigSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
@@ -344,6 +399,9 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     private final UnaryCallSettings.Builder<
             GetDiagnosticsInterconnectRequest, InterconnectsGetDiagnosticsResponse>
         getDiagnosticsSettings;
+    private final UnaryCallSettings.Builder<
+            GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+        getMacsecConfigSettings;
     private final UnaryCallSettings.Builder<InsertInterconnectRequest, Operation> insertSettings;
     private final OperationCallSettings.Builder<InsertInterconnectRequest, Operation, Operation>
         insertOperationSettings;
@@ -380,21 +438,21 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -411,6 +469,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDiagnosticsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getMacsecConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
@@ -424,6 +483,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
               deleteSettings,
               getSettings,
               getDiagnosticsSettings,
+              getMacsecConfigSettings,
               insertSettings,
               listSettings,
               patchSettings,
@@ -438,6 +498,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       getDiagnosticsSettings = settings.getDiagnosticsSettings.toBuilder();
+      getMacsecConfigSettings = settings.getMacsecConfigSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
@@ -451,6 +512,7 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
               deleteSettings,
               getSettings,
               getDiagnosticsSettings,
+              getMacsecConfigSettings,
               insertSettings,
               listSettings,
               patchSettings,
@@ -463,7 +525,6 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -483,6 +544,11 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
 
       builder
           .getDiagnosticsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getMacsecConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -521,13 +587,13 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -545,13 +611,13 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -569,13 +635,13 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -593,13 +659,13 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -626,8 +692,6 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInterconnectRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -645,14 +709,19 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       return getDiagnosticsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getMacsecConfig. */
+    public UnaryCallSettings.Builder<
+            GetMacsecConfigInterconnectRequest, InterconnectsGetMacsecConfigResponse>
+        getMacsecConfigSettings() {
+      return getMacsecConfigSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertInterconnectRequest, Operation> insertSettings() {
       return insertSettings;
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertInterconnectRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -670,8 +739,6 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchInterconnectRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
@@ -683,8 +750,6 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     }
 
     /** Returns the builder for the settings used for calls to setLabels. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetLabelsInterconnectRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return setLabelsOperationSettings;

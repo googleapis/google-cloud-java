@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -482,6 +482,19 @@ public final class JobServiceGrpc {
     return JobServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static JobServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<JobServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<JobServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public JobServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new JobServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return JobServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -885,6 +898,177 @@ public final class JobServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service JobService.
+   *
+   * <pre>
+   * A service handles job management, including job CRUD, enumeration and search.
+   * </pre>
+   */
+  public static final class JobServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<JobServiceBlockingV2Stub> {
+    private JobServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected JobServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new JobServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new job.
+     * Typically, the job becomes searchable within 10 seconds, but it may take
+     * up to 5 minutes.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.Job createJob(
+        com.google.cloud.talent.v4beta1.CreateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch create jobs operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateJobs(
+        com.google.cloud.talent.v4beta1.BatchCreateJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified job, whose status is OPEN or recently EXPIRED
+     * within the last 90 days.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.Job getJob(
+        com.google.cloud.talent.v4beta1.GetJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified job.
+     * Typically, updated contents become visible in search results within 10
+     * seconds, but it may take up to 5 minutes.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.Job updateJob(
+        com.google.cloud.talent.v4beta1.UpdateJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Begins executing a batch update jobs operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchUpdateJobs(
+        com.google.cloud.talent.v4beta1.BatchUpdateJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified job.
+     * Typically, the job becomes unsearchable within 10 seconds, but it may take
+     * up to 5 minutes.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteJob(
+        com.google.cloud.talent.v4beta1.DeleteJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by filter.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteJobs(
+        com.google.cloud.talent.v4beta1.BatchDeleteJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists jobs by filter.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.ListJobsResponse listJobs(
+        com.google.cloud.talent.v4beta1.ListJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs that the caller has permission to
+     * search against.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.SearchJobsResponse searchJobs(
+        com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches for jobs using the provided
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * This API call is intended for the use case of targeting passive job
+     * seekers (for example, job seekers who have signed up to receive email
+     * alerts about potential job opportunities), and has different algorithmic
+     * adjustments that are targeted to passive job seekers.
+     * This call constrains the
+     * [visibility][google.cloud.talent.v4beta1.Job.visibility] of jobs present in
+     * the database, and only returns jobs the caller has permission to search
+     * against.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.SearchJobsResponse searchJobsForAlert(
+        com.google.cloud.talent.v4beta1.SearchJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchJobsForAlertMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service JobService.
    *
    * <pre>
    * A service handles job management, including job CRUD, enumeration and search.

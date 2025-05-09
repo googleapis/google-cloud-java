@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.cloud.translate.v3.TranslateTextGlossaryConfig;
 import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
 import com.google.cloud.translate.v3.TranslationServiceClient;
+import com.google.cloud.translate.v3.TransliterationConfig;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -47,6 +48,7 @@ public class SyncTranslateText {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setModel("model104069929")
               .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+              .setTransliterationConfig(TransliterationConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .build();
       TranslateTextResponse response = translationServiceClient.translateText(request);

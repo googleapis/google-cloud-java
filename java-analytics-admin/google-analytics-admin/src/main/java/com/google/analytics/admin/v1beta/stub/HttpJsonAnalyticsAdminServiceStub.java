@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.List
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -40,6 +41,7 @@ import com.google.analytics.admin.v1beta.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.CreateDataStreamRequest;
 import com.google.analytics.admin.v1beta.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.CreateKeyEventRequest;
 import com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.CreatePropertyRequest;
 import com.google.analytics.admin.v1beta.CustomDimension;
@@ -52,6 +54,7 @@ import com.google.analytics.admin.v1beta.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1beta.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1beta.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.DeleteGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1beta.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.DeletePropertyRequest;
 import com.google.analytics.admin.v1beta.FirebaseLink;
@@ -62,9 +65,11 @@ import com.google.analytics.admin.v1beta.GetCustomMetricRequest;
 import com.google.analytics.admin.v1beta.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataStreamRequest;
+import com.google.analytics.admin.v1beta.GetKeyEventRequest;
 import com.google.analytics.admin.v1beta.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.GetPropertyRequest;
 import com.google.analytics.admin.v1beta.GoogleAdsLink;
+import com.google.analytics.admin.v1beta.KeyEvent;
 import com.google.analytics.admin.v1beta.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1beta.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1beta.ListAccountsRequest;
@@ -81,6 +86,8 @@ import com.google.analytics.admin.v1beta.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1beta.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksResponse;
+import com.google.analytics.admin.v1beta.ListKeyEventsRequest;
+import com.google.analytics.admin.v1beta.ListKeyEventsResponse;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1beta.ListPropertiesRequest;
@@ -100,6 +107,7 @@ import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.UpdatePropertyRequest;
 import com.google.api.core.BetaApi;
@@ -1312,6 +1320,190 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateKeyEventRequest, KeyEvent>
+      createKeyEventMethodDescriptor =
+          ApiMethodDescriptor.<CreateKeyEventRequest, KeyEvent>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/CreateKeyEvent")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateKeyEventRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=properties/*}/keyEvents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateKeyEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateKeyEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("keyEvent", request.getKeyEvent(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<KeyEvent>newBuilder()
+                      .setDefaultInstance(KeyEvent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateKeyEventRequest, KeyEvent>
+      updateKeyEventMethodDescriptor =
+          ApiMethodDescriptor.<UpdateKeyEventRequest, KeyEvent>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/UpdateKeyEvent")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateKeyEventRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{keyEvent.name=properties/*/keyEvents/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateKeyEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "keyEvent.name", request.getKeyEvent().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateKeyEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("keyEvent", request.getKeyEvent(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<KeyEvent>newBuilder()
+                      .setDefaultInstance(KeyEvent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetKeyEventRequest, KeyEvent>
+      getKeyEventMethodDescriptor =
+          ApiMethodDescriptor.<GetKeyEventRequest, KeyEvent>newBuilder()
+              .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/GetKeyEvent")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetKeyEventRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=properties/*/keyEvents/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetKeyEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetKeyEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<KeyEvent>newBuilder()
+                      .setDefaultInstance(KeyEvent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteKeyEventRequest, Empty>
+      deleteKeyEventMethodDescriptor =
+          ApiMethodDescriptor.<DeleteKeyEventRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/DeleteKeyEvent")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteKeyEventRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{name=properties/*/keyEvents/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteKeyEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteKeyEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListKeyEventsRequest, ListKeyEventsResponse>
+      listKeyEventsMethodDescriptor =
+          ApiMethodDescriptor.<ListKeyEventsRequest, ListKeyEventsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/ListKeyEvents")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListKeyEventsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=properties/*}/keyEvents",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListKeyEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListKeyEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListKeyEventsResponse>newBuilder()
+                      .setDefaultInstance(ListKeyEventsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionMethodDescriptor =
           ApiMethodDescriptor.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
@@ -2067,6 +2259,13 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       listConversionEventsCallable;
   private final UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable;
+  private final UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable;
+  private final UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable;
+  private final UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable;
+  private final UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable;
+  private final UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable;
+  private final UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable;
   private final UnaryCallable<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionCallable;
   private final UnaryCallable<UpdateCustomDimensionRequest, CustomDimension>
@@ -2496,6 +2695,62 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventTransportSettings =
+        HttpJsonCallSettings.<CreateKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(createKeyEventMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventTransportSettings =
+        HttpJsonCallSettings.<UpdateKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(updateKeyEventMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("key_event.name", String.valueOf(request.getKeyEvent().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventTransportSettings =
+        HttpJsonCallSettings.<GetKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(getKeyEventMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventTransportSettings =
+        HttpJsonCallSettings.<DeleteKeyEventRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteKeyEventMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListKeyEventsRequest, ListKeyEventsResponse>
+        listKeyEventsTransportSettings =
+            HttpJsonCallSettings.<ListKeyEventsRequest, ListKeyEventsResponse>newBuilder()
+                .setMethodDescriptor(listKeyEventsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionTransportSettings =
             HttpJsonCallSettings.<CreateCustomDimensionRequest, CustomDimension>newBuilder()
@@ -2890,6 +3145,24 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             listConversionEventsTransportSettings,
             settings.listConversionEventsSettings(),
             clientContext);
+    this.createKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            createKeyEventTransportSettings, settings.createKeyEventSettings(), clientContext);
+    this.updateKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            updateKeyEventTransportSettings, settings.updateKeyEventSettings(), clientContext);
+    this.getKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            getKeyEventTransportSettings, settings.getKeyEventSettings(), clientContext);
+    this.deleteKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            deleteKeyEventTransportSettings, settings.deleteKeyEventSettings(), clientContext);
+    this.listKeyEventsCallable =
+        callableFactory.createUnaryCallable(
+            listKeyEventsTransportSettings, settings.listKeyEventsSettings(), clientContext);
+    this.listKeyEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listKeyEventsTransportSettings, settings.listKeyEventsSettings(), clientContext);
     this.createCustomDimensionCallable =
         callableFactory.createUnaryCallable(
             createCustomDimensionTransportSettings,
@@ -3018,6 +3291,11 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(getConversionEventMethodDescriptor);
     methodDescriptors.add(deleteConversionEventMethodDescriptor);
     methodDescriptors.add(listConversionEventsMethodDescriptor);
+    methodDescriptors.add(createKeyEventMethodDescriptor);
+    methodDescriptors.add(updateKeyEventMethodDescriptor);
+    methodDescriptors.add(getKeyEventMethodDescriptor);
+    methodDescriptors.add(deleteKeyEventMethodDescriptor);
+    methodDescriptors.add(listKeyEventsMethodDescriptor);
     methodDescriptors.add(createCustomDimensionMethodDescriptor);
     methodDescriptors.add(updateCustomDimensionMethodDescriptor);
     methodDescriptors.add(listCustomDimensionsMethodDescriptor);
@@ -3256,6 +3534,37 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable() {
     return listConversionEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable() {
+    return createKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable() {
+    return updateKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable() {
+    return getKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable() {
+    return deleteKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable() {
+    return listKeyEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable() {
+    return listKeyEventsPagedCallable;
   }
 
   @Override

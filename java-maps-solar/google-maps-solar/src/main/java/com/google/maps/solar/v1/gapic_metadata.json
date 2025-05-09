@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.solar.v1",
+  "libraryPackage": "com.google.maps.solar.v1",
+  "services": {
+    "Solar": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SolarClient",
+          "rpcs": {
+            "FindClosestBuildingInsights": {
+              "methods": ["findClosestBuildingInsights", "findClosestBuildingInsightsCallable"]
+            },
+            "GetDataLayers": {
+              "methods": ["getDataLayers", "getDataLayersCallable"]
+            },
+            "GetGeoTiff": {
+              "methods": ["getGeoTiff", "getGeoTiffCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

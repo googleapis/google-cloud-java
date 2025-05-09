@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.apps.events.subscriptions.v1",
+  "libraryPackage": "com.google.apps.events.subscriptions.v1",
+  "services": {
+    "SubscriptionsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SubscriptionsServiceClient",
+          "rpcs": {
+            "CreateSubscription": {
+              "methods": ["createSubscriptionAsync", "createSubscriptionAsync", "createSubscriptionOperationCallable", "createSubscriptionCallable"]
+            },
+            "DeleteSubscription": {
+              "methods": ["deleteSubscriptionAsync", "deleteSubscriptionAsync", "deleteSubscriptionAsync", "deleteSubscriptionOperationCallable", "deleteSubscriptionCallable"]
+            },
+            "GetSubscription": {
+              "methods": ["getSubscription", "getSubscription", "getSubscription", "getSubscriptionCallable"]
+            },
+            "ListSubscriptions": {
+              "methods": ["listSubscriptions", "listSubscriptions", "listSubscriptionsPagedCallable", "listSubscriptionsCallable"]
+            },
+            "ReactivateSubscription": {
+              "methods": ["reactivateSubscriptionAsync", "reactivateSubscriptionAsync", "reactivateSubscriptionAsync", "reactivateSubscriptionOperationCallable", "reactivateSubscriptionCallable"]
+            },
+            "UpdateSubscription": {
+              "methods": ["updateSubscriptionAsync", "updateSubscriptionAsync", "updateSubscriptionOperationCallable", "updateSubscriptionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

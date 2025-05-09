@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -440,6 +440,19 @@ public final class TagValuesGrpc {
     return TagValuesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TagValuesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TagValuesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TagValuesBlockingV2Stub>() {
+          @java.lang.Override
+          public TagValuesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TagValuesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TagValuesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -829,6 +842,160 @@ public final class TagValuesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TagValues.
+   *
+   * <pre>
+   * Allow users to create and manage tag values.
+   * </pre>
+   */
+  public static final class TagValuesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TagValuesBlockingV2Stub> {
+    private TagValuesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TagValuesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TagValuesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all TagValues for a specific TagKey.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.ListTagValuesResponse listTagValues(
+        com.google.cloud.resourcemanager.v3.ListTagValuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTagValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the
+     * value does not exist or the user does not have permission to view it.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.TagValue getTagValue(
+        com.google.cloud.resourcemanager.v3.GetTagValueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTagValueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a TagValue by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the value does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.TagValue getNamespacedTagValue(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNamespacedTagValueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a TagValue as a child of the specified TagKey. If a another
+     * request with the same parameters is sent while the original request is in
+     * process the second request will receive an error. A maximum of 1000
+     * TagValues can exist under a TagKey at any given time.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTagValue(
+        com.google.cloud.resourcemanager.v3.CreateTagValueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTagValueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the attributes of the TagValue resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTagValue(
+        com.google.cloud.resourcemanager.v3.UpdateTagValueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTagValueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a TagValue. The TagValue cannot have any bindings when it is
+     * deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTagValue(
+        com.google.cloud.resourcemanager.v3.DeleteTagValueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTagValueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a TagValue. The returned policy may be
+     * empty if no such policy or resource exists. The `resource` field should
+     * be the TagValue's resource name. For example: `tagValues/1234`.
+     * The caller must have the
+     * `cloudresourcemanager.googleapis.com/tagValues.getIamPolicy` permission on
+     * the identified TagValue to get the access control policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on a TagValue, replacing any existing
+     * policy. The `resource` field should be the TagValue's resource name.
+     * For example: `tagValues/1234`.
+     * The caller must have `resourcemanager.tagValues.setIamPolicy` permission
+     * on the identified tagValue.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified TagValue.
+     * The `resource` field should be the TagValue's resource name. For example:
+     * `tagValues/1234`.
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TagValues.
    *
    * <pre>
    * Allow users to create and manage tag values.

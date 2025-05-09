@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,6 +179,55 @@ public final class MapsPlatformDatasetsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest,
+          com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>
+      getFetchDatasetErrorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchDatasetErrors",
+      requestType = com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest.class,
+      responseType = com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest,
+          com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>
+      getFetchDatasetErrorsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest,
+            com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>
+        getFetchDatasetErrorsMethod;
+    if ((getFetchDatasetErrorsMethod = MapsPlatformDatasetsGrpc.getFetchDatasetErrorsMethod)
+        == null) {
+      synchronized (MapsPlatformDatasetsGrpc.class) {
+        if ((getFetchDatasetErrorsMethod = MapsPlatformDatasetsGrpc.getFetchDatasetErrorsMethod)
+            == null) {
+          MapsPlatformDatasetsGrpc.getFetchDatasetErrorsMethod =
+              getFetchDatasetErrorsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest,
+                          com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchDatasetErrors"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MapsPlatformDatasetsMethodDescriptorSupplier("FetchDatasetErrors"))
+                      .build();
+        }
+      }
+    }
+    return getFetchDatasetErrorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest,
           com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse>
       getListDatasetsMethod;
@@ -281,6 +330,19 @@ public final class MapsPlatformDatasetsGrpc {
     return MapsPlatformDatasetsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MapsPlatformDatasetsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MapsPlatformDatasetsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MapsPlatformDatasetsBlockingV2Stub>() {
+          @java.lang.Override
+          public MapsPlatformDatasetsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MapsPlatformDatasetsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MapsPlatformDatasetsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -322,7 +384,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Create a new dataset for the specified project.
+     * Creates a new dataset for the specified project.
      * </pre>
      */
     default void createDataset(
@@ -337,7 +399,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Update the metadata for the dataset.
+     * Updates the metadata for the dataset.
      * </pre>
      */
     default void updateDatasetMetadata(
@@ -352,7 +414,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Get the dataset.
+     * Gets the dataset.
      * </pre>
      */
     default void getDataset(
@@ -366,7 +428,23 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * List all the datasets for the specified project.
+     * Gets all the errors of a dataset.
+     * </pre>
+     */
+    default void fetchDatasetErrors(
+        com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchDatasetErrorsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the datasets for the specified project.
      * </pre>
      */
     default void listDatasets(
@@ -381,7 +459,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Delete the specified dataset .
+     * Deletes the specified dataset.
      * </pre>
      */
     default void deleteDataset(
@@ -431,7 +509,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Create a new dataset for the specified project.
+     * Creates a new dataset for the specified project.
      * </pre>
      */
     public void createDataset(
@@ -448,7 +526,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Update the metadata for the dataset.
+     * Updates the metadata for the dataset.
      * </pre>
      */
     public void updateDatasetMetadata(
@@ -465,7 +543,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Get the dataset.
+     * Gets the dataset.
      * </pre>
      */
     public void getDataset(
@@ -480,7 +558,25 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * List all the datasets for the specified project.
+     * Gets all the errors of a dataset.
+     * </pre>
+     */
+    public void fetchDatasetErrors(
+        com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchDatasetErrorsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the datasets for the specified project.
      * </pre>
      */
     public void listDatasets(
@@ -497,7 +593,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Delete the specified dataset .
+     * Deletes the specified dataset.
      * </pre>
      */
     public void deleteDataset(
@@ -512,6 +608,105 @@ public final class MapsPlatformDatasetsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MapsPlatformDatasets.
+   *
+   * <pre>
+   * Service definition for the Maps Platform Datasets API.
+   * </pre>
+   */
+  public static final class MapsPlatformDatasetsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MapsPlatformDatasetsBlockingV2Stub> {
+    private MapsPlatformDatasetsBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MapsPlatformDatasetsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MapsPlatformDatasetsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new dataset for the specified project.
+     * </pre>
+     */
+    public com.google.maps.mapsplatformdatasets.v1.Dataset createDataset(
+        com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the metadata for the dataset.
+     * </pre>
+     */
+    public com.google.maps.mapsplatformdatasets.v1.Dataset updateDatasetMetadata(
+        com.google.maps.mapsplatformdatasets.v1.UpdateDatasetMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDatasetMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the dataset.
+     * </pre>
+     */
+    public com.google.maps.mapsplatformdatasets.v1.Dataset getDataset(
+        com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets all the errors of a dataset.
+     * </pre>
+     */
+    public com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse fetchDatasetErrors(
+        com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchDatasetErrorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the datasets for the specified project.
+     * </pre>
+     */
+    public com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse listDatasets(
+        com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified dataset.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataset(
+        com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MapsPlatformDatasets.
    *
    * <pre>
    * Service definition for the Maps Platform Datasets API.
@@ -534,7 +729,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Create a new dataset for the specified project.
+     * Creates a new dataset for the specified project.
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset createDataset(
@@ -547,7 +742,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Update the metadata for the dataset.
+     * Updates the metadata for the dataset.
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset updateDatasetMetadata(
@@ -560,7 +755,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Get the dataset.
+     * Gets the dataset.
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.Dataset getDataset(
@@ -573,7 +768,20 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * List all the datasets for the specified project.
+     * Gets all the errors of a dataset.
+     * </pre>
+     */
+    public com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse fetchDatasetErrors(
+        com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchDatasetErrorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the datasets for the specified project.
      * </pre>
      */
     public com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse listDatasets(
@@ -586,7 +794,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Delete the specified dataset .
+     * Deletes the specified dataset.
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataset(
@@ -620,7 +828,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Create a new dataset for the specified project.
+     * Creates a new dataset for the specified project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -634,7 +842,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Update the metadata for the dataset.
+     * Updates the metadata for the dataset.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -649,7 +857,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Get the dataset.
+     * Gets the dataset.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -663,7 +871,22 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * List all the datasets for the specified project.
+     * Gets all the errors of a dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>
+        fetchDatasetErrors(
+            com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchDatasetErrorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the datasets for the specified project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -677,7 +900,7 @@ public final class MapsPlatformDatasetsGrpc {
      *
      *
      * <pre>
-     * Delete the specified dataset .
+     * Deletes the specified dataset.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -690,8 +913,9 @@ public final class MapsPlatformDatasetsGrpc {
   private static final int METHODID_CREATE_DATASET = 0;
   private static final int METHODID_UPDATE_DATASET_METADATA = 1;
   private static final int METHODID_GET_DATASET = 2;
-  private static final int METHODID_LIST_DATASETS = 3;
-  private static final int METHODID_DELETE_DATASET = 4;
+  private static final int METHODID_FETCH_DATASET_ERRORS = 3;
+  private static final int METHODID_LIST_DATASETS = 4;
+  private static final int METHODID_DELETE_DATASET = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -726,6 +950,13 @@ public final class MapsPlatformDatasetsGrpc {
           serviceImpl.getDataset(
               (com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest) request,
               (io.grpc.stub.StreamObserver<com.google.maps.mapsplatformdatasets.v1.Dataset>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_DATASET_ERRORS:
+          serviceImpl.fetchDatasetErrors(
+              (com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_DATASETS:
@@ -779,6 +1010,13 @@ public final class MapsPlatformDatasetsGrpc {
                     com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest,
                     com.google.maps.mapsplatformdatasets.v1.Dataset>(
                     service, METHODID_GET_DATASET)))
+        .addMethod(
+            getFetchDatasetErrorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest,
+                    com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse>(
+                    service, METHODID_FETCH_DATASET_ERRORS)))
         .addMethod(
             getListDatasetsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -847,6 +1085,7 @@ public final class MapsPlatformDatasetsGrpc {
                       .addMethod(getCreateDatasetMethod())
                       .addMethod(getUpdateDatasetMetadataMethod())
                       .addMethod(getGetDatasetMethod())
+                      .addMethod(getFetchDatasetErrorsMethod())
                       .addMethod(getListDatasetsMethod())
                       .addMethod(getDeleteDatasetMethod())
                       .build();

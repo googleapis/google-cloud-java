@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1656,6 +1656,19 @@ public final class ClusterManagerGrpc {
     return ClusterManagerStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ClusterManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ClusterManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ClusterManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public ClusterManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ClusterManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ClusterManagerBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1961,8 +1974,6 @@ public final class ClusterManagerGrpc {
      * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
-     * This API is not yet intended for general use, and is not available for all
-     * clusters.
      * </pre>
      */
     default void getJSONWebKeys(
@@ -2556,8 +2567,6 @@ public final class ClusterManagerGrpc {
      * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
-     * This API is not yet intended for general use, and is not available for all
-     * clusters.
      * </pre>
      */
     public void getJSONWebKeys(
@@ -2858,6 +2867,511 @@ public final class ClusterManagerGrpc {
    * Google Kubernetes Engine Cluster Manager v1beta1
    * </pre>
    */
+  public static final class ClusterManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ClusterManagerBlockingV2Stub> {
+    private ClusterManagerBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ClusterManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ClusterManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all clusters owned by a project in either the specified zone or all
+     * zones.
+     * </pre>
+     */
+    public com.google.container.v1beta1.ListClustersResponse listClusters(
+        com.google.container.v1beta1.ListClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details for a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Cluster getCluster(
+        com.google.container.v1beta1.GetClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a cluster, consisting of the specified number and type of Google
+     * Compute Engine instances.
+     * By default, the cluster is created in the project's
+     * [default
+     * network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks).
+     * One firewall is added for the cluster. After cluster creation,
+     * the Kubelet creates routes for each node to allow the containers
+     * on that node to communicate with all other instances in the
+     * cluster.
+     * Finally, an entry is added to the project's global metadata indicating
+     * which CIDR range the cluster is using.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation createCluster(
+        com.google.container.v1beta1.CreateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings for a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation updateCluster(
+        com.google.container.v1beta1.UpdateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the version and/or image type of a specific node pool.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation updateNodePool(
+        com.google.container.v1beta1.UpdateNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the autoscaling settings of a specific node pool.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setNodePoolAutoscaling(
+        com.google.container.v1beta1.SetNodePoolAutoscalingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetNodePoolAutoscalingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the logging service for a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setLoggingService(
+        com.google.container.v1beta1.SetLoggingServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetLoggingServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the monitoring service for a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setMonitoringService(
+        com.google.container.v1beta1.SetMonitoringServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetMonitoringServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the addons for a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setAddonsConfig(
+        com.google.container.v1beta1.SetAddonsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetAddonsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the locations for a specific cluster.
+     * Deprecated. Use
+     * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1beta1/projects.locations.clusters/update)
+     * instead.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.container.v1beta1.Operation setLocations(
+        com.google.container.v1beta1.SetLocationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetLocationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the master for a specific cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation updateMaster(
+        com.google.container.v1beta1.UpdateMasterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMasterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets master auth materials. Currently supports changing the admin password
+     * or a specific cluster, either via password generation or explicitly setting
+     * the password.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setMasterAuth(
+        com.google.container.v1beta1.SetMasterAuthRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetMasterAuthMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the cluster, including the Kubernetes endpoint and all worker
+     * nodes.
+     * Firewalls and routes that were configured during cluster creation
+     * are also deleted.
+     * Other Google Compute Engine resources that might be in use by the cluster,
+     * such as load balancer resources, are not deleted if they weren't present
+     * when the cluster was initially created.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation deleteCluster(
+        com.google.container.v1beta1.DeleteClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all operations in a project in the specified zone or all zones.
+     * </pre>
+     */
+    public com.google.container.v1beta1.ListOperationsResponse listOperations(
+        com.google.container.v1beta1.ListOperationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOperationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the specified operation.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation getOperation(
+        com.google.container.v1beta1.GetOperationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOperationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the specified operation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty cancelOperation(
+        com.google.container.v1beta1.CancelOperationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelOperationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns configuration info about the Google Kubernetes Engine service.
+     * </pre>
+     */
+    public com.google.container.v1beta1.ServerConfig getServerConfig(
+        com.google.container.v1beta1.GetServerConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the public component of the cluster signing keys in
+     * JSON Web Key format.
+     * </pre>
+     */
+    public com.google.container.v1beta1.GetJSONWebKeysResponse getJSONWebKeys(
+        com.google.container.v1beta1.GetJSONWebKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJSONWebKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the node pools for a cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.ListNodePoolsResponse listNodePools(
+        com.google.container.v1beta1.ListNodePoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the requested node pool.
+     * </pre>
+     */
+    public com.google.container.v1beta1.NodePool getNodePool(
+        com.google.container.v1beta1.GetNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a node pool for a cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation createNodePool(
+        com.google.container.v1beta1.CreateNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a node pool from a cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation deleteNodePool(
+        com.google.container.v1beta1.DeleteNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CompleteNodePoolUpgrade will signal an on-going node pool upgrade to
+     * complete.
+     * </pre>
+     */
+    public com.google.protobuf.Empty completeNodePoolUpgrade(
+        com.google.container.v1beta1.CompleteNodePoolUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompleteNodePoolUpgradeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rolls back a previously Aborted or Failed NodePool upgrade.
+     * This makes no changes if the last upgrade successfully completed.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation rollbackNodePoolUpgrade(
+        com.google.container.v1beta1.RollbackNodePoolUpgradeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRollbackNodePoolUpgradeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the NodeManagement options for a node pool.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setNodePoolManagement(
+        com.google.container.v1beta1.SetNodePoolManagementRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetNodePoolManagementMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets labels on a cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setLabels(
+        com.google.container.v1beta1.SetLabelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetLabelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables or disables the ABAC authorization mechanism on a cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setLegacyAbac(
+        com.google.container.v1beta1.SetLegacyAbacRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetLegacyAbacMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts master IP rotation.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation startIPRotation(
+        com.google.container.v1beta1.StartIPRotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartIPRotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Completes master IP rotation.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation completeIPRotation(
+        com.google.container.v1beta1.CompleteIPRotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompleteIPRotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * SetNodePoolSizeRequest sets the size of a node pool. The new size will be
+     * used for all replicas, including future replicas created by modifying
+     * [NodePool.locations][google.container.v1beta1.NodePool.locations].
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setNodePoolSize(
+        com.google.container.v1beta1.SetNodePoolSizeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetNodePoolSizeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables or disables Network Policy for a cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setNetworkPolicy(
+        com.google.container.v1beta1.SetNetworkPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetNetworkPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the maintenance policy for a cluster.
+     * </pre>
+     */
+    public com.google.container.v1beta1.Operation setMaintenancePolicy(
+        com.google.container.v1beta1.SetMaintenancePolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetMaintenancePolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists subnetworks that can be used for creating clusters in a project.
+     * </pre>
+     */
+    public com.google.container.v1beta1.ListUsableSubnetworksResponse listUsableSubnetworks(
+        com.google.container.v1beta1.ListUsableSubnetworksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUsableSubnetworksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checks the cluster compatibility with Autopilot mode, and returns a list of
+     * compatibility issues.
+     * </pre>
+     */
+    public com.google.container.v1beta1.CheckAutopilotCompatibilityResponse
+        checkAutopilotCompatibility(
+            com.google.container.v1beta1.CheckAutopilotCompatibilityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckAutopilotCompatibilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches locations that offer Google Kubernetes Engine.
+     * </pre>
+     */
+    public com.google.container.v1beta1.ListLocationsResponse listLocations(
+        com.google.container.v1beta1.ListLocationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLocationsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ClusterManager.
+   *
+   * <pre>
+   * Google Kubernetes Engine Cluster Manager v1beta1
+   * </pre>
+   */
   public static final class ClusterManagerBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ClusterManagerBlockingStub> {
     private ClusterManagerBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -3120,8 +3634,6 @@ public final class ClusterManagerGrpc {
      * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
-     * This API is not yet intended for general use, and is not available for all
-     * clusters.
      * </pre>
      */
     public com.google.container.v1beta1.GetJSONWebKeysResponse getJSONWebKeys(
@@ -3642,8 +4154,6 @@ public final class ClusterManagerGrpc {
      * <pre>
      * Gets the public component of the cluster signing keys in
      * JSON Web Key format.
-     * This API is not yet intended for general use, and is not available for all
-     * clusters.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

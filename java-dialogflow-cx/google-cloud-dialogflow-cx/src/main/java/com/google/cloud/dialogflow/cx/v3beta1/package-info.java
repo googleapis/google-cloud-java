@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,25 @@
  * try (ChangelogsClient changelogsClient = ChangelogsClient.create()) {
  *   ChangelogName name = ChangelogName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CHANGELOG]");
  *   Changelog response = changelogsClient.getChangelog(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ConversationHistoryClient =======================
+ *
+ * <p>Service Description: Service for managing conversation history.
+ *
+ * <p>Sample for ConversationHistoryClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ConversationHistoryClient conversationHistoryClient = ConversationHistoryClient.create()) {
+ *   ConversationName name =
+ *       ConversationName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[CONVERSATION]");
+ *   Conversation response = conversationHistoryClient.getConversation(name);
  * }
  * }</pre>
  *
@@ -116,6 +135,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= ExamplesClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Examples][google.cloud.dialogflow.cx.v3beta1.Example].
+ *
+ * <p>Sample for ExamplesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ExamplesClient examplesClient = ExamplesClient.create()) {
+ *   PlaybookName parent = PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]");
+ *   Example example = Example.newBuilder().build();
+ *   Example response = examplesClient.createExample(parent, example);
+ * }
+ * }</pre>
+ *
  * <p>======================= ExperimentsClient =======================
  *
  * <p>Service Description: Service for managing
@@ -155,6 +194,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= GeneratorsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Generators][google.cloud.dialogflow.cx.v3beta1.Generator]
+ *
+ * <p>Sample for GeneratorsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GeneratorsClient generatorsClient = GeneratorsClient.create()) {
+ *   GeneratorName name = GeneratorName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[GENERATOR]");
+ *   Generator response = generatorsClient.getGenerator(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= IntentsClient =======================
  *
  * <p>Service Description: Service for managing
@@ -189,6 +247,26 @@
  * try (PagesClient pagesClient = PagesClient.create()) {
  *   PageName name = PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]");
  *   Page response = pagesClient.getPage(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PlaybooksClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Playbooks][google.cloud.dialogflow.cx.v3beta1.Playbook].
+ *
+ * <p>Sample for PlaybooksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PlaybooksClient playbooksClient = PlaybooksClient.create()) {
+ *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+ *   Playbook playbook = Playbook.newBuilder().build();
+ *   Playbook response = playbooksClient.createPlaybook(parent, playbook);
  * }
  * }</pre>
  *
@@ -280,6 +358,25 @@
  * try (TestCasesClient testCasesClient = TestCasesClient.create()) {
  *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
  *   testCasesClient.batchDeleteTestCases(parent);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ToolsClient =======================
+ *
+ * <p>Service Description: Service for managing [Tools][google.cloud.dialogflow.cx.v3beta1.Tool].
+ *
+ * <p>Sample for ToolsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ToolsClient toolsClient = ToolsClient.create()) {
+ *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+ *   Tool tool = Tool.newBuilder().build();
+ *   Tool response = toolsClient.createTool(parent, tool);
  * }
  * }</pre>
  *

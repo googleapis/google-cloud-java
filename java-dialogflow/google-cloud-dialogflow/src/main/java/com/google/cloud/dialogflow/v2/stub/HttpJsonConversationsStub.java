@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.dialogflow.v2.ConversationsClient.ListConversatio
 import static com.google.cloud.dialogflow.v2.ConversationsClient.ListLocationsPagedResponse;
 import static com.google.cloud.dialogflow.v2.ConversationsClient.ListMessagesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -36,9 +35,15 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.CreateConversationRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsRequest;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse;
 import com.google.cloud.dialogflow.v2.GetConversationRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesResponse;
 import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
@@ -67,7 +72,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonConversationsStub extends ConversationsStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -223,6 +227,47 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesMethodDescriptor =
+          ApiMethodDescriptor
+              .<IngestContextReferencesRequest, IngestContextReferencesResponse>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.v2.Conversations/IngestContextReferences")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<IngestContextReferencesRequest>newBuilder()
+                      .setPath(
+                          "/v2/{conversation=projects/*/locations/*/conversations/*}:ingestContextReferences",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<IngestContextReferencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "conversation", request.getConversation());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<IngestContextReferencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearConversation().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<IngestContextReferencesResponse>newBuilder()
+                      .setDefaultInstance(IngestContextReferencesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListMessagesRequest, ListMessagesResponse>
       listMessagesMethodDescriptor =
           ApiMethodDescriptor.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -351,6 +396,46 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionMethodDescriptor =
+          ApiMethodDescriptor
+              .<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.Conversations/GenerateStatelessSuggestion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateStatelessSuggestionRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/statelessSuggestion:generate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateStatelessSuggestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateStatelessSuggestionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateStatelessSuggestionResponse>newBuilder()
+                      .setDefaultInstance(GenerateStatelessSuggestionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeMethodDescriptor =
           ApiMethodDescriptor.<SearchKnowledgeRequest, SearchKnowledgeResponse>newBuilder()
@@ -393,6 +478,47 @@ public class HttpJsonConversationsStub extends ConversationsStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SearchKnowledgeResponse>newBuilder()
                       .setDefaultInstance(SearchKnowledgeResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsMethodDescriptor =
+          ApiMethodDescriptor.<GenerateSuggestionsRequest, GenerateSuggestionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dialogflow.v2.Conversations/GenerateSuggestions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateSuggestionsRequest>newBuilder()
+                      .setPath(
+                          "/v2/{conversation=projects/*/conversations/*}/suggestions:generate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateSuggestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "conversation", request.getConversation());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v2/{conversation=projects/*/locations/*/conversations/*}/suggestions:generate")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateSuggestionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearConversation().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateSuggestionsResponse>newBuilder()
+                      .setDefaultInstance(GenerateSuggestionsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -473,6 +599,8 @@ public class HttpJsonConversationsStub extends ConversationsStub {
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
   private final UnaryCallable<CompleteConversationRequest, Conversation>
       completeConversationCallable;
+  private final UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
       listMessagesPagedCallable;
@@ -480,8 +608,13 @@ public class HttpJsonConversationsStub extends ConversationsStub {
       suggestConversationSummaryCallable;
   private final UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummaryCallable;
+  private final UnaryCallable<
+          GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable;
   private final UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeCallable;
+  private final UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -576,6 +709,19 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
+        ingestContextReferencesTransportSettings =
+            HttpJsonCallSettings
+                .<IngestContextReferencesRequest, IngestContextReferencesResponse>newBuilder()
+                .setMethodDescriptor(ingestContextReferencesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("conversation", String.valueOf(request.getConversation()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         HttpJsonCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
             .setMethodDescriptor(listMessagesMethodDescriptor)
@@ -615,6 +761,20 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+        generateStatelessSuggestionTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateStatelessSuggestionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeTransportSettings =
             HttpJsonCallSettings.<SearchKnowledgeRequest, SearchKnowledgeResponse>newBuilder()
@@ -625,6 +785,19 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("conversation", String.valueOf(request.getConversation()));
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+        generateSuggestionsTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateSuggestionsRequest, GenerateSuggestionsResponse>newBuilder()
+                .setMethodDescriptor(generateSuggestionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("conversation", String.valueOf(request.getConversation()));
                       return builder.build();
                     })
                 .build();
@@ -675,6 +848,11 @@ public class HttpJsonConversationsStub extends ConversationsStub {
             completeConversationTransportSettings,
             settings.completeConversationSettings(),
             clientContext);
+    this.ingestContextReferencesCallable =
+        callableFactory.createUnaryCallable(
+            ingestContextReferencesTransportSettings,
+            settings.ingestContextReferencesSettings(),
+            clientContext);
     this.listMessagesCallable =
         callableFactory.createUnaryCallable(
             listMessagesTransportSettings, settings.listMessagesSettings(), clientContext);
@@ -691,9 +869,19 @@ public class HttpJsonConversationsStub extends ConversationsStub {
             generateStatelessSummaryTransportSettings,
             settings.generateStatelessSummarySettings(),
             clientContext);
+    this.generateStatelessSuggestionCallable =
+        callableFactory.createUnaryCallable(
+            generateStatelessSuggestionTransportSettings,
+            settings.generateStatelessSuggestionSettings(),
+            clientContext);
     this.searchKnowledgeCallable =
         callableFactory.createUnaryCallable(
             searchKnowledgeTransportSettings, settings.searchKnowledgeSettings(), clientContext);
+    this.generateSuggestionsCallable =
+        callableFactory.createUnaryCallable(
+            generateSuggestionsTransportSettings,
+            settings.generateSuggestionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -715,10 +903,13 @@ public class HttpJsonConversationsStub extends ConversationsStub {
     methodDescriptors.add(listConversationsMethodDescriptor);
     methodDescriptors.add(getConversationMethodDescriptor);
     methodDescriptors.add(completeConversationMethodDescriptor);
+    methodDescriptors.add(ingestContextReferencesMethodDescriptor);
     methodDescriptors.add(listMessagesMethodDescriptor);
     methodDescriptors.add(suggestConversationSummaryMethodDescriptor);
     methodDescriptors.add(generateStatelessSummaryMethodDescriptor);
+    methodDescriptors.add(generateStatelessSuggestionMethodDescriptor);
     methodDescriptors.add(searchKnowledgeMethodDescriptor);
+    methodDescriptors.add(generateSuggestionsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -752,6 +943,12 @@ public class HttpJsonConversationsStub extends ConversationsStub {
   }
 
   @Override
+  public UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable() {
+    return ingestContextReferencesCallable;
+  }
+
+  @Override
   public UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable() {
     return listMessagesCallable;
   }
@@ -774,8 +971,20 @@ public class HttpJsonConversationsStub extends ConversationsStub {
   }
 
   @Override
+  public UnaryCallable<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable() {
+    return generateStatelessSuggestionCallable;
+  }
+
+  @Override
   public UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse> searchKnowledgeCallable() {
     return searchKnowledgeCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable() {
+    return generateSuggestionsCallable;
   }
 
   @Override

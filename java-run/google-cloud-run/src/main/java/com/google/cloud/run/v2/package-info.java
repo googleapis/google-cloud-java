@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,32 @@
  * A client to Cloud Run Admin API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
+ *
+ * <p>======================= BuildsClient =======================
+ *
+ * <p>Service Description: Cloud Run Build Control Plane API
+ *
+ * <p>Sample for BuildsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BuildsClient buildsClient = BuildsClient.create()) {
+ *   SubmitBuildRequest request =
+ *       SubmitBuildRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setImageUri("imageUri-859610607")
+ *           .setServiceAccount("serviceAccount1079137720")
+ *           .setWorkerPool(
+ *               WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+ *           .addAllTags(new ArrayList<String>())
+ *           .build();
+ *   SubmitBuildResponse response = buildsClient.submitBuild(request);
+ * }
+ * }</pre>
  *
  * <p>======================= ExecutionsClient =======================
  *

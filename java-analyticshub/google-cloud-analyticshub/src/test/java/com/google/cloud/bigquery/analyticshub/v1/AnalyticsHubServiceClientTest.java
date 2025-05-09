@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -246,6 +246,8 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -291,6 +293,8 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -336,6 +340,8 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -384,6 +390,8 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -432,6 +440,8 @@ public class AnalyticsHubServiceClientTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -641,6 +651,9 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -691,6 +704,9 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -741,6 +757,9 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -794,6 +813,9 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -847,6 +869,9 @@ public class AnalyticsHubServiceClientTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -1224,6 +1249,9 @@ public class AnalyticsHubServiceClientTest {
             .setOrganizationDisplayName("organizationDisplayName-1353817286")
             .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
             .setSubscriberContact("subscriberContact-847205736")
+            .addAllLinkedResources(new ArrayList<Subscription.LinkedResource>())
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 
@@ -1268,6 +1296,9 @@ public class AnalyticsHubServiceClientTest {
             .setOrganizationDisplayName("organizationDisplayName-1353817286")
             .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
             .setSubscriberContact("subscriberContact-847205736")
+            .addAllLinkedResources(new ArrayList<Subscription.LinkedResource>())
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockAnalyticsHubService.addResponse(expectedResponse);
 

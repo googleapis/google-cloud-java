@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ import com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1.SearchDataItemsRequest;
 import com.google.cloud.aiplatform.v1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1.UpdateDatasetRequest;
+import com.google.cloud.aiplatform.v1.UpdateDatasetVersionRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -150,6 +151,10 @@ public abstract class DatasetServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateDatasetVersionRequest, Operation> createDatasetVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: createDatasetVersionCallable()");
+  }
+
+  public UnaryCallable<UpdateDatasetVersionRequest, DatasetVersion> updateDatasetVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDatasetVersionCallable()");
   }
 
   public OperationCallable<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -131,24 +130,20 @@ public class SessionEntityTypeName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectSessionEntityTypeBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectEnvironmentUserSessionEntityTypeBuilder
       newProjectEnvironmentUserSessionEntityTypeBuilder() {
     return new ProjectEnvironmentUserSessionEntityTypeBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationSessionEntityTypeBuilder
       newProjectLocationSessionEntityTypeBuilder() {
     return new ProjectLocationSessionEntityTypeBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationEnvironmentUserSessionEntityTypeBuilder
       newProjectLocationEnvironmentUserSessionEntityTypeBuilder() {
     return new ProjectLocationEnvironmentUserSessionEntityTypeBuilder();
@@ -162,13 +157,11 @@ public class SessionEntityTypeName implements ResourceName {
     return newBuilder().setProject(project).setSession(session).setEntityType(entityType).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionEntityTypeName ofProjectSessionEntityTypeName(
       String project, String session, String entityType) {
     return newBuilder().setProject(project).setSession(session).setEntityType(entityType).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionEntityTypeName ofProjectEnvironmentUserSessionEntityTypeName(
       String project, String environment, String user, String session, String entityType) {
     return newProjectEnvironmentUserSessionEntityTypeBuilder()
@@ -180,7 +173,6 @@ public class SessionEntityTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionEntityTypeName ofProjectLocationSessionEntityTypeName(
       String project, String location, String session, String entityType) {
     return newProjectLocationSessionEntityTypeBuilder()
@@ -191,7 +183,6 @@ public class SessionEntityTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionEntityTypeName ofProjectLocationEnvironmentUserSessionEntityTypeName(
       String project,
       String location,
@@ -218,7 +209,6 @@ public class SessionEntityTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectSessionEntityTypeName(
       String project, String session, String entityType) {
     return newBuilder()
@@ -229,7 +219,6 @@ public class SessionEntityTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectEnvironmentUserSessionEntityTypeName(
       String project, String environment, String user, String session, String entityType) {
     return newProjectEnvironmentUserSessionEntityTypeBuilder()
@@ -242,7 +231,6 @@ public class SessionEntityTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationSessionEntityTypeName(
       String project, String location, String session, String entityType) {
     return newProjectLocationSessionEntityTypeBuilder()
@@ -254,7 +242,6 @@ public class SessionEntityTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEnvironmentUserSessionEntityTypeName(
       String project,
       String location,
@@ -454,7 +441,8 @@ public class SessionEntityTypeName implements ResourceName {
     private Builder(SessionEntityTypeName sessionEntityTypeName) {
       Preconditions.checkArgument(
           Objects.equals(sessionEntityTypeName.pathTemplate, PROJECT_SESSION_ENTITY_TYPE),
-          "toBuilder is only supported when SessionEntityTypeName has the pattern of projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}");
+          "toBuilder is only supported when SessionEntityTypeName has the pattern of"
+              + " projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}");
       this.project = sessionEntityTypeName.project;
       this.session = sessionEntityTypeName.session;
       this.entityType = sessionEntityTypeName.entityType;
@@ -469,7 +457,6 @@ public class SessionEntityTypeName implements ResourceName {
    * Builder for
    * projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectEnvironmentUserSessionEntityTypeBuilder {
     private String project;
     private String environment;
@@ -533,7 +520,6 @@ public class SessionEntityTypeName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/agent/sessions/{session}/entityTypes/{entity_type}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationSessionEntityTypeBuilder {
     private String project;
     private String location;
@@ -587,7 +573,6 @@ public class SessionEntityTypeName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationEnvironmentUserSessionEntityTypeBuilder {
     private String project;
     private String location;

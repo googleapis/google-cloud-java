@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,12 +25,25 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AcceptPublisherModelEulaRequest;
+import com.google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse;
+import com.google.cloud.aiplatform.v1beta1.DeployRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployResponse;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelResponse;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
 import com.google.cloud.aiplatform.v1beta1.PublisherModel;
+import com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -40,6 +53,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -77,6 +91,65 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   ProtoUtils.marshaller(ListPublisherModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPublisherModelsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeployRequest, Operation> deployMethodDescriptor =
+      MethodDescriptor.<DeployRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelGardenService/Deploy")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeployRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeployPublisherModelRequest, Operation>
+      deployPublisherModelMethodDescriptor =
+          MethodDescriptor.<DeployPublisherModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelGardenService/DeployPublisherModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeployPublisherModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ExportPublisherModelRequest, Operation>
+      exportPublisherModelMethodDescriptor =
+          MethodDescriptor.<ExportPublisherModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelGardenService/ExportPublisherModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportPublisherModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceMethodDescriptor =
+          MethodDescriptor
+              .<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelGardenService/CheckPublisherModelEulaAcceptance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CheckPublisherModelEulaAcceptanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PublisherModelEulaAcceptance.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaMethodDescriptor =
+          MethodDescriptor
+              .<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelGardenService/AcceptPublisherModelEula")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AcceptPublisherModelEulaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PublisherModelEulaAcceptance.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -130,6 +203,26 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
       listPublisherModelsCallable;
   private final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsPagedResponse>
       listPublisherModelsPagedCallable;
+  private final UnaryCallable<DeployRequest, Operation> deployCallable;
+  private final OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable;
+  private final UnaryCallable<DeployPublisherModelRequest, Operation> deployPublisherModelCallable;
+  private final OperationCallable<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationCallable;
+  private final UnaryCallable<ExportPublisherModelRequest, Operation> exportPublisherModelCallable;
+  private final OperationCallable<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationCallable;
+  private final UnaryCallable<
+          CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceCallable;
+  private final UnaryCallable<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -204,6 +297,62 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<DeployRequest, Operation> deployTransportSettings =
+        GrpcCallSettings.<DeployRequest, Operation>newBuilder()
+            .setMethodDescriptor(deployMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("destination", String.valueOf(request.getDestination()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeployPublisherModelRequest, Operation> deployPublisherModelTransportSettings =
+        GrpcCallSettings.<DeployPublisherModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(deployPublisherModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("destination", String.valueOf(request.getDestination()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ExportPublisherModelRequest, Operation> exportPublisherModelTransportSettings =
+        GrpcCallSettings.<ExportPublisherModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportPublisherModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+        checkPublisherModelEulaAcceptanceTransportSettings =
+            GrpcCallSettings
+                .<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+                    newBuilder()
+                .setMethodDescriptor(checkPublisherModelEulaAcceptanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+        acceptPublisherModelEulaTransportSettings =
+            GrpcCallSettings
+                .<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>newBuilder()
+                .setMethodDescriptor(acceptPublisherModelEulaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -271,6 +420,47 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
             listPublisherModelsTransportSettings,
             settings.listPublisherModelsSettings(),
             clientContext);
+    this.deployCallable =
+        callableFactory.createUnaryCallable(
+            deployTransportSettings, settings.deploySettings(), clientContext);
+    this.deployOperationCallable =
+        callableFactory.createOperationCallable(
+            deployTransportSettings,
+            settings.deployOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deployPublisherModelCallable =
+        callableFactory.createUnaryCallable(
+            deployPublisherModelTransportSettings,
+            settings.deployPublisherModelSettings(),
+            clientContext);
+    this.deployPublisherModelOperationCallable =
+        callableFactory.createOperationCallable(
+            deployPublisherModelTransportSettings,
+            settings.deployPublisherModelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportPublisherModelCallable =
+        callableFactory.createUnaryCallable(
+            exportPublisherModelTransportSettings,
+            settings.exportPublisherModelSettings(),
+            clientContext);
+    this.exportPublisherModelOperationCallable =
+        callableFactory.createOperationCallable(
+            exportPublisherModelTransportSettings,
+            settings.exportPublisherModelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.checkPublisherModelEulaAcceptanceCallable =
+        callableFactory.createUnaryCallable(
+            checkPublisherModelEulaAcceptanceTransportSettings,
+            settings.checkPublisherModelEulaAcceptanceSettings(),
+            clientContext);
+    this.acceptPublisherModelEulaCallable =
+        callableFactory.createUnaryCallable(
+            acceptPublisherModelEulaTransportSettings,
+            settings.acceptPublisherModelEulaSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -315,6 +505,57 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
   public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsPagedResponse>
       listPublisherModelsPagedCallable() {
     return listPublisherModelsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeployRequest, Operation> deployCallable() {
+    return deployCallable;
+  }
+
+  @Override
+  public OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    return deployOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeployPublisherModelRequest, Operation> deployPublisherModelCallable() {
+    return deployPublisherModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationCallable() {
+    return deployPublisherModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportPublisherModelRequest, Operation> exportPublisherModelCallable() {
+    return exportPublisherModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationCallable() {
+    return exportPublisherModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceCallable() {
+    return checkPublisherModelEulaAcceptanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaCallable() {
+    return acceptPublisherModelEulaCallable;
   }
 
   @Override

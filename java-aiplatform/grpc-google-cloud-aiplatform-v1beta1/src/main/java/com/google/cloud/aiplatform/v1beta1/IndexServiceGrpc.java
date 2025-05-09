@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -363,6 +363,19 @@ public final class IndexServiceGrpc {
     return IndexServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static IndexServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<IndexServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IndexServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public IndexServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IndexServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return IndexServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -657,6 +670,120 @@ public final class IndexServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service IndexService.
+   *
+   * <pre>
+   * A service for creating and managing Vertex AI's Index resources.
+   * </pre>
+   */
+  public static final class IndexServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<IndexServiceBlockingV2Stub> {
+    private IndexServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected IndexServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new IndexServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Index.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIndex(
+        com.google.cloud.aiplatform.v1beta1.CreateIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Index.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Index getIndex(
+        com.google.cloud.aiplatform.v1beta1.GetIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Indexes in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListIndexesResponse listIndexes(
+        com.google.cloud.aiplatform.v1beta1.ListIndexesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIndexesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Index.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateIndex(
+        com.google.cloud.aiplatform.v1beta1.UpdateIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Index.
+     * An Index can only be deleted when all its
+     * [DeployedIndexes][google.cloud.aiplatform.v1beta1.Index.deployed_indexes]
+     * had been undeployed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIndex(
+        com.google.cloud.aiplatform.v1beta1.DeleteIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add/update Datapoints into an Index.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.UpsertDatapointsResponse upsertDatapoints(
+        com.google.cloud.aiplatform.v1beta1.UpsertDatapointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpsertDatapointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove Datapoints from an Index.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RemoveDatapointsResponse removeDatapoints(
+        com.google.cloud.aiplatform.v1beta1.RemoveDatapointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveDatapointsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service IndexService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's Index resources.

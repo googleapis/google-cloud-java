@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -172,6 +172,55 @@ public class PublisherClientHttpJsonTest {
               .addAllTextEvents(new ArrayList<String>())
               .build();
       client.publishEvents(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void publishTest() throws Exception {
+    PublishResponse expectedResponse = PublishResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    PublishRequest request =
+        PublishRequest.newBuilder()
+            .setMessageBus(
+                "projects/project-7721/locations/location-7721/messageBuses/messageBuse-7721")
+            .build();
+
+    PublishResponse actualResponse = client.publish(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void publishExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PublishRequest request =
+          PublishRequest.newBuilder()
+              .setMessageBus(
+                  "projects/project-7721/locations/location-7721/messageBuses/messageBuse-7721")
+              .build();
+      client.publish(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

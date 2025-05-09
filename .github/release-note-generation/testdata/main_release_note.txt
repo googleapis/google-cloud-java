@@ -6,6 +6,10 @@
 
 ## [1.13.0](https://github.com/googleapis/google-cloud-java/compare/v1.12.0...v1.13.0) (2023-06-08)
 
+### ⚠ BREAKING CHANGES
+
+* [vertexai] An existing field `entry` is removed from message `some.service.SearchEntriesResult`
+* [vertexai] An existing field `display_name` is removed from message `some.service.SearchEntriesResult`
 
 ### Features
 
@@ -14,13 +18,12 @@
 * [clouddeploy] Add support for disabling Pod overprovisioning in the progressive deployment strategy configuration for a Kubernetes Target ([#9499](https://github.com/googleapis/google-cloud-java/issues/9499)) ([b7890c5](https://github.com/googleapis/google-cloud-java/commit/b7890c57859116d1f6033af9f485598d84428f44))
 * [analyticsadmin] Add the resource definition of a STT recognizer ([#9492](https://github.com/googleapis/google-cloud-java/issues/9492)) ([f2baa92](https://github.com/googleapis/google-cloud-java/commit/f2baa928c4f4d9959591ea905d7c9042320dbc71))
 * [maps-mapsplatformdatasets] new module for migrationcenter ([#9514](https://github.com/googleapis/google-cloud-java/issues/9514)) ([a268c80](https://github.com/googleapis/google-cloud-java/commit/a268c8016262a7a5a13be6a9983294f83d1ecc3f))
-
+* [vertexai] some handwritten changes ([#1234](https://github.com/googleapis/google-cloud-java/issues/1234)) ([a268c80](https://github.com/googleapis/google-cloud-java/commit/a268c8016262a7a5a13be6a9983294f83d1ecc3f))
 
 ### Bug Fixes
 
 * **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.13 ([#9478](https://github.com/googleapis/google-cloud-java/issues/9478)) ([47778ff](https://github.com/googleapis/google-cloud-java/commit/47778ff0b2eb98b6354f237ee84df0dafc567bec))
-* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.6 ([#9494](https://github.com/googleapis/google-cloud-java/issues/9494)) ([739763f](https://github.com/googleapis/google-cloud-java/commit/739763f15ffa2434d7fa089899165f1e8fa5f870))
-* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.11.0 ([#9505](https://github.com/googleapis/google-cloud-java/issues/9505)) ([30bc6f0](https://github.com/googleapis/google-cloud-java/commit/30bc6f0aef5b95549230dbd5b5246f2a8dab4ba4))
+* **deps:** update dependency com.google.cloud:sdk-platform-java-config to v3.36.1 ([#11188](https://github.com/googleapis/google-cloud-java/pull/11188)) ([0200922](https://github.com/googleapis/google-cloud-java/commit/02009221d7d1966b4d180468f0cd1e32fbbab2c8))
 * **deps:** update dependency com.google.cloud:google-cloud-storage to v2.22.3 ([#9477](https://github.com/googleapis/google-cloud-java/issues/9477)) ([ce1ce33](https://github.com/googleapis/google-cloud-java/commit/ce1ce333f6e3e11a9382c8f29196b53c7afa21c2))
 
 

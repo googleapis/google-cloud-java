@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -815,6 +815,19 @@ public final class AutoMlGrpc {
     return AutoMlStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AutoMlBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AutoMlBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AutoMlBlockingV2Stub>() {
+          @java.lang.Override
+          public AutoMlBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AutoMlBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AutoMlBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1522,6 +1535,306 @@ public final class AutoMlGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AutoMl.
+   *
+   * <pre>
+   * AutoML Server API.
+   * The resource names are assigned by the server.
+   * The server never reuses names that it has created after the resources with
+   * those names are deleted.
+   * An ID of a resource is the last element of the item's resource name. For
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`, then
+   * the id for the item is `{dataset_id}`.
+   * Currently the only supported `location_id` is "us-central1".
+   * On any input that is documented to expect a string parameter in
+   * snake_case or dash-case, either of those cases is accepted.
+   * </pre>
+   */
+  public static final class AutoMlBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AutoMlBlockingV2Stub> {
+    private AutoMlBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AutoMlBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AutoMlBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDataset(
+        com.google.cloud.automl.v1.CreateDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a dataset.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.Dataset getDataset(
+        com.google.cloud.automl.v1.GetDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists datasets in a project.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.ListDatasetsResponse listDatasets(
+        com.google.cloud.automl.v1.ListDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a dataset.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.Dataset updateDataset(
+        com.google.cloud.automl.v1.UpdateDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a dataset and all of its contents.
+     * Returns empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDataset(
+        com.google.cloud.automl.v1.DeleteDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports data into a dataset.
+     * For Tables this method can only be called on an empty Dataset.
+     * For Tables:
+     * *   A
+     * [schema_inference_version][google.cloud.automl.v1.InputConfig.params]
+     *     parameter must be explicitly set.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importData(
+        com.google.cloud.automl.v1.ImportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports dataset's data to the provided output location.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportData(
+        com.google.cloud.automl.v1.ExportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an annotation spec.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.AnnotationSpec getAnnotationSpec(
+        com.google.cloud.automl.v1.GetAnnotationSpecRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAnnotationSpecMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a model.
+     * Returns a Model in the [response][google.longrunning.Operation.response]
+     * field when it completes.
+     * When you create a model, several model evaluations are created for it:
+     * a global evaluation, and one evaluation for each annotation spec.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createModel(
+        com.google.cloud.automl.v1.CreateModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.Model getModel(
+        com.google.cloud.automl.v1.GetModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists models.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.ListModelsResponse listModels(
+        com.google.cloud.automl.v1.ListModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a model.
+     * Returns `google.protobuf.Empty` in the
+     * [response][google.longrunning.Operation.response] field when it completes,
+     * and `delete_details` in the
+     * [metadata][google.longrunning.Operation.metadata] field.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteModel(
+        com.google.cloud.automl.v1.DeleteModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a model.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.Model updateModel(
+        com.google.cloud.automl.v1.UpdateModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model. If a model is already deployed, deploying it with the
+     * same parameters has no effect. Deploying with different parametrs
+     * (as e.g. changing
+     * [node_number][google.cloud.automl.v1p1beta.ImageObjectDetectionModelDeploymentMetadata.node_number])
+     *  will reset the deployment state without pausing the model's availability.
+     * Only applicable for Text Classification, Image Object Detection , Tables, and Image Segmentation; all other domains manage
+     * deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployModel(
+        com.google.cloud.automl.v1.DeployModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a model. If the model is not deployed this method has no effect.
+     * Only applicable for Text Classification, Image Object Detection and Tables;
+     * all other domains manage deployment automatically.
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployModel(
+        com.google.cloud.automl.v1.UndeployModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeployModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a trained, "export-able", model to a user specified Google Cloud
+     * Storage location. A model is considered export-able if and only if it has
+     * an export format defined for it in
+     * [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
+     * Returns an empty response in the
+     * [response][google.longrunning.Operation.response] field when it completes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportModel(
+        com.google.cloud.automl.v1.ExportModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a model evaluation.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.ModelEvaluation getModelEvaluation(
+        com.google.cloud.automl.v1.GetModelEvaluationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists model evaluations.
+     * </pre>
+     */
+    public com.google.cloud.automl.v1.ListModelEvaluationsResponse listModelEvaluations(
+        com.google.cloud.automl.v1.ListModelEvaluationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListModelEvaluationsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AutoMl.
    *
    * <pre>
    * AutoML Server API.

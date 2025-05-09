@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.functions.v2beta.samples;
 
 // [START cloudfunctions_v2beta_generated_FunctionService_GenerateUploadUrl_sync]
 import com.google.cloud.functions.v2beta.CryptoKeyName;
+import com.google.cloud.functions.v2beta.Environment;
 import com.google.cloud.functions.v2beta.FunctionServiceClient;
 import com.google.cloud.functions.v2beta.GenerateUploadUrlRequest;
 import com.google.cloud.functions.v2beta.GenerateUploadUrlResponse;
@@ -42,6 +43,7 @@ public class SyncGenerateUploadUrl {
               .setKmsKeyName(
                   CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setEnvironment(Environment.forNumber(0))
               .build();
       GenerateUploadUrlResponse response = functionServiceClient.generateUploadUrl(request);
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -186,6 +186,27 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
   }
 
   @Override
+  public void switchoverCluster(
+      SwitchoverClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SwitchoverCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void restoreCluster(
       RestoreClusterRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -220,7 +241,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSecondaryCluster, expected %s or %s",
+                  "Unrecognized response type %s for method CreateSecondaryCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -303,7 +325,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateSecondaryInstance, expected %s or %s",
+                  "Unrecognized response type %s for method CreateSecondaryInstance, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -324,7 +347,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateInstances, expected %s or %s",
+                  "Unrecognized response type %s for method BatchCreateInstances, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -431,6 +455,27 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
                   "Unrecognized response type %s for method RestartInstance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void executeSql(
+      ExecuteSqlRequest request, StreamObserver<ExecuteSqlResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExecuteSqlResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExecuteSqlResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExecuteSql, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExecuteSqlResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -554,7 +599,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListSupportedDatabaseFlags, expected %s or %s",
+                  "Unrecognized response type %s for method ListSupportedDatabaseFlags, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListSupportedDatabaseFlagsResponse.class.getName(),
                   Exception.class.getName())));
@@ -576,7 +622,8 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateClientCertificate, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateClientCertificate, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateClientCertificateResponse.class.getName(),
                   Exception.class.getName())));
@@ -701,6 +748,27 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
                   "Unrecognized response type %s for method DeleteUser, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDatabases(
+      ListDatabasesRequest request, StreamObserver<ListDatabasesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDatabasesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDatabasesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDatabases, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDatabasesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

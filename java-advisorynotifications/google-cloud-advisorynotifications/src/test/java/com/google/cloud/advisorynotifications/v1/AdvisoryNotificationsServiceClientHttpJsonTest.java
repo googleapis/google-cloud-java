@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,7 +88,7 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
+    LocationName parent = LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
 
     ListNotificationsPagedResponse pagedListResponse = client.listNotifications(parent);
 
@@ -120,7 +120,7 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      LocationName parent = LocationName.of("[ORGANIZATION]", "[LOCATION]");
+      LocationName parent = LocationName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
       client.listNotifications(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -183,7 +183,9 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
     Notification expectedResponse =
         Notification.newBuilder()
             .setName(
-                NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+                NotificationName.ofOrganizationLocationNotificationName(
+                        "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+                    .toString())
             .setSubject(Subject.newBuilder().build())
             .addAllMessages(new ArrayList<Message>())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -191,7 +193,9 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    NotificationName name = NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
+    NotificationName name =
+        NotificationName.ofOrganizationLocationNotificationName(
+            "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
 
     Notification actualResponse = client.getNotification(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -219,7 +223,9 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      NotificationName name = NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
+      NotificationName name =
+          NotificationName.ofOrganizationLocationNotificationName(
+              "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]");
       client.getNotification(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -232,7 +238,9 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
     Notification expectedResponse =
         Notification.newBuilder()
             .setName(
-                NotificationName.of("[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]").toString())
+                NotificationName.ofOrganizationLocationNotificationName(
+                        "[ORGANIZATION]", "[LOCATION]", "[NOTIFICATION]")
+                    .toString())
             .setSubject(Subject.newBuilder().build())
             .addAllMessages(new ArrayList<Message>())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -282,13 +290,14 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
   public void getSettingsTest() throws Exception {
     Settings expectedResponse =
         Settings.newBuilder()
-            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .setName(
+                SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString())
             .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
-    SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+    SettingsName name = SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
 
     Settings actualResponse = client.getSettings(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -316,7 +325,7 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+      SettingsName name = SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]");
       client.getSettings(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -328,7 +337,8 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
   public void getSettingsTest2() throws Exception {
     Settings expectedResponse =
         Settings.newBuilder()
-            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .setName(
+                SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString())
             .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
             .setEtag("etag3123477")
             .build();
@@ -374,7 +384,8 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
   public void updateSettingsTest() throws Exception {
     Settings expectedResponse =
         Settings.newBuilder()
-            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .setName(
+                SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString())
             .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
             .setEtag("etag3123477")
             .build();
@@ -382,7 +393,8 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
 
     Settings settings =
         Settings.newBuilder()
-            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .setName(
+                SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString())
             .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
             .setEtag("etag3123477")
             .build();
@@ -415,7 +427,9 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
     try {
       Settings settings =
           Settings.newBuilder()
-              .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .setName(
+                  SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+                      .toString())
               .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
               .setEtag("etag3123477")
               .build();

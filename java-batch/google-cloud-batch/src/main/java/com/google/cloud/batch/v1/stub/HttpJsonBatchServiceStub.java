@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import static com.google.cloud.batch.v1.BatchServiceClient.ListLocationsPagedRes
 import static com.google.cloud.batch.v1.BatchServiceClient.ListTasksPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -37,6 +36,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.batch.v1.CancelJobRequest;
+import com.google.cloud.batch.v1.CancelJobResponse;
 import com.google.cloud.batch.v1.CreateJobRequest;
 import com.google.cloud.batch.v1.DeleteJobRequest;
 import com.google.cloud.batch.v1.GetJobRequest;
@@ -71,12 +72,12 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(CancelJobResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =
@@ -183,6 +184,45 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   .build())
           .setOperationSnapshotFactory(
               (DeleteJobRequest request, Operation response) ->
+                  HttpJsonOperationSnapshot.create(response))
+          .build();
+
+  private static final ApiMethodDescriptor<CancelJobRequest, Operation> cancelJobMethodDescriptor =
+      ApiMethodDescriptor.<CancelJobRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.batch.v1.BatchService/CancelJob")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<CancelJobRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/jobs/*}:cancel",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<CancelJobRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<CancelJobRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (CancelJobRequest request, Operation response) ->
                   HttpJsonOperationSnapshot.create(response))
           .build();
 
@@ -367,6 +407,9 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable;
   private final OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable;
+  private final UnaryCallable<CancelJobRequest, Operation> cancelJobCallable;
+  private final OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
@@ -480,6 +523,17 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CancelJobRequest, Operation> cancelJobTransportSettings =
+        HttpJsonCallSettings.<CancelJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
@@ -552,6 +606,15 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
             settings.deleteJobOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.cancelJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelJobTransportSettings, settings.cancelJobSettings(), clientContext);
+    this.cancelJobOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelJobTransportSettings,
+            settings.cancelJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listJobsCallable =
         callableFactory.createUnaryCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
@@ -587,6 +650,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
     methodDescriptors.add(createJobMethodDescriptor);
     methodDescriptors.add(getJobMethodDescriptor);
     methodDescriptors.add(deleteJobMethodDescriptor);
+    methodDescriptors.add(cancelJobMethodDescriptor);
     methodDescriptors.add(listJobsMethodDescriptor);
     methodDescriptors.add(getTaskMethodDescriptor);
     methodDescriptors.add(listTasksMethodDescriptor);
@@ -618,6 +682,17 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   public OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable() {
     return deleteJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelJobRequest, Operation> cancelJobCallable() {
+    return cancelJobCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable() {
+    return cancelJobOperationCallable;
   }
 
   @Override

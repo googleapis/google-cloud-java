@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package com.google.cloud.devtools.containeranalysis.v1.stub;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -53,6 +55,10 @@ public abstract class ContainerAnalysisStub implements BackgroundResource {
       getVulnerabilityOccurrencesSummaryCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: getVulnerabilityOccurrencesSummaryCallable()");
+  }
+
+  public UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportSBOMCallable()");
   }
 
   @Override

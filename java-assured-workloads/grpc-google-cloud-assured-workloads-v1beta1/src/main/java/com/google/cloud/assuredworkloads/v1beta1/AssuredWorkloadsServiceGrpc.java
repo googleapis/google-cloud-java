@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -392,6 +392,19 @@ public final class AssuredWorkloadsServiceGrpc {
     return AssuredWorkloadsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AssuredWorkloadsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AssuredWorkloadsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssuredWorkloadsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AssuredWorkloadsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssuredWorkloadsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AssuredWorkloadsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -720,6 +733,134 @@ public final class AssuredWorkloadsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AssuredWorkloadsService.
+   *
+   * <pre>
+   * Service to manage AssuredWorkloads.
+   * </pre>
+   */
+  public static final class AssuredWorkloadsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AssuredWorkloadsServiceBlockingV2Stub> {
+    private AssuredWorkloadsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AssuredWorkloadsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AssuredWorkloadsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates Assured Workload.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkload(
+        com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing workload.
+     * Currently allows updating of workload display_name and labels.
+     * For force updates don't set etag field in the Workload.
+     * Only one update operation per workload can be in progress.
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload updateWorkload(
+        com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restrict the list of resources allowed in the Workload environment.
+     * The current list of allowed products can be found at
+     * https://cloud.google.com/assured-workloads/docs/supported-products
+     * In addition to assuredworkloads.workload.update permission, the user should
+     * also have orgpolicy.policy.set permission on the folder resource
+     * to use this functionality.
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse
+        restrictAllowedResources(
+            com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestrictAllowedResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the workload. Make sure that workload's direct children are already
+     * in a deleted state, otherwise the request will fail with a
+     * FAILED_PRECONDITION error.
+     * In addition to assuredworkloads.workload.delete permission, the user should
+     * also have orgpolicy.policy.set permission on the deleted folder to remove
+     * Assured Workloads OrgPolicies.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteWorkload(
+        com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets Assured Workload associated with a CRM Node
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.Workload getWorkload(
+        com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyze if the source Assured Workloads can be moved to the target Assured
+     * Workload
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse
+        analyzeWorkloadMove(
+            com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeWorkloadMoveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Assured Workloads under a CRM Node.
+     * </pre>
+     */
+    public com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse listWorkloads(
+        com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AssuredWorkloadsService.
    *
    * <pre>
    * Service to manage AssuredWorkloads.

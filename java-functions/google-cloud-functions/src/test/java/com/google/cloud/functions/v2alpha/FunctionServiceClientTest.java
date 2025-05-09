@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,8 @@ public class FunctionServiceClientTest {
             .setKmsKeyName(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setSatisfiesPzs(true)
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockFunctionService.addResponse(expectedResponse);
 
@@ -172,6 +174,8 @@ public class FunctionServiceClientTest {
             .setKmsKeyName(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setSatisfiesPzs(true)
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     mockFunctionService.addResponse(expectedResponse);
 
@@ -310,6 +314,8 @@ public class FunctionServiceClientTest {
             .setKmsKeyName(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setSatisfiesPzs(true)
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -374,6 +380,8 @@ public class FunctionServiceClientTest {
             .setKmsKeyName(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setSatisfiesPzs(true)
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -438,6 +446,8 @@ public class FunctionServiceClientTest {
             .setKmsKeyName(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setSatisfiesPzs(true)
+            .setCreateTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -581,6 +591,7 @@ public class FunctionServiceClientTest {
             .setKmsKeyName(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setEnvironment(Environment.forNumber(0))
             .build();
 
     GenerateUploadUrlResponse actualResponse = client.generateUploadUrl(request);
@@ -592,6 +603,7 @@ public class FunctionServiceClientTest {
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getKmsKeyName(), actualRequest.getKmsKeyName());
+    Assert.assertEquals(request.getEnvironment(), actualRequest.getEnvironment());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -610,6 +622,7 @@ public class FunctionServiceClientTest {
               .setKmsKeyName(
                   CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                       .toString())
+              .setEnvironment(Environment.forNumber(0))
               .build();
       client.generateUploadUrl(request);
       Assert.fail("No exception raised");

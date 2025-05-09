@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,52 @@ public final class SearchServiceGrpc {
     return getSearchMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.SearchRequest,
+          com.google.cloud.discoveryengine.v1beta.SearchResponse>
+      getSearchLiteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchLite",
+      requestType = com.google.cloud.discoveryengine.v1beta.SearchRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.SearchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.SearchRequest,
+          com.google.cloud.discoveryengine.v1beta.SearchResponse>
+      getSearchLiteMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse>
+        getSearchLiteMethod;
+    if ((getSearchLiteMethod = SearchServiceGrpc.getSearchLiteMethod) == null) {
+      synchronized (SearchServiceGrpc.class) {
+        if ((getSearchLiteMethod = SearchServiceGrpc.getSearchLiteMethod) == null) {
+          SearchServiceGrpc.getSearchLiteMethod =
+              getSearchLiteMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.SearchRequest,
+                          com.google.cloud.discoveryengine.v1beta.SearchResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchLite"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.SearchRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.SearchResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new SearchServiceMethodDescriptorSupplier("SearchLite"))
+                      .build();
+        }
+      }
+    }
+    return getSearchLiteMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SearchServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SearchServiceStub> factory =
@@ -93,6 +139,19 @@ public final class SearchServiceGrpc {
           }
         };
     return SearchServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SearchServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SearchServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SearchServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SearchServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SearchServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SearchServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -145,6 +204,30 @@ public final class SearchServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs a search. Similar to the
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * method, but a lite version that allows API key for authentication, where
+     * OAuth and IAM checks are not required.
+     * Only public website search is supported by this method. If data stores and
+     * engines not associated with public website search are specified, a
+     * `FAILED_PRECONDITION` error is returned.
+     * This method can be used for easy onboarding without having to implement an
+     * authentication backend. However, it is strongly recommended to use
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * instead with required OAuth and IAM checks to provide better data security.
+     * </pre>
+     */
+    default void searchLite(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.SearchResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchLiteMethod(), responseObserver);
+    }
   }
 
   /**
@@ -195,10 +278,91 @@ public final class SearchServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs a search. Similar to the
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * method, but a lite version that allows API key for authentication, where
+     * OAuth and IAM checks are not required.
+     * Only public website search is supported by this method. If data stores and
+     * engines not associated with public website search are specified, a
+     * `FAILED_PRECONDITION` error is returned.
+     * This method can be used for easy onboarding without having to implement an
+     * authentication backend. However, it is strongly recommended to use
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * instead with required OAuth and IAM checks to provide better data security.
+     * </pre>
+     */
+    public void searchLite(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.SearchResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchLiteMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SearchService.
+   *
+   * <pre>
+   * Service for search.
+   * </pre>
+   */
+  public static final class SearchServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SearchServiceBlockingV2Stub> {
+    private SearchServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SearchServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SearchServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs a search.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse search(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs a search. Similar to the
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * method, but a lite version that allows API key for authentication, where
+     * OAuth and IAM checks are not required.
+     * Only public website search is supported by this method. If data stores and
+     * engines not associated with public website search are specified, a
+     * `FAILED_PRECONDITION` error is returned.
+     * This method can be used for easy onboarding without having to implement an
+     * authentication backend. However, it is strongly recommended to use
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * instead with required OAuth and IAM checks to provide better data security.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse searchLite(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchLiteMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SearchService.
    *
    * <pre>
    * Service for search.
@@ -227,6 +391,29 @@ public final class SearchServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.SearchRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs a search. Similar to the
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * method, but a lite version that allows API key for authentication, where
+     * OAuth and IAM checks are not required.
+     * Only public website search is supported by this method. If data stores and
+     * engines not associated with public website search are specified, a
+     * `FAILED_PRECONDITION` error is returned.
+     * This method can be used for easy onboarding without having to implement an
+     * authentication backend. However, it is strongly recommended to use
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * instead with required OAuth and IAM checks to provide better data security.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse searchLite(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchLiteMethod(), getCallOptions(), request);
     }
   }
 
@@ -262,9 +449,34 @@ public final class SearchServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs a search. Similar to the
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * method, but a lite version that allows API key for authentication, where
+     * OAuth and IAM checks are not required.
+     * Only public website search is supported by this method. If data stores and
+     * engines not associated with public website search are specified, a
+     * `FAILED_PRECONDITION` error is returned.
+     * This method can be used for easy onboarding without having to implement an
+     * authentication backend. However, it is strongly recommended to use
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * instead with required OAuth and IAM checks to provide better data security.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse>
+        searchLite(com.google.cloud.discoveryengine.v1beta.SearchRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchLiteMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SEARCH = 0;
+  private static final int METHODID_SEARCH_LITE = 1;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -285,6 +497,12 @@ public final class SearchServiceGrpc {
       switch (methodId) {
         case METHODID_SEARCH:
           serviceImpl.search(
+              (com.google.cloud.discoveryengine.v1beta.SearchRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.SearchResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_LITE:
+          serviceImpl.searchLite(
               (com.google.cloud.discoveryengine.v1beta.SearchRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.SearchResponse>)
                   responseObserver);
@@ -314,6 +532,13 @@ public final class SearchServiceGrpc {
                     com.google.cloud.discoveryengine.v1beta.SearchRequest,
                     com.google.cloud.discoveryengine.v1beta.SearchResponse>(
                     service, METHODID_SEARCH)))
+        .addMethod(
+            getSearchLiteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.SearchRequest,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse>(
+                    service, METHODID_SEARCH_LITE)))
         .build();
   }
 
@@ -366,6 +591,7 @@ public final class SearchServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new SearchServiceFileDescriptorSupplier())
                       .addMethod(getSearchMethod())
+                      .addMethod(getSearchLiteMethod())
                       .build();
         }
       }

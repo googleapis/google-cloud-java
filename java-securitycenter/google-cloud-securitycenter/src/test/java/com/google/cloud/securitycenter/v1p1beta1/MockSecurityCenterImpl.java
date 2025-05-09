@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,7 +121,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateNotificationConfig, expected %s or %s",
+                  "Unrecognized response type %s for method CreateNotificationConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationConfig.class.getName(),
                   Exception.class.getName())));
@@ -142,7 +143,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteNotificationConfig, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteNotificationConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -183,7 +185,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetNotificationConfig, expected %s or %s",
+                  "Unrecognized response type %s for method GetNotificationConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationConfig.class.getName(),
                   Exception.class.getName())));
@@ -205,7 +208,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOrganizationSettings, expected %s or %s",
+                  "Unrecognized response type %s for method GetOrganizationSettings, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationSettings.class.getName(),
                   Exception.class.getName())));
@@ -331,7 +335,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListNotificationConfigs, expected %s or %s",
+                  "Unrecognized response type %s for method ListNotificationConfigs, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotificationConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -479,7 +484,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateNotificationConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateNotificationConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationConfig.class.getName(),
                   Exception.class.getName())));
@@ -501,7 +507,8 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateOrganizationSettings, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateOrganizationSettings, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationSettings.class.getName(),
                   Exception.class.getName())));

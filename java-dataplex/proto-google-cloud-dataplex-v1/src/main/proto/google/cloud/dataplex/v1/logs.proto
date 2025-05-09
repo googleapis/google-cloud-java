@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ syntax = "proto3";
 
 package google.cloud.dataplex.v1;
 
+import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
@@ -52,6 +53,18 @@ message DiscoveryEvent {
 
     // An event representing a partition being deleted.
     PARTITION_DELETED = 7;
+
+    // An event representing a table being published.
+    TABLE_PUBLISHED = 10;
+
+    // An event representing a table being updated.
+    TABLE_UPDATED = 11;
+
+    // An event representing a table being skipped in publishing.
+    TABLE_IGNORED = 12;
+
+    // An event representing a table being deleted.
+    TABLE_DELETED = 13;
   }
 
   // The type of the entity.
@@ -64,6 +77,21 @@ message DiscoveryEvent {
 
     // Entities representing unstructured data.
     FILESET = 2;
+  }
+
+  // The type of the published table.
+  enum TableType {
+    // An unspecified table type.
+    TABLE_TYPE_UNSPECIFIED = 0;
+
+    // External table type.
+    EXTERNAL_TABLE = 1;
+
+    // BigLake table type.
+    BIGLAKE_TABLE = 2;
+
+    // Object table type for unstructured data.
+    OBJECT_TABLE = 3;
   }
 
   // Details about configuration events.
@@ -83,6 +111,15 @@ message DiscoveryEvent {
 
     // The type of the entity resource.
     EntityType type = 2;
+  }
+
+  // Details about the published table.
+  message TableDetails {
+    // The fully-qualified resource name of the table resource.
+    string table = 1;
+
+    // The type of the table resource.
+    TableType type = 2;
   }
 
   // Details about the partition.
@@ -108,6 +145,9 @@ message DiscoveryEvent {
     // The type of action.
     // Eg. IncompatibleDataSchema, InvalidDataFormat
     string type = 1;
+
+    // The human readable issue associated with the action.
+    string issue = 2;
   }
 
   // The log message.
@@ -125,6 +165,9 @@ message DiscoveryEvent {
   // The data location associated with the event.
   string data_location = 5;
 
+  // The id of the associated datascan for standalone discovery.
+  string datascan_id = 6;
+
   // The type of the event being logged.
   EventType type = 10;
 
@@ -141,6 +184,9 @@ message DiscoveryEvent {
 
     // Details about the action associated with the event.
     ActionDetails action = 23;
+
+    // Details about the BigQuery table publishing associated with the event.
+    TableDetails table = 24;
   }
 }
 
@@ -315,9 +361,100 @@ message SessionEvent {
   google.protobuf.Duration unassigned_duration = 8;
 }
 
+// Payload associated with Governance related log events.
+message GovernanceEvent {
+  // Information about Entity resource that the log event is associated with.
+  message Entity {
+    // Type of entity.
+    enum EntityType {
+      // An unspecified Entity type.
+      ENTITY_TYPE_UNSPECIFIED = 0;
+
+      // Table entity type.
+      TABLE = 1;
+
+      // Fileset entity type.
+      FILESET = 2;
+    }
+
+    // The Entity resource the log event is associated with.
+    // Format:
+    // `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`
+    string entity = 1 [(google.api.resource_reference) = {
+      type: "dataplex.googleapis.com/Entity"
+    }];
+
+    // Type of entity.
+    EntityType entity_type = 2;
+  }
+
+  // Type of governance log event.
+  enum EventType {
+    // An unspecified event type.
+    EVENT_TYPE_UNSPECIFIED = 0;
+
+    // Resource IAM policy update event.
+    RESOURCE_IAM_POLICY_UPDATE = 1;
+
+    // BigQuery table create event.
+    BIGQUERY_TABLE_CREATE = 2;
+
+    // BigQuery table update event.
+    BIGQUERY_TABLE_UPDATE = 3;
+
+    // BigQuery table delete event.
+    BIGQUERY_TABLE_DELETE = 4;
+
+    // BigQuery connection create event.
+    BIGQUERY_CONNECTION_CREATE = 5;
+
+    // BigQuery connection update event.
+    BIGQUERY_CONNECTION_UPDATE = 6;
+
+    // BigQuery connection delete event.
+    BIGQUERY_CONNECTION_DELETE = 7;
+
+    // BigQuery taxonomy created.
+    BIGQUERY_TAXONOMY_CREATE = 10;
+
+    // BigQuery policy tag created.
+    BIGQUERY_POLICY_TAG_CREATE = 11;
+
+    // BigQuery policy tag deleted.
+    BIGQUERY_POLICY_TAG_DELETE = 12;
+
+    // BigQuery set iam policy for policy tag.
+    BIGQUERY_POLICY_TAG_SET_IAM_POLICY = 13;
+
+    // Access policy update event.
+    ACCESS_POLICY_UPDATE = 14;
+
+    // Number of resources matched with particular Query.
+    GOVERNANCE_RULE_MATCHED_RESOURCES = 15;
+
+    // Rule processing exceeds the allowed limit.
+    GOVERNANCE_RULE_SEARCH_LIMIT_EXCEEDS = 16;
+
+    // Rule processing errors.
+    GOVERNANCE_RULE_ERRORS = 17;
+
+    // Governance rule processing Event.
+    GOVERNANCE_RULE_PROCESSING = 18;
+  }
+
+  // The log message.
+  string message = 1;
+
+  // The type of the event.
+  EventType event_type = 2;
+
+  // Entity resource information if the log event is associated with a
+  // specific entity.
+  optional Entity entity = 3;
+}
+
 // These messages contain information about the execution of a datascan.
 // The monitored resource is 'DataScan'
-// Next ID: 13
 message DataScanEvent {
   // The type of the data scan.
   enum ScanType {
@@ -329,6 +466,9 @@ message DataScanEvent {
 
     // Data scan for data quality.
     DATA_QUALITY = 2;
+
+    // Data scan for data discovery.
+    DATA_DISCOVERY = 4;
   }
 
   // The job state of the data scan.
@@ -395,6 +535,28 @@ message DataScanEvent {
     // The value is the bool value depicting whether the dimension result was
     // `pass` or not.
     map<string, bool> dimension_passed = 3;
+
+    // The table-level data quality score for the data scan job.
+    //
+    // The data quality score ranges between [0, 100] (up to two decimal
+    // points).
+    float score = 4;
+
+    // The score of each dimension for data quality result.
+    // The key of the map is the name of the dimension.
+    // The value is the data quality score for the dimension.
+    //
+    // The score ranges between [0, 100] (up to two decimal
+    // points).
+    map<string, float> dimension_score = 5;
+
+    // The score of each column scanned in the data scan job.
+    // The key of the map is the name of the column.
+    // The value is the data quality score for the column.
+    //
+    // The score ranges between [0, 100] (up to two decimal
+    // points).
+    map<string, float> column_score = 6;
   }
 
   // Applied configs for data profile type data scan job.
@@ -519,37 +681,41 @@ message DataQualityScanRuleResult {
     // An unspecified rule type.
     RULE_TYPE_UNSPECIFIED = 0;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#nonnullexpectation.
+    // See
+    // [DataQualityRule.NonNullExpectation][google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation].
     NON_NULL_EXPECTATION = 1;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#rangeexpectation.
+    // See
+    // [DataQualityRule.RangeExpectation][google.cloud.dataplex.v1.DataQualityRule.RangeExpectation].
     RANGE_EXPECTATION = 2;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#regexexpectation.
+    // See
+    // [DataQualityRule.RegexExpectation][google.cloud.dataplex.v1.DataQualityRule.RegexExpectation].
     REGEX_EXPECTATION = 3;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#rowconditionexpectation.
+    // See
+    // [DataQualityRule.RowConditionExpectation][google.cloud.dataplex.v1.DataQualityRule.RowConditionExpectation].
     ROW_CONDITION_EXPECTATION = 4;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#setexpectation.
+    // See
+    // [DataQualityRule.SetExpectation][google.cloud.dataplex.v1.DataQualityRule.SetExpectation].
     SET_EXPECTATION = 5;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#statisticrangeexpectation.
+    // See
+    // [DataQualityRule.StatisticRangeExpectation][google.cloud.dataplex.v1.DataQualityRule.StatisticRangeExpectation].
     STATISTIC_RANGE_EXPECTATION = 6;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#tableconditionexpectation.
+    // See
+    // [DataQualityRule.TableConditionExpectation][google.cloud.dataplex.v1.DataQualityRule.TableConditionExpectation].
     TABLE_CONDITION_EXPECTATION = 7;
 
-    // Please see
-    // https://cloud.google.com/dataplex/docs/reference/rest/v1/DataQualityRule#uniquenessexpectation.
+    // See
+    // [DataQualityRule.UniquenessExpectation][google.cloud.dataplex.v1.DataQualityRule.UniquenessExpectation].
     UNIQUENESS_EXPECTATION = 8;
+
+    // See
+    // [DataQualityRule.SqlAssertion][google.cloud.dataplex.v1.DataQualityRule.SqlAssertion].
+    SQL_ASSERTION = 9;
   }
 
   // The evaluation type of the data quality rule.
@@ -613,4 +779,77 @@ message DataQualityScanRuleResult {
 
   // The number of rows with null values in the specified column.
   int64 null_row_count = 12;
+
+  // The number of rows returned by the SQL statement in a SQL assertion rule.
+  // This field is only valid for SQL assertion rules.
+  int64 assertion_row_count = 13;
+}
+
+// Payload associated with Business Glossary related log events.
+message BusinessGlossaryEvent {
+  // Type of glossary log event.
+  enum EventType {
+    // An unspecified event type.
+    EVENT_TYPE_UNSPECIFIED = 0;
+
+    // Glossary create event.
+    GLOSSARY_CREATE = 1;
+
+    // Glossary update event.
+    GLOSSARY_UPDATE = 2;
+
+    // Glossary delete event.
+    GLOSSARY_DELETE = 3;
+
+    // Glossary category create event.
+    GLOSSARY_CATEGORY_CREATE = 4;
+
+    // Glossary category update event.
+    GLOSSARY_CATEGORY_UPDATE = 5;
+
+    // Glossary category delete event.
+    GLOSSARY_CATEGORY_DELETE = 6;
+
+    // Glossary term create event.
+    GLOSSARY_TERM_CREATE = 7;
+
+    // Glossary term update event.
+    GLOSSARY_TERM_UPDATE = 8;
+
+    // Glossary term delete event.
+    GLOSSARY_TERM_DELETE = 9;
+  }
+
+  // The log message.
+  string message = 1;
+
+  // The type of the event.
+  EventType event_type = 2;
+
+  // Name of the resource.
+  string resource = 3;
+}
+
+// Payload associated with Entry related log events.
+message EntryLinkEvent {
+  // Type of entry link log event.
+  enum EventType {
+    // An unspecified event type.
+    EVENT_TYPE_UNSPECIFIED = 0;
+
+    // EntryLink create event.
+    ENTRY_LINK_CREATE = 1;
+
+    // EntryLink delete event.
+    ENTRY_LINK_DELETE = 2;
+  }
+
+  // The log message.
+  string message = 1;
+
+  // The type of the event.
+  EventType event_type = 2;
+
+  // Name of the resource.
+  string resource = 3;
 }

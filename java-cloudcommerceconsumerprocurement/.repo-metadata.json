@@ -5,7 +5,7 @@
   "api_description": "Find top solutions integrated with Google Cloud to accelerate your digital transformation. Scale and simplify procurement for your organization with online discovery, flexible purchasing, and fulfillment of enterprise-grade cloud solutions.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-cloudcommerceconsumerprocurement/latest/overview",
   "release_level": "preview",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-cloudcommerceconsumerprocurement",

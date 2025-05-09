@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,19 @@ public final class ReportErrorsServiceGrpc {
     return ReportErrorsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ReportErrorsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ReportErrorsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReportErrorsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ReportErrorsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReportErrorsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ReportErrorsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -145,9 +158,15 @@ public final class ReportErrorsServiceGrpc {
      * a `key` parameter. For example:
      * `POST
      * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
-     * **Note:** [Error Reporting](/error-reporting) is a global service built
-     * on Cloud Logging and doesn't analyze logs stored
-     * in regional log buckets or logs routed to other Google Cloud projects.
+     * **Note:** [Error Reporting] (https://cloud.google.com/error-reporting)
+     * is a service built on Cloud Logging and can analyze log entries when all of
+     * the following are true:
+     * * Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+     * * The log bucket satisfies one of the following:
+     *     * The log bucket is stored in the same project where the logs
+     *     originated.
+     *     * The logs were routed to a project, and then that project stored those
+     *     logs in a log bucket that it owns.
      * </pre>
      */
     default void reportErrorEvent(
@@ -206,9 +225,15 @@ public final class ReportErrorsServiceGrpc {
      * a `key` parameter. For example:
      * `POST
      * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
-     * **Note:** [Error Reporting](/error-reporting) is a global service built
-     * on Cloud Logging and doesn't analyze logs stored
-     * in regional log buckets or logs routed to other Google Cloud projects.
+     * **Note:** [Error Reporting] (https://cloud.google.com/error-reporting)
+     * is a service built on Cloud Logging and can analyze log entries when all of
+     * the following are true:
+     * * Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+     * * The log bucket satisfies one of the following:
+     *     * The log bucket is stored in the same project where the logs
+     *     originated.
+     *     * The logs were routed to a project, and then that project stored those
+     *     logs in a log bucket that it owns.
      * </pre>
      */
     public void reportErrorEvent(
@@ -225,6 +250,56 @@ public final class ReportErrorsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ReportErrorsService.
+   *
+   * <pre>
+   * An API for reporting error events.
+   * </pre>
+   */
+  public static final class ReportErrorsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ReportErrorsServiceBlockingV2Stub> {
+    private ReportErrorsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ReportErrorsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ReportErrorsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Report an individual error event and record the event to a log.
+     * This endpoint accepts **either** an OAuth token,
+     * **or** an [API key](https://support.google.com/cloud/answer/6158862)
+     * for authentication. To use an API key, append it to the URL as the value of
+     * a `key` parameter. For example:
+     * `POST
+     * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
+     * **Note:** [Error Reporting] (https://cloud.google.com/error-reporting)
+     * is a service built on Cloud Logging and can analyze log entries when all of
+     * the following are true:
+     * * Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+     * * The log bucket satisfies one of the following:
+     *     * The log bucket is stored in the same project where the logs
+     *     originated.
+     *     * The logs were routed to a project, and then that project stored those
+     *     logs in a log bucket that it owns.
+     * </pre>
+     */
+    public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
+        reportErrorEvent(
+            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReportErrorEventMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ReportErrorsService.
    *
    * <pre>
    * An API for reporting error events.
@@ -254,9 +329,15 @@ public final class ReportErrorsServiceGrpc {
      * a `key` parameter. For example:
      * `POST
      * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
-     * **Note:** [Error Reporting](/error-reporting) is a global service built
-     * on Cloud Logging and doesn't analyze logs stored
-     * in regional log buckets or logs routed to other Google Cloud projects.
+     * **Note:** [Error Reporting] (https://cloud.google.com/error-reporting)
+     * is a service built on Cloud Logging and can analyze log entries when all of
+     * the following are true:
+     * * Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+     * * The log bucket satisfies one of the following:
+     *     * The log bucket is stored in the same project where the logs
+     *     originated.
+     *     * The logs were routed to a project, and then that project stored those
+     *     logs in a log bucket that it owns.
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
@@ -298,9 +379,15 @@ public final class ReportErrorsServiceGrpc {
      * a `key` parameter. For example:
      * `POST
      * https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456`
-     * **Note:** [Error Reporting](/error-reporting) is a global service built
-     * on Cloud Logging and doesn't analyze logs stored
-     * in regional log buckets or logs routed to other Google Cloud projects.
+     * **Note:** [Error Reporting] (https://cloud.google.com/error-reporting)
+     * is a service built on Cloud Logging and can analyze log entries when all of
+     * the following are true:
+     * * Customer-managed encryption keys (CMEK) are disabled on the log bucket.
+     * * The log bucket satisfies one of the following:
+     *     * The log bucket is stored in the same project where the logs
+     *     originated.
+     *     * The logs were routed to a project, and then that project stored those
+     *     logs in a log bucket that it owns.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

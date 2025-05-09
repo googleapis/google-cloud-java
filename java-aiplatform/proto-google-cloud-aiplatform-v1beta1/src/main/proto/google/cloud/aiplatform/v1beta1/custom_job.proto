@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import "google/cloud/aiplatform/v1beta1/env_var.proto";
 import "google/cloud/aiplatform/v1beta1/io.proto";
 import "google/cloud/aiplatform/v1beta1/job_state.proto";
 import "google/cloud/aiplatform/v1beta1/machine_resources.proto";
+import "google/cloud/aiplatform/v1beta1/service_networking.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
@@ -109,6 +110,12 @@ message CustomJob {
   // The values are the URIs for each node's interactive shell.
   map<string, string> web_access_uris = 16
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 19 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents the spec of a CustomJob.
@@ -172,6 +179,10 @@ message CustomJobSpec {
   repeated string reserved_ip_ranges = 13
       [(google.api.field_behavior) = OPTIONAL];
 
+  // Optional. Configuration for PSC-I for CustomJob.
+  PscInterfaceConfig psc_interface_config = 21
+      [(google.api.field_behavior) = OPTIONAL];
+
   // The Cloud Storage location to store the output of this CustomJob or
   // HyperparameterTuningJob. For HyperparameterTuningJob,
   // the baseOutputDirectory of
@@ -194,6 +205,12 @@ message CustomJobSpec {
   //   * AIP_CHECKPOINT_DIR = `<base_output_directory>/<trial_id>/checkpoints/`
   //   * AIP_TENSORBOARD_LOG_DIR = `<base_output_directory>/<trial_id>/logs/`
   GcsDestination base_output_directory = 6;
+
+  // The ID of the location to store protected artifacts. e.g. us-central1.
+  // Populate only when the location is different than CustomJob location.
+  // List of supported locations:
+  // https://cloud.google.com/vertex-ai/docs/general/locations
+  string protected_artifact_location_id = 19;
 
   // Optional. The name of a Vertex AI
   // [Tensorboard][google.cloud.aiplatform.v1beta1.Tensorboard] resource to
@@ -248,6 +265,26 @@ message CustomJobSpec {
     (google.api.field_behavior) = OPTIONAL,
     (google.api.resource_reference) = {
       type: "aiplatform.googleapis.com/Context"
+    }
+  ];
+
+  // Optional. The name of the Model resources for which to generate a mapping
+  // to artifact URIs. Applicable only to some of the Google-provided custom
+  // jobs. Format: `projects/{project}/locations/{location}/models/{model}`
+  //
+  // In order to retrieve a specific version of the model, also provide
+  // the version ID or version alias.
+  //   Example: `projects/{project}/locations/{location}/models/{model}@2`
+  //              or
+  //            `projects/{project}/locations/{location}/models/{model}@golden`
+  // If no version ID or alias is specified, the "default" version will be
+  // returned. The "default" version alias is created for the first version of
+  // the model, and can be moved to other versions later on. There will be
+  // exactly one default version.
+  repeated string models = 20 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/Model"
     }
   ];
 }
@@ -325,6 +362,31 @@ message PythonPackageSpec {
 
 // All parameters related to queuing and scheduling of custom jobs.
 message Scheduling {
+  // Optional. This determines which type of scheduling strategy to use. Right
+  // now users have two options such as STANDARD which will use regular on
+  // demand resources to schedule the job, the other is SPOT which would
+  // leverage spot resources alongwith regular resources to schedule
+  // the job.
+  enum Strategy {
+    // Strategy will default to STANDARD.
+    STRATEGY_UNSPECIFIED = 0;
+
+    // Deprecated. Regular on-demand provisioning strategy.
+    ON_DEMAND = 1 [deprecated = true];
+
+    // Deprecated. Low cost by making potential use of spot resources.
+    LOW_COST = 2 [deprecated = true];
+
+    // Standard provisioning strategy uses regular on-demand resources.
+    STANDARD = 3;
+
+    // Spot provisioning strategy uses spot resources.
+    SPOT = 4;
+
+    // Flex Start strategy uses DWS to queue for resources.
+    FLEX_START = 6;
+  }
+
   // The maximum job running time. The default is 7 days.
   google.protobuf.Duration timeout = 1;
 
@@ -333,8 +395,18 @@ message Scheduling {
   // resilient to workers leaving and joining a job.
   bool restart_job_on_worker_restart = 3;
 
+  // Optional. This determines which type of scheduling strategy to use.
+  Strategy strategy = 4 [(google.api.field_behavior) = OPTIONAL];
+
   // Optional. Indicates if the job should retry for internal errors after the
   // job starts running. If true, overrides
   // `Scheduling.restart_job_on_worker_restart` to false.
   bool disable_retries = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. This is the maximum duration that a job will wait for the
+  // requested resources to be provisioned if the scheduling strategy is set to
+  // [Strategy.DWS_FLEX_START].
+  // If set to 0, the job will wait indefinitely. The default is 24 hours.
+  google.protobuf.Duration max_wait_duration = 6
+      [(google.api.field_behavior) = OPTIONAL];
 }

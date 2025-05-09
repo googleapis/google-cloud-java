@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class VersionName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectVersionBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationVersionBuilder newProjectLocationVersionBuilder() {
     return new ProjectLocationVersionBuilder();
   }
@@ -98,12 +95,10 @@ public class VersionName implements ResourceName {
     return newBuilder().setProject(project).setVersion(version).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static VersionName ofProjectVersionName(String project, String version) {
     return newBuilder().setProject(project).setVersion(version).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static VersionName ofProjectLocationVersionName(
       String project, String location, String version) {
     return newProjectLocationVersionBuilder()
@@ -117,12 +112,10 @@ public class VersionName implements ResourceName {
     return newBuilder().setProject(project).setVersion(version).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectVersionName(String project, String version) {
     return newBuilder().setProject(project).setVersion(version).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationVersionName(
       String project, String location, String version) {
     return newProjectLocationVersionBuilder()
@@ -260,7 +253,8 @@ public class VersionName implements ResourceName {
     private Builder(VersionName versionName) {
       Preconditions.checkArgument(
           Objects.equals(versionName.pathTemplate, PROJECT_VERSION),
-          "toBuilder is only supported when VersionName has the pattern of projects/{project}/agent/versions/{version}");
+          "toBuilder is only supported when VersionName has the pattern of"
+              + " projects/{project}/agent/versions/{version}");
       this.project = versionName.project;
       this.version = versionName.version;
     }
@@ -271,7 +265,6 @@ public class VersionName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/agent/versions/{version}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationVersionBuilder {
     private String project;
     private String location;

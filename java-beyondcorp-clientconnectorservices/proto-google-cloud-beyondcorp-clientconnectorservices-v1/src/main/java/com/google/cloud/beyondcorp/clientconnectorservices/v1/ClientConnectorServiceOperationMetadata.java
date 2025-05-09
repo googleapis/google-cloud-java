@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 /**
@@ -35,6 +36,7 @@ public final class ClientConnectorServiceOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOperationMetadata)
     ClientConnectorServiceOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClientConnectorServiceOperationMetadata.newBuilder() to construct.
   private ClientConnectorServiceOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,8 +75,10 @@ public final class ClientConnectorServiceOperationMetadata
                 .ClientConnectorServiceOperationMetadata.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -89,8 +93,9 @@ public final class ClientConnectorServiceOperationMetadata
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return createTime_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +112,7 @@ public final class ClientConnectorServiceOperationMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public final class ClientConnectorServiceOperationMetadata
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -138,8 +145,9 @@ public final class ClientConnectorServiceOperationMetadata
    */
   @java.lang.Override
   public boolean hasEndTime() {
-    return endTime_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public final class ClientConnectorServiceOperationMetadata
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -175,6 +184,7 @@ public final class ClientConnectorServiceOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object target_ = "";
+
   /**
    *
    *
@@ -198,6 +208,7 @@ public final class ClientConnectorServiceOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public final class ClientConnectorServiceOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object verb_ = "";
+
   /**
    *
    *
@@ -249,6 +261,7 @@ public final class ClientConnectorServiceOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -277,6 +290,7 @@ public final class ClientConnectorServiceOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statusMessage_ = "";
+
   /**
    *
    *
@@ -300,6 +314,7 @@ public final class ClientConnectorServiceOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -326,6 +341,7 @@ public final class ClientConnectorServiceOperationMetadata
 
   public static final int REQUESTED_CANCELLATION_FIELD_NUMBER = 6;
   private boolean requestedCancellation_ = false;
+
   /**
    *
    *
@@ -350,6 +366,7 @@ public final class ClientConnectorServiceOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object apiVersion_ = "";
+
   /**
    *
    *
@@ -373,6 +390,7 @@ public final class ClientConnectorServiceOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -411,10 +429,10 @@ public final class ClientConnectorServiceOperationMetadata
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (createTime_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getCreateTime());
     }
-    if (endTime_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getEndTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(target_)) {
@@ -441,10 +459,10 @@ public final class ClientConnectorServiceOperationMetadata
     if (size != -1) return size;
 
     size = 0;
-    if (createTime_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCreateTime());
     }
-    if (endTime_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(target_)) {
@@ -646,6 +664,7 @@ public final class ClientConnectorServiceOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -682,10 +701,20 @@ public final class ClientConnectorServiceOperationMetadata
 
     // Construct using
     // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOperationMetadata.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCreateTimeFieldBuilder();
+        getEndTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -757,11 +786,14 @@ public final class ClientConnectorServiceOperationMetadata
                 .ClientConnectorServiceOperationMetadata
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.target_ = target_;
@@ -778,6 +810,7 @@ public final class ClientConnectorServiceOperationMetadata
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.apiVersion_ = apiVersion_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -958,6 +991,7 @@ public final class ClientConnectorServiceOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -974,6 +1008,7 @@ public final class ClientConnectorServiceOperationMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -996,6 +1031,7 @@ public final class ClientConnectorServiceOperationMetadata
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1020,6 +1056,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1078,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,10 +1102,13 @@ public final class ClientConnectorServiceOperationMetadata
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1130,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1147,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1125,6 +1168,7 @@ public final class ClientConnectorServiceOperationMetadata
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1203,7 @@ public final class ClientConnectorServiceOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1174,6 +1219,7 @@ public final class ClientConnectorServiceOperationMetadata
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1193,6 +1239,7 @@ public final class ClientConnectorServiceOperationMetadata
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1263,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1284,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,10 +1307,13 @@ public final class ClientConnectorServiceOperationMetadata
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      if (endTime_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1334,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1350,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1314,6 +1368,7 @@ public final class ClientConnectorServiceOperationMetadata
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1342,6 +1397,7 @@ public final class ClientConnectorServiceOperationMetadata
     }
 
     private java.lang.Object target_ = "";
+
     /**
      *
      *
@@ -1364,6 +1420,7 @@ public final class ClientConnectorServiceOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1386,6 +1443,7 @@ public final class ClientConnectorServiceOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1407,6 +1465,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1483,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1448,6 +1508,7 @@ public final class ClientConnectorServiceOperationMetadata
     }
 
     private java.lang.Object verb_ = "";
+
     /**
      *
      *
@@ -1470,6 +1531,7 @@ public final class ClientConnectorServiceOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1492,6 +1554,7 @@ public final class ClientConnectorServiceOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1513,6 +1576,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1530,6 +1594,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1619,7 @@ public final class ClientConnectorServiceOperationMetadata
     }
 
     private java.lang.Object statusMessage_ = "";
+
     /**
      *
      *
@@ -1576,6 +1642,7 @@ public final class ClientConnectorServiceOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1598,6 +1665,7 @@ public final class ClientConnectorServiceOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1619,6 +1687,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1636,6 +1705,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1730,7 @@ public final class ClientConnectorServiceOperationMetadata
     }
 
     private boolean requestedCancellation_;
+
     /**
      *
      *
@@ -1679,6 +1750,7 @@ public final class ClientConnectorServiceOperationMetadata
     public boolean getRequestedCancellation() {
       return requestedCancellation_;
     }
+
     /**
      *
      *
@@ -1702,6 +1774,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1798,7 @@ public final class ClientConnectorServiceOperationMetadata
     }
 
     private java.lang.Object apiVersion_ = "";
+
     /**
      *
      *
@@ -1747,6 +1821,7 @@ public final class ClientConnectorServiceOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1769,6 +1844,7 @@ public final class ClientConnectorServiceOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1790,6 +1866,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1807,6 +1884,7 @@ public final class ClientConnectorServiceOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *

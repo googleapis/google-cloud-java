@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,6 +99,20 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
           }
         };
     return TextToSpeechLongAudioSynthesizeStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TextToSpeechLongAudioSynthesizeBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TextToSpeechLongAudioSynthesizeBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TextToSpeechLongAudioSynthesizeBlockingV2Stub>() {
+          @java.lang.Override
+          public TextToSpeechLongAudioSynthesizeBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TextToSpeechLongAudioSynthesizeBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TextToSpeechLongAudioSynthesizeBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -210,6 +224,41 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TextToSpeechLongAudioSynthesize.
+   *
+   * <pre>
+   * Service that implements Google Cloud Text-to-Speech API.
+   * </pre>
+   */
+  public static final class TextToSpeechLongAudioSynthesizeBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TextToSpeechLongAudioSynthesizeBlockingV2Stub> {
+    private TextToSpeechLongAudioSynthesizeBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TextToSpeechLongAudioSynthesizeBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TextToSpeechLongAudioSynthesizeBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Synthesizes long form text asynchronously.
+     * </pre>
+     */
+    public com.google.longrunning.Operation synthesizeLongAudio(
+        com.google.cloud.texttospeech.v1beta1.SynthesizeLongAudioRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSynthesizeLongAudioMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * TextToSpeechLongAudioSynthesize.
    *
    * <pre>
    * Service that implements Google Cloud Text-to-Speech API.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.advisorynotifications.v1.stub;
 
 import static com.google.cloud.advisorynotifications.v1.AdvisoryNotificationsServiceClient.ListNotificationsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -54,7 +53,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificationsServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -76,6 +74,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/notifications")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -116,6 +115,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/notifications/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -153,6 +153,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/settings}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -189,6 +190,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                                 fields, "settings.name", request.getSettings().getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{settings.name=projects/*/locations/*/settings}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

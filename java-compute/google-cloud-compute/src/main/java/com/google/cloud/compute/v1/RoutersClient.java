@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -60,19 +59,332 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the RoutersClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregatedList</td>
+ *      <td><p> Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(AggregatedListRoutersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Delete</td>
+ *      <td><p> Deletes the specified Router resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAsync(DeleteRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAsync(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOperationCallable()
+ *           <li><p> deleteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRoutePolicy</td>
+ *      <td><p> Deletes Route Policy</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRoutePolicyAsync(DeleteRoutePolicyRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteRoutePolicyAsync(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRoutePolicyOperationCallable()
+ *           <li><p> deleteRoutePolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Get</td>
+ *      <td><p> Returns the specified Router resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> get(GetRouterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> get(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetNatIpInfo</td>
+ *      <td><p> Retrieves runtime NAT IP information.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getNatIpInfo(GetNatIpInfoRouterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getNatIpInfo(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getNatIpInfoCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetNatMappingInfo</td>
+ *      <td><p> Retrieves runtime Nat mapping information of VM endpoints.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getNatMappingInfo(GetNatMappingInfoRoutersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getNatMappingInfo(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getNatMappingInfoPagedCallable()
+ *           <li><p> getNatMappingInfoCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRoutePolicy</td>
+ *      <td><p> Returns specified Route Policy</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRoutePolicy(GetRoutePolicyRouterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRoutePolicy(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRoutePolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRouterStatus</td>
+ *      <td><p> Retrieves runtime information of the specified router.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRouterStatus(GetRouterStatusRouterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRouterStatus(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRouterStatusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Insert</td>
+ *      <td><p> Creates a Router resource in the specified project and region using the data included in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> insertAsync(InsertRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> insertAsync(String project, String region, Router routerResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> List</td>
+ *      <td><p> Retrieves a list of Router resources available to the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> list(ListRoutersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> list(String project, String region)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBgpRoutes</td>
+ *      <td><p> Retrieves a list of router bgp routes available to the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBgpRoutes(ListBgpRoutesRoutersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBgpRoutes(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBgpRoutesPagedCallable()
+ *           <li><p> listBgpRoutesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRoutePolicies</td>
+ *      <td><p> Retrieves a list of router route policy subresources available to the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRoutePolicies(ListRoutePoliciesRoutersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRoutePolicies(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRoutePoliciesPagedCallable()
+ *           <li><p> listRoutePoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Patch</td>
+ *      <td><p> Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> patchAsync(PatchRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> patchAsync(String project, String region, String router, Router routerResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> patchOperationCallable()
+ *           <li><p> patchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PatchRoutePolicy</td>
+ *      <td><p> Patches Route Policy</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> patchRoutePolicyAsync(PatchRoutePolicyRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> patchRoutePolicyAsync(String project, String region, String router, RoutePolicy routePolicyResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> patchRoutePolicyOperationCallable()
+ *           <li><p> patchRoutePolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Preview</td>
+ *      <td><p> Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> preview(PreviewRouterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> preview(String project, String region, String router, Router routerResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> previewCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Update</td>
+ *      <td><p> Updates the specified Router resource with the data included in the request. This method conforms to PUT semantics, which requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAsync(UpdateRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAsync(String project, String region, String router, Router routerResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOperationCallable()
+ *           <li><p> updateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateRoutePolicy</td>
+ *      <td><p> Updates or creates new Route Policy</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRoutePolicyAsync(UpdateRoutePolicyRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateRoutePolicyAsync(String project, String region, String router, RoutePolicy routePolicyResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRoutePolicyOperationCallable()
+ *           <li><p> updateRoutePolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -162,7 +474,8 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -192,7 +505,8 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -212,6 +526,7 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, RoutersScopedList> element :
    *       routersClient.aggregatedList(request).iterateAll()) {
@@ -229,7 +544,8 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -249,6 +565,7 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, RoutersScopedList>> future =
    *       routersClient.aggregatedListPagedCallable().futureCall(request);
@@ -266,7 +583,8 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of routers.
+   * Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -286,6 +604,7 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     RouterAggregatedList response = routersClient.aggregatedListCallable().call(request);
@@ -370,8 +689,6 @@ public class RoutersClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> deleteAsync(DeleteRouterRequest request) {
     return deleteOperationCallable().futureCall(request);
   }
@@ -436,6 +753,140 @@ public class RoutersClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteRouterRequest, Operation> deleteCallable() {
     return stub.deleteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   Operation response = routersClient.deleteRoutePolicyAsync(project, region, router).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource where Route Policy is defined.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> deleteRoutePolicyAsync(
+      String project, String region, String router) {
+    DeleteRoutePolicyRouterRequest request =
+        DeleteRoutePolicyRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return deleteRoutePolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   DeleteRoutePolicyRouterRequest request =
+   *       DeleteRoutePolicyRouterRequest.newBuilder()
+   *           .setPolicy("policy-982670030")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   Operation response = routersClient.deleteRoutePolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> deleteRoutePolicyAsync(
+      DeleteRoutePolicyRouterRequest request) {
+    return deleteRoutePolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   DeleteRoutePolicyRouterRequest request =
+   *       DeleteRoutePolicyRouterRequest.newBuilder()
+   *           .setPolicy("policy-982670030")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.deleteRoutePolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteRoutePolicyRouterRequest, Operation, Operation>
+      deleteRoutePolicyOperationCallable() {
+    return stub.deleteRoutePolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   DeleteRoutePolicyRouterRequest request =
+   *       DeleteRoutePolicyRouterRequest.newBuilder()
+   *           .setPolicy("policy-982670030")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.deleteRoutePolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRoutePolicyRouterRequest, Operation>
+      deleteRoutePolicyCallable() {
+    return stub.deleteRoutePolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -530,6 +981,104 @@ public class RoutersClient implements BackgroundResource {
    */
   public final UnaryCallable<GetRouterRequest, Router> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves runtime NAT IP information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   NatIpInfoResponse response = routersClient.getNatIpInfo(project, region, router);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource to query for Nat IP information. The name should
+   *     conform to RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NatIpInfoResponse getNatIpInfo(String project, String region, String router) {
+    GetNatIpInfoRouterRequest request =
+        GetNatIpInfoRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return getNatIpInfo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves runtime NAT IP information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   GetNatIpInfoRouterRequest request =
+   *       GetNatIpInfoRouterRequest.newBuilder()
+   *           .setNatName("natName1727733580")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   NatIpInfoResponse response = routersClient.getNatIpInfo(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NatIpInfoResponse getNatIpInfo(GetNatIpInfoRouterRequest request) {
+    return getNatIpInfoCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves runtime NAT IP information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   GetNatIpInfoRouterRequest request =
+   *       GetNatIpInfoRouterRequest.newBuilder()
+   *           .setNatName("natName1727733580")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<NatIpInfoResponse> future =
+   *       routersClient.getNatIpInfoCallable().futureCall(request);
+   *   // Do something.
+   *   NatIpInfoResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoCallable() {
+    return stub.getNatIpInfoCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -697,6 +1246,107 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns specified Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   RoutersGetRoutePolicyResponse response =
+   *       routersClient.getRoutePolicy(project, region, router);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource to query for the route policy. The name should
+   *     conform to RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RoutersGetRoutePolicyResponse getRoutePolicy(
+      String project, String region, String router) {
+    GetRoutePolicyRouterRequest request =
+        GetRoutePolicyRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return getRoutePolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns specified Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   GetRoutePolicyRouterRequest request =
+   *       GetRoutePolicyRouterRequest.newBuilder()
+   *           .setPolicy("policy-982670030")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   RoutersGetRoutePolicyResponse response = routersClient.getRoutePolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RoutersGetRoutePolicyResponse getRoutePolicy(GetRoutePolicyRouterRequest request) {
+    return getRoutePolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns specified Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   GetRoutePolicyRouterRequest request =
+   *       GetRoutePolicyRouterRequest.newBuilder()
+   *           .setPolicy("policy-982670030")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<RoutersGetRoutePolicyResponse> future =
+   *       routersClient.getRoutePolicyCallable().futureCall(request);
+   *   // Do something.
+   *   RoutersGetRoutePolicyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+      getRoutePolicyCallable() {
+    return stub.getRoutePolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Retrieves runtime information of the specified router.
    *
    * <p>Sample code:
@@ -856,8 +1506,6 @@ public class RoutersClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> insertAsync(InsertRouterRequest request) {
     return insertOperationCallable().futureCall(request);
   }
@@ -1072,6 +1720,336 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves a list of router bgp routes available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   for (BgpRoute element : routersClient.listBgpRoutes(project, region, router).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name or id of the resource for this request. Name should conform to RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBgpRoutesPagedResponse listBgpRoutes(
+      String project, String region, String router) {
+    ListBgpRoutesRoutersRequest request =
+        ListBgpRoutesRoutersRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return listBgpRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router bgp routes available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListBgpRoutesRoutersRequest request =
+   *       ListBgpRoutesRoutersRequest.newBuilder()
+   *           .setAddressFamily("addressFamily-1130029960")
+   *           .setDestinationPrefix("destinationPrefix-1718345664")
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setPeer("peer3436898")
+   *           .setPolicyApplied(true)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouteType("routeType167668003")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   for (BgpRoute element : routersClient.listBgpRoutes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBgpRoutesPagedResponse listBgpRoutes(ListBgpRoutesRoutersRequest request) {
+    return listBgpRoutesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router bgp routes available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListBgpRoutesRoutersRequest request =
+   *       ListBgpRoutesRoutersRequest.newBuilder()
+   *           .setAddressFamily("addressFamily-1130029960")
+   *           .setDestinationPrefix("destinationPrefix-1718345664")
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setPeer("peer3436898")
+   *           .setPolicyApplied(true)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouteType("routeType167668003")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<BgpRoute> future = routersClient.listBgpRoutesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BgpRoute element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBgpRoutesRoutersRequest, ListBgpRoutesPagedResponse>
+      listBgpRoutesPagedCallable() {
+    return stub.listBgpRoutesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router bgp routes available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListBgpRoutesRoutersRequest request =
+   *       ListBgpRoutesRoutersRequest.newBuilder()
+   *           .setAddressFamily("addressFamily-1130029960")
+   *           .setDestinationPrefix("destinationPrefix-1718345664")
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setPeer("peer3436898")
+   *           .setPolicyApplied(true)
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouteType("routeType167668003")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   while (true) {
+   *     RoutersListBgpRoutes response = routersClient.listBgpRoutesCallable().call(request);
+   *     for (BgpRoute element : response.getResultList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes>
+      listBgpRoutesCallable() {
+    return stub.listBgpRoutesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router route policy subresources available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   for (RoutePolicy element :
+   *       routersClient.listRoutePolicies(project, region, router).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name or id of the resource for this request. Name should conform to RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRoutePoliciesPagedResponse listRoutePolicies(
+      String project, String region, String router) {
+    ListRoutePoliciesRoutersRequest request =
+        ListRoutePoliciesRoutersRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return listRoutePolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router route policy subresources available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListRoutePoliciesRoutersRequest request =
+   *       ListRoutePoliciesRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   for (RoutePolicy element : routersClient.listRoutePolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRoutePoliciesPagedResponse listRoutePolicies(
+      ListRoutePoliciesRoutersRequest request) {
+    return listRoutePoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router route policy subresources available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListRoutePoliciesRoutersRequest request =
+   *       ListRoutePoliciesRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<RoutePolicy> future =
+   *       routersClient.listRoutePoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RoutePolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRoutePoliciesRoutersRequest, ListRoutePoliciesPagedResponse>
+      listRoutePoliciesPagedCallable() {
+    return stub.listRoutePoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router route policy subresources available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListRoutePoliciesRoutersRequest request =
+   *       ListRoutePoliciesRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   while (true) {
+   *     RoutersListRoutePolicies response = routersClient.listRoutePoliciesCallable().call(request);
+   *     for (RoutePolicy element : response.getResultList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies>
+      listRoutePoliciesCallable() {
+    return stub.listRoutePoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Patches the specified Router resource with the data included in the request. This method
    * supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
@@ -1139,8 +2117,6 @@ public class RoutersClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> patchAsync(PatchRouterRequest request) {
     return patchOperationCallable().futureCall(request);
   }
@@ -1209,6 +2185,143 @@ public class RoutersClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchRouterRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   RoutePolicy routePolicyResource = RoutePolicy.newBuilder().build();
+   *   Operation response =
+   *       routersClient.patchRoutePolicyAsync(project, region, router, routePolicyResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource where Route Policy is defined.
+   * @param routePolicyResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchRoutePolicyAsync(
+      String project, String region, String router, RoutePolicy routePolicyResource) {
+    PatchRoutePolicyRouterRequest request =
+        PatchRoutePolicyRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .setRoutePolicyResource(routePolicyResource)
+            .build();
+    return patchRoutePolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   PatchRoutePolicyRouterRequest request =
+   *       PatchRoutePolicyRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRoutePolicyResource(RoutePolicy.newBuilder().build())
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   Operation response = routersClient.patchRoutePolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchRoutePolicyAsync(
+      PatchRoutePolicyRouterRequest request) {
+    return patchRoutePolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   PatchRoutePolicyRouterRequest request =
+   *       PatchRoutePolicyRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRoutePolicyResource(RoutePolicy.newBuilder().build())
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.patchRoutePolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchRoutePolicyRouterRequest, Operation, Operation>
+      patchRoutePolicyOperationCallable() {
+    return stub.patchRoutePolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   PatchRoutePolicyRouterRequest request =
+   *       PatchRoutePolicyRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRoutePolicyResource(RoutePolicy.newBuilder().build())
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.patchRoutePolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchRoutePolicyRouterRequest, Operation> patchRoutePolicyCallable() {
+    return stub.patchRoutePolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1387,8 +2500,6 @@ public class RoutersClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> updateAsync(UpdateRouterRequest request) {
     return updateOperationCallable().futureCall(request);
   }
@@ -1459,6 +2570,144 @@ public class RoutersClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateRouterRequest, Operation> updateCallable() {
     return stub.updateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates or creates new Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   RoutePolicy routePolicyResource = RoutePolicy.newBuilder().build();
+   *   Operation response =
+   *       routersClient.updateRoutePolicyAsync(project, region, router, routePolicyResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource where Route Policy is defined.
+   * @param routePolicyResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateRoutePolicyAsync(
+      String project, String region, String router, RoutePolicy routePolicyResource) {
+    UpdateRoutePolicyRouterRequest request =
+        UpdateRoutePolicyRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .setRoutePolicyResource(routePolicyResource)
+            .build();
+    return updateRoutePolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates or creates new Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   UpdateRoutePolicyRouterRequest request =
+   *       UpdateRoutePolicyRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRoutePolicyResource(RoutePolicy.newBuilder().build())
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   Operation response = routersClient.updateRoutePolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateRoutePolicyAsync(
+      UpdateRoutePolicyRouterRequest request) {
+    return updateRoutePolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates or creates new Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   UpdateRoutePolicyRouterRequest request =
+   *       UpdateRoutePolicyRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRoutePolicyResource(RoutePolicy.newBuilder().build())
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.updateRoutePolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRoutePolicyRouterRequest, Operation, Operation>
+      updateRoutePolicyOperationCallable() {
+    return stub.updateRoutePolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates or creates new Route Policy
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   UpdateRoutePolicyRouterRequest request =
+   *       UpdateRoutePolicyRouterRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRoutePolicyResource(RoutePolicy.newBuilder().build())
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.updateRoutePolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRoutePolicyRouterRequest, Operation>
+      updateRoutePolicyCallable() {
+    return stub.updateRoutePolicyCallable();
   }
 
   @Override
@@ -1733,6 +2982,162 @@ public class RoutersClient implements BackgroundResource {
     @Override
     protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBgpRoutesPagedResponse
+      extends AbstractPagedListResponse<
+          ListBgpRoutesRoutersRequest,
+          RoutersListBgpRoutes,
+          BgpRoute,
+          ListBgpRoutesPage,
+          ListBgpRoutesFixedSizeCollection> {
+
+    public static ApiFuture<ListBgpRoutesPagedResponse> createAsync(
+        PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
+        ApiFuture<RoutersListBgpRoutes> futureResponse) {
+      ApiFuture<ListBgpRoutesPage> futurePage =
+          ListBgpRoutesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBgpRoutesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBgpRoutesPagedResponse(ListBgpRoutesPage page) {
+      super(page, ListBgpRoutesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBgpRoutesPage
+      extends AbstractPage<
+          ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute, ListBgpRoutesPage> {
+
+    private ListBgpRoutesPage(
+        PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
+        RoutersListBgpRoutes response) {
+      super(context, response);
+    }
+
+    private static ListBgpRoutesPage createEmptyPage() {
+      return new ListBgpRoutesPage(null, null);
+    }
+
+    @Override
+    protected ListBgpRoutesPage createPage(
+        PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
+        RoutersListBgpRoutes response) {
+      return new ListBgpRoutesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBgpRoutesPage> createPageAsync(
+        PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> context,
+        ApiFuture<RoutersListBgpRoutes> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBgpRoutesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBgpRoutesRoutersRequest,
+          RoutersListBgpRoutes,
+          BgpRoute,
+          ListBgpRoutesPage,
+          ListBgpRoutesFixedSizeCollection> {
+
+    private ListBgpRoutesFixedSizeCollection(List<ListBgpRoutesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBgpRoutesFixedSizeCollection createEmptyCollection() {
+      return new ListBgpRoutesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBgpRoutesFixedSizeCollection createCollection(
+        List<ListBgpRoutesPage> pages, int collectionSize) {
+      return new ListBgpRoutesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRoutePoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListRoutePoliciesRoutersRequest,
+          RoutersListRoutePolicies,
+          RoutePolicy,
+          ListRoutePoliciesPage,
+          ListRoutePoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListRoutePoliciesPagedResponse> createAsync(
+        PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy> context,
+        ApiFuture<RoutersListRoutePolicies> futureResponse) {
+      ApiFuture<ListRoutePoliciesPage> futurePage =
+          ListRoutePoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRoutePoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRoutePoliciesPagedResponse(ListRoutePoliciesPage page) {
+      super(page, ListRoutePoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRoutePoliciesPage
+      extends AbstractPage<
+          ListRoutePoliciesRoutersRequest,
+          RoutersListRoutePolicies,
+          RoutePolicy,
+          ListRoutePoliciesPage> {
+
+    private ListRoutePoliciesPage(
+        PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy> context,
+        RoutersListRoutePolicies response) {
+      super(context, response);
+    }
+
+    private static ListRoutePoliciesPage createEmptyPage() {
+      return new ListRoutePoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListRoutePoliciesPage createPage(
+        PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy> context,
+        RoutersListRoutePolicies response) {
+      return new ListRoutePoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRoutePoliciesPage> createPageAsync(
+        PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy> context,
+        ApiFuture<RoutersListRoutePolicies> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRoutePoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRoutePoliciesRoutersRequest,
+          RoutersListRoutePolicies,
+          RoutePolicy,
+          ListRoutePoliciesPage,
+          ListRoutePoliciesFixedSizeCollection> {
+
+    private ListRoutePoliciesFixedSizeCollection(
+        List<ListRoutePoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRoutePoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListRoutePoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRoutePoliciesFixedSizeCollection createCollection(
+        List<ListRoutePoliciesPage> pages, int collectionSize) {
+      return new ListRoutePoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

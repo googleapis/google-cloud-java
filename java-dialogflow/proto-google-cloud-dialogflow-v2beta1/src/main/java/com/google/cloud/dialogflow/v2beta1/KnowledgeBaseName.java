@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class KnowledgeBaseName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectKnowledgeBaseBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationKnowledgeBaseBuilder newProjectLocationKnowledgeBaseBuilder() {
     return new ProjectLocationKnowledgeBaseBuilder();
   }
@@ -98,12 +95,10 @@ public class KnowledgeBaseName implements ResourceName {
     return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static KnowledgeBaseName ofProjectKnowledgeBaseName(String project, String knowledgeBase) {
     return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static KnowledgeBaseName ofProjectLocationKnowledgeBaseName(
       String project, String location, String knowledgeBase) {
     return newProjectLocationKnowledgeBaseBuilder()
@@ -117,12 +112,10 @@ public class KnowledgeBaseName implements ResourceName {
     return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectKnowledgeBaseName(String project, String knowledgeBase) {
     return newBuilder().setProject(project).setKnowledgeBase(knowledgeBase).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationKnowledgeBaseName(
       String project, String location, String knowledgeBase) {
     return newProjectLocationKnowledgeBaseBuilder()
@@ -260,7 +253,8 @@ public class KnowledgeBaseName implements ResourceName {
     private Builder(KnowledgeBaseName knowledgeBaseName) {
       Preconditions.checkArgument(
           Objects.equals(knowledgeBaseName.pathTemplate, PROJECT_KNOWLEDGE_BASE),
-          "toBuilder is only supported when KnowledgeBaseName has the pattern of projects/{project}/knowledgeBases/{knowledge_base}");
+          "toBuilder is only supported when KnowledgeBaseName has the pattern of"
+              + " projects/{project}/knowledgeBases/{knowledge_base}");
       this.project = knowledgeBaseName.project;
       this.knowledgeBase = knowledgeBaseName.knowledgeBase;
     }
@@ -271,7 +265,6 @@ public class KnowledgeBaseName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/knowledgeBases/{knowledge_base}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationKnowledgeBaseBuilder {
     private String project;
     private String location;

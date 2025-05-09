@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.maps.mapsplatformdatasets.v1.stub;
 
+import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.FetchDatasetErrorsPagedResponse;
 import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.ListDatasetsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -29,6 +30,8 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.Dataset;
 import com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse;
 import com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse;
@@ -78,6 +81,18 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsMethodDescriptor =
+          MethodDescriptor.<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.maps.mapsplatformdatasets.v1.MapsPlatformDatasets/FetchDatasetErrors")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchDatasetErrorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchDatasetErrorsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
       listDatasetsMethodDescriptor =
           MethodDescriptor.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -101,6 +116,10 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;
   private final UnaryCallable<UpdateDatasetMetadataRequest, Dataset> updateDatasetMetadataCallable;
   private final UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable;
+  private final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable;
+  private final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse>
       listDatasetsPagedCallable;
@@ -180,6 +199,17 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+        fetchDatasetErrorsTransportSettings =
+            GrpcCallSettings.<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>newBuilder()
+                .setMethodDescriptor(fetchDatasetErrorsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("dataset", String.valueOf(request.getDataset()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
             .setMethodDescriptor(listDatasetsMethodDescriptor)
@@ -212,6 +242,16 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
     this.getDatasetCallable =
         callableFactory.createUnaryCallable(
             getDatasetTransportSettings, settings.getDatasetSettings(), clientContext);
+    this.fetchDatasetErrorsCallable =
+        callableFactory.createUnaryCallable(
+            fetchDatasetErrorsTransportSettings,
+            settings.fetchDatasetErrorsSettings(),
+            clientContext);
+    this.fetchDatasetErrorsPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchDatasetErrorsTransportSettings,
+            settings.fetchDatasetErrorsSettings(),
+            clientContext);
     this.listDatasetsCallable =
         callableFactory.createUnaryCallable(
             listDatasetsTransportSettings, settings.listDatasetsSettings(), clientContext);
@@ -243,6 +283,18 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
   @Override
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     return getDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable() {
+    return fetchDatasetErrorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable() {
+    return fetchDatasetErrorsPagedCallable;
   }
 
   @Override

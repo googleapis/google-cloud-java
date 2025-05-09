@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.dialogflow.v2beta1.ParticipantsClient.ListSuggest
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -63,6 +64,8 @@ import com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest;
+import com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse;
 import com.google.cloud.dialogflow.v2beta1.Suggestion;
@@ -76,9 +79,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -95,7 +98,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createParticipant to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createParticipant:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -112,10 +117,21 @@ import org.threeten.bp.Duration;
  *             .createParticipantSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ParticipantsStubSettings participantsSettings = participantsSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -144,6 +160,8 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestFaqAnswersSettings;
   private final UnaryCallSettings<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
       suggestSmartRepliesSettings;
+  private final UnaryCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistSettings;
   private final PagedCallSettings<
           ListSuggestionsRequest, ListSuggestionsResponse, ListSuggestionsPagedResponse>
       listSuggestionsSettings;
@@ -188,9 +206,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
             @Override
             public Iterable<Participant> extractResources(ListParticipantsResponse payload) {
-              return payload.getParticipantsList() == null
-                  ? ImmutableList.<Participant>of()
-                  : payload.getParticipantsList();
+              return payload.getParticipantsList();
             }
           };
 
@@ -227,9 +243,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
             @Override
             public Iterable<Suggestion> extractResources(ListSuggestionsResponse payload) {
-              return payload.getSuggestionsList() == null
-                  ? ImmutableList.<Suggestion>of()
-                  : payload.getSuggestionsList();
+              return payload.getSuggestionsList();
             }
           };
 
@@ -263,9 +277,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -373,6 +385,12 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return suggestSmartRepliesSettings;
   }
 
+  /** Returns the object with the settings used for calls to suggestKnowledgeAssist. */
+  public UnaryCallSettings<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+      suggestKnowledgeAssistSettings() {
+    return suggestKnowledgeAssistSettings;
+  }
+
   /**
    * Returns the object with the settings used for calls to listSuggestions.
    *
@@ -423,12 +441,19 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dialogflow";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dialogflow.googleapis.com:443";
   }
@@ -467,7 +492,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -476,7 +500,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -522,6 +545,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     suggestArticlesSettings = settingsBuilder.suggestArticlesSettings().build();
     suggestFaqAnswersSettings = settingsBuilder.suggestFaqAnswersSettings().build();
     suggestSmartRepliesSettings = settingsBuilder.suggestSmartRepliesSettings().build();
+    suggestKnowledgeAssistSettings = settingsBuilder.suggestKnowledgeAssistSettings().build();
     listSuggestionsSettings = settingsBuilder.listSuggestionsSettings().build();
     compileSuggestionSettings = settingsBuilder.compileSuggestionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -551,6 +575,9 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
         suggestFaqAnswersSettings;
     private final UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesSettings;
+    private final UnaryCallSettings.Builder<
+            SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistSettings;
     private final PagedCallSettings.Builder<
             ListSuggestionsRequest, ListSuggestionsResponse, ListSuggestionsPagedResponse>
         listSuggestionsSettings;
@@ -584,32 +611,32 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(220000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(220000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(220000L))
               .build();
       definitions.put("retry_policy_2_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(220000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(220000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(220000L))
               .build();
       definitions.put("no_retry_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -631,6 +658,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestArticlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestFaqAnswersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       suggestSmartRepliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      suggestKnowledgeAssistSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSuggestionsSettings = PagedCallSettings.newBuilder(LIST_SUGGESTIONS_PAGE_STR_FACT);
       compileSuggestionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -646,6 +674,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               suggestArticlesSettings,
               suggestFaqAnswersSettings,
               suggestSmartRepliesSettings,
+              suggestKnowledgeAssistSettings,
               listSuggestionsSettings,
               compileSuggestionSettings,
               listLocationsSettings,
@@ -665,6 +694,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       suggestArticlesSettings = settings.suggestArticlesSettings.toBuilder();
       suggestFaqAnswersSettings = settings.suggestFaqAnswersSettings.toBuilder();
       suggestSmartRepliesSettings = settings.suggestSmartRepliesSettings.toBuilder();
+      suggestKnowledgeAssistSettings = settings.suggestKnowledgeAssistSettings.toBuilder();
       listSuggestionsSettings = settings.listSuggestionsSettings.toBuilder();
       compileSuggestionSettings = settings.compileSuggestionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -680,6 +710,7 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
               suggestArticlesSettings,
               suggestFaqAnswersSettings,
               suggestSmartRepliesSettings,
+              suggestKnowledgeAssistSettings,
               listSuggestionsSettings,
               compileSuggestionSettings,
               listLocationsSettings,
@@ -692,7 +723,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -705,7 +735,6 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -750,6 +779,11 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
 
       builder
           .suggestSmartRepliesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .suggestKnowledgeAssistSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -844,6 +878,12 @@ public class ParticipantsStubSettings extends StubSettings<ParticipantsStubSetti
     public UnaryCallSettings.Builder<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
         suggestSmartRepliesSettings() {
       return suggestSmartRepliesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to suggestKnowledgeAssist. */
+    public UnaryCallSettings.Builder<SuggestKnowledgeAssistRequest, SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssistSettings() {
+      return suggestKnowledgeAssistSettings;
     }
 
     /**

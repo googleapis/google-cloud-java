@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,35 +18,49 @@ package com.google.cloud.config.v1.stub;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
+import com.google.cloud.config.v1.CreatePreviewRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
+import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
+import com.google.cloud.config.v1.ExportPreviewResultRequest;
+import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
+import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
+import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
+import com.google.cloud.config.v1.ListPreviewsRequest;
+import com.google.cloud.config.v1.ListPreviewsResponse;
 import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
 import com.google.cloud.config.v1.ListRevisionsResponse;
+import com.google.cloud.config.v1.ListTerraformVersionsRequest;
+import com.google.cloud.config.v1.ListTerraformVersionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
+import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
+import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -184,6 +198,56 @@ public abstract class ConfigStub implements BackgroundResource {
 
   public UnaryCallable<ExportLockInfoRequest, LockInfo> exportLockInfoCallable() {
     throw new UnsupportedOperationException("Not implemented: exportLockInfoCallable()");
+  }
+
+  public OperationCallable<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createPreviewOperationCallable()");
+  }
+
+  public UnaryCallable<CreatePreviewRequest, Operation> createPreviewCallable() {
+    throw new UnsupportedOperationException("Not implemented: createPreviewCallable()");
+  }
+
+  public UnaryCallable<GetPreviewRequest, Preview> getPreviewCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPreviewCallable()");
+  }
+
+  public UnaryCallable<ListPreviewsRequest, ListPreviewsPagedResponse> listPreviewsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPreviewsPagedCallable()");
+  }
+
+  public UnaryCallable<ListPreviewsRequest, ListPreviewsResponse> listPreviewsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPreviewsCallable()");
+  }
+
+  public OperationCallable<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deletePreviewOperationCallable()");
+  }
+
+  public UnaryCallable<DeletePreviewRequest, Operation> deletePreviewCallable() {
+    throw new UnsupportedOperationException("Not implemented: deletePreviewCallable()");
+  }
+
+  public UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportPreviewResultCallable()");
+  }
+
+  public UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsPagedResponse>
+      listTerraformVersionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listTerraformVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTerraformVersionsCallable()");
+  }
+
+  public UnaryCallable<GetTerraformVersionRequest, TerraformVersion> getTerraformVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTerraformVersionCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

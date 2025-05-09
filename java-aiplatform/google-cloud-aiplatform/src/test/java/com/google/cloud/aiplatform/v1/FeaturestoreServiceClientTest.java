@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -121,6 +121,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -177,6 +179,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -233,6 +237,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -293,6 +299,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -353,6 +361,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -398,6 +408,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -531,6 +543,8 @@ public class FeaturestoreServiceClientTest {
             .setOnlineServingConfig(Featurestore.OnlineServingConfig.newBuilder().build())
             .setOnlineStorageTtlDays(1491501178)
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -763,6 +777,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -821,6 +837,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -879,6 +897,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -941,6 +961,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1003,6 +1025,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1052,6 +1076,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1187,6 +1213,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setMonitoringConfig(FeaturestoreMonitoringConfig.newBuilder().build())
             .setOfflineStorageTtlDays(-844678422)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1406,7 +1434,7 @@ public class FeaturestoreServiceClientTest {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.of(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                         "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
@@ -1416,6 +1444,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1467,7 +1497,7 @@ public class FeaturestoreServiceClientTest {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.of(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                         "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
@@ -1477,6 +1507,69 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFeatureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+    Feature feature = Feature.newBuilder().build();
+
+    Feature actualResponse = client.createFeatureAsync(parent, feature).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeatureRequest actualRequest = ((CreateFeatureRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(feature, actualRequest.getFeature());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeatureExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+      Feature feature = Feature.newBuilder().build();
+      client.createFeatureAsync(parent, feature).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createFeatureTest3() throws Exception {
+    Feature expectedResponse =
+        Feature.newBuilder()
+            .setName(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+                        "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1505,7 +1598,7 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
-  public void createFeatureExceptionTest2() throws Exception {
+  public void createFeatureExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockFeaturestoreService.addException(exception);
 
@@ -1522,11 +1615,11 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
-  public void createFeatureTest3() throws Exception {
+  public void createFeatureTest4() throws Exception {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.of(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                         "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
@@ -1536,6 +1629,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1567,7 +1662,7 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
-  public void createFeatureExceptionTest3() throws Exception {
+  public void createFeatureExceptionTest4() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockFeaturestoreService.addException(exception);
 
@@ -1586,11 +1681,11 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
-  public void createFeatureTest4() throws Exception {
+  public void createFeatureTest5() throws Exception {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.of(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                         "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
@@ -1600,6 +1695,72 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFeatureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
+    FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+    Feature feature = Feature.newBuilder().build();
+    String featureId = "featureId-420503887";
+
+    Feature actualResponse = client.createFeatureAsync(parent, feature, featureId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeatureRequest actualRequest = ((CreateFeatureRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(feature, actualRequest.getFeature());
+    Assert.assertEquals(featureId, actualRequest.getFeatureId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeatureExceptionTest5() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+      Feature feature = Feature.newBuilder().build();
+      String featureId = "featureId-420503887";
+      client.createFeatureAsync(parent, feature, featureId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createFeatureTest6() throws Exception {
+    Feature expectedResponse =
+        Feature.newBuilder()
+            .setName(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+                        "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setDisableMonitoring(true)
+            .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1630,7 +1791,7 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
-  public void createFeatureExceptionTest4() throws Exception {
+  public void createFeatureExceptionTest6() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockFeaturestoreService.addException(exception);
 
@@ -1709,6 +1870,54 @@ public class FeaturestoreServiceClientTest {
             .build();
     mockFeaturestoreService.addResponse(resultOperation);
 
+    FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+    List<CreateFeatureRequest> requests = new ArrayList<>();
+
+    BatchCreateFeaturesResponse actualResponse =
+        client.batchCreateFeaturesAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateFeaturesRequest actualRequest = ((BatchCreateFeaturesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateFeaturesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+      List<CreateFeatureRequest> requests = new ArrayList<>();
+      client.batchCreateFeaturesAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchCreateFeaturesTest3() throws Exception {
+    BatchCreateFeaturesResponse expectedResponse =
+        BatchCreateFeaturesResponse.newBuilder().addAllFeatures(new ArrayList<Feature>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateFeaturesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFeaturestoreService.addResponse(resultOperation);
+
     String parent = "parent-995424086";
     List<CreateFeatureRequest> requests = new ArrayList<>();
 
@@ -1729,7 +1938,7 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
-  public void batchCreateFeaturesExceptionTest2() throws Exception {
+  public void batchCreateFeaturesExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockFeaturestoreService.addException(exception);
 
@@ -1750,7 +1959,7 @@ public class FeaturestoreServiceClientTest {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.of(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                         "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
@@ -1760,11 +1969,14 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
     FeatureName name =
-        FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+        FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+            "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
 
     Feature actualResponse = client.getFeature(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1787,7 +1999,8 @@ public class FeaturestoreServiceClientTest {
 
     try {
       FeatureName name =
-          FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+          FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+              "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
       client.getFeature(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1800,7 +2013,7 @@ public class FeaturestoreServiceClientTest {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.of(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                         "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
@@ -1810,6 +2023,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1899,6 +2114,50 @@ public class FeaturestoreServiceClientTest {
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
+    FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+
+    ListFeaturesPagedResponse pagedListResponse = client.listFeatures(parent);
+
+    List<Feature> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeaturesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeaturestoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeaturesRequest actualRequest = ((ListFeaturesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeaturesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeaturestoreService.addException(exception);
+
+    try {
+      FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+      client.listFeatures(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeaturesTest3() throws Exception {
+    Feature responsesElement = Feature.newBuilder().build();
+    ListFeaturesResponse expectedResponse =
+        ListFeaturesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeatures(Arrays.asList(responsesElement))
+            .build();
+    mockFeaturestoreService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     ListFeaturesPagedResponse pagedListResponse = client.listFeatures(parent);
@@ -1920,7 +2179,7 @@ public class FeaturestoreServiceClientTest {
   }
 
   @Test
-  public void listFeaturesExceptionTest2() throws Exception {
+  public void listFeaturesExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockFeaturestoreService.addException(exception);
 
@@ -1938,7 +2197,7 @@ public class FeaturestoreServiceClientTest {
     Feature expectedResponse =
         Feature.newBuilder()
             .setName(
-                FeatureName.of(
+                FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                         "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                     .toString())
             .setDescription("description-1724546052")
@@ -1948,6 +2207,8 @@ public class FeaturestoreServiceClientTest {
             .setEtag("etag3123477")
             .setDisableMonitoring(true)
             .addAllMonitoringStatsAnomalies(new ArrayList<Feature.MonitoringStatsAnomaly>())
+            .setVersionColumnName("versionColumnName-997658119")
+            .setPointOfContact("pointOfContact-804861287")
             .build();
     mockFeaturestoreService.addResponse(expectedResponse);
 
@@ -1996,7 +2257,8 @@ public class FeaturestoreServiceClientTest {
     mockFeaturestoreService.addResponse(resultOperation);
 
     FeatureName name =
-        FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+        FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+            "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
 
     client.deleteFeatureAsync(name).get();
 
@@ -2018,7 +2280,8 @@ public class FeaturestoreServiceClientTest {
 
     try {
       FeatureName name =
-          FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+          FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+              "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
       client.deleteFeatureAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {

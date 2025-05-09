@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,9 @@ import com.google.cloud.discoveryengine.v1.CollectUserEventRequest;
 import com.google.cloud.discoveryengine.v1.ImportUserEventsMetadata;
 import com.google.cloud.discoveryengine.v1.ImportUserEventsRequest;
 import com.google.cloud.discoveryengine.v1.ImportUserEventsResponse;
+import com.google.cloud.discoveryengine.v1.PurgeUserEventsMetadata;
+import com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest;
+import com.google.cloud.discoveryengine.v1.PurgeUserEventsResponse;
 import com.google.cloud.discoveryengine.v1.UserEvent;
 import com.google.cloud.discoveryengine.v1.WriteUserEventRequest;
 import com.google.longrunning.Operation;
@@ -53,6 +56,15 @@ public abstract class UserEventServiceStub implements BackgroundResource {
 
   public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     throw new UnsupportedOperationException("Not implemented: collectUserEventCallable()");
+  }
+
+  public OperationCallable<PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeUserEventsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeUserEventsCallable()");
   }
 
   public OperationCallable<

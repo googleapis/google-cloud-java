@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.aiplatform.v1beta1.PersistentResourceServiceClien
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -53,6 +54,8 @@ import com.google.cloud.aiplatform.v1beta1.GetPersistentResourceRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesResponse;
 import com.google.cloud.aiplatform.v1beta1.PersistentResource;
+import com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -71,9 +74,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -90,7 +93,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getPersistentResource to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getPersistentResource:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -107,10 +112,47 @@ import org.threeten.bp.Duration;
  *             .getPersistentResourceSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * PersistentResourceServiceStubSettings persistentResourceServiceSettings =
  *     persistentResourceServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createPersistentResource:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * PersistentResourceServiceStubSettings.Builder persistentResourceServiceSettingsBuilder =
+ *     PersistentResourceServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * persistentResourceServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -147,6 +189,13 @@ public class PersistentResourceServiceStubSettings
           PersistentResource,
           UpdatePersistentResourceOperationMetadata>
       updatePersistentResourceOperationSettings;
+  private final UnaryCallSettings<RebootPersistentResourceRequest, Operation>
+      rebootPersistentResourceSettings;
+  private final OperationCallSettings<
+          RebootPersistentResourceRequest,
+          PersistentResource,
+          RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -195,9 +244,7 @@ public class PersistentResourceServiceStubSettings
             @Override
             public Iterable<PersistentResource> extractResources(
                 ListPersistentResourcesResponse payload) {
-              return payload.getPersistentResourcesList() == null
-                  ? ImmutableList.<PersistentResource>of()
-                  : payload.getPersistentResourcesList();
+              return payload.getPersistentResourcesList();
             }
           };
 
@@ -231,9 +278,7 @@ public class PersistentResourceServiceStubSettings
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -338,6 +383,21 @@ public class PersistentResourceServiceStubSettings
     return updatePersistentResourceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to rebootPersistentResource. */
+  public UnaryCallSettings<RebootPersistentResourceRequest, Operation>
+      rebootPersistentResourceSettings() {
+    return rebootPersistentResourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rebootPersistentResource. */
+  public OperationCallSettings<
+          RebootPersistentResourceRequest,
+          PersistentResource,
+          RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceOperationSettings() {
+    return rebootPersistentResourceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -376,12 +436,19 @@ public class PersistentResourceServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "aiplatform";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }
@@ -413,7 +480,6 @@ public class PersistentResourceServiceStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -451,6 +517,9 @@ public class PersistentResourceServiceStubSettings
     updatePersistentResourceSettings = settingsBuilder.updatePersistentResourceSettings().build();
     updatePersistentResourceOperationSettings =
         settingsBuilder.updatePersistentResourceOperationSettings().build();
+    rebootPersistentResourceSettings = settingsBuilder.rebootPersistentResourceSettings().build();
+    rebootPersistentResourceOperationSettings =
+        settingsBuilder.rebootPersistentResourceOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -488,6 +557,13 @@ public class PersistentResourceServiceStubSettings
             PersistentResource,
             UpdatePersistentResourceOperationMetadata>
         updatePersistentResourceOperationSettings;
+    private final UnaryCallSettings.Builder<RebootPersistentResourceRequest, Operation>
+        rebootPersistentResourceSettings;
+    private final OperationCallSettings.Builder<
+            RebootPersistentResourceRequest,
+            PersistentResource,
+            RebootPersistentResourceOperationMetadata>
+        rebootPersistentResourceOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -532,6 +608,8 @@ public class PersistentResourceServiceStubSettings
       deletePersistentResourceOperationSettings = OperationCallSettings.newBuilder();
       updatePersistentResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updatePersistentResourceOperationSettings = OperationCallSettings.newBuilder();
+      rebootPersistentResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rebootPersistentResourceOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -545,6 +623,7 @@ public class PersistentResourceServiceStubSettings
               listPersistentResourcesSettings,
               deletePersistentResourceSettings,
               updatePersistentResourceSettings,
+              rebootPersistentResourceSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -567,6 +646,9 @@ public class PersistentResourceServiceStubSettings
       updatePersistentResourceSettings = settings.updatePersistentResourceSettings.toBuilder();
       updatePersistentResourceOperationSettings =
           settings.updatePersistentResourceOperationSettings.toBuilder();
+      rebootPersistentResourceSettings = settings.rebootPersistentResourceSettings.toBuilder();
+      rebootPersistentResourceOperationSettings =
+          settings.rebootPersistentResourceOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -580,6 +662,7 @@ public class PersistentResourceServiceStubSettings
               listPersistentResourcesSettings,
               deletePersistentResourceSettings,
               updatePersistentResourceSettings,
+              rebootPersistentResourceSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -593,7 +676,6 @@ public class PersistentResourceServiceStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -623,6 +705,11 @@ public class PersistentResourceServiceStubSettings
 
       builder
           .updatePersistentResourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .rebootPersistentResourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -667,13 +754,13 @@ public class PersistentResourceServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -691,13 +778,13 @@ public class PersistentResourceServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -716,13 +803,38 @@ public class PersistentResourceServiceStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .rebootPersistentResourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RebootPersistentResourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PersistentResource.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  RebootPersistentResourceOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -750,8 +862,6 @@ public class PersistentResourceServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createPersistentResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePersistentResourceRequest,
             PersistentResource,
@@ -782,8 +892,6 @@ public class PersistentResourceServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deletePersistentResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeletePersistentResourceRequest, Empty, DeleteOperationMetadata>
         deletePersistentResourceOperationSettings() {
@@ -797,14 +905,27 @@ public class PersistentResourceServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updatePersistentResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdatePersistentResourceRequest,
             PersistentResource,
             UpdatePersistentResourceOperationMetadata>
         updatePersistentResourceOperationSettings() {
       return updatePersistentResourceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rebootPersistentResource. */
+    public UnaryCallSettings.Builder<RebootPersistentResourceRequest, Operation>
+        rebootPersistentResourceSettings() {
+      return rebootPersistentResourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rebootPersistentResource. */
+    public OperationCallSettings.Builder<
+            RebootPersistentResourceRequest,
+            PersistentResource,
+            RebootPersistentResourceOperationMetadata>
+        rebootPersistentResourceOperationSettings() {
+      return rebootPersistentResourceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

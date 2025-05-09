@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -542,6 +542,47 @@ public final class DatastreamGrpc {
       }
     }
     return getDeleteStreamMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.datastream.v1.RunStreamRequest, com.google.longrunning.Operation>
+      getRunStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunStream",
+      requestType = com.google.cloud.datastream.v1.RunStreamRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.datastream.v1.RunStreamRequest, com.google.longrunning.Operation>
+      getRunStreamMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.datastream.v1.RunStreamRequest, com.google.longrunning.Operation>
+        getRunStreamMethod;
+    if ((getRunStreamMethod = DatastreamGrpc.getRunStreamMethod) == null) {
+      synchronized (DatastreamGrpc.class) {
+        if ((getRunStreamMethod = DatastreamGrpc.getRunStreamMethod) == null) {
+          DatastreamGrpc.getRunStreamMethod =
+              getRunStreamMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.datastream.v1.RunStreamRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunStream"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.datastream.v1.RunStreamRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DatastreamMethodDescriptorSupplier("RunStream"))
+                      .build();
+        }
+      }
+    }
+    return getRunStreamMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1203,6 +1244,19 @@ public final class DatastreamGrpc {
     return DatastreamStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DatastreamBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DatastreamBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DatastreamBlockingV2Stub>() {
+          @java.lang.Override
+          public DatastreamBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DatastreamBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DatastreamBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1400,6 +1454,20 @@ public final class DatastreamGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteStreamMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    default void runStream(
+        com.google.cloud.datastream.v1.RunStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunStreamMethod(), responseObserver);
     }
 
     /**
@@ -1827,6 +1895,21 @@ public final class DatastreamGrpc {
      *
      *
      * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    public void runStream(
+        com.google.cloud.datastream.v1.RunStreamRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunStreamMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Use this method to get details about a stream object.
      * </pre>
      */
@@ -2062,6 +2145,374 @@ public final class DatastreamGrpc {
    * Datastream service
    * </pre>
    */
+  public static final class DatastreamBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DatastreamBlockingV2Stub> {
+    private DatastreamBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DatastreamBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DatastreamBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list connection profiles created in a project and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.ListConnectionProfilesResponse listConnectionProfiles(
+        com.google.cloud.datastream.v1.ListConnectionProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConnectionProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a connection profile.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.ConnectionProfile getConnectionProfile(
+        com.google.cloud.datastream.v1.GetConnectionProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to create a connection profile in a project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createConnectionProfile(
+        com.google.cloud.datastream.v1.CreateConnectionProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to update the parameters of a connection profile.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateConnectionProfile(
+        com.google.cloud.datastream.v1.UpdateConnectionProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to delete a connection profile.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteConnectionProfile(
+        com.google.cloud.datastream.v1.DeleteConnectionProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to discover a connection profile.
+     * The discover API call exposes the data objects and metadata belonging to
+     * the profile. Typically, a request returns children data objects of a
+     * parent data object that's optionally supplied in the request.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse
+        discoverConnectionProfile(
+            com.google.cloud.datastream.v1.DiscoverConnectionProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDiscoverConnectionProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list streams in a project and location.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.ListStreamsResponse listStreams(
+        com.google.cloud.datastream.v1.ListStreamsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListStreamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a stream.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.Stream getStream(
+        com.google.cloud.datastream.v1.GetStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to create a stream.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createStream(
+        com.google.cloud.datastream.v1.CreateStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to update the configuration of a stream.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateStream(
+        com.google.cloud.datastream.v1.UpdateStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to delete a stream.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteStream(
+        com.google.cloud.datastream.v1.DeleteStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runStream(
+        com.google.cloud.datastream.v1.RunStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a stream object.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.StreamObject getStreamObject(
+        com.google.cloud.datastream.v1.GetStreamObjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetStreamObjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to look up a stream object by its source object identifier.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.StreamObject lookupStreamObject(
+        com.google.cloud.datastream.v1.LookupStreamObjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupStreamObjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list the objects of a specific stream.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.ListStreamObjectsResponse listStreamObjects(
+        com.google.cloud.datastream.v1.ListStreamObjectsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListStreamObjectsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to start a backfill job for the specified stream object.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.StartBackfillJobResponse startBackfillJob(
+        com.google.cloud.datastream.v1.StartBackfillJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartBackfillJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to stop a backfill job for the specified stream object.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.StopBackfillJobResponse stopBackfillJob(
+        com.google.cloud.datastream.v1.StopBackfillJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopBackfillJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The FetchStaticIps API call exposes the static IP addresses used by
+     * Datastream.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.FetchStaticIpsResponse fetchStaticIps(
+        com.google.cloud.datastream.v1.FetchStaticIpsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchStaticIpsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to create a private connectivity configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPrivateConnection(
+        com.google.cloud.datastream.v1.CreatePrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a private connectivity configuration.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.PrivateConnection getPrivateConnection(
+        com.google.cloud.datastream.v1.GetPrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list private connectivity configurations in a project
+     * and location.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.ListPrivateConnectionsResponse listPrivateConnections(
+        com.google.cloud.datastream.v1.ListPrivateConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPrivateConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to delete a private connectivity configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePrivateConnection(
+        com.google.cloud.datastream.v1.DeletePrivateConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePrivateConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to create a route for a private connectivity configuration
+     * in a project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRoute(
+        com.google.cloud.datastream.v1.CreateRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to get details about a route.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.Route getRoute(
+        com.google.cloud.datastream.v1.GetRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to list routes created for a private connectivity
+     * configuration in a project and location.
+     * </pre>
+     */
+    public com.google.cloud.datastream.v1.ListRoutesResponse listRoutes(
+        com.google.cloud.datastream.v1.ListRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to delete a route.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRoute(
+        com.google.cloud.datastream.v1.DeleteRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRouteMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Datastream.
+   *
+   * <pre>
+   * Datastream service
+   * </pre>
+   */
   public static final class DatastreamBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DatastreamBlockingStub> {
     private DatastreamBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -2220,6 +2671,20 @@ public final class DatastreamGrpc {
         com.google.cloud.datastream.v1.DeleteStreamRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runStream(
+        com.google.cloud.datastream.v1.RunStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunStreamMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2587,6 +3052,20 @@ public final class DatastreamGrpc {
      *
      *
      * <pre>
+     * Use this method to start, resume or recover a stream with a non default CDC
+     * strategy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        runStream(com.google.cloud.datastream.v1.RunStreamRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunStreamMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Use this method to get details about a stream object.
      * </pre>
      */
@@ -2793,20 +3272,21 @@ public final class DatastreamGrpc {
   private static final int METHODID_CREATE_STREAM = 8;
   private static final int METHODID_UPDATE_STREAM = 9;
   private static final int METHODID_DELETE_STREAM = 10;
-  private static final int METHODID_GET_STREAM_OBJECT = 11;
-  private static final int METHODID_LOOKUP_STREAM_OBJECT = 12;
-  private static final int METHODID_LIST_STREAM_OBJECTS = 13;
-  private static final int METHODID_START_BACKFILL_JOB = 14;
-  private static final int METHODID_STOP_BACKFILL_JOB = 15;
-  private static final int METHODID_FETCH_STATIC_IPS = 16;
-  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 17;
-  private static final int METHODID_GET_PRIVATE_CONNECTION = 18;
-  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 19;
-  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 20;
-  private static final int METHODID_CREATE_ROUTE = 21;
-  private static final int METHODID_GET_ROUTE = 22;
-  private static final int METHODID_LIST_ROUTES = 23;
-  private static final int METHODID_DELETE_ROUTE = 24;
+  private static final int METHODID_RUN_STREAM = 11;
+  private static final int METHODID_GET_STREAM_OBJECT = 12;
+  private static final int METHODID_LOOKUP_STREAM_OBJECT = 13;
+  private static final int METHODID_LIST_STREAM_OBJECTS = 14;
+  private static final int METHODID_START_BACKFILL_JOB = 15;
+  private static final int METHODID_STOP_BACKFILL_JOB = 16;
+  private static final int METHODID_FETCH_STATIC_IPS = 17;
+  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 18;
+  private static final int METHODID_GET_PRIVATE_CONNECTION = 19;
+  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 20;
+  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 21;
+  private static final int METHODID_CREATE_ROUTE = 22;
+  private static final int METHODID_GET_ROUTE = 23;
+  private static final int METHODID_LIST_ROUTES = 24;
+  private static final int METHODID_DELETE_ROUTE = 25;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2885,6 +3365,11 @@ public final class DatastreamGrpc {
         case METHODID_DELETE_STREAM:
           serviceImpl.deleteStream(
               (com.google.cloud.datastream.v1.DeleteStreamRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RUN_STREAM:
+          serviceImpl.runStream(
+              (com.google.cloud.datastream.v1.RunStreamRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_STREAM_OBJECT:
@@ -3057,6 +3542,12 @@ public final class DatastreamGrpc {
                     com.google.cloud.datastream.v1.DeleteStreamRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_STREAM)))
         .addMethod(
+            getRunStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1.RunStreamRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_STREAM)))
+        .addMethod(
             getGetStreamObjectMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3211,6 +3702,7 @@ public final class DatastreamGrpc {
                       .addMethod(getCreateStreamMethod())
                       .addMethod(getUpdateStreamMethod())
                       .addMethod(getDeleteStreamMethod())
+                      .addMethod(getRunStreamMethod())
                       .addMethod(getGetStreamObjectMethod())
                       .addMethod(getLookupStreamObjectMethod())
                       .addMethod(getListStreamObjectsMethod())

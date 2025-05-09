@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -125,10 +125,27 @@ message Index {
   // Immutable. Customer-managed encryption key spec for an Index. If set, this
   // Index and all sub-resources of this Index will be secured by this key.
   EncryptionSpec encryption_spec = 17 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzs = 18 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Reserved for future use.
+  bool satisfies_pzi = 19 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // A datapoint of Index.
 message IndexDatapoint {
+  // Feature embedding vector for sparse index. An array of numbers whose values
+  // are located in the specified dimensions.
+  message SparseEmbedding {
+    // Required. The list of embedding values of the sparse vector.
+    repeated float values = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Required. The list of indexes for the embedding values of the sparse
+    // vector.
+    repeated int64 dimensions = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
   // Restriction of a datapoint which describe its attributes(tokens) from each
   // of several attribute categories(namespaces).
   message Restriction {
@@ -140,6 +157,58 @@ message IndexDatapoint {
 
     // The attributes to deny in this namespace. e.g.: 'blue'
     repeated string deny_list = 3;
+  }
+
+  // This field allows restricts to be based on numeric comparisons rather
+  // than categorical tokens.
+  message NumericRestriction {
+    // Which comparison operator to use.  Should be specified for queries only;
+    // specifying this for a datapoint is an error.
+    //
+    // Datapoints for which Operator is true relative to the query's Value
+    // field will be allowlisted.
+    enum Operator {
+      // Default value of the enum.
+      OPERATOR_UNSPECIFIED = 0;
+
+      // Datapoints are eligible iff their value is < the query's.
+      LESS = 1;
+
+      // Datapoints are eligible iff their value is <= the query's.
+      LESS_EQUAL = 2;
+
+      // Datapoints are eligible iff their value is == the query's.
+      EQUAL = 3;
+
+      // Datapoints are eligible iff their value is >= the query's.
+      GREATER_EQUAL = 4;
+
+      // Datapoints are eligible iff their value is > the query's.
+      GREATER = 5;
+
+      // Datapoints are eligible iff their value is != the query's.
+      NOT_EQUAL = 6;
+    }
+
+    // The type of Value must be consistent for all datapoints with a given
+    // namespace name. This is verified at runtime.
+    oneof Value {
+      // Represents 64 bit integer.
+      int64 value_int = 2;
+
+      // Represents 32 bit float.
+      float value_float = 3;
+
+      // Represents 64 bit float.
+      double value_double = 4;
+    }
+
+    // The namespace of this restriction. e.g.: cost.
+    string namespace = 1;
+
+    // This MUST be specified for queries and must NOT be specified for
+    // datapoints.
+    Operator op = 5;
   }
 
   // Crowding tag is a constraint on a neighbor list produced by nearest
@@ -157,15 +226,24 @@ message IndexDatapoint {
   // Required. Unique identifier of the datapoint.
   string datapoint_id = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. Feature embedding vector. An array of numbers with the length of
-  // [NearestNeighborSearchConfig.dimensions].
+  // Required. Feature embedding vector for dense index. An array of numbers
+  // with the length of [NearestNeighborSearchConfig.dimensions].
   repeated float feature_vector = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Feature embedding vector for sparse index.
+  SparseEmbedding sparse_embedding = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. List of Restrict of the datapoint, used to perform "restricted
   // searches" where boolean rule are used to filter the subset of the database
   // eligible for matching. This uses categorical tokens. See:
   // https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
   repeated Restriction restricts = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. List of Restrict of the datapoint, used to perform "restricted
+  // searches" where boolean rule are used to filter the subset of the database
+  // eligible for matching. This uses numeric comparisons.
+  repeated NumericRestriction numeric_restricts = 6
+      [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. CrowdingTag of the datapoint, the number of neighbors to return
   // in each crowding can be configured during query.
@@ -174,8 +252,11 @@ message IndexDatapoint {
 
 // Stats of the Index.
 message IndexStats {
-  // Output only. The number of vectors in the Index.
+  // Output only. The number of dense vectors in the Index.
   int64 vectors_count = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The number of sparse vectors in the Index.
+  int64 sparse_vectors_count = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. The number of shards in the Index.
   int32 shards_count = 2 [(google.api.field_behavior) = OUTPUT_ONLY];

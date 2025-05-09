@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.cloud.discoveryengine.v1beta.SearchRequest;
 import com.google.cloud.discoveryengine.v1beta.SearchResponse;
 import com.google.cloud.discoveryengine.v1beta.SearchServiceClient;
 import com.google.cloud.discoveryengine.v1beta.ServingConfigName;
+import com.google.cloud.discoveryengine.v1beta.SessionName;
 import com.google.cloud.discoveryengine.v1beta.UserInfo;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
@@ -56,9 +57,14 @@ public class AsyncSearch {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .setOneBoxPageSize(1988477988)
+              .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
+              .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .setRegionCode("regionCode-1991004415")
               .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
               .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
@@ -70,6 +76,15 @@ public class AsyncSearch {
               .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setNaturalLanguageQueryUnderstandingSpec(
+                  SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
+              .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setSession(
+                  SessionName.ofProjectLocationDataStoreSessionName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                      .toString())
+              .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .build();
       ApiFuture<SearchResponse.SearchResult> future =
           searchServiceClient.searchPagedCallable().futureCall(request);

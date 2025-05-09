@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 
 // [START aiplatform_v1beta1_generated_FeatureRegistryService_CreateFeature_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest;
-import com.google.cloud.aiplatform.v1beta1.CreateRegistryFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.EntityTypeName;
 import com.google.cloud.aiplatform.v1beta1.Feature;
 import com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient;
@@ -46,7 +46,7 @@ public class AsyncCreateFeatureLRO {
               .setFeature(Feature.newBuilder().build())
               .setFeatureId("featureId-420503887")
               .build();
-      OperationFuture<Feature, CreateRegistryFeatureOperationMetadata> future =
+      OperationFuture<Feature, CreateFeatureOperationMetadata> future =
           featureRegistryServiceClient.createFeatureOperationCallable().futureCall(request);
       // Do something.
       Feature response = future.get();

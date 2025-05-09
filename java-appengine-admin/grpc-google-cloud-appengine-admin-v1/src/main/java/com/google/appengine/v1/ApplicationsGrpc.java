@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -217,6 +217,19 @@ public final class ApplicationsGrpc {
           }
         };
     return ApplicationsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ApplicationsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ApplicationsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ApplicationsBlockingV2Stub>() {
+          @java.lang.Override
+          public ApplicationsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ApplicationsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ApplicationsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -448,6 +461,95 @@ public final class ApplicationsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Applications.
+   *
+   * <pre>
+   * Manages App Engine applications.
+   * </pre>
+   */
+  public static final class ApplicationsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ApplicationsBlockingV2Stub> {
+    private ApplicationsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ApplicationsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ApplicationsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an application.
+     * </pre>
+     */
+    public com.google.appengine.v1.Application getApplication(
+        com.google.appengine.v1.GetApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an App Engine application for a Google Cloud Platform project.
+     * Required fields:
+     * * `id` - The ID of the target Cloud Platform project.
+     * * *location* - The [region](https://cloud.google.com/appengine/docs/locations) where you want the App Engine application located.
+     * For more information about App Engine applications, see [Managing Projects, Applications, and Billing](https://cloud.google.com/appengine/docs/standard/python/console/).
+     * </pre>
+     */
+    public com.google.longrunning.Operation createApplication(
+        com.google.appengine.v1.CreateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified Application resource.
+     * You can update the following fields:
+     * * `auth_domain` - Google authentication domain for controlling user access to the application.
+     * * `default_cookie_expiration` - Cookie expiration policy for the application.
+     * * `iap` - Identity-Aware Proxy properties for the application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateApplication(
+        com.google.appengine.v1.UpdateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Recreates the required App Engine features for the specified App Engine
+     * application, for example a Cloud Storage bucket or App Engine service
+     * account.
+     * Use this method if you receive an error message about a missing feature,
+     * for example, *Error retrieving the App Engine service account*.
+     * If you have deleted your App Engine service account, this will
+     * not be able to recreate it. Instead, you should attempt to use the
+     * IAM undelete API if possible at https://cloud.google.com/iam/reference/rest/v1/projects.serviceAccounts/undelete?apix_params=%7B"name"%3A"projects%2F-%2FserviceAccounts%2Funique_id"%2C"resource"%3A%7B%7D%7D .
+     * If the deletion was recent, the numeric ID can be found in the Cloud
+     * Console Activity Log.
+     * </pre>
+     */
+    public com.google.longrunning.Operation repairApplication(
+        com.google.appengine.v1.RepairApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRepairApplicationMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Applications.
    *
    * <pre>
    * Manages App Engine applications.

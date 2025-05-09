@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -100,17 +99,14 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationCustomModuleBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderCustomModuleBuilder newFolderCustomModuleBuilder() {
     return new FolderCustomModuleBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectCustomModuleBuilder newProjectCustomModuleBuilder() {
     return new ProjectCustomModuleBuilder();
   }
@@ -124,19 +120,16 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
     return newBuilder().setOrganization(organization).setCustomModule(customModule).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsCustomModuleName ofOrganizationCustomModuleName(
       String organization, String customModule) {
     return newBuilder().setOrganization(organization).setCustomModule(customModule).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsCustomModuleName ofFolderCustomModuleName(
       String folder, String customModule) {
     return newFolderCustomModuleBuilder().setFolder(folder).setCustomModule(customModule).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsCustomModuleName ofProjectCustomModuleName(
       String project, String customModule) {
     return newProjectCustomModuleBuilder()
@@ -153,7 +146,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationCustomModuleName(
       String organization, String customModule) {
     return newBuilder()
@@ -163,7 +155,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderCustomModuleName(String folder, String customModule) {
     return newFolderCustomModuleBuilder()
         .setFolder(folder)
@@ -172,7 +163,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectCustomModuleName(String project, String customModule) {
     return newProjectCustomModuleBuilder()
         .setProject(project)
@@ -262,7 +252,7 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (o == this) {
       return true;
     }
@@ -325,7 +315,8 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               securityHealthAnalyticsCustomModuleName.pathTemplate, ORGANIZATION_CUSTOM_MODULE),
-          "toBuilder is only supported when SecurityHealthAnalyticsCustomModuleName has the pattern of organizations/{organization}/securityHealthAnalyticsSettings/customModules/{custom_module}");
+          "toBuilder is only supported when SecurityHealthAnalyticsCustomModuleName has the pattern"
+              + " of organizations/{organization}/securityHealthAnalyticsSettings/customModules/{custom_module}");
       this.organization = securityHealthAnalyticsCustomModuleName.organization;
       this.customModule = securityHealthAnalyticsCustomModuleName.customModule;
     }
@@ -336,7 +327,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/securityHealthAnalyticsSettings/customModules/{custom_module}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderCustomModuleBuilder {
     private String folder;
     private String customModule;
@@ -369,7 +359,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
   /**
    * Builder for projects/{project}/securityHealthAnalyticsSettings/customModules/{custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectCustomModuleBuilder {
     private String project;
     private String customModule;

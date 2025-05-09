@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,19 +57,106 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregatedList</td>
+ *      <td><p> Retrieves an aggregated list of all operations. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(AggregatedListGlobalOperationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Delete</td>
+ *      <td><p> Deletes the specified Operations resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> delete(DeleteGlobalOperationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> delete(String project, String operation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Get</td>
+ *      <td><p> Retrieves the specified Operations resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> get(GetGlobalOperationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> get(String project, String operation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> List</td>
+ *      <td><p> Retrieves a list of Operation resources contained within the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> list(ListGlobalOperationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> list(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Wait</td>
+ *      <td><p> Waits for the specified Operation resource to return as `DONE` or for the request to approach the 2 minute deadline, and retrieves the specified Operation resource. This method differs from the `GET` method in that it waits for no more than the default deadline (2 minutes) and then returns the current state of the operation, which might be `DONE` or still in progress. This method is called on a best-effort basis. Specifically: - In uncommon cases, when the server is overloaded, the request might return before the default deadline is reached, or might return after zero seconds. - If the default deadline is reached, there is no guarantee that the operation is actually done when the method returns. Be prepared to retry if the operation is not `DONE`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> wait(WaitGlobalOperationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> wait(String project, String operation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> waitCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -164,7 +251,8 @@ public class GlobalOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all operations.
+   * Retrieves an aggregated list of all operations. To prevent failure, Google recommends that you
+   * set the `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -194,7 +282,8 @@ public class GlobalOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all operations.
+   * Retrieves an aggregated list of all operations. To prevent failure, Google recommends that you
+   * set the `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -214,6 +303,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, OperationsScopedList> element :
    *       globalOperationsClient.aggregatedList(request).iterateAll()) {
@@ -232,7 +322,8 @@ public class GlobalOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all operations.
+   * Retrieves an aggregated list of all operations. To prevent failure, Google recommends that you
+   * set the `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -252,6 +343,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, OperationsScopedList>> future =
    *       globalOperationsClient.aggregatedListPagedCallable().futureCall(request);
@@ -269,7 +361,8 @@ public class GlobalOperationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of all operations.
+   * Retrieves an aggregated list of all operations. To prevent failure, Google recommends that you
+   * set the `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -289,6 +382,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     OperationAggregatedList response =
@@ -331,7 +425,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param operation Name of the Operations resource to delete.
+   * @param operation Name of the Operations resource to delete, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeleteGlobalOperationResponse delete(String project, String operation) {
@@ -422,7 +516,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param operation Name of the Operations resource to return.
+   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation get(String project, String operation) {
@@ -655,7 +749,7 @@ public class GlobalOperationsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param operation Name of the Operations resource to return.
+   * @param operation Name of the Operations resource to return, or its unique numeric identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation wait(String project, String operation) {

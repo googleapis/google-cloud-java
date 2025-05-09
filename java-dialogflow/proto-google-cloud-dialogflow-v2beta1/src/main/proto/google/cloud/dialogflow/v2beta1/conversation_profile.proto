@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -28,7 +28,6 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.V2Beta1";
 option go_package = "cloud.google.com/go/dialogflow/apiv2beta1/dialogflowpb;dialogflowpb";
 option java_multiple_files = true;
@@ -241,6 +240,18 @@ message ConversationProfile {
   // [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
   NotificationConfig new_message_event_notification_config = 8;
 
+  // Optional. Configuration for publishing transcription intermediate results.
+  // Event will be sent in format of
+  // [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]. If
+  // configured, the following information will be populated as
+  // [ConversationEvent][google.cloud.dialogflow.v2beta1.ConversationEvent]
+  // Pub/Sub message attributes:
+  // - "participant_id"
+  // - "participant_role"
+  // - "message_id"
+  NotificationConfig new_recognition_result_notification_config = 21
+      [(google.api.field_behavior) = OPTIONAL];
+
   // Settings for speech transcription.
   SpeechToTextConfig stt_config = 9;
 
@@ -296,10 +307,10 @@ message AutomatedAgentConfig {
     }
   ];
 
-  // Optional. Sets Dialogflow CX session life time.
+  // Optional. Configure lifetime of the Dialogflow session.
   // By default, a Dialogflow CX session remains active and its data is stored
-  // for 30 minutes after the last request is sent for the session. This value
-  // should be no longer than 1 day.
+  // for 30 minutes after the last request is sent for the session.
+  // This value should be no longer than 1 day.
   google.protobuf.Duration session_ttl = 3
       [(google.api.field_behavior) = OPTIONAL];
 }
@@ -335,6 +346,22 @@ message HumanAgentAssistantConfig {
     bool disable_agent_query_logging = 14
         [(google.api.field_behavior) = OPTIONAL];
 
+    // Optional. Enable query suggestion even if we can't find its answer.
+    // By default, queries are suggested only if we find its answer.
+    // Supported features: KNOWLEDGE_ASSIST
+    bool enable_query_suggestion_when_no_answer = 15
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Enable including conversation context during query answer
+    // generation. Supported features: KNOWLEDGE_SEARCH.
+    bool enable_conversation_augmented_query = 16
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. Enable query suggestion only.
+    // Supported features: KNOWLEDGE_ASSIST
+    bool enable_query_suggestion_only = 17
+        [(google.api.field_behavior) = OPTIONAL];
+
     // Settings of suggestion trigger.
     //
     // Currently, only ARTICLE_SUGGESTION, FAQ, and DIALOGFLOW_ASSIST will use
@@ -368,6 +395,25 @@ message HumanAgentAssistantConfig {
     // same participant based on the same context will be grouped into a single
     // Pub/Sub event or StreamingAnalyzeContentResponse.
     bool group_suggestion_responses = 3;
+
+    // Optional. List of various generator resource names used in the
+    // conversation profile.
+    repeated string generators = 4 [
+      (google.api.field_behavior) = OPTIONAL,
+      (google.api.resource_reference) = {
+        type: "dialogflow.googleapis.com/Generator"
+      }
+    ];
+
+    // Optional. When disable_high_latency_features_sync_delivery is true and
+    // using the AnalyzeContent API, we will not deliver the responses from high
+    // latency features in the API response. The
+    // human_agent_assistant_config.notification_config must be configured and
+    // enable_event_based_suggestion must be set to true to receive the
+    // responses from high latency features in Pub/Sub. High latency feature(s):
+    // KNOWLEDGE_ASSIST
+    bool disable_high_latency_features_sync_delivery = 5
+        [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Config for suggestion query.
@@ -451,6 +497,54 @@ message HumanAgentAssistantConfig {
       bool drop_ivr_messages = 3;
     }
 
+    // Custom sections to return when requesting a summary of a conversation.
+    // This is only supported when `baseline_model_version` == '2.0'.
+    //
+    // Supported features: CONVERSATION_SUMMARIZATION,
+    // CONVERSATION_SUMMARIZATION_VOICE.
+    message Sections {
+      // Selectable sections to return when requesting a summary of a
+      // conversation.
+      enum SectionType {
+        // Undefined section type, does not return anything.
+        SECTION_TYPE_UNSPECIFIED = 0;
+
+        // What the customer needs help with or has question about.
+        // Section name: "situation".
+        SITUATION = 1;
+
+        // What the agent does to help the customer.
+        // Section name: "action".
+        ACTION = 2;
+
+        // Result of the customer service. A single word describing the result
+        // of the conversation.
+        // Section name: "resolution".
+        RESOLUTION = 3;
+
+        // Reason for cancellation if the customer requests for a cancellation.
+        // "N/A" otherwise.
+        // Section name: "reason_for_cancellation".
+        REASON_FOR_CANCELLATION = 4;
+
+        // "Unsatisfied" or "Satisfied" depending on the customer's feelings at
+        // the end of the conversation.
+        // Section name: "customer_satisfaction".
+        CUSTOMER_SATISFACTION = 5;
+
+        // Key entities extracted from the conversation, such as ticket number,
+        // order number, dollar amount, etc.
+        // Section names are prefixed by "entities/".
+        ENTITIES = 6;
+      }
+
+      // The selected sections chosen to return when requesting a summary of a
+      // conversation. A duplicate selected section will be treated as a single
+      // selected section. If section types are not provided, the default will
+      // be {SITUATION, ACTION, RESULT}.
+      repeated SectionType section_types = 1;
+    }
+
     // Source of query.
     oneof query_source {
       // Query from knowledgebase. It is used by:
@@ -495,6 +589,14 @@ message HumanAgentAssistantConfig {
     // Determines how recent conversation context is filtered when generating
     // suggestions. If unspecified, no messages will be dropped.
     ContextFilterSettings context_filter_settings = 7;
+
+    // Optional. The customized sections chosen to return when requesting a
+    // summary of a conversation.
+    Sections sections = 8 [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. The number of recent messages to include in the context.
+    // Supported features: KNOWLEDGE_ASSIST.
+    int32 context_size = 9 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Custom conversation models used in agent assist feature.
@@ -581,7 +683,7 @@ message HumanAgentAssistantConfig {
 // Currently, this feature is not general available, please contact Google
 // to get access.
 message HumanAgentHandoffConfig {
-  // Configuration specific to LivePerson (https://www.liveperson.com).
+  // Configuration specific to [LivePerson](https://www.liveperson.com).
   message LivePersonConfig {
     // Required. Account number of the LivePerson account to connect. This is
     // the account number you input at the login page.
@@ -608,7 +710,7 @@ message HumanAgentHandoffConfig {
 
   // Required. Specifies which agent service to connect for human agent handoff.
   oneof agent_service {
-    // Uses LivePerson (https://www.liveperson.com).
+    // Uses [LivePerson](https://www.liveperson.com).
     LivePersonConfig live_person_config = 1;
 
     // Uses Salesforce Live Agent.

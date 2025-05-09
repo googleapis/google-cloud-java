@@ -5,6 +5,18 @@
   "protoPackage": "google.cloud.retail.v2beta",
   "libraryPackage": "com.google.cloud.retail.v2beta",
   "services": {
+    "AnalyticsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AnalyticsServiceClient",
+          "rpcs": {
+            "ExportAnalyticsMetrics": {
+              "methods": ["exportAnalyticsMetricsAsync", "exportAnalyticsMetricsOperationCallable", "exportAnalyticsMetricsCallable"]
+            }
+          }
+        }
+      }
+    },
     "CatalogService": {
       "clients": {
         "grpc": {
@@ -89,6 +101,30 @@
         }
       }
     },
+    "GenerativeQuestionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenerativeQuestionServiceClient",
+          "rpcs": {
+            "BatchUpdateGenerativeQuestionConfigs": {
+              "methods": ["batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigs", "batchUpdateGenerativeQuestionConfigsCallable"]
+            },
+            "GetGenerativeQuestionsFeatureConfig": {
+              "methods": ["getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfig", "getGenerativeQuestionsFeatureConfigCallable"]
+            },
+            "ListGenerativeQuestionConfigs": {
+              "methods": ["listGenerativeQuestionConfigs", "listGenerativeQuestionConfigs", "listGenerativeQuestionConfigs", "listGenerativeQuestionConfigsCallable"]
+            },
+            "UpdateGenerativeQuestionConfig": {
+              "methods": ["updateGenerativeQuestionConfig", "updateGenerativeQuestionConfig", "updateGenerativeQuestionConfigCallable"]
+            },
+            "UpdateGenerativeQuestionsFeatureConfig": {
+              "methods": ["updateGenerativeQuestionsFeatureConfig", "updateGenerativeQuestionsFeatureConfig", "updateGenerativeQuestionsFeatureConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "ModelService": {
       "clients": {
         "grpc": {
@@ -151,6 +187,9 @@
             "DeleteProduct": {
               "methods": ["deleteProduct", "deleteProduct", "deleteProduct", "deleteProductCallable"]
             },
+            "ExportProducts": {
+              "methods": ["exportProductsAsync", "exportProductsOperationCallable", "exportProductsCallable"]
+            },
             "GetProduct": {
               "methods": ["getProduct", "getProduct", "getProduct", "getProductCallable"]
             },
@@ -159,6 +198,9 @@
             },
             "ListProducts": {
               "methods": ["listProducts", "listProducts", "listProducts", "listProductsPagedCallable", "listProductsCallable"]
+            },
+            "PurgeProducts": {
+              "methods": ["purgeProductsAsync", "purgeProductsOperationCallable", "purgeProductsCallable"]
             },
             "RemoveFulfillmentPlaces": {
               "methods": ["removeFulfillmentPlacesAsync", "removeFulfillmentPlacesAsync", "removeFulfillmentPlacesAsync", "removeFulfillmentPlacesOperationCallable", "removeFulfillmentPlacesCallable"]
@@ -171,6 +213,21 @@
             },
             "UpdateProduct": {
               "methods": ["updateProduct", "updateProduct", "updateProductCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProjectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectServiceClient",
+          "rpcs": {
+            "GetAlertConfig": {
+              "methods": ["getAlertConfig", "getAlertConfig", "getAlertConfig", "getAlertConfigCallable"]
+            },
+            "UpdateAlertConfig": {
+              "methods": ["updateAlertConfig", "updateAlertConfig", "updateAlertConfigCallable"]
             }
           }
         }
@@ -225,6 +282,9 @@
           "rpcs": {
             "CollectUserEvent": {
               "methods": ["collectUserEvent", "collectUserEventCallable"]
+            },
+            "ExportUserEvents": {
+              "methods": ["exportUserEventsAsync", "exportUserEventsOperationCallable", "exportUserEventsCallable"]
             },
             "ImportUserEvents": {
               "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]

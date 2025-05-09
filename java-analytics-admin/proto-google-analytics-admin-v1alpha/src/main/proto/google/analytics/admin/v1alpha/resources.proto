@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,11 +24,16 @@ import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
+import "google/type/date.proto";
 
 option go_package = "cloud.google.com/go/analytics/admin/apiv1alpha/adminpb;adminpb";
 option java_multiple_files = true;
 option java_outer_classname = "ResourcesProto";
 option java_package = "com.google.analytics.admin.v1alpha";
+option (google.api.resource_definition) = {
+  type: "marketingplatformadmin.googleapis.com/Organization"
+  pattern: "organizations/{organization}"
+};
 
 // The category selected for this property, used for industry benchmarking.
 enum IndustryCategory {
@@ -213,8 +218,14 @@ enum ChangeHistoryResourceType {
   // ChannelGroup resource
   CHANNEL_GROUP = 22;
 
+  // BigQuery link resource
+  BIGQUERY_LINK = 23;
+
   // EnhancedMeasurementSettings resource
   ENHANCED_MEASUREMENT_SETTINGS = 24;
+
+  // DataRedactionSettings resource
+  DATA_REDACTION_SETTINGS = 25;
 
   // SKAdNetworkConversionValueSchema resource
   SKADNETWORK_CONVERSION_VALUE_SCHEMA = 26;
@@ -227,6 +238,15 @@ enum ChangeHistoryResourceType {
 
   // EventCreateRule resource
   EVENT_CREATE_RULE = 29;
+
+  // KeyEvent resource
+  KEY_EVENT = 30;
+
+  // CalculatedMetric resource
+  CALCULATED_METRIC = 31;
+
+  // ReportingDataAnnotation resource
+  REPORTING_DATA_ANNOTATION = 32;
 }
 
 // Status of the Google Signals settings.
@@ -301,18 +321,18 @@ enum LinkProposalState {
   OBSOLETE = 6;
 }
 
-// Types of Property resources.
+// Types of `Property` resources.
 enum PropertyType {
   // Unknown or unspecified property type
   PROPERTY_TYPE_UNSPECIFIED = 0;
 
-  // Ordinary GA4 property
+  // Ordinary Google Analytics property
   PROPERTY_TYPE_ORDINARY = 1;
 
-  // GA4 subproperty
+  // Google Analytics subproperty
   PROPERTY_TYPE_SUBPROPERTY = 2;
 
-  // GA4 rollup property
+  // Google Analytics rollup property
   PROPERTY_TYPE_ROLLUP = 3;
 }
 
@@ -363,9 +383,19 @@ message Account {
   // Output only. Indicates whether this Account is soft-deleted or not. Deleted
   // accounts are excluded from List results unless specifically requested.
   bool deleted = 6 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The URI for a Google Marketing Platform organization resource.
+  // Only set when this account is connected to a GMP organization.
+  // Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
+  string gmp_organization = 7 [
+    (google.api.field_behavior) = OUTPUT_ONLY,
+    (google.api.resource_reference) = {
+      type: "marketingplatformadmin.googleapis.com/Organization"
+    }
+  ];
 }
 
-// A resource message representing a Google Analytics GA4 property.
+// A resource message representing a Google Analytics property.
 message Property {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/Property"
@@ -379,8 +409,7 @@ message Property {
 
   // Immutable. The property type for this Property resource. When creating a
   // property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
-  // "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
-  // types cannot yet be created with the Google Analytics Admin API.
+  // "ORDINARY_PROPERTY" will be implied.
   PropertyType property_type = 14 [(google.api.field_behavior) = IMMUTABLE];
 
   // Output only. Time when the entity was originally created.
@@ -557,63 +586,7 @@ message DataStream {
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
-// A resource message representing a user's permissions on an Account or
-// Property resource.
-message UserLink {
-  option (google.api.resource) = {
-    type: "analyticsadmin.googleapis.com/UserLink"
-    pattern: "accounts/{account}/userLinks/{user_link}"
-    pattern: "properties/{property}/userLinks/{user_link}"
-  };
-
-  // Output only. Example format: properties/1234/userLinks/5678
-  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
-
-  // Immutable. Email address of the user to link
-  string email_address = 2 [(google.api.field_behavior) = IMMUTABLE];
-
-  // Roles directly assigned to this user for this account or property.
-  //
-  // Valid values:
-  // predefinedRoles/viewer
-  // predefinedRoles/analyst
-  // predefinedRoles/editor
-  // predefinedRoles/admin
-  // predefinedRoles/no-cost-data
-  // predefinedRoles/no-revenue-data
-  //
-  // Excludes roles that are inherited from a higher-level entity, group,
-  // or organization admin role.
-  //
-  // A UserLink that is updated to have an empty list of direct_roles will be
-  // deleted.
-  repeated string direct_roles = 3;
-}
-
-// Read-only resource used to summarize a principal's effective roles.
-message AuditUserLink {
-  // Example format: properties/1234/userLinks/5678
-  string name = 1;
-
-  // Email address of the linked user
-  string email_address = 2;
-
-  // Roles directly assigned to this user for this entity.
-  //
-  // Format: predefinedRoles/viewer
-  //
-  // Excludes roles that are inherited from an account (if this is for a
-  // property), group, or organization admin role.
-  repeated string direct_roles = 3;
-
-  // Union of all permissions a user has at this account or property (includes
-  // direct permissions, group-inherited permissions, etc.).
-  //
-  // Format: predefinedRoles/viewer
-  repeated string effective_roles = 4;
-}
-
-// A link between a GA4 property and a Firebase project.
+// A link between a Google Analytics property and a Firebase project.
 message FirebaseLink {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/FirebaseLink"
@@ -655,7 +628,7 @@ message GlobalSiteTag {
   string snippet = 2 [(google.api.field_behavior) = IMMUTABLE];
 }
 
-// A link between a GA4 property and a Google Ads account.
+// A link between a Google Analytics property and a Google Ads account.
 message GoogleAdsLink {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/GoogleAdsLink"
@@ -706,28 +679,47 @@ message DataSharingSettings {
   // Example: "accounts/1000/dataSharingSettings"
   string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Allows Google support to access the data in order to help troubleshoot
-  // issues.
+  // Allows Google technical support representatives access to your Google
+  // Analytics data and account when necessary to provide service and find
+  // solutions to technical issues.
+  //
+  // This field maps to the "Technical support" field in the Google Analytics
+  // Admin UI.
   bool sharing_with_google_support_enabled = 2;
 
-  // Allows Google sales teams that are assigned to the customer to access the
-  // data in order to suggest configuration changes to improve results.
-  // Sales team restrictions still apply when enabled.
+  // Allows Google access to your Google Analytics account data, including
+  // account usage and configuration data, product spending, and users
+  // associated with your Google Analytics account, so that Google can help you
+  // make the most of Google products, providing you with insights, offers,
+  // recommendations, and optimization tips across Google Analytics and other
+  // Google products for business.
+  //
+  // This field maps to the "Recommendations for your business" field in the
+  // Google Analytics Admin UI.
   bool sharing_with_google_assigned_sales_enabled = 3;
 
-  // Allows any of Google sales to access the data in order to suggest
-  // configuration changes to improve results.
-  bool sharing_with_google_any_sales_enabled = 4;
+  // Deprecated. This field is no longer used and always returns false.
+  bool sharing_with_google_any_sales_enabled = 4 [deprecated = true];
 
   // Allows Google to use the data to improve other Google products or services.
+  //
+  // This fields maps to the "Google products & services" field in the Google
+  // Analytics Admin UI.
   bool sharing_with_google_products_enabled = 5;
 
-  // Allows Google to share the data anonymously in aggregate form with others.
+  // Enable features like predictions, modeled data, and benchmarking that can
+  // provide you with richer business insights when you contribute aggregated
+  // measurement data. The data you share (including information about the
+  // property from which it is shared) is aggregated and de-identified before
+  // being used to generate business insights.
+  //
+  // This field maps to the "Modeling contributions & business insights" field
+  // in the Google Analytics Admin UI.
   bool sharing_with_others_enabled = 6;
 }
 
 // A virtual resource representing an overview of an account and
-// all its child GA4 properties.
+// all its child Google Analytics properties.
 message AccountSummary {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/AccountSummary"
@@ -753,7 +745,7 @@ message AccountSummary {
   repeated PropertySummary property_summaries = 4;
 }
 
-// A virtual resource representing metadata for a GA4 property.
+// A virtual resource representing metadata for a Google Analytics property.
 message PropertySummary {
   // Resource name of property referred to by this property summary
   // Format: properties/{property_id}
@@ -895,7 +887,7 @@ message ConversionValues {
 
 // Event setting conditions to match an event.
 message EventMapping {
-  // Required. Name of the GA4 event. It must always be set.
+  // Required. Name of the Google Analytics event. It must always be set.
   // The max allowed display name length is 40 UTF-16 code units.
   string event_name = 1 [(google.api.field_behavior) = REQUIRED];
 
@@ -1014,6 +1006,9 @@ message ChangeHistoryChange {
       // A snapshot of EnhancedMeasurementSettings resource in change history.
       EnhancedMeasurementSettings enhanced_measurement_settings = 24;
 
+      // A snapshot of DataRedactionSettings resource in change history.
+      DataRedactionSettings data_redaction_settings = 25;
+
       // A snapshot of SKAdNetworkConversionValueSchema resource in change
       // history.
       SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
@@ -1026,6 +1021,15 @@ message ChangeHistoryChange {
 
       // A snapshot of an EventCreateRule resource in change history.
       EventCreateRule event_create_rule = 29;
+
+      // A snapshot of a KeyEvent resource in change history.
+      KeyEvent key_event = 30;
+
+      // A snapshot of a CalculatedMetric resource in change history.
+      CalculatedMetric calculated_metric = 31;
+
+      // A snapshot of a ReportingDataAnnotation resource in change history.
+      ReportingDataAnnotation reporting_data_annotation = 32;
     }
   }
 
@@ -1044,7 +1048,8 @@ message ChangeHistoryChange {
   ChangeHistoryResource resource_after_change = 4;
 }
 
-// A link between a GA4 property and a Display & Video 360 advertiser.
+// A link between a Google Analytics property and a Display & Video 360
+// advertiser.
 message DisplayVideo360AdvertiserLink {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/DisplayVideo360AdvertiserLink"
@@ -1070,23 +1075,23 @@ message DisplayVideo360AdvertiserLink {
   google.protobuf.BoolValue ads_personalization_enabled = 4;
 
   // Immutable. Enables the import of campaign data from Display & Video 360
-  // into the GA4 property. After link creation, this can only be updated from
-  // the Display & Video 360 product. If this field is not set on create, it
-  // will be defaulted to true.
+  // into the Google Analytics property. After link creation, this can only be
+  // updated from the Display & Video 360 product. If this field is not set on
+  // create, it will be defaulted to true.
   google.protobuf.BoolValue campaign_data_sharing_enabled = 5
       [(google.api.field_behavior) = IMMUTABLE];
 
   // Immutable. Enables the import of cost data from Display & Video 360 into
-  // the GA4 property. This can only be enabled if campaign_data_sharing_enabled
-  // is enabled. After link creation, this can only be updated from the Display
-  // & Video 360 product. If this field is not set on create, it will be
-  // defaulted to true.
+  // the Google Analytics property. This can only be enabled if
+  // `campaign_data_sharing_enabled` is true. After link creation, this can
+  // only be updated from the Display & Video 360 product. If this field is not
+  // set on create, it will be defaulted to true.
   google.protobuf.BoolValue cost_data_sharing_enabled = 6
       [(google.api.field_behavior) = IMMUTABLE];
 }
 
-// A proposal for a link between a GA4 property and a Display & Video 360
-// advertiser.
+// A proposal for a link between a Google Analytics property and a Display &
+// Video 360 advertiser.
 //
 // A proposal is converted to a DisplayVideo360AdvertiserLink once approved.
 // Google Analytics admins approve inbound proposals while Display & Video 360
@@ -1141,7 +1146,7 @@ message DisplayVideo360AdvertiserLinkProposal {
       [(google.api.field_behavior) = IMMUTABLE];
 }
 
-// A link between a GA4 property and a Search Ads 360 entity.
+// A link between a Google Analytics property and a Search Ads 360 entity.
 message SearchAds360Link {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/SearchAds360Link"
@@ -1159,17 +1164,17 @@ message SearchAds360Link {
   string advertiser_id = 2 [(google.api.field_behavior) = IMMUTABLE];
 
   // Immutable. Enables the import of campaign data from Search Ads 360 into the
-  // GA4 property. After link creation, this can only be updated from the Search
-  // Ads 360 product.
-  // If this field is not set on create, it will be defaulted to true.
+  // Google Analytics property. After link creation, this can only be updated
+  // from the Search Ads 360 product. If this field is not set on create, it
+  // will be defaulted to true.
   google.protobuf.BoolValue campaign_data_sharing_enabled = 3
       [(google.api.field_behavior) = IMMUTABLE];
 
-  // Immutable. Enables the import of cost data from Search Ads 360 to the GA4
-  // property. This can only be enabled if campaign_data_sharing_enabled is
-  // enabled. After link creation, this can only be updated from
-  // the Search Ads 360 product.
-  // If this field is not set on create, it will be defaulted to true.
+  // Immutable. Enables the import of cost data from Search Ads 360 to the
+  // Google Analytics property. This can only be enabled if
+  // campaign_data_sharing_enabled is enabled. After link creation, this can
+  // only be updated from the Search Ads 360 product. If this field is not set
+  // on create, it will be defaulted to true.
   google.protobuf.BoolValue cost_data_sharing_enabled = 4
       [(google.api.field_behavior) = IMMUTABLE];
 
@@ -1207,6 +1212,20 @@ message ConversionEvent {
     type: "analyticsadmin.googleapis.com/ConversionEvent"
     pattern: "properties/{property}/conversionEvents/{conversion_event}"
   };
+
+  // Defines a default value/currency for a conversion event. Both value and
+  // currency must be provided.
+  message DefaultConversionValue {
+    // This value will be used to populate the value for all conversions
+    // of the specified event_name where the event "value" parameter is unset.
+    optional double value = 1;
+
+    // When a conversion event for this event_name has no set currency,
+    // this currency will be applied as the default. Must be in ISO 4217
+    // currency code format. See https://en.wikipedia.org/wiki/ISO_4217 for
+    // more information.
+    optional string currency_code = 2;
+  }
 
   // The method by which conversions will be counted across multiple events
   // within a session.
@@ -1251,6 +1270,79 @@ message ConversionEvent {
   // `ONCE_PER_EVENT`.
   ConversionCountingMethod counting_method = 6
       [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Defines a default value/currency for a conversion event.
+  optional DefaultConversionValue default_conversion_value = 7
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// A key event in a Google Analytics property.
+message KeyEvent {
+  option (google.api.resource) = {
+    type: "analyticsadmin.googleapis.com/KeyEvent"
+    pattern: "properties/{property}/keyEvents/{key_event}"
+    plural: "keyEvents"
+    singular: "keyEvent"
+  };
+
+  // Defines a default value/currency for a key event.
+  message DefaultValue {
+    // Required. This will be used to populate the "value" parameter for all
+    // occurrences of this Key Event (specified by event_name) where that
+    // parameter is unset.
+    double numeric_value = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Required. When an occurrence of this Key Event (specified by event_name)
+    // has no set currency this currency will be applied as the default. Must be
+    // in ISO 4217 currency code format.
+    //
+    // See https://en.wikipedia.org/wiki/ISO_4217 for more information.
+    string currency_code = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  // The method by which Key Events will be counted across multiple events
+  // within a session.
+  enum CountingMethod {
+    // Counting method not specified.
+    COUNTING_METHOD_UNSPECIFIED = 0;
+
+    // Each Event instance is considered a Key Event.
+    ONCE_PER_EVENT = 1;
+
+    // An Event instance is considered a Key Event at most once per session per
+    // user.
+    ONCE_PER_SESSION = 2;
+  }
+
+  // Output only. Resource name of this key event.
+  // Format: properties/{property}/keyEvents/{key_event}
+  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Immutable. The event name for this key event.
+  // Examples: 'click', 'purchase'
+  string event_name = 2 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Output only. Time when this key event was created in the property.
+  google.protobuf.Timestamp create_time = 3
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. If set to true, this event can be deleted.
+  bool deletable = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. If set to true, this key event refers to a custom event.  If
+  // set to false, this key event refers to a default event in GA. Default
+  // events typically have special meaning in GA. Default events are usually
+  // created for you by the GA system, but in some cases can be created by
+  // property admins. Custom events count towards the maximum number of
+  // custom key events that may be created per property.
+  bool custom = 5 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Required. The method by which Key Events will be counted across multiple
+  // events within a session.
+  CountingMethod counting_method = 6 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Defines a default value/currency for a key event.
+  DefaultValue default_value = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Settings values for Google Signals.  This is a singleton resource.
@@ -1451,6 +1543,105 @@ message CustomMetric {
       [(google.api.field_behavior) = OPTIONAL];
 }
 
+// A definition for a calculated metric.
+message CalculatedMetric {
+  option (google.api.resource) = {
+    type: "analyticsadmin.googleapis.com/CalculatedMetric"
+    pattern: "properties/{property}/calculatedMetrics/{calculated_metric}"
+    plural: "calculatedMetrics"
+    singular: "calculatedMetric"
+  };
+
+  // Possible types of representing the calculated metric's value.
+  enum MetricUnit {
+    // MetricUnit unspecified or missing.
+    METRIC_UNIT_UNSPECIFIED = 0;
+
+    // This metric uses default units.
+    STANDARD = 1;
+
+    // This metric measures a currency.
+    CURRENCY = 2;
+
+    // This metric measures feet.
+    FEET = 3;
+
+    // This metric measures miles.
+    MILES = 4;
+
+    // This metric measures meters.
+    METERS = 5;
+
+    // This metric measures kilometers.
+    KILOMETERS = 6;
+
+    // This metric measures milliseconds.
+    MILLISECONDS = 7;
+
+    // This metric measures seconds.
+    SECONDS = 8;
+
+    // This metric measures minutes.
+    MINUTES = 9;
+
+    // This metric measures hours.
+    HOURS = 10;
+  }
+
+  // Labels that mark the data in calculated metric used in conjunction with
+  // user roles that restrict access to cost and/or revenue metrics.
+  enum RestrictedMetricType {
+    // Type unknown or unspecified.
+    RESTRICTED_METRIC_TYPE_UNSPECIFIED = 0;
+
+    // Metric reports cost data.
+    COST_DATA = 1;
+
+    // Metric reports revenue data.
+    REVENUE_DATA = 2;
+  }
+
+  // Output only. Resource name for this CalculatedMetric.
+  // Format: 'properties/{property_id}/calculatedMetrics/{calculated_metric_id}'
+  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. Description for this calculated metric.
+  // Max length of 4096 characters.
+  string description = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Required. Display name for this calculated metric as shown in the
+  // Google Analytics UI. Max length 82 characters.
+  string display_name = 3 [(google.api.field_behavior) = REQUIRED];
+
+  // Output only. The ID to use for the calculated metric. In the UI, this is
+  // referred to as the "API name."
+  //
+  // The calculated_metric_id is used when referencing this calculated metric
+  // from external APIs. For example, "calcMetric:{calculated_metric_id}".
+  string calculated_metric_id = 4 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Required. The type for the calculated metric's value.
+  MetricUnit metric_unit = 5 [(google.api.field_behavior) = REQUIRED];
+
+  // Output only. Types of restricted data that this metric contains.
+  repeated RestrictedMetricType restricted_metric_type = 6
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Required. The calculated metric's definition. Maximum number of unique
+  // referenced custom metrics is 5. Formulas supports the following operations:
+  // + (addition),  - (subtraction), - (negative),  * (multiplication), /
+  // (division), () (parenthesis). Any valid real numbers are acceptable that
+  // fit in a Long (64bit integer) or a Double (64 bit floating point number).
+  // Example formula:
+  //   "( customEvent:parameter_name + cartPurchaseQuantity ) / 2.0"
+  string formula = 7 [(google.api.field_behavior) = REQUIRED];
+
+  // Output only. If true, this calculated metric has a invalid metric
+  // reference. Anything using a calculated metric with invalid_metric_reference
+  // set to true may fail, produce warnings, or produce unexpected results.
+  bool invalid_metric_reference = 9 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
 // Settings values for data retention. This is a singleton resource.
 message DataRetentionSettings {
   option (google.api.resource) = {
@@ -1470,15 +1661,15 @@ message DataRetentionSettings {
     FOURTEEN_MONTHS = 3;
 
     // The data retention time duration is 26 months.
-    // Available to 360 properties only.
+    // Available to 360 properties only. Available for event data only.
     TWENTY_SIX_MONTHS = 4;
 
     // The data retention time duration is 38 months.
-    // Available to 360 properties only.
+    // Available to 360 properties only. Available for event data only.
     THIRTY_EIGHT_MONTHS = 5;
 
     // The data retention time duration is 50 months.
-    // Available to 360 properties only.
+    // Available to 360 properties only. Available for event data only.
     FIFTY_MONTHS = 6;
   }
 
@@ -1486,8 +1677,13 @@ message DataRetentionSettings {
   // Format: properties/{property}/dataRetentionSettings
   string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The length of time that event-level data is retained.
-  RetentionDuration event_data_retention = 2;
+  // Required. The length of time that event-level data is retained.
+  RetentionDuration event_data_retention = 2
+      [(google.api.field_behavior) = REQUIRED];
+
+  // Required. The length of time that user-level data is retained.
+  RetentionDuration user_data_retention = 4
+      [(google.api.field_behavior) = REQUIRED];
 
   // If true, reset the retention period for the user identifier with every
   // event from that user.
@@ -1550,55 +1746,6 @@ message AttributionSettings {
     // for YouTube) before converting.
     // Previously CROSS_CHANNEL_LAST_CLICK
     PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 2;
-
-    // Starting in June 2023, new properties can no longer use this model.
-    // See
-    // [Analytics
-    // Help](https://support.google.com/analytics/answer/9164320#040623)
-    // for more details.
-    // Starting in September 2023, we will sunset this model for all properties.
-    //
-    // Gives all credit for the conversion to the first channel that a customer
-    // clicked (or engaged view through for YouTube) before converting.
-    // Previously CROSS_CHANNEL_FIRST_CLICK
-    PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK = 3;
-
-    // Starting in June 2023, new properties can no longer use this model.
-    // See
-    // [Analytics
-    // Help](https://support.google.com/analytics/answer/9164320#040623)
-    // for more details.
-    // Starting in September 2023, we will sunset this model for all properties.
-    //
-    // Distributes the credit for the conversion equally across all the channels
-    // a customer clicked (or engaged view through for YouTube) before
-    // converting.
-    // Previously CROSS_CHANNEL_LINEAR
-    PAID_AND_ORGANIC_CHANNELS_LINEAR = 4;
-
-    // Starting in June 2023, new properties can no longer use this model.
-    // See
-    // [Analytics
-    // Help](https://support.google.com/analytics/answer/9164320#040623)
-    // for more details.
-    // Starting in September 2023, we will sunset this model for all properties.
-    //
-    // Attributes 40% credit to the first and last interaction, and the
-    // remaining 20% credit is distributed evenly to the middle interactions.
-    // Previously CROSS_CHANNEL_POSITION_BASED
-    PAID_AND_ORGANIC_CHANNELS_POSITION_BASED = 5;
-
-    // Starting in June 2023, new properties can no longer use this model.
-    // See
-    // [Analytics
-    // Help](https://support.google.com/analytics/answer/9164320#040623)
-    // for more details.
-    // Starting in September 2023, we will sunset this model for all properties.
-    //
-    // Gives more credit to the touchpoints that happened closer in time to
-    // the conversion.
-    // Previously CROSS_CHANNEL_TIME_DECAY
-    PAID_AND_ORGANIC_CHANNELS_TIME_DECAY = 6;
 
     // Attributes 100% of the conversion value to the last Google Paid channel
     // that the customer clicked through before converting.
@@ -1697,7 +1844,7 @@ message AccessBinding {
   repeated string roles = 3;
 }
 
-// A link between a GA4 Property and BigQuery project.
+// A link between a Google Analytics property and BigQuery project.
 message BigQueryLink {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/BigQueryLink"
@@ -1742,6 +1889,14 @@ message BigQueryLink {
 
   // The list of event names that will be excluded from exports.
   repeated string excluded_events = 8;
+
+  // Required. Immutable. The geographic location where the created BigQuery
+  // dataset should reside. See https://cloud.google.com/bigquery/docs/locations
+  // for supported locations.
+  string dataset_location = 10 [
+    (google.api.field_behavior) = IMMUTABLE,
+    (google.api.field_behavior) = REQUIRED
+  ];
 }
 
 // Singleton resource under a web DataStream, configuring measurement of
@@ -1814,7 +1969,41 @@ message ConnectedSiteTag {
   string tag_id = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
-// A link between a GA4 Property and an AdSense for Content ad client.
+// Settings for client-side data redaction. Singleton resource under a Web
+// Stream.
+message DataRedactionSettings {
+  option (google.api.resource) = {
+    type: "analyticsadmin.googleapis.com/DataRedactionSettings"
+    pattern: "properties/{property}/dataStreams/{data_stream}/dataRedactionSettings"
+  };
+
+  // Output only. Name of this Data Redaction Settings resource.
+  // Format:
+  // properties/{property_id}/dataStreams/{data_stream}/dataRedactionSettings
+  // Example: "properties/1000/dataStreams/2000/dataRedactionSettings"
+  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // If enabled, any event parameter or user property values that look like an
+  // email will be redacted.
+  bool email_redaction_enabled = 2;
+
+  // Query Parameter redaction removes the key and value portions of a
+  // query parameter if it is in the configured set of query parameters.
+  //
+  // If enabled, URL query replacement logic will be run for the Stream. Any
+  // query parameters defined in query_parameter_keys will be redacted.
+  bool query_parameter_redaction_enabled = 3;
+
+  // The query parameter keys to apply redaction logic to if present in the URL.
+  // Query parameter matching is case-insensitive.
+  //
+  // Must contain at least one element if query_parameter_replacement_enabled
+  // is true. Keys cannot contain commas.
+  repeated string query_parameter_keys = 4;
+}
+
+// A link between a Google Analytics property and an AdSense for Content ad
+// client.
 message AdSenseLink {
   option (google.api.resource) = {
     type: "analyticsadmin.googleapis.com/AdSenseLink"
@@ -1826,7 +2015,114 @@ message AdSenseLink {
   // Example: properties/1234/adSenseLinks/6789
   string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Immutable. The AdSense ad client code that the GA4 property is linked to.
-  // Example format: "ca-pub-1234567890"
+  // Immutable. The AdSense ad client code that the Google Analytics property is
+  // linked to. Example format: "ca-pub-1234567890"
   string ad_client_code = 2 [(google.api.field_behavior) = IMMUTABLE];
+}
+
+// A link that references a source property under the parent rollup property.
+message RollupPropertySourceLink {
+  option (google.api.resource) = {
+    type: "analyticsadmin.googleapis.com/RollupPropertySourceLink"
+    pattern: "properties/{property}/rollupPropertySourceLinks/{rollup_property_source_link}"
+    plural: "rollupPropertySourceLinks"
+    singular: "rollupPropertySourceLink"
+  };
+
+  // Output only. Resource name of this RollupPropertySourceLink.
+  // Format:
+  // 'properties/{property_id}/rollupPropertySourceLinks/{rollup_property_source_link}'
+  // Format: 'properties/123/rollupPropertySourceLinks/456'
+  string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Immutable. Resource name of the source property.
+  // Format: properties/{property_id}
+  // Example: "properties/789"
+  string source_property = 2 [(google.api.field_behavior) = IMMUTABLE];
+}
+
+// A Reporting Data Annotation is a comment connected to certain dates for
+// reporting data.
+message ReportingDataAnnotation {
+  option (google.api.resource) = {
+    type: "analyticsadmin.googleapis.com/ReportingDataAnnotation"
+    pattern: "properties/{property}/reportingDataAnnotations/{reporting_data_annotation}"
+    plural: "reportingDataAnnotations"
+    singular: "reportingDataAnnotation"
+  };
+
+  // Represents a Reporting Data Annotation's date range, both start and end
+  // dates are inclusive. Time zones are based on the parent property.
+  message DateRange {
+    // Required. The start date for this range. Must be a valid date with
+    // year, month, and day set. The date may be in the past, present, or
+    // future.
+    google.type.Date start_date = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Required. The end date for this range. Must be a valid date with
+    // year, month, and day set. This date must be greater than or equal to
+    // the start date.
+    google.type.Date end_date = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  // Colors that may be used for this Reporting Data Annotation
+  enum Color {
+    // Color unknown or not specified.
+    COLOR_UNSPECIFIED = 0;
+
+    // Purple color.
+    PURPLE = 1;
+
+    // Brown color.
+    BROWN = 2;
+
+    // Blue color.
+    BLUE = 3;
+
+    // Green color.
+    GREEN = 4;
+
+    // Red color.
+    RED = 5;
+
+    // Cyan color.
+    CYAN = 6;
+
+    // Orange color. (Only used for system-generated annotations)
+    ORANGE = 7;
+  }
+
+  // Target for this Reporting Data Annotation
+  oneof target {
+    // If set, the Reporting Data Annotation is for a specific date represented
+    // by this field. The date must be a valid date with year, month and day
+    // set. The date may be in the past, present, or future.
+    google.type.Date annotation_date = 4;
+
+    // If set, the Reporting Data Annotation is for a range of dates represented
+    // by this field.
+    DateRange annotation_date_range = 5;
+  }
+
+  // Required. Identifier. Resource name of this Reporting Data Annotation.
+  // Format:
+  // 'properties/{property_id}/reportingDataAnnotations/{reporting_data_annotation}'
+  // Format: 'properties/123/reportingDataAnnotations/456'
+  string name = 1 [
+    (google.api.field_behavior) = IDENTIFIER,
+    (google.api.field_behavior) = REQUIRED
+  ];
+
+  // Required. Human-readable title for this Reporting Data Annotation.
+  string title = 2 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. Description for this Reporting Data Annotation.
+  string description = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Required. The color used for display of this Reporting Data Annotation.
+  Color color = 6 [(google.api.field_behavior) = REQUIRED];
+
+  // Output only. If true, this annotation was generated by the Google Analytics
+  // system. System-generated annotations cannot be updated or deleted.
+  bool system_generated = 7 [(google.api.field_behavior) = OUTPUT_ONLY];
 }

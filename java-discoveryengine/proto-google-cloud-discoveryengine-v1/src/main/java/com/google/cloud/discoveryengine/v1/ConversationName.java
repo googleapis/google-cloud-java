@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.discoveryengine.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -37,6 +36,9 @@ public class ConversationName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_COLLECTION_DATA_STORE_CONVERSATION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/conversations/{conversation}");
+  private static final PathTemplate PROJECT_LOCATION_COLLECTION_ENGINE_CONVERSATION =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/conversations/{conversation}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -45,6 +47,7 @@ public class ConversationName implements ResourceName {
   private final String dataStore;
   private final String conversation;
   private final String collection;
+  private final String engine;
 
   @Deprecated
   protected ConversationName() {
@@ -53,6 +56,7 @@ public class ConversationName implements ResourceName {
     dataStore = null;
     conversation = null;
     collection = null;
+    engine = null;
   }
 
   private ConversationName(Builder builder) {
@@ -61,6 +65,7 @@ public class ConversationName implements ResourceName {
     dataStore = Preconditions.checkNotNull(builder.getDataStore());
     conversation = Preconditions.checkNotNull(builder.getConversation());
     collection = null;
+    engine = null;
     pathTemplate = PROJECT_LOCATION_DATA_STORE_CONVERSATION;
   }
 
@@ -70,7 +75,18 @@ public class ConversationName implements ResourceName {
     collection = Preconditions.checkNotNull(builder.getCollection());
     dataStore = Preconditions.checkNotNull(builder.getDataStore());
     conversation = Preconditions.checkNotNull(builder.getConversation());
+    engine = null;
     pathTemplate = PROJECT_LOCATION_COLLECTION_DATA_STORE_CONVERSATION;
+  }
+
+  private ConversationName(ProjectLocationCollectionEngineConversationBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    collection = Preconditions.checkNotNull(builder.getCollection());
+    engine = Preconditions.checkNotNull(builder.getEngine());
+    conversation = Preconditions.checkNotNull(builder.getConversation());
+    dataStore = null;
+    pathTemplate = PROJECT_LOCATION_COLLECTION_ENGINE_CONVERSATION;
   }
 
   public String getProject() {
@@ -93,19 +109,26 @@ public class ConversationName implements ResourceName {
     return collection;
   }
 
+  public String getEngine() {
+    return engine;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationDataStoreConversationBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationCollectionDataStoreConversationBuilder
       newProjectLocationCollectionDataStoreConversationBuilder() {
     return new ProjectLocationCollectionDataStoreConversationBuilder();
+  }
+
+  public static ProjectLocationCollectionEngineConversationBuilder
+      newProjectLocationCollectionEngineConversationBuilder() {
+    return new ProjectLocationCollectionEngineConversationBuilder();
   }
 
   public Builder toBuilder() {
@@ -122,7 +145,6 @@ public class ConversationName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ConversationName ofProjectLocationDataStoreConversationName(
       String project, String location, String dataStore, String conversation) {
     return newBuilder()
@@ -133,7 +155,6 @@ public class ConversationName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ConversationName ofProjectLocationCollectionDataStoreConversationName(
       String project, String location, String collection, String dataStore, String conversation) {
     return newProjectLocationCollectionDataStoreConversationBuilder()
@@ -141,6 +162,17 @@ public class ConversationName implements ResourceName {
         .setLocation(location)
         .setCollection(collection)
         .setDataStore(dataStore)
+        .setConversation(conversation)
+        .build();
+  }
+
+  public static ConversationName ofProjectLocationCollectionEngineConversationName(
+      String project, String location, String collection, String engine, String conversation) {
+    return newProjectLocationCollectionEngineConversationBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setEngine(engine)
         .setConversation(conversation)
         .build();
   }
@@ -156,7 +188,6 @@ public class ConversationName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDataStoreConversationName(
       String project, String location, String dataStore, String conversation) {
     return newBuilder()
@@ -168,7 +199,6 @@ public class ConversationName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationCollectionDataStoreConversationName(
       String project, String location, String collection, String dataStore, String conversation) {
     return newProjectLocationCollectionDataStoreConversationBuilder()
@@ -176,6 +206,18 @@ public class ConversationName implements ResourceName {
         .setLocation(location)
         .setCollection(collection)
         .setDataStore(dataStore)
+        .setConversation(conversation)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationCollectionEngineConversationName(
+      String project, String location, String collection, String engine, String conversation) {
+    return newProjectLocationCollectionEngineConversationBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setEngine(engine)
         .setConversation(conversation)
         .build()
         .toString();
@@ -201,6 +243,15 @@ public class ConversationName implements ResourceName {
           matchMap.get("location"),
           matchMap.get("collection"),
           matchMap.get("data_store"),
+          matchMap.get("conversation"));
+    } else if (PROJECT_LOCATION_COLLECTION_ENGINE_CONVERSATION.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_COLLECTION_ENGINE_CONVERSATION.match(formattedString);
+      return ofProjectLocationCollectionEngineConversationName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("collection"),
+          matchMap.get("engine"),
           matchMap.get("conversation"));
     }
     throw new ValidationException("ConversationName.parse: formattedString not in valid format");
@@ -228,7 +279,8 @@ public class ConversationName implements ResourceName {
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_LOCATION_DATA_STORE_CONVERSATION.matches(formattedString)
-        || PROJECT_LOCATION_COLLECTION_DATA_STORE_CONVERSATION.matches(formattedString);
+        || PROJECT_LOCATION_COLLECTION_DATA_STORE_CONVERSATION.matches(formattedString)
+        || PROJECT_LOCATION_COLLECTION_ENGINE_CONVERSATION.matches(formattedString);
   }
 
   @Override
@@ -251,6 +303,9 @@ public class ConversationName implements ResourceName {
           }
           if (collection != null) {
             fieldMapBuilder.put("collection", collection);
+          }
+          if (engine != null) {
+            fieldMapBuilder.put("engine", engine);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -279,7 +334,8 @@ public class ConversationName implements ResourceName {
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.dataStore, that.dataStore)
           && Objects.equals(this.conversation, that.conversation)
-          && Objects.equals(this.collection, that.collection);
+          && Objects.equals(this.collection, that.collection)
+          && Objects.equals(this.engine, that.engine);
     }
     return false;
   }
@@ -299,6 +355,8 @@ public class ConversationName implements ResourceName {
     h ^= Objects.hashCode(conversation);
     h *= 1000003;
     h ^= Objects.hashCode(collection);
+    h *= 1000003;
+    h ^= Objects.hashCode(engine);
     return h;
   }
 
@@ -353,7 +411,8 @@ public class ConversationName implements ResourceName {
     private Builder(ConversationName conversationName) {
       Preconditions.checkArgument(
           Objects.equals(conversationName.pathTemplate, PROJECT_LOCATION_DATA_STORE_CONVERSATION),
-          "toBuilder is only supported when ConversationName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/conversations/{conversation}");
+          "toBuilder is only supported when ConversationName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/conversations/{conversation}");
       this.project = conversationName.project;
       this.location = conversationName.location;
       this.dataStore = conversationName.dataStore;
@@ -369,7 +428,6 @@ public class ConversationName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/conversations/{conversation}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationCollectionDataStoreConversationBuilder {
     private String project;
     private String location;
@@ -421,6 +479,69 @@ public class ConversationName implements ResourceName {
 
     public ProjectLocationCollectionDataStoreConversationBuilder setConversation(
         String conversation) {
+      this.conversation = conversation;
+      return this;
+    }
+
+    public ConversationName build() {
+      return new ConversationName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/conversations/{conversation}.
+   */
+  public static class ProjectLocationCollectionEngineConversationBuilder {
+    private String project;
+    private String location;
+    private String collection;
+    private String engine;
+    private String conversation;
+
+    protected ProjectLocationCollectionEngineConversationBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getCollection() {
+      return collection;
+    }
+
+    public String getEngine() {
+      return engine;
+    }
+
+    public String getConversation() {
+      return conversation;
+    }
+
+    public ProjectLocationCollectionEngineConversationBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineConversationBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineConversationBuilder setCollection(String collection) {
+      this.collection = collection;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineConversationBuilder setEngine(String engine) {
+      this.engine = engine;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineConversationBuilder setConversation(String conversation) {
       this.conversation = conversation;
       return this;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -425,7 +425,8 @@ public class MockRegistryImpl extends RegistryImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListApiSpecRevisions, expected %s or %s",
+                  "Unrecognized response type %s for method ListApiSpecRevisions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListApiSpecRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -467,7 +468,8 @@ public class MockRegistryImpl extends RegistryImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteApiSpecRevision, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteApiSpecRevision, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ApiSpec.class.getName(),
                   Exception.class.getName())));
@@ -594,7 +596,8 @@ public class MockRegistryImpl extends RegistryImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method TagApiDeploymentRevision, expected %s or %s",
+                  "Unrecognized response type %s for method TagApiDeploymentRevision, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ApiDeployment.class.getName(),
                   Exception.class.getName())));
@@ -616,7 +619,8 @@ public class MockRegistryImpl extends RegistryImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListApiDeploymentRevisions, expected %s or %s",
+                  "Unrecognized response type %s for method ListApiDeploymentRevisions, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListApiDeploymentRevisionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -637,7 +641,8 @@ public class MockRegistryImpl extends RegistryImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RollbackApiDeployment, expected %s or %s",
+                  "Unrecognized response type %s for method RollbackApiDeployment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ApiDeployment.class.getName(),
                   Exception.class.getName())));
@@ -658,7 +663,8 @@ public class MockRegistryImpl extends RegistryImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteApiDeploymentRevision, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteApiDeploymentRevision, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ApiDeployment.class.getName(),
                   Exception.class.getName())));

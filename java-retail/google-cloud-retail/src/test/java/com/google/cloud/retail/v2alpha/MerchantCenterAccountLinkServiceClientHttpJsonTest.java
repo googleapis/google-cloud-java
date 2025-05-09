@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -181,6 +181,7 @@ public class MerchantCenterAccountLinkServiceClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .addAllFeedFilters(new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
             .setProjectId("projectId-894832108")
+            .setSource("source-896505829")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -245,6 +246,7 @@ public class MerchantCenterAccountLinkServiceClientHttpJsonTest {
             .setLanguageCode("languageCode-2092349083")
             .addAllFeedFilters(new ArrayList<MerchantCenterAccountLink.MerchantCenterFeedFilter>())
             .setProjectId("projectId-894832108")
+            .setSource("source-896505829")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

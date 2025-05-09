@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-aiplatform</artifactId>
-  <version>3.29.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+  <version>3.64.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Vertex AI</name>
   <description>Java client for Google Cloud Vertex AI services.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-aiplatform-parent</artifactId>
-    <version>3.29.0</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
+    <version>3.64.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-aiplatform:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-aiplatform</site.installationModule>
@@ -43,6 +43,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -76,6 +77,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>

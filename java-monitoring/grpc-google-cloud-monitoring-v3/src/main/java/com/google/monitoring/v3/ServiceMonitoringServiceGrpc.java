@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,9 +22,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
- * managing and querying aspects of a workspace's services. These include the
- * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
- * of categorized Health Metrics.
+ * managing and querying aspects of a Metrics Scope's services. These include
+ * the `Service`'s monitored resources, its Service-Level Objectives, and a
+ * taxonomy of categorized Health Metrics.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -525,6 +525,19 @@ public final class ServiceMonitoringServiceGrpc {
     return ServiceMonitoringServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServiceMonitoringServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServiceMonitoringServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServiceMonitoringServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ServiceMonitoringServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServiceMonitoringServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServiceMonitoringServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -558,9 +571,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public interface AsyncService {
@@ -596,7 +609,7 @@ public final class ServiceMonitoringServiceGrpc {
      *
      *
      * <pre>
-     * List `Service`s for this workspace.
+     * List `Service`s for this Metrics Scope.
      * </pre>
      */
     default void listServices(
@@ -715,9 +728,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public abstract static class ServiceMonitoringServiceImplBase
@@ -734,9 +747,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public static final class ServiceMonitoringServiceStub
@@ -785,7 +798,7 @@ public final class ServiceMonitoringServiceGrpc {
      *
      *
      * <pre>
-     * List `Service`s for this workspace.
+     * List `Service`s for this Metrics Scope.
      * </pre>
      */
     public void listServices(
@@ -920,9 +933,164 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
+   * </pre>
+   */
+  public static final class ServiceMonitoringServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServiceMonitoringServiceBlockingV2Stub> {
+    private ServiceMonitoringServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServiceMonitoringServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServiceMonitoringServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Service createService(
+        com.google.monitoring.v3.CreateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the named `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Service getService(
+        com.google.monitoring.v3.GetServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List `Service`s for this Metrics Scope.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListServicesResponse listServices(
+        com.google.monitoring.v3.ListServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update this `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Service updateService(
+        com.google.monitoring.v3.UpdateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Soft delete this `Service`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteService(
+        com.google.monitoring.v3.DeleteServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a `ServiceLevelObjective` for the given `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ServiceLevelObjective createServiceLevelObjective(
+        com.google.monitoring.v3.CreateServiceLevelObjectiveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceLevelObjectiveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a `ServiceLevelObjective` by name.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ServiceLevelObjective getServiceLevelObjective(
+        com.google.monitoring.v3.GetServiceLevelObjectiveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceLevelObjectiveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List the `ServiceLevelObjective`s for the given `Service`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListServiceLevelObjectivesResponse listServiceLevelObjectives(
+        com.google.monitoring.v3.ListServiceLevelObjectivesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceLevelObjectivesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the given `ServiceLevelObjective`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ServiceLevelObjective updateServiceLevelObjective(
+        com.google.monitoring.v3.UpdateServiceLevelObjectiveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceLevelObjectiveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the given `ServiceLevelObjective`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteServiceLevelObjective(
+        com.google.monitoring.v3.DeleteServiceLevelObjectiveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceLevelObjectiveMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ServiceMonitoringService.
+   *
+   * <pre>
+   * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public static final class ServiceMonitoringServiceBlockingStub
@@ -968,7 +1136,7 @@ public final class ServiceMonitoringServiceGrpc {
      *
      *
      * <pre>
-     * List `Service`s for this workspace.
+     * List `Service`s for this Metrics Scope.
      * </pre>
      */
     public com.google.monitoring.v3.ListServicesResponse listServices(
@@ -1075,9 +1243,9 @@ public final class ServiceMonitoringServiceGrpc {
    *
    * <pre>
    * The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
-   * managing and querying aspects of a workspace's services. These include the
-   * `Service`'s monitored resources, its Service-Level Objectives, and a taxonomy
-   * of categorized Health Metrics.
+   * managing and querying aspects of a Metrics Scope's services. These include
+   * the `Service`'s monitored resources, its Service-Level Objectives, and a
+   * taxonomy of categorized Health Metrics.
    * </pre>
    */
   public static final class ServiceMonitoringServiceFutureStub
@@ -1123,7 +1291,7 @@ public final class ServiceMonitoringServiceGrpc {
      *
      *
      * <pre>
-     * List `Service`s for this workspace.
+     * List `Service`s for this Metrics Scope.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

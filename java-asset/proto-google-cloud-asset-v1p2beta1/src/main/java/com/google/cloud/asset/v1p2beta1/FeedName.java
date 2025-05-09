@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.asset.v1p2beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,17 +96,14 @@ public class FeedName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectFeedBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderFeedBuilder newFolderFeedBuilder() {
     return new FolderFeedBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationFeedBuilder newOrganizationFeedBuilder() {
     return new OrganizationFeedBuilder();
   }
@@ -120,17 +116,14 @@ public class FeedName implements ResourceName {
     return newBuilder().setProject(project).setFeed(feed).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static FeedName ofProjectFeedName(String project, String feed) {
     return newBuilder().setProject(project).setFeed(feed).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static FeedName ofFolderFeedName(String folder, String feed) {
     return newFolderFeedBuilder().setFolder(folder).setFeed(feed).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static FeedName ofOrganizationFeedName(String organization, String feed) {
     return newOrganizationFeedBuilder().setOrganization(organization).setFeed(feed).build();
   }
@@ -139,17 +132,14 @@ public class FeedName implements ResourceName {
     return newBuilder().setProject(project).setFeed(feed).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectFeedName(String project, String feed) {
     return newBuilder().setProject(project).setFeed(feed).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderFeedName(String folder, String feed) {
     return newFolderFeedBuilder().setFolder(folder).setFeed(feed).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationFeedName(String organization, String feed) {
     return newOrganizationFeedBuilder()
         .setOrganization(organization)
@@ -294,7 +284,8 @@ public class FeedName implements ResourceName {
     private Builder(FeedName feedName) {
       Preconditions.checkArgument(
           Objects.equals(feedName.pathTemplate, PROJECT_FEED),
-          "toBuilder is only supported when FeedName has the pattern of projects/{project}/feeds/{feed}");
+          "toBuilder is only supported when FeedName has the pattern of"
+              + " projects/{project}/feeds/{feed}");
       this.project = feedName.project;
       this.feed = feedName.feed;
     }
@@ -305,7 +296,6 @@ public class FeedName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/feeds/{feed}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderFeedBuilder {
     private String folder;
     private String feed;
@@ -336,7 +326,6 @@ public class FeedName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/feeds/{feed}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationFeedBuilder {
     private String organization;
     private String feed;

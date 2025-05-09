@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.shopping.merchant.inventories.v1beta.samples;
 // [START merchantapi_v1beta_generated_LocalInventoryService_ListLocalInventories_String_sync]
 import com.google.shopping.merchant.inventories.v1beta.LocalInventory;
 import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceClient;
+import com.google.shopping.merchant.inventories.v1beta.ProductName;
 
 public class SyncListLocalInventoriesString {
 
@@ -34,7 +35,7 @@ public class SyncListLocalInventoriesString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (LocalInventoryServiceClient localInventoryServiceClient =
         LocalInventoryServiceClient.create()) {
-      String parent = "parent-995424086";
+      String parent = ProductName.of("[ACCOUNT]", "[PRODUCT]").toString();
       for (LocalInventory element :
           localInventoryServiceClient.listLocalInventories(parent).iterateAll()) {
         // doThingsWith(element);

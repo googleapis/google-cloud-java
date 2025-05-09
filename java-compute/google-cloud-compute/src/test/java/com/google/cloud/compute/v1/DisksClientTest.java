@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,6 +94,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -101,6 +103,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -225,6 +229,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -232,6 +238,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -298,6 +306,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -305,6 +315,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -371,6 +383,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -378,6 +392,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -432,12 +448,14 @@ public class DisksClientTest {
   public void getTest() throws Exception {
     Disk expectedResponse =
         Disk.newBuilder()
+            .setAccessMode("accessMode-1142222553")
             .setArchitecture("architecture839674195")
             .setAsyncPrimaryDisk(DiskAsyncReplication.newBuilder().build())
             .putAllAsyncSecondaryDisks(new HashMap<String, DiskAsyncReplicationList>())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setDiskEncryptionKey(CustomerEncryptionKey.newBuilder().build())
+            .setEnableConfidentialCompute(true)
             .addAllGuestOsFeatures(new ArrayList<GuestOsFeature>())
             .setId(3355)
             .setKind("kind3292052")
@@ -458,6 +476,7 @@ public class DisksClientTest {
             .addAllReplicaZones(new ArrayList<String>())
             .addAllResourcePolicies(new ArrayList<String>())
             .setResourceStatus(DiskResourceStatus.newBuilder().build())
+            .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setSizeGb(2105542105)
@@ -468,11 +487,14 @@ public class DisksClientTest {
             .setSourceImage("sourceImage-105174528")
             .setSourceImageEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceImageId("sourceImageId2006496059")
+            .setSourceInstantSnapshot("sourceInstantSnapshot-1002724054")
+            .setSourceInstantSnapshotId("sourceInstantSnapshotId-1545139227")
             .setSourceSnapshot("sourceSnapshot-1078634753")
             .setSourceSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceSnapshotId("sourceSnapshotId-1480876934")
             .setSourceStorageObject("sourceStorageObject1498862911")
             .setStatus("status-892481550")
+            .setStoragePool("storagePool-525690569")
             .setType("type3575610")
             .addAllUsers(new ArrayList<String>())
             .setZone("zone3744684")
@@ -527,7 +549,6 @@ public class DisksClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -585,6 +606,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -592,6 +615,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -707,6 +732,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -714,6 +741,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -788,6 +817,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -795,6 +826,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -856,7 +889,6 @@ public class DisksClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -917,6 +949,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -924,6 +958,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -990,6 +1026,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -997,6 +1035,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1071,6 +1111,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1078,6 +1120,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1141,6 +1185,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1148,6 +1194,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1271,6 +1319,8 @@ public class DisksClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1278,6 +1328,8 @@ public class DisksClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")

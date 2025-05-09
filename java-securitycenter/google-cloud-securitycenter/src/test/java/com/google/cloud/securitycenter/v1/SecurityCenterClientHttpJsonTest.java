@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,20 @@ package com.google.cloud.securitycenter.v1;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAttackPathsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEventThreatDetectionCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListResourceValueConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListValuedResourcesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -50,6 +56,7 @@ import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.Value;
 import java.io.IOException;
@@ -440,6 +447,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -452,10 +460,21 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -524,6 +543,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -536,10 +556,21 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -596,10 +627,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    FolderName parent = FolderName.of("[FOLDER]");
+    FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
     MuteConfig muteConfig = MuteConfig.newBuilder().build();
 
     MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
@@ -628,7 +660,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      FolderName parent = FolderName.of("[FOLDER]");
+      FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
       MuteConfig muteConfig = MuteConfig.newBuilder().build();
       client.createMuteConfig(parent, muteConfig);
       Assert.fail("No exception raised");
@@ -650,10 +682,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    FolderName parent = FolderName.of("[FOLDER]");
     MuteConfig muteConfig = MuteConfig.newBuilder().build();
 
     MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
@@ -682,7 +715,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      FolderName parent = FolderName.of("[FOLDER]");
       MuteConfig muteConfig = MuteConfig.newBuilder().build();
       client.createMuteConfig(parent, muteConfig);
       Assert.fail("No exception raised");
@@ -704,10 +737,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    ProjectName parent = ProjectName.of("[PROJECT]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     MuteConfig muteConfig = MuteConfig.newBuilder().build();
 
     MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
@@ -736,7 +770,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ProjectName parent = ProjectName.of("[PROJECT]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       MuteConfig muteConfig = MuteConfig.newBuilder().build();
       client.createMuteConfig(parent, muteConfig);
       Assert.fail("No exception raised");
@@ -758,10 +792,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "organizations/organization-8287";
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
     MuteConfig muteConfig = MuteConfig.newBuilder().build();
 
     MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
@@ -790,7 +825,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String parent = "organizations/organization-8287";
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
       MuteConfig muteConfig = MuteConfig.newBuilder().build();
       client.createMuteConfig(parent, muteConfig);
       Assert.fail("No exception raised");
@@ -812,6 +847,229 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest5() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest6() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest6() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest7() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-8287";
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest7() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-8287";
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      client.createMuteConfig(parent, muteConfig);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest8() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest8() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest9() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -838,7 +1096,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest5() throws Exception {
+  public void createMuteConfigExceptionTest9() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -856,7 +1114,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createMuteConfigTest6() throws Exception {
+  public void createMuteConfigTest10() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -868,6 +1126,121 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest10() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest11() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    MuteConfig muteConfig = MuteConfig.newBuilder().build();
+    String muteConfigId = "muteConfigId1689669942";
+
+    MuteConfig actualResponse = client.createMuteConfig(parent, muteConfig, muteConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMuteConfigExceptionTest11() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      MuteConfig muteConfig = MuteConfig.newBuilder().build();
+      String muteConfigId = "muteConfigId1689669942";
+      client.createMuteConfig(parent, muteConfig, muteConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMuteConfigTest12() throws Exception {
+    MuteConfig expectedResponse =
+        MuteConfig.newBuilder()
+            .setName(
+                MuteConfigName.ofOrganizationMuteConfigName("[ORGANIZATION]", "[MUTE_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setFilter("filter-1274492040")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -894,7 +1267,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest6() throws Exception {
+  public void createMuteConfigExceptionTest12() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -912,7 +1285,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createMuteConfigTest7() throws Exception {
+  public void createMuteConfigTest13() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -924,6 +1297,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -950,7 +1324,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest7() throws Exception {
+  public void createMuteConfigExceptionTest13() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -968,7 +1342,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createMuteConfigTest8() throws Exception {
+  public void createMuteConfigTest14() throws Exception {
     MuteConfig expectedResponse =
         MuteConfig.newBuilder()
             .setName(
@@ -980,6 +1354,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1006,7 +1381,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void createMuteConfigExceptionTest8() throws Exception {
+  public void createMuteConfigExceptionTest14() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -1704,6 +2079,206 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
+  public void getSimulationTest() throws Exception {
+    Simulation expectedResponse =
+        Simulation.newBuilder()
+            .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllResourceValueConfigsMetadata(new ArrayList<ResourceValueConfigMetadata>())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+
+    Simulation actualResponse = client.getSimulation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSimulationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SimulationName name = SimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+      client.getSimulation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSimulationTest2() throws Exception {
+    Simulation expectedResponse =
+        Simulation.newBuilder()
+            .setName(SimulationName.of("[ORGANIZATION]", "[SIMULATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllResourceValueConfigsMetadata(new ArrayList<ResourceValueConfigMetadata>())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "organizations/organization-4328/simulations/simulation-4328";
+
+    Simulation actualResponse = client.getSimulation(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSimulationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "organizations/organization-4328/simulations/simulation-4328";
+      client.getSimulation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getValuedResourceTest() throws Exception {
+    ValuedResource expectedResponse =
+        ValuedResource.newBuilder()
+            .setName(
+                ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                    .toString())
+            .setResource("resource-341064690")
+            .setResourceType("resourceType-384364440")
+            .setDisplayName("displayName1714148973")
+            .setExposedScore(-1375686989)
+            .addAllResourceValueConfigsUsed(new ArrayList<ResourceValueConfigMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ValuedResourceName name =
+        ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+
+    ValuedResource actualResponse = client.getValuedResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getValuedResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ValuedResourceName name =
+          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+      client.getValuedResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getValuedResourceTest2() throws Exception {
+    ValuedResource expectedResponse =
+        ValuedResource.newBuilder()
+            .setName(
+                ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]")
+                    .toString())
+            .setResource("resource-341064690")
+            .setResourceType("resourceType-384364440")
+            .setDisplayName("displayName1714148973")
+            .setExposedScore(-1375686989)
+            .addAllResourceValueConfigsUsed(new ArrayList<ResourceValueConfigMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-7082/simulations/simulation-7082/valuedResources/valuedResource-7082";
+
+    ValuedResource actualResponse = client.getValuedResource(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getValuedResourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-7082/simulations/simulation-7082/valuedResources/valuedResource-7082";
+      client.getValuedResource(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getBigQueryExportTest() throws Exception {
     BigQueryExport expectedResponse =
         BigQueryExport.newBuilder()
@@ -1918,6 +2493,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1972,6 +2548,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2964,7 +3541,7 @@ public class SecurityCenterClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    FolderName parent = FolderName.of("[FOLDER]");
+    FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
 
     ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
 
@@ -2996,7 +3573,7 @@ public class SecurityCenterClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      FolderName parent = FolderName.of("[FOLDER]");
+      FolderLocationName parent = FolderLocationName.of("[FOLDER]", "[LOCATION]");
       client.listMuteConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -3006,6 +3583,156 @@ public class SecurityCenterClientHttpJsonTest {
 
   @Test
   public void listMuteConfigsTest2() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FolderName parent = FolderName.of("[FOLDER]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName parent = FolderName.of("[FOLDER]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest3() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest4() throws Exception {
+    MuteConfig responsesElement = MuteConfig.newBuilder().build();
+    ListMuteConfigsResponse expectedResponse =
+        ListMuteConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMuteConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListMuteConfigsPagedResponse pagedListResponse = client.listMuteConfigs(parent);
+
+    List<MuteConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMuteConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMuteConfigsExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listMuteConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMuteConfigsTest5() throws Exception {
     MuteConfig responsesElement = MuteConfig.newBuilder().build();
     ListMuteConfigsResponse expectedResponse =
         ListMuteConfigsResponse.newBuilder()
@@ -3039,7 +3766,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void listMuteConfigsExceptionTest2() throws Exception {
+  public void listMuteConfigsExceptionTest5() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -3055,7 +3782,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void listMuteConfigsTest3() throws Exception {
+  public void listMuteConfigsTest6() throws Exception {
     MuteConfig responsesElement = MuteConfig.newBuilder().build();
     ListMuteConfigsResponse expectedResponse =
         ListMuteConfigsResponse.newBuilder()
@@ -3089,7 +3816,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void listMuteConfigsExceptionTest3() throws Exception {
+  public void listMuteConfigsExceptionTest6() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -3105,7 +3832,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void listMuteConfigsTest4() throws Exception {
+  public void listMuteConfigsTest7() throws Exception {
     MuteConfig responsesElement = MuteConfig.newBuilder().build();
     ListMuteConfigsResponse expectedResponse =
         ListMuteConfigsResponse.newBuilder()
@@ -3139,7 +3866,7 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
-  public void listMuteConfigsExceptionTest4() throws Exception {
+  public void listMuteConfigsExceptionTest7() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -3895,6 +4622,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -3907,10 +4635,21 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3981,6 +4720,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -3993,10 +4733,21 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4065,6 +4816,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4077,10 +4829,21 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4149,6 +4912,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4161,10 +4925,21 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4393,6 +5168,59 @@ public class SecurityCenterClientHttpJsonTest {
   }
 
   @Test
+  public void simulateSecurityHealthAnalyticsCustomModuleTest() throws Exception {
+    SimulateSecurityHealthAnalyticsCustomModuleResponse expectedResponse =
+        SimulateSecurityHealthAnalyticsCustomModuleResponse.newBuilder()
+            .setResult(
+                SimulateSecurityHealthAnalyticsCustomModuleResponse.SimulatedResult.newBuilder()
+                    .build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+    CustomConfig customConfig = CustomConfig.newBuilder().build();
+    SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource =
+        SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder().build();
+
+    SimulateSecurityHealthAnalyticsCustomModuleResponse actualResponse =
+        client.simulateSecurityHealthAnalyticsCustomModule(parent, customConfig, resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void simulateSecurityHealthAnalyticsCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-7807/securityHealthAnalyticsSettings";
+      CustomConfig customConfig = CustomConfig.newBuilder().build();
+      SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource resource =
+          SimulateSecurityHealthAnalyticsCustomModuleRequest.SimulatedResource.newBuilder().build();
+      client.simulateSecurityHealthAnalyticsCustomModule(parent, customConfig, resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateExternalSystemTest() throws Exception {
     ExternalSystem expectedResponse =
         ExternalSystem.newBuilder()
@@ -4401,6 +5229,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setExternalUid("externalUid-1153085307")
             .setStatus("status-892481550")
             .setExternalSystemUpdateTime(Timestamp.newBuilder().build())
+            .setCaseUri("caseUri554877980")
+            .setCasePriority("casePriority1589324020")
+            .setCaseSla(Timestamp.newBuilder().build())
+            .setCaseCreateTime(Timestamp.newBuilder().build())
+            .setCaseCloseTime(Timestamp.newBuilder().build())
+            .setTicketInfo(ExternalSystem.TicketInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4412,6 +5246,12 @@ public class SecurityCenterClientHttpJsonTest {
             .setExternalUid("externalUid-1153085307")
             .setStatus("status-892481550")
             .setExternalSystemUpdateTime(Timestamp.newBuilder().build())
+            .setCaseUri("caseUri554877980")
+            .setCasePriority("casePriority1589324020")
+            .setCaseSla(Timestamp.newBuilder().build())
+            .setCaseCreateTime(Timestamp.newBuilder().build())
+            .setCaseCloseTime(Timestamp.newBuilder().build())
+            .setTicketInfo(ExternalSystem.TicketInfo.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4449,6 +5289,12 @@ public class SecurityCenterClientHttpJsonTest {
               .setExternalUid("externalUid-1153085307")
               .setStatus("status-892481550")
               .setExternalSystemUpdateTime(Timestamp.newBuilder().build())
+              .setCaseUri("caseUri554877980")
+              .setCasePriority("casePriority1589324020")
+              .setCaseSla(Timestamp.newBuilder().build())
+              .setCaseCreateTime(Timestamp.newBuilder().build())
+              .setCaseCloseTime(Timestamp.newBuilder().build())
+              .setTicketInfo(ExternalSystem.TicketInfo.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateExternalSystem(externalSystem, updateMask);
@@ -4483,6 +5329,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4495,10 +5342,21 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4525,6 +5383,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setAccess(Access.newBuilder().build())
             .addAllConnections(new ArrayList<Connection>())
             .setMuteInitiator("muteInitiator1395645462")
+            .setMuteInfo(Finding.MuteInfo.newBuilder().build())
             .addAllProcesses(new ArrayList<Process>())
             .putAllContacts(new HashMap<String, ContactDetails>())
             .addAllCompliances(new ArrayList<Compliance>())
@@ -4537,10 +5396,21 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllContainers(new ArrayList<Container>())
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
+            .setAttackExposure(AttackExposure.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+            .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+            .setCloudArmor(CloudArmor.newBuilder().build())
+            .setNotebook(Notebook.newBuilder().build())
+            .setToxicCombination(ToxicCombination.newBuilder().build())
+            .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -4592,6 +5462,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setAccess(Access.newBuilder().build())
               .addAllConnections(new ArrayList<Connection>())
               .setMuteInitiator("muteInitiator1395645462")
+              .setMuteInfo(Finding.MuteInfo.newBuilder().build())
               .addAllProcesses(new ArrayList<Process>())
               .putAllContacts(new HashMap<String, ContactDetails>())
               .addAllCompliances(new ArrayList<Compliance>())
@@ -4604,10 +5475,21 @@ public class SecurityCenterClientHttpJsonTest {
               .addAllContainers(new ArrayList<Container>())
               .setKubernetes(Kubernetes.newBuilder().build())
               .setDatabase(Database.newBuilder().build())
+              .setAttackExposure(AttackExposure.newBuilder().build())
               .addAllFiles(new ArrayList<File>())
               .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
               .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
               .setKernelRootkit(KernelRootkit.newBuilder().build())
+              .addAllOrgPolicies(new ArrayList<OrgPolicy>())
+              .setApplication(Application.newBuilder().build())
+              .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+              .setSecurityPosture(SecurityPosture.newBuilder().build())
+              .addAllLogEntries(new ArrayList<LogEntry>())
+              .addAllLoadBalancers(new ArrayList<LoadBalancer>())
+              .setCloudArmor(CloudArmor.newBuilder().build())
+              .setNotebook(Notebook.newBuilder().build())
+              .setToxicCombination(ToxicCombination.newBuilder().build())
+              .addAllGroupMemberships(new ArrayList<GroupMembership>())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");
@@ -4629,6 +5511,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4643,6 +5526,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
+            .setExpiryTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4683,6 +5567,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setMostRecentEditor("mostRecentEditor-833861941")
+              .setExpiryTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMuteConfig(muteConfig, updateMask);
@@ -5678,6 +6563,1615 @@ public class SecurityCenterClientHttpJsonTest {
     try {
       String parent = "organizations/organization-8287";
       client.listBigQueryExports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEventThreatDetectionCustomModuleTest() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EventThreatDetectionSettingsName parent =
+        EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+    EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+        EventThreatDetectionCustomModule.newBuilder().build();
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.createEventThreatDetectionCustomModule(parent, eventThreatDetectionCustomModule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventThreatDetectionSettingsName parent =
+          EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+      EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+          EventThreatDetectionCustomModule.newBuilder().build();
+      client.createEventThreatDetectionCustomModule(parent, eventThreatDetectionCustomModule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEventThreatDetectionCustomModuleTest2() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-4962/eventThreatDetectionSettings";
+    EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+        EventThreatDetectionCustomModule.newBuilder().build();
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.createEventThreatDetectionCustomModule(parent, eventThreatDetectionCustomModule);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createEventThreatDetectionCustomModuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-4962/eventThreatDetectionSettings";
+      EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+          EventThreatDetectionCustomModule.newBuilder().build();
+      client.createEventThreatDetectionCustomModule(parent, eventThreatDetectionCustomModule);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEventThreatDetectionCustomModuleTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    EventThreatDetectionCustomModuleName name =
+        EventThreatDetectionCustomModuleName.ofOrganizationModuleName("[ORGANIZATION]", "[MODULE]");
+
+    client.deleteEventThreatDetectionCustomModule(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventThreatDetectionCustomModuleName name =
+          EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+              "[ORGANIZATION]", "[MODULE]");
+      client.deleteEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEventThreatDetectionCustomModuleTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-4405/eventThreatDetectionSettings/customModules/customModule-4405";
+
+    client.deleteEventThreatDetectionCustomModule(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteEventThreatDetectionCustomModuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-4405/eventThreatDetectionSettings/customModules/customModule-4405";
+      client.deleteEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEventThreatDetectionCustomModuleTest() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EventThreatDetectionCustomModuleName name =
+        EventThreatDetectionCustomModuleName.ofOrganizationModuleName("[ORGANIZATION]", "[MODULE]");
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.getEventThreatDetectionCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventThreatDetectionCustomModuleName name =
+          EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+              "[ORGANIZATION]", "[MODULE]");
+      client.getEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEventThreatDetectionCustomModuleTest2() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-4405/eventThreatDetectionSettings/customModules/customModule-4405";
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.getEventThreatDetectionCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEventThreatDetectionCustomModuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-4405/eventThreatDetectionSettings/customModules/customModule-4405";
+      client.getEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDescendantEventThreatDetectionCustomModulesTest() throws Exception {
+    EventThreatDetectionCustomModule responsesElement =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    ListDescendantEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListDescendantEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EventThreatDetectionSettingsName parent =
+        EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListDescendantEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listDescendantEventThreatDetectionCustomModules(parent);
+
+    List<EventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEventThreatDetectionCustomModulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDescendantEventThreatDetectionCustomModulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventThreatDetectionSettingsName parent =
+          EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listDescendantEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDescendantEventThreatDetectionCustomModulesTest2() throws Exception {
+    EventThreatDetectionCustomModule responsesElement =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    ListDescendantEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListDescendantEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-4962/eventThreatDetectionSettings";
+
+    ListDescendantEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listDescendantEventThreatDetectionCustomModules(parent);
+
+    List<EventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEventThreatDetectionCustomModulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDescendantEventThreatDetectionCustomModulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-4962/eventThreatDetectionSettings";
+      client.listDescendantEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEventThreatDetectionCustomModulesTest() throws Exception {
+    EventThreatDetectionCustomModule responsesElement =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    ListEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EventThreatDetectionSettingsName parent =
+        EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listEventThreatDetectionCustomModules(parent);
+
+    List<EventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEventThreatDetectionCustomModulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEventThreatDetectionCustomModulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventThreatDetectionSettingsName parent =
+          EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEventThreatDetectionCustomModulesTest2() throws Exception {
+    EventThreatDetectionCustomModule responsesElement =
+        EventThreatDetectionCustomModule.newBuilder().build();
+    ListEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-4962/eventThreatDetectionSettings";
+
+    ListEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listEventThreatDetectionCustomModules(parent);
+
+    List<EventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEventThreatDetectionCustomModulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEventThreatDetectionCustomModulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-4962/eventThreatDetectionSettings";
+      client.listEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEventThreatDetectionCustomModuleTest() throws Exception {
+    EventThreatDetectionCustomModule expectedResponse =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+        EventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setAncestorModule(
+                EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLastEditor("lastEditor1523898275")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EventThreatDetectionCustomModule actualResponse =
+        client.updateEventThreatDetectionCustomModule(eventThreatDetectionCustomModule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventThreatDetectionCustomModule eventThreatDetectionCustomModule =
+          EventThreatDetectionCustomModule.newBuilder()
+              .setName(
+                  EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                          "[ORGANIZATION]", "[MODULE]")
+                      .toString())
+              .setConfig(Struct.newBuilder().build())
+              .setAncestorModule(
+                  EventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                          "[ORGANIZATION]", "[MODULE]")
+                      .toString())
+              .setType("type3575610")
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setLastEditor("lastEditor1523898275")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEventThreatDetectionCustomModule(eventThreatDetectionCustomModule, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void validateEventThreatDetectionCustomModuleTest() throws Exception {
+    ValidateEventThreatDetectionCustomModuleResponse expectedResponse =
+        ValidateEventThreatDetectionCustomModuleResponse.newBuilder()
+            .setErrors(CustomModuleValidationErrors.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ValidateEventThreatDetectionCustomModuleRequest request =
+        ValidateEventThreatDetectionCustomModuleRequest.newBuilder()
+            .setParent(
+                EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+            .setRawText("rawText985734517")
+            .setType("type3575610")
+            .build();
+
+    ValidateEventThreatDetectionCustomModuleResponse actualResponse =
+        client.validateEventThreatDetectionCustomModule(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void validateEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ValidateEventThreatDetectionCustomModuleRequest request =
+          ValidateEventThreatDetectionCustomModuleRequest.newBuilder()
+              .setParent(
+                  EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+              .setRawText("rawText985734517")
+              .setType("type3575610")
+              .build();
+      client.validateEventThreatDetectionCustomModule(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEffectiveEventThreatDetectionCustomModuleTest() throws Exception {
+    EffectiveEventThreatDetectionCustomModule expectedResponse =
+        EffectiveEventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EffectiveEventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EffectiveEventThreatDetectionCustomModuleName name =
+        EffectiveEventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+            "[ORGANIZATION]", "[MODULE]");
+
+    EffectiveEventThreatDetectionCustomModule actualResponse =
+        client.getEffectiveEventThreatDetectionCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEffectiveEventThreatDetectionCustomModuleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EffectiveEventThreatDetectionCustomModuleName name =
+          EffectiveEventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+              "[ORGANIZATION]", "[MODULE]");
+      client.getEffectiveEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEffectiveEventThreatDetectionCustomModuleTest2() throws Exception {
+    EffectiveEventThreatDetectionCustomModule expectedResponse =
+        EffectiveEventThreatDetectionCustomModule.newBuilder()
+            .setName(
+                EffectiveEventThreatDetectionCustomModuleName.ofOrganizationModuleName(
+                        "[ORGANIZATION]", "[MODULE]")
+                    .toString())
+            .setConfig(Struct.newBuilder().build())
+            .setType("type3575610")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-4198/eventThreatDetectionSettings/effectiveCustomModules/effectiveCustomModule-4198";
+
+    EffectiveEventThreatDetectionCustomModule actualResponse =
+        client.getEffectiveEventThreatDetectionCustomModule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEffectiveEventThreatDetectionCustomModuleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-4198/eventThreatDetectionSettings/effectiveCustomModules/effectiveCustomModule-4198";
+      client.getEffectiveEventThreatDetectionCustomModule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEffectiveEventThreatDetectionCustomModulesTest() throws Exception {
+    EffectiveEventThreatDetectionCustomModule responsesElement =
+        EffectiveEventThreatDetectionCustomModule.newBuilder().build();
+    ListEffectiveEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListEffectiveEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EventThreatDetectionSettingsName parent =
+        EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+
+    ListEffectiveEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listEffectiveEventThreatDetectionCustomModules(parent);
+
+    List<EffectiveEventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEffectiveEventThreatDetectionCustomModulesList().get(0),
+        resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEffectiveEventThreatDetectionCustomModulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EventThreatDetectionSettingsName parent =
+          EventThreatDetectionSettingsName.ofOrganizationName("[ORGANIZATION]");
+      client.listEffectiveEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEffectiveEventThreatDetectionCustomModulesTest2() throws Exception {
+    EffectiveEventThreatDetectionCustomModule responsesElement =
+        EffectiveEventThreatDetectionCustomModule.newBuilder().build();
+    ListEffectiveEventThreatDetectionCustomModulesResponse expectedResponse =
+        ListEffectiveEventThreatDetectionCustomModulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveEventThreatDetectionCustomModules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-4962/eventThreatDetectionSettings";
+
+    ListEffectiveEventThreatDetectionCustomModulesPagedResponse pagedListResponse =
+        client.listEffectiveEventThreatDetectionCustomModules(parent);
+
+    List<EffectiveEventThreatDetectionCustomModule> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getEffectiveEventThreatDetectionCustomModulesList().get(0),
+        resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEffectiveEventThreatDetectionCustomModulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-4962/eventThreatDetectionSettings";
+      client.listEffectiveEventThreatDetectionCustomModules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsTest() throws Exception {
+    BatchCreateResourceValueConfigsResponse expectedResponse =
+        BatchCreateResourceValueConfigsResponse.newBuilder()
+            .addAllResourceValueConfigs(new ArrayList<ResourceValueConfig>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+    List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+
+    BatchCreateResourceValueConfigsResponse actualResponse =
+        client.batchCreateResourceValueConfigs(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+      client.batchCreateResourceValueConfigs(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsTest2() throws Exception {
+    BatchCreateResourceValueConfigsResponse expectedResponse =
+        BatchCreateResourceValueConfigsResponse.newBuilder()
+            .addAllResourceValueConfigs(new ArrayList<ResourceValueConfig>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-8287";
+    List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+
+    BatchCreateResourceValueConfigsResponse actualResponse =
+        client.batchCreateResourceValueConfigs(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateResourceValueConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-8287";
+      List<CreateResourceValueConfigRequest> requests = new ArrayList<>();
+      client.batchCreateResourceValueConfigs(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteResourceValueConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceValueConfigName name =
+        ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+
+    client.deleteResourceValueConfig(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteResourceValueConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceValueConfigName name =
+          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+      client.deleteResourceValueConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteResourceValueConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "organizations/organization-3432/resourceValueConfigs/resourceValueConfig-3432";
+
+    client.deleteResourceValueConfig(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteResourceValueConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "organizations/organization-3432/resourceValueConfigs/resourceValueConfig-3432";
+      client.deleteResourceValueConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceValueConfigTest() throws Exception {
+    ResourceValueConfig expectedResponse =
+        ResourceValueConfig.newBuilder()
+            .setName(
+                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+            .setResourceValue(ResourceValue.forNumber(0))
+            .addAllTagValues(new ArrayList<String>())
+            .setResourceType("resourceType-384364440")
+            .setScope("scope109264468")
+            .putAllResourceLabelsSelector(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .setSensitiveDataProtectionMapping(
+                ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceValueConfigName name =
+        ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+
+    ResourceValueConfig actualResponse = client.getResourceValueConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getResourceValueConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceValueConfigName name =
+          ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]");
+      client.getResourceValueConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceValueConfigTest2() throws Exception {
+    ResourceValueConfig expectedResponse =
+        ResourceValueConfig.newBuilder()
+            .setName(
+                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+            .setResourceValue(ResourceValue.forNumber(0))
+            .addAllTagValues(new ArrayList<String>())
+            .setResourceType("resourceType-384364440")
+            .setScope("scope109264468")
+            .putAllResourceLabelsSelector(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .setSensitiveDataProtectionMapping(
+                ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "organizations/organization-3432/resourceValueConfigs/resourceValueConfig-3432";
+
+    ResourceValueConfig actualResponse = client.getResourceValueConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getResourceValueConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "organizations/organization-3432/resourceValueConfigs/resourceValueConfig-3432";
+      client.getResourceValueConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceValueConfigsTest() throws Exception {
+    ResourceValueConfig responsesElement = ResourceValueConfig.newBuilder().build();
+    ListResourceValueConfigsResponse expectedResponse =
+        ListResourceValueConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceValueConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+
+    ListResourceValueConfigsPagedResponse pagedListResponse =
+        client.listResourceValueConfigs(parent);
+
+    List<ResourceValueConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceValueConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceValueConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+      client.listResourceValueConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceValueConfigsTest2() throws Exception {
+    ResourceValueConfig responsesElement = ResourceValueConfig.newBuilder().build();
+    ListResourceValueConfigsResponse expectedResponse =
+        ListResourceValueConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceValueConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-8287";
+
+    ListResourceValueConfigsPagedResponse pagedListResponse =
+        client.listResourceValueConfigs(parent);
+
+    List<ResourceValueConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceValueConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceValueConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-8287";
+      client.listResourceValueConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateResourceValueConfigTest() throws Exception {
+    ResourceValueConfig expectedResponse =
+        ResourceValueConfig.newBuilder()
+            .setName(
+                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+            .setResourceValue(ResourceValue.forNumber(0))
+            .addAllTagValues(new ArrayList<String>())
+            .setResourceType("resourceType-384364440")
+            .setScope("scope109264468")
+            .putAllResourceLabelsSelector(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .setSensitiveDataProtectionMapping(
+                ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceValueConfig resourceValueConfig =
+        ResourceValueConfig.newBuilder()
+            .setName(
+                ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]").toString())
+            .setResourceValue(ResourceValue.forNumber(0))
+            .addAllTagValues(new ArrayList<String>())
+            .setResourceType("resourceType-384364440")
+            .setScope("scope109264468")
+            .putAllResourceLabelsSelector(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCloudProvider(CloudProvider.forNumber(0))
+            .setSensitiveDataProtectionMapping(
+                ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ResourceValueConfig actualResponse =
+        client.updateResourceValueConfig(resourceValueConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateResourceValueConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceValueConfig resourceValueConfig =
+          ResourceValueConfig.newBuilder()
+              .setName(
+                  ResourceValueConfigName.of("[ORGANIZATION]", "[RESOURCE_VALUE_CONFIG]")
+                      .toString())
+              .setResourceValue(ResourceValue.forNumber(0))
+              .addAllTagValues(new ArrayList<String>())
+              .setResourceType("resourceType-384364440")
+              .setScope("scope109264468")
+              .putAllResourceLabelsSelector(new HashMap<String, String>())
+              .setDescription("description-1724546052")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setCloudProvider(CloudProvider.forNumber(0))
+              .setSensitiveDataProtectionMapping(
+                  ResourceValueConfig.SensitiveDataProtectionMapping.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateResourceValueConfig(resourceValueConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listValuedResourcesTest() throws Exception {
+    ValuedResource responsesElement = ValuedResource.newBuilder().build();
+    ListValuedResourcesResponse expectedResponse =
+        ListValuedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllValuedResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationSimulationName parent =
+        OrganizationSimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+
+    ListValuedResourcesPagedResponse pagedListResponse = client.listValuedResources(parent);
+
+    List<ValuedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getValuedResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listValuedResourcesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationSimulationName parent =
+          OrganizationSimulationName.of("[ORGANIZATION]", "[SIMULATION]");
+      client.listValuedResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listValuedResourcesTest2() throws Exception {
+    ValuedResource responsesElement = ValuedResource.newBuilder().build();
+    ListValuedResourcesResponse expectedResponse =
+        ListValuedResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllValuedResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-6775/simulations/simulation-6775";
+
+    ListValuedResourcesPagedResponse pagedListResponse = client.listValuedResources(parent);
+
+    List<ValuedResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getValuedResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listValuedResourcesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-6775/simulations/simulation-6775";
+      client.listValuedResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAttackPathsTest() throws Exception {
+    AttackPath responsesElement = AttackPath.newBuilder().build();
+    ListAttackPathsResponse expectedResponse =
+        ListAttackPathsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAttackPaths(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ValuedResourceName parent =
+        ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+
+    ListAttackPathsPagedResponse pagedListResponse = client.listAttackPaths(parent);
+
+    List<AttackPath> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAttackPathsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAttackPathsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ValuedResourceName parent =
+          ValuedResourceName.of("[ORGANIZATION]", "[SIMULATION]", "[VALUED_RESOURCE]");
+      client.listAttackPaths(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAttackPathsTest2() throws Exception {
+    AttackPath responsesElement = AttackPath.newBuilder().build();
+    ListAttackPathsResponse expectedResponse =
+        ListAttackPathsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAttackPaths(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-6775/simulations/simulation-6775";
+
+    ListAttackPathsPagedResponse pagedListResponse = client.listAttackPaths(parent);
+
+    List<AttackPath> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAttackPathsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAttackPathsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-6775/simulations/simulation-6775";
+      client.listAttackPaths(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

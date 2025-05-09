@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,23 @@
 
 package com.google.cloud.dlp.v2.stub;
 
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListFileStoreDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.SearchConnectionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -53,7 +61,11 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
+import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -61,18 +73,30 @@ import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
+import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.GetTableDataProfileRequest;
 import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
@@ -80,32 +104,50 @@ import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.ListTableDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListTableDataProfilesResponse;
+import com.google.privacy.dlp.v2.ProjectDataProfile;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
+import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -122,7 +164,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of inspectContent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of inspectContent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -138,10 +182,21 @@ import org.threeten.bp.Duration;
  *             .inspectContentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DlpServiceStubSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings> {
@@ -194,6 +249,19 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       listJobTriggersSettings;
   private final UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings;
   private final UnaryCallSettings<ActivateJobTriggerRequest, DlpJob> activateJobTriggerSettings;
+  private final UnaryCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigSettings;
+  private final UnaryCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigSettings;
+  private final UnaryCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigSettings;
+  private final PagedCallSettings<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsSettings;
+  private final UnaryCallSettings<DeleteDiscoveryConfigRequest, Empty>
+      deleteDiscoveryConfigSettings;
   private final UnaryCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobSettings;
   private final PagedCallSettings<ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
       listDlpJobsSettings;
@@ -210,9 +278,51 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, ListStoredInfoTypesPagedResponse>
       listStoredInfoTypesSettings;
   private final UnaryCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeSettings;
+  private final PagedCallSettings<
+          ListProjectDataProfilesRequest,
+          ListProjectDataProfilesResponse,
+          ListProjectDataProfilesPagedResponse>
+      listProjectDataProfilesSettings;
+  private final PagedCallSettings<
+          ListTableDataProfilesRequest,
+          ListTableDataProfilesResponse,
+          ListTableDataProfilesPagedResponse>
+      listTableDataProfilesSettings;
+  private final PagedCallSettings<
+          ListColumnDataProfilesRequest,
+          ListColumnDataProfilesResponse,
+          ListColumnDataProfilesPagedResponse>
+      listColumnDataProfilesSettings;
+  private final UnaryCallSettings<GetProjectDataProfileRequest, ProjectDataProfile>
+      getProjectDataProfileSettings;
+  private final PagedCallSettings<
+          ListFileStoreDataProfilesRequest,
+          ListFileStoreDataProfilesResponse,
+          ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesSettings;
+  private final UnaryCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileSettings;
+  private final UnaryCallSettings<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileSettings;
+  private final UnaryCallSettings<GetTableDataProfileRequest, TableDataProfile>
+      getTableDataProfileSettings;
+  private final UnaryCallSettings<GetColumnDataProfileRequest, ColumnDataProfile>
+      getColumnDataProfileSettings;
+  private final UnaryCallSettings<DeleteTableDataProfileRequest, Empty>
+      deleteTableDataProfileSettings;
   private final UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobSettings;
   private final UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings;
+  private final UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings;
+  private final UnaryCallSettings<GetConnectionRequest, Connection> getConnectionSettings;
+  private final PagedCallSettings<
+          ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+      listConnectionsSettings;
+  private final PagedCallSettings<
+          SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+      searchConnectionsSettings;
+  private final UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings;
+  private final UnaryCallSettings<UpdateConnectionRequest, Connection> updateConnectionSettings;
 
   private static final PagedListDescriptor<
           ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
@@ -249,9 +359,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<InspectTemplate> extractResources(
                 ListInspectTemplatesResponse payload) {
-              return payload.getInspectTemplatesList() == null
-                  ? ImmutableList.<InspectTemplate>of()
-                  : payload.getInspectTemplatesList();
+              return payload.getInspectTemplatesList();
             }
           };
 
@@ -294,9 +402,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<DeidentifyTemplate> extractResources(
                 ListDeidentifyTemplatesResponse payload) {
-              return payload.getDeidentifyTemplatesList() == null
-                  ? ImmutableList.<DeidentifyTemplate>of()
-                  : payload.getDeidentifyTemplatesList();
+              return payload.getDeidentifyTemplatesList();
             }
           };
 
@@ -333,9 +439,46 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<JobTrigger> extractResources(ListJobTriggersResponse payload) {
-              return payload.getJobTriggersList() == null
-                  ? ImmutableList.<JobTrigger>of()
-                  : payload.getJobTriggersList();
+              return payload.getJobTriggersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+      LIST_DISCOVERY_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDiscoveryConfigsRequest injectToken(
+                ListDiscoveryConfigsRequest payload, String token) {
+              return ListDiscoveryConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDiscoveryConfigsRequest injectPageSize(
+                ListDiscoveryConfigsRequest payload, int pageSize) {
+              return ListDiscoveryConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDiscoveryConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDiscoveryConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DiscoveryConfig> extractResources(
+                ListDiscoveryConfigsResponse payload) {
+              return payload.getDiscoveryConfigsList();
             }
           };
 
@@ -369,9 +512,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<DlpJob> extractResources(ListDlpJobsResponse payload) {
-              return payload.getJobsList() == null
-                  ? ImmutableList.<DlpJob>of()
-                  : payload.getJobsList();
+              return payload.getJobsList();
             }
           };
 
@@ -409,9 +550,250 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<StoredInfoType> extractResources(ListStoredInfoTypesResponse payload) {
-              return payload.getStoredInfoTypesList() == null
-                  ? ImmutableList.<StoredInfoType>of()
-                  : payload.getStoredInfoTypesList();
+              return payload.getStoredInfoTypesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListProjectDataProfilesRequest, ListProjectDataProfilesResponse, ProjectDataProfile>
+      LIST_PROJECT_DATA_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListProjectDataProfilesRequest,
+              ListProjectDataProfilesResponse,
+              ProjectDataProfile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListProjectDataProfilesRequest injectToken(
+                ListProjectDataProfilesRequest payload, String token) {
+              return ListProjectDataProfilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListProjectDataProfilesRequest injectPageSize(
+                ListProjectDataProfilesRequest payload, int pageSize) {
+              return ListProjectDataProfilesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListProjectDataProfilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListProjectDataProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ProjectDataProfile> extractResources(
+                ListProjectDataProfilesResponse payload) {
+              return payload.getProjectDataProfilesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+      LIST_TABLE_DATA_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTableDataProfilesRequest injectToken(
+                ListTableDataProfilesRequest payload, String token) {
+              return ListTableDataProfilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTableDataProfilesRequest injectPageSize(
+                ListTableDataProfilesRequest payload, int pageSize) {
+              return ListTableDataProfilesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTableDataProfilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTableDataProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TableDataProfile> extractResources(
+                ListTableDataProfilesResponse payload) {
+              return payload.getTableDataProfilesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>
+      LIST_COLUMN_DATA_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListColumnDataProfilesRequest injectToken(
+                ListColumnDataProfilesRequest payload, String token) {
+              return ListColumnDataProfilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListColumnDataProfilesRequest injectPageSize(
+                ListColumnDataProfilesRequest payload, int pageSize) {
+              return ListColumnDataProfilesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListColumnDataProfilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListColumnDataProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ColumnDataProfile> extractResources(
+                ListColumnDataProfilesResponse payload) {
+              return payload.getColumnDataProfilesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse, FileStoreDataProfile>
+      LIST_FILE_STORE_DATA_PROFILES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListFileStoreDataProfilesRequest,
+              ListFileStoreDataProfilesResponse,
+              FileStoreDataProfile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFileStoreDataProfilesRequest injectToken(
+                ListFileStoreDataProfilesRequest payload, String token) {
+              return ListFileStoreDataProfilesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListFileStoreDataProfilesRequest injectPageSize(
+                ListFileStoreDataProfilesRequest payload, int pageSize) {
+              return ListFileStoreDataProfilesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFileStoreDataProfilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFileStoreDataProfilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<FileStoreDataProfile> extractResources(
+                ListFileStoreDataProfilesResponse payload) {
+              return payload.getFileStoreDataProfilesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListConnectionsRequest, ListConnectionsResponse, Connection>
+      LIST_CONNECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListConnectionsRequest, ListConnectionsResponse, Connection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListConnectionsRequest injectToken(
+                ListConnectionsRequest payload, String token) {
+              return ListConnectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListConnectionsRequest injectPageSize(
+                ListConnectionsRequest payload, int pageSize) {
+              return ListConnectionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListConnectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListConnectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Connection> extractResources(ListConnectionsResponse payload) {
+              return payload.getConnectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchConnectionsRequest, SearchConnectionsResponse, Connection>
+      SEARCH_CONNECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchConnectionsRequest, SearchConnectionsResponse, Connection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchConnectionsRequest injectToken(
+                SearchConnectionsRequest payload, String token) {
+              return SearchConnectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchConnectionsRequest injectPageSize(
+                SearchConnectionsRequest payload, int pageSize) {
+              return SearchConnectionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchConnectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchConnectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Connection> extractResources(SearchConnectionsResponse payload) {
+              return payload.getConnectionsList();
             }
           };
 
@@ -484,6 +866,30 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           };
 
   private static final PagedListResponseFactory<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          ListDiscoveryConfigsPagedResponse>
+      LIST_DISCOVERY_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDiscoveryConfigsRequest,
+              ListDiscoveryConfigsResponse,
+              ListDiscoveryConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDiscoveryConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse> callable,
+                ListDiscoveryConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDiscoveryConfigsResponse> futureResponse) {
+              PageContext<
+                      ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse, DiscoveryConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DISCOVERY_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListDiscoveryConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
       LIST_DLP_JOBS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -518,6 +924,150 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
                       PageContext.create(
                           callable, LIST_STORED_INFO_TYPES_PAGE_STR_DESC, request, context);
               return ListStoredInfoTypesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListProjectDataProfilesRequest,
+          ListProjectDataProfilesResponse,
+          ListProjectDataProfilesPagedResponse>
+      LIST_PROJECT_DATA_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListProjectDataProfilesRequest,
+              ListProjectDataProfilesResponse,
+              ListProjectDataProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListProjectDataProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
+                    callable,
+                ListProjectDataProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListProjectDataProfilesResponse> futureResponse) {
+              PageContext<
+                      ListProjectDataProfilesRequest,
+                      ListProjectDataProfilesResponse,
+                      ProjectDataProfile>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PROJECT_DATA_PROFILES_PAGE_STR_DESC, request, context);
+              return ListProjectDataProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTableDataProfilesRequest,
+          ListTableDataProfilesResponse,
+          ListTableDataProfilesPagedResponse>
+      LIST_TABLE_DATA_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTableDataProfilesRequest,
+              ListTableDataProfilesResponse,
+              ListTableDataProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTableDataProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesResponse> callable,
+                ListTableDataProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTableDataProfilesResponse> futureResponse) {
+              PageContext<
+                      ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TABLE_DATA_PROFILES_PAGE_STR_DESC, request, context);
+              return ListTableDataProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListColumnDataProfilesRequest,
+          ListColumnDataProfilesResponse,
+          ListColumnDataProfilesPagedResponse>
+      LIST_COLUMN_DATA_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListColumnDataProfilesRequest,
+              ListColumnDataProfilesResponse,
+              ListColumnDataProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListColumnDataProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
+                    callable,
+                ListColumnDataProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListColumnDataProfilesResponse> futureResponse) {
+              PageContext<
+                      ListColumnDataProfilesRequest,
+                      ListColumnDataProfilesResponse,
+                      ColumnDataProfile>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_COLUMN_DATA_PROFILES_PAGE_STR_DESC, request, context);
+              return ListColumnDataProfilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListFileStoreDataProfilesRequest,
+          ListFileStoreDataProfilesResponse,
+          ListFileStoreDataProfilesPagedResponse>
+      LIST_FILE_STORE_DATA_PROFILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFileStoreDataProfilesRequest,
+              ListFileStoreDataProfilesResponse,
+              ListFileStoreDataProfilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListFileStoreDataProfilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFileStoreDataProfilesRequest, ListFileStoreDataProfilesResponse>
+                    callable,
+                ListFileStoreDataProfilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFileStoreDataProfilesResponse> futureResponse) {
+              PageContext<
+                      ListFileStoreDataProfilesRequest,
+                      ListFileStoreDataProfilesResponse,
+                      FileStoreDataProfile>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_FILE_STORE_DATA_PROFILES_PAGE_STR_DESC, request, context);
+              return ListFileStoreDataProfilesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+      LIST_CONNECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListConnectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> callable,
+                ListConnectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListConnectionsResponse> futureResponse) {
+              PageContext<ListConnectionsRequest, ListConnectionsResponse, Connection> pageContext =
+                  PageContext.create(callable, LIST_CONNECTIONS_PAGE_STR_DESC, request, context);
+              return ListConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+      SEARCH_CONNECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchConnectionsRequest,
+              SearchConnectionsResponse,
+              SearchConnectionsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchConnectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchConnectionsRequest, SearchConnectionsResponse> callable,
+                SearchConnectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchConnectionsResponse> futureResponse) {
+              PageContext<SearchConnectionsRequest, SearchConnectionsResponse, Connection>
+                  pageContext =
+                      PageContext.create(
+                          callable, SEARCH_CONNECTIONS_PAGE_STR_DESC, request, context);
+              return SearchConnectionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -651,6 +1201,38 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return activateJobTriggerSettings;
   }
 
+  /** Returns the object with the settings used for calls to createDiscoveryConfig. */
+  public UnaryCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigSettings() {
+    return createDiscoveryConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDiscoveryConfig. */
+  public UnaryCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigSettings() {
+    return updateDiscoveryConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDiscoveryConfig. */
+  public UnaryCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigSettings() {
+    return getDiscoveryConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDiscoveryConfigs. */
+  public PagedCallSettings<
+          ListDiscoveryConfigsRequest,
+          ListDiscoveryConfigsResponse,
+          ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsSettings() {
+    return listDiscoveryConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDiscoveryConfig. */
+  public UnaryCallSettings<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigSettings() {
+    return deleteDiscoveryConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to createDlpJob. */
   public UnaryCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobSettings() {
     return createDlpJobSettings;
@@ -706,6 +1288,77 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return deleteStoredInfoTypeSettings;
   }
 
+  /** Returns the object with the settings used for calls to listProjectDataProfiles. */
+  public PagedCallSettings<
+          ListProjectDataProfilesRequest,
+          ListProjectDataProfilesResponse,
+          ListProjectDataProfilesPagedResponse>
+      listProjectDataProfilesSettings() {
+    return listProjectDataProfilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTableDataProfiles. */
+  public PagedCallSettings<
+          ListTableDataProfilesRequest,
+          ListTableDataProfilesResponse,
+          ListTableDataProfilesPagedResponse>
+      listTableDataProfilesSettings() {
+    return listTableDataProfilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listColumnDataProfiles. */
+  public PagedCallSettings<
+          ListColumnDataProfilesRequest,
+          ListColumnDataProfilesResponse,
+          ListColumnDataProfilesPagedResponse>
+      listColumnDataProfilesSettings() {
+    return listColumnDataProfilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getProjectDataProfile. */
+  public UnaryCallSettings<GetProjectDataProfileRequest, ProjectDataProfile>
+      getProjectDataProfileSettings() {
+    return getProjectDataProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listFileStoreDataProfiles. */
+  public PagedCallSettings<
+          ListFileStoreDataProfilesRequest,
+          ListFileStoreDataProfilesResponse,
+          ListFileStoreDataProfilesPagedResponse>
+      listFileStoreDataProfilesSettings() {
+    return listFileStoreDataProfilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getFileStoreDataProfile. */
+  public UnaryCallSettings<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+      getFileStoreDataProfileSettings() {
+    return getFileStoreDataProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFileStoreDataProfile. */
+  public UnaryCallSettings<DeleteFileStoreDataProfileRequest, Empty>
+      deleteFileStoreDataProfileSettings() {
+    return deleteFileStoreDataProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTableDataProfile. */
+  public UnaryCallSettings<GetTableDataProfileRequest, TableDataProfile>
+      getTableDataProfileSettings() {
+    return getTableDataProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getColumnDataProfile. */
+  public UnaryCallSettings<GetColumnDataProfileRequest, ColumnDataProfile>
+      getColumnDataProfileSettings() {
+    return getColumnDataProfileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTableDataProfile. */
+  public UnaryCallSettings<DeleteTableDataProfileRequest, Empty> deleteTableDataProfileSettings() {
+    return deleteTableDataProfileSettings;
+  }
+
   /** Returns the object with the settings used for calls to hybridInspectDlpJob. */
   public UnaryCallSettings<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobSettings() {
@@ -715,6 +1368,40 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
   /** Returns the object with the settings used for calls to finishDlpJob. */
   public UnaryCallSettings<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
     return finishDlpJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createConnection. */
+  public UnaryCallSettings<CreateConnectionRequest, Connection> createConnectionSettings() {
+    return createConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getConnection. */
+  public UnaryCallSettings<GetConnectionRequest, Connection> getConnectionSettings() {
+    return getConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listConnections. */
+  public PagedCallSettings<
+          ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+      listConnectionsSettings() {
+    return listConnectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchConnections. */
+  public PagedCallSettings<
+          SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+      searchConnectionsSettings() {
+    return searchConnectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteConnection. */
+  public UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+    return deleteConnectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateConnection. */
+  public UnaryCallSettings<UpdateConnectionRequest, Connection> updateConnectionSettings() {
+    return updateConnectionSettings;
   }
 
   public DlpServiceStub createStub() throws IOException {
@@ -733,12 +1420,19 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dlp";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dlp.googleapis.com:443";
   }
@@ -777,7 +1471,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -786,7 +1479,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -845,6 +1537,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     listJobTriggersSettings = settingsBuilder.listJobTriggersSettings().build();
     deleteJobTriggerSettings = settingsBuilder.deleteJobTriggerSettings().build();
     activateJobTriggerSettings = settingsBuilder.activateJobTriggerSettings().build();
+    createDiscoveryConfigSettings = settingsBuilder.createDiscoveryConfigSettings().build();
+    updateDiscoveryConfigSettings = settingsBuilder.updateDiscoveryConfigSettings().build();
+    getDiscoveryConfigSettings = settingsBuilder.getDiscoveryConfigSettings().build();
+    listDiscoveryConfigsSettings = settingsBuilder.listDiscoveryConfigsSettings().build();
+    deleteDiscoveryConfigSettings = settingsBuilder.deleteDiscoveryConfigSettings().build();
     createDlpJobSettings = settingsBuilder.createDlpJobSettings().build();
     listDlpJobsSettings = settingsBuilder.listDlpJobsSettings().build();
     getDlpJobSettings = settingsBuilder.getDlpJobSettings().build();
@@ -855,8 +1552,25 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     getStoredInfoTypeSettings = settingsBuilder.getStoredInfoTypeSettings().build();
     listStoredInfoTypesSettings = settingsBuilder.listStoredInfoTypesSettings().build();
     deleteStoredInfoTypeSettings = settingsBuilder.deleteStoredInfoTypeSettings().build();
+    listProjectDataProfilesSettings = settingsBuilder.listProjectDataProfilesSettings().build();
+    listTableDataProfilesSettings = settingsBuilder.listTableDataProfilesSettings().build();
+    listColumnDataProfilesSettings = settingsBuilder.listColumnDataProfilesSettings().build();
+    getProjectDataProfileSettings = settingsBuilder.getProjectDataProfileSettings().build();
+    listFileStoreDataProfilesSettings = settingsBuilder.listFileStoreDataProfilesSettings().build();
+    getFileStoreDataProfileSettings = settingsBuilder.getFileStoreDataProfileSettings().build();
+    deleteFileStoreDataProfileSettings =
+        settingsBuilder.deleteFileStoreDataProfileSettings().build();
+    getTableDataProfileSettings = settingsBuilder.getTableDataProfileSettings().build();
+    getColumnDataProfileSettings = settingsBuilder.getColumnDataProfileSettings().build();
+    deleteTableDataProfileSettings = settingsBuilder.deleteTableDataProfileSettings().build();
     hybridInspectDlpJobSettings = settingsBuilder.hybridInspectDlpJobSettings().build();
     finishDlpJobSettings = settingsBuilder.finishDlpJobSettings().build();
+    createConnectionSettings = settingsBuilder.createConnectionSettings().build();
+    getConnectionSettings = settingsBuilder.getConnectionSettings().build();
+    listConnectionsSettings = settingsBuilder.listConnectionsSettings().build();
+    searchConnectionsSettings = settingsBuilder.searchConnectionsSettings().build();
+    deleteConnectionSettings = settingsBuilder.deleteConnectionSettings().build();
+    updateConnectionSettings = settingsBuilder.updateConnectionSettings().build();
   }
 
   /** Builder for DlpServiceStubSettings. */
@@ -912,6 +1626,19 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         deleteJobTriggerSettings;
     private final UnaryCallSettings.Builder<ActivateJobTriggerRequest, DlpJob>
         activateJobTriggerSettings;
+    private final UnaryCallSettings.Builder<CreateDiscoveryConfigRequest, DiscoveryConfig>
+        createDiscoveryConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+        updateDiscoveryConfigSettings;
+    private final UnaryCallSettings.Builder<GetDiscoveryConfigRequest, DiscoveryConfig>
+        getDiscoveryConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListDiscoveryConfigsRequest,
+            ListDiscoveryConfigsResponse,
+            ListDiscoveryConfigsPagedResponse>
+        listDiscoveryConfigsSettings;
+    private final UnaryCallSettings.Builder<DeleteDiscoveryConfigRequest, Empty>
+        deleteDiscoveryConfigSettings;
     private final UnaryCallSettings.Builder<CreateDlpJobRequest, DlpJob> createDlpJobSettings;
     private final PagedCallSettings.Builder<
             ListDlpJobsRequest, ListDlpJobsResponse, ListDlpJobsPagedResponse>
@@ -932,9 +1659,54 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         listStoredInfoTypesSettings;
     private final UnaryCallSettings.Builder<DeleteStoredInfoTypeRequest, Empty>
         deleteStoredInfoTypeSettings;
+    private final PagedCallSettings.Builder<
+            ListProjectDataProfilesRequest,
+            ListProjectDataProfilesResponse,
+            ListProjectDataProfilesPagedResponse>
+        listProjectDataProfilesSettings;
+    private final PagedCallSettings.Builder<
+            ListTableDataProfilesRequest,
+            ListTableDataProfilesResponse,
+            ListTableDataProfilesPagedResponse>
+        listTableDataProfilesSettings;
+    private final PagedCallSettings.Builder<
+            ListColumnDataProfilesRequest,
+            ListColumnDataProfilesResponse,
+            ListColumnDataProfilesPagedResponse>
+        listColumnDataProfilesSettings;
+    private final UnaryCallSettings.Builder<GetProjectDataProfileRequest, ProjectDataProfile>
+        getProjectDataProfileSettings;
+    private final PagedCallSettings.Builder<
+            ListFileStoreDataProfilesRequest,
+            ListFileStoreDataProfilesResponse,
+            ListFileStoreDataProfilesPagedResponse>
+        listFileStoreDataProfilesSettings;
+    private final UnaryCallSettings.Builder<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+        getFileStoreDataProfileSettings;
+    private final UnaryCallSettings.Builder<DeleteFileStoreDataProfileRequest, Empty>
+        deleteFileStoreDataProfileSettings;
+    private final UnaryCallSettings.Builder<GetTableDataProfileRequest, TableDataProfile>
+        getTableDataProfileSettings;
+    private final UnaryCallSettings.Builder<GetColumnDataProfileRequest, ColumnDataProfile>
+        getColumnDataProfileSettings;
+    private final UnaryCallSettings.Builder<DeleteTableDataProfileRequest, Empty>
+        deleteTableDataProfileSettings;
     private final UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobSettings;
     private final UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings;
+    private final UnaryCallSettings.Builder<CreateConnectionRequest, Connection>
+        createConnectionSettings;
+    private final UnaryCallSettings.Builder<GetConnectionRequest, Connection> getConnectionSettings;
+    private final PagedCallSettings.Builder<
+            ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+        listConnectionsSettings;
+    private final PagedCallSettings.Builder<
+            SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+        searchConnectionsSettings;
+    private final UnaryCallSettings.Builder<DeleteConnectionRequest, Empty>
+        deleteConnectionSettings;
+    private final UnaryCallSettings.Builder<UpdateConnectionRequest, Connection>
+        updateConnectionSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -948,6 +1720,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -958,23 +1731,25 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(300000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(300000L))
-              .setTotalTimeout(Duration.ofMillis(300000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -1009,6 +1784,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       listJobTriggersSettings = PagedCallSettings.newBuilder(LIST_JOB_TRIGGERS_PAGE_STR_FACT);
       deleteJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       activateJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDiscoveryConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDiscoveryConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getDiscoveryConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDiscoveryConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_DISCOVERY_CONFIGS_PAGE_STR_FACT);
+      deleteDiscoveryConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDlpJobsSettings = PagedCallSettings.newBuilder(LIST_DLP_JOBS_PAGE_STR_FACT);
       getDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1020,8 +1801,28 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       listStoredInfoTypesSettings =
           PagedCallSettings.newBuilder(LIST_STORED_INFO_TYPES_PAGE_STR_FACT);
       deleteStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listProjectDataProfilesSettings =
+          PagedCallSettings.newBuilder(LIST_PROJECT_DATA_PROFILES_PAGE_STR_FACT);
+      listTableDataProfilesSettings =
+          PagedCallSettings.newBuilder(LIST_TABLE_DATA_PROFILES_PAGE_STR_FACT);
+      listColumnDataProfilesSettings =
+          PagedCallSettings.newBuilder(LIST_COLUMN_DATA_PROFILES_PAGE_STR_FACT);
+      getProjectDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listFileStoreDataProfilesSettings =
+          PagedCallSettings.newBuilder(LIST_FILE_STORE_DATA_PROFILES_PAGE_STR_FACT);
+      getFileStoreDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFileStoreDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getTableDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getColumnDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTableDataProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       hybridInspectDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       finishDlpJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listConnectionsSettings = PagedCallSettings.newBuilder(LIST_CONNECTIONS_PAGE_STR_FACT);
+      searchConnectionsSettings = PagedCallSettings.newBuilder(SEARCH_CONNECTIONS_PAGE_STR_FACT);
+      deleteConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1047,6 +1848,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               listJobTriggersSettings,
               deleteJobTriggerSettings,
               activateJobTriggerSettings,
+              createDiscoveryConfigSettings,
+              updateDiscoveryConfigSettings,
+              getDiscoveryConfigSettings,
+              listDiscoveryConfigsSettings,
+              deleteDiscoveryConfigSettings,
               createDlpJobSettings,
               listDlpJobsSettings,
               getDlpJobSettings,
@@ -1057,8 +1863,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getStoredInfoTypeSettings,
               listStoredInfoTypesSettings,
               deleteStoredInfoTypeSettings,
+              listProjectDataProfilesSettings,
+              listTableDataProfilesSettings,
+              listColumnDataProfilesSettings,
+              getProjectDataProfileSettings,
+              listFileStoreDataProfilesSettings,
+              getFileStoreDataProfileSettings,
+              deleteFileStoreDataProfileSettings,
+              getTableDataProfileSettings,
+              getColumnDataProfileSettings,
+              deleteTableDataProfileSettings,
               hybridInspectDlpJobSettings,
-              finishDlpJobSettings);
+              finishDlpJobSettings,
+              createConnectionSettings,
+              getConnectionSettings,
+              listConnectionsSettings,
+              searchConnectionsSettings,
+              deleteConnectionSettings,
+              updateConnectionSettings);
       initDefaults(this);
     }
 
@@ -1087,6 +1909,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       listJobTriggersSettings = settings.listJobTriggersSettings.toBuilder();
       deleteJobTriggerSettings = settings.deleteJobTriggerSettings.toBuilder();
       activateJobTriggerSettings = settings.activateJobTriggerSettings.toBuilder();
+      createDiscoveryConfigSettings = settings.createDiscoveryConfigSettings.toBuilder();
+      updateDiscoveryConfigSettings = settings.updateDiscoveryConfigSettings.toBuilder();
+      getDiscoveryConfigSettings = settings.getDiscoveryConfigSettings.toBuilder();
+      listDiscoveryConfigsSettings = settings.listDiscoveryConfigsSettings.toBuilder();
+      deleteDiscoveryConfigSettings = settings.deleteDiscoveryConfigSettings.toBuilder();
       createDlpJobSettings = settings.createDlpJobSettings.toBuilder();
       listDlpJobsSettings = settings.listDlpJobsSettings.toBuilder();
       getDlpJobSettings = settings.getDlpJobSettings.toBuilder();
@@ -1097,8 +1924,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       getStoredInfoTypeSettings = settings.getStoredInfoTypeSettings.toBuilder();
       listStoredInfoTypesSettings = settings.listStoredInfoTypesSettings.toBuilder();
       deleteStoredInfoTypeSettings = settings.deleteStoredInfoTypeSettings.toBuilder();
+      listProjectDataProfilesSettings = settings.listProjectDataProfilesSettings.toBuilder();
+      listTableDataProfilesSettings = settings.listTableDataProfilesSettings.toBuilder();
+      listColumnDataProfilesSettings = settings.listColumnDataProfilesSettings.toBuilder();
+      getProjectDataProfileSettings = settings.getProjectDataProfileSettings.toBuilder();
+      listFileStoreDataProfilesSettings = settings.listFileStoreDataProfilesSettings.toBuilder();
+      getFileStoreDataProfileSettings = settings.getFileStoreDataProfileSettings.toBuilder();
+      deleteFileStoreDataProfileSettings = settings.deleteFileStoreDataProfileSettings.toBuilder();
+      getTableDataProfileSettings = settings.getTableDataProfileSettings.toBuilder();
+      getColumnDataProfileSettings = settings.getColumnDataProfileSettings.toBuilder();
+      deleteTableDataProfileSettings = settings.deleteTableDataProfileSettings.toBuilder();
       hybridInspectDlpJobSettings = settings.hybridInspectDlpJobSettings.toBuilder();
       finishDlpJobSettings = settings.finishDlpJobSettings.toBuilder();
+      createConnectionSettings = settings.createConnectionSettings.toBuilder();
+      getConnectionSettings = settings.getConnectionSettings.toBuilder();
+      listConnectionsSettings = settings.listConnectionsSettings.toBuilder();
+      searchConnectionsSettings = settings.searchConnectionsSettings.toBuilder();
+      deleteConnectionSettings = settings.deleteConnectionSettings.toBuilder();
+      updateConnectionSettings = settings.updateConnectionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1124,6 +1967,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               listJobTriggersSettings,
               deleteJobTriggerSettings,
               activateJobTriggerSettings,
+              createDiscoveryConfigSettings,
+              updateDiscoveryConfigSettings,
+              getDiscoveryConfigSettings,
+              listDiscoveryConfigsSettings,
+              deleteDiscoveryConfigSettings,
               createDlpJobSettings,
               listDlpJobsSettings,
               getDlpJobSettings,
@@ -1134,8 +1982,24 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getStoredInfoTypeSettings,
               listStoredInfoTypesSettings,
               deleteStoredInfoTypeSettings,
+              listProjectDataProfilesSettings,
+              listTableDataProfilesSettings,
+              listColumnDataProfilesSettings,
+              getProjectDataProfileSettings,
+              listFileStoreDataProfilesSettings,
+              getFileStoreDataProfileSettings,
+              deleteFileStoreDataProfileSettings,
+              getTableDataProfileSettings,
+              getColumnDataProfileSettings,
+              deleteTableDataProfileSettings,
               hybridInspectDlpJobSettings,
-              finishDlpJobSettings);
+              finishDlpJobSettings,
+              createConnectionSettings,
+              getConnectionSettings,
+              listConnectionsSettings,
+              searchConnectionsSettings,
+              deleteConnectionSettings,
+              updateConnectionSettings);
     }
 
     private static Builder createDefault() {
@@ -1144,7 +2008,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1157,7 +2020,6 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1276,6 +2138,31 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .createDiscoveryConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateDiscoveryConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getDiscoveryConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDiscoveryConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDiscoveryConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .createDlpJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1326,6 +2213,56 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listProjectDataProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listTableDataProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listColumnDataProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getProjectDataProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listFileStoreDataProfilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getFileStoreDataProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteFileStoreDataProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getTableDataProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getColumnDataProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteTableDataProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .hybridInspectDlpJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1334,6 +2271,36 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           .finishDlpJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listConnectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .searchConnectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -1490,6 +2457,39 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       return activateJobTriggerSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createDiscoveryConfig. */
+    public UnaryCallSettings.Builder<CreateDiscoveryConfigRequest, DiscoveryConfig>
+        createDiscoveryConfigSettings() {
+      return createDiscoveryConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDiscoveryConfig. */
+    public UnaryCallSettings.Builder<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+        updateDiscoveryConfigSettings() {
+      return updateDiscoveryConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDiscoveryConfig. */
+    public UnaryCallSettings.Builder<GetDiscoveryConfigRequest, DiscoveryConfig>
+        getDiscoveryConfigSettings() {
+      return getDiscoveryConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDiscoveryConfigs. */
+    public PagedCallSettings.Builder<
+            ListDiscoveryConfigsRequest,
+            ListDiscoveryConfigsResponse,
+            ListDiscoveryConfigsPagedResponse>
+        listDiscoveryConfigsSettings() {
+      return listDiscoveryConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDiscoveryConfig. */
+    public UnaryCallSettings.Builder<DeleteDiscoveryConfigRequest, Empty>
+        deleteDiscoveryConfigSettings() {
+      return deleteDiscoveryConfigSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createDlpJob. */
     public UnaryCallSettings.Builder<CreateDlpJobRequest, DlpJob> createDlpJobSettings() {
       return createDlpJobSettings;
@@ -1550,6 +2550,78 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       return deleteStoredInfoTypeSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listProjectDataProfiles. */
+    public PagedCallSettings.Builder<
+            ListProjectDataProfilesRequest,
+            ListProjectDataProfilesResponse,
+            ListProjectDataProfilesPagedResponse>
+        listProjectDataProfilesSettings() {
+      return listProjectDataProfilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTableDataProfiles. */
+    public PagedCallSettings.Builder<
+            ListTableDataProfilesRequest,
+            ListTableDataProfilesResponse,
+            ListTableDataProfilesPagedResponse>
+        listTableDataProfilesSettings() {
+      return listTableDataProfilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listColumnDataProfiles. */
+    public PagedCallSettings.Builder<
+            ListColumnDataProfilesRequest,
+            ListColumnDataProfilesResponse,
+            ListColumnDataProfilesPagedResponse>
+        listColumnDataProfilesSettings() {
+      return listColumnDataProfilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getProjectDataProfile. */
+    public UnaryCallSettings.Builder<GetProjectDataProfileRequest, ProjectDataProfile>
+        getProjectDataProfileSettings() {
+      return getProjectDataProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listFileStoreDataProfiles. */
+    public PagedCallSettings.Builder<
+            ListFileStoreDataProfilesRequest,
+            ListFileStoreDataProfilesResponse,
+            ListFileStoreDataProfilesPagedResponse>
+        listFileStoreDataProfilesSettings() {
+      return listFileStoreDataProfilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getFileStoreDataProfile. */
+    public UnaryCallSettings.Builder<GetFileStoreDataProfileRequest, FileStoreDataProfile>
+        getFileStoreDataProfileSettings() {
+      return getFileStoreDataProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFileStoreDataProfile. */
+    public UnaryCallSettings.Builder<DeleteFileStoreDataProfileRequest, Empty>
+        deleteFileStoreDataProfileSettings() {
+      return deleteFileStoreDataProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTableDataProfile. */
+    public UnaryCallSettings.Builder<GetTableDataProfileRequest, TableDataProfile>
+        getTableDataProfileSettings() {
+      return getTableDataProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getColumnDataProfile. */
+    public UnaryCallSettings.Builder<GetColumnDataProfileRequest, ColumnDataProfile>
+        getColumnDataProfileSettings() {
+      return getColumnDataProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTableDataProfile. */
+    public UnaryCallSettings.Builder<DeleteTableDataProfileRequest, Empty>
+        deleteTableDataProfileSettings() {
+      return deleteTableDataProfileSettings;
+    }
+
     /** Returns the builder for the settings used for calls to hybridInspectDlpJob. */
     public UnaryCallSettings.Builder<HybridInspectDlpJobRequest, HybridInspectResponse>
         hybridInspectDlpJobSettings() {
@@ -1559,6 +2631,42 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     /** Returns the builder for the settings used for calls to finishDlpJob. */
     public UnaryCallSettings.Builder<FinishDlpJobRequest, Empty> finishDlpJobSettings() {
       return finishDlpJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createConnection. */
+    public UnaryCallSettings.Builder<CreateConnectionRequest, Connection>
+        createConnectionSettings() {
+      return createConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getConnection. */
+    public UnaryCallSettings.Builder<GetConnectionRequest, Connection> getConnectionSettings() {
+      return getConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listConnections. */
+    public PagedCallSettings.Builder<
+            ListConnectionsRequest, ListConnectionsResponse, ListConnectionsPagedResponse>
+        listConnectionsSettings() {
+      return listConnectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchConnections. */
+    public PagedCallSettings.Builder<
+            SearchConnectionsRequest, SearchConnectionsResponse, SearchConnectionsPagedResponse>
+        searchConnectionsSettings() {
+      return searchConnectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConnection. */
+    public UnaryCallSettings.Builder<DeleteConnectionRequest, Empty> deleteConnectionSettings() {
+      return deleteConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateConnection. */
+    public UnaryCallSettings.Builder<UpdateConnectionRequest, Connection>
+        updateConnectionSettings() {
+      return updateConnectionSettings;
     }
 
     @Override

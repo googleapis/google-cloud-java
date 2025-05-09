@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -753,6 +753,19 @@ public final class AnalyticsHubServiceGrpc {
     return AnalyticsHubServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AnalyticsHubServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AnalyticsHubServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AnalyticsHubServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AnalyticsHubServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AnalyticsHubServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AnalyticsHubServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1331,6 +1344,232 @@ public final class AnalyticsHubServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AnalyticsHubService.
+   *
+   * <pre>
+   * The `AnalyticsHubService` API facilitates data sharing within and across
+   * organizations. It allows data providers to publish listings that reference
+   * shared datasets. With Analytics Hub, users can discover and search for
+   * listings that they have access to. Subscribers can view and subscribe to
+   * listings. When you subscribe to a listing, Analytics Hub creates a linked
+   * dataset in your project.
+   * </pre>
+   */
+  public static final class AnalyticsHubServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AnalyticsHubServiceBlockingV2Stub> {
+    private AnalyticsHubServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AnalyticsHubServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AnalyticsHubServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all data exchanges in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesResponse
+        listDataExchanges(
+            com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataExchangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all data exchanges from projects in a given organization and
+     * location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesResponse
+        listOrgDataExchanges(
+            com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOrgDataExchangesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a data exchange.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange getDataExchange(
+        com.google.cloud.bigquery.dataexchange.v1beta1.GetDataExchangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataExchangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new data exchange.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange createDataExchange(
+        com.google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataExchangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing data exchange.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange updateDataExchange(
+        com.google.cloud.bigquery.dataexchange.v1beta1.UpdateDataExchangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataExchangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing data exchange.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataExchange(
+        com.google.cloud.bigquery.dataexchange.v1beta1.DeleteDataExchangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataExchangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all listings in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsResponse listListings(
+        com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListListingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a listing.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.Listing getListing(
+        com.google.cloud.bigquery.dataexchange.v1beta1.GetListingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetListingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new listing.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.Listing createListing(
+        com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateListingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing listing.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.Listing updateListing(
+        com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateListingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a listing.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteListing(
+        com.google.cloud.bigquery.dataexchange.v1beta1.DeleteListingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteListingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Subscribes to a listing.
+     * Currently, with Analytics Hub, you can create listings that
+     * reference only BigQuery datasets.
+     * Upon subscription to a listing for a BigQuery dataset, Analytics Hub
+     * creates a linked dataset in the subscriber's project.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingResponse subscribeListing(
+        com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubscribeListingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AnalyticsHubService.
    *
    * <pre>
    * The `AnalyticsHubService` API facilitates data sharing within and across

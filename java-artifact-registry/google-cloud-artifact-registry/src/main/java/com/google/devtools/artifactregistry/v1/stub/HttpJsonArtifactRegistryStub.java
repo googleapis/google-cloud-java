@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.devtools.artifactregistry.v1.stub;
 
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListAttachmentsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
@@ -24,11 +25,11 @@ import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.Lis
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRulesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -49,14 +50,23 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
+import com.google.devtools.artifactregistry.v1.Attachment;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest;
+import com.google.devtools.artifactregistry.v1.CreateAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.CreateRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.CreateRuleRequest;
 import com.google.devtools.artifactregistry.v1.CreateTagRequest;
+import com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest;
+import com.google.devtools.artifactregistry.v1.DeleteFileRequest;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
 import com.google.devtools.artifactregistry.v1.DeleteRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.DeleteRuleRequest;
 import com.google.devtools.artifactregistry.v1.DeleteTagRequest;
 import com.google.devtools.artifactregistry.v1.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1.DockerImage;
 import com.google.devtools.artifactregistry.v1.File;
+import com.google.devtools.artifactregistry.v1.GetAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
 import com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest;
@@ -65,6 +75,7 @@ import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.GetPythonPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.GetRuleRequest;
 import com.google.devtools.artifactregistry.v1.GetTagRequest;
 import com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest;
 import com.google.devtools.artifactregistry.v1.GetVersionRequest;
@@ -74,6 +85,8 @@ import com.google.devtools.artifactregistry.v1.ImportAptArtifactsResponse;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsMetadata;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsRequest;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsResponse;
+import com.google.devtools.artifactregistry.v1.ListAttachmentsRequest;
+import com.google.devtools.artifactregistry.v1.ListAttachmentsResponse;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesRequest;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesResponse;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
@@ -88,6 +101,8 @@ import com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesRequest;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesResponse;
+import com.google.devtools.artifactregistry.v1.ListRulesRequest;
+import com.google.devtools.artifactregistry.v1.ListRulesResponse;
 import com.google.devtools.artifactregistry.v1.ListTagsRequest;
 import com.google.devtools.artifactregistry.v1.ListTagsResponse;
 import com.google.devtools.artifactregistry.v1.ListVersionsRequest;
@@ -99,11 +114,16 @@ import com.google.devtools.artifactregistry.v1.Package;
 import com.google.devtools.artifactregistry.v1.ProjectSettings;
 import com.google.devtools.artifactregistry.v1.PythonPackage;
 import com.google.devtools.artifactregistry.v1.Repository;
+import com.google.devtools.artifactregistry.v1.Rule;
 import com.google.devtools.artifactregistry.v1.Tag;
+import com.google.devtools.artifactregistry.v1.UpdateFileRequest;
+import com.google.devtools.artifactregistry.v1.UpdatePackageRequest;
 import com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.UpdateRuleRequest;
 import com.google.devtools.artifactregistry.v1.UpdateTagRequest;
 import com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest;
+import com.google.devtools.artifactregistry.v1.UpdateVersionRequest;
 import com.google.devtools.artifactregistry.v1.VPCSCConfig;
 import com.google.devtools.artifactregistry.v1.Version;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -129,10 +149,11 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(BatchDeleteVersionsMetadata.getDescriptor())
+          .add(Attachment.getDescriptor())
           .add(Empty.getDescriptor())
           .add(ImportYumArtifactsResponse.getDescriptor())
           .add(ImportAptArtifactsResponse.getDescriptor())
@@ -536,6 +557,8 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListRepositoriesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -729,6 +752,8 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListPackagesRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -837,6 +862,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListVersionsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
@@ -926,6 +952,87 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<BatchDeleteVersionsRequest, Operation>
+      batchDeleteVersionsMethodDescriptor =
+          ApiMethodDescriptor.<BatchDeleteVersionsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/BatchDeleteVersions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeleteVersionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*/packages/*}/versions:batchDelete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BatchDeleteVersionsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateVersionRequest, Version>
+      updateVersionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateVersionRequest, Version>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/UpdateVersion")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{version.name=projects/*/locations/*/repositories/*/packages/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "version.name", request.getVersion().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("version", request.getVersion(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Version>newBuilder()
+                      .setDefaultInstance(Version.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListFilesRequest, ListFilesResponse>
       listFilesMethodDescriptor =
           ApiMethodDescriptor.<ListFilesRequest, ListFilesResponse>newBuilder()
@@ -989,6 +1096,79 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<File>newBuilder()
+                  .setDefaultInstance(File.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<DeleteFileRequest, Operation>
+      deleteFileMethodDescriptor =
+          ApiMethodDescriptor.<DeleteFileRequest, Operation>newBuilder()
+              .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/DeleteFile")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteFileRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/repositories/*/files/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFileRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteFileRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateFileRequest, File> updateFileMethodDescriptor =
+      ApiMethodDescriptor.<UpdateFileRequest, File>newBuilder()
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/UpdateFile")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<UpdateFileRequest>newBuilder()
+                  .setPath(
+                      "/v1/{file.name=projects/*/locations/*/repositories/*/files/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateFileRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "file.name", request.getFile().getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateFileRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create().toBody("file", request.getFile(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<File>newBuilder()
@@ -1157,6 +1337,180 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       request -> {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<DeleteTagRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Empty>newBuilder()
+                  .setDefaultInstance(Empty.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<CreateRuleRequest, Rule> createRuleMethodDescriptor =
+      ApiMethodDescriptor.<CreateRuleRequest, Rule>newBuilder()
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/CreateRule")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<CreateRuleRequest>newBuilder()
+                  .setPath(
+                      "/v1/{parent=projects/*/locations/*/repositories/*}/rules",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<CreateRuleRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "parent", request.getParent());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<CreateRuleRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "ruleId", request.getRuleId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create().toBody("rule", request.getRule(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Rule>newBuilder()
+                  .setDefaultInstance(Rule.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListRulesRequest, ListRulesResponse>
+      listRulesMethodDescriptor =
+          ApiMethodDescriptor.<ListRulesRequest, ListRulesResponse>newBuilder()
+              .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/ListRules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/rules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListRulesResponse>newBuilder()
+                      .setDefaultInstance(ListRulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetRuleRequest, Rule> getRuleMethodDescriptor =
+      ApiMethodDescriptor.<GetRuleRequest, Rule>newBuilder()
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/GetRule")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetRuleRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/repositories/*/rules/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetRuleRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetRuleRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Rule>newBuilder()
+                  .setDefaultInstance(Rule.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<UpdateRuleRequest, Rule> updateRuleMethodDescriptor =
+      ApiMethodDescriptor.<UpdateRuleRequest, Rule>newBuilder()
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/UpdateRule")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<UpdateRuleRequest>newBuilder()
+                  .setPath(
+                      "/v1/{rule.name=projects/*/locations/*/repositories/*/rules/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateRuleRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "rule.name", request.getRule().getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateRuleRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create().toBody("rule", request.getRule(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Rule>newBuilder()
+                  .setDefaultInstance(Rule.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<DeleteRuleRequest, Empty> deleteRuleMethodDescriptor =
+      ApiMethodDescriptor.<DeleteRuleRequest, Empty>newBuilder()
+          .setFullMethodName("google.devtools.artifactregistry.v1.ArtifactRegistry/DeleteRule")
+          .setHttpMethod("DELETE")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<DeleteRuleRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/repositories/*/rules/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteRuleRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<DeleteRuleRequest> serializer =
                             ProtoRestSerializer.create();
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
@@ -1434,6 +1788,200 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdatePackageRequest, Package>
+      updatePackageMethodDescriptor =
+          ApiMethodDescriptor.<UpdatePackageRequest, Package>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/UpdatePackage")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdatePackageRequest>newBuilder()
+                      .setPath(
+                          "/v1/{package.name=projects/*/locations/*/repositories/*/packages/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdatePackageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "package.name", request.getPackage().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdatePackageRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("package_", request.getPackage(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Package>newBuilder()
+                      .setDefaultInstance(Package.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAttachmentsRequest, ListAttachmentsResponse>
+      listAttachmentsMethodDescriptor =
+          ApiMethodDescriptor.<ListAttachmentsRequest, ListAttachmentsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ListAttachments")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAttachmentsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/attachments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAttachmentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAttachmentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAttachmentsResponse>newBuilder()
+                      .setDefaultInstance(ListAttachmentsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAttachmentRequest, Attachment>
+      getAttachmentMethodDescriptor =
+          ApiMethodDescriptor.<GetAttachmentRequest, Attachment>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/GetAttachment")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAttachmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/repositories/*/attachments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Attachment>newBuilder()
+                      .setDefaultInstance(Attachment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAttachmentRequest, Operation>
+      createAttachmentMethodDescriptor =
+          ApiMethodDescriptor.<CreateAttachmentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/CreateAttachment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAttachmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/repositories/*}/attachments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "attachmentId", request.getAttachmentId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("attachment", request.getAttachment(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAttachmentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAttachmentRequest, Operation>
+      deleteAttachmentMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAttachmentRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/DeleteAttachment")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAttachmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/repositories/*/attachments/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAttachmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAttachmentRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1556,15 +2104,29 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<DeleteVersionRequest, Operation> deleteVersionCallable;
   private final OperationCallable<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationCallable;
+  private final UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable;
+  private final OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable;
+  private final UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable;
   private final UnaryCallable<ListFilesRequest, ListFilesPagedResponse> listFilesPagedCallable;
   private final UnaryCallable<GetFileRequest, File> getFileCallable;
+  private final UnaryCallable<DeleteFileRequest, Operation> deleteFileCallable;
+  private final OperationCallable<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationCallable;
+  private final UnaryCallable<UpdateFileRequest, File> updateFileCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable;
   private final UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable;
   private final UnaryCallable<GetTagRequest, Tag> getTagCallable;
   private final UnaryCallable<CreateTagRequest, Tag> createTagCallable;
   private final UnaryCallable<UpdateTagRequest, Tag> updateTagCallable;
   private final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable;
+  private final UnaryCallable<CreateRuleRequest, Rule> createRuleCallable;
+  private final UnaryCallable<ListRulesRequest, ListRulesResponse> listRulesCallable;
+  private final UnaryCallable<ListRulesRequest, ListRulesPagedResponse> listRulesPagedCallable;
+  private final UnaryCallable<GetRuleRequest, Rule> getRuleCallable;
+  private final UnaryCallable<UpdateRuleRequest, Rule> updateRuleCallable;
+  private final UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -1575,6 +2137,18 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
       updateProjectSettingsCallable;
   private final UnaryCallable<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigCallable;
   private final UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable;
+  private final UnaryCallable<UpdatePackageRequest, Package> updatePackageCallable;
+  private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse>
+      listAttachmentsCallable;
+  private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
+      listAttachmentsPagedCallable;
+  private final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable;
+  private final UnaryCallable<CreateAttachmentRequest, Operation> createAttachmentCallable;
+  private final OperationCallable<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationCallable;
+  private final UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable;
+  private final OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1871,6 +2445,29 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsTransportSettings =
+            HttpJsonCallSettings.<BatchDeleteVersionsRequest, Operation>newBuilder()
+                .setMethodDescriptor(batchDeleteVersionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateVersionRequest, Version> updateVersionTransportSettings =
+        HttpJsonCallSettings.<UpdateVersionRequest, Version>newBuilder()
+            .setMethodDescriptor(updateVersionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("version.name", String.valueOf(request.getVersion().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListFilesRequest, ListFilesResponse> listFilesTransportSettings =
         HttpJsonCallSettings.<ListFilesRequest, ListFilesResponse>newBuilder()
             .setMethodDescriptor(listFilesMethodDescriptor)
@@ -1890,6 +2487,28 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteFileRequest, Operation> deleteFileTransportSettings =
+        HttpJsonCallSettings.<DeleteFileRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteFileMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateFileRequest, File> updateFileTransportSettings =
+        HttpJsonCallSettings.<UpdateFileRequest, File>newBuilder()
+            .setMethodDescriptor(updateFileMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("file.name", String.valueOf(request.getFile().getName()));
                   return builder.build();
                 })
             .build();
@@ -1940,6 +2559,61 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     HttpJsonCallSettings<DeleteTagRequest, Empty> deleteTagTransportSettings =
         HttpJsonCallSettings.<DeleteTagRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTagMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateRuleRequest, Rule> createRuleTransportSettings =
+        HttpJsonCallSettings.<CreateRuleRequest, Rule>newBuilder()
+            .setMethodDescriptor(createRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListRulesRequest, ListRulesResponse> listRulesTransportSettings =
+        HttpJsonCallSettings.<ListRulesRequest, ListRulesResponse>newBuilder()
+            .setMethodDescriptor(listRulesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetRuleRequest, Rule> getRuleTransportSettings =
+        HttpJsonCallSettings.<GetRuleRequest, Rule>newBuilder()
+            .setMethodDescriptor(getRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateRuleRequest, Rule> updateRuleTransportSettings =
+        HttpJsonCallSettings.<UpdateRuleRequest, Rule>newBuilder()
+            .setMethodDescriptor(updateRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("rule.name", String.valueOf(request.getRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteRuleRequest, Empty> deleteRuleTransportSettings =
+        HttpJsonCallSettings.<DeleteRuleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteRuleMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -2028,6 +2702,62 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add(
                       "vpcsc_config.name", String.valueOf(request.getVpcscConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdatePackageRequest, Package> updatePackageTransportSettings =
+        HttpJsonCallSettings.<UpdatePackageRequest, Package>newBuilder()
+            .setMethodDescriptor(updatePackageMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("package.name", String.valueOf(request.getPackage().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListAttachmentsRequest, ListAttachmentsResponse>
+        listAttachmentsTransportSettings =
+            HttpJsonCallSettings.<ListAttachmentsRequest, ListAttachmentsResponse>newBuilder()
+                .setMethodDescriptor(listAttachmentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
+        HttpJsonCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
+            .setMethodDescriptor(getAttachmentMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateAttachmentRequest, Operation> createAttachmentTransportSettings =
+        HttpJsonCallSettings.<CreateAttachmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAttachmentMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteAttachmentRequest, Operation> deleteAttachmentTransportSettings =
+        HttpJsonCallSettings.<DeleteAttachmentRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAttachmentMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -2187,6 +2917,20 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
             settings.deleteVersionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.batchDeleteVersionsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteVersionsTransportSettings,
+            settings.batchDeleteVersionsSettings(),
+            clientContext);
+    this.batchDeleteVersionsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteVersionsTransportSettings,
+            settings.batchDeleteVersionsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateVersionCallable =
+        callableFactory.createUnaryCallable(
+            updateVersionTransportSettings, settings.updateVersionSettings(), clientContext);
     this.listFilesCallable =
         callableFactory.createUnaryCallable(
             listFilesTransportSettings, settings.listFilesSettings(), clientContext);
@@ -2196,6 +2940,18 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     this.getFileCallable =
         callableFactory.createUnaryCallable(
             getFileTransportSettings, settings.getFileSettings(), clientContext);
+    this.deleteFileCallable =
+        callableFactory.createUnaryCallable(
+            deleteFileTransportSettings, settings.deleteFileSettings(), clientContext);
+    this.deleteFileOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteFileTransportSettings,
+            settings.deleteFileOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateFileCallable =
+        callableFactory.createUnaryCallable(
+            updateFileTransportSettings, settings.updateFileSettings(), clientContext);
     this.listTagsCallable =
         callableFactory.createUnaryCallable(
             listTagsTransportSettings, settings.listTagsSettings(), clientContext);
@@ -2214,6 +2970,24 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     this.deleteTagCallable =
         callableFactory.createUnaryCallable(
             deleteTagTransportSettings, settings.deleteTagSettings(), clientContext);
+    this.createRuleCallable =
+        callableFactory.createUnaryCallable(
+            createRuleTransportSettings, settings.createRuleSettings(), clientContext);
+    this.listRulesCallable =
+        callableFactory.createUnaryCallable(
+            listRulesTransportSettings, settings.listRulesSettings(), clientContext);
+    this.listRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listRulesTransportSettings, settings.listRulesSettings(), clientContext);
+    this.getRuleCallable =
+        callableFactory.createUnaryCallable(
+            getRuleTransportSettings, settings.getRuleSettings(), clientContext);
+    this.updateRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateRuleTransportSettings, settings.updateRuleSettings(), clientContext);
+    this.deleteRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteRuleTransportSettings, settings.deleteRuleSettings(), clientContext);
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
@@ -2243,6 +3017,36 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
             updateVPCSCConfigTransportSettings,
             settings.updateVPCSCConfigSettings(),
             clientContext);
+    this.updatePackageCallable =
+        callableFactory.createUnaryCallable(
+            updatePackageTransportSettings, settings.updatePackageSettings(), clientContext);
+    this.listAttachmentsCallable =
+        callableFactory.createUnaryCallable(
+            listAttachmentsTransportSettings, settings.listAttachmentsSettings(), clientContext);
+    this.listAttachmentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAttachmentsTransportSettings, settings.listAttachmentsSettings(), clientContext);
+    this.getAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            getAttachmentTransportSettings, settings.getAttachmentSettings(), clientContext);
+    this.createAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            createAttachmentTransportSettings, settings.createAttachmentSettings(), clientContext);
+    this.createAttachmentOperationCallable =
+        callableFactory.createOperationCallable(
+            createAttachmentTransportSettings,
+            settings.createAttachmentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            deleteAttachmentTransportSettings, settings.deleteAttachmentSettings(), clientContext);
+    this.deleteAttachmentOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAttachmentTransportSettings,
+            settings.deleteAttachmentOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2281,13 +3085,22 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     methodDescriptors.add(listVersionsMethodDescriptor);
     methodDescriptors.add(getVersionMethodDescriptor);
     methodDescriptors.add(deleteVersionMethodDescriptor);
+    methodDescriptors.add(batchDeleteVersionsMethodDescriptor);
+    methodDescriptors.add(updateVersionMethodDescriptor);
     methodDescriptors.add(listFilesMethodDescriptor);
     methodDescriptors.add(getFileMethodDescriptor);
+    methodDescriptors.add(deleteFileMethodDescriptor);
+    methodDescriptors.add(updateFileMethodDescriptor);
     methodDescriptors.add(listTagsMethodDescriptor);
     methodDescriptors.add(getTagMethodDescriptor);
     methodDescriptors.add(createTagMethodDescriptor);
     methodDescriptors.add(updateTagMethodDescriptor);
     methodDescriptors.add(deleteTagMethodDescriptor);
+    methodDescriptors.add(createRuleMethodDescriptor);
+    methodDescriptors.add(listRulesMethodDescriptor);
+    methodDescriptors.add(getRuleMethodDescriptor);
+    methodDescriptors.add(updateRuleMethodDescriptor);
+    methodDescriptors.add(deleteRuleMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
@@ -2295,6 +3108,11 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     methodDescriptors.add(updateProjectSettingsMethodDescriptor);
     methodDescriptors.add(getVPCSCConfigMethodDescriptor);
     methodDescriptors.add(updateVPCSCConfigMethodDescriptor);
+    methodDescriptors.add(updatePackageMethodDescriptor);
+    methodDescriptors.add(listAttachmentsMethodDescriptor);
+    methodDescriptors.add(getAttachmentMethodDescriptor);
+    methodDescriptors.add(createAttachmentMethodDescriptor);
+    methodDescriptors.add(deleteAttachmentMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -2492,6 +3310,22 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   }
 
   @Override
+  public UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable() {
+    return batchDeleteVersionsCallable;
+  }
+
+  @Override
+  public OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable() {
+    return batchDeleteVersionsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable() {
+    return updateVersionCallable;
+  }
+
+  @Override
   public UnaryCallable<ListFilesRequest, ListFilesResponse> listFilesCallable() {
     return listFilesCallable;
   }
@@ -2504,6 +3338,22 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   @Override
   public UnaryCallable<GetFileRequest, File> getFileCallable() {
     return getFileCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFileRequest, Operation> deleteFileCallable() {
+    return deleteFileCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationCallable() {
+    return deleteFileOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFileRequest, File> updateFileCallable() {
+    return updateFileCallable;
   }
 
   @Override
@@ -2534,6 +3384,36 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   @Override
   public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     return deleteTagCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRuleRequest, Rule> createRuleCallable() {
+    return createRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRulesRequest, ListRulesResponse> listRulesCallable() {
+    return listRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRulesRequest, ListRulesPagedResponse> listRulesPagedCallable() {
+    return listRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRuleRequest, Rule> getRuleCallable() {
+    return getRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRuleRequest, Rule> updateRuleCallable() {
+    return updateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
+    return deleteRuleCallable;
   }
 
   @Override
@@ -2571,6 +3451,49 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   @Override
   public UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable() {
     return updateVPCSCConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePackageRequest, Package> updatePackageCallable() {
+    return updatePackageCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse> listAttachmentsCallable() {
+    return listAttachmentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
+      listAttachmentsPagedCallable() {
+    return listAttachmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    return getAttachmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAttachmentRequest, Operation> createAttachmentCallable() {
+    return createAttachmentCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationCallable() {
+    return createAttachmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable() {
+    return deleteAttachmentCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationCallable() {
+    return deleteAttachmentOperationCallable;
   }
 
   @Override

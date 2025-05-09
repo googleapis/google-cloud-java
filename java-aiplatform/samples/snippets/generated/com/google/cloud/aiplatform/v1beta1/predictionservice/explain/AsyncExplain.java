@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import com.google.cloud.aiplatform.v1beta1.ExplanationSpecOverride;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.protobuf.Value;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AsyncExplain {
 
@@ -48,6 +49,8 @@ public class AsyncExplain {
               .addAllInstances(new ArrayList<Value>())
               .setParameters(Value.newBuilder().setBoolValue(true).build())
               .setExplanationSpecOverride(ExplanationSpecOverride.newBuilder().build())
+              .putAllConcurrentExplanationSpecOverride(
+                  new HashMap<String, ExplanationSpecOverride>())
               .setDeployedModelId("deployedModelId-1817547906")
               .build();
       ApiFuture<ExplainResponse> future =

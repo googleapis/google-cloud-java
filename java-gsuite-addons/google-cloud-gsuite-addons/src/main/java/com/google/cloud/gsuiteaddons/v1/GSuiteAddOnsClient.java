@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,26 +35,26 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: A service for managing Google Workspace Add-ons deployments.
+ * Service Description: A service for managing Google Workspace add-ons deployments.
  *
- * <p>A Google Workspace Add-on is a third-party embedded component that can be installed in Google
+ * <p>A Google Workspace add-on is a third-party embedded component that can be installed in Google
  * Workspace Applications like Gmail, Calendar, Drive, and the Google Docs, Sheets, and Slides
- * editors. Google Workspace Add-ons can display UI cards, receive contextual information from the
+ * editors. Google Workspace add-ons can display UI cards, receive contextual information from the
  * host application, and perform actions in the host application (See:
  * https://developers.google.com/gsuite/add-ons/overview for more information).
  *
- * <p>A Google Workspace Add-on deployment resource specifies metadata about the add-on, including a
+ * <p>A Google Workspace add-on deployment resource specifies metadata about the add-on, including a
  * specification of the entry points in the host application that trigger add-on executions (see:
  * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests). Add-on deployments
- * defined via the Google Workspace Add-ons API define their entrypoints using HTTPS URLs (See:
+ * defined via the Google Workspace add-ons API define their entrypoints using HTTPS URLs (See:
  * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
  *
- * <p>A Google Workspace Add-on deployment can be installed in developer mode, which allows an
+ * <p>A Google Workspace add-on deployment can be installed in developer mode, which allows an
  * add-on developer to test the experience an end-user would see when installing and running the
  * add-on in their G Suite applications. When running in developer mode, more detailed error
  * messages are exposed in the add-on UI to aid in debugging.
  *
- * <p>A Google Workspace Add-on deployment can be published to Google Workspace Marketplace, which
+ * <p>A Google Workspace add-on deployment can be published to Google Workspace Marketplace, which
  * allows other Google Workspace users to discover and install the add-on. See:
  * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview for details.
  *
@@ -76,19 +76,185 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the GSuiteAddOnsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAuthorization</td>
+ *      <td><p> Gets the authorization information for deployments in a given project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAuthorization(GetAuthorizationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAuthorization(AuthorizationName name)
+ *           <li><p> getAuthorization(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAuthorizationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDeployment</td>
+ *      <td><p> Creates a deployment with the specified name and configuration.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDeployment(CreateDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createDeployment(ProjectName parent, Deployment deployment, String deploymentId)
+ *           <li><p> createDeployment(String parent, Deployment deployment, String deploymentId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReplaceDeployment</td>
+ *      <td><p> Creates or replaces a deployment with the specified name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> replaceDeployment(ReplaceDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> replaceDeployment(Deployment deployment)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> replaceDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDeployment</td>
+ *      <td><p> Gets the deployment with the specified name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDeployment(GetDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDeployment(DeploymentName name)
+ *           <li><p> getDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDeployments</td>
+ *      <td><p> Lists all deployments in a particular project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDeployments(ListDeploymentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDeployments(ProjectName parent)
+ *           <li><p> listDeployments(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDeploymentsPagedCallable()
+ *           <li><p> listDeploymentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDeployment</td>
+ *      <td><p> Deletes the deployment with the given name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDeployment(DeleteDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteDeployment(DeploymentName name)
+ *           <li><p> deleteDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> InstallDeployment</td>
+ *      <td><p> Installs a deployment in developer mode. See: https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> installDeployment(InstallDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> installDeployment(DeploymentName name)
+ *           <li><p> installDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> installDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UninstallDeployment</td>
+ *      <td><p> Uninstalls a developer mode deployment. See: https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> uninstallDeployment(UninstallDeploymentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> uninstallDeployment(DeploymentName name)
+ *           <li><p> uninstallDeployment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> uninstallDeploymentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetInstallStatus</td>
+ *      <td><p> Fetches the install status of a developer mode deployment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getInstallStatus(GetInstallStatusRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getInstallStatus(InstallStatusName name)
+ *           <li><p> getInstallStatus(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getInstallStatusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -209,7 +375,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the project for which to get the Google Workspace Add-ons
+   * @param name Required. Name of the project for which to get the Google Workspace add-ons
    *     authorization information.
    *     <p>Example: `projects/my_project/authorization`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -238,7 +404,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the project for which to get the Google Workspace Add-ons
+   * @param name Required. Name of the project for which to get the Google Workspace add-ons
    *     authorization information.
    *     <p>Example: `projects/my_project/authorization`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

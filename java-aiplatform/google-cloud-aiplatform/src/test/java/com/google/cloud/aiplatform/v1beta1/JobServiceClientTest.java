@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -133,6 +133,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllWebAccessUris(new HashMap<String, String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -185,6 +187,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllWebAccessUris(new HashMap<String, String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -237,6 +241,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllWebAccessUris(new HashMap<String, String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -286,6 +292,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .putAllWebAccessUris(new HashMap<String, String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1066,6 +1074,8 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1128,6 +1138,8 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1190,6 +1202,8 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1249,6 +1263,8 @@ public class JobServiceClientTest {
             .setError(Status.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1554,6 +1570,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableRestrictedImageTraining(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1607,6 +1625,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableRestrictedImageTraining(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1660,6 +1680,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableRestrictedImageTraining(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -1710,6 +1732,8 @@ public class JobServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableRestrictedImageTraining(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2195,6 +2219,8 @@ public class JobServiceClientTest {
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
             .setDisableContainerLogging(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2268,6 +2294,8 @@ public class JobServiceClientTest {
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
             .setDisableContainerLogging(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2341,6 +2369,8 @@ public class JobServiceClientTest {
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
             .setDisableContainerLogging(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2413,6 +2443,8 @@ public class JobServiceClientTest {
             .addAllModelMonitoringStatsAnomalies(new ArrayList<ModelMonitoringStatsAnomalies>())
             .setModelMonitoringStatus(Status.newBuilder().build())
             .setDisableContainerLogging(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2731,6 +2763,8 @@ public class JobServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2806,6 +2840,8 @@ public class JobServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -2993,6 +3029,8 @@ public class JobServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -3065,6 +3103,8 @@ public class JobServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -3231,6 +3271,8 @@ public class JobServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setEnableMonitoringPipelineLogs(true)
             .setError(Status.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

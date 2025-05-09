@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,6 +102,19 @@ public final class SpeechTranslationServiceGrpc {
           }
         };
     return SpeechTranslationServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SpeechTranslationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SpeechTranslationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SpeechTranslationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SpeechTranslationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SpeechTranslationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SpeechTranslationServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -217,6 +230,45 @@ public final class SpeechTranslationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SpeechTranslationService.
+   *
+   * <pre>
+   * Provides translation from/to media types.
+   * </pre>
+   */
+  public static final class SpeechTranslationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SpeechTranslationServiceBlockingV2Stub> {
+    private SpeechTranslationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SpeechTranslationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SpeechTranslationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech translation: receive results while
+     * sending audio. This method is only available via the gRPC API (not REST).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest,
+            com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse>
+        streamingTranslateSpeech() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingTranslateSpeechMethod(), getCallOptions());
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * SpeechTranslationService.
    *
    * <pre>
    * Provides translation from/to media types.

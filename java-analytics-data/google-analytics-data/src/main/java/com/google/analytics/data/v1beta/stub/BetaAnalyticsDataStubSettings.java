@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,24 @@
 
 package com.google.analytics.data.v1beta.stub;
 
+import static com.google.analytics.data.v1beta.BetaAnalyticsDataClient.ListAudienceExportsPagedResponse;
+
+import com.google.analytics.data.v1beta.AudienceExport;
+import com.google.analytics.data.v1beta.AudienceExportMetadata;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunPivotReportsResponse;
 import com.google.analytics.data.v1beta.BatchRunReportsRequest;
 import com.google.analytics.data.v1beta.BatchRunReportsResponse;
 import com.google.analytics.data.v1beta.CheckCompatibilityRequest;
 import com.google.analytics.data.v1beta.CheckCompatibilityResponse;
+import com.google.analytics.data.v1beta.CreateAudienceExportRequest;
+import com.google.analytics.data.v1beta.GetAudienceExportRequest;
 import com.google.analytics.data.v1beta.GetMetadataRequest;
+import com.google.analytics.data.v1beta.ListAudienceExportsRequest;
+import com.google.analytics.data.v1beta.ListAudienceExportsResponse;
 import com.google.analytics.data.v1beta.Metadata;
+import com.google.analytics.data.v1beta.QueryAudienceExportRequest;
+import com.google.analytics.data.v1beta.QueryAudienceExportResponse;
 import com.google.analytics.data.v1beta.RunPivotReportRequest;
 import com.google.analytics.data.v1beta.RunPivotReportResponse;
 import com.google.analytics.data.v1beta.RunRealtimeReportRequest;
@@ -31,31 +41,44 @@ import com.google.analytics.data.v1beta.RunRealtimeReportResponse;
 import com.google.analytics.data.v1beta.RunReportRequest;
 import com.google.analytics.data.v1beta.RunReportResponse;
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -72,7 +95,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of runReport to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of runReport:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -89,10 +114,47 @@ import org.threeten.bp.Duration;
  *             .runReportSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * BetaAnalyticsDataStubSettings betaAnalyticsDataSettings =
  *     betaAnalyticsDataSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createAudienceExport:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * BetaAnalyticsDataStubSettings.Builder betaAnalyticsDataSettingsBuilder =
+ *     BetaAnalyticsDataStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * betaAnalyticsDataSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -117,6 +179,77 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
       runRealtimeReportSettings;
   private final UnaryCallSettings<CheckCompatibilityRequest, CheckCompatibilityResponse>
       checkCompatibilitySettings;
+  private final UnaryCallSettings<CreateAudienceExportRequest, Operation>
+      createAudienceExportSettings;
+  private final OperationCallSettings<
+          CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+      createAudienceExportOperationSettings;
+  private final UnaryCallSettings<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportSettings;
+  private final UnaryCallSettings<GetAudienceExportRequest, AudienceExport>
+      getAudienceExportSettings;
+  private final PagedCallSettings<
+          ListAudienceExportsRequest, ListAudienceExportsResponse, ListAudienceExportsPagedResponse>
+      listAudienceExportsSettings;
+
+  private static final PagedListDescriptor<
+          ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>
+      LIST_AUDIENCE_EXPORTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAudienceExportsRequest injectToken(
+                ListAudienceExportsRequest payload, String token) {
+              return ListAudienceExportsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAudienceExportsRequest injectPageSize(
+                ListAudienceExportsRequest payload, int pageSize) {
+              return ListAudienceExportsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAudienceExportsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAudienceExportsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AudienceExport> extractResources(ListAudienceExportsResponse payload) {
+              return payload.getAudienceExportsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAudienceExportsRequest, ListAudienceExportsResponse, ListAudienceExportsPagedResponse>
+      LIST_AUDIENCE_EXPORTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAudienceExportsRequest,
+              ListAudienceExportsResponse,
+              ListAudienceExportsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAudienceExportsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAudienceExportsRequest, ListAudienceExportsResponse> callable,
+                ListAudienceExportsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAudienceExportsResponse> futureResponse) {
+              PageContext<ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AUDIENCE_EXPORTS_PAGE_STR_DESC, request, context);
+              return ListAudienceExportsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to runReport. */
   public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
@@ -157,6 +290,35 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     return checkCompatibilitySettings;
   }
 
+  /** Returns the object with the settings used for calls to createAudienceExport. */
+  public UnaryCallSettings<CreateAudienceExportRequest, Operation> createAudienceExportSettings() {
+    return createAudienceExportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAudienceExport. */
+  public OperationCallSettings<CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+      createAudienceExportOperationSettings() {
+    return createAudienceExportOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryAudienceExport. */
+  public UnaryCallSettings<QueryAudienceExportRequest, QueryAudienceExportResponse>
+      queryAudienceExportSettings() {
+    return queryAudienceExportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAudienceExport. */
+  public UnaryCallSettings<GetAudienceExportRequest, AudienceExport> getAudienceExportSettings() {
+    return getAudienceExportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAudienceExports. */
+  public PagedCallSettings<
+          ListAudienceExportsRequest, ListAudienceExportsResponse, ListAudienceExportsPagedResponse>
+      listAudienceExportsSettings() {
+    return listAudienceExportsSettings;
+  }
+
   public BetaAnalyticsDataStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -173,12 +335,19 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "analyticsdata";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "analyticsdata.googleapis.com:443";
   }
@@ -217,7 +386,6 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -226,7 +394,6 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -270,6 +437,12 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     getMetadataSettings = settingsBuilder.getMetadataSettings().build();
     runRealtimeReportSettings = settingsBuilder.runRealtimeReportSettings().build();
     checkCompatibilitySettings = settingsBuilder.checkCompatibilitySettings().build();
+    createAudienceExportSettings = settingsBuilder.createAudienceExportSettings().build();
+    createAudienceExportOperationSettings =
+        settingsBuilder.createAudienceExportOperationSettings().build();
+    queryAudienceExportSettings = settingsBuilder.queryAudienceExportSettings().build();
+    getAudienceExportSettings = settingsBuilder.getAudienceExportSettings().build();
+    listAudienceExportsSettings = settingsBuilder.listAudienceExportsSettings().build();
   }
 
   /** Builder for BetaAnalyticsDataStubSettings. */
@@ -288,6 +461,20 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
         runRealtimeReportSettings;
     private final UnaryCallSettings.Builder<CheckCompatibilityRequest, CheckCompatibilityResponse>
         checkCompatibilitySettings;
+    private final UnaryCallSettings.Builder<CreateAudienceExportRequest, Operation>
+        createAudienceExportSettings;
+    private final OperationCallSettings.Builder<
+            CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+        createAudienceExportOperationSettings;
+    private final UnaryCallSettings.Builder<QueryAudienceExportRequest, QueryAudienceExportResponse>
+        queryAudienceExportSettings;
+    private final UnaryCallSettings.Builder<GetAudienceExportRequest, AudienceExport>
+        getAudienceExportSettings;
+    private final PagedCallSettings.Builder<
+            ListAudienceExportsRequest,
+            ListAudienceExportsResponse,
+            ListAudienceExportsPagedResponse>
+        listAudienceExportsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -296,6 +483,9 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
           ImmutableMap.builder();
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNKNOWN)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -306,12 +496,23 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
+              .build();
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -329,6 +530,12 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
       getMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runRealtimeReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       checkCompatibilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAudienceExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAudienceExportOperationSettings = OperationCallSettings.newBuilder();
+      queryAudienceExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAudienceExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAudienceExportsSettings =
+          PagedCallSettings.newBuilder(LIST_AUDIENCE_EXPORTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -338,7 +545,11 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
               batchRunPivotReportsSettings,
               getMetadataSettings,
               runRealtimeReportSettings,
-              checkCompatibilitySettings);
+              checkCompatibilitySettings,
+              createAudienceExportSettings,
+              queryAudienceExportSettings,
+              getAudienceExportSettings,
+              listAudienceExportsSettings);
       initDefaults(this);
     }
 
@@ -352,6 +563,12 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
       getMetadataSettings = settings.getMetadataSettings.toBuilder();
       runRealtimeReportSettings = settings.runRealtimeReportSettings.toBuilder();
       checkCompatibilitySettings = settings.checkCompatibilitySettings.toBuilder();
+      createAudienceExportSettings = settings.createAudienceExportSettings.toBuilder();
+      createAudienceExportOperationSettings =
+          settings.createAudienceExportOperationSettings.toBuilder();
+      queryAudienceExportSettings = settings.queryAudienceExportSettings.toBuilder();
+      getAudienceExportSettings = settings.getAudienceExportSettings.toBuilder();
+      listAudienceExportsSettings = settings.listAudienceExportsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -361,7 +578,11 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
               batchRunPivotReportsSettings,
               getMetadataSettings,
               runRealtimeReportSettings,
-              checkCompatibilitySettings);
+              checkCompatibilitySettings,
+              createAudienceExportSettings,
+              queryAudienceExportSettings,
+              getAudienceExportSettings,
+              listAudienceExportsSettings);
     }
 
     private static Builder createDefault() {
@@ -370,7 +591,6 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -383,7 +603,6 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -425,6 +644,50 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
           .checkCompatibilitySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createAudienceExportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .queryAudienceExportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAudienceExportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAudienceExportsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAudienceExportOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAudienceExportRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AudienceExport.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(AudienceExportMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -482,6 +745,40 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     public UnaryCallSettings.Builder<CheckCompatibilityRequest, CheckCompatibilityResponse>
         checkCompatibilitySettings() {
       return checkCompatibilitySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAudienceExport. */
+    public UnaryCallSettings.Builder<CreateAudienceExportRequest, Operation>
+        createAudienceExportSettings() {
+      return createAudienceExportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAudienceExport. */
+    public OperationCallSettings.Builder<
+            CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
+        createAudienceExportOperationSettings() {
+      return createAudienceExportOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryAudienceExport. */
+    public UnaryCallSettings.Builder<QueryAudienceExportRequest, QueryAudienceExportResponse>
+        queryAudienceExportSettings() {
+      return queryAudienceExportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAudienceExport. */
+    public UnaryCallSettings.Builder<GetAudienceExportRequest, AudienceExport>
+        getAudienceExportSettings() {
+      return getAudienceExportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAudienceExports. */
+    public PagedCallSettings.Builder<
+            ListAudienceExportsRequest,
+            ListAudienceExportsResponse,
+            ListAudienceExportsPagedResponse>
+        listAudienceExportsSettings() {
+      return listAudienceExportsSettings;
     }
 
     @Override

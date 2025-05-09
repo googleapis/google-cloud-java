@@ -10,8 +10,47 @@
         "grpc": {
           "libraryClient": "CompletionServiceClient",
           "rpcs": {
+            "AdvancedCompleteQuery": {
+              "methods": ["advancedCompleteQuery", "advancedCompleteQueryCallable"]
+            },
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
+            },
+            "ImportCompletionSuggestions": {
+              "methods": ["importCompletionSuggestionsAsync", "importCompletionSuggestionsOperationCallable", "importCompletionSuggestionsCallable"]
+            },
+            "ImportSuggestionDenyListEntries": {
+              "methods": ["importSuggestionDenyListEntriesAsync", "importSuggestionDenyListEntriesOperationCallable", "importSuggestionDenyListEntriesCallable"]
+            },
+            "PurgeCompletionSuggestions": {
+              "methods": ["purgeCompletionSuggestionsAsync", "purgeCompletionSuggestionsOperationCallable", "purgeCompletionSuggestionsCallable"]
+            },
+            "PurgeSuggestionDenyListEntries": {
+              "methods": ["purgeSuggestionDenyListEntriesAsync", "purgeSuggestionDenyListEntriesOperationCallable", "purgeSuggestionDenyListEntriesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ControlService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ControlServiceClient",
+          "rpcs": {
+            "CreateControl": {
+              "methods": ["createControl", "createControl", "createControl", "createControl", "createControlCallable"]
+            },
+            "DeleteControl": {
+              "methods": ["deleteControl", "deleteControl", "deleteControl", "deleteControlCallable"]
+            },
+            "GetControl": {
+              "methods": ["getControl", "getControl", "getControl", "getControlCallable"]
+            },
+            "ListControls": {
+              "methods": ["listControls", "listControls", "listControls", "listControls", "listControlsPagedCallable", "listControlsCallable"]
+            },
+            "UpdateControl": {
+              "methods": ["updateControl", "updateControl", "updateControlCallable"]
             }
           }
         }
@@ -22,23 +61,68 @@
         "grpc": {
           "libraryClient": "ConversationalSearchServiceClient",
           "rpcs": {
+            "AnswerQuery": {
+              "methods": ["answerQuery", "answerQueryCallable"]
+            },
             "ConverseConversation": {
               "methods": ["converseConversation", "converseConversation", "converseConversation", "converseConversationCallable"]
             },
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
+            "CreateSession": {
+              "methods": ["createSession", "createSession", "createSession", "createSessionCallable"]
+            },
             "DeleteConversation": {
               "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
+            "DeleteSession": {
+              "methods": ["deleteSession", "deleteSession", "deleteSession", "deleteSessionCallable"]
+            },
+            "GetAnswer": {
+              "methods": ["getAnswer", "getAnswer", "getAnswer", "getAnswerCallable"]
             },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
             },
+            "GetSession": {
+              "methods": ["getSession", "getSession", "getSession", "getSessionCallable"]
+            },
             "ListConversations": {
               "methods": ["listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
             },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
             "UpdateConversation": {
               "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
+            },
+            "UpdateSession": {
+              "methods": ["updateSession", "updateSession", "updateSessionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataStoreServiceClient",
+          "rpcs": {
+            "CreateDataStore": {
+              "methods": ["createDataStoreAsync", "createDataStoreAsync", "createDataStoreAsync", "createDataStoreOperationCallable", "createDataStoreCallable"]
+            },
+            "DeleteDataStore": {
+              "methods": ["deleteDataStoreAsync", "deleteDataStoreAsync", "deleteDataStoreAsync", "deleteDataStoreOperationCallable", "deleteDataStoreCallable"]
+            },
+            "GetDataStore": {
+              "methods": ["getDataStore", "getDataStore", "getDataStore", "getDataStoreCallable"]
+            },
+            "ListDataStores": {
+              "methods": ["listDataStores", "listDataStores", "listDataStores", "listDataStoresPagedCallable", "listDataStoresCallable"]
+            },
+            "UpdateDataStore": {
+              "methods": ["updateDataStore", "updateDataStore", "updateDataStoreCallable"]
             }
           }
         }
@@ -49,6 +133,9 @@
         "grpc": {
           "libraryClient": "DocumentServiceClient",
           "rpcs": {
+            "BatchGetDocumentsMetadata": {
+              "methods": ["batchGetDocumentsMetadata", "batchGetDocumentsMetadata", "batchGetDocumentsMetadata", "batchGetDocumentsMetadataCallable"]
+            },
             "CreateDocument": {
               "methods": ["createDocument", "createDocument", "createDocument", "createDocumentCallable"]
             },
@@ -68,7 +155,103 @@
               "methods": ["purgeDocumentsAsync", "purgeDocumentsOperationCallable", "purgeDocumentsCallable"]
             },
             "UpdateDocument": {
-              "methods": ["updateDocument", "updateDocumentCallable"]
+              "methods": ["updateDocument", "updateDocument", "updateDocumentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EngineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EngineServiceClient",
+          "rpcs": {
+            "CreateEngine": {
+              "methods": ["createEngineAsync", "createEngineAsync", "createEngineAsync", "createEngineOperationCallable", "createEngineCallable"]
+            },
+            "DeleteEngine": {
+              "methods": ["deleteEngineAsync", "deleteEngineAsync", "deleteEngineAsync", "deleteEngineOperationCallable", "deleteEngineCallable"]
+            },
+            "GetEngine": {
+              "methods": ["getEngine", "getEngine", "getEngine", "getEngineCallable"]
+            },
+            "ListEngines": {
+              "methods": ["listEngines", "listEngines", "listEngines", "listEnginesPagedCallable", "listEnginesCallable"]
+            },
+            "PauseEngine": {
+              "methods": ["pauseEngine", "pauseEngine", "pauseEngine", "pauseEngineCallable"]
+            },
+            "ResumeEngine": {
+              "methods": ["resumeEngine", "resumeEngine", "resumeEngine", "resumeEngineCallable"]
+            },
+            "TuneEngine": {
+              "methods": ["tuneEngineAsync", "tuneEngineAsync", "tuneEngineAsync", "tuneEngineOperationCallable", "tuneEngineCallable"]
+            },
+            "UpdateEngine": {
+              "methods": ["updateEngine", "updateEngine", "updateEngineCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EvaluationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EvaluationServiceClient",
+          "rpcs": {
+            "CreateEvaluation": {
+              "methods": ["createEvaluationAsync", "createEvaluationAsync", "createEvaluationAsync", "createEvaluationOperationCallable", "createEvaluationCallable"]
+            },
+            "GetEvaluation": {
+              "methods": ["getEvaluation", "getEvaluation", "getEvaluation", "getEvaluationCallable"]
+            },
+            "ListEvaluationResults": {
+              "methods": ["listEvaluationResults", "listEvaluationResults", "listEvaluationResults", "listEvaluationResultsPagedCallable", "listEvaluationResultsCallable"]
+            },
+            "ListEvaluations": {
+              "methods": ["listEvaluations", "listEvaluations", "listEvaluations", "listEvaluationsPagedCallable", "listEvaluationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GroundedGenerationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GroundedGenerationServiceClient",
+          "rpcs": {
+            "CheckGrounding": {
+              "methods": ["checkGrounding", "checkGroundingCallable"]
+            },
+            "GenerateGroundedContent": {
+              "methods": ["generateGroundedContent", "generateGroundedContentCallable"]
+            },
+            "StreamGenerateGroundedContent": {
+              "methods": ["streamGenerateGroundedContentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProjectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectServiceClient",
+          "rpcs": {
+            "ProvisionProject": {
+              "methods": ["provisionProjectAsync", "provisionProjectAsync", "provisionProjectAsync", "provisionProjectOperationCallable", "provisionProjectCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RankService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RankServiceClient",
+          "rpcs": {
+            "Rank": {
+              "methods": ["rank", "rankCallable"]
             }
           }
         }
@@ -81,6 +264,57 @@
           "rpcs": {
             "Recommend": {
               "methods": ["recommend", "recommendCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SampleQueryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SampleQueryServiceClient",
+          "rpcs": {
+            "CreateSampleQuery": {
+              "methods": ["createSampleQuery", "createSampleQuery", "createSampleQuery", "createSampleQueryCallable"]
+            },
+            "DeleteSampleQuery": {
+              "methods": ["deleteSampleQuery", "deleteSampleQuery", "deleteSampleQuery", "deleteSampleQueryCallable"]
+            },
+            "GetSampleQuery": {
+              "methods": ["getSampleQuery", "getSampleQuery", "getSampleQuery", "getSampleQueryCallable"]
+            },
+            "ImportSampleQueries": {
+              "methods": ["importSampleQueriesAsync", "importSampleQueriesOperationCallable", "importSampleQueriesCallable"]
+            },
+            "ListSampleQueries": {
+              "methods": ["listSampleQueries", "listSampleQueries", "listSampleQueries", "listSampleQueriesPagedCallable", "listSampleQueriesCallable"]
+            },
+            "UpdateSampleQuery": {
+              "methods": ["updateSampleQuery", "updateSampleQuery", "updateSampleQueryCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SampleQuerySetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SampleQuerySetServiceClient",
+          "rpcs": {
+            "CreateSampleQuerySet": {
+              "methods": ["createSampleQuerySet", "createSampleQuerySet", "createSampleQuerySet", "createSampleQuerySetCallable"]
+            },
+            "DeleteSampleQuerySet": {
+              "methods": ["deleteSampleQuerySet", "deleteSampleQuerySet", "deleteSampleQuerySet", "deleteSampleQuerySetCallable"]
+            },
+            "GetSampleQuerySet": {
+              "methods": ["getSampleQuerySet", "getSampleQuerySet", "getSampleQuerySet", "getSampleQuerySetCallable"]
+            },
+            "ListSampleQuerySets": {
+              "methods": ["listSampleQuerySets", "listSampleQuerySets", "listSampleQuerySets", "listSampleQuerySetsPagedCallable", "listSampleQuerySetsCallable"]
+            },
+            "UpdateSampleQuerySet": {
+              "methods": ["updateSampleQuerySet", "updateSampleQuerySet", "updateSampleQuerySetCallable"]
             }
           }
         }
@@ -117,6 +351,96 @@
           "rpcs": {
             "Search": {
               "methods": ["search", "searchPagedCallable", "searchCallable"]
+            },
+            "SearchLite": {
+              "methods": ["searchLite", "searchLitePagedCallable", "searchLiteCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SearchTuningService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchTuningServiceClient",
+          "rpcs": {
+            "ListCustomModels": {
+              "methods": ["listCustomModels", "listCustomModelsCallable"]
+            },
+            "TrainCustomModel": {
+              "methods": ["trainCustomModelAsync", "trainCustomModelOperationCallable", "trainCustomModelCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ServingConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServingConfigServiceClient",
+          "rpcs": {
+            "GetServingConfig": {
+              "methods": ["getServingConfig", "getServingConfig", "getServingConfig", "getServingConfigCallable"]
+            },
+            "ListServingConfigs": {
+              "methods": ["listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigsPagedCallable", "listServingConfigsCallable"]
+            },
+            "UpdateServingConfig": {
+              "methods": ["updateServingConfig", "updateServingConfig", "updateServingConfigCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SiteSearchEngineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SiteSearchEngineServiceClient",
+          "rpcs": {
+            "BatchCreateTargetSites": {
+              "methods": ["batchCreateTargetSitesAsync", "batchCreateTargetSitesOperationCallable", "batchCreateTargetSitesCallable"]
+            },
+            "BatchVerifyTargetSites": {
+              "methods": ["batchVerifyTargetSitesAsync", "batchVerifyTargetSitesOperationCallable", "batchVerifyTargetSitesCallable"]
+            },
+            "CreateSitemap": {
+              "methods": ["createSitemapAsync", "createSitemapAsync", "createSitemapAsync", "createSitemapOperationCallable", "createSitemapCallable"]
+            },
+            "CreateTargetSite": {
+              "methods": ["createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteAsync", "createTargetSiteOperationCallable", "createTargetSiteCallable"]
+            },
+            "DeleteSitemap": {
+              "methods": ["deleteSitemapAsync", "deleteSitemapAsync", "deleteSitemapAsync", "deleteSitemapOperationCallable", "deleteSitemapCallable"]
+            },
+            "DeleteTargetSite": {
+              "methods": ["deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteAsync", "deleteTargetSiteOperationCallable", "deleteTargetSiteCallable"]
+            },
+            "DisableAdvancedSiteSearch": {
+              "methods": ["disableAdvancedSiteSearchAsync", "disableAdvancedSiteSearchOperationCallable", "disableAdvancedSiteSearchCallable"]
+            },
+            "EnableAdvancedSiteSearch": {
+              "methods": ["enableAdvancedSiteSearchAsync", "enableAdvancedSiteSearchOperationCallable", "enableAdvancedSiteSearchCallable"]
+            },
+            "FetchDomainVerificationStatus": {
+              "methods": ["fetchDomainVerificationStatus", "fetchDomainVerificationStatusPagedCallable", "fetchDomainVerificationStatusCallable"]
+            },
+            "FetchSitemaps": {
+              "methods": ["fetchSitemaps", "fetchSitemaps", "fetchSitemaps", "fetchSitemapsCallable"]
+            },
+            "GetSiteSearchEngine": {
+              "methods": ["getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngine", "getSiteSearchEngineCallable"]
+            },
+            "GetTargetSite": {
+              "methods": ["getTargetSite", "getTargetSite", "getTargetSite", "getTargetSiteCallable"]
+            },
+            "ListTargetSites": {
+              "methods": ["listTargetSites", "listTargetSites", "listTargetSites", "listTargetSitesPagedCallable", "listTargetSitesCallable"]
+            },
+            "RecrawlUris": {
+              "methods": ["recrawlUrisAsync", "recrawlUrisOperationCallable", "recrawlUrisCallable"]
+            },
+            "UpdateTargetSite": {
+              "methods": ["updateTargetSiteAsync", "updateTargetSiteAsync", "updateTargetSiteOperationCallable", "updateTargetSiteCallable"]
             }
           }
         }
@@ -132,6 +456,9 @@
             },
             "ImportUserEvents": {
               "methods": ["importUserEventsAsync", "importUserEventsOperationCallable", "importUserEventsCallable"]
+            },
+            "PurgeUserEvents": {
+              "methods": ["purgeUserEventsAsync", "purgeUserEventsOperationCallable", "purgeUserEventsCallable"]
             },
             "WriteUserEvent": {
               "methods": ["writeUserEvent", "writeUserEventCallable"]

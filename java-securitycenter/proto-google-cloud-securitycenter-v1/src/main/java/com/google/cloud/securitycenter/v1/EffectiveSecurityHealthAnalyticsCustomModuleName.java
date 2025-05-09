@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -102,17 +101,14 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationEffectiveCustomModuleBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderEffectiveCustomModuleBuilder newFolderEffectiveCustomModuleBuilder() {
     return new FolderEffectiveCustomModuleBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectEffectiveCustomModuleBuilder newProjectEffectiveCustomModuleBuilder() {
     return new ProjectEffectiveCustomModuleBuilder();
   }
@@ -129,7 +125,6 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EffectiveSecurityHealthAnalyticsCustomModuleName
       ofOrganizationEffectiveCustomModuleName(String organization, String effectiveCustomModule) {
     return newBuilder()
@@ -138,7 +133,6 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EffectiveSecurityHealthAnalyticsCustomModuleName ofFolderEffectiveCustomModuleName(
       String folder, String effectiveCustomModule) {
     return newFolderEffectiveCustomModuleBuilder()
@@ -147,7 +141,6 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EffectiveSecurityHealthAnalyticsCustomModuleName ofProjectEffectiveCustomModuleName(
       String project, String effectiveCustomModule) {
     return newProjectEffectiveCustomModuleBuilder()
@@ -164,7 +157,6 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationEffectiveCustomModuleName(
       String organization, String effectiveCustomModule) {
     return newBuilder()
@@ -174,7 +166,6 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderEffectiveCustomModuleName(
       String folder, String effectiveCustomModule) {
     return newFolderEffectiveCustomModuleBuilder()
@@ -184,7 +175,6 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectEffectiveCustomModuleName(
       String project, String effectiveCustomModule) {
     return newProjectEffectiveCustomModuleBuilder()
@@ -212,7 +202,8 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
           matchMap.get("project"), matchMap.get("effective_custom_module"));
     }
     throw new ValidationException(
-        "EffectiveSecurityHealthAnalyticsCustomModuleName.parse: formattedString not in valid format");
+        "EffectiveSecurityHealthAnalyticsCustomModuleName.parse: formattedString not in valid"
+            + " format");
   }
 
   public static List<EffectiveSecurityHealthAnalyticsCustomModuleName> parseList(
@@ -279,7 +270,7 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (o == this) {
       return true;
     }
@@ -345,7 +336,9 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
           Objects.equals(
               effectiveSecurityHealthAnalyticsCustomModuleName.pathTemplate,
               ORGANIZATION_EFFECTIVE_CUSTOM_MODULE),
-          "toBuilder is only supported when EffectiveSecurityHealthAnalyticsCustomModuleName has the pattern of organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{effective_custom_module}");
+          "toBuilder is only supported when EffectiveSecurityHealthAnalyticsCustomModuleName has"
+              + " the pattern of"
+              + " organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{effective_custom_module}");
       this.organization = effectiveSecurityHealthAnalyticsCustomModuleName.organization;
       this.effectiveCustomModule =
           effectiveSecurityHealthAnalyticsCustomModuleName.effectiveCustomModule;
@@ -360,7 +353,6 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
    * Builder for
    * folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{effective_custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderEffectiveCustomModuleBuilder {
     private String folder;
     private String effectiveCustomModule;
@@ -395,7 +387,6 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
    * Builder for
    * projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{effective_custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectEffectiveCustomModuleBuilder {
     private String project;
     private String effectiveCustomModule;

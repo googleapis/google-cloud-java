@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -136,9 +136,33 @@ public class MockConversationsImpl extends ConversationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CompleteConversation, expected %s or %s",
+                  "Unrecognized response type %s for method CompleteConversation, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Conversation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void ingestContextReferences(
+      IngestContextReferencesRequest request,
+      StreamObserver<IngestContextReferencesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof IngestContextReferencesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((IngestContextReferencesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method IngestContextReferences, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  IngestContextReferencesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -179,7 +203,8 @@ public class MockConversationsImpl extends ConversationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SuggestConversationSummary, expected %s or %s",
+                  "Unrecognized response type %s for method SuggestConversationSummary, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SuggestConversationSummaryResponse.class.getName(),
                   Exception.class.getName())));
@@ -201,9 +226,33 @@ public class MockConversationsImpl extends ConversationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateStatelessSummary, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateStatelessSummary, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateStatelessSummaryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateStatelessSuggestion(
+      GenerateStatelessSuggestionRequest request,
+      StreamObserver<GenerateStatelessSuggestionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateStatelessSuggestionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateStatelessSuggestionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateStatelessSuggestion, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateStatelessSuggestionResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -225,6 +274,28 @@ public class MockConversationsImpl extends ConversationsImplBase {
                   "Unrecognized response type %s for method SearchKnowledge, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchKnowledgeResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateSuggestions(
+      GenerateSuggestionsRequest request,
+      StreamObserver<GenerateSuggestionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateSuggestionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateSuggestionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateSuggestions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateSuggestionsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

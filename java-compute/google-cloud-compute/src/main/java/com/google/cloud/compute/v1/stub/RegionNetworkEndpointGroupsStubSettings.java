@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,12 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListNetworkEndpointsPagedResponse;
 import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -44,21 +45,26 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AttachNetworkEndpointsRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.DeleteRegionNetworkEndpointGroupRequest;
+import com.google.cloud.compute.v1.DetachNetworkEndpointsRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.GetRegionNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.InsertRegionNetworkEndpointGroupRequest;
+import com.google.cloud.compute.v1.ListNetworkEndpointsRegionNetworkEndpointGroupsRequest;
 import com.google.cloud.compute.v1.ListRegionNetworkEndpointGroupsRequest;
 import com.google.cloud.compute.v1.NetworkEndpointGroup;
 import com.google.cloud.compute.v1.NetworkEndpointGroupList;
+import com.google.cloud.compute.v1.NetworkEndpointGroupsListNetworkEndpoints;
+import com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus;
 import com.google.cloud.compute.v1.Operation;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -75,7 +81,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -92,10 +100,47 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * RegionNetworkEndpointGroupsStubSettings regionNetworkEndpointGroupsSettings =
  *     regionNetworkEndpointGroupsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for attachNetworkEndpoints:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * RegionNetworkEndpointGroupsStubSettings.Builder regionNetworkEndpointGroupsSettingsBuilder =
+ *     RegionNetworkEndpointGroupsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * regionNetworkEndpointGroupsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -108,10 +153,22 @@ public class RegionNetworkEndpointGroupsStubSettings
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final UnaryCallSettings<
+          AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      attachNetworkEndpointsSettings;
+  private final OperationCallSettings<
+          AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationSettings;
   private final UnaryCallSettings<DeleteRegionNetworkEndpointGroupRequest, Operation>
       deleteSettings;
   private final OperationCallSettings<DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
       deleteOperationSettings;
+  private final UnaryCallSettings<
+          DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      detachNetworkEndpointsSettings;
+  private final OperationCallSettings<
+          DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationSettings;
   private final UnaryCallSettings<GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup>
       getSettings;
   private final UnaryCallSettings<InsertRegionNetworkEndpointGroupRequest, Operation>
@@ -121,6 +178,11 @@ public class RegionNetworkEndpointGroupsStubSettings
   private final PagedCallSettings<
           ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList, ListPagedResponse>
       listSettings;
+  private final PagedCallSettings<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints,
+          ListNetworkEndpointsPagedResponse>
+      listNetworkEndpointsSettings;
 
   private static final PagedListDescriptor<
           ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList, NetworkEndpointGroup>
@@ -163,9 +225,55 @@ public class RegionNetworkEndpointGroupsStubSettings
             @Override
             public Iterable<NetworkEndpointGroup> extractResources(
                 NetworkEndpointGroupList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<NetworkEndpointGroup>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints,
+          NetworkEndpointWithHealthStatus>
+      LIST_NETWORK_ENDPOINTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+              NetworkEndpointGroupsListNetworkEndpoints,
+              NetworkEndpointWithHealthStatus>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNetworkEndpointsRegionNetworkEndpointGroupsRequest injectToken(
+                ListNetworkEndpointsRegionNetworkEndpointGroupsRequest payload, String token) {
+              return ListNetworkEndpointsRegionNetworkEndpointGroupsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListNetworkEndpointsRegionNetworkEndpointGroupsRequest injectPageSize(
+                ListNetworkEndpointsRegionNetworkEndpointGroupsRequest payload, int pageSize) {
+              return ListNetworkEndpointsRegionNetworkEndpointGroupsRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListNetworkEndpointsRegionNetworkEndpointGroupsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(NetworkEndpointGroupsListNetworkEndpoints payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<NetworkEndpointWithHealthStatus> extractResources(
+                NetworkEndpointGroupsListNetworkEndpoints payload) {
+              return payload.getItemsList();
             }
           };
 
@@ -192,6 +300,48 @@ public class RegionNetworkEndpointGroupsStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints,
+          ListNetworkEndpointsPagedResponse>
+      LIST_NETWORK_ENDPOINTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+              NetworkEndpointGroupsListNetworkEndpoints,
+              ListNetworkEndpointsPagedResponse>() {
+            @Override
+            public ApiFuture<ListNetworkEndpointsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+                        NetworkEndpointGroupsListNetworkEndpoints>
+                    callable,
+                ListNetworkEndpointsRegionNetworkEndpointGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<NetworkEndpointGroupsListNetworkEndpoints> futureResponse) {
+              PageContext<
+                      ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+                      NetworkEndpointGroupsListNetworkEndpoints,
+                      NetworkEndpointWithHealthStatus>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_NETWORK_ENDPOINTS_PAGE_STR_DESC, request, context);
+              return ListNetworkEndpointsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Returns the object with the settings used for calls to attachNetworkEndpoints. */
+  public UnaryCallSettings<AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      attachNetworkEndpointsSettings() {
+    return attachNetworkEndpointsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to attachNetworkEndpoints. */
+  public OperationCallSettings<
+          AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      attachNetworkEndpointsOperationSettings() {
+    return attachNetworkEndpointsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionNetworkEndpointGroupRequest, Operation> deleteSettings() {
     return deleteSettings;
@@ -201,6 +351,19 @@ public class RegionNetworkEndpointGroupsStubSettings
   public OperationCallSettings<DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
       deleteOperationSettings() {
     return deleteOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to detachNetworkEndpoints. */
+  public UnaryCallSettings<DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+      detachNetworkEndpointsSettings() {
+    return detachNetworkEndpointsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to detachNetworkEndpoints. */
+  public OperationCallSettings<
+          DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+      detachNetworkEndpointsOperationSettings() {
+    return detachNetworkEndpointsOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to get. */
@@ -227,6 +390,15 @@ public class RegionNetworkEndpointGroupsStubSettings
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to listNetworkEndpoints. */
+  public PagedCallSettings<
+          ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+          NetworkEndpointGroupsListNetworkEndpoints,
+          ListNetworkEndpointsPagedResponse>
+      listNetworkEndpointsSettings() {
+    return listNetworkEndpointsSettings;
+  }
+
   public RegionNetworkEndpointGroupsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -238,12 +410,19 @@ public class RegionNetworkEndpointGroupsStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -275,7 +454,6 @@ public class RegionNetworkEndpointGroupsStubSettings
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -303,23 +481,42 @@ public class RegionNetworkEndpointGroupsStubSettings
   protected RegionNetworkEndpointGroupsStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    attachNetworkEndpointsSettings = settingsBuilder.attachNetworkEndpointsSettings().build();
+    attachNetworkEndpointsOperationSettings =
+        settingsBuilder.attachNetworkEndpointsOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
+    detachNetworkEndpointsSettings = settingsBuilder.detachNetworkEndpointsSettings().build();
+    detachNetworkEndpointsOperationSettings =
+        settingsBuilder.detachNetworkEndpointsOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    listNetworkEndpointsSettings = settingsBuilder.listNetworkEndpointsSettings().build();
   }
 
   /** Builder for RegionNetworkEndpointGroupsStubSettings. */
   public static class Builder
       extends StubSettings.Builder<RegionNetworkEndpointGroupsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<
+            AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+        attachNetworkEndpointsSettings;
+    private final OperationCallSettings.Builder<
+            AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+        attachNetworkEndpointsOperationSettings;
     private final UnaryCallSettings.Builder<DeleteRegionNetworkEndpointGroupRequest, Operation>
         deleteSettings;
     private final OperationCallSettings.Builder<
             DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
         deleteOperationSettings;
+    private final UnaryCallSettings.Builder<
+            DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+        detachNetworkEndpointsSettings;
+    private final OperationCallSettings.Builder<
+            DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+        detachNetworkEndpointsOperationSettings;
     private final UnaryCallSettings.Builder<
             GetRegionNetworkEndpointGroupRequest, NetworkEndpointGroup>
         getSettings;
@@ -331,6 +528,11 @@ public class RegionNetworkEndpointGroupsStubSettings
     private final PagedCallSettings.Builder<
             ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList, ListPagedResponse>
         listSettings;
+    private final PagedCallSettings.Builder<
+            ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+            NetworkEndpointGroupsListNetworkEndpoints,
+            ListNetworkEndpointsPagedResponse>
+        listNetworkEndpointsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -354,21 +556,21 @@ public class RegionNetworkEndpointGroupsStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -381,32 +583,57 @@ public class RegionNetworkEndpointGroupsStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      attachNetworkEndpointsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      attachNetworkEndpointsOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
+      detachNetworkEndpointsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      detachNetworkEndpointsOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      listNetworkEndpointsSettings =
+          PagedCallSettings.newBuilder(LIST_NETWORK_ENDPOINTS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings);
+              attachNetworkEndpointsSettings,
+              deleteSettings,
+              detachNetworkEndpointsSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              listNetworkEndpointsSettings);
       initDefaults(this);
     }
 
     protected Builder(RegionNetworkEndpointGroupsStubSettings settings) {
       super(settings);
 
+      attachNetworkEndpointsSettings = settings.attachNetworkEndpointsSettings.toBuilder();
+      attachNetworkEndpointsOperationSettings =
+          settings.attachNetworkEndpointsOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
+      detachNetworkEndpointsSettings = settings.detachNetworkEndpointsSettings.toBuilder();
+      detachNetworkEndpointsOperationSettings =
+          settings.detachNetworkEndpointsOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      listNetworkEndpointsSettings = settings.listNetworkEndpointsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings);
+              attachNetworkEndpointsSettings,
+              deleteSettings,
+              detachNetworkEndpointsSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              listNetworkEndpointsSettings);
     }
 
     private static Builder createDefault() {
@@ -415,7 +642,6 @@ public class RegionNetworkEndpointGroupsStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -424,7 +650,17 @@ public class RegionNetworkEndpointGroupsStubSettings
 
     private static Builder initDefaults(Builder builder) {
       builder
+          .attachNetworkEndpointsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .detachNetworkEndpointsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -444,6 +680,36 @@ public class RegionNetworkEndpointGroupsStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listNetworkEndpointsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .attachNetworkEndpointsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .deleteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -459,13 +725,38 @@ public class RegionNetworkEndpointGroupsStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .detachNetworkEndpointsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -484,13 +775,13 @@ public class RegionNetworkEndpointGroupsStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -511,6 +802,20 @@ public class RegionNetworkEndpointGroupsStubSettings
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to attachNetworkEndpoints. */
+    public UnaryCallSettings.Builder<
+            AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+        attachNetworkEndpointsSettings() {
+      return attachNetworkEndpointsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to attachNetworkEndpoints. */
+    public OperationCallSettings.Builder<
+            AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+        attachNetworkEndpointsOperationSettings() {
+      return attachNetworkEndpointsOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteRegionNetworkEndpointGroupRequest, Operation>
         deleteSettings() {
@@ -518,12 +823,24 @@ public class RegionNetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
+    public UnaryCallSettings.Builder<
+            DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation>
+        detachNetworkEndpointsSettings() {
+      return detachNetworkEndpointsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
+    public OperationCallSettings.Builder<
+            DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
+        detachNetworkEndpointsOperationSettings() {
+      return detachNetworkEndpointsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to get. */
@@ -539,8 +856,6 @@ public class RegionNetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             InsertRegionNetworkEndpointGroupRequest, Operation, Operation>
         insertOperationSettings() {
@@ -552,6 +867,15 @@ public class RegionNetworkEndpointGroupsStubSettings
             ListRegionNetworkEndpointGroupsRequest, NetworkEndpointGroupList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listNetworkEndpoints. */
+    public PagedCallSettings.Builder<
+            ListNetworkEndpointsRegionNetworkEndpointGroupsRequest,
+            NetworkEndpointGroupsListNetworkEndpoints,
+            ListNetworkEndpointsPagedResponse>
+        listNetworkEndpointsSettings() {
+      return listNetworkEndpointsSettings;
     }
 
     @Override

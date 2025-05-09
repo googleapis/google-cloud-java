@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_image_classification.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 /**
@@ -34,6 +35,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassification)
     AutoMlImageClassificationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlImageClassification.newBuilder() to construct.
   private AutoMlImageClassification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,10 +68,12 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
                 .Builder.class);
   }
 
+  private int bitField0_;
   public static final int INPUTS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageClassificationInputs
       inputs_;
+
   /**
    *
    *
@@ -85,8 +89,9 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasInputs() {
-    return inputs_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +114,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
             .AutoMlImageClassificationInputs.getDefaultInstance()
         : inputs_;
   }
+
   /**
    *
    *
@@ -134,6 +140,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
   private com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageClassificationMetadata
       metadata_;
+
   /**
    *
    *
@@ -149,8 +156,9 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasMetadata() {
-    return metadata_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +181,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
             .AutoMlImageClassificationMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -208,10 +217,10 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (inputs_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getInputs());
     }
-    if (metadata_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getMetadata());
     }
     getUnknownFields().writeTo(output);
@@ -223,10 +232,10 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (inputs_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInputs());
     }
-    if (metadata_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMetadata());
     }
     size += getUnknownFields().getSerializedSize();
@@ -395,6 +404,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -431,10 +441,20 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
 
     // Construct using
     // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassification.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getInputsFieldBuilder();
+        getMetadataFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -497,12 +517,16 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
         com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassification
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.inputs_ = inputsBuilder_ == null ? inputs_ : inputsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -632,6 +656,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                 .AutoMlImageClassificationInputsOrBuilder>
         inputsBuilder_;
+
     /**
      *
      *
@@ -648,6 +673,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -673,6 +699,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
         return inputsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -699,6 +726,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +751,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -750,10 +779,13 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       } else {
         inputsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      if (inputs_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +807,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +826,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -816,6 +850,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
             : inputs_;
       }
     }
+
     /**
      *
      *
@@ -861,6 +896,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                 .AutoMlImageClassificationMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -877,6 +913,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -902,6 +939,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -929,6 +967,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +992,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -981,10 +1021,13 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      if (metadata_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1049,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1068,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1047,6 +1092,7 @@ public final class AutoMlImageClassification extends com.google.protobuf.Generat
             : metadata_;
       }
     }
+
     /**
      *
      *

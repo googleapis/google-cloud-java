@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,6 +139,19 @@ public final class ChangelogsGrpc {
           }
         };
     return ChangelogsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ChangelogsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ChangelogsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ChangelogsBlockingV2Stub>() {
+          @java.lang.Override
+          public ChangelogsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ChangelogsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ChangelogsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -281,6 +294,53 @@ public final class ChangelogsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Changelogs.
+   *
+   * <pre>
+   * Service for managing
+   * [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
+   * </pre>
+   */
+  public static final class ChangelogsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ChangelogsBlockingV2Stub> {
+    private ChangelogsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ChangelogsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ChangelogsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of Changelogs.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListChangelogsResponse listChangelogs(
+        com.google.cloud.dialogflow.cx.v3beta1.ListChangelogsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChangelogsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified Changelog.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Changelog getChangelog(
+        com.google.cloud.dialogflow.cx.v3beta1.GetChangelogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChangelogMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Changelogs.
    *
    * <pre>
    * Service for managing

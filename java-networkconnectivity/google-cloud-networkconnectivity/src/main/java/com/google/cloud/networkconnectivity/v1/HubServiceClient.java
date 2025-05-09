@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,19 +71,547 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the HubServiceClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListHubs</td>
+ *      <td><p> Lists the Network Connectivity Center hubs associated with a given project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listHubs(ListHubsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listHubs(LocationName parent)
+ *           <li><p> listHubs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listHubsPagedCallable()
+ *           <li><p> listHubsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetHub</td>
+ *      <td><p> Gets details about a Network Connectivity Center hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHub(GetHubRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHub(HubName name)
+ *           <li><p> getHub(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHubCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateHub</td>
+ *      <td><p> Creates a new Network Connectivity Center hub in the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createHubAsync(CreateHubRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createHubAsync(LocationName parent, Hub hub, String hubId)
+ *           <li><p> createHubAsync(String parent, Hub hub, String hubId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createHubOperationCallable()
+ *           <li><p> createHubCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateHub</td>
+ *      <td><p> Updates the description and/or labels of a Network Connectivity Center hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateHubAsync(UpdateHubRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateHubAsync(Hub hub, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateHubOperationCallable()
+ *           <li><p> updateHubCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteHub</td>
+ *      <td><p> Deletes a Network Connectivity Center hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteHubAsync(DeleteHubRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteHubAsync(HubName name)
+ *           <li><p> deleteHubAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteHubOperationCallable()
+ *           <li><p> deleteHubCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListHubSpokes</td>
+ *      <td><p> Lists the Network Connectivity Center spokes associated with a specified hub and location. The list includes both spokes that are attached to the hub and spokes that have been proposed but not yet accepted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listHubSpokes(ListHubSpokesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listHubSpokes(HubName name)
+ *           <li><p> listHubSpokes(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listHubSpokesPagedCallable()
+ *           <li><p> listHubSpokesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryHubStatus</td>
+ *      <td><p> Query the Private Service Connect propagation status of a Network Connectivity Center hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryHubStatus(QueryHubStatusRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> queryHubStatus(HubName name)
+ *           <li><p> queryHubStatus(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryHubStatusPagedCallable()
+ *           <li><p> queryHubStatusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSpokes</td>
+ *      <td><p> Lists the Network Connectivity Center spokes in a specified project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSpokes(ListSpokesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSpokes(LocationName parent)
+ *           <li><p> listSpokes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSpokesPagedCallable()
+ *           <li><p> listSpokesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSpoke</td>
+ *      <td><p> Gets details about a Network Connectivity Center spoke.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSpoke(GetSpokeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSpoke(SpokeName name)
+ *           <li><p> getSpoke(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSpokeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSpoke</td>
+ *      <td><p> Creates a Network Connectivity Center spoke.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSpokeAsync(CreateSpokeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createSpokeAsync(LocationName parent, Spoke spoke, String spokeId)
+ *           <li><p> createSpokeAsync(String parent, Spoke spoke, String spokeId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSpokeOperationCallable()
+ *           <li><p> createSpokeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSpoke</td>
+ *      <td><p> Updates the parameters of a Network Connectivity Center spoke.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSpokeAsync(UpdateSpokeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateSpokeAsync(Spoke spoke, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSpokeOperationCallable()
+ *           <li><p> updateSpokeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RejectHubSpoke</td>
+ *      <td><p> Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able to connect to other spokes that are attached to the hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rejectHubSpokeAsync(RejectHubSpokeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> rejectHubSpokeAsync(HubName name, SpokeName spokeUri)
+ *           <li><p> rejectHubSpokeAsync(HubName name, String spokeUri)
+ *           <li><p> rejectHubSpokeAsync(String name, SpokeName spokeUri)
+ *           <li><p> rejectHubSpokeAsync(String name, String spokeUri)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rejectHubSpokeOperationCallable()
+ *           <li><p> rejectHubSpokeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AcceptHubSpoke</td>
+ *      <td><p> Accepts a proposal to attach a Network Connectivity Center spoke to a hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> acceptHubSpokeAsync(AcceptHubSpokeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> acceptHubSpokeAsync(HubName name, SpokeName spokeUri)
+ *           <li><p> acceptHubSpokeAsync(HubName name, String spokeUri)
+ *           <li><p> acceptHubSpokeAsync(String name, SpokeName spokeUri)
+ *           <li><p> acceptHubSpokeAsync(String name, String spokeUri)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> acceptHubSpokeOperationCallable()
+ *           <li><p> acceptHubSpokeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AcceptSpokeUpdate</td>
+ *      <td><p> Accepts a proposal to update a Network Connectivity Center spoke in a hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> acceptSpokeUpdateAsync(AcceptSpokeUpdateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> acceptSpokeUpdateAsync(HubName name, SpokeName spokeUri, String spokeEtag)
+ *           <li><p> acceptSpokeUpdateAsync(HubName name, String spokeUri, String spokeEtag)
+ *           <li><p> acceptSpokeUpdateAsync(String name, SpokeName spokeUri, String spokeEtag)
+ *           <li><p> acceptSpokeUpdateAsync(String name, String spokeUri, String spokeEtag)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> acceptSpokeUpdateOperationCallable()
+ *           <li><p> acceptSpokeUpdateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RejectSpokeUpdate</td>
+ *      <td><p> Rejects a proposal to update a Network Connectivity Center spoke in a hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rejectSpokeUpdateAsync(RejectSpokeUpdateRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> rejectSpokeUpdateAsync(HubName name, SpokeName spokeUri, String spokeEtag)
+ *           <li><p> rejectSpokeUpdateAsync(HubName name, String spokeUri, String spokeEtag)
+ *           <li><p> rejectSpokeUpdateAsync(String name, SpokeName spokeUri, String spokeEtag)
+ *           <li><p> rejectSpokeUpdateAsync(String name, String spokeUri, String spokeEtag)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rejectSpokeUpdateOperationCallable()
+ *           <li><p> rejectSpokeUpdateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSpoke</td>
+ *      <td><p> Deletes a Network Connectivity Center spoke.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSpokeAsync(DeleteSpokeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteSpokeAsync(SpokeName name)
+ *           <li><p> deleteSpokeAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSpokeOperationCallable()
+ *           <li><p> deleteSpokeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRouteTable</td>
+ *      <td><p> Gets details about a Network Connectivity Center route table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRouteTable(GetRouteTableRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRouteTable(RouteTableName name)
+ *           <li><p> getRouteTable(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRouteTableCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRoute</td>
+ *      <td><p> Gets details about the specified route.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRoute(GetRouteRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRoute(HubRouteName name)
+ *           <li><p> getRoute(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRouteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRoutes</td>
+ *      <td><p> Lists routes in a given route table.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRoutes(ListRoutesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRoutes(RouteTableName parent)
+ *           <li><p> listRoutes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRoutesPagedCallable()
+ *           <li><p> listRoutesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRouteTables</td>
+ *      <td><p> Lists route tables in a given hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRouteTables(ListRouteTablesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRouteTables(HubName parent)
+ *           <li><p> listRouteTables(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRouteTablesPagedCallable()
+ *           <li><p> listRouteTablesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGroup</td>
+ *      <td><p> Gets details about a Network Connectivity Center group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGroup(GetGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getGroup(GroupName name)
+ *           <li><p> getGroup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListGroups</td>
+ *      <td><p> Lists groups in a given hub.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listGroups(ListGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listGroups(HubName parent)
+ *           <li><p> listGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listGroupsPagedCallable()
+ *           <li><p> listGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateGroup</td>
+ *      <td><p> Updates the parameters of a Network Connectivity Center group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateGroupAsync(UpdateGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateGroupAsync(Group group, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateGroupOperationCallable()
+ *           <li><p> updateGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -1051,6 +1579,176 @@ public class HubServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListHubSpokesRequest, ListHubSpokesResponse> listHubSpokesCallable() {
     return stub.listHubSpokesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   for (HubStatusEntry element : hubServiceClient.queryHubStatus(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryHubStatusPagedResponse queryHubStatus(HubName name) {
+    QueryHubStatusRequest request =
+        QueryHubStatusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return queryHubStatus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   for (HubStatusEntry element : hubServiceClient.queryHubStatus(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryHubStatusPagedResponse queryHubStatus(String name) {
+    QueryHubStatusRequest request = QueryHubStatusRequest.newBuilder().setName(name).build();
+    return queryHubStatus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   QueryHubStatusRequest request =
+   *       QueryHubStatusRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setGroupBy("groupBy293428022")
+   *           .build();
+   *   for (HubStatusEntry element : hubServiceClient.queryHubStatus(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryHubStatusPagedResponse queryHubStatus(QueryHubStatusRequest request) {
+    return queryHubStatusPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   QueryHubStatusRequest request =
+   *       QueryHubStatusRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setGroupBy("groupBy293428022")
+   *           .build();
+   *   ApiFuture<HubStatusEntry> future =
+   *       hubServiceClient.queryHubStatusPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (HubStatusEntry element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryHubStatusRequest, QueryHubStatusPagedResponse>
+      queryHubStatusPagedCallable() {
+    return stub.queryHubStatusPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Query the Private Service Connect propagation status of a Network Connectivity Center hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   QueryHubStatusRequest request =
+   *       QueryHubStatusRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setGroupBy("groupBy293428022")
+   *           .build();
+   *   while (true) {
+   *     QueryHubStatusResponse response = hubServiceClient.queryHubStatusCallable().call(request);
+   *     for (HubStatusEntry element : response.getHubStatusEntriesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<QueryHubStatusRequest, QueryHubStatusResponse>
+      queryHubStatusCallable() {
+    return stub.queryHubStatusCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2074,6 +2772,497 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   AcceptSpokeUpdateResponse response =
+   *       hubServiceClient.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to accept spoke update.
+   * @param spokeUri Required. The URI of the spoke to accept update.
+   * @param spokeEtag Required. The etag of the spoke to accept update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      HubName name, SpokeName spokeUri, String spokeEtag) {
+    AcceptSpokeUpdateRequest request =
+        AcceptSpokeUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return acceptSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   AcceptSpokeUpdateResponse response =
+   *       hubServiceClient.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to accept spoke update.
+   * @param spokeUri Required. The URI of the spoke to accept update.
+   * @param spokeEtag Required. The etag of the spoke to accept update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      HubName name, String spokeUri, String spokeEtag) {
+    AcceptSpokeUpdateRequest request =
+        AcceptSpokeUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri)
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return acceptSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   AcceptSpokeUpdateResponse response =
+   *       hubServiceClient.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to accept spoke update.
+   * @param spokeUri Required. The URI of the spoke to accept update.
+   * @param spokeEtag Required. The etag of the spoke to accept update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      String name, SpokeName spokeUri, String spokeEtag) {
+    AcceptSpokeUpdateRequest request =
+        AcceptSpokeUpdateRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return acceptSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   AcceptSpokeUpdateResponse response =
+   *       hubServiceClient.acceptSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to accept spoke update.
+   * @param spokeUri Required. The URI of the spoke to accept update.
+   * @param spokeEtag Required. The etag of the spoke to accept update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      String name, String spokeUri, String spokeEtag) {
+    AcceptSpokeUpdateRequest request =
+        AcceptSpokeUpdateRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri)
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return acceptSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptSpokeUpdateRequest request =
+   *       AcceptSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AcceptSpokeUpdateResponse response = hubServiceClient.acceptSpokeUpdateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
+      AcceptSpokeUpdateRequest request) {
+    return acceptSpokeUpdateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptSpokeUpdateRequest request =
+   *       AcceptSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> future =
+   *       hubServiceClient.acceptSpokeUpdateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AcceptSpokeUpdateResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationCallable() {
+    return stub.acceptSpokeUpdateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptSpokeUpdateRequest request =
+   *       AcceptSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       hubServiceClient.acceptSpokeUpdateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateCallable() {
+    return stub.acceptSpokeUpdateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   RejectSpokeUpdateResponse response =
+   *       hubServiceClient.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to reject spoke update.
+   * @param spokeUri Required. The URI of the spoke to reject update.
+   * @param spokeEtag Required. The etag of the spoke to reject update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      HubName name, SpokeName spokeUri, String spokeEtag) {
+    RejectSpokeUpdateRequest request =
+        RejectSpokeUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return rejectSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   RejectSpokeUpdateResponse response =
+   *       hubServiceClient.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to reject spoke update.
+   * @param spokeUri Required. The URI of the spoke to reject update.
+   * @param spokeEtag Required. The etag of the spoke to reject update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      HubName name, String spokeUri, String spokeEtag) {
+    RejectSpokeUpdateRequest request =
+        RejectSpokeUpdateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri)
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return rejectSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   RejectSpokeUpdateResponse response =
+   *       hubServiceClient.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to reject spoke update.
+   * @param spokeUri Required. The URI of the spoke to reject update.
+   * @param spokeEtag Required. The etag of the spoke to reject update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      String name, SpokeName spokeUri, String spokeEtag) {
+    RejectSpokeUpdateRequest request =
+        RejectSpokeUpdateRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return rejectSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   String spokeEtag = "spokeEtag-1185145407";
+   *   RejectSpokeUpdateResponse response =
+   *       hubServiceClient.rejectSpokeUpdateAsync(name, spokeUri, spokeEtag).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub to reject spoke update.
+   * @param spokeUri Required. The URI of the spoke to reject update.
+   * @param spokeEtag Required. The etag of the spoke to reject update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      String name, String spokeUri, String spokeEtag) {
+    RejectSpokeUpdateRequest request =
+        RejectSpokeUpdateRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri)
+            .setSpokeEtag(spokeEtag)
+            .build();
+    return rejectSpokeUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectSpokeUpdateRequest request =
+   *       RejectSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setDetails("details1557721666")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RejectSpokeUpdateResponse response = hubServiceClient.rejectSpokeUpdateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
+      RejectSpokeUpdateRequest request) {
+    return rejectSpokeUpdateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectSpokeUpdateRequest request =
+   *       RejectSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setDetails("details1557721666")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> future =
+   *       hubServiceClient.rejectSpokeUpdateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RejectSpokeUpdateResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationCallable() {
+    return stub.rejectSpokeUpdateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectSpokeUpdateRequest request =
+   *       RejectSpokeUpdateRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setSpokeEtag("spokeEtag-1185145407")
+   *           .setDetails("details1557721666")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       hubServiceClient.rejectSpokeUpdateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateCallable() {
+    return stub.rejectSpokeUpdateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a Network Connectivity Center spoke.
    *
    * <p>Sample code:
@@ -2431,7 +3620,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -2460,7 +3649,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -2488,7 +3677,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -2522,7 +3711,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -2555,7 +3744,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists routes in a given project.
+   * Lists routes in a given route table.
    *
    * <p>Sample code:
    *
@@ -2595,7 +3784,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -2626,7 +3815,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -2654,7 +3843,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -2688,7 +3877,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -2723,7 +3912,7 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists route tables in a given project.
+   * Lists route tables in a given hub.
    *
    * <p>Sample code:
    *
@@ -3032,6 +4221,130 @@ public class HubServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
     return stub.listGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   Group group = Group.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Group response = hubServiceClient.updateGroupAsync(group, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param group Required. The state that the group should be in after the update.
+   * @param updateMask Optional. In the case of an update to an existing group, field mask is used
+   *     to specify the fields to be overwritten. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field is overwritten if it is in the
+   *     mask. If the user does not provide a mask, then all fields are overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Group, OperationMetadata> updateGroupAsync(
+      Group group, FieldMask updateMask) {
+    UpdateGroupRequest request =
+        UpdateGroupRequest.newBuilder().setGroup(group).setUpdateMask(updateMask).build();
+    return updateGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGroupRequest request =
+   *       UpdateGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGroup(Group.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Group response = hubServiceClient.updateGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Group, OperationMetadata> updateGroupAsync(
+      UpdateGroupRequest request) {
+    return updateGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGroupRequest request =
+   *       UpdateGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGroup(Group.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Group, OperationMetadata> future =
+   *       hubServiceClient.updateGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Group response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationCallable() {
+    return stub.updateGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateGroupRequest request =
+   *       UpdateGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setGroup(Group.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.updateGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable() {
+    return stub.updateGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3545,6 +4858,82 @@ public class HubServiceClient implements BackgroundResource {
     protected ListHubSpokesFixedSizeCollection createCollection(
         List<ListHubSpokesPage> pages, int collectionSize) {
       return new ListHubSpokesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class QueryHubStatusPagedResponse
+      extends AbstractPagedListResponse<
+          QueryHubStatusRequest,
+          QueryHubStatusResponse,
+          HubStatusEntry,
+          QueryHubStatusPage,
+          QueryHubStatusFixedSizeCollection> {
+
+    public static ApiFuture<QueryHubStatusPagedResponse> createAsync(
+        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        ApiFuture<QueryHubStatusResponse> futureResponse) {
+      ApiFuture<QueryHubStatusPage> futurePage =
+          QueryHubStatusPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new QueryHubStatusPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private QueryHubStatusPagedResponse(QueryHubStatusPage page) {
+      super(page, QueryHubStatusFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class QueryHubStatusPage
+      extends AbstractPage<
+          QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry, QueryHubStatusPage> {
+
+    private QueryHubStatusPage(
+        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        QueryHubStatusResponse response) {
+      super(context, response);
+    }
+
+    private static QueryHubStatusPage createEmptyPage() {
+      return new QueryHubStatusPage(null, null);
+    }
+
+    @Override
+    protected QueryHubStatusPage createPage(
+        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        QueryHubStatusResponse response) {
+      return new QueryHubStatusPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<QueryHubStatusPage> createPageAsync(
+        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        ApiFuture<QueryHubStatusResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class QueryHubStatusFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          QueryHubStatusRequest,
+          QueryHubStatusResponse,
+          HubStatusEntry,
+          QueryHubStatusPage,
+          QueryHubStatusFixedSizeCollection> {
+
+    private QueryHubStatusFixedSizeCollection(List<QueryHubStatusPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static QueryHubStatusFixedSizeCollection createEmptyCollection() {
+      return new QueryHubStatusFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected QueryHubStatusFixedSizeCollection createCollection(
+        List<QueryHubStatusPage> pages, int collectionSize) {
+      return new QueryHubStatusFixedSizeCollection(pages, collectionSize);
     }
   }
 

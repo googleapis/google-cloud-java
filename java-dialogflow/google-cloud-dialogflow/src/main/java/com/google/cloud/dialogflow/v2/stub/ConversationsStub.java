@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,15 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.CreateConversationRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsRequest;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse;
 import com.google.cloud.dialogflow.v2.GetConversationRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesResponse;
 import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
@@ -73,6 +79,11 @@ public abstract class ConversationsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: completeConversationCallable()");
   }
 
+  public UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable() {
+    throw new UnsupportedOperationException("Not implemented: ingestContextReferencesCallable()");
+  }
+
   public UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse> listMessagesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listMessagesPagedCallable()");
   }
@@ -92,8 +103,19 @@ public abstract class ConversationsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: generateStatelessSummaryCallable()");
   }
 
+  public UnaryCallable<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: generateStatelessSuggestionCallable()");
+  }
+
   public UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse> searchKnowledgeCallable() {
     throw new UnsupportedOperationException("Not implemented: searchKnowledgeCallable()");
+  }
+
+  public UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateSuggestionsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

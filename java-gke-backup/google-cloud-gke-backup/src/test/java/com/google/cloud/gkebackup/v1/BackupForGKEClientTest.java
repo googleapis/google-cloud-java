@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,13 @@
 
 package com.google.cloud.gkebackup.v1;
 
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupChannelsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListBackupsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListLocationsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoreChannelsPagedResponse;
+import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlanBindingsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestorePlansPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoresPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeBackupsPagedResponse;
@@ -129,6 +133,9 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -195,6 +202,9 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -349,6 +359,9 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -400,6 +413,9 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -451,6 +467,9 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
+            .setLastSuccessfulBackupTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -580,6 +599,642 @@ public class BackupForGKEClientTest {
   }
 
   @Test
+  public void createBackupChannelTest() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    BackupChannel backupChannel = BackupChannel.newBuilder().build();
+    String backupChannelId = "backupChannelId707614172";
+
+    BackupChannel actualResponse =
+        client.createBackupChannelAsync(parent, backupChannel, backupChannelId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBackupChannelRequest actualRequest = ((CreateBackupChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(backupChannel, actualRequest.getBackupChannel());
+    Assert.assertEquals(backupChannelId, actualRequest.getBackupChannelId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBackupChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      BackupChannel backupChannel = BackupChannel.newBuilder().build();
+      String backupChannelId = "backupChannelId707614172";
+      client.createBackupChannelAsync(parent, backupChannel, backupChannelId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createBackupChannelTest2() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    BackupChannel backupChannel = BackupChannel.newBuilder().build();
+    String backupChannelId = "backupChannelId707614172";
+
+    BackupChannel actualResponse =
+        client.createBackupChannelAsync(parent, backupChannel, backupChannelId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBackupChannelRequest actualRequest = ((CreateBackupChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(backupChannel, actualRequest.getBackupChannel());
+    Assert.assertEquals(backupChannelId, actualRequest.getBackupChannelId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBackupChannelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      BackupChannel backupChannel = BackupChannel.newBuilder().build();
+      String backupChannelId = "backupChannelId707614172";
+      client.createBackupChannelAsync(parent, backupChannel, backupChannelId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listBackupChannelsTest() throws Exception {
+    BackupChannel responsesElement = BackupChannel.newBuilder().build();
+    ListBackupChannelsResponse expectedResponse =
+        ListBackupChannelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupChannels(Arrays.asList(responsesElement))
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListBackupChannelsPagedResponse pagedListResponse = client.listBackupChannels(parent);
+
+    List<BackupChannel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupChannelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBackupChannelsRequest actualRequest = ((ListBackupChannelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBackupChannelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listBackupChannels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupChannelsTest2() throws Exception {
+    BackupChannel responsesElement = BackupChannel.newBuilder().build();
+    ListBackupChannelsResponse expectedResponse =
+        ListBackupChannelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupChannels(Arrays.asList(responsesElement))
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListBackupChannelsPagedResponse pagedListResponse = client.listBackupChannels(parent);
+
+    List<BackupChannel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupChannelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBackupChannelsRequest actualRequest = ((ListBackupChannelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBackupChannelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listBackupChannels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupChannelTest() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    BackupChannelName name = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+
+    BackupChannel actualResponse = client.getBackupChannel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupChannelRequest actualRequest = ((GetBackupChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      BackupChannelName name = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+      client.getBackupChannel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupChannelTest2() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    BackupChannel actualResponse = client.getBackupChannel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupChannelRequest actualRequest = ((GetBackupChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupChannelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBackupChannel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateBackupChannelTest() throws Exception {
+    BackupChannel expectedResponse =
+        BackupChannel.newBuilder()
+            .setName(BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    BackupChannel backupChannel = BackupChannel.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    BackupChannel actualResponse = client.updateBackupChannelAsync(backupChannel, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateBackupChannelRequest actualRequest = ((UpdateBackupChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(backupChannel, actualRequest.getBackupChannel());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateBackupChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      BackupChannel backupChannel = BackupChannel.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBackupChannelAsync(backupChannel, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteBackupChannelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    BackupChannelName name = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+
+    client.deleteBackupChannelAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBackupChannelRequest actualRequest = ((DeleteBackupChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBackupChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      BackupChannelName name = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+      client.deleteBackupChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteBackupChannelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBackupChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteBackupChannelAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBackupChannelRequest actualRequest = ((DeleteBackupChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBackupChannelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteBackupChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listBackupPlanBindingsTest() throws Exception {
+    BackupPlanBinding responsesElement = BackupPlanBinding.newBuilder().build();
+    ListBackupPlanBindingsResponse expectedResponse =
+        ListBackupPlanBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupPlanBindings(Arrays.asList(responsesElement))
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    BackupChannelName parent = BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+
+    ListBackupPlanBindingsPagedResponse pagedListResponse = client.listBackupPlanBindings(parent);
+
+    List<BackupPlanBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupPlanBindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBackupPlanBindingsRequest actualRequest =
+        ((ListBackupPlanBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBackupPlanBindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      BackupChannelName parent =
+          BackupChannelName.of("[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]");
+      client.listBackupPlanBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupPlanBindingsTest2() throws Exception {
+    BackupPlanBinding responsesElement = BackupPlanBinding.newBuilder().build();
+    ListBackupPlanBindingsResponse expectedResponse =
+        ListBackupPlanBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupPlanBindings(Arrays.asList(responsesElement))
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListBackupPlanBindingsPagedResponse pagedListResponse = client.listBackupPlanBindings(parent);
+
+    List<BackupPlanBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupPlanBindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListBackupPlanBindingsRequest actualRequest =
+        ((ListBackupPlanBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listBackupPlanBindingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listBackupPlanBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupPlanBindingTest() throws Exception {
+    BackupPlanBinding expectedResponse =
+        BackupPlanBinding.newBuilder()
+            .setName(
+                BackupPlanBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]", "[BACKUP_PLAN_BINDING]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .setCluster("cluster872092154")
+            .setBackupPlanDetails(BackupPlanBinding.BackupPlanDetails.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    BackupPlanBindingName name =
+        BackupPlanBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]", "[BACKUP_PLAN_BINDING]");
+
+    BackupPlanBinding actualResponse = client.getBackupPlanBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupPlanBindingRequest actualRequest =
+        ((GetBackupPlanBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupPlanBindingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      BackupPlanBindingName name =
+          BackupPlanBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]", "[BACKUP_PLAN_BINDING]");
+      client.getBackupPlanBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupPlanBindingTest2() throws Exception {
+    BackupPlanBinding expectedResponse =
+        BackupPlanBinding.newBuilder()
+            .setName(
+                BackupPlanBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[BACKUP_CHANNEL]", "[BACKUP_PLAN_BINDING]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .setCluster("cluster872092154")
+            .setBackupPlanDetails(BackupPlanBinding.BackupPlanDetails.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    BackupPlanBinding actualResponse = client.getBackupPlanBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupPlanBindingRequest actualRequest =
+        ((GetBackupPlanBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupPlanBindingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBackupPlanBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createBackupTest() throws Exception {
     Backup expectedResponse =
         Backup.newBuilder()
@@ -607,6 +1262,9 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -682,6 +1340,9 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -845,6 +1506,9 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -906,6 +1570,9 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -967,6 +1634,9 @@ public class BackupForGKEClientTest {
             .setDescription("description-1724546052")
             .setPodCount(977657493)
             .setConfigBackupSizeBytes(-606785139)
+            .setPermissiveMode(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1201,6 +1871,8 @@ public class BackupForGKEClientTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -1256,6 +1928,8 @@ public class BackupForGKEClientTest {
             .setCompleteTime(Timestamp.newBuilder().build())
             .setStateMessage("stateMessage1128185398")
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -1743,6 +2417,656 @@ public class BackupForGKEClientTest {
   }
 
   @Test
+  public void createRestoreChannelTest() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+    String restoreChannelId = "restoreChannelId1139842704";
+
+    RestoreChannel actualResponse =
+        client.createRestoreChannelAsync(parent, restoreChannel, restoreChannelId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRestoreChannelRequest actualRequest =
+        ((CreateRestoreChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(restoreChannel, actualRequest.getRestoreChannel());
+    Assert.assertEquals(restoreChannelId, actualRequest.getRestoreChannelId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRestoreChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+      String restoreChannelId = "restoreChannelId1139842704";
+      client.createRestoreChannelAsync(parent, restoreChannel, restoreChannelId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRestoreChannelTest2() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+    String restoreChannelId = "restoreChannelId1139842704";
+
+    RestoreChannel actualResponse =
+        client.createRestoreChannelAsync(parent, restoreChannel, restoreChannelId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRestoreChannelRequest actualRequest =
+        ((CreateRestoreChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(restoreChannel, actualRequest.getRestoreChannel());
+    Assert.assertEquals(restoreChannelId, actualRequest.getRestoreChannelId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRestoreChannelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+      String restoreChannelId = "restoreChannelId1139842704";
+      client.createRestoreChannelAsync(parent, restoreChannel, restoreChannelId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listRestoreChannelsTest() throws Exception {
+    RestoreChannel responsesElement = RestoreChannel.newBuilder().build();
+    ListRestoreChannelsResponse expectedResponse =
+        ListRestoreChannelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreChannels(Arrays.asList(responsesElement))
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListRestoreChannelsPagedResponse pagedListResponse = client.listRestoreChannels(parent);
+
+    List<RestoreChannel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestoreChannelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreChannelsRequest actualRequest = ((ListRestoreChannelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreChannelsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listRestoreChannels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestoreChannelsTest2() throws Exception {
+    RestoreChannel responsesElement = RestoreChannel.newBuilder().build();
+    ListRestoreChannelsResponse expectedResponse =
+        ListRestoreChannelsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestoreChannels(Arrays.asList(responsesElement))
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRestoreChannelsPagedResponse pagedListResponse = client.listRestoreChannels(parent);
+
+    List<RestoreChannel> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestoreChannelsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestoreChannelsRequest actualRequest = ((ListRestoreChannelsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestoreChannelsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRestoreChannels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreChannelTest() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    RestoreChannelName name = RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+
+    RestoreChannel actualResponse = client.getRestoreChannel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreChannelRequest actualRequest = ((GetRestoreChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      RestoreChannelName name =
+          RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+      client.getRestoreChannel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestoreChannelTest2() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RestoreChannel actualResponse = client.getRestoreChannel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestoreChannelRequest actualRequest = ((GetRestoreChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestoreChannelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRestoreChannel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateRestoreChannelTest() throws Exception {
+    RestoreChannel expectedResponse =
+        RestoreChannel.newBuilder()
+            .setName(
+                RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]").toString())
+            .setDestinationProject("destinationProject-1719758037")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .setDestinationProjectId("destinationProjectId874937766")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    RestoreChannel actualResponse =
+        client.updateRestoreChannelAsync(restoreChannel, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateRestoreChannelRequest actualRequest =
+        ((UpdateRestoreChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(restoreChannel, actualRequest.getRestoreChannel());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateRestoreChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      RestoreChannel restoreChannel = RestoreChannel.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateRestoreChannelAsync(restoreChannel, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteRestoreChannelTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    RestoreChannelName name = RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+
+    client.deleteRestoreChannelAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRestoreChannelRequest actualRequest =
+        ((DeleteRestoreChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRestoreChannelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      RestoreChannelName name =
+          RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+      client.deleteRestoreChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteRestoreChannelTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRestoreChannelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBackupForGKE.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteRestoreChannelAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteRestoreChannelRequest actualRequest =
+        ((DeleteRestoreChannelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteRestoreChannelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteRestoreChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listRestorePlanBindingsTest() throws Exception {
+    RestorePlanBinding responsesElement = RestorePlanBinding.newBuilder().build();
+    ListRestorePlanBindingsResponse expectedResponse =
+        ListRestorePlanBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestorePlanBindings(Arrays.asList(responsesElement))
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    RestoreChannelName parent =
+        RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+
+    ListRestorePlanBindingsPagedResponse pagedListResponse = client.listRestorePlanBindings(parent);
+
+    List<RestorePlanBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestorePlanBindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestorePlanBindingsRequest actualRequest =
+        ((ListRestorePlanBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestorePlanBindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      RestoreChannelName parent =
+          RestoreChannelName.of("[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]");
+      client.listRestorePlanBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRestorePlanBindingsTest2() throws Exception {
+    RestorePlanBinding responsesElement = RestorePlanBinding.newBuilder().build();
+    ListRestorePlanBindingsResponse expectedResponse =
+        ListRestorePlanBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRestorePlanBindings(Arrays.asList(responsesElement))
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRestorePlanBindingsPagedResponse pagedListResponse = client.listRestorePlanBindings(parent);
+
+    List<RestorePlanBinding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRestorePlanBindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRestorePlanBindingsRequest actualRequest =
+        ((ListRestorePlanBindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRestorePlanBindingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRestorePlanBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestorePlanBindingTest() throws Exception {
+    RestorePlanBinding expectedResponse =
+        RestorePlanBinding.newBuilder()
+            .setName(
+                RestorePlanBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]", "[RESTORE_PLAN_BINDING]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRestorePlan(
+                RestorePlanName.of("[PROJECT]", "[LOCATION]", "[RESTORE_PLAN]").toString())
+            .setEtag("etag3123477")
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    RestorePlanBindingName name =
+        RestorePlanBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]", "[RESTORE_PLAN_BINDING]");
+
+    RestorePlanBinding actualResponse = client.getRestorePlanBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestorePlanBindingRequest actualRequest =
+        ((GetRestorePlanBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestorePlanBindingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      RestorePlanBindingName name =
+          RestorePlanBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]", "[RESTORE_PLAN_BINDING]");
+      client.getRestorePlanBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRestorePlanBindingTest2() throws Exception {
+    RestorePlanBinding expectedResponse =
+        RestorePlanBinding.newBuilder()
+            .setName(
+                RestorePlanBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[RESTORE_CHANNEL]", "[RESTORE_PLAN_BINDING]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRestorePlan(
+                RestorePlanName.of("[PROJECT]", "[LOCATION]", "[RESTORE_PLAN]").toString())
+            .setEtag("etag3123477")
+            .setBackupPlan(BackupPlanName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]").toString())
+            .build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RestorePlanBinding actualResponse = client.getRestorePlanBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRestorePlanBindingRequest actualRequest =
+        ((GetRestorePlanBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRestorePlanBindingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRestorePlanBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createRestoreTest() throws Exception {
     Restore expectedResponse =
         Restore.newBuilder()
@@ -1764,6 +3088,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1833,6 +3160,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1990,6 +3320,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -2045,6 +3378,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -2100,6 +3436,9 @@ public class BackupForGKEClientTest {
             .setResourcesFailedCount(217904743)
             .setVolumesRestoredCount(1005533068)
             .setEtag("etag3123477")
+            .setFilter(Restore.Filter.newBuilder().build())
+            .addAllVolumeDataRestorePolicyOverrides(
+                new ArrayList<VolumeDataRestorePolicyOverride>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2422,6 +3761,80 @@ public class BackupForGKEClientTest {
     try {
       String name = "name3373707";
       client.getVolumeRestore(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlTest() throws Exception {
+    GetBackupIndexDownloadUrlResponse expectedResponse =
+        GetBackupIndexDownloadUrlResponse.newBuilder().setSignedUrl("signedUrl1076770995").build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]");
+
+    GetBackupIndexDownloadUrlResponse actualResponse = client.getBackupIndexDownloadUrl(backup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupIndexDownloadUrlRequest actualRequest =
+        ((GetBackupIndexDownloadUrlRequest) actualRequests.get(0));
+
+    Assert.assertEquals(backup.toString(), actualRequest.getBackup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]");
+      client.getBackupIndexDownloadUrl(backup);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlTest2() throws Exception {
+    GetBackupIndexDownloadUrlResponse expectedResponse =
+        GetBackupIndexDownloadUrlResponse.newBuilder().setSignedUrl("signedUrl1076770995").build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String backup = "backup-1396673086";
+
+    GetBackupIndexDownloadUrlResponse actualResponse = client.getBackupIndexDownloadUrl(backup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupIndexDownloadUrlRequest actualRequest =
+        ((GetBackupIndexDownloadUrlRequest) actualRequests.get(0));
+
+    Assert.assertEquals(backup, actualRequest.getBackup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String backup = "backup-1396673086";
+      client.getBackupIndexDownloadUrl(backup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

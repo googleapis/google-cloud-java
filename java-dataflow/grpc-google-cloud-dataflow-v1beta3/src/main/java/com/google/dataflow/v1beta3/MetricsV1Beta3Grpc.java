@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,6 +193,19 @@ public final class MetricsV1Beta3Grpc {
     return MetricsV1Beta3Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MetricsV1Beta3BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MetricsV1Beta3BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MetricsV1Beta3BlockingV2Stub>() {
+          @java.lang.Override
+          public MetricsV1Beta3BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MetricsV1Beta3BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MetricsV1Beta3BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -381,6 +394,74 @@ public final class MetricsV1Beta3Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MetricsV1Beta3.
+   *
+   * <pre>
+   * The Dataflow Metrics API lets you monitor the progress of Dataflow
+   * jobs.
+   * </pre>
+   */
+  public static final class MetricsV1Beta3BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MetricsV1Beta3BlockingV2Stub> {
+    private MetricsV1Beta3BlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MetricsV1Beta3BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MetricsV1Beta3BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Request the job status.
+     * To request the status of a job, we recommend using
+     * `projects.locations.jobs.getMetrics` with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.jobs.getMetrics` is not recommended, as you can only request the
+     * status of jobs that are running in `us-central1`.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.JobMetrics getJobMetrics(
+        com.google.dataflow.v1beta3.GetJobMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Request detailed information about the execution status of the job.
+     * EXPERIMENTAL.  This API is subject to change or removal without notice.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.JobExecutionDetails getJobExecutionDetails(
+        com.google.dataflow.v1beta3.GetJobExecutionDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobExecutionDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Request detailed information about the execution status of a stage of the
+     * job.
+     * EXPERIMENTAL.  This API is subject to change or removal without notice.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.StageExecutionDetails getStageExecutionDetails(
+        com.google.dataflow.v1beta3.GetStageExecutionDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetStageExecutionDetailsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MetricsV1Beta3.
    *
    * <pre>
    * The Dataflow Metrics API lets you monitor the progress of Dataflow

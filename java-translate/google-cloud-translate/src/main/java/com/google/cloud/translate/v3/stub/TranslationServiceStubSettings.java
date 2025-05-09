@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,19 @@
 
 package com.google.cloud.translate.v3.stub;
 
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtFilesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListAdaptiveMtSentencesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListDatasetsPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListExamplesPagedResponse;
 import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossariesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListGlossaryEntriesPagedResponse;
+import static com.google.cloud.translate.v3.TranslationServiceClient.ListModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -47,38 +55,91 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.translate.v3.AdaptiveMtDataset;
+import com.google.cloud.translate.v3.AdaptiveMtFile;
+import com.google.cloud.translate.v3.AdaptiveMtSentence;
+import com.google.cloud.translate.v3.AdaptiveMtTranslateRequest;
+import com.google.cloud.translate.v3.AdaptiveMtTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateDocumentMetadata;
 import com.google.cloud.translate.v3.BatchTranslateDocumentRequest;
 import com.google.cloud.translate.v3.BatchTranslateDocumentResponse;
 import com.google.cloud.translate.v3.BatchTranslateMetadata;
 import com.google.cloud.translate.v3.BatchTranslateResponse;
 import com.google.cloud.translate.v3.BatchTranslateTextRequest;
+import com.google.cloud.translate.v3.CreateAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.CreateDatasetMetadata;
+import com.google.cloud.translate.v3.CreateDatasetRequest;
+import com.google.cloud.translate.v3.CreateGlossaryEntryRequest;
 import com.google.cloud.translate.v3.CreateGlossaryMetadata;
 import com.google.cloud.translate.v3.CreateGlossaryRequest;
+import com.google.cloud.translate.v3.CreateModelMetadata;
+import com.google.cloud.translate.v3.CreateModelRequest;
+import com.google.cloud.translate.v3.Dataset;
+import com.google.cloud.translate.v3.DeleteAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.DeleteAdaptiveMtFileRequest;
+import com.google.cloud.translate.v3.DeleteDatasetMetadata;
+import com.google.cloud.translate.v3.DeleteDatasetRequest;
+import com.google.cloud.translate.v3.DeleteGlossaryEntryRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryMetadata;
 import com.google.cloud.translate.v3.DeleteGlossaryRequest;
 import com.google.cloud.translate.v3.DeleteGlossaryResponse;
+import com.google.cloud.translate.v3.DeleteModelMetadata;
+import com.google.cloud.translate.v3.DeleteModelRequest;
 import com.google.cloud.translate.v3.DetectLanguageRequest;
 import com.google.cloud.translate.v3.DetectLanguageResponse;
+import com.google.cloud.translate.v3.Example;
+import com.google.cloud.translate.v3.ExportDataMetadata;
+import com.google.cloud.translate.v3.ExportDataRequest;
+import com.google.cloud.translate.v3.GetAdaptiveMtDatasetRequest;
+import com.google.cloud.translate.v3.GetAdaptiveMtFileRequest;
+import com.google.cloud.translate.v3.GetDatasetRequest;
+import com.google.cloud.translate.v3.GetGlossaryEntryRequest;
 import com.google.cloud.translate.v3.GetGlossaryRequest;
+import com.google.cloud.translate.v3.GetModelRequest;
 import com.google.cloud.translate.v3.GetSupportedLanguagesRequest;
 import com.google.cloud.translate.v3.Glossary;
+import com.google.cloud.translate.v3.GlossaryEntry;
+import com.google.cloud.translate.v3.ImportAdaptiveMtFileRequest;
+import com.google.cloud.translate.v3.ImportAdaptiveMtFileResponse;
+import com.google.cloud.translate.v3.ImportDataMetadata;
+import com.google.cloud.translate.v3.ImportDataRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtDatasetsRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtDatasetsResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtFilesRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtFilesResponse;
+import com.google.cloud.translate.v3.ListAdaptiveMtSentencesRequest;
+import com.google.cloud.translate.v3.ListAdaptiveMtSentencesResponse;
+import com.google.cloud.translate.v3.ListDatasetsRequest;
+import com.google.cloud.translate.v3.ListDatasetsResponse;
+import com.google.cloud.translate.v3.ListExamplesRequest;
+import com.google.cloud.translate.v3.ListExamplesResponse;
 import com.google.cloud.translate.v3.ListGlossariesRequest;
 import com.google.cloud.translate.v3.ListGlossariesResponse;
+import com.google.cloud.translate.v3.ListGlossaryEntriesRequest;
+import com.google.cloud.translate.v3.ListGlossaryEntriesResponse;
+import com.google.cloud.translate.v3.ListModelsRequest;
+import com.google.cloud.translate.v3.ListModelsResponse;
+import com.google.cloud.translate.v3.Model;
+import com.google.cloud.translate.v3.RomanizeTextRequest;
+import com.google.cloud.translate.v3.RomanizeTextResponse;
 import com.google.cloud.translate.v3.SupportedLanguages;
 import com.google.cloud.translate.v3.TranslateDocumentRequest;
 import com.google.cloud.translate.v3.TranslateDocumentResponse;
 import com.google.cloud.translate.v3.TranslateTextRequest;
 import com.google.cloud.translate.v3.TranslateTextResponse;
+import com.google.cloud.translate.v3.UpdateGlossaryEntryRequest;
+import com.google.cloud.translate.v3.UpdateGlossaryMetadata;
+import com.google.cloud.translate.v3.UpdateGlossaryRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -95,7 +156,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of translateText to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of translateText:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -112,10 +175,47 @@ import org.threeten.bp.Duration;
  *             .translateTextSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * TranslationServiceStubSettings translationServiceSettings =
  *     translationServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for batchTranslateText:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * TranslationServiceStubSettings.Builder translationServiceSettingsBuilder =
+ *     TranslationServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * translationServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -129,6 +229,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
 
   private final UnaryCallSettings<TranslateTextRequest, TranslateTextResponse>
       translateTextSettings;
+  private final UnaryCallSettings<RomanizeTextRequest, RomanizeTextResponse> romanizeTextSettings;
   private final UnaryCallSettings<DetectLanguageRequest, DetectLanguageResponse>
       detectLanguageSettings;
   private final UnaryCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -149,6 +250,9 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
   private final UnaryCallSettings<CreateGlossaryRequest, Operation> createGlossarySettings;
   private final OperationCallSettings<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
       createGlossaryOperationSettings;
+  private final UnaryCallSettings<UpdateGlossaryRequest, Operation> updateGlossarySettings;
+  private final OperationCallSettings<UpdateGlossaryRequest, Glossary, UpdateGlossaryMetadata>
+      updateGlossaryOperationSettings;
   private final PagedCallSettings<
           ListGlossariesRequest, ListGlossariesResponse, ListGlossariesPagedResponse>
       listGlossariesSettings;
@@ -157,6 +261,69 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
   private final OperationCallSettings<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationSettings;
+  private final UnaryCallSettings<GetGlossaryEntryRequest, GlossaryEntry> getGlossaryEntrySettings;
+  private final PagedCallSettings<
+          ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, ListGlossaryEntriesPagedResponse>
+      listGlossaryEntriesSettings;
+  private final UnaryCallSettings<CreateGlossaryEntryRequest, GlossaryEntry>
+      createGlossaryEntrySettings;
+  private final UnaryCallSettings<UpdateGlossaryEntryRequest, GlossaryEntry>
+      updateGlossaryEntrySettings;
+  private final UnaryCallSettings<DeleteGlossaryEntryRequest, Empty> deleteGlossaryEntrySettings;
+  private final UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings;
+  private final OperationCallSettings<CreateDatasetRequest, Dataset, CreateDatasetMetadata>
+      createDatasetOperationSettings;
+  private final UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings;
+  private final PagedCallSettings<
+          ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+      listDatasetsSettings;
+  private final UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings;
+  private final OperationCallSettings<DeleteDatasetRequest, Empty, DeleteDatasetMetadata>
+      deleteDatasetOperationSettings;
+  private final UnaryCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetSettings;
+  private final UnaryCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetSettings;
+  private final UnaryCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetSettings;
+  private final PagedCallSettings<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsSettings;
+  private final UnaryCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateSettings;
+  private final UnaryCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+      getAdaptiveMtFileSettings;
+  private final UnaryCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileSettings;
+  private final UnaryCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileSettings;
+  private final PagedCallSettings<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesSettings;
+  private final PagedCallSettings<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesSettings;
+  private final UnaryCallSettings<ImportDataRequest, Operation> importDataSettings;
+  private final OperationCallSettings<ImportDataRequest, Empty, ImportDataMetadata>
+      importDataOperationSettings;
+  private final UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings;
+  private final OperationCallSettings<ExportDataRequest, Empty, ExportDataMetadata>
+      exportDataOperationSettings;
+  private final PagedCallSettings<
+          ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
+      listExamplesSettings;
+  private final UnaryCallSettings<CreateModelRequest, Operation> createModelSettings;
+  private final OperationCallSettings<CreateModelRequest, Model, CreateModelMetadata>
+      createModelOperationSettings;
+  private final PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      listModelsSettings;
+  private final UnaryCallSettings<GetModelRequest, Model> getModelSettings;
+  private final UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings;
+  private final OperationCallSettings<DeleteModelRequest, Empty, DeleteModelMetadata>
+      deleteModelOperationSettings;
 
   private static final PagedListDescriptor<ListGlossariesRequest, ListGlossariesResponse, Glossary>
       LIST_GLOSSARIES_PAGE_STR_DESC =
@@ -189,9 +356,269 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
 
             @Override
             public Iterable<Glossary> extractResources(ListGlossariesResponse payload) {
-              return payload.getGlossariesList() == null
-                  ? ImmutableList.<Glossary>of()
-                  : payload.getGlossariesList();
+              return payload.getGlossariesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry>
+      LIST_GLOSSARY_ENTRIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGlossaryEntriesRequest injectToken(
+                ListGlossaryEntriesRequest payload, String token) {
+              return ListGlossaryEntriesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListGlossaryEntriesRequest injectPageSize(
+                ListGlossaryEntriesRequest payload, int pageSize) {
+              return ListGlossaryEntriesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGlossaryEntriesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGlossaryEntriesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GlossaryEntry> extractResources(ListGlossaryEntriesResponse payload) {
+              return payload.getGlossaryEntriesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>
+      LIST_DATASETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDatasetsRequest, ListDatasetsResponse, Dataset>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDatasetsRequest injectToken(ListDatasetsRequest payload, String token) {
+              return ListDatasetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDatasetsRequest injectPageSize(ListDatasetsRequest payload, int pageSize) {
+              return ListDatasetsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDatasetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDatasetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
+              return payload.getDatasetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>
+      LIST_ADAPTIVE_MT_DATASETS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse, AdaptiveMtDataset>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdaptiveMtDatasetsRequest injectToken(
+                ListAdaptiveMtDatasetsRequest payload, String token) {
+              return ListAdaptiveMtDatasetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdaptiveMtDatasetsRequest injectPageSize(
+                ListAdaptiveMtDatasetsRequest payload, int pageSize) {
+              return ListAdaptiveMtDatasetsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdaptiveMtDatasetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdaptiveMtDatasetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdaptiveMtDataset> extractResources(
+                ListAdaptiveMtDatasetsResponse payload) {
+              return payload.getAdaptiveMtDatasetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+      LIST_ADAPTIVE_MT_FILES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdaptiveMtFilesRequest injectToken(
+                ListAdaptiveMtFilesRequest payload, String token) {
+              return ListAdaptiveMtFilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdaptiveMtFilesRequest injectPageSize(
+                ListAdaptiveMtFilesRequest payload, int pageSize) {
+              return ListAdaptiveMtFilesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdaptiveMtFilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdaptiveMtFilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdaptiveMtFile> extractResources(ListAdaptiveMtFilesResponse payload) {
+              return payload.getAdaptiveMtFilesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse, AdaptiveMtSentence>
+      LIST_ADAPTIVE_MT_SENTENCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAdaptiveMtSentencesRequest,
+              ListAdaptiveMtSentencesResponse,
+              AdaptiveMtSentence>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdaptiveMtSentencesRequest injectToken(
+                ListAdaptiveMtSentencesRequest payload, String token) {
+              return ListAdaptiveMtSentencesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdaptiveMtSentencesRequest injectPageSize(
+                ListAdaptiveMtSentencesRequest payload, int pageSize) {
+              return ListAdaptiveMtSentencesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdaptiveMtSentencesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdaptiveMtSentencesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdaptiveMtSentence> extractResources(
+                ListAdaptiveMtSentencesResponse payload) {
+              return payload.getAdaptiveMtSentencesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListExamplesRequest, ListExamplesResponse, Example>
+      LIST_EXAMPLES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListExamplesRequest, ListExamplesResponse, Example>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListExamplesRequest injectToken(ListExamplesRequest payload, String token) {
+              return ListExamplesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListExamplesRequest injectPageSize(ListExamplesRequest payload, int pageSize) {
+              return ListExamplesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListExamplesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListExamplesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Example> extractResources(ListExamplesResponse payload) {
+              return payload.getExamplesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>
+      LIST_MODELS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListModelsRequest, ListModelsResponse, Model>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListModelsRequest injectToken(ListModelsRequest payload, String token) {
+              return ListModelsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListModelsRequest injectPageSize(ListModelsRequest payload, int pageSize) {
+              return ListModelsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListModelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListModelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Model> extractResources(ListModelsResponse payload) {
+              return payload.getModelsList();
             }
           };
 
@@ -212,9 +639,161 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, ListGlossaryEntriesPagedResponse>
+      LIST_GLOSSARY_ENTRIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGlossaryEntriesRequest,
+              ListGlossaryEntriesResponse,
+              ListGlossaryEntriesPagedResponse>() {
+            @Override
+            public ApiFuture<ListGlossaryEntriesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse> callable,
+                ListGlossaryEntriesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGlossaryEntriesResponse> futureResponse) {
+              PageContext<ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, GlossaryEntry>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GLOSSARY_ENTRIES_PAGE_STR_DESC, request, context);
+              return ListGlossaryEntriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+      LIST_DATASETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDatasetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> callable,
+                ListDatasetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDatasetsResponse> futureResponse) {
+              PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> pageContext =
+                  PageContext.create(callable, LIST_DATASETS_PAGE_STR_DESC, request, context);
+              return ListDatasetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          ListAdaptiveMtDatasetsPagedResponse>
+      LIST_ADAPTIVE_MT_DATASETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdaptiveMtDatasetsRequest,
+              ListAdaptiveMtDatasetsResponse,
+              ListAdaptiveMtDatasetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdaptiveMtDatasetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdaptiveMtDatasetsRequest, ListAdaptiveMtDatasetsResponse>
+                    callable,
+                ListAdaptiveMtDatasetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdaptiveMtDatasetsResponse> futureResponse) {
+              PageContext<
+                      ListAdaptiveMtDatasetsRequest,
+                      ListAdaptiveMtDatasetsResponse,
+                      AdaptiveMtDataset>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ADAPTIVE_MT_DATASETS_PAGE_STR_DESC, request, context);
+              return ListAdaptiveMtDatasetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, ListAdaptiveMtFilesPagedResponse>
+      LIST_ADAPTIVE_MT_FILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdaptiveMtFilesRequest,
+              ListAdaptiveMtFilesResponse,
+              ListAdaptiveMtFilesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdaptiveMtFilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse> callable,
+                ListAdaptiveMtFilesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdaptiveMtFilesResponse> futureResponse) {
+              PageContext<ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, AdaptiveMtFile>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ADAPTIVE_MT_FILES_PAGE_STR_DESC, request, context);
+              return ListAdaptiveMtFilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          ListAdaptiveMtSentencesPagedResponse>
+      LIST_ADAPTIVE_MT_SENTENCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdaptiveMtSentencesRequest,
+              ListAdaptiveMtSentencesResponse,
+              ListAdaptiveMtSentencesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdaptiveMtSentencesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdaptiveMtSentencesRequest, ListAdaptiveMtSentencesResponse>
+                    callable,
+                ListAdaptiveMtSentencesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdaptiveMtSentencesResponse> futureResponse) {
+              PageContext<
+                      ListAdaptiveMtSentencesRequest,
+                      ListAdaptiveMtSentencesResponse,
+                      AdaptiveMtSentence>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ADAPTIVE_MT_SENTENCES_PAGE_STR_DESC, request, context);
+              return ListAdaptiveMtSentencesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
+      LIST_EXAMPLES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>() {
+            @Override
+            public ApiFuture<ListExamplesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListExamplesRequest, ListExamplesResponse> callable,
+                ListExamplesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListExamplesResponse> futureResponse) {
+              PageContext<ListExamplesRequest, ListExamplesResponse, Example> pageContext =
+                  PageContext.create(callable, LIST_EXAMPLES_PAGE_STR_DESC, request, context);
+              return ListExamplesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      LIST_MODELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListModelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListModelsRequest, ListModelsResponse> callable,
+                ListModelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListModelsResponse> futureResponse) {
+              PageContext<ListModelsRequest, ListModelsResponse, Model> pageContext =
+                  PageContext.create(callable, LIST_MODELS_PAGE_STR_DESC, request, context);
+              return ListModelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to translateText. */
   public UnaryCallSettings<TranslateTextRequest, TranslateTextResponse> translateTextSettings() {
     return translateTextSettings;
+  }
+
+  /** Returns the object with the settings used for calls to romanizeText. */
+  public UnaryCallSettings<RomanizeTextRequest, RomanizeTextResponse> romanizeTextSettings() {
+    return romanizeTextSettings;
   }
 
   /** Returns the object with the settings used for calls to detectLanguage. */
@@ -272,6 +851,17 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return createGlossaryOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateGlossary. */
+  public UnaryCallSettings<UpdateGlossaryRequest, Operation> updateGlossarySettings() {
+    return updateGlossarySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGlossary. */
+  public OperationCallSettings<UpdateGlossaryRequest, Glossary, UpdateGlossaryMetadata>
+      updateGlossaryOperationSettings() {
+    return updateGlossaryOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listGlossaries. */
   public PagedCallSettings<
           ListGlossariesRequest, ListGlossariesResponse, ListGlossariesPagedResponse>
@@ -296,6 +886,194 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return deleteGlossaryOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getGlossaryEntry. */
+  public UnaryCallSettings<GetGlossaryEntryRequest, GlossaryEntry> getGlossaryEntrySettings() {
+    return getGlossaryEntrySettings;
+  }
+
+  /** Returns the object with the settings used for calls to listGlossaryEntries. */
+  public PagedCallSettings<
+          ListGlossaryEntriesRequest, ListGlossaryEntriesResponse, ListGlossaryEntriesPagedResponse>
+      listGlossaryEntriesSettings() {
+    return listGlossaryEntriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createGlossaryEntry. */
+  public UnaryCallSettings<CreateGlossaryEntryRequest, GlossaryEntry>
+      createGlossaryEntrySettings() {
+    return createGlossaryEntrySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGlossaryEntry. */
+  public UnaryCallSettings<UpdateGlossaryEntryRequest, GlossaryEntry>
+      updateGlossaryEntrySettings() {
+    return updateGlossaryEntrySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGlossaryEntry. */
+  public UnaryCallSettings<DeleteGlossaryEntryRequest, Empty> deleteGlossaryEntrySettings() {
+    return deleteGlossaryEntrySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDataset. */
+  public UnaryCallSettings<CreateDatasetRequest, Operation> createDatasetSettings() {
+    return createDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDataset. */
+  public OperationCallSettings<CreateDatasetRequest, Dataset, CreateDatasetMetadata>
+      createDatasetOperationSettings() {
+    return createDatasetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataset. */
+  public UnaryCallSettings<GetDatasetRequest, Dataset> getDatasetSettings() {
+    return getDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDatasets. */
+  public PagedCallSettings<ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+      listDatasetsSettings() {
+    return listDatasetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public UnaryCallSettings<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
+    return deleteDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDataset. */
+  public OperationCallSettings<DeleteDatasetRequest, Empty, DeleteDatasetMetadata>
+      deleteDatasetOperationSettings() {
+    return deleteDatasetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAdaptiveMtDataset. */
+  public UnaryCallSettings<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      createAdaptiveMtDatasetSettings() {
+    return createAdaptiveMtDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAdaptiveMtDataset. */
+  public UnaryCallSettings<DeleteAdaptiveMtDatasetRequest, Empty>
+      deleteAdaptiveMtDatasetSettings() {
+    return deleteAdaptiveMtDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAdaptiveMtDataset. */
+  public UnaryCallSettings<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+      getAdaptiveMtDatasetSettings() {
+    return getAdaptiveMtDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtDatasets. */
+  public PagedCallSettings<
+          ListAdaptiveMtDatasetsRequest,
+          ListAdaptiveMtDatasetsResponse,
+          ListAdaptiveMtDatasetsPagedResponse>
+      listAdaptiveMtDatasetsSettings() {
+    return listAdaptiveMtDatasetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to adaptiveMtTranslate. */
+  public UnaryCallSettings<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+      adaptiveMtTranslateSettings() {
+    return adaptiveMtTranslateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAdaptiveMtFile. */
+  public UnaryCallSettings<GetAdaptiveMtFileRequest, AdaptiveMtFile> getAdaptiveMtFileSettings() {
+    return getAdaptiveMtFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAdaptiveMtFile. */
+  public UnaryCallSettings<DeleteAdaptiveMtFileRequest, Empty> deleteAdaptiveMtFileSettings() {
+    return deleteAdaptiveMtFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importAdaptiveMtFile. */
+  public UnaryCallSettings<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+      importAdaptiveMtFileSettings() {
+    return importAdaptiveMtFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtFiles. */
+  public PagedCallSettings<
+          ListAdaptiveMtFilesRequest, ListAdaptiveMtFilesResponse, ListAdaptiveMtFilesPagedResponse>
+      listAdaptiveMtFilesSettings() {
+    return listAdaptiveMtFilesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdaptiveMtSentences. */
+  public PagedCallSettings<
+          ListAdaptiveMtSentencesRequest,
+          ListAdaptiveMtSentencesResponse,
+          ListAdaptiveMtSentencesPagedResponse>
+      listAdaptiveMtSentencesSettings() {
+    return listAdaptiveMtSentencesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importData. */
+  public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
+    return importDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importData. */
+  public OperationCallSettings<ImportDataRequest, Empty, ImportDataMetadata>
+      importDataOperationSettings() {
+    return importDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings() {
+    return exportDataSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportData. */
+  public OperationCallSettings<ExportDataRequest, Empty, ExportDataMetadata>
+      exportDataOperationSettings() {
+    return exportDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listExamples. */
+  public PagedCallSettings<ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
+      listExamplesSettings() {
+    return listExamplesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createModel. */
+  public UnaryCallSettings<CreateModelRequest, Operation> createModelSettings() {
+    return createModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createModel. */
+  public OperationCallSettings<CreateModelRequest, Model, CreateModelMetadata>
+      createModelOperationSettings() {
+    return createModelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listModels. */
+  public PagedCallSettings<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+      listModelsSettings() {
+    return listModelsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getModel. */
+  public UnaryCallSettings<GetModelRequest, Model> getModelSettings() {
+    return getModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteModel. */
+  public UnaryCallSettings<DeleteModelRequest, Operation> deleteModelSettings() {
+    return deleteModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteModel. */
+  public OperationCallSettings<DeleteModelRequest, Empty, DeleteModelMetadata>
+      deleteModelOperationSettings() {
+    return deleteModelOperationSettings;
+  }
+
   public TranslationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -312,12 +1090,19 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "translate";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "translate.googleapis.com:443";
   }
@@ -356,7 +1141,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -365,7 +1149,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -403,6 +1186,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     super(settingsBuilder);
 
     translateTextSettings = settingsBuilder.translateTextSettings().build();
+    romanizeTextSettings = settingsBuilder.romanizeTextSettings().build();
     detectLanguageSettings = settingsBuilder.detectLanguageSettings().build();
     getSupportedLanguagesSettings = settingsBuilder.getSupportedLanguagesSettings().build();
     translateDocumentSettings = settingsBuilder.translateDocumentSettings().build();
@@ -414,10 +1198,44 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
         settingsBuilder.batchTranslateDocumentOperationSettings().build();
     createGlossarySettings = settingsBuilder.createGlossarySettings().build();
     createGlossaryOperationSettings = settingsBuilder.createGlossaryOperationSettings().build();
+    updateGlossarySettings = settingsBuilder.updateGlossarySettings().build();
+    updateGlossaryOperationSettings = settingsBuilder.updateGlossaryOperationSettings().build();
     listGlossariesSettings = settingsBuilder.listGlossariesSettings().build();
     getGlossarySettings = settingsBuilder.getGlossarySettings().build();
     deleteGlossarySettings = settingsBuilder.deleteGlossarySettings().build();
     deleteGlossaryOperationSettings = settingsBuilder.deleteGlossaryOperationSettings().build();
+    getGlossaryEntrySettings = settingsBuilder.getGlossaryEntrySettings().build();
+    listGlossaryEntriesSettings = settingsBuilder.listGlossaryEntriesSettings().build();
+    createGlossaryEntrySettings = settingsBuilder.createGlossaryEntrySettings().build();
+    updateGlossaryEntrySettings = settingsBuilder.updateGlossaryEntrySettings().build();
+    deleteGlossaryEntrySettings = settingsBuilder.deleteGlossaryEntrySettings().build();
+    createDatasetSettings = settingsBuilder.createDatasetSettings().build();
+    createDatasetOperationSettings = settingsBuilder.createDatasetOperationSettings().build();
+    getDatasetSettings = settingsBuilder.getDatasetSettings().build();
+    listDatasetsSettings = settingsBuilder.listDatasetsSettings().build();
+    deleteDatasetSettings = settingsBuilder.deleteDatasetSettings().build();
+    deleteDatasetOperationSettings = settingsBuilder.deleteDatasetOperationSettings().build();
+    createAdaptiveMtDatasetSettings = settingsBuilder.createAdaptiveMtDatasetSettings().build();
+    deleteAdaptiveMtDatasetSettings = settingsBuilder.deleteAdaptiveMtDatasetSettings().build();
+    getAdaptiveMtDatasetSettings = settingsBuilder.getAdaptiveMtDatasetSettings().build();
+    listAdaptiveMtDatasetsSettings = settingsBuilder.listAdaptiveMtDatasetsSettings().build();
+    adaptiveMtTranslateSettings = settingsBuilder.adaptiveMtTranslateSettings().build();
+    getAdaptiveMtFileSettings = settingsBuilder.getAdaptiveMtFileSettings().build();
+    deleteAdaptiveMtFileSettings = settingsBuilder.deleteAdaptiveMtFileSettings().build();
+    importAdaptiveMtFileSettings = settingsBuilder.importAdaptiveMtFileSettings().build();
+    listAdaptiveMtFilesSettings = settingsBuilder.listAdaptiveMtFilesSettings().build();
+    listAdaptiveMtSentencesSettings = settingsBuilder.listAdaptiveMtSentencesSettings().build();
+    importDataSettings = settingsBuilder.importDataSettings().build();
+    importDataOperationSettings = settingsBuilder.importDataOperationSettings().build();
+    exportDataSettings = settingsBuilder.exportDataSettings().build();
+    exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
+    listExamplesSettings = settingsBuilder.listExamplesSettings().build();
+    createModelSettings = settingsBuilder.createModelSettings().build();
+    createModelOperationSettings = settingsBuilder.createModelOperationSettings().build();
+    listModelsSettings = settingsBuilder.listModelsSettings().build();
+    getModelSettings = settingsBuilder.getModelSettings().build();
+    deleteModelSettings = settingsBuilder.deleteModelSettings().build();
+    deleteModelOperationSettings = settingsBuilder.deleteModelOperationSettings().build();
   }
 
   /** Builder for TranslationServiceStubSettings. */
@@ -426,6 +1244,8 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<TranslateTextRequest, TranslateTextResponse>
         translateTextSettings;
+    private final UnaryCallSettings.Builder<RomanizeTextRequest, RomanizeTextResponse>
+        romanizeTextSettings;
     private final UnaryCallSettings.Builder<DetectLanguageRequest, DetectLanguageResponse>
         detectLanguageSettings;
     private final UnaryCallSettings.Builder<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -449,6 +1269,11 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     private final OperationCallSettings.Builder<
             CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
         createGlossaryOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateGlossaryRequest, Operation>
+        updateGlossarySettings;
+    private final OperationCallSettings.Builder<
+            UpdateGlossaryRequest, Glossary, UpdateGlossaryMetadata>
+        updateGlossaryOperationSettings;
     private final PagedCallSettings.Builder<
             ListGlossariesRequest, ListGlossariesResponse, ListGlossariesPagedResponse>
         listGlossariesSettings;
@@ -458,6 +1283,79 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     private final OperationCallSettings.Builder<
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings;
+    private final UnaryCallSettings.Builder<GetGlossaryEntryRequest, GlossaryEntry>
+        getGlossaryEntrySettings;
+    private final PagedCallSettings.Builder<
+            ListGlossaryEntriesRequest,
+            ListGlossaryEntriesResponse,
+            ListGlossaryEntriesPagedResponse>
+        listGlossaryEntriesSettings;
+    private final UnaryCallSettings.Builder<CreateGlossaryEntryRequest, GlossaryEntry>
+        createGlossaryEntrySettings;
+    private final UnaryCallSettings.Builder<UpdateGlossaryEntryRequest, GlossaryEntry>
+        updateGlossaryEntrySettings;
+    private final UnaryCallSettings.Builder<DeleteGlossaryEntryRequest, Empty>
+        deleteGlossaryEntrySettings;
+    private final UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings;
+    private final OperationCallSettings.Builder<
+            CreateDatasetRequest, Dataset, CreateDatasetMetadata>
+        createDatasetOperationSettings;
+    private final UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings;
+    private final PagedCallSettings.Builder<
+            ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+        listDatasetsSettings;
+    private final UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings;
+    private final OperationCallSettings.Builder<DeleteDatasetRequest, Empty, DeleteDatasetMetadata>
+        deleteDatasetOperationSettings;
+    private final UnaryCallSettings.Builder<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        createAdaptiveMtDatasetSettings;
+    private final UnaryCallSettings.Builder<DeleteAdaptiveMtDatasetRequest, Empty>
+        deleteAdaptiveMtDatasetSettings;
+    private final UnaryCallSettings.Builder<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        getAdaptiveMtDatasetSettings;
+    private final PagedCallSettings.Builder<
+            ListAdaptiveMtDatasetsRequest,
+            ListAdaptiveMtDatasetsResponse,
+            ListAdaptiveMtDatasetsPagedResponse>
+        listAdaptiveMtDatasetsSettings;
+    private final UnaryCallSettings.Builder<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+        adaptiveMtTranslateSettings;
+    private final UnaryCallSettings.Builder<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+        getAdaptiveMtFileSettings;
+    private final UnaryCallSettings.Builder<DeleteAdaptiveMtFileRequest, Empty>
+        deleteAdaptiveMtFileSettings;
+    private final UnaryCallSettings.Builder<
+            ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+        importAdaptiveMtFileSettings;
+    private final PagedCallSettings.Builder<
+            ListAdaptiveMtFilesRequest,
+            ListAdaptiveMtFilesResponse,
+            ListAdaptiveMtFilesPagedResponse>
+        listAdaptiveMtFilesSettings;
+    private final PagedCallSettings.Builder<
+            ListAdaptiveMtSentencesRequest,
+            ListAdaptiveMtSentencesResponse,
+            ListAdaptiveMtSentencesPagedResponse>
+        listAdaptiveMtSentencesSettings;
+    private final UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings;
+    private final OperationCallSettings.Builder<ImportDataRequest, Empty, ImportDataMetadata>
+        importDataOperationSettings;
+    private final UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings;
+    private final OperationCallSettings.Builder<ExportDataRequest, Empty, ExportDataMetadata>
+        exportDataOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
+        listExamplesSettings;
+    private final UnaryCallSettings.Builder<CreateModelRequest, Operation> createModelSettings;
+    private final OperationCallSettings.Builder<CreateModelRequest, Model, CreateModelMetadata>
+        createModelOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+        listModelsSettings;
+    private final UnaryCallSettings.Builder<GetModelRequest, Model> getModelSettings;
+    private final UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings;
+    private final OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteModelMetadata>
+        deleteModelOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -466,6 +1364,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           ImmutableMap.builder();
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
@@ -481,21 +1380,23 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -509,6 +1410,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       super(clientContext);
 
       translateTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      romanizeTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       detectLanguageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSupportedLanguagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       translateDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -518,23 +1420,89 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       batchTranslateDocumentOperationSettings = OperationCallSettings.newBuilder();
       createGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGlossaryOperationSettings = OperationCallSettings.newBuilder();
+      updateGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGlossaryOperationSettings = OperationCallSettings.newBuilder();
       listGlossariesSettings = PagedCallSettings.newBuilder(LIST_GLOSSARIES_PAGE_STR_FACT);
       getGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGlossarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteGlossaryOperationSettings = OperationCallSettings.newBuilder();
+      getGlossaryEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listGlossaryEntriesSettings =
+          PagedCallSettings.newBuilder(LIST_GLOSSARY_ENTRIES_PAGE_STR_FACT);
+      createGlossaryEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGlossaryEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteGlossaryEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDatasetOperationSettings = OperationCallSettings.newBuilder();
+      getDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDatasetsSettings = PagedCallSettings.newBuilder(LIST_DATASETS_PAGE_STR_FACT);
+      deleteDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDatasetOperationSettings = OperationCallSettings.newBuilder();
+      createAdaptiveMtDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAdaptiveMtDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAdaptiveMtDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAdaptiveMtDatasetsSettings =
+          PagedCallSettings.newBuilder(LIST_ADAPTIVE_MT_DATASETS_PAGE_STR_FACT);
+      adaptiveMtTranslateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAdaptiveMtFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAdaptiveMtFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importAdaptiveMtFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAdaptiveMtFilesSettings =
+          PagedCallSettings.newBuilder(LIST_ADAPTIVE_MT_FILES_PAGE_STR_FACT);
+      listAdaptiveMtSentencesSettings =
+          PagedCallSettings.newBuilder(LIST_ADAPTIVE_MT_SENTENCES_PAGE_STR_FACT);
+      importDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importDataOperationSettings = OperationCallSettings.newBuilder();
+      exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportDataOperationSettings = OperationCallSettings.newBuilder();
+      listExamplesSettings = PagedCallSettings.newBuilder(LIST_EXAMPLES_PAGE_STR_FACT);
+      createModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createModelOperationSettings = OperationCallSettings.newBuilder();
+      listModelsSettings = PagedCallSettings.newBuilder(LIST_MODELS_PAGE_STR_FACT);
+      getModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteModelOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               translateTextSettings,
+              romanizeTextSettings,
               detectLanguageSettings,
               getSupportedLanguagesSettings,
               translateDocumentSettings,
               batchTranslateTextSettings,
               batchTranslateDocumentSettings,
               createGlossarySettings,
+              updateGlossarySettings,
               listGlossariesSettings,
               getGlossarySettings,
-              deleteGlossarySettings);
+              deleteGlossarySettings,
+              getGlossaryEntrySettings,
+              listGlossaryEntriesSettings,
+              createGlossaryEntrySettings,
+              updateGlossaryEntrySettings,
+              deleteGlossaryEntrySettings,
+              createDatasetSettings,
+              getDatasetSettings,
+              listDatasetsSettings,
+              deleteDatasetSettings,
+              createAdaptiveMtDatasetSettings,
+              deleteAdaptiveMtDatasetSettings,
+              getAdaptiveMtDatasetSettings,
+              listAdaptiveMtDatasetsSettings,
+              adaptiveMtTranslateSettings,
+              getAdaptiveMtFileSettings,
+              deleteAdaptiveMtFileSettings,
+              importAdaptiveMtFileSettings,
+              listAdaptiveMtFilesSettings,
+              listAdaptiveMtSentencesSettings,
+              importDataSettings,
+              exportDataSettings,
+              listExamplesSettings,
+              createModelSettings,
+              listModelsSettings,
+              getModelSettings,
+              deleteModelSettings);
       initDefaults(this);
     }
 
@@ -542,6 +1510,7 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       super(settings);
 
       translateTextSettings = settings.translateTextSettings.toBuilder();
+      romanizeTextSettings = settings.romanizeTextSettings.toBuilder();
       detectLanguageSettings = settings.detectLanguageSettings.toBuilder();
       getSupportedLanguagesSettings = settings.getSupportedLanguagesSettings.toBuilder();
       translateDocumentSettings = settings.translateDocumentSettings.toBuilder();
@@ -553,23 +1522,85 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           settings.batchTranslateDocumentOperationSettings.toBuilder();
       createGlossarySettings = settings.createGlossarySettings.toBuilder();
       createGlossaryOperationSettings = settings.createGlossaryOperationSettings.toBuilder();
+      updateGlossarySettings = settings.updateGlossarySettings.toBuilder();
+      updateGlossaryOperationSettings = settings.updateGlossaryOperationSettings.toBuilder();
       listGlossariesSettings = settings.listGlossariesSettings.toBuilder();
       getGlossarySettings = settings.getGlossarySettings.toBuilder();
       deleteGlossarySettings = settings.deleteGlossarySettings.toBuilder();
       deleteGlossaryOperationSettings = settings.deleteGlossaryOperationSettings.toBuilder();
+      getGlossaryEntrySettings = settings.getGlossaryEntrySettings.toBuilder();
+      listGlossaryEntriesSettings = settings.listGlossaryEntriesSettings.toBuilder();
+      createGlossaryEntrySettings = settings.createGlossaryEntrySettings.toBuilder();
+      updateGlossaryEntrySettings = settings.updateGlossaryEntrySettings.toBuilder();
+      deleteGlossaryEntrySettings = settings.deleteGlossaryEntrySettings.toBuilder();
+      createDatasetSettings = settings.createDatasetSettings.toBuilder();
+      createDatasetOperationSettings = settings.createDatasetOperationSettings.toBuilder();
+      getDatasetSettings = settings.getDatasetSettings.toBuilder();
+      listDatasetsSettings = settings.listDatasetsSettings.toBuilder();
+      deleteDatasetSettings = settings.deleteDatasetSettings.toBuilder();
+      deleteDatasetOperationSettings = settings.deleteDatasetOperationSettings.toBuilder();
+      createAdaptiveMtDatasetSettings = settings.createAdaptiveMtDatasetSettings.toBuilder();
+      deleteAdaptiveMtDatasetSettings = settings.deleteAdaptiveMtDatasetSettings.toBuilder();
+      getAdaptiveMtDatasetSettings = settings.getAdaptiveMtDatasetSettings.toBuilder();
+      listAdaptiveMtDatasetsSettings = settings.listAdaptiveMtDatasetsSettings.toBuilder();
+      adaptiveMtTranslateSettings = settings.adaptiveMtTranslateSettings.toBuilder();
+      getAdaptiveMtFileSettings = settings.getAdaptiveMtFileSettings.toBuilder();
+      deleteAdaptiveMtFileSettings = settings.deleteAdaptiveMtFileSettings.toBuilder();
+      importAdaptiveMtFileSettings = settings.importAdaptiveMtFileSettings.toBuilder();
+      listAdaptiveMtFilesSettings = settings.listAdaptiveMtFilesSettings.toBuilder();
+      listAdaptiveMtSentencesSettings = settings.listAdaptiveMtSentencesSettings.toBuilder();
+      importDataSettings = settings.importDataSettings.toBuilder();
+      importDataOperationSettings = settings.importDataOperationSettings.toBuilder();
+      exportDataSettings = settings.exportDataSettings.toBuilder();
+      exportDataOperationSettings = settings.exportDataOperationSettings.toBuilder();
+      listExamplesSettings = settings.listExamplesSettings.toBuilder();
+      createModelSettings = settings.createModelSettings.toBuilder();
+      createModelOperationSettings = settings.createModelOperationSettings.toBuilder();
+      listModelsSettings = settings.listModelsSettings.toBuilder();
+      getModelSettings = settings.getModelSettings.toBuilder();
+      deleteModelSettings = settings.deleteModelSettings.toBuilder();
+      deleteModelOperationSettings = settings.deleteModelOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               translateTextSettings,
+              romanizeTextSettings,
               detectLanguageSettings,
               getSupportedLanguagesSettings,
               translateDocumentSettings,
               batchTranslateTextSettings,
               batchTranslateDocumentSettings,
               createGlossarySettings,
+              updateGlossarySettings,
               listGlossariesSettings,
               getGlossarySettings,
-              deleteGlossarySettings);
+              deleteGlossarySettings,
+              getGlossaryEntrySettings,
+              listGlossaryEntriesSettings,
+              createGlossaryEntrySettings,
+              updateGlossaryEntrySettings,
+              deleteGlossaryEntrySettings,
+              createDatasetSettings,
+              getDatasetSettings,
+              listDatasetsSettings,
+              deleteDatasetSettings,
+              createAdaptiveMtDatasetSettings,
+              deleteAdaptiveMtDatasetSettings,
+              getAdaptiveMtDatasetSettings,
+              listAdaptiveMtDatasetsSettings,
+              adaptiveMtTranslateSettings,
+              getAdaptiveMtFileSettings,
+              deleteAdaptiveMtFileSettings,
+              importAdaptiveMtFileSettings,
+              listAdaptiveMtFilesSettings,
+              listAdaptiveMtSentencesSettings,
+              importDataSettings,
+              exportDataSettings,
+              listExamplesSettings,
+              createModelSettings,
+              listModelsSettings,
+              getModelSettings,
+              deleteModelSettings);
     }
 
     private static Builder createDefault() {
@@ -578,7 +1609,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -591,7 +1621,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -603,6 +1632,11 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .translateTextSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .romanizeTextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .detectLanguageSettings()
@@ -635,6 +1669,11 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateGlossarySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listGlossariesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -648,6 +1687,136 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .deleteGlossarySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getGlossaryEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listGlossaryEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createGlossaryEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateGlossaryEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteGlossaryEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listDatasetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createAdaptiveMtDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAdaptiveMtDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAdaptiveMtDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAdaptiveMtDatasetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .adaptiveMtTranslateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAdaptiveMtFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAdaptiveMtFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .importAdaptiveMtFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAdaptiveMtFilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAdaptiveMtSentencesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .importDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .exportDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listExamplesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listModelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .batchTranslateTextOperationSettings()
@@ -664,13 +1833,13 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -690,13 +1859,13 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -714,13 +1883,37 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGlossaryOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGlossaryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Glossary.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(UpdateGlossaryMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -738,13 +1931,153 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Dataset.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateDatasetMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteDatasetMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ImportDataMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportDataOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<ExportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(ExportDataMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CreateModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Model.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateModelMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteModelMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -769,6 +2102,12 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     public UnaryCallSettings.Builder<TranslateTextRequest, TranslateTextResponse>
         translateTextSettings() {
       return translateTextSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to romanizeText. */
+    public UnaryCallSettings.Builder<RomanizeTextRequest, RomanizeTextResponse>
+        romanizeTextSettings() {
+      return romanizeTextSettings;
     }
 
     /** Returns the builder for the settings used for calls to detectLanguage. */
@@ -796,8 +2135,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     }
 
     /** Returns the builder for the settings used for calls to batchTranslateText. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
         batchTranslateTextOperationSettings() {
@@ -811,8 +2148,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     }
 
     /** Returns the builder for the settings used for calls to batchTranslateDocument. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchTranslateDocumentRequest,
             BatchTranslateDocumentResponse,
@@ -827,11 +2162,20 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     }
 
     /** Returns the builder for the settings used for calls to createGlossary. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
         createGlossaryOperationSettings() {
       return createGlossaryOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGlossary. */
+    public UnaryCallSettings.Builder<UpdateGlossaryRequest, Operation> updateGlossarySettings() {
+      return updateGlossarySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGlossary. */
+    public OperationCallSettings.Builder<UpdateGlossaryRequest, Glossary, UpdateGlossaryMetadata>
+        updateGlossaryOperationSettings() {
+      return updateGlossaryOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listGlossaries. */
@@ -852,12 +2196,208 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     }
 
     /** Returns the builder for the settings used for calls to deleteGlossary. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings() {
       return deleteGlossaryOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGlossaryEntry. */
+    public UnaryCallSettings.Builder<GetGlossaryEntryRequest, GlossaryEntry>
+        getGlossaryEntrySettings() {
+      return getGlossaryEntrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listGlossaryEntries. */
+    public PagedCallSettings.Builder<
+            ListGlossaryEntriesRequest,
+            ListGlossaryEntriesResponse,
+            ListGlossaryEntriesPagedResponse>
+        listGlossaryEntriesSettings() {
+      return listGlossaryEntriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGlossaryEntry. */
+    public UnaryCallSettings.Builder<CreateGlossaryEntryRequest, GlossaryEntry>
+        createGlossaryEntrySettings() {
+      return createGlossaryEntrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGlossaryEntry. */
+    public UnaryCallSettings.Builder<UpdateGlossaryEntryRequest, GlossaryEntry>
+        updateGlossaryEntrySettings() {
+      return updateGlossaryEntrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGlossaryEntry. */
+    public UnaryCallSettings.Builder<DeleteGlossaryEntryRequest, Empty>
+        deleteGlossaryEntrySettings() {
+      return deleteGlossaryEntrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDataset. */
+    public UnaryCallSettings.Builder<CreateDatasetRequest, Operation> createDatasetSettings() {
+      return createDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDataset. */
+    public OperationCallSettings.Builder<CreateDatasetRequest, Dataset, CreateDatasetMetadata>
+        createDatasetOperationSettings() {
+      return createDatasetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDataset. */
+    public UnaryCallSettings.Builder<GetDatasetRequest, Dataset> getDatasetSettings() {
+      return getDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDatasets. */
+    public PagedCallSettings.Builder<
+            ListDatasetsRequest, ListDatasetsResponse, ListDatasetsPagedResponse>
+        listDatasetsSettings() {
+      return listDatasetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    public UnaryCallSettings.Builder<DeleteDatasetRequest, Operation> deleteDatasetSettings() {
+      return deleteDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDataset. */
+    public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, DeleteDatasetMetadata>
+        deleteDatasetOperationSettings() {
+      return deleteDatasetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<CreateAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        createAdaptiveMtDatasetSettings() {
+      return createAdaptiveMtDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<DeleteAdaptiveMtDatasetRequest, Empty>
+        deleteAdaptiveMtDatasetSettings() {
+      return deleteAdaptiveMtDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAdaptiveMtDataset. */
+    public UnaryCallSettings.Builder<GetAdaptiveMtDatasetRequest, AdaptiveMtDataset>
+        getAdaptiveMtDatasetSettings() {
+      return getAdaptiveMtDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtDatasets. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtDatasetsRequest,
+            ListAdaptiveMtDatasetsResponse,
+            ListAdaptiveMtDatasetsPagedResponse>
+        listAdaptiveMtDatasetsSettings() {
+      return listAdaptiveMtDatasetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to adaptiveMtTranslate. */
+    public UnaryCallSettings.Builder<AdaptiveMtTranslateRequest, AdaptiveMtTranslateResponse>
+        adaptiveMtTranslateSettings() {
+      return adaptiveMtTranslateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<GetAdaptiveMtFileRequest, AdaptiveMtFile>
+        getAdaptiveMtFileSettings() {
+      return getAdaptiveMtFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<DeleteAdaptiveMtFileRequest, Empty>
+        deleteAdaptiveMtFileSettings() {
+      return deleteAdaptiveMtFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importAdaptiveMtFile. */
+    public UnaryCallSettings.Builder<ImportAdaptiveMtFileRequest, ImportAdaptiveMtFileResponse>
+        importAdaptiveMtFileSettings() {
+      return importAdaptiveMtFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtFiles. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtFilesRequest,
+            ListAdaptiveMtFilesResponse,
+            ListAdaptiveMtFilesPagedResponse>
+        listAdaptiveMtFilesSettings() {
+      return listAdaptiveMtFilesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdaptiveMtSentences. */
+    public PagedCallSettings.Builder<
+            ListAdaptiveMtSentencesRequest,
+            ListAdaptiveMtSentencesResponse,
+            ListAdaptiveMtSentencesPagedResponse>
+        listAdaptiveMtSentencesSettings() {
+      return listAdaptiveMtSentencesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importData. */
+    public UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings() {
+      return importDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importData. */
+    public OperationCallSettings.Builder<ImportDataRequest, Empty, ImportDataMetadata>
+        importDataOperationSettings() {
+      return importDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public UnaryCallSettings.Builder<ExportDataRequest, Operation> exportDataSettings() {
+      return exportDataSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportData. */
+    public OperationCallSettings.Builder<ExportDataRequest, Empty, ExportDataMetadata>
+        exportDataOperationSettings() {
+      return exportDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listExamples. */
+    public PagedCallSettings.Builder<
+            ListExamplesRequest, ListExamplesResponse, ListExamplesPagedResponse>
+        listExamplesSettings() {
+      return listExamplesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createModel. */
+    public UnaryCallSettings.Builder<CreateModelRequest, Operation> createModelSettings() {
+      return createModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createModel. */
+    public OperationCallSettings.Builder<CreateModelRequest, Model, CreateModelMetadata>
+        createModelOperationSettings() {
+      return createModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listModels. */
+    public PagedCallSettings.Builder<ListModelsRequest, ListModelsResponse, ListModelsPagedResponse>
+        listModelsSettings() {
+      return listModelsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getModel. */
+    public UnaryCallSettings.Builder<GetModelRequest, Model> getModelSettings() {
+      return getModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModel. */
+    public UnaryCallSettings.Builder<DeleteModelRequest, Operation> deleteModelSettings() {
+      return deleteModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteModel. */
+    public OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteModelMetadata>
+        deleteModelOperationSettings() {
+      return deleteModelOperationSettings;
     }
 
     @Override

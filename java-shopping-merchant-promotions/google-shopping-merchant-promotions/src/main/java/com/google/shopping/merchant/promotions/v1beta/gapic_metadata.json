@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.promotions.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.promotions.v1beta",
+  "services": {
+    "PromotionsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PromotionsServiceClient",
+          "rpcs": {
+            "GetPromotion": {
+              "methods": ["getPromotion", "getPromotion", "getPromotion", "getPromotionCallable"]
+            },
+            "InsertPromotion": {
+              "methods": ["insertPromotion", "insertPromotionCallable"]
+            },
+            "ListPromotions": {
+              "methods": ["listPromotions", "listPromotions", "listPromotionsPagedCallable", "listPromotionsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

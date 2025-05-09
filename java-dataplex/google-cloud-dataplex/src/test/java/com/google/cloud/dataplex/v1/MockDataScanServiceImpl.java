@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -222,6 +222,29 @@ public class MockDataScanServiceImpl extends DataScanServiceImplBase {
                   "Unrecognized response type %s for method ListDataScanJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDataScanJobsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateDataQualityRules(
+      GenerateDataQualityRulesRequest request,
+      StreamObserver<GenerateDataQualityRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateDataQualityRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateDataQualityRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateDataQualityRules, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateDataQualityRulesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

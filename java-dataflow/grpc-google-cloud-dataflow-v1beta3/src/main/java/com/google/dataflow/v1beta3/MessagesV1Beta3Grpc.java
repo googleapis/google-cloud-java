@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,6 +94,19 @@ public final class MessagesV1Beta3Grpc {
           }
         };
     return MessagesV1Beta3Stub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MessagesV1Beta3BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MessagesV1Beta3BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MessagesV1Beta3BlockingV2Stub>() {
+          @java.lang.Override
+          public MessagesV1Beta3BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MessagesV1Beta3BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MessagesV1Beta3BlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -216,6 +229,46 @@ public final class MessagesV1Beta3Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MessagesV1Beta3.
+   *
+   * <pre>
+   * The Dataflow Messages API is used for monitoring the progress of
+   * Dataflow jobs.
+   * </pre>
+   */
+  public static final class MessagesV1Beta3BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MessagesV1Beta3BlockingV2Stub> {
+    private MessagesV1Beta3BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MessagesV1Beta3BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MessagesV1Beta3BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Request the job status.
+     * To request the status of a job, we recommend using
+     * `projects.locations.jobs.messages.list` with a [regional endpoint]
+     * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+     * `projects.jobs.messages.list` is not recommended, as you can only request
+     * the status of jobs that are running in `us-central1`.
+     * </pre>
+     */
+    public com.google.dataflow.v1beta3.ListJobMessagesResponse listJobMessages(
+        com.google.dataflow.v1beta3.ListJobMessagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobMessagesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MessagesV1Beta3.
    *
    * <pre>
    * The Dataflow Messages API is used for monitoring the progress of

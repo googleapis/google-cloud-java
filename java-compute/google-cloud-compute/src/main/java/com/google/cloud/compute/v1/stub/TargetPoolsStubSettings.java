@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import static com.google.cloud.compute.v1.TargetPoolsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -57,6 +57,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.RemoveHealthCheckTargetPoolRequest;
 import com.google.cloud.compute.v1.RemoveInstanceTargetPoolRequest;
 import com.google.cloud.compute.v1.SetBackupTargetPoolRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyTargetPoolRequest;
 import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
@@ -67,11 +68,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.Collections;
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -88,7 +88,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -105,9 +107,46 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * TargetPoolsStubSettings targetPoolsSettings = targetPoolsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addHealthCheck:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * TargetPoolsStubSettings.Builder targetPoolsSettingsBuilder =
+ *     TargetPoolsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * targetPoolsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -151,6 +190,10 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
   private final UnaryCallSettings<SetBackupTargetPoolRequest, Operation> setBackupSettings;
   private final OperationCallSettings<SetBackupTargetPoolRequest, Operation, Operation>
       setBackupOperationSettings;
+  private final UnaryCallSettings<SetSecurityPolicyTargetPoolRequest, Operation>
+      setSecurityPolicySettings;
+  private final OperationCallSettings<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListTargetPoolsRequest,
@@ -195,9 +238,7 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
             @Override
             public Iterable<Map.Entry<String, TargetPoolsScopedList>> extractResources(
                 TargetPoolAggregatedList payload) {
-              return payload.getItemsMap() == null
-                  ? Collections.<Map.Entry<String, TargetPoolsScopedList>>emptySet()
-                  : payload.getItemsMap().entrySet();
+              return payload.getItemsMap().entrySet();
             }
           };
 
@@ -233,9 +274,7 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
 
             @Override
             public Iterable<TargetPool> extractResources(TargetPoolList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<TargetPool>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -381,6 +420,18 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     return setBackupOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public UnaryCallSettings<SetSecurityPolicyTargetPoolRequest, Operation>
+      setSecurityPolicySettings() {
+    return setSecurityPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setSecurityPolicy. */
+  public OperationCallSettings<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+      setSecurityPolicyOperationSettings() {
+    return setSecurityPolicyOperationSettings;
+  }
+
   public TargetPoolsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -392,12 +443,19 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -429,7 +487,6 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -476,6 +533,9 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     removeInstanceOperationSettings = settingsBuilder.removeInstanceOperationSettings().build();
     setBackupSettings = settingsBuilder.setBackupSettings().build();
     setBackupOperationSettings = settingsBuilder.setBackupOperationSettings().build();
+    setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
+    setSecurityPolicyOperationSettings =
+        settingsBuilder.setSecurityPolicyOperationSettings().build();
   }
 
   /** Builder for TargetPoolsStubSettings. */
@@ -519,6 +579,11 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
         setBackupSettings;
     private final OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
         setBackupOperationSettings;
+    private final UnaryCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation>
+        setSecurityPolicySettings;
+    private final OperationCallSettings.Builder<
+            SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -542,21 +607,21 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -587,6 +652,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       removeInstanceOperationSettings = OperationCallSettings.newBuilder();
       setBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setBackupOperationSettings = OperationCallSettings.newBuilder();
+      setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -600,7 +667,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
               listSettings,
               removeHealthCheckSettings,
               removeInstanceSettings,
-              setBackupSettings);
+              setBackupSettings,
+              setSecurityPolicySettings);
       initDefaults(this);
     }
 
@@ -625,6 +693,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       removeInstanceOperationSettings = settings.removeInstanceOperationSettings.toBuilder();
       setBackupSettings = settings.setBackupSettings.toBuilder();
       setBackupOperationSettings = settings.setBackupOperationSettings.toBuilder();
+      setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
+      setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -638,7 +708,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
               listSettings,
               removeHealthCheckSettings,
               removeInstanceSettings,
-              setBackupSettings);
+              setBackupSettings,
+              setSecurityPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -647,7 +718,6 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -711,6 +781,11 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .setSecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .addHealthCheckOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -725,13 +800,13 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -749,13 +824,13 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -773,13 +848,13 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -797,13 +872,13 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -822,13 +897,13 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -846,13 +921,13 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -870,13 +945,38 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setSecurityPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetSecurityPolicyTargetPoolRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -904,8 +1004,6 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to addHealthCheck. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddHealthCheckTargetPoolRequest, Operation, Operation>
         addHealthCheckOperationSettings() {
       return addHealthCheckOperationSettings;
@@ -918,8 +1016,6 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to addInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddInstanceTargetPoolRequest, Operation, Operation>
         addInstanceOperationSettings() {
       return addInstanceOperationSettings;
@@ -938,8 +1034,6 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTargetPoolRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -962,8 +1056,6 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertTargetPoolRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -982,8 +1074,6 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to removeHealthCheck. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RemoveHealthCheckTargetPoolRequest, Operation, Operation>
         removeHealthCheckOperationSettings() {
       return removeHealthCheckOperationSettings;
@@ -996,8 +1086,6 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to removeInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RemoveInstanceTargetPoolRequest, Operation, Operation>
         removeInstanceOperationSettings() {
       return removeInstanceOperationSettings;
@@ -1009,11 +1097,21 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to setBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetBackupTargetPoolRequest, Operation, Operation>
         setBackupOperationSettings() {
       return setBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public UnaryCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation>
+        setSecurityPolicySettings() {
+      return setSecurityPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setSecurityPolicy. */
+    public OperationCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
+        setSecurityPolicyOperationSettings() {
+      return setSecurityPolicyOperationSettings;
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -381,6 +381,19 @@ public final class ServingConfigServiceGrpc {
     return ServingConfigServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ServingConfigServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ServingConfigServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ServingConfigServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ServingConfigServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ServingConfigServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ServingConfigServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -706,6 +719,133 @@ public final class ServingConfigServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ServingConfigService.
+   *
+   * <pre>
+   * Service for modifying ServingConfig.
+   * </pre>
+   */
+  public static final class ServingConfigServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ServingConfigServiceBlockingV2Stub> {
+    private ServingConfigServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ServingConfigServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ServingConfigServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ServingConfig.
+     * A maximum of 100
+     * [ServingConfig][google.cloud.retail.v2alpha.ServingConfig]s are allowed in
+     * a [Catalog][google.cloud.retail.v2alpha.Catalog], otherwise a
+     * FAILED_PRECONDITION error is returned.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.ServingConfig createServingConfig(
+        com.google.cloud.retail.v2alpha.CreateServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteServingConfig(
+        com.google.cloud.retail.v2alpha.DeleteServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ServingConfig.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.ServingConfig updateServingConfig(
+        com.google.cloud.retail.v2alpha.UpdateServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.ServingConfig getServingConfig(
+        com.google.cloud.retail.v2alpha.GetServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ServingConfigs linked to this catalog.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.ListServingConfigsResponse listServingConfigs(
+        com.google.cloud.retail.v2alpha.ListServingConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServingConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a Control on the specified ServingConfig.
+     * The control is added in the last position of the list of controls
+     * it belongs to (e.g. if it's a facet spec control it will be applied
+     * in the last position of servingConfig.facetSpecIds)
+     * Returns a ALREADY_EXISTS error if the control has already been applied.
+     * Returns a FAILED_PRECONDITION error if the addition could exceed maximum
+     * number of control allowed for that type of control.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.ServingConfig addControl(
+        com.google.cloud.retail.v2alpha.AddControlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddControlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a Control on the specified ServingConfig.
+     * The control is removed from the ServingConfig.
+     * Returns a NOT_FOUND error if the Control is not enabled for the
+     * ServingConfig.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.ServingConfig removeControl(
+        com.google.cloud.retail.v2alpha.RemoveControlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveControlMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ServingConfigService.
    *
    * <pre>
    * Service for modifying ServingConfig.

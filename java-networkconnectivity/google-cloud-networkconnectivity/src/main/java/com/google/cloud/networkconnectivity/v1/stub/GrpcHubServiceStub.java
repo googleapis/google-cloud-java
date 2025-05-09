@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocat
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.QueryHubStatusPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -38,6 +39,8 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
@@ -62,11 +65,16 @@ import com.google.cloud.networkconnectivity.v1.ListRoutesResponse;
 import com.google.cloud.networkconnectivity.v1.ListSpokesRequest;
 import com.google.cloud.networkconnectivity.v1.ListSpokesResponse;
 import com.google.cloud.networkconnectivity.v1.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1.QueryHubStatusRequest;
+import com.google.cloud.networkconnectivity.v1.QueryHubStatusResponse;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateGroupRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -143,6 +151,17 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   ProtoUtils.marshaller(ListHubSpokesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<QueryHubStatusRequest, QueryHubStatusResponse>
+      queryHubStatusMethodDescriptor =
+          MethodDescriptor.<QueryHubStatusRequest, QueryHubStatusResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/QueryHubStatus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryHubStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryHubStatusResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListSpokesRequest, ListSpokesResponse>
       listSpokesMethodDescriptor =
           MethodDescriptor.<ListSpokesRequest, ListSpokesResponse>newBuilder()
@@ -193,6 +212,26 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/AcceptHubSpoke")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AcceptHubSpokeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AcceptSpokeUpdateRequest, Operation>
+      acceptSpokeUpdateMethodDescriptor =
+          MethodDescriptor.<AcceptSpokeUpdateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/AcceptSpokeUpdate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AcceptSpokeUpdateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RejectSpokeUpdateRequest, Operation>
+      rejectSpokeUpdateMethodDescriptor =
+          MethodDescriptor.<RejectSpokeUpdateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/RejectSpokeUpdate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RejectSpokeUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -259,6 +298,14 @@ public class GrpcHubServiceStub extends HubServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateGroupRequest, Operation> updateGroupMethodDescriptor =
+      MethodDescriptor.<UpdateGroupRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.networkconnectivity.v1.HubService/UpdateGroup")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -320,6 +367,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<ListHubSpokesRequest, ListHubSpokesResponse> listHubSpokesCallable;
   private final UnaryCallable<ListHubSpokesRequest, ListHubSpokesPagedResponse>
       listHubSpokesPagedCallable;
+  private final UnaryCallable<QueryHubStatusRequest, QueryHubStatusResponse> queryHubStatusCallable;
+  private final UnaryCallable<QueryHubStatusRequest, QueryHubStatusPagedResponse>
+      queryHubStatusPagedCallable;
   private final UnaryCallable<ListSpokesRequest, ListSpokesResponse> listSpokesCallable;
   private final UnaryCallable<ListSpokesRequest, ListSpokesPagedResponse> listSpokesPagedCallable;
   private final UnaryCallable<GetSpokeRequest, Spoke> getSpokeCallable;
@@ -335,6 +385,14 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<AcceptHubSpokeRequest, Operation> acceptHubSpokeCallable;
   private final OperationCallable<AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
       acceptHubSpokeOperationCallable;
+  private final UnaryCallable<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateCallable;
+  private final OperationCallable<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationCallable;
+  private final UnaryCallable<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateCallable;
+  private final OperationCallable<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationCallable;
   private final UnaryCallable<DeleteSpokeRequest, Operation> deleteSpokeCallable;
   private final OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationCallable;
@@ -349,6 +407,9 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<GetGroupRequest, Group> getGroupCallable;
   private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
   private final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable;
+  private final UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable;
+  private final OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -460,6 +521,17 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<QueryHubStatusRequest, QueryHubStatusResponse>
+        queryHubStatusTransportSettings =
+            GrpcCallSettings.<QueryHubStatusRequest, QueryHubStatusResponse>newBuilder()
+                .setMethodDescriptor(queryHubStatusMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListSpokesRequest, ListSpokesResponse> listSpokesTransportSettings =
         GrpcCallSettings.<ListSpokesRequest, ListSpokesResponse>newBuilder()
             .setMethodDescriptor(listSpokesMethodDescriptor)
@@ -513,6 +585,26 @@ public class GrpcHubServiceStub extends HubServiceStub {
     GrpcCallSettings<AcceptHubSpokeRequest, Operation> acceptHubSpokeTransportSettings =
         GrpcCallSettings.<AcceptHubSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(acceptHubSpokeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateTransportSettings =
+        GrpcCallSettings.<AcceptSpokeUpdateRequest, Operation>newBuilder()
+            .setMethodDescriptor(acceptSpokeUpdateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateTransportSettings =
+        GrpcCallSettings.<RejectSpokeUpdateRequest, Operation>newBuilder()
+            .setMethodDescriptor(rejectSpokeUpdateMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -588,6 +680,16 @@ public class GrpcHubServiceStub extends HubServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateGroupRequest, Operation> updateGroupTransportSettings =
+        GrpcCallSettings.<UpdateGroupRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("group.name", String.valueOf(request.getGroup().getName()));
                   return builder.build();
                 })
             .build();
@@ -685,6 +787,12 @@ public class GrpcHubServiceStub extends HubServiceStub {
     this.listHubSpokesPagedCallable =
         callableFactory.createPagedCallable(
             listHubSpokesTransportSettings, settings.listHubSpokesSettings(), clientContext);
+    this.queryHubStatusCallable =
+        callableFactory.createUnaryCallable(
+            queryHubStatusTransportSettings, settings.queryHubStatusSettings(), clientContext);
+    this.queryHubStatusPagedCallable =
+        callableFactory.createPagedCallable(
+            queryHubStatusTransportSettings, settings.queryHubStatusSettings(), clientContext);
     this.listSpokesCallable =
         callableFactory.createUnaryCallable(
             listSpokesTransportSettings, settings.listSpokesSettings(), clientContext);
@@ -730,6 +838,28 @@ public class GrpcHubServiceStub extends HubServiceStub {
             settings.acceptHubSpokeOperationSettings(),
             clientContext,
             operationsStub);
+    this.acceptSpokeUpdateCallable =
+        callableFactory.createUnaryCallable(
+            acceptSpokeUpdateTransportSettings,
+            settings.acceptSpokeUpdateSettings(),
+            clientContext);
+    this.acceptSpokeUpdateOperationCallable =
+        callableFactory.createOperationCallable(
+            acceptSpokeUpdateTransportSettings,
+            settings.acceptSpokeUpdateOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.rejectSpokeUpdateCallable =
+        callableFactory.createUnaryCallable(
+            rejectSpokeUpdateTransportSettings,
+            settings.rejectSpokeUpdateSettings(),
+            clientContext);
+    this.rejectSpokeUpdateOperationCallable =
+        callableFactory.createOperationCallable(
+            rejectSpokeUpdateTransportSettings,
+            settings.rejectSpokeUpdateOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteSpokeCallable =
         callableFactory.createUnaryCallable(
             deleteSpokeTransportSettings, settings.deleteSpokeSettings(), clientContext);
@@ -766,6 +896,15 @@ public class GrpcHubServiceStub extends HubServiceStub {
     this.listGroupsPagedCallable =
         callableFactory.createPagedCallable(
             listGroupsTransportSettings, settings.listGroupsSettings(), clientContext);
+    this.updateGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateGroupTransportSettings, settings.updateGroupSettings(), clientContext);
+    this.updateGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGroupTransportSettings,
+            settings.updateGroupOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -853,6 +992,17 @@ public class GrpcHubServiceStub extends HubServiceStub {
   }
 
   @Override
+  public UnaryCallable<QueryHubStatusRequest, QueryHubStatusResponse> queryHubStatusCallable() {
+    return queryHubStatusCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryHubStatusRequest, QueryHubStatusPagedResponse>
+      queryHubStatusPagedCallable() {
+    return queryHubStatusPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ListSpokesRequest, ListSpokesResponse> listSpokesCallable() {
     return listSpokesCallable;
   }
@@ -912,6 +1062,28 @@ public class GrpcHubServiceStub extends HubServiceStub {
   }
 
   @Override
+  public UnaryCallable<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateCallable() {
+    return acceptSpokeUpdateCallable;
+  }
+
+  @Override
+  public OperationCallable<AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationCallable() {
+    return acceptSpokeUpdateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateCallable() {
+    return rejectSpokeUpdateCallable;
+  }
+
+  @Override
+  public OperationCallable<RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationCallable() {
+    return rejectSpokeUpdateOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteSpokeRequest, Operation> deleteSpokeCallable() {
     return deleteSpokeCallable;
   }
@@ -966,6 +1138,17 @@ public class GrpcHubServiceStub extends HubServiceStub {
   @Override
   public UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
     return listGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable() {
+    return updateGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationCallable() {
+    return updateGroupOperationCallable;
   }
 
   @Override

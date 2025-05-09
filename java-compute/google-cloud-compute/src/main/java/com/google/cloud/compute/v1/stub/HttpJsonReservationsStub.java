@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.ReservationsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.ReservationsClient.ListPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -42,6 +41,7 @@ import com.google.cloud.compute.v1.InsertReservationRequest;
 import com.google.cloud.compute.v1.ListReservationsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PerformMaintenanceReservationRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reservation;
 import com.google.cloud.compute.v1.ReservationAggregatedList;
@@ -67,7 +67,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonReservationsStub extends ReservationsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -118,6 +117,12 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
                             }
                             return fields;
                           })
@@ -366,6 +371,64 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<PerformMaintenanceReservationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Reservations/PerformMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PerformMaintenanceReservationRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/reservations/{reservation}/performMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservation", request.getReservation());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceReservationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "reservationsPerformMaintenanceRequestResource",
+                                      request.getReservationsPerformMaintenanceRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PerformMaintenanceReservationRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<ResizeReservationRequest, Operation>
       resizeMethodDescriptor =
           ApiMethodDescriptor.<ResizeReservationRequest, Operation>newBuilder()
@@ -587,6 +650,10 @@ public class HttpJsonReservationsStub extends ReservationsStub {
       insertOperationCallable;
   private final UnaryCallable<ListReservationsRequest, ReservationList> listCallable;
   private final UnaryCallable<ListReservationsRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceCallable;
+  private final OperationCallable<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationCallable;
   private final UnaryCallable<ResizeReservationRequest, Operation> resizeCallable;
   private final OperationCallable<ResizeReservationRequest, Operation, Operation>
       resizeOperationCallable;
@@ -717,6 +784,20 @@ public class HttpJsonReservationsStub extends ReservationsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<PerformMaintenanceReservationRequest, Operation>
+        performMaintenanceTransportSettings =
+            HttpJsonCallSettings.<PerformMaintenanceReservationRequest, Operation>newBuilder()
+                .setMethodDescriptor(performMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("reservation", String.valueOf(request.getReservation()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ResizeReservationRequest, Operation> resizeTransportSettings =
         HttpJsonCallSettings.<ResizeReservationRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeMethodDescriptor)
@@ -808,6 +889,17 @@ public class HttpJsonReservationsStub extends ReservationsStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.performMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceSettings(),
+            clientContext);
+    this.performMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.resizeCallable =
         callableFactory.createUnaryCallable(
             resizeTransportSettings, settings.resizeSettings(), clientContext);
@@ -848,6 +940,7 @@ public class HttpJsonReservationsStub extends ReservationsStub {
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(performMaintenanceMethodDescriptor);
     methodDescriptors.add(resizeMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
@@ -907,6 +1000,18 @@ public class HttpJsonReservationsStub extends ReservationsStub {
   @Override
   public UnaryCallable<ListReservationsRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceCallable() {
+    return performMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return performMaintenanceOperationCallable;
   }
 
   @Override

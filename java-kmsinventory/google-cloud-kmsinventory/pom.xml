@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kmsinventory</artifactId>
-  <version>0.17.0</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+  <version>0.52.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
   <packaging>jar</packaging>
   <name>Google KMS Inventory API</name>
   <description>KMS Inventory API KMS Inventory API.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-kmsinventory-parent</artifactId>
-    <version>0.17.0</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+    <version>0.52.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-kmsinventory</site.installationModule>
@@ -64,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -72,6 +73,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

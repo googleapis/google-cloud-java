@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ option ruby_package = "Google::Cloud::GkeBackup::V1";
 // Represents the backup of a specific persistent volume as a component of a
 // Backup - both the record of the operation and a pointer to the underlying
 // storage-specific artifacts.
-// Next id: 14
 message VolumeBackup {
   option (google.api.resource) = {
     type: "gkebackup.googleapis.com/VolumeBackup"
@@ -76,6 +75,10 @@ message VolumeBackup {
     // This VolumeBackup resource (and its associated artifacts) is in the
     // process of being deleted.
     DELETING = 6;
+
+    // The underlying artifacts of a volume backup (eg: persistent disk
+    // snapshots) are deleted.
+    CLEANED_UP = 7;
   }
 
   // Output only. The full name of the VolumeBackup resource.
@@ -127,7 +130,9 @@ message VolumeBackup {
   State state = 11 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. A human readable message explaining why the VolumeBackup is in
-  // its current state.
+  // its current state. This field is only meant for human consumption and
+  // should not be used programmatically as this field is not guaranteed to be
+  // consistent.
   string state_message = 12 [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Output only. `etag` is used for optimistic concurrency control as a way to
@@ -136,10 +141,15 @@ message VolumeBackup {
   // read-modify-write cycle to perform volume backup updates in order to avoid
   // race conditions.
   string etag = 13 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. [Output Only] Reserved for future use.
+  bool satisfies_pzs = 14 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. [Output Only] Reserved for future use.
+  bool satisfies_pzi = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents the operation of restoring a volume from a VolumeBackup.
-// Next id: 13
 message VolumeRestore {
   option (google.api.resource) = {
     type: "gkebackup.googleapis.com/VolumeRestore"

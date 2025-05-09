@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -540,6 +540,19 @@ public final class CloudFunctionsServiceGrpc {
     return CloudFunctionsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudFunctionsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudFunctionsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudFunctionsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudFunctionsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudFunctionsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudFunctionsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -611,7 +624,7 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Creates a new function. If a function with the given name already exists in
-     * the specified project, the long running operation returns an
+     * the specified project, the long running operation will return
      * `ALREADY_EXISTS` error.
      * </pre>
      */
@@ -641,7 +654,7 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Deletes a function with the given name from the specified project. If the
-     * given function is used by some trigger, the trigger is updated to
+     * given function is used by some trigger, the trigger will be updated to
      * remove this function.
      * </pre>
      */
@@ -688,10 +701,10 @@ public final class CloudFunctionsServiceGrpc {
      *   target bucket using internal service identity; if credentials were
      *   attached, the identity from the credentials would be used, but that
      *   identity does not have permissions to upload files to the URL.
-     * When making an HTTP PUT request, these two headers must be specified:
+     * When making a HTTP PUT request, these two headers need to be specified:
      * * `content-type: application/zip`
      * * `x-goog-content-length-range: 0,104857600`
-     * And this header must NOT be specified:
+     * And this header SHOULD NOT be specified:
      * * `Authorization: Bearer YOUR_TOKEN`
      * </pre>
      */
@@ -708,9 +721,9 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Returns a signed URL for downloading deployed function source code.
-     * The URL is only valid for a limited period and must be used within
+     * The URL is only valid for a limited period and should be used within
      * minutes after generation.
-     * For more information about the signed URL usage, see:
+     * For more information about the signed URL usage see:
      * https://cloud.google.com/storage/docs/access-control/signed-urls
      * </pre>
      */
@@ -759,7 +772,7 @@ public final class CloudFunctionsServiceGrpc {
      * <pre>
      * Tests the specified permissions against the IAM access control policy
      * for a function.
-     * If the function does not exist, this returns an empty set of
+     * If the function does not exist, this will return an empty set of
      * permissions, not a NOT_FOUND error.
      * </pre>
      */
@@ -845,7 +858,7 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Creates a new function. If a function with the given name already exists in
-     * the specified project, the long running operation returns an
+     * the specified project, the long running operation will return
      * `ALREADY_EXISTS` error.
      * </pre>
      */
@@ -879,7 +892,7 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Deletes a function with the given name from the specified project. If the
-     * given function is used by some trigger, the trigger is updated to
+     * given function is used by some trigger, the trigger will be updated to
      * remove this function.
      * </pre>
      */
@@ -930,10 +943,10 @@ public final class CloudFunctionsServiceGrpc {
      *   target bucket using internal service identity; if credentials were
      *   attached, the identity from the credentials would be used, but that
      *   identity does not have permissions to upload files to the URL.
-     * When making an HTTP PUT request, these two headers must be specified:
+     * When making a HTTP PUT request, these two headers need to be specified:
      * * `content-type: application/zip`
      * * `x-goog-content-length-range: 0,104857600`
-     * And this header must NOT be specified:
+     * And this header SHOULD NOT be specified:
      * * `Authorization: Bearer YOUR_TOKEN`
      * </pre>
      */
@@ -952,9 +965,9 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Returns a signed URL for downloading deployed function source code.
-     * The URL is only valid for a limited period and must be used within
+     * The URL is only valid for a limited period and should be used within
      * minutes after generation.
-     * For more information about the signed URL usage, see:
+     * For more information about the signed URL usage see:
      * https://cloud.google.com/storage/docs/access-control/signed-urls
      * </pre>
      */
@@ -1009,7 +1022,7 @@ public final class CloudFunctionsServiceGrpc {
      * <pre>
      * Tests the specified permissions against the IAM access control policy
      * for a function.
-     * If the function does not exist, this returns an empty set of
+     * If the function does not exist, this will return an empty set of
      * permissions, not a NOT_FOUND error.
      * </pre>
      */
@@ -1026,6 +1039,203 @@ public final class CloudFunctionsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudFunctionsService.
+   *
+   * <pre>
+   * A service that application uses to manipulate triggers and functions.
+   * </pre>
+   */
+  public static final class CloudFunctionsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudFunctionsServiceBlockingV2Stub> {
+    private CloudFunctionsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudFunctionsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudFunctionsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of functions that belong to the requested project.
+     * </pre>
+     */
+    public com.google.cloud.functions.v1.ListFunctionsResponse listFunctions(
+        com.google.cloud.functions.v1.ListFunctionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFunctionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a function with the given name from the requested project.
+     * </pre>
+     */
+    public com.google.cloud.functions.v1.CloudFunction getFunction(
+        com.google.cloud.functions.v1.GetFunctionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFunctionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new function. If a function with the given name already exists in
+     * the specified project, the long running operation will return
+     * `ALREADY_EXISTS` error.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFunction(
+        com.google.cloud.functions.v1.CreateFunctionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFunctionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates existing function.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFunction(
+        com.google.cloud.functions.v1.UpdateFunctionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFunctionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a function with the given name from the specified project. If the
+     * given function is used by some trigger, the trigger will be updated to
+     * remove this function.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFunction(
+        com.google.cloud.functions.v1.DeleteFunctionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFunctionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Synchronously invokes a deployed Cloud Function. To be used for testing
+     * purposes as very limited traffic is allowed. For more information on
+     * the actual limits, refer to
+     * [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
+     * </pre>
+     */
+    public com.google.cloud.functions.v1.CallFunctionResponse callFunction(
+        com.google.cloud.functions.v1.CallFunctionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCallFunctionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for uploading a function source code.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls.
+     * Once the function source code upload is complete, the used signed
+     * URL should be provided in CreateFunction or UpdateFunction request
+     * as a reference to the function source code.
+     * When uploading source code to the generated signed URL, please follow
+     * these restrictions:
+     * * Source file type should be a zip file.
+     * * Source file size should not exceed 100MB limit.
+     * * No credentials should be attached - the signed URLs provide access to the
+     *   target bucket using internal service identity; if credentials were
+     *   attached, the identity from the credentials would be used, but that
+     *   identity does not have permissions to upload files to the URL.
+     * When making a HTTP PUT request, these two headers need to be specified:
+     * * `content-type: application/zip`
+     * * `x-goog-content-length-range: 0,104857600`
+     * And this header SHOULD NOT be specified:
+     * * `Authorization: Bearer YOUR_TOKEN`
+     * </pre>
+     */
+    public com.google.cloud.functions.v1.GenerateUploadUrlResponse generateUploadUrl(
+        com.google.cloud.functions.v1.GenerateUploadUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateUploadUrlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a signed URL for downloading deployed function source code.
+     * The URL is only valid for a limited period and should be used within
+     * minutes after generation.
+     * For more information about the signed URL usage see:
+     * https://cloud.google.com/storage/docs/access-control/signed-urls
+     * </pre>
+     */
+    public com.google.cloud.functions.v1.GenerateDownloadUrlResponse generateDownloadUrl(
+        com.google.cloud.functions.v1.GenerateDownloadUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateDownloadUrlMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy on the specified function.
+     * Replaces any existing policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a function.
+     * Returns an empty policy if the function exists and does not have a policy
+     * set.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tests the specified permissions against the IAM access control policy
+     * for a function.
+     * If the function does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudFunctionsService.
    *
    * <pre>
    * A service that application uses to manipulate triggers and functions.
@@ -1075,7 +1285,7 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Creates a new function. If a function with the given name already exists in
-     * the specified project, the long running operation returns an
+     * the specified project, the long running operation will return
      * `ALREADY_EXISTS` error.
      * </pre>
      */
@@ -1103,7 +1313,7 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Deletes a function with the given name from the specified project. If the
-     * given function is used by some trigger, the trigger is updated to
+     * given function is used by some trigger, the trigger will be updated to
      * remove this function.
      * </pre>
      */
@@ -1147,10 +1357,10 @@ public final class CloudFunctionsServiceGrpc {
      *   target bucket using internal service identity; if credentials were
      *   attached, the identity from the credentials would be used, but that
      *   identity does not have permissions to upload files to the URL.
-     * When making an HTTP PUT request, these two headers must be specified:
+     * When making a HTTP PUT request, these two headers need to be specified:
      * * `content-type: application/zip`
      * * `x-goog-content-length-range: 0,104857600`
-     * And this header must NOT be specified:
+     * And this header SHOULD NOT be specified:
      * * `Authorization: Bearer YOUR_TOKEN`
      * </pre>
      */
@@ -1165,9 +1375,9 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Returns a signed URL for downloading deployed function source code.
-     * The URL is only valid for a limited period and must be used within
+     * The URL is only valid for a limited period and should be used within
      * minutes after generation.
-     * For more information about the signed URL usage, see:
+     * For more information about the signed URL usage see:
      * https://cloud.google.com/storage/docs/access-control/signed-urls
      * </pre>
      */
@@ -1210,7 +1420,7 @@ public final class CloudFunctionsServiceGrpc {
      * <pre>
      * Tests the specified permissions against the IAM access control policy
      * for a function.
-     * If the function does not exist, this returns an empty set of
+     * If the function does not exist, this will return an empty set of
      * permissions, not a NOT_FOUND error.
      * </pre>
      */
@@ -1275,7 +1485,7 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Creates a new function. If a function with the given name already exists in
-     * the specified project, the long running operation returns an
+     * the specified project, the long running operation will return
      * `ALREADY_EXISTS` error.
      * </pre>
      */
@@ -1303,7 +1513,7 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Deletes a function with the given name from the specified project. If the
-     * given function is used by some trigger, the trigger is updated to
+     * given function is used by some trigger, the trigger will be updated to
      * remove this function.
      * </pre>
      */
@@ -1348,10 +1558,10 @@ public final class CloudFunctionsServiceGrpc {
      *   target bucket using internal service identity; if credentials were
      *   attached, the identity from the credentials would be used, but that
      *   identity does not have permissions to upload files to the URL.
-     * When making an HTTP PUT request, these two headers must be specified:
+     * When making a HTTP PUT request, these two headers need to be specified:
      * * `content-type: application/zip`
      * * `x-goog-content-length-range: 0,104857600`
-     * And this header must NOT be specified:
+     * And this header SHOULD NOT be specified:
      * * `Authorization: Bearer YOUR_TOKEN`
      * </pre>
      */
@@ -1367,9 +1577,9 @@ public final class CloudFunctionsServiceGrpc {
      *
      * <pre>
      * Returns a signed URL for downloading deployed function source code.
-     * The URL is only valid for a limited period and must be used within
+     * The URL is only valid for a limited period and should be used within
      * minutes after generation.
-     * For more information about the signed URL usage, see:
+     * For more information about the signed URL usage see:
      * https://cloud.google.com/storage/docs/access-control/signed-urls
      * </pre>
      */
@@ -1415,7 +1625,7 @@ public final class CloudFunctionsServiceGrpc {
      * <pre>
      * Tests the specified permissions against the IAM access control policy
      * for a function.
-     * If the function does not exist, this returns an empty set of
+     * If the function does not exist, this will return an empty set of
      * permissions, not a NOT_FOUND error.
      * </pre>
      */

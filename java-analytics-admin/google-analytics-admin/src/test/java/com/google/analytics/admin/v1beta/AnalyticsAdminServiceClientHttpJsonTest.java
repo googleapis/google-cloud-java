@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.List
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -100,6 +101,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
+            .setGmpOrganization("gmpOrganization-65424739")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -149,6 +151,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
+            .setGmpOrganization("gmpOrganization-65424739")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -338,6 +341,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
+            .setGmpOrganization("gmpOrganization-65424739")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -349,6 +353,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
+            .setGmpOrganization("gmpOrganization-65424739")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -386,6 +391,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setRegionCode("regionCode-1991004415")
               .setDeleted(true)
+              .setGmpOrganization("gmpOrganization-65424739")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAccount(account, updateMask);
@@ -2266,6 +2272,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2316,6 +2323,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2366,6 +2374,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2376,6 +2385,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2412,6 +2422,8 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setDeletable(true)
               .setCustom(true)
+              .setDefaultConversionValue(
+                  ConversionEvent.DefaultConversionValue.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateConversionEvent(conversionEvent, updateMask);
@@ -2430,6 +2442,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2478,6 +2491,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDeletable(true)
             .setCustom(true)
+            .setDefaultConversionValue(ConversionEvent.DefaultConversionValue.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2691,6 +2705,453 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     try {
       String parent = "properties/propertie-2024";
       client.listConversionEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createKeyEventTest() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    KeyEvent keyEvent = KeyEvent.newBuilder().build();
+
+    KeyEvent actualResponse = client.createKeyEvent(parent, keyEvent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createKeyEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      KeyEvent keyEvent = KeyEvent.newBuilder().build();
+      client.createKeyEvent(parent, keyEvent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createKeyEventTest2() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+    KeyEvent keyEvent = KeyEvent.newBuilder().build();
+
+    KeyEvent actualResponse = client.createKeyEvent(parent, keyEvent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createKeyEventExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      KeyEvent keyEvent = KeyEvent.newBuilder().build();
+      client.createKeyEvent(parent, keyEvent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateKeyEventTest() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    KeyEvent keyEvent =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    KeyEvent actualResponse = client.updateKeyEvent(keyEvent, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateKeyEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      KeyEvent keyEvent =
+          KeyEvent.newBuilder()
+              .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+              .setEventName("eventName31228997")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setDeletable(true)
+              .setCustom(true)
+              .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateKeyEvent(keyEvent, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getKeyEventTest() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+
+    KeyEvent actualResponse = client.getKeyEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getKeyEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+      client.getKeyEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getKeyEventTest2() throws Exception {
+    KeyEvent expectedResponse =
+        KeyEvent.newBuilder()
+            .setName(KeyEventName.of("[PROPERTY]", "[KEY_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .setDefaultValue(KeyEvent.DefaultValue.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-1843/keyEvents/keyEvent-1843";
+
+    KeyEvent actualResponse = client.getKeyEvent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getKeyEventExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-1843/keyEvents/keyEvent-1843";
+      client.getKeyEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteKeyEventTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+
+    client.deleteKeyEvent(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteKeyEventExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      KeyEventName name = KeyEventName.of("[PROPERTY]", "[KEY_EVENT]");
+      client.deleteKeyEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteKeyEventTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-1843/keyEvents/keyEvent-1843";
+
+    client.deleteKeyEvent(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteKeyEventExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-1843/keyEvents/keyEvent-1843";
+      client.deleteKeyEvent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listKeyEventsTest() throws Exception {
+    KeyEvent responsesElement = KeyEvent.newBuilder().build();
+    ListKeyEventsResponse expectedResponse =
+        ListKeyEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllKeyEvents(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListKeyEventsPagedResponse pagedListResponse = client.listKeyEvents(parent);
+
+    List<KeyEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKeyEventsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listKeyEventsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listKeyEvents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listKeyEventsTest2() throws Exception {
+    KeyEvent responsesElement = KeyEvent.newBuilder().build();
+    ListKeyEventsResponse expectedResponse =
+        ListKeyEventsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllKeyEvents(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListKeyEventsPagedResponse pagedListResponse = client.listKeyEvents(parent);
+
+    List<KeyEvent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKeyEventsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listKeyEventsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listKeyEvents(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -4181,6 +4642,8 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllOrderBys(new ArrayList<AccessOrderBy>())
             .setReturnEntityQuota(true)
+            .setIncludeAllUsers(true)
+            .setExpandGroups(true)
             .build();
 
     RunAccessReportResponse actualResponse = client.runAccessReport(request);
@@ -4222,6 +4685,8 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .setTimeZone("timeZone-2077180903")
               .addAllOrderBys(new ArrayList<AccessOrderBy>())
               .setReturnEntityQuota(true)
+              .setIncludeAllUsers(true)
+              .setExpandGroups(true)
               .build();
       client.runAccessReport(request);
       Assert.fail("No exception raised");

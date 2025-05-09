@@ -46,8 +46,14 @@
             "ListSnapshots": {
               "methods": ["listSnapshots", "listSnapshots", "listSnapshots", "listSnapshotsPagedCallable", "listSnapshotsCallable"]
             },
+            "PromoteReplica": {
+              "methods": ["promoteReplicaAsync", "promoteReplicaOperationCallable", "promoteReplicaCallable"]
+            },
             "RestoreInstance": {
               "methods": ["restoreInstanceAsync", "restoreInstanceOperationCallable", "restoreInstanceCallable"]
+            },
+            "RevertInstance": {
+              "methods": ["revertInstanceAsync", "revertInstanceOperationCallable", "revertInstanceCallable"]
             },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]

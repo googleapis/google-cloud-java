@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,19 +70,519 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateFeaturestore</td>
+ *      <td><p> Creates a new Featurestore in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createFeaturestoreAsync(CreateFeaturestoreRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createFeaturestoreAsync(LocationName parent, Featurestore featurestore)
+ *           <li><p> createFeaturestoreAsync(String parent, Featurestore featurestore)
+ *           <li><p> createFeaturestoreAsync(LocationName parent, Featurestore featurestore, String featurestoreId)
+ *           <li><p> createFeaturestoreAsync(String parent, Featurestore featurestore, String featurestoreId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createFeaturestoreOperationCallable()
+ *           <li><p> createFeaturestoreCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFeaturestore</td>
+ *      <td><p> Gets details of a single Featurestore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFeaturestore(GetFeaturestoreRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFeaturestore(FeaturestoreName name)
+ *           <li><p> getFeaturestore(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFeaturestoreCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFeaturestores</td>
+ *      <td><p> Lists Featurestores in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFeaturestores(ListFeaturestoresRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFeaturestores(LocationName parent)
+ *           <li><p> listFeaturestores(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFeaturestoresPagedCallable()
+ *           <li><p> listFeaturestoresCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateFeaturestore</td>
+ *      <td><p> Updates the parameters of a single Featurestore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFeaturestoreAsync(UpdateFeaturestoreRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateFeaturestoreAsync(Featurestore featurestore, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFeaturestoreOperationCallable()
+ *           <li><p> updateFeaturestoreCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFeaturestore</td>
+ *      <td><p> Deletes a single Featurestore. The Featurestore must not contain any EntityTypes or `force` must be set to true for the request to succeed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFeaturestoreAsync(DeleteFeaturestoreRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteFeaturestoreAsync(FeaturestoreName name)
+ *           <li><p> deleteFeaturestoreAsync(String name)
+ *           <li><p> deleteFeaturestoreAsync(FeaturestoreName name, boolean force)
+ *           <li><p> deleteFeaturestoreAsync(String name, boolean force)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFeaturestoreOperationCallable()
+ *           <li><p> deleteFeaturestoreCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateEntityType</td>
+ *      <td><p> Creates a new EntityType in a given Featurestore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createEntityTypeAsync(CreateEntityTypeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createEntityTypeAsync(FeaturestoreName parent, EntityType entityType)
+ *           <li><p> createEntityTypeAsync(String parent, EntityType entityType)
+ *           <li><p> createEntityTypeAsync(FeaturestoreName parent, EntityType entityType, String entityTypeId)
+ *           <li><p> createEntityTypeAsync(String parent, EntityType entityType, String entityTypeId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createEntityTypeOperationCallable()
+ *           <li><p> createEntityTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetEntityType</td>
+ *      <td><p> Gets details of a single EntityType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEntityType(GetEntityTypeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEntityType(EntityTypeName name)
+ *           <li><p> getEntityType(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEntityTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListEntityTypes</td>
+ *      <td><p> Lists EntityTypes in a given Featurestore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listEntityTypes(ListEntityTypesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listEntityTypes(FeaturestoreName parent)
+ *           <li><p> listEntityTypes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listEntityTypesPagedCallable()
+ *           <li><p> listEntityTypesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateEntityType</td>
+ *      <td><p> Updates the parameters of a single EntityType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateEntityType(UpdateEntityTypeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateEntityType(EntityType entityType, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateEntityTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteEntityType</td>
+ *      <td><p> Deletes a single EntityType. The EntityType must not have any Features or `force` must be set to true for the request to succeed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteEntityTypeAsync(DeleteEntityTypeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteEntityTypeAsync(EntityTypeName name)
+ *           <li><p> deleteEntityTypeAsync(String name)
+ *           <li><p> deleteEntityTypeAsync(EntityTypeName name, boolean force)
+ *           <li><p> deleteEntityTypeAsync(String name, boolean force)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteEntityTypeOperationCallable()
+ *           <li><p> deleteEntityTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateFeature</td>
+ *      <td><p> Creates a new Feature in a given EntityType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createFeatureAsync(CreateFeatureRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createFeatureAsync(EntityTypeName parent, Feature feature)
+ *           <li><p> createFeatureAsync(FeatureGroupName parent, Feature feature)
+ *           <li><p> createFeatureAsync(String parent, Feature feature)
+ *           <li><p> createFeatureAsync(EntityTypeName parent, Feature feature, String featureId)
+ *           <li><p> createFeatureAsync(FeatureGroupName parent, Feature feature, String featureId)
+ *           <li><p> createFeatureAsync(String parent, Feature feature, String featureId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createFeatureOperationCallable()
+ *           <li><p> createFeatureCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateFeatures</td>
+ *      <td><p> Creates a batch of Features in a given EntityType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateFeaturesAsync(EntityTypeName parent, List&lt;CreateFeatureRequest&gt; requests)
+ *           <li><p> batchCreateFeaturesAsync(FeatureGroupName parent, List&lt;CreateFeatureRequest&gt; requests)
+ *           <li><p> batchCreateFeaturesAsync(String parent, List&lt;CreateFeatureRequest&gt; requests)
+ *           <li><p> batchCreateFeaturesAsync(BatchCreateFeaturesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateFeaturesOperationCallable()
+ *           <li><p> batchCreateFeaturesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFeature</td>
+ *      <td><p> Gets details of a single Feature.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFeature(GetFeatureRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFeature(FeatureName name)
+ *           <li><p> getFeature(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFeatureCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFeatures</td>
+ *      <td><p> Lists Features in a given EntityType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFeatures(ListFeaturesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFeatures(EntityTypeName parent)
+ *           <li><p> listFeatures(FeatureGroupName parent)
+ *           <li><p> listFeatures(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFeaturesPagedCallable()
+ *           <li><p> listFeaturesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateFeature</td>
+ *      <td><p> Updates the parameters of a single Feature.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFeature(UpdateFeatureRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateFeature(Feature feature, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFeatureCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFeature</td>
+ *      <td><p> Deletes a single Feature.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFeatureAsync(DeleteFeatureRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteFeatureAsync(FeatureName name)
+ *           <li><p> deleteFeatureAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFeatureOperationCallable()
+ *           <li><p> deleteFeatureCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportFeatureValues</td>
+ *      <td><p> Imports Feature values into the Featurestore from a source storage.
+ * <p>  The progress of the import is tracked by the returned operation. The imported features are guaranteed to be visible to subsequent read operations after the operation is marked as successfully done.
+ * <p>  If an import operation fails, the Feature values returned from reads and exports may be inconsistent. If consistency is required, the caller must retry the same import request again and wait till the new operation returned is marked as successfully done.
+ * <p>  There are also scenarios where the caller can cause inconsistency.
+ * <p>   - Source data for import contains multiple distinct Feature values for    the same entity ID and timestamp.  - Source is modified during an import. This includes adding, updating, or  removing source data and/or metadata. Examples of updating metadata  include but are not limited to changing storage location, storage class,  or retention policy.  - Online serving cluster is under-provisioned.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importFeatureValuesAsync(ImportFeatureValuesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> importFeatureValuesAsync(EntityTypeName entityType)
+ *           <li><p> importFeatureValuesAsync(String entityType)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importFeatureValuesOperationCallable()
+ *           <li><p> importFeatureValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchReadFeatureValues</td>
+ *      <td><p> Batch reads Feature values from a Featurestore.
+ * <p>  This API enables batch reading Feature values, where each read instance in the batch may read Feature values of entities from one or more EntityTypes. Point-in-time correctness is guaranteed for Feature values of each read instance as of each instance's read timestamp.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchReadFeatureValuesAsync(BatchReadFeatureValuesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> batchReadFeatureValuesAsync(FeaturestoreName featurestore)
+ *           <li><p> batchReadFeatureValuesAsync(String featurestore)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchReadFeatureValuesOperationCallable()
+ *           <li><p> batchReadFeatureValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportFeatureValues</td>
+ *      <td><p> Exports Feature values from all the entities of a target EntityType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportFeatureValuesAsync(ExportFeatureValuesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> exportFeatureValuesAsync(EntityTypeName entityType)
+ *           <li><p> exportFeatureValuesAsync(String entityType)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportFeatureValuesOperationCallable()
+ *           <li><p> exportFeatureValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFeatureValues</td>
+ *      <td><p> Delete Feature values from Featurestore.
+ * <p>  The progress of the deletion is tracked by the returned operation. The deleted feature values are guaranteed to be invisible to subsequent read operations after the operation is marked as successfully done.
+ * <p>  If a delete feature values operation fails, the feature values returned from reads and exports may be inconsistent. If consistency is required, the caller must retry the same delete request again and wait till the new operation returned is marked as successfully done.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFeatureValuesAsync(DeleteFeatureValuesRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteFeatureValuesAsync(EntityTypeName entityType)
+ *           <li><p> deleteFeatureValuesAsync(String entityType)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFeatureValuesOperationCallable()
+ *           <li><p> deleteFeatureValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchFeatures</td>
+ *      <td><p> Searches Features matching a query in a given project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchFeatures(SearchFeaturesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchFeatures(LocationName location)
+ *           <li><p> searchFeatures(String location)
+ *           <li><p> searchFeatures(LocationName location, String query)
+ *           <li><p> searchFeatures(String location, String query)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchFeaturesPagedCallable()
+ *           <li><p> searchFeaturesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -1980,13 +2480,53 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param feature Required. The Feature to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       EntityTypeName parent, Feature feature) {
+    CreateFeatureRequest request =
+        CreateFeatureRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFeature(feature)
+            .build();
+    return createFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Feature in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   Feature feature = Feature.newBuilder().build();
+   *   Feature response = featurestoreServiceClient.createFeatureAsync(parent, feature).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param feature Required. The Feature to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
+      FeatureGroupName parent, Feature feature) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2016,8 +2556,11 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param feature Required. The Feature to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2050,18 +2593,66 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
    *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
    *     character cannot be a number.
-   *     <p>The value must be unique within an EntityType.
+   *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
       EntityTypeName parent, Feature feature, String featureId) {
+    CreateFeatureRequest request =
+        CreateFeatureRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFeature(feature)
+            .setFeatureId(featureId)
+            .build();
+    return createFeatureAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Feature in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   Feature feature = Feature.newBuilder().build();
+   *   String featureId = "featureId-420503887";
+   *   Feature response =
+   *       featurestoreServiceClient.createFeatureAsync(parent, feature, featureId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param feature Required. The Feature to create.
+   * @param featureId Required. The ID to use for the Feature, which will become the final component
+   *     of the Feature's resource name.
+   *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
+   *     character cannot be a number.
+   *     <p>The value must be unique within an EntityType/FeatureGroup.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
+      FeatureGroupName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2094,14 +2685,17 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create a Feature. Format:
+   * @param parent Required. The resource name of the EntityType or FeatureGroup to create a
+   *     Feature. Format for entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
    *     <p>This value may be up to 128 characters, and valid characters are `[a-z0-9_]`. The first
    *     character cannot be a number.
-   *     <p>The value must be unique within an EntityType.
+   *     <p>The value must be unique within an EntityType/FeatureGroup.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
@@ -2234,17 +2828,58 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create the batch of Features
-   *     under. Format:
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param requests Required. The request message specifying the Features to create. All Features
-   *     must be created under the same parent EntityType. The `parent` field in each child request
-   *     message can be omitted. If `parent` is set in a child request, then the value must match
-   *     the `parent` value in this request message.
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
       batchCreateFeaturesAsync(EntityTypeName parent, List<CreateFeatureRequest> requests) {
+    BatchCreateFeaturesRequest request =
+        BatchCreateFeaturesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateFeaturesAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of Features in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   List<CreateFeatureRequest> requests = new ArrayList<>();
+   *   BatchCreateFeaturesResponse response =
+   *       featurestoreServiceClient.batchCreateFeaturesAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param requests Required. The request message specifying the Features to create. All Features
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesAsync(FeatureGroupName parent, List<CreateFeatureRequest> requests) {
     BatchCreateFeaturesRequest request =
         BatchCreateFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2275,13 +2910,14 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the EntityType to create the batch of Features
-   *     under. Format:
+   * @param parent Required. The resource name of the EntityType/FeatureGroup to create the batch of
+   *     Features under. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @param requests Required. The request message specifying the Features to create. All Features
-   *     must be created under the same parent EntityType. The `parent` field in each child request
-   *     message can be omitted. If `parent` is set in a child request, then the value must match
-   *     the `parent` value in this request message.
+   *     must be created under the same parent EntityType / FeatureGroup. The `parent` field in each
+   *     child request message can be omitted. If `parent` is set in a child request, then the value
+   *     must match the `parent` value in this request message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
@@ -2404,13 +3040,16 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   FeatureName name =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+   *       FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+   *           "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
    *   Feature response = featurestoreServiceClient.getFeature(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Feature resource. Format:
+   * @param name Required. The name of the Feature resource. Format for entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feature getFeature(FeatureName name) {
@@ -2433,14 +3072,17 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   String name =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+   *       FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+   *               "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *           .toString();
    *   Feature response = featurestoreServiceClient.getFeature(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Feature resource. Format:
+   * @param name Required. The name of the Feature resource. Format for entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feature getFeature(String name) {
@@ -2464,7 +3106,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   GetFeatureRequest request =
    *       GetFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();
@@ -2495,7 +3137,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   GetFeatureRequest request =
    *       GetFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();
@@ -2531,11 +3173,49 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Location to list Features. Format:
+   * @param parent Required. The resource name of the Location to list Features. Format for
+   *     entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFeaturesPagedResponse listFeatures(EntityTypeName parent) {
+    ListFeaturesRequest request =
+        ListFeaturesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFeatures(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Features in a given EntityType.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
+   *   FeatureGroupName parent = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+   *   for (Feature element : featurestoreServiceClient.listFeatures(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Location to list Features. Format for
+   *     entity_type as parent:
+   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFeaturesPagedResponse listFeatures(FeatureGroupName parent) {
     ListFeaturesRequest request =
         ListFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2565,8 +3245,11 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the Location to list Features. Format:
+   * @param parent Required. The resource name of the Location to list Features. Format for
+   *     entity_type as parent:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   *     Format for feature_group as parent:
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFeaturesPagedResponse listFeatures(String parent) {
@@ -2718,13 +3401,16 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * @param feature Required. The Feature's `name` field is used to identify the Feature to be
    *     updated. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * @param updateMask Field mask is used to specify the fields to be overwritten in the Features
    *     resource by the update. The fields specified in the update_mask are relative to the
    *     resource, not the full request. A field will be overwritten if it is in the mask. If the
    *     user does not provide a mask then only the non-empty fields present in the request will be
    *     overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
-   *     <p>&#42; `description` &#42; `labels` &#42; `disable_monitoring`
+   *     <p>&#42; `description` &#42; `labels` &#42; `disable_monitoring` (Not supported for
+   *     FeatureRegistryService Feature) &#42; `point_of_contact` (Not supported for
+   *     FeaturestoreService FeatureStore)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Feature updateFeature(Feature feature, FieldMask updateMask) {
@@ -2805,13 +3491,15 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   FeatureName name =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
+   *       FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+   *           "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]");
    *   featurestoreServiceClient.deleteFeatureAsync(name).get();
    * }
    * }</pre>
    *
    * @param name Required. The name of the Features to be deleted. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureAsync(
@@ -2835,7 +3523,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FeaturestoreServiceClient featurestoreServiceClient = FeaturestoreServiceClient.create()) {
    *   String name =
-   *       FeatureName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
+   *       FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
+   *               "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *           .toString();
    *   featurestoreServiceClient.deleteFeatureAsync(name).get();
    * }
@@ -2843,6 +3532,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the Features to be deleted. Format:
    *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureAsync(String name) {
@@ -2866,7 +3556,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();
@@ -2898,7 +3588,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();
@@ -2930,7 +3620,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   DeleteFeatureRequest request =
    *       DeleteFeatureRequest.newBuilder()
    *           .setName(
-   *               FeatureName.of(
+   *               FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
    *                   .toString())
    *           .build();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -61,19 +60,108 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AggregatedList</td>
+ *      <td><p> Retrieves an aggregated list of commitments by region. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(AggregatedListRegionCommitmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> aggregatedList(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> aggregatedListPagedCallable()
+ *           <li><p> aggregatedListCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Get</td>
+ *      <td><p> Returns the specified commitment resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> get(GetRegionCommitmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> get(String project, String region, String commitment)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Insert</td>
+ *      <td><p> Creates a commitment in the specified project using the data included in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> insertAsync(InsertRegionCommitmentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> insertAsync(String project, String region, Commitment commitmentResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> insertOperationCallable()
+ *           <li><p> insertCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> List</td>
+ *      <td><p> Retrieves a list of commitments contained within the specified region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> list(ListRegionCommitmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> list(String project, String region)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPagedCallable()
+ *           <li><p> listCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Update</td>
+ *      <td><p> Updates the specified commitment with the data included in the request. Update is performed only on selected fields included as part of update-mask. Only the following fields can be updated: auto_renew and plan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAsync(UpdateRegionCommitmentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAsync(String project, String region, String commitment, Commitment commitmentResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOperationCallable()
+ *           <li><p> updateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -168,7 +256,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments by region.
+   * Retrieves an aggregated list of commitments by region. To prevent failure, Google recommends
+   * that you set the `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -198,7 +287,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments by region.
+   * Retrieves an aggregated list of commitments by region. To prevent failure, Google recommends
+   * that you set the `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -218,6 +308,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, CommitmentsScopedList> element :
    *       regionCommitmentsClient.aggregatedList(request).iterateAll()) {
@@ -236,7 +327,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments by region.
+   * Retrieves an aggregated list of commitments by region. To prevent failure, Google recommends
+   * that you set the `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -256,6 +348,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, CommitmentsScopedList>> future =
    *       regionCommitmentsClient.aggregatedListPagedCallable().futureCall(request);
@@ -273,7 +366,8 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments by region.
+   * Retrieves an aggregated list of commitments by region. To prevent failure, Google recommends
+   * that you set the `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -293,6 +387,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
+   *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
    *     CommitmentAggregatedList response =
@@ -473,8 +568,6 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> insertAsync(
       InsertRegionCommitmentRequest request) {
     return insertOperationCallable().futureCall(request);
@@ -691,7 +784,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
   /**
    * Updates the specified commitment with the data included in the request. Update is performed
    * only on selected fields included as part of update-mask. Only the following fields can be
-   * modified: auto_renew.
+   * updated: auto_renew and plan.
    *
    * <p>Sample code:
    *
@@ -715,7 +808,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param commitment Name of the commitment for which auto renew is being updated.
+   * @param commitment Name of the commitment that you want to update.
    * @param commitmentResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -735,7 +828,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
   /**
    * Updates the specified commitment with the data included in the request. Update is performed
    * only on selected fields included as part of update-mask. Only the following fields can be
-   * modified: auto_renew.
+   * updated: auto_renew and plan.
    *
    * <p>Sample code:
    *
@@ -763,8 +856,6 @@ public class RegionCommitmentsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> updateAsync(
       UpdateRegionCommitmentRequest request) {
     return updateOperationCallable().futureCall(request);
@@ -774,7 +865,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
   /**
    * Updates the specified commitment with the data included in the request. Update is performed
    * only on selected fields included as part of update-mask. Only the following fields can be
-   * modified: auto_renew.
+   * updated: auto_renew and plan.
    *
    * <p>Sample code:
    *
@@ -811,7 +902,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
   /**
    * Updates the specified commitment with the data included in the request. Update is performed
    * only on selected fields included as part of update-mask. Only the following fields can be
-   * modified: auto_renew.
+   * updated: auto_renew and plan.
    *
    * <p>Sample code:
    *

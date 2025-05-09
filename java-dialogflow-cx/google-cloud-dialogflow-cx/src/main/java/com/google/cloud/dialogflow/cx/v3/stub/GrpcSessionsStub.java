@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3.AnswerFeedback;
 import com.google.cloud.dialogflow.cx.v3.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.DetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest;
@@ -34,6 +36,7 @@ import com.google.cloud.dialogflow.cx.v3.MatchIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.MatchIntentResponse;
 import com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -58,6 +61,17 @@ public class GrpcSessionsStub extends SessionsStub {
           MethodDescriptor.<DetectIntentRequest, DetectIntentResponse>newBuilder()
               .setType(MethodDescriptor.MethodType.UNARY)
               .setFullMethodName("google.cloud.dialogflow.cx.v3.Sessions/DetectIntent")
+              .setRequestMarshaller(ProtoUtils.marshaller(DetectIntentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DetectIntentResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentMethodDescriptor =
+          MethodDescriptor.<DetectIntentRequest, DetectIntentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.cx.v3.Sessions/ServerStreamingDetectIntent")
               .setRequestMarshaller(ProtoUtils.marshaller(DetectIntentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DetectIntentResponse.getDefaultInstance()))
@@ -95,6 +109,16 @@ public class GrpcSessionsStub extends SessionsStub {
                   ProtoUtils.marshaller(FulfillIntentResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackMethodDescriptor =
+          MethodDescriptor.<SubmitAnswerFeedbackRequest, AnswerFeedback>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.Sessions/SubmitAnswerFeedback")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SubmitAnswerFeedbackRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AnswerFeedback.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -115,10 +139,14 @@ public class GrpcSessionsStub extends SessionsStub {
           .build();
 
   private final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable;
+  private final ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentCallable;
   private final BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable;
   private final UnaryCallable<MatchIntentRequest, MatchIntentResponse> matchIntentCallable;
   private final UnaryCallable<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentCallable;
+  private final UnaryCallable<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -173,6 +201,17 @@ public class GrpcSessionsStub extends SessionsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentTransportSettings =
+            GrpcCallSettings.<DetectIntentRequest, DetectIntentResponse>newBuilder()
+                .setMethodDescriptor(serverStreamingDetectIntentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("session", String.valueOf(request.getSession()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
         streamingDetectIntentTransportSettings =
             GrpcCallSettings
@@ -201,6 +240,17 @@ public class GrpcSessionsStub extends SessionsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SubmitAnswerFeedbackRequest, AnswerFeedback>
+        submitAnswerFeedbackTransportSettings =
+            GrpcCallSettings.<SubmitAnswerFeedbackRequest, AnswerFeedback>newBuilder()
+                .setMethodDescriptor(submitAnswerFeedbackMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("session", String.valueOf(request.getSession()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -225,6 +275,11 @@ public class GrpcSessionsStub extends SessionsStub {
     this.detectIntentCallable =
         callableFactory.createUnaryCallable(
             detectIntentTransportSettings, settings.detectIntentSettings(), clientContext);
+    this.serverStreamingDetectIntentCallable =
+        callableFactory.createServerStreamingCallable(
+            serverStreamingDetectIntentTransportSettings,
+            settings.serverStreamingDetectIntentSettings(),
+            clientContext);
     this.streamingDetectIntentCallable =
         callableFactory.createBidiStreamingCallable(
             streamingDetectIntentTransportSettings,
@@ -236,6 +291,11 @@ public class GrpcSessionsStub extends SessionsStub {
     this.fulfillIntentCallable =
         callableFactory.createUnaryCallable(
             fulfillIntentTransportSettings, settings.fulfillIntentSettings(), clientContext);
+    this.submitAnswerFeedbackCallable =
+        callableFactory.createUnaryCallable(
+            submitAnswerFeedbackTransportSettings,
+            settings.submitAnswerFeedbackSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -260,6 +320,12 @@ public class GrpcSessionsStub extends SessionsStub {
   }
 
   @Override
+  public ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentCallable() {
+    return serverStreamingDetectIntentCallable;
+  }
+
+  @Override
   public BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {
     return streamingDetectIntentCallable;
@@ -273,6 +339,11 @@ public class GrpcSessionsStub extends SessionsStub {
   @Override
   public UnaryCallable<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentCallable() {
     return fulfillIntentCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitAnswerFeedbackRequest, AnswerFeedback> submitAnswerFeedbackCallable() {
+    return submitAnswerFeedbackCallable;
   }
 
   @Override

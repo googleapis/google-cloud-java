@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.FeatureOnlineStoreServiceStub;
@@ -44,8 +45,10 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * This class provides the ability to make remote calls to the backing service through method calls
- * that map to API methods. Sample code to get started:
+ * Service Description: A service for fetching feature values from the online store.
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -57,9 +60,9 @@ import javax.annotation.Generated;
  *     FeatureOnlineStoreServiceClient.create()) {
  *   FeatureViewName featureView =
  *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
- *   String id = "id3355";
+ *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
  *   FetchFeatureValuesResponse response =
- *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+ *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
  * }
  * }</pre>
  *
@@ -67,19 +70,140 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchFeatureValues</td>
+ *      <td><p> Fetch feature values under a FeatureView.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchFeatureValues(FetchFeatureValuesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchFeatureValues(FeatureViewName featureView, FeatureViewDataKey dataKey)
+ *           <li><p> fetchFeatureValues(String featureView, FeatureViewDataKey dataKey)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchFeatureValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamingFetchFeatureValues</td>
+ *      <td><p> Bidirectional streaming RPC to fetch feature values under a FeatureView. Requests may not have a one-to-one mapping to responses and responses may be returned out-of-order to reduce latency.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamingFetchFeatureValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchNearestEntities</td>
+ *      <td><p> Search the nearest entities under a FeatureView. Search only works for indexable feature view; if a feature view isn't indexable, returns Invalid argument response.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchNearestEntities(SearchNearestEntitiesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchNearestEntitiesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FeatureViewDirectWrite</td>
+ *      <td><p> Bidirectional streaming RPC to directly write to feature values in a feature view. Requests may not have a one-to-one mapping to responses and responses may be returned out-of-order to reduce latency.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> featureViewDirectWriteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -191,24 +315,23 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    *     FeatureOnlineStoreServiceClient.create()) {
    *   FeatureViewName featureView =
    *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
-   *   String id = "id3355";
+   *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
    *   FetchFeatureValuesResponse response =
-   *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+   *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
    * }
    * }</pre>
    *
    * @param featureView Required. FeatureView resource format
    *     `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}/featureViews/{featureView}`
-   * @param id Simple ID. The whole string will be used as is to identify Entity to fetch feature
-   *     values for.
+   * @param dataKey Optional. The request key to fetch feature values for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchFeatureValuesResponse fetchFeatureValues(
-      FeatureViewName featureView, String id) {
+      FeatureViewName featureView, FeatureViewDataKey dataKey) {
     FetchFeatureValuesRequest request =
         FetchFeatureValuesRequest.newBuilder()
             .setFeatureView(featureView == null ? null : featureView.toString())
-            .setId(id)
+            .setDataKey(dataKey)
             .build();
     return fetchFeatureValues(request);
   }
@@ -230,21 +353,24 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    *   String featureView =
    *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
    *           .toString();
-   *   String id = "id3355";
+   *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
    *   FetchFeatureValuesResponse response =
-   *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+   *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
    * }
    * }</pre>
    *
    * @param featureView Required. FeatureView resource format
    *     `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}/featureViews/{featureView}`
-   * @param id Simple ID. The whole string will be used as is to identify Entity to fetch feature
-   *     values for.
+   * @param dataKey Optional. The request key to fetch feature values for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchFeatureValuesResponse fetchFeatureValues(String featureView, String id) {
+  public final FetchFeatureValuesResponse fetchFeatureValues(
+      String featureView, FeatureViewDataKey dataKey) {
     FetchFeatureValuesRequest request =
-        FetchFeatureValuesRequest.newBuilder().setFeatureView(featureView).setId(id).build();
+        FetchFeatureValuesRequest.newBuilder()
+            .setFeatureView(featureView)
+            .setDataKey(dataKey)
+            .build();
     return fetchFeatureValues(request);
   }
 
@@ -268,6 +394,8 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    *               FeatureViewName.of(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
    *                   .toString())
+   *           .setDataKey(FeatureViewDataKey.newBuilder().build())
+   *           .setDataFormat(FeatureViewDataFormat.forNumber(0))
    *           .build();
    *   FetchFeatureValuesResponse response =
    *       featureOnlineStoreServiceClient.fetchFeatureValues(request);
@@ -301,6 +429,8 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    *               FeatureViewName.of(
    *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
    *                   .toString())
+   *           .setDataKey(FeatureViewDataKey.newBuilder().build())
+   *           .setDataFormat(FeatureViewDataFormat.forNumber(0))
    *           .build();
    *   ApiFuture<FetchFeatureValuesResponse> future =
    *       featureOnlineStoreServiceClient.fetchFeatureValuesCallable().futureCall(request);
@@ -312,6 +442,45 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
   public final UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable() {
     return stub.fetchFeatureValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bidirectional streaming RPC to fetch feature values under a FeatureView. Requests may not have
+   * a one-to-one mapping to responses and responses may be returned out-of-order to reduce latency.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+   *     FeatureOnlineStoreServiceClient.create()) {
+   *   BidiStream<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+   *       bidiStream = featureOnlineStoreServiceClient.streamingFetchFeatureValuesCallable().call();
+   *   StreamingFetchFeatureValuesRequest request =
+   *       StreamingFetchFeatureValuesRequest.newBuilder()
+   *           .setFeatureView(
+   *               FeatureViewName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+   *                   .toString())
+   *           .addAllDataKeys(new ArrayList<FeatureViewDataKey>())
+   *           .setDataFormat(FeatureViewDataFormat.forNumber(0))
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamingFetchFeatureValuesResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesCallable() {
+    return stub.streamingFetchFeatureValuesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -385,6 +554,45 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
   public final UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable() {
     return stub.searchNearestEntitiesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bidirectional streaming RPC to directly write to feature values in a feature view. Requests may
+   * not have a one-to-one mapping to responses and responses may be returned out-of-order to reduce
+   * latency.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+   *     FeatureOnlineStoreServiceClient.create()) {
+   *   BidiStream<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse> bidiStream =
+   *       featureOnlineStoreServiceClient.featureViewDirectWriteCallable().call();
+   *   FeatureViewDirectWriteRequest request =
+   *       FeatureViewDirectWriteRequest.newBuilder()
+   *           .setFeatureView(
+   *               FeatureViewName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+   *                   .toString())
+   *           .addAllDataKeyAndFeatureValues(
+   *               new ArrayList<FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (FeatureViewDirectWriteResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable() {
+    return stub.featureViewDirectWriteCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

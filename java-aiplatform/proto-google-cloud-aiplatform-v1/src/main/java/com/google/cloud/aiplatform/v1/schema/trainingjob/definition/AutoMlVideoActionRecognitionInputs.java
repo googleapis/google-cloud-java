@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_action_recognition.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 /**
@@ -28,6 +29,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs)
     AutoMlVideoActionRecognitionInputsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlVideoActionRecognitionInputs.newBuilder() to construct.
   private AutoMlVideoActionRecognitionInputs(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -138,6 +140,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
      * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
      * <code>CLOUD = 1;</code>
      */
     public static final int CLOUD_VALUE = 1;
+
     /**
      *
      *
@@ -161,6 +165,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
      * <code>MOBILE_VERSATILE_1 = 2;</code>
      */
     public static final int MOBILE_VERSATILE_1_VALUE = 2;
+
     /**
      *
      *
@@ -173,6 +178,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
      * <code>MOBILE_JETSON_VERSATILE_1 = 3;</code>
      */
     public static final int MOBILE_JETSON_VERSATILE_1_VALUE = 3;
+
     /**
      *
      *
@@ -278,6 +284,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
   private int modelType_ = 0;
+
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType model_type = 1;
@@ -289,6 +296,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
   public int getModelTypeValue() {
     return modelType_;
   }
+
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType model_type = 1;
@@ -503,6 +511,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs}
@@ -712,6 +721,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
     private int bitField0_;
 
     private int modelType_ = 0;
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType model_type = 1;
@@ -723,6 +733,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
     public int getModelTypeValue() {
       return modelType_;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType model_type = 1;
@@ -737,6 +748,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType model_type = 1;
@@ -758,6 +770,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
               .AutoMlVideoActionRecognitionInputs.ModelType.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType model_type = 1;
@@ -778,6 +791,7 @@ public final class AutoMlVideoActionRecognitionInputs extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType model_type = 1;

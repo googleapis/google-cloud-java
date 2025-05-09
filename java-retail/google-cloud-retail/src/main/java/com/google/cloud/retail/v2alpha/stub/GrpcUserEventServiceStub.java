@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.CollectUserEventRequest;
+import com.google.cloud.retail.v2alpha.ExportMetadata;
+import com.google.cloud.retail.v2alpha.ExportUserEventsRequest;
+import com.google.cloud.retail.v2alpha.ExportUserEventsResponse;
 import com.google.cloud.retail.v2alpha.ImportMetadata;
 import com.google.cloud.retail.v2alpha.ImportUserEventsRequest;
 import com.google.cloud.retail.v2alpha.ImportUserEventsResponse;
@@ -95,6 +98,16 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExportUserEventsRequest, Operation>
+      exportUserEventsMethodDescriptor =
+          MethodDescriptor.<ExportUserEventsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2alpha.UserEventService/ExportUserEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportUserEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<RejoinUserEventsRequest, Operation>
       rejoinUserEventsMethodDescriptor =
           MethodDescriptor.<RejoinUserEventsRequest, Operation>newBuilder()
@@ -113,6 +126,9 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
   private final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable;
   private final OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationCallable;
+  private final UnaryCallable<ExportUserEventsRequest, Operation> exportUserEventsCallable;
+  private final OperationCallable<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationCallable;
   private final UnaryCallable<RejoinUserEventsRequest, Operation> rejoinUserEventsCallable;
   private final OperationCallable<
           RejoinUserEventsRequest, RejoinUserEventsResponse, RejoinUserEventsMetadata>
@@ -202,6 +218,16 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExportUserEventsRequest, Operation> exportUserEventsTransportSettings =
+        GrpcCallSettings.<ExportUserEventsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportUserEventsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<RejoinUserEventsRequest, Operation> rejoinUserEventsTransportSettings =
         GrpcCallSettings.<RejoinUserEventsRequest, Operation>newBuilder()
             .setMethodDescriptor(rejoinUserEventsMethodDescriptor)
@@ -235,6 +261,15 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
         callableFactory.createOperationCallable(
             importUserEventsTransportSettings,
             settings.importUserEventsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportUserEventsCallable =
+        callableFactory.createUnaryCallable(
+            exportUserEventsTransportSettings, settings.exportUserEventsSettings(), clientContext);
+    this.exportUserEventsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportUserEventsTransportSettings,
+            settings.exportUserEventsOperationSettings(),
             clientContext,
             operationsStub);
     this.rejoinUserEventsCallable =
@@ -285,6 +320,17 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
   public OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationCallable() {
     return importUserEventsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportUserEventsRequest, Operation> exportUserEventsCallable() {
+    return exportUserEventsCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportUserEventsRequest, ExportUserEventsResponse, ExportMetadata>
+      exportUserEventsOperationCallable() {
+    return exportUserEventsOperationCallable;
   }
 
   @Override

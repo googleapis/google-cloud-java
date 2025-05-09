@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,9 +45,11 @@ import com.google.cloudbuild.v1.CreateBuildTriggerRequest;
 import com.google.cloudbuild.v1.CreateWorkerPoolRequest;
 import com.google.cloudbuild.v1.DeleteBuildTriggerRequest;
 import com.google.cloudbuild.v1.DeleteWorkerPoolRequest;
+import com.google.cloudbuild.v1.Dependency;
 import com.google.cloudbuild.v1.GetBuildRequest;
 import com.google.cloudbuild.v1.GetBuildTriggerRequest;
 import com.google.cloudbuild.v1.GetWorkerPoolRequest;
+import com.google.cloudbuild.v1.GitConfig;
 import com.google.cloudbuild.v1.GitHubEventsConfig;
 import com.google.cloudbuild.v1.GitRepoSource;
 import com.google.cloudbuild.v1.ListBuildTriggersRequest;
@@ -168,7 +170,9 @@ public class CloudBuildClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -244,7 +248,9 @@ public class CloudBuildClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -359,7 +365,9 @@ public class CloudBuildClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -427,7 +435,9 @@ public class CloudBuildClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -503,7 +513,9 @@ public class CloudBuildClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -837,7 +849,9 @@ public class CloudBuildClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

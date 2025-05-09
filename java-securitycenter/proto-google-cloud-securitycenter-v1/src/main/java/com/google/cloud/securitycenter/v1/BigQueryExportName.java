@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -98,17 +97,14 @@ public class BigQueryExportName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationExportBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderExportBuilder newFolderExportBuilder() {
     return new FolderExportBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectExportBuilder newProjectExportBuilder() {
     return new ProjectExportBuilder();
   }
@@ -121,17 +117,14 @@ public class BigQueryExportName implements ResourceName {
     return newBuilder().setOrganization(organization).setExport(export).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BigQueryExportName ofOrganizationExportName(String organization, String export) {
     return newBuilder().setOrganization(organization).setExport(export).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BigQueryExportName ofFolderExportName(String folder, String export) {
     return newFolderExportBuilder().setFolder(folder).setExport(export).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BigQueryExportName ofProjectExportName(String project, String export) {
     return newProjectExportBuilder().setProject(project).setExport(export).build();
   }
@@ -140,17 +133,14 @@ public class BigQueryExportName implements ResourceName {
     return newBuilder().setOrganization(organization).setExport(export).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationExportName(String organization, String export) {
     return newBuilder().setOrganization(organization).setExport(export).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderExportName(String folder, String export) {
     return newFolderExportBuilder().setFolder(folder).setExport(export).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectExportName(String project, String export) {
     return newProjectExportBuilder().setProject(project).setExport(export).build().toString();
   }
@@ -233,7 +223,7 @@ public class BigQueryExportName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (o == this) {
       return true;
     }
@@ -291,7 +281,8 @@ public class BigQueryExportName implements ResourceName {
     private Builder(BigQueryExportName bigQueryExportName) {
       Preconditions.checkArgument(
           Objects.equals(bigQueryExportName.pathTemplate, ORGANIZATION_EXPORT),
-          "toBuilder is only supported when BigQueryExportName has the pattern of organizations/{organization}/bigQueryExports/{export}");
+          "toBuilder is only supported when BigQueryExportName has the pattern of"
+              + " organizations/{organization}/bigQueryExports/{export}");
       this.organization = bigQueryExportName.organization;
       this.export = bigQueryExportName.export;
     }
@@ -302,7 +293,6 @@ public class BigQueryExportName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/bigQueryExports/{export}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderExportBuilder {
     private String folder;
     private String export;
@@ -333,7 +323,6 @@ public class BigQueryExportName implements ResourceName {
   }
 
   /** Builder for projects/{project}/bigQueryExports/{export}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectExportBuilder {
     private String project;
     private String export;

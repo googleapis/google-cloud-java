@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,15 @@
 
 package com.google.cloud.contactcenterinsights.v1.stub;
 
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAllFeedbackLabelsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysesPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListAnalysisRulesPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListConversationsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListFeedbackLabelsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListPhraseMatchersPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaQuestionsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaScorecardRevisionsPagedResponse;
+import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListQaScorecardsPagedResponse;
 import static com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -30,9 +36,19 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.contactcenterinsights.v1.Analysis;
+import com.google.cloud.contactcenterinsights.v1.AnalysisRule;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsResponse;
+import com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsMetadata;
+import com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest;
+import com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest;
 import com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest;
@@ -40,57 +56,111 @@ import com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse;
 import com.google.cloud.contactcenterinsights.v1.Conversation;
 import com.google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateAnalysisRuleRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateFeedbackLabelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateQaQuestionRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRequest;
+import com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRevisionRequest;
 import com.google.cloud.contactcenterinsights.v1.CreateViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRuleRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteFeedbackLabelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteQaQuestionRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRequest;
+import com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRevisionRequest;
 import com.google.cloud.contactcenterinsights.v1.DeleteViewRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.DeployIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.DeployQaScorecardRevisionRequest;
+import com.google.cloud.contactcenterinsights.v1.EncryptionSpec;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest;
 import com.google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.ExportIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.FeedbackLabel;
 import com.google.cloud.contactcenterinsights.v1.GetAnalysisRequest;
+import com.google.cloud.contactcenterinsights.v1.GetAnalysisRuleRequest;
 import com.google.cloud.contactcenterinsights.v1.GetConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest;
+import com.google.cloud.contactcenterinsights.v1.GetFeedbackLabelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.GetIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.GetQaQuestionRequest;
+import com.google.cloud.contactcenterinsights.v1.GetQaScorecardRequest;
+import com.google.cloud.contactcenterinsights.v1.GetQaScorecardRevisionRequest;
 import com.google.cloud.contactcenterinsights.v1.GetSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.GetViewRequest;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelMetadata;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest;
+import com.google.cloud.contactcenterinsights.v1.ImportIssueModelResponse;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsMetadata;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecMetadata;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest;
+import com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecResponse;
 import com.google.cloud.contactcenterinsights.v1.Issue;
 import com.google.cloud.contactcenterinsights.v1.IssueModel;
+import com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsResponse;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest;
 import com.google.cloud.contactcenterinsights.v1.ListAnalysesResponse;
+import com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesRequest;
+import com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesResponse;
 import com.google.cloud.contactcenterinsights.v1.ListConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.ListConversationsResponse;
+import com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsResponse;
 import com.google.cloud.contactcenterinsights.v1.ListIssueModelsRequest;
 import com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse;
 import com.google.cloud.contactcenterinsights.v1.ListIssuesRequest;
 import com.google.cloud.contactcenterinsights.v1.ListIssuesResponse;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest;
 import com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse;
+import com.google.cloud.contactcenterinsights.v1.ListQaQuestionsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListQaQuestionsResponse;
+import com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsResponse;
+import com.google.cloud.contactcenterinsights.v1.ListQaScorecardsRequest;
+import com.google.cloud.contactcenterinsights.v1.ListQaScorecardsResponse;
 import com.google.cloud.contactcenterinsights.v1.ListViewsRequest;
 import com.google.cloud.contactcenterinsights.v1.ListViewsResponse;
 import com.google.cloud.contactcenterinsights.v1.PhraseMatcher;
+import com.google.cloud.contactcenterinsights.v1.QaQuestion;
+import com.google.cloud.contactcenterinsights.v1.QaScorecard;
+import com.google.cloud.contactcenterinsights.v1.QaScorecardRevision;
+import com.google.cloud.contactcenterinsights.v1.QueryMetricsMetadata;
+import com.google.cloud.contactcenterinsights.v1.QueryMetricsRequest;
+import com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse;
 import com.google.cloud.contactcenterinsights.v1.Settings;
+import com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionMetadata;
+import com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequest;
+import com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionResponse;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse;
+import com.google.cloud.contactcenterinsights.v1.UndeployQaScorecardRevisionRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateAnalysisRuleRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateFeedbackLabelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateQaQuestionRequest;
+import com.google.cloud.contactcenterinsights.v1.UpdateQaScorecardRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateViewRequest;
 import com.google.cloud.contactcenterinsights.v1.UploadConversationMetadata;
@@ -233,6 +303,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsMethodDescriptor =
+          MethodDescriptor.<BulkDeleteConversationsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkDeleteConversations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BulkDeleteConversationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<IngestConversationsRequest, Operation>
       ingestConversationsMethodDescriptor =
           MethodDescriptor.<IngestConversationsRequest, Operation>newBuilder()
@@ -330,6 +411,28 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UndeployIssueModel")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ExportIssueModelRequest, Operation>
+      exportIssueModelMethodDescriptor =
+          MethodDescriptor.<ExportIssueModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ExportIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportIssueModelRequest, Operation>
+      importIssueModelMethodDescriptor =
+          MethodDescriptor.<ImportIssueModelRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ImportIssueModel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -471,6 +574,84 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateAnalysisRuleRequest, AnalysisRule>
+      createAnalysisRuleMethodDescriptor =
+          MethodDescriptor.<CreateAnalysisRuleRequest, AnalysisRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateAnalysisRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAnalysisRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AnalysisRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAnalysisRuleRequest, AnalysisRule>
+      getAnalysisRuleMethodDescriptor =
+          MethodDescriptor.<GetAnalysisRuleRequest, AnalysisRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetAnalysisRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAnalysisRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AnalysisRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+      listAnalysisRulesMethodDescriptor =
+          MethodDescriptor.<ListAnalysisRulesRequest, ListAnalysisRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListAnalysisRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAnalysisRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAnalysisRulesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateAnalysisRuleRequest, AnalysisRule>
+      updateAnalysisRuleMethodDescriptor =
+          MethodDescriptor.<UpdateAnalysisRuleRequest, AnalysisRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateAnalysisRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAnalysisRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AnalysisRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAnalysisRuleRequest, Empty>
+      deleteAnalysisRuleMethodDescriptor =
+          MethodDescriptor.<DeleteAnalysisRuleRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteAnalysisRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAnalysisRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetEncryptionSpecRequest, EncryptionSpec>
+      getEncryptionSpecMethodDescriptor =
+          MethodDescriptor.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetEncryptionSpec")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEncryptionSpecRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EncryptionSpec.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecMethodDescriptor =
+          MethodDescriptor.<InitializeEncryptionSpecRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/InitializeEncryptionSpec")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(InitializeEncryptionSpecRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateViewRequest, View> createViewMethodDescriptor =
       MethodDescriptor.<CreateViewRequest, View>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -516,6 +697,302 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<QueryMetricsRequest, Operation>
+      queryMetricsMethodDescriptor =
+          MethodDescriptor.<QueryMetricsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/QueryMetrics")
+              .setRequestMarshaller(ProtoUtils.marshaller(QueryMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateQaQuestionRequest, QaQuestion>
+      createQaQuestionMethodDescriptor =
+          MethodDescriptor.<CreateQaQuestionRequest, QaQuestion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateQaQuestion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateQaQuestionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QaQuestion.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetQaQuestionRequest, QaQuestion>
+      getQaQuestionMethodDescriptor =
+          MethodDescriptor.<GetQaQuestionRequest, QaQuestion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetQaQuestion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetQaQuestionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QaQuestion.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateQaQuestionRequest, QaQuestion>
+      updateQaQuestionMethodDescriptor =
+          MethodDescriptor.<UpdateQaQuestionRequest, QaQuestion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateQaQuestion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateQaQuestionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QaQuestion.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteQaQuestionRequest, Empty>
+      deleteQaQuestionMethodDescriptor =
+          MethodDescriptor.<DeleteQaQuestionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteQaQuestion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteQaQuestionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListQaQuestionsRequest, ListQaQuestionsResponse>
+      listQaQuestionsMethodDescriptor =
+          MethodDescriptor.<ListQaQuestionsRequest, ListQaQuestionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListQaQuestions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListQaQuestionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListQaQuestionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateQaScorecardRequest, QaScorecard>
+      createQaScorecardMethodDescriptor =
+          MethodDescriptor.<CreateQaScorecardRequest, QaScorecard>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateQaScorecard")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateQaScorecardRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QaScorecard.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetQaScorecardRequest, QaScorecard>
+      getQaScorecardMethodDescriptor =
+          MethodDescriptor.<GetQaScorecardRequest, QaScorecard>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetQaScorecard")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetQaScorecardRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QaScorecard.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateQaScorecardRequest, QaScorecard>
+      updateQaScorecardMethodDescriptor =
+          MethodDescriptor.<UpdateQaScorecardRequest, QaScorecard>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateQaScorecard")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateQaScorecardRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QaScorecard.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteQaScorecardRequest, Empty>
+      deleteQaScorecardMethodDescriptor =
+          MethodDescriptor.<DeleteQaScorecardRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteQaScorecard")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteQaScorecardRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListQaScorecardsRequest, ListQaScorecardsResponse>
+      listQaScorecardsMethodDescriptor =
+          MethodDescriptor.<ListQaScorecardsRequest, ListQaScorecardsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListQaScorecards")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListQaScorecardsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListQaScorecardsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+      createQaScorecardRevisionMethodDescriptor =
+          MethodDescriptor.<CreateQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateQaScorecardRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateQaScorecardRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QaScorecardRevision.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetQaScorecardRevisionRequest, QaScorecardRevision>
+      getQaScorecardRevisionMethodDescriptor =
+          MethodDescriptor.<GetQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetQaScorecardRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetQaScorecardRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QaScorecardRevision.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<TuneQaScorecardRevisionRequest, Operation>
+      tuneQaScorecardRevisionMethodDescriptor =
+          MethodDescriptor.<TuneQaScorecardRevisionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/TuneQaScorecardRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TuneQaScorecardRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+      deployQaScorecardRevisionMethodDescriptor =
+          MethodDescriptor.<DeployQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeployQaScorecardRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeployQaScorecardRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QaScorecardRevision.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+      undeployQaScorecardRevisionMethodDescriptor =
+          MethodDescriptor.<UndeployQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UndeployQaScorecardRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UndeployQaScorecardRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QaScorecardRevision.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteQaScorecardRevisionRequest, Empty>
+      deleteQaScorecardRevisionMethodDescriptor =
+          MethodDescriptor.<DeleteQaScorecardRevisionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteQaScorecardRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteQaScorecardRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+      listQaScorecardRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListQaScorecardRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListQaScorecardRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListQaScorecardRevisionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateFeedbackLabelRequest, FeedbackLabel>
+      createFeedbackLabelMethodDescriptor =
+          MethodDescriptor.<CreateFeedbackLabelRequest, FeedbackLabel>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateFeedbackLabel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateFeedbackLabelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FeedbackLabel.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+      listFeedbackLabelsMethodDescriptor =
+          MethodDescriptor.<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListFeedbackLabels")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListFeedbackLabelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFeedbackLabelsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetFeedbackLabelRequest, FeedbackLabel>
+      getFeedbackLabelMethodDescriptor =
+          MethodDescriptor.<GetFeedbackLabelRequest, FeedbackLabel>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetFeedbackLabel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetFeedbackLabelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FeedbackLabel.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateFeedbackLabelRequest, FeedbackLabel>
+      updateFeedbackLabelMethodDescriptor =
+          MethodDescriptor.<UpdateFeedbackLabelRequest, FeedbackLabel>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateFeedbackLabel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateFeedbackLabelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FeedbackLabel.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteFeedbackLabelRequest, Empty>
+      deleteFeedbackLabelMethodDescriptor =
+          MethodDescriptor.<DeleteFeedbackLabelRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteFeedbackLabel")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteFeedbackLabelRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+      listAllFeedbackLabelsMethodDescriptor =
+          MethodDescriptor.<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListAllFeedbackLabels")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAllFeedbackLabelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAllFeedbackLabelsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<BulkUploadFeedbackLabelsRequest, Operation>
+      bulkUploadFeedbackLabelsMethodDescriptor =
+          MethodDescriptor.<BulkUploadFeedbackLabelsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkUploadFeedbackLabels")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BulkUploadFeedbackLabelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<BulkDownloadFeedbackLabelsRequest, Operation>
+      bulkDownloadFeedbackLabelsMethodDescriptor =
+          MethodDescriptor.<BulkDownloadFeedbackLabelsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/BulkDownloadFeedbackLabels")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BulkDownloadFeedbackLabelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
   private final UnaryCallable<UploadConversationRequest, Operation> uploadConversationCallable;
   private final OperationCallable<
@@ -543,6 +1020,13 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
           BulkAnalyzeConversationsResponse,
           BulkAnalyzeConversationsMetadata>
       bulkAnalyzeConversationsOperationCallable;
+  private final UnaryCallable<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsCallable;
+  private final OperationCallable<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationCallable;
   private final UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable;
   private final OperationCallable<
           IngestConversationsRequest, IngestConversationsResponse, IngestConversationsMetadata>
@@ -569,6 +1053,14 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final OperationCallable<
           UndeployIssueModelRequest, UndeployIssueModelResponse, UndeployIssueModelMetadata>
       undeployIssueModelOperationCallable;
+  private final UnaryCallable<ExportIssueModelRequest, Operation> exportIssueModelCallable;
+  private final OperationCallable<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationCallable;
+  private final UnaryCallable<ImportIssueModelRequest, Operation> importIssueModelCallable;
+  private final OperationCallable<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationCallable;
   private final UnaryCallable<GetIssueRequest, Issue> getIssueCallable;
   private final UnaryCallable<ListIssuesRequest, ListIssuesResponse> listIssuesCallable;
   private final UnaryCallable<UpdateIssueRequest, Issue> updateIssueCallable;
@@ -588,12 +1080,97 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   private final UnaryCallable<CalculateStatsRequest, CalculateStatsResponse> calculateStatsCallable;
   private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
   private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
+  private final UnaryCallable<CreateAnalysisRuleRequest, AnalysisRule> createAnalysisRuleCallable;
+  private final UnaryCallable<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleCallable;
+  private final UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+      listAnalysisRulesCallable;
+  private final UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesPagedResponse>
+      listAnalysisRulesPagedCallable;
+  private final UnaryCallable<UpdateAnalysisRuleRequest, AnalysisRule> updateAnalysisRuleCallable;
+  private final UnaryCallable<DeleteAnalysisRuleRequest, Empty> deleteAnalysisRuleCallable;
+  private final UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable;
+  private final UnaryCallable<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecCallable;
+  private final OperationCallable<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationCallable;
   private final UnaryCallable<CreateViewRequest, View> createViewCallable;
   private final UnaryCallable<GetViewRequest, View> getViewCallable;
   private final UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable;
   private final UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable;
   private final UnaryCallable<UpdateViewRequest, View> updateViewCallable;
   private final UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable;
+  private final UnaryCallable<QueryMetricsRequest, Operation> queryMetricsCallable;
+  private final OperationCallable<QueryMetricsRequest, QueryMetricsResponse, QueryMetricsMetadata>
+      queryMetricsOperationCallable;
+  private final UnaryCallable<CreateQaQuestionRequest, QaQuestion> createQaQuestionCallable;
+  private final UnaryCallable<GetQaQuestionRequest, QaQuestion> getQaQuestionCallable;
+  private final UnaryCallable<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionCallable;
+  private final UnaryCallable<DeleteQaQuestionRequest, Empty> deleteQaQuestionCallable;
+  private final UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsResponse>
+      listQaQuestionsCallable;
+  private final UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsPagedResponse>
+      listQaQuestionsPagedCallable;
+  private final UnaryCallable<CreateQaScorecardRequest, QaScorecard> createQaScorecardCallable;
+  private final UnaryCallable<GetQaScorecardRequest, QaScorecard> getQaScorecardCallable;
+  private final UnaryCallable<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardCallable;
+  private final UnaryCallable<DeleteQaScorecardRequest, Empty> deleteQaScorecardCallable;
+  private final UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsResponse>
+      listQaScorecardsCallable;
+  private final UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsPagedResponse>
+      listQaScorecardsPagedCallable;
+  private final UnaryCallable<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+      createQaScorecardRevisionCallable;
+  private final UnaryCallable<GetQaScorecardRevisionRequest, QaScorecardRevision>
+      getQaScorecardRevisionCallable;
+  private final UnaryCallable<TuneQaScorecardRevisionRequest, Operation>
+      tuneQaScorecardRevisionCallable;
+  private final OperationCallable<
+          TuneQaScorecardRevisionRequest,
+          TuneQaScorecardRevisionResponse,
+          TuneQaScorecardRevisionMetadata>
+      tuneQaScorecardRevisionOperationCallable;
+  private final UnaryCallable<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+      deployQaScorecardRevisionCallable;
+  private final UnaryCallable<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+      undeployQaScorecardRevisionCallable;
+  private final UnaryCallable<DeleteQaScorecardRevisionRequest, Empty>
+      deleteQaScorecardRevisionCallable;
+  private final UnaryCallable<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+      listQaScorecardRevisionsCallable;
+  private final UnaryCallable<
+          ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsPagedResponse>
+      listQaScorecardRevisionsPagedCallable;
+  private final UnaryCallable<CreateFeedbackLabelRequest, FeedbackLabel>
+      createFeedbackLabelCallable;
+  private final UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+      listFeedbackLabelsCallable;
+  private final UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsPagedResponse>
+      listFeedbackLabelsPagedCallable;
+  private final UnaryCallable<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelCallable;
+  private final UnaryCallable<UpdateFeedbackLabelRequest, FeedbackLabel>
+      updateFeedbackLabelCallable;
+  private final UnaryCallable<DeleteFeedbackLabelRequest, Empty> deleteFeedbackLabelCallable;
+  private final UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+      listAllFeedbackLabelsCallable;
+  private final UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsPagedResponse>
+      listAllFeedbackLabelsPagedCallable;
+  private final UnaryCallable<BulkUploadFeedbackLabelsRequest, Operation>
+      bulkUploadFeedbackLabelsCallable;
+  private final OperationCallable<
+          BulkUploadFeedbackLabelsRequest,
+          BulkUploadFeedbackLabelsResponse,
+          BulkUploadFeedbackLabelsMetadata>
+      bulkUploadFeedbackLabelsOperationCallable;
+  private final UnaryCallable<BulkDownloadFeedbackLabelsRequest, Operation>
+      bulkDownloadFeedbackLabelsCallable;
+  private final OperationCallable<
+          BulkDownloadFeedbackLabelsRequest,
+          BulkDownloadFeedbackLabelsResponse,
+          BulkDownloadFeedbackLabelsMetadata>
+      bulkDownloadFeedbackLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -752,6 +1329,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<BulkDeleteConversationsRequest, Operation>
+        bulkDeleteConversationsTransportSettings =
+            GrpcCallSettings.<BulkDeleteConversationsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkDeleteConversationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<IngestConversationsRequest, Operation> ingestConversationsTransportSettings =
         GrpcCallSettings.<IngestConversationsRequest, Operation>newBuilder()
             .setMethodDescriptor(ingestConversationsMethodDescriptor)
@@ -841,6 +1429,26 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ExportIssueModelRequest, Operation> exportIssueModelTransportSettings =
+        GrpcCallSettings.<ExportIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ImportIssueModelRequest, Operation> importIssueModelTransportSettings =
+        GrpcCallSettings.<ImportIssueModelRequest, Operation>newBuilder()
+            .setMethodDescriptor(importIssueModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
             .build();
@@ -982,6 +1590,81 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateAnalysisRuleRequest, AnalysisRule> createAnalysisRuleTransportSettings =
+        GrpcCallSettings.<CreateAnalysisRuleRequest, AnalysisRule>newBuilder()
+            .setMethodDescriptor(createAnalysisRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleTransportSettings =
+        GrpcCallSettings.<GetAnalysisRuleRequest, AnalysisRule>newBuilder()
+            .setMethodDescriptor(getAnalysisRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+        listAnalysisRulesTransportSettings =
+            GrpcCallSettings.<ListAnalysisRulesRequest, ListAnalysisRulesResponse>newBuilder()
+                .setMethodDescriptor(listAnalysisRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateAnalysisRuleRequest, AnalysisRule> updateAnalysisRuleTransportSettings =
+        GrpcCallSettings.<UpdateAnalysisRuleRequest, AnalysisRule>newBuilder()
+            .setMethodDescriptor(updateAnalysisRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "analysis_rule.name", String.valueOf(request.getAnalysisRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAnalysisRuleRequest, Empty> deleteAnalysisRuleTransportSettings =
+        GrpcCallSettings.<DeleteAnalysisRuleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAnalysisRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecTransportSettings =
+        GrpcCallSettings.<GetEncryptionSpecRequest, EncryptionSpec>newBuilder()
+            .setMethodDescriptor(getEncryptionSpecMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<InitializeEncryptionSpecRequest, Operation>
+        initializeEncryptionSpecTransportSettings =
+            GrpcCallSettings.<InitializeEncryptionSpecRequest, Operation>newBuilder()
+                .setMethodDescriptor(initializeEncryptionSpecMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "encryption_spec.name",
+                          String.valueOf(request.getEncryptionSpec().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CreateViewRequest, View> createViewTransportSettings =
         GrpcCallSettings.<CreateViewRequest, View>newBuilder()
             .setMethodDescriptor(createViewMethodDescriptor)
@@ -1032,6 +1715,287 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<QueryMetricsRequest, Operation> queryMetricsTransportSettings =
+        GrpcCallSettings.<QueryMetricsRequest, Operation>newBuilder()
+            .setMethodDescriptor(queryMetricsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("location", String.valueOf(request.getLocation()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateQaQuestionRequest, QaQuestion> createQaQuestionTransportSettings =
+        GrpcCallSettings.<CreateQaQuestionRequest, QaQuestion>newBuilder()
+            .setMethodDescriptor(createQaQuestionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetQaQuestionRequest, QaQuestion> getQaQuestionTransportSettings =
+        GrpcCallSettings.<GetQaQuestionRequest, QaQuestion>newBuilder()
+            .setMethodDescriptor(getQaQuestionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionTransportSettings =
+        GrpcCallSettings.<UpdateQaQuestionRequest, QaQuestion>newBuilder()
+            .setMethodDescriptor(updateQaQuestionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "qa_question.name", String.valueOf(request.getQaQuestion().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteQaQuestionRequest, Empty> deleteQaQuestionTransportSettings =
+        GrpcCallSettings.<DeleteQaQuestionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteQaQuestionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListQaQuestionsRequest, ListQaQuestionsResponse>
+        listQaQuestionsTransportSettings =
+            GrpcCallSettings.<ListQaQuestionsRequest, ListQaQuestionsResponse>newBuilder()
+                .setMethodDescriptor(listQaQuestionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateQaScorecardRequest, QaScorecard> createQaScorecardTransportSettings =
+        GrpcCallSettings.<CreateQaScorecardRequest, QaScorecard>newBuilder()
+            .setMethodDescriptor(createQaScorecardMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetQaScorecardRequest, QaScorecard> getQaScorecardTransportSettings =
+        GrpcCallSettings.<GetQaScorecardRequest, QaScorecard>newBuilder()
+            .setMethodDescriptor(getQaScorecardMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardTransportSettings =
+        GrpcCallSettings.<UpdateQaScorecardRequest, QaScorecard>newBuilder()
+            .setMethodDescriptor(updateQaScorecardMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "qa_scorecard.name", String.valueOf(request.getQaScorecard().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteQaScorecardRequest, Empty> deleteQaScorecardTransportSettings =
+        GrpcCallSettings.<DeleteQaScorecardRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteQaScorecardMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListQaScorecardsRequest, ListQaScorecardsResponse>
+        listQaScorecardsTransportSettings =
+            GrpcCallSettings.<ListQaScorecardsRequest, ListQaScorecardsResponse>newBuilder()
+                .setMethodDescriptor(listQaScorecardsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+        createQaScorecardRevisionTransportSettings =
+            GrpcCallSettings.<CreateQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+                .setMethodDescriptor(createQaScorecardRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetQaScorecardRevisionRequest, QaScorecardRevision>
+        getQaScorecardRevisionTransportSettings =
+            GrpcCallSettings.<GetQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+                .setMethodDescriptor(getQaScorecardRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<TuneQaScorecardRevisionRequest, Operation>
+        tuneQaScorecardRevisionTransportSettings =
+            GrpcCallSettings.<TuneQaScorecardRevisionRequest, Operation>newBuilder()
+                .setMethodDescriptor(tuneQaScorecardRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+        deployQaScorecardRevisionTransportSettings =
+            GrpcCallSettings.<DeployQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+                .setMethodDescriptor(deployQaScorecardRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+        undeployQaScorecardRevisionTransportSettings =
+            GrpcCallSettings.<UndeployQaScorecardRevisionRequest, QaScorecardRevision>newBuilder()
+                .setMethodDescriptor(undeployQaScorecardRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteQaScorecardRevisionRequest, Empty>
+        deleteQaScorecardRevisionTransportSettings =
+            GrpcCallSettings.<DeleteQaScorecardRevisionRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteQaScorecardRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+        listQaScorecardRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listQaScorecardRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateFeedbackLabelRequest, FeedbackLabel>
+        createFeedbackLabelTransportSettings =
+            GrpcCallSettings.<CreateFeedbackLabelRequest, FeedbackLabel>newBuilder()
+                .setMethodDescriptor(createFeedbackLabelMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+        listFeedbackLabelsTransportSettings =
+            GrpcCallSettings.<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>newBuilder()
+                .setMethodDescriptor(listFeedbackLabelsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelTransportSettings =
+        GrpcCallSettings.<GetFeedbackLabelRequest, FeedbackLabel>newBuilder()
+            .setMethodDescriptor(getFeedbackLabelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateFeedbackLabelRequest, FeedbackLabel>
+        updateFeedbackLabelTransportSettings =
+            GrpcCallSettings.<UpdateFeedbackLabelRequest, FeedbackLabel>newBuilder()
+                .setMethodDescriptor(updateFeedbackLabelMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "feedback_label.name",
+                          String.valueOf(request.getFeedbackLabel().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteFeedbackLabelRequest, Empty> deleteFeedbackLabelTransportSettings =
+        GrpcCallSettings.<DeleteFeedbackLabelRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteFeedbackLabelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+        listAllFeedbackLabelsTransportSettings =
+            GrpcCallSettings
+                .<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>newBuilder()
+                .setMethodDescriptor(listAllFeedbackLabelsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<BulkUploadFeedbackLabelsRequest, Operation>
+        bulkUploadFeedbackLabelsTransportSettings =
+            GrpcCallSettings.<BulkUploadFeedbackLabelsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkUploadFeedbackLabelsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<BulkDownloadFeedbackLabelsRequest, Operation>
+        bulkDownloadFeedbackLabelsTransportSettings =
+            GrpcCallSettings.<BulkDownloadFeedbackLabelsRequest, Operation>newBuilder()
+                .setMethodDescriptor(bulkDownloadFeedbackLabelsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createConversationCallable =
         callableFactory.createUnaryCallable(
@@ -1104,6 +2068,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
             settings.bulkAnalyzeConversationsOperationSettings(),
             clientContext,
             operationsStub);
+    this.bulkDeleteConversationsCallable =
+        callableFactory.createUnaryCallable(
+            bulkDeleteConversationsTransportSettings,
+            settings.bulkDeleteConversationsSettings(),
+            clientContext);
+    this.bulkDeleteConversationsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkDeleteConversationsTransportSettings,
+            settings.bulkDeleteConversationsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.ingestConversationsCallable =
         callableFactory.createUnaryCallable(
             ingestConversationsTransportSettings,
@@ -1173,6 +2148,24 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
             settings.undeployIssueModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.exportIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            exportIssueModelTransportSettings, settings.exportIssueModelSettings(), clientContext);
+    this.exportIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            exportIssueModelTransportSettings,
+            settings.exportIssueModelOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.importIssueModelCallable =
+        callableFactory.createUnaryCallable(
+            importIssueModelTransportSettings, settings.importIssueModelSettings(), clientContext);
+    this.importIssueModelOperationCallable =
+        callableFactory.createOperationCallable(
+            importIssueModelTransportSettings,
+            settings.importIssueModelOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getIssueCallable =
         callableFactory.createUnaryCallable(
             getIssueTransportSettings, settings.getIssueSettings(), clientContext);
@@ -1227,6 +2220,50 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
     this.updateSettingsCallable =
         callableFactory.createUnaryCallable(
             updateSettingsTransportSettings, settings.updateSettingsSettings(), clientContext);
+    this.createAnalysisRuleCallable =
+        callableFactory.createUnaryCallable(
+            createAnalysisRuleTransportSettings,
+            settings.createAnalysisRuleSettings(),
+            clientContext);
+    this.getAnalysisRuleCallable =
+        callableFactory.createUnaryCallable(
+            getAnalysisRuleTransportSettings, settings.getAnalysisRuleSettings(), clientContext);
+    this.listAnalysisRulesCallable =
+        callableFactory.createUnaryCallable(
+            listAnalysisRulesTransportSettings,
+            settings.listAnalysisRulesSettings(),
+            clientContext);
+    this.listAnalysisRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAnalysisRulesTransportSettings,
+            settings.listAnalysisRulesSettings(),
+            clientContext);
+    this.updateAnalysisRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateAnalysisRuleTransportSettings,
+            settings.updateAnalysisRuleSettings(),
+            clientContext);
+    this.deleteAnalysisRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteAnalysisRuleTransportSettings,
+            settings.deleteAnalysisRuleSettings(),
+            clientContext);
+    this.getEncryptionSpecCallable =
+        callableFactory.createUnaryCallable(
+            getEncryptionSpecTransportSettings,
+            settings.getEncryptionSpecSettings(),
+            clientContext);
+    this.initializeEncryptionSpecCallable =
+        callableFactory.createUnaryCallable(
+            initializeEncryptionSpecTransportSettings,
+            settings.initializeEncryptionSpecSettings(),
+            clientContext);
+    this.initializeEncryptionSpecOperationCallable =
+        callableFactory.createOperationCallable(
+            initializeEncryptionSpecTransportSettings,
+            settings.initializeEncryptionSpecOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createViewCallable =
         callableFactory.createUnaryCallable(
             createViewTransportSettings, settings.createViewSettings(), clientContext);
@@ -1245,6 +2282,163 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
     this.deleteViewCallable =
         callableFactory.createUnaryCallable(
             deleteViewTransportSettings, settings.deleteViewSettings(), clientContext);
+    this.queryMetricsCallable =
+        callableFactory.createUnaryCallable(
+            queryMetricsTransportSettings, settings.queryMetricsSettings(), clientContext);
+    this.queryMetricsOperationCallable =
+        callableFactory.createOperationCallable(
+            queryMetricsTransportSettings,
+            settings.queryMetricsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createQaQuestionCallable =
+        callableFactory.createUnaryCallable(
+            createQaQuestionTransportSettings, settings.createQaQuestionSettings(), clientContext);
+    this.getQaQuestionCallable =
+        callableFactory.createUnaryCallable(
+            getQaQuestionTransportSettings, settings.getQaQuestionSettings(), clientContext);
+    this.updateQaQuestionCallable =
+        callableFactory.createUnaryCallable(
+            updateQaQuestionTransportSettings, settings.updateQaQuestionSettings(), clientContext);
+    this.deleteQaQuestionCallable =
+        callableFactory.createUnaryCallable(
+            deleteQaQuestionTransportSettings, settings.deleteQaQuestionSettings(), clientContext);
+    this.listQaQuestionsCallable =
+        callableFactory.createUnaryCallable(
+            listQaQuestionsTransportSettings, settings.listQaQuestionsSettings(), clientContext);
+    this.listQaQuestionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listQaQuestionsTransportSettings, settings.listQaQuestionsSettings(), clientContext);
+    this.createQaScorecardCallable =
+        callableFactory.createUnaryCallable(
+            createQaScorecardTransportSettings,
+            settings.createQaScorecardSettings(),
+            clientContext);
+    this.getQaScorecardCallable =
+        callableFactory.createUnaryCallable(
+            getQaScorecardTransportSettings, settings.getQaScorecardSettings(), clientContext);
+    this.updateQaScorecardCallable =
+        callableFactory.createUnaryCallable(
+            updateQaScorecardTransportSettings,
+            settings.updateQaScorecardSettings(),
+            clientContext);
+    this.deleteQaScorecardCallable =
+        callableFactory.createUnaryCallable(
+            deleteQaScorecardTransportSettings,
+            settings.deleteQaScorecardSettings(),
+            clientContext);
+    this.listQaScorecardsCallable =
+        callableFactory.createUnaryCallable(
+            listQaScorecardsTransportSettings, settings.listQaScorecardsSettings(), clientContext);
+    this.listQaScorecardsPagedCallable =
+        callableFactory.createPagedCallable(
+            listQaScorecardsTransportSettings, settings.listQaScorecardsSettings(), clientContext);
+    this.createQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            createQaScorecardRevisionTransportSettings,
+            settings.createQaScorecardRevisionSettings(),
+            clientContext);
+    this.getQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getQaScorecardRevisionTransportSettings,
+            settings.getQaScorecardRevisionSettings(),
+            clientContext);
+    this.tuneQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            tuneQaScorecardRevisionTransportSettings,
+            settings.tuneQaScorecardRevisionSettings(),
+            clientContext);
+    this.tuneQaScorecardRevisionOperationCallable =
+        callableFactory.createOperationCallable(
+            tuneQaScorecardRevisionTransportSettings,
+            settings.tuneQaScorecardRevisionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deployQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            deployQaScorecardRevisionTransportSettings,
+            settings.deployQaScorecardRevisionSettings(),
+            clientContext);
+    this.undeployQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            undeployQaScorecardRevisionTransportSettings,
+            settings.undeployQaScorecardRevisionSettings(),
+            clientContext);
+    this.deleteQaScorecardRevisionCallable =
+        callableFactory.createUnaryCallable(
+            deleteQaScorecardRevisionTransportSettings,
+            settings.deleteQaScorecardRevisionSettings(),
+            clientContext);
+    this.listQaScorecardRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listQaScorecardRevisionsTransportSettings,
+            settings.listQaScorecardRevisionsSettings(),
+            clientContext);
+    this.listQaScorecardRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listQaScorecardRevisionsTransportSettings,
+            settings.listQaScorecardRevisionsSettings(),
+            clientContext);
+    this.createFeedbackLabelCallable =
+        callableFactory.createUnaryCallable(
+            createFeedbackLabelTransportSettings,
+            settings.createFeedbackLabelSettings(),
+            clientContext);
+    this.listFeedbackLabelsCallable =
+        callableFactory.createUnaryCallable(
+            listFeedbackLabelsTransportSettings,
+            settings.listFeedbackLabelsSettings(),
+            clientContext);
+    this.listFeedbackLabelsPagedCallable =
+        callableFactory.createPagedCallable(
+            listFeedbackLabelsTransportSettings,
+            settings.listFeedbackLabelsSettings(),
+            clientContext);
+    this.getFeedbackLabelCallable =
+        callableFactory.createUnaryCallable(
+            getFeedbackLabelTransportSettings, settings.getFeedbackLabelSettings(), clientContext);
+    this.updateFeedbackLabelCallable =
+        callableFactory.createUnaryCallable(
+            updateFeedbackLabelTransportSettings,
+            settings.updateFeedbackLabelSettings(),
+            clientContext);
+    this.deleteFeedbackLabelCallable =
+        callableFactory.createUnaryCallable(
+            deleteFeedbackLabelTransportSettings,
+            settings.deleteFeedbackLabelSettings(),
+            clientContext);
+    this.listAllFeedbackLabelsCallable =
+        callableFactory.createUnaryCallable(
+            listAllFeedbackLabelsTransportSettings,
+            settings.listAllFeedbackLabelsSettings(),
+            clientContext);
+    this.listAllFeedbackLabelsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAllFeedbackLabelsTransportSettings,
+            settings.listAllFeedbackLabelsSettings(),
+            clientContext);
+    this.bulkUploadFeedbackLabelsCallable =
+        callableFactory.createUnaryCallable(
+            bulkUploadFeedbackLabelsTransportSettings,
+            settings.bulkUploadFeedbackLabelsSettings(),
+            clientContext);
+    this.bulkUploadFeedbackLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkUploadFeedbackLabelsTransportSettings,
+            settings.bulkUploadFeedbackLabelsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.bulkDownloadFeedbackLabelsCallable =
+        callableFactory.createUnaryCallable(
+            bulkDownloadFeedbackLabelsTransportSettings,
+            settings.bulkDownloadFeedbackLabelsSettings(),
+            clientContext);
+    this.bulkDownloadFeedbackLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            bulkDownloadFeedbackLabelsTransportSettings,
+            settings.bulkDownloadFeedbackLabelsOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1344,6 +2538,21 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   }
 
   @Override
+  public UnaryCallable<BulkDeleteConversationsRequest, Operation>
+      bulkDeleteConversationsCallable() {
+    return bulkDeleteConversationsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkDeleteConversationsRequest,
+          BulkDeleteConversationsResponse,
+          BulkDeleteConversationsMetadata>
+      bulkDeleteConversationsOperationCallable() {
+    return bulkDeleteConversationsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<IngestConversationsRequest, Operation> ingestConversationsCallable() {
     return ingestConversationsCallable;
   }
@@ -1429,6 +2638,30 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   }
 
   @Override
+  public UnaryCallable<ExportIssueModelRequest, Operation> exportIssueModelCallable() {
+    return exportIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ExportIssueModelRequest, ExportIssueModelResponse, ExportIssueModelMetadata>
+      exportIssueModelOperationCallable() {
+    return exportIssueModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportIssueModelRequest, Operation> importIssueModelCallable() {
+    return importIssueModelCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportIssueModelRequest, ImportIssueModelResponse, ImportIssueModelMetadata>
+      importIssueModelOperationCallable() {
+    return importIssueModelOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetIssueRequest, Issue> getIssueCallable() {
     return getIssueCallable;
   }
@@ -1502,6 +2735,58 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   }
 
   @Override
+  public UnaryCallable<CreateAnalysisRuleRequest, AnalysisRule> createAnalysisRuleCallable() {
+    return createAnalysisRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAnalysisRuleRequest, AnalysisRule> getAnalysisRuleCallable() {
+    return getAnalysisRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
+      listAnalysisRulesCallable() {
+    return listAnalysisRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAnalysisRulesRequest, ListAnalysisRulesPagedResponse>
+      listAnalysisRulesPagedCallable() {
+    return listAnalysisRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAnalysisRuleRequest, AnalysisRule> updateAnalysisRuleCallable() {
+    return updateAnalysisRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAnalysisRuleRequest, Empty> deleteAnalysisRuleCallable() {
+    return deleteAnalysisRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEncryptionSpecRequest, EncryptionSpec> getEncryptionSpecCallable() {
+    return getEncryptionSpecCallable;
+  }
+
+  @Override
+  public UnaryCallable<InitializeEncryptionSpecRequest, Operation>
+      initializeEncryptionSpecCallable() {
+    return initializeEncryptionSpecCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          InitializeEncryptionSpecRequest,
+          InitializeEncryptionSpecResponse,
+          InitializeEncryptionSpecMetadata>
+      initializeEncryptionSpecOperationCallable() {
+    return initializeEncryptionSpecOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateViewRequest, View> createViewCallable() {
     return createViewCallable;
   }
@@ -1529,6 +2814,211 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   @Override
   public UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable() {
     return deleteViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryMetricsRequest, Operation> queryMetricsCallable() {
+    return queryMetricsCallable;
+  }
+
+  @Override
+  public OperationCallable<QueryMetricsRequest, QueryMetricsResponse, QueryMetricsMetadata>
+      queryMetricsOperationCallable() {
+    return queryMetricsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQaQuestionRequest, QaQuestion> createQaQuestionCallable() {
+    return createQaQuestionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQaQuestionRequest, QaQuestion> getQaQuestionCallable() {
+    return getQaQuestionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQaQuestionRequest, QaQuestion> updateQaQuestionCallable() {
+    return updateQaQuestionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQaQuestionRequest, Empty> deleteQaQuestionCallable() {
+    return deleteQaQuestionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsResponse> listQaQuestionsCallable() {
+    return listQaQuestionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaQuestionsRequest, ListQaQuestionsPagedResponse>
+      listQaQuestionsPagedCallable() {
+    return listQaQuestionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQaScorecardRequest, QaScorecard> createQaScorecardCallable() {
+    return createQaScorecardCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQaScorecardRequest, QaScorecard> getQaScorecardCallable() {
+    return getQaScorecardCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQaScorecardRequest, QaScorecard> updateQaScorecardCallable() {
+    return updateQaScorecardCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQaScorecardRequest, Empty> deleteQaScorecardCallable() {
+    return deleteQaScorecardCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsResponse>
+      listQaScorecardsCallable() {
+    return listQaScorecardsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaScorecardsRequest, ListQaScorecardsPagedResponse>
+      listQaScorecardsPagedCallable() {
+    return listQaScorecardsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQaScorecardRevisionRequest, QaScorecardRevision>
+      createQaScorecardRevisionCallable() {
+    return createQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQaScorecardRevisionRequest, QaScorecardRevision>
+      getQaScorecardRevisionCallable() {
+    return getQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<TuneQaScorecardRevisionRequest, Operation>
+      tuneQaScorecardRevisionCallable() {
+    return tuneQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          TuneQaScorecardRevisionRequest,
+          TuneQaScorecardRevisionResponse,
+          TuneQaScorecardRevisionMetadata>
+      tuneQaScorecardRevisionOperationCallable() {
+    return tuneQaScorecardRevisionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeployQaScorecardRevisionRequest, QaScorecardRevision>
+      deployQaScorecardRevisionCallable() {
+    return deployQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
+      undeployQaScorecardRevisionCallable() {
+    return undeployQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQaScorecardRevisionRequest, Empty>
+      deleteQaScorecardRevisionCallable() {
+    return deleteQaScorecardRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsResponse>
+      listQaScorecardRevisionsCallable() {
+    return listQaScorecardRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQaScorecardRevisionsRequest, ListQaScorecardRevisionsPagedResponse>
+      listQaScorecardRevisionsPagedCallable() {
+    return listQaScorecardRevisionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateFeedbackLabelRequest, FeedbackLabel> createFeedbackLabelCallable() {
+    return createFeedbackLabelCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
+      listFeedbackLabelsCallable() {
+    return listFeedbackLabelsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFeedbackLabelsRequest, ListFeedbackLabelsPagedResponse>
+      listFeedbackLabelsPagedCallable() {
+    return listFeedbackLabelsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFeedbackLabelRequest, FeedbackLabel> getFeedbackLabelCallable() {
+    return getFeedbackLabelCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateFeedbackLabelRequest, FeedbackLabel> updateFeedbackLabelCallable() {
+    return updateFeedbackLabelCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFeedbackLabelRequest, Empty> deleteFeedbackLabelCallable() {
+    return deleteFeedbackLabelCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
+      listAllFeedbackLabelsCallable() {
+    return listAllFeedbackLabelsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsPagedResponse>
+      listAllFeedbackLabelsPagedCallable() {
+    return listAllFeedbackLabelsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkUploadFeedbackLabelsRequest, Operation>
+      bulkUploadFeedbackLabelsCallable() {
+    return bulkUploadFeedbackLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkUploadFeedbackLabelsRequest,
+          BulkUploadFeedbackLabelsResponse,
+          BulkUploadFeedbackLabelsMetadata>
+      bulkUploadFeedbackLabelsOperationCallable() {
+    return bulkUploadFeedbackLabelsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BulkDownloadFeedbackLabelsRequest, Operation>
+      bulkDownloadFeedbackLabelsCallable() {
+    return bulkDownloadFeedbackLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BulkDownloadFeedbackLabelsRequest,
+          BulkDownloadFeedbackLabelsResponse,
+          BulkDownloadFeedbackLabelsMetadata>
+      bulkDownloadFeedbackLabelsOperationCallable() {
+    return bulkDownloadFeedbackLabelsOperationCallable;
   }
 
   @Override

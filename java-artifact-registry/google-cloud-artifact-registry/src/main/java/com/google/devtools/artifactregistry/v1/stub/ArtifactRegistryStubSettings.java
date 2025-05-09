@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.devtools.artifactregistry.v1.stub;
 
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListAttachmentsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
@@ -24,12 +25,14 @@ import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.Lis
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRulesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -64,14 +67,23 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.devtools.artifactregistry.v1.Attachment;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest;
+import com.google.devtools.artifactregistry.v1.CreateAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.CreateRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.CreateRuleRequest;
 import com.google.devtools.artifactregistry.v1.CreateTagRequest;
+import com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest;
+import com.google.devtools.artifactregistry.v1.DeleteFileRequest;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
 import com.google.devtools.artifactregistry.v1.DeleteRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.DeleteRuleRequest;
 import com.google.devtools.artifactregistry.v1.DeleteTagRequest;
 import com.google.devtools.artifactregistry.v1.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1.DockerImage;
 import com.google.devtools.artifactregistry.v1.File;
+import com.google.devtools.artifactregistry.v1.GetAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
 import com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest;
@@ -80,6 +92,7 @@ import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.GetPythonPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.GetRuleRequest;
 import com.google.devtools.artifactregistry.v1.GetTagRequest;
 import com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest;
 import com.google.devtools.artifactregistry.v1.GetVersionRequest;
@@ -89,6 +102,8 @@ import com.google.devtools.artifactregistry.v1.ImportAptArtifactsResponse;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsMetadata;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsRequest;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsResponse;
+import com.google.devtools.artifactregistry.v1.ListAttachmentsRequest;
+import com.google.devtools.artifactregistry.v1.ListAttachmentsResponse;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesRequest;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesResponse;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
@@ -103,6 +118,8 @@ import com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesRequest;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesResponse;
+import com.google.devtools.artifactregistry.v1.ListRulesRequest;
+import com.google.devtools.artifactregistry.v1.ListRulesResponse;
 import com.google.devtools.artifactregistry.v1.ListTagsRequest;
 import com.google.devtools.artifactregistry.v1.ListTagsResponse;
 import com.google.devtools.artifactregistry.v1.ListVersionsRequest;
@@ -114,11 +131,16 @@ import com.google.devtools.artifactregistry.v1.Package;
 import com.google.devtools.artifactregistry.v1.ProjectSettings;
 import com.google.devtools.artifactregistry.v1.PythonPackage;
 import com.google.devtools.artifactregistry.v1.Repository;
+import com.google.devtools.artifactregistry.v1.Rule;
 import com.google.devtools.artifactregistry.v1.Tag;
+import com.google.devtools.artifactregistry.v1.UpdateFileRequest;
+import com.google.devtools.artifactregistry.v1.UpdatePackageRequest;
 import com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.UpdateRuleRequest;
 import com.google.devtools.artifactregistry.v1.UpdateTagRequest;
 import com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest;
+import com.google.devtools.artifactregistry.v1.UpdateVersionRequest;
 import com.google.devtools.artifactregistry.v1.VPCSCConfig;
 import com.google.devtools.artifactregistry.v1.Version;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -129,9 +151,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -149,7 +171,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDockerImage to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDockerImage:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -166,9 +190,46 @@ import org.threeten.bp.Duration;
  *             .getDockerImageSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ArtifactRegistryStubSettings artifactRegistrySettings = artifactRegistrySettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for importAptArtifacts:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ArtifactRegistryStubSettings.Builder artifactRegistrySettingsBuilder =
+ *     ArtifactRegistryStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * artifactRegistrySettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -229,15 +290,31 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
   private final UnaryCallSettings<DeleteVersionRequest, Operation> deleteVersionSettings;
   private final OperationCallSettings<DeleteVersionRequest, Empty, OperationMetadata>
       deleteVersionOperationSettings;
+  private final UnaryCallSettings<BatchDeleteVersionsRequest, Operation>
+      batchDeleteVersionsSettings;
+  private final OperationCallSettings<
+          BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationSettings;
+  private final UnaryCallSettings<UpdateVersionRequest, Version> updateVersionSettings;
   private final PagedCallSettings<ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
       listFilesSettings;
   private final UnaryCallSettings<GetFileRequest, File> getFileSettings;
+  private final UnaryCallSettings<DeleteFileRequest, Operation> deleteFileSettings;
+  private final OperationCallSettings<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationSettings;
+  private final UnaryCallSettings<UpdateFileRequest, File> updateFileSettings;
   private final PagedCallSettings<ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
       listTagsSettings;
   private final UnaryCallSettings<GetTagRequest, Tag> getTagSettings;
   private final UnaryCallSettings<CreateTagRequest, Tag> createTagSettings;
   private final UnaryCallSettings<UpdateTagRequest, Tag> updateTagSettings;
   private final UnaryCallSettings<DeleteTagRequest, Empty> deleteTagSettings;
+  private final UnaryCallSettings<CreateRuleRequest, Rule> createRuleSettings;
+  private final PagedCallSettings<ListRulesRequest, ListRulesResponse, ListRulesPagedResponse>
+      listRulesSettings;
+  private final UnaryCallSettings<GetRuleRequest, Rule> getRuleSettings;
+  private final UnaryCallSettings<UpdateRuleRequest, Rule> updateRuleSettings;
+  private final UnaryCallSettings<DeleteRuleRequest, Empty> deleteRuleSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -248,6 +325,17 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       updateProjectSettingsSettings;
   private final UnaryCallSettings<GetVPCSCConfigRequest, VPCSCConfig> getVPCSCConfigSettings;
   private final UnaryCallSettings<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigSettings;
+  private final UnaryCallSettings<UpdatePackageRequest, Package> updatePackageSettings;
+  private final PagedCallSettings<
+          ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
+      listAttachmentsSettings;
+  private final UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings;
+  private final UnaryCallSettings<CreateAttachmentRequest, Operation> createAttachmentSettings;
+  private final OperationCallSettings<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationSettings;
+  private final UnaryCallSettings<DeleteAttachmentRequest, Operation> deleteAttachmentSettings;
+  private final OperationCallSettings<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -287,9 +375,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<DockerImage> extractResources(ListDockerImagesResponse payload) {
-              return payload.getDockerImagesList() == null
-                  ? ImmutableList.<DockerImage>of()
-                  : payload.getDockerImagesList();
+              return payload.getDockerImagesList();
             }
           };
 
@@ -327,9 +413,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<MavenArtifact> extractResources(ListMavenArtifactsResponse payload) {
-              return payload.getMavenArtifactsList() == null
-                  ? ImmutableList.<MavenArtifact>of()
-                  : payload.getMavenArtifactsList();
+              return payload.getMavenArtifactsList();
             }
           };
 
@@ -366,9 +450,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<NpmPackage> extractResources(ListNpmPackagesResponse payload) {
-              return payload.getNpmPackagesList() == null
-                  ? ImmutableList.<NpmPackage>of()
-                  : payload.getNpmPackagesList();
+              return payload.getNpmPackagesList();
             }
           };
 
@@ -406,9 +488,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<PythonPackage> extractResources(ListPythonPackagesResponse payload) {
-              return payload.getPythonPackagesList() == null
-                  ? ImmutableList.<PythonPackage>of()
-                  : payload.getPythonPackagesList();
+              return payload.getPythonPackagesList();
             }
           };
 
@@ -445,9 +525,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Repository> extractResources(ListRepositoriesResponse payload) {
-              return payload.getRepositoriesList() == null
-                  ? ImmutableList.<Repository>of()
-                  : payload.getRepositoriesList();
+              return payload.getRepositoriesList();
             }
           };
 
@@ -481,9 +559,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Package> extractResources(ListPackagesResponse payload) {
-              return payload.getPackagesList() == null
-                  ? ImmutableList.<Package>of()
-                  : payload.getPackagesList();
+              return payload.getPackagesList();
             }
           };
 
@@ -517,9 +593,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Version> extractResources(ListVersionsResponse payload) {
-              return payload.getVersionsList() == null
-                  ? ImmutableList.<Version>of()
-                  : payload.getVersionsList();
+              return payload.getVersionsList();
             }
           };
 
@@ -553,9 +627,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<File> extractResources(ListFilesResponse payload) {
-              return payload.getFilesList() == null
-                  ? ImmutableList.<File>of()
-                  : payload.getFilesList();
+              return payload.getFilesList();
             }
           };
 
@@ -589,9 +661,78 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Tag> extractResources(ListTagsResponse payload) {
-              return payload.getTagsList() == null
-                  ? ImmutableList.<Tag>of()
-                  : payload.getTagsList();
+              return payload.getTagsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListRulesRequest, ListRulesResponse, Rule>
+      LIST_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListRulesRequest, ListRulesResponse, Rule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRulesRequest injectToken(ListRulesRequest payload, String token) {
+              return ListRulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRulesRequest injectPageSize(ListRulesRequest payload, int pageSize) {
+              return ListRulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Rule> extractResources(ListRulesResponse payload) {
+              return payload.getRulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAttachmentsRequest, ListAttachmentsResponse, Attachment>
+      LIST_ATTACHMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAttachmentsRequest, ListAttachmentsResponse, Attachment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAttachmentsRequest injectToken(
+                ListAttachmentsRequest payload, String token) {
+              return ListAttachmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAttachmentsRequest injectPageSize(
+                ListAttachmentsRequest payload, int pageSize) {
+              return ListAttachmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAttachmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAttachmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Attachment> extractResources(ListAttachmentsResponse payload) {
+              return payload.getAttachmentsList();
             }
           };
 
@@ -625,9 +766,7 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -792,6 +931,40 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               PageContext<ListTagsRequest, ListTagsResponse, Tag> pageContext =
                   PageContext.create(callable, LIST_TAGS_PAGE_STR_DESC, request, context);
               return ListTagsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRulesRequest, ListRulesResponse, ListRulesPagedResponse>
+      LIST_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRulesRequest, ListRulesResponse, ListRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRulesRequest, ListRulesResponse> callable,
+                ListRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRulesResponse> futureResponse) {
+              PageContext<ListRulesRequest, ListRulesResponse, Rule> pageContext =
+                  PageContext.create(callable, LIST_RULES_PAGE_STR_DESC, request, context);
+              return ListRulesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
+      LIST_ATTACHMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAttachmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse> callable,
+                ListAttachmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAttachmentsResponse> futureResponse) {
+              PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> pageContext =
+                  PageContext.create(callable, LIST_ATTACHMENTS_PAGE_STR_DESC, request, context);
+              return ListAttachmentsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -967,6 +1140,22 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return deleteVersionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchDeleteVersions. */
+  public UnaryCallSettings<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsSettings() {
+    return batchDeleteVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteVersions. */
+  public OperationCallSettings<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationSettings() {
+    return batchDeleteVersionsOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateVersion. */
+  public UnaryCallSettings<UpdateVersionRequest, Version> updateVersionSettings() {
+    return updateVersionSettings;
+  }
+
   /** Returns the object with the settings used for calls to listFiles. */
   public PagedCallSettings<ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
       listFilesSettings() {
@@ -976,6 +1165,22 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
   /** Returns the object with the settings used for calls to getFile. */
   public UnaryCallSettings<GetFileRequest, File> getFileSettings() {
     return getFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFile. */
+  public UnaryCallSettings<DeleteFileRequest, Operation> deleteFileSettings() {
+    return deleteFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFile. */
+  public OperationCallSettings<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationSettings() {
+    return deleteFileOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateFile. */
+  public UnaryCallSettings<UpdateFileRequest, File> updateFileSettings() {
+    return updateFileSettings;
   }
 
   /** Returns the object with the settings used for calls to listTags. */
@@ -1002,6 +1207,32 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
   /** Returns the object with the settings used for calls to deleteTag. */
   public UnaryCallSettings<DeleteTagRequest, Empty> deleteTagSettings() {
     return deleteTagSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRule. */
+  public UnaryCallSettings<CreateRuleRequest, Rule> createRuleSettings() {
+    return createRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRules. */
+  public PagedCallSettings<ListRulesRequest, ListRulesResponse, ListRulesPagedResponse>
+      listRulesSettings() {
+    return listRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRule. */
+  public UnaryCallSettings<GetRuleRequest, Rule> getRuleSettings() {
+    return getRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRule. */
+  public UnaryCallSettings<UpdateRuleRequest, Rule> updateRuleSettings() {
+    return updateRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRule. */
+  public UnaryCallSettings<DeleteRuleRequest, Empty> deleteRuleSettings() {
+    return deleteRuleSettings;
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -1042,6 +1273,45 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return updateVPCSCConfigSettings;
   }
 
+  /** Returns the object with the settings used for calls to updatePackage. */
+  public UnaryCallSettings<UpdatePackageRequest, Package> updatePackageSettings() {
+    return updatePackageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAttachments. */
+  public PagedCallSettings<
+          ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
+      listAttachmentsSettings() {
+    return listAttachmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAttachment. */
+  public UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings() {
+    return getAttachmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAttachment. */
+  public UnaryCallSettings<CreateAttachmentRequest, Operation> createAttachmentSettings() {
+    return createAttachmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAttachment. */
+  public OperationCallSettings<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationSettings() {
+    return createAttachmentOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAttachment. */
+  public UnaryCallSettings<DeleteAttachmentRequest, Operation> deleteAttachmentSettings() {
+    return deleteAttachmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAttachment. */
+  public OperationCallSettings<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationSettings() {
+    return deleteAttachmentOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1069,12 +1339,19 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "artifactregistry";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "artifactregistry.googleapis.com:443";
   }
@@ -1113,7 +1390,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1122,7 +1398,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1188,13 +1463,25 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     getVersionSettings = settingsBuilder.getVersionSettings().build();
     deleteVersionSettings = settingsBuilder.deleteVersionSettings().build();
     deleteVersionOperationSettings = settingsBuilder.deleteVersionOperationSettings().build();
+    batchDeleteVersionsSettings = settingsBuilder.batchDeleteVersionsSettings().build();
+    batchDeleteVersionsOperationSettings =
+        settingsBuilder.batchDeleteVersionsOperationSettings().build();
+    updateVersionSettings = settingsBuilder.updateVersionSettings().build();
     listFilesSettings = settingsBuilder.listFilesSettings().build();
     getFileSettings = settingsBuilder.getFileSettings().build();
+    deleteFileSettings = settingsBuilder.deleteFileSettings().build();
+    deleteFileOperationSettings = settingsBuilder.deleteFileOperationSettings().build();
+    updateFileSettings = settingsBuilder.updateFileSettings().build();
     listTagsSettings = settingsBuilder.listTagsSettings().build();
     getTagSettings = settingsBuilder.getTagSettings().build();
     createTagSettings = settingsBuilder.createTagSettings().build();
     updateTagSettings = settingsBuilder.updateTagSettings().build();
     deleteTagSettings = settingsBuilder.deleteTagSettings().build();
+    createRuleSettings = settingsBuilder.createRuleSettings().build();
+    listRulesSettings = settingsBuilder.listRulesSettings().build();
+    getRuleSettings = settingsBuilder.getRuleSettings().build();
+    updateRuleSettings = settingsBuilder.updateRuleSettings().build();
+    deleteRuleSettings = settingsBuilder.deleteRuleSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -1202,6 +1489,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     updateProjectSettingsSettings = settingsBuilder.updateProjectSettingsSettings().build();
     getVPCSCConfigSettings = settingsBuilder.getVPCSCConfigSettings().build();
     updateVPCSCConfigSettings = settingsBuilder.updateVPCSCConfigSettings().build();
+    updatePackageSettings = settingsBuilder.updatePackageSettings().build();
+    listAttachmentsSettings = settingsBuilder.listAttachmentsSettings().build();
+    getAttachmentSettings = settingsBuilder.getAttachmentSettings().build();
+    createAttachmentSettings = settingsBuilder.createAttachmentSettings().build();
+    createAttachmentOperationSettings = settingsBuilder.createAttachmentOperationSettings().build();
+    deleteAttachmentSettings = settingsBuilder.deleteAttachmentSettings().build();
+    deleteAttachmentOperationSettings = settingsBuilder.deleteAttachmentOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1267,10 +1561,20 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     private final UnaryCallSettings.Builder<DeleteVersionRequest, Operation> deleteVersionSettings;
     private final OperationCallSettings.Builder<DeleteVersionRequest, Empty, OperationMetadata>
         deleteVersionOperationSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsSettings;
+    private final OperationCallSettings.Builder<
+            BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+        batchDeleteVersionsOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateVersionRequest, Version> updateVersionSettings;
     private final PagedCallSettings.Builder<
             ListFilesRequest, ListFilesResponse, ListFilesPagedResponse>
         listFilesSettings;
     private final UnaryCallSettings.Builder<GetFileRequest, File> getFileSettings;
+    private final UnaryCallSettings.Builder<DeleteFileRequest, Operation> deleteFileSettings;
+    private final OperationCallSettings.Builder<DeleteFileRequest, Empty, OperationMetadata>
+        deleteFileOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateFileRequest, File> updateFileSettings;
     private final PagedCallSettings.Builder<
             ListTagsRequest, ListTagsResponse, ListTagsPagedResponse>
         listTagsSettings;
@@ -1278,6 +1582,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     private final UnaryCallSettings.Builder<CreateTagRequest, Tag> createTagSettings;
     private final UnaryCallSettings.Builder<UpdateTagRequest, Tag> updateTagSettings;
     private final UnaryCallSettings.Builder<DeleteTagRequest, Empty> deleteTagSettings;
+    private final UnaryCallSettings.Builder<CreateRuleRequest, Rule> createRuleSettings;
+    private final PagedCallSettings.Builder<
+            ListRulesRequest, ListRulesResponse, ListRulesPagedResponse>
+        listRulesSettings;
+    private final UnaryCallSettings.Builder<GetRuleRequest, Rule> getRuleSettings;
+    private final UnaryCallSettings.Builder<UpdateRuleRequest, Rule> updateRuleSettings;
+    private final UnaryCallSettings.Builder<DeleteRuleRequest, Empty> deleteRuleSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -1290,6 +1601,20 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
         getVPCSCConfigSettings;
     private final UnaryCallSettings.Builder<UpdateVPCSCConfigRequest, VPCSCConfig>
         updateVPCSCConfigSettings;
+    private final UnaryCallSettings.Builder<UpdatePackageRequest, Package> updatePackageSettings;
+    private final PagedCallSettings.Builder<
+            ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
+        listAttachmentsSettings;
+    private final UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings;
+    private final UnaryCallSettings.Builder<CreateAttachmentRequest, Operation>
+        createAttachmentSettings;
+    private final OperationCallSettings.Builder<
+            CreateAttachmentRequest, Attachment, OperationMetadata>
+        createAttachmentOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAttachmentRequest, Operation>
+        deleteAttachmentSettings;
+    private final OperationCallSettings.Builder<DeleteAttachmentRequest, Empty, OperationMetadata>
+        deleteAttachmentOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1312,10 +1637,10 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1355,13 +1680,24 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       getVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteVersionOperationSettings = OperationCallSettings.newBuilder();
+      batchDeleteVersionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteVersionsOperationSettings = OperationCallSettings.newBuilder();
+      updateVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFilesSettings = PagedCallSettings.newBuilder(LIST_FILES_PAGE_STR_FACT);
       getFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFileOperationSettings = OperationCallSettings.newBuilder();
+      updateFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTagsSettings = PagedCallSettings.newBuilder(LIST_TAGS_PAGE_STR_FACT);
       getTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRulesSettings = PagedCallSettings.newBuilder(LIST_RULES_PAGE_STR_FACT);
+      getRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1369,6 +1705,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       updateProjectSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getVPCSCConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateVPCSCConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePackageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAttachmentsSettings = PagedCallSettings.newBuilder(LIST_ATTACHMENTS_PAGE_STR_FACT);
+      getAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAttachmentOperationSettings = OperationCallSettings.newBuilder();
+      deleteAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAttachmentOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1395,13 +1738,22 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               listVersionsSettings,
               getVersionSettings,
               deleteVersionSettings,
+              batchDeleteVersionsSettings,
+              updateVersionSettings,
               listFilesSettings,
               getFileSettings,
+              deleteFileSettings,
+              updateFileSettings,
               listTagsSettings,
               getTagSettings,
               createTagSettings,
               updateTagSettings,
               deleteTagSettings,
+              createRuleSettings,
+              listRulesSettings,
+              getRuleSettings,
+              updateRuleSettings,
+              deleteRuleSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings,
@@ -1409,6 +1761,11 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               updateProjectSettingsSettings,
               getVPCSCConfigSettings,
               updateVPCSCConfigSettings,
+              updatePackageSettings,
+              listAttachmentsSettings,
+              getAttachmentSettings,
+              createAttachmentSettings,
+              deleteAttachmentSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1446,13 +1803,25 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       getVersionSettings = settings.getVersionSettings.toBuilder();
       deleteVersionSettings = settings.deleteVersionSettings.toBuilder();
       deleteVersionOperationSettings = settings.deleteVersionOperationSettings.toBuilder();
+      batchDeleteVersionsSettings = settings.batchDeleteVersionsSettings.toBuilder();
+      batchDeleteVersionsOperationSettings =
+          settings.batchDeleteVersionsOperationSettings.toBuilder();
+      updateVersionSettings = settings.updateVersionSettings.toBuilder();
       listFilesSettings = settings.listFilesSettings.toBuilder();
       getFileSettings = settings.getFileSettings.toBuilder();
+      deleteFileSettings = settings.deleteFileSettings.toBuilder();
+      deleteFileOperationSettings = settings.deleteFileOperationSettings.toBuilder();
+      updateFileSettings = settings.updateFileSettings.toBuilder();
       listTagsSettings = settings.listTagsSettings.toBuilder();
       getTagSettings = settings.getTagSettings.toBuilder();
       createTagSettings = settings.createTagSettings.toBuilder();
       updateTagSettings = settings.updateTagSettings.toBuilder();
       deleteTagSettings = settings.deleteTagSettings.toBuilder();
+      createRuleSettings = settings.createRuleSettings.toBuilder();
+      listRulesSettings = settings.listRulesSettings.toBuilder();
+      getRuleSettings = settings.getRuleSettings.toBuilder();
+      updateRuleSettings = settings.updateRuleSettings.toBuilder();
+      deleteRuleSettings = settings.deleteRuleSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -1460,6 +1829,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       updateProjectSettingsSettings = settings.updateProjectSettingsSettings.toBuilder();
       getVPCSCConfigSettings = settings.getVPCSCConfigSettings.toBuilder();
       updateVPCSCConfigSettings = settings.updateVPCSCConfigSettings.toBuilder();
+      updatePackageSettings = settings.updatePackageSettings.toBuilder();
+      listAttachmentsSettings = settings.listAttachmentsSettings.toBuilder();
+      getAttachmentSettings = settings.getAttachmentSettings.toBuilder();
+      createAttachmentSettings = settings.createAttachmentSettings.toBuilder();
+      createAttachmentOperationSettings = settings.createAttachmentOperationSettings.toBuilder();
+      deleteAttachmentSettings = settings.deleteAttachmentSettings.toBuilder();
+      deleteAttachmentOperationSettings = settings.deleteAttachmentOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1486,13 +1862,22 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               listVersionsSettings,
               getVersionSettings,
               deleteVersionSettings,
+              batchDeleteVersionsSettings,
+              updateVersionSettings,
               listFilesSettings,
               getFileSettings,
+              deleteFileSettings,
+              updateFileSettings,
               listTagsSettings,
               getTagSettings,
               createTagSettings,
               updateTagSettings,
               deleteTagSettings,
+              createRuleSettings,
+              listRulesSettings,
+              getRuleSettings,
+              updateRuleSettings,
+              deleteRuleSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings,
@@ -1500,6 +1885,11 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
               updateProjectSettingsSettings,
               getVPCSCConfigSettings,
               updateVPCSCConfigSettings,
+              updatePackageSettings,
+              listAttachmentsSettings,
+              getAttachmentSettings,
+              createAttachmentSettings,
+              deleteAttachmentSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1510,7 +1900,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1523,7 +1912,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1637,12 +2025,32 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .batchDeleteVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .listFilesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .getFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateFileSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1668,6 +2076,31 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
 
       builder
           .deleteTagSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteRuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1707,6 +2140,31 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .updatePackageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listAttachmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getAttachmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createAttachmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteAttachmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -1733,13 +2191,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1759,13 +2217,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1783,13 +2241,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1807,13 +2265,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1831,13 +2289,13 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1855,13 +2313,109 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .batchDeleteVersionsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteVersionsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  BatchDeleteVersionsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteFileOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteFileRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createAttachmentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAttachmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Attachment.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAttachmentOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAttachmentRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1939,8 +2493,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to importAptArtifacts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
         importAptArtifactsOperationSettings() {
@@ -1954,8 +2506,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to importYumArtifacts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
         importYumArtifactsOperationSettings() {
@@ -1981,8 +2531,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to createRepository. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRepositoryRequest, Repository, OperationMetadata>
         createRepositoryOperationSettings() {
       return createRepositoryOperationSettings;
@@ -2001,8 +2549,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to deleteRepository. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRepositoryRequest, Empty, OperationMetadata>
         deleteRepositoryOperationSettings() {
       return deleteRepositoryOperationSettings;
@@ -2026,8 +2572,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to deletePackage. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePackageRequest, Empty, OperationMetadata>
         deletePackageOperationSettings() {
       return deletePackageOperationSettings;
@@ -2051,11 +2595,27 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to deleteVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteVersionRequest, Empty, OperationMetadata>
         deleteVersionOperationSettings() {
       return deleteVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteVersions. */
+    public UnaryCallSettings.Builder<BatchDeleteVersionsRequest, Operation>
+        batchDeleteVersionsSettings() {
+      return batchDeleteVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteVersions. */
+    public OperationCallSettings.Builder<
+            BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+        batchDeleteVersionsOperationSettings() {
+      return batchDeleteVersionsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateVersion. */
+    public UnaryCallSettings.Builder<UpdateVersionRequest, Version> updateVersionSettings() {
+      return updateVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to listFiles. */
@@ -2067,6 +2627,22 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     /** Returns the builder for the settings used for calls to getFile. */
     public UnaryCallSettings.Builder<GetFileRequest, File> getFileSettings() {
       return getFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFile. */
+    public UnaryCallSettings.Builder<DeleteFileRequest, Operation> deleteFileSettings() {
+      return deleteFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFile. */
+    public OperationCallSettings.Builder<DeleteFileRequest, Empty, OperationMetadata>
+        deleteFileOperationSettings() {
+      return deleteFileOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateFile. */
+    public UnaryCallSettings.Builder<UpdateFileRequest, File> updateFileSettings() {
+      return updateFileSettings;
     }
 
     /** Returns the builder for the settings used for calls to listTags. */
@@ -2093,6 +2669,32 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     /** Returns the builder for the settings used for calls to deleteTag. */
     public UnaryCallSettings.Builder<DeleteTagRequest, Empty> deleteTagSettings() {
       return deleteTagSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRule. */
+    public UnaryCallSettings.Builder<CreateRuleRequest, Rule> createRuleSettings() {
+      return createRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRules. */
+    public PagedCallSettings.Builder<ListRulesRequest, ListRulesResponse, ListRulesPagedResponse>
+        listRulesSettings() {
+      return listRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRule. */
+    public UnaryCallSettings.Builder<GetRuleRequest, Rule> getRuleSettings() {
+      return getRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRule. */
+    public UnaryCallSettings.Builder<UpdateRuleRequest, Rule> updateRuleSettings() {
+      return updateRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRule. */
+    public UnaryCallSettings.Builder<DeleteRuleRequest, Empty> deleteRuleSettings() {
+      return deleteRuleSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */
@@ -2132,6 +2734,47 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     public UnaryCallSettings.Builder<UpdateVPCSCConfigRequest, VPCSCConfig>
         updateVPCSCConfigSettings() {
       return updateVPCSCConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePackage. */
+    public UnaryCallSettings.Builder<UpdatePackageRequest, Package> updatePackageSettings() {
+      return updatePackageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAttachments. */
+    public PagedCallSettings.Builder<
+            ListAttachmentsRequest, ListAttachmentsResponse, ListAttachmentsPagedResponse>
+        listAttachmentsSettings() {
+      return listAttachmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAttachment. */
+    public UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings() {
+      return getAttachmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAttachment. */
+    public UnaryCallSettings.Builder<CreateAttachmentRequest, Operation>
+        createAttachmentSettings() {
+      return createAttachmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAttachment. */
+    public OperationCallSettings.Builder<CreateAttachmentRequest, Attachment, OperationMetadata>
+        createAttachmentOperationSettings() {
+      return createAttachmentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAttachment. */
+    public UnaryCallSettings.Builder<DeleteAttachmentRequest, Operation>
+        deleteAttachmentSettings() {
+      return deleteAttachmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAttachment. */
+    public OperationCallSettings.Builder<DeleteAttachmentRequest, Empty, OperationMetadata>
+        deleteAttachmentOperationSettings() {
+      return deleteAttachmentOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

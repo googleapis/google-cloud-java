@@ -10,11 +10,26 @@
         "grpc": {
           "libraryClient": "ArtifactRegistryClient",
           "rpcs": {
+            "BatchDeleteVersions": {
+              "methods": ["batchDeleteVersionsAsync", "batchDeleteVersionsAsync", "batchDeleteVersionsAsync", "batchDeleteVersionsOperationCallable", "batchDeleteVersionsCallable"]
+            },
+            "CreateAttachment": {
+              "methods": ["createAttachmentAsync", "createAttachmentAsync", "createAttachmentAsync", "createAttachmentOperationCallable", "createAttachmentCallable"]
+            },
             "CreateRepository": {
               "methods": ["createRepositoryAsync", "createRepositoryAsync", "createRepositoryAsync", "createRepositoryOperationCallable", "createRepositoryCallable"]
             },
+            "CreateRule": {
+              "methods": ["createRule", "createRule", "createRule", "createRuleCallable"]
+            },
             "CreateTag": {
               "methods": ["createTag", "createTag", "createTagCallable"]
+            },
+            "DeleteAttachment": {
+              "methods": ["deleteAttachmentAsync", "deleteAttachmentAsync", "deleteAttachmentAsync", "deleteAttachmentOperationCallable", "deleteAttachmentCallable"]
+            },
+            "DeleteFile": {
+              "methods": ["deleteFileAsync", "deleteFileAsync", "deleteFileAsync", "deleteFileOperationCallable", "deleteFileCallable"]
             },
             "DeletePackage": {
               "methods": ["deletePackageAsync", "deletePackageAsync", "deletePackageAsync", "deletePackageOperationCallable", "deletePackageCallable"]
@@ -22,11 +37,17 @@
             "DeleteRepository": {
               "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
             },
+            "DeleteRule": {
+              "methods": ["deleteRule", "deleteRule", "deleteRule", "deleteRuleCallable"]
+            },
             "DeleteTag": {
               "methods": ["deleteTag", "deleteTag", "deleteTagCallable"]
             },
             "DeleteVersion": {
               "methods": ["deleteVersionAsync", "deleteVersionAsync", "deleteVersionOperationCallable", "deleteVersionCallable"]
+            },
+            "GetAttachment": {
+              "methods": ["getAttachment", "getAttachment", "getAttachment", "getAttachmentCallable"]
             },
             "GetDockerImage": {
               "methods": ["getDockerImage", "getDockerImage", "getDockerImage", "getDockerImageCallable"]
@@ -58,6 +79,9 @@
             "GetRepository": {
               "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
             },
+            "GetRule": {
+              "methods": ["getRule", "getRule", "getRule", "getRuleCallable"]
+            },
             "GetTag": {
               "methods": ["getTag", "getTag", "getTagCallable"]
             },
@@ -72,6 +96,9 @@
             },
             "ImportYumArtifacts": {
               "methods": ["importYumArtifactsAsync", "importYumArtifactsOperationCallable", "importYumArtifactsCallable"]
+            },
+            "ListAttachments": {
+              "methods": ["listAttachments", "listAttachments", "listAttachments", "listAttachmentsPagedCallable", "listAttachmentsCallable"]
             },
             "ListDockerImages": {
               "methods": ["listDockerImages", "listDockerImages", "listDockerImagesPagedCallable", "listDockerImagesCallable"]
@@ -97,6 +124,9 @@
             "ListRepositories": {
               "methods": ["listRepositories", "listRepositories", "listRepositories", "listRepositoriesPagedCallable", "listRepositoriesCallable"]
             },
+            "ListRules": {
+              "methods": ["listRules", "listRules", "listRules", "listRulesPagedCallable", "listRulesCallable"]
+            },
             "ListTags": {
               "methods": ["listTags", "listTags", "listTagsPagedCallable", "listTagsCallable"]
             },
@@ -109,17 +139,29 @@
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
+            "UpdateFile": {
+              "methods": ["updateFile", "updateFile", "updateFileCallable"]
+            },
+            "UpdatePackage": {
+              "methods": ["updatePackage", "updatePackage", "updatePackageCallable"]
+            },
             "UpdateProjectSettings": {
               "methods": ["updateProjectSettings", "updateProjectSettings", "updateProjectSettingsCallable"]
             },
             "UpdateRepository": {
               "methods": ["updateRepository", "updateRepository", "updateRepositoryCallable"]
             },
+            "UpdateRule": {
+              "methods": ["updateRule", "updateRule", "updateRuleCallable"]
+            },
             "UpdateTag": {
               "methods": ["updateTag", "updateTag", "updateTagCallable"]
             },
             "UpdateVPCSCConfig": {
               "methods": ["updateVPCSCConfig", "updateVPCSCConfig", "updateVPCSCConfigCallable"]
+            },
+            "UpdateVersion": {
+              "methods": ["updateVersion", "updateVersion", "updateVersionCallable"]
             }
           }
         }

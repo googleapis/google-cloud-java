@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,6 +248,103 @@ public final class NetAppGrpc {
       }
     }
     return getDeleteStoragePoolMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+          com.google.longrunning.Operation>
+      getValidateDirectoryServiceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ValidateDirectoryService",
+      requestType = com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+          com.google.longrunning.Operation>
+      getValidateDirectoryServiceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+            com.google.longrunning.Operation>
+        getValidateDirectoryServiceMethod;
+    if ((getValidateDirectoryServiceMethod = NetAppGrpc.getValidateDirectoryServiceMethod)
+        == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getValidateDirectoryServiceMethod = NetAppGrpc.getValidateDirectoryServiceMethod)
+            == null) {
+          NetAppGrpc.getValidateDirectoryServiceMethod =
+              getValidateDirectoryServiceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ValidateDirectoryService"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetAppMethodDescriptorSupplier("ValidateDirectoryService"))
+                      .build();
+        }
+      }
+    }
+    return getValidateDirectoryServiceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+          com.google.longrunning.Operation>
+      getSwitchActiveReplicaZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SwitchActiveReplicaZone",
+      requestType = com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+          com.google.longrunning.Operation>
+      getSwitchActiveReplicaZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+            com.google.longrunning.Operation>
+        getSwitchActiveReplicaZoneMethod;
+    if ((getSwitchActiveReplicaZoneMethod = NetAppGrpc.getSwitchActiveReplicaZoneMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getSwitchActiveReplicaZoneMethod = NetAppGrpc.getSwitchActiveReplicaZoneMethod)
+            == null) {
+          NetAppGrpc.getSwitchActiveReplicaZoneMethod =
+              getSwitchActiveReplicaZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SwitchActiveReplicaZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new NetAppMethodDescriptorSupplier("SwitchActiveReplicaZone"))
+                      .build();
+        }
+      }
+    }
+    return getSwitchActiveReplicaZoneMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1588,6 +1685,943 @@ public final class NetAppGrpc {
     return getReverseReplicationDirectionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+      getEstablishPeeringMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EstablishPeering",
+      requestType = com.google.cloud.netapp.v1.EstablishPeeringRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+      getEstablishPeeringMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.EstablishPeeringRequest, com.google.longrunning.Operation>
+        getEstablishPeeringMethod;
+    if ((getEstablishPeeringMethod = NetAppGrpc.getEstablishPeeringMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getEstablishPeeringMethod = NetAppGrpc.getEstablishPeeringMethod) == null) {
+          NetAppGrpc.getEstablishPeeringMethod =
+              getEstablishPeeringMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.EstablishPeeringRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EstablishPeering"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.EstablishPeeringRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("EstablishPeering"))
+                      .build();
+        }
+      }
+    }
+    return getEstablishPeeringMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+      getSyncReplicationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SyncReplication",
+      requestType = com.google.cloud.netapp.v1.SyncReplicationRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+      getSyncReplicationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.SyncReplicationRequest, com.google.longrunning.Operation>
+        getSyncReplicationMethod;
+    if ((getSyncReplicationMethod = NetAppGrpc.getSyncReplicationMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getSyncReplicationMethod = NetAppGrpc.getSyncReplicationMethod) == null) {
+          NetAppGrpc.getSyncReplicationMethod =
+              getSyncReplicationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.SyncReplicationRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SyncReplication"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.SyncReplicationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("SyncReplication"))
+                      .build();
+        }
+      }
+    }
+    return getSyncReplicationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateBackupVaultRequest, com.google.longrunning.Operation>
+      getCreateBackupVaultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBackupVault",
+      requestType = com.google.cloud.netapp.v1.CreateBackupVaultRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateBackupVaultRequest, com.google.longrunning.Operation>
+      getCreateBackupVaultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.CreateBackupVaultRequest, com.google.longrunning.Operation>
+        getCreateBackupVaultMethod;
+    if ((getCreateBackupVaultMethod = NetAppGrpc.getCreateBackupVaultMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getCreateBackupVaultMethod = NetAppGrpc.getCreateBackupVaultMethod) == null) {
+          NetAppGrpc.getCreateBackupVaultMethod =
+              getCreateBackupVaultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.CreateBackupVaultRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBackupVault"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.CreateBackupVaultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("CreateBackupVault"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBackupVaultMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetBackupVaultRequest, com.google.cloud.netapp.v1.BackupVault>
+      getGetBackupVaultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupVault",
+      requestType = com.google.cloud.netapp.v1.GetBackupVaultRequest.class,
+      responseType = com.google.cloud.netapp.v1.BackupVault.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetBackupVaultRequest, com.google.cloud.netapp.v1.BackupVault>
+      getGetBackupVaultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.GetBackupVaultRequest,
+            com.google.cloud.netapp.v1.BackupVault>
+        getGetBackupVaultMethod;
+    if ((getGetBackupVaultMethod = NetAppGrpc.getGetBackupVaultMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getGetBackupVaultMethod = NetAppGrpc.getGetBackupVaultMethod) == null) {
+          NetAppGrpc.getGetBackupVaultMethod =
+              getGetBackupVaultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.GetBackupVaultRequest,
+                          com.google.cloud.netapp.v1.BackupVault>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBackupVault"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.GetBackupVaultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.BackupVault.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("GetBackupVault"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupVaultMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListBackupVaultsRequest,
+          com.google.cloud.netapp.v1.ListBackupVaultsResponse>
+      getListBackupVaultsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackupVaults",
+      requestType = com.google.cloud.netapp.v1.ListBackupVaultsRequest.class,
+      responseType = com.google.cloud.netapp.v1.ListBackupVaultsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListBackupVaultsRequest,
+          com.google.cloud.netapp.v1.ListBackupVaultsResponse>
+      getListBackupVaultsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ListBackupVaultsRequest,
+            com.google.cloud.netapp.v1.ListBackupVaultsResponse>
+        getListBackupVaultsMethod;
+    if ((getListBackupVaultsMethod = NetAppGrpc.getListBackupVaultsMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getListBackupVaultsMethod = NetAppGrpc.getListBackupVaultsMethod) == null) {
+          NetAppGrpc.getListBackupVaultsMethod =
+              getListBackupVaultsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ListBackupVaultsRequest,
+                          com.google.cloud.netapp.v1.ListBackupVaultsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackupVaults"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListBackupVaultsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListBackupVaultsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("ListBackupVaults"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupVaultsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateBackupVaultRequest, com.google.longrunning.Operation>
+      getUpdateBackupVaultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBackupVault",
+      requestType = com.google.cloud.netapp.v1.UpdateBackupVaultRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateBackupVaultRequest, com.google.longrunning.Operation>
+      getUpdateBackupVaultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.UpdateBackupVaultRequest, com.google.longrunning.Operation>
+        getUpdateBackupVaultMethod;
+    if ((getUpdateBackupVaultMethod = NetAppGrpc.getUpdateBackupVaultMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getUpdateBackupVaultMethod = NetAppGrpc.getUpdateBackupVaultMethod) == null) {
+          NetAppGrpc.getUpdateBackupVaultMethod =
+              getUpdateBackupVaultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.UpdateBackupVaultRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBackupVault"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.UpdateBackupVaultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("UpdateBackupVault"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupVaultMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteBackupVaultRequest, com.google.longrunning.Operation>
+      getDeleteBackupVaultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBackupVault",
+      requestType = com.google.cloud.netapp.v1.DeleteBackupVaultRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteBackupVaultRequest, com.google.longrunning.Operation>
+      getDeleteBackupVaultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.DeleteBackupVaultRequest, com.google.longrunning.Operation>
+        getDeleteBackupVaultMethod;
+    if ((getDeleteBackupVaultMethod = NetAppGrpc.getDeleteBackupVaultMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getDeleteBackupVaultMethod = NetAppGrpc.getDeleteBackupVaultMethod) == null) {
+          NetAppGrpc.getDeleteBackupVaultMethod =
+              getDeleteBackupVaultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.DeleteBackupVaultRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBackupVault"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.DeleteBackupVaultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("DeleteBackupVault"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBackupVaultMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateBackupRequest, com.google.longrunning.Operation>
+      getCreateBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBackup",
+      requestType = com.google.cloud.netapp.v1.CreateBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateBackupRequest, com.google.longrunning.Operation>
+      getCreateBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.CreateBackupRequest, com.google.longrunning.Operation>
+        getCreateBackupMethod;
+    if ((getCreateBackupMethod = NetAppGrpc.getCreateBackupMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getCreateBackupMethod = NetAppGrpc.getCreateBackupMethod) == null) {
+          NetAppGrpc.getCreateBackupMethod =
+              getCreateBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.CreateBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.CreateBackupRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("CreateBackup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetBackupRequest, com.google.cloud.netapp.v1.Backup>
+      getGetBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackup",
+      requestType = com.google.cloud.netapp.v1.GetBackupRequest.class,
+      responseType = com.google.cloud.netapp.v1.Backup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetBackupRequest, com.google.cloud.netapp.v1.Backup>
+      getGetBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.GetBackupRequest, com.google.cloud.netapp.v1.Backup>
+        getGetBackupMethod;
+    if ((getGetBackupMethod = NetAppGrpc.getGetBackupMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getGetBackupMethod = NetAppGrpc.getGetBackupMethod) == null) {
+          NetAppGrpc.getGetBackupMethod =
+              getGetBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.GetBackupRequest,
+                          com.google.cloud.netapp.v1.Backup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.GetBackupRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.Backup.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("GetBackup"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListBackupsRequest,
+          com.google.cloud.netapp.v1.ListBackupsResponse>
+      getListBackupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackups",
+      requestType = com.google.cloud.netapp.v1.ListBackupsRequest.class,
+      responseType = com.google.cloud.netapp.v1.ListBackupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListBackupsRequest,
+          com.google.cloud.netapp.v1.ListBackupsResponse>
+      getListBackupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ListBackupsRequest,
+            com.google.cloud.netapp.v1.ListBackupsResponse>
+        getListBackupsMethod;
+    if ((getListBackupsMethod = NetAppGrpc.getListBackupsMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getListBackupsMethod = NetAppGrpc.getListBackupsMethod) == null) {
+          NetAppGrpc.getListBackupsMethod =
+              getListBackupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ListBackupsRequest,
+                          com.google.cloud.netapp.v1.ListBackupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListBackupsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListBackupsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("ListBackups"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteBackupRequest, com.google.longrunning.Operation>
+      getDeleteBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBackup",
+      requestType = com.google.cloud.netapp.v1.DeleteBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteBackupRequest, com.google.longrunning.Operation>
+      getDeleteBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.DeleteBackupRequest, com.google.longrunning.Operation>
+        getDeleteBackupMethod;
+    if ((getDeleteBackupMethod = NetAppGrpc.getDeleteBackupMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getDeleteBackupMethod = NetAppGrpc.getDeleteBackupMethod) == null) {
+          NetAppGrpc.getDeleteBackupMethod =
+              getDeleteBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.DeleteBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.DeleteBackupRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("DeleteBackup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateBackupRequest, com.google.longrunning.Operation>
+      getUpdateBackupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBackup",
+      requestType = com.google.cloud.netapp.v1.UpdateBackupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateBackupRequest, com.google.longrunning.Operation>
+      getUpdateBackupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.UpdateBackupRequest, com.google.longrunning.Operation>
+        getUpdateBackupMethod;
+    if ((getUpdateBackupMethod = NetAppGrpc.getUpdateBackupMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getUpdateBackupMethod = NetAppGrpc.getUpdateBackupMethod) == null) {
+          NetAppGrpc.getUpdateBackupMethod =
+              getUpdateBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.UpdateBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.UpdateBackupRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("UpdateBackup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateBackupPolicyRequest, com.google.longrunning.Operation>
+      getCreateBackupPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBackupPolicy",
+      requestType = com.google.cloud.netapp.v1.CreateBackupPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateBackupPolicyRequest, com.google.longrunning.Operation>
+      getCreateBackupPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.CreateBackupPolicyRequest, com.google.longrunning.Operation>
+        getCreateBackupPolicyMethod;
+    if ((getCreateBackupPolicyMethod = NetAppGrpc.getCreateBackupPolicyMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getCreateBackupPolicyMethod = NetAppGrpc.getCreateBackupPolicyMethod) == null) {
+          NetAppGrpc.getCreateBackupPolicyMethod =
+              getCreateBackupPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.CreateBackupPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBackupPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.CreateBackupPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("CreateBackupPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBackupPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetBackupPolicyRequest,
+          com.google.cloud.netapp.v1.BackupPolicy>
+      getGetBackupPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupPolicy",
+      requestType = com.google.cloud.netapp.v1.GetBackupPolicyRequest.class,
+      responseType = com.google.cloud.netapp.v1.BackupPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetBackupPolicyRequest,
+          com.google.cloud.netapp.v1.BackupPolicy>
+      getGetBackupPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.GetBackupPolicyRequest,
+            com.google.cloud.netapp.v1.BackupPolicy>
+        getGetBackupPolicyMethod;
+    if ((getGetBackupPolicyMethod = NetAppGrpc.getGetBackupPolicyMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getGetBackupPolicyMethod = NetAppGrpc.getGetBackupPolicyMethod) == null) {
+          NetAppGrpc.getGetBackupPolicyMethod =
+              getGetBackupPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.GetBackupPolicyRequest,
+                          com.google.cloud.netapp.v1.BackupPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBackupPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.GetBackupPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.BackupPolicy.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("GetBackupPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListBackupPoliciesRequest,
+          com.google.cloud.netapp.v1.ListBackupPoliciesResponse>
+      getListBackupPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackupPolicies",
+      requestType = com.google.cloud.netapp.v1.ListBackupPoliciesRequest.class,
+      responseType = com.google.cloud.netapp.v1.ListBackupPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListBackupPoliciesRequest,
+          com.google.cloud.netapp.v1.ListBackupPoliciesResponse>
+      getListBackupPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ListBackupPoliciesRequest,
+            com.google.cloud.netapp.v1.ListBackupPoliciesResponse>
+        getListBackupPoliciesMethod;
+    if ((getListBackupPoliciesMethod = NetAppGrpc.getListBackupPoliciesMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getListBackupPoliciesMethod = NetAppGrpc.getListBackupPoliciesMethod) == null) {
+          NetAppGrpc.getListBackupPoliciesMethod =
+              getListBackupPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ListBackupPoliciesRequest,
+                          com.google.cloud.netapp.v1.ListBackupPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackupPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListBackupPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListBackupPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("ListBackupPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateBackupPolicyRequest, com.google.longrunning.Operation>
+      getUpdateBackupPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBackupPolicy",
+      requestType = com.google.cloud.netapp.v1.UpdateBackupPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateBackupPolicyRequest, com.google.longrunning.Operation>
+      getUpdateBackupPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.UpdateBackupPolicyRequest, com.google.longrunning.Operation>
+        getUpdateBackupPolicyMethod;
+    if ((getUpdateBackupPolicyMethod = NetAppGrpc.getUpdateBackupPolicyMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getUpdateBackupPolicyMethod = NetAppGrpc.getUpdateBackupPolicyMethod) == null) {
+          NetAppGrpc.getUpdateBackupPolicyMethod =
+              getUpdateBackupPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.UpdateBackupPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBackupPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.UpdateBackupPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("UpdateBackupPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteBackupPolicyRequest, com.google.longrunning.Operation>
+      getDeleteBackupPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBackupPolicy",
+      requestType = com.google.cloud.netapp.v1.DeleteBackupPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteBackupPolicyRequest, com.google.longrunning.Operation>
+      getDeleteBackupPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.DeleteBackupPolicyRequest, com.google.longrunning.Operation>
+        getDeleteBackupPolicyMethod;
+    if ((getDeleteBackupPolicyMethod = NetAppGrpc.getDeleteBackupPolicyMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getDeleteBackupPolicyMethod = NetAppGrpc.getDeleteBackupPolicyMethod) == null) {
+          NetAppGrpc.getDeleteBackupPolicyMethod =
+              getDeleteBackupPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.DeleteBackupPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBackupPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.DeleteBackupPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("DeleteBackupPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBackupPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+          com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+      getListQuotaRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListQuotaRules",
+      requestType = com.google.cloud.netapp.v1.ListQuotaRulesRequest.class,
+      responseType = com.google.cloud.netapp.v1.ListQuotaRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+          com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+      getListQuotaRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+            com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+        getListQuotaRulesMethod;
+    if ((getListQuotaRulesMethod = NetAppGrpc.getListQuotaRulesMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getListQuotaRulesMethod = NetAppGrpc.getListQuotaRulesMethod) == null) {
+          NetAppGrpc.getListQuotaRulesMethod =
+              getListQuotaRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+                          com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListQuotaRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListQuotaRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListQuotaRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("ListQuotaRules"))
+                      .build();
+        }
+      }
+    }
+    return getListQuotaRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetQuotaRuleRequest, com.google.cloud.netapp.v1.QuotaRule>
+      getGetQuotaRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetQuotaRule",
+      requestType = com.google.cloud.netapp.v1.GetQuotaRuleRequest.class,
+      responseType = com.google.cloud.netapp.v1.QuotaRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetQuotaRuleRequest, com.google.cloud.netapp.v1.QuotaRule>
+      getGetQuotaRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.GetQuotaRuleRequest, com.google.cloud.netapp.v1.QuotaRule>
+        getGetQuotaRuleMethod;
+    if ((getGetQuotaRuleMethod = NetAppGrpc.getGetQuotaRuleMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getGetQuotaRuleMethod = NetAppGrpc.getGetQuotaRuleMethod) == null) {
+          NetAppGrpc.getGetQuotaRuleMethod =
+              getGetQuotaRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.GetQuotaRuleRequest,
+                          com.google.cloud.netapp.v1.QuotaRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetQuotaRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.GetQuotaRuleRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.QuotaRule.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("GetQuotaRule"))
+                      .build();
+        }
+      }
+    }
+    return getGetQuotaRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateQuotaRuleRequest, com.google.longrunning.Operation>
+      getCreateQuotaRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateQuotaRule",
+      requestType = com.google.cloud.netapp.v1.CreateQuotaRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.CreateQuotaRuleRequest, com.google.longrunning.Operation>
+      getCreateQuotaRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.CreateQuotaRuleRequest, com.google.longrunning.Operation>
+        getCreateQuotaRuleMethod;
+    if ((getCreateQuotaRuleMethod = NetAppGrpc.getCreateQuotaRuleMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getCreateQuotaRuleMethod = NetAppGrpc.getCreateQuotaRuleMethod) == null) {
+          NetAppGrpc.getCreateQuotaRuleMethod =
+              getCreateQuotaRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.CreateQuotaRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateQuotaRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.CreateQuotaRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("CreateQuotaRule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateQuotaRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateQuotaRuleRequest, com.google.longrunning.Operation>
+      getUpdateQuotaRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateQuotaRule",
+      requestType = com.google.cloud.netapp.v1.UpdateQuotaRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateQuotaRuleRequest, com.google.longrunning.Operation>
+      getUpdateQuotaRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.UpdateQuotaRuleRequest, com.google.longrunning.Operation>
+        getUpdateQuotaRuleMethod;
+    if ((getUpdateQuotaRuleMethod = NetAppGrpc.getUpdateQuotaRuleMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getUpdateQuotaRuleMethod = NetAppGrpc.getUpdateQuotaRuleMethod) == null) {
+          NetAppGrpc.getUpdateQuotaRuleMethod =
+              getUpdateQuotaRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.UpdateQuotaRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateQuotaRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.UpdateQuotaRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("UpdateQuotaRule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateQuotaRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteQuotaRuleRequest, com.google.longrunning.Operation>
+      getDeleteQuotaRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteQuotaRule",
+      requestType = com.google.cloud.netapp.v1.DeleteQuotaRuleRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.DeleteQuotaRuleRequest, com.google.longrunning.Operation>
+      getDeleteQuotaRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.DeleteQuotaRuleRequest, com.google.longrunning.Operation>
+        getDeleteQuotaRuleMethod;
+    if ((getDeleteQuotaRuleMethod = NetAppGrpc.getDeleteQuotaRuleMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getDeleteQuotaRuleMethod = NetAppGrpc.getDeleteQuotaRuleMethod) == null) {
+          NetAppGrpc.getDeleteQuotaRuleMethod =
+              getDeleteQuotaRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.DeleteQuotaRuleRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteQuotaRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.DeleteQuotaRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("DeleteQuotaRule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteQuotaRuleMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static NetAppStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<NetAppStub> factory =
@@ -1598,6 +2632,19 @@ public final class NetAppGrpc {
           }
         };
     return NetAppStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NetAppBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NetAppBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NetAppBlockingV2Stub>() {
+          @java.lang.Override
+          public NetAppBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NetAppBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NetAppBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1706,6 +2753,36 @@ public final class NetAppGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteStoragePoolMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    default void validateDirectoryService(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getValidateDirectoryServiceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    default void switchActiveReplicaZone(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSwitchActiveReplicaZoneMethod(), responseObserver);
     }
 
     /**
@@ -2151,6 +3228,321 @@ public final class NetAppGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getReverseReplicationDirectionMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    default void establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEstablishPeeringMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    default void syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSyncReplicationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup vault
+     * </pre>
+     */
+    default void createBackupVault(
+        com.google.cloud.netapp.v1.CreateBackupVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateBackupVaultMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup vault
+     * </pre>
+     */
+    default void getBackupVault(
+        com.google.cloud.netapp.v1.GetBackupVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.BackupVault> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupVaultMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup vaults.
+     * </pre>
+     */
+    default void listBackupVaults(
+        com.google.cloud.netapp.v1.ListBackupVaultsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupVaultsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupVaultsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific backup vault.
+     * </pre>
+     */
+    default void updateBackupVault(
+        com.google.cloud.netapp.v1.UpdateBackupVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBackupVaultMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup vault.
+     * </pre>
+     */
+    default void deleteBackupVault(
+        com.google.cloud.netapp.v1.DeleteBackupVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBackupVaultMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a backup from the volume specified in the request
+     * The backup can be created from the given snapshot if specified in the
+     * request. If no snapshot specified, there'll be a new snapshot taken to
+     * initiate the backup creation.
+     * </pre>
+     */
+    default void createBackup(
+        com.google.cloud.netapp.v1.CreateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup
+     * </pre>
+     */
+    default void getBackup(
+        com.google.cloud.netapp.v1.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.Backup> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all backups for a backupVault.
+     * </pre>
+     */
+    default void listBackups(
+        com.google.cloud.netapp.v1.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup.
+     * </pre>
+     */
+    default void deleteBackup(
+        com.google.cloud.netapp.v1.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update backup with full spec.
+     * </pre>
+     */
+    default void updateBackup(
+        com.google.cloud.netapp.v1.UpdateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBackupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup policy
+     * </pre>
+     */
+    default void createBackupPolicy(
+        com.google.cloud.netapp.v1.CreateBackupPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateBackupPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup policy by backup_policy_id.
+     * </pre>
+     */
+    default void getBackupPolicy(
+        com.google.cloud.netapp.v1.GetBackupPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.BackupPolicy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup policies.
+     * </pre>
+     */
+    default void listBackupPolicies(
+        com.google.cloud.netapp.v1.ListBackupPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates settings of a specific backup policy.
+     * </pre>
+     */
+    default void updateBackupPolicy(
+        com.google.cloud.netapp.v1.UpdateBackupPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBackupPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup policy.
+     * </pre>
+     */
+    default void deleteBackupPolicy(
+        com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBackupPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    default void listQuotaRules(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListQuotaRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    default void getQuotaRule(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.QuotaRule> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetQuotaRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    default void createQuotaRule(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateQuotaRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    default void updateQuotaRule(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateQuotaRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    default void deleteQuotaRule(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteQuotaRuleMethod(), responseObserver);
+    }
   }
 
   /**
@@ -2262,6 +3654,40 @@ public final class NetAppGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteStoragePoolMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    public void validateDirectoryService(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getValidateDirectoryServiceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    public void switchActiveReplicaZone(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSwitchActiveReplicaZoneMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2770,6 +4196,364 @@ public final class NetAppGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public void establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEstablishPeeringMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public void syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSyncReplicationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup vault
+     * </pre>
+     */
+    public void createBackupVault(
+        com.google.cloud.netapp.v1.CreateBackupVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBackupVaultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup vault
+     * </pre>
+     */
+    public void getBackupVault(
+        com.google.cloud.netapp.v1.GetBackupVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.BackupVault> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupVaultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup vaults.
+     * </pre>
+     */
+    public void listBackupVaults(
+        com.google.cloud.netapp.v1.ListBackupVaultsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupVaultsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupVaultsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific backup vault.
+     * </pre>
+     */
+    public void updateBackupVault(
+        com.google.cloud.netapp.v1.UpdateBackupVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupVaultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup vault.
+     * </pre>
+     */
+    public void deleteBackupVault(
+        com.google.cloud.netapp.v1.DeleteBackupVaultRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupVaultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a backup from the volume specified in the request
+     * The backup can be created from the given snapshot if specified in the
+     * request. If no snapshot specified, there'll be a new snapshot taken to
+     * initiate the backup creation.
+     * </pre>
+     */
+    public void createBackup(
+        com.google.cloud.netapp.v1.CreateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBackupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup
+     * </pre>
+     */
+    public void getBackup(
+        com.google.cloud.netapp.v1.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.Backup> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all backups for a backupVault.
+     * </pre>
+     */
+    public void listBackups(
+        com.google.cloud.netapp.v1.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup.
+     * </pre>
+     */
+    public void deleteBackup(
+        com.google.cloud.netapp.v1.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update backup with full spec.
+     * </pre>
+     */
+    public void updateBackup(
+        com.google.cloud.netapp.v1.UpdateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup policy
+     * </pre>
+     */
+    public void createBackupPolicy(
+        com.google.cloud.netapp.v1.CreateBackupPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBackupPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup policy by backup_policy_id.
+     * </pre>
+     */
+    public void getBackupPolicy(
+        com.google.cloud.netapp.v1.GetBackupPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.BackupPolicy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup policies.
+     * </pre>
+     */
+    public void listBackupPolicies(
+        com.google.cloud.netapp.v1.ListBackupPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates settings of a specific backup policy.
+     * </pre>
+     */
+    public void updateBackupPolicy(
+        com.google.cloud.netapp.v1.UpdateBackupPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup policy.
+     * </pre>
+     */
+    public void deleteBackupPolicy(
+        com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    public void listQuotaRules(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListQuotaRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    public void getQuotaRule(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.QuotaRule> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetQuotaRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    public void createQuotaRule(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateQuotaRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    public void updateQuotaRule(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateQuotaRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    public void deleteQuotaRule(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteQuotaRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2779,15 +4563,15 @@ public final class NetAppGrpc {
    * NetApp Files Google Cloud Service
    * </pre>
    */
-  public static final class NetAppBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<NetAppBlockingStub> {
-    private NetAppBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class NetAppBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NetAppBlockingV2Stub> {
+    private NetAppBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected NetAppBlockingStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new NetAppBlockingStub(channel, callOptions);
+    protected NetAppBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NetAppBlockingV2Stub(channel, callOptions);
     }
 
     /**
@@ -2853,6 +4637,34 @@ public final class NetAppGrpc {
         com.google.cloud.netapp.v1.DeleteStoragePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation validateDirectoryService(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateDirectoryServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation switchActiveReplicaZone(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSwitchActiveReplicaZoneMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3262,6 +5074,1106 @@ public final class NetAppGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReverseReplicationDirectionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public com.google.longrunning.Operation establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEstablishPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public com.google.longrunning.Operation syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSyncReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup vault
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupVault(
+        com.google.cloud.netapp.v1.CreateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup vault
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.BackupVault getBackupVault(
+        com.google.cloud.netapp.v1.GetBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup vaults.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupVaultsResponse listBackupVaults(
+        com.google.cloud.netapp.v1.ListBackupVaultsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupVaultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific backup vault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupVault(
+        com.google.cloud.netapp.v1.UpdateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup vault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupVault(
+        com.google.cloud.netapp.v1.DeleteBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a backup from the volume specified in the request
+     * The backup can be created from the given snapshot if specified in the
+     * request. If no snapshot specified, there'll be a new snapshot taken to
+     * initiate the backup creation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.cloud.netapp.v1.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Backup getBackup(
+        com.google.cloud.netapp.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all backups for a backupVault.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupsResponse listBackups(
+        com.google.cloud.netapp.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.netapp.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update backup with full spec.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackup(
+        com.google.cloud.netapp.v1.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup policy
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupPolicy(
+        com.google.cloud.netapp.v1.CreateBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup policy by backup_policy_id.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.BackupPolicy getBackupPolicy(
+        com.google.cloud.netapp.v1.GetBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup policies.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupPoliciesResponse listBackupPolicies(
+        com.google.cloud.netapp.v1.ListBackupPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates settings of a specific backup policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPolicy(
+        com.google.cloud.netapp.v1.UpdateBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupPolicy(
+        com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListQuotaRulesResponse listQuotaRules(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQuotaRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.QuotaRule getQuotaRule(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createQuotaRule(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateQuotaRule(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteQuotaRule(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQuotaRuleMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service NetApp.
+   *
+   * <pre>
+   * NetApp Files Google Cloud Service
+   * </pre>
+   */
+  public static final class NetAppBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<NetAppBlockingStub> {
+    private NetAppBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NetAppBlockingStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NetAppBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all storage pools owned by the caller.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListStoragePoolsResponse listStoragePools(
+        com.google.cloud.netapp.v1.ListStoragePoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListStoragePoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new storage pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createStoragePool(
+        com.google.cloud.netapp.v1.CreateStoragePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified storage pool by poolId.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.StoragePool getStoragePool(
+        com.google.cloud.netapp.v1.GetStoragePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the storage pool properties with the full spec
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateStoragePool(
+        com.google.cloud.netapp.v1.UpdateStoragePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the storage pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteStoragePool(
+        com.google.cloud.netapp.v1.DeleteStoragePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteStoragePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation validateDirectoryService(
+        com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateDirectoryServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation switchActiveReplicaZone(
+        com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSwitchActiveReplicaZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Volumes in a given project.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListVolumesResponse listVolumes(
+        com.google.cloud.netapp.v1.ListVolumesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVolumesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Volume getVolume(
+        com.google.cloud.netapp.v1.GetVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Volume in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVolume(
+        com.google.cloud.netapp.v1.CreateVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateVolume(
+        com.google.cloud.netapp.v1.UpdateVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVolume(
+        com.google.cloud.netapp.v1.DeleteVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revert an existing volume to a specified snapshot.
+     * Warning! This operation will permanently revert all changes made after the
+     * snapshot was created.
+     * </pre>
+     */
+    public com.google.longrunning.Operation revertVolume(
+        com.google.cloud.netapp.v1.RevertVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevertVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all snapshots for a volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListSnapshotsResponse listSnapshots(
+        com.google.cloud.netapp.v1.ListSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describe a snapshot for a volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Snapshot getSnapshot(
+        com.google.cloud.netapp.v1.GetSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new snapshot for a volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSnapshot(
+        com.google.cloud.netapp.v1.CreateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSnapshot(
+        com.google.cloud.netapp.v1.DeleteSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSnapshot(
+        com.google.cloud.netapp.v1.UpdateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists active directories.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListActiveDirectoriesResponse listActiveDirectories(
+        com.google.cloud.netapp.v1.ListActiveDirectoriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListActiveDirectoriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specified active directory.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ActiveDirectory getActiveDirectory(
+        com.google.cloud.netapp.v1.GetActiveDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetActiveDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * CreateActiveDirectory
+     * Creates the active directory specified in the request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createActiveDirectory(
+        com.google.cloud.netapp.v1.CreateActiveDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateActiveDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update the parameters of an active directories.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateActiveDirectory(
+        com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateActiveDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete the active directory specified in the request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteActiveDirectory(
+        com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteActiveDirectoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all KMS configs owned by the caller.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListKmsConfigsResponse listKmsConfigs(
+        com.google.cloud.netapp.v1.ListKmsConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListKmsConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new KMS config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createKmsConfig(
+        com.google.cloud.netapp.v1.CreateKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified KMS config by kms_config_id.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.KmsConfig getKmsConfig(
+        com.google.cloud.netapp.v1.GetKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Kms config properties with the full spec
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateKmsConfig(
+        com.google.cloud.netapp.v1.UpdateKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Encrypt the existing volumes without CMEK encryption with the desired the
+     * KMS config for the whole region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation encryptVolumes(
+        com.google.cloud.netapp.v1.EncryptVolumesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEncryptVolumesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies KMS config reachability.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.VerifyKmsConfigResponse verifyKmsConfig(
+        com.google.cloud.netapp.v1.VerifyKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the Kms config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteKmsConfig(
+        com.google.cloud.netapp.v1.DeleteKmsConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteKmsConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all replications for a volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListReplicationsResponse listReplications(
+        com.google.cloud.netapp.v1.ListReplicationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReplicationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describe a replication for a volume.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Replication getReplication(
+        com.google.cloud.netapp.v1.GetReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new replication for a volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createReplication(
+        com.google.cloud.netapp.v1.CreateReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a replication.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteReplication(
+        com.google.cloud.netapp.v1.DeleteReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific replication.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateReplication(
+        com.google.cloud.netapp.v1.UpdateReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stop Cross Region Replication.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopReplication(
+        com.google.cloud.netapp.v1.StopReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resume Cross Region Replication.
+     * </pre>
+     */
+    public com.google.longrunning.Operation resumeReplication(
+        com.google.cloud.netapp.v1.ResumeReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reverses direction of replication. Source becomes destination and
+     * destination becomes source.
+     * </pre>
+     */
+    public com.google.longrunning.Operation reverseReplicationDirection(
+        com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReverseReplicationDirectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public com.google.longrunning.Operation establishPeering(
+        com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEstablishPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public com.google.longrunning.Operation syncReplication(
+        com.google.cloud.netapp.v1.SyncReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSyncReplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup vault
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupVault(
+        com.google.cloud.netapp.v1.CreateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup vault
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.BackupVault getBackupVault(
+        com.google.cloud.netapp.v1.GetBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup vaults.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupVaultsResponse listBackupVaults(
+        com.google.cloud.netapp.v1.ListBackupVaultsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupVaultsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific backup vault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupVault(
+        com.google.cloud.netapp.v1.UpdateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup vault.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupVault(
+        com.google.cloud.netapp.v1.DeleteBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupVaultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a backup from the volume specified in the request
+     * The backup can be created from the given snapshot if specified in the
+     * request. If no snapshot specified, there'll be a new snapshot taken to
+     * initiate the backup creation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.cloud.netapp.v1.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.Backup getBackup(
+        com.google.cloud.netapp.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all backups for a backupVault.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupsResponse listBackups(
+        com.google.cloud.netapp.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.netapp.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update backup with full spec.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackup(
+        com.google.cloud.netapp.v1.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup policy
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupPolicy(
+        com.google.cloud.netapp.v1.CreateBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup policy by backup_policy_id.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.BackupPolicy getBackupPolicy(
+        com.google.cloud.netapp.v1.GetBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup policies.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupPoliciesResponse listBackupPolicies(
+        com.google.cloud.netapp.v1.ListBackupPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates settings of a specific backup policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPolicy(
+        com.google.cloud.netapp.v1.UpdateBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupPolicy(
+        com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListQuotaRulesResponse listQuotaRules(
+        com.google.cloud.netapp.v1.ListQuotaRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQuotaRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.QuotaRule getQuotaRule(
+        com.google.cloud.netapp.v1.GetQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createQuotaRule(
+        com.google.cloud.netapp.v1.CreateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateQuotaRule(
+        com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateQuotaRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteQuotaRule(
+        com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQuotaRuleMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3347,6 +6259,35 @@ public final class NetAppGrpc {
         deleteStoragePool(com.google.cloud.netapp.v1.DeleteStoragePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteStoragePoolMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ValidateDirectoryService does a connectivity check for a directory service
+     * policy attached to the storage pool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        validateDirectoryService(
+            com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getValidateDirectoryServiceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This operation will switch the active/replica zone for a regional
+     * storagePool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        switchActiveReplicaZone(com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSwitchActiveReplicaZoneMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3765,6 +6706,302 @@ public final class NetAppGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReverseReplicationDirectionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Establish replication peering.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        establishPeering(com.google.cloud.netapp.v1.EstablishPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEstablishPeeringMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the replication. This will invoke one time volume data transfer from
+     * source to destination.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        syncReplication(com.google.cloud.netapp.v1.SyncReplicationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSyncReplicationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup vault
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createBackupVault(com.google.cloud.netapp.v1.CreateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBackupVaultMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup vault
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.BackupVault>
+        getBackupVault(com.google.cloud.netapp.v1.GetBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupVaultMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup vaults.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.ListBackupVaultsResponse>
+        listBackupVaults(com.google.cloud.netapp.v1.ListBackupVaultsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupVaultsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific backup vault.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBackupVault(com.google.cloud.netapp.v1.UpdateBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBackupVaultMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup vault.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteBackupVault(com.google.cloud.netapp.v1.DeleteBackupVaultRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBackupVaultMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a backup from the volume specified in the request
+     * The backup can be created from the given snapshot if specified in the
+     * request. If no snapshot specified, there'll be a new snapshot taken to
+     * initiate the backup creation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createBackup(com.google.cloud.netapp.v1.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.netapp.v1.Backup>
+        getBackup(com.google.cloud.netapp.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns descriptions of all backups for a backupVault.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.ListBackupsResponse>
+        listBackups(com.google.cloud.netapp.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteBackup(com.google.cloud.netapp.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update backup with full spec.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBackup(com.google.cloud.netapp.v1.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBackupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new backup policy
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createBackupPolicy(com.google.cloud.netapp.v1.CreateBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBackupPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the description of the specified backup policy by backup_policy_id.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.BackupPolicy>
+        getBackupPolicy(com.google.cloud.netapp.v1.GetBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all available backup policies.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.ListBackupPoliciesResponse>
+        listBackupPolicies(com.google.cloud.netapp.v1.ListBackupPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates settings of a specific backup policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBackupPolicy(com.google.cloud.netapp.v1.UpdateBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBackupPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warning! This operation will permanently delete the backup policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteBackupPolicy(com.google.cloud.netapp.v1.DeleteBackupPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBackupPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns list of all quota rules in a location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.ListQuotaRulesResponse>
+        listQuotaRules(com.google.cloud.netapp.v1.ListQuotaRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListQuotaRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns details of the specified quota rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.netapp.v1.QuotaRule>
+        getQuotaRule(com.google.cloud.netapp.v1.GetQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetQuotaRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new quota rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createQuotaRule(com.google.cloud.netapp.v1.CreateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateQuotaRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a quota rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateQuotaRule(com.google.cloud.netapp.v1.UpdateQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateQuotaRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a quota rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteQuotaRule(com.google.cloud.netapp.v1.DeleteQuotaRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteQuotaRuleMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_STORAGE_POOLS = 0;
@@ -3772,37 +7009,61 @@ public final class NetAppGrpc {
   private static final int METHODID_GET_STORAGE_POOL = 2;
   private static final int METHODID_UPDATE_STORAGE_POOL = 3;
   private static final int METHODID_DELETE_STORAGE_POOL = 4;
-  private static final int METHODID_LIST_VOLUMES = 5;
-  private static final int METHODID_GET_VOLUME = 6;
-  private static final int METHODID_CREATE_VOLUME = 7;
-  private static final int METHODID_UPDATE_VOLUME = 8;
-  private static final int METHODID_DELETE_VOLUME = 9;
-  private static final int METHODID_REVERT_VOLUME = 10;
-  private static final int METHODID_LIST_SNAPSHOTS = 11;
-  private static final int METHODID_GET_SNAPSHOT = 12;
-  private static final int METHODID_CREATE_SNAPSHOT = 13;
-  private static final int METHODID_DELETE_SNAPSHOT = 14;
-  private static final int METHODID_UPDATE_SNAPSHOT = 15;
-  private static final int METHODID_LIST_ACTIVE_DIRECTORIES = 16;
-  private static final int METHODID_GET_ACTIVE_DIRECTORY = 17;
-  private static final int METHODID_CREATE_ACTIVE_DIRECTORY = 18;
-  private static final int METHODID_UPDATE_ACTIVE_DIRECTORY = 19;
-  private static final int METHODID_DELETE_ACTIVE_DIRECTORY = 20;
-  private static final int METHODID_LIST_KMS_CONFIGS = 21;
-  private static final int METHODID_CREATE_KMS_CONFIG = 22;
-  private static final int METHODID_GET_KMS_CONFIG = 23;
-  private static final int METHODID_UPDATE_KMS_CONFIG = 24;
-  private static final int METHODID_ENCRYPT_VOLUMES = 25;
-  private static final int METHODID_VERIFY_KMS_CONFIG = 26;
-  private static final int METHODID_DELETE_KMS_CONFIG = 27;
-  private static final int METHODID_LIST_REPLICATIONS = 28;
-  private static final int METHODID_GET_REPLICATION = 29;
-  private static final int METHODID_CREATE_REPLICATION = 30;
-  private static final int METHODID_DELETE_REPLICATION = 31;
-  private static final int METHODID_UPDATE_REPLICATION = 32;
-  private static final int METHODID_STOP_REPLICATION = 33;
-  private static final int METHODID_RESUME_REPLICATION = 34;
-  private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 35;
+  private static final int METHODID_VALIDATE_DIRECTORY_SERVICE = 5;
+  private static final int METHODID_SWITCH_ACTIVE_REPLICA_ZONE = 6;
+  private static final int METHODID_LIST_VOLUMES = 7;
+  private static final int METHODID_GET_VOLUME = 8;
+  private static final int METHODID_CREATE_VOLUME = 9;
+  private static final int METHODID_UPDATE_VOLUME = 10;
+  private static final int METHODID_DELETE_VOLUME = 11;
+  private static final int METHODID_REVERT_VOLUME = 12;
+  private static final int METHODID_LIST_SNAPSHOTS = 13;
+  private static final int METHODID_GET_SNAPSHOT = 14;
+  private static final int METHODID_CREATE_SNAPSHOT = 15;
+  private static final int METHODID_DELETE_SNAPSHOT = 16;
+  private static final int METHODID_UPDATE_SNAPSHOT = 17;
+  private static final int METHODID_LIST_ACTIVE_DIRECTORIES = 18;
+  private static final int METHODID_GET_ACTIVE_DIRECTORY = 19;
+  private static final int METHODID_CREATE_ACTIVE_DIRECTORY = 20;
+  private static final int METHODID_UPDATE_ACTIVE_DIRECTORY = 21;
+  private static final int METHODID_DELETE_ACTIVE_DIRECTORY = 22;
+  private static final int METHODID_LIST_KMS_CONFIGS = 23;
+  private static final int METHODID_CREATE_KMS_CONFIG = 24;
+  private static final int METHODID_GET_KMS_CONFIG = 25;
+  private static final int METHODID_UPDATE_KMS_CONFIG = 26;
+  private static final int METHODID_ENCRYPT_VOLUMES = 27;
+  private static final int METHODID_VERIFY_KMS_CONFIG = 28;
+  private static final int METHODID_DELETE_KMS_CONFIG = 29;
+  private static final int METHODID_LIST_REPLICATIONS = 30;
+  private static final int METHODID_GET_REPLICATION = 31;
+  private static final int METHODID_CREATE_REPLICATION = 32;
+  private static final int METHODID_DELETE_REPLICATION = 33;
+  private static final int METHODID_UPDATE_REPLICATION = 34;
+  private static final int METHODID_STOP_REPLICATION = 35;
+  private static final int METHODID_RESUME_REPLICATION = 36;
+  private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 37;
+  private static final int METHODID_ESTABLISH_PEERING = 38;
+  private static final int METHODID_SYNC_REPLICATION = 39;
+  private static final int METHODID_CREATE_BACKUP_VAULT = 40;
+  private static final int METHODID_GET_BACKUP_VAULT = 41;
+  private static final int METHODID_LIST_BACKUP_VAULTS = 42;
+  private static final int METHODID_UPDATE_BACKUP_VAULT = 43;
+  private static final int METHODID_DELETE_BACKUP_VAULT = 44;
+  private static final int METHODID_CREATE_BACKUP = 45;
+  private static final int METHODID_GET_BACKUP = 46;
+  private static final int METHODID_LIST_BACKUPS = 47;
+  private static final int METHODID_DELETE_BACKUP = 48;
+  private static final int METHODID_UPDATE_BACKUP = 49;
+  private static final int METHODID_CREATE_BACKUP_POLICY = 50;
+  private static final int METHODID_GET_BACKUP_POLICY = 51;
+  private static final int METHODID_LIST_BACKUP_POLICIES = 52;
+  private static final int METHODID_UPDATE_BACKUP_POLICY = 53;
+  private static final int METHODID_DELETE_BACKUP_POLICY = 54;
+  private static final int METHODID_LIST_QUOTA_RULES = 55;
+  private static final int METHODID_GET_QUOTA_RULE = 56;
+  private static final int METHODID_CREATE_QUOTA_RULE = 57;
+  private static final int METHODID_UPDATE_QUOTA_RULE = 58;
+  private static final int METHODID_DELETE_QUOTA_RULE = 59;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3846,6 +7107,16 @@ public final class NetAppGrpc {
         case METHODID_DELETE_STORAGE_POOL:
           serviceImpl.deleteStoragePool(
               (com.google.cloud.netapp.v1.DeleteStoragePoolRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_VALIDATE_DIRECTORY_SERVICE:
+          serviceImpl.validateDirectoryService(
+              (com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SWITCH_ACTIVE_REPLICA_ZONE:
+          serviceImpl.switchActiveReplicaZone(
+              (com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_VOLUMES:
@@ -4012,6 +7283,122 @@ public final class NetAppGrpc {
               (com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_ESTABLISH_PEERING:
+          serviceImpl.establishPeering(
+              (com.google.cloud.netapp.v1.EstablishPeeringRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_SYNC_REPLICATION:
+          serviceImpl.syncReplication(
+              (com.google.cloud.netapp.v1.SyncReplicationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_BACKUP_VAULT:
+          serviceImpl.createBackupVault(
+              (com.google.cloud.netapp.v1.CreateBackupVaultRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_BACKUP_VAULT:
+          serviceImpl.getBackupVault(
+              (com.google.cloud.netapp.v1.GetBackupVaultRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.BackupVault>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_VAULTS:
+          serviceImpl.listBackupVaults(
+              (com.google.cloud.netapp.v1.ListBackupVaultsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupVaultsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_BACKUP_VAULT:
+          serviceImpl.updateBackupVault(
+              (com.google.cloud.netapp.v1.UpdateBackupVaultRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP_VAULT:
+          serviceImpl.deleteBackupVault(
+              (com.google.cloud.netapp.v1.DeleteBackupVaultRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_BACKUP:
+          serviceImpl.createBackup(
+              (com.google.cloud.netapp.v1.CreateBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_BACKUP:
+          serviceImpl.getBackup(
+              (com.google.cloud.netapp.v1.GetBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.Backup>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUPS:
+          serviceImpl.listBackups(
+              (com.google.cloud.netapp.v1.ListBackupsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP:
+          serviceImpl.deleteBackup(
+              (com.google.cloud.netapp.v1.DeleteBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_BACKUP:
+          serviceImpl.updateBackup(
+              (com.google.cloud.netapp.v1.UpdateBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_BACKUP_POLICY:
+          serviceImpl.createBackupPolicy(
+              (com.google.cloud.netapp.v1.CreateBackupPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_BACKUP_POLICY:
+          serviceImpl.getBackupPolicy(
+              (com.google.cloud.netapp.v1.GetBackupPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.BackupPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_POLICIES:
+          serviceImpl.listBackupPolicies(
+              (com.google.cloud.netapp.v1.ListBackupPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupPoliciesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_BACKUP_POLICY:
+          serviceImpl.updateBackupPolicy(
+              (com.google.cloud.netapp.v1.UpdateBackupPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP_POLICY:
+          serviceImpl.deleteBackupPolicy(
+              (com.google.cloud.netapp.v1.DeleteBackupPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_QUOTA_RULES:
+          serviceImpl.listQuotaRules(
+              (com.google.cloud.netapp.v1.ListQuotaRulesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListQuotaRulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_QUOTA_RULE:
+          serviceImpl.getQuotaRule(
+              (com.google.cloud.netapp.v1.GetQuotaRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.QuotaRule>) responseObserver);
+          break;
+        case METHODID_CREATE_QUOTA_RULE:
+          serviceImpl.createQuotaRule(
+              (com.google.cloud.netapp.v1.CreateQuotaRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_QUOTA_RULE:
+          serviceImpl.updateQuotaRule(
+              (com.google.cloud.netapp.v1.UpdateQuotaRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_QUOTA_RULE:
+          serviceImpl.deleteQuotaRule(
+              (com.google.cloud.netapp.v1.DeleteQuotaRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -4061,6 +7448,20 @@ public final class NetAppGrpc {
                 new MethodHandlers<
                     com.google.cloud.netapp.v1.DeleteStoragePoolRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_STORAGE_POOL)))
+        .addMethod(
+            getValidateDirectoryServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_VALIDATE_DIRECTORY_SERVICE)))
+        .addMethod(
+            getSwitchActiveReplicaZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_SWITCH_ACTIVE_REPLICA_ZONE)))
         .addMethod(
             getListVolumesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4255,6 +7656,142 @@ public final class NetAppGrpc {
                     com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_REVERSE_REPLICATION_DIRECTION)))
+        .addMethod(
+            getEstablishPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.EstablishPeeringRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ESTABLISH_PEERING)))
+        .addMethod(
+            getSyncReplicationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.SyncReplicationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SYNC_REPLICATION)))
+        .addMethod(
+            getCreateBackupVaultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.CreateBackupVaultRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BACKUP_VAULT)))
+        .addMethod(
+            getGetBackupVaultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.GetBackupVaultRequest,
+                    com.google.cloud.netapp.v1.BackupVault>(service, METHODID_GET_BACKUP_VAULT)))
+        .addMethod(
+            getListBackupVaultsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ListBackupVaultsRequest,
+                    com.google.cloud.netapp.v1.ListBackupVaultsResponse>(
+                    service, METHODID_LIST_BACKUP_VAULTS)))
+        .addMethod(
+            getUpdateBackupVaultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.UpdateBackupVaultRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP_VAULT)))
+        .addMethod(
+            getDeleteBackupVaultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.DeleteBackupVaultRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP_VAULT)))
+        .addMethod(
+            getCreateBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.CreateBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BACKUP)))
+        .addMethod(
+            getGetBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.GetBackupRequest, com.google.cloud.netapp.v1.Backup>(
+                    service, METHODID_GET_BACKUP)))
+        .addMethod(
+            getListBackupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ListBackupsRequest,
+                    com.google.cloud.netapp.v1.ListBackupsResponse>(
+                    service, METHODID_LIST_BACKUPS)))
+        .addMethod(
+            getDeleteBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.DeleteBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP)))
+        .addMethod(
+            getUpdateBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.UpdateBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP)))
+        .addMethod(
+            getCreateBackupPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.CreateBackupPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BACKUP_POLICY)))
+        .addMethod(
+            getGetBackupPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.GetBackupPolicyRequest,
+                    com.google.cloud.netapp.v1.BackupPolicy>(service, METHODID_GET_BACKUP_POLICY)))
+        .addMethod(
+            getListBackupPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ListBackupPoliciesRequest,
+                    com.google.cloud.netapp.v1.ListBackupPoliciesResponse>(
+                    service, METHODID_LIST_BACKUP_POLICIES)))
+        .addMethod(
+            getUpdateBackupPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.UpdateBackupPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP_POLICY)))
+        .addMethod(
+            getDeleteBackupPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.DeleteBackupPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP_POLICY)))
+        .addMethod(
+            getListQuotaRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ListQuotaRulesRequest,
+                    com.google.cloud.netapp.v1.ListQuotaRulesResponse>(
+                    service, METHODID_LIST_QUOTA_RULES)))
+        .addMethod(
+            getGetQuotaRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.GetQuotaRuleRequest,
+                    com.google.cloud.netapp.v1.QuotaRule>(service, METHODID_GET_QUOTA_RULE)))
+        .addMethod(
+            getCreateQuotaRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.CreateQuotaRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_QUOTA_RULE)))
+        .addMethod(
+            getUpdateQuotaRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.UpdateQuotaRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_QUOTA_RULE)))
+        .addMethod(
+            getDeleteQuotaRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.DeleteQuotaRuleRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_QUOTA_RULE)))
         .build();
   }
 
@@ -4309,6 +7846,8 @@ public final class NetAppGrpc {
                       .addMethod(getGetStoragePoolMethod())
                       .addMethod(getUpdateStoragePoolMethod())
                       .addMethod(getDeleteStoragePoolMethod())
+                      .addMethod(getValidateDirectoryServiceMethod())
+                      .addMethod(getSwitchActiveReplicaZoneMethod())
                       .addMethod(getListVolumesMethod())
                       .addMethod(getGetVolumeMethod())
                       .addMethod(getCreateVolumeMethod())
@@ -4340,6 +7879,28 @@ public final class NetAppGrpc {
                       .addMethod(getStopReplicationMethod())
                       .addMethod(getResumeReplicationMethod())
                       .addMethod(getReverseReplicationDirectionMethod())
+                      .addMethod(getEstablishPeeringMethod())
+                      .addMethod(getSyncReplicationMethod())
+                      .addMethod(getCreateBackupVaultMethod())
+                      .addMethod(getGetBackupVaultMethod())
+                      .addMethod(getListBackupVaultsMethod())
+                      .addMethod(getUpdateBackupVaultMethod())
+                      .addMethod(getDeleteBackupVaultMethod())
+                      .addMethod(getCreateBackupMethod())
+                      .addMethod(getGetBackupMethod())
+                      .addMethod(getListBackupsMethod())
+                      .addMethod(getDeleteBackupMethod())
+                      .addMethod(getUpdateBackupMethod())
+                      .addMethod(getCreateBackupPolicyMethod())
+                      .addMethod(getGetBackupPolicyMethod())
+                      .addMethod(getListBackupPoliciesMethod())
+                      .addMethod(getUpdateBackupPolicyMethod())
+                      .addMethod(getDeleteBackupPolicyMethod())
+                      .addMethod(getListQuotaRulesMethod())
+                      .addMethod(getGetQuotaRuleMethod())
+                      .addMethod(getCreateQuotaRuleMethod())
+                      .addMethod(getUpdateQuotaRuleMethod())
+                      .addMethod(getDeleteQuotaRuleMethod())
                       .build();
         }
       }

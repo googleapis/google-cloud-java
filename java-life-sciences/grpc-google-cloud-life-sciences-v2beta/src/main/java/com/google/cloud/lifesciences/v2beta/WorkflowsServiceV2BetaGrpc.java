@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,6 +92,19 @@ public final class WorkflowsServiceV2BetaGrpc {
           }
         };
     return WorkflowsServiceV2BetaStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static WorkflowsServiceV2BetaBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<WorkflowsServiceV2BetaBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<WorkflowsServiceV2BetaBlockingV2Stub>() {
+          @java.lang.Override
+          public WorkflowsServiceV2BetaBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new WorkflowsServiceV2BetaBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return WorkflowsServiceV2BetaBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -231,6 +244,55 @@ public final class WorkflowsServiceV2BetaGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service WorkflowsServiceV2Beta.
+   *
+   * <pre>
+   * A service for running workflows, such as pipelines consisting of Docker
+   * containers.
+   * </pre>
+   */
+  public static final class WorkflowsServiceV2BetaBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<WorkflowsServiceV2BetaBlockingV2Stub> {
+    private WorkflowsServiceV2BetaBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected WorkflowsServiceV2BetaBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new WorkflowsServiceV2BetaBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs a pipeline.  The returned Operation's [metadata]
+     * [google.longrunning.Operation.metadata] field will contain a
+     * [google.cloud.lifesciences.v2beta.Metadata][google.cloud.lifesciences.v2beta.Metadata]
+     * object describing the status of the pipeline execution. The
+     * [response][google.longrunning.Operation.response] field will contain a
+     * [google.cloud.lifesciences.v2beta.RunPipelineResponse][google.cloud.lifesciences.v2beta.RunPipelineResponse]
+     * object if the pipeline completes successfully.
+     * **Note:** Before you can use this method, the *Life Sciences Service Agent*
+     * must have access to your project. This is done automatically when the
+     * Cloud Life Sciences API is first enabled, but if you delete this permission
+     * you must disable and re-enable the API to grant the Life Sciences
+     * Service Agent the required permissions.
+     * Authorization requires the following [Google
+     * IAM](https://cloud.google.com/iam/) permission:
+     * * `lifesciences.workflows.run`
+     * </pre>
+     */
+    public com.google.longrunning.Operation runPipeline(
+        com.google.cloud.lifesciences.v2beta.RunPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunPipelineMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service WorkflowsServiceV2Beta.
    *
    * <pre>
    * A service for running workflows, such as pipelines consisting of Docker

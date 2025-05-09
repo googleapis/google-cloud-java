@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,7 +178,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConsumerQuotaMetrics, expected %s or %s",
+                  "Unrecognized response type %s for method ListConsumerQuotaMetrics, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConsumerQuotaMetricsResponse.class.getName(),
                   Exception.class.getName())));
@@ -199,7 +200,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConsumerQuotaMetric, expected %s or %s",
+                  "Unrecognized response type %s for method GetConsumerQuotaMetric, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConsumerQuotaMetric.class.getName(),
                   Exception.class.getName())));
@@ -220,7 +222,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConsumerQuotaLimit, expected %s or %s",
+                  "Unrecognized response type %s for method GetConsumerQuotaLimit, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConsumerQuotaLimit.class.getName(),
                   Exception.class.getName())));
@@ -326,7 +329,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportAdminOverrides, expected %s or %s",
+                  "Unrecognized response type %s for method ImportAdminOverrides, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -347,7 +351,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConsumerOverride, expected %s or %s",
+                  "Unrecognized response type %s for method CreateConsumerOverride, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -368,7 +373,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateConsumerOverride, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateConsumerOverride, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -389,7 +395,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConsumerOverride, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteConsumerOverride, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -411,7 +418,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConsumerOverrides, expected %s or %s",
+                  "Unrecognized response type %s for method ListConsumerOverrides, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConsumerOverridesResponse.class.getName(),
                   Exception.class.getName())));
@@ -432,7 +440,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportConsumerOverrides, expected %s or %s",
+                  "Unrecognized response type %s for method ImportConsumerOverrides, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -453,7 +462,8 @@ public class MockServiceUsageImpl extends ServiceUsageImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateServiceIdentity, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateServiceIdentity, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

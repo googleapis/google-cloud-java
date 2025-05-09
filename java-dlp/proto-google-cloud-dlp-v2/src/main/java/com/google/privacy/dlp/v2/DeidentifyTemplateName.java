@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.privacy.dlp.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -109,23 +108,19 @@ public class DeidentifyTemplateName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationDeidentifyTemplateBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectDeidentifyTemplateBuilder newProjectDeidentifyTemplateBuilder() {
     return new ProjectDeidentifyTemplateBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationDeidentifyTemplateBuilder
       newOrganizationLocationDeidentifyTemplateBuilder() {
     return new OrganizationLocationDeidentifyTemplateBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationDeidentifyTemplateBuilder
       newProjectLocationDeidentifyTemplateBuilder() {
     return new ProjectLocationDeidentifyTemplateBuilder();
@@ -142,7 +137,6 @@ public class DeidentifyTemplateName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DeidentifyTemplateName ofOrganizationDeidentifyTemplateName(
       String organization, String deidentifyTemplate) {
     return newBuilder()
@@ -151,7 +145,6 @@ public class DeidentifyTemplateName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DeidentifyTemplateName ofProjectDeidentifyTemplateName(
       String project, String deidentifyTemplate) {
     return newProjectDeidentifyTemplateBuilder()
@@ -160,7 +153,6 @@ public class DeidentifyTemplateName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DeidentifyTemplateName ofOrganizationLocationDeidentifyTemplateName(
       String organization, String location, String deidentifyTemplate) {
     return newOrganizationLocationDeidentifyTemplateBuilder()
@@ -170,7 +162,6 @@ public class DeidentifyTemplateName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DeidentifyTemplateName ofProjectLocationDeidentifyTemplateName(
       String project, String location, String deidentifyTemplate) {
     return newProjectLocationDeidentifyTemplateBuilder()
@@ -188,7 +179,6 @@ public class DeidentifyTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationDeidentifyTemplateName(
       String organization, String deidentifyTemplate) {
     return newBuilder()
@@ -198,7 +188,6 @@ public class DeidentifyTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectDeidentifyTemplateName(
       String project, String deidentifyTemplate) {
     return newProjectDeidentifyTemplateBuilder()
@@ -208,7 +197,6 @@ public class DeidentifyTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationDeidentifyTemplateName(
       String organization, String location, String deidentifyTemplate) {
     return newOrganizationLocationDeidentifyTemplateBuilder()
@@ -219,7 +207,6 @@ public class DeidentifyTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDeidentifyTemplateName(
       String project, String location, String deidentifyTemplate) {
     return newProjectLocationDeidentifyTemplateBuilder()
@@ -358,7 +345,8 @@ public class DeidentifyTemplateName implements ResourceName {
     private Builder(DeidentifyTemplateName deidentifyTemplateName) {
       Preconditions.checkArgument(
           Objects.equals(deidentifyTemplateName.pathTemplate, ORGANIZATION_DEIDENTIFY_TEMPLATE),
-          "toBuilder is only supported when DeidentifyTemplateName has the pattern of organizations/{organization}/deidentifyTemplates/{deidentify_template}");
+          "toBuilder is only supported when DeidentifyTemplateName has the pattern of"
+              + " organizations/{organization}/deidentifyTemplates/{deidentify_template}");
       this.organization = deidentifyTemplateName.organization;
       this.deidentifyTemplate = deidentifyTemplateName.deidentifyTemplate;
     }
@@ -369,7 +357,6 @@ public class DeidentifyTemplateName implements ResourceName {
   }
 
   /** Builder for projects/{project}/deidentifyTemplates/{deidentify_template}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectDeidentifyTemplateBuilder {
     private String project;
     private String deidentifyTemplate;
@@ -403,7 +390,6 @@ public class DeidentifyTemplateName implements ResourceName {
    * Builder for
    * organizations/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationDeidentifyTemplateBuilder {
     private String organization;
     private String location;
@@ -447,7 +433,6 @@ public class DeidentifyTemplateName implements ResourceName {
   /**
    * Builder for projects/{project}/locations/{location}/deidentifyTemplates/{deidentify_template}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationDeidentifyTemplateBuilder {
     private String project;
     private String location;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.aiplatform.v1beta1;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationSlicesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelEvaluationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionCheckpointsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.ModelServiceClient.ListModelsPagedResponse;
 
@@ -222,6 +223,7 @@ public class ModelServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setVersionDescription("versionDescription-1736173564")
+            .setDefaultCheckpointId("defaultCheckpointId2036067748")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
@@ -244,6 +246,10 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -289,6 +295,7 @@ public class ModelServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setVersionDescription("versionDescription-1736173564")
+            .setDefaultCheckpointId("defaultCheckpointId2036067748")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
@@ -311,6 +318,10 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -521,6 +532,98 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void listModelVersionCheckpointsTest() throws Exception {
+    ModelVersionCheckpoint responsesElement = ModelVersionCheckpoint.newBuilder().build();
+    ListModelVersionCheckpointsResponse expectedResponse =
+        ListModelVersionCheckpointsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCheckpoints(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+
+    ListModelVersionCheckpointsPagedResponse pagedListResponse =
+        client.listModelVersionCheckpoints(name);
+
+    List<ModelVersionCheckpoint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCheckpointsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelVersionCheckpointsRequest actualRequest =
+        ((ListModelVersionCheckpointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelVersionCheckpointsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+      client.listModelVersionCheckpoints(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listModelVersionCheckpointsTest2() throws Exception {
+    ModelVersionCheckpoint responsesElement = ModelVersionCheckpoint.newBuilder().build();
+    ListModelVersionCheckpointsResponse expectedResponse =
+        ListModelVersionCheckpointsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCheckpoints(Arrays.asList(responsesElement))
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ListModelVersionCheckpointsPagedResponse pagedListResponse =
+        client.listModelVersionCheckpoints(name);
+
+    List<ModelVersionCheckpoint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCheckpointsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListModelVersionCheckpointsRequest actualRequest =
+        ((ListModelVersionCheckpointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listModelVersionCheckpointsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.listModelVersionCheckpoints(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateModelTest() throws Exception {
     Model expectedResponse =
         Model.newBuilder()
@@ -532,6 +635,7 @@ public class ModelServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setVersionDescription("versionDescription-1736173564")
+            .setDefaultCheckpointId("defaultCheckpointId2036067748")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
@@ -554,6 +658,10 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -862,6 +970,7 @@ public class ModelServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setVersionDescription("versionDescription-1736173564")
+            .setDefaultCheckpointId("defaultCheckpointId2036067748")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
@@ -884,6 +993,10 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -932,6 +1045,7 @@ public class ModelServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setVersionDescription("versionDescription-1736173564")
+            .setDefaultCheckpointId("defaultCheckpointId2036067748")
             .setPredictSchemata(PredictSchemata.newBuilder().build())
             .setMetadataSchemaUri("metadataSchemaUri781971868")
             .setMetadata(Value.newBuilder().setBoolValue(true).build())
@@ -954,6 +1068,10 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setBaseModelSource(Model.BaseModelSource.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .addAllCheckpoints(new ArrayList<Checkpoint>())
             .build();
     mockModelService.addResponse(expectedResponse);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.CommitAuthor;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.PullGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PullGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
-import com.google.protobuf.Empty;
 
 public class AsyncPullGitCommits {
 
@@ -45,9 +45,10 @@ public class AsyncPullGitCommits {
               .setRemoteBranch("remoteBranch-533119608")
               .setAuthor(CommitAuthor.newBuilder().build())
               .build();
-      ApiFuture<Empty> future = dataformClient.pullGitCommitsCallable().futureCall(request);
+      ApiFuture<PullGitCommitsResponse> future =
+          dataformClient.pullGitCommitsCallable().futureCall(request);
       // Do something.
-      future.get();
+      PullGitCommitsResponse response = future.get();
     }
   }
 }

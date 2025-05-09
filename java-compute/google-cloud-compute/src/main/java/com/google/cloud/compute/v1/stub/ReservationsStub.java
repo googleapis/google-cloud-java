@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.cloud.compute.v1.GetReservationRequest;
 import com.google.cloud.compute.v1.InsertReservationRequest;
 import com.google.cloud.compute.v1.ListReservationsRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PerformMaintenanceReservationRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reservation;
 import com.google.cloud.compute.v1.ReservationAggregatedList;
@@ -91,6 +92,17 @@ public abstract class ReservationsStub implements BackgroundResource {
 
   public UnaryCallable<ListReservationsRequest, ReservationList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public OperationCallable<PerformMaintenanceReservationRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: performMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<PerformMaintenanceReservationRequest, Operation>
+      performMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: performMaintenanceCallable()");
   }
 
   public OperationCallable<ResizeReservationRequest, Operation, Operation>

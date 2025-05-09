@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ public class SyncAnnotateAssessment {
           AnnotateAssessmentRequest.newBuilder()
               .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
               .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
+              .setAccountId("accountId-1827029976")
               .setHashedAccountId(ByteString.EMPTY)
               .setTransactionEvent(TransactionEvent.newBuilder().build())
               .build();

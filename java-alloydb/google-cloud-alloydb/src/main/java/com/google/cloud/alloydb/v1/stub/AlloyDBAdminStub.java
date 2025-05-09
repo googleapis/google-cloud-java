@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.alloydb.v1.stub;
 
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListClustersPagedResponse;
+import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListDatabasesPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
@@ -41,6 +42,8 @@ import com.google.cloud.alloydb.v1.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1.DeleteUserRequest;
+import com.google.cloud.alloydb.v1.ExecuteSqlRequest;
+import com.google.cloud.alloydb.v1.ExecuteSqlResponse;
 import com.google.cloud.alloydb.v1.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1.GenerateClientCertificateResponse;
@@ -55,6 +58,8 @@ import com.google.cloud.alloydb.v1.ListBackupsRequest;
 import com.google.cloud.alloydb.v1.ListBackupsResponse;
 import com.google.cloud.alloydb.v1.ListClustersRequest;
 import com.google.cloud.alloydb.v1.ListClustersResponse;
+import com.google.cloud.alloydb.v1.ListDatabasesRequest;
+import com.google.cloud.alloydb.v1.ListDatabasesResponse;
 import com.google.cloud.alloydb.v1.ListInstancesRequest;
 import com.google.cloud.alloydb.v1.ListInstancesResponse;
 import com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsRequest;
@@ -65,6 +70,7 @@ import com.google.cloud.alloydb.v1.OperationMetadata;
 import com.google.cloud.alloydb.v1.PromoteClusterRequest;
 import com.google.cloud.alloydb.v1.RestartInstanceRequest;
 import com.google.cloud.alloydb.v1.RestoreClusterRequest;
+import com.google.cloud.alloydb.v1.SwitchoverClusterRequest;
 import com.google.cloud.alloydb.v1.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1.UpdateInstanceRequest;
@@ -142,6 +148,16 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<PromoteClusterRequest, Operation> promoteClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: promoteClusterCallable()");
+  }
+
+  public OperationCallable<SwitchoverClusterRequest, Cluster, OperationMetadata>
+      switchoverClusterOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: switchoverClusterOperationCallable()");
+  }
+
+  public UnaryCallable<SwitchoverClusterRequest, Operation> switchoverClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: switchoverClusterCallable()");
   }
 
   public OperationCallable<RestoreClusterRequest, Cluster, OperationMetadata>
@@ -252,6 +268,10 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: restartInstanceCallable()");
   }
 
+  public UnaryCallable<ExecuteSqlRequest, ExecuteSqlResponse> executeSqlCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeSqlCallable()");
+  }
+
   public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listBackupsPagedCallable()");
   }
@@ -334,6 +354,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteUserCallable()");
+  }
+
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabasesPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabasesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

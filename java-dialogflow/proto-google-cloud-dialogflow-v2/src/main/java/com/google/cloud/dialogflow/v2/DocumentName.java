@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,12 +88,10 @@ public class DocumentName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectKnowledgeBaseDocumentBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationKnowledgeBaseDocumentBuilder
       newProjectLocationKnowledgeBaseDocumentBuilder() {
     return new ProjectLocationKnowledgeBaseDocumentBuilder();
@@ -112,7 +109,6 @@ public class DocumentName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DocumentName ofProjectKnowledgeBaseDocumentName(
       String project, String knowledgeBase, String document) {
     return newBuilder()
@@ -122,7 +118,6 @@ public class DocumentName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DocumentName ofProjectLocationKnowledgeBaseDocumentName(
       String project, String location, String knowledgeBase, String document) {
     return newProjectLocationKnowledgeBaseDocumentBuilder()
@@ -142,7 +137,6 @@ public class DocumentName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectKnowledgeBaseDocumentName(
       String project, String knowledgeBase, String document) {
     return newBuilder()
@@ -153,7 +147,6 @@ public class DocumentName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationKnowledgeBaseDocumentName(
       String project, String location, String knowledgeBase, String document) {
     return newProjectLocationKnowledgeBaseDocumentBuilder()
@@ -313,7 +306,8 @@ public class DocumentName implements ResourceName {
     private Builder(DocumentName documentName) {
       Preconditions.checkArgument(
           Objects.equals(documentName.pathTemplate, PROJECT_KNOWLEDGE_BASE_DOCUMENT),
-          "toBuilder is only supported when DocumentName has the pattern of projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
+          "toBuilder is only supported when DocumentName has the pattern of"
+              + " projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}");
       this.project = documentName.project;
       this.knowledgeBase = documentName.knowledgeBase;
       this.document = documentName.document;
@@ -328,7 +322,6 @@ public class DocumentName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/knowledgeBases/{knowledge_base}/documents/{document}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationKnowledgeBaseDocumentBuilder {
     private String project;
     private String location;

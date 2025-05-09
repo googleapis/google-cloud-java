@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dataform</artifactId>
-  <version>0.27.0</version><!-- {x-version-update:google-cloud-dataform:current} -->
+  <version>0.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Dataform</name>
   <description>Cloud Dataform Help analytics teams manage data inside BigQuery using SQL.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dataform-parent</artifactId>
-    <version>0.27.0</version><!-- {x-version-update:google-cloud-dataform:current} -->
+    <version>0.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-dataform</site.installationModule>
@@ -46,10 +46,6 @@
       <artifactId>proto-google-cloud-dataform-v1beta1</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-dataform-v1alpha2</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
@@ -68,6 +64,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -81,6 +78,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
 
     <!-- Test dependencies -->
@@ -90,11 +88,6 @@
       <scope>test</scope>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-dataform-v1alpha2</artifactId>
-      <scope>test</scope>
-    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

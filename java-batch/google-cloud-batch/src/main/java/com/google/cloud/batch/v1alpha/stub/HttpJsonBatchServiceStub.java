@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.batch.v1alpha.stub;
 
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListResourceAllowancesPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListTasksPagedResponse;
 
 import com.google.api.HttpRule;
@@ -37,17 +38,27 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.batch.v1alpha.CancelJobRequest;
+import com.google.cloud.batch.v1alpha.CancelJobResponse;
 import com.google.cloud.batch.v1alpha.CreateJobRequest;
+import com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.DeleteJobRequest;
+import com.google.cloud.batch.v1alpha.DeleteResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.GetJobRequest;
+import com.google.cloud.batch.v1alpha.GetResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.GetTaskRequest;
 import com.google.cloud.batch.v1alpha.Job;
 import com.google.cloud.batch.v1alpha.ListJobsRequest;
 import com.google.cloud.batch.v1alpha.ListJobsResponse;
+import com.google.cloud.batch.v1alpha.ListResourceAllowancesRequest;
+import com.google.cloud.batch.v1alpha.ListResourceAllowancesResponse;
 import com.google.cloud.batch.v1alpha.ListTasksRequest;
 import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
+import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateJobRequest;
+import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -76,6 +87,7 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(CancelJobResponse.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .build();
 
@@ -184,6 +196,81 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
           .setOperationSnapshotFactory(
               (DeleteJobRequest request, Operation response) ->
                   HttpJsonOperationSnapshot.create(response))
+          .build();
+
+  private static final ApiMethodDescriptor<CancelJobRequest, Operation> cancelJobMethodDescriptor =
+      ApiMethodDescriptor.<CancelJobRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/CancelJob")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<CancelJobRequest>newBuilder()
+                  .setPath(
+                      "/v1alpha/{name=projects/*/locations/*/jobs/*}:cancel",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<CancelJobRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<CancelJobRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (CancelJobRequest request, Operation response) ->
+                  HttpJsonOperationSnapshot.create(response))
+          .build();
+
+  private static final ApiMethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
+      ApiMethodDescriptor.<UpdateJobRequest, Job>newBuilder()
+          .setFullMethodName("google.cloud.batch.v1alpha.BatchService/UpdateJob")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<UpdateJobRequest>newBuilder()
+                  .setPath(
+                      "/v1alpha/{job.name=projects/*/locations/*/jobs/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateJobRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "job.name", request.getJob().getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateJobRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request -> ProtoRestSerializer.create().toBody("job", request.getJob(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Job>newBuilder()
+                  .setDefaultInstance(Job.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
           .build();
 
   private static final ApiMethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -295,6 +382,201 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceMethodDescriptor =
+          ApiMethodDescriptor.<CreateResourceAllowanceRequest, ResourceAllowance>newBuilder()
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/CreateResourceAllowance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateResourceAllowanceRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=projects/*/locations/*}/resourceAllowances",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateResourceAllowanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateResourceAllowanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "resourceAllowanceId", request.getResourceAllowanceId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "resourceAllowance", request.getResourceAllowance(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceAllowance>newBuilder()
+                      .setDefaultInstance(ResourceAllowance.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceMethodDescriptor =
+          ApiMethodDescriptor.<GetResourceAllowanceRequest, ResourceAllowance>newBuilder()
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/GetResourceAllowance")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetResourceAllowanceRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/resourceAllowances/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceAllowanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetResourceAllowanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceAllowance>newBuilder()
+                      .setDefaultInstance(ResourceAllowance.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceMethodDescriptor =
+          ApiMethodDescriptor.<DeleteResourceAllowanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/DeleteResourceAllowance")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteResourceAllowanceRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/resourceAllowances/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteResourceAllowanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteResourceAllowanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "reason", request.getReason());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteResourceAllowanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+      listResourceAllowancesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListResourceAllowancesRequest, ListResourceAllowancesResponse>newBuilder()
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/ListResourceAllowances")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListResourceAllowancesRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{parent=projects/*/locations/*}/resourceAllowances",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceAllowancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListResourceAllowancesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListResourceAllowancesResponse>newBuilder()
+                      .setDefaultInstance(ListResourceAllowancesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceMethodDescriptor =
+          ApiMethodDescriptor.<UpdateResourceAllowanceRequest, ResourceAllowance>newBuilder()
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/UpdateResourceAllowance")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateResourceAllowanceRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{resourceAllowance.name=projects/*/locations/*/resourceAllowances/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateResourceAllowanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "resourceAllowance.name",
+                                request.getResourceAllowance().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateResourceAllowanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "resourceAllowance", request.getResourceAllowance(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResourceAllowance>newBuilder()
+                      .setDefaultInstance(ResourceAllowance.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -368,11 +650,29 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   private final UnaryCallable<DeleteJobRequest, Operation> deleteJobCallable;
   private final OperationCallable<DeleteJobRequest, Empty, OperationMetadata>
       deleteJobOperationCallable;
+  private final UnaryCallable<CancelJobRequest, Operation> cancelJobCallable;
+  private final OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable;
+  private final UnaryCallable<UpdateJobRequest, Job> updateJobCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable;
+  private final UnaryCallable<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceCallable;
+  private final UnaryCallable<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceCallable;
+  private final UnaryCallable<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceCallable;
+  private final OperationCallable<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+      deleteResourceAllowanceOperationCallable;
+  private final UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+      listResourceAllowancesCallable;
+  private final UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesPagedResponse>
+      listResourceAllowancesPagedCallable;
+  private final UnaryCallable<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -481,6 +781,28 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CancelJobRequest, Operation> cancelJobTransportSettings =
+        HttpJsonCallSettings.<CancelJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
+        HttpJsonCallSettings.<UpdateJobRequest, Job>newBuilder()
+            .setMethodDescriptor(updateJobMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("job.name", String.valueOf(request.getJob().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
@@ -514,6 +836,69 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateResourceAllowanceRequest, ResourceAllowance>
+        createResourceAllowanceTransportSettings =
+            HttpJsonCallSettings.<CreateResourceAllowanceRequest, ResourceAllowance>newBuilder()
+                .setMethodDescriptor(createResourceAllowanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetResourceAllowanceRequest, ResourceAllowance>
+        getResourceAllowanceTransportSettings =
+            HttpJsonCallSettings.<GetResourceAllowanceRequest, ResourceAllowance>newBuilder()
+                .setMethodDescriptor(getResourceAllowanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteResourceAllowanceRequest, Operation>
+        deleteResourceAllowanceTransportSettings =
+            HttpJsonCallSettings.<DeleteResourceAllowanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteResourceAllowanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+        listResourceAllowancesTransportSettings =
+            HttpJsonCallSettings
+                .<ListResourceAllowancesRequest, ListResourceAllowancesResponse>newBuilder()
+                .setMethodDescriptor(listResourceAllowancesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateResourceAllowanceRequest, ResourceAllowance>
+        updateResourceAllowanceTransportSettings =
+            HttpJsonCallSettings.<UpdateResourceAllowanceRequest, ResourceAllowance>newBuilder()
+                .setMethodDescriptor(updateResourceAllowanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "resource_allowance.name",
+                          String.valueOf(request.getResourceAllowance().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -553,6 +938,18 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
             settings.deleteJobOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.cancelJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelJobTransportSettings, settings.cancelJobSettings(), clientContext);
+    this.cancelJobOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelJobTransportSettings,
+            settings.cancelJobOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateJobCallable =
+        callableFactory.createUnaryCallable(
+            updateJobTransportSettings, settings.updateJobSettings(), clientContext);
     this.listJobsCallable =
         callableFactory.createUnaryCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
@@ -568,6 +965,42 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
     this.listTasksPagedCallable =
         callableFactory.createPagedCallable(
             listTasksTransportSettings, settings.listTasksSettings(), clientContext);
+    this.createResourceAllowanceCallable =
+        callableFactory.createUnaryCallable(
+            createResourceAllowanceTransportSettings,
+            settings.createResourceAllowanceSettings(),
+            clientContext);
+    this.getResourceAllowanceCallable =
+        callableFactory.createUnaryCallable(
+            getResourceAllowanceTransportSettings,
+            settings.getResourceAllowanceSettings(),
+            clientContext);
+    this.deleteResourceAllowanceCallable =
+        callableFactory.createUnaryCallable(
+            deleteResourceAllowanceTransportSettings,
+            settings.deleteResourceAllowanceSettings(),
+            clientContext);
+    this.deleteResourceAllowanceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteResourceAllowanceTransportSettings,
+            settings.deleteResourceAllowanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listResourceAllowancesCallable =
+        callableFactory.createUnaryCallable(
+            listResourceAllowancesTransportSettings,
+            settings.listResourceAllowancesSettings(),
+            clientContext);
+    this.listResourceAllowancesPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceAllowancesTransportSettings,
+            settings.listResourceAllowancesSettings(),
+            clientContext);
+    this.updateResourceAllowanceCallable =
+        callableFactory.createUnaryCallable(
+            updateResourceAllowanceTransportSettings,
+            settings.updateResourceAllowanceSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -588,9 +1021,16 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
     methodDescriptors.add(createJobMethodDescriptor);
     methodDescriptors.add(getJobMethodDescriptor);
     methodDescriptors.add(deleteJobMethodDescriptor);
+    methodDescriptors.add(cancelJobMethodDescriptor);
+    methodDescriptors.add(updateJobMethodDescriptor);
     methodDescriptors.add(listJobsMethodDescriptor);
     methodDescriptors.add(getTaskMethodDescriptor);
     methodDescriptors.add(listTasksMethodDescriptor);
+    methodDescriptors.add(createResourceAllowanceMethodDescriptor);
+    methodDescriptors.add(getResourceAllowanceMethodDescriptor);
+    methodDescriptors.add(deleteResourceAllowanceMethodDescriptor);
+    methodDescriptors.add(listResourceAllowancesMethodDescriptor);
+    methodDescriptors.add(updateResourceAllowanceMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -622,6 +1062,22 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   }
 
   @Override
+  public UnaryCallable<CancelJobRequest, Operation> cancelJobCallable() {
+    return cancelJobCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelJobRequest, CancelJobResponse, OperationMetadata>
+      cancelJobOperationCallable() {
+    return cancelJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
+    return updateJobCallable;
+  }
+
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
   }
@@ -644,6 +1100,48 @@ public class HttpJsonBatchServiceStub extends BatchServiceStub {
   @Override
   public UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable() {
     return listTasksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceCallable() {
+    return createResourceAllowanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceCallable() {
+    return getResourceAllowanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceCallable() {
+    return deleteResourceAllowanceCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+      deleteResourceAllowanceOperationCallable() {
+    return deleteResourceAllowanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+      listResourceAllowancesCallable() {
+    return listResourceAllowancesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesPagedResponse>
+      listResourceAllowancesPagedCallable() {
+    return listResourceAllowancesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceCallable() {
+    return updateResourceAllowanceCallable;
   }
 
   @Override

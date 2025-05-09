@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,6 +165,27 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
   }
 
   @Override
+  public void failoverReservation(
+      FailoverReservationRequest request, StreamObserver<Reservation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Reservation) {
+      requests.add(request);
+      responseObserver.onNext(((Reservation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FailoverReservation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Reservation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createCapacityCommitment(
       CreateCapacityCommitmentRequest request,
       StreamObserver<CapacityCommitment> responseObserver) {
@@ -179,7 +200,8 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCapacityCommitment, expected %s or %s",
+                  "Unrecognized response type %s for method CreateCapacityCommitment, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CapacityCommitment.class.getName(),
                   Exception.class.getName())));
@@ -201,7 +223,8 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListCapacityCommitments, expected %s or %s",
+                  "Unrecognized response type %s for method ListCapacityCommitments, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCapacityCommitmentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -222,7 +245,8 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetCapacityCommitment, expected %s or %s",
+                  "Unrecognized response type %s for method GetCapacityCommitment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CapacityCommitment.class.getName(),
                   Exception.class.getName())));
@@ -243,7 +267,8 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteCapacityCommitment, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteCapacityCommitment, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -265,7 +290,8 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateCapacityCommitment, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateCapacityCommitment, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CapacityCommitment.class.getName(),
                   Exception.class.getName())));
@@ -287,7 +313,8 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SplitCapacityCommitment, expected %s or %s",
+                  "Unrecognized response type %s for method SplitCapacityCommitment, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SplitCapacityCommitmentResponse.class.getName(),
                   Exception.class.getName())));
@@ -309,7 +336,8 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method MergeCapacityCommitments, expected %s or %s",
+                  "Unrecognized response type %s for method MergeCapacityCommitments, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CapacityCommitment.class.getName(),
                   Exception.class.getName())));
@@ -416,7 +444,8 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchAllAssignments, expected %s or %s",
+                  "Unrecognized response type %s for method SearchAllAssignments, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchAllAssignmentsResponse.class.getName(),
                   Exception.class.getName())));

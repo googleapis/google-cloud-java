@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 /**
@@ -35,6 +36,7 @@ public final class DeleteClientConnectorServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.DeleteClientConnectorServiceRequest)
     DeleteClientConnectorServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteClientConnectorServiceRequest.newBuilder() to construct.
   private DeleteClientConnectorServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +77,7 @@ public final class DeleteClientConnectorServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class DeleteClientConnectorServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class DeleteClientConnectorServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class DeleteClientConnectorServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class DeleteClientConnectorServiceRequest
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -423,6 +430,7 @@ public final class DeleteClientConnectorServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -664,6 +672,7 @@ public final class DeleteClientConnectorServiceRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -688,6 +697,7 @@ public final class DeleteClientConnectorServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -712,6 +722,7 @@ public final class DeleteClientConnectorServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -735,6 +746,7 @@ public final class DeleteClientConnectorServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +766,7 @@ public final class DeleteClientConnectorServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +793,7 @@ public final class DeleteClientConnectorServiceRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -814,6 +828,7 @@ public final class DeleteClientConnectorServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +863,7 @@ public final class DeleteClientConnectorServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class DeleteClientConnectorServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +927,7 @@ public final class DeleteClientConnectorServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +964,7 @@ public final class DeleteClientConnectorServiceRequest
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -962,6 +981,7 @@ public final class DeleteClientConnectorServiceRequest
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -982,6 +1002,7 @@ public final class DeleteClientConnectorServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

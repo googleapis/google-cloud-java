@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -313,6 +313,19 @@ public final class ContextsGrpc {
     return ContextsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ContextsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ContextsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ContextsBlockingV2Stub>() {
+          @java.lang.Override
+          public ContextsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ContextsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ContextsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -567,6 +580,105 @@ public final class ContextsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Contexts.
+   *
+   * <pre>
+   * Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
+   * </pre>
+   */
+  public static final class ContextsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ContextsBlockingV2Stub> {
+    private ContextsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ContextsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ContextsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all contexts in the specified session.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListContextsResponse listContexts(
+        com.google.cloud.dialogflow.v2beta1.ListContextsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified context.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Context getContext(
+        com.google.cloud.dialogflow.v2beta1.GetContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a context.
+     * If the specified context already exists, overrides the context.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Context createContext(
+        com.google.cloud.dialogflow.v2beta1.CreateContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified context.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Context updateContext(
+        com.google.cloud.dialogflow.v2beta1.UpdateContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified context.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteContext(
+        com.google.cloud.dialogflow.v2beta1.DeleteContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes all active contexts in the specified session.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAllContexts(
+        com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAllContextsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Contexts.
    *
    * <pre>
    * Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].

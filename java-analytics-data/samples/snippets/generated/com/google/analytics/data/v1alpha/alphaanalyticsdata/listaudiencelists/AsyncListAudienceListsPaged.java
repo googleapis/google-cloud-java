@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class AsyncListAudienceListsPaged {
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
       ListAudienceListsRequest request =
           ListAudienceListsRequest.newBuilder()
-              .setParent(PropertyName.of("[PROPERTYID]").toString())
+              .setParent(PropertyName.of("[PROPERTY]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

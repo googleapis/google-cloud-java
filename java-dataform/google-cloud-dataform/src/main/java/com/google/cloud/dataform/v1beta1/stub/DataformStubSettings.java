@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,24 @@
 
 package com.google.cloud.dataform.v1beta1.stub;
 
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListRepositoriesPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkflowConfigsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkflowInvocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListWorkspacesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryCompilationResultActionsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryDirectoryContentsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.QueryRepositoryDirectoryContentsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.QueryWorkflowInvocationActionsPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.SearchFilesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -51,16 +57,29 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
+import com.google.cloud.dataform.v1beta1.CommitLogEntry;
+import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
 import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse;
 import com.google.cloud.dataform.v1beta1.CompilationResult;
 import com.google.cloud.dataform.v1beta1.CompilationResultAction;
+import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusRequest;
+import com.google.cloud.dataform.v1beta1.ComputeRepositoryAccessTokenStatusResponse;
+import com.google.cloud.dataform.v1beta1.Config;
 import com.google.cloud.dataform.v1beta1.CreateCompilationResultRequest;
+import com.google.cloud.dataform.v1beta1.CreateReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateRepositoryRequest;
+import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest;
+import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.DirectoryEntry;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffRequest;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileGitStatusesRequest;
@@ -69,16 +88,25 @@ import com.google.cloud.dataform.v1beta1.FetchGitAheadBehindRequest;
 import com.google.cloud.dataform.v1beta1.FetchGitAheadBehindResponse;
 import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse;
+import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
+import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
+import com.google.cloud.dataform.v1beta1.GetConfigRequest;
+import com.google.cloud.dataform.v1beta1.GetReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.GetRepositoryRequest;
+import com.google.cloud.dataform.v1beta1.GetWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.GetWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.GetWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.InstallNpmPackagesRequest;
 import com.google.cloud.dataform.v1beta1.InstallNpmPackagesResponse;
 import com.google.cloud.dataform.v1beta1.ListCompilationResultsRequest;
 import com.google.cloud.dataform.v1beta1.ListCompilationResultsResponse;
+import com.google.cloud.dataform.v1beta1.ListReleaseConfigsRequest;
+import com.google.cloud.dataform.v1beta1.ListReleaseConfigsResponse;
 import com.google.cloud.dataform.v1beta1.ListRepositoriesRequest;
 import com.google.cloud.dataform.v1beta1.ListRepositoriesResponse;
+import com.google.cloud.dataform.v1beta1.ListWorkflowConfigsRequest;
+import com.google.cloud.dataform.v1beta1.ListWorkflowConfigsResponse;
 import com.google.cloud.dataform.v1beta1.ListWorkflowInvocationsRequest;
 import com.google.cloud.dataform.v1beta1.ListWorkflowInvocationsResponse;
 import com.google.cloud.dataform.v1beta1.ListWorkspacesRequest;
@@ -90,20 +118,37 @@ import com.google.cloud.dataform.v1beta1.MoveDirectoryResponse;
 import com.google.cloud.dataform.v1beta1.MoveFileRequest;
 import com.google.cloud.dataform.v1beta1.MoveFileResponse;
 import com.google.cloud.dataform.v1beta1.PullGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PullGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.PushGitCommitsRequest;
+import com.google.cloud.dataform.v1beta1.PushGitCommitsResponse;
 import com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsRequest;
 import com.google.cloud.dataform.v1beta1.QueryCompilationResultActionsResponse;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsResponse;
+import com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsRequest;
+import com.google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse;
 import com.google.cloud.dataform.v1beta1.QueryWorkflowInvocationActionsRequest;
 import com.google.cloud.dataform.v1beta1.QueryWorkflowInvocationActionsResponse;
 import com.google.cloud.dataform.v1beta1.ReadFileRequest;
 import com.google.cloud.dataform.v1beta1.ReadFileResponse;
+import com.google.cloud.dataform.v1beta1.ReadRepositoryFileRequest;
+import com.google.cloud.dataform.v1beta1.ReadRepositoryFileResponse;
+import com.google.cloud.dataform.v1beta1.ReleaseConfig;
 import com.google.cloud.dataform.v1beta1.RemoveDirectoryRequest;
+import com.google.cloud.dataform.v1beta1.RemoveDirectoryResponse;
 import com.google.cloud.dataform.v1beta1.RemoveFileRequest;
+import com.google.cloud.dataform.v1beta1.RemoveFileResponse;
 import com.google.cloud.dataform.v1beta1.Repository;
 import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest;
+import com.google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse;
+import com.google.cloud.dataform.v1beta1.SearchFilesRequest;
+import com.google.cloud.dataform.v1beta1.SearchFilesResponse;
+import com.google.cloud.dataform.v1beta1.SearchResult;
+import com.google.cloud.dataform.v1beta1.UpdateConfigRequest;
+import com.google.cloud.dataform.v1beta1.UpdateReleaseConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateRepositoryRequest;
+import com.google.cloud.dataform.v1beta1.UpdateWorkflowConfigRequest;
+import com.google.cloud.dataform.v1beta1.WorkflowConfig;
 import com.google.cloud.dataform.v1beta1.WorkflowInvocation;
 import com.google.cloud.dataform.v1beta1.WorkflowInvocationAction;
 import com.google.cloud.dataform.v1beta1.Workspace;
@@ -117,6 +162,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -137,7 +187,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getRepository to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getRepository:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -153,17 +205,31 @@ import javax.annotation.Generated;
  *             .getRepositorySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * DataformStubSettings dataformSettings = dataformSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/bigquery")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final PagedCallSettings<
           ListRepositoriesRequest, ListRepositoriesResponse, ListRepositoriesPagedResponse>
@@ -172,6 +238,23 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<CreateRepositoryRequest, Repository> createRepositorySettings;
   private final UnaryCallSettings<UpdateRepositoryRequest, Repository> updateRepositorySettings;
   private final UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings;
+  private final UnaryCallSettings<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
+      commitRepositoryChangesSettings;
+  private final UnaryCallSettings<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
+      readRepositoryFileSettings;
+  private final PagedCallSettings<
+          QueryRepositoryDirectoryContentsRequest,
+          QueryRepositoryDirectoryContentsResponse,
+          QueryRepositoryDirectoryContentsPagedResponse>
+      queryRepositoryDirectoryContentsSettings;
+  private final PagedCallSettings<
+          FetchRepositoryHistoryRequest,
+          FetchRepositoryHistoryResponse,
+          FetchRepositoryHistoryPagedResponse>
+      fetchRepositoryHistorySettings;
+  private final UnaryCallSettings<
+          ComputeRepositoryAccessTokenStatusRequest, ComputeRepositoryAccessTokenStatusResponse>
+      computeRepositoryAccessTokenStatusSettings;
   private final UnaryCallSettings<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
       fetchRemoteBranchesSettings;
   private final PagedCallSettings<
@@ -182,15 +265,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceSettings;
   private final UnaryCallSettings<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
       installNpmPackagesSettings;
-  private final UnaryCallSettings<PullGitCommitsRequest, Empty> pullGitCommitsSettings;
-  private final UnaryCallSettings<PushGitCommitsRequest, Empty> pushGitCommitsSettings;
+  private final UnaryCallSettings<PullGitCommitsRequest, PullGitCommitsResponse>
+      pullGitCommitsSettings;
+  private final UnaryCallSettings<PushGitCommitsRequest, PushGitCommitsResponse>
+      pushGitCommitsSettings;
   private final UnaryCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
       fetchFileGitStatusesSettings;
   private final UnaryCallSettings<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
       fetchGitAheadBehindSettings;
-  private final UnaryCallSettings<CommitWorkspaceChangesRequest, Empty>
+  private final UnaryCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
       commitWorkspaceChangesSettings;
-  private final UnaryCallSettings<ResetWorkspaceChangesRequest, Empty>
+  private final UnaryCallSettings<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
       resetWorkspaceChangesSettings;
   private final UnaryCallSettings<FetchFileDiffRequest, FetchFileDiffResponse>
       fetchFileDiffSettings;
@@ -199,15 +284,27 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           QueryDirectoryContentsResponse,
           QueryDirectoryContentsPagedResponse>
       queryDirectoryContentsSettings;
+  private final PagedCallSettings<SearchFilesRequest, SearchFilesResponse, SearchFilesPagedResponse>
+      searchFilesSettings;
   private final UnaryCallSettings<MakeDirectoryRequest, MakeDirectoryResponse>
       makeDirectorySettings;
-  private final UnaryCallSettings<RemoveDirectoryRequest, Empty> removeDirectorySettings;
+  private final UnaryCallSettings<RemoveDirectoryRequest, RemoveDirectoryResponse>
+      removeDirectorySettings;
   private final UnaryCallSettings<MoveDirectoryRequest, MoveDirectoryResponse>
       moveDirectorySettings;
   private final UnaryCallSettings<ReadFileRequest, ReadFileResponse> readFileSettings;
-  private final UnaryCallSettings<RemoveFileRequest, Empty> removeFileSettings;
+  private final UnaryCallSettings<RemoveFileRequest, RemoveFileResponse> removeFileSettings;
   private final UnaryCallSettings<MoveFileRequest, MoveFileResponse> moveFileSettings;
   private final UnaryCallSettings<WriteFileRequest, WriteFileResponse> writeFileSettings;
+  private final PagedCallSettings<
+          ListReleaseConfigsRequest, ListReleaseConfigsResponse, ListReleaseConfigsPagedResponse>
+      listReleaseConfigsSettings;
+  private final UnaryCallSettings<GetReleaseConfigRequest, ReleaseConfig> getReleaseConfigSettings;
+  private final UnaryCallSettings<CreateReleaseConfigRequest, ReleaseConfig>
+      createReleaseConfigSettings;
+  private final UnaryCallSettings<UpdateReleaseConfigRequest, ReleaseConfig>
+      updateReleaseConfigSettings;
+  private final UnaryCallSettings<DeleteReleaseConfigRequest, Empty> deleteReleaseConfigSettings;
   private final PagedCallSettings<
           ListCompilationResultsRequest,
           ListCompilationResultsResponse,
@@ -223,6 +320,16 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           QueryCompilationResultActionsPagedResponse>
       queryCompilationResultActionsSettings;
   private final PagedCallSettings<
+          ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, ListWorkflowConfigsPagedResponse>
+      listWorkflowConfigsSettings;
+  private final UnaryCallSettings<GetWorkflowConfigRequest, WorkflowConfig>
+      getWorkflowConfigSettings;
+  private final UnaryCallSettings<CreateWorkflowConfigRequest, WorkflowConfig>
+      createWorkflowConfigSettings;
+  private final UnaryCallSettings<UpdateWorkflowConfigRequest, WorkflowConfig>
+      updateWorkflowConfigSettings;
+  private final UnaryCallSettings<DeleteWorkflowConfigRequest, Empty> deleteWorkflowConfigSettings;
+  private final PagedCallSettings<
           ListWorkflowInvocationsRequest,
           ListWorkflowInvocationsResponse,
           ListWorkflowInvocationsPagedResponse>
@@ -233,17 +340,23 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createWorkflowInvocationSettings;
   private final UnaryCallSettings<DeleteWorkflowInvocationRequest, Empty>
       deleteWorkflowInvocationSettings;
-  private final UnaryCallSettings<CancelWorkflowInvocationRequest, Empty>
+  private final UnaryCallSettings<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
       cancelWorkflowInvocationSettings;
   private final PagedCallSettings<
           QueryWorkflowInvocationActionsRequest,
           QueryWorkflowInvocationActionsResponse,
           QueryWorkflowInvocationActionsPagedResponse>
       queryWorkflowInvocationActionsSettings;
+  private final UnaryCallSettings<GetConfigRequest, Config> getConfigSettings;
+  private final UnaryCallSettings<UpdateConfigRequest, Config> updateConfigSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListRepositoriesRequest, ListRepositoriesResponse, Repository>
@@ -278,9 +391,95 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
             @Override
             public Iterable<Repository> extractResources(ListRepositoriesResponse payload) {
-              return payload.getRepositoriesList() == null
-                  ? ImmutableList.<Repository>of()
-                  : payload.getRepositoriesList();
+              return payload.getRepositoriesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          QueryRepositoryDirectoryContentsRequest,
+          QueryRepositoryDirectoryContentsResponse,
+          DirectoryEntry>
+      QUERY_REPOSITORY_DIRECTORY_CONTENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              QueryRepositoryDirectoryContentsRequest,
+              QueryRepositoryDirectoryContentsResponse,
+              DirectoryEntry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryRepositoryDirectoryContentsRequest injectToken(
+                QueryRepositoryDirectoryContentsRequest payload, String token) {
+              return QueryRepositoryDirectoryContentsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public QueryRepositoryDirectoryContentsRequest injectPageSize(
+                QueryRepositoryDirectoryContentsRequest payload, int pageSize) {
+              return QueryRepositoryDirectoryContentsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryRepositoryDirectoryContentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryRepositoryDirectoryContentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DirectoryEntry> extractResources(
+                QueryRepositoryDirectoryContentsResponse payload) {
+              return payload.getDirectoryEntriesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>
+      FETCH_REPOSITORY_HISTORY_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchRepositoryHistoryRequest injectToken(
+                FetchRepositoryHistoryRequest payload, String token) {
+              return FetchRepositoryHistoryRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchRepositoryHistoryRequest injectPageSize(
+                FetchRepositoryHistoryRequest payload, int pageSize) {
+              return FetchRepositoryHistoryRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchRepositoryHistoryRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchRepositoryHistoryResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CommitLogEntry> extractResources(
+                FetchRepositoryHistoryResponse payload) {
+              return payload.getCommitsList();
             }
           };
 
@@ -315,21 +514,15 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
             @Override
             public Iterable<Workspace> extractResources(ListWorkspacesResponse payload) {
-              return payload.getWorkspacesList() == null
-                  ? ImmutableList.<Workspace>of()
-                  : payload.getWorkspacesList();
+              return payload.getWorkspacesList();
             }
           };
 
   private static final PagedListDescriptor<
-          QueryDirectoryContentsRequest,
-          QueryDirectoryContentsResponse,
-          QueryDirectoryContentsResponse.DirectoryEntry>
+          QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>
       QUERY_DIRECTORY_CONTENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              QueryDirectoryContentsRequest,
-              QueryDirectoryContentsResponse,
-              QueryDirectoryContentsResponse.DirectoryEntry>() {
+              QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>() {
             @Override
             public String emptyToken() {
               return "";
@@ -360,11 +553,81 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             }
 
             @Override
-            public Iterable<QueryDirectoryContentsResponse.DirectoryEntry> extractResources(
+            public Iterable<DirectoryEntry> extractResources(
                 QueryDirectoryContentsResponse payload) {
-              return payload.getDirectoryEntriesList() == null
-                  ? ImmutableList.<QueryDirectoryContentsResponse.DirectoryEntry>of()
-                  : payload.getDirectoryEntriesList();
+              return payload.getDirectoryEntriesList();
+            }
+          };
+
+  private static final PagedListDescriptor<SearchFilesRequest, SearchFilesResponse, SearchResult>
+      SEARCH_FILES_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchFilesRequest, SearchFilesResponse, SearchResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchFilesRequest injectToken(SearchFilesRequest payload, String token) {
+              return SearchFilesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchFilesRequest injectPageSize(SearchFilesRequest payload, int pageSize) {
+              return SearchFilesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchFilesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchFilesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchResult> extractResources(SearchFilesResponse payload) {
+              return payload.getSearchResultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig>
+      LIST_RELEASE_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReleaseConfigsRequest injectToken(
+                ListReleaseConfigsRequest payload, String token) {
+              return ListReleaseConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListReleaseConfigsRequest injectPageSize(
+                ListReleaseConfigsRequest payload, int pageSize) {
+              return ListReleaseConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReleaseConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReleaseConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ReleaseConfig> extractResources(ListReleaseConfigsResponse payload) {
+              return payload.getReleaseConfigsList();
             }
           };
 
@@ -405,9 +668,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<CompilationResult> extractResources(
                 ListCompilationResultsResponse payload) {
-              return payload.getCompilationResultsList() == null
-                  ? ImmutableList.<CompilationResult>of()
-                  : payload.getCompilationResultsList();
+              return payload.getCompilationResultsList();
             }
           };
 
@@ -454,9 +715,45 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<CompilationResultAction> extractResources(
                 QueryCompilationResultActionsResponse payload) {
-              return payload.getCompilationResultActionsList() == null
-                  ? ImmutableList.<CompilationResultAction>of()
-                  : payload.getCompilationResultActionsList();
+              return payload.getCompilationResultActionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>
+      LIST_WORKFLOW_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListWorkflowConfigsRequest injectToken(
+                ListWorkflowConfigsRequest payload, String token) {
+              return ListWorkflowConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListWorkflowConfigsRequest injectPageSize(
+                ListWorkflowConfigsRequest payload, int pageSize) {
+              return ListWorkflowConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListWorkflowConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListWorkflowConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<WorkflowConfig> extractResources(ListWorkflowConfigsResponse payload) {
+              return payload.getWorkflowConfigsList();
             }
           };
 
@@ -499,9 +796,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<WorkflowInvocation> extractResources(
                 ListWorkflowInvocationsResponse payload) {
-              return payload.getWorkflowInvocationsList() == null
-                  ? ImmutableList.<WorkflowInvocation>of()
-                  : payload.getWorkflowInvocationsList();
+              return payload.getWorkflowInvocationsList();
             }
           };
 
@@ -548,9 +843,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<WorkflowInvocationAction> extractResources(
                 QueryWorkflowInvocationActionsResponse payload) {
-              return payload.getWorkflowInvocationActionsList() == null
-                  ? ImmutableList.<WorkflowInvocationAction>of()
-                  : payload.getWorkflowInvocationActionsList();
+              return payload.getWorkflowInvocationActionsList();
             }
           };
 
@@ -584,9 +877,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -606,6 +897,64 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
                       PageContext.create(
                           callable, LIST_REPOSITORIES_PAGE_STR_DESC, request, context);
               return ListRepositoriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          QueryRepositoryDirectoryContentsRequest,
+          QueryRepositoryDirectoryContentsResponse,
+          QueryRepositoryDirectoryContentsPagedResponse>
+      QUERY_REPOSITORY_DIRECTORY_CONTENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryRepositoryDirectoryContentsRequest,
+              QueryRepositoryDirectoryContentsResponse,
+              QueryRepositoryDirectoryContentsPagedResponse>() {
+            @Override
+            public ApiFuture<QueryRepositoryDirectoryContentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        QueryRepositoryDirectoryContentsRequest,
+                        QueryRepositoryDirectoryContentsResponse>
+                    callable,
+                QueryRepositoryDirectoryContentsRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryRepositoryDirectoryContentsResponse> futureResponse) {
+              PageContext<
+                      QueryRepositoryDirectoryContentsRequest,
+                      QueryRepositoryDirectoryContentsResponse,
+                      DirectoryEntry>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          QUERY_REPOSITORY_DIRECTORY_CONTENTS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return QueryRepositoryDirectoryContentsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          FetchRepositoryHistoryRequest,
+          FetchRepositoryHistoryResponse,
+          FetchRepositoryHistoryPagedResponse>
+      FETCH_REPOSITORY_HISTORY_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchRepositoryHistoryRequest,
+              FetchRepositoryHistoryResponse,
+              FetchRepositoryHistoryPagedResponse>() {
+            @Override
+            public ApiFuture<FetchRepositoryHistoryPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse>
+                    callable,
+                FetchRepositoryHistoryRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchRepositoryHistoryResponse> futureResponse) {
+              PageContext<
+                      FetchRepositoryHistoryRequest, FetchRepositoryHistoryResponse, CommitLogEntry>
+                  pageContext =
+                      PageContext.create(
+                          callable, FETCH_REPOSITORY_HISTORY_PAGE_STR_DESC, request, context);
+              return FetchRepositoryHistoryPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -643,13 +992,49 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
                 ApiCallContext context,
                 ApiFuture<QueryDirectoryContentsResponse> futureResponse) {
               PageContext<
-                      QueryDirectoryContentsRequest,
-                      QueryDirectoryContentsResponse,
-                      QueryDirectoryContentsResponse.DirectoryEntry>
+                      QueryDirectoryContentsRequest, QueryDirectoryContentsResponse, DirectoryEntry>
                   pageContext =
                       PageContext.create(
                           callable, QUERY_DIRECTORY_CONTENTS_PAGE_STR_DESC, request, context);
               return QueryDirectoryContentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchFilesRequest, SearchFilesResponse, SearchFilesPagedResponse>
+      SEARCH_FILES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchFilesRequest, SearchFilesResponse, SearchFilesPagedResponse>() {
+            @Override
+            public ApiFuture<SearchFilesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchFilesRequest, SearchFilesResponse> callable,
+                SearchFilesRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchFilesResponse> futureResponse) {
+              PageContext<SearchFilesRequest, SearchFilesResponse, SearchResult> pageContext =
+                  PageContext.create(callable, SEARCH_FILES_PAGE_STR_DESC, request, context);
+              return SearchFilesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListReleaseConfigsRequest, ListReleaseConfigsResponse, ListReleaseConfigsPagedResponse>
+      LIST_RELEASE_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReleaseConfigsRequest,
+              ListReleaseConfigsResponse,
+              ListReleaseConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListReleaseConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListReleaseConfigsRequest, ListReleaseConfigsResponse> callable,
+                ListReleaseConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReleaseConfigsResponse> futureResponse) {
+              PageContext<ListReleaseConfigsRequest, ListReleaseConfigsResponse, ReleaseConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RELEASE_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListReleaseConfigsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -709,6 +1094,27 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
                           context);
               return QueryCompilationResultActionsPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, ListWorkflowConfigsPagedResponse>
+      LIST_WORKFLOW_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListWorkflowConfigsRequest,
+              ListWorkflowConfigsResponse,
+              ListWorkflowConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListWorkflowConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse> callable,
+                ListWorkflowConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListWorkflowConfigsResponse> futureResponse) {
+              PageContext<ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, WorkflowConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_WORKFLOW_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListWorkflowConfigsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -816,6 +1222,43 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return deleteRepositorySettings;
   }
 
+  /** Returns the object with the settings used for calls to commitRepositoryChanges. */
+  public UnaryCallSettings<CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
+      commitRepositoryChangesSettings() {
+    return commitRepositoryChangesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to readRepositoryFile. */
+  public UnaryCallSettings<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
+      readRepositoryFileSettings() {
+    return readRepositoryFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to queryRepositoryDirectoryContents. */
+  public PagedCallSettings<
+          QueryRepositoryDirectoryContentsRequest,
+          QueryRepositoryDirectoryContentsResponse,
+          QueryRepositoryDirectoryContentsPagedResponse>
+      queryRepositoryDirectoryContentsSettings() {
+    return queryRepositoryDirectoryContentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchRepositoryHistory. */
+  public PagedCallSettings<
+          FetchRepositoryHistoryRequest,
+          FetchRepositoryHistoryResponse,
+          FetchRepositoryHistoryPagedResponse>
+      fetchRepositoryHistorySettings() {
+    return fetchRepositoryHistorySettings;
+  }
+
+  /** Returns the object with the settings used for calls to computeRepositoryAccessTokenStatus. */
+  public UnaryCallSettings<
+          ComputeRepositoryAccessTokenStatusRequest, ComputeRepositoryAccessTokenStatusResponse>
+      computeRepositoryAccessTokenStatusSettings() {
+    return computeRepositoryAccessTokenStatusSettings;
+  }
+
   /** Returns the object with the settings used for calls to fetchRemoteBranches. */
   public UnaryCallSettings<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
       fetchRemoteBranchesSettings() {
@@ -851,12 +1294,12 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to pullGitCommits. */
-  public UnaryCallSettings<PullGitCommitsRequest, Empty> pullGitCommitsSettings() {
+  public UnaryCallSettings<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsSettings() {
     return pullGitCommitsSettings;
   }
 
   /** Returns the object with the settings used for calls to pushGitCommits. */
-  public UnaryCallSettings<PushGitCommitsRequest, Empty> pushGitCommitsSettings() {
+  public UnaryCallSettings<PushGitCommitsRequest, PushGitCommitsResponse> pushGitCommitsSettings() {
     return pushGitCommitsSettings;
   }
 
@@ -873,12 +1316,14 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to commitWorkspaceChanges. */
-  public UnaryCallSettings<CommitWorkspaceChangesRequest, Empty> commitWorkspaceChangesSettings() {
+  public UnaryCallSettings<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
+      commitWorkspaceChangesSettings() {
     return commitWorkspaceChangesSettings;
   }
 
   /** Returns the object with the settings used for calls to resetWorkspaceChanges. */
-  public UnaryCallSettings<ResetWorkspaceChangesRequest, Empty> resetWorkspaceChangesSettings() {
+  public UnaryCallSettings<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
+      resetWorkspaceChangesSettings() {
     return resetWorkspaceChangesSettings;
   }
 
@@ -896,13 +1341,20 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return queryDirectoryContentsSettings;
   }
 
+  /** Returns the object with the settings used for calls to searchFiles. */
+  public PagedCallSettings<SearchFilesRequest, SearchFilesResponse, SearchFilesPagedResponse>
+      searchFilesSettings() {
+    return searchFilesSettings;
+  }
+
   /** Returns the object with the settings used for calls to makeDirectory. */
   public UnaryCallSettings<MakeDirectoryRequest, MakeDirectoryResponse> makeDirectorySettings() {
     return makeDirectorySettings;
   }
 
   /** Returns the object with the settings used for calls to removeDirectory. */
-  public UnaryCallSettings<RemoveDirectoryRequest, Empty> removeDirectorySettings() {
+  public UnaryCallSettings<RemoveDirectoryRequest, RemoveDirectoryResponse>
+      removeDirectorySettings() {
     return removeDirectorySettings;
   }
 
@@ -917,7 +1369,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to removeFile. */
-  public UnaryCallSettings<RemoveFileRequest, Empty> removeFileSettings() {
+  public UnaryCallSettings<RemoveFileRequest, RemoveFileResponse> removeFileSettings() {
     return removeFileSettings;
   }
 
@@ -929,6 +1381,35 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to writeFile. */
   public UnaryCallSettings<WriteFileRequest, WriteFileResponse> writeFileSettings() {
     return writeFileSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listReleaseConfigs. */
+  public PagedCallSettings<
+          ListReleaseConfigsRequest, ListReleaseConfigsResponse, ListReleaseConfigsPagedResponse>
+      listReleaseConfigsSettings() {
+    return listReleaseConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getReleaseConfig. */
+  public UnaryCallSettings<GetReleaseConfigRequest, ReleaseConfig> getReleaseConfigSettings() {
+    return getReleaseConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createReleaseConfig. */
+  public UnaryCallSettings<CreateReleaseConfigRequest, ReleaseConfig>
+      createReleaseConfigSettings() {
+    return createReleaseConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateReleaseConfig. */
+  public UnaryCallSettings<UpdateReleaseConfigRequest, ReleaseConfig>
+      updateReleaseConfigSettings() {
+    return updateReleaseConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteReleaseConfig. */
+  public UnaryCallSettings<DeleteReleaseConfigRequest, Empty> deleteReleaseConfigSettings() {
+    return deleteReleaseConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to listCompilationResults. */
@@ -961,6 +1442,35 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return queryCompilationResultActionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listWorkflowConfigs. */
+  public PagedCallSettings<
+          ListWorkflowConfigsRequest, ListWorkflowConfigsResponse, ListWorkflowConfigsPagedResponse>
+      listWorkflowConfigsSettings() {
+    return listWorkflowConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getWorkflowConfig. */
+  public UnaryCallSettings<GetWorkflowConfigRequest, WorkflowConfig> getWorkflowConfigSettings() {
+    return getWorkflowConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createWorkflowConfig. */
+  public UnaryCallSettings<CreateWorkflowConfigRequest, WorkflowConfig>
+      createWorkflowConfigSettings() {
+    return createWorkflowConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateWorkflowConfig. */
+  public UnaryCallSettings<UpdateWorkflowConfigRequest, WorkflowConfig>
+      updateWorkflowConfigSettings() {
+    return updateWorkflowConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteWorkflowConfig. */
+  public UnaryCallSettings<DeleteWorkflowConfigRequest, Empty> deleteWorkflowConfigSettings() {
+    return deleteWorkflowConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to listWorkflowInvocations. */
   public PagedCallSettings<
           ListWorkflowInvocationsRequest,
@@ -989,7 +1499,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to cancelWorkflowInvocation. */
-  public UnaryCallSettings<CancelWorkflowInvocationRequest, Empty>
+  public UnaryCallSettings<CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
       cancelWorkflowInvocationSettings() {
     return cancelWorkflowInvocationSettings;
   }
@@ -1003,6 +1513,16 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return queryWorkflowInvocationActionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getConfig. */
+  public UnaryCallSettings<GetConfigRequest, Config> getConfigSettings() {
+    return getConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateConfig. */
+  public UnaryCallSettings<UpdateConfigRequest, Config> updateConfigSettings() {
+    return updateConfigSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1012,6 +1532,22 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to getLocation. */
   public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
     return getLocationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public DataformStub createStub() throws IOException {
@@ -1030,12 +1566,19 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dataform";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dataform.googleapis.com:443";
   }
@@ -1074,7 +1617,6 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(DataformStubSettings.class))
@@ -1082,7 +1624,6 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(DataformStubSettings.class))
@@ -1123,6 +1664,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     createRepositorySettings = settingsBuilder.createRepositorySettings().build();
     updateRepositorySettings = settingsBuilder.updateRepositorySettings().build();
     deleteRepositorySettings = settingsBuilder.deleteRepositorySettings().build();
+    commitRepositoryChangesSettings = settingsBuilder.commitRepositoryChangesSettings().build();
+    readRepositoryFileSettings = settingsBuilder.readRepositoryFileSettings().build();
+    queryRepositoryDirectoryContentsSettings =
+        settingsBuilder.queryRepositoryDirectoryContentsSettings().build();
+    fetchRepositoryHistorySettings = settingsBuilder.fetchRepositoryHistorySettings().build();
+    computeRepositoryAccessTokenStatusSettings =
+        settingsBuilder.computeRepositoryAccessTokenStatusSettings().build();
     fetchRemoteBranchesSettings = settingsBuilder.fetchRemoteBranchesSettings().build();
     listWorkspacesSettings = settingsBuilder.listWorkspacesSettings().build();
     getWorkspaceSettings = settingsBuilder.getWorkspaceSettings().build();
@@ -1137,6 +1685,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     resetWorkspaceChangesSettings = settingsBuilder.resetWorkspaceChangesSettings().build();
     fetchFileDiffSettings = settingsBuilder.fetchFileDiffSettings().build();
     queryDirectoryContentsSettings = settingsBuilder.queryDirectoryContentsSettings().build();
+    searchFilesSettings = settingsBuilder.searchFilesSettings().build();
     makeDirectorySettings = settingsBuilder.makeDirectorySettings().build();
     removeDirectorySettings = settingsBuilder.removeDirectorySettings().build();
     moveDirectorySettings = settingsBuilder.moveDirectorySettings().build();
@@ -1144,11 +1693,21 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     removeFileSettings = settingsBuilder.removeFileSettings().build();
     moveFileSettings = settingsBuilder.moveFileSettings().build();
     writeFileSettings = settingsBuilder.writeFileSettings().build();
+    listReleaseConfigsSettings = settingsBuilder.listReleaseConfigsSettings().build();
+    getReleaseConfigSettings = settingsBuilder.getReleaseConfigSettings().build();
+    createReleaseConfigSettings = settingsBuilder.createReleaseConfigSettings().build();
+    updateReleaseConfigSettings = settingsBuilder.updateReleaseConfigSettings().build();
+    deleteReleaseConfigSettings = settingsBuilder.deleteReleaseConfigSettings().build();
     listCompilationResultsSettings = settingsBuilder.listCompilationResultsSettings().build();
     getCompilationResultSettings = settingsBuilder.getCompilationResultSettings().build();
     createCompilationResultSettings = settingsBuilder.createCompilationResultSettings().build();
     queryCompilationResultActionsSettings =
         settingsBuilder.queryCompilationResultActionsSettings().build();
+    listWorkflowConfigsSettings = settingsBuilder.listWorkflowConfigsSettings().build();
+    getWorkflowConfigSettings = settingsBuilder.getWorkflowConfigSettings().build();
+    createWorkflowConfigSettings = settingsBuilder.createWorkflowConfigSettings().build();
+    updateWorkflowConfigSettings = settingsBuilder.updateWorkflowConfigSettings().build();
+    deleteWorkflowConfigSettings = settingsBuilder.deleteWorkflowConfigSettings().build();
     listWorkflowInvocationsSettings = settingsBuilder.listWorkflowInvocationsSettings().build();
     getWorkflowInvocationSettings = settingsBuilder.getWorkflowInvocationSettings().build();
     createWorkflowInvocationSettings = settingsBuilder.createWorkflowInvocationSettings().build();
@@ -1156,8 +1715,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     cancelWorkflowInvocationSettings = settingsBuilder.cancelWorkflowInvocationSettings().build();
     queryWorkflowInvocationActionsSettings =
         settingsBuilder.queryWorkflowInvocationActionsSettings().build();
+    getConfigSettings = settingsBuilder.getConfigSettings().build();
+    updateConfigSettings = settingsBuilder.updateConfigSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for DataformStubSettings. */
@@ -1173,6 +1737,24 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         updateRepositorySettings;
     private final UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty>
         deleteRepositorySettings;
+    private final UnaryCallSettings.Builder<
+            CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
+        commitRepositoryChangesSettings;
+    private final UnaryCallSettings.Builder<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
+        readRepositoryFileSettings;
+    private final PagedCallSettings.Builder<
+            QueryRepositoryDirectoryContentsRequest,
+            QueryRepositoryDirectoryContentsResponse,
+            QueryRepositoryDirectoryContentsPagedResponse>
+        queryRepositoryDirectoryContentsSettings;
+    private final PagedCallSettings.Builder<
+            FetchRepositoryHistoryRequest,
+            FetchRepositoryHistoryResponse,
+            FetchRepositoryHistoryPagedResponse>
+        fetchRepositoryHistorySettings;
+    private final UnaryCallSettings.Builder<
+            ComputeRepositoryAccessTokenStatusRequest, ComputeRepositoryAccessTokenStatusResponse>
+        computeRepositoryAccessTokenStatusSettings;
     private final UnaryCallSettings.Builder<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
         fetchRemoteBranchesSettings;
     private final PagedCallSettings.Builder<
@@ -1184,16 +1766,20 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     private final UnaryCallSettings.Builder<DeleteWorkspaceRequest, Empty> deleteWorkspaceSettings;
     private final UnaryCallSettings.Builder<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
         installNpmPackagesSettings;
-    private final UnaryCallSettings.Builder<PullGitCommitsRequest, Empty> pullGitCommitsSettings;
-    private final UnaryCallSettings.Builder<PushGitCommitsRequest, Empty> pushGitCommitsSettings;
+    private final UnaryCallSettings.Builder<PullGitCommitsRequest, PullGitCommitsResponse>
+        pullGitCommitsSettings;
+    private final UnaryCallSettings.Builder<PushGitCommitsRequest, PushGitCommitsResponse>
+        pushGitCommitsSettings;
     private final UnaryCallSettings.Builder<
             FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
         fetchFileGitStatusesSettings;
     private final UnaryCallSettings.Builder<FetchGitAheadBehindRequest, FetchGitAheadBehindResponse>
         fetchGitAheadBehindSettings;
-    private final UnaryCallSettings.Builder<CommitWorkspaceChangesRequest, Empty>
+    private final UnaryCallSettings.Builder<
+            CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesSettings;
-    private final UnaryCallSettings.Builder<ResetWorkspaceChangesRequest, Empty>
+    private final UnaryCallSettings.Builder<
+            ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
         resetWorkspaceChangesSettings;
     private final UnaryCallSettings.Builder<FetchFileDiffRequest, FetchFileDiffResponse>
         fetchFileDiffSettings;
@@ -1202,15 +1788,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             QueryDirectoryContentsResponse,
             QueryDirectoryContentsPagedResponse>
         queryDirectoryContentsSettings;
+    private final PagedCallSettings.Builder<
+            SearchFilesRequest, SearchFilesResponse, SearchFilesPagedResponse>
+        searchFilesSettings;
     private final UnaryCallSettings.Builder<MakeDirectoryRequest, MakeDirectoryResponse>
         makeDirectorySettings;
-    private final UnaryCallSettings.Builder<RemoveDirectoryRequest, Empty> removeDirectorySettings;
+    private final UnaryCallSettings.Builder<RemoveDirectoryRequest, RemoveDirectoryResponse>
+        removeDirectorySettings;
     private final UnaryCallSettings.Builder<MoveDirectoryRequest, MoveDirectoryResponse>
         moveDirectorySettings;
     private final UnaryCallSettings.Builder<ReadFileRequest, ReadFileResponse> readFileSettings;
-    private final UnaryCallSettings.Builder<RemoveFileRequest, Empty> removeFileSettings;
+    private final UnaryCallSettings.Builder<RemoveFileRequest, RemoveFileResponse>
+        removeFileSettings;
     private final UnaryCallSettings.Builder<MoveFileRequest, MoveFileResponse> moveFileSettings;
     private final UnaryCallSettings.Builder<WriteFileRequest, WriteFileResponse> writeFileSettings;
+    private final PagedCallSettings.Builder<
+            ListReleaseConfigsRequest, ListReleaseConfigsResponse, ListReleaseConfigsPagedResponse>
+        listReleaseConfigsSettings;
+    private final UnaryCallSettings.Builder<GetReleaseConfigRequest, ReleaseConfig>
+        getReleaseConfigSettings;
+    private final UnaryCallSettings.Builder<CreateReleaseConfigRequest, ReleaseConfig>
+        createReleaseConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateReleaseConfigRequest, ReleaseConfig>
+        updateReleaseConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteReleaseConfigRequest, Empty>
+        deleteReleaseConfigSettings;
     private final PagedCallSettings.Builder<
             ListCompilationResultsRequest,
             ListCompilationResultsResponse,
@@ -1226,6 +1828,19 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             QueryCompilationResultActionsPagedResponse>
         queryCompilationResultActionsSettings;
     private final PagedCallSettings.Builder<
+            ListWorkflowConfigsRequest,
+            ListWorkflowConfigsResponse,
+            ListWorkflowConfigsPagedResponse>
+        listWorkflowConfigsSettings;
+    private final UnaryCallSettings.Builder<GetWorkflowConfigRequest, WorkflowConfig>
+        getWorkflowConfigSettings;
+    private final UnaryCallSettings.Builder<CreateWorkflowConfigRequest, WorkflowConfig>
+        createWorkflowConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateWorkflowConfigRequest, WorkflowConfig>
+        updateWorkflowConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteWorkflowConfigRequest, Empty>
+        deleteWorkflowConfigSettings;
+    private final PagedCallSettings.Builder<
             ListWorkflowInvocationsRequest,
             ListWorkflowInvocationsResponse,
             ListWorkflowInvocationsPagedResponse>
@@ -1236,17 +1851,24 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         createWorkflowInvocationSettings;
     private final UnaryCallSettings.Builder<DeleteWorkflowInvocationRequest, Empty>
         deleteWorkflowInvocationSettings;
-    private final UnaryCallSettings.Builder<CancelWorkflowInvocationRequest, Empty>
+    private final UnaryCallSettings.Builder<
+            CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
         cancelWorkflowInvocationSettings;
     private final PagedCallSettings.Builder<
             QueryWorkflowInvocationActionsRequest,
             QueryWorkflowInvocationActionsResponse,
             QueryWorkflowInvocationActionsPagedResponse>
         queryWorkflowInvocationActionsSettings;
+    private final UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateConfigRequest, Config> updateConfigSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1279,6 +1901,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      commitRepositoryChangesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      readRepositoryFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      queryRepositoryDirectoryContentsSettings =
+          PagedCallSettings.newBuilder(QUERY_REPOSITORY_DIRECTORY_CONTENTS_PAGE_STR_FACT);
+      fetchRepositoryHistorySettings =
+          PagedCallSettings.newBuilder(FETCH_REPOSITORY_HISTORY_PAGE_STR_FACT);
+      computeRepositoryAccessTokenStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchRemoteBranchesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listWorkspacesSettings = PagedCallSettings.newBuilder(LIST_WORKSPACES_PAGE_STR_FACT);
       getWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1294,6 +1923,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       fetchFileDiffSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       queryDirectoryContentsSettings =
           PagedCallSettings.newBuilder(QUERY_DIRECTORY_CONTENTS_PAGE_STR_FACT);
+      searchFilesSettings = PagedCallSettings.newBuilder(SEARCH_FILES_PAGE_STR_FACT);
       makeDirectorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeDirectorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       moveDirectorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1301,12 +1931,23 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       removeFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       moveFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       writeFileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listReleaseConfigsSettings = PagedCallSettings.newBuilder(LIST_RELEASE_CONFIGS_PAGE_STR_FACT);
+      getReleaseConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createReleaseConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateReleaseConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteReleaseConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCompilationResultsSettings =
           PagedCallSettings.newBuilder(LIST_COMPILATION_RESULTS_PAGE_STR_FACT);
       getCompilationResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCompilationResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       queryCompilationResultActionsSettings =
           PagedCallSettings.newBuilder(QUERY_COMPILATION_RESULT_ACTIONS_PAGE_STR_FACT);
+      listWorkflowConfigsSettings =
+          PagedCallSettings.newBuilder(LIST_WORKFLOW_CONFIGS_PAGE_STR_FACT);
+      getWorkflowConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createWorkflowConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateWorkflowConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteWorkflowConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listWorkflowInvocationsSettings =
           PagedCallSettings.newBuilder(LIST_WORKFLOW_INVOCATIONS_PAGE_STR_FACT);
       getWorkflowInvocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1315,8 +1956,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       cancelWorkflowInvocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       queryWorkflowInvocationActionsSettings =
           PagedCallSettings.newBuilder(QUERY_WORKFLOW_INVOCATION_ACTIONS_PAGE_STR_FACT);
+      getConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1325,6 +1971,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createRepositorySettings,
               updateRepositorySettings,
               deleteRepositorySettings,
+              commitRepositoryChangesSettings,
+              readRepositoryFileSettings,
+              queryRepositoryDirectoryContentsSettings,
+              fetchRepositoryHistorySettings,
+              computeRepositoryAccessTokenStatusSettings,
               fetchRemoteBranchesSettings,
               listWorkspacesSettings,
               getWorkspaceSettings,
@@ -1339,6 +1990,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               resetWorkspaceChangesSettings,
               fetchFileDiffSettings,
               queryDirectoryContentsSettings,
+              searchFilesSettings,
               makeDirectorySettings,
               removeDirectorySettings,
               moveDirectorySettings,
@@ -1346,18 +1998,33 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               removeFileSettings,
               moveFileSettings,
               writeFileSettings,
+              listReleaseConfigsSettings,
+              getReleaseConfigSettings,
+              createReleaseConfigSettings,
+              updateReleaseConfigSettings,
+              deleteReleaseConfigSettings,
               listCompilationResultsSettings,
               getCompilationResultSettings,
               createCompilationResultSettings,
               queryCompilationResultActionsSettings,
+              listWorkflowConfigsSettings,
+              getWorkflowConfigSettings,
+              createWorkflowConfigSettings,
+              updateWorkflowConfigSettings,
+              deleteWorkflowConfigSettings,
               listWorkflowInvocationsSettings,
               getWorkflowInvocationSettings,
               createWorkflowInvocationSettings,
               deleteWorkflowInvocationSettings,
               cancelWorkflowInvocationSettings,
               queryWorkflowInvocationActionsSettings,
+              getConfigSettings,
+              updateConfigSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -1369,6 +2036,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createRepositorySettings = settings.createRepositorySettings.toBuilder();
       updateRepositorySettings = settings.updateRepositorySettings.toBuilder();
       deleteRepositorySettings = settings.deleteRepositorySettings.toBuilder();
+      commitRepositoryChangesSettings = settings.commitRepositoryChangesSettings.toBuilder();
+      readRepositoryFileSettings = settings.readRepositoryFileSettings.toBuilder();
+      queryRepositoryDirectoryContentsSettings =
+          settings.queryRepositoryDirectoryContentsSettings.toBuilder();
+      fetchRepositoryHistorySettings = settings.fetchRepositoryHistorySettings.toBuilder();
+      computeRepositoryAccessTokenStatusSettings =
+          settings.computeRepositoryAccessTokenStatusSettings.toBuilder();
       fetchRemoteBranchesSettings = settings.fetchRemoteBranchesSettings.toBuilder();
       listWorkspacesSettings = settings.listWorkspacesSettings.toBuilder();
       getWorkspaceSettings = settings.getWorkspaceSettings.toBuilder();
@@ -1383,6 +2057,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       resetWorkspaceChangesSettings = settings.resetWorkspaceChangesSettings.toBuilder();
       fetchFileDiffSettings = settings.fetchFileDiffSettings.toBuilder();
       queryDirectoryContentsSettings = settings.queryDirectoryContentsSettings.toBuilder();
+      searchFilesSettings = settings.searchFilesSettings.toBuilder();
       makeDirectorySettings = settings.makeDirectorySettings.toBuilder();
       removeDirectorySettings = settings.removeDirectorySettings.toBuilder();
       moveDirectorySettings = settings.moveDirectorySettings.toBuilder();
@@ -1390,11 +2065,21 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       removeFileSettings = settings.removeFileSettings.toBuilder();
       moveFileSettings = settings.moveFileSettings.toBuilder();
       writeFileSettings = settings.writeFileSettings.toBuilder();
+      listReleaseConfigsSettings = settings.listReleaseConfigsSettings.toBuilder();
+      getReleaseConfigSettings = settings.getReleaseConfigSettings.toBuilder();
+      createReleaseConfigSettings = settings.createReleaseConfigSettings.toBuilder();
+      updateReleaseConfigSettings = settings.updateReleaseConfigSettings.toBuilder();
+      deleteReleaseConfigSettings = settings.deleteReleaseConfigSettings.toBuilder();
       listCompilationResultsSettings = settings.listCompilationResultsSettings.toBuilder();
       getCompilationResultSettings = settings.getCompilationResultSettings.toBuilder();
       createCompilationResultSettings = settings.createCompilationResultSettings.toBuilder();
       queryCompilationResultActionsSettings =
           settings.queryCompilationResultActionsSettings.toBuilder();
+      listWorkflowConfigsSettings = settings.listWorkflowConfigsSettings.toBuilder();
+      getWorkflowConfigSettings = settings.getWorkflowConfigSettings.toBuilder();
+      createWorkflowConfigSettings = settings.createWorkflowConfigSettings.toBuilder();
+      updateWorkflowConfigSettings = settings.updateWorkflowConfigSettings.toBuilder();
+      deleteWorkflowConfigSettings = settings.deleteWorkflowConfigSettings.toBuilder();
       listWorkflowInvocationsSettings = settings.listWorkflowInvocationsSettings.toBuilder();
       getWorkflowInvocationSettings = settings.getWorkflowInvocationSettings.toBuilder();
       createWorkflowInvocationSettings = settings.createWorkflowInvocationSettings.toBuilder();
@@ -1402,8 +2087,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       cancelWorkflowInvocationSettings = settings.cancelWorkflowInvocationSettings.toBuilder();
       queryWorkflowInvocationActionsSettings =
           settings.queryWorkflowInvocationActionsSettings.toBuilder();
+      getConfigSettings = settings.getConfigSettings.toBuilder();
+      updateConfigSettings = settings.updateConfigSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1412,6 +2102,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createRepositorySettings,
               updateRepositorySettings,
               deleteRepositorySettings,
+              commitRepositoryChangesSettings,
+              readRepositoryFileSettings,
+              queryRepositoryDirectoryContentsSettings,
+              fetchRepositoryHistorySettings,
+              computeRepositoryAccessTokenStatusSettings,
               fetchRemoteBranchesSettings,
               listWorkspacesSettings,
               getWorkspaceSettings,
@@ -1426,6 +2121,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               resetWorkspaceChangesSettings,
               fetchFileDiffSettings,
               queryDirectoryContentsSettings,
+              searchFilesSettings,
               makeDirectorySettings,
               removeDirectorySettings,
               moveDirectorySettings,
@@ -1433,18 +2129,33 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               removeFileSettings,
               moveFileSettings,
               writeFileSettings,
+              listReleaseConfigsSettings,
+              getReleaseConfigSettings,
+              createReleaseConfigSettings,
+              updateReleaseConfigSettings,
+              deleteReleaseConfigSettings,
               listCompilationResultsSettings,
               getCompilationResultSettings,
               createCompilationResultSettings,
               queryCompilationResultActionsSettings,
+              listWorkflowConfigsSettings,
+              getWorkflowConfigSettings,
+              createWorkflowConfigSettings,
+              updateWorkflowConfigSettings,
+              deleteWorkflowConfigSettings,
               listWorkflowInvocationsSettings,
               getWorkflowInvocationSettings,
               createWorkflowInvocationSettings,
               deleteWorkflowInvocationSettings,
               cancelWorkflowInvocationSettings,
               queryWorkflowInvocationActionsSettings,
+              getConfigSettings,
+              updateConfigSettings,
               listLocationsSettings,
-              getLocationSettings);
+              getLocationSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -1453,7 +2164,6 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1466,7 +2176,6 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1496,6 +2205,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .deleteRepositorySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .commitRepositoryChangesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .readRepositoryFileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .queryRepositoryDirectoryContentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchRepositoryHistorySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .computeRepositoryAccessTokenStatusSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1570,6 +2304,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .searchFilesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .makeDirectorySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1605,6 +2344,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .listReleaseConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getReleaseConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createReleaseConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateReleaseConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteReleaseConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listCompilationResultsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1621,6 +2385,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .queryCompilationResultActionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listWorkflowConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getWorkflowConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createWorkflowConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateWorkflowConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteWorkflowConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1655,12 +2444,37 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .getConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1711,6 +2525,46 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       return deleteRepositorySettings;
     }
 
+    /** Returns the builder for the settings used for calls to commitRepositoryChanges. */
+    public UnaryCallSettings.Builder<
+            CommitRepositoryChangesRequest, CommitRepositoryChangesResponse>
+        commitRepositoryChangesSettings() {
+      return commitRepositoryChangesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to readRepositoryFile. */
+    public UnaryCallSettings.Builder<ReadRepositoryFileRequest, ReadRepositoryFileResponse>
+        readRepositoryFileSettings() {
+      return readRepositoryFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryRepositoryDirectoryContents. */
+    public PagedCallSettings.Builder<
+            QueryRepositoryDirectoryContentsRequest,
+            QueryRepositoryDirectoryContentsResponse,
+            QueryRepositoryDirectoryContentsPagedResponse>
+        queryRepositoryDirectoryContentsSettings() {
+      return queryRepositoryDirectoryContentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchRepositoryHistory. */
+    public PagedCallSettings.Builder<
+            FetchRepositoryHistoryRequest,
+            FetchRepositoryHistoryResponse,
+            FetchRepositoryHistoryPagedResponse>
+        fetchRepositoryHistorySettings() {
+      return fetchRepositoryHistorySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to computeRepositoryAccessTokenStatus.
+     */
+    public UnaryCallSettings.Builder<
+            ComputeRepositoryAccessTokenStatusRequest, ComputeRepositoryAccessTokenStatusResponse>
+        computeRepositoryAccessTokenStatusSettings() {
+      return computeRepositoryAccessTokenStatusSettings;
+    }
+
     /** Returns the builder for the settings used for calls to fetchRemoteBranches. */
     public UnaryCallSettings.Builder<FetchRemoteBranchesRequest, FetchRemoteBranchesResponse>
         fetchRemoteBranchesSettings() {
@@ -1746,12 +2600,14 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to pullGitCommits. */
-    public UnaryCallSettings.Builder<PullGitCommitsRequest, Empty> pullGitCommitsSettings() {
+    public UnaryCallSettings.Builder<PullGitCommitsRequest, PullGitCommitsResponse>
+        pullGitCommitsSettings() {
       return pullGitCommitsSettings;
     }
 
     /** Returns the builder for the settings used for calls to pushGitCommits. */
-    public UnaryCallSettings.Builder<PushGitCommitsRequest, Empty> pushGitCommitsSettings() {
+    public UnaryCallSettings.Builder<PushGitCommitsRequest, PushGitCommitsResponse>
+        pushGitCommitsSettings() {
       return pushGitCommitsSettings;
     }
 
@@ -1768,13 +2624,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to commitWorkspaceChanges. */
-    public UnaryCallSettings.Builder<CommitWorkspaceChangesRequest, Empty>
+    public UnaryCallSettings.Builder<CommitWorkspaceChangesRequest, CommitWorkspaceChangesResponse>
         commitWorkspaceChangesSettings() {
       return commitWorkspaceChangesSettings;
     }
 
     /** Returns the builder for the settings used for calls to resetWorkspaceChanges. */
-    public UnaryCallSettings.Builder<ResetWorkspaceChangesRequest, Empty>
+    public UnaryCallSettings.Builder<ResetWorkspaceChangesRequest, ResetWorkspaceChangesResponse>
         resetWorkspaceChangesSettings() {
       return resetWorkspaceChangesSettings;
     }
@@ -1794,6 +2650,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       return queryDirectoryContentsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to searchFiles. */
+    public PagedCallSettings.Builder<
+            SearchFilesRequest, SearchFilesResponse, SearchFilesPagedResponse>
+        searchFilesSettings() {
+      return searchFilesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to makeDirectory. */
     public UnaryCallSettings.Builder<MakeDirectoryRequest, MakeDirectoryResponse>
         makeDirectorySettings() {
@@ -1801,7 +2664,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to removeDirectory. */
-    public UnaryCallSettings.Builder<RemoveDirectoryRequest, Empty> removeDirectorySettings() {
+    public UnaryCallSettings.Builder<RemoveDirectoryRequest, RemoveDirectoryResponse>
+        removeDirectorySettings() {
       return removeDirectorySettings;
     }
 
@@ -1817,7 +2681,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to removeFile. */
-    public UnaryCallSettings.Builder<RemoveFileRequest, Empty> removeFileSettings() {
+    public UnaryCallSettings.Builder<RemoveFileRequest, RemoveFileResponse> removeFileSettings() {
       return removeFileSettings;
     }
 
@@ -1829,6 +2693,37 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to writeFile. */
     public UnaryCallSettings.Builder<WriteFileRequest, WriteFileResponse> writeFileSettings() {
       return writeFileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listReleaseConfigs. */
+    public PagedCallSettings.Builder<
+            ListReleaseConfigsRequest, ListReleaseConfigsResponse, ListReleaseConfigsPagedResponse>
+        listReleaseConfigsSettings() {
+      return listReleaseConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getReleaseConfig. */
+    public UnaryCallSettings.Builder<GetReleaseConfigRequest, ReleaseConfig>
+        getReleaseConfigSettings() {
+      return getReleaseConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createReleaseConfig. */
+    public UnaryCallSettings.Builder<CreateReleaseConfigRequest, ReleaseConfig>
+        createReleaseConfigSettings() {
+      return createReleaseConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateReleaseConfig. */
+    public UnaryCallSettings.Builder<UpdateReleaseConfigRequest, ReleaseConfig>
+        updateReleaseConfigSettings() {
+      return updateReleaseConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReleaseConfig. */
+    public UnaryCallSettings.Builder<DeleteReleaseConfigRequest, Empty>
+        deleteReleaseConfigSettings() {
+      return deleteReleaseConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listCompilationResults. */
@@ -1861,6 +2756,39 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       return queryCompilationResultActionsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listWorkflowConfigs. */
+    public PagedCallSettings.Builder<
+            ListWorkflowConfigsRequest,
+            ListWorkflowConfigsResponse,
+            ListWorkflowConfigsPagedResponse>
+        listWorkflowConfigsSettings() {
+      return listWorkflowConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getWorkflowConfig. */
+    public UnaryCallSettings.Builder<GetWorkflowConfigRequest, WorkflowConfig>
+        getWorkflowConfigSettings() {
+      return getWorkflowConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkflowConfig. */
+    public UnaryCallSettings.Builder<CreateWorkflowConfigRequest, WorkflowConfig>
+        createWorkflowConfigSettings() {
+      return createWorkflowConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateWorkflowConfig. */
+    public UnaryCallSettings.Builder<UpdateWorkflowConfigRequest, WorkflowConfig>
+        updateWorkflowConfigSettings() {
+      return updateWorkflowConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteWorkflowConfig. */
+    public UnaryCallSettings.Builder<DeleteWorkflowConfigRequest, Empty>
+        deleteWorkflowConfigSettings() {
+      return deleteWorkflowConfigSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listWorkflowInvocations. */
     public PagedCallSettings.Builder<
             ListWorkflowInvocationsRequest,
@@ -1889,7 +2817,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to cancelWorkflowInvocation. */
-    public UnaryCallSettings.Builder<CancelWorkflowInvocationRequest, Empty>
+    public UnaryCallSettings.Builder<
+            CancelWorkflowInvocationRequest, CancelWorkflowInvocationResponse>
         cancelWorkflowInvocationSettings() {
       return cancelWorkflowInvocationSettings;
     }
@@ -1903,6 +2832,16 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       return queryWorkflowInvocationActionsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getConfig. */
+    public UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings() {
+      return getConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateConfig. */
+    public UnaryCallSettings.Builder<UpdateConfigRequest, Config> updateConfigSettings() {
+      return updateConfigSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLocations. */
     public PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -1913,6 +2852,22 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to getLocation. */
     public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
       return getLocationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

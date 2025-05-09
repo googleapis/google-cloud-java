@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.dialogflow.v2.ConversationsClient.ListMessagesPag
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -48,9 +49,15 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.CreateConversationRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsRequest;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse;
 import com.google.cloud.dialogflow.v2.GetConversationRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesResponse;
 import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
@@ -69,9 +76,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -88,7 +95,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createConversation to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createConversation:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -105,10 +114,21 @@ import org.threeten.bp.Duration;
  *             .createConversationSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ConversationsStubSettings conversationsSettings = conversationsSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class ConversationsStubSettings extends StubSettings<ConversationsStubSettings> {
@@ -127,6 +147,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   private final UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings;
   private final UnaryCallSettings<CompleteConversationRequest, Conversation>
       completeConversationSettings;
+  private final UnaryCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesSettings;
   private final PagedCallSettings<
           ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
       listMessagesSettings;
@@ -135,8 +157,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       suggestConversationSummarySettings;
   private final UnaryCallSettings<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummarySettings;
+  private final UnaryCallSettings<
+          GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionSettings;
   private final UnaryCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeSettings;
+  private final UnaryCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -176,9 +203,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
 
             @Override
             public Iterable<Conversation> extractResources(ListConversationsResponse payload) {
-              return payload.getConversationsList() == null
-                  ? ImmutableList.<Conversation>of()
-                  : payload.getConversationsList();
+              return payload.getConversationsList();
             }
           };
 
@@ -212,9 +237,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
 
             @Override
             public Iterable<Message> extractResources(ListMessagesResponse payload) {
-              return payload.getMessagesList() == null
-                  ? ImmutableList.<Message>of()
-                  : payload.getMessagesList();
+              return payload.getMessagesList();
             }
           };
 
@@ -248,9 +271,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -332,6 +353,12 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     return completeConversationSettings;
   }
 
+  /** Returns the object with the settings used for calls to ingestContextReferences. */
+  public UnaryCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesSettings() {
+    return ingestContextReferencesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listMessages. */
   public PagedCallSettings<ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
       listMessagesSettings() {
@@ -350,10 +377,22 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     return generateStatelessSummarySettings;
   }
 
+  /** Returns the object with the settings used for calls to generateStatelessSuggestion. */
+  public UnaryCallSettings<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionSettings() {
+    return generateStatelessSuggestionSettings;
+  }
+
   /** Returns the object with the settings used for calls to searchKnowledge. */
   public UnaryCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeSettings() {
     return searchKnowledgeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateSuggestions. */
+  public UnaryCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsSettings() {
+    return generateSuggestionsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -383,12 +422,19 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dialogflow";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dialogflow.googleapis.com:443";
   }
@@ -427,7 +473,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -436,7 +481,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -477,11 +521,15 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     completeConversationSettings = settingsBuilder.completeConversationSettings().build();
+    ingestContextReferencesSettings = settingsBuilder.ingestContextReferencesSettings().build();
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
     suggestConversationSummarySettings =
         settingsBuilder.suggestConversationSummarySettings().build();
     generateStatelessSummarySettings = settingsBuilder.generateStatelessSummarySettings().build();
+    generateStatelessSuggestionSettings =
+        settingsBuilder.generateStatelessSuggestionSettings().build();
     searchKnowledgeSettings = settingsBuilder.searchKnowledgeSettings().build();
+    generateSuggestionsSettings = settingsBuilder.generateSuggestionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -498,6 +546,9 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
         getConversationSettings;
     private final UnaryCallSettings.Builder<CompleteConversationRequest, Conversation>
         completeConversationSettings;
+    private final UnaryCallSettings.Builder<
+            IngestContextReferencesRequest, IngestContextReferencesResponse>
+        ingestContextReferencesSettings;
     private final PagedCallSettings.Builder<
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings;
@@ -507,8 +558,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     private final UnaryCallSettings.Builder<
             GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
         generateStatelessSummarySettings;
+    private final UnaryCallSettings.Builder<
+            GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+        generateStatelessSuggestionSettings;
     private final UnaryCallSettings.Builder<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeSettings;
+    private final UnaryCallSettings.Builder<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+        generateSuggestionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -532,13 +588,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -555,10 +611,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       completeConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      ingestContextReferencesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
       suggestConversationSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateStatelessSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateStatelessSuggestionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchKnowledgeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateSuggestionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -568,10 +627,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listConversationsSettings,
               getConversationSettings,
               completeConversationSettings,
+              ingestContextReferencesSettings,
               listMessagesSettings,
               suggestConversationSummarySettings,
               generateStatelessSummarySettings,
+              generateStatelessSuggestionSettings,
               searchKnowledgeSettings,
+              generateSuggestionsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -584,10 +646,14 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
       getConversationSettings = settings.getConversationSettings.toBuilder();
       completeConversationSettings = settings.completeConversationSettings.toBuilder();
+      ingestContextReferencesSettings = settings.ingestContextReferencesSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
       suggestConversationSummarySettings = settings.suggestConversationSummarySettings.toBuilder();
       generateStatelessSummarySettings = settings.generateStatelessSummarySettings.toBuilder();
+      generateStatelessSuggestionSettings =
+          settings.generateStatelessSuggestionSettings.toBuilder();
       searchKnowledgeSettings = settings.searchKnowledgeSettings.toBuilder();
+      generateSuggestionsSettings = settings.generateSuggestionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -597,10 +663,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               listConversationsSettings,
               getConversationSettings,
               completeConversationSettings,
+              ingestContextReferencesSettings,
               listMessagesSettings,
               suggestConversationSummarySettings,
               generateStatelessSummarySettings,
+              generateStatelessSuggestionSettings,
               searchKnowledgeSettings,
+              generateSuggestionsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -611,7 +680,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -624,7 +692,6 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -653,6 +720,11 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .ingestContextReferencesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listMessagesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -668,7 +740,17 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .generateStatelessSuggestionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .searchKnowledgeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateSuggestionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -725,6 +807,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       return completeConversationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to ingestContextReferences. */
+    public UnaryCallSettings.Builder<
+            IngestContextReferencesRequest, IngestContextReferencesResponse>
+        ingestContextReferencesSettings() {
+      return ingestContextReferencesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listMessages. */
     public PagedCallSettings.Builder<
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
@@ -746,10 +835,23 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       return generateStatelessSummarySettings;
     }
 
+    /** Returns the builder for the settings used for calls to generateStatelessSuggestion. */
+    public UnaryCallSettings.Builder<
+            GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+        generateStatelessSuggestionSettings() {
+      return generateStatelessSuggestionSettings;
+    }
+
     /** Returns the builder for the settings used for calls to searchKnowledge. */
     public UnaryCallSettings.Builder<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeSettings() {
       return searchKnowledgeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateSuggestions. */
+    public UnaryCallSettings.Builder<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+        generateSuggestionsSettings() {
+      return generateSuggestionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

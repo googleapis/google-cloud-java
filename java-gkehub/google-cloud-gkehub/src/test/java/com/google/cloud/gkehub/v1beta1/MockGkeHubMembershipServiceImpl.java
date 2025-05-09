@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -179,7 +179,8 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateConnectManifest, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateConnectManifest, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateConnectManifestResponse.class.getName(),
                   Exception.class.getName())));
@@ -223,7 +224,8 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateExclusivityManifest, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateExclusivityManifest, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateExclusivityManifestResponse.class.getName(),
                   Exception.class.getName())));

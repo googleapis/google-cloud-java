@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -359,6 +359,19 @@ public final class EkmServiceGrpc {
     return EkmServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EkmServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EkmServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EkmServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public EkmServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EkmServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EkmServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -671,6 +684,128 @@ public final class EkmServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service EkmService.
+   *
+   * <pre>
+   * Google Cloud Key Management EKM Service
+   * Manages external cryptographic keys and operations using those keys.
+   * Implements a REST model with the following objects:
+   * * [EkmConnection][google.cloud.kms.v1.EkmConnection]
+   * </pre>
+   */
+  public static final class EkmServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EkmServiceBlockingV2Stub> {
+    private EkmServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EkmServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EkmServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [EkmConnections][google.cloud.kms.v1.EkmConnection].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.ListEkmConnectionsResponse listEkmConnections(
+        com.google.cloud.kms.v1.ListEkmConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEkmConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns metadata for a given
+     * [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.EkmConnection getEkmConnection(
+        com.google.cloud.kms.v1.GetEkmConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEkmConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [EkmConnection][google.cloud.kms.v1.EkmConnection] in a given
+     * Project and Location.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.EkmConnection createEkmConnection(
+        com.google.cloud.kms.v1.CreateEkmConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEkmConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [EkmConnection][google.cloud.kms.v1.EkmConnection]'s metadata.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.EkmConnection updateEkmConnection(
+        com.google.cloud.kms.v1.UpdateEkmConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEkmConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.EkmConfig getEkmConfig(
+        com.google.cloud.kms.v1.GetEkmConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEkmConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [EkmConfig][google.cloud.kms.v1.EkmConfig] singleton resource
+     * for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.EkmConfig updateEkmConfig(
+        com.google.cloud.kms.v1.UpdateEkmConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEkmConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies that Cloud KMS can successfully connect to the external key
+     * manager specified by an [EkmConnection][google.cloud.kms.v1.EkmConnection].
+     * If there is an error connecting to the EKM, this method returns a
+     * FAILED_PRECONDITION status containing structured information as described
+     * at https://cloud.google.com/kms/docs/reference/ekm_errors.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.VerifyConnectivityResponse verifyConnectivity(
+        com.google.cloud.kms.v1.VerifyConnectivityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyConnectivityMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EkmService.
    *
    * <pre>
    * Google Cloud Key Management EKM Service

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import static com.google.cloud.compute.v1.PublicAdvertisedPrefixesClient.ListPag
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -44,6 +44,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AnnouncePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.InsertPublicAdvertisedPrefixeRequest;
@@ -52,14 +53,15 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchPublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.PublicAdvertisedPrefix;
 import com.google.cloud.compute.v1.PublicAdvertisedPrefixList;
+import com.google.cloud.compute.v1.WithdrawPublicAdvertisedPrefixeRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -76,7 +78,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -93,10 +97,47 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * PublicAdvertisedPrefixesStubSettings publicAdvertisedPrefixesSettings =
  *     publicAdvertisedPrefixesSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for announce:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * PublicAdvertisedPrefixesStubSettings.Builder publicAdvertisedPrefixesSettingsBuilder =
+ *     PublicAdvertisedPrefixesStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * publicAdvertisedPrefixesSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -109,6 +150,10 @@ public class PublicAdvertisedPrefixesStubSettings
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final UnaryCallSettings<AnnouncePublicAdvertisedPrefixeRequest, Operation>
+      announceSettings;
+  private final OperationCallSettings<AnnouncePublicAdvertisedPrefixeRequest, Operation, Operation>
+      announceOperationSettings;
   private final UnaryCallSettings<DeletePublicAdvertisedPrefixeRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
       deleteOperationSettings;
@@ -123,6 +168,10 @@ public class PublicAdvertisedPrefixesStubSettings
   private final UnaryCallSettings<PatchPublicAdvertisedPrefixeRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<WithdrawPublicAdvertisedPrefixeRequest, Operation>
+      withdrawSettings;
+  private final OperationCallSettings<WithdrawPublicAdvertisedPrefixeRequest, Operation, Operation>
+      withdrawOperationSettings;
 
   private static final PagedListDescriptor<
           ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList, PublicAdvertisedPrefix>
@@ -165,9 +214,7 @@ public class PublicAdvertisedPrefixesStubSettings
             @Override
             public Iterable<PublicAdvertisedPrefix> extractResources(
                 PublicAdvertisedPrefixList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<PublicAdvertisedPrefix>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -193,6 +240,17 @@ public class PublicAdvertisedPrefixesStubSettings
               return ListPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to announce. */
+  public UnaryCallSettings<AnnouncePublicAdvertisedPrefixeRequest, Operation> announceSettings() {
+    return announceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to announce. */
+  public OperationCallSettings<AnnouncePublicAdvertisedPrefixeRequest, Operation, Operation>
+      announceOperationSettings() {
+    return announceOperationSettings;
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeletePublicAdvertisedPrefixeRequest, Operation> deleteSettings() {
@@ -240,6 +298,17 @@ public class PublicAdvertisedPrefixesStubSettings
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to withdraw. */
+  public UnaryCallSettings<WithdrawPublicAdvertisedPrefixeRequest, Operation> withdrawSettings() {
+    return withdrawSettings;
+  }
+
+  /** Returns the object with the settings used for calls to withdraw. */
+  public OperationCallSettings<WithdrawPublicAdvertisedPrefixeRequest, Operation, Operation>
+      withdrawOperationSettings() {
+    return withdrawOperationSettings;
+  }
+
   public PublicAdvertisedPrefixesStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -251,12 +320,19 @@ public class PublicAdvertisedPrefixesStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -288,7 +364,6 @@ public class PublicAdvertisedPrefixesStubSettings
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -316,6 +391,8 @@ public class PublicAdvertisedPrefixesStubSettings
   protected PublicAdvertisedPrefixesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    announceSettings = settingsBuilder.announceSettings().build();
+    announceOperationSettings = settingsBuilder.announceOperationSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -324,12 +401,19 @@ public class PublicAdvertisedPrefixesStubSettings
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    withdrawSettings = settingsBuilder.withdrawSettings().build();
+    withdrawOperationSettings = settingsBuilder.withdrawOperationSettings().build();
   }
 
   /** Builder for PublicAdvertisedPrefixesStubSettings. */
   public static class Builder
       extends StubSettings.Builder<PublicAdvertisedPrefixesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<AnnouncePublicAdvertisedPrefixeRequest, Operation>
+        announceSettings;
+    private final OperationCallSettings.Builder<
+            AnnouncePublicAdvertisedPrefixeRequest, Operation, Operation>
+        announceOperationSettings;
     private final UnaryCallSettings.Builder<DeletePublicAdvertisedPrefixeRequest, Operation>
         deleteSettings;
     private final OperationCallSettings.Builder<
@@ -351,6 +435,11 @@ public class PublicAdvertisedPrefixesStubSettings
     private final OperationCallSettings.Builder<
             PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<WithdrawPublicAdvertisedPrefixeRequest, Operation>
+        withdrawSettings;
+    private final OperationCallSettings.Builder<
+            WithdrawPublicAdvertisedPrefixeRequest, Operation, Operation>
+        withdrawOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -374,21 +463,21 @@ public class PublicAdvertisedPrefixesStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -401,6 +490,8 @@ public class PublicAdvertisedPrefixesStubSettings
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      announceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      announceOperationSettings = OperationCallSettings.newBuilder();
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -409,16 +500,26 @@ public class PublicAdvertisedPrefixesStubSettings
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      withdrawSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      withdrawOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings, patchSettings);
+              announceSettings,
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              patchSettings,
+              withdrawSettings);
       initDefaults(this);
     }
 
     protected Builder(PublicAdvertisedPrefixesStubSettings settings) {
       super(settings);
 
+      announceSettings = settings.announceSettings.toBuilder();
+      announceOperationSettings = settings.announceOperationSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -427,10 +528,18 @@ public class PublicAdvertisedPrefixesStubSettings
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      withdrawSettings = settings.withdrawSettings.toBuilder();
+      withdrawOperationSettings = settings.withdrawOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteSettings, getSettings, insertSettings, listSettings, patchSettings);
+              announceSettings,
+              deleteSettings,
+              getSettings,
+              insertSettings,
+              listSettings,
+              patchSettings,
+              withdrawSettings);
     }
 
     private static Builder createDefault() {
@@ -439,7 +548,6 @@ public class PublicAdvertisedPrefixesStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -447,6 +555,11 @@ public class PublicAdvertisedPrefixesStubSettings
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .announceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
       builder
           .deleteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -473,6 +586,36 @@ public class PublicAdvertisedPrefixesStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .withdrawSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .announceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AnnouncePublicAdvertisedPrefixeRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .deleteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -488,13 +631,13 @@ public class PublicAdvertisedPrefixesStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -513,13 +656,13 @@ public class PublicAdvertisedPrefixesStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -538,13 +681,38 @@ public class PublicAdvertisedPrefixesStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .withdrawOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<WithdrawPublicAdvertisedPrefixeRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -565,6 +733,19 @@ public class PublicAdvertisedPrefixesStubSettings
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to announce. */
+    public UnaryCallSettings.Builder<AnnouncePublicAdvertisedPrefixeRequest, Operation>
+        announceSettings() {
+      return announceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to announce. */
+    public OperationCallSettings.Builder<
+            AnnouncePublicAdvertisedPrefixeRequest, Operation, Operation>
+        announceOperationSettings() {
+      return announceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeletePublicAdvertisedPrefixeRequest, Operation>
         deleteSettings() {
@@ -572,8 +753,6 @@ public class PublicAdvertisedPrefixesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePublicAdvertisedPrefixeRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -592,8 +771,6 @@ public class PublicAdvertisedPrefixesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertPublicAdvertisedPrefixeRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -613,11 +790,22 @@ public class PublicAdvertisedPrefixesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchPublicAdvertisedPrefixeRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public UnaryCallSettings.Builder<WithdrawPublicAdvertisedPrefixeRequest, Operation>
+        withdrawSettings() {
+      return withdrawSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to withdraw. */
+    public OperationCallSettings.Builder<
+            WithdrawPublicAdvertisedPrefixeRequest, Operation, Operation>
+        withdrawOperationSettings() {
+      return withdrawOperationSettings;
     }
 
     @Override

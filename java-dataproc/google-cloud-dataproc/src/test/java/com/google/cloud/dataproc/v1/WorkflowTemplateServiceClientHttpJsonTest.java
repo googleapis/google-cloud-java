@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,6 +111,7 @@ public class WorkflowTemplateServiceClientHttpJsonTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -169,6 +170,7 @@ public class WorkflowTemplateServiceClientHttpJsonTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -227,6 +229,7 @@ public class WorkflowTemplateServiceClientHttpJsonTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -285,6 +288,7 @@ public class WorkflowTemplateServiceClientHttpJsonTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -345,6 +349,7 @@ public class WorkflowTemplateServiceClientHttpJsonTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -740,6 +745,7 @@ public class WorkflowTemplateServiceClientHttpJsonTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -758,6 +764,7 @@ public class WorkflowTemplateServiceClientHttpJsonTest {
             .addAllJobs(new ArrayList<OrderedJob>())
             .addAllParameters(new ArrayList<TemplateParameter>())
             .setDagTimeout(Duration.newBuilder().build())
+            .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
             .build();
 
     WorkflowTemplate actualResponse = client.updateWorkflowTemplate(template);
@@ -801,6 +808,7 @@ public class WorkflowTemplateServiceClientHttpJsonTest {
               .addAllJobs(new ArrayList<OrderedJob>())
               .addAllParameters(new ArrayList<TemplateParameter>())
               .setDagTimeout(Duration.newBuilder().build())
+              .setEncryptionConfig(WorkflowTemplate.EncryptionConfig.newBuilder().build())
               .build();
       client.updateWorkflowTemplate(template);
       Assert.fail("No exception raised");

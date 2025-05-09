@@ -29,18 +29,20 @@ function find_existing_version_pom() {
   local group_id_dir="${group_id//\.//}"
   local URL="${MAVEN_SITE}/${group_id_dir}/${artifact_id}/${version}/${artifact_id}-${version}.pom"
   local status_code=$(curl --silent --head -o /dev/null -w "%{http_code}" $URL)
-  if [ "${status_code}" == "404" ]; then
-    echo " The version does not exists. Good"
-  else
+  if [ "${status_code}" == "200" ]; then
     echo " The version already exists at ${URL}. Please investigate."
     return_code=1
+  else
+    echo " The version does not exists (status_code ${status_code} for ${URL}). Good."
   fi
-
 }
 
 return_code=0
 
 for pom_file in $(find . -maxdepth 3 -name pom.xml|sort --dictionary-order); do
+  if [[ "${pom_file}" == *java-samples* ]]; then
+      continue
+  fi
   find_existing_version_pom "${pom_file}"
 done
 

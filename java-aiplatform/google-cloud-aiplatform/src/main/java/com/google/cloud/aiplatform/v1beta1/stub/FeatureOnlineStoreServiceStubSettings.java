@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreServiceClien
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -36,14 +37,19 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -76,7 +82,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of fetchFeatureValues to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of fetchFeatureValues:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -93,11 +101,22 @@ import javax.annotation.Generated;
  *             .fetchFeatureValuesSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * FeatureOnlineStoreServiceStubSettings featureOnlineStoreServiceSettings =
  *     featureOnlineStoreServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -109,8 +128,13 @@ public class FeatureOnlineStoreServiceStubSettings
 
   private final UnaryCallSettings<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesSettings;
+  private final StreamingCallSettings<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesSettings;
   private final UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesSettings;
+  private final StreamingCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -150,9 +174,7 @@ public class FeatureOnlineStoreServiceStubSettings
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -179,10 +201,23 @@ public class FeatureOnlineStoreServiceStubSettings
     return fetchFeatureValuesSettings;
   }
 
+  /** Returns the object with the settings used for calls to streamingFetchFeatureValues. */
+  public StreamingCallSettings<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesSettings() {
+    return streamingFetchFeatureValuesSettings;
+  }
+
   /** Returns the object with the settings used for calls to searchNearestEntities. */
   public UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesSettings() {
     return searchNearestEntitiesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to featureViewDirectWrite. */
+  public StreamingCallSettings<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteSettings() {
+    return featureViewDirectWriteSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -223,12 +258,19 @@ public class FeatureOnlineStoreServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "aiplatform";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }
@@ -260,7 +302,6 @@ public class FeatureOnlineStoreServiceStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -288,7 +329,10 @@ public class FeatureOnlineStoreServiceStubSettings
     super(settingsBuilder);
 
     fetchFeatureValuesSettings = settingsBuilder.fetchFeatureValuesSettings().build();
+    streamingFetchFeatureValuesSettings =
+        settingsBuilder.streamingFetchFeatureValuesSettings().build();
     searchNearestEntitiesSettings = settingsBuilder.searchNearestEntitiesSettings().build();
+    featureViewDirectWriteSettings = settingsBuilder.featureViewDirectWriteSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -302,9 +346,15 @@ public class FeatureOnlineStoreServiceStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
         fetchFeatureValuesSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+        streamingFetchFeatureValuesSettings;
     private final UnaryCallSettings.Builder<
             SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings;
+    private final StreamingCallSettings.Builder<
+            FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -341,7 +391,9 @@ public class FeatureOnlineStoreServiceStubSettings
       super(clientContext);
 
       fetchFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamingFetchFeatureValuesSettings = StreamingCallSettings.newBuilder();
       searchNearestEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      featureViewDirectWriteSettings = StreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -364,7 +416,10 @@ public class FeatureOnlineStoreServiceStubSettings
       super(settings);
 
       fetchFeatureValuesSettings = settings.fetchFeatureValuesSettings.toBuilder();
+      streamingFetchFeatureValuesSettings =
+          settings.streamingFetchFeatureValuesSettings.toBuilder();
       searchNearestEntitiesSettings = settings.searchNearestEntitiesSettings.toBuilder();
+      featureViewDirectWriteSettings = settings.featureViewDirectWriteSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -388,7 +443,6 @@ public class FeatureOnlineStoreServiceStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -455,10 +509,24 @@ public class FeatureOnlineStoreServiceStubSettings
       return fetchFeatureValuesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to streamingFetchFeatureValues. */
+    public StreamingCallSettings.Builder<
+            StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+        streamingFetchFeatureValuesSettings() {
+      return streamingFetchFeatureValuesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to searchNearestEntities. */
     public UnaryCallSettings.Builder<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings() {
       return searchNearestEntitiesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to featureViewDirectWrite. */
+    public StreamingCallSettings.Builder<
+            FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+        featureViewDirectWriteSettings() {
+      return featureViewDirectWriteSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

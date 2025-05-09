@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -73,19 +74,204 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDeploymentResourcePool</td>
+ *      <td><p> Create a DeploymentResourcePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDeploymentResourcePoolAsync(CreateDeploymentResourcePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createDeploymentResourcePoolAsync(LocationName parent, DeploymentResourcePool deploymentResourcePool, String deploymentResourcePoolId)
+ *           <li><p> createDeploymentResourcePoolAsync(String parent, DeploymentResourcePool deploymentResourcePool, String deploymentResourcePoolId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDeploymentResourcePoolOperationCallable()
+ *           <li><p> createDeploymentResourcePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDeploymentResourcePool</td>
+ *      <td><p> Get a DeploymentResourcePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDeploymentResourcePool(GetDeploymentResourcePoolRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDeploymentResourcePool(DeploymentResourcePoolName name)
+ *           <li><p> getDeploymentResourcePool(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDeploymentResourcePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDeploymentResourcePools</td>
+ *      <td><p> List DeploymentResourcePools in a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDeploymentResourcePools(ListDeploymentResourcePoolsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDeploymentResourcePools(ProjectName parent)
+ *           <li><p> listDeploymentResourcePools(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDeploymentResourcePoolsPagedCallable()
+ *           <li><p> listDeploymentResourcePoolsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDeploymentResourcePool</td>
+ *      <td><p> Update a DeploymentResourcePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentResourcePoolAsync(UpdateDeploymentResourcePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentResourcePoolAsync(DeploymentResourcePool deploymentResourcePool, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentResourcePoolOperationCallable()
+ *           <li><p> updateDeploymentResourcePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDeploymentResourcePool</td>
+ *      <td><p> Delete a DeploymentResourcePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDeploymentResourcePoolAsync(DeleteDeploymentResourcePoolRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteDeploymentResourcePoolAsync(DeploymentResourcePoolName name)
+ *           <li><p> deleteDeploymentResourcePoolAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDeploymentResourcePoolOperationCallable()
+ *           <li><p> deleteDeploymentResourcePoolCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> QueryDeployedModels</td>
+ *      <td><p> List DeployedModels that have been deployed on this DeploymentResourcePool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> queryDeployedModels(QueryDeployedModelsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> queryDeployedModels(String deploymentResourcePool)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> queryDeployedModelsPagedCallable()
+ *           <li><p> queryDeployedModelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -711,6 +897,151 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
           ListDeploymentResourcePoolsRequest, ListDeploymentResourcePoolsResponse>
       listDeploymentResourcePoolsCallable() {
     return stub.listDeploymentResourcePoolsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a DeploymentResourcePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+   *     DeploymentResourcePoolServiceClient.create()) {
+   *   DeploymentResourcePool deploymentResourcePool = DeploymentResourcePool.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DeploymentResourcePool response =
+   *       deploymentResourcePoolServiceClient
+   *           .updateDeploymentResourcePoolAsync(deploymentResourcePool, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param deploymentResourcePool Required. The DeploymentResourcePool to update.
+   *     <p>The DeploymentResourcePool's `name` field is used to identify the DeploymentResourcePool
+   *     to update. Format:
+   *     `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+   * @param updateMask Required. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          DeploymentResourcePool, UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolAsync(
+          DeploymentResourcePool deploymentResourcePool, FieldMask updateMask) {
+    UpdateDeploymentResourcePoolRequest request =
+        UpdateDeploymentResourcePoolRequest.newBuilder()
+            .setDeploymentResourcePool(deploymentResourcePool)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDeploymentResourcePoolAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a DeploymentResourcePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+   *     DeploymentResourcePoolServiceClient.create()) {
+   *   UpdateDeploymentResourcePoolRequest request =
+   *       UpdateDeploymentResourcePoolRequest.newBuilder()
+   *           .setDeploymentResourcePool(DeploymentResourcePool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DeploymentResourcePool response =
+   *       deploymentResourcePoolServiceClient.updateDeploymentResourcePoolAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          DeploymentResourcePool, UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolAsync(UpdateDeploymentResourcePoolRequest request) {
+    return updateDeploymentResourcePoolOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a DeploymentResourcePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+   *     DeploymentResourcePoolServiceClient.create()) {
+   *   UpdateDeploymentResourcePoolRequest request =
+   *       UpdateDeploymentResourcePoolRequest.newBuilder()
+   *           .setDeploymentResourcePool(DeploymentResourcePool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<DeploymentResourcePool, UpdateDeploymentResourcePoolOperationMetadata>
+   *       future =
+   *           deploymentResourcePoolServiceClient
+   *               .updateDeploymentResourcePoolOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   DeploymentResourcePool response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateDeploymentResourcePoolRequest,
+          DeploymentResourcePool,
+          UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolOperationCallable() {
+    return stub.updateDeploymentResourcePoolOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a DeploymentResourcePool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentResourcePoolServiceClient deploymentResourcePoolServiceClient =
+   *     DeploymentResourcePoolServiceClient.create()) {
+   *   UpdateDeploymentResourcePoolRequest request =
+   *       UpdateDeploymentResourcePoolRequest.newBuilder()
+   *           .setDeploymentResourcePool(DeploymentResourcePool.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       deploymentResourcePoolServiceClient
+   *           .updateDeploymentResourcePoolCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolCallable() {
+    return stub.updateDeploymentResourcePoolCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

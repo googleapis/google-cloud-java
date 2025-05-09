@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,9 @@ import com.google.cloud.retail.v2beta.AddLocalInventoriesRequest;
 import com.google.cloud.retail.v2beta.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2beta.CreateProductRequest;
 import com.google.cloud.retail.v2beta.DeleteProductRequest;
+import com.google.cloud.retail.v2beta.ExportMetadata;
+import com.google.cloud.retail.v2beta.ExportProductsRequest;
+import com.google.cloud.retail.v2beta.ExportProductsResponse;
 import com.google.cloud.retail.v2beta.GetProductRequest;
 import com.google.cloud.retail.v2beta.ImportMetadata;
 import com.google.cloud.retail.v2beta.ImportProductsRequest;
@@ -37,6 +40,9 @@ import com.google.cloud.retail.v2beta.ImportProductsResponse;
 import com.google.cloud.retail.v2beta.ListProductsRequest;
 import com.google.cloud.retail.v2beta.ListProductsResponse;
 import com.google.cloud.retail.v2beta.Product;
+import com.google.cloud.retail.v2beta.PurgeProductsMetadata;
+import com.google.cloud.retail.v2beta.PurgeProductsRequest;
+import com.google.cloud.retail.v2beta.PurgeProductsResponse;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest;
 import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesResponse;
@@ -94,6 +100,15 @@ public abstract class ProductServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteProductCallable()");
   }
 
+  public OperationCallable<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeProductsOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
+    throw new UnsupportedOperationException("Not implemented: purgeProductsCallable()");
+  }
+
   public OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: importProductsOperationCallable()");
@@ -101,6 +116,15 @@ public abstract class ProductServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     throw new UnsupportedOperationException("Not implemented: importProductsCallable()");
+  }
+
+  public OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportProductsOperationCallable()");
+  }
+
+  public UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportProductsCallable()");
   }
 
   public OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.settings.v1beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -166,32 +165,26 @@ public class SettingsName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderBuilder newFolderBuilder() {
     return new FolderBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectBuilder newProjectBuilder() {
     return new ProjectBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationClusterBuilder newProjectLocationClusterBuilder() {
     return new ProjectLocationClusterBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectRegionClusterBuilder newProjectRegionClusterBuilder() {
     return new ProjectRegionClusterBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectZoneClusterBuilder newProjectZoneClusterBuilder() {
     return new ProjectZoneClusterBuilder();
   }
@@ -204,22 +197,18 @@ public class SettingsName implements ResourceName {
     return newBuilder().setOrganization(organization).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingsName ofOrganizationName(String organization) {
     return newBuilder().setOrganization(organization).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingsName ofFolderName(String folder) {
     return newFolderBuilder().setFolder(folder).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingsName ofProjectName(String project) {
     return newProjectBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingsName ofProjectLocationClusterName(
       String project, String location, String cluster) {
     return newProjectLocationClusterBuilder()
@@ -229,7 +218,6 @@ public class SettingsName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingsName ofProjectRegionClusterName(
       String project, String region, String cluster) {
     return newProjectRegionClusterBuilder()
@@ -239,7 +227,6 @@ public class SettingsName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingsName ofProjectZoneClusterName(String project, String zone, String cluster) {
     return newProjectZoneClusterBuilder()
         .setProject(project)
@@ -252,22 +239,18 @@ public class SettingsName implements ResourceName {
     return newBuilder().setOrganization(organization).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationName(String organization) {
     return newBuilder().setOrganization(organization).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderName(String folder) {
     return newFolderBuilder().setFolder(folder).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectName(String project) {
     return newProjectBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationClusterName(
       String project, String location, String cluster) {
     return newProjectLocationClusterBuilder()
@@ -278,7 +261,6 @@ public class SettingsName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectRegionClusterName(
       String project, String region, String cluster) {
     return newProjectRegionClusterBuilder()
@@ -289,7 +271,6 @@ public class SettingsName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectZoneClusterName(String project, String zone, String cluster) {
     return newProjectZoneClusterBuilder()
         .setProject(project)
@@ -458,7 +439,8 @@ public class SettingsName implements ResourceName {
     private Builder(SettingsName settingsName) {
       Preconditions.checkArgument(
           Objects.equals(settingsName.pathTemplate, ORGANIZATION),
-          "toBuilder is only supported when SettingsName has the pattern of organizations/{organization}/settings");
+          "toBuilder is only supported when SettingsName has the pattern of"
+              + " organizations/{organization}/settings");
       this.organization = settingsName.organization;
     }
 
@@ -468,7 +450,6 @@ public class SettingsName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/settings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderBuilder {
     private String folder;
 
@@ -489,7 +470,6 @@ public class SettingsName implements ResourceName {
   }
 
   /** Builder for projects/{project}/settings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectBuilder {
     private String project;
 
@@ -510,7 +490,6 @@ public class SettingsName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/clusters/{cluster}/settings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationClusterBuilder {
     private String project;
     private String location;
@@ -551,7 +530,6 @@ public class SettingsName implements ResourceName {
   }
 
   /** Builder for projects/{project}/regions/{region}/clusters/{cluster}/settings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectRegionClusterBuilder {
     private String project;
     private String region;
@@ -592,7 +570,6 @@ public class SettingsName implements ResourceName {
   }
 
   /** Builder for projects/{project}/zones/{zone}/clusters/{cluster}/settings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectZoneClusterBuilder {
     private String project;
     private String zone;

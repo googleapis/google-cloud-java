@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -56,28 +57,344 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (LineageClient lineageClient = LineageClient.create()) {
- *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
- *   Process process = Process.newBuilder().build();
- *   Process response = lineageClient.createProcess(parent, process);
+ *   String parent = "parent-995424086";
+ *   Struct openLineage = Struct.newBuilder().build();
+ *   ProcessOpenLineageRunEventResponse response =
+ *       lineageClient.processOpenLineageRunEvent(parent, openLineage);
  * }
  * }</pre>
  *
  * <p>Note: close() needs to be called on the LineageClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ProcessOpenLineageRunEvent</td>
+ *      <td><p> Creates new lineage events together with their parents: process and run. Updates the process and run if they already exist. Mapped from Open Lineage specification: https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> processOpenLineageRunEvent(ProcessOpenLineageRunEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> processOpenLineageRunEvent(String parent, Struct openLineage)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> processOpenLineageRunEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateProcess</td>
+ *      <td><p> Creates a new process.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createProcess(CreateProcessRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createProcess(LocationName parent, Process process)
+ *           <li><p> createProcess(String parent, Process process)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createProcessCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateProcess</td>
+ *      <td><p> Updates a process.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateProcess(UpdateProcessRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateProcess(Process process, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateProcessCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProcess</td>
+ *      <td><p> Gets the details of the specified process.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProcess(GetProcessRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProcess(ProcessName name)
+ *           <li><p> getProcess(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProcessCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListProcesses</td>
+ *      <td><p> List processes in the given project and location. List order is descending by insertion time.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listProcesses(ListProcessesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listProcesses(LocationName parent)
+ *           <li><p> listProcesses(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listProcessesPagedCallable()
+ *           <li><p> listProcessesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteProcess</td>
+ *      <td><p> Deletes the process with the specified name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteProcessAsync(DeleteProcessRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteProcessAsync(ProcessName name)
+ *           <li><p> deleteProcessAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteProcessOperationCallable()
+ *           <li><p> deleteProcessCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRun</td>
+ *      <td><p> Creates a new run.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRun(CreateRunRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createRun(ProcessName parent, Run run)
+ *           <li><p> createRun(String parent, Run run)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRunCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateRun</td>
+ *      <td><p> Updates a run.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRun(UpdateRunRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateRun(Run run, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRunCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRun</td>
+ *      <td><p> Gets the details of the specified run.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRun(GetRunRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRun(RunName name)
+ *           <li><p> getRun(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRunCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRuns</td>
+ *      <td><p> Lists runs in the given project and location. List order is descending by `start_time`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRuns(ListRunsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRuns(ProcessName parent)
+ *           <li><p> listRuns(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRunsPagedCallable()
+ *           <li><p> listRunsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRun</td>
+ *      <td><p> Deletes the run with the specified name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRunAsync(DeleteRunRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteRunAsync(RunName name)
+ *           <li><p> deleteRunAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRunOperationCallable()
+ *           <li><p> deleteRunCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateLineageEvent</td>
+ *      <td><p> Creates a new lineage event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createLineageEvent(CreateLineageEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createLineageEvent(RunName parent, LineageEvent lineageEvent)
+ *           <li><p> createLineageEvent(String parent, LineageEvent lineageEvent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createLineageEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLineageEvent</td>
+ *      <td><p> Gets details of a specified lineage event.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLineageEvent(GetLineageEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getLineageEvent(LineageEventName name)
+ *           <li><p> getLineageEvent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLineageEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLineageEvents</td>
+ *      <td><p> Lists lineage events in the given project and location. The list order is not defined.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLineageEvents(ListLineageEventsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listLineageEvents(RunName parent)
+ *           <li><p> listLineageEvents(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLineageEventsPagedCallable()
+ *           <li><p> listLineageEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteLineageEvent</td>
+ *      <td><p> Deletes the lineage event with the specified name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteLineageEvent(DeleteLineageEventRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteLineageEvent(LineageEventName name)
+ *           <li><p> deleteLineageEvent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteLineageEventCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchLinks</td>
+ *      <td><p> Retrieve a list of links connected to a specific asset. Links represent the data flow between &#42;&#42;source&#42;&#42; (upstream) and &#42;&#42;target&#42;&#42; (downstream) assets in transformation pipelines. Links are stored in the same project as the Lineage Events that create them.
+ * <p>  You can retrieve links in every project where you have the `datalineage.events.get` permission. The project provided in the URL is used for Billing and Quota.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchLinks(SearchLinksRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchLinksPagedCallable()
+ *           <li><p> searchLinksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchSearchLinkProcesses</td>
+ *      <td><p> Retrieve information about LineageProcesses associated with specific links. LineageProcesses are transformation pipelines that result in data flowing from &#42;&#42;source&#42;&#42; to &#42;&#42;target&#42;&#42; assets. Links between assets represent this operation.
+ * <p>  If you have specific link names, you can use this method to verify which LineageProcesses contribute to creating those links. See the [SearchLinks][google.cloud.datacatalog.lineage.v1.Lineage.SearchLinks] method for more information on how to retrieve link name.
+ * <p>  You can retrieve the LineageProcess information in every project where you have the `datalineage.events.get` permission. The project provided in the URL is used for Billing and Quota.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchSearchLinkProcesses(BatchSearchLinkProcessesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchSearchLinkProcessesPagedCallable()
+ *           <li><p> batchSearchLinkProcessesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -201,6 +518,111 @@ public class LineageClient implements BackgroundResource {
   @BetaApi
   public final OperationsClient getHttpJsonOperationsClient() {
     return httpJsonOperationsClient;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new lineage events together with their parents: process and run. Updates the process
+   * and run if they already exist. Mapped from Open Lineage specification:
+   * https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineageClient lineageClient = LineageClient.create()) {
+   *   String parent = "parent-995424086";
+   *   Struct openLineage = Struct.newBuilder().build();
+   *   ProcessOpenLineageRunEventResponse response =
+   *       lineageClient.processOpenLineageRunEvent(parent, openLineage);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project and its location that should own the process,
+   *     run, and lineage event.
+   * @param openLineage Required. OpenLineage message following OpenLineage format:
+   *     https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessOpenLineageRunEventResponse processOpenLineageRunEvent(
+      String parent, Struct openLineage) {
+    ProcessOpenLineageRunEventRequest request =
+        ProcessOpenLineageRunEventRequest.newBuilder()
+            .setParent(parent)
+            .setOpenLineage(openLineage)
+            .build();
+    return processOpenLineageRunEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new lineage events together with their parents: process and run. Updates the process
+   * and run if they already exist. Mapped from Open Lineage specification:
+   * https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineageClient lineageClient = LineageClient.create()) {
+   *   ProcessOpenLineageRunEventRequest request =
+   *       ProcessOpenLineageRunEventRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOpenLineage(Struct.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ProcessOpenLineageRunEventResponse response =
+   *       lineageClient.processOpenLineageRunEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProcessOpenLineageRunEventResponse processOpenLineageRunEvent(
+      ProcessOpenLineageRunEventRequest request) {
+    return processOpenLineageRunEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates new lineage events together with their parents: process and run. Updates the process
+   * and run if they already exist. Mapped from Open Lineage specification:
+   * https://github.com/OpenLineage/OpenLineage/blob/main/spec/OpenLineage.json.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineageClient lineageClient = LineageClient.create()) {
+   *   ProcessOpenLineageRunEventRequest request =
+   *       ProcessOpenLineageRunEventRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOpenLineage(Struct.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<ProcessOpenLineageRunEventResponse> future =
+   *       lineageClient.processOpenLineageRunEventCallable().futureCall(request);
+   *   // Do something.
+   *   ProcessOpenLineageRunEventResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventCallable() {
+    return stub.processOpenLineageRunEventCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -993,6 +1415,7 @@ public class LineageClient implements BackgroundResource {
    *       UpdateRunRequest.newBuilder()
    *           .setRun(Run.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAllowMissing(true)
    *           .build();
    *   Run response = lineageClient.updateRun(request);
    * }
@@ -1022,6 +1445,7 @@ public class LineageClient implements BackgroundResource {
    *       UpdateRunRequest.newBuilder()
    *           .setRun(Run.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setAllowMissing(true)
    *           .build();
    *   ApiFuture<Run> future = lineageClient.updateRunCallable().futureCall(request);
    *   // Do something.

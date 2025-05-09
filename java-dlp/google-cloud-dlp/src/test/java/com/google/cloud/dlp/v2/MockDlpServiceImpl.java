@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,11 @@ package com.google.cloud.dlp.v2;
 import com.google.api.core.BetaApi;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
+import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.CreateConnectionRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -27,19 +31,31 @@ import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
+import com.google.privacy.dlp.v2.DeleteConnectionRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
+import com.google.privacy.dlp.v2.DeleteFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DeleteTableDataProfileRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpServiceGrpc.DlpServiceImplBase;
+import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
+import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
+import com.google.privacy.dlp.v2.GetConnectionRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
+import com.google.privacy.dlp.v2.GetFileStoreDataProfileRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.GetTableDataProfileRequest;
 import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
@@ -47,24 +63,42 @@ import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
+import com.google.privacy.dlp.v2.ListConnectionsRequest;
+import com.google.privacy.dlp.v2.ListConnectionsResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListFileStoreDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.ListTableDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListTableDataProfilesResponse;
+import com.google.privacy.dlp.v2.ProjectDataProfile;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.SearchConnectionsRequest;
+import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
+import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.UpdateConnectionRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
@@ -230,7 +264,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateInspectTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method CreateInspectTemplate, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   InspectTemplate.class.getName(),
                   Exception.class.getName())));
@@ -251,7 +286,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateInspectTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateInspectTemplate, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   InspectTemplate.class.getName(),
                   Exception.class.getName())));
@@ -294,7 +330,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListInspectTemplates, expected %s or %s",
+                  "Unrecognized response type %s for method ListInspectTemplates, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListInspectTemplatesResponse.class.getName(),
                   Exception.class.getName())));
@@ -315,7 +352,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteInspectTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteInspectTemplate, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -337,7 +375,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDeidentifyTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDeidentifyTemplate, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeidentifyTemplate.class.getName(),
                   Exception.class.getName())));
@@ -359,7 +398,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateDeidentifyTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateDeidentifyTemplate, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeidentifyTemplate.class.getName(),
                   Exception.class.getName())));
@@ -380,7 +420,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDeidentifyTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method GetDeidentifyTemplate, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeidentifyTemplate.class.getName(),
                   Exception.class.getName())));
@@ -402,7 +443,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDeidentifyTemplates, expected %s or %s",
+                  "Unrecognized response type %s for method ListDeidentifyTemplates, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDeidentifyTemplatesResponse.class.getName(),
                   Exception.class.getName())));
@@ -423,7 +465,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDeidentifyTemplate, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDeidentifyTemplate, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -487,7 +530,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method HybridInspectJobTrigger, expected %s or %s",
+                  "Unrecognized response type %s for method HybridInspectJobTrigger, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   HybridInspectResponse.class.getName(),
                   Exception.class.getName())));
@@ -574,6 +618,116 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
                   "Unrecognized response type %s for method ActivateJobTrigger, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DlpJob.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDiscoveryConfig(
+      CreateDiscoveryConfigRequest request, StreamObserver<DiscoveryConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DiscoveryConfig) {
+      requests.add(request);
+      responseObserver.onNext(((DiscoveryConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDiscoveryConfig, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DiscoveryConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDiscoveryConfig(
+      UpdateDiscoveryConfigRequest request, StreamObserver<DiscoveryConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DiscoveryConfig) {
+      requests.add(request);
+      responseObserver.onNext(((DiscoveryConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDiscoveryConfig, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DiscoveryConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDiscoveryConfig(
+      GetDiscoveryConfigRequest request, StreamObserver<DiscoveryConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DiscoveryConfig) {
+      requests.add(request);
+      responseObserver.onNext(((DiscoveryConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDiscoveryConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DiscoveryConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDiscoveryConfigs(
+      ListDiscoveryConfigsRequest request,
+      StreamObserver<ListDiscoveryConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDiscoveryConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDiscoveryConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDiscoveryConfigs, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDiscoveryConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDiscoveryConfig(
+      DeleteDiscoveryConfigRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDiscoveryConfig, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -693,7 +847,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateStoredInfoType, expected %s or %s",
+                  "Unrecognized response type %s for method CreateStoredInfoType, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   StoredInfoType.class.getName(),
                   Exception.class.getName())));
@@ -714,7 +869,8 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateStoredInfoType, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateStoredInfoType, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   StoredInfoType.class.getName(),
                   Exception.class.getName())));
@@ -778,7 +934,232 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteStoredInfoType, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteStoredInfoType, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listProjectDataProfiles(
+      ListProjectDataProfilesRequest request,
+      StreamObserver<ListProjectDataProfilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListProjectDataProfilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListProjectDataProfilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProjectDataProfiles, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListProjectDataProfilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listTableDataProfiles(
+      ListTableDataProfilesRequest request,
+      StreamObserver<ListTableDataProfilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListTableDataProfilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListTableDataProfilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTableDataProfiles, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListTableDataProfilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listColumnDataProfiles(
+      ListColumnDataProfilesRequest request,
+      StreamObserver<ListColumnDataProfilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListColumnDataProfilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListColumnDataProfilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListColumnDataProfiles, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListColumnDataProfilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getProjectDataProfile(
+      GetProjectDataProfileRequest request, StreamObserver<ProjectDataProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProjectDataProfile) {
+      requests.add(request);
+      responseObserver.onNext(((ProjectDataProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProjectDataProfile, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProjectDataProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listFileStoreDataProfiles(
+      ListFileStoreDataProfilesRequest request,
+      StreamObserver<ListFileStoreDataProfilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFileStoreDataProfilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFileStoreDataProfilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFileStoreDataProfiles, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFileStoreDataProfilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getFileStoreDataProfile(
+      GetFileStoreDataProfileRequest request,
+      StreamObserver<FileStoreDataProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FileStoreDataProfile) {
+      requests.add(request);
+      responseObserver.onNext(((FileStoreDataProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFileStoreDataProfile, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FileStoreDataProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteFileStoreDataProfile(
+      DeleteFileStoreDataProfileRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFileStoreDataProfile, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getTableDataProfile(
+      GetTableDataProfileRequest request, StreamObserver<TableDataProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TableDataProfile) {
+      requests.add(request);
+      responseObserver.onNext(((TableDataProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTableDataProfile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TableDataProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getColumnDataProfile(
+      GetColumnDataProfileRequest request, StreamObserver<ColumnDataProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ColumnDataProfile) {
+      requests.add(request);
+      responseObserver.onNext(((ColumnDataProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetColumnDataProfile, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ColumnDataProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteTableDataProfile(
+      DeleteTableDataProfileRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTableDataProfile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -822,6 +1203,133 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
                   "Unrecognized response type %s for method FinishDlpJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createConnection(
+      CreateConnectionRequest request, StreamObserver<Connection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Connection) {
+      requests.add(request);
+      responseObserver.onNext(((Connection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Connection.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getConnection(
+      GetConnectionRequest request, StreamObserver<Connection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Connection) {
+      requests.add(request);
+      responseObserver.onNext(((Connection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Connection.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listConnections(
+      ListConnectionsRequest request, StreamObserver<ListConnectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListConnectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListConnectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListConnections, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListConnectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void searchConnections(
+      SearchConnectionsRequest request,
+      StreamObserver<SearchConnectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchConnectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchConnectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchConnections, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchConnectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteConnection(
+      DeleteConnectionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateConnection(
+      UpdateConnectionRequest request, StreamObserver<Connection> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Connection) {
+      requests.add(request);
+      responseObserver.onNext(((Connection) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateConnection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Connection.class.getName(),
                   Exception.class.getName())));
     }
   }

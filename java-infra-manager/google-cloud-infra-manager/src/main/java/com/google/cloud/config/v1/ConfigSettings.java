@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,10 @@ package com.google.cloud.config.v1;
 
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -65,7 +67,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getDeployment to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getDeployment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -81,9 +85,45 @@ import javax.annotation.Generated;
  *             .getDeploymentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ConfigSettings configSettings = configSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDeployment:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ConfigSettings.Builder configSettingsBuilder = ConfigSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * configSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -205,6 +245,60 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     return ((ConfigStubSettings) getStubSettings()).exportLockInfoSettings();
   }
 
+  /** Returns the object with the settings used for calls to createPreview. */
+  public UnaryCallSettings<CreatePreviewRequest, Operation> createPreviewSettings() {
+    return ((ConfigStubSettings) getStubSettings()).createPreviewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPreview. */
+  public OperationCallSettings<CreatePreviewRequest, Preview, OperationMetadata>
+      createPreviewOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).createPreviewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPreview. */
+  public UnaryCallSettings<GetPreviewRequest, Preview> getPreviewSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getPreviewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPreviews. */
+  public PagedCallSettings<ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+      listPreviewsSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listPreviewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePreview. */
+  public UnaryCallSettings<DeletePreviewRequest, Operation> deletePreviewSettings() {
+    return ((ConfigStubSettings) getStubSettings()).deletePreviewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePreview. */
+  public OperationCallSettings<DeletePreviewRequest, Preview, OperationMetadata>
+      deletePreviewOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).deletePreviewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportPreviewResult. */
+  public UnaryCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
+      exportPreviewResultSettings() {
+    return ((ConfigStubSettings) getStubSettings()).exportPreviewResultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTerraformVersions. */
+  public PagedCallSettings<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          ListTerraformVersionsPagedResponse>
+      listTerraformVersionsSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listTerraformVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTerraformVersion. */
+  public UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getTerraformVersionSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -272,7 +366,6 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     return ConfigStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ConfigStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -283,7 +376,6 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -325,7 +417,6 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
       return new Builder(ConfigStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConfigStubSettings.newHttpJsonBuilder());
     }
@@ -466,6 +557,61 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     /** Returns the builder for the settings used for calls to exportLockInfo. */
     public UnaryCallSettings.Builder<ExportLockInfoRequest, LockInfo> exportLockInfoSettings() {
       return getStubSettingsBuilder().exportLockInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPreview. */
+    public UnaryCallSettings.Builder<CreatePreviewRequest, Operation> createPreviewSettings() {
+      return getStubSettingsBuilder().createPreviewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPreview. */
+    public OperationCallSettings.Builder<CreatePreviewRequest, Preview, OperationMetadata>
+        createPreviewOperationSettings() {
+      return getStubSettingsBuilder().createPreviewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPreview. */
+    public UnaryCallSettings.Builder<GetPreviewRequest, Preview> getPreviewSettings() {
+      return getStubSettingsBuilder().getPreviewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPreviews. */
+    public PagedCallSettings.Builder<
+            ListPreviewsRequest, ListPreviewsResponse, ListPreviewsPagedResponse>
+        listPreviewsSettings() {
+      return getStubSettingsBuilder().listPreviewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePreview. */
+    public UnaryCallSettings.Builder<DeletePreviewRequest, Operation> deletePreviewSettings() {
+      return getStubSettingsBuilder().deletePreviewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePreview. */
+    public OperationCallSettings.Builder<DeletePreviewRequest, Preview, OperationMetadata>
+        deletePreviewOperationSettings() {
+      return getStubSettingsBuilder().deletePreviewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportPreviewResult. */
+    public UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
+        exportPreviewResultSettings() {
+      return getStubSettingsBuilder().exportPreviewResultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTerraformVersions. */
+    public PagedCallSettings.Builder<
+            ListTerraformVersionsRequest,
+            ListTerraformVersionsResponse,
+            ListTerraformVersionsPagedResponse>
+        listTerraformVersionsSettings() {
+      return getStubSettingsBuilder().listTerraformVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTerraformVersion. */
+    public UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
+        getTerraformVersionSettings() {
+      return getStubSettingsBuilder().getTerraformVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

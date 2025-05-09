@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
  *
  * <p>======================= AnalyticsAdminServiceClient =======================
  *
- * <p>Service Description: Service Interface for the Analytics Admin API (GA4).
+ * <p>Service Description: Service Interface for the Google Analytics Admin API.
  *
  * <p>Sample for AnalyticsAdminServiceClient:
  *

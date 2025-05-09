@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -60,19 +61,245 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the ConversationsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateConversation</td>
+ *      <td><p> Creates a new conversation. Conversations are auto-completed after 24 hours.
+ * <p>  Conversation Lifecycle: There are two stages during a conversation: Automated Agent Stage and Assist Stage.
+ * <p>  For Automated Agent Stage, there will be a dialogflow agent responding to user queries.
+ * <p>  For Assist Stage, there's no dialogflow agent responding to user queries. But we will provide suggestions which are generated from conversation.
+ * <p>  If [Conversation.conversation_profile][google.cloud.dialogflow.v2.Conversation.conversation_profile] is configured for a dialogflow agent, conversation will start from `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And during `Automated Agent Stage`, once an [Intent][google.cloud.dialogflow.v2.Intent] with [Intent.live_agent_handoff][google.cloud.dialogflow.v2.Intent.live_agent_handoff] is triggered, conversation will transfer to Assist Stage.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createConversation(CreateConversationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createConversation(LocationName parent, Conversation conversation)
+ *           <li><p> createConversation(ProjectName parent, Conversation conversation)
+ *           <li><p> createConversation(String parent, Conversation conversation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createConversationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListConversations</td>
+ *      <td><p> Returns the list of all conversations in the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listConversations(ListConversationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listConversations(LocationName parent)
+ *           <li><p> listConversations(ProjectName parent)
+ *           <li><p> listConversations(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listConversationsPagedCallable()
+ *           <li><p> listConversationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetConversation</td>
+ *      <td><p> Retrieves the specific conversation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getConversation(GetConversationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getConversation(ConversationName name)
+ *           <li><p> getConversation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getConversationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CompleteConversation</td>
+ *      <td><p> Completes the specified conversation. Finished conversations are purged from the database after 30 days.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> completeConversation(CompleteConversationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> completeConversation(ConversationName name)
+ *           <li><p> completeConversation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> completeConversationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> IngestContextReferences</td>
+ *      <td><p> Data ingestion API. Ingests context references for an existing conversation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> ingestContextReferences(IngestContextReferencesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> ingestContextReferences(ConversationName conversation, Map&lt;String, Conversation.ContextReference&gt; contextReferences)
+ *           <li><p> ingestContextReferences(String conversation, Map&lt;String, Conversation.ContextReference&gt; contextReferences)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> ingestContextReferencesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMessages</td>
+ *      <td><p> Lists messages that belong to a given conversation. `messages` are ordered by `create_time` in descending order. To fetch updates without duplication, send request with filter `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty page_token.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMessages(ListMessagesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMessages(ConversationName parent)
+ *           <li><p> listMessages(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMessagesPagedCallable()
+ *           <li><p> listMessagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SuggestConversationSummary</td>
+ *      <td><p> Suggests summary for a conversation based on specific historical messages. The range of the messages to be used for summary can be specified in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> suggestConversationSummary(SuggestConversationSummaryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> suggestConversationSummary(ConversationName conversation)
+ *           <li><p> suggestConversationSummary(String conversation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> suggestConversationSummaryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateStatelessSummary</td>
+ *      <td><p> Generates and returns a summary for a conversation that does not have a resource created for it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateStatelessSummary(GenerateStatelessSummaryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateStatelessSummaryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateStatelessSuggestion</td>
+ *      <td><p> Generates and returns a suggestion for a conversation that does not have a resource created for it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateStatelessSuggestion(GenerateStatelessSuggestionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateStatelessSuggestionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchKnowledge</td>
+ *      <td><p> Get answers for the given query based on knowledge documents.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchKnowledge(SearchKnowledgeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchKnowledgeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateSuggestions</td>
+ *      <td><p> Generates all the suggestions using generators configured in the conversation profile. A generator is used only if its trigger event is matched.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateSuggestions(GenerateSuggestionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> generateSuggestions(ConversationName conversation)
+ *           <li><p> generateSuggestions(String conversation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateSuggestionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -864,6 +1091,152 @@ public class ConversationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Data ingestion API. Ingests context references for an existing conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   ConversationName conversation =
+   *       ConversationName.ofProjectLocationConversationName(
+   *           "[PROJECT]", "[LOCATION]", "[CONVERSATION]");
+   *   Map<String, Conversation.ContextReference> contextReferences = new HashMap<>();
+   *   IngestContextReferencesResponse response =
+   *       conversationsClient.ingestContextReferences(conversation, contextReferences);
+   * }
+   * }</pre>
+   *
+   * @param conversation Required. Resource identifier of the conversation to ingest context
+   *     information for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/conversations/&lt;Conversation ID&gt;`.
+   * @param contextReferences Required. The context references to ingest. The key is the name of the
+   *     context reference and the value contains the contents of the context reference. The key is
+   *     used to incorporate ingested context references to enhance the generator.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IngestContextReferencesResponse ingestContextReferences(
+      ConversationName conversation, Map<String, Conversation.ContextReference> contextReferences) {
+    IngestContextReferencesRequest request =
+        IngestContextReferencesRequest.newBuilder()
+            .setConversation(conversation == null ? null : conversation.toString())
+            .putAllContextReferences(contextReferences)
+            .build();
+    return ingestContextReferences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Data ingestion API. Ingests context references for an existing conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   String conversation =
+   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
+   *   Map<String, Conversation.ContextReference> contextReferences = new HashMap<>();
+   *   IngestContextReferencesResponse response =
+   *       conversationsClient.ingestContextReferences(conversation, contextReferences);
+   * }
+   * }</pre>
+   *
+   * @param conversation Required. Resource identifier of the conversation to ingest context
+   *     information for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   *     ID&gt;/conversations/&lt;Conversation ID&gt;`.
+   * @param contextReferences Required. The context references to ingest. The key is the name of the
+   *     context reference and the value contains the contents of the context reference. The key is
+   *     used to incorporate ingested context references to enhance the generator.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IngestContextReferencesResponse ingestContextReferences(
+      String conversation, Map<String, Conversation.ContextReference> contextReferences) {
+    IngestContextReferencesRequest request =
+        IngestContextReferencesRequest.newBuilder()
+            .setConversation(conversation)
+            .putAllContextReferences(contextReferences)
+            .build();
+    return ingestContextReferences(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Data ingestion API. Ingests context references for an existing conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   IngestContextReferencesRequest request =
+   *       IngestContextReferencesRequest.newBuilder()
+   *           .setConversation(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
+   *           .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
+   *           .build();
+   *   IngestContextReferencesResponse response =
+   *       conversationsClient.ingestContextReferences(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IngestContextReferencesResponse ingestContextReferences(
+      IngestContextReferencesRequest request) {
+    return ingestContextReferencesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Data ingestion API. Ingests context references for an existing conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   IngestContextReferencesRequest request =
+   *       IngestContextReferencesRequest.newBuilder()
+   *           .setConversation(
+   *               ConversationName.ofProjectLocationConversationName(
+   *                       "[PROJECT]", "[LOCATION]", "[CONVERSATION]")
+   *                   .toString())
+   *           .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
+   *           .build();
+   *   ApiFuture<IngestContextReferencesResponse> future =
+   *       conversationsClient.ingestContextReferencesCallable().futureCall(request);
+   *   // Do something.
+   *   IngestContextReferencesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable() {
+    return stub.ingestContextReferencesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists messages that belong to a given conversation. `messages` are ordered by `create_time` in
    * descending order. To fetch updates without duplication, send request with filter
    * `create_time_epoch_microseconds &gt; [first item's create_time of previous request]` and empty
@@ -1275,6 +1648,74 @@ public class ConversationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Generates and returns a suggestion for a conversation that does not have a resource created for
+   * it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateStatelessSuggestionRequest request =
+   *       GenerateStatelessSuggestionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
+   *           .setConversationContext(ConversationContext.newBuilder().build())
+   *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .build();
+   *   GenerateStatelessSuggestionResponse response =
+   *       conversationsClient.generateStatelessSuggestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateStatelessSuggestionResponse generateStatelessSuggestion(
+      GenerateStatelessSuggestionRequest request) {
+    return generateStatelessSuggestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates and returns a suggestion for a conversation that does not have a resource created for
+   * it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateStatelessSuggestionRequest request =
+   *       GenerateStatelessSuggestionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
+   *           .setConversationContext(ConversationContext.newBuilder().build())
+   *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .build();
+   *   ApiFuture<GenerateStatelessSuggestionResponse> future =
+   *       conversationsClient.generateStatelessSuggestionCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateStatelessSuggestionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable() {
+    return stub.generateStatelessSuggestionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Get answers for the given query based on knowledge documents.
    *
    * <p>Sample code:
@@ -1302,6 +1743,9 @@ public class ConversationsClient implements BackgroundResource {
    *               MessageName.ofProjectConversationMessageName(
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
+   *           .setEndUserMetadata(Struct.newBuilder().build())
+   *           .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+   *           .setExactSearch(true)
    *           .build();
    *   SearchKnowledgeResponse response = conversationsClient.searchKnowledge(request);
    * }
@@ -1343,6 +1787,9 @@ public class ConversationsClient implements BackgroundResource {
    *               MessageName.ofProjectConversationMessageName(
    *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
    *                   .toString())
+   *           .setEndUserMetadata(Struct.newBuilder().build())
+   *           .setSearchConfig(SearchKnowledgeRequest.SearchConfig.newBuilder().build())
+   *           .setExactSearch(true)
    *           .build();
    *   ApiFuture<SearchKnowledgeResponse> future =
    *       conversationsClient.searchKnowledgeCallable().futureCall(request);
@@ -1354,6 +1801,147 @@ public class ConversationsClient implements BackgroundResource {
   public final UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeCallable() {
     return stub.searchKnowledgeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates all the suggestions using generators configured in the conversation profile. A
+   * generator is used only if its trigger event is matched.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   ConversationName conversation =
+   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]");
+   *   GenerateSuggestionsResponse response = conversationsClient.generateSuggestions(conversation);
+   * }
+   * }</pre>
+   *
+   * @param conversation Required. The conversation for which the suggestions are generated. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;`.
+   *     <p>The conversation must be created with a conversation profile which has generators
+   *     configured in it to be able to get suggestions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateSuggestionsResponse generateSuggestions(ConversationName conversation) {
+    GenerateSuggestionsRequest request =
+        GenerateSuggestionsRequest.newBuilder()
+            .setConversation(conversation == null ? null : conversation.toString())
+            .build();
+    return generateSuggestions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates all the suggestions using generators configured in the conversation profile. A
+   * generator is used only if its trigger event is matched.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   String conversation =
+   *       ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]").toString();
+   *   GenerateSuggestionsResponse response = conversationsClient.generateSuggestions(conversation);
+   * }
+   * }</pre>
+   *
+   * @param conversation Required. The conversation for which the suggestions are generated. Format:
+   *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation
+   *     ID&gt;`.
+   *     <p>The conversation must be created with a conversation profile which has generators
+   *     configured in it to be able to get suggestions.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateSuggestionsResponse generateSuggestions(String conversation) {
+    GenerateSuggestionsRequest request =
+        GenerateSuggestionsRequest.newBuilder().setConversation(conversation).build();
+    return generateSuggestions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates all the suggestions using generators configured in the conversation profile. A
+   * generator is used only if its trigger event is matched.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateSuggestionsRequest request =
+   *       GenerateSuggestionsRequest.newBuilder()
+   *           .setConversation(
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .build();
+   *   GenerateSuggestionsResponse response = conversationsClient.generateSuggestions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateSuggestionsResponse generateSuggestions(GenerateSuggestionsRequest request) {
+    return generateSuggestionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates all the suggestions using generators configured in the conversation profile. A
+   * generator is used only if its trigger event is matched.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateSuggestionsRequest request =
+   *       GenerateSuggestionsRequest.newBuilder()
+   *           .setConversation(
+   *               ConversationName.ofProjectConversationName("[PROJECT]", "[CONVERSATION]")
+   *                   .toString())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .build();
+   *   ApiFuture<GenerateSuggestionsResponse> future =
+   *       conversationsClient.generateSuggestionsCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateSuggestionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable() {
+    return stub.generateSuggestionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

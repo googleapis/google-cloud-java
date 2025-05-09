@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ package com.google.cloud.bigquery.analyticshub.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchangeName;
+import com.google.cloud.bigquery.analyticshub.v1.DestinationDataset;
 import com.google.cloud.bigquery.analyticshub.v1.LocationName;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
 import com.google.longrunning.Operation;
@@ -41,6 +42,7 @@ public class AsyncSubscribeDataExchange {
           SubscribeDataExchangeRequest.newBuilder()
               .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
               .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setDestinationDataset(DestinationDataset.newBuilder().build())
               .setSubscription("subscription341203229")
               .setSubscriberContact("subscriberContact-847205736")
               .build();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.gkemulticloud.v1.AwsClustersClient.ListAwsNodePoo
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -49,7 +50,9 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gkemulticloud.v1.AwsCluster;
+import com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys;
 import com.google.cloud.gkemulticloud.v1.AwsNodePool;
+import com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig;
 import com.google.cloud.gkemulticloud.v1.AwsServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest;
@@ -57,14 +60,19 @@ import com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest;
+import com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest;
 import com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest;
 import com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse;
 import com.google.cloud.gkemulticloud.v1.OperationMetadata;
+import com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest;
 import com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest;
 import com.google.common.collect.ImmutableList;
@@ -74,9 +82,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -93,7 +101,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAwsCluster to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getAwsCluster:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -110,9 +120,46 @@ import org.threeten.bp.Duration;
  *             .getAwsClusterSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AwsClustersStubSettings awsClustersSettings = awsClustersSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createAwsCluster:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AwsClustersStubSettings.Builder awsClustersSettingsBuilder =
+ *     AwsClustersStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * awsClustersSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -134,6 +181,9 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   private final UnaryCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterSettings;
   private final OperationCallSettings<DeleteAwsClusterRequest, Empty, OperationMetadata>
       deleteAwsClusterOperationSettings;
+  private final UnaryCallSettings<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenSettings;
   private final UnaryCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenSettings;
   private final UnaryCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolSettings;
@@ -142,6 +192,11 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   private final UnaryCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolSettings;
   private final OperationCallSettings<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
       updateAwsNodePoolOperationSettings;
+  private final UnaryCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateSettings;
+  private final OperationCallSettings<
+          RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationSettings;
   private final UnaryCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings;
   private final PagedCallSettings<
           ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, ListAwsNodePoolsPagedResponse>
@@ -149,6 +204,10 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   private final UnaryCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolSettings;
   private final OperationCallSettings<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationSettings;
+  private final UnaryCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigSettings;
+  private final UnaryCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+      getAwsJsonWebKeysSettings;
   private final UnaryCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
       getAwsServerConfigSettings;
 
@@ -185,9 +244,7 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
 
             @Override
             public Iterable<AwsCluster> extractResources(ListAwsClustersResponse payload) {
-              return payload.getAwsClustersList() == null
-                  ? ImmutableList.<AwsCluster>of()
-                  : payload.getAwsClustersList();
+              return payload.getAwsClustersList();
             }
           };
 
@@ -225,9 +282,7 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
 
             @Override
             public Iterable<AwsNodePool> extractResources(ListAwsNodePoolsResponse payload) {
-              return payload.getAwsNodePoolsList() == null
-                  ? ImmutableList.<AwsNodePool>of()
-                  : payload.getAwsNodePoolsList();
+              return payload.getAwsNodePoolsList();
             }
           };
 
@@ -312,6 +367,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return deleteAwsClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateAwsClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+      generateAwsClusterAgentTokenSettings() {
+    return generateAwsClusterAgentTokenSettings;
+  }
+
   /** Returns the object with the settings used for calls to generateAwsAccessToken. */
   public UnaryCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenSettings() {
@@ -340,6 +402,18 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return updateAwsNodePoolOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  public UnaryCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
+      rollbackAwsNodePoolUpdateSettings() {
+    return rollbackAwsNodePoolUpdateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  public OperationCallSettings<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+      rollbackAwsNodePoolUpdateOperationSettings() {
+    return rollbackAwsNodePoolUpdateOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getAwsNodePool. */
   public UnaryCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
     return getAwsNodePoolSettings;
@@ -361,6 +435,17 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
   public OperationCallSettings<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationSettings() {
     return deleteAwsNodePoolOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAwsOpenIdConfig. */
+  public UnaryCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+      getAwsOpenIdConfigSettings() {
+    return getAwsOpenIdConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAwsJsonWebKeys. */
+  public UnaryCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysSettings() {
+    return getAwsJsonWebKeysSettings;
   }
 
   /** Returns the object with the settings used for calls to getAwsServerConfig. */
@@ -385,12 +470,19 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "gkemulticloud";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "gkemulticloud.googleapis.com:443";
   }
@@ -429,7 +521,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -438,7 +529,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -483,6 +573,8 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     listAwsClustersSettings = settingsBuilder.listAwsClustersSettings().build();
     deleteAwsClusterSettings = settingsBuilder.deleteAwsClusterSettings().build();
     deleteAwsClusterOperationSettings = settingsBuilder.deleteAwsClusterOperationSettings().build();
+    generateAwsClusterAgentTokenSettings =
+        settingsBuilder.generateAwsClusterAgentTokenSettings().build();
     generateAwsAccessTokenSettings = settingsBuilder.generateAwsAccessTokenSettings().build();
     createAwsNodePoolSettings = settingsBuilder.createAwsNodePoolSettings().build();
     createAwsNodePoolOperationSettings =
@@ -490,11 +582,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     updateAwsNodePoolSettings = settingsBuilder.updateAwsNodePoolSettings().build();
     updateAwsNodePoolOperationSettings =
         settingsBuilder.updateAwsNodePoolOperationSettings().build();
+    rollbackAwsNodePoolUpdateSettings = settingsBuilder.rollbackAwsNodePoolUpdateSettings().build();
+    rollbackAwsNodePoolUpdateOperationSettings =
+        settingsBuilder.rollbackAwsNodePoolUpdateOperationSettings().build();
     getAwsNodePoolSettings = settingsBuilder.getAwsNodePoolSettings().build();
     listAwsNodePoolsSettings = settingsBuilder.listAwsNodePoolsSettings().build();
     deleteAwsNodePoolSettings = settingsBuilder.deleteAwsNodePoolSettings().build();
     deleteAwsNodePoolOperationSettings =
         settingsBuilder.deleteAwsNodePoolOperationSettings().build();
+    getAwsOpenIdConfigSettings = settingsBuilder.getAwsOpenIdConfigSettings().build();
+    getAwsJsonWebKeysSettings = settingsBuilder.getAwsJsonWebKeysSettings().build();
     getAwsServerConfigSettings = settingsBuilder.getAwsServerConfigSettings().build();
   }
 
@@ -520,6 +617,9 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     private final OperationCallSettings.Builder<DeleteAwsClusterRequest, Empty, OperationMetadata>
         deleteAwsClusterOperationSettings;
     private final UnaryCallSettings.Builder<
+            GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+        generateAwsClusterAgentTokenSettings;
+    private final UnaryCallSettings.Builder<
             GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenSettings;
     private final UnaryCallSettings.Builder<CreateAwsNodePoolRequest, Operation>
@@ -532,6 +632,11 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     private final OperationCallSettings.Builder<
             UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
         updateAwsNodePoolOperationSettings;
+    private final UnaryCallSettings.Builder<RollbackAwsNodePoolUpdateRequest, Operation>
+        rollbackAwsNodePoolUpdateSettings;
+    private final OperationCallSettings.Builder<
+            RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+        rollbackAwsNodePoolUpdateOperationSettings;
     private final UnaryCallSettings.Builder<GetAwsNodePoolRequest, AwsNodePool>
         getAwsNodePoolSettings;
     private final PagedCallSettings.Builder<
@@ -541,6 +646,10 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
         deleteAwsNodePoolSettings;
     private final OperationCallSettings.Builder<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
         deleteAwsNodePoolOperationSettings;
+    private final UnaryCallSettings.Builder<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+        getAwsOpenIdConfigSettings;
+    private final UnaryCallSettings.Builder<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+        getAwsJsonWebKeysSettings;
     private final UnaryCallSettings.Builder<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -564,21 +673,21 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -599,15 +708,20 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       listAwsClustersSettings = PagedCallSettings.newBuilder(LIST_AWS_CLUSTERS_PAGE_STR_FACT);
       deleteAwsClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAwsClusterOperationSettings = OperationCallSettings.newBuilder();
+      generateAwsClusterAgentTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateAwsAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAwsNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAwsNodePoolOperationSettings = OperationCallSettings.newBuilder();
       updateAwsNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAwsNodePoolOperationSettings = OperationCallSettings.newBuilder();
+      rollbackAwsNodePoolUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rollbackAwsNodePoolUpdateOperationSettings = OperationCallSettings.newBuilder();
       getAwsNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAwsNodePoolsSettings = PagedCallSettings.newBuilder(LIST_AWS_NODE_POOLS_PAGE_STR_FACT);
       deleteAwsNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAwsNodePoolOperationSettings = OperationCallSettings.newBuilder();
+      getAwsOpenIdConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAwsJsonWebKeysSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAwsServerConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -617,12 +731,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
               getAwsClusterSettings,
               listAwsClustersSettings,
               deleteAwsClusterSettings,
+              generateAwsClusterAgentTokenSettings,
               generateAwsAccessTokenSettings,
               createAwsNodePoolSettings,
               updateAwsNodePoolSettings,
+              rollbackAwsNodePoolUpdateSettings,
               getAwsNodePoolSettings,
               listAwsNodePoolsSettings,
               deleteAwsNodePoolSettings,
+              getAwsOpenIdConfigSettings,
+              getAwsJsonWebKeysSettings,
               getAwsServerConfigSettings);
       initDefaults(this);
     }
@@ -638,15 +756,22 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       listAwsClustersSettings = settings.listAwsClustersSettings.toBuilder();
       deleteAwsClusterSettings = settings.deleteAwsClusterSettings.toBuilder();
       deleteAwsClusterOperationSettings = settings.deleteAwsClusterOperationSettings.toBuilder();
+      generateAwsClusterAgentTokenSettings =
+          settings.generateAwsClusterAgentTokenSettings.toBuilder();
       generateAwsAccessTokenSettings = settings.generateAwsAccessTokenSettings.toBuilder();
       createAwsNodePoolSettings = settings.createAwsNodePoolSettings.toBuilder();
       createAwsNodePoolOperationSettings = settings.createAwsNodePoolOperationSettings.toBuilder();
       updateAwsNodePoolSettings = settings.updateAwsNodePoolSettings.toBuilder();
       updateAwsNodePoolOperationSettings = settings.updateAwsNodePoolOperationSettings.toBuilder();
+      rollbackAwsNodePoolUpdateSettings = settings.rollbackAwsNodePoolUpdateSettings.toBuilder();
+      rollbackAwsNodePoolUpdateOperationSettings =
+          settings.rollbackAwsNodePoolUpdateOperationSettings.toBuilder();
       getAwsNodePoolSettings = settings.getAwsNodePoolSettings.toBuilder();
       listAwsNodePoolsSettings = settings.listAwsNodePoolsSettings.toBuilder();
       deleteAwsNodePoolSettings = settings.deleteAwsNodePoolSettings.toBuilder();
       deleteAwsNodePoolOperationSettings = settings.deleteAwsNodePoolOperationSettings.toBuilder();
+      getAwsOpenIdConfigSettings = settings.getAwsOpenIdConfigSettings.toBuilder();
+      getAwsJsonWebKeysSettings = settings.getAwsJsonWebKeysSettings.toBuilder();
       getAwsServerConfigSettings = settings.getAwsServerConfigSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -656,12 +781,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
               getAwsClusterSettings,
               listAwsClustersSettings,
               deleteAwsClusterSettings,
+              generateAwsClusterAgentTokenSettings,
               generateAwsAccessTokenSettings,
               createAwsNodePoolSettings,
               updateAwsNodePoolSettings,
+              rollbackAwsNodePoolUpdateSettings,
               getAwsNodePoolSettings,
               listAwsNodePoolsSettings,
               deleteAwsNodePoolSettings,
+              getAwsOpenIdConfigSettings,
+              getAwsJsonWebKeysSettings,
               getAwsServerConfigSettings);
     }
 
@@ -671,7 +800,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -684,7 +812,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -718,6 +845,11 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .generateAwsClusterAgentTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .generateAwsAccessTokenSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -729,6 +861,11 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
 
       builder
           .updateAwsNodePoolSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .rollbackAwsNodePoolUpdateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -746,6 +883,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .deleteAwsNodePoolSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAwsOpenIdConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAwsJsonWebKeysSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getAwsServerConfigSettings()
@@ -767,13 +914,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -791,13 +938,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -815,13 +962,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -839,13 +986,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -863,13 +1010,38 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .rollbackAwsNodePoolUpdateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RollbackAwsNodePoolUpdateRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AwsNodePool.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -887,13 +1059,13 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -921,8 +1093,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createAwsCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAwsClusterRequest, AwsCluster, OperationMetadata>
         createAwsClusterOperationSettings() {
       return createAwsClusterOperationSettings;
@@ -935,8 +1105,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateAwsCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateAwsClusterRequest, AwsCluster, OperationMetadata>
         updateAwsClusterOperationSettings() {
       return updateAwsClusterOperationSettings;
@@ -961,11 +1129,16 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteAwsCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAwsClusterRequest, Empty, OperationMetadata>
         deleteAwsClusterOperationSettings() {
       return deleteAwsClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateAwsClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
+        generateAwsClusterAgentTokenSettings() {
+      return generateAwsClusterAgentTokenSettings;
     }
 
     /** Returns the builder for the settings used for calls to generateAwsAccessToken. */
@@ -981,8 +1154,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createAwsNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
         createAwsNodePoolOperationSettings() {
       return createAwsNodePoolOperationSettings;
@@ -995,11 +1166,22 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateAwsNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
         updateAwsNodePoolOperationSettings() {
       return updateAwsNodePoolOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    public UnaryCallSettings.Builder<RollbackAwsNodePoolUpdateRequest, Operation>
+        rollbackAwsNodePoolUpdateSettings() {
+      return rollbackAwsNodePoolUpdateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    public OperationCallSettings.Builder<
+            RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
+        rollbackAwsNodePoolUpdateOperationSettings() {
+      return rollbackAwsNodePoolUpdateOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAwsNodePool. */
@@ -1021,11 +1203,21 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteAwsNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
         deleteAwsNodePoolOperationSettings() {
       return deleteAwsNodePoolOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAwsOpenIdConfig. */
+    public UnaryCallSettings.Builder<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
+        getAwsOpenIdConfigSettings() {
+      return getAwsOpenIdConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAwsJsonWebKeys. */
+    public UnaryCallSettings.Builder<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
+        getAwsJsonWebKeysSettings() {
+      return getAwsJsonWebKeysSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAwsServerConfig. */

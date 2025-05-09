@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -489,6 +489,19 @@ public final class FlowsGrpc {
     return FlowsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FlowsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FlowsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FlowsBlockingV2Stub>() {
+          @java.lang.Override
+          public FlowsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FlowsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FlowsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -921,6 +934,194 @@ public final class FlowsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Flows.
+   *
+   * <pre>
+   * Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].
+   * </pre>
+   */
+  public static final class FlowsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FlowsBlockingV2Stub> {
+    private FlowsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FlowsBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FlowsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a flow in the specified agent.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Flow createFlow(
+        com.google.cloud.dialogflow.cx.v3.CreateFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specified flow.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFlow(
+        com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all flows in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.ListFlowsResponse listFlows(
+        com.google.cloud.dialogflow.cx.v3.ListFlowsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFlowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified flow.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Flow getFlow(
+        com.google.cloud.dialogflow.cx.v3.GetFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified flow.
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.Flow updateFlow(
+        com.google.cloud.dialogflow.cx.v3.UpdateFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified flow. Note that only the flow in 'draft' environment
+     * is trained.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation trainFlow(
+        com.google.cloud.dialogflow.cx.v3.TrainFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTrainFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified flow and creates or updates validation results.
+     * Please call this API after the training is completed to get the complete
+     * validation results.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.FlowValidationResult validateFlow(
+        com.google.cloud.dialogflow.cx.v3.ValidateFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest flow validation result. Flow validation is performed
+     * when ValidateFlow is called.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3.FlowValidationResult getFlowValidationResult(
+        com.google.cloud.dialogflow.cx.v3.GetFlowValidationResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFlowValidationResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified flow to the specified agent from a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`:
+     * [ImportFlowResponse][google.cloud.dialogflow.cx.v3.ImportFlowResponse]
+     * Note: You should always train a flow prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation importFlow(
+        com.google.cloud.dialogflow.cx.v3.ImportFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified flow to a binary file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`:
+     * [ExportFlowResponse][google.cloud.dialogflow.cx.v3.ExportFlowResponse]
+     * Note that resources (e.g. intents, entities, webhooks) that the flow
+     * references will also be exported.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportFlow(
+        com.google.cloud.dialogflow.cx.v3.ExportFlowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportFlowMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Flows.
    *
    * <pre>
    * Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].

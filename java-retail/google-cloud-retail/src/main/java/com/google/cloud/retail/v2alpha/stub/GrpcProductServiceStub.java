@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,9 @@ import com.google.cloud.retail.v2alpha.AddLocalInventoriesRequest;
 import com.google.cloud.retail.v2alpha.AddLocalInventoriesResponse;
 import com.google.cloud.retail.v2alpha.CreateProductRequest;
 import com.google.cloud.retail.v2alpha.DeleteProductRequest;
+import com.google.cloud.retail.v2alpha.ExportMetadata;
+import com.google.cloud.retail.v2alpha.ExportProductsRequest;
+import com.google.cloud.retail.v2alpha.ExportProductsResponse;
 import com.google.cloud.retail.v2alpha.GetProductRequest;
 import com.google.cloud.retail.v2alpha.ImportMetadata;
 import com.google.cloud.retail.v2alpha.ImportProductsRequest;
@@ -139,6 +142,16 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExportProductsRequest, Operation>
+      exportProductsMethodDescriptor =
+          MethodDescriptor.<ExportProductsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2alpha.ProductService/ExportProducts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SetInventoryRequest, Operation>
       setInventoryMethodDescriptor =
           MethodDescriptor.<SetInventoryRequest, Operation>newBuilder()
@@ -204,6 +217,9 @@ public class GrpcProductServiceStub extends ProductServiceStub {
   private final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable;
   private final OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable;
+  private final UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable;
+  private final OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable;
   private final UnaryCallable<SetInventoryRequest, Operation> setInventoryCallable;
   private final OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
       setInventoryOperationCallable;
@@ -344,6 +360,16 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExportProductsRequest, Operation> exportProductsTransportSettings =
+        GrpcCallSettings.<ExportProductsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportProductsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
         GrpcCallSettings.<SetInventoryRequest, Operation>newBuilder()
             .setMethodDescriptor(setInventoryMethodDescriptor)
@@ -431,6 +457,15 @@ public class GrpcProductServiceStub extends ProductServiceStub {
         callableFactory.createOperationCallable(
             importProductsTransportSettings,
             settings.importProductsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportProductsCallable =
+        callableFactory.createUnaryCallable(
+            exportProductsTransportSettings, settings.exportProductsSettings(), clientContext);
+    this.exportProductsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportProductsTransportSettings,
+            settings.exportProductsOperationSettings(),
             clientContext,
             operationsStub);
     this.setInventoryCallable =
@@ -545,6 +580,17 @@ public class GrpcProductServiceStub extends ProductServiceStub {
   public OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable() {
     return importProductsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportProductsRequest, Operation> exportProductsCallable() {
+    return exportProductsCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationCallable() {
+    return exportProductsOperationCallable;
   }
 
   @Override

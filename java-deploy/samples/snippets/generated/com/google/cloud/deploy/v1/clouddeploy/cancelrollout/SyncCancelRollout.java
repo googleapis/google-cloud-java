@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.RolloutName;
+import java.util.ArrayList;
 
 public class SyncCancelRollout {
 
@@ -45,6 +46,7 @@ public class SyncCancelRollout {
                           "[RELEASE]",
                           "[ROLLOUT]")
                       .toString())
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       CancelRolloutResponse response = cloudDeployClient.cancelRollout(request);
     }

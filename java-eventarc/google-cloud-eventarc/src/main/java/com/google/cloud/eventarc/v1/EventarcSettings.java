@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,12 @@ package com.google.cloud.eventarc.v1;
 
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelConnectionsPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListChannelsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListGoogleApiSourcesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListLocationsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusEnrollmentsPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListMessageBusesPagedResponse;
+import static com.google.cloud.eventarc.v1.EventarcClient.ListPipelinesPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListProvidersPagedResponse;
 import static com.google.cloud.eventarc.v1.EventarcClient.ListTriggersPagedResponse;
 
@@ -65,7 +70,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getTrigger to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getTrigger:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -81,9 +88,45 @@ import javax.annotation.Generated;
  *             .getTriggerSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * EventarcSettings eventarcSettings = eventarcSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createTrigger:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EventarcSettings.Builder eventarcSettingsBuilder = EventarcSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * eventarcSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -239,6 +282,200 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
     return ((EventarcStubSettings) getStubSettings()).updateGoogleChannelConfigSettings();
   }
 
+  /** Returns the object with the settings used for calls to getMessageBus. */
+  public UnaryCallSettings<GetMessageBusRequest, MessageBus> getMessageBusSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getMessageBusSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMessageBuses. */
+  public PagedCallSettings<
+          ListMessageBusesRequest, ListMessageBusesResponse, ListMessageBusesPagedResponse>
+      listMessageBusesSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listMessageBusesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMessageBusEnrollments. */
+  public PagedCallSettings<
+          ListMessageBusEnrollmentsRequest,
+          ListMessageBusEnrollmentsResponse,
+          ListMessageBusEnrollmentsPagedResponse>
+      listMessageBusEnrollmentsSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listMessageBusEnrollmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMessageBus. */
+  public UnaryCallSettings<CreateMessageBusRequest, Operation> createMessageBusSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createMessageBusSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMessageBus. */
+  public OperationCallSettings<CreateMessageBusRequest, MessageBus, OperationMetadata>
+      createMessageBusOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createMessageBusOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMessageBus. */
+  public UnaryCallSettings<UpdateMessageBusRequest, Operation> updateMessageBusSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateMessageBusSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMessageBus. */
+  public OperationCallSettings<UpdateMessageBusRequest, MessageBus, OperationMetadata>
+      updateMessageBusOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateMessageBusOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMessageBus. */
+  public UnaryCallSettings<DeleteMessageBusRequest, Operation> deleteMessageBusSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteMessageBusSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMessageBus. */
+  public OperationCallSettings<DeleteMessageBusRequest, MessageBus, OperationMetadata>
+      deleteMessageBusOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteMessageBusOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEnrollment. */
+  public UnaryCallSettings<GetEnrollmentRequest, Enrollment> getEnrollmentSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getEnrollmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listEnrollments. */
+  public PagedCallSettings<
+          ListEnrollmentsRequest, ListEnrollmentsResponse, ListEnrollmentsPagedResponse>
+      listEnrollmentsSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listEnrollmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEnrollment. */
+  public UnaryCallSettings<CreateEnrollmentRequest, Operation> createEnrollmentSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createEnrollmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createEnrollment. */
+  public OperationCallSettings<CreateEnrollmentRequest, Enrollment, OperationMetadata>
+      createEnrollmentOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createEnrollmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEnrollment. */
+  public UnaryCallSettings<UpdateEnrollmentRequest, Operation> updateEnrollmentSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateEnrollmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEnrollment. */
+  public OperationCallSettings<UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+      updateEnrollmentOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateEnrollmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEnrollment. */
+  public UnaryCallSettings<DeleteEnrollmentRequest, Operation> deleteEnrollmentSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteEnrollmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEnrollment. */
+  public OperationCallSettings<DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+      deleteEnrollmentOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteEnrollmentOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPipeline. */
+  public UnaryCallSettings<GetPipelineRequest, Pipeline> getPipelineSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getPipelineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPipelines. */
+  public PagedCallSettings<ListPipelinesRequest, ListPipelinesResponse, ListPipelinesPagedResponse>
+      listPipelinesSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listPipelinesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPipeline. */
+  public UnaryCallSettings<CreatePipelineRequest, Operation> createPipelineSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createPipelineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPipeline. */
+  public OperationCallSettings<CreatePipelineRequest, Pipeline, OperationMetadata>
+      createPipelineOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createPipelineOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePipeline. */
+  public UnaryCallSettings<UpdatePipelineRequest, Operation> updatePipelineSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updatePipelineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePipeline. */
+  public OperationCallSettings<UpdatePipelineRequest, Pipeline, OperationMetadata>
+      updatePipelineOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updatePipelineOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePipeline. */
+  public UnaryCallSettings<DeletePipelineRequest, Operation> deletePipelineSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deletePipelineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePipeline. */
+  public OperationCallSettings<DeletePipelineRequest, Pipeline, OperationMetadata>
+      deletePipelineOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deletePipelineOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGoogleApiSource. */
+  public UnaryCallSettings<GetGoogleApiSourceRequest, GoogleApiSource>
+      getGoogleApiSourceSettings() {
+    return ((EventarcStubSettings) getStubSettings()).getGoogleApiSourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGoogleApiSources. */
+  public PagedCallSettings<
+          ListGoogleApiSourcesRequest,
+          ListGoogleApiSourcesResponse,
+          ListGoogleApiSourcesPagedResponse>
+      listGoogleApiSourcesSettings() {
+    return ((EventarcStubSettings) getStubSettings()).listGoogleApiSourcesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGoogleApiSource. */
+  public UnaryCallSettings<CreateGoogleApiSourceRequest, Operation>
+      createGoogleApiSourceSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createGoogleApiSourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGoogleApiSource. */
+  public OperationCallSettings<CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      createGoogleApiSourceOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).createGoogleApiSourceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGoogleApiSource. */
+  public UnaryCallSettings<UpdateGoogleApiSourceRequest, Operation>
+      updateGoogleApiSourceSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateGoogleApiSourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGoogleApiSource. */
+  public OperationCallSettings<UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      updateGoogleApiSourceOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).updateGoogleApiSourceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGoogleApiSource. */
+  public UnaryCallSettings<DeleteGoogleApiSourceRequest, Operation>
+      deleteGoogleApiSourceSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteGoogleApiSourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGoogleApiSource. */
+  public OperationCallSettings<DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+      deleteGoogleApiSourceOperationSettings() {
+    return ((EventarcStubSettings) getStubSettings()).deleteGoogleApiSourceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -306,7 +543,6 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
     return EventarcStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return EventarcStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -317,7 +553,6 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -359,7 +594,6 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
       return new Builder(EventarcStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EventarcStubSettings.newHttpJsonBuilder());
     }
@@ -533,6 +767,210 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
     public UnaryCallSettings.Builder<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
         updateGoogleChannelConfigSettings() {
       return getStubSettingsBuilder().updateGoogleChannelConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMessageBus. */
+    public UnaryCallSettings.Builder<GetMessageBusRequest, MessageBus> getMessageBusSettings() {
+      return getStubSettingsBuilder().getMessageBusSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMessageBuses. */
+    public PagedCallSettings.Builder<
+            ListMessageBusesRequest, ListMessageBusesResponse, ListMessageBusesPagedResponse>
+        listMessageBusesSettings() {
+      return getStubSettingsBuilder().listMessageBusesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMessageBusEnrollments. */
+    public PagedCallSettings.Builder<
+            ListMessageBusEnrollmentsRequest,
+            ListMessageBusEnrollmentsResponse,
+            ListMessageBusEnrollmentsPagedResponse>
+        listMessageBusEnrollmentsSettings() {
+      return getStubSettingsBuilder().listMessageBusEnrollmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMessageBus. */
+    public UnaryCallSettings.Builder<CreateMessageBusRequest, Operation>
+        createMessageBusSettings() {
+      return getStubSettingsBuilder().createMessageBusSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMessageBus. */
+    public OperationCallSettings.Builder<CreateMessageBusRequest, MessageBus, OperationMetadata>
+        createMessageBusOperationSettings() {
+      return getStubSettingsBuilder().createMessageBusOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMessageBus. */
+    public UnaryCallSettings.Builder<UpdateMessageBusRequest, Operation>
+        updateMessageBusSettings() {
+      return getStubSettingsBuilder().updateMessageBusSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMessageBus. */
+    public OperationCallSettings.Builder<UpdateMessageBusRequest, MessageBus, OperationMetadata>
+        updateMessageBusOperationSettings() {
+      return getStubSettingsBuilder().updateMessageBusOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMessageBus. */
+    public UnaryCallSettings.Builder<DeleteMessageBusRequest, Operation>
+        deleteMessageBusSettings() {
+      return getStubSettingsBuilder().deleteMessageBusSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMessageBus. */
+    public OperationCallSettings.Builder<DeleteMessageBusRequest, MessageBus, OperationMetadata>
+        deleteMessageBusOperationSettings() {
+      return getStubSettingsBuilder().deleteMessageBusOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEnrollment. */
+    public UnaryCallSettings.Builder<GetEnrollmentRequest, Enrollment> getEnrollmentSettings() {
+      return getStubSettingsBuilder().getEnrollmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listEnrollments. */
+    public PagedCallSettings.Builder<
+            ListEnrollmentsRequest, ListEnrollmentsResponse, ListEnrollmentsPagedResponse>
+        listEnrollmentsSettings() {
+      return getStubSettingsBuilder().listEnrollmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEnrollment. */
+    public UnaryCallSettings.Builder<CreateEnrollmentRequest, Operation>
+        createEnrollmentSettings() {
+      return getStubSettingsBuilder().createEnrollmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEnrollment. */
+    public OperationCallSettings.Builder<CreateEnrollmentRequest, Enrollment, OperationMetadata>
+        createEnrollmentOperationSettings() {
+      return getStubSettingsBuilder().createEnrollmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnrollment. */
+    public UnaryCallSettings.Builder<UpdateEnrollmentRequest, Operation>
+        updateEnrollmentSettings() {
+      return getStubSettingsBuilder().updateEnrollmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnrollment. */
+    public OperationCallSettings.Builder<UpdateEnrollmentRequest, Enrollment, OperationMetadata>
+        updateEnrollmentOperationSettings() {
+      return getStubSettingsBuilder().updateEnrollmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEnrollment. */
+    public UnaryCallSettings.Builder<DeleteEnrollmentRequest, Operation>
+        deleteEnrollmentSettings() {
+      return getStubSettingsBuilder().deleteEnrollmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEnrollment. */
+    public OperationCallSettings.Builder<DeleteEnrollmentRequest, Enrollment, OperationMetadata>
+        deleteEnrollmentOperationSettings() {
+      return getStubSettingsBuilder().deleteEnrollmentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPipeline. */
+    public UnaryCallSettings.Builder<GetPipelineRequest, Pipeline> getPipelineSettings() {
+      return getStubSettingsBuilder().getPipelineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPipelines. */
+    public PagedCallSettings.Builder<
+            ListPipelinesRequest, ListPipelinesResponse, ListPipelinesPagedResponse>
+        listPipelinesSettings() {
+      return getStubSettingsBuilder().listPipelinesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPipeline. */
+    public UnaryCallSettings.Builder<CreatePipelineRequest, Operation> createPipelineSettings() {
+      return getStubSettingsBuilder().createPipelineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPipeline. */
+    public OperationCallSettings.Builder<CreatePipelineRequest, Pipeline, OperationMetadata>
+        createPipelineOperationSettings() {
+      return getStubSettingsBuilder().createPipelineOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePipeline. */
+    public UnaryCallSettings.Builder<UpdatePipelineRequest, Operation> updatePipelineSettings() {
+      return getStubSettingsBuilder().updatePipelineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePipeline. */
+    public OperationCallSettings.Builder<UpdatePipelineRequest, Pipeline, OperationMetadata>
+        updatePipelineOperationSettings() {
+      return getStubSettingsBuilder().updatePipelineOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePipeline. */
+    public UnaryCallSettings.Builder<DeletePipelineRequest, Operation> deletePipelineSettings() {
+      return getStubSettingsBuilder().deletePipelineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePipeline. */
+    public OperationCallSettings.Builder<DeletePipelineRequest, Pipeline, OperationMetadata>
+        deletePipelineOperationSettings() {
+      return getStubSettingsBuilder().deletePipelineOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGoogleApiSource. */
+    public UnaryCallSettings.Builder<GetGoogleApiSourceRequest, GoogleApiSource>
+        getGoogleApiSourceSettings() {
+      return getStubSettingsBuilder().getGoogleApiSourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGoogleApiSources. */
+    public PagedCallSettings.Builder<
+            ListGoogleApiSourcesRequest,
+            ListGoogleApiSourcesResponse,
+            ListGoogleApiSourcesPagedResponse>
+        listGoogleApiSourcesSettings() {
+      return getStubSettingsBuilder().listGoogleApiSourcesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGoogleApiSource. */
+    public UnaryCallSettings.Builder<CreateGoogleApiSourceRequest, Operation>
+        createGoogleApiSourceSettings() {
+      return getStubSettingsBuilder().createGoogleApiSourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGoogleApiSource. */
+    public OperationCallSettings.Builder<
+            CreateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        createGoogleApiSourceOperationSettings() {
+      return getStubSettingsBuilder().createGoogleApiSourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoogleApiSource. */
+    public UnaryCallSettings.Builder<UpdateGoogleApiSourceRequest, Operation>
+        updateGoogleApiSourceSettings() {
+      return getStubSettingsBuilder().updateGoogleApiSourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGoogleApiSource. */
+    public OperationCallSettings.Builder<
+            UpdateGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        updateGoogleApiSourceOperationSettings() {
+      return getStubSettingsBuilder().updateGoogleApiSourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGoogleApiSource. */
+    public UnaryCallSettings.Builder<DeleteGoogleApiSourceRequest, Operation>
+        deleteGoogleApiSourceSettings() {
+      return getStubSettingsBuilder().deleteGoogleApiSourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGoogleApiSource. */
+    public OperationCallSettings.Builder<
+            DeleteGoogleApiSourceRequest, GoogleApiSource, OperationMetadata>
+        deleteGoogleApiSourceOperationSettings() {
+      return getStubSettingsBuilder().deleteGoogleApiSourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

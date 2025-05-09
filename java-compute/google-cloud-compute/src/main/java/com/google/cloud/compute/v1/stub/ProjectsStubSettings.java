@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import static com.google.cloud.compute.v1.ProjectsClient.ListXpnHostsPagedRespon
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -58,6 +58,7 @@ import com.google.cloud.compute.v1.MoveInstanceProjectRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Project;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
+import com.google.cloud.compute.v1.SetCloudArmorTierProjectRequest;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest;
 import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectRequest;
@@ -68,9 +69,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -87,7 +88,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -103,9 +106,45 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ProjectsStubSettings projectsSettings = projectsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for disableXpnHost:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ProjectsStubSettings.Builder projectsSettingsBuilder = ProjectsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * projectsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -145,6 +184,10 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
   private final UnaryCallSettings<MoveInstanceProjectRequest, Operation> moveInstanceSettings;
   private final OperationCallSettings<MoveInstanceProjectRequest, Operation, Operation>
       moveInstanceOperationSettings;
+  private final UnaryCallSettings<SetCloudArmorTierProjectRequest, Operation>
+      setCloudArmorTierSettings;
+  private final OperationCallSettings<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationSettings;
   private final UnaryCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataSettings;
   private final OperationCallSettings<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
@@ -194,9 +237,7 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
 
             @Override
             public Iterable<XpnResourceId> extractResources(ProjectsGetXpnResources payload) {
-              return payload.getResourcesList() == null
-                  ? ImmutableList.<XpnResourceId>of()
-                  : payload.getResourcesList();
+              return payload.getResourcesList();
             }
           };
 
@@ -234,9 +275,7 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
 
             @Override
             public Iterable<Project> extractResources(XpnHostList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<Project>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
             }
           };
 
@@ -368,6 +407,17 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return moveInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setCloudArmorTier. */
+  public UnaryCallSettings<SetCloudArmorTierProjectRequest, Operation> setCloudArmorTierSettings() {
+    return setCloudArmorTierSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setCloudArmorTier. */
+  public OperationCallSettings<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationSettings() {
+    return setCloudArmorTierOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setCommonInstanceMetadata. */
   public UnaryCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataSettings() {
@@ -415,12 +465,19 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -452,7 +509,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(ProjectsStubSettings.class))
@@ -497,6 +553,9 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     moveDiskOperationSettings = settingsBuilder.moveDiskOperationSettings().build();
     moveInstanceSettings = settingsBuilder.moveInstanceSettings().build();
     moveInstanceOperationSettings = settingsBuilder.moveInstanceOperationSettings().build();
+    setCloudArmorTierSettings = settingsBuilder.setCloudArmorTierSettings().build();
+    setCloudArmorTierOperationSettings =
+        settingsBuilder.setCloudArmorTierOperationSettings().build();
     setCommonInstanceMetadataSettings = settingsBuilder.setCommonInstanceMetadataSettings().build();
     setCommonInstanceMetadataOperationSettings =
         settingsBuilder.setCommonInstanceMetadataOperationSettings().build();
@@ -544,6 +603,11 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
         moveInstanceSettings;
     private final OperationCallSettings.Builder<MoveInstanceProjectRequest, Operation, Operation>
         moveInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<SetCloudArmorTierProjectRequest, Operation>
+        setCloudArmorTierSettings;
+    private final OperationCallSettings.Builder<
+            SetCloudArmorTierProjectRequest, Operation, Operation>
+        setCloudArmorTierOperationSettings;
     private final UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectRequest, Operation>
         setCommonInstanceMetadataSettings;
     private final OperationCallSettings.Builder<
@@ -582,21 +646,21 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -625,6 +689,8 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       moveDiskOperationSettings = OperationCallSettings.newBuilder();
       moveInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       moveInstanceOperationSettings = OperationCallSettings.newBuilder();
+      setCloudArmorTierSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setCloudArmorTierOperationSettings = OperationCallSettings.newBuilder();
       setCommonInstanceMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setCommonInstanceMetadataOperationSettings = OperationCallSettings.newBuilder();
       setDefaultNetworkTierSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -644,6 +710,7 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
               listXpnHostsSettings,
               moveDiskSettings,
               moveInstanceSettings,
+              setCloudArmorTierSettings,
               setCommonInstanceMetadataSettings,
               setDefaultNetworkTierSettings,
               setUsageExportBucketSettings);
@@ -670,6 +737,8 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       moveDiskOperationSettings = settings.moveDiskOperationSettings.toBuilder();
       moveInstanceSettings = settings.moveInstanceSettings.toBuilder();
       moveInstanceOperationSettings = settings.moveInstanceOperationSettings.toBuilder();
+      setCloudArmorTierSettings = settings.setCloudArmorTierSettings.toBuilder();
+      setCloudArmorTierOperationSettings = settings.setCloudArmorTierOperationSettings.toBuilder();
       setCommonInstanceMetadataSettings = settings.setCommonInstanceMetadataSettings.toBuilder();
       setCommonInstanceMetadataOperationSettings =
           settings.setCommonInstanceMetadataOperationSettings.toBuilder();
@@ -692,6 +761,7 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
               listXpnHostsSettings,
               moveDiskSettings,
               moveInstanceSettings,
+              setCloudArmorTierSettings,
               setCommonInstanceMetadataSettings,
               setDefaultNetworkTierSettings,
               setUsageExportBucketSettings);
@@ -703,7 +773,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -762,6 +831,11 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .setCloudArmorTierSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .setCommonInstanceMetadataSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -791,13 +865,13 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -816,13 +890,13 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -840,13 +914,13 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -864,13 +938,13 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -888,13 +962,13 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -912,13 +986,37 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setCloudArmorTierOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetCloudArmorTierProjectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -937,13 +1035,13 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -962,13 +1060,13 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -987,13 +1085,13 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -1021,8 +1119,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to disableXpnHost. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DisableXpnHostProjectRequest, Operation, Operation>
         disableXpnHostOperationSettings() {
       return disableXpnHostOperationSettings;
@@ -1035,8 +1131,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to disableXpnResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DisableXpnResourceProjectRequest, Operation, Operation>
         disableXpnResourceOperationSettings() {
       return disableXpnResourceOperationSettings;
@@ -1049,8 +1143,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to enableXpnHost. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<EnableXpnHostProjectRequest, Operation, Operation>
         enableXpnHostOperationSettings() {
       return enableXpnHostOperationSettings;
@@ -1063,8 +1155,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to enableXpnResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<EnableXpnResourceProjectRequest, Operation, Operation>
         enableXpnResourceOperationSettings() {
       return enableXpnResourceOperationSettings;
@@ -1100,8 +1190,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to moveDisk. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<MoveDiskProjectRequest, Operation, Operation>
         moveDiskOperationSettings() {
       return moveDiskOperationSettings;
@@ -1113,11 +1201,21 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to moveInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<MoveInstanceProjectRequest, Operation, Operation>
         moveInstanceOperationSettings() {
       return moveInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setCloudArmorTier. */
+    public UnaryCallSettings.Builder<SetCloudArmorTierProjectRequest, Operation>
+        setCloudArmorTierSettings() {
+      return setCloudArmorTierSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setCloudArmorTier. */
+    public OperationCallSettings.Builder<SetCloudArmorTierProjectRequest, Operation, Operation>
+        setCloudArmorTierOperationSettings() {
+      return setCloudArmorTierOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */
@@ -1127,8 +1225,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetCommonInstanceMetadataProjectRequest, Operation, Operation>
         setCommonInstanceMetadataOperationSettings() {
@@ -1142,8 +1238,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setDefaultNetworkTier. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetDefaultNetworkTierProjectRequest, Operation, Operation>
         setDefaultNetworkTierOperationSettings() {
       return setDefaultNetworkTierOperationSettings;
@@ -1156,8 +1250,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setUsageExportBucket. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetUsageExportBucketProjectRequest, Operation, Operation>
         setUsageExportBucketOperationSettings() {
       return setUsageExportBucketOperationSettings;

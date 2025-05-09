@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,8 @@ public class MockDeploymentResourcePoolServiceImpl extends DeploymentResourcePoo
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDeploymentResourcePool, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDeploymentResourcePool, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -95,7 +96,8 @@ public class MockDeploymentResourcePoolServiceImpl extends DeploymentResourcePoo
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDeploymentResourcePool, expected %s or %s",
+                  "Unrecognized response type %s for method GetDeploymentResourcePool, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DeploymentResourcePool.class.getName(),
                   Exception.class.getName())));
@@ -117,9 +119,32 @@ public class MockDeploymentResourcePoolServiceImpl extends DeploymentResourcePoo
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDeploymentResourcePools, expected %s or %s",
+                  "Unrecognized response type %s for method ListDeploymentResourcePools, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDeploymentResourcePoolsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDeploymentResourcePool(
+      UpdateDeploymentResourcePoolRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDeploymentResourcePool, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -138,7 +163,8 @@ public class MockDeploymentResourcePoolServiceImpl extends DeploymentResourcePoo
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDeploymentResourcePool, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDeploymentResourcePool, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

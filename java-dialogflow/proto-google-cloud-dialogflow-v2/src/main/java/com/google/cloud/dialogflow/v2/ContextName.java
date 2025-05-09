@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -131,23 +130,19 @@ public class ContextName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectSessionContextBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectEnvironmentUserSessionContextBuilder
       newProjectEnvironmentUserSessionContextBuilder() {
     return new ProjectEnvironmentUserSessionContextBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationSessionContextBuilder newProjectLocationSessionContextBuilder() {
     return new ProjectLocationSessionContextBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationEnvironmentUserSessionContextBuilder
       newProjectLocationEnvironmentUserSessionContextBuilder() {
     return new ProjectLocationEnvironmentUserSessionContextBuilder();
@@ -161,13 +156,11 @@ public class ContextName implements ResourceName {
     return newBuilder().setProject(project).setSession(session).setContext(context).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ContextName ofProjectSessionContextName(
       String project, String session, String context) {
     return newBuilder().setProject(project).setSession(session).setContext(context).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ContextName ofProjectEnvironmentUserSessionContextName(
       String project, String environment, String user, String session, String context) {
     return newProjectEnvironmentUserSessionContextBuilder()
@@ -179,7 +172,6 @@ public class ContextName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ContextName ofProjectLocationSessionContextName(
       String project, String location, String session, String context) {
     return newProjectLocationSessionContextBuilder()
@@ -190,7 +182,6 @@ public class ContextName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ContextName ofProjectLocationEnvironmentUserSessionContextName(
       String project,
       String location,
@@ -217,7 +208,6 @@ public class ContextName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectSessionContextName(
       String project, String session, String context) {
     return newBuilder()
@@ -228,7 +218,6 @@ public class ContextName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectEnvironmentUserSessionContextName(
       String project, String environment, String user, String session, String context) {
     return newProjectEnvironmentUserSessionContextBuilder()
@@ -241,7 +230,6 @@ public class ContextName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationSessionContextName(
       String project, String location, String session, String context) {
     return newProjectLocationSessionContextBuilder()
@@ -253,7 +241,6 @@ public class ContextName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEnvironmentUserSessionContextName(
       String project,
       String location,
@@ -452,7 +439,8 @@ public class ContextName implements ResourceName {
     private Builder(ContextName contextName) {
       Preconditions.checkArgument(
           Objects.equals(contextName.pathTemplate, PROJECT_SESSION_CONTEXT),
-          "toBuilder is only supported when ContextName has the pattern of projects/{project}/agent/sessions/{session}/contexts/{context}");
+          "toBuilder is only supported when ContextName has the pattern of"
+              + " projects/{project}/agent/sessions/{session}/contexts/{context}");
       this.project = contextName.project;
       this.session = contextName.session;
       this.context = contextName.context;
@@ -467,7 +455,6 @@ public class ContextName implements ResourceName {
    * Builder for
    * projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectEnvironmentUserSessionContextBuilder {
     private String project;
     private String environment;
@@ -531,7 +518,6 @@ public class ContextName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/agent/sessions/{session}/contexts/{context}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationSessionContextBuilder {
     private String project;
     private String location;
@@ -585,7 +571,6 @@ public class ContextName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationEnvironmentUserSessionContextBuilder {
     private String project;
     private String location;

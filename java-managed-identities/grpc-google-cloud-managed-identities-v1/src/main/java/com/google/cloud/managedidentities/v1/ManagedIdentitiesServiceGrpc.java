@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -546,6 +546,19 @@ public final class ManagedIdentitiesServiceGrpc {
     return ManagedIdentitiesServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ManagedIdentitiesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ManagedIdentitiesServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ManagedIdentitiesServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ManagedIdentitiesServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ManagedIdentitiesServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ManagedIdentitiesServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -998,6 +1011,182 @@ public final class ManagedIdentitiesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ManagedIdentitiesService.
+   *
+   * <pre>
+   * API Overview
+   * The `managedidentites.googleapis.com` service implements the Google Cloud
+   * Managed Identites API for identity services
+   * (e.g. Microsoft Active Directory).
+   * The Managed Identities service provides methods to manage
+   * (create/read/update/delete) domains, reset managed identities admin password,
+   * add/remove domain controllers in GCP regions and add/remove VPC peering.
+   * Data Model
+   * The Managed Identities service exposes the following resources:
+   * * Locations as global, named as follows:
+   *   `projects/{project_id}/locations/global`.
+   * * Domains, named as follows:
+   *   `/projects/{project_id}/locations/global/domain/{domain_name}`.
+   * The `{domain_name}` refers to fully qualified domain name in the customer
+   * project e.g. mydomain.myorganization.com, with the following restrictions:
+   *  * Must contain only lowercase letters, numbers, periods and hyphens.
+   *  * Must start with a letter.
+   *  * Must contain between 2-64 characters.
+   *  * Must end with a number or a letter.
+   *  * Must not start with period.
+   *  * First segement length (mydomain form example above) shouldn't exceed
+   *    15 chars.
+   *  * The last segment cannot be fully numeric.
+   *  * Must be unique within the customer project.
+   * </pre>
+   */
+  public static final class ManagedIdentitiesServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ManagedIdentitiesServiceBlockingV2Stub> {
+    private ManagedIdentitiesServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ManagedIdentitiesServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ManagedIdentitiesServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Microsoft AD domain.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMicrosoftAdDomain(
+        com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMicrosoftAdDomainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets a domain's administrator password.
+     * </pre>
+     */
+    public com.google.cloud.managedidentities.v1.ResetAdminPasswordResponse resetAdminPassword(
+        com.google.cloud.managedidentities.v1.ResetAdminPasswordRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResetAdminPasswordMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists domains in a project.
+     * </pre>
+     */
+    public com.google.cloud.managedidentities.v1.ListDomainsResponse listDomains(
+        com.google.cloud.managedidentities.v1.ListDomainsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDomainsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a domain.
+     * </pre>
+     */
+    public com.google.cloud.managedidentities.v1.Domain getDomain(
+        com.google.cloud.managedidentities.v1.GetDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDomainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the metadata and configuration of a domain.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDomain(
+        com.google.cloud.managedidentities.v1.UpdateDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDomainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a domain.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDomain(
+        com.google.cloud.managedidentities.v1.DeleteDomainRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDomainMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds an AD trust to a domain.
+     * </pre>
+     */
+    public com.google.longrunning.Operation attachTrust(
+        com.google.cloud.managedidentities.v1.AttachTrustRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAttachTrustMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the DNS conditional forwarder.
+     * </pre>
+     */
+    public com.google.longrunning.Operation reconfigureTrust(
+        com.google.cloud.managedidentities.v1.ReconfigureTrustRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReconfigureTrustMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes an AD trust.
+     * </pre>
+     */
+    public com.google.longrunning.Operation detachTrust(
+        com.google.cloud.managedidentities.v1.DetachTrustRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDetachTrustMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates a trust state, that the target domain is reachable, and that the
+     * target domain is able to accept incoming trust requests.
+     * </pre>
+     */
+    public com.google.longrunning.Operation validateTrust(
+        com.google.cloud.managedidentities.v1.ValidateTrustRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getValidateTrustMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ManagedIdentitiesService.
    *
    * <pre>
    * API Overview

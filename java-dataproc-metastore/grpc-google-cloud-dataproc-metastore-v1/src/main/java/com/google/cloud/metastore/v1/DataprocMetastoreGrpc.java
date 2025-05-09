@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -879,6 +879,19 @@ public final class DataprocMetastoreGrpc {
     return DataprocMetastoreStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataprocMetastoreBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataprocMetastoreBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataprocMetastoreBlockingV2Stub>() {
+          @java.lang.Override
+          public DataprocMetastoreBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataprocMetastoreBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataprocMetastoreBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1544,6 +1557,278 @@ public final class DataprocMetastoreGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataprocMetastore.
+   *
+   * <pre>
+   * Configures and manages metastore services.
+   * Metastore services are fully managed, highly available, autoscaled,
+   * autohealing, OSS-native deployments of technical metadata management
+   * software. Each metastore service exposes a network endpoint through which
+   * metadata queries are served. Metadata queries can originate from a variety
+   * of sources, including Apache Hive, Apache Presto, and Apache Spark.
+   * The Dataproc Metastore API defines the following resource model:
+   * * The service works with a collection of Google Cloud projects, named:
+   * `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   *   (a location must refer to a Google Cloud `region`)
+   * * Each location has a collection of services, named: `/services/&#42;`
+   * * Dataproc Metastore services are resources with names of the form:
+   *   `/projects/{project_number}/locations/{location_id}/services/{service_id}`.
+   * </pre>
+   */
+  public static final class DataprocMetastoreBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataprocMetastoreBlockingV2Stub> {
+    private DataprocMetastoreBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataprocMetastoreBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataprocMetastoreBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists services in a project and location.
+     * </pre>
+     */
+    public com.google.cloud.metastore.v1.ListServicesResponse listServices(
+        com.google.cloud.metastore.v1.ListServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a single service.
+     * </pre>
+     */
+    public com.google.cloud.metastore.v1.Service getService(
+        com.google.cloud.metastore.v1.GetServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a metastore service in a project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createService(
+        com.google.cloud.metastore.v1.CreateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single service.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateService(
+        com.google.cloud.metastore.v1.UpdateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single service.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteService(
+        com.google.cloud.metastore.v1.DeleteServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists imports in a service.
+     * </pre>
+     */
+    public com.google.cloud.metastore.v1.ListMetadataImportsResponse listMetadataImports(
+        com.google.cloud.metastore.v1.ListMetadataImportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMetadataImportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single import.
+     * </pre>
+     */
+    public com.google.cloud.metastore.v1.MetadataImport getMetadataImport(
+        com.google.cloud.metastore.v1.GetMetadataImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMetadataImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new MetadataImport in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMetadataImport(
+        com.google.cloud.metastore.v1.CreateMetadataImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMetadataImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single import.
+     * Only the description field of MetadataImport is supported to be updated.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMetadataImport(
+        com.google.cloud.metastore.v1.UpdateMetadataImportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMetadataImportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports metadata from a service.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportMetadata(
+        com.google.cloud.metastore.v1.ExportMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a service from a backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreService(
+        com.google.cloud.metastore.v1.RestoreServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists backups in a service.
+     * </pre>
+     */
+    public com.google.cloud.metastore.v1.ListBackupsResponse listBackups(
+        com.google.cloud.metastore.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single backup.
+     * </pre>
+     */
+    public com.google.cloud.metastore.v1.Backup getBackup(
+        com.google.cloud.metastore.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new backup in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.cloud.metastore.v1.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.metastore.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Query DPMS metadata.
+     * </pre>
+     */
+    public com.google.longrunning.Operation queryMetadata(
+        com.google.cloud.metastore.v1.QueryMetadataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryMetadataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Move a table to another database.
+     * </pre>
+     */
+    public com.google.longrunning.Operation moveTableToDatabase(
+        com.google.cloud.metastore.v1.MoveTableToDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveTableToDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Alter metadata resource location. The metadata resource can be a database,
+     * table, or partition. This functionality only updates the parent directory
+     * for the respective metadata resource and does not transfer any existing
+     * data to the new location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation alterMetadataResourceLocation(
+        com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAlterMetadataResourceLocationMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataprocMetastore.
    *
    * <pre>
    * Configures and manages metastore services.

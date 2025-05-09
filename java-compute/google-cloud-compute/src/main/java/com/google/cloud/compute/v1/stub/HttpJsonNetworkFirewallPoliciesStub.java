@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.NetworkFirewallPoliciesClient.ListPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -34,7 +34,9 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAssociationNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.AddPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.AggregatedListNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.CloneRulesNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.DeleteNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.FirewallPolicy;
@@ -44,15 +46,19 @@ import com.google.cloud.compute.v1.FirewallPolicyRule;
 import com.google.cloud.compute.v1.GetAssociationNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetIamPolicyNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.GetPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.GetRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.InsertNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListNetworkFirewallPoliciesRequest;
+import com.google.cloud.compute.v1.NetworkFirewallPolicyAggregatedList;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.PatchPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveAssociationNetworkFirewallPolicyRequest;
+import com.google.cloud.compute.v1.RemovePacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.RemoveRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.SetIamPolicyNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNetworkFirewallPolicyRequest;
@@ -73,7 +79,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPoliciesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -129,6 +134,75 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       .build())
               .setOperationSnapshotFactory(
                   (AddAssociationNetworkFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      addPacketMirroringRuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.NetworkFirewallPolicies/AddPacketMirroringRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<AddPacketMirroringRuleNetworkFirewallPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/firewallPolicies/{firewallPolicy}/addPacketMirroringRule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddPacketMirroringRuleNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddPacketMirroringRuleNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasMaxPriority()) {
+                              serializer.putQueryParam(
+                                  fields, "maxPriority", request.getMaxPriority());
+                            }
+                            if (request.hasMinPriority()) {
+                              serializer.putQueryParam(
+                                  fields, "minPriority", request.getMinPriority());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "firewallPolicyRuleResource",
+                                      request.getFirewallPolicyRuleResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddPacketMirroringRuleNetworkFirewallPolicyRequest request,
+                      Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     return HttpJsonOperationSnapshot.newBuilder()
@@ -203,6 +277,72 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                         .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
                         .build();
                   })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+                  newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.NetworkFirewallPolicies/AggregatedList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<AggregatedListNetworkFirewallPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/firewallPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNetworkFirewallPoliciesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListNetworkFirewallPoliciesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NetworkFirewallPolicyAggregatedList>newBuilder()
+                      .setDefaultInstance(NetworkFirewallPolicyAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<CloneRulesNetworkFirewallPolicyRequest, Operation>
@@ -428,6 +568,48 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+      getPacketMirroringRuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.NetworkFirewallPolicies/GetPacketMirroringRule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetPacketMirroringRuleNetworkFirewallPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/firewallPolicies/{firewallPolicy}/getPacketMirroringRule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPacketMirroringRuleNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetPacketMirroringRuleNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FirewallPolicyRule>newBuilder()
+                      .setDefaultInstance(FirewallPolicyRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
       getRuleMethodDescriptor =
           ApiMethodDescriptor.<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>newBuilder()
@@ -628,6 +810,72 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      patchPacketMirroringRuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.NetworkFirewallPolicies/PatchPacketMirroringRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<PatchPacketMirroringRuleNetworkFirewallPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/firewallPolicies/{firewallPolicy}/patchPacketMirroringRule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    PatchPacketMirroringRuleNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    PatchPacketMirroringRuleNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "firewallPolicyRuleResource",
+                                      request.getFirewallPolicyRuleResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PatchPacketMirroringRuleNetworkFirewallPolicyRequest request,
+                      Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<PatchRuleNetworkFirewallPolicyRequest, Operation>
       patchRuleMethodDescriptor =
           ApiMethodDescriptor.<PatchRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
@@ -730,6 +978,66 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       .build())
               .setOperationSnapshotFactory(
                   (RemoveAssociationNetworkFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      removePacketMirroringRuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.NetworkFirewallPolicies/RemovePacketMirroringRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<RemovePacketMirroringRuleNetworkFirewallPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/firewallPolicies/{firewallPolicy}/removePacketMirroringRule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    RemovePacketMirroringRuleNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    RemovePacketMirroringRuleNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RemovePacketMirroringRuleNetworkFirewallPolicyRequest request,
+                      Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     return HttpJsonOperationSnapshot.newBuilder()
@@ -884,9 +1192,20 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       addAssociationCallable;
   private final OperationCallable<AddAssociationNetworkFirewallPolicyRequest, Operation, Operation>
       addAssociationOperationCallable;
+  private final UnaryCallable<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      addPacketMirroringRuleCallable;
+  private final OperationCallable<
+          AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      addPacketMirroringRuleOperationCallable;
   private final UnaryCallable<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleCallable;
   private final OperationCallable<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
       addRuleOperationCallable;
+  private final UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<CloneRulesNetworkFirewallPolicyRequest, Operation> cloneRulesCallable;
   private final OperationCallable<CloneRulesNetworkFirewallPolicyRequest, Operation, Operation>
       cloneRulesOperationCallable;
@@ -898,6 +1217,9 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
       getAssociationCallable;
   private final UnaryCallable<GetIamPolicyNetworkFirewallPolicyRequest, Policy>
       getIamPolicyCallable;
+  private final UnaryCallable<
+          GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+      getPacketMirroringRuleCallable;
   private final UnaryCallable<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
       getRuleCallable;
   private final UnaryCallable<InsertNetworkFirewallPolicyRequest, Operation> insertCallable;
@@ -909,6 +1231,11 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   private final UnaryCallable<PatchNetworkFirewallPolicyRequest, Operation> patchCallable;
   private final OperationCallable<PatchNetworkFirewallPolicyRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      patchPacketMirroringRuleCallable;
+  private final OperationCallable<
+          PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      patchPacketMirroringRuleOperationCallable;
   private final UnaryCallable<PatchRuleNetworkFirewallPolicyRequest, Operation> patchRuleCallable;
   private final OperationCallable<PatchRuleNetworkFirewallPolicyRequest, Operation, Operation>
       patchRuleOperationCallable;
@@ -917,6 +1244,11 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   private final OperationCallable<
           RemoveAssociationNetworkFirewallPolicyRequest, Operation, Operation>
       removeAssociationOperationCallable;
+  private final UnaryCallable<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      removePacketMirroringRuleCallable;
+  private final OperationCallable<
+          RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      removePacketMirroringRuleOperationCallable;
   private final UnaryCallable<RemoveRuleNetworkFirewallPolicyRequest, Operation> removeRuleCallable;
   private final OperationCallable<RemoveRuleNetworkFirewallPolicyRequest, Operation, Operation>
       removeRuleOperationCallable;
@@ -985,6 +1317,20 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        addPacketMirroringRuleTransportSettings =
+            HttpJsonCallSettings
+                .<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(addPacketMirroringRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleTransportSettings =
         HttpJsonCallSettings.<AddRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(addRuleMethodDescriptor)
@@ -997,6 +1343,21 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<
+            AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+                    newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CloneRulesNetworkFirewallPolicyRequest, Operation>
         cloneRulesTransportSettings =
             HttpJsonCallSettings.<CloneRulesNetworkFirewallPolicyRequest, Operation>newBuilder()
@@ -1061,6 +1422,21 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+        getPacketMirroringRuleTransportSettings =
+            HttpJsonCallSettings
+                .<GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+                    newBuilder()
+                .setMethodDescriptor(getPacketMirroringRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
         getRuleTransportSettings =
             HttpJsonCallSettings
@@ -1111,6 +1487,20 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        patchPacketMirroringRuleTransportSettings =
+            HttpJsonCallSettings
+                .<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchPacketMirroringRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<PatchRuleNetworkFirewallPolicyRequest, Operation>
         patchRuleTransportSettings =
             HttpJsonCallSettings.<PatchRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
@@ -1129,6 +1519,20 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
             HttpJsonCallSettings
                 .<RemoveAssociationNetworkFirewallPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+        removePacketMirroringRuleTransportSettings =
+            HttpJsonCallSettings
+                .<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(removePacketMirroringRuleMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -1189,6 +1593,17 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
             settings.addAssociationOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.addPacketMirroringRuleCallable =
+        callableFactory.createUnaryCallable(
+            addPacketMirroringRuleTransportSettings,
+            settings.addPacketMirroringRuleSettings(),
+            clientContext);
+    this.addPacketMirroringRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            addPacketMirroringRuleTransportSettings,
+            settings.addPacketMirroringRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.addRuleCallable =
         callableFactory.createUnaryCallable(
             addRuleTransportSettings, settings.addRuleSettings(), clientContext);
@@ -1198,6 +1613,12 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
             settings.addRuleOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.cloneRulesCallable =
         callableFactory.createUnaryCallable(
             cloneRulesTransportSettings, settings.cloneRulesSettings(), clientContext);
@@ -1225,6 +1646,11 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.getPacketMirroringRuleCallable =
+        callableFactory.createUnaryCallable(
+            getPacketMirroringRuleTransportSettings,
+            settings.getPacketMirroringRuleSettings(),
+            clientContext);
     this.getRuleCallable =
         callableFactory.createUnaryCallable(
             getRuleTransportSettings, settings.getRuleSettings(), clientContext);
@@ -1252,6 +1678,17 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.patchPacketMirroringRuleCallable =
+        callableFactory.createUnaryCallable(
+            patchPacketMirroringRuleTransportSettings,
+            settings.patchPacketMirroringRuleSettings(),
+            clientContext);
+    this.patchPacketMirroringRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            patchPacketMirroringRuleTransportSettings,
+            settings.patchPacketMirroringRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.patchRuleCallable =
         callableFactory.createUnaryCallable(
             patchRuleTransportSettings, settings.patchRuleSettings(), clientContext);
@@ -1270,6 +1707,17 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
         callableFactory.createOperationCallable(
             removeAssociationTransportSettings,
             settings.removeAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.removePacketMirroringRuleCallable =
+        callableFactory.createUnaryCallable(
+            removePacketMirroringRuleTransportSettings,
+            settings.removePacketMirroringRuleSettings(),
+            clientContext);
+    this.removePacketMirroringRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            removePacketMirroringRuleTransportSettings,
+            settings.removePacketMirroringRuleOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.removeRuleCallable =
@@ -1298,18 +1746,23 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(addAssociationMethodDescriptor);
+    methodDescriptors.add(addPacketMirroringRuleMethodDescriptor);
     methodDescriptors.add(addRuleMethodDescriptor);
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(cloneRulesMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getAssociationMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
+    methodDescriptors.add(getPacketMirroringRuleMethodDescriptor);
     methodDescriptors.add(getRuleMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(patchPacketMirroringRuleMethodDescriptor);
     methodDescriptors.add(patchRuleMethodDescriptor);
     methodDescriptors.add(removeAssociationMethodDescriptor);
+    methodDescriptors.add(removePacketMirroringRuleMethodDescriptor);
     methodDescriptors.add(removeRuleMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
@@ -1329,6 +1782,18 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   }
 
   @Override
+  public UnaryCallable<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      addPacketMirroringRuleCallable() {
+    return addPacketMirroringRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      addPacketMirroringRuleOperationCallable() {
+    return addPacketMirroringRuleOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleCallable() {
     return addRuleCallable;
   }
@@ -1337,6 +1802,19 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   public OperationCallable<AddRuleNetworkFirewallPolicyRequest, Operation, Operation>
       addRuleOperationCallable() {
     return addRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AggregatedListNetworkFirewallPoliciesRequest, NetworkFirewallPolicyAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListNetworkFirewallPoliciesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override
@@ -1378,6 +1856,12 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   }
 
   @Override
+  public UnaryCallable<GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
+      getPacketMirroringRuleCallable() {
+    return getPacketMirroringRuleCallable;
+  }
+
+  @Override
   public UnaryCallable<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule> getRuleCallable() {
     return getRuleCallable;
   }
@@ -1415,6 +1899,19 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   }
 
   @Override
+  public UnaryCallable<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      patchPacketMirroringRuleCallable() {
+    return patchPacketMirroringRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      patchPacketMirroringRuleOperationCallable() {
+    return patchPacketMirroringRuleOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<PatchRuleNetworkFirewallPolicyRequest, Operation> patchRuleCallable() {
     return patchRuleCallable;
   }
@@ -1435,6 +1932,19 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   public OperationCallable<RemoveAssociationNetworkFirewallPolicyRequest, Operation, Operation>
       removeAssociationOperationCallable() {
     return removeAssociationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
+      removePacketMirroringRuleCallable() {
+    return removePacketMirroringRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation, Operation>
+      removePacketMirroringRuleOperationCallable() {
+    return removePacketMirroringRuleOperationCallable;
   }
 
   @Override

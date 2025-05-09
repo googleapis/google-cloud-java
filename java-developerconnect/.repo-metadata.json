@@ -1,0 +1,16 @@
+{
+  "api_shortname": "developerconnect",
+  "name_pretty": "Developer Connect API",
+  "product_documentation": "https://cloud.google.com/developer-connect/docs/overview",
+  "api_description": "Connect third-party source code management to Google",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-developerconnect/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-developerconnect",
+  "distribution_name": "com.google.cloud:google-cloud-developerconnect",
+  "api_id": "developerconnect.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

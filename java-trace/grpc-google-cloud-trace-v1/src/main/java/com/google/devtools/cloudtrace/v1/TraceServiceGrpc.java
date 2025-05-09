@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -185,6 +185,19 @@ public final class TraceServiceGrpc {
     return TraceServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TraceServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TraceServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TraceServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TraceServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TraceServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TraceServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -366,6 +379,73 @@ public final class TraceServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TraceService.
+   *
+   * <pre>
+   * This file describes an API for collecting and viewing traces and spans
+   * within a trace.  A Trace is a collection of spans corresponding to a single
+   * operation or set of operations for an application. A span is an individual
+   * timed event which forms a node of the trace tree. Spans for a single trace
+   * may span multiple services.
+   * </pre>
+   */
+  public static final class TraceServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TraceServiceBlockingV2Stub> {
+    private TraceServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TraceServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TraceServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns of a list of traces that match the specified filter conditions.
+     * </pre>
+     */
+    public com.google.devtools.cloudtrace.v1.ListTracesResponse listTraces(
+        com.google.devtools.cloudtrace.v1.ListTracesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTracesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single trace by its ID.
+     * </pre>
+     */
+    public com.google.devtools.cloudtrace.v1.Trace getTrace(
+        com.google.devtools.cloudtrace.v1.GetTraceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTraceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sends new traces to Stackdriver Trace or updates existing traces. If the ID
+     * of a trace that you send matches that of an existing trace, any fields
+     * in the existing trace and its spans are overwritten by the provided values,
+     * and any new fields provided are merged with the existing trace data. If the
+     * ID does not match, a new trace is created.
+     * </pre>
+     */
+    public com.google.protobuf.Empty patchTraces(
+        com.google.devtools.cloudtrace.v1.PatchTracesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPatchTracesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TraceService.
    *
    * <pre>
    * This file describes an API for collecting and viewing traces and spans

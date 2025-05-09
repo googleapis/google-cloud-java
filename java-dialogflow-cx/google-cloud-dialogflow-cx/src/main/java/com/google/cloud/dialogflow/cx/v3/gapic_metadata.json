@@ -106,11 +106,17 @@
             "DeleteEntityType": {
               "methods": ["deleteEntityType", "deleteEntityType", "deleteEntityType", "deleteEntityTypeCallable"]
             },
+            "ExportEntityTypes": {
+              "methods": ["exportEntityTypesAsync", "exportEntityTypesOperationCallable", "exportEntityTypesCallable"]
+            },
             "GetEntityType": {
               "methods": ["getEntityType", "getEntityType", "getEntityType", "getEntityTypeCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ImportEntityTypes": {
+              "methods": ["importEntityTypesAsync", "importEntityTypesOperationCallable", "importEntityTypesCallable"]
             },
             "ListEntityTypes": {
               "methods": ["listEntityTypes", "listEntityTypes", "listEntityTypes", "listEntityTypesPagedCallable", "listEntityTypesCallable"]
@@ -248,6 +254,36 @@
         }
       }
     },
+    "Generators": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeneratorsClient",
+          "rpcs": {
+            "CreateGenerator": {
+              "methods": ["createGenerator", "createGenerator", "createGenerator", "createGeneratorCallable"]
+            },
+            "DeleteGenerator": {
+              "methods": ["deleteGenerator", "deleteGenerator", "deleteGenerator", "deleteGeneratorCallable"]
+            },
+            "GetGenerator": {
+              "methods": ["getGenerator", "getGenerator", "getGenerator", "getGeneratorCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListGenerators": {
+              "methods": ["listGenerators", "listGenerators", "listGenerators", "listGeneratorsPagedCallable", "listGeneratorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateGenerator": {
+              "methods": ["updateGenerator", "updateGenerator", "updateGeneratorCallable"]
+            }
+          }
+        }
+      }
+    },
     "Intents": {
       "clients": {
         "grpc": {
@@ -364,8 +400,14 @@
             "MatchIntent": {
               "methods": ["matchIntent", "matchIntentCallable"]
             },
+            "ServerStreamingDetectIntent": {
+              "methods": ["serverStreamingDetectIntentCallable"]
+            },
             "StreamingDetectIntent": {
               "methods": ["streamingDetectIntentCallable"]
+            },
+            "SubmitAnswerFeedback": {
+              "methods": ["submitAnswerFeedback", "submitAnswerFeedbackCallable"]
             }
           }
         }

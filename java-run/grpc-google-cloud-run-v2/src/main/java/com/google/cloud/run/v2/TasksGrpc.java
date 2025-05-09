@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -125,6 +125,19 @@ public final class TasksGrpc {
           }
         };
     return TasksStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TasksBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TasksBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TasksBlockingV2Stub>() {
+          @java.lang.Override
+          public TasksBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TasksBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TasksBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -253,6 +266,50 @@ public final class TasksGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Tasks.
+   *
+   * <pre>
+   * Cloud Run Task Control Plane API.
+   * </pre>
+   */
+  public static final class TasksBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TasksBlockingV2Stub> {
+    private TasksBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TasksBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TasksBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a Task.
+     * </pre>
+     */
+    public com.google.cloud.run.v2.Task getTask(com.google.cloud.run.v2.GetTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Tasks from an Execution of a Job.
+     * </pre>
+     */
+    public com.google.cloud.run.v2.ListTasksResponse listTasks(
+        com.google.cloud.run.v2.ListTasksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTasksMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Tasks.
    *
    * <pre>
    * Cloud Run Task Control Plane API.

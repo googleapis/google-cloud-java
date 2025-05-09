@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -867,6 +867,19 @@ public final class RegistrationServiceGrpc {
     return RegistrationServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RegistrationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RegistrationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RegistrationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public RegistrationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RegistrationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RegistrationServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1543,6 +1556,272 @@ public final class RegistrationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RegistrationService.
+   *
+   * <pre>
+   * Service Directory API for registering services. It defines the following
+   * resource model:
+   * - The API has a collection of
+   * [Namespace][google.cloud.servicedirectory.v1.Namespace]
+   * resources, named `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;`.
+   * - Each Namespace has a collection of
+   * [Service][google.cloud.servicedirectory.v1.Service] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;`.
+   * - Each Service has a collection of
+   * [Endpoint][google.cloud.servicedirectory.v1.Endpoint]
+   * resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;namespaces/&#42;&#47;services/&#42;&#47;endpoints/&#42;`.
+   * </pre>
+   */
+  public static final class RegistrationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RegistrationServiceBlockingV2Stub> {
+    private RegistrationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RegistrationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RegistrationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a namespace, and returns the new namespace.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Namespace createNamespace(
+        com.google.cloud.servicedirectory.v1.CreateNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all namespaces.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.ListNamespacesResponse listNamespaces(
+        com.google.cloud.servicedirectory.v1.ListNamespacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNamespacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a namespace.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Namespace getNamespace(
+        com.google.cloud.servicedirectory.v1.GetNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a namespace.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Namespace updateNamespace(
+        com.google.cloud.servicedirectory.v1.UpdateNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a namespace. This also deletes all services and endpoints in
+     * the namespace.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteNamespace(
+        com.google.cloud.servicedirectory.v1.DeleteNamespaceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNamespaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a service, and returns the new service.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Service createService(
+        com.google.cloud.servicedirectory.v1.CreateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all services belonging to a namespace.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.ListServicesResponse listServices(
+        com.google.cloud.servicedirectory.v1.ListServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a service.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Service getService(
+        com.google.cloud.servicedirectory.v1.GetServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a service.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Service updateService(
+        com.google.cloud.servicedirectory.v1.UpdateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a service. This also deletes all endpoints associated with
+     * the service.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteService(
+        com.google.cloud.servicedirectory.v1.DeleteServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an endpoint, and returns the new endpoint.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Endpoint createEndpoint(
+        com.google.cloud.servicedirectory.v1.CreateEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all endpoints.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.ListEndpointsResponse listEndpoints(
+        com.google.cloud.servicedirectory.v1.ListEndpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEndpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an endpoint.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Endpoint getEndpoint(
+        com.google.cloud.servicedirectory.v1.GetEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an endpoint.
+     * </pre>
+     */
+    public com.google.cloud.servicedirectory.v1.Endpoint updateEndpoint(
+        com.google.cloud.servicedirectory.v1.UpdateEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an endpoint.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEndpoint(
+        com.google.cloud.servicedirectory.v1.DeleteEndpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM Policy for a resource (namespace or service only).
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM Policy for a resource (namespace or service only).
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tests IAM permissions for a resource (namespace or service only).
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service RegistrationService.
    *
    * <pre>
    * Service Directory API for registering services. It defines the following

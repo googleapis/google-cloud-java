@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.discoveryengine.v1beta;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,12 +96,10 @@ public class BranchName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationDataStoreBranchBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationCollectionDataStoreBranchBuilder
       newProjectLocationCollectionDataStoreBranchBuilder() {
     return new ProjectLocationCollectionDataStoreBranchBuilder();
@@ -121,7 +118,6 @@ public class BranchName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BranchName ofProjectLocationDataStoreBranchName(
       String project, String location, String dataStore, String branch) {
     return newBuilder()
@@ -132,7 +128,6 @@ public class BranchName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BranchName ofProjectLocationCollectionDataStoreBranchName(
       String project, String location, String collection, String dataStore, String branch) {
     return newProjectLocationCollectionDataStoreBranchBuilder()
@@ -154,7 +149,6 @@ public class BranchName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDataStoreBranchName(
       String project, String location, String dataStore, String branch) {
     return newBuilder()
@@ -166,7 +160,6 @@ public class BranchName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationCollectionDataStoreBranchName(
       String project, String location, String collection, String dataStore, String branch) {
     return newProjectLocationCollectionDataStoreBranchBuilder()
@@ -349,7 +342,8 @@ public class BranchName implements ResourceName {
     private Builder(BranchName branchName) {
       Preconditions.checkArgument(
           Objects.equals(branchName.pathTemplate, PROJECT_LOCATION_DATA_STORE_BRANCH),
-          "toBuilder is only supported when BranchName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}");
+          "toBuilder is only supported when BranchName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}");
       this.project = branchName.project;
       this.location = branchName.location;
       this.dataStore = branchName.dataStore;
@@ -365,7 +359,6 @@ public class BranchName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationCollectionDataStoreBranchBuilder {
     private String project;
     private String location;

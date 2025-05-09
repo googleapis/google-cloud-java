@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,15 +56,20 @@ import com.google.cloud.datacatalog.v1.ListEntryGroupsResponse;
 import com.google.cloud.datacatalog.v1.ListTagsRequest;
 import com.google.cloud.datacatalog.v1.ListTagsResponse;
 import com.google.cloud.datacatalog.v1.LookupEntryRequest;
+import com.google.cloud.datacatalog.v1.MigrationConfig;
 import com.google.cloud.datacatalog.v1.ModifyEntryContactsRequest;
 import com.google.cloud.datacatalog.v1.ModifyEntryOverviewRequest;
+import com.google.cloud.datacatalog.v1.OrganizationConfig;
 import com.google.cloud.datacatalog.v1.ReconcileTagsMetadata;
 import com.google.cloud.datacatalog.v1.ReconcileTagsRequest;
 import com.google.cloud.datacatalog.v1.ReconcileTagsResponse;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest;
 import com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest;
+import com.google.cloud.datacatalog.v1.RetrieveConfigRequest;
+import com.google.cloud.datacatalog.v1.RetrieveEffectiveConfigRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogRequest;
 import com.google.cloud.datacatalog.v1.SearchCatalogResponse;
+import com.google.cloud.datacatalog.v1.SetConfigRequest;
 import com.google.cloud.datacatalog.v1.StarEntryRequest;
 import com.google.cloud.datacatalog.v1.StarEntryResponse;
 import com.google.cloud.datacatalog.v1.Tag;
@@ -96,7 +101,10 @@ import javax.annotation.Generated;
  * gRPC stub implementation for the DataCatalog service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class GrpcDataCatalogStub extends DataCatalogStub {
   private static final MethodDescriptor<SearchCatalogRequest, SearchCatalogResponse>
@@ -422,6 +430,35 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SetConfigRequest, MigrationConfig>
+      setConfigMethodDescriptor =
+          MethodDescriptor.<SetConfigRequest, MigrationConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/SetConfig")
+              .setRequestMarshaller(ProtoUtils.marshaller(SetConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MigrationConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RetrieveConfigRequest, OrganizationConfig>
+      retrieveConfigMethodDescriptor =
+          MethodDescriptor.<RetrieveConfigRequest, OrganizationConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/RetrieveConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RetrieveConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(OrganizationConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigMethodDescriptor =
+          MethodDescriptor.<RetrieveEffectiveConfigRequest, MigrationConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/RetrieveEffectiveConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RetrieveEffectiveConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MigrationConfig.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable;
@@ -476,6 +513,10 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   private final OperationCallable<
           ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
       importEntriesOperationCallable;
+  private final UnaryCallable<SetConfigRequest, MigrationConfig> setConfigCallable;
+  private final UnaryCallable<RetrieveConfigRequest, OrganizationConfig> retrieveConfigCallable;
+  private final UnaryCallable<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -856,6 +897,37 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SetConfigRequest, MigrationConfig> setConfigTransportSettings =
+        GrpcCallSettings.<SetConfigRequest, MigrationConfig>newBuilder()
+            .setMethodDescriptor(setConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RetrieveConfigRequest, OrganizationConfig> retrieveConfigTransportSettings =
+        GrpcCallSettings.<RetrieveConfigRequest, OrganizationConfig>newBuilder()
+            .setMethodDescriptor(retrieveConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RetrieveEffectiveConfigRequest, MigrationConfig>
+        retrieveEffectiveConfigTransportSettings =
+            GrpcCallSettings.<RetrieveEffectiveConfigRequest, MigrationConfig>newBuilder()
+                .setMethodDescriptor(retrieveEffectiveConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.searchCatalogCallable =
         callableFactory.createUnaryCallable(
@@ -1005,6 +1077,17 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
             settings.importEntriesOperationSettings(),
             clientContext,
             operationsStub);
+    this.setConfigCallable =
+        callableFactory.createUnaryCallable(
+            setConfigTransportSettings, settings.setConfigSettings(), clientContext);
+    this.retrieveConfigCallable =
+        callableFactory.createUnaryCallable(
+            retrieveConfigTransportSettings, settings.retrieveConfigSettings(), clientContext);
+    this.retrieveEffectiveConfigCallable =
+        callableFactory.createUnaryCallable(
+            retrieveEffectiveConfigTransportSettings,
+            settings.retrieveEffectiveConfigSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1221,6 +1304,22 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
   public OperationCallable<ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
       importEntriesOperationCallable() {
     return importEntriesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetConfigRequest, MigrationConfig> setConfigCallable() {
+    return setConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveConfigRequest, OrganizationConfig> retrieveConfigCallable() {
+    return retrieveConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveEffectiveConfigRequest, MigrationConfig>
+      retrieveEffectiveConfigCallable() {
+    return retrieveEffectiveConfigCallable;
   }
 
   @Override

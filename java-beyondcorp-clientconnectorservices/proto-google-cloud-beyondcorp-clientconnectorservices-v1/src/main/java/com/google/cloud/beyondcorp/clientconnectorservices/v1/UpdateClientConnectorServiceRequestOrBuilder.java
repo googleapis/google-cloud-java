@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 public interface UpdateClientConnectorServiceRequestOrBuilder
@@ -43,6 +44,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    * @return Whether the clientConnectorService field is set.
    */
   boolean hasClientConnectorService();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    */
   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       getClientConnectorService();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface UpdateClientConnectorServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

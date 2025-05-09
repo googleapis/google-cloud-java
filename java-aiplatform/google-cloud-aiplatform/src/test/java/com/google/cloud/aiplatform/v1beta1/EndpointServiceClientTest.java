@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -125,12 +125,18 @@ public class EndpointServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -193,12 +199,18 @@ public class EndpointServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -261,12 +273,18 @@ public class EndpointServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -332,12 +350,18 @@ public class EndpointServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,12 +427,18 @@ public class EndpointServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -462,12 +492,18 @@ public class EndpointServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -607,12 +643,18 @@ public class EndpointServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setModelDeploymentMonitoringJob(
                 ModelDeploymentMonitoringJobName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setPredictRequestResponseLoggingConfig(
                 PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -646,6 +688,78 @@ public class EndpointServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEndpointLongRunningTest() throws Exception {
+    Endpoint expectedResponse =
+        Endpoint.newBuilder()
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllDeployedModels(new ArrayList<DeployedModel>())
+            .putAllTrafficSplit(new HashMap<String, Integer>())
+            .setEtag("etag3123477")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setNetwork("network1843485230")
+            .setEnablePrivateServiceConnect(true)
+            .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+            .setModelDeploymentMonitoringJob(
+                ModelDeploymentMonitoringJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
+                    .toString())
+            .setPredictRequestResponseLoggingConfig(
+                PredictRequestResponseLoggingConfig.newBuilder().build())
+            .setDedicatedEndpointEnabled(true)
+            .setDedicatedEndpointDns("dedicatedEndpointDns1492154853")
+            .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateEndpointLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEndpointService.addResponse(resultOperation);
+
+    Endpoint endpoint = Endpoint.newBuilder().build();
+
+    Endpoint actualResponse = client.updateEndpointLongRunningAsync(endpoint).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEndpointLongRunningRequest actualRequest =
+        ((UpdateEndpointLongRunningRequest) actualRequests.get(0));
+
+    Assert.assertEquals(endpoint, actualRequest.getEndpoint());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateEndpointLongRunningExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      Endpoint endpoint = Endpoint.newBuilder().build();
+      client.updateEndpointLongRunningAsync(endpoint).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -1050,6 +1164,194 @@ public class EndpointServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void setPublisherModelConfigTest() throws Exception {
+    PublisherModelConfig expectedResponse =
+        PublisherModelConfig.newBuilder()
+            .setLoggingConfig(PredictRequestResponseLoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setPublisherModelConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEndpointService.addResponse(resultOperation);
+
+    EndpointName name =
+        EndpointName.ofProjectLocationPublisherModelName(
+            "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+    PublisherModelConfig publisherModelConfig = PublisherModelConfig.newBuilder().build();
+
+    PublisherModelConfig actualResponse =
+        client.setPublisherModelConfigAsync(name, publisherModelConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetPublisherModelConfigRequest actualRequest =
+        ((SetPublisherModelConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(publisherModelConfig, actualRequest.getPublisherModelConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setPublisherModelConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      EndpointName name =
+          EndpointName.ofProjectLocationPublisherModelName(
+              "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+      PublisherModelConfig publisherModelConfig = PublisherModelConfig.newBuilder().build();
+      client.setPublisherModelConfigAsync(name, publisherModelConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void setPublisherModelConfigTest2() throws Exception {
+    PublisherModelConfig expectedResponse =
+        PublisherModelConfig.newBuilder()
+            .setLoggingConfig(PredictRequestResponseLoggingConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setPublisherModelConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEndpointService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    PublisherModelConfig publisherModelConfig = PublisherModelConfig.newBuilder().build();
+
+    PublisherModelConfig actualResponse =
+        client.setPublisherModelConfigAsync(name, publisherModelConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetPublisherModelConfigRequest actualRequest =
+        ((SetPublisherModelConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(publisherModelConfig, actualRequest.getPublisherModelConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setPublisherModelConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      PublisherModelConfig publisherModelConfig = PublisherModelConfig.newBuilder().build();
+      client.setPublisherModelConfigAsync(name, publisherModelConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void fetchPublisherModelConfigTest() throws Exception {
+    PublisherModelConfig expectedResponse =
+        PublisherModelConfig.newBuilder()
+            .setLoggingConfig(PredictRequestResponseLoggingConfig.newBuilder().build())
+            .build();
+    mockEndpointService.addResponse(expectedResponse);
+
+    EndpointName name =
+        EndpointName.ofProjectLocationPublisherModelName(
+            "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+
+    PublisherModelConfig actualResponse = client.fetchPublisherModelConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchPublisherModelConfigRequest actualRequest =
+        ((FetchPublisherModelConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchPublisherModelConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      EndpointName name =
+          EndpointName.ofProjectLocationPublisherModelName(
+              "[PROJECT]", "[LOCATION]", "[PUBLISHER]", "[MODEL]");
+      client.fetchPublisherModelConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchPublisherModelConfigTest2() throws Exception {
+    PublisherModelConfig expectedResponse =
+        PublisherModelConfig.newBuilder()
+            .setLoggingConfig(PredictRequestResponseLoggingConfig.newBuilder().build())
+            .build();
+    mockEndpointService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    PublisherModelConfig actualResponse = client.fetchPublisherModelConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchPublisherModelConfigRequest actualRequest =
+        ((FetchPublisherModelConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchPublisherModelConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.fetchPublisherModelConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

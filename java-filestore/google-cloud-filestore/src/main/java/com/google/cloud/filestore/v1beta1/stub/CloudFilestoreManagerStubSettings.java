@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import static com.google.cloud.filestore.v1beta1.CloudFilestoreManagerClient.Lis
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -73,6 +74,7 @@ import com.google.cloud.filestore.v1beta1.ListSharesRequest;
 import com.google.cloud.filestore.v1beta1.ListSharesResponse;
 import com.google.cloud.filestore.v1beta1.ListSnapshotsRequest;
 import com.google.cloud.filestore.v1beta1.ListSnapshotsResponse;
+import com.google.cloud.filestore.v1beta1.PromoteReplicaRequest;
 import com.google.cloud.filestore.v1beta1.RestoreInstanceRequest;
 import com.google.cloud.filestore.v1beta1.RevertInstanceRequest;
 import com.google.cloud.filestore.v1beta1.Share;
@@ -88,9 +90,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -107,7 +109,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getInstance to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getInstance:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -124,10 +128,47 @@ import org.threeten.bp.Duration;
  *             .getInstanceSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CloudFilestoreManagerStubSettings cloudFilestoreManagerSettings =
  *     cloudFilestoreManagerSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createInstance:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CloudFilestoreManagerStubSettings.Builder cloudFilestoreManagerSettingsBuilder =
+ *     CloudFilestoreManagerStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * cloudFilestoreManagerSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -154,6 +195,9 @@ public class CloudFilestoreManagerStubSettings
   private final UnaryCallSettings<RevertInstanceRequest, Operation> revertInstanceSettings;
   private final OperationCallSettings<RevertInstanceRequest, Instance, OperationMetadata>
       revertInstanceOperationSettings;
+  private final UnaryCallSettings<PromoteReplicaRequest, Operation> promoteReplicaSettings;
+  private final OperationCallSettings<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings;
@@ -225,9 +269,7 @@ public class CloudFilestoreManagerStubSettings
 
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
-              return payload.getInstancesList() == null
-                  ? ImmutableList.<Instance>of()
-                  : payload.getInstancesList();
+              return payload.getInstancesList();
             }
           };
 
@@ -261,9 +303,7 @@ public class CloudFilestoreManagerStubSettings
 
             @Override
             public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
-              return payload.getSnapshotsList() == null
-                  ? ImmutableList.<Snapshot>of()
-                  : payload.getSnapshotsList();
+              return payload.getSnapshotsList();
             }
           };
 
@@ -297,9 +337,7 @@ public class CloudFilestoreManagerStubSettings
 
             @Override
             public Iterable<Backup> extractResources(ListBackupsResponse payload) {
-              return payload.getBackupsList() == null
-                  ? ImmutableList.<Backup>of()
-                  : payload.getBackupsList();
+              return payload.getBackupsList();
             }
           };
 
@@ -333,9 +371,7 @@ public class CloudFilestoreManagerStubSettings
 
             @Override
             public Iterable<Share> extractResources(ListSharesResponse payload) {
-              return payload.getSharesList() == null
-                  ? ImmutableList.<Share>of()
-                  : payload.getSharesList();
+              return payload.getSharesList();
             }
           };
 
@@ -460,6 +496,17 @@ public class CloudFilestoreManagerStubSettings
   public OperationCallSettings<RevertInstanceRequest, Instance, OperationMetadata>
       revertInstanceOperationSettings() {
     return revertInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to promoteReplica. */
+  public UnaryCallSettings<PromoteReplicaRequest, Operation> promoteReplicaSettings() {
+    return promoteReplicaSettings;
+  }
+
+  /** Returns the object with the settings used for calls to promoteReplica. */
+  public OperationCallSettings<PromoteReplicaRequest, Instance, OperationMetadata>
+      promoteReplicaOperationSettings() {
+    return promoteReplicaOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
@@ -621,12 +668,19 @@ public class CloudFilestoreManagerStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "file";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "file.googleapis.com:443";
   }
@@ -665,7 +719,6 @@ public class CloudFilestoreManagerStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -674,7 +727,6 @@ public class CloudFilestoreManagerStubSettings
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -721,6 +773,8 @@ public class CloudFilestoreManagerStubSettings
     restoreInstanceOperationSettings = settingsBuilder.restoreInstanceOperationSettings().build();
     revertInstanceSettings = settingsBuilder.revertInstanceSettings().build();
     revertInstanceOperationSettings = settingsBuilder.revertInstanceOperationSettings().build();
+    promoteReplicaSettings = settingsBuilder.promoteReplicaSettings().build();
+    promoteReplicaOperationSettings = settingsBuilder.promoteReplicaOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
@@ -773,6 +827,10 @@ public class CloudFilestoreManagerStubSettings
         revertInstanceSettings;
     private final OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
         revertInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<PromoteReplicaRequest, Operation>
+        promoteReplicaSettings;
+    private final OperationCallSettings.Builder<PromoteReplicaRequest, Instance, OperationMetadata>
+        promoteReplicaOperationSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Operation>
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
@@ -845,39 +903,39 @@ public class CloudFilestoreManagerStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(250L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(250L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(32000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(32000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000000L))
-              .setTotalTimeout(Duration.ofMillis(60000000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(14400000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(14400000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(14400000L))
-              .setTotalTimeout(Duration.ofMillis(14400000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(14400000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(14400000L))
               .build();
       definitions.put("no_retry_2_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -900,6 +958,8 @@ public class CloudFilestoreManagerStubSettings
       restoreInstanceOperationSettings = OperationCallSettings.newBuilder();
       revertInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       revertInstanceOperationSettings = OperationCallSettings.newBuilder();
+      promoteReplicaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      promoteReplicaOperationSettings = OperationCallSettings.newBuilder();
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
@@ -935,6 +995,7 @@ public class CloudFilestoreManagerStubSettings
               updateInstanceSettings,
               restoreInstanceSettings,
               revertInstanceSettings,
+              promoteReplicaSettings,
               deleteInstanceSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
@@ -967,6 +1028,8 @@ public class CloudFilestoreManagerStubSettings
       restoreInstanceOperationSettings = settings.restoreInstanceOperationSettings.toBuilder();
       revertInstanceSettings = settings.revertInstanceSettings.toBuilder();
       revertInstanceOperationSettings = settings.revertInstanceOperationSettings.toBuilder();
+      promoteReplicaSettings = settings.promoteReplicaSettings.toBuilder();
+      promoteReplicaOperationSettings = settings.promoteReplicaOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
@@ -1002,6 +1065,7 @@ public class CloudFilestoreManagerStubSettings
               updateInstanceSettings,
               restoreInstanceSettings,
               revertInstanceSettings,
+              promoteReplicaSettings,
               deleteInstanceSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
@@ -1026,7 +1090,6 @@ public class CloudFilestoreManagerStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1039,7 +1102,6 @@ public class CloudFilestoreManagerStubSettings
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1074,6 +1136,11 @@ public class CloudFilestoreManagerStubSettings
 
       builder
           .revertInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .promoteReplicaSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1172,13 +1239,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(30000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(7200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(7200000L))
                       .build()));
 
       builder
@@ -1196,13 +1263,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(30000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(900000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(900000L))
                       .build()));
 
       builder
@@ -1220,13 +1287,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(30000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(7200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(7200000L))
                       .build()));
 
       builder
@@ -1244,13 +1311,37 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(30000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(7200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(7200000L))
+                      .build()));
+
+      builder
+          .promoteReplicaOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PromoteReplicaRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1268,13 +1359,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(30000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(1200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(1200000L))
                       .build()));
 
       builder
@@ -1292,13 +1383,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(10000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(10000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(660000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(660000L))
                       .build()));
 
       builder
@@ -1316,13 +1407,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(30000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(7200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(7200000L))
                       .build()));
 
       builder
@@ -1340,13 +1431,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(10000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(10000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(660000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(660000L))
                       .build()));
 
       builder
@@ -1364,13 +1455,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(30000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(7200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(7200000L))
                       .build()));
 
       builder
@@ -1388,13 +1479,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(30000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(30000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(7200000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(7200000L))
                       .build()));
 
       builder
@@ -1412,13 +1503,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(10000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(10000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(60000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(660000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(660000L))
                       .build()));
 
       builder
@@ -1435,13 +1526,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1458,13 +1549,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1481,13 +1572,13 @@ public class CloudFilestoreManagerStubSettings
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1526,8 +1617,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -1539,8 +1628,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;
@@ -1552,8 +1639,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to restoreInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreInstanceRequest, Instance, OperationMetadata>
         restoreInstanceOperationSettings() {
       return restoreInstanceOperationSettings;
@@ -1565,11 +1650,20 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to revertInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
         revertInstanceOperationSettings() {
       return revertInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to promoteReplica. */
+    public UnaryCallSettings.Builder<PromoteReplicaRequest, Operation> promoteReplicaSettings() {
+      return promoteReplicaSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to promoteReplica. */
+    public OperationCallSettings.Builder<PromoteReplicaRequest, Instance, OperationMetadata>
+        promoteReplicaOperationSettings() {
+      return promoteReplicaOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
@@ -1578,8 +1672,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
@@ -1603,8 +1695,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSnapshotRequest, Snapshot, OperationMetadata>
         createSnapshotOperationSettings() {
       return createSnapshotOperationSettings;
@@ -1616,8 +1706,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSnapshotRequest, Empty, OperationMetadata>
         deleteSnapshotOperationSettings() {
       return deleteSnapshotOperationSettings;
@@ -1629,8 +1717,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSnapshotRequest, Snapshot, OperationMetadata>
         updateSnapshotOperationSettings() {
       return updateSnapshotOperationSettings;
@@ -1654,8 +1740,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
         createBackupOperationSettings() {
       return createBackupOperationSettings;
@@ -1667,8 +1751,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings() {
       return deleteBackupOperationSettings;
@@ -1680,8 +1762,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return updateBackupOperationSettings;
@@ -1704,8 +1784,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateShareRequest, Share, OperationMetadata>
         createShareOperationSettings() {
       return createShareOperationSettings;
@@ -1717,8 +1795,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteShareRequest, Empty, OperationMetadata>
         deleteShareOperationSettings() {
       return deleteShareOperationSettings;
@@ -1730,8 +1806,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateShareRequest, Share, OperationMetadata>
         updateShareOperationSettings() {
       return updateShareOperationSettings;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,9 +32,11 @@ import com.google.cloud.speech.v1p1beta1.stub.HttpJsonAdaptationStub;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -85,6 +87,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -135,6 +146,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -185,6 +205,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -231,6 +260,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -377,6 +415,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -385,6 +432,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
             .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
             .setBoost(93922211)
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -419,6 +475,15 @@ public class AdaptationClientHttpJsonTest {
               .setName(PhraseSetName.of("[PROJECT]", "[LOCATION]", "[PHRASE_SET]").toString())
               .addAllPhrases(new ArrayList<PhraseSet.Phrase>())
               .setBoost(93922211)
+              .setKmsKeyName("kmsKeyName412586233")
+              .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+              .setUid("uid115792")
+              .setDisplayName("displayName1714148973")
+              .setDeleteTime(Timestamp.newBuilder().build())
+              .setExpireTime(Timestamp.newBuilder().build())
+              .putAllAnnotations(new HashMap<String, String>())
+              .setEtag("etag3123477")
+              .setReconciling(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updatePhraseSet(phraseSet, updateMask);
@@ -515,6 +580,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -565,6 +639,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -615,6 +698,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -661,6 +753,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -807,6 +908,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -815,6 +925,15 @@ public class AdaptationClientHttpJsonTest {
             .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
             .setCustomClassId("customClassId1871032322")
             .addAllItems(new ArrayList<CustomClass.ClassItem>())
+            .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setEtag("etag3123477")
+            .setReconciling(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -849,6 +968,15 @@ public class AdaptationClientHttpJsonTest {
               .setName(CustomClassName.of("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]").toString())
               .setCustomClassId("customClassId1871032322")
               .addAllItems(new ArrayList<CustomClass.ClassItem>())
+              .setKmsKeyName("kmsKeyName412586233")
+              .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
+              .setUid("uid115792")
+              .setDisplayName("displayName1714148973")
+              .setDeleteTime(Timestamp.newBuilder().build())
+              .setExpireTime(Timestamp.newBuilder().build())
+              .putAllAnnotations(new HashMap<String, String>())
+              .setEtag("etag3123477")
+              .setReconciling(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCustomClass(customClass, updateMask);

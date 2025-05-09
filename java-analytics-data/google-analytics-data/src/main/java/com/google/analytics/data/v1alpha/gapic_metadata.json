@@ -13,17 +13,44 @@
             "CreateAudienceList": {
               "methods": ["createAudienceListAsync", "createAudienceListAsync", "createAudienceListAsync", "createAudienceListOperationCallable", "createAudienceListCallable"]
             },
+            "CreateRecurringAudienceList": {
+              "methods": ["createRecurringAudienceList", "createRecurringAudienceList", "createRecurringAudienceList", "createRecurringAudienceListCallable"]
+            },
+            "CreateReportTask": {
+              "methods": ["createReportTaskAsync", "createReportTaskAsync", "createReportTaskAsync", "createReportTaskOperationCallable", "createReportTaskCallable"]
+            },
             "GetAudienceList": {
               "methods": ["getAudienceList", "getAudienceList", "getAudienceList", "getAudienceListCallable"]
+            },
+            "GetPropertyQuotasSnapshot": {
+              "methods": ["getPropertyQuotasSnapshot", "getPropertyQuotasSnapshot", "getPropertyQuotasSnapshot", "getPropertyQuotasSnapshotCallable"]
+            },
+            "GetRecurringAudienceList": {
+              "methods": ["getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceList", "getRecurringAudienceListCallable"]
+            },
+            "GetReportTask": {
+              "methods": ["getReportTask", "getReportTask", "getReportTask", "getReportTaskCallable"]
             },
             "ListAudienceLists": {
               "methods": ["listAudienceLists", "listAudienceLists", "listAudienceLists", "listAudienceListsPagedCallable", "listAudienceListsCallable"]
             },
+            "ListRecurringAudienceLists": {
+              "methods": ["listRecurringAudienceLists", "listRecurringAudienceLists", "listRecurringAudienceLists", "listRecurringAudienceListsPagedCallable", "listRecurringAudienceListsCallable"]
+            },
+            "ListReportTasks": {
+              "methods": ["listReportTasks", "listReportTasks", "listReportTasks", "listReportTasksPagedCallable", "listReportTasksCallable"]
+            },
             "QueryAudienceList": {
               "methods": ["queryAudienceList", "queryAudienceList", "queryAudienceListCallable"]
             },
+            "QueryReportTask": {
+              "methods": ["queryReportTask", "queryReportTask", "queryReportTaskCallable"]
+            },
             "RunFunnelReport": {
               "methods": ["runFunnelReport", "runFunnelReportCallable"]
+            },
+            "SheetExportAudienceList": {
+              "methods": ["sheetExportAudienceList", "sheetExportAudienceList", "sheetExportAudienceList", "sheetExportAudienceListCallable"]
             }
           }
         }

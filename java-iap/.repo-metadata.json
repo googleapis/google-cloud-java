@@ -1,0 +1,16 @@
+{
+  "api_shortname": "iap",
+  "name_pretty": "Cloud Identity-Aware Proxy API",
+  "product_documentation": "https://cloud.google.com/iap",
+  "api_description": "Controls access to cloud applications running on Google Cloud Platform.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-iap/latest/overview",
+  "release_level": "stable",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-iap",
+  "distribution_name": "com.google.cloud:google-cloud-iap",
+  "api_id": "iap.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

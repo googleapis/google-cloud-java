@@ -1,0 +1,114 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.apphub.v1",
+  "libraryPackage": "com.google.cloud.apphub.v1",
+  "services": {
+    "AppHub": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AppHubClient",
+          "rpcs": {
+            "CreateApplication": {
+              "methods": ["createApplicationAsync", "createApplicationAsync", "createApplicationAsync", "createApplicationOperationCallable", "createApplicationCallable"]
+            },
+            "CreateService": {
+              "methods": ["createServiceAsync", "createServiceAsync", "createServiceAsync", "createServiceOperationCallable", "createServiceCallable"]
+            },
+            "CreateServiceProjectAttachment": {
+              "methods": ["createServiceProjectAttachmentAsync", "createServiceProjectAttachmentAsync", "createServiceProjectAttachmentAsync", "createServiceProjectAttachmentOperationCallable", "createServiceProjectAttachmentCallable"]
+            },
+            "CreateWorkload": {
+              "methods": ["createWorkloadAsync", "createWorkloadAsync", "createWorkloadAsync", "createWorkloadOperationCallable", "createWorkloadCallable"]
+            },
+            "DeleteApplication": {
+              "methods": ["deleteApplicationAsync", "deleteApplicationAsync", "deleteApplicationAsync", "deleteApplicationOperationCallable", "deleteApplicationCallable"]
+            },
+            "DeleteService": {
+              "methods": ["deleteServiceAsync", "deleteServiceAsync", "deleteServiceAsync", "deleteServiceOperationCallable", "deleteServiceCallable"]
+            },
+            "DeleteServiceProjectAttachment": {
+              "methods": ["deleteServiceProjectAttachmentAsync", "deleteServiceProjectAttachmentAsync", "deleteServiceProjectAttachmentAsync", "deleteServiceProjectAttachmentOperationCallable", "deleteServiceProjectAttachmentCallable"]
+            },
+            "DeleteWorkload": {
+              "methods": ["deleteWorkloadAsync", "deleteWorkloadAsync", "deleteWorkloadAsync", "deleteWorkloadOperationCallable", "deleteWorkloadCallable"]
+            },
+            "DetachServiceProjectAttachment": {
+              "methods": ["detachServiceProjectAttachment", "detachServiceProjectAttachment", "detachServiceProjectAttachment", "detachServiceProjectAttachmentCallable"]
+            },
+            "GetApplication": {
+              "methods": ["getApplication", "getApplication", "getApplication", "getApplicationCallable"]
+            },
+            "GetDiscoveredService": {
+              "methods": ["getDiscoveredService", "getDiscoveredService", "getDiscoveredService", "getDiscoveredServiceCallable"]
+            },
+            "GetDiscoveredWorkload": {
+              "methods": ["getDiscoveredWorkload", "getDiscoveredWorkload", "getDiscoveredWorkload", "getDiscoveredWorkloadCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getService", "getService", "getServiceCallable"]
+            },
+            "GetServiceProjectAttachment": {
+              "methods": ["getServiceProjectAttachment", "getServiceProjectAttachment", "getServiceProjectAttachment", "getServiceProjectAttachmentCallable"]
+            },
+            "GetWorkload": {
+              "methods": ["getWorkload", "getWorkload", "getWorkload", "getWorkloadCallable"]
+            },
+            "ListApplications": {
+              "methods": ["listApplications", "listApplications", "listApplications", "listApplicationsPagedCallable", "listApplicationsCallable"]
+            },
+            "ListDiscoveredServices": {
+              "methods": ["listDiscoveredServices", "listDiscoveredServices", "listDiscoveredServices", "listDiscoveredServicesPagedCallable", "listDiscoveredServicesCallable"]
+            },
+            "ListDiscoveredWorkloads": {
+              "methods": ["listDiscoveredWorkloads", "listDiscoveredWorkloads", "listDiscoveredWorkloads", "listDiscoveredWorkloadsPagedCallable", "listDiscoveredWorkloadsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListServiceProjectAttachments": {
+              "methods": ["listServiceProjectAttachments", "listServiceProjectAttachments", "listServiceProjectAttachments", "listServiceProjectAttachmentsPagedCallable", "listServiceProjectAttachmentsCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "ListWorkloads": {
+              "methods": ["listWorkloads", "listWorkloads", "listWorkloads", "listWorkloadsPagedCallable", "listWorkloadsCallable"]
+            },
+            "LookupDiscoveredService": {
+              "methods": ["lookupDiscoveredService", "lookupDiscoveredService", "lookupDiscoveredService", "lookupDiscoveredServiceCallable"]
+            },
+            "LookupDiscoveredWorkload": {
+              "methods": ["lookupDiscoveredWorkload", "lookupDiscoveredWorkload", "lookupDiscoveredWorkload", "lookupDiscoveredWorkloadCallable"]
+            },
+            "LookupServiceProjectAttachment": {
+              "methods": ["lookupServiceProjectAttachment", "lookupServiceProjectAttachment", "lookupServiceProjectAttachment", "lookupServiceProjectAttachmentCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateApplication": {
+              "methods": ["updateApplicationAsync", "updateApplicationAsync", "updateApplicationOperationCallable", "updateApplicationCallable"]
+            },
+            "UpdateService": {
+              "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
+            },
+            "UpdateWorkload": {
+              "methods": ["updateWorkloadAsync", "updateWorkloadAsync", "updateWorkloadOperationCallable", "updateWorkloadCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

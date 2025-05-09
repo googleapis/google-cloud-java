@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -126,6 +126,52 @@ public final class UserEventServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest,
+          com.google.longrunning.Operation>
+      getPurgeUserEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PurgeUserEvents",
+      requestType = com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest,
+          com.google.longrunning.Operation>
+      getPurgeUserEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest,
+            com.google.longrunning.Operation>
+        getPurgeUserEventsMethod;
+    if ((getPurgeUserEventsMethod = UserEventServiceGrpc.getPurgeUserEventsMethod) == null) {
+      synchronized (UserEventServiceGrpc.class) {
+        if ((getPurgeUserEventsMethod = UserEventServiceGrpc.getPurgeUserEventsMethod) == null) {
+          UserEventServiceGrpc.getPurgeUserEventsMethod =
+              getPurgeUserEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PurgeUserEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new UserEventServiceMethodDescriptorSupplier("PurgeUserEvents"))
+                      .build();
+        }
+      }
+    }
+    return getPurgeUserEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.discoveryengine.v1.ImportUserEventsRequest,
           com.google.longrunning.Operation>
       getImportUserEventsMethod;
@@ -182,6 +228,19 @@ public final class UserEventServiceGrpc {
           }
         };
     return UserEventServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static UserEventServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<UserEventServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<UserEventServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public UserEventServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new UserEventServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return UserEventServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -257,7 +316,24 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Bulk import of User events. Request processing might be
+     * Deletes permanently all user events specified by the filter provided.
+     * Depending on the number of events specified by the filter, this operation
+     * could take hours or days to complete. To test a filter, use the list
+     * command first.
+     * </pre>
+     */
+    default void purgeUserEvents(
+        com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPurgeUserEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of user events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
      * Operation.response is of type ImportResponse. Note that it is
@@ -347,7 +423,26 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Bulk import of User events. Request processing might be
+     * Deletes permanently all user events specified by the filter provided.
+     * Depending on the number of events specified by the filter, this operation
+     * could take hours or days to complete. To test a filter, use the list
+     * command first.
+     * </pre>
+     */
+    public void purgeUserEvents(
+        com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPurgeUserEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of user events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
      * Operation.response is of type ImportResponse. Note that it is
@@ -367,6 +462,90 @@ public final class UserEventServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service UserEventService.
+   *
+   * <pre>
+   * Service for ingesting end user actions on a website to Discovery Engine API.
+   * </pre>
+   */
+  public static final class UserEventServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<UserEventServiceBlockingV2Stub> {
+    private UserEventServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected UserEventServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new UserEventServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes a single user event.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.UserEvent writeUserEvent(
+        com.google.cloud.discoveryengine.v1.WriteUserEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes a single user event from the browser. This uses a GET request to
+     * due to browser restriction of POST-ing to a third-party domain.
+     * This method is used only by the Discovery Engine API JavaScript pixel and
+     * Google Tag Manager. Users should not call this method directly.
+     * </pre>
+     */
+    public com.google.api.HttpBody collectUserEvent(
+        com.google.cloud.discoveryengine.v1.CollectUserEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCollectUserEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes permanently all user events specified by the filter provided.
+     * Depending on the number of events specified by the filter, this operation
+     * could take hours or days to complete. To test a filter, use the list
+     * command first.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeUserEvents(
+        com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of user events. Request processing might be
+     * synchronous. Events that already exist are skipped.
+     * Use this method for backfilling historical user events.
+     * Operation.response is of type ImportResponse. Note that it is
+     * possible for a subset of the items to be successfully inserted.
+     * Operation.metadata is of type ImportMetadata.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importUserEvents(
+        com.google.cloud.discoveryengine.v1.ImportUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service UserEventService.
    *
    * <pre>
    * Service for ingesting end user actions on a website to Discovery Engine API.
@@ -417,7 +596,23 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Bulk import of User events. Request processing might be
+     * Deletes permanently all user events specified by the filter provided.
+     * Depending on the number of events specified by the filter, this operation
+     * could take hours or days to complete. To test a filter, use the list
+     * command first.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeUserEvents(
+        com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of user events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
      * Operation.response is of type ImportResponse. Note that it is
@@ -485,7 +680,23 @@ public final class UserEventServiceGrpc {
      *
      *
      * <pre>
-     * Bulk import of User events. Request processing might be
+     * Deletes permanently all user events specified by the filter provided.
+     * Depending on the number of events specified by the filter, this operation
+     * could take hours or days to complete. To test a filter, use the list
+     * command first.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        purgeUserEvents(com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPurgeUserEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of user events. Request processing might be
      * synchronous. Events that already exist are skipped.
      * Use this method for backfilling historical user events.
      * Operation.response is of type ImportResponse. Note that it is
@@ -502,7 +713,8 @@ public final class UserEventServiceGrpc {
 
   private static final int METHODID_WRITE_USER_EVENT = 0;
   private static final int METHODID_COLLECT_USER_EVENT = 1;
-  private static final int METHODID_IMPORT_USER_EVENTS = 2;
+  private static final int METHODID_PURGE_USER_EVENTS = 2;
+  private static final int METHODID_IMPORT_USER_EVENTS = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -531,6 +743,11 @@ public final class UserEventServiceGrpc {
           serviceImpl.collectUserEvent(
               (com.google.cloud.discoveryengine.v1.CollectUserEventRequest) request,
               (io.grpc.stub.StreamObserver<com.google.api.HttpBody>) responseObserver);
+          break;
+        case METHODID_PURGE_USER_EVENTS:
+          serviceImpl.purgeUserEvents(
+              (com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_IMPORT_USER_EVENTS:
           serviceImpl.importUserEvents(
@@ -568,6 +785,12 @@ public final class UserEventServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.discoveryengine.v1.CollectUserEventRequest,
                     com.google.api.HttpBody>(service, METHODID_COLLECT_USER_EVENT)))
+        .addMethod(
+            getPurgeUserEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.PurgeUserEventsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PURGE_USER_EVENTS)))
         .addMethod(
             getImportUserEventsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -627,6 +850,7 @@ public final class UserEventServiceGrpc {
                       .setSchemaDescriptor(new UserEventServiceFileDescriptorSupplier())
                       .addMethod(getWriteUserEventMethod())
                       .addMethod(getCollectUserEventMethod())
+                      .addMethod(getPurgeUserEventsMethod())
                       .addMethod(getImportUserEventsMethod())
                       .build();
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
 
 package com.google.analytics.admin.v1alpha.stub;
 
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -31,14 +31,18 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventCreateRulesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventEditRulesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -53,29 +57,23 @@ import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AttributionSettings;
 import com.google.analytics.admin.v1alpha.Audience;
-import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
-import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest;
-import com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
+import com.google.analytics.admin.v1alpha.CalculatedMetric;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
@@ -86,22 +84,31 @@ import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
+import com.google.analytics.admin.v1alpha.DataRedactionSettings;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
@@ -109,18 +116,23 @@ import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.EventCreateRule;
+import com.google.analytics.admin.v1alpha.EventEditRule;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -133,10 +145,12 @@ import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
@@ -144,17 +158,22 @@ import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkPropos
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.GetEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetKeyEventRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
+import com.google.analytics.admin.v1alpha.KeyEvent;
 import com.google.analytics.admin.v1alpha.ListAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.ListAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
@@ -167,6 +186,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
@@ -185,26 +206,39 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequ
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest;
 import com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse;
+import com.google.analytics.admin.v1alpha.ListEventEditRulesRequest;
+import com.google.analytics.admin.v1alpha.ListEventEditRulesResponse;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
+import com.google.analytics.admin.v1alpha.ListKeyEventsRequest;
+import com.google.analytics.admin.v1alpha.ListKeyEventsResponse;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse;
+import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest;
+import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
-import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
-import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest;
+import com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse;
+import com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest;
+import com.google.analytics.admin.v1alpha.ReportingDataAnnotation;
+import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
 import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
@@ -213,28 +247,36 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
+import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.UserLink;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -375,118 +417,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<GetUserLinkRequest, UserLink> getUserLinkMethodDescriptor =
-      MethodDescriptor.<GetUserLinkRequest, UserLink>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.analytics.admin.v1alpha.AnalyticsAdminService/GetUserLink")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetUserLinkRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
-          .build();
-
-  private static final MethodDescriptor<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksMethodDescriptor =
-          MethodDescriptor.<BatchGetUserLinksRequest, BatchGetUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchGetUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchGetUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(BatchGetUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<ListUserLinksRequest, ListUserLinksResponse>
-      listUserLinksMethodDescriptor =
-          MethodDescriptor.<ListUserLinksRequest, ListUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ListUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ListUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<AuditUserLinksRequest, AuditUserLinksResponse>
-      auditUserLinksMethodDescriptor =
-          MethodDescriptor.<AuditUserLinksRequest, AuditUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/AuditUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(AuditUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(AuditUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<CreateUserLinkRequest, UserLink>
-      createUserLinkMethodDescriptor =
-          MethodDescriptor.<CreateUserLinkRequest, UserLink>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateUserLink")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(CreateUserLinkRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksMethodDescriptor =
-          MethodDescriptor.<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchCreateUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchCreateUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(BatchCreateUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<UpdateUserLinkRequest, UserLink>
-      updateUserLinkMethodDescriptor =
-          MethodDescriptor.<UpdateUserLinkRequest, UserLink>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateUserLink")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(UpdateUserLinkRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(UserLink.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksMethodDescriptor =
-          MethodDescriptor.<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchUpdateUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchUpdateUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(BatchUpdateUserLinksResponse.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<DeleteUserLinkRequest, Empty>
-      deleteUserLinkMethodDescriptor =
-          MethodDescriptor.<DeleteUserLinkRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteUserLink")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteUserLinkRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<BatchDeleteUserLinksRequest, Empty>
-      batchDeleteUserLinksMethodDescriptor =
-          MethodDescriptor.<BatchDeleteUserLinksRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/BatchDeleteUserLinks")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(BatchDeleteUserLinksRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateFirebaseLinkRequest, FirebaseLink>
@@ -849,6 +779,59 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListConversionEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversionEventsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateKeyEventRequest, KeyEvent>
+      createKeyEventMethodDescriptor =
+          MethodDescriptor.<CreateKeyEventRequest, KeyEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateKeyEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateKeyEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateKeyEventRequest, KeyEvent>
+      updateKeyEventMethodDescriptor =
+          MethodDescriptor.<UpdateKeyEventRequest, KeyEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateKeyEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateKeyEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetKeyEventRequest, KeyEvent> getKeyEventMethodDescriptor =
+      MethodDescriptor.<GetKeyEventRequest, KeyEvent>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.analytics.admin.v1alpha.AnalyticsAdminService/GetKeyEvent")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetKeyEventRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteKeyEventRequest, Empty>
+      deleteKeyEventMethodDescriptor =
+          MethodDescriptor.<DeleteKeyEventRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteKeyEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteKeyEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListKeyEventsRequest, ListKeyEventsResponse>
+      listKeyEventsMethodDescriptor =
+          MethodDescriptor.<ListKeyEventsRequest, ListKeyEventsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListKeyEvents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListKeyEventsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListKeyEventsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<
@@ -1623,6 +1606,17 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       FetchAutomatedGa4ConfigurationOptOutResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateBigQueryLinkRequest, BigQueryLink>
+      createBigQueryLinkMethodDescriptor =
+          MethodDescriptor.<CreateBigQueryLinkRequest, BigQueryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateBigQueryLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateBigQueryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BigQueryLink.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetBigQueryLinkRequest, BigQueryLink>
       getBigQueryLinkMethodDescriptor =
           MethodDescriptor.<GetBigQueryLinkRequest, BigQueryLink>newBuilder()
@@ -1644,6 +1638,28 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListBigQueryLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBigQueryLinksResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteBigQueryLinkRequest, Empty>
+      deleteBigQueryLinkMethodDescriptor =
+          MethodDescriptor.<DeleteBigQueryLinkRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteBigQueryLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteBigQueryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateBigQueryLinkRequest, BigQueryLink>
+      updateBigQueryLinkMethodDescriptor =
+          MethodDescriptor.<UpdateBigQueryLinkRequest, BigQueryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateBigQueryLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateBigQueryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(BigQueryLink.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<
@@ -1827,6 +1843,370 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetEventEditRuleRequest, EventEditRule>
+      getEventEditRuleMethodDescriptor =
+          MethodDescriptor.<GetEventEditRuleRequest, EventEditRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetEventEditRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEventEditRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EventEditRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListEventEditRulesRequest, ListEventEditRulesResponse>
+      listEventEditRulesMethodDescriptor =
+          MethodDescriptor.<ListEventEditRulesRequest, ListEventEditRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListEventEditRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListEventEditRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListEventEditRulesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateEventEditRuleRequest, EventEditRule>
+      createEventEditRuleMethodDescriptor =
+          MethodDescriptor.<CreateEventEditRuleRequest, EventEditRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateEventEditRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEventEditRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EventEditRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateEventEditRuleRequest, EventEditRule>
+      updateEventEditRuleMethodDescriptor =
+          MethodDescriptor.<UpdateEventEditRuleRequest, EventEditRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateEventEditRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateEventEditRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EventEditRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteEventEditRuleRequest, Empty>
+      deleteEventEditRuleMethodDescriptor =
+          MethodDescriptor.<DeleteEventEditRuleRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteEventEditRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEventEditRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ReorderEventEditRulesRequest, Empty>
+      reorderEventEditRulesMethodDescriptor =
+          MethodDescriptor.<ReorderEventEditRulesRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ReorderEventEditRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReorderEventEditRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateDataRedactionSettingsRequest, DataRedactionSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateDataRedactionSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDataRedactionSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DataRedactionSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsMethodDescriptor =
+          MethodDescriptor.<GetDataRedactionSettingsRequest, DataRedactionSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetDataRedactionSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDataRedactionSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DataRedactionSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricMethodDescriptor =
+          MethodDescriptor.<GetCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetCalculatedMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCalculatedMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CalculatedMetric.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricMethodDescriptor =
+          MethodDescriptor.<CreateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateCalculatedMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateCalculatedMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CalculatedMetric.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsMethodDescriptor =
+          MethodDescriptor.<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListCalculatedMetrics")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListCalculatedMetricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListCalculatedMetricsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricMethodDescriptor =
+          MethodDescriptor.<UpdateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateCalculatedMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCalculatedMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CalculatedMetric.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteCalculatedMetricRequest, Empty>
+      deleteCalculatedMetricMethodDescriptor =
+          MethodDescriptor.<DeleteCalculatedMetricRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteCalculatedMetric")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteCalculatedMetricRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertyMethodDescriptor =
+          MethodDescriptor.<CreateRollupPropertyRequest, CreateRollupPropertyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateRollupProperty")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRollupPropertyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CreateRollupPropertyResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkMethodDescriptor =
+          MethodDescriptor
+              .<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetRollupPropertySourceLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRollupPropertySourceLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RollupPropertySourceLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+      listRollupPropertySourceLinksMethodDescriptor =
+          MethodDescriptor
+              .<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListRollupPropertySourceLinks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRollupPropertySourceLinksRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRollupPropertySourceLinksResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkMethodDescriptor =
+          MethodDescriptor
+              .<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateRollupPropertySourceLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRollupPropertySourceLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RollupPropertySourceLink.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkMethodDescriptor =
+          MethodDescriptor.<DeleteRollupPropertySourceLinkRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteRollupPropertySourceLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteRollupPropertySourceLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+      provisionSubpropertyMethodDescriptor =
+          MethodDescriptor.<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ProvisionSubproperty")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ProvisionSubpropertyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ProvisionSubpropertyResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubpropertyEventFilter.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubpropertyEventFilter.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersMethodDescriptor =
+          MethodDescriptor
+              .<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListSubpropertyEventFilters")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSubpropertyEventFiltersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSubpropertyEventFiltersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubpropertyEventFilter.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterMethodDescriptor =
+          MethodDescriptor.<DeleteSubpropertyEventFilterRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteSubpropertyEventFilter")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSubpropertyEventFilterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationMethodDescriptor =
+          MethodDescriptor
+              .<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateReportingDataAnnotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateReportingDataAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportingDataAnnotation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationMethodDescriptor =
+          MethodDescriptor.<GetReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetReportingDataAnnotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetReportingDataAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportingDataAnnotation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsMethodDescriptor =
+          MethodDescriptor
+              .<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListReportingDataAnnotations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListReportingDataAnnotationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListReportingDataAnnotationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationMethodDescriptor =
+          MethodDescriptor
+              .<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateReportingDataAnnotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateReportingDataAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReportingDataAnnotation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationMethodDescriptor =
+          MethodDescriptor.<DeleteReportingDataAnnotationRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteReportingDataAnnotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteReportingDataAnnotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionMethodDescriptor =
+          MethodDescriptor.<SubmitUserDeletionRequest, SubmitUserDeletionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/SubmitUserDeletion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SubmitUserDeletionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SubmitUserDeletionResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -1846,23 +2226,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<CreatePropertyRequest, Property> createPropertyCallable;
   private final UnaryCallable<DeletePropertyRequest, Property> deletePropertyCallable;
   private final UnaryCallable<UpdatePropertyRequest, Property> updatePropertyCallable;
-  private final UnaryCallable<GetUserLinkRequest, UserLink> getUserLinkCallable;
-  private final UnaryCallable<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksCallable;
-  private final UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable;
-  private final UnaryCallable<ListUserLinksRequest, ListUserLinksPagedResponse>
-      listUserLinksPagedCallable;
-  private final UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> auditUserLinksCallable;
-  private final UnaryCallable<AuditUserLinksRequest, AuditUserLinksPagedResponse>
-      auditUserLinksPagedCallable;
-  private final UnaryCallable<CreateUserLinkRequest, UserLink> createUserLinkCallable;
-  private final UnaryCallable<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksCallable;
-  private final UnaryCallable<UpdateUserLinkRequest, UserLink> updateUserLinkCallable;
-  private final UnaryCallable<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksCallable;
-  private final UnaryCallable<DeleteUserLinkRequest, Empty> deleteUserLinkCallable;
-  private final UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable;
   private final UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable;
   private final UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable;
   private final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
@@ -1937,6 +2300,13 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       listConversionEventsCallable;
   private final UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable;
+  private final UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable;
+  private final UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable;
+  private final UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable;
+  private final UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable;
+  private final UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable;
+  private final UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable;
   private final UnaryCallable<
           GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
       getDisplayVideo360AdvertiserLinkCallable;
@@ -2076,11 +2446,14 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<
           FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
       fetchAutomatedGa4ConfigurationOptOutCallable;
+  private final UnaryCallable<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkCallable;
   private final UnaryCallable<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkCallable;
   private final UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksResponse>
       listBigQueryLinksCallable;
   private final UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
       listBigQueryLinksPagedCallable;
+  private final UnaryCallable<DeleteBigQueryLinkRequest, Empty> deleteBigQueryLinkCallable;
+  private final UnaryCallable<UpdateBigQueryLinkRequest, BigQueryLink> updateBigQueryLinkCallable;
   private final UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       getEnhancedMeasurementSettingsCallable;
   private final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
@@ -2110,6 +2483,78 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<UpdateEventCreateRuleRequest, EventCreateRule>
       updateEventCreateRuleCallable;
   private final UnaryCallable<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleCallable;
+  private final UnaryCallable<GetEventEditRuleRequest, EventEditRule> getEventEditRuleCallable;
+  private final UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesResponse>
+      listEventEditRulesCallable;
+  private final UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesPagedResponse>
+      listEventEditRulesPagedCallable;
+  private final UnaryCallable<CreateEventEditRuleRequest, EventEditRule>
+      createEventEditRuleCallable;
+  private final UnaryCallable<UpdateEventEditRuleRequest, EventEditRule>
+      updateEventEditRuleCallable;
+  private final UnaryCallable<DeleteEventEditRuleRequest, Empty> deleteEventEditRuleCallable;
+  private final UnaryCallable<ReorderEventEditRulesRequest, Empty> reorderEventEditRulesCallable;
+  private final UnaryCallable<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsCallable;
+  private final UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsCallable;
+  private final UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricCallable;
+  private final UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable;
+  private final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable;
+  private final UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable;
+  private final UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable;
+  private final UnaryCallable<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricCallable;
+  private final UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertyCallable;
+  private final UnaryCallable<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkCallable;
+  private final UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+      listRollupPropertySourceLinksCallable;
+  private final UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksPagedResponse>
+      listRollupPropertySourceLinksPagedCallable;
+  private final UnaryCallable<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkCallable;
+  private final UnaryCallable<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkCallable;
+  private final UnaryCallable<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+      provisionSubpropertyCallable;
+  private final UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterCallable;
+  private final UnaryCallable<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterCallable;
+  private final UnaryCallable<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersCallable;
+  private final UnaryCallable<
+          ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersPagedCallable;
+  private final UnaryCallable<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterCallable;
+  private final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable;
+  private final UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationCallable;
+  private final UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationCallable;
+  private final UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsCallable;
+  private final UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsPagedCallable;
+  private final UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationCallable;
+  private final UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationCallable;
+  private final UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -2236,110 +2681,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("property.name", String.valueOf(request.getProperty().getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<GetUserLinkRequest, UserLink> getUserLinkTransportSettings =
-        GrpcCallSettings.<GetUserLinkRequest, UserLink>newBuilder()
-            .setMethodDescriptor(getUserLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-        batchGetUserLinksTransportSettings =
-            GrpcCallSettings.<BatchGetUserLinksRequest, BatchGetUserLinksResponse>newBuilder()
-                .setMethodDescriptor(batchGetUserLinksMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<ListUserLinksRequest, ListUserLinksResponse> listUserLinksTransportSettings =
-        GrpcCallSettings.<ListUserLinksRequest, ListUserLinksResponse>newBuilder()
-            .setMethodDescriptor(listUserLinksMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<AuditUserLinksRequest, AuditUserLinksResponse>
-        auditUserLinksTransportSettings =
-            GrpcCallSettings.<AuditUserLinksRequest, AuditUserLinksResponse>newBuilder()
-                .setMethodDescriptor(auditUserLinksMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<CreateUserLinkRequest, UserLink> createUserLinkTransportSettings =
-        GrpcCallSettings.<CreateUserLinkRequest, UserLink>newBuilder()
-            .setMethodDescriptor(createUserLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-        batchCreateUserLinksTransportSettings =
-            GrpcCallSettings.<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>newBuilder()
-                .setMethodDescriptor(batchCreateUserLinksMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<UpdateUserLinkRequest, UserLink> updateUserLinkTransportSettings =
-        GrpcCallSettings.<UpdateUserLinkRequest, UserLink>newBuilder()
-            .setMethodDescriptor(updateUserLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("user_link.name", String.valueOf(request.getUserLink().getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-        batchUpdateUserLinksTransportSettings =
-            GrpcCallSettings.<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>newBuilder()
-                .setMethodDescriptor(batchUpdateUserLinksMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<DeleteUserLinkRequest, Empty> deleteUserLinkTransportSettings =
-        GrpcCallSettings.<DeleteUserLinkRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteUserLinkMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("name", String.valueOf(request.getName()));
-                  return builder.build();
-                })
-            .build();
-    GrpcCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksTransportSettings =
-        GrpcCallSettings.<BatchDeleteUserLinksRequest, Empty>newBuilder()
-            .setMethodDescriptor(batchDeleteUserLinksMethodDescriptor)
-            .setParamsExtractor(
-                request -> {
-                  RequestParamsBuilder builder = RequestParamsBuilder.create();
-                  builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
             .build();
@@ -2677,6 +3018,56 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventTransportSettings =
+        GrpcCallSettings.<CreateKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(createKeyEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventTransportSettings =
+        GrpcCallSettings.<UpdateKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(updateKeyEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("key_event.name", String.valueOf(request.getKeyEvent().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventTransportSettings =
+        GrpcCallSettings.<GetKeyEventRequest, KeyEvent>newBuilder()
+            .setMethodDescriptor(getKeyEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventTransportSettings =
+        GrpcCallSettings.<DeleteKeyEventRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteKeyEventMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsTransportSettings =
+        GrpcCallSettings.<ListKeyEventsRequest, ListKeyEventsResponse>newBuilder()
+            .setMethodDescriptor(listKeyEventsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
         getDisplayVideo360AdvertiserLinkTransportSettings =
             GrpcCallSettings
@@ -3389,6 +3780,16 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                     newBuilder()
                 .setMethodDescriptor(fetchAutomatedGa4ConfigurationOptOutMethodDescriptor)
                 .build();
+    GrpcCallSettings<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkTransportSettings =
+        GrpcCallSettings.<CreateBigQueryLinkRequest, BigQueryLink>newBuilder()
+            .setMethodDescriptor(createBigQueryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkTransportSettings =
         GrpcCallSettings.<GetBigQueryLinkRequest, BigQueryLink>newBuilder()
             .setMethodDescriptor(getBigQueryLinkMethodDescriptor)
@@ -3410,6 +3811,27 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<DeleteBigQueryLinkRequest, Empty> deleteBigQueryLinkTransportSettings =
+        GrpcCallSettings.<DeleteBigQueryLinkRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteBigQueryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateBigQueryLinkRequest, BigQueryLink> updateBigQueryLinkTransportSettings =
+        GrpcCallSettings.<UpdateBigQueryLinkRequest, BigQueryLink>newBuilder()
+            .setMethodDescriptor(updateBigQueryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "bigquery_link.name", String.valueOf(request.getBigqueryLink().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
         getEnhancedMeasurementSettingsTransportSettings =
             GrpcCallSettings
@@ -3555,6 +3977,344 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetEventEditRuleRequest, EventEditRule> getEventEditRuleTransportSettings =
+        GrpcCallSettings.<GetEventEditRuleRequest, EventEditRule>newBuilder()
+            .setMethodDescriptor(getEventEditRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListEventEditRulesRequest, ListEventEditRulesResponse>
+        listEventEditRulesTransportSettings =
+            GrpcCallSettings.<ListEventEditRulesRequest, ListEventEditRulesResponse>newBuilder()
+                .setMethodDescriptor(listEventEditRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateEventEditRuleRequest, EventEditRule>
+        createEventEditRuleTransportSettings =
+            GrpcCallSettings.<CreateEventEditRuleRequest, EventEditRule>newBuilder()
+                .setMethodDescriptor(createEventEditRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateEventEditRuleRequest, EventEditRule>
+        updateEventEditRuleTransportSettings =
+            GrpcCallSettings.<UpdateEventEditRuleRequest, EventEditRule>newBuilder()
+                .setMethodDescriptor(updateEventEditRuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "event_edit_rule.name",
+                          String.valueOf(request.getEventEditRule().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteEventEditRuleRequest, Empty> deleteEventEditRuleTransportSettings =
+        GrpcCallSettings.<DeleteEventEditRuleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteEventEditRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ReorderEventEditRulesRequest, Empty> reorderEventEditRulesTransportSettings =
+        GrpcCallSettings.<ReorderEventEditRulesRequest, Empty>newBuilder()
+            .setMethodDescriptor(reorderEventEditRulesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+        updateDataRedactionSettingsTransportSettings =
+            GrpcCallSettings.<UpdateDataRedactionSettingsRequest, DataRedactionSettings>newBuilder()
+                .setMethodDescriptor(updateDataRedactionSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "data_redaction_settings.name",
+                          String.valueOf(request.getDataRedactionSettings().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetDataRedactionSettingsRequest, DataRedactionSettings>
+        getDataRedactionSettingsTransportSettings =
+            GrpcCallSettings.<GetDataRedactionSettingsRequest, DataRedactionSettings>newBuilder()
+                .setMethodDescriptor(getDataRedactionSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetCalculatedMetricRequest, CalculatedMetric>
+        getCalculatedMetricTransportSettings =
+            GrpcCallSettings.<GetCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(getCalculatedMetricMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateCalculatedMetricRequest, CalculatedMetric>
+        createCalculatedMetricTransportSettings =
+            GrpcCallSettings.<CreateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(createCalculatedMetricMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+        listCalculatedMetricsTransportSettings =
+            GrpcCallSettings
+                .<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>newBuilder()
+                .setMethodDescriptor(listCalculatedMetricsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateCalculatedMetricRequest, CalculatedMetric>
+        updateCalculatedMetricTransportSettings =
+            GrpcCallSettings.<UpdateCalculatedMetricRequest, CalculatedMetric>newBuilder()
+                .setMethodDescriptor(updateCalculatedMetricMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "calculated_metric.name",
+                          String.valueOf(request.getCalculatedMetric().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricTransportSettings =
+        GrpcCallSettings.<DeleteCalculatedMetricRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteCalculatedMetricMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+        createRollupPropertyTransportSettings =
+            GrpcCallSettings.<CreateRollupPropertyRequest, CreateRollupPropertyResponse>newBuilder()
+                .setMethodDescriptor(createRollupPropertyMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+        getRollupPropertySourceLinkTransportSettings =
+            GrpcCallSettings
+                .<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>newBuilder()
+                .setMethodDescriptor(getRollupPropertySourceLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+        listRollupPropertySourceLinksTransportSettings =
+            GrpcCallSettings
+                .<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+                    newBuilder()
+                .setMethodDescriptor(listRollupPropertySourceLinksMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+        createRollupPropertySourceLinkTransportSettings =
+            GrpcCallSettings
+                .<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>newBuilder()
+                .setMethodDescriptor(createRollupPropertySourceLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteRollupPropertySourceLinkRequest, Empty>
+        deleteRollupPropertySourceLinkTransportSettings =
+            GrpcCallSettings.<DeleteRollupPropertySourceLinkRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteRollupPropertySourceLinkMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+        provisionSubpropertyTransportSettings =
+            GrpcCallSettings.<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>newBuilder()
+                .setMethodDescriptor(provisionSubpropertyMethodDescriptor)
+                .build();
+    GrpcCallSettings<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        createSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings
+                .<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+                .setMethodDescriptor(createSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        getSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings.<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+                .setMethodDescriptor(getSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+        listSubpropertyEventFiltersTransportSettings =
+            GrpcCallSettings
+                .<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSubpropertyEventFiltersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        updateSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings
+                .<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>newBuilder()
+                .setMethodDescriptor(updateSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "subproperty_event_filter.name",
+                          String.valueOf(request.getSubpropertyEventFilter().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
+        deleteSubpropertyEventFilterTransportSettings =
+            GrpcCallSettings.<DeleteSubpropertyEventFilterRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSubpropertyEventFilterMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        createReportingDataAnnotationTransportSettings =
+            GrpcCallSettings
+                .<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+                .setMethodDescriptor(createReportingDataAnnotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+        getReportingDataAnnotationTransportSettings =
+            GrpcCallSettings
+                .<GetReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+                .setMethodDescriptor(getReportingDataAnnotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+        listReportingDataAnnotationsTransportSettings =
+            GrpcCallSettings
+                .<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listReportingDataAnnotationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        updateReportingDataAnnotationTransportSettings =
+            GrpcCallSettings
+                .<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
+                .setMethodDescriptor(updateReportingDataAnnotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "reporting_data_annotation.name",
+                          String.valueOf(request.getReportingDataAnnotation().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteReportingDataAnnotationRequest, Empty>
+        deleteReportingDataAnnotationTransportSettings =
+            GrpcCallSettings.<DeleteReportingDataAnnotationRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteReportingDataAnnotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+        submitUserDeletionTransportSettings =
+            GrpcCallSettings.<SubmitUserDeletionRequest, SubmitUserDeletionResponse>newBuilder()
+                .setMethodDescriptor(submitUserDeletionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -3604,50 +4364,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
     this.updatePropertyCallable =
         callableFactory.createUnaryCallable(
             updatePropertyTransportSettings, settings.updatePropertySettings(), clientContext);
-    this.getUserLinkCallable =
-        callableFactory.createUnaryCallable(
-            getUserLinkTransportSettings, settings.getUserLinkSettings(), clientContext);
-    this.batchGetUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            batchGetUserLinksTransportSettings,
-            settings.batchGetUserLinksSettings(),
-            clientContext);
-    this.listUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            listUserLinksTransportSettings, settings.listUserLinksSettings(), clientContext);
-    this.listUserLinksPagedCallable =
-        callableFactory.createPagedCallable(
-            listUserLinksTransportSettings, settings.listUserLinksSettings(), clientContext);
-    this.auditUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            auditUserLinksTransportSettings, settings.auditUserLinksSettings(), clientContext);
-    this.auditUserLinksPagedCallable =
-        callableFactory.createPagedCallable(
-            auditUserLinksTransportSettings, settings.auditUserLinksSettings(), clientContext);
-    this.createUserLinkCallable =
-        callableFactory.createUnaryCallable(
-            createUserLinkTransportSettings, settings.createUserLinkSettings(), clientContext);
-    this.batchCreateUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            batchCreateUserLinksTransportSettings,
-            settings.batchCreateUserLinksSettings(),
-            clientContext);
-    this.updateUserLinkCallable =
-        callableFactory.createUnaryCallable(
-            updateUserLinkTransportSettings, settings.updateUserLinkSettings(), clientContext);
-    this.batchUpdateUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            batchUpdateUserLinksTransportSettings,
-            settings.batchUpdateUserLinksSettings(),
-            clientContext);
-    this.deleteUserLinkCallable =
-        callableFactory.createUnaryCallable(
-            deleteUserLinkTransportSettings, settings.deleteUserLinkSettings(), clientContext);
-    this.batchDeleteUserLinksCallable =
-        callableFactory.createUnaryCallable(
-            batchDeleteUserLinksTransportSettings,
-            settings.batchDeleteUserLinksSettings(),
-            clientContext);
     this.createFirebaseLinkCallable =
         callableFactory.createUnaryCallable(
             createFirebaseLinkTransportSettings,
@@ -3816,6 +4532,24 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             listConversionEventsTransportSettings,
             settings.listConversionEventsSettings(),
             clientContext);
+    this.createKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            createKeyEventTransportSettings, settings.createKeyEventSettings(), clientContext);
+    this.updateKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            updateKeyEventTransportSettings, settings.updateKeyEventSettings(), clientContext);
+    this.getKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            getKeyEventTransportSettings, settings.getKeyEventSettings(), clientContext);
+    this.deleteKeyEventCallable =
+        callableFactory.createUnaryCallable(
+            deleteKeyEventTransportSettings, settings.deleteKeyEventSettings(), clientContext);
+    this.listKeyEventsCallable =
+        callableFactory.createUnaryCallable(
+            listKeyEventsTransportSettings, settings.listKeyEventsSettings(), clientContext);
+    this.listKeyEventsPagedCallable =
+        callableFactory.createPagedCallable(
+            listKeyEventsTransportSettings, settings.listKeyEventsSettings(), clientContext);
     this.getDisplayVideo360AdvertiserLinkCallable =
         callableFactory.createUnaryCallable(
             getDisplayVideo360AdvertiserLinkTransportSettings,
@@ -4144,6 +4878,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             fetchAutomatedGa4ConfigurationOptOutTransportSettings,
             settings.fetchAutomatedGa4ConfigurationOptOutSettings(),
             clientContext);
+    this.createBigQueryLinkCallable =
+        callableFactory.createUnaryCallable(
+            createBigQueryLinkTransportSettings,
+            settings.createBigQueryLinkSettings(),
+            clientContext);
     this.getBigQueryLinkCallable =
         callableFactory.createUnaryCallable(
             getBigQueryLinkTransportSettings, settings.getBigQueryLinkSettings(), clientContext);
@@ -4156,6 +4895,16 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createPagedCallable(
             listBigQueryLinksTransportSettings,
             settings.listBigQueryLinksSettings(),
+            clientContext);
+    this.deleteBigQueryLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteBigQueryLinkTransportSettings,
+            settings.deleteBigQueryLinkSettings(),
+            clientContext);
+    this.updateBigQueryLinkCallable =
+        callableFactory.createUnaryCallable(
+            updateBigQueryLinkTransportSettings,
+            settings.updateBigQueryLinkSettings(),
             clientContext);
     this.getEnhancedMeasurementSettingsCallable =
         callableFactory.createUnaryCallable(
@@ -4235,6 +4984,179 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             deleteEventCreateRuleTransportSettings,
             settings.deleteEventCreateRuleSettings(),
+            clientContext);
+    this.getEventEditRuleCallable =
+        callableFactory.createUnaryCallable(
+            getEventEditRuleTransportSettings, settings.getEventEditRuleSettings(), clientContext);
+    this.listEventEditRulesCallable =
+        callableFactory.createUnaryCallable(
+            listEventEditRulesTransportSettings,
+            settings.listEventEditRulesSettings(),
+            clientContext);
+    this.listEventEditRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEventEditRulesTransportSettings,
+            settings.listEventEditRulesSettings(),
+            clientContext);
+    this.createEventEditRuleCallable =
+        callableFactory.createUnaryCallable(
+            createEventEditRuleTransportSettings,
+            settings.createEventEditRuleSettings(),
+            clientContext);
+    this.updateEventEditRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateEventEditRuleTransportSettings,
+            settings.updateEventEditRuleSettings(),
+            clientContext);
+    this.deleteEventEditRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteEventEditRuleTransportSettings,
+            settings.deleteEventEditRuleSettings(),
+            clientContext);
+    this.reorderEventEditRulesCallable =
+        callableFactory.createUnaryCallable(
+            reorderEventEditRulesTransportSettings,
+            settings.reorderEventEditRulesSettings(),
+            clientContext);
+    this.updateDataRedactionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateDataRedactionSettingsTransportSettings,
+            settings.updateDataRedactionSettingsSettings(),
+            clientContext);
+    this.getDataRedactionSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getDataRedactionSettingsTransportSettings,
+            settings.getDataRedactionSettingsSettings(),
+            clientContext);
+    this.getCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            getCalculatedMetricTransportSettings,
+            settings.getCalculatedMetricSettings(),
+            clientContext);
+    this.createCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            createCalculatedMetricTransportSettings,
+            settings.createCalculatedMetricSettings(),
+            clientContext);
+    this.listCalculatedMetricsCallable =
+        callableFactory.createUnaryCallable(
+            listCalculatedMetricsTransportSettings,
+            settings.listCalculatedMetricsSettings(),
+            clientContext);
+    this.listCalculatedMetricsPagedCallable =
+        callableFactory.createPagedCallable(
+            listCalculatedMetricsTransportSettings,
+            settings.listCalculatedMetricsSettings(),
+            clientContext);
+    this.updateCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            updateCalculatedMetricTransportSettings,
+            settings.updateCalculatedMetricSettings(),
+            clientContext);
+    this.deleteCalculatedMetricCallable =
+        callableFactory.createUnaryCallable(
+            deleteCalculatedMetricTransportSettings,
+            settings.deleteCalculatedMetricSettings(),
+            clientContext);
+    this.createRollupPropertyCallable =
+        callableFactory.createUnaryCallable(
+            createRollupPropertyTransportSettings,
+            settings.createRollupPropertySettings(),
+            clientContext);
+    this.getRollupPropertySourceLinkCallable =
+        callableFactory.createUnaryCallable(
+            getRollupPropertySourceLinkTransportSettings,
+            settings.getRollupPropertySourceLinkSettings(),
+            clientContext);
+    this.listRollupPropertySourceLinksCallable =
+        callableFactory.createUnaryCallable(
+            listRollupPropertySourceLinksTransportSettings,
+            settings.listRollupPropertySourceLinksSettings(),
+            clientContext);
+    this.listRollupPropertySourceLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listRollupPropertySourceLinksTransportSettings,
+            settings.listRollupPropertySourceLinksSettings(),
+            clientContext);
+    this.createRollupPropertySourceLinkCallable =
+        callableFactory.createUnaryCallable(
+            createRollupPropertySourceLinkTransportSettings,
+            settings.createRollupPropertySourceLinkSettings(),
+            clientContext);
+    this.deleteRollupPropertySourceLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteRollupPropertySourceLinkTransportSettings,
+            settings.deleteRollupPropertySourceLinkSettings(),
+            clientContext);
+    this.provisionSubpropertyCallable =
+        callableFactory.createUnaryCallable(
+            provisionSubpropertyTransportSettings,
+            settings.provisionSubpropertySettings(),
+            clientContext);
+    this.createSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            createSubpropertyEventFilterTransportSettings,
+            settings.createSubpropertyEventFilterSettings(),
+            clientContext);
+    this.getSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            getSubpropertyEventFilterTransportSettings,
+            settings.getSubpropertyEventFilterSettings(),
+            clientContext);
+    this.listSubpropertyEventFiltersCallable =
+        callableFactory.createUnaryCallable(
+            listSubpropertyEventFiltersTransportSettings,
+            settings.listSubpropertyEventFiltersSettings(),
+            clientContext);
+    this.listSubpropertyEventFiltersPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubpropertyEventFiltersTransportSettings,
+            settings.listSubpropertyEventFiltersSettings(),
+            clientContext);
+    this.updateSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            updateSubpropertyEventFilterTransportSettings,
+            settings.updateSubpropertyEventFilterSettings(),
+            clientContext);
+    this.deleteSubpropertyEventFilterCallable =
+        callableFactory.createUnaryCallable(
+            deleteSubpropertyEventFilterTransportSettings,
+            settings.deleteSubpropertyEventFilterSettings(),
+            clientContext);
+    this.createReportingDataAnnotationCallable =
+        callableFactory.createUnaryCallable(
+            createReportingDataAnnotationTransportSettings,
+            settings.createReportingDataAnnotationSettings(),
+            clientContext);
+    this.getReportingDataAnnotationCallable =
+        callableFactory.createUnaryCallable(
+            getReportingDataAnnotationTransportSettings,
+            settings.getReportingDataAnnotationSettings(),
+            clientContext);
+    this.listReportingDataAnnotationsCallable =
+        callableFactory.createUnaryCallable(
+            listReportingDataAnnotationsTransportSettings,
+            settings.listReportingDataAnnotationsSettings(),
+            clientContext);
+    this.listReportingDataAnnotationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listReportingDataAnnotationsTransportSettings,
+            settings.listReportingDataAnnotationsSettings(),
+            clientContext);
+    this.updateReportingDataAnnotationCallable =
+        callableFactory.createUnaryCallable(
+            updateReportingDataAnnotationTransportSettings,
+            settings.updateReportingDataAnnotationSettings(),
+            clientContext);
+    this.deleteReportingDataAnnotationCallable =
+        callableFactory.createUnaryCallable(
+            deleteReportingDataAnnotationTransportSettings,
+            settings.deleteReportingDataAnnotationSettings(),
+            clientContext);
+    this.submitUserDeletionCallable =
+        callableFactory.createUnaryCallable(
+            submitUserDeletionTransportSettings,
+            settings.submitUserDeletionSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -4317,71 +5239,6 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   @Override
   public UnaryCallable<UpdatePropertyRequest, Property> updatePropertyCallable() {
     return updatePropertyCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetUserLinkRequest, UserLink> getUserLinkCallable() {
-    return getUserLinkCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksCallable() {
-    return batchGetUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable() {
-    return listUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListUserLinksRequest, ListUserLinksPagedResponse>
-      listUserLinksPagedCallable() {
-    return listUserLinksPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> auditUserLinksCallable() {
-    return auditUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<AuditUserLinksRequest, AuditUserLinksPagedResponse>
-      auditUserLinksPagedCallable() {
-    return auditUserLinksPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateUserLinkRequest, UserLink> createUserLinkCallable() {
-    return createUserLinkCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksCallable() {
-    return batchCreateUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateUserLinkRequest, UserLink> updateUserLinkCallable() {
-    return updateUserLinkCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksCallable() {
-    return batchUpdateUserLinksCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteUserLinkRequest, Empty> deleteUserLinkCallable() {
-    return deleteUserLinkCallable;
-  }
-
-  @Override
-  public UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable() {
-    return batchDeleteUserLinksCallable;
   }
 
   @Override
@@ -4586,6 +5443,37 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<ListConversionEventsRequest, ListConversionEventsPagedResponse>
       listConversionEventsPagedCallable() {
     return listConversionEventsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateKeyEventRequest, KeyEvent> createKeyEventCallable() {
+    return createKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateKeyEventRequest, KeyEvent> updateKeyEventCallable() {
+    return updateKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetKeyEventRequest, KeyEvent> getKeyEventCallable() {
+    return getKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteKeyEventRequest, Empty> deleteKeyEventCallable() {
+    return deleteKeyEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsCallable() {
+    return listKeyEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListKeyEventsRequest, ListKeyEventsPagedResponse>
+      listKeyEventsPagedCallable() {
+    return listKeyEventsPagedCallable;
   }
 
   @Override
@@ -5006,6 +5894,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
+  public UnaryCallable<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkCallable() {
+    return createBigQueryLinkCallable;
+  }
+
+  @Override
   public UnaryCallable<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkCallable() {
     return getBigQueryLinkCallable;
   }
@@ -5020,6 +5913,16 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
       listBigQueryLinksPagedCallable() {
     return listBigQueryLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBigQueryLinkRequest, Empty> deleteBigQueryLinkCallable() {
+    return deleteBigQueryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBigQueryLinkRequest, BigQueryLink> updateBigQueryLinkCallable() {
+    return updateBigQueryLinkCallable;
   }
 
   @Override
@@ -5116,6 +6019,211 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   @Override
   public UnaryCallable<DeleteEventCreateRuleRequest, Empty> deleteEventCreateRuleCallable() {
     return deleteEventCreateRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEventEditRuleRequest, EventEditRule> getEventEditRuleCallable() {
+    return getEventEditRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesResponse>
+      listEventEditRulesCallable() {
+    return listEventEditRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesPagedResponse>
+      listEventEditRulesPagedCallable() {
+    return listEventEditRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateEventEditRuleRequest, EventEditRule> createEventEditRuleCallable() {
+    return createEventEditRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEventEditRuleRequest, EventEditRule> updateEventEditRuleCallable() {
+    return updateEventEditRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEventEditRuleRequest, Empty> deleteEventEditRuleCallable() {
+    return deleteEventEditRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReorderEventEditRulesRequest, Empty> reorderEventEditRulesCallable() {
+    return reorderEventEditRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsCallable() {
+    return updateDataRedactionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsCallable() {
+    return getDataRedactionSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCalculatedMetricRequest, CalculatedMetric> getCalculatedMetricCallable() {
+    return getCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricCallable() {
+    return createCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse>
+      listCalculatedMetricsCallable() {
+    return listCalculatedMetricsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsPagedCallable() {
+    return listCalculatedMetricsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricCallable() {
+    return updateCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricCallable() {
+    return deleteCalculatedMetricCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertyCallable() {
+    return createRollupPropertyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkCallable() {
+    return getRollupPropertySourceLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+      listRollupPropertySourceLinksCallable() {
+    return listRollupPropertySourceLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksPagedResponse>
+      listRollupPropertySourceLinksPagedCallable() {
+    return listRollupPropertySourceLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkCallable() {
+    return createRollupPropertySourceLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkCallable() {
+    return deleteRollupPropertySourceLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+      provisionSubpropertyCallable() {
+    return provisionSubpropertyCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterCallable() {
+    return createSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterCallable() {
+    return getSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+      listSubpropertyEventFiltersCallable() {
+    return listSubpropertyEventFiltersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersPagedCallable() {
+    return listSubpropertyEventFiltersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterCallable() {
+    return updateSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable() {
+    return deleteSubpropertyEventFilterCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationCallable() {
+    return createReportingDataAnnotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationCallable() {
+    return getReportingDataAnnotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+      listReportingDataAnnotationsCallable() {
+    return listReportingDataAnnotationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsPagedCallable() {
+    return listReportingDataAnnotationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationCallable() {
+    return updateReportingDataAnnotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationCallable() {
+    return deleteReportingDataAnnotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionCallable() {
+    return submitUserDeletionCallable;
   }
 
   @Override

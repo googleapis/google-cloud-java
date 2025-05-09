@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -146,6 +146,19 @@ public final class ConfidentialComputingGrpc {
     return ConfidentialComputingStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConfidentialComputingBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConfidentialComputingBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConfidentialComputingBlockingV2Stub>() {
+          @java.lang.Override
+          public ConfidentialComputingBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConfidentialComputingBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConfidentialComputingBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -288,6 +301,53 @@ public final class ConfidentialComputingGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConfidentialComputing.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * </pre>
+   */
+  public static final class ConfidentialComputingBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConfidentialComputingBlockingV2Stub> {
+    private ConfidentialComputingBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConfidentialComputingBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConfidentialComputingBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Challenge in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.confidentialcomputing.v1.Challenge createChallenge(
+        com.google.cloud.confidentialcomputing.v1.CreateChallengeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChallengeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies the provided attestation info, returning a signed OIDC token.
+     * </pre>
+     */
+    public com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse verifyAttestation(
+        com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyAttestationMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ConfidentialComputing.
    *
    * <pre>
    * Service describing handlers for resources

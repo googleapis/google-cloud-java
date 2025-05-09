@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,6 +276,19 @@ public final class RuleSetServiceGrpc {
     return RuleSetServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static RuleSetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<RuleSetServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<RuleSetServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public RuleSetServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new RuleSetServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return RuleSetServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -508,6 +521,92 @@ public final class RuleSetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service RuleSetService.
+   *
+   * <pre>
+   * Service to manage customer specific RuleSets.
+   * </pre>
+   */
+  public static final class RuleSetServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<RuleSetServiceBlockingV2Stub> {
+    private RuleSetServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected RuleSetServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new RuleSetServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ruleset.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.RuleSet createRuleSet(
+        com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRuleSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ruleset. Returns NOT_FOUND if the ruleset does not exist.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.RuleSet getRuleSet(
+        com.google.cloud.contentwarehouse.v1.GetRuleSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRuleSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ruleset. Returns INVALID_ARGUMENT if the name of the ruleset
+     * is non-empty and does not equal the existing name.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.RuleSet updateRuleSet(
+        com.google.cloud.contentwarehouse.v1.UpdateRuleSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRuleSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ruleset. Returns NOT_FOUND if the document does not exist.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRuleSet(
+        com.google.cloud.contentwarehouse.v1.DeleteRuleSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRuleSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists rulesets.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.ListRuleSetsResponse listRuleSets(
+        com.google.cloud.contentwarehouse.v1.ListRuleSetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRuleSetsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service RuleSetService.
    *
    * <pre>
    * Service to manage customer specific RuleSets.

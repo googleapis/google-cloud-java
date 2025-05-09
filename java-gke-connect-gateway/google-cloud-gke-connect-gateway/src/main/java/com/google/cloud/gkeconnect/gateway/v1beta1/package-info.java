@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,11 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= GatewayServiceClient =======================
+ * <p>======================= GatewayControlClient =======================
  *
- * <p>Service Description: Gateway service is a public API which works as a Kubernetes resource
- * model proxy between end users and registered Kubernetes clusters. Each RPC in this service
- * matches with an HTTP verb. End user will initiate kubectl commands against the Gateway service,
- * and Gateway service will forward user requests to clusters.
+ * <p>Service Description: GatewayControl is the control plane API for Connect Gateway.
  *
- * <p>Sample for GatewayServiceClient:
+ * <p>Sample for GatewayControlClient:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -34,14 +31,15 @@
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (GatewayServiceClient gatewayServiceClient = GatewayServiceClient.create()) {
- *   HttpBody request =
- *       HttpBody.newBuilder()
- *           .setContentType("contentType-389131437")
- *           .setData(ByteString.EMPTY)
- *           .addAllExtensions(new ArrayList<Any>())
+ * try (GatewayControlClient gatewayControlClient = GatewayControlClient.create()) {
+ *   GenerateCredentialsRequest request =
+ *       GenerateCredentialsRequest.newBuilder()
+ *           .setName("name3373707")
+ *           .setForceUseAgent(true)
+ *           .setVersion("version351608024")
+ *           .setKubernetesNamespace("kubernetesNamespace-1862862667")
  *           .build();
- *   HttpBody response = gatewayServiceClient.getResource(request);
+ *   GenerateCredentialsResponse response = gatewayControlClient.generateCredentials(request);
  * }
  * }</pre>
  */

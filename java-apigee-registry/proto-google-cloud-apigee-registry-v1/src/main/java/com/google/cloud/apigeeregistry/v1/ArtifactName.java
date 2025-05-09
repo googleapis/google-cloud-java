@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.apigeeregistry.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -155,29 +154,24 @@ public class ArtifactName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationArtifactBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationApiArtifactBuilder newProjectLocationApiArtifactBuilder() {
     return new ProjectLocationApiArtifactBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationApiVersionArtifactBuilder
       newProjectLocationApiVersionArtifactBuilder() {
     return new ProjectLocationApiVersionArtifactBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationApiVersionSpecArtifactBuilder
       newProjectLocationApiVersionSpecArtifactBuilder() {
     return new ProjectLocationApiVersionSpecArtifactBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationApiDeploymentArtifactBuilder
       newProjectLocationApiDeploymentArtifactBuilder() {
     return new ProjectLocationApiDeploymentArtifactBuilder();
@@ -191,13 +185,11 @@ public class ArtifactName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).setArtifact(artifact).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ArtifactName ofProjectLocationArtifactName(
       String project, String location, String artifact) {
     return newBuilder().setProject(project).setLocation(location).setArtifact(artifact).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ArtifactName ofProjectLocationApiArtifactName(
       String project, String location, String api, String artifact) {
     return newProjectLocationApiArtifactBuilder()
@@ -208,7 +200,6 @@ public class ArtifactName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ArtifactName ofProjectLocationApiVersionArtifactName(
       String project, String location, String api, String version, String artifact) {
     return newProjectLocationApiVersionArtifactBuilder()
@@ -220,7 +211,6 @@ public class ArtifactName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ArtifactName ofProjectLocationApiVersionSpecArtifactName(
       String project, String location, String api, String version, String spec, String artifact) {
     return newProjectLocationApiVersionSpecArtifactBuilder()
@@ -233,7 +223,6 @@ public class ArtifactName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ArtifactName ofProjectLocationApiDeploymentArtifactName(
       String project, String location, String api, String deployment, String artifact) {
     return newProjectLocationApiDeploymentArtifactBuilder()
@@ -254,7 +243,6 @@ public class ArtifactName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationArtifactName(
       String project, String location, String artifact) {
     return newBuilder()
@@ -265,7 +253,6 @@ public class ArtifactName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationApiArtifactName(
       String project, String location, String api, String artifact) {
     return newProjectLocationApiArtifactBuilder()
@@ -277,7 +264,6 @@ public class ArtifactName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationApiVersionArtifactName(
       String project, String location, String api, String version, String artifact) {
     return newProjectLocationApiVersionArtifactBuilder()
@@ -290,7 +276,6 @@ public class ArtifactName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationApiVersionSpecArtifactName(
       String project, String location, String api, String version, String spec, String artifact) {
     return newProjectLocationApiVersionSpecArtifactBuilder()
@@ -304,7 +289,6 @@ public class ArtifactName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationApiDeploymentArtifactName(
       String project, String location, String api, String deployment, String artifact) {
     return newProjectLocationApiDeploymentArtifactBuilder()
@@ -512,7 +496,8 @@ public class ArtifactName implements ResourceName {
     private Builder(ArtifactName artifactName) {
       Preconditions.checkArgument(
           Objects.equals(artifactName.pathTemplate, PROJECT_LOCATION_ARTIFACT),
-          "toBuilder is only supported when ArtifactName has the pattern of projects/{project}/locations/{location}/artifacts/{artifact}");
+          "toBuilder is only supported when ArtifactName has the pattern of"
+              + " projects/{project}/locations/{location}/artifacts/{artifact}");
       this.project = artifactName.project;
       this.location = artifactName.location;
       this.artifact = artifactName.artifact;
@@ -524,7 +509,6 @@ public class ArtifactName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/apis/{api}/artifacts/{artifact}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationApiArtifactBuilder {
     private String project;
     private String location;
@@ -578,7 +562,6 @@ public class ArtifactName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/apis/{api}/versions/{version}/artifacts/{artifact}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationApiVersionArtifactBuilder {
     private String project;
     private String location;
@@ -642,7 +625,6 @@ public class ArtifactName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}/artifacts/{artifact}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationApiVersionSpecArtifactBuilder {
     private String project;
     private String location;
@@ -716,7 +698,6 @@ public class ArtifactName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/apis/{api}/deployments/{deployment}/artifacts/{artifact}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationApiDeploymentArtifactBuilder {
     private String project;
     private String location;

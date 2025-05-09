@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.accessapproval.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -88,17 +87,14 @@ public class AccessApprovalSettingsName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderBuilder newFolderBuilder() {
     return new FolderBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationBuilder newOrganizationBuilder() {
     return new OrganizationBuilder();
   }
@@ -111,17 +107,14 @@ public class AccessApprovalSettingsName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AccessApprovalSettingsName ofProjectName(String project) {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AccessApprovalSettingsName ofFolderName(String folder) {
     return newFolderBuilder().setFolder(folder).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AccessApprovalSettingsName ofOrganizationName(String organization) {
     return newOrganizationBuilder().setOrganization(organization).build();
   }
@@ -130,17 +123,14 @@ public class AccessApprovalSettingsName implements ResourceName {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectName(String project) {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderName(String folder) {
     return newFolderBuilder().setFolder(folder).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationName(String organization) {
     return newOrganizationBuilder().setOrganization(organization).build().toString();
   }
@@ -266,7 +256,8 @@ public class AccessApprovalSettingsName implements ResourceName {
     private Builder(AccessApprovalSettingsName accessApprovalSettingsName) {
       Preconditions.checkArgument(
           Objects.equals(accessApprovalSettingsName.pathTemplate, PROJECT),
-          "toBuilder is only supported when AccessApprovalSettingsName has the pattern of projects/{project}/accessApprovalSettings");
+          "toBuilder is only supported when AccessApprovalSettingsName has the pattern of"
+              + " projects/{project}/accessApprovalSettings");
       this.project = accessApprovalSettingsName.project;
     }
 
@@ -276,7 +267,6 @@ public class AccessApprovalSettingsName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/accessApprovalSettings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderBuilder {
     private String folder;
 
@@ -297,7 +287,6 @@ public class AccessApprovalSettingsName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/accessApprovalSettings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationBuilder {
     private String organization;
 

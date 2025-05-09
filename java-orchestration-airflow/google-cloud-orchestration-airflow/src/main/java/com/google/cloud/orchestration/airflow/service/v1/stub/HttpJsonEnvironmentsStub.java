@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,11 @@
 package com.google.cloud.orchestration.airflow.service.v1.stub;
 
 import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListUserWorkloadsConfigMapsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListUserWorkloadsSecretsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1.EnvironmentsClient.ListWorkloadsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -35,18 +37,32 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CheckUpgradeResponse;
 import com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.CreateUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverRequest;
 import com.google.cloud.orchestration.airflow.service.v1.DatabaseFailoverResponse;
 import com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.Environment;
 import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ExecuteAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesRequest;
 import com.google.cloud.orchestration.airflow.service.v1.FetchDatabasePropertiesResponse;
 import com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.GetUserWorkloadsSecretRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest;
 import com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsConfigMapsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListUserWorkloadsSecretsResponse;
+import com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsRequest;
+import com.google.cloud.orchestration.airflow.service.v1.ListWorkloadsResponse;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.OperationMetadata;
@@ -57,6 +73,10 @@ import com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandRequest;
 import com.google.cloud.orchestration.airflow.service.v1.StopAirflowCommandResponse;
 import com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsConfigMapRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UpdateUserWorkloadsSecretRequest;
+import com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap;
+import com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -76,7 +96,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
@@ -86,6 +105,7 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
           .add(OperationMetadata.getDescriptor())
           .add(LoadSnapshotResponse.getDescriptor())
           .add(SaveSnapshotResponse.getDescriptor())
+          .add(CheckUpgradeResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<CreateEnvironmentRequest, Operation>
@@ -403,6 +423,479 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListWorkloadsRequest, ListWorkloadsResponse>
+      listWorkloadsMethodDescriptor =
+          ApiMethodDescriptor.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/ListWorkloads")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListWorkloadsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/environments/*}/workloads",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListWorkloadsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListWorkloadsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListWorkloadsResponse>newBuilder()
+                      .setDefaultInstance(ListWorkloadsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CheckUpgradeRequest, Operation>
+      checkUpgradeMethodDescriptor =
+          ApiMethodDescriptor.<CheckUpgradeRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/CheckUpgrade")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CheckUpgradeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{environment=projects/*/locations/*/environments/*}:checkUpgrade",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CheckUpgradeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "environment", request.getEnvironment());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CheckUpgradeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearEnvironment().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CheckUpgradeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretMethodDescriptor =
+          ApiMethodDescriptor.<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/CreateUserWorkloadsSecret")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateUserWorkloadsSecretRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/environments/*}/userWorkloadsSecrets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateUserWorkloadsSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateUserWorkloadsSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "userWorkloadsSecret",
+                                      request.getUserWorkloadsSecret(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<UserWorkloadsSecret>newBuilder()
+                      .setDefaultInstance(UserWorkloadsSecret.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretMethodDescriptor =
+          ApiMethodDescriptor.<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/GetUserWorkloadsSecret")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetUserWorkloadsSecretRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/environments/*/userWorkloadsSecrets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetUserWorkloadsSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetUserWorkloadsSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<UserWorkloadsSecret>newBuilder()
+                      .setDefaultInstance(UserWorkloadsSecret.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+      listUserWorkloadsSecretsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/ListUserWorkloadsSecrets")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListUserWorkloadsSecretsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/environments/*}/userWorkloadsSecrets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUserWorkloadsSecretsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUserWorkloadsSecretsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListUserWorkloadsSecretsResponse>newBuilder()
+                      .setDefaultInstance(ListUserWorkloadsSecretsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretMethodDescriptor =
+          ApiMethodDescriptor.<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/UpdateUserWorkloadsSecret")
+              .setHttpMethod("PUT")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateUserWorkloadsSecretRequest>newBuilder()
+                      .setPath(
+                          "/v1/{userWorkloadsSecret.name=projects/*/locations/*/environments/*/userWorkloadsSecrets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateUserWorkloadsSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "userWorkloadsSecret.name",
+                                request.getUserWorkloadsSecret().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateUserWorkloadsSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "userWorkloadsSecret",
+                                      request.getUserWorkloadsSecret(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<UserWorkloadsSecret>newBuilder()
+                      .setDefaultInstance(UserWorkloadsSecret.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretMethodDescriptor =
+          ApiMethodDescriptor.<DeleteUserWorkloadsSecretRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/DeleteUserWorkloadsSecret")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteUserWorkloadsSecretRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/environments/*/userWorkloadsSecrets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteUserWorkloadsSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteUserWorkloadsSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapMethodDescriptor =
+          ApiMethodDescriptor
+              .<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/CreateUserWorkloadsConfigMap")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateUserWorkloadsConfigMapRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/environments/*}/userWorkloadsConfigMaps",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateUserWorkloadsConfigMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateUserWorkloadsConfigMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "userWorkloadsConfigMap",
+                                      request.getUserWorkloadsConfigMap(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<UserWorkloadsConfigMap>newBuilder()
+                      .setDefaultInstance(UserWorkloadsConfigMap.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapMethodDescriptor =
+          ApiMethodDescriptor.<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/GetUserWorkloadsConfigMap")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetUserWorkloadsConfigMapRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/environments/*/userWorkloadsConfigMaps/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetUserWorkloadsConfigMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetUserWorkloadsConfigMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<UserWorkloadsConfigMap>newBuilder()
+                      .setDefaultInstance(UserWorkloadsConfigMap.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+      listUserWorkloadsConfigMapsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/ListUserWorkloadsConfigMaps")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListUserWorkloadsConfigMapsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/environments/*}/userWorkloadsConfigMaps",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUserWorkloadsConfigMapsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListUserWorkloadsConfigMapsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListUserWorkloadsConfigMapsResponse>newBuilder()
+                      .setDefaultInstance(ListUserWorkloadsConfigMapsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/UpdateUserWorkloadsConfigMap")
+              .setHttpMethod("PUT")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateUserWorkloadsConfigMapRequest>newBuilder()
+                      .setPath(
+                          "/v1/{userWorkloadsConfigMap.name=projects/*/locations/*/environments/*/userWorkloadsConfigMaps/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateUserWorkloadsConfigMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "userWorkloadsConfigMap.name",
+                                request.getUserWorkloadsConfigMap().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateUserWorkloadsConfigMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "userWorkloadsConfigMap",
+                                      request.getUserWorkloadsConfigMap(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<UserWorkloadsConfigMap>newBuilder()
+                      .setDefaultInstance(UserWorkloadsConfigMap.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapMethodDescriptor =
+          ApiMethodDescriptor.<DeleteUserWorkloadsConfigMapRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.orchestration.airflow.service.v1.Environments/DeleteUserWorkloadsConfigMap")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteUserWorkloadsConfigMapRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/environments/*/userWorkloadsConfigMaps/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteUserWorkloadsConfigMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteUserWorkloadsConfigMapRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<SaveSnapshotRequest, Operation>
       saveSnapshotMethodDescriptor =
           ApiMethodDescriptor.<SaveSnapshotRequest, Operation>newBuilder()
@@ -590,6 +1083,39 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
       stopAirflowCommandCallable;
   private final UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
       pollAirflowCommandCallable;
+  private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable;
+  private final UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
+      listWorkloadsPagedCallable;
+  private final UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable;
+  private final OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable;
+  private final UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretCallable;
+  private final UnaryCallable<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretCallable;
+  private final UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+      listUserWorkloadsSecretsCallable;
+  private final UnaryCallable<
+          ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsPagedResponse>
+      listUserWorkloadsSecretsPagedCallable;
+  private final UnaryCallable<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretCallable;
+  private final UnaryCallable<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretCallable;
+  private final UnaryCallable<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapCallable;
+  private final UnaryCallable<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapCallable;
+  private final UnaryCallable<
+          ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+      listUserWorkloadsConfigMapsCallable;
+  private final UnaryCallable<
+          ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsPagedResponse>
+      listUserWorkloadsConfigMapsPagedCallable;
+  private final UnaryCallable<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapCallable;
+  private final UnaryCallable<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapCallable;
   private final UnaryCallable<SaveSnapshotRequest, Operation> saveSnapshotCallable;
   private final OperationCallable<SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
       saveSnapshotOperationCallable;
@@ -761,6 +1287,159 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListWorkloadsRequest, ListWorkloadsResponse>
+        listWorkloadsTransportSettings =
+            HttpJsonCallSettings.<ListWorkloadsRequest, ListWorkloadsResponse>newBuilder()
+                .setMethodDescriptor(listWorkloadsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CheckUpgradeRequest, Operation> checkUpgradeTransportSettings =
+        HttpJsonCallSettings.<CheckUpgradeRequest, Operation>newBuilder()
+            .setMethodDescriptor(checkUpgradeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("environment", String.valueOf(request.getEnvironment()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        createUserWorkloadsSecretTransportSettings =
+            HttpJsonCallSettings.<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+                .setMethodDescriptor(createUserWorkloadsSecretMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        getUserWorkloadsSecretTransportSettings =
+            HttpJsonCallSettings.<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+                .setMethodDescriptor(getUserWorkloadsSecretMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+        listUserWorkloadsSecretsTransportSettings =
+            HttpJsonCallSettings
+                .<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>newBuilder()
+                .setMethodDescriptor(listUserWorkloadsSecretsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        updateUserWorkloadsSecretTransportSettings =
+            HttpJsonCallSettings.<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>newBuilder()
+                .setMethodDescriptor(updateUserWorkloadsSecretMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "user_workloads_secret.name",
+                          String.valueOf(request.getUserWorkloadsSecret().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteUserWorkloadsSecretRequest, Empty>
+        deleteUserWorkloadsSecretTransportSettings =
+            HttpJsonCallSettings.<DeleteUserWorkloadsSecretRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteUserWorkloadsSecretMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        createUserWorkloadsConfigMapTransportSettings =
+            HttpJsonCallSettings
+                .<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+                .setMethodDescriptor(createUserWorkloadsConfigMapMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        getUserWorkloadsConfigMapTransportSettings =
+            HttpJsonCallSettings
+                .<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+                .setMethodDescriptor(getUserWorkloadsConfigMapMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+        listUserWorkloadsConfigMapsTransportSettings =
+            HttpJsonCallSettings
+                .<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listUserWorkloadsConfigMapsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        updateUserWorkloadsConfigMapTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>newBuilder()
+                .setMethodDescriptor(updateUserWorkloadsConfigMapMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "user_workloads_config_map.name",
+                          String.valueOf(request.getUserWorkloadsConfigMap().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteUserWorkloadsConfigMapRequest, Empty>
+        deleteUserWorkloadsConfigMapTransportSettings =
+            HttpJsonCallSettings.<DeleteUserWorkloadsConfigMapRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteUserWorkloadsConfigMapMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SaveSnapshotRequest, Operation> saveSnapshotTransportSettings =
         HttpJsonCallSettings.<SaveSnapshotRequest, Operation>newBuilder()
             .setMethodDescriptor(saveSnapshotMethodDescriptor)
@@ -865,6 +1544,81 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
             pollAirflowCommandTransportSettings,
             settings.pollAirflowCommandSettings(),
             clientContext);
+    this.listWorkloadsCallable =
+        callableFactory.createUnaryCallable(
+            listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
+    this.listWorkloadsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWorkloadsTransportSettings, settings.listWorkloadsSettings(), clientContext);
+    this.checkUpgradeCallable =
+        callableFactory.createUnaryCallable(
+            checkUpgradeTransportSettings, settings.checkUpgradeSettings(), clientContext);
+    this.checkUpgradeOperationCallable =
+        callableFactory.createOperationCallable(
+            checkUpgradeTransportSettings,
+            settings.checkUpgradeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createUserWorkloadsSecretCallable =
+        callableFactory.createUnaryCallable(
+            createUserWorkloadsSecretTransportSettings,
+            settings.createUserWorkloadsSecretSettings(),
+            clientContext);
+    this.getUserWorkloadsSecretCallable =
+        callableFactory.createUnaryCallable(
+            getUserWorkloadsSecretTransportSettings,
+            settings.getUserWorkloadsSecretSettings(),
+            clientContext);
+    this.listUserWorkloadsSecretsCallable =
+        callableFactory.createUnaryCallable(
+            listUserWorkloadsSecretsTransportSettings,
+            settings.listUserWorkloadsSecretsSettings(),
+            clientContext);
+    this.listUserWorkloadsSecretsPagedCallable =
+        callableFactory.createPagedCallable(
+            listUserWorkloadsSecretsTransportSettings,
+            settings.listUserWorkloadsSecretsSettings(),
+            clientContext);
+    this.updateUserWorkloadsSecretCallable =
+        callableFactory.createUnaryCallable(
+            updateUserWorkloadsSecretTransportSettings,
+            settings.updateUserWorkloadsSecretSettings(),
+            clientContext);
+    this.deleteUserWorkloadsSecretCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserWorkloadsSecretTransportSettings,
+            settings.deleteUserWorkloadsSecretSettings(),
+            clientContext);
+    this.createUserWorkloadsConfigMapCallable =
+        callableFactory.createUnaryCallable(
+            createUserWorkloadsConfigMapTransportSettings,
+            settings.createUserWorkloadsConfigMapSettings(),
+            clientContext);
+    this.getUserWorkloadsConfigMapCallable =
+        callableFactory.createUnaryCallable(
+            getUserWorkloadsConfigMapTransportSettings,
+            settings.getUserWorkloadsConfigMapSettings(),
+            clientContext);
+    this.listUserWorkloadsConfigMapsCallable =
+        callableFactory.createUnaryCallable(
+            listUserWorkloadsConfigMapsTransportSettings,
+            settings.listUserWorkloadsConfigMapsSettings(),
+            clientContext);
+    this.listUserWorkloadsConfigMapsPagedCallable =
+        callableFactory.createPagedCallable(
+            listUserWorkloadsConfigMapsTransportSettings,
+            settings.listUserWorkloadsConfigMapsSettings(),
+            clientContext);
+    this.updateUserWorkloadsConfigMapCallable =
+        callableFactory.createUnaryCallable(
+            updateUserWorkloadsConfigMapTransportSettings,
+            settings.updateUserWorkloadsConfigMapSettings(),
+            clientContext);
+    this.deleteUserWorkloadsConfigMapCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserWorkloadsConfigMapTransportSettings,
+            settings.deleteUserWorkloadsConfigMapSettings(),
+            clientContext);
     this.saveSnapshotCallable =
         callableFactory.createUnaryCallable(
             saveSnapshotTransportSettings, settings.saveSnapshotSettings(), clientContext);
@@ -913,6 +1667,18 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
     methodDescriptors.add(executeAirflowCommandMethodDescriptor);
     methodDescriptors.add(stopAirflowCommandMethodDescriptor);
     methodDescriptors.add(pollAirflowCommandMethodDescriptor);
+    methodDescriptors.add(listWorkloadsMethodDescriptor);
+    methodDescriptors.add(checkUpgradeMethodDescriptor);
+    methodDescriptors.add(createUserWorkloadsSecretMethodDescriptor);
+    methodDescriptors.add(getUserWorkloadsSecretMethodDescriptor);
+    methodDescriptors.add(listUserWorkloadsSecretsMethodDescriptor);
+    methodDescriptors.add(updateUserWorkloadsSecretMethodDescriptor);
+    methodDescriptors.add(deleteUserWorkloadsSecretMethodDescriptor);
+    methodDescriptors.add(createUserWorkloadsConfigMapMethodDescriptor);
+    methodDescriptors.add(getUserWorkloadsConfigMapMethodDescriptor);
+    methodDescriptors.add(listUserWorkloadsConfigMapsMethodDescriptor);
+    methodDescriptors.add(updateUserWorkloadsConfigMapMethodDescriptor);
+    methodDescriptors.add(deleteUserWorkloadsConfigMapMethodDescriptor);
     methodDescriptors.add(saveSnapshotMethodDescriptor);
     methodDescriptors.add(loadSnapshotMethodDescriptor);
     methodDescriptors.add(databaseFailoverMethodDescriptor);
@@ -990,6 +1756,100 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
   public UnaryCallable<PollAirflowCommandRequest, PollAirflowCommandResponse>
       pollAirflowCommandCallable() {
     return pollAirflowCommandCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
+    return listWorkloadsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
+      listWorkloadsPagedCallable() {
+    return listWorkloadsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckUpgradeRequest, Operation> checkUpgradeCallable() {
+    return checkUpgradeCallable;
+  }
+
+  @Override
+  public OperationCallable<CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
+      checkUpgradeOperationCallable() {
+    return checkUpgradeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretCallable() {
+    return createUserWorkloadsSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretCallable() {
+    return getUserWorkloadsSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsResponse>
+      listUserWorkloadsSecretsCallable() {
+    return listUserWorkloadsSecretsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserWorkloadsSecretsRequest, ListUserWorkloadsSecretsPagedResponse>
+      listUserWorkloadsSecretsPagedCallable() {
+    return listUserWorkloadsSecretsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretCallable() {
+    return updateUserWorkloadsSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretCallable() {
+    return deleteUserWorkloadsSecretCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapCallable() {
+    return createUserWorkloadsConfigMapCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapCallable() {
+    return getUserWorkloadsConfigMapCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsResponse>
+      listUserWorkloadsConfigMapsCallable() {
+    return listUserWorkloadsConfigMapsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserWorkloadsConfigMapsRequest, ListUserWorkloadsConfigMapsPagedResponse>
+      listUserWorkloadsConfigMapsPagedCallable() {
+    return listUserWorkloadsConfigMapsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapCallable() {
+    return updateUserWorkloadsConfigMapCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapCallable() {
+    return deleteUserWorkloadsConfigMapCallable;
   }
 
   @Override

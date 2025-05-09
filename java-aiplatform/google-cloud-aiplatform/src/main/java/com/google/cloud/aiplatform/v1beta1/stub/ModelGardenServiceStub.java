@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,24 @@ import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListP
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AcceptPublisherModelEulaRequest;
+import com.google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse;
+import com.google.cloud.aiplatform.v1beta1.DeployRequest;
+import com.google.cloud.aiplatform.v1beta1.DeployResponse;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelResponse;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
 import com.google.cloud.aiplatform.v1beta1.PublisherModel;
+import com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -35,6 +48,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -46,6 +61,10 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ModelGardenServiceStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
 
   public UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable() {
     throw new UnsupportedOperationException("Not implemented: getPublisherModelCallable()");
@@ -59,6 +78,54 @@ public abstract class ModelGardenServiceStub implements BackgroundResource {
   public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
       listPublisherModelsCallable() {
     throw new UnsupportedOperationException("Not implemented: listPublisherModelsCallable()");
+  }
+
+  public OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployOperationCallable()");
+  }
+
+  public UnaryCallable<DeployRequest, Operation> deployCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployCallable()");
+  }
+
+  @Deprecated
+  public OperationCallable<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deployPublisherModelOperationCallable()");
+  }
+
+  @Deprecated
+  public UnaryCallable<DeployPublisherModelRequest, Operation> deployPublisherModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: deployPublisherModelCallable()");
+  }
+
+  public OperationCallable<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportPublisherModelOperationCallable()");
+  }
+
+  public UnaryCallable<ExportPublisherModelRequest, Operation> exportPublisherModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportPublisherModelCallable()");
+  }
+
+  public UnaryCallable<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: checkPublisherModelEulaAcceptanceCallable()");
+  }
+
+  public UnaryCallable<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaCallable() {
+    throw new UnsupportedOperationException("Not implemented: acceptPublisherModelEulaCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

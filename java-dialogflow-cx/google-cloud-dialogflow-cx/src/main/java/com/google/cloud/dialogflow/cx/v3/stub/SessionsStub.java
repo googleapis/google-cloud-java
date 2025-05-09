@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,9 @@ import static com.google.cloud.dialogflow.cx.v3.SessionsClient.ListLocationsPage
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3.AnswerFeedback;
 import com.google.cloud.dialogflow.cx.v3.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.DetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3.FulfillIntentRequest;
@@ -29,6 +31,7 @@ import com.google.cloud.dialogflow.cx.v3.MatchIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.MatchIntentResponse;
 import com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3.SubmitAnswerFeedbackRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -48,6 +51,12 @@ public abstract class SessionsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: detectIntentCallable()");
   }
 
+  public ServerStreamingCallable<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: serverStreamingDetectIntentCallable()");
+  }
+
   public BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {
     throw new UnsupportedOperationException("Not implemented: streamingDetectIntentCallable()");
@@ -59,6 +68,10 @@ public abstract class SessionsStub implements BackgroundResource {
 
   public UnaryCallable<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentCallable() {
     throw new UnsupportedOperationException("Not implemented: fulfillIntentCallable()");
+  }
+
+  public UnaryCallable<SubmitAnswerFeedbackRequest, AnswerFeedback> submitAnswerFeedbackCallable() {
+    throw new UnsupportedOperationException("Not implemented: submitAnswerFeedbackCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1;
 import static com.google.cloud.compute.v1.RegionSecurityPoliciesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -50,7 +49,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -67,14 +68,62 @@ import javax.annotation.Generated;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * RegionSecurityPoliciesSettings regionSecurityPoliciesSettings =
  *     regionSecurityPoliciesSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for addRule:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * RegionSecurityPoliciesSettings.Builder regionSecurityPoliciesSettingsBuilder =
+ *     RegionSecurityPoliciesSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * regionSecurityPoliciesSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurityPoliciesSettings> {
+
+  /** Returns the object with the settings used for calls to addRule. */
+  public UnaryCallSettings<AddRuleRegionSecurityPolicyRequest, Operation> addRuleSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).addRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addRule. */
+  public OperationCallSettings<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).addRuleOperationSettings();
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteRegionSecurityPolicyRequest, Operation> deleteSettings() {
@@ -90,6 +139,12 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRegionSecurityPolicyRequest, SecurityPolicy> getSettings() {
     return ((RegionSecurityPoliciesStubSettings) getStubSettings()).getSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRule. */
+  public UnaryCallSettings<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+      getRuleSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).getRuleSettings();
   }
 
   /** Returns the object with the settings used for calls to insert. */
@@ -118,6 +173,39 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
   public OperationCallSettings<PatchRegionSecurityPolicyRequest, Operation, Operation>
       patchOperationSettings() {
     return ((RegionSecurityPoliciesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchRule. */
+  public UnaryCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation> patchRuleSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).patchRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchRule. */
+  public OperationCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).patchRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeRule. */
+  public UnaryCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation> removeRuleSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).removeRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeRule. */
+  public OperationCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).removeRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation> setLabelsSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((RegionSecurityPoliciesStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
   public static final RegionSecurityPoliciesSettings create(RegionSecurityPoliciesStubSettings stub)
@@ -155,7 +243,6 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
     return RegionSecurityPoliciesStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return RegionSecurityPoliciesStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -219,6 +306,18 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to addRule. */
+    public UnaryCallSettings.Builder<AddRuleRegionSecurityPolicyRequest, Operation>
+        addRuleSettings() {
+      return getStubSettingsBuilder().addRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addRule. */
+    public OperationCallSettings.Builder<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+        addRuleOperationSettings() {
+      return getStubSettingsBuilder().addRuleOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteRegionSecurityPolicyRequest, Operation>
         deleteSettings() {
@@ -234,6 +333,12 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionSecurityPolicyRequest, SecurityPolicy> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRule. */
+    public UnaryCallSettings.Builder<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+        getRuleSettings() {
+      return getStubSettingsBuilder().getRuleSettings();
     }
 
     /** Returns the builder for the settings used for calls to insert. */
@@ -264,6 +369,43 @@ public class RegionSecurityPoliciesSettings extends ClientSettings<RegionSecurit
     public OperationCallSettings.Builder<PatchRegionSecurityPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchRule. */
+    public UnaryCallSettings.Builder<PatchRuleRegionSecurityPolicyRequest, Operation>
+        patchRuleSettings() {
+      return getStubSettingsBuilder().patchRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchRule. */
+    public OperationCallSettings.Builder<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+        patchRuleOperationSettings() {
+      return getStubSettingsBuilder().patchRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeRule. */
+    public UnaryCallSettings.Builder<RemoveRuleRegionSecurityPolicyRequest, Operation>
+        removeRuleSettings() {
+      return getStubSettingsBuilder().removeRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeRule. */
+    public OperationCallSettings.Builder<
+            RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+        removeRuleOperationSettings() {
+      return getStubSettingsBuilder().removeRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsRegionSecurityPolicyRequest, Operation>
+        setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     @Override

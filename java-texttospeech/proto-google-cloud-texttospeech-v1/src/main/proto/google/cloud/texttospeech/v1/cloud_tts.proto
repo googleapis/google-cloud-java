@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,12 +21,12 @@ import "google/api/client.proto";
 import "google/api/field_behavior.proto";
 import "google/api/resource.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.TextToSpeech.V1";
 option go_package = "cloud.google.com/go/texttospeech/apiv1/texttospeechpb;texttospeechpb";
 option java_multiple_files = true;
 option java_outer_classname = "TextToSpeechProto";
 option java_package = "com.google.cloud.texttospeech.v1";
+option objc_class_prefix = "CTTS";
 option php_namespace = "Google\\Cloud\\TextToSpeech\\V1";
 option ruby_package = "Google::Cloud::TextToSpeech::V1";
 option (google.api.resource_definition) = {
@@ -58,6 +58,11 @@ service TextToSpeech {
     };
     option (google.api.method_signature) = "input,voice,audio_config";
   }
+
+  // Performs bidirectional streaming speech synthesis: receives audio while
+  // sending text.
+  rpc StreamingSynthesize(stream StreamingSynthesizeRequest)
+      returns (stream StreamingSynthesizeResponse) {}
 }
 
 // Gender of the voice as described in
@@ -94,7 +99,7 @@ enum AudioEncoding {
   // MP3 audio at 32kbps.
   MP3 = 2;
 
-  // Opus encoded audio wrapped in an ogg container. The result will be a
+  // Opus encoded audio wrapped in an ogg container. The result is a
   // file which can be played natively on Android, and in browsers (at least
   // Chrome and Firefox). The quality of the encoding is considerably higher
   // than MP3 while using approximately the same bitrate.
@@ -107,6 +112,11 @@ enum AudioEncoding {
   // 8-bit samples that compand 14-bit audio samples using G.711 PCMU/A-law.
   // Audio content returned as ALAW also contains a WAV header.
   ALAW = 6;
+
+  // Uncompressed 16-bit signed little-endian samples (Linear PCM).
+  // Note that as opposed to LINEAR16, audio won't be wrapped in a WAV (or
+  // any other) header.
+  PCM = 7;
 }
 
 // The top-level message sent by the client for the `ListVoices` method.
@@ -145,6 +155,13 @@ message Voice {
   int32 natural_sample_rate_hertz = 4;
 }
 
+// Used for advanced voice options.
+message AdvancedVoiceOptions {
+  // Only for Journey voices. If false, the synthesis is context aware
+  // and has a higher latency.
+  optional bool low_latency_journey_synthesis = 1;
+}
+
 // The top-level message sent by the client for the `SynthesizeSpeech` method.
 message SynthesizeSpeechRequest {
   // Required. The Synthesizer requires either plain text or SSML as input.
@@ -155,6 +172,83 @@ message SynthesizeSpeechRequest {
 
   // Required. The configuration of the synthesized audio.
   AudioConfig audio_config = 3 [(google.api.field_behavior) = REQUIRED];
+
+  // Advanced voice options.
+  optional AdvancedVoiceOptions advanced_voice_options = 8;
+}
+
+// Pronunciation customization for a phrase.
+message CustomPronunciationParams {
+  // The phonetic encoding of the phrase.
+  enum PhoneticEncoding {
+    // Not specified.
+    PHONETIC_ENCODING_UNSPECIFIED = 0;
+
+    // IPA, such as apple -> ˈæpəl.
+    // https://en.wikipedia.org/wiki/International_Phonetic_Alphabet
+    PHONETIC_ENCODING_IPA = 1;
+
+    // X-SAMPA, such as apple -> "{p@l".
+    // https://en.wikipedia.org/wiki/X-SAMPA
+    PHONETIC_ENCODING_X_SAMPA = 2;
+
+    // For reading-to-pron conversion to work well, the `pronunciation` field
+    //  should only contain Kanji, Hiragana, and Katakana.
+    //
+    // The pronunciation can also contain pitch accents.
+    // The start of a pitch phrase is specified with `^` and the down-pitch
+    // position is specified with `!`, for example:
+    //
+    //     phrase:端  pronunciation:^はし
+    //     phrase:箸  pronunciation:^は!し
+    //     phrase:橋  pronunciation:^はし!
+    //
+    // We currently only support the Tokyo dialect, which allows at most one
+    // down-pitch per phrase (i.e. at most one `!` between `^`).
+    PHONETIC_ENCODING_JAPANESE_YOMIGANA = 3;
+
+    // Used to specify pronunciations for Mandarin words. See
+    // https://en.wikipedia.org/wiki/Pinyin.
+    //
+    // For example: 朝阳, the pronunciation is "chao2 yang2". The number
+    // represents the tone, and there is a space between syllables. Neutral
+    // tones are represented by 5, for example 孩子 "hai2 zi5".
+    PHONETIC_ENCODING_PINYIN = 4;
+  }
+
+  // The phrase to which the customization is applied.
+  // The phrase can be multiple words, such as proper nouns, but shouldn't span
+  // the length of the sentence.
+  optional string phrase = 1;
+
+  // The phonetic encoding of the phrase.
+  optional PhoneticEncoding phonetic_encoding = 2;
+
+  // The pronunciation of the phrase. This must be in the phonetic encoding
+  // specified above.
+  optional string pronunciation = 3;
+}
+
+// A collection of pronunciation customizations.
+message CustomPronunciations {
+  // The pronunciation customizations are applied.
+  repeated CustomPronunciationParams pronunciations = 1;
+}
+
+// A collection of turns for multi-speaker synthesis.
+message MultiSpeakerMarkup {
+  // A multi-speaker turn.
+  message Turn {
+    // Required. The speaker of the turn, for example, 'O' or 'Q'. Please refer
+    // to documentation for available speakers.
+    string speaker = 1 [(google.api.field_behavior) = REQUIRED];
+
+    // Required. The text to speak.
+    string text = 2 [(google.api.field_behavior) = REQUIRED];
+  }
+
+  // Required. Speaker turns.
+  repeated Turn turns = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 // Contains text input to be synthesized. Either `text` or `ssml` must be
@@ -167,13 +261,34 @@ message SynthesisInput {
     // The raw text to be synthesized.
     string text = 1;
 
+    // Markup for HD voices specifically. This field may not be used with any
+    // other voices.
+    string markup = 5;
+
     // The SSML document to be synthesized. The SSML document must be valid
     // and well-formed. Otherwise the RPC will fail and return
     // [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
     // more information, see
     // [SSML](https://cloud.google.com/text-to-speech/docs/ssml).
     string ssml = 2;
+
+    // The multi-speaker input to be synthesized. Only applicable for
+    // multi-speaker synthesis.
+    MultiSpeakerMarkup multi_speaker_markup = 4;
   }
+
+  // Optional. The pronunciation customizations are applied to the input. If
+  // this is set, the input is synthesized using the given pronunciation
+  // customizations.
+  //
+  // The initial support is for en-us, with plans to expand to other locales in
+  // the future. Instant Clone voices aren't supported.
+  //
+  // In order to customize the pronunciation of a phrase, there must be an exact
+  // match of the phrase in the input types. If using SSML, the phrase must not
+  // be inside a phoneme tag.
+  CustomPronunciations custom_pronunciations = 3
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Description of which voice to use for a synthesis request.
@@ -191,8 +306,9 @@ message VoiceSelectionParams {
   // Bokmal) instead of "no" (Norwegian)".
   string language_code = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // The name of the voice. If not set, the service will choose a
-  // voice based on the other parameters such as language_code and gender.
+  // The name of the voice. If both the name and the gender are not set,
+  // the service will choose a voice based on the other parameters such as
+  // language_code.
   string name = 2;
 
   // The preferred gender of the voice. If not set, the service will
@@ -206,6 +322,11 @@ message VoiceSelectionParams {
   // the service will choose the custom voice matching the specified
   // configuration.
   CustomVoiceParams custom_voice = 4;
+
+  // Optional. The configuration for a voice clone. If
+  // [VoiceCloneParams.voice_clone_key] is set, the service chooses the voice
+  // clone matching the specified configuration.
+  VoiceCloneParams voice_clone = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Description of audio data to be synthesized.
@@ -213,10 +334,10 @@ message AudioConfig {
   // Required. The format of the audio byte stream.
   AudioEncoding audio_encoding = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
+  // Optional. Input only. Speaking rate/speed, in the range [0.25, 2.0]. 1.0 is
   // the normal native speed supported by the specific voice. 2.0 is twice as
   // fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
-  // speed. Any other values < 0.25 or > 4.0 will return an error.
+  // speed. Any other values < 0.25 or > 2.0 will return an error.
   double speaking_rate = 2 [
     (google.api.field_behavior) = INPUT_ONLY,
     (google.api.field_behavior) = OPTIONAL
@@ -266,9 +387,8 @@ message AudioConfig {
 
 // Description of the custom voice to be synthesized.
 message CustomVoiceParams {
-  // The usage of the synthesized audio. You must report your honest and
-  // correct usage of the service as it's regulated by contract and will cause
-  // significant difference in billing.
+  // Deprecated. The usage of the synthesized audio. Usage does not affect
+  // billing.
   enum ReportedUsage {
     // Request with reported usage unspecified will be rejected.
     REPORTED_USAGE_UNSPECIFIED = 0;
@@ -289,8 +409,15 @@ message CustomVoiceParams {
     (google.api.resource_reference) = { type: "automl.googleapis.com/Model" }
   ];
 
-  // Optional. The usage of the synthesized audio to be reported.
-  ReportedUsage reported_usage = 3 [(google.api.field_behavior) = OPTIONAL];
+  // Optional. Deprecated. The usage of the synthesized audio to be reported.
+  ReportedUsage reported_usage = 3
+      [deprecated = true, (google.api.field_behavior) = OPTIONAL];
+}
+
+// The configuration of Voice Clone feature.
+message VoiceCloneParams {
+  // Required. Created by GenerateVoiceCloningKey.
+  string voice_cloning_key = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 // The message returned to the client by the `SynthesizeSpeech` method.
@@ -300,5 +427,90 @@ message SynthesizeSpeechResponse {
   // For LINEAR16 audio, we include the WAV header. Note: as
   // with all bytes fields, protobuffers use a pure binary representation,
   // whereas JSON representations use base64.
+  bytes audio_content = 1;
+}
+
+// Description of the desired output audio data.
+message StreamingAudioConfig {
+  // Required. The format of the audio byte stream.
+  // Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+  // return an error.
+  AudioEncoding audio_encoding = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. The synthesis sample rate (in hertz) for this audio.
+  int32 sample_rate_hertz = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Input only. Speaking rate/speed, in the range [0.25, 2.0]. 1.0 is
+  // the normal native speed supported by the specific voice. 2.0 is twice as
+  // fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+  // speed. Any other values < 0.25 or > 2.0 will return an error.
+  double speaking_rate = 3 [
+    (google.api.field_behavior) = INPUT_ONLY,
+    (google.api.field_behavior) = OPTIONAL
+  ];
+}
+
+// Provides configuration information for the StreamingSynthesize request.
+message StreamingSynthesizeConfig {
+  // Required. The desired voice of the synthesized audio.
+  VoiceSelectionParams voice = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Optional. The configuration of the synthesized audio.
+  StreamingAudioConfig streaming_audio_config = 4
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The pronunciation customizations are applied to the input. If
+  // this is set, the input is synthesized using the given pronunciation
+  // customizations.
+  //
+  // The initial support is for en-us, with plans to expand to other locales in
+  // the future. Instant Clone voices aren't supported.
+  //
+  // In order to customize the pronunciation of a phrase, there must be an exact
+  // match of the phrase in the input types. If using SSML, the phrase must not
+  // be inside a phoneme tag.
+  CustomPronunciations custom_pronunciations = 5
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Input to be synthesized.
+message StreamingSynthesisInput {
+  oneof input_source {
+    // The raw text to be synthesized. It is recommended that each input
+    // contains complete, terminating sentences, which results in better prosody
+    // in the output audio.
+    string text = 1;
+
+    // Markup for HD voices specifically. This field may not be used with any
+    // other voices.
+    string markup = 5;
+  }
+}
+
+// Request message for the `StreamingSynthesize` method. Multiple
+// `StreamingSynthesizeRequest` messages are sent in one call.
+// The first message must contain a `streaming_config` that
+// fully specifies the request configuration and must not contain `input`. All
+// subsequent messages must only have `input` set.
+message StreamingSynthesizeRequest {
+  // The request to be sent, either a StreamingSynthesizeConfig or
+  // StreamingSynthesisInput.
+  oneof streaming_request {
+    // StreamingSynthesizeConfig to be used in this streaming attempt. Only
+    // specified in the first message sent in a `StreamingSynthesize` call.
+    StreamingSynthesizeConfig streaming_config = 1;
+
+    // Input to synthesize. Specified in all messages but the first in a
+    // `StreamingSynthesize` call.
+    StreamingSynthesisInput input = 2;
+  }
+}
+
+// `StreamingSynthesizeResponse` is the only message returned to the
+// client by `StreamingSynthesize` method. A series of zero or more
+// `StreamingSynthesizeResponse` messages are streamed back to the client.
+message StreamingSynthesizeResponse {
+  // The audio data bytes encoded as specified in the request. This is
+  // headerless LINEAR16 audio with a sample rate of 24000.
   bytes audio_content = 1;
 }

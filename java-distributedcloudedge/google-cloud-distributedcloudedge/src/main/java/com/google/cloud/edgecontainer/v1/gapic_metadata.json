@@ -31,8 +31,14 @@
             "GenerateAccessToken": {
               "methods": ["generateAccessToken", "generateAccessToken", "generateAccessToken", "generateAccessTokenCallable"]
             },
+            "GenerateOfflineCredential": {
+              "methods": ["generateOfflineCredential", "generateOfflineCredential", "generateOfflineCredential", "generateOfflineCredentialCallable"]
+            },
             "GetCluster": {
               "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
             },
             "GetMachine": {
               "methods": ["getMachine", "getMachine", "getMachine", "getMachineCallable"]
@@ -40,11 +46,17 @@
             "GetNodePool": {
               "methods": ["getNodePool", "getNodePool", "getNodePool", "getNodePoolCallable"]
             },
+            "GetServerConfig": {
+              "methods": ["getServerConfig", "getServerConfig", "getServerConfig", "getServerConfigCallable"]
+            },
             "GetVpnConnection": {
               "methods": ["getVpnConnection", "getVpnConnection", "getVpnConnection", "getVpnConnectionCallable"]
             },
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListMachines": {
               "methods": ["listMachines", "listMachines", "listMachines", "listMachinesPagedCallable", "listMachinesCallable"]
@@ -60,6 +72,9 @@
             },
             "UpdateNodePool": {
               "methods": ["updateNodePoolAsync", "updateNodePoolAsync", "updateNodePoolOperationCallable", "updateNodePoolCallable"]
+            },
+            "UpgradeCluster": {
+              "methods": ["upgradeClusterAsync", "upgradeClusterAsync", "upgradeClusterAsync", "upgradeClusterOperationCallable", "upgradeClusterCallable"]
             }
           }
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -31,6 +32,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -46,6 +49,8 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -54,6 +59,10 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -166,6 +175,42 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<AddIpOverrideRequest, AddIpOverrideResponse>
+      addIpOverrideMethodDescriptor =
+          MethodDescriptor.<AddIpOverrideRequest, AddIpOverrideResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/AddIpOverride")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AddIpOverrideRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AddIpOverrideResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideMethodDescriptor =
+          MethodDescriptor.<RemoveIpOverrideRequest, RemoveIpOverrideResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/RemoveIpOverride")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveIpOverrideRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RemoveIpOverrideResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListIpOverridesRequest, ListIpOverridesResponse>
+      listIpOverridesMethodDescriptor =
+          MethodDescriptor.<ListIpOverridesRequest, ListIpOverridesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ListIpOverrides")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListIpOverridesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListIpOverridesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetMetricsRequest, Metrics> getMetricsMethodDescriptor =
       MethodDescriptor.<GetMetricsRequest, Metrics>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -232,6 +277,20 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .build();
 
   private static final MethodDescriptor<
+          ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesMethodDescriptor =
+          MethodDescriptor
+              .<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ReorderFirewallPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReorderFirewallPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReorderFirewallPoliciesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
       listRelatedAccountGroupsMethodDescriptor =
           MethodDescriptor
@@ -293,6 +352,13 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable;
   private final UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable;
   private final UnaryCallable<MigrateKeyRequest, Key> migrateKeyCallable;
+  private final UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable;
+  private final UnaryCallable<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideCallable;
+  private final UnaryCallable<ListIpOverridesRequest, ListIpOverridesResponse>
+      listIpOverridesCallable;
+  private final UnaryCallable<ListIpOverridesRequest, ListIpOverridesPagedResponse>
+      listIpOverridesPagedCallable;
   private final UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable;
   private final UnaryCallable<CreateFirewallPolicyRequest, FirewallPolicy>
       createFirewallPolicyCallable;
@@ -304,6 +370,8 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<UpdateFirewallPolicyRequest, FirewallPolicy>
       updateFirewallPolicyCallable;
   private final UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable;
+  private final UnaryCallable<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesCallable;
   private final UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
       listRelatedAccountGroupsCallable;
   private final UnaryCallable<
@@ -464,6 +532,38 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideTransportSettings =
+        GrpcCallSettings.<AddIpOverrideRequest, AddIpOverrideResponse>newBuilder()
+            .setMethodDescriptor(addIpOverrideMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+        removeIpOverrideTransportSettings =
+            GrpcCallSettings.<RemoveIpOverrideRequest, RemoveIpOverrideResponse>newBuilder()
+                .setMethodDescriptor(removeIpOverrideMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListIpOverridesRequest, ListIpOverridesResponse>
+        listIpOverridesTransportSettings =
+            GrpcCallSettings.<ListIpOverridesRequest, ListIpOverridesResponse>newBuilder()
+                .setMethodDescriptor(listIpOverridesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GetMetricsRequest, Metrics> getMetricsTransportSettings =
         GrpcCallSettings.<GetMetricsRequest, Metrics>newBuilder()
             .setMethodDescriptor(getMetricsMethodDescriptor)
@@ -529,6 +629,18 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+        reorderFirewallPoliciesTransportSettings =
+            GrpcCallSettings
+                .<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>newBuilder()
+                .setMethodDescriptor(reorderFirewallPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsResponse>
         listRelatedAccountGroupsTransportSettings =
             GrpcCallSettings
@@ -607,6 +719,18 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     this.migrateKeyCallable =
         callableFactory.createUnaryCallable(
             migrateKeyTransportSettings, settings.migrateKeySettings(), clientContext);
+    this.addIpOverrideCallable =
+        callableFactory.createUnaryCallable(
+            addIpOverrideTransportSettings, settings.addIpOverrideSettings(), clientContext);
+    this.removeIpOverrideCallable =
+        callableFactory.createUnaryCallable(
+            removeIpOverrideTransportSettings, settings.removeIpOverrideSettings(), clientContext);
+    this.listIpOverridesCallable =
+        callableFactory.createUnaryCallable(
+            listIpOverridesTransportSettings, settings.listIpOverridesSettings(), clientContext);
+    this.listIpOverridesPagedCallable =
+        callableFactory.createPagedCallable(
+            listIpOverridesTransportSettings, settings.listIpOverridesSettings(), clientContext);
     this.getMetricsCallable =
         callableFactory.createUnaryCallable(
             getMetricsTransportSettings, settings.getMetricsSettings(), clientContext);
@@ -639,6 +763,11 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
         callableFactory.createUnaryCallable(
             deleteFirewallPolicyTransportSettings,
             settings.deleteFirewallPolicySettings(),
+            clientContext);
+    this.reorderFirewallPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            reorderFirewallPoliciesTransportSettings,
+            settings.reorderFirewallPoliciesSettings(),
             clientContext);
     this.listRelatedAccountGroupsCallable =
         callableFactory.createUnaryCallable(
@@ -732,6 +861,28 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   }
 
   @Override
+  public UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable() {
+    return addIpOverrideCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideCallable() {
+    return removeIpOverrideCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListIpOverridesRequest, ListIpOverridesResponse> listIpOverridesCallable() {
+    return listIpOverridesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListIpOverridesRequest, ListIpOverridesPagedResponse>
+      listIpOverridesPagedCallable() {
+    return listIpOverridesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     return getMetricsCallable;
   }
@@ -766,6 +917,12 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   @Override
   public UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable() {
     return deleteFirewallPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesCallable() {
+    return reorderFirewallPoliciesCallable;
   }
 
   @Override

@@ -12,10 +12,14 @@ branchProtectionRules:
       - units (11)
       - units (17)
       - cla/google
-      - enforcer
       - lint
-      - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - 'Kokoro - Test: GraalVM Native Image C'
+      - header-check
+      - library_generation
+      - unmanaged_dependency_check
   - pattern: 1.0.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -28,7 +32,6 @@ branchProtectionRules:
       - cla/google
       - enforcer
       - lint
-      - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
   - pattern: 1.13.x
     isAdminEnforced: true
@@ -42,8 +45,58 @@ branchProtectionRules:
       - cla/google
       - enforcer
       - lint
+      - 'Kokoro - Test: Integration'
+  - pattern: 1.25.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - header-check
+  - pattern: 1.37.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - enforcer
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - header-check
+      - library_generation
+  - pattern: 1.53.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - units (8)
+      - units (11)
+      - units (17)
+      - cla/google
+      - lint
+      - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: GraalVM Native Image A'
+      - 'Kokoro - Test: GraalVM Native Image B'
+      - header-check
+      - library_generation
+      - unmanaged_dependency_check
 permissionRules:
   - team: yoshi-admins
     permission: admin

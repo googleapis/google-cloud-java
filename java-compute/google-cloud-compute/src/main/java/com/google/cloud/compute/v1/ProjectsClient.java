@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -57,19 +56,278 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the ProjectsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DisableXpnHost</td>
+ *      <td><p> Disable this project as a shared VPC host project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> disableXpnHostAsync(DisableXpnHostProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> disableXpnHostAsync(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> disableXpnHostOperationCallable()
+ *           <li><p> disableXpnHostCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DisableXpnResource</td>
+ *      <td><p> Disable a service resource (also known as service project) associated with this host project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> disableXpnResourceAsync(DisableXpnResourceProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> disableXpnResourceAsync(String project, ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> disableXpnResourceOperationCallable()
+ *           <li><p> disableXpnResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EnableXpnHost</td>
+ *      <td><p> Enable this project as a shared VPC host project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> enableXpnHostAsync(EnableXpnHostProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> enableXpnHostAsync(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> enableXpnHostOperationCallable()
+ *           <li><p> enableXpnHostCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> EnableXpnResource</td>
+ *      <td><p> Enable service resource (a.k.a service project) for a host project, so that subnets in the host project can be used by instances in the service project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> enableXpnResourceAsync(EnableXpnResourceProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> enableXpnResourceAsync(String project, ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> enableXpnResourceOperationCallable()
+ *           <li><p> enableXpnResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Get</td>
+ *      <td><p> Returns the specified Project resource. To decrease latency for this method, you can optionally omit any unneeded information from the response by using a field mask. This practice is especially recommended for unused quota information (the `quotas` field). To exclude one or more fields, set your request's `fields` query parameter to only include the fields you need. For example, to only include the `id` and `selfLink` fields, add the query parameter `?fields=id,selfLink` to your request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> get(GetProjectRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> get(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetXpnHost</td>
+ *      <td><p> Gets the shared VPC host project that this project links to. May be empty if no link exists.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getXpnHost(GetXpnHostProjectRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getXpnHost(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getXpnHostCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetXpnResources</td>
+ *      <td><p> Gets service resources (a.k.a service project) associated with this host project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getXpnResources(GetXpnResourcesProjectsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getXpnResources(String project)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getXpnResourcesPagedCallable()
+ *           <li><p> getXpnResourcesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListXpnHosts</td>
+ *      <td><p> Lists all shared VPC host projects visible to the user in an organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listXpnHosts(ListXpnHostsProjectsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listXpnHosts(String project, ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listXpnHostsPagedCallable()
+ *           <li><p> listXpnHostsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MoveDisk</td>
+ *      <td><p> Moves a persistent disk from one zone to another.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> moveDiskAsync(MoveDiskProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> moveDiskAsync(String project, DiskMoveRequest diskMoveRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> moveDiskOperationCallable()
+ *           <li><p> moveDiskCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MoveInstance</td>
+ *      <td><p> Moves an instance and its attached persistent disks from one zone to another. &#42;Note&#42;: Moving VMs or disks by using this method might cause unexpected behavior. For more information, see the [known issue](/compute/docs/troubleshooting/known-issues#moving_vms_or_disks_using_the_moveinstance_api_or_the_causes_unexpected_behavior). [Deprecated] This method is deprecated. See [moving instance across zones](/compute/docs/instances/moving-instance-across-zones) instead.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> moveInstanceAsync(MoveInstanceProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> moveInstanceAsync(String project, InstanceMoveRequest instanceMoveRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> moveInstanceOperationCallable()
+ *           <li><p> moveInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetCloudArmorTier</td>
+ *      <td><p> Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise for more information.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setCloudArmorTierAsync(SetCloudArmorTierProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setCloudArmorTierAsync(String project, ProjectsSetCloudArmorTierRequest projectsSetCloudArmorTierRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setCloudArmorTierOperationCallable()
+ *           <li><p> setCloudArmorTierCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetCommonInstanceMetadata</td>
+ *      <td><p> Sets metadata common to all instances within the specified project using the data included in the request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setCommonInstanceMetadataAsync(SetCommonInstanceMetadataProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setCommonInstanceMetadataAsync(String project, Metadata metadataResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setCommonInstanceMetadataOperationCallable()
+ *           <li><p> setCommonInstanceMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetDefaultNetworkTier</td>
+ *      <td><p> Sets the default network tier of the project. The default network tier is used when an address/forwardingRule/instance is created without specifying the network tier field.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setDefaultNetworkTierAsync(SetDefaultNetworkTierProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setDefaultNetworkTierAsync(String project, ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setDefaultNetworkTierOperationCallable()
+ *           <li><p> setDefaultNetworkTierCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetUsageExportBucket</td>
+ *      <td><p> Enables the usage export feature and sets the usage export bucket where reports are stored. If you provide an empty request body using this method, the usage export feature will be disabled.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setUsageExportBucketAsync(SetUsageExportBucketProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setUsageExportBucketAsync(String project, UsageExportLocation usageExportLocationResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setUsageExportBucketOperationCallable()
+ *           <li><p> setUsageExportBucketCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -210,8 +468,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> disableXpnHostAsync(
       DisableXpnHostProjectRequest request) {
     return disableXpnHostOperationCallable().futureCall(request);
@@ -339,8 +595,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> disableXpnResourceAsync(
       DisableXpnResourceProjectRequest request) {
     return disableXpnResourceOperationCallable().futureCall(request);
@@ -461,8 +715,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> enableXpnHostAsync(
       EnableXpnHostProjectRequest request) {
     return enableXpnHostOperationCallable().futureCall(request);
@@ -592,8 +844,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> enableXpnResourceAsync(
       EnableXpnResourceProjectRequest request) {
     return enableXpnResourceOperationCallable().futureCall(request);
@@ -1190,8 +1440,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> moveDiskAsync(MoveDiskProjectRequest request) {
     return moveDiskOperationCallable().futureCall(request);
   }
@@ -1326,8 +1574,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> moveInstanceAsync(
       MoveInstanceProjectRequest request) {
     return moveInstanceOperationCallable().futureCall(request);
@@ -1405,6 +1651,146 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the
+   * project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise
+   * for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   String project = "project-309310695";
+   *   ProjectsSetCloudArmorTierRequest projectsSetCloudArmorTierRequestResource =
+   *       ProjectsSetCloudArmorTierRequest.newBuilder().build();
+   *   Operation response =
+   *       projectsClient
+   *           .setCloudArmorTierAsync(project, projectsSetCloudArmorTierRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param projectsSetCloudArmorTierRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setCloudArmorTierAsync(
+      String project, ProjectsSetCloudArmorTierRequest projectsSetCloudArmorTierRequestResource) {
+    SetCloudArmorTierProjectRequest request =
+        SetCloudArmorTierProjectRequest.newBuilder()
+            .setProject(project)
+            .setProjectsSetCloudArmorTierRequestResource(projectsSetCloudArmorTierRequestResource)
+            .build();
+    return setCloudArmorTierAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the
+   * project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise
+   * for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetCloudArmorTierProjectRequest request =
+   *       SetCloudArmorTierProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsSetCloudArmorTierRequestResource(
+   *               ProjectsSetCloudArmorTierRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = projectsClient.setCloudArmorTierAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setCloudArmorTierAsync(
+      SetCloudArmorTierProjectRequest request) {
+    return setCloudArmorTierOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the
+   * project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise
+   * for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetCloudArmorTierProjectRequest request =
+   *       SetCloudArmorTierProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsSetCloudArmorTierRequestResource(
+   *               ProjectsSetCloudArmorTierRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.setCloudArmorTierOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationCallable() {
+    return stub.setCloudArmorTierOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the
+   * project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise
+   * for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetCloudArmorTierProjectRequest request =
+   *       SetCloudArmorTierProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsSetCloudArmorTierRequestResource(
+   *               ProjectsSetCloudArmorTierRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = projectsClient.setCloudArmorTierCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetCloudArmorTierProjectRequest, Operation>
+      setCloudArmorTierCallable() {
+    return stub.setCloudArmorTierCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Sets metadata common to all instances within the specified project using the data included in
    * the request.
    *
@@ -1465,8 +1851,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setCommonInstanceMetadataAsync(
       SetCommonInstanceMetadataProjectRequest request) {
     return setCommonInstanceMetadataOperationCallable().futureCall(request);
@@ -1604,8 +1988,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setDefaultNetworkTierAsync(
       SetDefaultNetworkTierProjectRequest request) {
     return setDefaultNetworkTierOperationCallable().futureCall(request);
@@ -1739,8 +2121,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setUsageExportBucketAsync(
       SetUsageExportBucketProjectRequest request) {
     return setUsageExportBucketOperationCallable().futureCall(request);

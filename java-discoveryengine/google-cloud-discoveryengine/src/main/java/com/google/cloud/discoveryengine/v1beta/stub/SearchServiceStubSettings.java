@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,13 @@
 
 package com.google.cloud.discoveryengine.v1beta.stub;
 
+import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchLitePagedResponse;
 import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -50,9 +52,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -70,7 +72,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of search to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of search:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -87,10 +91,21 @@ import org.threeten.bp.Duration;
  *             .searchSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SearchServiceStubSettings searchServiceSettings = searchServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -101,6 +116,8 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
 
   private final PagedCallSettings<SearchRequest, SearchResponse, SearchPagedResponse>
       searchSettings;
+  private final PagedCallSettings<SearchRequest, SearchResponse, SearchLitePagedResponse>
+      searchLiteSettings;
 
   private static final PagedListDescriptor<
           SearchRequest, SearchResponse, SearchResponse.SearchResult>
@@ -133,9 +150,42 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
 
             @Override
             public Iterable<SearchResponse.SearchResult> extractResources(SearchResponse payload) {
-              return payload.getResultsList() == null
-                  ? ImmutableList.<SearchResponse.SearchResult>of()
-                  : payload.getResultsList();
+              return payload.getResultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchRequest, SearchResponse, SearchResponse.SearchResult>
+      SEARCH_LITE_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchRequest, SearchResponse, SearchResponse.SearchResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchRequest injectToken(SearchRequest payload, String token) {
+              return SearchRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchRequest injectPageSize(SearchRequest payload, int pageSize) {
+              return SearchRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchResponse.SearchResult> extractResources(SearchResponse payload) {
+              return payload.getResultsList();
             }
           };
 
@@ -154,9 +204,31 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
             }
           };
 
+  private static final PagedListResponseFactory<
+          SearchRequest, SearchResponse, SearchLitePagedResponse>
+      SEARCH_LITE_PAGE_STR_FACT =
+          new PagedListResponseFactory<SearchRequest, SearchResponse, SearchLitePagedResponse>() {
+            @Override
+            public ApiFuture<SearchLitePagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchRequest, SearchResponse> callable,
+                SearchRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchResponse> futureResponse) {
+              PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> pageContext =
+                  PageContext.create(callable, SEARCH_LITE_PAGE_STR_DESC, request, context);
+              return SearchLitePagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to search. */
   public PagedCallSettings<SearchRequest, SearchResponse, SearchPagedResponse> searchSettings() {
     return searchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchLite. */
+  public PagedCallSettings<SearchRequest, SearchResponse, SearchLitePagedResponse>
+      searchLiteSettings() {
+    return searchLiteSettings;
   }
 
   public SearchServiceStub createStub() throws IOException {
@@ -175,12 +247,19 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "discoveryengine";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "discoveryengine.googleapis.com:443";
   }
@@ -219,7 +298,6 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -228,7 +306,6 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -266,6 +343,7 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     super(settingsBuilder);
 
     searchSettings = settingsBuilder.searchSettings().build();
+    searchLiteSettings = settingsBuilder.searchLiteSettings().build();
   }
 
   /** Builder for SearchServiceStubSettings. */
@@ -273,6 +351,8 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchPagedResponse>
         searchSettings;
+    private final PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchLitePagedResponse>
+        searchLiteSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -280,7 +360,7 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_0_codes",
+          "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -292,15 +372,15 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(5000L))
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(30000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_0_params", settings);
+      definitions.put("retry_policy_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -312,9 +392,10 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       super(clientContext);
 
       searchSettings = PagedCallSettings.newBuilder(SEARCH_PAGE_STR_FACT);
+      searchLiteSettings = PagedCallSettings.newBuilder(SEARCH_LITE_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchSettings, searchLiteSettings);
       initDefaults(this);
     }
 
@@ -322,9 +403,10 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       super(settings);
 
       searchSettings = settings.searchSettings.toBuilder();
+      searchLiteSettings = settings.searchLiteSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(searchSettings, searchLiteSettings);
     }
 
     private static Builder createDefault() {
@@ -333,7 +415,6 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -346,7 +427,6 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -356,8 +436,13 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     private static Builder initDefaults(Builder builder) {
       builder
           .searchSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .searchLiteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       return builder;
     }
@@ -381,6 +466,12 @@ public class SearchServiceStubSettings extends StubSettings<SearchServiceStubSet
     public PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchPagedResponse>
         searchSettings() {
       return searchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchLite. */
+    public PagedCallSettings.Builder<SearchRequest, SearchResponse, SearchLitePagedResponse>
+        searchLiteSettings() {
+      return searchLiteSettings;
     }
 
     @Override

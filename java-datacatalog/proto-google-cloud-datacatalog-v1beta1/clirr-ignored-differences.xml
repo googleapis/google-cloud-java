@@ -16,4 +16,65 @@
     <className>com/google/cloud/datacatalog/v1beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/datacatalog/v1beta1/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
 </differences>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -163,5 +163,11 @@ public class TextToSpeechClientHttpJsonTest {
     } catch (InvalidArgumentException e) {
       // Expected exception.
     }
+  }
+
+  @Test
+  public void streamingSynthesizeUnsupportedMethodTest() throws Exception {
+    // The streamingSynthesize() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
   }
 }

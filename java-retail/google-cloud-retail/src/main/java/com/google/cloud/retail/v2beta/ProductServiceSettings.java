@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,7 +53,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createProduct to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createProduct:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -70,9 +72,46 @@ import javax.annotation.Generated;
  *             .createProductSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ProductServiceSettings productServiceSettings = productServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for purgeProducts:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ProductServiceSettings.Builder productServiceSettingsBuilder =
+ *     ProductServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * productServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -105,6 +144,17 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
     return ((ProductServiceStubSettings) getStubSettings()).deleteProductSettings();
   }
 
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public UnaryCallSettings<PurgeProductsRequest, Operation> purgeProductsSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).purgeProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeProducts. */
+  public OperationCallSettings<PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+      purgeProductsOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).purgeProductsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to importProducts. */
   public UnaryCallSettings<ImportProductsRequest, Operation> importProductsSettings() {
     return ((ProductServiceStubSettings) getStubSettings()).importProductsSettings();
@@ -114,6 +164,17 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
   public OperationCallSettings<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationSettings() {
     return ((ProductServiceStubSettings) getStubSettings()).importProductsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportProducts. */
+  public UnaryCallSettings<ExportProductsRequest, Operation> exportProductsSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).exportProductsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportProducts. */
+  public OperationCallSettings<ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+      exportProductsOperationSettings() {
+    return ((ProductServiceStubSettings) getStubSettings()).exportProductsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to setInventory. */
@@ -224,7 +285,6 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
     return ProductServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ProductServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -235,7 +295,6 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -277,7 +336,6 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
       return new Builder(ProductServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ProductServiceStubSettings.newHttpJsonBuilder());
     }
@@ -325,6 +383,18 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
       return getStubSettingsBuilder().deleteProductSettings();
     }
 
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public UnaryCallSettings.Builder<PurgeProductsRequest, Operation> purgeProductsSettings() {
+      return getStubSettingsBuilder().purgeProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeProducts. */
+    public OperationCallSettings.Builder<
+            PurgeProductsRequest, PurgeProductsResponse, PurgeProductsMetadata>
+        purgeProductsOperationSettings() {
+      return getStubSettingsBuilder().purgeProductsOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to importProducts. */
     public UnaryCallSettings.Builder<ImportProductsRequest, Operation> importProductsSettings() {
       return getStubSettingsBuilder().importProductsSettings();
@@ -335,6 +405,18 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
             ImportProductsRequest, ImportProductsResponse, ImportMetadata>
         importProductsOperationSettings() {
       return getStubSettingsBuilder().importProductsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportProducts. */
+    public UnaryCallSettings.Builder<ExportProductsRequest, Operation> exportProductsSettings() {
+      return getStubSettingsBuilder().exportProductsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportProducts. */
+    public OperationCallSettings.Builder<
+            ExportProductsRequest, ExportProductsResponse, ExportMetadata>
+        exportProductsOperationSettings() {
+      return getStubSettingsBuilder().exportProductsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setInventory. */

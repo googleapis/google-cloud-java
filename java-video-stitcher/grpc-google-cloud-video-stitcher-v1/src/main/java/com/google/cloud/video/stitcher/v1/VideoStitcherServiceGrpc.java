@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1159,6 +1159,287 @@ public final class VideoStitcherServiceGrpc {
     return getDeleteLiveConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateLiveConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateLiveConfig",
+      requestType = com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateLiveConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest,
+            com.google.longrunning.Operation>
+        getUpdateLiveConfigMethod;
+    if ((getUpdateLiveConfigMethod = VideoStitcherServiceGrpc.getUpdateLiveConfigMethod) == null) {
+      synchronized (VideoStitcherServiceGrpc.class) {
+        if ((getUpdateLiveConfigMethod = VideoStitcherServiceGrpc.getUpdateLiveConfigMethod)
+            == null) {
+          VideoStitcherServiceGrpc.getUpdateLiveConfigMethod =
+              getUpdateLiveConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateLiveConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VideoStitcherServiceMethodDescriptorSupplier("UpdateLiveConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateLiveConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.CreateVodConfigRequest,
+          com.google.longrunning.Operation>
+      getCreateVodConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateVodConfig",
+      requestType = com.google.cloud.video.stitcher.v1.CreateVodConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.CreateVodConfigRequest,
+          com.google.longrunning.Operation>
+      getCreateVodConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.stitcher.v1.CreateVodConfigRequest,
+            com.google.longrunning.Operation>
+        getCreateVodConfigMethod;
+    if ((getCreateVodConfigMethod = VideoStitcherServiceGrpc.getCreateVodConfigMethod) == null) {
+      synchronized (VideoStitcherServiceGrpc.class) {
+        if ((getCreateVodConfigMethod = VideoStitcherServiceGrpc.getCreateVodConfigMethod)
+            == null) {
+          VideoStitcherServiceGrpc.getCreateVodConfigMethod =
+              getCreateVodConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.stitcher.v1.CreateVodConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateVodConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.stitcher.v1.CreateVodConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VideoStitcherServiceMethodDescriptorSupplier("CreateVodConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateVodConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.ListVodConfigsRequest,
+          com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>
+      getListVodConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListVodConfigs",
+      requestType = com.google.cloud.video.stitcher.v1.ListVodConfigsRequest.class,
+      responseType = com.google.cloud.video.stitcher.v1.ListVodConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.ListVodConfigsRequest,
+          com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>
+      getListVodConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.stitcher.v1.ListVodConfigsRequest,
+            com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>
+        getListVodConfigsMethod;
+    if ((getListVodConfigsMethod = VideoStitcherServiceGrpc.getListVodConfigsMethod) == null) {
+      synchronized (VideoStitcherServiceGrpc.class) {
+        if ((getListVodConfigsMethod = VideoStitcherServiceGrpc.getListVodConfigsMethod) == null) {
+          VideoStitcherServiceGrpc.getListVodConfigsMethod =
+              getListVodConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.stitcher.v1.ListVodConfigsRequest,
+                          com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListVodConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.stitcher.v1.ListVodConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.stitcher.v1.ListVodConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VideoStitcherServiceMethodDescriptorSupplier("ListVodConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListVodConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.GetVodConfigRequest,
+          com.google.cloud.video.stitcher.v1.VodConfig>
+      getGetVodConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetVodConfig",
+      requestType = com.google.cloud.video.stitcher.v1.GetVodConfigRequest.class,
+      responseType = com.google.cloud.video.stitcher.v1.VodConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.GetVodConfigRequest,
+          com.google.cloud.video.stitcher.v1.VodConfig>
+      getGetVodConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.stitcher.v1.GetVodConfigRequest,
+            com.google.cloud.video.stitcher.v1.VodConfig>
+        getGetVodConfigMethod;
+    if ((getGetVodConfigMethod = VideoStitcherServiceGrpc.getGetVodConfigMethod) == null) {
+      synchronized (VideoStitcherServiceGrpc.class) {
+        if ((getGetVodConfigMethod = VideoStitcherServiceGrpc.getGetVodConfigMethod) == null) {
+          VideoStitcherServiceGrpc.getGetVodConfigMethod =
+              getGetVodConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.stitcher.v1.GetVodConfigRequest,
+                          com.google.cloud.video.stitcher.v1.VodConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetVodConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.stitcher.v1.GetVodConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.stitcher.v1.VodConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VideoStitcherServiceMethodDescriptorSupplier("GetVodConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetVodConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest,
+          com.google.longrunning.Operation>
+      getDeleteVodConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteVodConfig",
+      requestType = com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest,
+          com.google.longrunning.Operation>
+      getDeleteVodConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest,
+            com.google.longrunning.Operation>
+        getDeleteVodConfigMethod;
+    if ((getDeleteVodConfigMethod = VideoStitcherServiceGrpc.getDeleteVodConfigMethod) == null) {
+      synchronized (VideoStitcherServiceGrpc.class) {
+        if ((getDeleteVodConfigMethod = VideoStitcherServiceGrpc.getDeleteVodConfigMethod)
+            == null) {
+          VideoStitcherServiceGrpc.getDeleteVodConfigMethod =
+              getDeleteVodConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteVodConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VideoStitcherServiceMethodDescriptorSupplier("DeleteVodConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteVodConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateVodConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateVodConfig",
+      requestType = com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateVodConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest,
+            com.google.longrunning.Operation>
+        getUpdateVodConfigMethod;
+    if ((getUpdateVodConfigMethod = VideoStitcherServiceGrpc.getUpdateVodConfigMethod) == null) {
+      synchronized (VideoStitcherServiceGrpc.class) {
+        if ((getUpdateVodConfigMethod = VideoStitcherServiceGrpc.getUpdateVodConfigMethod)
+            == null) {
+          VideoStitcherServiceGrpc.getUpdateVodConfigMethod =
+              getUpdateVodConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateVodConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VideoStitcherServiceMethodDescriptorSupplier("UpdateVodConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateVodConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static VideoStitcherServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<VideoStitcherServiceStub> factory =
@@ -1170,6 +1451,19 @@ public final class VideoStitcherServiceGrpc {
           }
         };
     return VideoStitcherServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VideoStitcherServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VideoStitcherServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VideoStitcherServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public VideoStitcherServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VideoStitcherServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VideoStitcherServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1565,6 +1859,97 @@ public final class VideoStitcherServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteLiveConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified LiveConfig. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    default void updateLiveConfig(
+        com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateLiveConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers the VOD config with the provided unique ID in
+     * the specified region.
+     * </pre>
+     */
+    default void createVodConfig(
+        com.google.cloud.video.stitcher.v1.CreateVodConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateVodConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all VOD configs managed by the Video Stitcher API that
+     * belong to the specified project and region.
+     * </pre>
+     */
+    default void listVodConfigs(
+        com.google.cloud.video.stitcher.v1.ListVodConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListVodConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified VOD config managed by the Video
+     * Stitcher API service.
+     * </pre>
+     */
+    default void getVodConfig(
+        com.google.cloud.video.stitcher.v1.GetVodConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.stitcher.v1.VodConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetVodConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified VOD config.
+     * </pre>
+     */
+    default void deleteVodConfig(
+        com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteVodConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified VOD config. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    default void updateVodConfig(
+        com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateVodConfigMethod(), responseObserver);
     }
   }
 
@@ -2009,10 +2394,540 @@ public final class VideoStitcherServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified LiveConfig. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public void updateLiveConfig(
+        com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateLiveConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers the VOD config with the provided unique ID in
+     * the specified region.
+     * </pre>
+     */
+    public void createVodConfig(
+        com.google.cloud.video.stitcher.v1.CreateVodConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateVodConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all VOD configs managed by the Video Stitcher API that
+     * belong to the specified project and region.
+     * </pre>
+     */
+    public void listVodConfigs(
+        com.google.cloud.video.stitcher.v1.ListVodConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListVodConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified VOD config managed by the Video
+     * Stitcher API service.
+     * </pre>
+     */
+    public void getVodConfig(
+        com.google.cloud.video.stitcher.v1.GetVodConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.stitcher.v1.VodConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetVodConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified VOD config.
+     * </pre>
+     */
+    public void deleteVodConfig(
+        com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteVodConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified VOD config. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public void updateVodConfig(
+        com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateVodConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VideoStitcherService.
+   *
+   * <pre>
+   * Video-On-Demand content stitching API allows you to insert ads
+   * into (VoD) video on demand files. You will be able to render custom
+   * scrubber bars with highlighted ads, enforce ad policies, allow
+   * seamless playback and tracking on native players and monetize
+   * content with any standard VMAP compliant ad server.
+   * </pre>
+   */
+  public static final class VideoStitcherServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VideoStitcherServiceBlockingV2Stub> {
+    private VideoStitcherServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VideoStitcherServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VideoStitcherServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CDN key.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCdnKey(
+        com.google.cloud.video.stitcher.v1.CreateCdnKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCdnKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all CDN keys in the specified project and location.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.ListCdnKeysResponse listCdnKeys(
+        com.google.cloud.video.stitcher.v1.ListCdnKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCdnKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified CDN key.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.CdnKey getCdnKey(
+        com.google.cloud.video.stitcher.v1.GetCdnKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCdnKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified CDN key.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCdnKey(
+        com.google.cloud.video.stitcher.v1.DeleteCdnKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCdnKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified CDN key. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCdnKey(
+        com.google.cloud.video.stitcher.v1.UpdateCdnKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCdnKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a client side playback VOD session and returns the full
+     * tracking and playback metadata of the session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.VodSession createVodSession(
+        com.google.cloud.video.stitcher.v1.CreateVodSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVodSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the full tracking, playback metadata, and relevant ad-ops
+     * logs for the specified VOD session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.VodSession getVodSession(
+        com.google.cloud.video.stitcher.v1.GetVodSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVodSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of detailed stitching information of the specified VOD
+     * session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.ListVodStitchDetailsResponse listVodStitchDetails(
+        com.google.cloud.video.stitcher.v1.ListVodStitchDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVodStitchDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified stitching information for the specified VOD session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.VodStitchDetail getVodStitchDetail(
+        com.google.cloud.video.stitcher.v1.GetVodStitchDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVodStitchDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return the list of ad tag details for the specified VOD session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsResponse listVodAdTagDetails(
+        com.google.cloud.video.stitcher.v1.ListVodAdTagDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVodAdTagDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified ad tag detail for the specified VOD session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.VodAdTagDetail getVodAdTagDetail(
+        com.google.cloud.video.stitcher.v1.GetVodAdTagDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVodAdTagDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Return the list of ad tag details for the specified live session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsResponse listLiveAdTagDetails(
+        com.google.cloud.video.stitcher.v1.ListLiveAdTagDetailsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLiveAdTagDetailsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified ad tag detail for the specified live session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.LiveAdTagDetail getLiveAdTagDetail(
+        com.google.cloud.video.stitcher.v1.GetLiveAdTagDetailRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLiveAdTagDetailMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a slate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSlate(
+        com.google.cloud.video.stitcher.v1.CreateSlateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSlateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all slates in the specified project and location.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.ListSlatesResponse listSlates(
+        com.google.cloud.video.stitcher.v1.ListSlatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSlatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified slate.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.Slate getSlate(
+        com.google.cloud.video.stitcher.v1.GetSlateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSlateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified slate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSlate(
+        com.google.cloud.video.stitcher.v1.UpdateSlateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSlateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified slate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSlate(
+        com.google.cloud.video.stitcher.v1.DeleteSlateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSlateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new live session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.LiveSession createLiveSession(
+        com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLiveSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the details for the specified live session.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.LiveSession getLiveSession(
+        com.google.cloud.video.stitcher.v1.GetLiveSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLiveSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers the live config with the provided unique ID in
+     * the specified region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createLiveConfig(
+        com.google.cloud.video.stitcher.v1.CreateLiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLiveConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all live configs managed by the Video Stitcher that
+     * belong to the specified project and region.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.ListLiveConfigsResponse listLiveConfigs(
+        com.google.cloud.video.stitcher.v1.ListLiveConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLiveConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified live config managed by the Video
+     * Stitcher service.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.LiveConfig getLiveConfig(
+        com.google.cloud.video.stitcher.v1.GetLiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLiveConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified live config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteLiveConfig(
+        com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLiveConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified LiveConfig. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateLiveConfig(
+        com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLiveConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers the VOD config with the provided unique ID in
+     * the specified region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVodConfig(
+        com.google.cloud.video.stitcher.v1.CreateVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVodConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all VOD configs managed by the Video Stitcher API that
+     * belong to the specified project and region.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.ListVodConfigsResponse listVodConfigs(
+        com.google.cloud.video.stitcher.v1.ListVodConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVodConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified VOD config managed by the Video
+     * Stitcher API service.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.VodConfig getVodConfig(
+        com.google.cloud.video.stitcher.v1.GetVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVodConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified VOD config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVodConfig(
+        com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVodConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified VOD config. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateVodConfig(
+        com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVodConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service VideoStitcherService.
    *
    * <pre>
    * Video-On-Demand content stitching API allows you to insert ads
@@ -2352,6 +3267,89 @@ public final class VideoStitcherServiceGrpc {
         com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteLiveConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified LiveConfig. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateLiveConfig(
+        com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLiveConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers the VOD config with the provided unique ID in
+     * the specified region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVodConfig(
+        com.google.cloud.video.stitcher.v1.CreateVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVodConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all VOD configs managed by the Video Stitcher API that
+     * belong to the specified project and region.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.ListVodConfigsResponse listVodConfigs(
+        com.google.cloud.video.stitcher.v1.ListVodConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVodConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified VOD config managed by the Video
+     * Stitcher API service.
+     * </pre>
+     */
+    public com.google.cloud.video.stitcher.v1.VodConfig getVodConfig(
+        com.google.cloud.video.stitcher.v1.GetVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVodConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified VOD config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVodConfig(
+        com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVodConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified VOD config. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateVodConfig(
+        com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateVodConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -2715,6 +3713,91 @@ public final class VideoStitcherServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteLiveConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified LiveConfig. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateLiveConfig(com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateLiveConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers the VOD config with the provided unique ID in
+     * the specified region.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createVodConfig(com.google.cloud.video.stitcher.v1.CreateVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateVodConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all VOD configs managed by the Video Stitcher API that
+     * belong to the specified project and region.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>
+        listVodConfigs(com.google.cloud.video.stitcher.v1.ListVodConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListVodConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified VOD config managed by the Video
+     * Stitcher API service.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.stitcher.v1.VodConfig>
+        getVodConfig(com.google.cloud.video.stitcher.v1.GetVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetVodConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified VOD config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteVodConfig(com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteVodConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified VOD config. Only update fields specified
+     * in the call method body.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateVodConfig(com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateVodConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CDN_KEY = 0;
@@ -2741,6 +3824,12 @@ public final class VideoStitcherServiceGrpc {
   private static final int METHODID_LIST_LIVE_CONFIGS = 21;
   private static final int METHODID_GET_LIVE_CONFIG = 22;
   private static final int METHODID_DELETE_LIVE_CONFIG = 23;
+  private static final int METHODID_UPDATE_LIVE_CONFIG = 24;
+  private static final int METHODID_CREATE_VOD_CONFIG = 25;
+  private static final int METHODID_LIST_VOD_CONFIGS = 26;
+  private static final int METHODID_GET_VOD_CONFIG = 27;
+  private static final int METHODID_DELETE_VOD_CONFIG = 28;
+  private static final int METHODID_UPDATE_VOD_CONFIG = 29;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2897,6 +3986,39 @@ public final class VideoStitcherServiceGrpc {
         case METHODID_DELETE_LIVE_CONFIG:
           serviceImpl.deleteLiveConfig(
               (com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_LIVE_CONFIG:
+          serviceImpl.updateLiveConfig(
+              (com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_VOD_CONFIG:
+          serviceImpl.createVodConfig(
+              (com.google.cloud.video.stitcher.v1.CreateVodConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_VOD_CONFIGS:
+          serviceImpl.listVodConfigs(
+              (com.google.cloud.video.stitcher.v1.ListVodConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_VOD_CONFIG:
+          serviceImpl.getVodConfig(
+              (com.google.cloud.video.stitcher.v1.GetVodConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.video.stitcher.v1.VodConfig>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_VOD_CONFIG:
+          serviceImpl.deleteVodConfig(
+              (com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_VOD_CONFIG:
+          serviceImpl.updateVodConfig(
+              (com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -3075,6 +4197,44 @@ public final class VideoStitcherServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.video.stitcher.v1.DeleteLiveConfigRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_LIVE_CONFIG)))
+        .addMethod(
+            getUpdateLiveConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.stitcher.v1.UpdateLiveConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_LIVE_CONFIG)))
+        .addMethod(
+            getCreateVodConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.stitcher.v1.CreateVodConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_VOD_CONFIG)))
+        .addMethod(
+            getListVodConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.stitcher.v1.ListVodConfigsRequest,
+                    com.google.cloud.video.stitcher.v1.ListVodConfigsResponse>(
+                    service, METHODID_LIST_VOD_CONFIGS)))
+        .addMethod(
+            getGetVodConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.stitcher.v1.GetVodConfigRequest,
+                    com.google.cloud.video.stitcher.v1.VodConfig>(
+                    service, METHODID_GET_VOD_CONFIG)))
+        .addMethod(
+            getDeleteVodConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.stitcher.v1.DeleteVodConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_VOD_CONFIG)))
+        .addMethod(
+            getUpdateVodConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.stitcher.v1.UpdateVodConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_VOD_CONFIG)))
         .build();
   }
 
@@ -3150,6 +4310,12 @@ public final class VideoStitcherServiceGrpc {
                       .addMethod(getListLiveConfigsMethod())
                       .addMethod(getGetLiveConfigMethod())
                       .addMethod(getDeleteLiveConfigMethod())
+                      .addMethod(getUpdateLiveConfigMethod())
+                      .addMethod(getCreateVodConfigMethod())
+                      .addMethod(getListVodConfigsMethod())
+                      .addMethod(getGetVodConfigMethod())
+                      .addMethod(getDeleteVodConfigMethod())
+                      .addMethod(getUpdateVodConfigMethod())
                       .build();
         }
       }

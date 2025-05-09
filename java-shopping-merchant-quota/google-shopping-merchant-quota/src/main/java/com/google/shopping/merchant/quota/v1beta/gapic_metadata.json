@@ -1,0 +1,21 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.quota.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.quota.v1beta",
+  "services": {
+    "QuotaService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "QuotaServiceClient",
+          "rpcs": {
+            "ListQuotaGroups": {
+              "methods": ["listQuotaGroups", "listQuotaGroups", "listQuotaGroups", "listQuotaGroupsPagedCallable", "listQuotaGroupsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

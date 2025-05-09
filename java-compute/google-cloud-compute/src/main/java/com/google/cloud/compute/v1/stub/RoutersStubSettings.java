@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,13 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListBgpRoutesPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListRoutePoliciesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -47,21 +49,34 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
+import com.google.cloud.compute.v1.BgpRoute;
+import com.google.cloud.compute.v1.DeleteRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
+import com.google.cloud.compute.v1.GetNatIpInfoRouterRequest;
 import com.google.cloud.compute.v1.GetNatMappingInfoRoutersRequest;
+import com.google.cloud.compute.v1.GetRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.GetRouterRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterRequest;
 import com.google.cloud.compute.v1.InsertRouterRequest;
+import com.google.cloud.compute.v1.ListBgpRoutesRoutersRequest;
+import com.google.cloud.compute.v1.ListRoutePoliciesRoutersRequest;
 import com.google.cloud.compute.v1.ListRoutersRequest;
+import com.google.cloud.compute.v1.NatIpInfoResponse;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.PatchRouterRequest;
 import com.google.cloud.compute.v1.PreviewRouterRequest;
+import com.google.cloud.compute.v1.RoutePolicy;
 import com.google.cloud.compute.v1.Router;
 import com.google.cloud.compute.v1.RouterAggregatedList;
 import com.google.cloud.compute.v1.RouterList;
 import com.google.cloud.compute.v1.RouterStatusResponse;
+import com.google.cloud.compute.v1.RoutersGetRoutePolicyResponse;
+import com.google.cloud.compute.v1.RoutersListBgpRoutes;
+import com.google.cloud.compute.v1.RoutersListRoutePolicies;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
 import com.google.cloud.compute.v1.RoutersScopedList;
+import com.google.cloud.compute.v1.UpdateRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.UpdateRouterRequest;
 import com.google.cloud.compute.v1.VmEndpointNatMappings;
 import com.google.cloud.compute.v1.VmEndpointNatMappingsList;
@@ -70,11 +85,10 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.Collections;
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -91,7 +105,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -107,9 +123,45 @@ import org.threeten.bp.Duration;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * RoutersStubSettings routersSettings = routersSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for delete:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * RoutersStubSettings.Builder routersSettingsBuilder = RoutersStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * routersSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -127,25 +179,47 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   private final UnaryCallSettings<DeleteRouterRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteRouterRequest, Operation, Operation>
       deleteOperationSettings;
+  private final UnaryCallSettings<DeleteRoutePolicyRouterRequest, Operation>
+      deleteRoutePolicySettings;
+  private final OperationCallSettings<DeleteRoutePolicyRouterRequest, Operation, Operation>
+      deleteRoutePolicyOperationSettings;
   private final UnaryCallSettings<GetRouterRequest, Router> getSettings;
+  private final UnaryCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+      getNatIpInfoSettings;
   private final PagedCallSettings<
           GetNatMappingInfoRoutersRequest,
           VmEndpointNatMappingsList,
           GetNatMappingInfoPagedResponse>
       getNatMappingInfoSettings;
+  private final UnaryCallSettings<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+      getRoutePolicySettings;
   private final UnaryCallSettings<GetRouterStatusRouterRequest, RouterStatusResponse>
       getRouterStatusSettings;
   private final UnaryCallSettings<InsertRouterRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertRouterRequest, Operation, Operation>
       insertOperationSettings;
   private final PagedCallSettings<ListRoutersRequest, RouterList, ListPagedResponse> listSettings;
+  private final PagedCallSettings<
+          ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
+      listBgpRoutesSettings;
+  private final PagedCallSettings<
+          ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, ListRoutePoliciesPagedResponse>
+      listRoutePoliciesSettings;
   private final UnaryCallSettings<PatchRouterRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRouterRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<PatchRoutePolicyRouterRequest, Operation>
+      patchRoutePolicySettings;
+  private final OperationCallSettings<PatchRoutePolicyRouterRequest, Operation, Operation>
+      patchRoutePolicyOperationSettings;
   private final UnaryCallSettings<PreviewRouterRequest, RoutersPreviewResponse> previewSettings;
   private final UnaryCallSettings<UpdateRouterRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateRouterRequest, Operation, Operation>
       updateOperationSettings;
+  private final UnaryCallSettings<UpdateRoutePolicyRouterRequest, Operation>
+      updateRoutePolicySettings;
+  private final OperationCallSettings<UpdateRoutePolicyRouterRequest, Operation, Operation>
+      updateRoutePolicyOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListRoutersRequest, RouterAggregatedList, Map.Entry<String, RoutersScopedList>>
@@ -186,9 +260,7 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
             @Override
             public Iterable<Map.Entry<String, RoutersScopedList>> extractResources(
                 RouterAggregatedList payload) {
-              return payload.getItemsMap() == null
-                  ? Collections.<Map.Entry<String, RoutersScopedList>>emptySet()
-                  : payload.getItemsMap().entrySet();
+              return payload.getItemsMap().entrySet();
             }
           };
 
@@ -231,9 +303,7 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
             @Override
             public Iterable<VmEndpointNatMappings> extractResources(
                 VmEndpointNatMappingsList payload) {
-              return payload.getResultList() == null
-                  ? ImmutableList.<VmEndpointNatMappings>of()
-                  : payload.getResultList();
+              return payload.getResultList();
             }
           };
 
@@ -267,9 +337,88 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
 
             @Override
             public Iterable<Router> extractResources(RouterList payload) {
-              return payload.getItemsList() == null
-                  ? ImmutableList.<Router>of()
-                  : payload.getItemsList();
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute>
+      LIST_BGP_ROUTES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBgpRoutesRoutersRequest injectToken(
+                ListBgpRoutesRoutersRequest payload, String token) {
+              return ListBgpRoutesRoutersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBgpRoutesRoutersRequest injectPageSize(
+                ListBgpRoutesRoutersRequest payload, int pageSize) {
+              return ListBgpRoutesRoutersRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBgpRoutesRoutersRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(RoutersListBgpRoutes payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BgpRoute> extractResources(RoutersListBgpRoutes payload) {
+              return payload.getResultList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy>
+      LIST_ROUTE_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRoutePoliciesRoutersRequest injectToken(
+                ListRoutePoliciesRoutersRequest payload, String token) {
+              return ListRoutePoliciesRoutersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListRoutePoliciesRoutersRequest injectPageSize(
+                ListRoutePoliciesRoutersRequest payload, int pageSize) {
+              return ListRoutePoliciesRoutersRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRoutePoliciesRoutersRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(RoutersListRoutePolicies payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RoutePolicy> extractResources(RoutersListRoutePolicies payload) {
+              return payload.getResultList();
             }
           };
 
@@ -335,6 +484,44 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
+      LIST_BGP_ROUTES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>() {
+            @Override
+            public ApiFuture<ListBgpRoutesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes> callable,
+                ListBgpRoutesRoutersRequest request,
+                ApiCallContext context,
+                ApiFuture<RoutersListBgpRoutes> futureResponse) {
+              PageContext<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, BgpRoute> pageContext =
+                  PageContext.create(callable, LIST_BGP_ROUTES_PAGE_STR_DESC, request, context);
+              return ListBgpRoutesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, ListRoutePoliciesPagedResponse>
+      LIST_ROUTE_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRoutePoliciesRoutersRequest,
+              RoutersListRoutePolicies,
+              ListRoutePoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListRoutePoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies> callable,
+                ListRoutePoliciesRoutersRequest request,
+                ApiCallContext context,
+                ApiFuture<RoutersListRoutePolicies> futureResponse) {
+              PageContext<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ROUTE_POLICIES_PAGE_STR_DESC, request, context);
+              return ListRoutePoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to aggregatedList. */
   public PagedCallSettings<
           AggregatedListRoutersRequest, RouterAggregatedList, AggregatedListPagedResponse>
@@ -353,9 +540,25 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     return deleteOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteRoutePolicy. */
+  public UnaryCallSettings<DeleteRoutePolicyRouterRequest, Operation> deleteRoutePolicySettings() {
+    return deleteRoutePolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRoutePolicy. */
+  public OperationCallSettings<DeleteRoutePolicyRouterRequest, Operation, Operation>
+      deleteRoutePolicyOperationSettings() {
+    return deleteRoutePolicyOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRouterRequest, Router> getSettings() {
     return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getNatIpInfo. */
+  public UnaryCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse> getNatIpInfoSettings() {
+    return getNatIpInfoSettings;
   }
 
   /** Returns the object with the settings used for calls to getNatMappingInfo. */
@@ -365,6 +568,12 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           GetNatMappingInfoPagedResponse>
       getNatMappingInfoSettings() {
     return getNatMappingInfoSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRoutePolicy. */
+  public UnaryCallSettings<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+      getRoutePolicySettings() {
+    return getRoutePolicySettings;
   }
 
   /** Returns the object with the settings used for calls to getRouterStatus. */
@@ -389,6 +598,20 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     return listSettings;
   }
 
+  /** Returns the object with the settings used for calls to listBgpRoutes. */
+  public PagedCallSettings<
+          ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
+      listBgpRoutesSettings() {
+    return listBgpRoutesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRoutePolicies. */
+  public PagedCallSettings<
+          ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, ListRoutePoliciesPagedResponse>
+      listRoutePoliciesSettings() {
+    return listRoutePoliciesSettings;
+  }
+
   /** Returns the object with the settings used for calls to patch. */
   public UnaryCallSettings<PatchRouterRequest, Operation> patchSettings() {
     return patchSettings;
@@ -397,6 +620,17 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   /** Returns the object with the settings used for calls to patch. */
   public OperationCallSettings<PatchRouterRequest, Operation, Operation> patchOperationSettings() {
     return patchOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchRoutePolicy. */
+  public UnaryCallSettings<PatchRoutePolicyRouterRequest, Operation> patchRoutePolicySettings() {
+    return patchRoutePolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchRoutePolicy. */
+  public OperationCallSettings<PatchRoutePolicyRouterRequest, Operation, Operation>
+      patchRoutePolicyOperationSettings() {
+    return patchRoutePolicyOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to preview. */
@@ -415,6 +649,17 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     return updateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateRoutePolicy. */
+  public UnaryCallSettings<UpdateRoutePolicyRouterRequest, Operation> updateRoutePolicySettings() {
+    return updateRoutePolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRoutePolicy. */
+  public OperationCallSettings<UpdateRoutePolicyRouterRequest, Operation, Operation>
+      updateRoutePolicyOperationSettings() {
+    return updateRoutePolicyOperationSettings;
+  }
+
   public RoutersStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -426,12 +671,19 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "compute";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "compute.googleapis.com:443";
   }
@@ -463,7 +715,6 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     return defaultHttpJsonTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(RoutersStubSettings.class))
@@ -493,17 +744,29 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
+    deleteRoutePolicySettings = settingsBuilder.deleteRoutePolicySettings().build();
+    deleteRoutePolicyOperationSettings =
+        settingsBuilder.deleteRoutePolicyOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getNatIpInfoSettings = settingsBuilder.getNatIpInfoSettings().build();
     getNatMappingInfoSettings = settingsBuilder.getNatMappingInfoSettings().build();
+    getRoutePolicySettings = settingsBuilder.getRoutePolicySettings().build();
     getRouterStatusSettings = settingsBuilder.getRouterStatusSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    listBgpRoutesSettings = settingsBuilder.listBgpRoutesSettings().build();
+    listRoutePoliciesSettings = settingsBuilder.listRoutePoliciesSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    patchRoutePolicySettings = settingsBuilder.patchRoutePolicySettings().build();
+    patchRoutePolicyOperationSettings = settingsBuilder.patchRoutePolicyOperationSettings().build();
     previewSettings = settingsBuilder.previewSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
+    updateRoutePolicySettings = settingsBuilder.updateRoutePolicySettings().build();
+    updateRoutePolicyOperationSettings =
+        settingsBuilder.updateRoutePolicyOperationSettings().build();
   }
 
   /** Builder for RoutersStubSettings. */
@@ -515,12 +778,22 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     private final UnaryCallSettings.Builder<DeleteRouterRequest, Operation> deleteSettings;
     private final OperationCallSettings.Builder<DeleteRouterRequest, Operation, Operation>
         deleteOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteRoutePolicyRouterRequest, Operation>
+        deleteRoutePolicySettings;
+    private final OperationCallSettings.Builder<
+            DeleteRoutePolicyRouterRequest, Operation, Operation>
+        deleteRoutePolicyOperationSettings;
     private final UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings;
+    private final UnaryCallSettings.Builder<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+        getNatIpInfoSettings;
     private final PagedCallSettings.Builder<
             GetNatMappingInfoRoutersRequest,
             VmEndpointNatMappingsList,
             GetNatMappingInfoPagedResponse>
         getNatMappingInfoSettings;
+    private final UnaryCallSettings.Builder<
+            GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+        getRoutePolicySettings;
     private final UnaryCallSettings.Builder<GetRouterStatusRouterRequest, RouterStatusResponse>
         getRouterStatusSettings;
     private final UnaryCallSettings.Builder<InsertRouterRequest, Operation> insertSettings;
@@ -528,14 +801,31 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
         insertOperationSettings;
     private final PagedCallSettings.Builder<ListRoutersRequest, RouterList, ListPagedResponse>
         listSettings;
+    private final PagedCallSettings.Builder<
+            ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
+        listBgpRoutesSettings;
+    private final PagedCallSettings.Builder<
+            ListRoutePoliciesRoutersRequest,
+            RoutersListRoutePolicies,
+            ListRoutePoliciesPagedResponse>
+        listRoutePoliciesSettings;
     private final UnaryCallSettings.Builder<PatchRouterRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchRouterRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<PatchRoutePolicyRouterRequest, Operation>
+        patchRoutePolicySettings;
+    private final OperationCallSettings.Builder<PatchRoutePolicyRouterRequest, Operation, Operation>
+        patchRoutePolicyOperationSettings;
     private final UnaryCallSettings.Builder<PreviewRouterRequest, RoutersPreviewResponse>
         previewSettings;
     private final UnaryCallSettings.Builder<UpdateRouterRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateRouterRequest, Operation, Operation>
         updateOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateRoutePolicyRouterRequest, Operation>
+        updateRoutePolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateRoutePolicyRouterRequest, Operation, Operation>
+        updateRoutePolicyOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -559,21 +849,21 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -589,30 +879,47 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
+      deleteRoutePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRoutePolicyOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getNatIpInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getNatMappingInfoSettings = PagedCallSettings.newBuilder(GET_NAT_MAPPING_INFO_PAGE_STR_FACT);
+      getRoutePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getRouterStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      listBgpRoutesSettings = PagedCallSettings.newBuilder(LIST_BGP_ROUTES_PAGE_STR_FACT);
+      listRoutePoliciesSettings = PagedCallSettings.newBuilder(LIST_ROUTE_POLICIES_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      patchRoutePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchRoutePolicyOperationSettings = OperationCallSettings.newBuilder();
       previewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
+      updateRoutePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRoutePolicyOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings,
               deleteSettings,
+              deleteRoutePolicySettings,
               getSettings,
+              getNatIpInfoSettings,
               getNatMappingInfoSettings,
+              getRoutePolicySettings,
               getRouterStatusSettings,
               insertSettings,
               listSettings,
+              listBgpRoutesSettings,
+              listRoutePoliciesSettings,
               patchSettings,
+              patchRoutePolicySettings,
               previewSettings,
-              updateSettings);
+              updateSettings,
+              updateRoutePolicySettings);
       initDefaults(this);
     }
 
@@ -622,30 +929,47 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
+      deleteRoutePolicySettings = settings.deleteRoutePolicySettings.toBuilder();
+      deleteRoutePolicyOperationSettings = settings.deleteRoutePolicyOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getNatIpInfoSettings = settings.getNatIpInfoSettings.toBuilder();
       getNatMappingInfoSettings = settings.getNatMappingInfoSettings.toBuilder();
+      getRoutePolicySettings = settings.getRoutePolicySettings.toBuilder();
       getRouterStatusSettings = settings.getRouterStatusSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      listBgpRoutesSettings = settings.listBgpRoutesSettings.toBuilder();
+      listRoutePoliciesSettings = settings.listRoutePoliciesSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      patchRoutePolicySettings = settings.patchRoutePolicySettings.toBuilder();
+      patchRoutePolicyOperationSettings = settings.patchRoutePolicyOperationSettings.toBuilder();
       previewSettings = settings.previewSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
+      updateRoutePolicySettings = settings.updateRoutePolicySettings.toBuilder();
+      updateRoutePolicyOperationSettings = settings.updateRoutePolicyOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings,
               deleteSettings,
+              deleteRoutePolicySettings,
               getSettings,
+              getNatIpInfoSettings,
               getNatMappingInfoSettings,
+              getRoutePolicySettings,
               getRouterStatusSettings,
               insertSettings,
               listSettings,
+              listBgpRoutesSettings,
+              listRoutePoliciesSettings,
               patchSettings,
+              patchRoutePolicySettings,
               previewSettings,
-              updateSettings);
+              updateSettings,
+              updateRoutePolicySettings);
     }
 
     private static Builder createDefault() {
@@ -654,7 +978,6 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -673,12 +996,27 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .deleteRoutePolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .getSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getNatIpInfoSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getNatMappingInfoSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRoutePolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -698,7 +1036,22 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listBgpRoutesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listRoutePoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .patchRoutePolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -709,6 +1062,11 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
 
       builder
           .updateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateRoutePolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -727,13 +1085,37 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteRoutePolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRoutePolicyRouterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -751,13 +1133,13 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -774,13 +1156,37 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchRoutePolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchRoutePolicyRouterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       builder
@@ -798,13 +1204,37 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateRoutePolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRoutePolicyRouterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
       return builder;
@@ -838,16 +1268,32 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRouterRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteRoutePolicy. */
+    public UnaryCallSettings.Builder<DeleteRoutePolicyRouterRequest, Operation>
+        deleteRoutePolicySettings() {
+      return deleteRoutePolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRoutePolicy. */
+    public OperationCallSettings.Builder<DeleteRoutePolicyRouterRequest, Operation, Operation>
+        deleteRoutePolicyOperationSettings() {
+      return deleteRoutePolicyOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getNatIpInfo. */
+    public UnaryCallSettings.Builder<GetNatIpInfoRouterRequest, NatIpInfoResponse>
+        getNatIpInfoSettings() {
+      return getNatIpInfoSettings;
     }
 
     /** Returns the builder for the settings used for calls to getNatMappingInfo. */
@@ -857,6 +1303,12 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
             GetNatMappingInfoPagedResponse>
         getNatMappingInfoSettings() {
       return getNatMappingInfoSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRoutePolicy. */
+    public UnaryCallSettings.Builder<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
+        getRoutePolicySettings() {
+      return getRoutePolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to getRouterStatus. */
@@ -871,8 +1323,6 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertRouterRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -884,17 +1334,43 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       return listSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listBgpRoutes. */
+    public PagedCallSettings.Builder<
+            ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
+        listBgpRoutesSettings() {
+      return listBgpRoutesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRoutePolicies. */
+    public PagedCallSettings.Builder<
+            ListRoutePoliciesRoutersRequest,
+            RoutersListRoutePolicies,
+            ListRoutePoliciesPagedResponse>
+        listRoutePoliciesSettings() {
+      return listRoutePoliciesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to patch. */
     public UnaryCallSettings.Builder<PatchRouterRequest, Operation> patchSettings() {
       return patchSettings;
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchRouterRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchRoutePolicy. */
+    public UnaryCallSettings.Builder<PatchRoutePolicyRouterRequest, Operation>
+        patchRoutePolicySettings() {
+      return patchRoutePolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchRoutePolicy. */
+    public OperationCallSettings.Builder<PatchRoutePolicyRouterRequest, Operation, Operation>
+        patchRoutePolicyOperationSettings() {
+      return patchRoutePolicyOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to preview. */
@@ -909,11 +1385,21 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to update. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRouterRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRoutePolicy. */
+    public UnaryCallSettings.Builder<UpdateRoutePolicyRouterRequest, Operation>
+        updateRoutePolicySettings() {
+      return updateRoutePolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRoutePolicy. */
+    public OperationCallSettings.Builder<UpdateRoutePolicyRouterRequest, Operation, Operation>
+        updateRoutePolicyOperationSettings() {
+      return updateRoutePolicyOperationSettings;
     }
 
     @Override

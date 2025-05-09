@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.cx.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,12 +96,10 @@ public class SessionName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationAgentSessionBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationAgentEnvironmentSessionBuilder
       newProjectLocationAgentEnvironmentSessionBuilder() {
     return new ProjectLocationAgentEnvironmentSessionBuilder();
@@ -121,7 +118,6 @@ public class SessionName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionName ofProjectLocationAgentSessionName(
       String project, String location, String agent, String session) {
     return newBuilder()
@@ -132,7 +128,6 @@ public class SessionName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionName ofProjectLocationAgentEnvironmentSessionName(
       String project, String location, String agent, String environment, String session) {
     return newProjectLocationAgentEnvironmentSessionBuilder()
@@ -154,7 +149,6 @@ public class SessionName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationAgentSessionName(
       String project, String location, String agent, String session) {
     return newBuilder()
@@ -166,7 +160,6 @@ public class SessionName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationAgentEnvironmentSessionName(
       String project, String location, String agent, String environment, String session) {
     return newProjectLocationAgentEnvironmentSessionBuilder()
@@ -347,7 +340,8 @@ public class SessionName implements ResourceName {
     private Builder(SessionName sessionName) {
       Preconditions.checkArgument(
           Objects.equals(sessionName.pathTemplate, PROJECT_LOCATION_AGENT_SESSION),
-          "toBuilder is only supported when SessionName has the pattern of projects/{project}/locations/{location}/agents/{agent}/sessions/{session}");
+          "toBuilder is only supported when SessionName has the pattern of"
+              + " projects/{project}/locations/{location}/agents/{agent}/sessions/{session}");
       this.project = sessionName.project;
       this.location = sessionName.location;
       this.agent = sessionName.agent;
@@ -363,7 +357,6 @@ public class SessionName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/agents/{agent}/environments/{environment}/sessions/{session}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationAgentEnvironmentSessionBuilder {
     private String project;
     private String location;

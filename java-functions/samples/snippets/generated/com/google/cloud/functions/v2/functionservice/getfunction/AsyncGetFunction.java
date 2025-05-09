@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ public class AsyncGetFunction {
       GetFunctionRequest request =
           GetFunctionRequest.newBuilder()
               .setName(FunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+              .setRevision("revision-260786213")
               .build();
       ApiFuture<Function> future = functionServiceClient.getFunctionCallable().futureCall(request);
       // Do something.

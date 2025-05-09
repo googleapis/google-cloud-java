@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,10 +123,13 @@ public class PersistentResourceServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -193,10 +196,13 @@ public class PersistentResourceServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -263,10 +269,13 @@ public class PersistentResourceServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockPersistentResourceService.addResponse(expectedResponse);
 
@@ -318,10 +327,13 @@ public class PersistentResourceServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockPersistentResourceService.addResponse(expectedResponse);
 
@@ -549,10 +561,13 @@ public class PersistentResourceServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setNetwork("network1843485230")
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
             .setResourceRuntime(ResourceRuntime.newBuilder().build())
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -591,6 +606,136 @@ public class PersistentResourceServiceClientTest {
       PersistentResource persistentResource = PersistentResource.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updatePersistentResourceAsync(persistentResource, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rebootPersistentResourceTest() throws Exception {
+    PersistentResource expectedResponse =
+        PersistentResource.newBuilder()
+            .setName(
+                PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .addAllResourcePools(new ArrayList<ResourcePool>())
+            .setError(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
+            .setResourceRuntime(ResourceRuntime.newBuilder().build())
+            .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rebootPersistentResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPersistentResourceService.addResponse(resultOperation);
+
+    PersistentResourceName name =
+        PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]");
+
+    PersistentResource actualResponse = client.rebootPersistentResourceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPersistentResourceService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RebootPersistentResourceRequest actualRequest =
+        ((RebootPersistentResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rebootPersistentResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPersistentResourceService.addException(exception);
+
+    try {
+      PersistentResourceName name =
+          PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]");
+      client.rebootPersistentResourceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rebootPersistentResourceTest2() throws Exception {
+    PersistentResource expectedResponse =
+        PersistentResource.newBuilder()
+            .setName(
+                PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .addAllResourcePools(new ArrayList<ResourcePool>())
+            .setError(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
+            .setResourceRuntime(ResourceRuntime.newBuilder().build())
+            .addAllReservedIpRanges(new ArrayList<String>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rebootPersistentResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPersistentResourceService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    PersistentResource actualResponse = client.rebootPersistentResourceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPersistentResourceService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RebootPersistentResourceRequest actualRequest =
+        ((RebootPersistentResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rebootPersistentResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPersistentResourceService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.rebootPersistentResourceAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,6 +147,8 @@ public class ServiceAttachmentsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -154,6 +156,8 @@ public class ServiceAttachmentsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -222,6 +226,7 @@ public class ServiceAttachmentsClientTest {
             .setName("name3373707")
             .addAllNatSubnets(new ArrayList<String>())
             .setProducerForwardingRule("producerForwardingRule-1240429621")
+            .setPropagatedConnectionLimit(-1814764418)
             .setPscServiceAttachmentId(Uint128.newBuilder().build())
             .setReconcileConnections(true)
             .setRegion("region-934795532")
@@ -278,7 +283,6 @@ public class ServiceAttachmentsClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -336,6 +340,8 @@ public class ServiceAttachmentsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -343,6 +349,8 @@ public class ServiceAttachmentsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -458,6 +466,8 @@ public class ServiceAttachmentsClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -465,6 +475,8 @@ public class ServiceAttachmentsClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -526,7 +538,6 @@ public class ServiceAttachmentsClientTest {
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
             .setIamOwned(true)
-            .addAllRules(new ArrayList<Rule>())
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

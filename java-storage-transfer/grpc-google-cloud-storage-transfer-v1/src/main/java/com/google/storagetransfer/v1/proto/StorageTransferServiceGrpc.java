@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -747,6 +747,19 @@ public final class StorageTransferServiceGrpc {
     return StorageTransferServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static StorageTransferServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<StorageTransferServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<StorageTransferServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public StorageTransferServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new StorageTransferServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return StorageTransferServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1307,6 +1320,231 @@ public final class StorageTransferServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service StorageTransferService.
+   *
+   * <pre>
+   * Storage Transfer Service and its protos.
+   * Transfers data between between Google Cloud Storage buckets or from a data
+   * source external to Google to a Cloud Storage bucket.
+   * </pre>
+   */
+  public static final class StorageTransferServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<StorageTransferServiceBlockingV2Stub> {
+    private StorageTransferServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected StorageTransferServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new StorageTransferServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the Google service account that is used by Storage Transfer
+     * Service to access buckets in the project where transfers
+     * run or in other projects. Each Google service account is associated
+     * with one Google Cloud project. Users
+     * should add this service account to the Google Cloud Storage bucket
+     * ACLs to grant access to Storage Transfer Service. This service
+     * account is created and owned by Storage Transfer Service and can
+     * only be used by Storage Transfer Service.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.GoogleServiceAccount
+        getGoogleServiceAccount(
+            com.google.storagetransfer.v1.proto.TransferProto.GetGoogleServiceAccountRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGoogleServiceAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a transfer job that runs periodically.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob createTransferJob(
+        com.google.storagetransfer.v1.proto.TransferProto.CreateTransferJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTransferJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a transfer job. Updating a job's transfer spec does not affect
+     * transfer operations that are running already.
+     * **Note:** The job's [status][google.storagetransfer.v1.TransferJob.status]
+     * field can be modified using this RPC (for example, to set a job's status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED],
+     * [DISABLED][google.storagetransfer.v1.TransferJob.Status.DISABLED], or
+     * [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob updateTransferJob(
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateTransferJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTransferJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a transfer job.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.TransferJob getTransferJob(
+        com.google.storagetransfer.v1.proto.TransferProto.GetTransferJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTransferJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists transfer jobs.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsResponse
+        listTransferJobs(
+            com.google.storagetransfer.v1.proto.TransferProto.ListTransferJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTransferJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses a transfer operation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty pauseTransferOperation(
+        com.google.storagetransfer.v1.proto.TransferProto.PauseTransferOperationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseTransferOperationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a transfer operation that is paused.
+     * </pre>
+     */
+    public com.google.protobuf.Empty resumeTransferOperation(
+        com.google.storagetransfer.v1.proto.TransferProto.ResumeTransferOperationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeTransferOperationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a new operation for the specified transfer job.
+     * A `TransferJob` has a maximum of one active `TransferOperation`. If this
+     * method is called while a `TransferOperation` is active, an error is
+     * returned.
+     * </pre>
+     */
+    public com.google.longrunning.Operation runTransferJob(
+        com.google.storagetransfer.v1.proto.TransferProto.RunTransferJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunTransferJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a transfer job. Deleting a transfer job sets its status to
+     * [DELETED][google.storagetransfer.v1.TransferJob.Status.DELETED].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTransferJob(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteTransferJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTransferJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an agent pool resource.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool createAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.CreateAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAgentPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing agent pool resource.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool updateAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.UpdateAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAgentPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an agent pool.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferTypes.AgentPool getAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.GetAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAgentPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists agent pools.
+     * </pre>
+     */
+    public com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsResponse listAgentPools(
+        com.google.storagetransfer.v1.proto.TransferProto.ListAgentPoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAgentPoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an agent pool.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAgentPool(
+        com.google.storagetransfer.v1.proto.TransferProto.DeleteAgentPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAgentPoolMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service StorageTransferService.
    *
    * <pre>
    * Storage Transfer Service and its protos.

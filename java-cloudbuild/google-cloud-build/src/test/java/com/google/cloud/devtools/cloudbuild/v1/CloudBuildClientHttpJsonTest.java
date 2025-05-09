@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@ import com.google.cloudbuild.v1.BuildOptions;
 import com.google.cloudbuild.v1.BuildStep;
 import com.google.cloudbuild.v1.BuildTrigger;
 import com.google.cloudbuild.v1.BuildTriggerName;
+import com.google.cloudbuild.v1.Dependency;
+import com.google.cloudbuild.v1.GitConfig;
 import com.google.cloudbuild.v1.GitHubEventsConfig;
 import com.google.cloudbuild.v1.GitRepoSource;
 import com.google.cloudbuild.v1.ListBuildTriggersResponse;
@@ -146,7 +148,9 @@ public class CloudBuildClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -224,7 +228,9 @@ public class CloudBuildClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -349,7 +355,9 @@ public class CloudBuildClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -422,7 +430,9 @@ public class CloudBuildClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -500,7 +510,9 @@ public class CloudBuildClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -901,7 +913,9 @@ public class CloudBuildClientHttpJsonTest {
             .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setGitConfig(GitConfig.newBuilder().build())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
+            .addAllDependencies(new ArrayList<Dependency>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

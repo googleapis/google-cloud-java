@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ public class SyncGetAudienceListAudiencelistname {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-      AudienceListName name = AudienceListName.of("[PROPERTYID]", "[AUDIENCELISTID]");
+      AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
       AudienceList response = alphaAnalyticsDataClient.getAudienceList(name);
     }
   }

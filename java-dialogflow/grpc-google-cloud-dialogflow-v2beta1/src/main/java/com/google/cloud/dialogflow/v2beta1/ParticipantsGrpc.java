@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -463,6 +463,56 @@ public final class ParticipantsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest,
+          com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>
+      getSuggestKnowledgeAssistMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SuggestKnowledgeAssist",
+      requestType = com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest,
+          com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>
+      getSuggestKnowledgeAssistMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest,
+            com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>
+        getSuggestKnowledgeAssistMethod;
+    if ((getSuggestKnowledgeAssistMethod = ParticipantsGrpc.getSuggestKnowledgeAssistMethod)
+        == null) {
+      synchronized (ParticipantsGrpc.class) {
+        if ((getSuggestKnowledgeAssistMethod = ParticipantsGrpc.getSuggestKnowledgeAssistMethod)
+            == null) {
+          ParticipantsGrpc.getSuggestKnowledgeAssistMethod =
+              getSuggestKnowledgeAssistMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest,
+                          com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SuggestKnowledgeAssist"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParticipantsMethodDescriptorSupplier("SuggestKnowledgeAssist"))
+                      .build();
+        }
+      }
+    }
+    return getSuggestKnowledgeAssistMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest,
           com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse>
       getListSuggestionsMethod;
@@ -567,6 +617,19 @@ public final class ParticipantsGrpc {
           }
         };
     return ParticipantsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ParticipantsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ParticipantsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ParticipantsBlockingV2Stub>() {
+          @java.lang.Override
+          public ParticipantsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ParticipantsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ParticipantsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -767,6 +830,22 @@ public final class ParticipantsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSuggestSmartRepliesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets knowledge assist suggestions based on historical messages.
+     * </pre>
+     */
+    default void suggestKnowledgeAssist(
+        com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSuggestKnowledgeAssistMethod(), responseObserver);
     }
 
     /**
@@ -1050,6 +1129,24 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Gets knowledge assist suggestions based on historical messages.
+     * </pre>
+     */
+    public void suggestKnowledgeAssist(
+        com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSuggestKnowledgeAssistMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
      * See
@@ -1114,6 +1211,243 @@ public final class ParticipantsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Participants.
+   *
+   * <pre>
+   * Service for managing
+   * [Participants][google.cloud.dialogflow.v2beta1.Participant].
+   * </pre>
+   */
+  public static final class ParticipantsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ParticipantsBlockingV2Stub> {
+    private ParticipantsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ParticipantsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ParticipantsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new participant in a conversation.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Participant createParticipant(
+        com.google.cloud.dialogflow.v2beta1.CreateParticipantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateParticipantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a conversation participant.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Participant getParticipant(
+        com.google.cloud.dialogflow.v2beta1.GetParticipantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetParticipantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all participants in the specified conversation.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListParticipantsResponse listParticipants(
+        com.google.cloud.dialogflow.v2beta1.ListParticipantsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListParticipantsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified participant.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.Participant updateParticipant(
+        com.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateParticipantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a text (chat, for example), or audio (phone recording, for example)
+     * message from a participant into the conversation.
+     * Note: Always use agent versions for production traffic
+     * sent to virtual agents. See [Versions and
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.AnalyzeContentResponse analyzeContent(
+        com.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeContentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a text (e.g., chat) or audio (e.g., phone recording) message from a
+     * participant into the conversation.
+     * Note: This method is only available through the gRPC API (not REST).
+     * The top-level message sent to the client by the server is
+     * `StreamingAnalyzeContentResponse`. Multiple response messages can be
+     * returned in order. The first one or more messages contain the
+     * `recognition_result` field. Each result represents a more complete
+     * transcript of what the user said. The next message contains the
+     * `reply_text` field, and potentially the `reply_audio` and/or the
+     * `automated_agent_reply` fields.
+     * Note: Always use agent versions for production traffic
+     * sent to virtual agents. See [Versions and
+     * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest,
+            com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse>
+        streamingAnalyzeContent() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingAnalyzeContentMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets suggested articles for a participant based on specific historical
+     * messages.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse suggestArticles(
+        com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestArticlesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets suggested faq answers for a participant based on specific historical
+     * messages.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse suggestFaqAnswers(
+        com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestFaqAnswersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart replies for a participant based on specific historical
+     * messages.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse suggestSmartReplies(
+        com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestSmartRepliesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets knowledge assist suggestions based on historical messages.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse
+        suggestKnowledgeAssist(
+            com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestKnowledgeAssistMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use inline suggestion, event based suggestion or
+     * Suggestion* API instead.
+     * See
+     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
+     * for more details. Removal Date: 2020-09-01.
+     * Retrieves suggestions for live agents.
+     * This method should be used by human agent client software to fetch auto
+     * generated suggestions in real-time, while the conversation with an end user
+     * is in progress. The functionality is implemented in terms of the
+     * [list
+     * pagination](https://cloud.google.com/apis/design/design_patterns#list_pagination)
+     * design pattern. The client app should use the `next_page_token` field
+     * to fetch the next batch of suggestions. `suggestions` are sorted by
+     * `create_time` in descending order.
+     * To fetch latest suggestion, just set `page_size` to 1.
+     * To fetch new suggestions without duplication, send request with filter
+     * `create_time_epoch_microseconds &gt; [first item's create_time of previous
+     * request]` and empty page_token.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse listSuggestions(
+        com.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSuggestionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated. use
+     * [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
+     * and
+     * [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
+     * instead.
+     * Gets suggestions for a participant based on specific historical
+     * messages.
+     * Note that
+     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
+     * will only list the auto-generated suggestions, while
+     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
+     * will try to compile suggestion based on the provided conversation context
+     * in the real time.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.dialogflow.v2beta1.CompileSuggestionResponse compileSuggestion(
+        com.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompileSuggestionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Participants.
    *
    * <pre>
    * Service for managing
@@ -1247,6 +1581,20 @@ public final class ParticipantsGrpc {
         com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSuggestSmartRepliesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets knowledge assist suggestions based on historical messages.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse
+        suggestKnowledgeAssist(
+            com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestKnowledgeAssistMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1457,6 +1805,21 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Gets knowledge assist suggestions based on historical messages.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>
+        suggestKnowledgeAssist(
+            com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSuggestKnowledgeAssistMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
      * See
@@ -1521,9 +1884,10 @@ public final class ParticipantsGrpc {
   private static final int METHODID_SUGGEST_ARTICLES = 5;
   private static final int METHODID_SUGGEST_FAQ_ANSWERS = 6;
   private static final int METHODID_SUGGEST_SMART_REPLIES = 7;
-  private static final int METHODID_LIST_SUGGESTIONS = 8;
-  private static final int METHODID_COMPILE_SUGGESTION = 9;
-  private static final int METHODID_STREAMING_ANALYZE_CONTENT = 10;
+  private static final int METHODID_SUGGEST_KNOWLEDGE_ASSIST = 8;
+  private static final int METHODID_LIST_SUGGESTIONS = 9;
+  private static final int METHODID_COMPILE_SUGGESTION = 10;
+  private static final int METHODID_STREAMING_ANALYZE_CONTENT = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1593,6 +1957,13 @@ public final class ParticipantsGrpc {
               (com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SUGGEST_KNOWLEDGE_ASSIST:
+          serviceImpl.suggestKnowledgeAssist(
+              (com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_SUGGESTIONS:
@@ -1697,6 +2068,13 @@ public final class ParticipantsGrpc {
                     com.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse>(
                     service, METHODID_SUGGEST_SMART_REPLIES)))
         .addMethod(
+            getSuggestKnowledgeAssistMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistRequest,
+                    com.google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse>(
+                    service, METHODID_SUGGEST_KNOWLEDGE_ASSIST)))
+        .addMethod(
             getListSuggestionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1770,6 +2148,7 @@ public final class ParticipantsGrpc {
                       .addMethod(getSuggestArticlesMethod())
                       .addMethod(getSuggestFaqAnswersMethod())
                       .addMethod(getSuggestSmartRepliesMethod())
+                      .addMethod(getSuggestKnowledgeAssistMethod())
                       .addMethod(getListSuggestionsMethod())
                       .addMethod(getCompileSuggestionMethod())
                       .build();

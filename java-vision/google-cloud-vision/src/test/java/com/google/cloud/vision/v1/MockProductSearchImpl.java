@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -282,7 +282,8 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateReferenceImage, expected %s or %s",
+                  "Unrecognized response type %s for method CreateReferenceImage, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ReferenceImage.class.getName(),
                   Exception.class.getName())));
@@ -303,7 +304,8 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteReferenceImage, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteReferenceImage, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -367,7 +369,8 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AddProductToProductSet, expected %s or %s",
+                  "Unrecognized response type %s for method AddProductToProductSet, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -388,7 +391,8 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RemoveProductFromProductSet, expected %s or %s",
+                  "Unrecognized response type %s for method RemoveProductFromProductSet, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -410,7 +414,8 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListProductsInProductSet, expected %s or %s",
+                  "Unrecognized response type %s for method ListProductsInProductSet, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListProductsInProductSetResponse.class.getName(),
                   Exception.class.getName())));

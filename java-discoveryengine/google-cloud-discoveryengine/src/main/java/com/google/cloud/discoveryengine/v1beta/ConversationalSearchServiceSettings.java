@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1beta;
 
 import static com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceClient.ListConversationsPagedResponse;
+import static com.google.cloud.discoveryengine.v1beta.ConversationalSearchServiceClient.ListSessionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -52,7 +53,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of converseConversation to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of converseConversation:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -69,11 +72,22 @@ import javax.annotation.Generated;
  *             .converseConversationSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * ConversationalSearchServiceSettings conversationalSearchServiceSettings =
  *     conversationalSearchServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -118,6 +132,42 @@ public class ConversationalSearchServiceSettings
         .listConversationsSettings();
   }
 
+  /** Returns the object with the settings used for calls to answerQuery. */
+  public UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).answerQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAnswer. */
+  public UnaryCallSettings<GetAnswerRequest, Answer> getAnswerSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).getAnswerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSession. */
+  public UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).createSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSession. */
+  public UnaryCallSettings<DeleteSessionRequest, Empty> deleteSessionSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).deleteSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSession. */
+  public UnaryCallSettings<UpdateSessionRequest, Session> updateSessionSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).updateSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSession. */
+  public UnaryCallSettings<GetSessionRequest, Session> getSessionSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).getSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSessions. */
+  public PagedCallSettings<ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+      listSessionsSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).listSessionsSettings();
+  }
+
   public static final ConversationalSearchServiceSettings create(
       ConversationalSearchServiceStubSettings stub) throws IOException {
     return new ConversationalSearchServiceSettings.Builder(stub.toBuilder()).build();
@@ -159,7 +209,6 @@ public class ConversationalSearchServiceSettings
     return ConversationalSearchServiceStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ConversationalSearchServiceStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -170,7 +219,6 @@ public class ConversationalSearchServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -213,7 +261,6 @@ public class ConversationalSearchServiceSettings
       return new Builder(ConversationalSearchServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConversationalSearchServiceStubSettings.newHttpJsonBuilder());
     }
@@ -269,6 +316,44 @@ public class ConversationalSearchServiceSettings
             ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
         listConversationsSettings() {
       return getStubSettingsBuilder().listConversationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to answerQuery. */
+    public UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        answerQuerySettings() {
+      return getStubSettingsBuilder().answerQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAnswer. */
+    public UnaryCallSettings.Builder<GetAnswerRequest, Answer> getAnswerSettings() {
+      return getStubSettingsBuilder().getAnswerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSession. */
+    public UnaryCallSettings.Builder<CreateSessionRequest, Session> createSessionSettings() {
+      return getStubSettingsBuilder().createSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSession. */
+    public UnaryCallSettings.Builder<DeleteSessionRequest, Empty> deleteSessionSettings() {
+      return getStubSettingsBuilder().deleteSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSession. */
+    public UnaryCallSettings.Builder<UpdateSessionRequest, Session> updateSessionSettings() {
+      return getStubSettingsBuilder().updateSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSession. */
+    public UnaryCallSettings.Builder<GetSessionRequest, Session> getSessionSettings() {
+      return getStubSettingsBuilder().getSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSessions. */
+    public PagedCallSettings.Builder<
+            ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+        listSessionsSettings() {
+      return getStubSettingsBuilder().listSessionsSettings();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,11 @@
 
 package com.google.cloud.deploy.v1.stub;
 
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationRunsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListAutomationsPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListCustomTargetTypesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeliveryPipelinesPagedResponse;
+import static com.google.cloud.deploy.v1.CloudDeployClient.ListDeployPoliciesPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListJobRunsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListLocationsPagedResponse;
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListReleasesPagedResponse;
@@ -24,7 +28,6 @@ import static com.google.cloud.deploy.v1.CloudDeployClient.ListRolloutsPagedResp
 import static com.google.cloud.deploy.v1.CloudDeployClient.ListTargetsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -46,18 +49,34 @@ import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
 import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
+import com.google.cloud.deploy.v1.Automation;
+import com.google.cloud.deploy.v1.AutomationRun;
+import com.google.cloud.deploy.v1.CancelAutomationRunRequest;
+import com.google.cloud.deploy.v1.CancelAutomationRunResponse;
 import com.google.cloud.deploy.v1.CancelRolloutRequest;
 import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
+import com.google.cloud.deploy.v1.CreateAutomationRequest;
+import com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.CreateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
 import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.CreateTargetRequest;
+import com.google.cloud.deploy.v1.CustomTargetType;
+import com.google.cloud.deploy.v1.DeleteAutomationRequest;
+import com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.DeleteDeployPolicyRequest;
 import com.google.cloud.deploy.v1.DeleteTargetRequest;
 import com.google.cloud.deploy.v1.DeliveryPipeline;
+import com.google.cloud.deploy.v1.DeployPolicy;
+import com.google.cloud.deploy.v1.GetAutomationRequest;
+import com.google.cloud.deploy.v1.GetAutomationRunRequest;
 import com.google.cloud.deploy.v1.GetConfigRequest;
+import com.google.cloud.deploy.v1.GetCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.GetDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.GetDeployPolicyRequest;
 import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
@@ -65,8 +84,16 @@ import com.google.cloud.deploy.v1.GetTargetRequest;
 import com.google.cloud.deploy.v1.IgnoreJobRequest;
 import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.JobRun;
+import com.google.cloud.deploy.v1.ListAutomationRunsRequest;
+import com.google.cloud.deploy.v1.ListAutomationRunsResponse;
+import com.google.cloud.deploy.v1.ListAutomationsRequest;
+import com.google.cloud.deploy.v1.ListAutomationsResponse;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesRequest;
+import com.google.cloud.deploy.v1.ListCustomTargetTypesResponse;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
+import com.google.cloud.deploy.v1.ListDeployPoliciesRequest;
+import com.google.cloud.deploy.v1.ListDeployPoliciesResponse;
 import com.google.cloud.deploy.v1.ListJobRunsRequest;
 import com.google.cloud.deploy.v1.ListJobRunsResponse;
 import com.google.cloud.deploy.v1.ListReleasesRequest;
@@ -79,11 +106,16 @@ import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.Release;
 import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
+import com.google.cloud.deploy.v1.RollbackTargetRequest;
+import com.google.cloud.deploy.v1.RollbackTargetResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
 import com.google.cloud.deploy.v1.TerminateJobRunRequest;
 import com.google.cloud.deploy.v1.TerminateJobRunResponse;
+import com.google.cloud.deploy.v1.UpdateAutomationRequest;
+import com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
+import com.google.cloud.deploy.v1.UpdateDeployPolicyRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -113,15 +145,17 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(DeployPolicy.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Rollout.getDescriptor())
+          .add(Automation.getDescriptor())
           .add(DeliveryPipeline.getDescriptor())
           .add(Target.getDescriptor())
+          .add(CustomTargetType.getDescriptor())
           .add(Release.getDescriptor())
           .build();
 
@@ -375,6 +409,43 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RollbackTargetRequest, RollbackTargetResponse>
+      rollbackTargetMethodDescriptor =
+          ApiMethodDescriptor.<RollbackTargetRequest, RollbackTargetResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/RollbackTarget")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RollbackTargetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*}:rollbackTarget",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RollbackTargetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RollbackTargetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RollbackTargetResponse>newBuilder()
+                      .setDefaultInstance(RollbackTargetResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetTargetRequest, Target> getTargetMethodDescriptor =
       ApiMethodDescriptor.<GetTargetRequest, Target>newBuilder()
           .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetTarget")
@@ -542,6 +613,217 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListCustomTargetTypes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListCustomTargetTypesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/customTargetTypes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomTargetTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListCustomTargetTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListCustomTargetTypesResponse>newBuilder()
+                      .setDefaultInstance(ListCustomTargetTypesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeMethodDescriptor =
+          ApiMethodDescriptor.<GetCustomTargetTypeRequest, CustomTargetType>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetCustomTargetType")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCustomTargetTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/customTargetTypes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomTargetType>newBuilder()
+                      .setDefaultInstance(CustomTargetType.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomTargetTypeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateCustomTargetType")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomTargetTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/customTargetTypes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "customTargetTypeId", request.getCustomTargetTypeId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customTargetType", request.getCustomTargetType(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateCustomTargetTypeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCustomTargetTypeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateCustomTargetType")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCustomTargetTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{customTargetType.name=projects/*/locations/*/customTargetTypes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "customTargetType.name",
+                                request.getCustomTargetType().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("customTargetType", request.getCustomTargetType(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateCustomTargetTypeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeMethodDescriptor =
+          ApiMethodDescriptor.<DeleteCustomTargetTypeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteCustomTargetType")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteCustomTargetTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/customTargetTypes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteCustomTargetTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteCustomTargetTypeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListReleasesRequest, ListReleasesResponse>
       listReleasesMethodDescriptor =
           ApiMethodDescriptor.<ListReleasesRequest, ListReleasesResponse>newBuilder()
@@ -635,6 +917,10 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateReleaseRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "overrideDeployPolicy",
+                                request.getOverrideDeployPolicyList());
                             serializer.putQueryParam(fields, "releaseId", request.getReleaseId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
@@ -690,6 +976,213 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<AbandonReleaseResponse>newBuilder()
                       .setDefaultInstance(AbandonReleaseResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateDeployPolicyRequest, Operation>
+      createDeployPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateDeployPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateDeployPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDeployPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/deployPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "deployPolicyId", request.getDeployPolicyId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("deployPolicy", request.getDeployPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateDeployPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDeployPolicyRequest, Operation>
+      updateDeployPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDeployPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateDeployPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDeployPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{deployPolicy.name=projects/*/locations/*/deployPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "deployPolicy.name", request.getDeployPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("deployPolicy", request.getDeployPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDeployPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDeployPolicyRequest, Operation>
+      deleteDeployPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDeployPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteDeployPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDeployPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deployPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteDeployPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesMethodDescriptor =
+          ApiMethodDescriptor.<ListDeployPoliciesRequest, ListDeployPoliciesResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListDeployPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDeployPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/deployPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeployPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDeployPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDeployPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListDeployPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDeployPolicyRequest, DeployPolicy>
+      getDeployPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetDeployPolicyRequest, DeployPolicy>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetDeployPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDeployPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deployPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDeployPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DeployPolicy>newBuilder()
+                      .setDefaultInstance(DeployPolicy.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -898,6 +1391,10 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateRolloutRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "overrideDeployPolicy",
+                                request.getOverrideDeployPolicyList());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "rolloutId", request.getRolloutId());
                             serializer.putQueryParam(
@@ -1137,6 +1634,322 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<CreateAutomationRequest, Operation>
+      createAutomationMethodDescriptor =
+          ApiMethodDescriptor.<CreateAutomationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CreateAutomation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAutomationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/deliveryPipelines/*}/automations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAutomationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAutomationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "automationId", request.getAutomationId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("automation", request.getAutomation(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAutomationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAutomationRequest, Operation>
+      updateAutomationMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAutomationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/UpdateAutomation")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAutomationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{automation.name=projects/*/locations/*/deliveryPipelines/*/automations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAutomationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "automation.name", request.getAutomation().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAutomationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("automation", request.getAutomation(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAutomationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAutomationRequest, Operation>
+      deleteAutomationMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAutomationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/DeleteAutomation")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAutomationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*/automations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAutomationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAutomationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAutomationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetAutomationRequest, Automation>
+      getAutomationMethodDescriptor =
+          ApiMethodDescriptor.<GetAutomationRequest, Automation>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetAutomation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAutomationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*/automations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutomationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutomationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Automation>newBuilder()
+                      .setDefaultInstance(Automation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAutomationsRequest, ListAutomationsResponse>
+      listAutomationsMethodDescriptor =
+          ApiMethodDescriptor.<ListAutomationsRequest, ListAutomationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListAutomations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAutomationsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/deliveryPipelines/*}/automations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAutomationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAutomationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAutomationsResponse>newBuilder()
+                      .setDefaultInstance(ListAutomationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAutomationRunRequest, AutomationRun>
+      getAutomationRunMethodDescriptor =
+          ApiMethodDescriptor.<GetAutomationRunRequest, AutomationRun>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/GetAutomationRun")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAutomationRunRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*/automationRuns/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutomationRunRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutomationRunRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutomationRun>newBuilder()
+                      .setDefaultInstance(AutomationRun.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAutomationRunsRequest, ListAutomationRunsResponse>
+      listAutomationRunsMethodDescriptor =
+          ApiMethodDescriptor.<ListAutomationRunsRequest, ListAutomationRunsResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/ListAutomationRuns")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAutomationRunsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/deliveryPipelines/*}/automationRuns",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAutomationRunsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAutomationRunsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAutomationRunsResponse>newBuilder()
+                      .setDefaultInstance(ListAutomationRunsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunMethodDescriptor =
+          ApiMethodDescriptor.<CancelAutomationRunRequest, CancelAutomationRunResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CancelAutomationRun")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelAutomationRunRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*/automationRuns/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelAutomationRunRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelAutomationRunRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CancelAutomationRunResponse>newBuilder()
+                      .setDefaultInstance(CancelAutomationRunResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1223,7 +2036,9 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/targets/*}:setIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/targets/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/customTargetTypes/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/deployPolicies/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1262,7 +2077,9 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/targets/*}:getIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/targets/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/customTargetTypes/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/deployPolicies/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -1342,6 +2159,7 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<ListTargetsRequest, ListTargetsResponse> listTargetsCallable;
   private final UnaryCallable<ListTargetsRequest, ListTargetsPagedResponse>
       listTargetsPagedCallable;
+  private final UnaryCallable<RollbackTargetRequest, RollbackTargetResponse> rollbackTargetCallable;
   private final UnaryCallable<GetTargetRequest, Target> getTargetCallable;
   private final UnaryCallable<CreateTargetRequest, Operation> createTargetCallable;
   private final OperationCallable<CreateTargetRequest, Target, OperationMetadata>
@@ -1352,6 +2170,26 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<DeleteTargetRequest, Operation> deleteTargetCallable;
   private final OperationCallable<DeleteTargetRequest, Empty, OperationMetadata>
       deleteTargetOperationCallable;
+  private final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable;
+  private final UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable;
+  private final UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType>
+      getCustomTargetTypeCallable;
+  private final UnaryCallable<CreateCustomTargetTypeRequest, Operation>
+      createCustomTargetTypeCallable;
+  private final OperationCallable<
+          CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable;
+  private final UnaryCallable<UpdateCustomTargetTypeRequest, Operation>
+      updateCustomTargetTypeCallable;
+  private final OperationCallable<
+          UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable;
+  private final UnaryCallable<DeleteCustomTargetTypeRequest, Operation>
+      deleteCustomTargetTypeCallable;
+  private final OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable;
   private final UnaryCallable<ListReleasesRequest, ListReleasesResponse> listReleasesCallable;
   private final UnaryCallable<ListReleasesRequest, ListReleasesPagedResponse>
       listReleasesPagedCallable;
@@ -1360,6 +2198,20 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final OperationCallable<CreateReleaseRequest, Release, OperationMetadata>
       createReleaseOperationCallable;
   private final UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable;
+  private final UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable;
+  private final OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationCallable;
+  private final UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable;
+  private final OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationCallable;
+  private final UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable;
+  private final OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationCallable;
+  private final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesCallable;
+  private final UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesPagedCallable;
+  private final UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable;
   private final UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable;
   private final UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable;
   private final UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable;
@@ -1379,6 +2231,27 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<TerminateJobRunRequest, TerminateJobRunResponse>
       terminateJobRunCallable;
   private final UnaryCallable<GetConfigRequest, Config> getConfigCallable;
+  private final UnaryCallable<CreateAutomationRequest, Operation> createAutomationCallable;
+  private final OperationCallable<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationCallable;
+  private final UnaryCallable<UpdateAutomationRequest, Operation> updateAutomationCallable;
+  private final OperationCallable<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationCallable;
+  private final UnaryCallable<DeleteAutomationRequest, Operation> deleteAutomationCallable;
+  private final OperationCallable<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationCallable;
+  private final UnaryCallable<GetAutomationRequest, Automation> getAutomationCallable;
+  private final UnaryCallable<ListAutomationsRequest, ListAutomationsResponse>
+      listAutomationsCallable;
+  private final UnaryCallable<ListAutomationsRequest, ListAutomationsPagedResponse>
+      listAutomationsPagedCallable;
+  private final UnaryCallable<GetAutomationRunRequest, AutomationRun> getAutomationRunCallable;
+  private final UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsResponse>
+      listAutomationRunsCallable;
+  private final UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsPagedResponse>
+      listAutomationRunsPagedCallable;
+  private final UnaryCallable<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1532,6 +2405,18 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<RollbackTargetRequest, RollbackTargetResponse>
+        rollbackTargetTransportSettings =
+            HttpJsonCallSettings.<RollbackTargetRequest, RollbackTargetResponse>newBuilder()
+                .setMethodDescriptor(rollbackTargetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetTargetRequest, Target> getTargetTransportSettings =
         HttpJsonCallSettings.<GetTargetRequest, Target>newBuilder()
             .setMethodDescriptor(getTargetMethodDescriptor)
@@ -1576,6 +2461,69 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+        listCustomTargetTypesTransportSettings =
+            HttpJsonCallSettings
+                .<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>newBuilder()
+                .setMethodDescriptor(listCustomTargetTypesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetCustomTargetTypeRequest, CustomTargetType>
+        getCustomTargetTypeTransportSettings =
+            HttpJsonCallSettings.<GetCustomTargetTypeRequest, CustomTargetType>newBuilder()
+                .setMethodDescriptor(getCustomTargetTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CreateCustomTargetTypeRequest, Operation>
+        createCustomTargetTypeTransportSettings =
+            HttpJsonCallSettings.<CreateCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(createCustomTargetTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateCustomTargetTypeRequest, Operation>
+        updateCustomTargetTypeTransportSettings =
+            HttpJsonCallSettings.<UpdateCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateCustomTargetTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_target_type.name",
+                          String.valueOf(request.getCustomTargetType().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteCustomTargetTypeRequest, Operation>
+        deleteCustomTargetTypeTransportSettings =
+            HttpJsonCallSettings.<DeleteCustomTargetTypeRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteCustomTargetTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListReleasesRequest, ListReleasesResponse> listReleasesTransportSettings =
         HttpJsonCallSettings.<ListReleasesRequest, ListReleasesResponse>newBuilder()
             .setMethodDescriptor(listReleasesMethodDescriptor)
@@ -1621,6 +2569,63 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateDeployPolicyRequest, Operation> createDeployPolicyTransportSettings =
+        HttpJsonCallSettings.<CreateDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(createDeployPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateDeployPolicyRequest, Operation> updateDeployPolicyTransportSettings =
+        HttpJsonCallSettings.<UpdateDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDeployPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "deploy_policy.name", String.valueOf(request.getDeployPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyTransportSettings =
+        HttpJsonCallSettings.<DeleteDeployPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDeployPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+        listDeployPoliciesTransportSettings =
+            HttpJsonCallSettings.<ListDeployPoliciesRequest, ListDeployPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listDeployPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyTransportSettings =
+        HttpJsonCallSettings.<GetDeployPolicyRequest, DeployPolicy>newBuilder()
+            .setMethodDescriptor(getDeployPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutTransportSettings =
             HttpJsonCallSettings.<ApproveRolloutRequest, ApproveRolloutResponse>newBuilder()
@@ -1757,6 +2762,98 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateAutomationRequest, Operation> createAutomationTransportSettings =
+        HttpJsonCallSettings.<CreateAutomationRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAutomationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateAutomationRequest, Operation> updateAutomationTransportSettings =
+        HttpJsonCallSettings.<UpdateAutomationRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAutomationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("automation.name", String.valueOf(request.getAutomation().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteAutomationRequest, Operation> deleteAutomationTransportSettings =
+        HttpJsonCallSettings.<DeleteAutomationRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAutomationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetAutomationRequest, Automation> getAutomationTransportSettings =
+        HttpJsonCallSettings.<GetAutomationRequest, Automation>newBuilder()
+            .setMethodDescriptor(getAutomationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListAutomationsRequest, ListAutomationsResponse>
+        listAutomationsTransportSettings =
+            HttpJsonCallSettings.<ListAutomationsRequest, ListAutomationsResponse>newBuilder()
+                .setMethodDescriptor(listAutomationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAutomationRunRequest, AutomationRun> getAutomationRunTransportSettings =
+        HttpJsonCallSettings.<GetAutomationRunRequest, AutomationRun>newBuilder()
+            .setMethodDescriptor(getAutomationRunMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListAutomationRunsRequest, ListAutomationRunsResponse>
+        listAutomationRunsTransportSettings =
+            HttpJsonCallSettings.<ListAutomationRunsRequest, ListAutomationRunsResponse>newBuilder()
+                .setMethodDescriptor(listAutomationRunsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CancelAutomationRunRequest, CancelAutomationRunResponse>
+        cancelAutomationRunTransportSettings =
+            HttpJsonCallSettings
+                .<CancelAutomationRunRequest, CancelAutomationRunResponse>newBuilder()
+                .setMethodDescriptor(cancelAutomationRunMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1869,6 +2966,9 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     this.listTargetsPagedCallable =
         callableFactory.createPagedCallable(
             listTargetsTransportSettings, settings.listTargetsSettings(), clientContext);
+    this.rollbackTargetCallable =
+        callableFactory.createUnaryCallable(
+            rollbackTargetTransportSettings, settings.rollbackTargetSettings(), clientContext);
     this.getTargetCallable =
         callableFactory.createUnaryCallable(
             getTargetTransportSettings, settings.getTargetSettings(), clientContext);
@@ -1899,6 +2999,54 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
             settings.deleteTargetOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listCustomTargetTypesCallable =
+        callableFactory.createUnaryCallable(
+            listCustomTargetTypesTransportSettings,
+            settings.listCustomTargetTypesSettings(),
+            clientContext);
+    this.listCustomTargetTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listCustomTargetTypesTransportSettings,
+            settings.listCustomTargetTypesSettings(),
+            clientContext);
+    this.getCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            getCustomTargetTypeTransportSettings,
+            settings.getCustomTargetTypeSettings(),
+            clientContext);
+    this.createCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            createCustomTargetTypeTransportSettings,
+            settings.createCustomTargetTypeSettings(),
+            clientContext);
+    this.createCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            createCustomTargetTypeTransportSettings,
+            settings.createCustomTargetTypeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomTargetTypeTransportSettings,
+            settings.updateCustomTargetTypeSettings(),
+            clientContext);
+    this.updateCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCustomTargetTypeTransportSettings,
+            settings.updateCustomTargetTypeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteCustomTargetTypeCallable =
+        callableFactory.createUnaryCallable(
+            deleteCustomTargetTypeTransportSettings,
+            settings.deleteCustomTargetTypeSettings(),
+            clientContext);
+    this.deleteCustomTargetTypeOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteCustomTargetTypeTransportSettings,
+            settings.deleteCustomTargetTypeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listReleasesCallable =
         callableFactory.createUnaryCallable(
             listReleasesTransportSettings, settings.listReleasesSettings(), clientContext);
@@ -1920,6 +3068,52 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     this.abandonReleaseCallable =
         callableFactory.createUnaryCallable(
             abandonReleaseTransportSettings, settings.abandonReleaseSettings(), clientContext);
+    this.createDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createDeployPolicyTransportSettings,
+            settings.createDeployPolicySettings(),
+            clientContext);
+    this.createDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createDeployPolicyTransportSettings,
+            settings.createDeployPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateDeployPolicyTransportSettings,
+            settings.updateDeployPolicySettings(),
+            clientContext);
+    this.updateDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDeployPolicyTransportSettings,
+            settings.updateDeployPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeployPolicyTransportSettings,
+            settings.deleteDeployPolicySettings(),
+            clientContext);
+    this.deleteDeployPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDeployPolicyTransportSettings,
+            settings.deleteDeployPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listDeployPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listDeployPoliciesTransportSettings,
+            settings.listDeployPoliciesSettings(),
+            clientContext);
+    this.listDeployPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeployPoliciesTransportSettings,
+            settings.listDeployPoliciesSettings(),
+            clientContext);
+    this.getDeployPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getDeployPolicyTransportSettings, settings.getDeployPolicySettings(), clientContext);
     this.approveRolloutCallable =
         callableFactory.createUnaryCallable(
             approveRolloutTransportSettings, settings.approveRolloutSettings(), clientContext);
@@ -1968,6 +3162,60 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     this.getConfigCallable =
         callableFactory.createUnaryCallable(
             getConfigTransportSettings, settings.getConfigSettings(), clientContext);
+    this.createAutomationCallable =
+        callableFactory.createUnaryCallable(
+            createAutomationTransportSettings, settings.createAutomationSettings(), clientContext);
+    this.createAutomationOperationCallable =
+        callableFactory.createOperationCallable(
+            createAutomationTransportSettings,
+            settings.createAutomationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateAutomationCallable =
+        callableFactory.createUnaryCallable(
+            updateAutomationTransportSettings, settings.updateAutomationSettings(), clientContext);
+    this.updateAutomationOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAutomationTransportSettings,
+            settings.updateAutomationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAutomationCallable =
+        callableFactory.createUnaryCallable(
+            deleteAutomationTransportSettings, settings.deleteAutomationSettings(), clientContext);
+    this.deleteAutomationOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAutomationTransportSettings,
+            settings.deleteAutomationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getAutomationCallable =
+        callableFactory.createUnaryCallable(
+            getAutomationTransportSettings, settings.getAutomationSettings(), clientContext);
+    this.listAutomationsCallable =
+        callableFactory.createUnaryCallable(
+            listAutomationsTransportSettings, settings.listAutomationsSettings(), clientContext);
+    this.listAutomationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAutomationsTransportSettings, settings.listAutomationsSettings(), clientContext);
+    this.getAutomationRunCallable =
+        callableFactory.createUnaryCallable(
+            getAutomationRunTransportSettings, settings.getAutomationRunSettings(), clientContext);
+    this.listAutomationRunsCallable =
+        callableFactory.createUnaryCallable(
+            listAutomationRunsTransportSettings,
+            settings.listAutomationRunsSettings(),
+            clientContext);
+    this.listAutomationRunsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAutomationRunsTransportSettings,
+            settings.listAutomationRunsSettings(),
+            clientContext);
+    this.cancelAutomationRunCallable =
+        callableFactory.createUnaryCallable(
+            cancelAutomationRunTransportSettings,
+            settings.cancelAutomationRunSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2002,14 +3250,25 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     methodDescriptors.add(updateDeliveryPipelineMethodDescriptor);
     methodDescriptors.add(deleteDeliveryPipelineMethodDescriptor);
     methodDescriptors.add(listTargetsMethodDescriptor);
+    methodDescriptors.add(rollbackTargetMethodDescriptor);
     methodDescriptors.add(getTargetMethodDescriptor);
     methodDescriptors.add(createTargetMethodDescriptor);
     methodDescriptors.add(updateTargetMethodDescriptor);
     methodDescriptors.add(deleteTargetMethodDescriptor);
+    methodDescriptors.add(listCustomTargetTypesMethodDescriptor);
+    methodDescriptors.add(getCustomTargetTypeMethodDescriptor);
+    methodDescriptors.add(createCustomTargetTypeMethodDescriptor);
+    methodDescriptors.add(updateCustomTargetTypeMethodDescriptor);
+    methodDescriptors.add(deleteCustomTargetTypeMethodDescriptor);
     methodDescriptors.add(listReleasesMethodDescriptor);
     methodDescriptors.add(getReleaseMethodDescriptor);
     methodDescriptors.add(createReleaseMethodDescriptor);
     methodDescriptors.add(abandonReleaseMethodDescriptor);
+    methodDescriptors.add(createDeployPolicyMethodDescriptor);
+    methodDescriptors.add(updateDeployPolicyMethodDescriptor);
+    methodDescriptors.add(deleteDeployPolicyMethodDescriptor);
+    methodDescriptors.add(listDeployPoliciesMethodDescriptor);
+    methodDescriptors.add(getDeployPolicyMethodDescriptor);
     methodDescriptors.add(approveRolloutMethodDescriptor);
     methodDescriptors.add(advanceRolloutMethodDescriptor);
     methodDescriptors.add(cancelRolloutMethodDescriptor);
@@ -2022,6 +3281,14 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     methodDescriptors.add(getJobRunMethodDescriptor);
     methodDescriptors.add(terminateJobRunMethodDescriptor);
     methodDescriptors.add(getConfigMethodDescriptor);
+    methodDescriptors.add(createAutomationMethodDescriptor);
+    methodDescriptors.add(updateAutomationMethodDescriptor);
+    methodDescriptors.add(deleteAutomationMethodDescriptor);
+    methodDescriptors.add(getAutomationMethodDescriptor);
+    methodDescriptors.add(listAutomationsMethodDescriptor);
+    methodDescriptors.add(getAutomationRunMethodDescriptor);
+    methodDescriptors.add(listAutomationRunsMethodDescriptor);
+    methodDescriptors.add(cancelAutomationRunMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -2095,6 +3362,11 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<RollbackTargetRequest, RollbackTargetResponse> rollbackTargetCallable() {
+    return rollbackTargetCallable;
+  }
+
+  @Override
   public UnaryCallable<GetTargetRequest, Target> getTargetCallable() {
     return getTargetCallable;
   }
@@ -2133,6 +3405,56 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesResponse>
+      listCustomTargetTypesCallable() {
+    return listCustomTargetTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListCustomTargetTypesRequest, ListCustomTargetTypesPagedResponse>
+      listCustomTargetTypesPagedCallable() {
+    return listCustomTargetTypesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCustomTargetTypeRequest, CustomTargetType> getCustomTargetTypeCallable() {
+    return getCustomTargetTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomTargetTypeRequest, Operation> createCustomTargetTypeCallable() {
+    return createCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      createCustomTargetTypeOperationCallable() {
+    return createCustomTargetTypeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomTargetTypeRequest, Operation> updateCustomTargetTypeCallable() {
+    return updateCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
+      updateCustomTargetTypeOperationCallable() {
+    return updateCustomTargetTypeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteCustomTargetTypeRequest, Operation> deleteCustomTargetTypeCallable() {
+    return deleteCustomTargetTypeCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
+      deleteCustomTargetTypeOperationCallable() {
+    return deleteCustomTargetTypeOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListReleasesRequest, ListReleasesResponse> listReleasesCallable() {
     return listReleasesCallable;
   }
@@ -2161,6 +3483,56 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable() {
     return abandonReleaseCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDeployPolicyRequest, Operation> createDeployPolicyCallable() {
+    return createDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      createDeployPolicyOperationCallable() {
+    return createDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDeployPolicyRequest, Operation> updateDeployPolicyCallable() {
+    return updateDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDeployPolicyRequest, DeployPolicy, OperationMetadata>
+      updateDeployPolicyOperationCallable() {
+    return updateDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDeployPolicyRequest, Operation> deleteDeployPolicyCallable() {
+    return deleteDeployPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDeployPolicyRequest, Empty, OperationMetadata>
+      deleteDeployPolicyOperationCallable() {
+    return deleteDeployPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesResponse>
+      listDeployPoliciesCallable() {
+    return listDeployPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeployPoliciesRequest, ListDeployPoliciesPagedResponse>
+      listDeployPoliciesPagedCallable() {
+    return listDeployPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeployPolicyRequest, DeployPolicy> getDeployPolicyCallable() {
+    return getDeployPolicyCallable;
   }
 
   @Override
@@ -2237,6 +3609,78 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {
     return getConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAutomationRequest, Operation> createAutomationCallable() {
+    return createAutomationCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAutomationRequest, Automation, OperationMetadata>
+      createAutomationOperationCallable() {
+    return createAutomationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAutomationRequest, Operation> updateAutomationCallable() {
+    return updateAutomationCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAutomationRequest, Automation, OperationMetadata>
+      updateAutomationOperationCallable() {
+    return updateAutomationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAutomationRequest, Operation> deleteAutomationCallable() {
+    return deleteAutomationCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAutomationRequest, Empty, OperationMetadata>
+      deleteAutomationOperationCallable() {
+    return deleteAutomationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutomationRequest, Automation> getAutomationCallable() {
+    return getAutomationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutomationsRequest, ListAutomationsResponse> listAutomationsCallable() {
+    return listAutomationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutomationsRequest, ListAutomationsPagedResponse>
+      listAutomationsPagedCallable() {
+    return listAutomationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutomationRunRequest, AutomationRun> getAutomationRunCallable() {
+    return getAutomationRunCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsResponse>
+      listAutomationRunsCallable() {
+    return listAutomationRunsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutomationRunsRequest, ListAutomationRunsPagedResponse>
+      listAutomationRunsPagedCallable() {
+    return listAutomationRunsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelAutomationRunRequest, CancelAutomationRunResponse>
+      cancelAutomationRunCallable() {
+    return cancelAutomationRunCallable;
   }
 
   @Override

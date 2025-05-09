@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -357,6 +357,7 @@ public class DataTransferServiceClientTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -368,6 +369,7 @@ public class DataTransferServiceClientTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -417,6 +419,7 @@ public class DataTransferServiceClientTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -428,6 +431,7 @@ public class DataTransferServiceClientTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -477,6 +481,7 @@ public class DataTransferServiceClientTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -488,6 +493,7 @@ public class DataTransferServiceClientTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -538,6 +544,7 @@ public class DataTransferServiceClientTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -549,6 +556,7 @@ public class DataTransferServiceClientTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -673,6 +681,7 @@ public class DataTransferServiceClientTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -684,6 +693,7 @@ public class DataTransferServiceClientTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -734,6 +744,7 @@ public class DataTransferServiceClientTest {
             .setParams(Struct.newBuilder().build())
             .setSchedule("schedule-697920873")
             .setScheduleOptions(ScheduleOptions.newBuilder().build())
+            .setScheduleOptionsV2(ScheduleOptionsV2.newBuilder().build())
             .setDataRefreshWindowDays(327632845)
             .setDisabled(true)
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -745,6 +756,7 @@ public class DataTransferServiceClientTest {
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
             .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
+            .setError(Status.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -1535,6 +1547,49 @@ public class DataTransferServiceClientTest {
               .addAllDataSourceIds(new ArrayList<String>())
               .build();
       client.enrollDataSources(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void unenrollDataSourcesTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataTransferService.addResponse(expectedResponse);
+
+    UnenrollDataSourcesRequest request =
+        UnenrollDataSourcesRequest.newBuilder()
+            .setName("name3373707")
+            .addAllDataSourceIds(new ArrayList<String>())
+            .build();
+
+    client.unenrollDataSources(request);
+
+    List<AbstractMessage> actualRequests = mockDataTransferService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UnenrollDataSourcesRequest actualRequest = ((UnenrollDataSourcesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getDataSourceIdsList(), actualRequest.getDataSourceIdsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void unenrollDataSourcesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataTransferService.addException(exception);
+
+    try {
+      UnenrollDataSourcesRequest request =
+          UnenrollDataSourcesRequest.newBuilder()
+              .setName("name3373707")
+              .addAllDataSourceIds(new ArrayList<String>())
+              .build();
+      client.unenrollDataSources(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

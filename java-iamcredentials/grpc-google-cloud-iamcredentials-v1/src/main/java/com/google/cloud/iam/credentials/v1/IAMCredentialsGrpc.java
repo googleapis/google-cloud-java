@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -243,6 +243,19 @@ public final class IAMCredentialsGrpc {
     return IAMCredentialsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static IAMCredentialsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<IAMCredentialsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<IAMCredentialsBlockingV2Stub>() {
+          @java.lang.Override
+          public IAMCredentialsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new IAMCredentialsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return IAMCredentialsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -461,6 +474,85 @@ public final class IAMCredentialsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service IAMCredentials.
+   *
+   * <pre>
+   * A service account is a special type of Google account that belongs to your
+   * application or a virtual machine (VM), instead of to an individual end user.
+   * Your application assumes the identity of the service account to call Google
+   * APIs, so that the users aren't directly involved.
+   * Service account credentials are used to temporarily assume the identity
+   * of the service account. Supported credential types include OAuth 2.0 access
+   * tokens, OpenID Connect ID tokens, self-signed JSON Web Tokens (JWTs), and
+   * more.
+   * </pre>
+   */
+  public static final class IAMCredentialsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<IAMCredentialsBlockingV2Stub> {
+    private IAMCredentialsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected IAMCredentialsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new IAMCredentialsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an OAuth 2.0 access token for a service account.
+     * </pre>
+     */
+    public com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse generateAccessToken(
+        com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an OpenID Connect ID token for a service account.
+     * </pre>
+     */
+    public com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse generateIdToken(
+        com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateIdTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Signs a blob using a service account's system-managed private key.
+     * </pre>
+     */
+    public com.google.cloud.iam.credentials.v1.SignBlobResponse signBlob(
+        com.google.cloud.iam.credentials.v1.SignBlobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSignBlobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Signs a JWT using a service account's system-managed private key.
+     * </pre>
+     */
+    public com.google.cloud.iam.credentials.v1.SignJwtResponse signJwt(
+        com.google.cloud.iam.credentials.v1.SignJwtRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSignJwtMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service IAMCredentials.
    *
    * <pre>
    * A service account is a special type of Google account that belongs to your

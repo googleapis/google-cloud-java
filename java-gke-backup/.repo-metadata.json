@@ -5,12 +5,12 @@
   "api_description": "is a service for backing up and restoring workloads in GKE.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-gke-backup/latest/overview",
   "release_level": "preview",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-gke-backup",
   "distribution_name": "com.google.cloud:google-cloud-gke-backup",
-  "api_id": "gke-backup.googleapis.com",
+  "api_id": "gkebackup.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }

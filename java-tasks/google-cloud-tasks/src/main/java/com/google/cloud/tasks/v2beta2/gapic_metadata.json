@@ -13,9 +13,6 @@
             "AcknowledgeTask": {
               "methods": ["acknowledgeTask", "acknowledgeTask", "acknowledgeTask", "acknowledgeTaskCallable"]
             },
-            "BufferTask": {
-              "methods": ["bufferTask", "bufferTask", "bufferTask", "bufferTaskCallable"]
-            },
             "CancelLease": {
               "methods": ["cancelLease", "cancelLease", "cancelLease", "cancelLeaseCallable"]
             },

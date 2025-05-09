@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,6 +97,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -104,6 +106,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -239,6 +243,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -246,6 +252,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -323,6 +331,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -330,6 +340,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -412,6 +424,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -419,6 +433,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -482,6 +498,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -489,6 +507,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -571,6 +591,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -578,6 +600,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -651,6 +675,7 @@ public class InstanceGroupManagersClientTest {
   public void getTest() throws Exception {
     InstanceGroupManager expectedResponse =
         InstanceGroupManager.newBuilder()
+            .setAllInstancesConfig(InstanceGroupManagerAllInstancesConfig.newBuilder().build())
             .addAllAutoHealingPolicies(new ArrayList<InstanceGroupManagerAutoHealingPolicy>())
             .setBaseInstanceName("baseInstanceName-736241103")
             .setCreationTimestamp("creationTimestamp-370203401")
@@ -659,6 +684,8 @@ public class InstanceGroupManagersClientTest {
             .setDistributionPolicy(DistributionPolicy.newBuilder().build())
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
+            .setInstanceFlexibilityPolicy(
+                InstanceGroupManagerInstanceFlexibilityPolicy.newBuilder().build())
             .setInstanceGroup("instanceGroup-1404696854")
             .setInstanceLifecyclePolicy(
                 InstanceGroupManagerInstanceLifecyclePolicy.newBuilder().build())
@@ -668,11 +695,17 @@ public class InstanceGroupManagersClientTest {
             .setName("name3373707")
             .addAllNamedPorts(new ArrayList<NamedPort>())
             .setRegion("region-934795532")
+            .setResourcePolicies(InstanceGroupManagerResourcePolicies.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
+            .setStandbyPolicy(InstanceGroupManagerStandbyPolicy.newBuilder().build())
             .setStatefulPolicy(StatefulPolicy.newBuilder().build())
             .setStatus(InstanceGroupManagerStatus.newBuilder().build())
             .addAllTargetPools(new ArrayList<String>())
             .setTargetSize(-2084603409)
+            .setTargetStoppedSize(1613032225)
+            .setTargetSuspendedSize(-765655981)
             .setUpdatePolicy(InstanceGroupManagerUpdatePolicy.newBuilder().build())
             .addAllVersions(new ArrayList<InstanceGroupManagerVersion>())
             .setZone("zone3744684")
@@ -732,6 +765,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -739,6 +774,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1020,6 +1057,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1027,6 +1066,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1093,6 +1134,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1100,6 +1143,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1182,6 +1227,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1189,6 +1236,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1271,6 +1320,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1278,6 +1329,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1331,6 +1384,99 @@ public class InstanceGroupManagersClientTest {
   }
 
   @Test
+  public void resumeInstancesTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroupManager = "instanceGroupManager-7543";
+    InstanceGroupManagersResumeInstancesRequest
+        instanceGroupManagersResumeInstancesRequestResource =
+            InstanceGroupManagersResumeInstancesRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .resumeInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersResumeInstancesRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resumeInstancesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroupManager = "instanceGroupManager-7543";
+      InstanceGroupManagersResumeInstancesRequest
+          instanceGroupManagersResumeInstancesRequestResource =
+              InstanceGroupManagersResumeInstancesRequest.newBuilder().build();
+      client
+          .resumeInstancesAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersResumeInstancesRequestResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void setInstanceTemplateTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -1343,6 +1489,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1350,6 +1498,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1432,6 +1582,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1439,6 +1591,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")
@@ -1508,6 +1662,282 @@ public class InstanceGroupManagersClientTest {
   }
 
   @Test
+  public void startInstancesTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroupManager = "instanceGroupManager-7543";
+    InstanceGroupManagersStartInstancesRequest instanceGroupManagersStartInstancesRequestResource =
+        InstanceGroupManagersStartInstancesRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .startInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersStartInstancesRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startInstancesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroupManager = "instanceGroupManager-7543";
+      InstanceGroupManagersStartInstancesRequest
+          instanceGroupManagersStartInstancesRequestResource =
+              InstanceGroupManagersStartInstancesRequest.newBuilder().build();
+      client
+          .startInstancesAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersStartInstancesRequestResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void stopInstancesTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroupManager = "instanceGroupManager-7543";
+    InstanceGroupManagersStopInstancesRequest instanceGroupManagersStopInstancesRequestResource =
+        InstanceGroupManagersStopInstancesRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .stopInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersStopInstancesRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void stopInstancesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroupManager = "instanceGroupManager-7543";
+      InstanceGroupManagersStopInstancesRequest instanceGroupManagersStopInstancesRequestResource =
+          InstanceGroupManagersStopInstancesRequest.newBuilder().build();
+      client
+          .stopInstancesAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersStopInstancesRequestResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void suspendInstancesTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String instanceGroupManager = "instanceGroupManager-7543";
+    InstanceGroupManagersSuspendInstancesRequest
+        instanceGroupManagersSuspendInstancesRequestResource =
+            InstanceGroupManagersSuspendInstancesRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .suspendInstancesAsync(
+                project,
+                zone,
+                instanceGroupManager,
+                instanceGroupManagersSuspendInstancesRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void suspendInstancesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String instanceGroupManager = "instanceGroupManager-7543";
+      InstanceGroupManagersSuspendInstancesRequest
+          instanceGroupManagersSuspendInstancesRequestResource =
+              InstanceGroupManagersSuspendInstancesRequest.newBuilder().build();
+      client
+          .suspendInstancesAsync(
+              project,
+              zone,
+              instanceGroupManager,
+              instanceGroupManagersSuspendInstancesRequestResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void updatePerInstanceConfigsTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()
@@ -1520,6 +1950,8 @@ public class InstanceGroupManagersClientTest {
             .setHttpErrorStatusCode(0)
             .setId(3355)
             .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
             .setKind("kind3292052")
             .setName("name3373707")
             .setOperationGroupId("operationGroupId1716161683")
@@ -1527,6 +1959,8 @@ public class InstanceGroupManagersClientTest {
             .setProgress(-1001078227)
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
             .setStartTime("startTime-2129294769")
             .setStatus(Status.DONE)
             .setStatusMessage("statusMessage-958704715")

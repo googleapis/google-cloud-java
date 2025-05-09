@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +39,8 @@ import com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse;
+import com.google.cloud.aiplatform.v1beta1.UpdateDeploymentResourcePoolOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateDeploymentResourcePoolRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -101,6 +103,17 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
                   ProtoUtils.marshaller(ListDeploymentResourcePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeploymentResourcePoolsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolMethodDescriptor =
+          MethodDescriptor.<UpdateDeploymentResourcePoolRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.DeploymentResourcePoolService/UpdateDeploymentResourcePool")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDeploymentResourcePoolRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<DeleteDeploymentResourcePoolRequest, Operation>
@@ -187,6 +200,13 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
   private final UnaryCallable<
           ListDeploymentResourcePoolsRequest, ListDeploymentResourcePoolsPagedResponse>
       listDeploymentResourcePoolsPagedCallable;
+  private final UnaryCallable<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolCallable;
+  private final OperationCallable<
+          UpdateDeploymentResourcePoolRequest,
+          DeploymentResourcePool,
+          UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolOperationCallable;
   private final UnaryCallable<DeleteDeploymentResourcePoolRequest, Operation>
       deleteDeploymentResourcePoolCallable;
   private final OperationCallable<
@@ -284,6 +304,19 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateDeploymentResourcePoolRequest, Operation>
+        updateDeploymentResourcePoolTransportSettings =
+            GrpcCallSettings.<UpdateDeploymentResourcePoolRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDeploymentResourcePoolMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "deployment_resource_pool.name",
+                          String.valueOf(request.getDeploymentResourcePool().getName()));
                       return builder.build();
                     })
                 .build();
@@ -389,6 +422,17 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
             listDeploymentResourcePoolsTransportSettings,
             settings.listDeploymentResourcePoolsSettings(),
             clientContext);
+    this.updateDeploymentResourcePoolCallable =
+        callableFactory.createUnaryCallable(
+            updateDeploymentResourcePoolTransportSettings,
+            settings.updateDeploymentResourcePoolSettings(),
+            clientContext);
+    this.updateDeploymentResourcePoolOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDeploymentResourcePoolTransportSettings,
+            settings.updateDeploymentResourcePoolOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteDeploymentResourcePoolCallable =
         callableFactory.createUnaryCallable(
             deleteDeploymentResourcePoolTransportSettings,
@@ -470,6 +514,21 @@ public class GrpcDeploymentResourcePoolServiceStub extends DeploymentResourcePoo
   public UnaryCallable<ListDeploymentResourcePoolsRequest, ListDeploymentResourcePoolsPagedResponse>
       listDeploymentResourcePoolsPagedCallable() {
     return listDeploymentResourcePoolsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDeploymentResourcePoolRequest, Operation>
+      updateDeploymentResourcePoolCallable() {
+    return updateDeploymentResourcePoolCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateDeploymentResourcePoolRequest,
+          DeploymentResourcePool,
+          UpdateDeploymentResourcePoolOperationMetadata>
+      updateDeploymentResourcePoolOperationCallable() {
+    return updateDeploymentResourcePoolOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_classification.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 public interface AutoMlImageClassificationMetadataOrBuilder
@@ -54,6 +55,7 @@ public interface AutoMlImageClassificationMetadataOrBuilder
    * @return The enum numeric value on the wire for successfulStopReason.
    */
   int getSuccessfulStopReasonValue();
+
   /**
    *
    *

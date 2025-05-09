@@ -48,6 +48,7 @@ function appendAllModules() {
   else
     modules=$(listAllModules)
   fi
+  OLD_IFS="$IFS"
   IFS=','
   for module in $modules; do
     # Only include modules with a .cloud subdirectory in the generated config.
@@ -55,6 +56,7 @@ function appendAllModules() {
       appendModule "${module%/}" # Remove possible trailing '/'
     fi
   done
+  IFS="$OLD_IFS"
 }
 
 # Ensure current directory is <root>/.cloud

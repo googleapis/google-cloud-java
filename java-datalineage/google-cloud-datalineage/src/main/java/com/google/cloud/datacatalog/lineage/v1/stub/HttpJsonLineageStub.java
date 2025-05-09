@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import static com.google.cloud.datacatalog.lineage.v1.LineageClient.ListRunsPage
 import static com.google.cloud.datacatalog.lineage.v1.LineageClient.SearchLinksPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -59,6 +58,8 @@ import com.google.cloud.datacatalog.lineage.v1.ListRunsRequest;
 import com.google.cloud.datacatalog.lineage.v1.ListRunsResponse;
 import com.google.cloud.datacatalog.lineage.v1.OperationMetadata;
 import com.google.cloud.datacatalog.lineage.v1.Process;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest;
+import com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse;
 import com.google.cloud.datacatalog.lineage.v1.Run;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest;
 import com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse;
@@ -83,13 +84,53 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonLineageStub extends LineageStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(OperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
           .build();
+
+  private static final ApiMethodDescriptor<
+          ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventMethodDescriptor =
+          ApiMethodDescriptor
+              .<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.datacatalog.lineage.v1.Lineage/ProcessOpenLineageRunEvent")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ProcessOpenLineageRunEventRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}:processOpenLineageRunEvent",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ProcessOpenLineageRunEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ProcessOpenLineageRunEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("openLineage", request.getOpenLineage(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ProcessOpenLineageRunEventResponse>newBuilder()
+                      .setDefaultInstance(ProcessOpenLineageRunEventResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<CreateProcessRequest, Process>
       createProcessMethodDescriptor =
@@ -334,6 +375,7 @@ public class HttpJsonLineageStub extends LineageStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<UpdateRunRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "allowMissing", request.getAllowMissing());
                         serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
@@ -675,6 +717,8 @@ public class HttpJsonLineageStub extends LineageStub {
                       .build())
               .build();
 
+  private final UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventCallable;
   private final UnaryCallable<CreateProcessRequest, Process> createProcessCallable;
   private final UnaryCallable<UpdateProcessRequest, Process> updateProcessCallable;
   private final UnaryCallable<GetProcessRequest, Process> getProcessCallable;
@@ -775,6 +819,19 @@ public class HttpJsonLineageStub extends LineageStub {
                         .build())
                 .build());
 
+    HttpJsonCallSettings<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+        processOpenLineageRunEventTransportSettings =
+            HttpJsonCallSettings
+                .<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>newBuilder()
+                .setMethodDescriptor(processOpenLineageRunEventMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<CreateProcessRequest, Process> createProcessTransportSettings =
         HttpJsonCallSettings.<CreateProcessRequest, Process>newBuilder()
             .setMethodDescriptor(createProcessMethodDescriptor)
@@ -957,6 +1014,11 @@ public class HttpJsonLineageStub extends LineageStub {
                     })
                 .build();
 
+    this.processOpenLineageRunEventCallable =
+        callableFactory.createUnaryCallable(
+            processOpenLineageRunEventTransportSettings,
+            settings.processOpenLineageRunEventSettings(),
+            clientContext);
     this.createProcessCallable =
         callableFactory.createUnaryCallable(
             createProcessTransportSettings, settings.createProcessSettings(), clientContext);
@@ -1052,6 +1114,7 @@ public class HttpJsonLineageStub extends LineageStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(processOpenLineageRunEventMethodDescriptor);
     methodDescriptors.add(createProcessMethodDescriptor);
     methodDescriptors.add(updateProcessMethodDescriptor);
     methodDescriptors.add(getProcessMethodDescriptor);
@@ -1073,6 +1136,12 @@ public class HttpJsonLineageStub extends LineageStub {
 
   public HttpJsonOperationsStub getHttpJsonOperationsStub() {
     return httpJsonOperationsStub;
+  }
+
+  @Override
+  public UnaryCallable<ProcessOpenLineageRunEventRequest, ProcessOpenLineageRunEventResponse>
+      processOpenLineageRunEventCallable() {
+    return processOpenLineageRunEventCallable;
   }
 
   @Override

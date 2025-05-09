@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -178,6 +178,19 @@ public final class NodeGroupControllerGrpc {
           }
         };
     return NodeGroupControllerStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NodeGroupControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NodeGroupControllerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NodeGroupControllerBlockingV2Stub>() {
+          @java.lang.Override
+          public NodeGroupControllerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NodeGroupControllerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NodeGroupControllerBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -359,6 +372,72 @@ public final class NodeGroupControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service NodeGroupController.
+   *
+   * <pre>
+   * The `NodeGroupControllerService` provides methods to manage node groups
+   * of Compute Engine managed instances.
+   * </pre>
+   */
+  public static final class NodeGroupControllerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NodeGroupControllerBlockingV2Stub> {
+    private NodeGroupControllerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NodeGroupControllerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NodeGroupControllerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a node group in a cluster. The returned
+     * [Operation.metadata][google.longrunning.Operation.metadata] is
+     * [NodeGroupOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetadata).
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNodeGroup(
+        com.google.cloud.dataproc.v1.CreateNodeGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNodeGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resizes a node group in a cluster. The returned
+     * [Operation.metadata][google.longrunning.Operation.metadata] is
+     * [NodeGroupOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetadata).
+     * </pre>
+     */
+    public com.google.longrunning.Operation resizeNodeGroup(
+        com.google.cloud.dataproc.v1.ResizeNodeGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResizeNodeGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the resource representation for a node group in a
+     * cluster.
+     * </pre>
+     */
+    public com.google.cloud.dataproc.v1.NodeGroup getNodeGroup(
+        com.google.cloud.dataproc.v1.GetNodeGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodeGroupMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service NodeGroupController.
    *
    * <pre>
    * The `NodeGroupControllerService` provides methods to manage node groups

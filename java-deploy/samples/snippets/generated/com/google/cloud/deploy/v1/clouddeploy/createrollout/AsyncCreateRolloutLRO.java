@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.cloud.deploy.v1.CreateRolloutRequest;
 import com.google.cloud.deploy.v1.OperationMetadata;
 import com.google.cloud.deploy.v1.ReleaseName;
 import com.google.cloud.deploy.v1.Rollout;
+import java.util.ArrayList;
 
 public class AsyncCreateRolloutLRO {
 
@@ -46,6 +47,7 @@ public class AsyncCreateRolloutLRO {
               .setRollout(Rollout.newBuilder().build())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .setStartingPhaseId("startingPhaseId-326529130")
               .build();
       OperationFuture<Rollout, OperationMetadata> future =

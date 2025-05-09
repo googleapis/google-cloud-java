@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -200,6 +200,20 @@ public final class PolicyTagManagerSerializationGrpc {
           }
         };
     return PolicyTagManagerSerializationStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PolicyTagManagerSerializationBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerSerializationBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PolicyTagManagerSerializationBlockingV2Stub>() {
+          @java.lang.Override
+          public PolicyTagManagerSerializationBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PolicyTagManagerSerializationBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PolicyTagManagerSerializationBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -415,6 +429,87 @@ public final class PolicyTagManagerSerializationGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PolicyTagManagerSerialization.
+   *
+   * <pre>
+   * Policy Tag Manager Serialization API service allows you to manipulate
+   * your policy tags and taxonomies in a serialized format.
+   * Taxonomy is a hierarchical group of policy tags.
+   * </pre>
+   */
+  public static final class PolicyTagManagerSerializationBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PolicyTagManagerSerializationBlockingV2Stub> {
+    private PolicyTagManagerSerializationBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PolicyTagManagerSerializationBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PolicyTagManagerSerializationBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces (updates) a taxonomy and all its policy tags.
+     * The taxonomy and its entire hierarchy of policy tags must be
+     * represented literally by `SerializedTaxonomy` and the nested
+     * `SerializedPolicyTag` messages.
+     * This operation automatically does the following:
+     * - Deletes the existing policy tags that are missing from the
+     *   `SerializedPolicyTag`.
+     * - Creates policy tags that don't have resource names. They are considered
+     *   new.
+     * - Updates policy tags with valid resources names accordingly.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.Taxonomy replaceTaxonomy(
+        com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReplaceTaxonomyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates new taxonomies (including their policy tags) in a given project
+     * by importing from inlined or cross-regional sources.
+     * For a cross-regional source, new taxonomies are created by copying
+     * from a source in another region.
+     * For an inlined source, taxonomies and policy tags are created in bulk using
+     * nested protocol buffer structures.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse importTaxonomies(
+        com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportTaxonomiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports taxonomies in the requested type and returns them,
+     * including their policy tags. The requested taxonomies must belong to the
+     * same project.
+     * This method generates `SerializedTaxonomy` protocol buffers with nested
+     * policy tags that can be used as input for `ImportTaxonomies` calls.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse exportTaxonomies(
+        com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportTaxonomiesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * PolicyTagManagerSerialization.
    *
    * <pre>
    * Policy Tag Manager Serialization API service allows you to manipulate

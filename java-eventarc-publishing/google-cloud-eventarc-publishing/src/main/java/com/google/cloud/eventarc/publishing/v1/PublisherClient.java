@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,15 +36,19 @@ import javax.annotation.Generated;
  *
  * <p>A partner is a third-party event provider that is integrated with Eventarc.
  *
- * <p>A subscriber is a GCP customer interested in receiving events.
+ * <p>A subscriber is a Google Cloud customer interested in receiving events.
  *
  * <p>Channel is a first-class Eventarc resource that is created and managed by the subscriber in
- * their GCP project. A Channel represents a subscriber's intent to receive events from an event
- * provider. A Channel is associated with exactly one event provider.
+ * their Google Cloud project. A Channel represents a subscriber's intent to receive events from an
+ * event provider. A Channel is associated with exactly one event provider.
  *
  * <p>ChannelConnection is a first-class Eventarc resource that is created and managed by the
- * partner in their GCP project. A ChannelConnection represents a connection between a partner and a
- * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a Channel.
+ * partner in their Google Cloud project. A ChannelConnection represents a connection between a
+ * partner and a subscriber's Channel. A ChannelConnection has a one-to-one mapping with a Channel.
+ *
+ * <p>Bus is a first-class Eventarc resource that is created and managed in a Google Cloud project.
+ * A Bus provides a discoverable endpoint for events and is a router that receives all events
+ * published by event providers and delivers them to zero or more subscribers.
  *
  * <p>Publisher allows an event provider to publish events to Eventarc.
  *
@@ -72,19 +76,56 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the PublisherClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PublishChannelConnectionEvents</td>
+ *      <td><p> Publish events to a ChannelConnection in a partner's project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> publishChannelConnectionEvents(PublishChannelConnectionEventsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> publishChannelConnectionEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PublishEvents</td>
+ *      <td><p> Publish events to a subscriber's channel.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> publishEvents(PublishEventsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> publishEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Publish</td>
+ *      <td><p> Publish events to a message bus.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> publish(PublishRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> publishCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -308,6 +349,57 @@ public class PublisherClient implements BackgroundResource {
    */
   public final UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable() {
     return stub.publishEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Publish events to a message bus.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   PublishRequest request =
+   *       PublishRequest.newBuilder().setMessageBus("messageBus-1690749703").build();
+   *   PublishResponse response = publisherClient.publish(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublishResponse publish(PublishRequest request) {
+    return publishCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Publish events to a message bus.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   PublishRequest request =
+   *       PublishRequest.newBuilder().setMessageBus("messageBus-1690749703").build();
+   *   ApiFuture<PublishResponse> future = publisherClient.publishCallable().futureCall(request);
+   *   // Do something.
+   *   PublishResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+    return stub.publishCallable();
   }
 
   @Override

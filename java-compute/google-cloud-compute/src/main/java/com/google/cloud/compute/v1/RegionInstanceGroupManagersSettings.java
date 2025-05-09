@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import static com.google.cloud.compute.v1.RegionInstanceGroupManagersClient.List
 import static com.google.cloud.compute.v1.RegionInstanceGroupManagersClient.ListPerInstanceConfigsPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -53,7 +52,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -70,10 +71,47 @@ import javax.annotation.Generated;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * RegionInstanceGroupManagersSettings regionInstanceGroupManagersSettings =
  *     regionInstanceGroupManagersSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for abandonInstances:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * RegionInstanceGroupManagersSettings.Builder regionInstanceGroupManagersSettingsBuilder =
+ *     RegionInstanceGroupManagersSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * regionInstanceGroupManagersSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -268,6 +306,20 @@ public class RegionInstanceGroupManagersSettings
     return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).resizeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to resumeInstances. */
+  public UnaryCallSettings<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+      resumeInstancesSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).resumeInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resumeInstances. */
+  public OperationCallSettings<
+          ResumeInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      resumeInstancesOperationSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
+        .resumeInstancesOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setInstanceTemplate. */
   public UnaryCallSettings<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
       setInstanceTemplateSettings() {
@@ -295,6 +347,47 @@ public class RegionInstanceGroupManagersSettings
       setTargetPoolsOperationSettings() {
     return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
         .setTargetPoolsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startInstances. */
+  public UnaryCallSettings<StartInstancesRegionInstanceGroupManagerRequest, Operation>
+      startInstancesSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).startInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startInstances. */
+  public OperationCallSettings<
+          StartInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      startInstancesOperationSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
+        .startInstancesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopInstances. */
+  public UnaryCallSettings<StopInstancesRegionInstanceGroupManagerRequest, Operation>
+      stopInstancesSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).stopInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopInstances. */
+  public OperationCallSettings<StopInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      stopInstancesOperationSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
+        .stopInstancesOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to suspendInstances. */
+  public UnaryCallSettings<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+      suspendInstancesSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings()).suspendInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to suspendInstances. */
+  public OperationCallSettings<
+          SuspendInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+      suspendInstancesOperationSettings() {
+    return ((RegionInstanceGroupManagersStubSettings) getStubSettings())
+        .suspendInstancesOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to updatePerInstanceConfigs. */
@@ -347,7 +440,6 @@ public class RegionInstanceGroupManagersSettings
     return RegionInstanceGroupManagersStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return RegionInstanceGroupManagersStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -599,6 +691,19 @@ public class RegionInstanceGroupManagersSettings
       return getStubSettingsBuilder().resizeOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to resumeInstances. */
+    public UnaryCallSettings.Builder<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
+        resumeInstancesSettings() {
+      return getStubSettingsBuilder().resumeInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resumeInstances. */
+    public OperationCallSettings.Builder<
+            ResumeInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        resumeInstancesOperationSettings() {
+      return getStubSettingsBuilder().resumeInstancesOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setInstanceTemplate. */
     public UnaryCallSettings.Builder<
             SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
@@ -624,6 +729,45 @@ public class RegionInstanceGroupManagersSettings
             SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
         setTargetPoolsOperationSettings() {
       return getStubSettingsBuilder().setTargetPoolsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startInstances. */
+    public UnaryCallSettings.Builder<StartInstancesRegionInstanceGroupManagerRequest, Operation>
+        startInstancesSettings() {
+      return getStubSettingsBuilder().startInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startInstances. */
+    public OperationCallSettings.Builder<
+            StartInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        startInstancesOperationSettings() {
+      return getStubSettingsBuilder().startInstancesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstances. */
+    public UnaryCallSettings.Builder<StopInstancesRegionInstanceGroupManagerRequest, Operation>
+        stopInstancesSettings() {
+      return getStubSettingsBuilder().stopInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopInstances. */
+    public OperationCallSettings.Builder<
+            StopInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        stopInstancesOperationSettings() {
+      return getStubSettingsBuilder().stopInstancesOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suspendInstances. */
+    public UnaryCallSettings.Builder<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
+        suspendInstancesSettings() {
+      return getStubSettingsBuilder().suspendInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suspendInstances. */
+    public OperationCallSettings.Builder<
+            SuspendInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
+        suspendInstancesOperationSettings() {
+      return getStubSettingsBuilder().suspendInstancesOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */

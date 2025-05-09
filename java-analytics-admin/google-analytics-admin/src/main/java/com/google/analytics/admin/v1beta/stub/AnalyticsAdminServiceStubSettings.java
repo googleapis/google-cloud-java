@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.List
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
 import static com.google.analytics.admin.v1beta.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -42,6 +43,7 @@ import com.google.analytics.admin.v1beta.CreateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.CreateDataStreamRequest;
 import com.google.analytics.admin.v1beta.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.CreateKeyEventRequest;
 import com.google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.CreatePropertyRequest;
 import com.google.analytics.admin.v1beta.CustomDimension;
@@ -54,6 +56,7 @@ import com.google.analytics.admin.v1beta.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1beta.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1beta.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1beta.DeleteGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1beta.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.DeletePropertyRequest;
 import com.google.analytics.admin.v1beta.FirebaseLink;
@@ -64,9 +67,11 @@ import com.google.analytics.admin.v1beta.GetCustomMetricRequest;
 import com.google.analytics.admin.v1beta.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1beta.GetDataStreamRequest;
+import com.google.analytics.admin.v1beta.GetKeyEventRequest;
 import com.google.analytics.admin.v1beta.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.GetPropertyRequest;
 import com.google.analytics.admin.v1beta.GoogleAdsLink;
+import com.google.analytics.admin.v1beta.KeyEvent;
 import com.google.analytics.admin.v1beta.ListAccountSummariesRequest;
 import com.google.analytics.admin.v1beta.ListAccountSummariesResponse;
 import com.google.analytics.admin.v1beta.ListAccountsRequest;
@@ -83,6 +88,8 @@ import com.google.analytics.admin.v1beta.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1beta.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1beta.ListGoogleAdsLinksResponse;
+import com.google.analytics.admin.v1beta.ListKeyEventsRequest;
+import com.google.analytics.admin.v1beta.ListKeyEventsResponse;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1beta.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1beta.ListPropertiesRequest;
@@ -102,11 +109,13 @@ import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1beta.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1beta.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1beta.UpdatePropertyRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -135,9 +144,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -155,7 +164,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAccount to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getAccount:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -172,11 +183,22 @@ import org.threeten.bp.Duration;
  *             .getAccountSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AnalyticsAdminServiceStubSettings analyticsAdminServiceSettings =
  *     analyticsAdminServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -259,6 +281,13 @@ public class AnalyticsAdminServiceStubSettings
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings;
+  private final UnaryCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventSettings;
+  private final UnaryCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings;
+  private final UnaryCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventSettings;
+  private final UnaryCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventSettings;
+  private final PagedCallSettings<
+          ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      listKeyEventsSettings;
   private final UnaryCallSettings<CreateCustomDimensionRequest, CustomDimension>
       createCustomDimensionSettings;
   private final UnaryCallSettings<UpdateCustomDimensionRequest, CustomDimension>
@@ -325,9 +354,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<Account> extractResources(ListAccountsResponse payload) {
-              return payload.getAccountsList() == null
-                  ? ImmutableList.<Account>of()
-                  : payload.getAccountsList();
+              return payload.getAccountsList();
             }
           };
 
@@ -365,9 +392,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<AccountSummary> extractResources(ListAccountSummariesResponse payload) {
-              return payload.getAccountSummariesList() == null
-                  ? ImmutableList.<AccountSummary>of()
-                  : payload.getAccountSummariesList();
+              return payload.getAccountSummariesList();
             }
           };
 
@@ -402,9 +427,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<Property> extractResources(ListPropertiesResponse payload) {
-              return payload.getPropertiesList() == null
-                  ? ImmutableList.<Property>of()
-                  : payload.getPropertiesList();
+              return payload.getPropertiesList();
             }
           };
 
@@ -442,9 +465,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<FirebaseLink> extractResources(ListFirebaseLinksResponse payload) {
-              return payload.getFirebaseLinksList() == null
-                  ? ImmutableList.<FirebaseLink>of()
-                  : payload.getFirebaseLinksList();
+              return payload.getFirebaseLinksList();
             }
           };
 
@@ -482,9 +503,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<GoogleAdsLink> extractResources(ListGoogleAdsLinksResponse payload) {
-              return payload.getGoogleAdsLinksList() == null
-                  ? ImmutableList.<GoogleAdsLink>of()
-                  : payload.getGoogleAdsLinksList();
+              return payload.getGoogleAdsLinksList();
             }
           };
 
@@ -531,9 +550,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<MeasurementProtocolSecret> extractResources(
                 ListMeasurementProtocolSecretsResponse payload) {
-              return payload.getMeasurementProtocolSecretsList() == null
-                  ? ImmutableList.<MeasurementProtocolSecret>of()
-                  : payload.getMeasurementProtocolSecretsList();
+              return payload.getMeasurementProtocolSecretsList();
             }
           };
 
@@ -578,9 +595,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<ChangeHistoryEvent> extractResources(
                 SearchChangeHistoryEventsResponse payload) {
-              return payload.getChangeHistoryEventsList() == null
-                  ? ImmutableList.<ChangeHistoryEvent>of()
-                  : payload.getChangeHistoryEventsList();
+              return payload.getChangeHistoryEventsList();
             }
           };
 
@@ -619,9 +634,41 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<ConversionEvent> extractResources(
                 ListConversionEventsResponse payload) {
-              return payload.getConversionEventsList() == null
-                  ? ImmutableList.<ConversionEvent>of()
-                  : payload.getConversionEventsList();
+              return payload.getConversionEventsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent>
+      LIST_KEY_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListKeyEventsRequest injectToken(ListKeyEventsRequest payload, String token) {
+              return ListKeyEventsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListKeyEventsRequest injectPageSize(ListKeyEventsRequest payload, int pageSize) {
+              return ListKeyEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListKeyEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListKeyEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<KeyEvent> extractResources(ListKeyEventsResponse payload) {
+              return payload.getKeyEventsList();
             }
           };
 
@@ -660,9 +707,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<CustomDimension> extractResources(
                 ListCustomDimensionsResponse payload) {
-              return payload.getCustomDimensionsList() == null
-                  ? ImmutableList.<CustomDimension>of()
-                  : payload.getCustomDimensionsList();
+              return payload.getCustomDimensionsList();
             }
           };
 
@@ -700,9 +745,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<CustomMetric> extractResources(ListCustomMetricsResponse payload) {
-              return payload.getCustomMetricsList() == null
-                  ? ImmutableList.<CustomMetric>of()
-                  : payload.getCustomMetricsList();
+              return payload.getCustomMetricsList();
             }
           };
 
@@ -739,9 +782,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<DataStream> extractResources(ListDataStreamsResponse payload) {
-              return payload.getDataStreamsList() == null
-                  ? ImmutableList.<DataStream>of()
-                  : payload.getDataStreamsList();
+              return payload.getDataStreamsList();
             }
           };
 
@@ -926,6 +967,23 @@ public class AnalyticsAdminServiceStubSettings
                       PageContext.create(
                           callable, LIST_CONVERSION_EVENTS_PAGE_STR_DESC, request, context);
               return ListConversionEventsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      LIST_KEY_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>() {
+            @Override
+            public ApiFuture<ListKeyEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> callable,
+                ListKeyEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListKeyEventsResponse> futureResponse) {
+              PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> pageContext =
+                  PageContext.create(callable, LIST_KEY_EVENTS_PAGE_STR_DESC, request, context);
+              return ListKeyEventsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1150,36 +1208,87 @@ public class AnalyticsAdminServiceStubSettings
     return searchChangeHistoryEventsSettings;
   }
 
-  /** Returns the object with the settings used for calls to createConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to createConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings() {
     return createConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to updateConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
       updateConversionEventSettings() {
     return updateConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to getConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to getConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings() {
     return getConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to deleteConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventSettings() {
     return deleteConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to listConversionEvents. */
+  /**
+   * Returns the object with the settings used for calls to listConversionEvents.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListConversionEventsRequest,
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings() {
     return listConversionEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createKeyEvent. */
+  public UnaryCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+    return createKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateKeyEvent. */
+  public UnaryCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+    return updateKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getKeyEvent. */
+  public UnaryCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+    return getKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteKeyEvent. */
+  public UnaryCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+    return deleteKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listKeyEvents. */
+  public PagedCallSettings<ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      listKeyEventsSettings() {
+    return listKeyEventsSettings;
   }
 
   /** Returns the object with the settings used for calls to createCustomDimension. */
@@ -1302,12 +1411,19 @@ public class AnalyticsAdminServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "analyticsadmin";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "analyticsadmin.googleapis.com:443";
   }
@@ -1346,7 +1462,6 @@ public class AnalyticsAdminServiceStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1355,7 +1470,6 @@ public class AnalyticsAdminServiceStubSettings
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -1429,6 +1543,11 @@ public class AnalyticsAdminServiceStubSettings
     getConversionEventSettings = settingsBuilder.getConversionEventSettings().build();
     deleteConversionEventSettings = settingsBuilder.deleteConversionEventSettings().build();
     listConversionEventsSettings = settingsBuilder.listConversionEventsSettings().build();
+    createKeyEventSettings = settingsBuilder.createKeyEventSettings().build();
+    updateKeyEventSettings = settingsBuilder.updateKeyEventSettings().build();
+    getKeyEventSettings = settingsBuilder.getKeyEventSettings().build();
+    deleteKeyEventSettings = settingsBuilder.deleteKeyEventSettings().build();
+    listKeyEventsSettings = settingsBuilder.listKeyEventsSettings().build();
     createCustomDimensionSettings = settingsBuilder.createCustomDimensionSettings().build();
     updateCustomDimensionSettings = settingsBuilder.updateCustomDimensionSettings().build();
     listCustomDimensionsSettings = settingsBuilder.listCustomDimensionsSettings().build();
@@ -1530,6 +1649,13 @@ public class AnalyticsAdminServiceStubSettings
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings;
+    private final UnaryCallSettings.Builder<CreateKeyEventRequest, KeyEvent> createKeyEventSettings;
+    private final UnaryCallSettings.Builder<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings;
+    private final UnaryCallSettings.Builder<GetKeyEventRequest, KeyEvent> getKeyEventSettings;
+    private final UnaryCallSettings.Builder<DeleteKeyEventRequest, Empty> deleteKeyEventSettings;
+    private final PagedCallSettings.Builder<
+            ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+        listKeyEventsSettings;
     private final UnaryCallSettings.Builder<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionSettings;
     private final UnaryCallSettings.Builder<UpdateCustomDimensionRequest, CustomDimension>
@@ -1592,13 +1718,13 @@ public class AnalyticsAdminServiceStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1647,6 +1773,11 @@ public class AnalyticsAdminServiceStubSettings
       deleteConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversionEventsSettings =
           PagedCallSettings.newBuilder(LIST_CONVERSION_EVENTS_PAGE_STR_FACT);
+      createKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listKeyEventsSettings = PagedCallSettings.newBuilder(LIST_KEY_EVENTS_PAGE_STR_FACT);
       createCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCustomDimensionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCustomDimensionsSettings =
@@ -1700,6 +1831,11 @@ public class AnalyticsAdminServiceStubSettings
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
+              createKeyEventSettings,
+              updateKeyEventSettings,
+              getKeyEventSettings,
+              deleteKeyEventSettings,
+              listKeyEventsSettings,
               createCustomDimensionSettings,
               updateCustomDimensionSettings,
               listCustomDimensionsSettings,
@@ -1761,6 +1897,11 @@ public class AnalyticsAdminServiceStubSettings
       getConversionEventSettings = settings.getConversionEventSettings.toBuilder();
       deleteConversionEventSettings = settings.deleteConversionEventSettings.toBuilder();
       listConversionEventsSettings = settings.listConversionEventsSettings.toBuilder();
+      createKeyEventSettings = settings.createKeyEventSettings.toBuilder();
+      updateKeyEventSettings = settings.updateKeyEventSettings.toBuilder();
+      getKeyEventSettings = settings.getKeyEventSettings.toBuilder();
+      deleteKeyEventSettings = settings.deleteKeyEventSettings.toBuilder();
+      listKeyEventsSettings = settings.listKeyEventsSettings.toBuilder();
       createCustomDimensionSettings = settings.createCustomDimensionSettings.toBuilder();
       updateCustomDimensionSettings = settings.updateCustomDimensionSettings.toBuilder();
       listCustomDimensionsSettings = settings.listCustomDimensionsSettings.toBuilder();
@@ -1814,6 +1955,11 @@ public class AnalyticsAdminServiceStubSettings
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
+              createKeyEventSettings,
+              updateKeyEventSettings,
+              getKeyEventSettings,
+              deleteKeyEventSettings,
+              listKeyEventsSettings,
               createCustomDimensionSettings,
               updateCustomDimensionSettings,
               listCustomDimensionsSettings,
@@ -1840,7 +1986,6 @@ public class AnalyticsAdminServiceStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1853,7 +1998,6 @@ public class AnalyticsAdminServiceStubSettings
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -2013,6 +2157,31 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .listConversionEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listKeyEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2289,37 +2458,89 @@ public class AnalyticsAdminServiceStubSettings
       return searchChangeHistoryEventsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to createConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return createConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to updateConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
         updateConversionEventSettings() {
       return updateConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to getConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
         getConversionEventSettings() {
       return getConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to deleteConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
         deleteConversionEventSettings() {
       return deleteConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listConversionEvents. */
+    /**
+     * Returns the builder for the settings used for calls to listConversionEvents.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListConversionEventsRequest,
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings() {
       return listConversionEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createKeyEvent. */
+    public UnaryCallSettings.Builder<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+      return createKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKeyEvent. */
+    public UnaryCallSettings.Builder<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+      return updateKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getKeyEvent. */
+    public UnaryCallSettings.Builder<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+      return getKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteKeyEvent. */
+    public UnaryCallSettings.Builder<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+      return deleteKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listKeyEvents. */
+    public PagedCallSettings.Builder<
+            ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+        listKeyEventsSettings() {
+      return listKeyEventsSettings;
     }
 
     /** Returns the builder for the settings used for calls to createCustomDimension. */

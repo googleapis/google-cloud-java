@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -278,6 +278,19 @@ public final class DashboardsServiceGrpc {
     return DashboardsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DashboardsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DashboardsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DashboardsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DashboardsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DashboardsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DashboardsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -549,6 +562,110 @@ public final class DashboardsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DashboardsService.
+   *
+   * <pre>
+   * Manages Stackdriver dashboards. A dashboard is an arrangement of data display
+   * widgets in a specific layout.
+   * </pre>
+   */
+  public static final class DashboardsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DashboardsServiceBlockingV2Stub> {
+    private DashboardsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DashboardsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DashboardsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new custom dashboard. For examples on how you can use this API to
+     * create dashboards, see [Managing dashboards by
+     * API](https://cloud.google.com/monitoring/dashboards/api-dashboard). This
+     * method requires the `monitoring.dashboards.create` permission on the
+     * specified project. For more information about permissions, see [Cloud
+     * Identity and Access Management](https://cloud.google.com/iam).
+     * </pre>
+     */
+    public com.google.monitoring.dashboard.v1.Dashboard createDashboard(
+        com.google.monitoring.dashboard.v1.CreateDashboardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDashboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the existing dashboards.
+     * This method requires the `monitoring.dashboards.list` permission
+     * on the specified project. For more information, see
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
+     * </pre>
+     */
+    public com.google.monitoring.dashboard.v1.ListDashboardsResponse listDashboards(
+        com.google.monitoring.dashboard.v1.ListDashboardsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDashboardsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a specific dashboard.
+     * This method requires the `monitoring.dashboards.get` permission
+     * on the specified dashboard. For more information, see
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
+     * </pre>
+     */
+    public com.google.monitoring.dashboard.v1.Dashboard getDashboard(
+        com.google.monitoring.dashboard.v1.GetDashboardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDashboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing custom dashboard.
+     * This method requires the `monitoring.dashboards.delete` permission
+     * on the specified dashboard. For more information, see
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDashboard(
+        com.google.monitoring.dashboard.v1.DeleteDashboardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDashboardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces an existing custom dashboard with a new definition.
+     * This method requires the `monitoring.dashboards.update` permission
+     * on the specified dashboard. For more information, see
+     * [Cloud Identity and Access Management](https://cloud.google.com/iam).
+     * </pre>
+     */
+    public com.google.monitoring.dashboard.v1.Dashboard updateDashboard(
+        com.google.monitoring.dashboard.v1.UpdateDashboardRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDashboardMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DashboardsService.
    *
    * <pre>
    * Manages Stackdriver dashboards. A dashboard is an arrangement of data display

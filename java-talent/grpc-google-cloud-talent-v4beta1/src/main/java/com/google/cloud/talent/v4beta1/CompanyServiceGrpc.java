@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -275,6 +275,19 @@ public final class CompanyServiceGrpc {
     return CompanyServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CompanyServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CompanyServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompanyServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CompanyServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompanyServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CompanyServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -501,6 +514,92 @@ public final class CompanyServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CompanyService.
+   *
+   * <pre>
+   * A service that handles company management, including CRUD and enumeration.
+   * </pre>
+   */
+  public static final class CompanyServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CompanyServiceBlockingV2Stub> {
+    private CompanyServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CompanyServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CompanyServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new company entity.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.Company createCompany(
+        com.google.cloud.talent.v4beta1.CreateCompanyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCompanyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves specified company.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.Company getCompany(
+        com.google.cloud.talent.v4beta1.GetCompanyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCompanyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates specified company.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.Company updateCompany(
+        com.google.cloud.talent.v4beta1.UpdateCompanyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCompanyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes specified company.
+     * Prerequisite: The company has no jobs associated with it.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCompany(
+        com.google.cloud.talent.v4beta1.DeleteCompanyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCompanyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all companies associated with the project.
+     * </pre>
+     */
+    public com.google.cloud.talent.v4beta1.ListCompaniesResponse listCompanies(
+        com.google.cloud.talent.v4beta1.ListCompaniesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCompaniesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CompanyService.
    *
    * <pre>
    * A service that handles company management, including CRUD and enumeration.

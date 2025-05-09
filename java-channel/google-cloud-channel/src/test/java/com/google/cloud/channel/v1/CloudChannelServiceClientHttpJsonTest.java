@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -284,6 +284,7 @@ public class CloudChannelServiceClientHttpJsonTest {
         CheckCloudIdentityAccountsExistRequest.newBuilder()
             .setParent("accounts/account-4811")
             .setDomain("domain-1326197564")
+            .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
             .build();
 
     CheckCloudIdentityAccountsExistResponse actualResponse =
@@ -317,6 +318,7 @@ public class CloudChannelServiceClientHttpJsonTest {
           CheckCloudIdentityAccountsExistRequest.newBuilder()
               .setParent("accounts/account-4811")
               .setDomain("domain-1326197564")
+              .setPrimaryAdminEmail("primaryAdminEmail-1896816337")
               .build();
       client.checkCloudIdentityAccountsExist(request);
       Assert.fail("No exception raised");

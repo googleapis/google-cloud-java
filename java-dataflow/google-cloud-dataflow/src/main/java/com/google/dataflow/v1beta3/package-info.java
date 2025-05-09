@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,7 +150,7 @@
  *
  * <p>======================= FlexTemplatesServiceClient =======================
  *
- * <p>Service Description: Provides a service for Flex templates. This feature is not ready yet.
+ * <p>Service Description: Provides a service for Flex templates.
  *
  * <p>Sample for FlexTemplatesServiceClient:
  *

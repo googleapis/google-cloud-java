@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,11 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocat
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.QueryHubStatusPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -56,6 +57,8 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
@@ -67,6 +70,7 @@ import com.google.cloud.networkconnectivity.v1.GetRouteTableRequest;
 import com.google.cloud.networkconnectivity.v1.GetSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.Group;
 import com.google.cloud.networkconnectivity.v1.Hub;
+import com.google.cloud.networkconnectivity.v1.HubStatusEntry;
 import com.google.cloud.networkconnectivity.v1.ListGroupsRequest;
 import com.google.cloud.networkconnectivity.v1.ListGroupsResponse;
 import com.google.cloud.networkconnectivity.v1.ListHubSpokesRequest;
@@ -80,11 +84,16 @@ import com.google.cloud.networkconnectivity.v1.ListRoutesResponse;
 import com.google.cloud.networkconnectivity.v1.ListSpokesRequest;
 import com.google.cloud.networkconnectivity.v1.ListSpokesResponse;
 import com.google.cloud.networkconnectivity.v1.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1.QueryHubStatusRequest;
+import com.google.cloud.networkconnectivity.v1.QueryHubStatusResponse;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateGroupRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
 import com.google.common.collect.ImmutableList;
@@ -99,9 +108,9 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -119,7 +128,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getHub to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getHub:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -135,9 +146,45 @@ import org.threeten.bp.Duration;
  *             .getHubSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * HubServiceStubSettings hubServiceSettings = hubServiceSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createHub:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * HubServiceStubSettings.Builder hubServiceSettingsBuilder = HubServiceStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * hubServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -161,6 +208,9 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
   private final PagedCallSettings<
           ListHubSpokesRequest, ListHubSpokesResponse, ListHubSpokesPagedResponse>
       listHubSpokesSettings;
+  private final PagedCallSettings<
+          QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+      queryHubStatusSettings;
   private final PagedCallSettings<ListSpokesRequest, ListSpokesResponse, ListSpokesPagedResponse>
       listSpokesSettings;
   private final UnaryCallSettings<GetSpokeRequest, Spoke> getSpokeSettings;
@@ -178,6 +228,14 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
   private final OperationCallSettings<
           AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
       acceptHubSpokeOperationSettings;
+  private final UnaryCallSettings<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateSettings;
+  private final OperationCallSettings<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationSettings;
+  private final UnaryCallSettings<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateSettings;
+  private final OperationCallSettings<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationSettings;
   private final UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings;
   private final OperationCallSettings<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationSettings;
@@ -191,6 +249,9 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
   private final UnaryCallSettings<GetGroupRequest, Group> getGroupSettings;
   private final PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings;
+  private final UnaryCallSettings<UpdateGroupRequest, Operation> updateGroupSettings;
+  private final OperationCallSettings<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -230,9 +291,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
             @Override
             public Iterable<Hub> extractResources(ListHubsResponse payload) {
-              return payload.getHubsList() == null
-                  ? ImmutableList.<Hub>of()
-                  : payload.getHubsList();
+              return payload.getHubsList();
             }
           };
 
@@ -266,9 +325,43 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
             @Override
             public Iterable<Spoke> extractResources(ListHubSpokesResponse payload) {
-              return payload.getSpokesList() == null
-                  ? ImmutableList.<Spoke>of()
-                  : payload.getSpokesList();
+              return payload.getSpokesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry>
+      QUERY_HUB_STATUS_PAGE_STR_DESC =
+          new PagedListDescriptor<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public QueryHubStatusRequest injectToken(QueryHubStatusRequest payload, String token) {
+              return QueryHubStatusRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public QueryHubStatusRequest injectPageSize(
+                QueryHubStatusRequest payload, int pageSize) {
+              return QueryHubStatusRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(QueryHubStatusRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(QueryHubStatusResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<HubStatusEntry> extractResources(QueryHubStatusResponse payload) {
+              return payload.getHubStatusEntriesList();
             }
           };
 
@@ -302,9 +395,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
             @Override
             public Iterable<Spoke> extractResources(ListSpokesResponse payload) {
-              return payload.getSpokesList() == null
-                  ? ImmutableList.<Spoke>of()
-                  : payload.getSpokesList();
+              return payload.getSpokesList();
             }
           };
 
@@ -338,9 +429,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
             @Override
             public Iterable<Route> extractResources(ListRoutesResponse payload) {
-              return payload.getRoutesList() == null
-                  ? ImmutableList.<Route>of()
-                  : payload.getRoutesList();
+              return payload.getRoutesList();
             }
           };
 
@@ -377,9 +466,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
             @Override
             public Iterable<RouteTable> extractResources(ListRouteTablesResponse payload) {
-              return payload.getRouteTablesList() == null
-                  ? ImmutableList.<RouteTable>of()
-                  : payload.getRouteTablesList();
+              return payload.getRouteTablesList();
             }
           };
 
@@ -413,9 +500,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
             @Override
             public Iterable<Group> extractResources(ListGroupsResponse payload) {
-              return payload.getGroupsList() == null
-                  ? ImmutableList.<Group>of()
-                  : payload.getGroupsList();
+              return payload.getGroupsList();
             }
           };
 
@@ -449,9 +534,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -485,6 +568,25 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> pageContext =
                   PageContext.create(callable, LIST_HUB_SPOKES_PAGE_STR_DESC, request, context);
               return ListHubSpokesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+      QUERY_HUB_STATUS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>() {
+            @Override
+            public ApiFuture<QueryHubStatusPagedResponse> getFuturePagedResponse(
+                UnaryCallable<QueryHubStatusRequest, QueryHubStatusResponse> callable,
+                QueryHubStatusRequest request,
+                ApiCallContext context,
+                ApiFuture<QueryHubStatusResponse> futureResponse) {
+              PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry>
+                  pageContext =
+                      PageContext.create(
+                          callable, QUERY_HUB_STATUS_PAGE_STR_DESC, request, context);
+              return QueryHubStatusPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -623,6 +725,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return listHubSpokesSettings;
   }
 
+  /** Returns the object with the settings used for calls to queryHubStatus. */
+  public PagedCallSettings<
+          QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+      queryHubStatusSettings() {
+    return queryHubStatusSettings;
+  }
+
   /** Returns the object with the settings used for calls to listSpokes. */
   public PagedCallSettings<ListSpokesRequest, ListSpokesResponse, ListSpokesPagedResponse>
       listSpokesSettings() {
@@ -678,6 +787,30 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return acceptHubSpokeOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to acceptSpokeUpdate. */
+  public UnaryCallSettings<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateSettings() {
+    return acceptSpokeUpdateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to acceptSpokeUpdate. */
+  public OperationCallSettings<
+          AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationSettings() {
+    return acceptSpokeUpdateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rejectSpokeUpdate. */
+  public UnaryCallSettings<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateSettings() {
+    return rejectSpokeUpdateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rejectSpokeUpdate. */
+  public OperationCallSettings<
+          RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationSettings() {
+    return rejectSpokeUpdateOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteSpoke. */
   public UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
     return deleteSpokeSettings;
@@ -723,6 +856,17 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return listGroupsSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateGroup. */
+  public UnaryCallSettings<UpdateGroupRequest, Operation> updateGroupSettings() {
+    return updateGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGroup. */
+  public OperationCallSettings<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationSettings() {
+    return updateGroupOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -761,12 +905,19 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "networkconnectivity";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "networkconnectivity.googleapis.com:443";
   }
@@ -798,7 +949,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -834,6 +984,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     deleteHubSettings = settingsBuilder.deleteHubSettings().build();
     deleteHubOperationSettings = settingsBuilder.deleteHubOperationSettings().build();
     listHubSpokesSettings = settingsBuilder.listHubSpokesSettings().build();
+    queryHubStatusSettings = settingsBuilder.queryHubStatusSettings().build();
     listSpokesSettings = settingsBuilder.listSpokesSettings().build();
     getSpokeSettings = settingsBuilder.getSpokeSettings().build();
     createSpokeSettings = settingsBuilder.createSpokeSettings().build();
@@ -844,6 +995,12 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     rejectHubSpokeOperationSettings = settingsBuilder.rejectHubSpokeOperationSettings().build();
     acceptHubSpokeSettings = settingsBuilder.acceptHubSpokeSettings().build();
     acceptHubSpokeOperationSettings = settingsBuilder.acceptHubSpokeOperationSettings().build();
+    acceptSpokeUpdateSettings = settingsBuilder.acceptSpokeUpdateSettings().build();
+    acceptSpokeUpdateOperationSettings =
+        settingsBuilder.acceptSpokeUpdateOperationSettings().build();
+    rejectSpokeUpdateSettings = settingsBuilder.rejectSpokeUpdateSettings().build();
+    rejectSpokeUpdateOperationSettings =
+        settingsBuilder.rejectSpokeUpdateOperationSettings().build();
     deleteSpokeSettings = settingsBuilder.deleteSpokeSettings().build();
     deleteSpokeOperationSettings = settingsBuilder.deleteSpokeOperationSettings().build();
     getRouteTableSettings = settingsBuilder.getRouteTableSettings().build();
@@ -852,6 +1009,8 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     listRouteTablesSettings = settingsBuilder.listRouteTablesSettings().build();
     getGroupSettings = settingsBuilder.getGroupSettings().build();
     listGroupsSettings = settingsBuilder.listGroupsSettings().build();
+    updateGroupSettings = settingsBuilder.updateGroupSettings().build();
+    updateGroupOperationSettings = settingsBuilder.updateGroupOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -879,6 +1038,9 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
             ListHubSpokesRequest, ListHubSpokesResponse, ListHubSpokesPagedResponse>
         listHubSpokesSettings;
     private final PagedCallSettings.Builder<
+            QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+        queryHubStatusSettings;
+    private final PagedCallSettings.Builder<
             ListSpokesRequest, ListSpokesResponse, ListSpokesPagedResponse>
         listSpokesSettings;
     private final UnaryCallSettings.Builder<GetSpokeRequest, Spoke> getSpokeSettings;
@@ -898,6 +1060,16 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     private final OperationCallSettings.Builder<
             AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
         acceptHubSpokeOperationSettings;
+    private final UnaryCallSettings.Builder<AcceptSpokeUpdateRequest, Operation>
+        acceptSpokeUpdateSettings;
+    private final OperationCallSettings.Builder<
+            AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+        acceptSpokeUpdateOperationSettings;
+    private final UnaryCallSettings.Builder<RejectSpokeUpdateRequest, Operation>
+        rejectSpokeUpdateSettings;
+    private final OperationCallSettings.Builder<
+            RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+        rejectSpokeUpdateOperationSettings;
     private final UnaryCallSettings.Builder<DeleteSpokeRequest, Operation> deleteSpokeSettings;
     private final OperationCallSettings.Builder<DeleteSpokeRequest, Empty, OperationMetadata>
         deleteSpokeOperationSettings;
@@ -913,6 +1085,9 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     private final PagedCallSettings.Builder<
             ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings;
+    private final UnaryCallSettings.Builder<UpdateGroupRequest, Operation> updateGroupSettings;
+    private final OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
+        updateGroupOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -942,21 +1117,21 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -978,6 +1153,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       deleteHubSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteHubOperationSettings = OperationCallSettings.newBuilder();
       listHubSpokesSettings = PagedCallSettings.newBuilder(LIST_HUB_SPOKES_PAGE_STR_FACT);
+      queryHubStatusSettings = PagedCallSettings.newBuilder(QUERY_HUB_STATUS_PAGE_STR_FACT);
       listSpokesSettings = PagedCallSettings.newBuilder(LIST_SPOKES_PAGE_STR_FACT);
       getSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -988,6 +1164,10 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       rejectHubSpokeOperationSettings = OperationCallSettings.newBuilder();
       acceptHubSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       acceptHubSpokeOperationSettings = OperationCallSettings.newBuilder();
+      acceptSpokeUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      acceptSpokeUpdateOperationSettings = OperationCallSettings.newBuilder();
+      rejectSpokeUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rejectSpokeUpdateOperationSettings = OperationCallSettings.newBuilder();
       deleteSpokeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSpokeOperationSettings = OperationCallSettings.newBuilder();
       getRouteTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -996,6 +1176,8 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       listRouteTablesSettings = PagedCallSettings.newBuilder(LIST_ROUTE_TABLES_PAGE_STR_FACT);
       getGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listGroupsSettings = PagedCallSettings.newBuilder(LIST_GROUPS_PAGE_STR_FACT);
+      updateGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGroupOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1010,12 +1192,15 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               updateHubSettings,
               deleteHubSettings,
               listHubSpokesSettings,
+              queryHubStatusSettings,
               listSpokesSettings,
               getSpokeSettings,
               createSpokeSettings,
               updateSpokeSettings,
               rejectHubSpokeSettings,
               acceptHubSpokeSettings,
+              acceptSpokeUpdateSettings,
+              rejectSpokeUpdateSettings,
               deleteSpokeSettings,
               getRouteTableSettings,
               getRouteSettings,
@@ -1023,6 +1208,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               listRouteTablesSettings,
               getGroupSettings,
               listGroupsSettings,
+              updateGroupSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1043,6 +1229,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       deleteHubSettings = settings.deleteHubSettings.toBuilder();
       deleteHubOperationSettings = settings.deleteHubOperationSettings.toBuilder();
       listHubSpokesSettings = settings.listHubSpokesSettings.toBuilder();
+      queryHubStatusSettings = settings.queryHubStatusSettings.toBuilder();
       listSpokesSettings = settings.listSpokesSettings.toBuilder();
       getSpokeSettings = settings.getSpokeSettings.toBuilder();
       createSpokeSettings = settings.createSpokeSettings.toBuilder();
@@ -1053,6 +1240,10 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       rejectHubSpokeOperationSettings = settings.rejectHubSpokeOperationSettings.toBuilder();
       acceptHubSpokeSettings = settings.acceptHubSpokeSettings.toBuilder();
       acceptHubSpokeOperationSettings = settings.acceptHubSpokeOperationSettings.toBuilder();
+      acceptSpokeUpdateSettings = settings.acceptSpokeUpdateSettings.toBuilder();
+      acceptSpokeUpdateOperationSettings = settings.acceptSpokeUpdateOperationSettings.toBuilder();
+      rejectSpokeUpdateSettings = settings.rejectSpokeUpdateSettings.toBuilder();
+      rejectSpokeUpdateOperationSettings = settings.rejectSpokeUpdateOperationSettings.toBuilder();
       deleteSpokeSettings = settings.deleteSpokeSettings.toBuilder();
       deleteSpokeOperationSettings = settings.deleteSpokeOperationSettings.toBuilder();
       getRouteTableSettings = settings.getRouteTableSettings.toBuilder();
@@ -1061,6 +1252,8 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       listRouteTablesSettings = settings.listRouteTablesSettings.toBuilder();
       getGroupSettings = settings.getGroupSettings.toBuilder();
       listGroupsSettings = settings.listGroupsSettings.toBuilder();
+      updateGroupSettings = settings.updateGroupSettings.toBuilder();
+      updateGroupOperationSettings = settings.updateGroupOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1075,12 +1268,15 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               updateHubSettings,
               deleteHubSettings,
               listHubSpokesSettings,
+              queryHubStatusSettings,
               listSpokesSettings,
               getSpokeSettings,
               createSpokeSettings,
               updateSpokeSettings,
               rejectHubSpokeSettings,
               acceptHubSpokeSettings,
+              acceptSpokeUpdateSettings,
+              rejectSpokeUpdateSettings,
               deleteSpokeSettings,
               getRouteTableSettings,
               getRouteSettings,
@@ -1088,6 +1284,7 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               listRouteTablesSettings,
               getGroupSettings,
               listGroupsSettings,
+              updateGroupSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1101,7 +1298,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -1140,6 +1336,11 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .queryHubStatusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listSpokesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -1166,6 +1367,16 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
       builder
           .acceptHubSpokeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .acceptSpokeUpdateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .rejectSpokeUpdateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1201,6 +1412,11 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
       builder
           .listGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1242,13 +1458,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1264,13 +1480,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1287,13 +1503,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1310,13 +1526,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1333,13 +1549,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1357,13 +1573,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1381,13 +1597,63 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .acceptSpokeUpdateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AcceptSpokeUpdateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AcceptSpokeUpdateResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .rejectSpokeUpdateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RejectSpokeUpdateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RejectSpokeUpdateResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1404,13 +1670,36 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<UpdateGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Group.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1448,8 +1737,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateHubRequest, Hub, OperationMetadata>
         createHubOperationSettings() {
       return createHubOperationSettings;
@@ -1461,8 +1748,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateHubRequest, Hub, OperationMetadata>
         updateHubOperationSettings() {
       return updateHubOperationSettings;
@@ -1474,8 +1759,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteHubRequest, Empty, OperationMetadata>
         deleteHubOperationSettings() {
       return deleteHubOperationSettings;
@@ -1486,6 +1769,13 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
             ListHubSpokesRequest, ListHubSpokesResponse, ListHubSpokesPagedResponse>
         listHubSpokesSettings() {
       return listHubSpokesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryHubStatus. */
+    public PagedCallSettings.Builder<
+            QueryHubStatusRequest, QueryHubStatusResponse, QueryHubStatusPagedResponse>
+        queryHubStatusSettings() {
+      return queryHubStatusSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSpokes. */
@@ -1505,8 +1795,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSpokeRequest, Spoke, OperationMetadata>
         createSpokeOperationSettings() {
       return createSpokeOperationSettings;
@@ -1518,8 +1806,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSpokeRequest, Spoke, OperationMetadata>
         updateSpokeOperationSettings() {
       return updateSpokeOperationSettings;
@@ -1531,8 +1817,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to rejectHubSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RejectHubSpokeRequest, RejectHubSpokeResponse, OperationMetadata>
         rejectHubSpokeOperationSettings() {
@@ -1545,12 +1829,36 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to acceptHubSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
         acceptHubSpokeOperationSettings() {
       return acceptHubSpokeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to acceptSpokeUpdate. */
+    public UnaryCallSettings.Builder<AcceptSpokeUpdateRequest, Operation>
+        acceptSpokeUpdateSettings() {
+      return acceptSpokeUpdateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to acceptSpokeUpdate. */
+    public OperationCallSettings.Builder<
+            AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+        acceptSpokeUpdateOperationSettings() {
+      return acceptSpokeUpdateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rejectSpokeUpdate. */
+    public UnaryCallSettings.Builder<RejectSpokeUpdateRequest, Operation>
+        rejectSpokeUpdateSettings() {
+      return rejectSpokeUpdateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rejectSpokeUpdate. */
+    public OperationCallSettings.Builder<
+            RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+        rejectSpokeUpdateOperationSettings() {
+      return rejectSpokeUpdateOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */
@@ -1559,8 +1867,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSpokeRequest, Empty, OperationMetadata>
         deleteSpokeOperationSettings() {
       return deleteSpokeOperationSettings;
@@ -1598,6 +1904,17 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     public PagedCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings() {
       return listGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGroup. */
+    public UnaryCallSettings.Builder<UpdateGroupRequest, Operation> updateGroupSettings() {
+      return updateGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGroup. */
+    public OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
+        updateGroupOperationSettings() {
+      return updateGroupOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

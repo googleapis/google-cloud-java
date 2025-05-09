@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.privilegedaccessmanager.v1",
+  "libraryPackage": "com.google.cloud.privilegedaccessmanager.v1",
+  "services": {
+    "PrivilegedAccessManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PrivilegedAccessManagerClient",
+          "rpcs": {
+            "ApproveGrant": {
+              "methods": ["approveGrant", "approveGrantCallable"]
+            },
+            "CheckOnboardingStatus": {
+              "methods": ["checkOnboardingStatus", "checkOnboardingStatusCallable"]
+            },
+            "CreateEntitlement": {
+              "methods": ["createEntitlementAsync", "createEntitlementAsync", "createEntitlementAsync", "createEntitlementAsync", "createEntitlementAsync", "createEntitlementOperationCallable", "createEntitlementCallable"]
+            },
+            "CreateGrant": {
+              "methods": ["createGrant", "createGrant", "createGrant", "createGrantCallable"]
+            },
+            "DeleteEntitlement": {
+              "methods": ["deleteEntitlementAsync", "deleteEntitlementAsync", "deleteEntitlementAsync", "deleteEntitlementOperationCallable", "deleteEntitlementCallable"]
+            },
+            "DenyGrant": {
+              "methods": ["denyGrant", "denyGrantCallable"]
+            },
+            "GetEntitlement": {
+              "methods": ["getEntitlement", "getEntitlement", "getEntitlement", "getEntitlementCallable"]
+            },
+            "GetGrant": {
+              "methods": ["getGrant", "getGrant", "getGrant", "getGrantCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListEntitlements": {
+              "methods": ["listEntitlements", "listEntitlements", "listEntitlements", "listEntitlements", "listEntitlements", "listEntitlementsPagedCallable", "listEntitlementsCallable"]
+            },
+            "ListGrants": {
+              "methods": ["listGrants", "listGrants", "listGrants", "listGrantsPagedCallable", "listGrantsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RevokeGrant": {
+              "methods": ["revokeGrantAsync", "revokeGrantOperationCallable", "revokeGrantCallable"]
+            },
+            "SearchEntitlements": {
+              "methods": ["searchEntitlements", "searchEntitlementsPagedCallable", "searchEntitlementsCallable"]
+            },
+            "SearchGrants": {
+              "methods": ["searchGrants", "searchGrantsPagedCallable", "searchGrantsCallable"]
+            },
+            "UpdateEntitlement": {
+              "methods": ["updateEntitlementAsync", "updateEntitlementAsync", "updateEntitlementOperationCallable", "updateEntitlementCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

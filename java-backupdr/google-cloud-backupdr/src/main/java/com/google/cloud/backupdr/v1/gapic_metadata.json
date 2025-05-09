@@ -1,0 +1,117 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.backupdr.v1",
+  "libraryPackage": "com.google.cloud.backupdr.v1",
+  "services": {
+    "BackupDR": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BackupDRClient",
+          "rpcs": {
+            "CreateBackupPlan": {
+              "methods": ["createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanOperationCallable", "createBackupPlanCallable"]
+            },
+            "CreateBackupPlanAssociation": {
+              "methods": ["createBackupPlanAssociationAsync", "createBackupPlanAssociationAsync", "createBackupPlanAssociationAsync", "createBackupPlanAssociationOperationCallable", "createBackupPlanAssociationCallable"]
+            },
+            "CreateBackupVault": {
+              "methods": ["createBackupVaultAsync", "createBackupVaultAsync", "createBackupVaultAsync", "createBackupVaultOperationCallable", "createBackupVaultCallable"]
+            },
+            "CreateManagementServer": {
+              "methods": ["createManagementServerAsync", "createManagementServerAsync", "createManagementServerAsync", "createManagementServerOperationCallable", "createManagementServerCallable"]
+            },
+            "DeleteBackup": {
+              "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
+            },
+            "DeleteBackupPlan": {
+              "methods": ["deleteBackupPlanAsync", "deleteBackupPlanAsync", "deleteBackupPlanAsync", "deleteBackupPlanOperationCallable", "deleteBackupPlanCallable"]
+            },
+            "DeleteBackupPlanAssociation": {
+              "methods": ["deleteBackupPlanAssociationAsync", "deleteBackupPlanAssociationAsync", "deleteBackupPlanAssociationAsync", "deleteBackupPlanAssociationOperationCallable", "deleteBackupPlanAssociationCallable"]
+            },
+            "DeleteBackupVault": {
+              "methods": ["deleteBackupVaultAsync", "deleteBackupVaultAsync", "deleteBackupVaultAsync", "deleteBackupVaultOperationCallable", "deleteBackupVaultCallable"]
+            },
+            "DeleteManagementServer": {
+              "methods": ["deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerOperationCallable", "deleteManagementServerCallable"]
+            },
+            "FetchUsableBackupVaults": {
+              "methods": ["fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaultsPagedCallable", "fetchUsableBackupVaultsCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetBackupPlan": {
+              "methods": ["getBackupPlan", "getBackupPlan", "getBackupPlan", "getBackupPlanCallable"]
+            },
+            "GetBackupPlanAssociation": {
+              "methods": ["getBackupPlanAssociation", "getBackupPlanAssociation", "getBackupPlanAssociation", "getBackupPlanAssociationCallable"]
+            },
+            "GetBackupVault": {
+              "methods": ["getBackupVault", "getBackupVault", "getBackupVault", "getBackupVaultCallable"]
+            },
+            "GetDataSource": {
+              "methods": ["getDataSource", "getDataSource", "getDataSource", "getDataSourceCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetManagementServer": {
+              "methods": ["getManagementServer", "getManagementServer", "getManagementServer", "getManagementServerCallable"]
+            },
+            "InitializeService": {
+              "methods": ["initializeServiceAsync", "initializeServiceOperationCallable", "initializeServiceCallable"]
+            },
+            "ListBackupPlanAssociations": {
+              "methods": ["listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociationsPagedCallable", "listBackupPlanAssociationsCallable"]
+            },
+            "ListBackupPlans": {
+              "methods": ["listBackupPlans", "listBackupPlans", "listBackupPlans", "listBackupPlansPagedCallable", "listBackupPlansCallable"]
+            },
+            "ListBackupVaults": {
+              "methods": ["listBackupVaults", "listBackupVaults", "listBackupVaults", "listBackupVaultsPagedCallable", "listBackupVaultsCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListDataSources": {
+              "methods": ["listDataSources", "listDataSources", "listDataSources", "listDataSourcesPagedCallable", "listDataSourcesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListManagementServers": {
+              "methods": ["listManagementServers", "listManagementServers", "listManagementServers", "listManagementServersPagedCallable", "listManagementServersCallable"]
+            },
+            "RestoreBackup": {
+              "methods": ["restoreBackupAsync", "restoreBackupAsync", "restoreBackupAsync", "restoreBackupOperationCallable", "restoreBackupCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "TriggerBackup": {
+              "methods": ["triggerBackupAsync", "triggerBackupAsync", "triggerBackupAsync", "triggerBackupOperationCallable", "triggerBackupCallable"]
+            },
+            "UpdateBackup": {
+              "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
+            },
+            "UpdateBackupVault": {
+              "methods": ["updateBackupVaultAsync", "updateBackupVaultAsync", "updateBackupVaultOperationCallable", "updateBackupVaultCallable"]
+            },
+            "UpdateDataSource": {
+              "methods": ["updateDataSourceAsync", "updateDataSourceAsync", "updateDataSourceOperationCallable", "updateDataSourceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

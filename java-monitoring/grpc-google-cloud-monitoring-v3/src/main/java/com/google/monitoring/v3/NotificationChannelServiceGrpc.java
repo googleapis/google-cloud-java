@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -576,6 +576,20 @@ public final class NotificationChannelServiceGrpc {
     return NotificationChannelServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static NotificationChannelServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<NotificationChannelServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<NotificationChannelServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public NotificationChannelServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new NotificationChannelServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return NotificationChannelServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1065,6 +1079,211 @@ public final class NotificationChannelServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service NotificationChannelService.
+   *
+   * <pre>
+   * The Notification Channel API provides access to configuration that
+   * controls how messages related to incidents are sent.
+   * </pre>
+   */
+  public static final class NotificationChannelServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<NotificationChannelServiceBlockingV2Stub> {
+    private NotificationChannelServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected NotificationChannelServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new NotificationChannelServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the descriptors for supported channel types. The use of descriptors
+     * makes it possible for new channel types to be dynamically added.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse
+        listNotificationChannelDescriptors(
+            com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNotificationChannelDescriptorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single channel descriptor. The descriptor indicates which fields
+     * are expected / permitted for a notification channel of the given type.
+     * </pre>
+     */
+    public com.google.monitoring.v3.NotificationChannelDescriptor getNotificationChannelDescriptor(
+        com.google.monitoring.v3.GetNotificationChannelDescriptorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNotificationChannelDescriptorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the notification channels that have been created for the project.
+     * To list the types of notification channels that are supported, use
+     * the `ListNotificationChannelDescriptors` method.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListNotificationChannelsResponse listNotificationChannels(
+        com.google.monitoring.v3.ListNotificationChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNotificationChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single notification channel. The channel includes the relevant
+     * configuration details with which the channel was created. However, the
+     * response may truncate or omit passwords, API keys, or other private key
+     * matter and thus the response may not be 100% identical to the information
+     * that was supplied in the call to the create method.
+     * </pre>
+     */
+    public com.google.monitoring.v3.NotificationChannel getNotificationChannel(
+        com.google.monitoring.v3.GetNotificationChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNotificationChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new notification channel, representing a single notification
+     * endpoint such as an email address, SMS number, or PagerDuty service.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
+     * </pre>
+     */
+    public com.google.monitoring.v3.NotificationChannel createNotificationChannel(
+        com.google.monitoring.v3.CreateNotificationChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNotificationChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a notification channel. Fields not specified in the field mask
+     * remain unchanged.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
+     * </pre>
+     */
+    public com.google.monitoring.v3.NotificationChannel updateNotificationChannel(
+        com.google.monitoring.v3.UpdateNotificationChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNotificationChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a notification channel.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteNotificationChannel(
+        com.google.monitoring.v3.DeleteNotificationChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNotificationChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Causes a verification code to be delivered to the channel. The code
+     * can then be supplied in `VerifyNotificationChannel` to verify the channel.
+     * </pre>
+     */
+    public com.google.protobuf.Empty sendNotificationChannelVerificationCode(
+        com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getSendNotificationChannelVerificationCodeMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Requests a verification code for an already verified channel that can then
+     * be used in a call to VerifyNotificationChannel() on a different channel
+     * with an equivalent identity in the same or in a different project. This
+     * makes it possible to copy a channel between projects without requiring
+     * manual reverification of the channel. If the channel is not in the
+     * verified state, this method will fail (in other words, this may only be
+     * used if the SendNotificationChannelVerificationCode and
+     * VerifyNotificationChannel paths have already been used to put the given
+     * channel into the verified state).
+     * There is no guarantee that the verification codes returned by this method
+     * will be of a similar structure or form as the ones that are delivered
+     * to the channel via SendNotificationChannelVerificationCode; while
+     * VerifyNotificationChannel() will recognize both the codes delivered via
+     * SendNotificationChannelVerificationCode() and returned from
+     * GetNotificationChannelVerificationCode(), it is typically the case that
+     * the verification codes delivered via
+     * SendNotificationChannelVerificationCode() will be shorter and also
+     * have a shorter expiration (e.g. codes such as "G-123456") whereas
+     * GetVerificationCode() will typically return a much longer, websafe base
+     * 64 encoded string that has a longer expiration time.
+     * </pre>
+     */
+    public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+        getNotificationChannelVerificationCode(
+            com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGetNotificationChannelVerificationCodeMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies a `NotificationChannel` by proving receipt of the code
+     * delivered to the channel as a result of calling
+     * `SendNotificationChannelVerificationCode`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.NotificationChannel verifyNotificationChannel(
+        com.google.monitoring.v3.VerifyNotificationChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyNotificationChannelMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * NotificationChannelService.
    *
    * <pre>
    * The Notification Channel API provides access to configuration that

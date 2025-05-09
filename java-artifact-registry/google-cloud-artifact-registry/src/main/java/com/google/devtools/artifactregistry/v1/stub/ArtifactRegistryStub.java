@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.devtools.artifactregistry.v1.stub;
 
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListAttachmentsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListDockerImagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListFilesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListLocationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.Lis
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListPythonPackagesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRepositoriesPagedResponse;
+import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListRulesPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListTagsPagedResponse;
 import static com.google.devtools.artifactregistry.v1.ArtifactRegistryClient.ListVersionsPagedResponse;
 
@@ -34,14 +36,23 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.devtools.artifactregistry.v1.Attachment;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsMetadata;
+import com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest;
+import com.google.devtools.artifactregistry.v1.CreateAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.CreateRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.CreateRuleRequest;
 import com.google.devtools.artifactregistry.v1.CreateTagRequest;
+import com.google.devtools.artifactregistry.v1.DeleteAttachmentRequest;
+import com.google.devtools.artifactregistry.v1.DeleteFileRequest;
 import com.google.devtools.artifactregistry.v1.DeletePackageRequest;
 import com.google.devtools.artifactregistry.v1.DeleteRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.DeleteRuleRequest;
 import com.google.devtools.artifactregistry.v1.DeleteTagRequest;
 import com.google.devtools.artifactregistry.v1.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1.DockerImage;
 import com.google.devtools.artifactregistry.v1.File;
+import com.google.devtools.artifactregistry.v1.GetAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
 import com.google.devtools.artifactregistry.v1.GetFileRequest;
 import com.google.devtools.artifactregistry.v1.GetMavenArtifactRequest;
@@ -50,6 +61,7 @@ import com.google.devtools.artifactregistry.v1.GetPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.GetPythonPackageRequest;
 import com.google.devtools.artifactregistry.v1.GetRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.GetRuleRequest;
 import com.google.devtools.artifactregistry.v1.GetTagRequest;
 import com.google.devtools.artifactregistry.v1.GetVPCSCConfigRequest;
 import com.google.devtools.artifactregistry.v1.GetVersionRequest;
@@ -59,6 +71,8 @@ import com.google.devtools.artifactregistry.v1.ImportAptArtifactsResponse;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsMetadata;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsRequest;
 import com.google.devtools.artifactregistry.v1.ImportYumArtifactsResponse;
+import com.google.devtools.artifactregistry.v1.ListAttachmentsRequest;
+import com.google.devtools.artifactregistry.v1.ListAttachmentsResponse;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesRequest;
 import com.google.devtools.artifactregistry.v1.ListDockerImagesResponse;
 import com.google.devtools.artifactregistry.v1.ListFilesRequest;
@@ -73,6 +87,8 @@ import com.google.devtools.artifactregistry.v1.ListPythonPackagesRequest;
 import com.google.devtools.artifactregistry.v1.ListPythonPackagesResponse;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesRequest;
 import com.google.devtools.artifactregistry.v1.ListRepositoriesResponse;
+import com.google.devtools.artifactregistry.v1.ListRulesRequest;
+import com.google.devtools.artifactregistry.v1.ListRulesResponse;
 import com.google.devtools.artifactregistry.v1.ListTagsRequest;
 import com.google.devtools.artifactregistry.v1.ListTagsResponse;
 import com.google.devtools.artifactregistry.v1.ListVersionsRequest;
@@ -84,11 +100,16 @@ import com.google.devtools.artifactregistry.v1.Package;
 import com.google.devtools.artifactregistry.v1.ProjectSettings;
 import com.google.devtools.artifactregistry.v1.PythonPackage;
 import com.google.devtools.artifactregistry.v1.Repository;
+import com.google.devtools.artifactregistry.v1.Rule;
 import com.google.devtools.artifactregistry.v1.Tag;
+import com.google.devtools.artifactregistry.v1.UpdateFileRequest;
+import com.google.devtools.artifactregistry.v1.UpdatePackageRequest;
 import com.google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest;
 import com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest;
+import com.google.devtools.artifactregistry.v1.UpdateRuleRequest;
 import com.google.devtools.artifactregistry.v1.UpdateTagRequest;
 import com.google.devtools.artifactregistry.v1.UpdateVPCSCConfigRequest;
+import com.google.devtools.artifactregistry.v1.UpdateVersionRequest;
 import com.google.devtools.artifactregistry.v1.VPCSCConfig;
 import com.google.devtools.artifactregistry.v1.Version;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -273,6 +294,20 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteVersionCallable()");
   }
 
+  public OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeleteVersionsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteVersionsCallable()");
+  }
+
+  public UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateVersionCallable()");
+  }
+
   public UnaryCallable<ListFilesRequest, ListFilesPagedResponse> listFilesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listFilesPagedCallable()");
   }
@@ -283,6 +318,19 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
 
   public UnaryCallable<GetFileRequest, File> getFileCallable() {
     throw new UnsupportedOperationException("Not implemented: getFileCallable()");
+  }
+
+  public OperationCallable<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFileOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteFileRequest, Operation> deleteFileCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFileCallable()");
+  }
+
+  public UnaryCallable<UpdateFileRequest, File> updateFileCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateFileCallable()");
   }
 
   public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
@@ -307,6 +355,30 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTagCallable()");
+  }
+
+  public UnaryCallable<CreateRuleRequest, Rule> createRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: createRuleCallable()");
+  }
+
+  public UnaryCallable<ListRulesRequest, ListRulesPagedResponse> listRulesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRulesPagedCallable()");
+  }
+
+  public UnaryCallable<ListRulesRequest, ListRulesResponse> listRulesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRulesCallable()");
+  }
+
+  public UnaryCallable<GetRuleRequest, Rule> getRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRuleCallable()");
+  }
+
+  public UnaryCallable<UpdateRuleRequest, Rule> updateRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRuleCallable()");
+  }
+
+  public UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteRuleCallable()");
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
@@ -337,6 +409,41 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
 
   public UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateVPCSCConfigCallable()");
+  }
+
+  public UnaryCallable<UpdatePackageRequest, Package> updatePackageCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePackageCallable()");
+  }
+
+  public UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
+      listAttachmentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAttachmentsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse> listAttachmentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAttachmentsCallable()");
+  }
+
+  public UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAttachmentCallable()");
+  }
+
+  public OperationCallable<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAttachmentOperationCallable()");
+  }
+
+  public UnaryCallable<CreateAttachmentRequest, Operation> createAttachmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAttachmentCallable()");
+  }
+
+  public OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAttachmentOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAttachmentCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

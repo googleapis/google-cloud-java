@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.protos.google.cloud.binaryauthorization.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -71,12 +70,10 @@ public class PolicyName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static LocationBuilder newLocationBuilder() {
     return new LocationBuilder();
   }
@@ -89,12 +86,10 @@ public class PolicyName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static PolicyName ofProjectName(String project) {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static PolicyName ofLocationName(String location) {
     return newLocationBuilder().setLocation(location).build();
   }
@@ -103,12 +98,10 @@ public class PolicyName implements ResourceName {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectName(String project) {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatLocationName(String location) {
     return newLocationBuilder().setLocation(location).build().toString();
   }
@@ -222,7 +215,8 @@ public class PolicyName implements ResourceName {
     private Builder(PolicyName policyName) {
       Preconditions.checkArgument(
           Objects.equals(policyName.pathTemplate, PROJECT),
-          "toBuilder is only supported when PolicyName has the pattern of projects/{project}/policy");
+          "toBuilder is only supported when PolicyName has the pattern of"
+              + " projects/{project}/policy");
       this.project = policyName.project;
     }
 
@@ -232,7 +226,6 @@ public class PolicyName implements ResourceName {
   }
 
   /** Builder for locations/{location}/policy. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class LocationBuilder {
     private String location;
 

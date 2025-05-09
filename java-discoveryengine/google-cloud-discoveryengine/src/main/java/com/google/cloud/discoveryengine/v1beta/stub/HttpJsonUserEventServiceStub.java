@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,9 @@ import com.google.cloud.discoveryengine.v1beta.CollectUserEventRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsMetadata;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeUserEventsResponse;
 import com.google.cloud.discoveryengine.v1beta.UserEvent;
 import com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest;
 import com.google.common.collect.ImmutableMap;
@@ -63,7 +66,9 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(ImportUserEventsMetadata.getDescriptor())
+          .add(PurgeUserEventsResponse.getDescriptor())
           .add(ImportUserEventsResponse.getDescriptor())
+          .add(PurgeUserEventsMetadata.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<WriteUserEventRequest, UserEvent>
@@ -85,12 +90,14 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:write")
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:write",
+                          "/v1beta/{parent=projects/*/locations/*}/userEvents:write")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<WriteUserEventRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "writeAsync", request.getWriteAsync());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -125,7 +132,8 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:collect")
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:collect",
+                          "/v1beta/{parent=projects/*/locations/*}/userEvents:collect")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -148,6 +156,49 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                       .setDefaultInstance(HttpBody.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<PurgeUserEventsRequest, Operation>
+      purgeUserEventsMethodDescriptor =
+          ApiMethodDescriptor.<PurgeUserEventsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.UserEventService/PurgeUserEvents")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PurgeUserEventsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/dataStores/*}/userEvents:purge",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PurgeUserEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*}/userEvents:purge")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PurgeUserEventsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PurgeUserEventsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<ImportUserEventsRequest, Operation>
@@ -195,6 +246,10 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
 
   private final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable;
   private final UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable;
+  private final UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable;
+  private final OperationCallable<
+          PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationCallable;
   private final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable;
   private final OperationCallable<
           ImportUserEventsRequest, ImportUserEventsResponse, ImportUserEventsMetadata>
@@ -249,10 +304,26 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
             typeRegistry,
             ImmutableMap.<String, HttpRule>builder()
                 .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}:cancel")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}:cancel")
+                                .build())
+                        .build())
+                .put(
                     "google.longrunning.Operations.GetOperation",
                     HttpRule.newBuilder()
                         .setGet(
-                            "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}")
+                            "/v1beta/{name=projects/*/locations/*/collections/*/dataConnector/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*/operations/*}")
+                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
@@ -305,7 +376,17 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1beta/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/sampleQuerySets/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -316,7 +397,12 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                     "google.longrunning.Operations.ListOperations",
                     HttpRule.newBuilder()
                         .setGet(
-                            "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*}/operations")
+                            "/v1beta/{name=projects/*/locations/*/collections/*/dataConnector}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/collections/*/dataStores/*/branches/*}/operations")
+                                .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
@@ -400,6 +486,17 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<PurgeUserEventsRequest, Operation> purgeUserEventsTransportSettings =
+        HttpJsonCallSettings.<PurgeUserEventsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeUserEventsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ImportUserEventsRequest, Operation> importUserEventsTransportSettings =
         HttpJsonCallSettings.<ImportUserEventsRequest, Operation>newBuilder()
             .setMethodDescriptor(importUserEventsMethodDescriptor)
@@ -418,6 +515,15 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
     this.collectUserEventCallable =
         callableFactory.createUnaryCallable(
             collectUserEventTransportSettings, settings.collectUserEventSettings(), clientContext);
+    this.purgeUserEventsCallable =
+        callableFactory.createUnaryCallable(
+            purgeUserEventsTransportSettings, settings.purgeUserEventsSettings(), clientContext);
+    this.purgeUserEventsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeUserEventsTransportSettings,
+            settings.purgeUserEventsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.importUserEventsCallable =
         callableFactory.createUnaryCallable(
             importUserEventsTransportSettings, settings.importUserEventsSettings(), clientContext);
@@ -437,6 +543,7 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(writeUserEventMethodDescriptor);
     methodDescriptors.add(collectUserEventMethodDescriptor);
+    methodDescriptors.add(purgeUserEventsMethodDescriptor);
     methodDescriptors.add(importUserEventsMethodDescriptor);
     return methodDescriptors;
   }
@@ -453,6 +560,17 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
   @Override
   public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     return collectUserEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
+    return purgeUserEventsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
+      purgeUserEventsOperationCallable() {
+    return purgeUserEventsOperationCallable;
   }
 
   @Override

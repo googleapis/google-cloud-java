@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -188,6 +188,7 @@ public class CloudFunctionsServiceClientHttpJsonTest {
             .addAllSecretVolumes(new ArrayList<SecretVolume>())
             .setSourceToken("sourceToken-94946658")
             .setDockerRepository("dockerRepository1588395402")
+            .setBuildServiceAccount("buildServiceAccount-278261818")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -258,6 +259,7 @@ public class CloudFunctionsServiceClientHttpJsonTest {
             .addAllSecretVolumes(new ArrayList<SecretVolume>())
             .setSourceToken("sourceToken-94946658")
             .setDockerRepository("dockerRepository1588395402")
+            .setBuildServiceAccount("buildServiceAccount-278261818")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -328,6 +330,7 @@ public class CloudFunctionsServiceClientHttpJsonTest {
             .addAllSecretVolumes(new ArrayList<SecretVolume>())
             .setSourceToken("sourceToken-94946658")
             .setDockerRepository("dockerRepository1588395402")
+            .setBuildServiceAccount("buildServiceAccount-278261818")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -405,6 +408,7 @@ public class CloudFunctionsServiceClientHttpJsonTest {
             .addAllSecretVolumes(new ArrayList<SecretVolume>())
             .setSourceToken("sourceToken-94946658")
             .setDockerRepository("dockerRepository1588395402")
+            .setBuildServiceAccount("buildServiceAccount-278261818")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -482,6 +486,7 @@ public class CloudFunctionsServiceClientHttpJsonTest {
             .addAllSecretVolumes(new ArrayList<SecretVolume>())
             .setSourceToken("sourceToken-94946658")
             .setDockerRepository("dockerRepository1588395402")
+            .setBuildServiceAccount("buildServiceAccount-278261818")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -520,6 +525,7 @@ public class CloudFunctionsServiceClientHttpJsonTest {
             .addAllSecretVolumes(new ArrayList<SecretVolume>())
             .setSourceToken("sourceToken-94946658")
             .setDockerRepository("dockerRepository1588395402")
+            .setBuildServiceAccount("buildServiceAccount-278261818")
             .build();
 
     CloudFunction actualResponse = client.updateFunctionAsync(function).get();
@@ -577,6 +583,7 @@ public class CloudFunctionsServiceClientHttpJsonTest {
               .addAllSecretVolumes(new ArrayList<SecretVolume>())
               .setSourceToken("sourceToken-94946658")
               .setDockerRepository("dockerRepository1588395402")
+              .setBuildServiceAccount("buildServiceAccount-278261818")
               .build();
       client.updateFunctionAsync(function).get();
       Assert.fail("No exception raised");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -25,6 +26,8 @@ import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -40,6 +43,8 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -48,6 +53,10 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -107,6 +116,24 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
     throw new UnsupportedOperationException("Not implemented: migrateKeyCallable()");
   }
 
+  public UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable() {
+    throw new UnsupportedOperationException("Not implemented: addIpOverrideCallable()");
+  }
+
+  public UnaryCallable<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeIpOverrideCallable()");
+  }
+
+  public UnaryCallable<ListIpOverridesRequest, ListIpOverridesPagedResponse>
+      listIpOverridesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listIpOverridesPagedCallable()");
+  }
+
+  public UnaryCallable<ListIpOverridesRequest, ListIpOverridesResponse> listIpOverridesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listIpOverridesCallable()");
+  }
+
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     throw new UnsupportedOperationException("Not implemented: getMetricsCallable()");
   }
@@ -135,6 +162,11 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
 
   public UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteFirewallPolicyCallable()");
+  }
+
+  public UnaryCallable<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesCallable() {
+    throw new UnsupportedOperationException("Not implemented: reorderFirewallPoliciesCallable()");
   }
 
   public UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsPagedResponse>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -114,6 +114,11 @@ public class ServicesClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -123,8 +128,8 @@ public class ServicesClientHttpJsonTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -198,6 +203,11 @@ public class ServicesClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -207,8 +217,8 @@ public class ServicesClientHttpJsonTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -282,6 +292,11 @@ public class ServicesClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -291,8 +306,8 @@ public class ServicesClientHttpJsonTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -357,6 +372,11 @@ public class ServicesClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -366,8 +386,8 @@ public class ServicesClientHttpJsonTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -532,6 +552,11 @@ public class ServicesClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -541,8 +566,8 @@ public class ServicesClientHttpJsonTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -575,6 +600,11 @@ public class ServicesClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -584,8 +614,8 @@ public class ServicesClientHttpJsonTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -637,6 +667,11 @@ public class ServicesClientHttpJsonTest {
               .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
               .setTemplate(RevisionTemplate.newBuilder().build())
               .addAllTraffic(new ArrayList<TrafficTarget>())
+              .setScaling(ServiceScaling.newBuilder().build())
+              .setInvokerIamDisabled(true)
+              .setDefaultUriDisabled(true)
+              .addAllUrls(new ArrayList<String>())
+              .addAllCustomAudiences(new ArrayList<String>())
               .setObservedGeneration(900833007)
               .setTerminalCondition(Condition.newBuilder().build())
               .addAllConditions(new ArrayList<Condition>())
@@ -646,12 +681,177 @@ public class ServicesClientHttpJsonTest {
                   RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
               .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
               .setUri("uri116076")
-              .addAllCustomAudiences(new ArrayList<String>())
               .setSatisfiesPzs(true)
+              .setBuildConfig(BuildConfig.newBuilder().build())
               .setReconciling(true)
               .setEtag("etag3123477")
               .build();
       client.updateServiceAsync(service).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateServiceTest2() throws Exception {
+    Service expectedResponse =
+        Service.newBuilder()
+            .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .setGeneration(305703192)
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastModifier("lastModifier1959003021")
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
+            .setIngress(IngressTraffic.forNumber(0))
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setTemplate(RevisionTemplate.newBuilder().build())
+            .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
+            .setObservedGeneration(900833007)
+            .setTerminalCondition(Condition.newBuilder().build())
+            .addAllConditions(new ArrayList<Condition>())
+            .setLatestReadyRevision(
+                RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
+            .setLatestCreatedRevision(
+                RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
+            .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
+            .setUri("uri116076")
+            .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
+            .setReconciling(true)
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateServiceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Service service =
+        Service.newBuilder()
+            .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .setGeneration(305703192)
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setCreator("creator1028554796")
+            .setLastModifier("lastModifier1959003021")
+            .setClient("client-1357712437")
+            .setClientVersion("clientVersion771880589")
+            .setIngress(IngressTraffic.forNumber(0))
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+            .setTemplate(RevisionTemplate.newBuilder().build())
+            .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
+            .setObservedGeneration(900833007)
+            .setTerminalCondition(Condition.newBuilder().build())
+            .addAllConditions(new ArrayList<Condition>())
+            .setLatestReadyRevision(
+                RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
+            .setLatestCreatedRevision(
+                RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
+            .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
+            .setUri("uri116076")
+            .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
+            .setReconciling(true)
+            .setEtag("etag3123477")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Service actualResponse = client.updateServiceAsync(service, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateServiceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Service service =
+          Service.newBuilder()
+              .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
+              .setDescription("description-1724546052")
+              .setUid("uid115792")
+              .setGeneration(305703192)
+              .putAllLabels(new HashMap<String, String>())
+              .putAllAnnotations(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDeleteTime(Timestamp.newBuilder().build())
+              .setExpireTime(Timestamp.newBuilder().build())
+              .setCreator("creator1028554796")
+              .setLastModifier("lastModifier1959003021")
+              .setClient("client-1357712437")
+              .setClientVersion("clientVersion771880589")
+              .setIngress(IngressTraffic.forNumber(0))
+              .setLaunchStage(LaunchStage.forNumber(0))
+              .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
+              .setTemplate(RevisionTemplate.newBuilder().build())
+              .addAllTraffic(new ArrayList<TrafficTarget>())
+              .setScaling(ServiceScaling.newBuilder().build())
+              .setInvokerIamDisabled(true)
+              .setDefaultUriDisabled(true)
+              .addAllUrls(new ArrayList<String>())
+              .addAllCustomAudiences(new ArrayList<String>())
+              .setObservedGeneration(900833007)
+              .setTerminalCondition(Condition.newBuilder().build())
+              .addAllConditions(new ArrayList<Condition>())
+              .setLatestReadyRevision(
+                  RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
+              .setLatestCreatedRevision(
+                  RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
+              .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
+              .setUri("uri116076")
+              .setSatisfiesPzs(true)
+              .setBuildConfig(BuildConfig.newBuilder().build())
+              .setReconciling(true)
+              .setEtag("etag3123477")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateServiceAsync(service, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -680,6 +880,11 @@ public class ServicesClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -689,8 +894,8 @@ public class ServicesClientHttpJsonTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -760,6 +965,11 @@ public class ServicesClientHttpJsonTest {
             .setBinaryAuthorization(BinaryAuthorization.newBuilder().build())
             .setTemplate(RevisionTemplate.newBuilder().build())
             .addAllTraffic(new ArrayList<TrafficTarget>())
+            .setScaling(ServiceScaling.newBuilder().build())
+            .setInvokerIamDisabled(true)
+            .setDefaultUriDisabled(true)
+            .addAllUrls(new ArrayList<String>())
+            .addAllCustomAudiences(new ArrayList<String>())
             .setObservedGeneration(900833007)
             .setTerminalCondition(Condition.newBuilder().build())
             .addAllConditions(new ArrayList<Condition>())
@@ -769,8 +979,8 @@ public class ServicesClientHttpJsonTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
-            .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
+            .setBuildConfig(BuildConfig.newBuilder().build())
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();

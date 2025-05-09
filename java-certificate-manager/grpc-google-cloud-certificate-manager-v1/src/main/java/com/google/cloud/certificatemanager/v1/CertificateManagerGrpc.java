@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1264,6 +1264,242 @@ public final class CertificateManagerGrpc {
     return getDeleteCertificateIssuanceConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest,
+          com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>
+      getListTrustConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTrustConfigs",
+      requestType = com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest.class,
+      responseType = com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest,
+          com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>
+      getListTrustConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest,
+            com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>
+        getListTrustConfigsMethod;
+    if ((getListTrustConfigsMethod = CertificateManagerGrpc.getListTrustConfigsMethod) == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getListTrustConfigsMethod = CertificateManagerGrpc.getListTrustConfigsMethod)
+            == null) {
+          CertificateManagerGrpc.getListTrustConfigsMethod =
+              getListTrustConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest,
+                          com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTrustConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier("ListTrustConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListTrustConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.GetTrustConfigRequest,
+          com.google.cloud.certificatemanager.v1.TrustConfig>
+      getGetTrustConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTrustConfig",
+      requestType = com.google.cloud.certificatemanager.v1.GetTrustConfigRequest.class,
+      responseType = com.google.cloud.certificatemanager.v1.TrustConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.GetTrustConfigRequest,
+          com.google.cloud.certificatemanager.v1.TrustConfig>
+      getGetTrustConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.GetTrustConfigRequest,
+            com.google.cloud.certificatemanager.v1.TrustConfig>
+        getGetTrustConfigMethod;
+    if ((getGetTrustConfigMethod = CertificateManagerGrpc.getGetTrustConfigMethod) == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getGetTrustConfigMethod = CertificateManagerGrpc.getGetTrustConfigMethod) == null) {
+          CertificateManagerGrpc.getGetTrustConfigMethod =
+              getGetTrustConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1.GetTrustConfigRequest,
+                          com.google.cloud.certificatemanager.v1.TrustConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTrustConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1.GetTrustConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1.TrustConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier("GetTrustConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetTrustConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest,
+          com.google.longrunning.Operation>
+      getCreateTrustConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTrustConfig",
+      requestType = com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest,
+          com.google.longrunning.Operation>
+      getCreateTrustConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest,
+            com.google.longrunning.Operation>
+        getCreateTrustConfigMethod;
+    if ((getCreateTrustConfigMethod = CertificateManagerGrpc.getCreateTrustConfigMethod) == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getCreateTrustConfigMethod = CertificateManagerGrpc.getCreateTrustConfigMethod)
+            == null) {
+          CertificateManagerGrpc.getCreateTrustConfigMethod =
+              getCreateTrustConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTrustConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier("CreateTrustConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateTrustConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateTrustConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTrustConfig",
+      requestType = com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest,
+          com.google.longrunning.Operation>
+      getUpdateTrustConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest,
+            com.google.longrunning.Operation>
+        getUpdateTrustConfigMethod;
+    if ((getUpdateTrustConfigMethod = CertificateManagerGrpc.getUpdateTrustConfigMethod) == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getUpdateTrustConfigMethod = CertificateManagerGrpc.getUpdateTrustConfigMethod)
+            == null) {
+          CertificateManagerGrpc.getUpdateTrustConfigMethod =
+              getUpdateTrustConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTrustConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier("UpdateTrustConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateTrustConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest,
+          com.google.longrunning.Operation>
+      getDeleteTrustConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTrustConfig",
+      requestType = com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest,
+          com.google.longrunning.Operation>
+      getDeleteTrustConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest,
+            com.google.longrunning.Operation>
+        getDeleteTrustConfigMethod;
+    if ((getDeleteTrustConfigMethod = CertificateManagerGrpc.getDeleteTrustConfigMethod) == null) {
+      synchronized (CertificateManagerGrpc.class) {
+        if ((getDeleteTrustConfigMethod = CertificateManagerGrpc.getDeleteTrustConfigMethod)
+            == null) {
+          CertificateManagerGrpc.getDeleteTrustConfigMethod =
+              getDeleteTrustConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTrustConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CertificateManagerMethodDescriptorSupplier("DeleteTrustConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTrustConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CertificateManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CertificateManagerStub> factory =
@@ -1275,6 +1511,19 @@ public final class CertificateManagerGrpc {
           }
         };
     return CertificateManagerStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CertificateManagerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CertificateManagerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CertificateManagerBlockingV2Stub>() {
+          @java.lang.Override
+          public CertificateManagerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CertificateManagerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CertificateManagerBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1683,6 +1932,78 @@ public final class CertificateManagerGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteCertificateIssuanceConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrustConfigs in a given project and location.
+     * </pre>
+     */
+    default void listTrustConfigs(
+        com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTrustConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TrustConfig.
+     * </pre>
+     */
+    default void getTrustConfig(
+        com.google.cloud.certificatemanager.v1.GetTrustConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.TrustConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTrustConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TrustConfig in a given project and location.
+     * </pre>
+     */
+    default void createTrustConfig(
+        com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTrustConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TrustConfig.
+     * </pre>
+     */
+    default void updateTrustConfig(
+        com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTrustConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TrustConfig.
+     * </pre>
+     */
+    default void deleteTrustConfig(
+        com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTrustConfigMethod(), responseObserver);
     }
   }
 
@@ -2157,10 +2478,514 @@ public final class CertificateManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrustConfigs in a given project and location.
+     * </pre>
+     */
+    public void listTrustConfigs(
+        com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTrustConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TrustConfig.
+     * </pre>
+     */
+    public void getTrustConfig(
+        com.google.cloud.certificatemanager.v1.GetTrustConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.TrustConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTrustConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TrustConfig in a given project and location.
+     * </pre>
+     */
+    public void createTrustConfig(
+        com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateTrustConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TrustConfig.
+     * </pre>
+     */
+    public void updateTrustConfig(
+        com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTrustConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TrustConfig.
+     * </pre>
+     */
+    public void deleteTrustConfig(
+        com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTrustConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CertificateManager.
+   *
+   * <pre>
+   * API Overview
+   * Certificates Manager API allows customers to see and manage all their TLS
+   * certificates.
+   * Certificates Manager API service provides methods to manage certificates,
+   * group them into collections, and create serving configuration that can be
+   * easily applied to other Cloud resources e.g. Target Proxies.
+   * Data Model
+   * The Certificates Manager service exposes the following resources:
+   * * `Certificate` that describes a single TLS certificate.
+   * * `CertificateMap` that describes a collection of certificates that can be
+   * attached to a target resource.
+   * * `CertificateMapEntry` that describes a single configuration entry that
+   * consists of a SNI and a group of certificates. It's a subresource of
+   * CertificateMap.
+   * Certificate, CertificateMap and CertificateMapEntry IDs
+   * have to fully match the regexp `[a-z0-9-]{1,63}`. In other words,
+   * - only lower case letters, digits, and hyphen are allowed
+   * - length of the resource ID has to be in [1,63] range.
+   * Provides methods to manage Cloud Certificate Manager entities.
+   * </pre>
+   */
+  public static final class CertificateManagerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CertificateManagerBlockingV2Stub> {
+    private CertificateManagerBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CertificateManagerBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CertificateManagerBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Certificates in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificatesResponse listCertificates(
+        com.google.cloud.certificatemanager.v1.ListCertificatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCertificatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Certificate.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.Certificate getCertificate(
+        com.google.cloud.certificatemanager.v1.GetCertificateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Certificate in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificate(
+        com.google.cloud.certificatemanager.v1.CreateCertificateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Certificate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCertificate(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Certificate.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificate(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateMaps in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificateMapsResponse listCertificateMaps(
+        com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCertificateMapsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateMap.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.CertificateMap getCertificateMap(
+        com.google.cloud.certificatemanager.v1.GetCertificateMapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCertificateMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateMap in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificateMap(
+        com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCertificateMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CertificateMap.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCertificateMap(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCertificateMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateMap. A Certificate Map can't be deleted
+     * if it contains Certificate Map Entries. Remove all the entries from
+     * the map before calling this method.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificateMap(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCertificateMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateMapEntries in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse
+        listCertificateMapEntries(
+            com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCertificateMapEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateMapEntry.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.CertificateMapEntry getCertificateMapEntry(
+        com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCertificateMapEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateMapEntry in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificateMapEntry(
+        com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCertificateMapEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CertificateMapEntry.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCertificateMapEntry(
+        com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCertificateMapEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateMapEntry.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificateMapEntry(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCertificateMapEntryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DnsAuthorizations in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse
+        listDnsAuthorizations(
+            com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDnsAuthorizationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DnsAuthorization.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.DnsAuthorization getDnsAuthorization(
+        com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DnsAuthorization in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDnsAuthorization(
+        com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DnsAuthorization.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDnsAuthorization(
+        com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DnsAuthorization.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDnsAuthorization(
+        com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDnsAuthorizationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CertificateIssuanceConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse
+        listCertificateIssuanceConfigs(
+            com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCertificateIssuanceConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig
+        getCertificateIssuanceConfig(
+            com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CertificateIssuanceConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CertificateIssuanceConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCertificateIssuanceConfig(
+        com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrustConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse listTrustConfigs(
+        com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTrustConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TrustConfig.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig getTrustConfig(
+        com.google.cloud.certificatemanager.v1.GetTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TrustConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTrustConfig(
+        com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TrustConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTrustConfig(
+        com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TrustConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTrustConfig(
+        com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTrustConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CertificateManager.
    *
    * <pre>
    * API Overview
@@ -2513,6 +3338,71 @@ public final class CertificateManagerGrpc {
         com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteCertificateIssuanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrustConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse listTrustConfigs(
+        com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTrustConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TrustConfig.
+     * </pre>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig getTrustConfig(
+        com.google.cloud.certificatemanager.v1.GetTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TrustConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTrustConfig(
+        com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TrustConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTrustConfig(
+        com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTrustConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TrustConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTrustConfig(
+        com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTrustConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -2897,6 +3787,73 @@ public final class CertificateManagerGrpc {
           getChannel().newCall(getDeleteCertificateIssuanceConfigMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TrustConfigs in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>
+        listTrustConfigs(com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTrustConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TrustConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.certificatemanager.v1.TrustConfig>
+        getTrustConfig(com.google.cloud.certificatemanager.v1.GetTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTrustConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TrustConfig in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createTrustConfig(com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateTrustConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a TrustConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateTrustConfig(com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTrustConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TrustConfig.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteTrustConfig(com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTrustConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CERTIFICATES = 0;
@@ -2923,6 +3880,11 @@ public final class CertificateManagerGrpc {
   private static final int METHODID_GET_CERTIFICATE_ISSUANCE_CONFIG = 21;
   private static final int METHODID_CREATE_CERTIFICATE_ISSUANCE_CONFIG = 22;
   private static final int METHODID_DELETE_CERTIFICATE_ISSUANCE_CONFIG = 23;
+  private static final int METHODID_LIST_TRUST_CONFIGS = 24;
+  private static final int METHODID_GET_TRUST_CONFIG = 25;
+  private static final int METHODID_CREATE_TRUST_CONFIG = 26;
+  private static final int METHODID_UPDATE_TRUST_CONFIG = 27;
+  private static final int METHODID_DELETE_TRUST_CONFIG = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3080,6 +4042,34 @@ public final class CertificateManagerGrpc {
           serviceImpl.deleteCertificateIssuanceConfig(
               (com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest)
                   request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_TRUST_CONFIGS:
+          serviceImpl.listTrustConfigs(
+              (com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TRUST_CONFIG:
+          serviceImpl.getTrustConfig(
+              (com.google.cloud.certificatemanager.v1.GetTrustConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.TrustConfig>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_TRUST_CONFIG:
+          serviceImpl.createTrustConfig(
+              (com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_TRUST_CONFIG:
+          serviceImpl.updateTrustConfig(
+              (com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_TRUST_CONFIG:
+          serviceImpl.deleteTrustConfig(
+              (com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -3259,6 +4249,38 @@ public final class CertificateManagerGrpc {
                     com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_CERTIFICATE_ISSUANCE_CONFIG)))
+        .addMethod(
+            getListTrustConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest,
+                    com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse>(
+                    service, METHODID_LIST_TRUST_CONFIGS)))
+        .addMethod(
+            getGetTrustConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.GetTrustConfigRequest,
+                    com.google.cloud.certificatemanager.v1.TrustConfig>(
+                    service, METHODID_GET_TRUST_CONFIG)))
+        .addMethod(
+            getCreateTrustConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_TRUST_CONFIG)))
+        .addMethod(
+            getUpdateTrustConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_TRUST_CONFIG)))
+        .addMethod(
+            getDeleteTrustConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TRUST_CONFIG)))
         .build();
   }
 
@@ -3334,6 +4356,11 @@ public final class CertificateManagerGrpc {
                       .addMethod(getGetCertificateIssuanceConfigMethod())
                       .addMethod(getCreateCertificateIssuanceConfigMethod())
                       .addMethod(getDeleteCertificateIssuanceConfigMethod())
+                      .addMethod(getListTrustConfigsMethod())
+                      .addMethod(getGetTrustConfigMethod())
+                      .addMethod(getCreateTrustConfigMethod())
+                      .addMethod(getUpdateTrustConfigMethod())
+                      .addMethod(getDeleteTrustConfigMethod())
                       .build();
         }
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,9 @@
 package com.google.cloud.orchestration.airflow.service.v1beta1;
 
 import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListUserWorkloadsConfigMapsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListUserWorkloadsSecretsPagedResponse;
+import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListWorkloadsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -53,7 +56,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getEnvironment to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getEnvironment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -69,9 +74,45 @@ import javax.annotation.Generated;
  *             .getEnvironmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * EnvironmentsSettings environmentsSettings = environmentsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createEnvironment:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EnvironmentsSettings.Builder environmentsSettingsBuilder = EnvironmentsSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * environmentsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @BetaApi
@@ -163,6 +204,78 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     return ((EnvironmentsStubSettings) getStubSettings()).pollAirflowCommandSettings();
   }
 
+  /** Returns the object with the settings used for calls to listWorkloads. */
+  public PagedCallSettings<ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
+      listWorkloadsSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).listWorkloadsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUserWorkloadsSecret. */
+  public UnaryCallSettings<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      createUserWorkloadsSecretSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).createUserWorkloadsSecretSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUserWorkloadsSecret. */
+  public UnaryCallSettings<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      getUserWorkloadsSecretSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).getUserWorkloadsSecretSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUserWorkloadsSecrets. */
+  public PagedCallSettings<
+          ListUserWorkloadsSecretsRequest,
+          ListUserWorkloadsSecretsResponse,
+          ListUserWorkloadsSecretsPagedResponse>
+      listUserWorkloadsSecretsSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).listUserWorkloadsSecretsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateUserWorkloadsSecret. */
+  public UnaryCallSettings<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+      updateUserWorkloadsSecretSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).updateUserWorkloadsSecretSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserWorkloadsSecret. */
+  public UnaryCallSettings<DeleteUserWorkloadsSecretRequest, Empty>
+      deleteUserWorkloadsSecretSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).deleteUserWorkloadsSecretSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUserWorkloadsConfigMap. */
+  public UnaryCallSettings<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      createUserWorkloadsConfigMapSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).createUserWorkloadsConfigMapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUserWorkloadsConfigMap. */
+  public UnaryCallSettings<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      getUserWorkloadsConfigMapSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).getUserWorkloadsConfigMapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUserWorkloadsConfigMaps. */
+  public PagedCallSettings<
+          ListUserWorkloadsConfigMapsRequest,
+          ListUserWorkloadsConfigMapsResponse,
+          ListUserWorkloadsConfigMapsPagedResponse>
+      listUserWorkloadsConfigMapsSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).listUserWorkloadsConfigMapsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateUserWorkloadsConfigMap. */
+  public UnaryCallSettings<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+      updateUserWorkloadsConfigMapSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).updateUserWorkloadsConfigMapSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserWorkloadsConfigMap. */
+  public UnaryCallSettings<DeleteUserWorkloadsConfigMapRequest, Empty>
+      deleteUserWorkloadsConfigMapSettings() {
+    return ((EnvironmentsStubSettings) getStubSettings()).deleteUserWorkloadsConfigMapSettings();
+  }
+
   /** Returns the object with the settings used for calls to saveSnapshot. */
   public UnaryCallSettings<SaveSnapshotRequest, Operation> saveSnapshotSettings() {
     return ((EnvironmentsStubSettings) getStubSettings()).saveSnapshotSettings();
@@ -243,7 +356,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     return EnvironmentsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return EnvironmentsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -254,7 +366,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -296,7 +407,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
       return new Builder(EnvironmentsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EnvironmentsStubSettings.newHttpJsonBuilder());
     }
@@ -405,6 +515,79 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
     public UnaryCallSettings.Builder<PollAirflowCommandRequest, PollAirflowCommandResponse>
         pollAirflowCommandSettings() {
       return getStubSettingsBuilder().pollAirflowCommandSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listWorkloads. */
+    public PagedCallSettings.Builder<
+            ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsPagedResponse>
+        listWorkloadsSettings() {
+      return getStubSettingsBuilder().listWorkloadsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUserWorkloadsSecret. */
+    public UnaryCallSettings.Builder<CreateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        createUserWorkloadsSecretSettings() {
+      return getStubSettingsBuilder().createUserWorkloadsSecretSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUserWorkloadsSecret. */
+    public UnaryCallSettings.Builder<GetUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        getUserWorkloadsSecretSettings() {
+      return getStubSettingsBuilder().getUserWorkloadsSecretSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUserWorkloadsSecrets. */
+    public PagedCallSettings.Builder<
+            ListUserWorkloadsSecretsRequest,
+            ListUserWorkloadsSecretsResponse,
+            ListUserWorkloadsSecretsPagedResponse>
+        listUserWorkloadsSecretsSettings() {
+      return getStubSettingsBuilder().listUserWorkloadsSecretsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateUserWorkloadsSecret. */
+    public UnaryCallSettings.Builder<UpdateUserWorkloadsSecretRequest, UserWorkloadsSecret>
+        updateUserWorkloadsSecretSettings() {
+      return getStubSettingsBuilder().updateUserWorkloadsSecretSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserWorkloadsSecret. */
+    public UnaryCallSettings.Builder<DeleteUserWorkloadsSecretRequest, Empty>
+        deleteUserWorkloadsSecretSettings() {
+      return getStubSettingsBuilder().deleteUserWorkloadsSecretSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUserWorkloadsConfigMap. */
+    public UnaryCallSettings.Builder<CreateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        createUserWorkloadsConfigMapSettings() {
+      return getStubSettingsBuilder().createUserWorkloadsConfigMapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUserWorkloadsConfigMap. */
+    public UnaryCallSettings.Builder<GetUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        getUserWorkloadsConfigMapSettings() {
+      return getStubSettingsBuilder().getUserWorkloadsConfigMapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUserWorkloadsConfigMaps. */
+    public PagedCallSettings.Builder<
+            ListUserWorkloadsConfigMapsRequest,
+            ListUserWorkloadsConfigMapsResponse,
+            ListUserWorkloadsConfigMapsPagedResponse>
+        listUserWorkloadsConfigMapsSettings() {
+      return getStubSettingsBuilder().listUserWorkloadsConfigMapsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateUserWorkloadsConfigMap. */
+    public UnaryCallSettings.Builder<UpdateUserWorkloadsConfigMapRequest, UserWorkloadsConfigMap>
+        updateUserWorkloadsConfigMapSettings() {
+      return getStubSettingsBuilder().updateUserWorkloadsConfigMapSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserWorkloadsConfigMap. */
+    public UnaryCallSettings.Builder<DeleteUserWorkloadsConfigMapRequest, Empty>
+        deleteUserWorkloadsConfigMapSettings() {
+      return getStubSettingsBuilder().deleteUserWorkloadsConfigMapSettings();
     }
 
     /** Returns the builder for the settings used for calls to saveSnapshot. */

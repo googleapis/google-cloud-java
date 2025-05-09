@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,6 +85,7 @@ public class RegionsClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
+            .setQuotaStatusWarning(QuotaStatusWarning.newBuilder().build())
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
             .setStatus("status-892481550")

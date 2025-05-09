@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Secret Manager API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= SecretManagerServiceClient =======================
  *
@@ -32,6 +34,11 @@
  * <p>Sample for SecretManagerServiceClient:
  *
  * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (SecretManagerServiceClient secretManagerServiceClient =
  *     SecretManagerServiceClient.create()) {
  *   ProjectName parent = ProjectName.of("[PROJECT]");

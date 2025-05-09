@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -443,6 +443,62 @@ public final class AttachedClustersGrpc {
     return getGenerateAttachedClusterInstallManifestMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest,
+          com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse>
+      getGenerateAttachedClusterAgentTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateAttachedClusterAgentToken",
+      requestType =
+          com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest.class,
+      responseType =
+          com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest,
+          com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse>
+      getGenerateAttachedClusterAgentTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest,
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse>
+        getGenerateAttachedClusterAgentTokenMethod;
+    if ((getGenerateAttachedClusterAgentTokenMethod =
+            AttachedClustersGrpc.getGenerateAttachedClusterAgentTokenMethod)
+        == null) {
+      synchronized (AttachedClustersGrpc.class) {
+        if ((getGenerateAttachedClusterAgentTokenMethod =
+                AttachedClustersGrpc.getGenerateAttachedClusterAgentTokenMethod)
+            == null) {
+          AttachedClustersGrpc.getGenerateAttachedClusterAgentTokenMethod =
+              getGenerateAttachedClusterAgentTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest,
+                          com.google.cloud.gkemulticloud.v1
+                              .GenerateAttachedClusterAgentTokenResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateAttachedClusterAgentToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1
+                                  .GenerateAttachedClusterAgentTokenRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkemulticloud.v1
+                                  .GenerateAttachedClusterAgentTokenResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AttachedClustersMethodDescriptorSupplier(
+                              "GenerateAttachedClusterAgentToken"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateAttachedClusterAgentTokenMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AttachedClustersStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AttachedClustersStub> factory =
@@ -454,6 +510,19 @@ public final class AttachedClustersGrpc {
           }
         };
     return AttachedClustersStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AttachedClustersBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AttachedClustersBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AttachedClustersBlockingV2Stub>() {
+          @java.lang.Override
+          public AttachedClustersBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AttachedClustersBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AttachedClustersBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -630,6 +699,22 @@ public final class AttachedClustersGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateAttachedClusterInstallManifestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    default void generateAttachedClusterAgentToken(
+        com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateAttachedClusterAgentTokenMethod(), responseObserver);
     }
   }
 
@@ -823,10 +908,194 @@ public final class AttachedClustersGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public void generateAttachedClusterAgentToken(
+        com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateAttachedClusterAgentTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AttachedClusters.
+   *
+   * <pre>
+   * The AttachedClusters API provides a single centrally managed service
+   * to register and manage Anthos attached clusters that run on customer's owned
+   * infrastructure.
+   * </pre>
+   */
+  public static final class AttachedClustersBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AttachedClustersBlockingV2Stub> {
+    private AttachedClustersBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AttachedClustersBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AttachedClustersBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
+     * on a given Google Cloud Platform project and region.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.UpdateAttachedClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports creates a new
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource
+     * by importing an existing Fleet Membership resource.
+     * Attached Clusters created before the introduction of the Anthos Multi-Cloud
+     * API can be imported through this method.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a specific
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedCluster getAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster]
+     * resources on a given Google Cloud project and region.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.ListAttachedClustersResponse listAttachedClusters(
+        com.google.cloud.gkemulticloud.v1.ListAttachedClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAttachedClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific
+     * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource.
+     * If successful, the response contains a newly created
+     * [Operation][google.longrunning.Operation] resource that can be
+     * described to track the status of the operation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAttachedCluster(
+        com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAttachedClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns information, such as supported Kubernetes versions, on a given
+     * Google Cloud location.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.AttachedServerConfig getAttachedServerConfig(
+        com.google.cloud.gkemulticloud.v1.GetAttachedServerConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAttachedServerConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates the install manifest to be installed on the target cluster.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse
+        generateAttachedClusterInstallManifest(
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGenerateAttachedClusterInstallManifestMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse
+        generateAttachedClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAttachedClusterAgentTokenMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AttachedClusters.
    *
    * <pre>
    * The AttachedClusters API provides a single centrally managed service
@@ -973,6 +1242,20 @@ public final class AttachedClustersGrpc {
           getGenerateAttachedClusterInstallManifestMethod(),
           getCallOptions(),
           request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse
+        generateAttachedClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAttachedClusterAgentTokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -1133,6 +1416,22 @@ public final class AttachedClustersGrpc {
           getChannel().newCall(getGenerateAttachedClusterInstallManifestMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a cluster agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse>
+        generateAttachedClusterAgentToken(
+            com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateAttachedClusterAgentTokenMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_CREATE_ATTACHED_CLUSTER = 0;
@@ -1143,6 +1442,7 @@ public final class AttachedClustersGrpc {
   private static final int METHODID_DELETE_ATTACHED_CLUSTER = 5;
   private static final int METHODID_GET_ATTACHED_SERVER_CONFIG = 6;
   private static final int METHODID_GENERATE_ATTACHED_CLUSTER_INSTALL_MANIFEST = 7;
+  private static final int METHODID_GENERATE_ATTACHED_CLUSTER_AGENT_TOKEN = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1207,6 +1507,13 @@ public final class AttachedClustersGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.gkemulticloud.v1
                           .GenerateAttachedClusterInstallManifestResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_ATTACHED_CLUSTER_AGENT_TOKEN:
+          serviceImpl.generateAttachedClusterAgentToken(
+              (com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse>)
                   responseObserver);
           break;
         default:
@@ -1280,6 +1587,13 @@ public final class AttachedClustersGrpc {
                     com.google.cloud.gkemulticloud.v1
                         .GenerateAttachedClusterInstallManifestResponse>(
                     service, METHODID_GENERATE_ATTACHED_CLUSTER_INSTALL_MANIFEST)))
+        .addMethod(
+            getGenerateAttachedClusterAgentTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest,
+                    com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse>(
+                    service, METHODID_GENERATE_ATTACHED_CLUSTER_AGENT_TOKEN)))
         .build();
   }
 
@@ -1339,6 +1653,7 @@ public final class AttachedClustersGrpc {
                       .addMethod(getDeleteAttachedClusterMethod())
                       .addMethod(getGetAttachedServerConfigMethod())
                       .addMethod(getGenerateAttachedClusterInstallManifestMethod())
+                      .addMethod(getGenerateAttachedClusterAgentTokenMethod())
                       .build();
         }
       }

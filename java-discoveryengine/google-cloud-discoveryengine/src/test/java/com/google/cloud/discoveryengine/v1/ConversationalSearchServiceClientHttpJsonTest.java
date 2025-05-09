@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1;
 
 import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListConversationsPagedResponse;
+import static com.google.cloud.discoveryengine.v1.ConversationalSearchServiceClient.ListSessionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -35,6 +36,7 @@ import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -652,6 +654,722 @@ public class ConversationalSearchServiceClientHttpJsonTest {
     try {
       String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
       client.listConversations(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void answerQueryTest() throws Exception {
+    AnswerQueryResponse expectedResponse =
+        AnswerQueryResponse.newBuilder()
+            .setAnswer(Answer.newBuilder().build())
+            .setSession(Session.newBuilder().build())
+            .setAnswerQueryToken("answerQueryToken758314095")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AnswerQueryRequest request =
+        AnswerQueryRequest.newBuilder()
+            .setServingConfig(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setQuery(Query.newBuilder().build())
+            .setSession(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
+            .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+            .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
+            .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
+            .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
+            .setQueryUnderstandingSpec(
+                AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
+            .setAsynchronousMode(true)
+            .setUserPseudoId("userPseudoId-1155274652")
+            .putAllUserLabels(new HashMap<String, String>())
+            .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
+            .build();
+
+    AnswerQueryResponse actualResponse = client.answerQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void answerQueryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AnswerQueryRequest request =
+          AnswerQueryRequest.newBuilder()
+              .setServingConfig(
+                  ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                      .toString())
+              .setQuery(Query.newBuilder().build())
+              .setSession(
+                  SessionName.ofProjectLocationDataStoreSessionName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                      .toString())
+              .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
+              .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+              .setGroundingSpec(AnswerQueryRequest.GroundingSpec.newBuilder().build())
+              .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
+              .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
+              .setQueryUnderstandingSpec(
+                  AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
+              .setAsynchronousMode(true)
+              .setUserPseudoId("userPseudoId-1155274652")
+              .putAllUserLabels(new HashMap<String, String>())
+              .setEndUserSpec(AnswerQueryRequest.EndUserSpec.newBuilder().build())
+              .build();
+      client.answerQuery(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamAnswerQueryTest() throws Exception {}
+
+  @Test
+  public void streamAnswerQueryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+  }
+
+  @Test
+  public void getAnswerTest() throws Exception {
+    Answer expectedResponse =
+        Answer.newBuilder()
+            .setName(
+                AnswerName.ofProjectLocationDataStoreSessionAnswerName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
+                    .toString())
+            .setAnswerText("answerText959441419")
+            .setGroundingScore(1981101646)
+            .addAllCitations(new ArrayList<Answer.Citation>())
+            .addAllGroundingSupports(new ArrayList<Answer.GroundingSupport>())
+            .addAllReferences(new ArrayList<Answer.Reference>())
+            .addAllRelatedQuestions(new ArrayList<String>())
+            .addAllSteps(new ArrayList<Answer.Step>())
+            .setQueryUnderstandingInfo(Answer.QueryUnderstandingInfo.newBuilder().build())
+            .addAllAnswerSkippedReasons(new ArrayList<Answer.AnswerSkippedReason>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCompleteTime(Timestamp.newBuilder().build())
+            .addAllSafetyRatings(new ArrayList<SafetyRating>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AnswerName name =
+        AnswerName.ofProjectLocationDataStoreSessionAnswerName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]");
+
+    Answer actualResponse = client.getAnswer(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAnswerExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AnswerName name =
+          AnswerName.ofProjectLocationDataStoreSessionAnswerName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]");
+      client.getAnswer(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAnswerTest2() throws Exception {
+    Answer expectedResponse =
+        Answer.newBuilder()
+            .setName(
+                AnswerName.ofProjectLocationDataStoreSessionAnswerName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
+                    .toString())
+            .setAnswerText("answerText959441419")
+            .setGroundingScore(1981101646)
+            .addAllCitations(new ArrayList<Answer.Citation>())
+            .addAllGroundingSupports(new ArrayList<Answer.GroundingSupport>())
+            .addAllReferences(new ArrayList<Answer.Reference>())
+            .addAllRelatedQuestions(new ArrayList<String>())
+            .addAllSteps(new ArrayList<Answer.Step>())
+            .setQueryUnderstandingInfo(Answer.QueryUnderstandingInfo.newBuilder().build())
+            .addAllAnswerSkippedReasons(new ArrayList<Answer.AnswerSkippedReason>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setCompleteTime(Timestamp.newBuilder().build())
+            .addAllSafetyRatings(new ArrayList<SafetyRating>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4748/locations/location-4748/dataStores/dataStore-4748/sessions/session-4748/answers/answer-4748";
+
+    Answer actualResponse = client.getAnswer(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAnswerExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4748/locations/location-4748/dataStores/dataStore-4748/sessions/session-4748/answers/answer-4748";
+      client.getAnswer(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSessionTest() throws Exception {
+    Session expectedResponse =
+        Session.newBuilder()
+            .setName(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .addAllTurns(new ArrayList<Session.Turn>())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataStoreName parent =
+        DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+    Session session = Session.newBuilder().build();
+
+    Session actualResponse = client.createSession(parent, session);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataStoreName parent =
+          DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      Session session = Session.newBuilder().build();
+      client.createSession(parent, session);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSessionTest2() throws Exception {
+    Session expectedResponse =
+        Session.newBuilder()
+            .setName(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .addAllTurns(new ArrayList<Session.Turn>())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+    Session session = Session.newBuilder().build();
+
+    Session actualResponse = client.createSession(parent, session);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createSessionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+      Session session = Session.newBuilder().build();
+      client.createSession(parent, session);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSessionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SessionName name =
+        SessionName.ofProjectLocationDataStoreSessionName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]");
+
+    client.deleteSession(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SessionName name =
+          SessionName.ofProjectLocationDataStoreSessionName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]");
+      client.deleteSession(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSessionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5067/locations/location-5067/dataStores/dataStore-5067/sessions/session-5067";
+
+    client.deleteSession(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSessionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5067/locations/location-5067/dataStores/dataStore-5067/sessions/session-5067";
+      client.deleteSession(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSessionTest() throws Exception {
+    Session expectedResponse =
+        Session.newBuilder()
+            .setName(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .addAllTurns(new ArrayList<Session.Turn>())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Session session =
+        Session.newBuilder()
+            .setName(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .addAllTurns(new ArrayList<Session.Turn>())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Session actualResponse = client.updateSession(session, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Session session =
+          Session.newBuilder()
+              .setName(
+                  SessionName.ofProjectLocationDataStoreSessionName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                      .toString())
+              .setDisplayName("displayName1714148973")
+              .setUserPseudoId("userPseudoId-1155274652")
+              .addAllTurns(new ArrayList<Session.Turn>())
+              .setStartTime(Timestamp.newBuilder().build())
+              .setEndTime(Timestamp.newBuilder().build())
+              .setIsPinned(true)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSession(session, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSessionTest() throws Exception {
+    Session expectedResponse =
+        Session.newBuilder()
+            .setName(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .addAllTurns(new ArrayList<Session.Turn>())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SessionName name =
+        SessionName.ofProjectLocationDataStoreSessionName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]");
+
+    Session actualResponse = client.getSession(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SessionName name =
+          SessionName.ofProjectLocationDataStoreSessionName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]");
+      client.getSession(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSessionTest2() throws Exception {
+    Session expectedResponse =
+        Session.newBuilder()
+            .setName(
+                SessionName.ofProjectLocationDataStoreSessionName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setUserPseudoId("userPseudoId-1155274652")
+            .addAllTurns(new ArrayList<Session.Turn>())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .setIsPinned(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5067/locations/location-5067/dataStores/dataStore-5067/sessions/session-5067";
+
+    Session actualResponse = client.getSession(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSessionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5067/locations/location-5067/dataStores/dataStore-5067/sessions/session-5067";
+      client.getSession(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSessionsTest() throws Exception {
+    Session responsesElement = Session.newBuilder().build();
+    ListSessionsResponse expectedResponse =
+        ListSessionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSessions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataStoreName parent =
+        DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+
+    ListSessionsPagedResponse pagedListResponse = client.listSessions(parent);
+
+    List<Session> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSessionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSessionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataStoreName parent =
+          DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      client.listSessions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSessionsTest2() throws Exception {
+    Session responsesElement = Session.newBuilder().build();
+    ListSessionsResponse expectedResponse =
+        ListSessionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSessions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+
+    ListSessionsPagedResponse pagedListResponse = client.listSessions(parent);
+
+    List<Session> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSessionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSessionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+      client.listSessions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

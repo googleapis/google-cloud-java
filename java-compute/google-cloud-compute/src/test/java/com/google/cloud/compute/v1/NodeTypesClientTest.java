@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -141,6 +141,7 @@ public class NodeTypesClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setLocalSsdGb(-1281375158)
+            .setMaxVms(844450625)
             .setMemoryMb(1726613907)
             .setName("name3373707")
             .setSelfLink("selfLink1191800166")

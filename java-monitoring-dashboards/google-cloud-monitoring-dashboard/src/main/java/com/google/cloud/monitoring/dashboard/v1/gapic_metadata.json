@@ -11,16 +11,16 @@
           "libraryClient": "DashboardsServiceClient",
           "rpcs": {
             "CreateDashboard": {
-              "methods": ["createDashboard", "createDashboardCallable"]
+              "methods": ["createDashboard", "createDashboard", "createDashboard", "createDashboardCallable"]
             },
             "DeleteDashboard": {
-              "methods": ["deleteDashboard", "deleteDashboardCallable"]
+              "methods": ["deleteDashboard", "deleteDashboard", "deleteDashboard", "deleteDashboardCallable"]
             },
             "GetDashboard": {
-              "methods": ["getDashboard", "getDashboardCallable"]
+              "methods": ["getDashboard", "getDashboard", "getDashboard", "getDashboardCallable"]
             },
             "ListDashboards": {
-              "methods": ["listDashboards", "listDashboardsPagedCallable", "listDashboardsCallable"]
+              "methods": ["listDashboards", "listDashboards", "listDashboards", "listDashboardsPagedCallable", "listDashboardsCallable"]
             },
             "UpdateDashboard": {
               "methods": ["updateDashboard", "updateDashboardCallable"]

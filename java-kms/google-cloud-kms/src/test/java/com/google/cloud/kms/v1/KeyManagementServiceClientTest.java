@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -559,6 +559,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -610,6 +611,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -771,6 +773,7 @@ public class KeyManagementServiceClientTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -816,6 +819,7 @@ public class KeyManagementServiceClientTest {
             .setPemCrc32C(Int64Value.newBuilder().build())
             .setName("name3373707")
             .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setPublicKey(ChecksummedData.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1049,6 +1053,7 @@ public class KeyManagementServiceClientTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1103,6 +1108,7 @@ public class KeyManagementServiceClientTest {
             .setImportOnly(true)
             .setDestroyScheduledDuration(Duration.newBuilder().build())
             .setCryptoKeyBackend(KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]").toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1485,6 +1491,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1600,6 +1607,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 
@@ -1655,6 +1663,7 @@ public class KeyManagementServiceClientTest {
             .setCryptoKeyBackend(
                 CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
                     .toString())
+            .setKeyAccessJustificationsPolicy(KeyAccessJustificationsPolicy.newBuilder().build())
             .build();
     mockKeyManagementService.addResponse(expectedResponse);
 

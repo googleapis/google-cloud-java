@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.google.protobuf.Any;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
@@ -83,6 +84,7 @@ public class CompletionServiceClientHttpJsonTest {
             .addAllCompletionResults(new ArrayList<CompleteQueryResponse.CompletionResult>())
             .setAttributionToken("attributionToken104706234")
             .addAllRecentSearchResults(new ArrayList<CompleteQueryResponse.RecentSearchResult>())
+            .putAllAttributeResults(new HashMap<String, CompleteQueryResponse.AttributeResult>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -95,6 +97,7 @@ public class CompletionServiceClientHttpJsonTest {
             .setDeviceType("deviceType781190832")
             .setDataset("dataset1443214456")
             .setMaxSuggestions(618824852)
+            .setEnableAttributeSuggestions(true)
             .setEntity("entity-1298275357")
             .build();
 
@@ -133,6 +136,7 @@ public class CompletionServiceClientHttpJsonTest {
               .setDeviceType("deviceType781190832")
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
+              .setEnableAttributeSuggestions(true)
               .setEntity("entity-1298275357")
               .build();
       client.completeQuery(request);

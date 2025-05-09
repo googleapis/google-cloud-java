@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -356,6 +356,19 @@ public final class ReachabilityServiceGrpc {
     return ReachabilityServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ReachabilityServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ReachabilityServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ReachabilityServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ReachabilityServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ReachabilityServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ReachabilityServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -469,7 +482,7 @@ public final class ReachabilityServiceGrpc {
      * &lt;code&gt;UNKNOWN&lt;/code&gt;.
      * If the endpoint specifications in `ConnectivityTest` are incomplete, the
      * reachability result returns a value of `AMBIGUOUS`. See the documentation
-     * in `ConnectivityTest` for for more details.
+     * in `ConnectivityTest` for more details.
      * </pre>
      */
     default void updateConnectivityTest(
@@ -640,7 +653,7 @@ public final class ReachabilityServiceGrpc {
      * &lt;code&gt;UNKNOWN&lt;/code&gt;.
      * If the endpoint specifications in `ConnectivityTest` are incomplete, the
      * reachability result returns a value of `AMBIGUOUS`. See the documentation
-     * in `ConnectivityTest` for for more details.
+     * in `ConnectivityTest` for more details.
      * </pre>
      */
     public void updateConnectivityTest(
@@ -696,6 +709,142 @@ public final class ReachabilityServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ReachabilityService.
+   *
+   * <pre>
+   * The Reachability service in the Google Cloud Network Management API provides
+   * services that analyze the reachability within a single Google Virtual Private
+   * Cloud (VPC) network, between peered VPC networks, between VPC and on-premises
+   * networks, or between VPC networks and internet hosts. A reachability analysis
+   * is based on Google Cloud network configurations.
+   * You can use the analysis results to verify these configurations and
+   * to troubleshoot connectivity issues.
+   * </pre>
+   */
+  public static final class ReachabilityServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ReachabilityServiceBlockingV2Stub> {
+    private ReachabilityServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ReachabilityServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ReachabilityServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Connectivity Tests owned by a project.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsResponse
+        listConnectivityTests(
+            com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConnectivityTestsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Connectivity Test.
+     * </pre>
+     */
+    public com.google.cloud.networkmanagement.v1beta1.ConnectivityTest getConnectivityTest(
+        com.google.cloud.networkmanagement.v1beta1.GetConnectivityTestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectivityTestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Connectivity Test.
+     * After you create a test, the reachability analysis is performed as part
+     * of the long running operation, which completes when the analysis completes.
+     * If the endpoint specifications in `ConnectivityTest` are invalid
+     * (for example, containing non-existent resources in the network, or you
+     * don't have read permissions to the network configurations of listed
+     * projects), then the reachability result returns a value of `UNKNOWN`.
+     * If the endpoint specifications in `ConnectivityTest` are
+     * incomplete, the reachability result returns a value of
+     * &lt;code&gt;AMBIGUOUS&lt;/code&gt;. For more information,
+     * see the Connectivity Test documentation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createConnectivityTest(
+        com.google.cloud.networkmanagement.v1beta1.CreateConnectivityTestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConnectivityTestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the configuration of an existing `ConnectivityTest`.
+     * After you update a test, the reachability analysis is performed as part
+     * of the long running operation, which completes when the analysis completes.
+     * The Reachability state in the test resource is updated with the new result.
+     * If the endpoint specifications in `ConnectivityTest` are invalid
+     * (for example, they contain non-existent resources in the network, or the
+     * user does not have read permissions to the network configurations of
+     * listed projects), then the reachability result returns a value of
+     * &lt;code&gt;UNKNOWN&lt;/code&gt;.
+     * If the endpoint specifications in `ConnectivityTest` are incomplete, the
+     * reachability result returns a value of `AMBIGUOUS`. See the documentation
+     * in `ConnectivityTest` for more details.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateConnectivityTest(
+        com.google.cloud.networkmanagement.v1beta1.UpdateConnectivityTestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConnectivityTestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rerun an existing `ConnectivityTest`.
+     * After the user triggers the rerun, the reachability analysis is performed
+     * as part of the long running operation, which completes when the analysis
+     * completes.
+     * Even though the test configuration remains the same, the reachability
+     * result may change due to underlying network configuration changes.
+     * If the endpoint specifications in `ConnectivityTest` become invalid (for
+     * example, specified resources are deleted in the network, or you lost
+     * read permissions to the network configurations of listed projects), then
+     * the reachability result returns a value of `UNKNOWN`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rerunConnectivityTest(
+        com.google.cloud.networkmanagement.v1beta1.RerunConnectivityTestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRerunConnectivityTestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific `ConnectivityTest`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteConnectivityTest(
+        com.google.cloud.networkmanagement.v1beta1.DeleteConnectivityTestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConnectivityTestMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ReachabilityService.
    *
    * <pre>
    * The Reachability service in the Google Cloud Network Management API provides
@@ -785,7 +934,7 @@ public final class ReachabilityServiceGrpc {
      * &lt;code&gt;UNKNOWN&lt;/code&gt;.
      * If the endpoint specifications in `ConnectivityTest` are incomplete, the
      * reachability result returns a value of `AMBIGUOUS`. See the documentation
-     * in `ConnectivityTest` for for more details.
+     * in `ConnectivityTest` for more details.
      * </pre>
      */
     public com.google.longrunning.Operation updateConnectivityTest(
@@ -925,7 +1074,7 @@ public final class ReachabilityServiceGrpc {
      * &lt;code&gt;UNKNOWN&lt;/code&gt;.
      * If the endpoint specifications in `ConnectivityTest` are incomplete, the
      * reachability result returns a value of `AMBIGUOUS`. See the documentation
-     * in `ConnectivityTest` for for more details.
+     * in `ConnectivityTest` for more details.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

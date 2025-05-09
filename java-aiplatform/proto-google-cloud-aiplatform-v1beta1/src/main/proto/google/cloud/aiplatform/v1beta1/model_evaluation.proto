@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -125,7 +125,7 @@ message ModelEvaluation {
   // The metadata of the ModelEvaluation.
   // For the ModelEvaluation uploaded from Managed Pipeline, metadata contains a
   // structured value with keys of "pipeline_job_id", "evaluation_dataset_type",
-  // "evaluation_dataset_path".
+  // "evaluation_dataset_path", "row_based_metrics_path".
   google.protobuf.Value metadata = 11;
 
   // Specify the configuration for bias detection.

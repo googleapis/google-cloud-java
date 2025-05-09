@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.batch.v1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonOperationSnapshotCallable;
@@ -41,7 +40,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonBatchServiceCallableFactory
     implements HttpJsonStubCallableFactory<Operation, OperationsStub> {
 
@@ -73,8 +71,6 @@ public class HttpJsonBatchServiceCallableFactory
         httpJsonCallSettings, callSettings, clientContext);
   }
 
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   @Override
   public <RequestT, ResponseT, MetadataT>
       OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(

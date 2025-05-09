@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.developerconnect.v1",
+  "libraryPackage": "com.google.cloud.developerconnect.v1",
+  "services": {
+    "DeveloperConnect": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DeveloperConnectClient",
+          "rpcs": {
+            "CreateConnection": {
+              "methods": ["createConnectionAsync", "createConnectionAsync", "createConnectionAsync", "createConnectionOperationCallable", "createConnectionCallable"]
+            },
+            "CreateGitRepositoryLink": {
+              "methods": ["createGitRepositoryLinkAsync", "createGitRepositoryLinkAsync", "createGitRepositoryLinkAsync", "createGitRepositoryLinkOperationCallable", "createGitRepositoryLinkCallable"]
+            },
+            "DeleteConnection": {
+              "methods": ["deleteConnectionAsync", "deleteConnectionAsync", "deleteConnectionAsync", "deleteConnectionOperationCallable", "deleteConnectionCallable"]
+            },
+            "DeleteGitRepositoryLink": {
+              "methods": ["deleteGitRepositoryLinkAsync", "deleteGitRepositoryLinkAsync", "deleteGitRepositoryLinkAsync", "deleteGitRepositoryLinkOperationCallable", "deleteGitRepositoryLinkCallable"]
+            },
+            "FetchGitHubInstallations": {
+              "methods": ["fetchGitHubInstallations", "fetchGitHubInstallations", "fetchGitHubInstallations", "fetchGitHubInstallationsCallable"]
+            },
+            "FetchGitRefs": {
+              "methods": ["fetchGitRefs", "fetchGitRefs", "fetchGitRefs", "fetchGitRefsPagedCallable", "fetchGitRefsCallable"]
+            },
+            "FetchLinkableGitRepositories": {
+              "methods": ["fetchLinkableGitRepositories", "fetchLinkableGitRepositories", "fetchLinkableGitRepositories", "fetchLinkableGitRepositoriesPagedCallable", "fetchLinkableGitRepositoriesCallable"]
+            },
+            "FetchReadToken": {
+              "methods": ["fetchReadToken", "fetchReadToken", "fetchReadToken", "fetchReadTokenCallable"]
+            },
+            "FetchReadWriteToken": {
+              "methods": ["fetchReadWriteToken", "fetchReadWriteToken", "fetchReadWriteToken", "fetchReadWriteTokenCallable"]
+            },
+            "GetConnection": {
+              "methods": ["getConnection", "getConnection", "getConnection", "getConnectionCallable"]
+            },
+            "GetGitRepositoryLink": {
+              "methods": ["getGitRepositoryLink", "getGitRepositoryLink", "getGitRepositoryLink", "getGitRepositoryLinkCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListConnections": {
+              "methods": ["listConnections", "listConnections", "listConnections", "listConnectionsPagedCallable", "listConnectionsCallable"]
+            },
+            "ListGitRepositoryLinks": {
+              "methods": ["listGitRepositoryLinks", "listGitRepositoryLinks", "listGitRepositoryLinks", "listGitRepositoryLinksPagedCallable", "listGitRepositoryLinksCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateConnection": {
+              "methods": ["updateConnectionAsync", "updateConnectionAsync", "updateConnectionOperationCallable", "updateConnectionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -29,6 +29,9 @@ option java_package = "com.google.cloud.deploy.v1";
 message DeliveryPipelineNotificationEvent {
   // Debug message for when a notification fails to send.
   string message = 1;
+
+  // Unique identifier of the `DeliveryPipeline`.
+  string pipeline_uid = 4;
 
   // The name of the `Delivery Pipeline`.
   string delivery_pipeline = 2;

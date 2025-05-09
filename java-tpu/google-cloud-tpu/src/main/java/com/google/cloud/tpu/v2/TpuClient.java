@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,19 +67,376 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the TpuClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListNodes</td>
+ *      <td><p> Lists nodes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNodes(ListNodesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listNodes(LocationName parent)
+ *           <li><p> listNodes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNodesPagedCallable()
+ *           <li><p> listNodesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetNode</td>
+ *      <td><p> Gets the details of a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getNode(GetNodeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getNode(NodeName name)
+ *           <li><p> getNode(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateNode</td>
+ *      <td><p> Creates a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createNodeAsync(CreateNodeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createNodeAsync(LocationName parent, Node node, String nodeId)
+ *           <li><p> createNodeAsync(String parent, Node node, String nodeId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createNodeOperationCallable()
+ *           <li><p> createNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteNode</td>
+ *      <td><p> Deletes a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteNodeAsync(DeleteNodeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteNodeAsync(NodeName name)
+ *           <li><p> deleteNodeAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteNodeOperationCallable()
+ *           <li><p> deleteNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StopNode</td>
+ *      <td><p> Stops a node. This operation is only available with single TPU nodes.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> stopNodeAsync(StopNodeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> stopNodeOperationCallable()
+ *           <li><p> stopNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StartNode</td>
+ *      <td><p> Starts a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startNodeAsync(StartNodeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startNodeOperationCallable()
+ *           <li><p> startNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateNode</td>
+ *      <td><p> Updates the configurations of a node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateNodeAsync(UpdateNodeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateNodeAsync(Node node, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateNodeOperationCallable()
+ *           <li><p> updateNodeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListQueuedResources</td>
+ *      <td><p> Lists queued resources.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQueuedResources(ListQueuedResourcesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQueuedResources(LocationName parent)
+ *           <li><p> listQueuedResources(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQueuedResourcesPagedCallable()
+ *           <li><p> listQueuedResourcesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQueuedResource</td>
+ *      <td><p> Gets details of a queued resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQueuedResource(GetQueuedResourceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQueuedResource(QueuedResourceName name)
+ *           <li><p> getQueuedResource(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateQueuedResource</td>
+ *      <td><p> Creates a QueuedResource TPU instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQueuedResourceAsync(CreateQueuedResourceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createQueuedResourceAsync(LocationName parent, QueuedResource queuedResource, String queuedResourceId)
+ *           <li><p> createQueuedResourceAsync(String parent, QueuedResource queuedResource, String queuedResourceId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQueuedResourceOperationCallable()
+ *           <li><p> createQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQueuedResource</td>
+ *      <td><p> Deletes a QueuedResource TPU instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQueuedResourceAsync(DeleteQueuedResourceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteQueuedResourceAsync(QueuedResourceName name)
+ *           <li><p> deleteQueuedResourceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQueuedResourceOperationCallable()
+ *           <li><p> deleteQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ResetQueuedResource</td>
+ *      <td><p> Resets a QueuedResource TPU instance</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resetQueuedResourceAsync(ResetQueuedResourceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> resetQueuedResourceAsync(QueuedResourceName name)
+ *           <li><p> resetQueuedResourceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resetQueuedResourceOperationCallable()
+ *           <li><p> resetQueuedResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateServiceIdentity</td>
+ *      <td><p> Generates the Cloud TPU service identity for the project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateServiceIdentity(GenerateServiceIdentityRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateServiceIdentityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAcceleratorTypes</td>
+ *      <td><p> Lists accelerator types supported by this API.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAcceleratorTypes(ListAcceleratorTypesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAcceleratorTypes(LocationName parent)
+ *           <li><p> listAcceleratorTypes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAcceleratorTypesPagedCallable()
+ *           <li><p> listAcceleratorTypesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAcceleratorType</td>
+ *      <td><p> Gets AcceleratorType.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAcceleratorType(GetAcceleratorTypeRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAcceleratorType(AcceleratorTypeName name)
+ *           <li><p> getAcceleratorType(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAcceleratorTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRuntimeVersions</td>
+ *      <td><p> Lists runtime versions supported by this API.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRuntimeVersions(ListRuntimeVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRuntimeVersions(LocationName parent)
+ *           <li><p> listRuntimeVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRuntimeVersionsPagedCallable()
+ *           <li><p> listRuntimeVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRuntimeVersion</td>
+ *      <td><p> Gets a runtime version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRuntimeVersion(GetRuntimeVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRuntimeVersion(RuntimeVersionName name)
+ *           <li><p> getRuntimeVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRuntimeVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetGuestAttributes</td>
+ *      <td><p> Retrieves the guest attributes for the node.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getGuestAttributes(GetGuestAttributesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getGuestAttributesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -1055,6 +1412,759 @@ public class TpuClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists queued resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (QueuedResource element : tpuClient.listQueuedResources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQueuedResourcesPagedResponse listQueuedResources(LocationName parent) {
+    ListQueuedResourcesRequest request =
+        ListQueuedResourcesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listQueuedResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists queued resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (QueuedResource element : tpuClient.listQueuedResources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQueuedResourcesPagedResponse listQueuedResources(String parent) {
+    ListQueuedResourcesRequest request =
+        ListQueuedResourcesRequest.newBuilder().setParent(parent).build();
+    return listQueuedResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists queued resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListQueuedResourcesRequest request =
+   *       ListQueuedResourcesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (QueuedResource element : tpuClient.listQueuedResources(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQueuedResourcesPagedResponse listQueuedResources(
+      ListQueuedResourcesRequest request) {
+    return listQueuedResourcesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists queued resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListQueuedResourcesRequest request =
+   *       ListQueuedResourcesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<QueuedResource> future =
+   *       tpuClient.listQueuedResourcesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QueuedResource element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesPagedResponse>
+      listQueuedResourcesPagedCallable() {
+    return stub.listQueuedResourcesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists queued resources.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ListQueuedResourcesRequest request =
+   *       ListQueuedResourcesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListQueuedResourcesResponse response =
+   *         tpuClient.listQueuedResourcesCallable().call(request);
+   *     for (QueuedResource element : response.getQueuedResourcesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
+      listQueuedResourcesCallable() {
+    return stub.listQueuedResourcesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a queued resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   QueuedResourceName name =
+   *       QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+   *   QueuedResource response = tpuClient.getQueuedResource(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueuedResource getQueuedResource(QueuedResourceName name) {
+    GetQueuedResourceRequest request =
+        GetQueuedResourceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getQueuedResource(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a queued resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   String name =
+   *       QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString();
+   *   QueuedResource response = tpuClient.getQueuedResource(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueuedResource getQueuedResource(String name) {
+    GetQueuedResourceRequest request = GetQueuedResourceRequest.newBuilder().setName(name).build();
+    return getQueuedResource(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a queued resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   GetQueuedResourceRequest request =
+   *       GetQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .build();
+   *   QueuedResource response = tpuClient.getQueuedResource(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueuedResource getQueuedResource(GetQueuedResourceRequest request) {
+    return getQueuedResourceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a queued resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   GetQueuedResourceRequest request =
+   *       GetQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .build();
+   *   ApiFuture<QueuedResource> future = tpuClient.getQueuedResourceCallable().futureCall(request);
+   *   // Do something.
+   *   QueuedResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetQueuedResourceRequest, QueuedResource> getQueuedResourceCallable() {
+    return stub.getQueuedResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   QueuedResource queuedResource = QueuedResource.newBuilder().build();
+   *   String queuedResourceId = "queuedResourceId437646236";
+   *   QueuedResource response =
+   *       tpuClient.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name.
+   * @param queuedResource Required. The queued resource.
+   * @param queuedResourceId Optional. The unqualified resource name. Should follow the
+   *     `^[A-Za-z0-9_.~+%-]+$` regex format.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> createQueuedResourceAsync(
+      LocationName parent, QueuedResource queuedResource, String queuedResourceId) {
+    CreateQueuedResourceRequest request =
+        CreateQueuedResourceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQueuedResource(queuedResource)
+            .setQueuedResourceId(queuedResourceId)
+            .build();
+    return createQueuedResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   QueuedResource queuedResource = QueuedResource.newBuilder().build();
+   *   String queuedResourceId = "queuedResourceId437646236";
+   *   QueuedResource response =
+   *       tpuClient.createQueuedResourceAsync(parent, queuedResource, queuedResourceId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name.
+   * @param queuedResource Required. The queued resource.
+   * @param queuedResourceId Optional. The unqualified resource name. Should follow the
+   *     `^[A-Za-z0-9_.~+%-]+$` regex format.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> createQueuedResourceAsync(
+      String parent, QueuedResource queuedResource, String queuedResourceId) {
+    CreateQueuedResourceRequest request =
+        CreateQueuedResourceRequest.newBuilder()
+            .setParent(parent)
+            .setQueuedResource(queuedResource)
+            .setQueuedResourceId(queuedResourceId)
+            .build();
+    return createQueuedResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   CreateQueuedResourceRequest request =
+   *       CreateQueuedResourceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQueuedResourceId("queuedResourceId437646236")
+   *           .setQueuedResource(QueuedResource.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   QueuedResource response = tpuClient.createQueuedResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> createQueuedResourceAsync(
+      CreateQueuedResourceRequest request) {
+    return createQueuedResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   CreateQueuedResourceRequest request =
+   *       CreateQueuedResourceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQueuedResourceId("queuedResourceId437646236")
+   *           .setQueuedResource(QueuedResource.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<QueuedResource, OperationMetadata> future =
+   *       tpuClient.createQueuedResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QueuedResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+      createQueuedResourceOperationCallable() {
+    return stub.createQueuedResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   CreateQueuedResourceRequest request =
+   *       CreateQueuedResourceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setQueuedResourceId("queuedResourceId437646236")
+   *           .setQueuedResource(QueuedResource.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = tpuClient.createQueuedResourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateQueuedResourceRequest, Operation>
+      createQueuedResourceCallable() {
+    return stub.createQueuedResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   QueuedResourceName name =
+   *       QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+   *   tpuClient.deleteQueuedResourceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQueuedResourceAsync(
+      QueuedResourceName name) {
+    DeleteQueuedResourceRequest request =
+        DeleteQueuedResourceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteQueuedResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   String name =
+   *       QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString();
+   *   tpuClient.deleteQueuedResourceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQueuedResourceAsync(String name) {
+    DeleteQueuedResourceRequest request =
+        DeleteQueuedResourceRequest.newBuilder().setName(name).build();
+    return deleteQueuedResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   DeleteQueuedResourceRequest request =
+   *       DeleteQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   tpuClient.deleteQueuedResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteQueuedResourceAsync(
+      DeleteQueuedResourceRequest request) {
+    return deleteQueuedResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   DeleteQueuedResourceRequest request =
+   *       DeleteQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       tpuClient.deleteQueuedResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteQueuedResourceRequest, Empty, OperationMetadata>
+      deleteQueuedResourceOperationCallable() {
+    return stub.deleteQueuedResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a QueuedResource TPU instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   DeleteQueuedResourceRequest request =
+   *       DeleteQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future = tpuClient.deleteQueuedResourceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteQueuedResourceRequest, Operation>
+      deleteQueuedResourceCallable() {
+    return stub.deleteQueuedResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   QueuedResourceName name =
+   *       QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]");
+   *   QueuedResource response = tpuClient.resetQueuedResourceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the queued resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> resetQueuedResourceAsync(
+      QueuedResourceName name) {
+    ResetQueuedResourceRequest request =
+        ResetQueuedResourceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return resetQueuedResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   String name =
+   *       QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString();
+   *   QueuedResource response = tpuClient.resetQueuedResourceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the queued resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> resetQueuedResourceAsync(
+      String name) {
+    ResetQueuedResourceRequest request =
+        ResetQueuedResourceRequest.newBuilder().setName(name).build();
+    return resetQueuedResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ResetQueuedResourceRequest request =
+   *       ResetQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .build();
+   *   QueuedResource response = tpuClient.resetQueuedResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<QueuedResource, OperationMetadata> resetQueuedResourceAsync(
+      ResetQueuedResourceRequest request) {
+    return resetQueuedResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ResetQueuedResourceRequest request =
+   *       ResetQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .build();
+   *   OperationFuture<QueuedResource, OperationMetadata> future =
+   *       tpuClient.resetQueuedResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   QueuedResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationCallable() {
+    return stub.resetQueuedResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resets a QueuedResource TPU instance
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TpuClient tpuClient = TpuClient.create()) {
+   *   ResetQueuedResourceRequest request =
+   *       ResetQueuedResourceRequest.newBuilder()
+   *           .setName(
+   *               QueuedResourceName.of("[PROJECT]", "[LOCATION]", "[QUEUED_RESOURCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = tpuClient.resetQueuedResourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResetQueuedResourceRequest, Operation> resetQueuedResourceCallable() {
+    return stub.resetQueuedResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Generates the Cloud TPU service identity for the project.
    *
    * <p>Sample code:
@@ -1995,6 +3105,90 @@ public class TpuClient implements BackgroundResource {
     protected ListNodesFixedSizeCollection createCollection(
         List<ListNodesPage> pages, int collectionSize) {
       return new ListNodesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListQueuedResourcesPagedResponse
+      extends AbstractPagedListResponse<
+          ListQueuedResourcesRequest,
+          ListQueuedResourcesResponse,
+          QueuedResource,
+          ListQueuedResourcesPage,
+          ListQueuedResourcesFixedSizeCollection> {
+
+    public static ApiFuture<ListQueuedResourcesPagedResponse> createAsync(
+        PageContext<ListQueuedResourcesRequest, ListQueuedResourcesResponse, QueuedResource>
+            context,
+        ApiFuture<ListQueuedResourcesResponse> futureResponse) {
+      ApiFuture<ListQueuedResourcesPage> futurePage =
+          ListQueuedResourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListQueuedResourcesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListQueuedResourcesPagedResponse(ListQueuedResourcesPage page) {
+      super(page, ListQueuedResourcesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListQueuedResourcesPage
+      extends AbstractPage<
+          ListQueuedResourcesRequest,
+          ListQueuedResourcesResponse,
+          QueuedResource,
+          ListQueuedResourcesPage> {
+
+    private ListQueuedResourcesPage(
+        PageContext<ListQueuedResourcesRequest, ListQueuedResourcesResponse, QueuedResource>
+            context,
+        ListQueuedResourcesResponse response) {
+      super(context, response);
+    }
+
+    private static ListQueuedResourcesPage createEmptyPage() {
+      return new ListQueuedResourcesPage(null, null);
+    }
+
+    @Override
+    protected ListQueuedResourcesPage createPage(
+        PageContext<ListQueuedResourcesRequest, ListQueuedResourcesResponse, QueuedResource>
+            context,
+        ListQueuedResourcesResponse response) {
+      return new ListQueuedResourcesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListQueuedResourcesPage> createPageAsync(
+        PageContext<ListQueuedResourcesRequest, ListQueuedResourcesResponse, QueuedResource>
+            context,
+        ApiFuture<ListQueuedResourcesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListQueuedResourcesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListQueuedResourcesRequest,
+          ListQueuedResourcesResponse,
+          QueuedResource,
+          ListQueuedResourcesPage,
+          ListQueuedResourcesFixedSizeCollection> {
+
+    private ListQueuedResourcesFixedSizeCollection(
+        List<ListQueuedResourcesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListQueuedResourcesFixedSizeCollection createEmptyCollection() {
+      return new ListQueuedResourcesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListQueuedResourcesFixedSizeCollection createCollection(
+        List<ListQueuedResourcesPage> pages, int collectionSize) {
+      return new ListQueuedResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
 

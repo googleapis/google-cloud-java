@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,16 +27,20 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * product that can generate and deliver events through Eventarc.
  * A third-party event provider is an event provider from outside of Google.
  * A partner is a third-party event provider that is integrated with Eventarc.
- * A subscriber is a GCP customer interested in receiving events.
+ * A subscriber is a Google Cloud customer interested in receiving events.
  * Channel is a first-class Eventarc resource that is created and managed
- * by the subscriber in their GCP project. A Channel represents a subscriber's
- * intent to receive events from an event provider. A Channel is associated with
- * exactly one event provider.
+ * by the subscriber in their Google Cloud project. A Channel represents a
+ * subscriber's intent to receive events from an event provider. A Channel is
+ * associated with exactly one event provider.
  * ChannelConnection is a first-class Eventarc resource that
- * is created and managed by the partner in their GCP project. A
+ * is created and managed by the partner in their Google Cloud project. A
  * ChannelConnection represents a connection between a partner and a
  * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a
  * Channel.
+ * Bus is a first-class Eventarc resource that is created and managed in a
+ * Google Cloud project. A Bus provides a discoverable endpoint for events and
+ * is a router that receives all events published by event providers and
+ * delivers them to zero or more subscribers.
  * Publisher allows an event provider to publish events to Eventarc.
  * </pre>
  */
@@ -154,6 +158,52 @@ public final class PublisherGrpc {
     return getPublishEventsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.publishing.v1.PublishRequest,
+          com.google.cloud.eventarc.publishing.v1.PublishResponse>
+      getPublishMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Publish",
+      requestType = com.google.cloud.eventarc.publishing.v1.PublishRequest.class,
+      responseType = com.google.cloud.eventarc.publishing.v1.PublishResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.eventarc.publishing.v1.PublishRequest,
+          com.google.cloud.eventarc.publishing.v1.PublishResponse>
+      getPublishMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.eventarc.publishing.v1.PublishRequest,
+            com.google.cloud.eventarc.publishing.v1.PublishResponse>
+        getPublishMethod;
+    if ((getPublishMethod = PublisherGrpc.getPublishMethod) == null) {
+      synchronized (PublisherGrpc.class) {
+        if ((getPublishMethod = PublisherGrpc.getPublishMethod) == null) {
+          PublisherGrpc.getPublishMethod =
+              getPublishMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.eventarc.publishing.v1.PublishRequest,
+                          com.google.cloud.eventarc.publishing.v1.PublishResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Publish"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.publishing.v1.PublishRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.eventarc.publishing.v1.PublishResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new PublisherMethodDescriptorSupplier("Publish"))
+                      .build();
+        }
+      }
+    }
+    return getPublishMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PublisherStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PublisherStub> factory =
@@ -164,6 +214,19 @@ public final class PublisherGrpc {
           }
         };
     return PublisherStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PublisherBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PublisherBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PublisherBlockingV2Stub>() {
+          @java.lang.Override
+          public PublisherBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PublisherBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PublisherBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -204,16 +267,20 @@ public final class PublisherGrpc {
    * product that can generate and deliver events through Eventarc.
    * A third-party event provider is an event provider from outside of Google.
    * A partner is a third-party event provider that is integrated with Eventarc.
-   * A subscriber is a GCP customer interested in receiving events.
+   * A subscriber is a Google Cloud customer interested in receiving events.
    * Channel is a first-class Eventarc resource that is created and managed
-   * by the subscriber in their GCP project. A Channel represents a subscriber's
-   * intent to receive events from an event provider. A Channel is associated with
-   * exactly one event provider.
+   * by the subscriber in their Google Cloud project. A Channel represents a
+   * subscriber's intent to receive events from an event provider. A Channel is
+   * associated with exactly one event provider.
    * ChannelConnection is a first-class Eventarc resource that
-   * is created and managed by the partner in their GCP project. A
+   * is created and managed by the partner in their Google Cloud project. A
    * ChannelConnection represents a connection between a partner and a
    * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a
    * Channel.
+   * Bus is a first-class Eventarc resource that is created and managed in a
+   * Google Cloud project. A Bus provides a discoverable endpoint for events and
+   * is a router that receives all events published by event providers and
+   * delivers them to zero or more subscribers.
    * Publisher allows an event provider to publish events to Eventarc.
    * </pre>
    */
@@ -249,6 +316,20 @@ public final class PublisherGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getPublishEventsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a message bus.
+     * </pre>
+     */
+    default void publish(
+        com.google.cloud.eventarc.publishing.v1.PublishRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.publishing.v1.PublishResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPublishMethod(), responseObserver);
+    }
   }
 
   /**
@@ -261,16 +342,20 @@ public final class PublisherGrpc {
    * product that can generate and deliver events through Eventarc.
    * A third-party event provider is an event provider from outside of Google.
    * A partner is a third-party event provider that is integrated with Eventarc.
-   * A subscriber is a GCP customer interested in receiving events.
+   * A subscriber is a Google Cloud customer interested in receiving events.
    * Channel is a first-class Eventarc resource that is created and managed
-   * by the subscriber in their GCP project. A Channel represents a subscriber's
-   * intent to receive events from an event provider. A Channel is associated with
-   * exactly one event provider.
+   * by the subscriber in their Google Cloud project. A Channel represents a
+   * subscriber's intent to receive events from an event provider. A Channel is
+   * associated with exactly one event provider.
    * ChannelConnection is a first-class Eventarc resource that
-   * is created and managed by the partner in their GCP project. A
+   * is created and managed by the partner in their Google Cloud project. A
    * ChannelConnection represents a connection between a partner and a
    * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a
    * Channel.
+   * Bus is a first-class Eventarc resource that is created and managed in a
+   * Google Cloud project. A Bus provides a discoverable endpoint for events and
+   * is a router that receives all events published by event providers and
+   * delivers them to zero or more subscribers.
    * Publisher allows an event provider to publish events to Eventarc.
    * </pre>
    */
@@ -292,16 +377,20 @@ public final class PublisherGrpc {
    * product that can generate and deliver events through Eventarc.
    * A third-party event provider is an event provider from outside of Google.
    * A partner is a third-party event provider that is integrated with Eventarc.
-   * A subscriber is a GCP customer interested in receiving events.
+   * A subscriber is a Google Cloud customer interested in receiving events.
    * Channel is a first-class Eventarc resource that is created and managed
-   * by the subscriber in their GCP project. A Channel represents a subscriber's
-   * intent to receive events from an event provider. A Channel is associated with
-   * exactly one event provider.
+   * by the subscriber in their Google Cloud project. A Channel represents a
+   * subscriber's intent to receive events from an event provider. A Channel is
+   * associated with exactly one event provider.
    * ChannelConnection is a first-class Eventarc resource that
-   * is created and managed by the partner in their GCP project. A
+   * is created and managed by the partner in their Google Cloud project. A
    * ChannelConnection represents a connection between a partner and a
    * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a
    * Channel.
+   * Bus is a first-class Eventarc resource that is created and managed in a
+   * Google Cloud project. A Bus provides a discoverable endpoint for events and
+   * is a router that receives all events published by event providers and
+   * delivers them to zero or more subscribers.
    * Publisher allows an event provider to publish events to Eventarc.
    * </pre>
    */
@@ -349,6 +438,21 @@ public final class PublisherGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a message bus.
+     * </pre>
+     */
+    public void publish(
+        com.google.cloud.eventarc.publishing.v1.PublishRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.eventarc.publishing.v1.PublishResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPublishMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -361,16 +465,100 @@ public final class PublisherGrpc {
    * product that can generate and deliver events through Eventarc.
    * A third-party event provider is an event provider from outside of Google.
    * A partner is a third-party event provider that is integrated with Eventarc.
-   * A subscriber is a GCP customer interested in receiving events.
+   * A subscriber is a Google Cloud customer interested in receiving events.
    * Channel is a first-class Eventarc resource that is created and managed
-   * by the subscriber in their GCP project. A Channel represents a subscriber's
-   * intent to receive events from an event provider. A Channel is associated with
-   * exactly one event provider.
+   * by the subscriber in their Google Cloud project. A Channel represents a
+   * subscriber's intent to receive events from an event provider. A Channel is
+   * associated with exactly one event provider.
    * ChannelConnection is a first-class Eventarc resource that
-   * is created and managed by the partner in their GCP project. A
+   * is created and managed by the partner in their Google Cloud project. A
    * ChannelConnection represents a connection between a partner and a
    * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a
    * Channel.
+   * Bus is a first-class Eventarc resource that is created and managed in a
+   * Google Cloud project. A Bus provides a discoverable endpoint for events and
+   * is a router that receives all events published by event providers and
+   * delivers them to zero or more subscribers.
+   * Publisher allows an event provider to publish events to Eventarc.
+   * </pre>
+   */
+  public static final class PublisherBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PublisherBlockingV2Stub> {
+    private PublisherBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PublisherBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PublisherBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a ChannelConnection in a partner's project.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse
+        publishChannelConnectionEvents(
+            com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPublishChannelConnectionEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a subscriber's channel.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.publishing.v1.PublishEventsResponse publishEvents(
+        com.google.cloud.eventarc.publishing.v1.PublishEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPublishEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a message bus.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.publishing.v1.PublishResponse publish(
+        com.google.cloud.eventarc.publishing.v1.PublishRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPublishMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Publisher.
+   *
+   * <pre>
+   * Eventarc processes events generated by an event provider and delivers them to
+   * a subscriber.
+   * An event provider is a software-as-a-service (SaaS) system or
+   * product that can generate and deliver events through Eventarc.
+   * A third-party event provider is an event provider from outside of Google.
+   * A partner is a third-party event provider that is integrated with Eventarc.
+   * A subscriber is a Google Cloud customer interested in receiving events.
+   * Channel is a first-class Eventarc resource that is created and managed
+   * by the subscriber in their Google Cloud project. A Channel represents a
+   * subscriber's intent to receive events from an event provider. A Channel is
+   * associated with exactly one event provider.
+   * ChannelConnection is a first-class Eventarc resource that
+   * is created and managed by the partner in their Google Cloud project. A
+   * ChannelConnection represents a connection between a partner and a
+   * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a
+   * Channel.
+   * Bus is a first-class Eventarc resource that is created and managed in a
+   * Google Cloud project. A Bus provides a discoverable endpoint for events and
+   * is a router that receives all events published by event providers and
+   * delivers them to zero or more subscribers.
    * Publisher allows an event provider to publish events to Eventarc.
    * </pre>
    */
@@ -412,6 +600,19 @@ public final class PublisherGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPublishEventsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a message bus.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.publishing.v1.PublishResponse publish(
+        com.google.cloud.eventarc.publishing.v1.PublishRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPublishMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -424,16 +625,20 @@ public final class PublisherGrpc {
    * product that can generate and deliver events through Eventarc.
    * A third-party event provider is an event provider from outside of Google.
    * A partner is a third-party event provider that is integrated with Eventarc.
-   * A subscriber is a GCP customer interested in receiving events.
+   * A subscriber is a Google Cloud customer interested in receiving events.
    * Channel is a first-class Eventarc resource that is created and managed
-   * by the subscriber in their GCP project. A Channel represents a subscriber's
-   * intent to receive events from an event provider. A Channel is associated with
-   * exactly one event provider.
+   * by the subscriber in their Google Cloud project. A Channel represents a
+   * subscriber's intent to receive events from an event provider. A Channel is
+   * associated with exactly one event provider.
    * ChannelConnection is a first-class Eventarc resource that
-   * is created and managed by the partner in their GCP project. A
+   * is created and managed by the partner in their Google Cloud project. A
    * ChannelConnection represents a connection between a partner and a
    * subscriber's Channel. A ChannelConnection has a one-to-one mapping with a
    * Channel.
+   * Bus is a first-class Eventarc resource that is created and managed in a
+   * Google Cloud project. A Bus provides a discoverable endpoint for events and
+   * is a router that receives all events published by event providers and
+   * delivers them to zero or more subscribers.
    * Publisher allows an event provider to publish events to Eventarc.
    * </pre>
    */
@@ -477,10 +682,25 @@ public final class PublisherGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPublishEventsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish events to a message bus.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.eventarc.publishing.v1.PublishResponse>
+        publish(com.google.cloud.eventarc.publishing.v1.PublishRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPublishMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PUBLISH_CHANNEL_CONNECTION_EVENTS = 0;
   private static final int METHODID_PUBLISH_EVENTS = 1;
+  private static final int METHODID_PUBLISH = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -515,6 +735,12 @@ public final class PublisherGrpc {
                       com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>)
                   responseObserver);
           break;
+        case METHODID_PUBLISH:
+          serviceImpl.publish(
+              (com.google.cloud.eventarc.publishing.v1.PublishRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.eventarc.publishing.v1.PublishResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -547,6 +773,13 @@ public final class PublisherGrpc {
                     com.google.cloud.eventarc.publishing.v1.PublishEventsRequest,
                     com.google.cloud.eventarc.publishing.v1.PublishEventsResponse>(
                     service, METHODID_PUBLISH_EVENTS)))
+        .addMethod(
+            getPublishMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.eventarc.publishing.v1.PublishRequest,
+                    com.google.cloud.eventarc.publishing.v1.PublishResponse>(
+                    service, METHODID_PUBLISH)))
         .build();
   }
 
@@ -600,6 +833,7 @@ public final class PublisherGrpc {
                       .setSchemaDescriptor(new PublisherFileDescriptorSupplier())
                       .addMethod(getPublishChannelConnectionEventsMethod())
                       .addMethod(getPublishEventsMethod())
+                      .addMethod(getPublishMethod())
                       .build();
         }
       }

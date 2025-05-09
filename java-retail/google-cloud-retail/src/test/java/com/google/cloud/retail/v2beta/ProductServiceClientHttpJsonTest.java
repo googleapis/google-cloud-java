@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -731,6 +731,67 @@ public class ProductServiceClientHttpJsonTest {
   }
 
   @Test
+  public void purgeProductsTest() throws Exception {
+    PurgeProductsResponse expectedResponse =
+        PurgeProductsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeProductsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PurgeProductsRequest request =
+        PurgeProductsRequest.newBuilder()
+            .setParent(BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+            .setFilter("filter-1274492040")
+            .setForce(true)
+            .build();
+
+    PurgeProductsResponse actualResponse = client.purgeProductsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void purgeProductsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PurgeProductsRequest request =
+          PurgeProductsRequest.newBuilder()
+              .setParent(
+                  BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+              .setFilter("filter-1274492040")
+              .setForce(true)
+              .build();
+      client.purgeProductsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void importProductsTest() throws Exception {
     ImportProductsResponse expectedResponse =
         ImportProductsResponse.newBuilder()
@@ -792,6 +853,68 @@ public class ProductServiceClientHttpJsonTest {
               .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
               .build();
       client.importProductsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportProductsTest() throws Exception {
+    ExportProductsResponse expectedResponse =
+        ExportProductsResponse.newBuilder()
+            .addAllErrorSamples(new ArrayList<Status>())
+            .setErrorsConfig(ExportErrorsConfig.newBuilder().build())
+            .setOutputResult(OutputResult.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportProductsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExportProductsRequest request =
+        ExportProductsRequest.newBuilder()
+            .setParent(BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+            .setOutputConfig(OutputConfig.newBuilder().build())
+            .setFilter("filter-1274492040")
+            .build();
+
+    ExportProductsResponse actualResponse = client.exportProductsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportProductsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportProductsRequest request =
+          ExportProductsRequest.newBuilder()
+              .setParent(
+                  BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+              .setOutputConfig(OutputConfig.newBuilder().build())
+              .setFilter("filter-1274492040")
+              .build();
+      client.exportProductsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

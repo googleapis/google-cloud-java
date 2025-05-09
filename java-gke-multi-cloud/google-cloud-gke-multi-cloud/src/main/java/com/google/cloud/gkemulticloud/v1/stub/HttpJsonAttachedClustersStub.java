@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.gkemulticloud.v1.stub;
 import static com.google.cloud.gkemulticloud.v1.AttachedClustersClient.ListAttachedClustersPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -39,6 +38,8 @@ import com.google.cloud.gkemulticloud.v1.AttachedCluster;
 import com.google.cloud.gkemulticloud.v1.AttachedServerConfig;
 import com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest;
 import com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenRequest;
+import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterAgentTokenResponse;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest;
 import com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse;
 import com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest;
@@ -67,7 +68,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
@@ -389,6 +389,8 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                                 fields, "attachedClusterId", request.getAttachedClusterId());
                             serializer.putQueryParam(
                                 fields, "platformVersion", request.getPlatformVersion());
+                            serializer.putQueryParam(
+                                fields, "proxyConfig", request.getProxyConfig());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -398,6 +400,52 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       .<GenerateAttachedClusterInstallManifestResponse>newBuilder()
                       .setDefaultInstance(
                           GenerateAttachedClusterInstallManifestResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenMethodDescriptor =
+          ApiMethodDescriptor
+              .<GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.gkemulticloud.v1.AttachedClusters/GenerateAttachedClusterAgentToken")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GenerateAttachedClusterAgentTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1/{attachedCluster=projects/*/locations/*/attachedClusters/*}:generateAttachedClusterAgentToken",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateAttachedClusterAgentTokenRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "attachedCluster", request.getAttachedCluster());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateAttachedClusterAgentTokenRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearAttachedCluster().build(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateAttachedClusterAgentTokenResponse>newBuilder()
+                      .setDefaultInstance(
+                          GenerateAttachedClusterAgentTokenResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -430,6 +478,9 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
           GenerateAttachedClusterInstallManifestRequest,
           GenerateAttachedClusterInstallManifestResponse>
       generateAttachedClusterInstallManifestCallable;
+  private final UnaryCallable<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -605,6 +656,22 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<
+            GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+        generateAttachedClusterAgentTokenTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateAttachedClusterAgentTokenRequest,
+                    GenerateAttachedClusterAgentTokenResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateAttachedClusterAgentTokenMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("attached_cluster", String.valueOf(request.getAttachedCluster()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createAttachedClusterCallable =
         callableFactory.createUnaryCallable(
@@ -675,6 +742,11 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
             generateAttachedClusterInstallManifestTransportSettings,
             settings.generateAttachedClusterInstallManifestSettings(),
             clientContext);
+    this.generateAttachedClusterAgentTokenCallable =
+        callableFactory.createUnaryCallable(
+            generateAttachedClusterAgentTokenTransportSettings,
+            settings.generateAttachedClusterAgentTokenSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -691,6 +763,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
     methodDescriptors.add(deleteAttachedClusterMethodDescriptor);
     methodDescriptors.add(getAttachedServerConfigMethodDescriptor);
     methodDescriptors.add(generateAttachedClusterInstallManifestMethodDescriptor);
+    methodDescriptors.add(generateAttachedClusterAgentTokenMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -771,6 +844,13 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
           GenerateAttachedClusterInstallManifestResponse>
       generateAttachedClusterInstallManifestCallable() {
     return generateAttachedClusterInstallManifestCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
+      generateAttachedClusterAgentTokenCallable() {
+    return generateAttachedClusterAgentTokenCallable;
   }
 
   @Override

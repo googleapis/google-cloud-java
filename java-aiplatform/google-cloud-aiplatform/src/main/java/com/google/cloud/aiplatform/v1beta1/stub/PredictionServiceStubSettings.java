@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.google.api.HttpBody;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -38,19 +39,34 @@ import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.ChatCompletionsRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
 import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
+import com.google.cloud.aiplatform.v1beta1.DirectPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.DirectPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.DirectRawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.DirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
+import com.google.cloud.aiplatform.v1beta1.GenerateContentRequest;
+import com.google.cloud.aiplatform.v1beta1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.RawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamDirectPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamDirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamRawPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingRawPredictResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -65,9 +81,9 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,7 +100,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of predict to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of predict:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -101,25 +119,59 @@ import org.threeten.bp.Duration;
  *             .predictSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * PredictionServiceStubSettings predictionServiceSettings =
  *     predictionServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PredictionServiceStubSettings extends StubSettings<PredictionServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .build();
 
   private final UnaryCallSettings<PredictRequest, PredictResponse> predictSettings;
   private final UnaryCallSettings<RawPredictRequest, HttpBody> rawPredictSettings;
+  private final ServerStreamingCallSettings<StreamRawPredictRequest, HttpBody>
+      streamRawPredictSettings;
+  private final UnaryCallSettings<DirectPredictRequest, DirectPredictResponse>
+      directPredictSettings;
+  private final UnaryCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
+      directRawPredictSettings;
+  private final StreamingCallSettings<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictSettings;
+  private final StreamingCallSettings<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictSettings;
+  private final StreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      streamingPredictSettings;
   private final ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictSettings;
+  private final StreamingCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
+      streamingRawPredictSettings;
   private final UnaryCallSettings<ExplainRequest, ExplainResponse> explainSettings;
   private final UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings;
+  private final UnaryCallSettings<GenerateContentRequest, GenerateContentResponse>
+      generateContentSettings;
+  private final ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentSettings;
+  private final ServerStreamingCallSettings<ChatCompletionsRequest, HttpBody>
+      chatCompletionsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -159,9 +211,7 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -192,10 +242,50 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     return rawPredictSettings;
   }
 
+  /** Returns the object with the settings used for calls to streamRawPredict. */
+  public ServerStreamingCallSettings<StreamRawPredictRequest, HttpBody> streamRawPredictSettings() {
+    return streamRawPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to directPredict. */
+  public UnaryCallSettings<DirectPredictRequest, DirectPredictResponse> directPredictSettings() {
+    return directPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to directRawPredict. */
+  public UnaryCallSettings<DirectRawPredictRequest, DirectRawPredictResponse>
+      directRawPredictSettings() {
+    return directRawPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamDirectPredict. */
+  public StreamingCallSettings<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictSettings() {
+    return streamDirectPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamDirectRawPredict. */
+  public StreamingCallSettings<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictSettings() {
+    return streamDirectRawPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingPredict. */
+  public StreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+      streamingPredictSettings() {
+    return streamingPredictSettings;
+  }
+
   /** Returns the object with the settings used for calls to serverStreamingPredict. */
   public ServerStreamingCallSettings<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictSettings() {
     return serverStreamingPredictSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingRawPredict. */
+  public StreamingCallSettings<StreamingRawPredictRequest, StreamingRawPredictResponse>
+      streamingRawPredictSettings() {
+    return streamingRawPredictSettings;
   }
 
   /** Returns the object with the settings used for calls to explain. */
@@ -206,6 +296,23 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
   /** Returns the object with the settings used for calls to countTokens. */
   public UnaryCallSettings<CountTokensRequest, CountTokensResponse> countTokensSettings() {
     return countTokensSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateContent. */
+  public UnaryCallSettings<GenerateContentRequest, GenerateContentResponse>
+      generateContentSettings() {
+    return generateContentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamGenerateContent. */
+  public ServerStreamingCallSettings<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentSettings() {
+    return streamGenerateContentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to chatCompletions. */
+  public ServerStreamingCallSettings<ChatCompletionsRequest, HttpBody> chatCompletionsSettings() {
+    return chatCompletionsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -246,12 +353,19 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "aiplatform";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "aiplatform.googleapis.com:443";
   }
@@ -283,7 +397,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -312,9 +425,19 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
     predictSettings = settingsBuilder.predictSettings().build();
     rawPredictSettings = settingsBuilder.rawPredictSettings().build();
+    streamRawPredictSettings = settingsBuilder.streamRawPredictSettings().build();
+    directPredictSettings = settingsBuilder.directPredictSettings().build();
+    directRawPredictSettings = settingsBuilder.directRawPredictSettings().build();
+    streamDirectPredictSettings = settingsBuilder.streamDirectPredictSettings().build();
+    streamDirectRawPredictSettings = settingsBuilder.streamDirectRawPredictSettings().build();
+    streamingPredictSettings = settingsBuilder.streamingPredictSettings().build();
     serverStreamingPredictSettings = settingsBuilder.serverStreamingPredictSettings().build();
+    streamingRawPredictSettings = settingsBuilder.streamingRawPredictSettings().build();
     explainSettings = settingsBuilder.explainSettings().build();
     countTokensSettings = settingsBuilder.countTokensSettings().build();
+    generateContentSettings = settingsBuilder.generateContentSettings().build();
+    streamGenerateContentSettings = settingsBuilder.streamGenerateContentSettings().build();
+    chatCompletionsSettings = settingsBuilder.chatCompletionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -327,12 +450,36 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<PredictRequest, PredictResponse> predictSettings;
     private final UnaryCallSettings.Builder<RawPredictRequest, HttpBody> rawPredictSettings;
+    private final ServerStreamingCallSettings.Builder<StreamRawPredictRequest, HttpBody>
+        streamRawPredictSettings;
+    private final UnaryCallSettings.Builder<DirectPredictRequest, DirectPredictResponse>
+        directPredictSettings;
+    private final UnaryCallSettings.Builder<DirectRawPredictRequest, DirectRawPredictResponse>
+        directRawPredictSettings;
+    private final StreamingCallSettings.Builder<
+            StreamDirectPredictRequest, StreamDirectPredictResponse>
+        streamDirectPredictSettings;
+    private final StreamingCallSettings.Builder<
+            StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+        streamDirectRawPredictSettings;
+    private final StreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        streamingPredictSettings;
     private final ServerStreamingCallSettings.Builder<
             StreamingPredictRequest, StreamingPredictResponse>
         serverStreamingPredictSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingRawPredictRequest, StreamingRawPredictResponse>
+        streamingRawPredictSettings;
     private final UnaryCallSettings.Builder<ExplainRequest, ExplainResponse> explainSettings;
     private final UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
         countTokensSettings;
+    private final UnaryCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
+        generateContentSettings;
+    private final ServerStreamingCallSettings.Builder<
+            GenerateContentRequest, GenerateContentResponse>
+        streamGenerateContentSettings;
+    private final ServerStreamingCallSettings.Builder<ChatCompletionsRequest, HttpBody>
+        chatCompletionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -360,10 +507,10 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(5000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(5000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(5000L))
-              .setTotalTimeout(Duration.ofMillis(5000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(5000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(5000L))
               .build();
       definitions.put("no_retry_9_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -380,9 +527,19 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       rawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamRawPredictSettings = ServerStreamingCallSettings.newBuilder();
+      directPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      directRawPredictSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamDirectPredictSettings = StreamingCallSettings.newBuilder();
+      streamDirectRawPredictSettings = StreamingCallSettings.newBuilder();
+      streamingPredictSettings = StreamingCallSettings.newBuilder();
       serverStreamingPredictSettings = ServerStreamingCallSettings.newBuilder();
+      streamingRawPredictSettings = StreamingCallSettings.newBuilder();
       explainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       countTokensSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamGenerateContentSettings = ServerStreamingCallSettings.newBuilder();
+      chatCompletionsSettings = ServerStreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -393,8 +550,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               predictSettings,
               rawPredictSettings,
+              directPredictSettings,
+              directRawPredictSettings,
               explainSettings,
               countTokensSettings,
+              generateContentSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -408,9 +568,19 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       predictSettings = settings.predictSettings.toBuilder();
       rawPredictSettings = settings.rawPredictSettings.toBuilder();
+      streamRawPredictSettings = settings.streamRawPredictSettings.toBuilder();
+      directPredictSettings = settings.directPredictSettings.toBuilder();
+      directRawPredictSettings = settings.directRawPredictSettings.toBuilder();
+      streamDirectPredictSettings = settings.streamDirectPredictSettings.toBuilder();
+      streamDirectRawPredictSettings = settings.streamDirectRawPredictSettings.toBuilder();
+      streamingPredictSettings = settings.streamingPredictSettings.toBuilder();
       serverStreamingPredictSettings = settings.serverStreamingPredictSettings.toBuilder();
+      streamingRawPredictSettings = settings.streamingRawPredictSettings.toBuilder();
       explainSettings = settings.explainSettings.toBuilder();
       countTokensSettings = settings.countTokensSettings.toBuilder();
+      generateContentSettings = settings.generateContentSettings.toBuilder();
+      streamGenerateContentSettings = settings.streamGenerateContentSettings.toBuilder();
+      chatCompletionsSettings = settings.chatCompletionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -421,8 +591,11 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               predictSettings,
               rawPredictSettings,
+              directPredictSettings,
+              directRawPredictSettings,
               explainSettings,
               countTokensSettings,
+              generateContentSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -436,7 +609,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -455,6 +627,21 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .streamRawPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .directPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .directRawPredictSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .serverStreamingPredictSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -466,6 +653,21 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
 
       builder
           .countTokensSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .generateContentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .streamGenerateContentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .chatCompletionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -522,10 +724,53 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
       return rawPredictSettings;
     }
 
+    /** Returns the builder for the settings used for calls to streamRawPredict. */
+    public ServerStreamingCallSettings.Builder<StreamRawPredictRequest, HttpBody>
+        streamRawPredictSettings() {
+      return streamRawPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to directPredict. */
+    public UnaryCallSettings.Builder<DirectPredictRequest, DirectPredictResponse>
+        directPredictSettings() {
+      return directPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to directRawPredict. */
+    public UnaryCallSettings.Builder<DirectRawPredictRequest, DirectRawPredictResponse>
+        directRawPredictSettings() {
+      return directRawPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamDirectPredict. */
+    public StreamingCallSettings.Builder<StreamDirectPredictRequest, StreamDirectPredictResponse>
+        streamDirectPredictSettings() {
+      return streamDirectPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamDirectRawPredict. */
+    public StreamingCallSettings.Builder<
+            StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+        streamDirectRawPredictSettings() {
+      return streamDirectRawPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingPredict. */
+    public StreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
+        streamingPredictSettings() {
+      return streamingPredictSettings;
+    }
+
     /** Returns the builder for the settings used for calls to serverStreamingPredict. */
     public ServerStreamingCallSettings.Builder<StreamingPredictRequest, StreamingPredictResponse>
         serverStreamingPredictSettings() {
       return serverStreamingPredictSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingRawPredict. */
+    public StreamingCallSettings.Builder<StreamingRawPredictRequest, StreamingRawPredictResponse>
+        streamingRawPredictSettings() {
+      return streamingRawPredictSettings;
     }
 
     /** Returns the builder for the settings used for calls to explain. */
@@ -537,6 +782,24 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     public UnaryCallSettings.Builder<CountTokensRequest, CountTokensResponse>
         countTokensSettings() {
       return countTokensSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateContent. */
+    public UnaryCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
+        generateContentSettings() {
+      return generateContentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamGenerateContent. */
+    public ServerStreamingCallSettings.Builder<GenerateContentRequest, GenerateContentResponse>
+        streamGenerateContentSettings() {
+      return streamGenerateContentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to chatCompletions. */
+    public ServerStreamingCallSettings.Builder<ChatCompletionsRequest, HttpBody>
+        chatCompletionsSettings() {
+      return chatCompletionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

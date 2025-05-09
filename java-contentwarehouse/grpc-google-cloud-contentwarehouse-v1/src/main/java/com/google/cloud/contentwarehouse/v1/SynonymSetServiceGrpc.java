@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -277,6 +277,19 @@ public final class SynonymSetServiceGrpc {
     return SynonymSetServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SynonymSetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SynonymSetServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SynonymSetServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SynonymSetServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SynonymSetServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SynonymSetServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -525,6 +538,99 @@ public final class SynonymSetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SynonymSetService.
+   *
+   * <pre>
+   * A Service that manage/custom customer specified SynonymSets.
+   * </pre>
+   */
+  public static final class SynonymSetServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SynonymSetServiceBlockingV2Stub> {
+    private SynonymSetServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SynonymSetServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SynonymSetServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SynonymSet for a single context.
+     * Throws an ALREADY_EXISTS exception if a synonymset already exists
+     * for the context.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.SynonymSet createSynonymSet(
+        com.google.cloud.contentwarehouse.v1.CreateSynonymSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSynonymSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a SynonymSet for a particular context.
+     * Throws a NOT_FOUND exception if the Synonymset
+     * does not exist
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.SynonymSet getSynonymSet(
+        com.google.cloud.contentwarehouse.v1.GetSynonymSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSynonymSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove the existing SynonymSet for the context and replaces it
+     * with a new one.
+     * Throws a NOT_FOUND exception if the SynonymSet is not found.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.SynonymSet updateSynonymSet(
+        com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSynonymSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SynonymSet for a given context.
+     * Throws a NOT_FOUND exception if the SynonymSet is not found.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSynonymSet(
+        com.google.cloud.contentwarehouse.v1.DeleteSynonymSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSynonymSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all SynonymSets (for all contexts) for the specified location.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.ListSynonymSetsResponse listSynonymSets(
+        com.google.cloud.contentwarehouse.v1.ListSynonymSetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSynonymSetsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SynonymSetService.
    *
    * <pre>
    * A Service that manage/custom customer specified SynonymSets.

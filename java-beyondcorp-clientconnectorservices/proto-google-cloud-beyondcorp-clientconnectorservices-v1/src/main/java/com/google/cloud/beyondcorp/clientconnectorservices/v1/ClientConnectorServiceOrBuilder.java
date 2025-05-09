@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 public interface ClientConnectorServiceOrBuilder
@@ -36,6 +37,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -75,6 +78,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -113,6 +118,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return Whether the ingress field is set.
    */
   boolean hasIngress();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface ClientConnectorServiceOrBuilder
    */
   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
       getIngress();
+
   /**
    *
    *
@@ -215,6 +224,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return Whether the egress field is set.
    */
   boolean hasEgress();
+
   /**
    *
    *
@@ -229,6 +239,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The egress.
    */
   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress getEgress();
+
   /**
    *
    *
@@ -257,6 +268,7 @@ public interface ClientConnectorServiceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

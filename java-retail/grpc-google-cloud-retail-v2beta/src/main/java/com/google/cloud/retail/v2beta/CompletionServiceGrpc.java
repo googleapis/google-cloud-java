@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -145,6 +145,19 @@ public final class CompletionServiceGrpc {
           }
         };
     return CompletionServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CompletionServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CompletionServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CompletionServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CompletionServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CompletionServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CompletionServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -305,6 +318,62 @@ public final class CompletionServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CompletionService.
+   *
+   * <pre>
+   * Autocomplete service for retail.
+   * This feature is only available for users who have Retail Search enabled.
+   * Enable Retail Search on Cloud Console before using this feature.
+   * </pre>
+   */
+  public static final class CompletionServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CompletionServiceBlockingV2Stub> {
+    private CompletionServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CompletionServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CompletionServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Completes the specified prefix with keyword suggestions.
+     * This feature is only available for users who have Retail Search enabled.
+     * Enable Retail Search on Cloud Console before using this feature.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.CompleteQueryResponse completeQuery(
+        com.google.cloud.retail.v2beta.CompleteQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompleteQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of processed completion dataset.
+     * Request processing is asynchronous. Partial updating is not supported.
+     * The operation is successfully finished only after the imported suggestions
+     * are indexed successfully and ready for serving. The process takes hours.
+     * This feature is only available for users who have Retail Search enabled.
+     * Enable Retail Search on Cloud Console before using this feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importCompletionData(
+        com.google.cloud.retail.v2beta.ImportCompletionDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportCompletionDataMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CompletionService.
    *
    * <pre>
    * Autocomplete service for retail.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,11 +31,13 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/secrets/v1beta1/service.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class SecretManagerServiceGrpc {
 
   private SecretManagerServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.secrets.v1beta1.SecretManagerService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.secrets.v1beta1.SecretManagerService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -747,6 +749,19 @@ public final class SecretManagerServiceGrpc {
     return SecretManagerServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SecretManagerServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SecretManagerServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecretManagerServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SecretManagerServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -786,7 +801,7 @@ public final class SecretManagerServiceGrpc {
    * * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
    * </pre>
    */
-  public abstract static class SecretManagerServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -795,7 +810,7 @@ public final class SecretManagerServiceGrpc {
      * Lists [Secrets][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
-    public void listSecrets(
+    default void listSecrets(
         com.google.cloud.secretmanager.v1beta1.ListSecretsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.ListSecretsResponse>
             responseObserver) {
@@ -807,10 +822,11 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no
+     * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      */
-    public void createSecret(
+    default void createSecret(
         com.google.cloud.secretmanager.v1beta1.CreateSecretRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.Secret>
             responseObserver) {
@@ -822,11 +838,12 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] containing secret data and attaches
-     * it to an existing [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
+     * containing secret data and attaches it to an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
-    public void addSecretVersion(
+    default void addSecretVersion(
         com.google.cloud.secretmanager.v1beta1.AddSecretVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.SecretVersion>
             responseObserver) {
@@ -841,7 +858,7 @@ public final class SecretManagerServiceGrpc {
      * Gets metadata for a given [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
-    public void getSecret(
+    default void getSecret(
         com.google.cloud.secretmanager.v1beta1.GetSecretRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.Secret>
             responseObserver) {
@@ -852,10 +869,11 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Updates metadata of an existing [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Updates metadata of an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
-    public void updateSecret(
+    default void updateSecret(
         com.google.cloud.secretmanager.v1beta1.UpdateSecretRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.Secret>
             responseObserver) {
@@ -870,7 +888,7 @@ public final class SecretManagerServiceGrpc {
      * Deletes a [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
-    public void deleteSecret(
+    default void deleteSecret(
         com.google.cloud.secretmanager.v1beta1.DeleteSecretRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -881,11 +899,11 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This call does not return secret
-     * data.
+     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This
+     * call does not return secret data.
      * </pre>
      */
-    public void listSecretVersions(
+    default void listSecretVersions(
         com.google.cloud.secretmanager.v1beta1.ListSecretVersionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.secretmanager.v1beta1.ListSecretVersionsResponse>
@@ -898,12 +916,13 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Gets metadata for a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Gets metadata for a
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
      * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      */
-    public void getSecretVersion(
+    default void getSecretVersion(
         com.google.cloud.secretmanager.v1beta1.GetSecretVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.SecretVersion>
             responseObserver) {
@@ -915,12 +934,13 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]. This call returns the secret data.
+     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * This call returns the secret data.
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
      * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      */
-    public void accessSecretVersion(
+    default void accessSecretVersion(
         com.google.cloud.secretmanager.v1beta1.AccessSecretVersionRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.secretmanager.v1beta1.AccessSecretVersionResponse>
@@ -934,11 +954,12 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Disables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
      * [DISABLED][google.cloud.secrets.v1beta1.SecretVersion.State.DISABLED].
      * </pre>
      */
-    public void disableSecretVersion(
+    default void disableSecretVersion(
         com.google.cloud.secretmanager.v1beta1.DisableSecretVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.SecretVersion>
             responseObserver) {
@@ -951,11 +972,12 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Enables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
      * [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED].
      * </pre>
      */
-    public void enableSecretVersion(
+    default void enableSecretVersion(
         com.google.cloud.secretmanager.v1beta1.EnableSecretVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.SecretVersion>
             responseObserver) {
@@ -968,12 +990,13 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Destroys a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
-     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and irrevocably destroys the
-     * secret data.
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and
+     * irrevocably destroys the secret data.
      * </pre>
      */
-    public void destroySecretVersion(
+    default void destroySecretVersion(
         com.google.cloud.secretmanager.v1beta1.DestroySecretVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1beta1.SecretVersion>
             responseObserver) {
@@ -987,11 +1010,12 @@ public final class SecretManagerServiceGrpc {
      * <pre>
      * Sets the access control policy on the specified secret. Replaces any
      * existing policy.
-     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] are enforced according
-     * to the policy set on the associated [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+     * are enforced according to the policy set on the associated
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1006,7 +1030,7 @@ public final class SecretManagerServiceGrpc {
      * Returns empty policy if the secret exists and does not have a policy set.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1025,122 +1049,37 @@ public final class SecretManagerServiceGrpc {
      * may "fail open" without warning.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SecretManagerService.
+   *
+   * <pre>
+   * Secret Manager Service
+   * Manages secrets and operations using those secrets. Implements a REST
+   * model with the following objects:
+   * * [Secret][google.cloud.secrets.v1beta1.Secret]
+   * * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
+   * </pre>
+   */
+  public abstract static class SecretManagerServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListSecretsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.ListSecretsRequest,
-                      com.google.cloud.secretmanager.v1beta1.ListSecretsResponse>(
-                      this, METHODID_LIST_SECRETS)))
-          .addMethod(
-              getCreateSecretMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.CreateSecretRequest,
-                      com.google.cloud.secretmanager.v1beta1.Secret>(this, METHODID_CREATE_SECRET)))
-          .addMethod(
-              getAddSecretVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.AddSecretVersionRequest,
-                      com.google.cloud.secretmanager.v1beta1.SecretVersion>(
-                      this, METHODID_ADD_SECRET_VERSION)))
-          .addMethod(
-              getGetSecretMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.GetSecretRequest,
-                      com.google.cloud.secretmanager.v1beta1.Secret>(this, METHODID_GET_SECRET)))
-          .addMethod(
-              getUpdateSecretMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.UpdateSecretRequest,
-                      com.google.cloud.secretmanager.v1beta1.Secret>(this, METHODID_UPDATE_SECRET)))
-          .addMethod(
-              getDeleteSecretMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.DeleteSecretRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SECRET)))
-          .addMethod(
-              getListSecretVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.ListSecretVersionsRequest,
-                      com.google.cloud.secretmanager.v1beta1.ListSecretVersionsResponse>(
-                      this, METHODID_LIST_SECRET_VERSIONS)))
-          .addMethod(
-              getGetSecretVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.GetSecretVersionRequest,
-                      com.google.cloud.secretmanager.v1beta1.SecretVersion>(
-                      this, METHODID_GET_SECRET_VERSION)))
-          .addMethod(
-              getAccessSecretVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.AccessSecretVersionRequest,
-                      com.google.cloud.secretmanager.v1beta1.AccessSecretVersionResponse>(
-                      this, METHODID_ACCESS_SECRET_VERSION)))
-          .addMethod(
-              getDisableSecretVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.DisableSecretVersionRequest,
-                      com.google.cloud.secretmanager.v1beta1.SecretVersion>(
-                      this, METHODID_DISABLE_SECRET_VERSION)))
-          .addMethod(
-              getEnableSecretVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.EnableSecretVersionRequest,
-                      com.google.cloud.secretmanager.v1beta1.SecretVersion>(
-                      this, METHODID_ENABLE_SECRET_VERSION)))
-          .addMethod(
-              getDestroySecretVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.secretmanager.v1beta1.DestroySecretVersionRequest,
-                      com.google.cloud.secretmanager.v1beta1.SecretVersion>(
-                      this, METHODID_DESTROY_SECRET_VERSION)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return SecretManagerServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SecretManagerService.
    *
    * <pre>
    * Secret Manager Service
@@ -1183,7 +1122,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no
+     * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      */
     public void createSecret(
@@ -1200,8 +1140,9 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] containing secret data and attaches
-     * it to an existing [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
+     * containing secret data and attaches it to an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public void addSecretVersion(
@@ -1233,7 +1174,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Updates metadata of an existing [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Updates metadata of an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public void updateSecret(
@@ -1266,8 +1208,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This call does not return secret
-     * data.
+     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This
+     * call does not return secret data.
      * </pre>
      */
     public void listSecretVersions(
@@ -1285,7 +1227,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Gets metadata for a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Gets metadata for a
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
      * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
@@ -1304,7 +1247,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]. This call returns the secret data.
+     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * This call returns the secret data.
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
      * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
@@ -1325,7 +1269,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Disables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
      * [DISABLED][google.cloud.secrets.v1beta1.SecretVersion.State.DISABLED].
      * </pre>
      */
@@ -1344,7 +1289,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Enables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
      * [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED].
      * </pre>
      */
@@ -1363,9 +1309,10 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Destroys a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
-     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and irrevocably destroys the
-     * secret data.
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and
+     * irrevocably destroys the secret data.
      * </pre>
      */
     public void destroySecretVersion(
@@ -1384,8 +1331,9 @@ public final class SecretManagerServiceGrpc {
      * <pre>
      * Sets the access control policy on the specified secret. Replaces any
      * existing policy.
-     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] are enforced according
-     * to the policy set on the associated [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+     * are enforced according to the policy set on the associated
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public void setIamPolicy(
@@ -1438,7 +1386,7 @@ public final class SecretManagerServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SecretManagerService.
    *
    * <pre>
    * Secret Manager Service
@@ -1448,17 +1396,17 @@ public final class SecretManagerServiceGrpc {
    * * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
    * </pre>
    */
-  public static final class SecretManagerServiceBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<SecretManagerServiceBlockingStub> {
-    private SecretManagerServiceBlockingStub(
+  public static final class SecretManagerServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SecretManagerServiceBlockingV2Stub> {
+    private SecretManagerServiceBlockingV2Stub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected SecretManagerServiceBlockingStub build(
+    protected SecretManagerServiceBlockingV2Stub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SecretManagerServiceBlockingStub(channel, callOptions);
+      return new SecretManagerServiceBlockingV2Stub(channel, callOptions);
     }
 
     /**
@@ -1478,7 +1426,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no
+     * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      */
     public com.google.cloud.secretmanager.v1beta1.Secret createSecret(
@@ -1491,8 +1440,9 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] containing secret data and attaches
-     * it to an existing [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
+     * containing secret data and attaches it to an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public com.google.cloud.secretmanager.v1beta1.SecretVersion addSecretVersion(
@@ -1518,7 +1468,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Updates metadata of an existing [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Updates metadata of an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public com.google.cloud.secretmanager.v1beta1.Secret updateSecret(
@@ -1544,8 +1495,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This call does not return secret
-     * data.
+     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This
+     * call does not return secret data.
      * </pre>
      */
     public com.google.cloud.secretmanager.v1beta1.ListSecretVersionsResponse listSecretVersions(
@@ -1558,7 +1509,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Gets metadata for a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Gets metadata for a
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
      * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
@@ -1573,7 +1525,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]. This call returns the secret data.
+     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * This call returns the secret data.
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
      * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
@@ -1589,7 +1542,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Disables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
      * [DISABLED][google.cloud.secrets.v1beta1.SecretVersion.State.DISABLED].
      * </pre>
      */
@@ -1604,7 +1558,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Enables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
      * [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED].
      * </pre>
      */
@@ -1619,9 +1574,10 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Destroys a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
-     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and irrevocably destroys the
-     * secret data.
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and
+     * irrevocably destroys the secret data.
      * </pre>
      */
     public com.google.cloud.secretmanager.v1beta1.SecretVersion destroySecretVersion(
@@ -1636,8 +1592,9 @@ public final class SecretManagerServiceGrpc {
      * <pre>
      * Sets the access control policy on the specified secret. Replaces any
      * existing policy.
-     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] are enforced according
-     * to the policy set on the associated [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+     * are enforced according to the policy set on the associated
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -1678,7 +1635,256 @@ public final class SecretManagerServiceGrpc {
   }
 
   /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SecretManagerService.
    *
+   * <pre>
+   * Secret Manager Service
+   * Manages secrets and operations using those secrets. Implements a REST
+   * model with the following objects:
+   * * [Secret][google.cloud.secrets.v1beta1.Secret]
+   * * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
+   * </pre>
+   */
+  public static final class SecretManagerServiceBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<SecretManagerServiceBlockingStub> {
+    private SecretManagerServiceBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SecretManagerServiceBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SecretManagerServiceBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Secrets][google.cloud.secrets.v1beta1.Secret].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.ListSecretsResponse listSecrets(
+        com.google.cloud.secretmanager.v1beta1.ListSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no
+     * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.Secret createSecret(
+        com.google.cloud.secretmanager.v1beta1.CreateSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
+     * containing secret data and attaches it to an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.SecretVersion addSecretVersion(
+        com.google.cloud.secretmanager.v1beta1.AddSecretVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata for a given [Secret][google.cloud.secrets.v1beta1.Secret].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.Secret getSecret(
+        com.google.cloud.secretmanager.v1beta1.GetSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates metadata of an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.Secret updateSecret(
+        com.google.cloud.secretmanager.v1beta1.UpdateSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [Secret][google.cloud.secrets.v1beta1.Secret].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSecret(
+        com.google.cloud.secretmanager.v1beta1.DeleteSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This
+     * call does not return secret data.
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.ListSecretVersionsResponse listSecretVersions(
+        com.google.cloud.secretmanager.v1beta1.ListSecretVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSecretVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata for a
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.SecretVersion getSecretVersion(
+        com.google.cloud.secretmanager.v1beta1.GetSecretVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * This call returns the secret data.
+     * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.AccessSecretVersionResponse accessSecretVersion(
+        com.google.cloud.secretmanager.v1beta1.AccessSecretVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAccessSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * [DISABLED][google.cloud.secrets.v1beta1.SecretVersion.State.DISABLED].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.SecretVersion disableSecretVersion(
+        com.google.cloud.secretmanager.v1beta1.DisableSecretVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED].
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.SecretVersion enableSecretVersion(
+        com.google.cloud.secretmanager.v1beta1.EnableSecretVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableSecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Destroys a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and
+     * irrevocably destroys the secret data.
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1beta1.SecretVersion destroySecretVersion(
+        com.google.cloud.secretmanager.v1beta1.DestroySecretVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDestroySecretVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified secret. Replaces any
+     * existing policy.
+     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+     * are enforced according to the policy set on the associated
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a secret.
+     * Returns empty policy if the secret exists and does not have a policy set.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has for the specified secret.
+     * If the secret does not exist, this call returns an empty set of
+     * permissions, not a NOT_FOUND error.
+     * Note: This operation is designed to be used for building permission-aware
+     * UIs and command-line tools, not for authorization checking. This operation
+     * may "fail open" without warning.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SecretManagerService.
    *
    * <pre>
    * Secret Manager Service
@@ -1719,7 +1925,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
+     * Creates a new [Secret][google.cloud.secrets.v1beta1.Secret] containing no
+     * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1733,8 +1940,9 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] containing secret data and attaches
-     * it to an existing [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Creates a new [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]
+     * containing secret data and attaches it to an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1762,7 +1970,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Updates metadata of an existing [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Updates metadata of an existing
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1789,8 +1998,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This call does not return secret
-     * data.
+     * Lists [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]. This
+     * call does not return secret data.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1805,7 +2014,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Gets metadata for a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * Gets metadata for a
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
      * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
@@ -1821,7 +2031,8 @@ public final class SecretManagerServiceGrpc {
      *
      *
      * <pre>
-     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion]. This call returns the secret data.
+     * Accesses a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+     * This call returns the secret data.
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/latest` is an alias to the `latest`
      * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
      * </pre>
@@ -1839,7 +2050,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Disables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
      * [DISABLED][google.cloud.secrets.v1beta1.SecretVersion.State.DISABLED].
      * </pre>
      */
@@ -1856,7 +2068,8 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Enables a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
      * [ENABLED][google.cloud.secrets.v1beta1.SecretVersion.State.ENABLED].
      * </pre>
      */
@@ -1873,9 +2086,10 @@ public final class SecretManagerServiceGrpc {
      *
      * <pre>
      * Destroys a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
-     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
-     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and irrevocably destroys the
-     * secret data.
+     * Sets the [state][google.cloud.secrets.v1beta1.SecretVersion.state] of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to
+     * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED] and
+     * irrevocably destroys the secret data.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1892,8 +2106,9 @@ public final class SecretManagerServiceGrpc {
      * <pre>
      * Sets the access control policy on the specified secret. Replaces any
      * existing policy.
-     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] are enforced according
-     * to the policy set on the associated [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Permissions on [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion]
+     * are enforced according to the policy set on the associated
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -1957,10 +2172,10 @@ public final class SecretManagerServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SecretManagerServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SecretManagerServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2075,6 +2290,110 @@ public final class SecretManagerServiceGrpc {
     }
   }
 
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListSecretsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.ListSecretsRequest,
+                    com.google.cloud.secretmanager.v1beta1.ListSecretsResponse>(
+                    service, METHODID_LIST_SECRETS)))
+        .addMethod(
+            getCreateSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.CreateSecretRequest,
+                    com.google.cloud.secretmanager.v1beta1.Secret>(
+                    service, METHODID_CREATE_SECRET)))
+        .addMethod(
+            getAddSecretVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.AddSecretVersionRequest,
+                    com.google.cloud.secretmanager.v1beta1.SecretVersion>(
+                    service, METHODID_ADD_SECRET_VERSION)))
+        .addMethod(
+            getGetSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.GetSecretRequest,
+                    com.google.cloud.secretmanager.v1beta1.Secret>(service, METHODID_GET_SECRET)))
+        .addMethod(
+            getUpdateSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.UpdateSecretRequest,
+                    com.google.cloud.secretmanager.v1beta1.Secret>(
+                    service, METHODID_UPDATE_SECRET)))
+        .addMethod(
+            getDeleteSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.DeleteSecretRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SECRET)))
+        .addMethod(
+            getListSecretVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.ListSecretVersionsRequest,
+                    com.google.cloud.secretmanager.v1beta1.ListSecretVersionsResponse>(
+                    service, METHODID_LIST_SECRET_VERSIONS)))
+        .addMethod(
+            getGetSecretVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.GetSecretVersionRequest,
+                    com.google.cloud.secretmanager.v1beta1.SecretVersion>(
+                    service, METHODID_GET_SECRET_VERSION)))
+        .addMethod(
+            getAccessSecretVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.AccessSecretVersionRequest,
+                    com.google.cloud.secretmanager.v1beta1.AccessSecretVersionResponse>(
+                    service, METHODID_ACCESS_SECRET_VERSION)))
+        .addMethod(
+            getDisableSecretVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.DisableSecretVersionRequest,
+                    com.google.cloud.secretmanager.v1beta1.SecretVersion>(
+                    service, METHODID_DISABLE_SECRET_VERSION)))
+        .addMethod(
+            getEnableSecretVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.EnableSecretVersionRequest,
+                    com.google.cloud.secretmanager.v1beta1.SecretVersion>(
+                    service, METHODID_ENABLE_SECRET_VERSION)))
+        .addMethod(
+            getDestroySecretVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1beta1.DestroySecretVersionRequest,
+                    com.google.cloud.secretmanager.v1beta1.SecretVersion>(
+                    service, METHODID_DESTROY_SECRET_VERSION)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
+  }
+
   private abstract static class SecretManagerServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier,
           io.grpc.protobuf.ProtoServiceDescriptorSupplier {
@@ -2099,9 +2418,9 @@ public final class SecretManagerServiceGrpc {
   private static final class SecretManagerServiceMethodDescriptorSupplier
       extends SecretManagerServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SecretManagerServiceMethodDescriptorSupplier(String methodName) {
+    SecretManagerServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

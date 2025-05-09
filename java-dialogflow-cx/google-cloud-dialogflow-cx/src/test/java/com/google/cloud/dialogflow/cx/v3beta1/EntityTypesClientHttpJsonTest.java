@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -42,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -83,106 +85,6 @@ public class EntityTypesClientHttpJsonTest {
   @After
   public void tearDown() throws Exception {
     mockService.reset();
-  }
-
-  @Test
-  public void listEntityTypesTest() throws Exception {
-    EntityType responsesElement = EntityType.newBuilder().build();
-    ListEntityTypesResponse expectedResponse =
-        ListEntityTypesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllEntityTypes(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-
-    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
-
-    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listEntityTypesExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
-      client.listEntityTypes(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listEntityTypesTest2() throws Exception {
-    EntityType responsesElement = EntityType.newBuilder().build();
-    ListEntityTypesResponse expectedResponse =
-        ListEntityTypesResponse.newBuilder()
-            .setNextPageToken("")
-            .addAllEntityTypes(Arrays.asList(responsesElement))
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String parent = "projects/project-1167/locations/location-1167/agents/agent-1167";
-
-    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
-
-    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
-
-    Assert.assertEquals(1, resources.size());
-    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listEntityTypesExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String parent = "projects/project-1167/locations/location-1167/agents/agent-1167";
-      client.listEntityTypes(parent);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
   }
 
   @Test
@@ -543,6 +445,224 @@ public class EntityTypesClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEntityTypesTest() throws Exception {
+    EntityType responsesElement = EntityType.newBuilder().build();
+    ListEntityTypesResponse expectedResponse =
+        ListEntityTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntityTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+
+    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
+
+    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEntityTypesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+      client.listEntityTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listEntityTypesTest2() throws Exception {
+    EntityType responsesElement = EntityType.newBuilder().build();
+    ListEntityTypesResponse expectedResponse =
+        ListEntityTypesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEntityTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-1167/locations/location-1167/agents/agent-1167";
+
+    ListEntityTypesPagedResponse pagedListResponse = client.listEntityTypes(parent);
+
+    List<EntityType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEntityTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEntityTypesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-1167/locations/location-1167/agents/agent-1167";
+      client.listEntityTypes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void exportEntityTypesTest() throws Exception {
+    ExportEntityTypesResponse expectedResponse = ExportEntityTypesResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEntityTypesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExportEntityTypesRequest request =
+        ExportEntityTypesRequest.newBuilder()
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .addAllEntityTypes(new ArrayList<String>())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+
+    ExportEntityTypesResponse actualResponse = client.exportEntityTypesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportEntityTypesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportEntityTypesRequest request =
+          ExportEntityTypesRequest.newBuilder()
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .addAllEntityTypes(new ArrayList<String>())
+              .setLanguageCode("languageCode-2092349083")
+              .build();
+      client.exportEntityTypesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importEntityTypesTest() throws Exception {
+    ImportEntityTypesResponse expectedResponse =
+        ImportEntityTypesResponse.newBuilder()
+            .addAllEntityTypes(new ArrayList<String>())
+            .setConflictingResources(
+                ImportEntityTypesResponse.ConflictingResources.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importEntityTypesTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ImportEntityTypesRequest request =
+        ImportEntityTypesRequest.newBuilder()
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setTargetEntityType(
+                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
+            .build();
+
+    ImportEntityTypesResponse actualResponse = client.importEntityTypesAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importEntityTypesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImportEntityTypesRequest request =
+          ImportEntityTypesRequest.newBuilder()
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setTargetEntityType(
+                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+                      .toString())
+              .build();
+      client.importEntityTypesAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,12 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AnnotationSpec;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataRequest;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataResponse;
+import com.google.cloud.aiplatform.v1beta1.AssessDataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AssessDataRequest;
+import com.google.cloud.aiplatform.v1beta1.AssessDataResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetVersionOperationMetadata;
@@ -68,6 +74,7 @@ import com.google.cloud.aiplatform.v1beta1.RestoreDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateDatasetVersionRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -168,6 +175,17 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDatasetVersionRequest, DatasetVersion>
+      updateDatasetVersionMethodDescriptor =
+          MethodDescriptor.<UpdateDatasetVersionRequest, DatasetVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.DatasetService/UpdateDatasetVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDatasetVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DatasetVersion.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<DeleteDatasetVersionRequest, Operation>
@@ -278,6 +296,23 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   ProtoUtils.marshaller(ListAnnotationsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<AssessDataRequest, Operation> assessDataMethodDescriptor =
+      MethodDescriptor.<AssessDataRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/AssessData")
+          .setRequestMarshaller(ProtoUtils.marshaller(AssessDataRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<AssembleDataRequest, Operation>
+      assembleDataMethodDescriptor =
+          MethodDescriptor.<AssembleDataRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.DatasetService/AssembleData")
+              .setRequestMarshaller(ProtoUtils.marshaller(AssembleDataRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -347,6 +382,8 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   private final OperationCallable<
           CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
       createDatasetVersionOperationCallable;
+  private final UnaryCallable<UpdateDatasetVersionRequest, DatasetVersion>
+      updateDatasetVersionCallable;
   private final UnaryCallable<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionCallable;
   private final OperationCallable<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
       deleteDatasetVersionOperationCallable;
@@ -379,6 +416,14 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
       listAnnotationsCallable;
   private final UnaryCallable<ListAnnotationsRequest, ListAnnotationsPagedResponse>
       listAnnotationsPagedCallable;
+  private final UnaryCallable<AssessDataRequest, Operation> assessDataCallable;
+  private final OperationCallable<
+          AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+      assessDataOperationCallable;
+  private final UnaryCallable<AssembleDataRequest, Operation> assembleDataCallable;
+  private final OperationCallable<
+          AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+      assembleDataOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -512,6 +557,19 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateDatasetVersionRequest, DatasetVersion>
+        updateDatasetVersionTransportSettings =
+            GrpcCallSettings.<UpdateDatasetVersionRequest, DatasetVersion>newBuilder()
+                .setMethodDescriptor(updateDatasetVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "dataset_version.name",
+                          String.valueOf(request.getDatasetVersion().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionTransportSettings =
         GrpcCallSettings.<DeleteDatasetVersionRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteDatasetVersionMethodDescriptor)
@@ -617,6 +675,26 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<AssessDataRequest, Operation> assessDataTransportSettings =
+        GrpcCallSettings.<AssessDataRequest, Operation>newBuilder()
+            .setMethodDescriptor(assessDataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<AssembleDataRequest, Operation> assembleDataTransportSettings =
+        GrpcCallSettings.<AssembleDataRequest, Operation>newBuilder()
+            .setMethodDescriptor(assembleDataMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -728,6 +806,11 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
             settings.createDatasetVersionOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateDatasetVersionCallable =
+        callableFactory.createUnaryCallable(
+            updateDatasetVersionTransportSettings,
+            settings.updateDatasetVersionSettings(),
+            clientContext);
     this.deleteDatasetVersionCallable =
         callableFactory.createUnaryCallable(
             deleteDatasetVersionTransportSettings,
@@ -803,6 +886,24 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
     this.listAnnotationsPagedCallable =
         callableFactory.createPagedCallable(
             listAnnotationsTransportSettings, settings.listAnnotationsSettings(), clientContext);
+    this.assessDataCallable =
+        callableFactory.createUnaryCallable(
+            assessDataTransportSettings, settings.assessDataSettings(), clientContext);
+    this.assessDataOperationCallable =
+        callableFactory.createOperationCallable(
+            assessDataTransportSettings,
+            settings.assessDataOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.assembleDataCallable =
+        callableFactory.createUnaryCallable(
+            assembleDataTransportSettings, settings.assembleDataSettings(), clientContext);
+    this.assembleDataOperationCallable =
+        callableFactory.createOperationCallable(
+            assembleDataTransportSettings,
+            settings.assembleDataOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -909,6 +1010,11 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   }
 
   @Override
+  public UnaryCallable<UpdateDatasetVersionRequest, DatasetVersion> updateDatasetVersionCallable() {
+    return updateDatasetVersionCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionCallable() {
     return deleteDatasetVersionCallable;
   }
@@ -1007,6 +1113,28 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
   public UnaryCallable<ListAnnotationsRequest, ListAnnotationsPagedResponse>
       listAnnotationsPagedCallable() {
     return listAnnotationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<AssessDataRequest, Operation> assessDataCallable() {
+    return assessDataCallable;
+  }
+
+  @Override
+  public OperationCallable<AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+      assessDataOperationCallable() {
+    return assessDataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AssembleDataRequest, Operation> assembleDataCallable() {
+    return assembleDataCallable;
+  }
+
+  @Override
+  public OperationCallable<AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+      assembleDataOperationCallable() {
+    return assembleDataOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,12 +88,10 @@ public class ParticipantName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectConversationParticipantBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationConversationParticipantBuilder
       newProjectLocationConversationParticipantBuilder() {
     return new ProjectLocationConversationParticipantBuilder();
@@ -112,7 +109,6 @@ public class ParticipantName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ParticipantName ofProjectConversationParticipantName(
       String project, String conversation, String participant) {
     return newBuilder()
@@ -122,7 +118,6 @@ public class ParticipantName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ParticipantName ofProjectLocationConversationParticipantName(
       String project, String location, String conversation, String participant) {
     return newProjectLocationConversationParticipantBuilder()
@@ -142,7 +137,6 @@ public class ParticipantName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectConversationParticipantName(
       String project, String conversation, String participant) {
     return newBuilder()
@@ -153,7 +147,6 @@ public class ParticipantName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationConversationParticipantName(
       String project, String location, String conversation, String participant) {
     return newProjectLocationConversationParticipantBuilder()
@@ -313,7 +306,8 @@ public class ParticipantName implements ResourceName {
     private Builder(ParticipantName participantName) {
       Preconditions.checkArgument(
           Objects.equals(participantName.pathTemplate, PROJECT_CONVERSATION_PARTICIPANT),
-          "toBuilder is only supported when ParticipantName has the pattern of projects/{project}/conversations/{conversation}/participants/{participant}");
+          "toBuilder is only supported when ParticipantName has the pattern of"
+              + " projects/{project}/conversations/{conversation}/participants/{participant}");
       this.project = participantName.project;
       this.conversation = participantName.conversation;
       this.participant = participantName.participant;
@@ -328,7 +322,6 @@ public class ParticipantName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationConversationParticipantBuilder {
     private String project;
     private String location;

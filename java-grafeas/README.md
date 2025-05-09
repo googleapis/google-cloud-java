@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.23.0</version>
+      <version>26.59.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -32,32 +32,31 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>io.grafeas</groupId>
     <artifactId>grafeas</artifactId>
   </dependency>
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:grafeas:released} -->
 
 ```xml
 <dependency>
   <groupId>io.grafeas</groupId>
   <artifactId>grafeas</artifactId>
-  <version>2.29.0</version>
+  <version>2.62.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'io.grafeas:grafeas:2.29.0'
+implementation 'io.grafeas:grafeas:2.62.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "io.grafeas" % "grafeas" % "2.29.0"
+libraryDependencies += "io.grafeas" % "grafeas" % "2.62.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -72,7 +71,7 @@ The client application making API calls must be granted [authorization scopes][a
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Grafeas [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Grafeas.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -98,6 +97,10 @@ use this Grafeas Client Library.
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
+
+## Transport
+
+Grafeas uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
@@ -191,7 +194,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/io.grafeas/grafeas.svg
-[maven-version-link]: https://central.sonatype.com/artifact/io.grafeas/grafeas/2.25.0
+[maven-version-link]: https://central.sonatype.com/artifact/io.grafeas/grafeas/2.62.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
@@ -203,8 +206,8 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
-
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=containeranalysis.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 

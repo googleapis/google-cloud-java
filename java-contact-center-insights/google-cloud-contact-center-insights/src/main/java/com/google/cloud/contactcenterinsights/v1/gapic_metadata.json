@@ -13,6 +13,15 @@
             "BulkAnalyzeConversations": {
               "methods": ["bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsAsync", "bulkAnalyzeConversationsOperationCallable", "bulkAnalyzeConversationsCallable"]
             },
+            "BulkDeleteConversations": {
+              "methods": ["bulkDeleteConversationsAsync", "bulkDeleteConversationsAsync", "bulkDeleteConversationsAsync", "bulkDeleteConversationsOperationCallable", "bulkDeleteConversationsCallable"]
+            },
+            "BulkDownloadFeedbackLabels": {
+              "methods": ["bulkDownloadFeedbackLabelsAsync", "bulkDownloadFeedbackLabelsAsync", "bulkDownloadFeedbackLabelsAsync", "bulkDownloadFeedbackLabelsOperationCallable", "bulkDownloadFeedbackLabelsCallable"]
+            },
+            "BulkUploadFeedbackLabels": {
+              "methods": ["bulkUploadFeedbackLabelsAsync", "bulkUploadFeedbackLabelsAsync", "bulkUploadFeedbackLabelsAsync", "bulkUploadFeedbackLabelsOperationCallable", "bulkUploadFeedbackLabelsCallable"]
+            },
             "CalculateIssueModelStats": {
               "methods": ["calculateIssueModelStats", "calculateIssueModelStats", "calculateIssueModelStats", "calculateIssueModelStatsCallable"]
             },
@@ -22,8 +31,14 @@
             "CreateAnalysis": {
               "methods": ["createAnalysisAsync", "createAnalysisAsync", "createAnalysisAsync", "createAnalysisOperationCallable", "createAnalysisCallable"]
             },
+            "CreateAnalysisRule": {
+              "methods": ["createAnalysisRule", "createAnalysisRule", "createAnalysisRule", "createAnalysisRuleCallable"]
+            },
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
+            },
+            "CreateFeedbackLabel": {
+              "methods": ["createFeedbackLabel", "createFeedbackLabel", "createFeedbackLabel", "createFeedbackLabelCallable"]
             },
             "CreateIssueModel": {
               "methods": ["createIssueModelAsync", "createIssueModelAsync", "createIssueModelAsync", "createIssueModelOperationCallable", "createIssueModelCallable"]
@@ -31,14 +46,29 @@
             "CreatePhraseMatcher": {
               "methods": ["createPhraseMatcher", "createPhraseMatcher", "createPhraseMatcher", "createPhraseMatcherCallable"]
             },
+            "CreateQaQuestion": {
+              "methods": ["createQaQuestion", "createQaQuestion", "createQaQuestion", "createQaQuestionCallable"]
+            },
+            "CreateQaScorecard": {
+              "methods": ["createQaScorecard", "createQaScorecard", "createQaScorecard", "createQaScorecardCallable"]
+            },
+            "CreateQaScorecardRevision": {
+              "methods": ["createQaScorecardRevision", "createQaScorecardRevision", "createQaScorecardRevision", "createQaScorecardRevisionCallable"]
+            },
             "CreateView": {
               "methods": ["createView", "createView", "createView", "createViewCallable"]
             },
             "DeleteAnalysis": {
               "methods": ["deleteAnalysis", "deleteAnalysis", "deleteAnalysis", "deleteAnalysisCallable"]
             },
+            "DeleteAnalysisRule": {
+              "methods": ["deleteAnalysisRule", "deleteAnalysisRule", "deleteAnalysisRule", "deleteAnalysisRuleCallable"]
+            },
             "DeleteConversation": {
               "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
+            "DeleteFeedbackLabel": {
+              "methods": ["deleteFeedbackLabel", "deleteFeedbackLabel", "deleteFeedbackLabel", "deleteFeedbackLabelCallable"]
             },
             "DeleteIssue": {
               "methods": ["deleteIssue", "deleteIssue", "deleteIssue", "deleteIssueCallable"]
@@ -49,20 +79,44 @@
             "DeletePhraseMatcher": {
               "methods": ["deletePhraseMatcher", "deletePhraseMatcher", "deletePhraseMatcher", "deletePhraseMatcherCallable"]
             },
+            "DeleteQaQuestion": {
+              "methods": ["deleteQaQuestion", "deleteQaQuestion", "deleteQaQuestion", "deleteQaQuestionCallable"]
+            },
+            "DeleteQaScorecard": {
+              "methods": ["deleteQaScorecard", "deleteQaScorecard", "deleteQaScorecard", "deleteQaScorecardCallable"]
+            },
+            "DeleteQaScorecardRevision": {
+              "methods": ["deleteQaScorecardRevision", "deleteQaScorecardRevision", "deleteQaScorecardRevision", "deleteQaScorecardRevisionCallable"]
+            },
             "DeleteView": {
               "methods": ["deleteView", "deleteView", "deleteView", "deleteViewCallable"]
             },
             "DeployIssueModel": {
               "methods": ["deployIssueModelAsync", "deployIssueModelAsync", "deployIssueModelAsync", "deployIssueModelOperationCallable", "deployIssueModelCallable"]
             },
+            "DeployQaScorecardRevision": {
+              "methods": ["deployQaScorecardRevision", "deployQaScorecardRevisionCallable"]
+            },
             "ExportInsightsData": {
               "methods": ["exportInsightsDataAsync", "exportInsightsDataAsync", "exportInsightsDataAsync", "exportInsightsDataOperationCallable", "exportInsightsDataCallable"]
+            },
+            "ExportIssueModel": {
+              "methods": ["exportIssueModelAsync", "exportIssueModelAsync", "exportIssueModelAsync", "exportIssueModelOperationCallable", "exportIssueModelCallable"]
             },
             "GetAnalysis": {
               "methods": ["getAnalysis", "getAnalysis", "getAnalysis", "getAnalysisCallable"]
             },
+            "GetAnalysisRule": {
+              "methods": ["getAnalysisRule", "getAnalysisRule", "getAnalysisRule", "getAnalysisRuleCallable"]
+            },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
+            },
+            "GetEncryptionSpec": {
+              "methods": ["getEncryptionSpec", "getEncryptionSpec", "getEncryptionSpec", "getEncryptionSpecCallable"]
+            },
+            "GetFeedbackLabel": {
+              "methods": ["getFeedbackLabel", "getFeedbackLabel", "getFeedbackLabel", "getFeedbackLabelCallable"]
             },
             "GetIssue": {
               "methods": ["getIssue", "getIssue", "getIssue", "getIssueCallable"]
@@ -73,20 +127,44 @@
             "GetPhraseMatcher": {
               "methods": ["getPhraseMatcher", "getPhraseMatcher", "getPhraseMatcher", "getPhraseMatcherCallable"]
             },
+            "GetQaQuestion": {
+              "methods": ["getQaQuestion", "getQaQuestion", "getQaQuestion", "getQaQuestionCallable"]
+            },
+            "GetQaScorecard": {
+              "methods": ["getQaScorecard", "getQaScorecard", "getQaScorecard", "getQaScorecardCallable"]
+            },
+            "GetQaScorecardRevision": {
+              "methods": ["getQaScorecardRevision", "getQaScorecardRevision", "getQaScorecardRevision", "getQaScorecardRevisionCallable"]
+            },
             "GetSettings": {
               "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
             },
             "GetView": {
               "methods": ["getView", "getView", "getView", "getViewCallable"]
             },
+            "ImportIssueModel": {
+              "methods": ["importIssueModelAsync", "importIssueModelAsync", "importIssueModelAsync", "importIssueModelOperationCallable", "importIssueModelCallable"]
+            },
             "IngestConversations": {
               "methods": ["ingestConversationsAsync", "ingestConversationsAsync", "ingestConversationsAsync", "ingestConversationsOperationCallable", "ingestConversationsCallable"]
+            },
+            "InitializeEncryptionSpec": {
+              "methods": ["initializeEncryptionSpecAsync", "initializeEncryptionSpecAsync", "initializeEncryptionSpecOperationCallable", "initializeEncryptionSpecCallable"]
+            },
+            "ListAllFeedbackLabels": {
+              "methods": ["listAllFeedbackLabels", "listAllFeedbackLabels", "listAllFeedbackLabels", "listAllFeedbackLabelsPagedCallable", "listAllFeedbackLabelsCallable"]
             },
             "ListAnalyses": {
               "methods": ["listAnalyses", "listAnalyses", "listAnalyses", "listAnalysesPagedCallable", "listAnalysesCallable"]
             },
+            "ListAnalysisRules": {
+              "methods": ["listAnalysisRules", "listAnalysisRules", "listAnalysisRules", "listAnalysisRulesPagedCallable", "listAnalysisRulesCallable"]
+            },
             "ListConversations": {
               "methods": ["listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
+            },
+            "ListFeedbackLabels": {
+              "methods": ["listFeedbackLabels", "listFeedbackLabels", "listFeedbackLabels", "listFeedbackLabelsPagedCallable", "listFeedbackLabelsCallable"]
             },
             "ListIssueModels": {
               "methods": ["listIssueModels", "listIssueModels", "listIssueModels", "listIssueModelsCallable"]
@@ -97,14 +175,38 @@
             "ListPhraseMatchers": {
               "methods": ["listPhraseMatchers", "listPhraseMatchers", "listPhraseMatchers", "listPhraseMatchersPagedCallable", "listPhraseMatchersCallable"]
             },
+            "ListQaQuestions": {
+              "methods": ["listQaQuestions", "listQaQuestions", "listQaQuestions", "listQaQuestionsPagedCallable", "listQaQuestionsCallable"]
+            },
+            "ListQaScorecardRevisions": {
+              "methods": ["listQaScorecardRevisions", "listQaScorecardRevisions", "listQaScorecardRevisions", "listQaScorecardRevisionsPagedCallable", "listQaScorecardRevisionsCallable"]
+            },
+            "ListQaScorecards": {
+              "methods": ["listQaScorecards", "listQaScorecards", "listQaScorecards", "listQaScorecardsPagedCallable", "listQaScorecardsCallable"]
+            },
             "ListViews": {
               "methods": ["listViews", "listViews", "listViews", "listViewsPagedCallable", "listViewsCallable"]
+            },
+            "QueryMetrics": {
+              "methods": ["queryMetricsAsync", "queryMetricsOperationCallable", "queryMetricsCallable"]
+            },
+            "TuneQaScorecardRevision": {
+              "methods": ["tuneQaScorecardRevisionAsync", "tuneQaScorecardRevisionAsync", "tuneQaScorecardRevisionAsync", "tuneQaScorecardRevisionOperationCallable", "tuneQaScorecardRevisionCallable"]
             },
             "UndeployIssueModel": {
               "methods": ["undeployIssueModelAsync", "undeployIssueModelAsync", "undeployIssueModelAsync", "undeployIssueModelOperationCallable", "undeployIssueModelCallable"]
             },
+            "UndeployQaScorecardRevision": {
+              "methods": ["undeployQaScorecardRevision", "undeployQaScorecardRevisionCallable"]
+            },
+            "UpdateAnalysisRule": {
+              "methods": ["updateAnalysisRule", "updateAnalysisRule", "updateAnalysisRuleCallable"]
+            },
             "UpdateConversation": {
               "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
+            },
+            "UpdateFeedbackLabel": {
+              "methods": ["updateFeedbackLabel", "updateFeedbackLabel", "updateFeedbackLabelCallable"]
             },
             "UpdateIssue": {
               "methods": ["updateIssue", "updateIssue", "updateIssueCallable"]
@@ -114,6 +216,12 @@
             },
             "UpdatePhraseMatcher": {
               "methods": ["updatePhraseMatcher", "updatePhraseMatcher", "updatePhraseMatcherCallable"]
+            },
+            "UpdateQaQuestion": {
+              "methods": ["updateQaQuestion", "updateQaQuestion", "updateQaQuestionCallable"]
+            },
+            "UpdateQaScorecard": {
+              "methods": ["updateQaScorecard", "updateQaScorecard", "updateQaScorecardCallable"]
             },
             "UpdateSettings": {
               "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]

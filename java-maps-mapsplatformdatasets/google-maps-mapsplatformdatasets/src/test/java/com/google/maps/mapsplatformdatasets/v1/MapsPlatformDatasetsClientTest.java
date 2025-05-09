@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.maps.mapsplatformdatasets.v1;
 
+import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.FetchDatasetErrorsPagedResponse;
 import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.ListDatasetsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -30,6 +31,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -91,7 +93,7 @@ public class MapsPlatformDatasetsClientTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -141,7 +143,7 @@ public class MapsPlatformDatasetsClientTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -191,7 +193,7 @@ public class MapsPlatformDatasetsClientTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -242,7 +244,7 @@ public class MapsPlatformDatasetsClientTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -289,7 +291,7 @@ public class MapsPlatformDatasetsClientTest {
             .setDescription("description-1724546052")
             .setVersionId("versionId-1407102957")
             .addAllUsage(new ArrayList<Usage>())
-            .setStatus(Status.newBuilder().build())
+            .setStatus(com.google.maps.mapsplatformdatasets.v1.Status.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setVersionCreateTime(Timestamp.newBuilder().build())
@@ -321,6 +323,94 @@ public class MapsPlatformDatasetsClientTest {
     try {
       String name = "name3373707";
       client.getDataset(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchDatasetErrorsTest() throws Exception {
+    Status responsesElement = Status.newBuilder().build();
+    FetchDatasetErrorsResponse expectedResponse =
+        FetchDatasetErrorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllErrors(Arrays.asList(responsesElement))
+            .build();
+    mockMapsPlatformDatasets.addResponse(expectedResponse);
+
+    DatasetName dataset = DatasetName.of("[PROJECT]", "[DATASET]");
+
+    FetchDatasetErrorsPagedResponse pagedListResponse = client.fetchDatasetErrors(dataset);
+
+    List<Status> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getErrorsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMapsPlatformDatasets.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchDatasetErrorsRequest actualRequest = ((FetchDatasetErrorsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset.toString(), actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchDatasetErrorsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMapsPlatformDatasets.addException(exception);
+
+    try {
+      DatasetName dataset = DatasetName.of("[PROJECT]", "[DATASET]");
+      client.fetchDatasetErrors(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchDatasetErrorsTest2() throws Exception {
+    Status responsesElement = Status.newBuilder().build();
+    FetchDatasetErrorsResponse expectedResponse =
+        FetchDatasetErrorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllErrors(Arrays.asList(responsesElement))
+            .build();
+    mockMapsPlatformDatasets.addResponse(expectedResponse);
+
+    String dataset = "dataset1443214456";
+
+    FetchDatasetErrorsPagedResponse pagedListResponse = client.fetchDatasetErrors(dataset);
+
+    List<Status> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getErrorsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockMapsPlatformDatasets.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchDatasetErrorsRequest actualRequest = ((FetchDatasetErrorsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchDatasetErrorsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockMapsPlatformDatasets.addException(exception);
+
+    try {
+      String dataset = "dataset1443214456";
+      client.fetchDatasetErrors(dataset);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.NetworkAttachmentsClient.AggregatedLis
 import static com.google.cloud.compute.v1.NetworkAttachmentsClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -51,7 +50,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of get to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of get:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -68,10 +69,47 @@ import javax.annotation.Generated;
  *             .getSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * NetworkAttachmentsSettings networkAttachmentsSettings =
  *     networkAttachmentsSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for delete:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * NetworkAttachmentsSettings.Builder networkAttachmentsSettingsBuilder =
+ *     NetworkAttachmentsSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * networkAttachmentsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -124,6 +162,17 @@ public class NetworkAttachmentsSettings extends ClientSettings<NetworkAttachment
     return ((NetworkAttachmentsStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchNetworkAttachmentRequest, Operation> patchSettings() {
+    return ((NetworkAttachmentsStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchNetworkAttachmentRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((NetworkAttachmentsStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyNetworkAttachmentRequest, Policy> setIamPolicySettings() {
     return ((NetworkAttachmentsStubSettings) getStubSettings()).setIamPolicySettings();
@@ -170,7 +219,6 @@ public class NetworkAttachmentsSettings extends ClientSettings<NetworkAttachment
     return NetworkAttachmentsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return NetworkAttachmentsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -280,6 +328,17 @@ public class NetworkAttachmentsSettings extends ClientSettings<NetworkAttachment
             ListNetworkAttachmentsRequest, NetworkAttachmentList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchNetworkAttachmentRequest, Operation> patchSettings() {
+      return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchNetworkAttachmentRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

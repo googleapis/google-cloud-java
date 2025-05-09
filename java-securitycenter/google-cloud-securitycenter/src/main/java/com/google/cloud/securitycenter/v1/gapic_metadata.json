@@ -10,17 +10,23 @@
         "grpc": {
           "libraryClient": "SecurityCenterClient",
           "rpcs": {
+            "BatchCreateResourceValueConfigs": {
+              "methods": ["batchCreateResourceValueConfigs", "batchCreateResourceValueConfigs", "batchCreateResourceValueConfigs", "batchCreateResourceValueConfigsCallable"]
+            },
             "BulkMuteFindings": {
               "methods": ["bulkMuteFindingsAsync", "bulkMuteFindingsAsync", "bulkMuteFindingsAsync", "bulkMuteFindingsOperationCallable", "bulkMuteFindingsCallable"]
             },
             "CreateBigQueryExport": {
               "methods": ["createBigQueryExport", "createBigQueryExport", "createBigQueryExport", "createBigQueryExport", "createBigQueryExport", "createBigQueryExportCallable"]
             },
+            "CreateEventThreatDetectionCustomModule": {
+              "methods": ["createEventThreatDetectionCustomModule", "createEventThreatDetectionCustomModule", "createEventThreatDetectionCustomModule", "createEventThreatDetectionCustomModuleCallable"]
+            },
             "CreateFinding": {
               "methods": ["createFinding", "createFinding", "createFinding", "createFindingCallable"]
             },
             "CreateMuteConfig": {
-              "methods": ["createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfigCallable"]
+              "methods": ["createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfig", "createMuteConfigCallable"]
             },
             "CreateNotificationConfig": {
               "methods": ["createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfig", "createNotificationConfigCallable"]
@@ -34,11 +40,17 @@
             "DeleteBigQueryExport": {
               "methods": ["deleteBigQueryExport", "deleteBigQueryExport", "deleteBigQueryExport", "deleteBigQueryExportCallable"]
             },
+            "DeleteEventThreatDetectionCustomModule": {
+              "methods": ["deleteEventThreatDetectionCustomModule", "deleteEventThreatDetectionCustomModule", "deleteEventThreatDetectionCustomModule", "deleteEventThreatDetectionCustomModuleCallable"]
+            },
             "DeleteMuteConfig": {
               "methods": ["deleteMuteConfig", "deleteMuteConfig", "deleteMuteConfig", "deleteMuteConfigCallable"]
             },
             "DeleteNotificationConfig": {
               "methods": ["deleteNotificationConfig", "deleteNotificationConfig", "deleteNotificationConfig", "deleteNotificationConfigCallable"]
+            },
+            "DeleteResourceValueConfig": {
+              "methods": ["deleteResourceValueConfig", "deleteResourceValueConfig", "deleteResourceValueConfig", "deleteResourceValueConfigCallable"]
             },
             "DeleteSecurityHealthAnalyticsCustomModule": {
               "methods": ["deleteSecurityHealthAnalyticsCustomModule", "deleteSecurityHealthAnalyticsCustomModule", "deleteSecurityHealthAnalyticsCustomModule", "deleteSecurityHealthAnalyticsCustomModuleCallable"]
@@ -46,8 +58,14 @@
             "GetBigQueryExport": {
               "methods": ["getBigQueryExport", "getBigQueryExport", "getBigQueryExport", "getBigQueryExportCallable"]
             },
+            "GetEffectiveEventThreatDetectionCustomModule": {
+              "methods": ["getEffectiveEventThreatDetectionCustomModule", "getEffectiveEventThreatDetectionCustomModule", "getEffectiveEventThreatDetectionCustomModule", "getEffectiveEventThreatDetectionCustomModuleCallable"]
+            },
             "GetEffectiveSecurityHealthAnalyticsCustomModule": {
               "methods": ["getEffectiveSecurityHealthAnalyticsCustomModule", "getEffectiveSecurityHealthAnalyticsCustomModule", "getEffectiveSecurityHealthAnalyticsCustomModule", "getEffectiveSecurityHealthAnalyticsCustomModuleCallable"]
+            },
+            "GetEventThreatDetectionCustomModule": {
+              "methods": ["getEventThreatDetectionCustomModule", "getEventThreatDetectionCustomModule", "getEventThreatDetectionCustomModule", "getEventThreatDetectionCustomModuleCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
@@ -61,11 +79,20 @@
             "GetOrganizationSettings": {
               "methods": ["getOrganizationSettings", "getOrganizationSettings", "getOrganizationSettings", "getOrganizationSettingsCallable"]
             },
+            "GetResourceValueConfig": {
+              "methods": ["getResourceValueConfig", "getResourceValueConfig", "getResourceValueConfig", "getResourceValueConfigCallable"]
+            },
             "GetSecurityHealthAnalyticsCustomModule": {
               "methods": ["getSecurityHealthAnalyticsCustomModule", "getSecurityHealthAnalyticsCustomModule", "getSecurityHealthAnalyticsCustomModule", "getSecurityHealthAnalyticsCustomModuleCallable"]
             },
+            "GetSimulation": {
+              "methods": ["getSimulation", "getSimulation", "getSimulation", "getSimulationCallable"]
+            },
             "GetSource": {
               "methods": ["getSource", "getSource", "getSource", "getSourceCallable"]
+            },
+            "GetValuedResource": {
+              "methods": ["getValuedResource", "getValuedResource", "getValuedResource", "getValuedResourceCallable"]
             },
             "GroupAssets": {
               "methods": ["groupAssets", "groupAssetsPagedCallable", "groupAssetsCallable"]
@@ -76,29 +103,47 @@
             "ListAssets": {
               "methods": ["listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
             },
+            "ListAttackPaths": {
+              "methods": ["listAttackPaths", "listAttackPaths", "listAttackPaths", "listAttackPathsPagedCallable", "listAttackPathsCallable"]
+            },
             "ListBigQueryExports": {
               "methods": ["listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExports", "listBigQueryExportsPagedCallable", "listBigQueryExportsCallable"]
+            },
+            "ListDescendantEventThreatDetectionCustomModules": {
+              "methods": ["listDescendantEventThreatDetectionCustomModules", "listDescendantEventThreatDetectionCustomModules", "listDescendantEventThreatDetectionCustomModules", "listDescendantEventThreatDetectionCustomModulesPagedCallable", "listDescendantEventThreatDetectionCustomModulesCallable"]
             },
             "ListDescendantSecurityHealthAnalyticsCustomModules": {
               "methods": ["listDescendantSecurityHealthAnalyticsCustomModules", "listDescendantSecurityHealthAnalyticsCustomModules", "listDescendantSecurityHealthAnalyticsCustomModules", "listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable", "listDescendantSecurityHealthAnalyticsCustomModulesCallable"]
             },
+            "ListEffectiveEventThreatDetectionCustomModules": {
+              "methods": ["listEffectiveEventThreatDetectionCustomModules", "listEffectiveEventThreatDetectionCustomModules", "listEffectiveEventThreatDetectionCustomModules", "listEffectiveEventThreatDetectionCustomModulesPagedCallable", "listEffectiveEventThreatDetectionCustomModulesCallable"]
+            },
             "ListEffectiveSecurityHealthAnalyticsCustomModules": {
               "methods": ["listEffectiveSecurityHealthAnalyticsCustomModules", "listEffectiveSecurityHealthAnalyticsCustomModules", "listEffectiveSecurityHealthAnalyticsCustomModules", "listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable", "listEffectiveSecurityHealthAnalyticsCustomModulesCallable"]
+            },
+            "ListEventThreatDetectionCustomModules": {
+              "methods": ["listEventThreatDetectionCustomModules", "listEventThreatDetectionCustomModules", "listEventThreatDetectionCustomModules", "listEventThreatDetectionCustomModulesPagedCallable", "listEventThreatDetectionCustomModulesCallable"]
             },
             "ListFindings": {
               "methods": ["listFindings", "listFindingsPagedCallable", "listFindingsCallable"]
             },
             "ListMuteConfigs": {
-              "methods": ["listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigsPagedCallable", "listMuteConfigsCallable"]
+              "methods": ["listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigs", "listMuteConfigsPagedCallable", "listMuteConfigsCallable"]
             },
             "ListNotificationConfigs": {
               "methods": ["listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigs", "listNotificationConfigsPagedCallable", "listNotificationConfigsCallable"]
+            },
+            "ListResourceValueConfigs": {
+              "methods": ["listResourceValueConfigs", "listResourceValueConfigs", "listResourceValueConfigs", "listResourceValueConfigsPagedCallable", "listResourceValueConfigsCallable"]
             },
             "ListSecurityHealthAnalyticsCustomModules": {
               "methods": ["listSecurityHealthAnalyticsCustomModules", "listSecurityHealthAnalyticsCustomModules", "listSecurityHealthAnalyticsCustomModules", "listSecurityHealthAnalyticsCustomModulesPagedCallable", "listSecurityHealthAnalyticsCustomModulesCallable"]
             },
             "ListSources": {
               "methods": ["listSources", "listSources", "listSources", "listSources", "listSources", "listSourcesPagedCallable", "listSourcesCallable"]
+            },
+            "ListValuedResources": {
+              "methods": ["listValuedResources", "listValuedResources", "listValuedResources", "listValuedResourcesPagedCallable", "listValuedResourcesCallable"]
             },
             "RunAssetDiscovery": {
               "methods": ["runAssetDiscoveryAsync", "runAssetDiscoveryAsync", "runAssetDiscoveryAsync", "runAssetDiscoveryOperationCallable", "runAssetDiscoveryCallable"]
@@ -112,11 +157,17 @@
             "SetMute": {
               "methods": ["setMute", "setMute", "setMute", "setMuteCallable"]
             },
+            "SimulateSecurityHealthAnalyticsCustomModule": {
+              "methods": ["simulateSecurityHealthAnalyticsCustomModule", "simulateSecurityHealthAnalyticsCustomModule", "simulateSecurityHealthAnalyticsCustomModuleCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateBigQueryExport": {
               "methods": ["updateBigQueryExport", "updateBigQueryExport", "updateBigQueryExportCallable"]
+            },
+            "UpdateEventThreatDetectionCustomModule": {
+              "methods": ["updateEventThreatDetectionCustomModule", "updateEventThreatDetectionCustomModule", "updateEventThreatDetectionCustomModuleCallable"]
             },
             "UpdateExternalSystem": {
               "methods": ["updateExternalSystem", "updateExternalSystem", "updateExternalSystemCallable"]
@@ -133,6 +184,9 @@
             "UpdateOrganizationSettings": {
               "methods": ["updateOrganizationSettings", "updateOrganizationSettings", "updateOrganizationSettingsCallable"]
             },
+            "UpdateResourceValueConfig": {
+              "methods": ["updateResourceValueConfig", "updateResourceValueConfig", "updateResourceValueConfigCallable"]
+            },
             "UpdateSecurityHealthAnalyticsCustomModule": {
               "methods": ["updateSecurityHealthAnalyticsCustomModule", "updateSecurityHealthAnalyticsCustomModule", "updateSecurityHealthAnalyticsCustomModuleCallable"]
             },
@@ -141,6 +195,9 @@
             },
             "UpdateSource": {
               "methods": ["updateSource", "updateSource", "updateSourceCallable"]
+            },
+            "ValidateEventThreatDetectionCustomModule": {
+              "methods": ["validateEventThreatDetectionCustomModule", "validateEventThreatDetectionCustomModuleCallable"]
             }
           }
         }

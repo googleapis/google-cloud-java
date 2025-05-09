@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,7 +85,14 @@ public class UserEventServiceClientHttpJsonTest {
     UserEvent expectedResponse =
         UserEvent.newBuilder()
             .setEventType("eventType31430900")
+            .setConversionType("conversionType989646192")
             .setUserPseudoId("userPseudoId-1155274652")
+            .setEngine(
+                EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+            .setDataStore(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
             .setEventTime(Timestamp.newBuilder().build())
             .setUserInfo(UserInfo.newBuilder().build())
             .setDirectUserRequest(true)
@@ -102,6 +109,7 @@ public class UserEventServiceClientHttpJsonTest {
             .addAllPromotionIds(new ArrayList<String>())
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .setMediaInfo(MediaInfo.newBuilder().build())
+            .addAllPanels(new ArrayList<PanelInfo>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -112,6 +120,7 @@ public class UserEventServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                     .toString())
             .setUserEvent(UserEvent.newBuilder().build())
+            .setWriteAsync(true)
             .build();
 
     UserEvent actualResponse = client.writeUserEvent(request);
@@ -147,6 +156,7 @@ public class UserEventServiceClientHttpJsonTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
                       .toString())
               .setUserEvent(UserEvent.newBuilder().build())
+              .setWriteAsync(true)
               .build();
       client.writeUserEvent(request);
       Assert.fail("No exception raised");
@@ -216,6 +226,69 @@ public class UserEventServiceClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void purgeUserEventsTest() throws Exception {
+    PurgeUserEventsResponse expectedResponse =
+        PurgeUserEventsResponse.newBuilder().setPurgeCount(575305851).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeUserEventsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PurgeUserEventsRequest request =
+        PurgeUserEventsRequest.newBuilder()
+            .setParent(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setFilter("filter-1274492040")
+            .setForce(true)
+            .build();
+
+    PurgeUserEventsResponse actualResponse = client.purgeUserEventsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void purgeUserEventsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PurgeUserEventsRequest request =
+          PurgeUserEventsRequest.newBuilder()
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
+              .setFilter("filter-1274492040")
+              .setForce(true)
+              .build();
+      client.purgeUserEventsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

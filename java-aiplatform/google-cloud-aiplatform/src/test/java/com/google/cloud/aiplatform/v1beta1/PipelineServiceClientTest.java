@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -614,9 +614,15 @@ public class PipelineServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setNetwork("network1843485230")
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
             .setScheduleName("scheduleName1161977282")
+            .setPreflightValidations(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setOriginalPipelineJobId(-1935378772)
+            .addAllPipelineTaskRerunConfigs(new ArrayList<PipelineTaskRerunConfig>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -676,9 +682,15 @@ public class PipelineServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setNetwork("network1843485230")
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
             .setScheduleName("scheduleName1161977282")
+            .setPreflightValidations(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setOriginalPipelineJobId(-1935378772)
+            .addAllPipelineTaskRerunConfigs(new ArrayList<PipelineTaskRerunConfig>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -738,9 +750,15 @@ public class PipelineServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setNetwork("network1843485230")
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
             .setScheduleName("scheduleName1161977282")
+            .setPreflightValidations(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setOriginalPipelineJobId(-1935378772)
+            .addAllPipelineTaskRerunConfigs(new ArrayList<PipelineTaskRerunConfig>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -794,9 +812,15 @@ public class PipelineServiceClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setNetwork("network1843485230")
             .addAllReservedIpRanges(new ArrayList<String>())
+            .setPscInterfaceConfig(PscInterfaceConfig.newBuilder().build())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
             .setScheduleName("scheduleName1161977282")
+            .setPreflightValidations(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setOriginalPipelineJobId(-1935378772)
+            .addAllPipelineTaskRerunConfigs(new ArrayList<PipelineTaskRerunConfig>())
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -1003,6 +1027,108 @@ public class PipelineServiceClientTest {
   }
 
   @Test
+  public void batchDeletePipelineJobsTest() throws Exception {
+    BatchDeletePipelineJobsResponse expectedResponse =
+        BatchDeletePipelineJobsResponse.newBuilder()
+            .addAllPipelineJobs(new ArrayList<PipelineJob>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeletePipelineJobsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPipelineService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> names = new ArrayList<>();
+
+    BatchDeletePipelineJobsResponse actualResponse =
+        client.batchDeletePipelineJobsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeletePipelineJobsRequest actualRequest =
+        ((BatchDeletePipelineJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeletePipelineJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> names = new ArrayList<>();
+      client.batchDeletePipelineJobsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchDeletePipelineJobsTest2() throws Exception {
+    BatchDeletePipelineJobsResponse expectedResponse =
+        BatchDeletePipelineJobsResponse.newBuilder()
+            .addAllPipelineJobs(new ArrayList<PipelineJob>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeletePipelineJobsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPipelineService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<String> names = new ArrayList<>();
+
+    BatchDeletePipelineJobsResponse actualResponse =
+        client.batchDeletePipelineJobsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeletePipelineJobsRequest actualRequest =
+        ((BatchDeletePipelineJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeletePipelineJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> names = new ArrayList<>();
+      client.batchDeletePipelineJobsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void cancelPipelineJobTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPipelineService.addResponse(expectedResponse);
@@ -1067,6 +1193,108 @@ public class PipelineServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCancelPipelineJobsTest() throws Exception {
+    BatchCancelPipelineJobsResponse expectedResponse =
+        BatchCancelPipelineJobsResponse.newBuilder()
+            .addAllPipelineJobs(new ArrayList<PipelineJob>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCancelPipelineJobsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPipelineService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    List<String> names = new ArrayList<>();
+
+    BatchCancelPipelineJobsResponse actualResponse =
+        client.batchCancelPipelineJobsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCancelPipelineJobsRequest actualRequest =
+        ((BatchCancelPipelineJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCancelPipelineJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      List<String> names = new ArrayList<>();
+      client.batchCancelPipelineJobsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchCancelPipelineJobsTest2() throws Exception {
+    BatchCancelPipelineJobsResponse expectedResponse =
+        BatchCancelPipelineJobsResponse.newBuilder()
+            .addAllPipelineJobs(new ArrayList<PipelineJob>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCancelPipelineJobsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPipelineService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<String> names = new ArrayList<>();
+
+    BatchCancelPipelineJobsResponse actualResponse =
+        client.batchCancelPipelineJobsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPipelineService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCancelPipelineJobsRequest actualRequest =
+        ((BatchCancelPipelineJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCancelPipelineJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPipelineService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> names = new ArrayList<>();
+      client.batchCancelPipelineJobsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

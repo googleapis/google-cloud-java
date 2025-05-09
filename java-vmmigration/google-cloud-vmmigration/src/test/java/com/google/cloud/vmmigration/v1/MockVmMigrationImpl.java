@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -199,7 +199,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListUtilizationReports, expected %s or %s",
+                  "Unrecognized response type %s for method ListUtilizationReports, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUtilizationReportsResponse.class.getName(),
                   Exception.class.getName())));
@@ -220,7 +221,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetUtilizationReport, expected %s or %s",
+                  "Unrecognized response type %s for method GetUtilizationReport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   UtilizationReport.class.getName(),
                   Exception.class.getName())));
@@ -241,7 +243,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateUtilizationReport, expected %s or %s",
+                  "Unrecognized response type %s for method CreateUtilizationReport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -262,7 +265,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteUtilizationReport, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteUtilizationReport, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -284,7 +288,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListDatacenterConnectors, expected %s or %s",
+                  "Unrecognized response type %s for method ListDatacenterConnectors, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDatacenterConnectorsResponse.class.getName(),
                   Exception.class.getName())));
@@ -305,7 +310,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetDatacenterConnector, expected %s or %s",
+                  "Unrecognized response type %s for method GetDatacenterConnector, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   DatacenterConnector.class.getName(),
                   Exception.class.getName())));
@@ -326,7 +332,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateDatacenterConnector, expected %s or %s",
+                  "Unrecognized response type %s for method CreateDatacenterConnector, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -347,7 +354,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteDatacenterConnector, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteDatacenterConnector, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -867,7 +875,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RemoveGroupMigration, expected %s or %s",
+                  "Unrecognized response type %s for method RemoveGroupMigration, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -995,7 +1004,8 @@ public class MockVmMigrationImpl extends VmMigrationImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListReplicationCycles, expected %s or %s",
+                  "Unrecognized response type %s for method ListReplicationCycles, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListReplicationCyclesResponse.class.getName(),
                   Exception.class.getName())));

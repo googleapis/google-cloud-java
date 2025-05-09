@@ -112,14 +112,23 @@
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
+            "GenerateStatelessSuggestion": {
+              "methods": ["generateStatelessSuggestion", "generateStatelessSuggestionCallable"]
+            },
             "GenerateStatelessSummary": {
               "methods": ["generateStatelessSummary", "generateStatelessSummaryCallable"]
+            },
+            "GenerateSuggestions": {
+              "methods": ["generateSuggestions", "generateSuggestions", "generateSuggestions", "generateSuggestionsCallable"]
             },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "IngestContextReferences": {
+              "methods": ["ingestContextReferences", "ingestContextReferences", "ingestContextReferences", "ingestContextReferencesCallable"]
             },
             "ListConversations": {
               "methods": ["listConversations", "listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
@@ -287,6 +296,27 @@
         }
       }
     },
+    "EncryptionSpecService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EncryptionSpecServiceClient",
+          "rpcs": {
+            "GetEncryptionSpec": {
+              "methods": ["getEncryptionSpec", "getEncryptionSpec", "getEncryptionSpec", "getEncryptionSpecCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "InitializeEncryptionSpec": {
+              "methods": ["initializeEncryptionSpecAsync", "initializeEncryptionSpecAsync", "initializeEncryptionSpecOperationCallable", "initializeEncryptionSpecCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
     "EntityTypes": {
       "clients": {
         "grpc": {
@@ -386,6 +416,36 @@
         }
       }
     },
+    "Generators": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GeneratorsClient",
+          "rpcs": {
+            "CreateGenerator": {
+              "methods": ["createGenerator", "createGenerator", "createGenerator", "createGeneratorCallable"]
+            },
+            "DeleteGenerator": {
+              "methods": ["deleteGenerator", "deleteGenerator", "deleteGenerator", "deleteGeneratorCallable"]
+            },
+            "GetGenerator": {
+              "methods": ["getGenerator", "getGenerator", "getGenerator", "getGeneratorCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListGenerators": {
+              "methods": ["listGenerators", "listGenerators", "listGenerators", "listGeneratorsPagedCallable", "listGeneratorsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateGenerator": {
+              "methods": ["updateGenerator", "updateGenerator", "updateGeneratorCallable"]
+            }
+          }
+        }
+      }
+    },
     "Intents": {
       "clients": {
         "grpc": {
@@ -458,7 +518,7 @@
           "libraryClient": "ParticipantsClient",
           "rpcs": {
             "AnalyzeContent": {
-              "methods": ["analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContentCallable"]
+              "methods": ["analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContent", "analyzeContentCallable"]
             },
             "CreateParticipant": {
               "methods": ["createParticipant", "createParticipant", "createParticipant", "createParticipantCallable"]
@@ -483,6 +543,9 @@
             },
             "SuggestFaqAnswers": {
               "methods": ["suggestFaqAnswers", "suggestFaqAnswers", "suggestFaqAnswers", "suggestFaqAnswersCallable"]
+            },
+            "SuggestKnowledgeAssist": {
+              "methods": ["suggestKnowledgeAssist", "suggestKnowledgeAssistCallable"]
             },
             "SuggestSmartReplies": {
               "methods": ["suggestSmartReplies", "suggestSmartReplies", "suggestSmartReplies", "suggestSmartRepliesCallable"]

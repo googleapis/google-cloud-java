@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Duration;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -112,6 +113,9 @@ public class JobsV1Beta3ClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setCreatedFromSnapshotId("createdFromSnapshotId851802705")
             .setSatisfiesPzs(true)
+            .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setServiceResources(ServiceResources.newBuilder().build())
             .build();
     mockJobsV1Beta3.addResponse(expectedResponse);
 
@@ -192,6 +196,9 @@ public class JobsV1Beta3ClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setCreatedFromSnapshotId("createdFromSnapshotId851802705")
             .setSatisfiesPzs(true)
+            .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setServiceResources(ServiceResources.newBuilder().build())
             .build();
     mockJobsV1Beta3.addResponse(expectedResponse);
 
@@ -269,6 +276,9 @@ public class JobsV1Beta3ClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setCreatedFromSnapshotId("createdFromSnapshotId851802705")
             .setSatisfiesPzs(true)
+            .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setServiceResources(ServiceResources.newBuilder().build())
             .build();
     mockJobsV1Beta3.addResponse(expectedResponse);
 
@@ -278,6 +288,7 @@ public class JobsV1Beta3ClientTest {
             .setJobId("jobId101296568")
             .setJob(Job.newBuilder().build())
             .setLocation("location1901043637")
+            .setUpdateMask(FieldMask.newBuilder().build())
             .build();
 
     Job actualResponse = client.updateJob(request);
@@ -291,6 +302,7 @@ public class JobsV1Beta3ClientTest {
     Assert.assertEquals(request.getJobId(), actualRequest.getJobId());
     Assert.assertEquals(request.getJob(), actualRequest.getJob());
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -309,6 +321,7 @@ public class JobsV1Beta3ClientTest {
               .setJobId("jobId101296568")
               .setJob(Job.newBuilder().build())
               .setLocation("location1901043637")
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       client.updateJob(request);
       Assert.fail("No exception raised");
@@ -334,6 +347,7 @@ public class JobsV1Beta3ClientTest {
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setLocation("location1901043637")
+            .setName("name3373707")
             .build();
 
     ListJobsPagedResponse pagedListResponse = client.listJobs(request);
@@ -353,6 +367,7 @@ public class JobsV1Beta3ClientTest {
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -372,6 +387,7 @@ public class JobsV1Beta3ClientTest {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setLocation("location1901043637")
+              .setName("name3373707")
               .build();
       client.listJobs(request);
       Assert.fail("No exception raised");
@@ -397,6 +413,7 @@ public class JobsV1Beta3ClientTest {
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setLocation("location1901043637")
+            .setName("name3373707")
             .build();
 
     AggregatedListJobsPagedResponse pagedListResponse = client.aggregatedListJobs(request);
@@ -416,6 +433,7 @@ public class JobsV1Beta3ClientTest {
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -435,6 +453,7 @@ public class JobsV1Beta3ClientTest {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setLocation("location1901043637")
+              .setName("name3373707")
               .build();
       client.aggregatedListJobs(request);
       Assert.fail("No exception raised");

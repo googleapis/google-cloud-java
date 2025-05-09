@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -417,6 +417,19 @@ public final class ConversationProfilesGrpc {
     return ConversationProfilesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConversationProfilesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConversationProfilesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConversationProfilesBlockingV2Stub>() {
+          @java.lang.Override
+          public ConversationProfilesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConversationProfilesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConversationProfilesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -490,7 +503,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Creates a conversation profile in the specified project.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -509,7 +524,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Updates the specified conversation profile.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -664,7 +681,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Creates a conversation profile in the specified project.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -685,7 +704,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Updates the specified conversation profile.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -780,6 +801,153 @@ public final class ConversationProfilesGrpc {
    * [ConversationProfiles][google.cloud.dialogflow.v2.ConversationProfile].
    * </pre>
    */
+  public static final class ConversationProfilesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConversationProfilesBlockingV2Stub> {
+    private ConversationProfilesBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConversationProfilesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConversationProfilesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all conversation profiles in the specified project.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListConversationProfilesResponse listConversationProfiles(
+        com.google.cloud.dialogflow.v2.ListConversationProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversationProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified conversation profile.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ConversationProfile getConversationProfile(
+        com.google.cloud.dialogflow.v2.GetConversationProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversationProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a conversation profile in the specified project.
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+     * aren't populated in the response. You can retrieve them via
+     * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
+     * API.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ConversationProfile createConversationProfile(
+        com.google.cloud.dialogflow.v2.CreateConversationProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConversationProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified conversation profile.
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
+     * aren't populated in the response. You can retrieve them via
+     * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
+     * API.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ConversationProfile updateConversationProfile(
+        com.google.cloud.dialogflow.v2.UpdateConversationProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConversationProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified conversation profile.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversationProfile(
+        com.google.cloud.dialogflow.v2.DeleteConversationProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversationProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds or updates a suggestion feature in a conversation profile.
+     * If the conversation profile contains the type of suggestion feature for
+     * the participant role, it will update it. Otherwise it will insert the
+     * suggestion feature.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [SetSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.SetSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * If a long running operation to add or update suggestion feature
+     * config for the same conversation profile, participant role and suggestion
+     * feature type exists, please cancel the existing long running operation
+     * before sending such request, otherwise the request will be rejected.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setSuggestionFeatureConfig(
+        com.google.cloud.dialogflow.v2.SetSuggestionFeatureConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetSuggestionFeatureConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Clears a suggestion feature from a conversation profile for the given
+     * participant role.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ClearSuggestionFeatureConfigOperationMetadata][google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigOperationMetadata]
+     * - `response`:
+     * [ConversationProfile][google.cloud.dialogflow.v2.ConversationProfile]
+     * </pre>
+     */
+    public com.google.longrunning.Operation clearSuggestionFeatureConfig(
+        com.google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getClearSuggestionFeatureConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ConversationProfiles.
+   *
+   * <pre>
+   * Service for managing
+   * [ConversationProfiles][google.cloud.dialogflow.v2.ConversationProfile].
+   * </pre>
+   */
   public static final class ConversationProfilesBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<ConversationProfilesBlockingStub> {
     private ConversationProfilesBlockingStub(
@@ -824,7 +992,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Creates a conversation profile in the specified project.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -841,7 +1011,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Updates the specified conversation profile.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -971,7 +1143,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Creates a conversation profile in the specified project.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.
@@ -990,7 +1164,9 @@ public final class ConversationProfilesGrpc {
      *
      * <pre>
      * Updates the specified conversation profile.
-     * [ConversationProfile.CreateTime][] and [ConversationProfile.UpdateTime][]
+     * [ConversationProfile.create_time][google.cloud.dialogflow.v2.ConversationProfile.create_time]
+     * and
+     * [ConversationProfile.update_time][google.cloud.dialogflow.v2.ConversationProfile.update_time]
      * aren't populated in the response. You can retrieve them via
      * [GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile]
      * API.

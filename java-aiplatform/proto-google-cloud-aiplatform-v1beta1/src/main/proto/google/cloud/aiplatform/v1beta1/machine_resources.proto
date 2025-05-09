@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package google.cloud.aiplatform.v1beta1;
 
 import "google/api/field_behavior.proto";
 import "google/cloud/aiplatform/v1beta1/accelerator_type.proto";
+import "google/cloud/aiplatform/v1beta1/reservation_affinity.proto";
 
 option csharp_namespace = "Google.Cloud.AIPlatform.V1Beta1";
 option go_package = "cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatformpb";
@@ -52,6 +53,24 @@ message MachineSpec {
 
   // The number of accelerators to attach to the machine.
   int32 accelerator_count = 3;
+
+  // Immutable. The topology of the TPUs. Corresponds to the TPU topologies
+  // available from GKE. (Example: tpu_topology: "2x2x1").
+  string tpu_topology = 4 [(google.api.field_behavior) = IMMUTABLE];
+
+  // Optional. Immutable. The number of nodes per replica for multihost GPU
+  // deployments.
+  int32 multihost_gpu_node_count = 6 [
+    (google.api.field_behavior) = IMMUTABLE,
+    (google.api.field_behavior) = OPTIONAL
+  ];
+
+  // Optional. Immutable. Configuration controlling how this resource pool
+  // consumes reservation.
+  ReservationAffinity reservation_affinity = 5 [
+    (google.api.field_behavior) = IMMUTABLE,
+    (google.api.field_behavior) = OPTIONAL
+  ];
 }
 
 // A description of resources that are dedicated to a DeployedModel, and
@@ -92,6 +111,14 @@ message DedicatedResources {
   // number of GPUs per replica in the selected machine type).
   int32 max_replica_count = 3 [(google.api.field_behavior) = IMMUTABLE];
 
+  // Optional. Number of required available replicas for the deployment to
+  // succeed. This field is only needed when partial model deployment/mutation
+  // is desired. If set, the model deploy/mutate operation will succeed once
+  // available_replica_count reaches required_replica_count, and the rest of
+  // the replicas will be retried. If not set, the default
+  // required_replica_count will be min_replica_count.
+  int32 required_replica_count = 9 [(google.api.field_behavior) = OPTIONAL];
+
   // Immutable. The metric specifications that overrides a resource
   // utilization metric (CPU utilization, accelerator's duty cycle, and so on)
   // target value (default to 60 if not set). At most one entry is allowed per
@@ -117,6 +144,10 @@ message DedicatedResources {
   // to `80`.
   repeated AutoscalingMetricSpec autoscaling_metric_specs = 4
       [(google.api.field_behavior) = IMMUTABLE];
+
+  // Optional. If true, schedule the deployment workload on [spot
+  // VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
+  bool spot = 5 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // A description of resources that to large degree are decided by Vertex AI,
@@ -227,4 +258,18 @@ message AutoscalingMetricSpec {
   // percentage, the machine replicas change. The default value is 60
   // (representing 60%) if not provided.
   int32 target = 2;
+}
+
+// A set of Shielded Instance options.
+// See [Images using supported Shielded VM
+// features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
+message ShieldedVmConfig {
+  // Defines whether the instance has [Secure
+  // Boot](https://cloud.google.com/compute/shielded-vm/docs/shielded-vm#secure-boot)
+  // enabled.
+  //
+  // Secure Boot helps ensure that the system only runs authentic software by
+  // verifying the digital signature of all boot components, and halting the
+  // boot process if signature verification fails.
+  bool enable_secure_boot = 1;
 }

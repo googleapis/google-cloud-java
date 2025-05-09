@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_segmentation.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 public interface AutoMlImageSegmentationOrBuilder
@@ -38,6 +39,7 @@ public interface AutoMlImageSegmentationOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
+
   /**
    *
    *
@@ -53,6 +55,7 @@ public interface AutoMlImageSegmentationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationInputs
       getInputs();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface AutoMlImageSegmentationOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface AutoMlImageSegmentationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationMetadata
       getMetadata();
+
   /**
    *
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -160,6 +160,157 @@ public class MockBackupForGKEImpl extends BackupForGKEImplBase {
                   "Unrecognized response type %s for method DeleteBackupPlan, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createBackupChannel(
+      CreateBackupChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBackupChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBackupChannels(
+      ListBackupChannelsRequest request,
+      StreamObserver<ListBackupChannelsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBackupChannelsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBackupChannelsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBackupChannels, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBackupChannelsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBackupChannel(
+      GetBackupChannelRequest request, StreamObserver<BackupChannel> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BackupChannel) {
+      requests.add(request);
+      responseObserver.onNext(((BackupChannel) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBackupChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BackupChannel.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateBackupChannel(
+      UpdateBackupChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBackupChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteBackupChannel(
+      DeleteBackupChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBackupChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBackupPlanBindings(
+      ListBackupPlanBindingsRequest request,
+      StreamObserver<ListBackupPlanBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBackupPlanBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBackupPlanBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBackupPlanBindings, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBackupPlanBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBackupPlanBinding(
+      GetBackupPlanBindingRequest request, StreamObserver<BackupPlanBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BackupPlanBinding) {
+      requests.add(request);
+      responseObserver.onNext(((BackupPlanBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBackupPlanBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BackupPlanBinding.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -417,6 +568,160 @@ public class MockBackupForGKEImpl extends BackupForGKEImplBase {
   }
 
   @Override
+  public void createRestoreChannel(
+      CreateRestoreChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRestoreChannel, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRestoreChannels(
+      ListRestoreChannelsRequest request,
+      StreamObserver<ListRestoreChannelsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRestoreChannelsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRestoreChannelsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRestoreChannels, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRestoreChannelsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRestoreChannel(
+      GetRestoreChannelRequest request, StreamObserver<RestoreChannel> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestoreChannel) {
+      requests.add(request);
+      responseObserver.onNext(((RestoreChannel) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRestoreChannel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestoreChannel.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateRestoreChannel(
+      UpdateRestoreChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRestoreChannel, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRestoreChannel(
+      DeleteRestoreChannelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRestoreChannel, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRestorePlanBindings(
+      ListRestorePlanBindingsRequest request,
+      StreamObserver<ListRestorePlanBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRestorePlanBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRestorePlanBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRestorePlanBindings, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRestorePlanBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRestorePlanBinding(
+      GetRestorePlanBindingRequest request, StreamObserver<RestorePlanBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RestorePlanBinding) {
+      requests.add(request);
+      responseObserver.onNext(((RestorePlanBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRestorePlanBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RestorePlanBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createRestore(
       CreateRestoreRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -559,6 +864,29 @@ public class MockBackupForGKEImpl extends BackupForGKEImplBase {
                   "Unrecognized response type %s for method GetVolumeRestore, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VolumeRestore.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getBackupIndexDownloadUrl(
+      GetBackupIndexDownloadUrlRequest request,
+      StreamObserver<GetBackupIndexDownloadUrlResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GetBackupIndexDownloadUrlResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GetBackupIndexDownloadUrlResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBackupIndexDownloadUrl, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GetBackupIndexDownloadUrlResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

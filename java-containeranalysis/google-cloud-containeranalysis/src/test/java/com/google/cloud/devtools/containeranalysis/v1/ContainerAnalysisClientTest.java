@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.resourcenames.ResourceName;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.ProjectName;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
@@ -526,6 +528,45 @@ public class ContainerAnalysisClientTest {
       String parent = "parent-995424086";
       String filter = "filter-1274492040";
       client.getVulnerabilityOccurrencesSummary(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void exportSBOMTest() throws Exception {
+    ExportSBOMResponse expectedResponse =
+        ExportSBOMResponse.newBuilder()
+            .setDiscoveryOccurrence("discoveryOccurrence1120661409")
+            .build();
+    mockContainerAnalysis.addResponse(expectedResponse);
+
+    ExportSBOMRequest request = ExportSBOMRequest.newBuilder().setName("name3373707").build();
+
+    ExportSBOMResponse actualResponse = client.exportSBOM(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockContainerAnalysis.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportSBOMRequest actualRequest = ((ExportSBOMRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCloudStorageLocation(), actualRequest.getCloudStorageLocation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportSBOMExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockContainerAnalysis.addException(exception);
+
+    try {
+      ExportSBOMRequest request = ExportSBOMRequest.newBuilder().setName("name3373707").build();
+      client.exportSBOM(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

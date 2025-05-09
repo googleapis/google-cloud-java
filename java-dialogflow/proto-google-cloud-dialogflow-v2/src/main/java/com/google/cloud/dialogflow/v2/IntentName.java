@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class IntentName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectIntentBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationIntentBuilder newProjectLocationIntentBuilder() {
     return new ProjectLocationIntentBuilder();
   }
@@ -98,12 +95,10 @@ public class IntentName implements ResourceName {
     return newBuilder().setProject(project).setIntent(intent).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static IntentName ofProjectIntentName(String project, String intent) {
     return newBuilder().setProject(project).setIntent(intent).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static IntentName ofProjectLocationIntentName(
       String project, String location, String intent) {
     return newProjectLocationIntentBuilder()
@@ -117,12 +112,10 @@ public class IntentName implements ResourceName {
     return newBuilder().setProject(project).setIntent(intent).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectIntentName(String project, String intent) {
     return newBuilder().setProject(project).setIntent(intent).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationIntentName(
       String project, String location, String intent) {
     return newProjectLocationIntentBuilder()
@@ -260,7 +253,8 @@ public class IntentName implements ResourceName {
     private Builder(IntentName intentName) {
       Preconditions.checkArgument(
           Objects.equals(intentName.pathTemplate, PROJECT_INTENT),
-          "toBuilder is only supported when IntentName has the pattern of projects/{project}/agent/intents/{intent}");
+          "toBuilder is only supported when IntentName has the pattern of"
+              + " projects/{project}/agent/intents/{intent}");
       this.project = intentName.project;
       this.intent = intentName.intent;
     }
@@ -271,7 +265,6 @@ public class IntentName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/agent/intents/{intent}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationIntentBuilder {
     private String project;
     private String location;

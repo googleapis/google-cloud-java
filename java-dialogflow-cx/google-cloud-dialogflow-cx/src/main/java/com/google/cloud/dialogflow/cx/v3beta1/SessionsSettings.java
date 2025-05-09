@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -55,7 +56,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of detectIntent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of detectIntent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -71,10 +74,21 @@ import javax.annotation.Generated;
  *             .detectIntentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -83,6 +97,12 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
   /** Returns the object with the settings used for calls to detectIntent. */
   public UnaryCallSettings<DetectIntentRequest, DetectIntentResponse> detectIntentSettings() {
     return ((SessionsStubSettings) getStubSettings()).detectIntentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to serverStreamingDetectIntent. */
+  public ServerStreamingCallSettings<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentSettings() {
+    return ((SessionsStubSettings) getStubSettings()).serverStreamingDetectIntentSettings();
   }
 
   /** Returns the object with the settings used for calls to streamingDetectIntent. */
@@ -99,6 +119,12 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
   /** Returns the object with the settings used for calls to fulfillIntent. */
   public UnaryCallSettings<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentSettings() {
     return ((SessionsStubSettings) getStubSettings()).fulfillIntentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitAnswerFeedback. */
+  public UnaryCallSettings<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackSettings() {
+    return ((SessionsStubSettings) getStubSettings()).submitAnswerFeedbackSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -152,7 +178,6 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
     return SessionsStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return SessionsStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -163,7 +188,6 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -205,7 +229,6 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
       return new Builder(SessionsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SessionsStubSettings.newHttpJsonBuilder());
     }
@@ -232,6 +255,12 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
       return getStubSettingsBuilder().detectIntentSettings();
     }
 
+    /** Returns the builder for the settings used for calls to serverStreamingDetectIntent. */
+    public ServerStreamingCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentSettings() {
+      return getStubSettingsBuilder().serverStreamingDetectIntentSettings();
+    }
+
     /** Returns the builder for the settings used for calls to streamingDetectIntent. */
     public StreamingCallSettings.Builder<
             StreamingDetectIntentRequest, StreamingDetectIntentResponse>
@@ -249,6 +278,12 @@ public class SessionsSettings extends ClientSettings<SessionsSettings> {
     public UnaryCallSettings.Builder<FulfillIntentRequest, FulfillIntentResponse>
         fulfillIntentSettings() {
       return getStubSettingsBuilder().fulfillIntentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitAnswerFeedback. */
+    public UnaryCallSettings.Builder<SubmitAnswerFeedbackRequest, AnswerFeedback>
+        submitAnswerFeedbackSettings() {
+      return getStubSettingsBuilder().submitAnswerFeedbackSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

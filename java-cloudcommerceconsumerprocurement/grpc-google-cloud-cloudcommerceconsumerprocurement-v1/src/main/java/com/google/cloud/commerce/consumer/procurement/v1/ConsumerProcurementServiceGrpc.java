@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -182,6 +182,98 @@ public final class ConsumerProcurementServiceGrpc {
     return getListOrdersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest,
+          com.google.longrunning.Operation>
+      getModifyOrderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ModifyOrder",
+      requestType = com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest,
+          com.google.longrunning.Operation>
+      getModifyOrderMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest,
+            com.google.longrunning.Operation>
+        getModifyOrderMethod;
+    if ((getModifyOrderMethod = ConsumerProcurementServiceGrpc.getModifyOrderMethod) == null) {
+      synchronized (ConsumerProcurementServiceGrpc.class) {
+        if ((getModifyOrderMethod = ConsumerProcurementServiceGrpc.getModifyOrderMethod) == null) {
+          ConsumerProcurementServiceGrpc.getModifyOrderMethod =
+              getModifyOrderMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ModifyOrder"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConsumerProcurementServiceMethodDescriptorSupplier("ModifyOrder"))
+                      .build();
+        }
+      }
+    }
+    return getModifyOrderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest,
+          com.google.longrunning.Operation>
+      getCancelOrderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelOrder",
+      requestType = com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest,
+          com.google.longrunning.Operation>
+      getCancelOrderMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest,
+            com.google.longrunning.Operation>
+        getCancelOrderMethod;
+    if ((getCancelOrderMethod = ConsumerProcurementServiceGrpc.getCancelOrderMethod) == null) {
+      synchronized (ConsumerProcurementServiceGrpc.class) {
+        if ((getCancelOrderMethod = ConsumerProcurementServiceGrpc.getCancelOrderMethod) == null) {
+          ConsumerProcurementServiceGrpc.getCancelOrderMethod =
+              getCancelOrderMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelOrder"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConsumerProcurementServiceMethodDescriptorSupplier("CancelOrder"))
+                      .build();
+        }
+      }
+    }
+    return getCancelOrderMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConsumerProcurementServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConsumerProcurementServiceStub> factory =
@@ -193,6 +285,20 @@ public final class ConsumerProcurementServiceGrpc {
           }
         };
     return ConsumerProcurementServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConsumerProcurementServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConsumerProcurementServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConsumerProcurementServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ConsumerProcurementServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConsumerProcurementServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConsumerProcurementServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -288,6 +394,37 @@ public final class ConsumerProcurementServiceGrpc {
                 com.google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListOrdersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+     * </pre>
+     */
+    default void modifyOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getModifyOrderMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product
+     * procured in the Order will be cancelled.
+     * </pre>
+     */
+    default void cancelOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelOrderMethod(), responseObserver);
     }
   }
 
@@ -393,10 +530,151 @@ public final class ConsumerProcurementServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListOrdersMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+     * </pre>
+     */
+    public void modifyOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getModifyOrderMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product
+     * procured in the Order will be cancelled.
+     * </pre>
+     */
+    public void cancelOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelOrderMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConsumerProcurementService.
+   *
+   * <pre>
+   * ConsumerProcurementService allows customers to make purchases of products
+   * served by the Cloud Commerce platform.
+   * When purchases are made, the
+   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService]
+   * programs the appropriate backends, including both Google's own
+   * infrastructure, as well as third-party systems, and to enable billing setup
+   * for charging for the procured item.
+   * </pre>
+   */
+  public static final class ConsumerProcurementServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConsumerProcurementServiceBlockingV2Stub> {
+    private ConsumerProcurementServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConsumerProcurementServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConsumerProcurementServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [Order][google.cloud.commerce.consumer.procurement.v1.Order].
+     * This API only supports GCP spend-based committed use
+     * discounts specified by GCP documentation.
+     * The returned long-running operation is in-progress until the backend
+     * completes the creation of the resource. Once completed, the order is
+     * in
+     * [OrderState.ORDER_STATE_ACTIVE][google.cloud.commerce.consumer.procurement.v1.OrderState.ORDER_STATE_ACTIVE].
+     * In case of failure, the order resource will be removed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation placeOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.PlaceOrderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPlaceOrderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the requested
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+     * </pre>
+     */
+    public com.google.cloud.commerce.consumer.procurement.v1.Order getOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.GetOrderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOrderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Order][google.cloud.commerce.consumer.procurement.v1.Order]
+     * resources that the user has access to, within the scope of the parent
+     * resource.
+     * </pre>
+     */
+    public com.google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse listOrders(
+        com.google.cloud.commerce.consumer.procurement.v1.ListOrdersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOrdersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation modifyOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyOrderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product
+     * procured in the Order will be cancelled.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelOrderMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ConsumerProcurementService.
    *
    * <pre>
    * ConsumerProcurementService allows customers to make purchases of products
@@ -468,6 +746,35 @@ public final class ConsumerProcurementServiceGrpc {
         com.google.cloud.commerce.consumer.procurement.v1.ListOrdersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListOrdersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation modifyOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyOrderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product
+     * procured in the Order will be cancelled.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelOrder(
+        com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelOrderMethod(), getCallOptions(), request);
     }
   }
 
@@ -548,11 +855,42 @@ public final class ConsumerProcurementServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListOrdersMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order] resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        modifyOrder(com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getModifyOrderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an existing
+     * [Order][google.cloud.commerce.consumer.procurement.v1.Order]. Every product
+     * procured in the Order will be cancelled.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        cancelOrder(com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelOrderMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PLACE_ORDER = 0;
   private static final int METHODID_GET_ORDER = 1;
   private static final int METHODID_LIST_ORDERS = 2;
+  private static final int METHODID_MODIFY_ORDER = 3;
+  private static final int METHODID_CANCEL_ORDER = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -588,6 +926,16 @@ public final class ConsumerProcurementServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse>)
                   responseObserver);
+          break;
+        case METHODID_MODIFY_ORDER:
+          serviceImpl.modifyOrder(
+              (com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_ORDER:
+          serviceImpl.cancelOrder(
+              (com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -627,6 +975,18 @@ public final class ConsumerProcurementServiceGrpc {
                     com.google.cloud.commerce.consumer.procurement.v1.ListOrdersRequest,
                     com.google.cloud.commerce.consumer.procurement.v1.ListOrdersResponse>(
                     service, METHODID_LIST_ORDERS)))
+        .addMethod(
+            getModifyOrderMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest,
+                    com.google.longrunning.Operation>(service, METHODID_MODIFY_ORDER)))
+        .addMethod(
+            getCancelOrderMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.commerce.consumer.procurement.v1.CancelOrderRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_ORDER)))
         .build();
   }
 
@@ -681,6 +1041,8 @@ public final class ConsumerProcurementServiceGrpc {
                       .addMethod(getPlaceOrderMethod())
                       .addMethod(getGetOrderMethod())
                       .addMethod(getListOrdersMethod())
+                      .addMethod(getModifyOrderMethod())
+                      .addMethod(getCancelOrderMethod())
                       .build();
         }
       }

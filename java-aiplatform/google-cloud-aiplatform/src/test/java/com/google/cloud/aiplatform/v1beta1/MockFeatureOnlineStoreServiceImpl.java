@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,6 +81,44 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
   }
 
   @Override
+  public StreamObserver<StreamingFetchFeatureValuesRequest> streamingFetchFeatureValues(
+      final StreamObserver<StreamingFetchFeatureValuesResponse> responseObserver) {
+    StreamObserver<StreamingFetchFeatureValuesRequest> requestObserver =
+        new StreamObserver<StreamingFetchFeatureValuesRequest>() {
+          @Override
+          public void onNext(StreamingFetchFeatureValuesRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamingFetchFeatureValuesResponse) {
+              responseObserver.onNext(((StreamingFetchFeatureValuesResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamingFetchFeatureValues,"
+                              + " expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamingFetchFeatureValuesResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
   public void searchNearestEntities(
       SearchNearestEntitiesRequest request,
       StreamObserver<SearchNearestEntitiesResponse> responseObserver) {
@@ -95,10 +133,49 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchNearestEntities, expected %s or %s",
+                  "Unrecognized response type %s for method SearchNearestEntities, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchNearestEntitiesResponse.class.getName(),
                   Exception.class.getName())));
     }
+  }
+
+  @Override
+  public StreamObserver<FeatureViewDirectWriteRequest> featureViewDirectWrite(
+      final StreamObserver<FeatureViewDirectWriteResponse> responseObserver) {
+    StreamObserver<FeatureViewDirectWriteRequest> requestObserver =
+        new StreamObserver<FeatureViewDirectWriteRequest>() {
+          @Override
+          public void onNext(FeatureViewDirectWriteRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof FeatureViewDirectWriteResponse) {
+              responseObserver.onNext(((FeatureViewDirectWriteResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method FeatureViewDirectWrite,"
+                              + " expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          FeatureViewDirectWriteResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
   }
 }

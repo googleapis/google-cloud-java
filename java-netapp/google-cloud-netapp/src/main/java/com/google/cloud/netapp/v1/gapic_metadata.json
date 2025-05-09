@@ -13,8 +13,20 @@
             "CreateActiveDirectory": {
               "methods": ["createActiveDirectoryAsync", "createActiveDirectoryAsync", "createActiveDirectoryAsync", "createActiveDirectoryOperationCallable", "createActiveDirectoryCallable"]
             },
+            "CreateBackup": {
+              "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
+            },
+            "CreateBackupPolicy": {
+              "methods": ["createBackupPolicyAsync", "createBackupPolicyAsync", "createBackupPolicyAsync", "createBackupPolicyOperationCallable", "createBackupPolicyCallable"]
+            },
+            "CreateBackupVault": {
+              "methods": ["createBackupVaultAsync", "createBackupVaultAsync", "createBackupVaultAsync", "createBackupVaultOperationCallable", "createBackupVaultCallable"]
+            },
             "CreateKmsConfig": {
               "methods": ["createKmsConfigAsync", "createKmsConfigAsync", "createKmsConfigAsync", "createKmsConfigOperationCallable", "createKmsConfigCallable"]
+            },
+            "CreateQuotaRule": {
+              "methods": ["createQuotaRuleAsync", "createQuotaRuleAsync", "createQuotaRuleAsync", "createQuotaRuleOperationCallable", "createQuotaRuleCallable"]
             },
             "CreateReplication": {
               "methods": ["createReplicationAsync", "createReplicationAsync", "createReplicationAsync", "createReplicationOperationCallable", "createReplicationCallable"]
@@ -31,8 +43,20 @@
             "DeleteActiveDirectory": {
               "methods": ["deleteActiveDirectoryAsync", "deleteActiveDirectoryAsync", "deleteActiveDirectoryAsync", "deleteActiveDirectoryOperationCallable", "deleteActiveDirectoryCallable"]
             },
+            "DeleteBackup": {
+              "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
+            },
+            "DeleteBackupPolicy": {
+              "methods": ["deleteBackupPolicyAsync", "deleteBackupPolicyAsync", "deleteBackupPolicyAsync", "deleteBackupPolicyOperationCallable", "deleteBackupPolicyCallable"]
+            },
+            "DeleteBackupVault": {
+              "methods": ["deleteBackupVaultAsync", "deleteBackupVaultAsync", "deleteBackupVaultAsync", "deleteBackupVaultOperationCallable", "deleteBackupVaultCallable"]
+            },
             "DeleteKmsConfig": {
               "methods": ["deleteKmsConfigAsync", "deleteKmsConfigAsync", "deleteKmsConfigAsync", "deleteKmsConfigOperationCallable", "deleteKmsConfigCallable"]
+            },
+            "DeleteQuotaRule": {
+              "methods": ["deleteQuotaRuleAsync", "deleteQuotaRuleAsync", "deleteQuotaRuleAsync", "deleteQuotaRuleOperationCallable", "deleteQuotaRuleCallable"]
             },
             "DeleteReplication": {
               "methods": ["deleteReplicationAsync", "deleteReplicationAsync", "deleteReplicationAsync", "deleteReplicationOperationCallable", "deleteReplicationCallable"]
@@ -49,14 +73,29 @@
             "EncryptVolumes": {
               "methods": ["encryptVolumesAsync", "encryptVolumesOperationCallable", "encryptVolumesCallable"]
             },
+            "EstablishPeering": {
+              "methods": ["establishPeeringAsync", "establishPeeringOperationCallable", "establishPeeringCallable"]
+            },
             "GetActiveDirectory": {
               "methods": ["getActiveDirectory", "getActiveDirectory", "getActiveDirectory", "getActiveDirectoryCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetBackupPolicy": {
+              "methods": ["getBackupPolicy", "getBackupPolicy", "getBackupPolicy", "getBackupPolicyCallable"]
+            },
+            "GetBackupVault": {
+              "methods": ["getBackupVault", "getBackupVault", "getBackupVault", "getBackupVaultCallable"]
             },
             "GetKmsConfig": {
               "methods": ["getKmsConfig", "getKmsConfig", "getKmsConfig", "getKmsConfigCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetQuotaRule": {
+              "methods": ["getQuotaRule", "getQuotaRule", "getQuotaRule", "getQuotaRuleCallable"]
             },
             "GetReplication": {
               "methods": ["getReplication", "getReplication", "getReplication", "getReplicationCallable"]
@@ -73,11 +112,23 @@
             "ListActiveDirectories": {
               "methods": ["listActiveDirectories", "listActiveDirectories", "listActiveDirectories", "listActiveDirectoriesPagedCallable", "listActiveDirectoriesCallable"]
             },
+            "ListBackupPolicies": {
+              "methods": ["listBackupPolicies", "listBackupPolicies", "listBackupPolicies", "listBackupPoliciesPagedCallable", "listBackupPoliciesCallable"]
+            },
+            "ListBackupVaults": {
+              "methods": ["listBackupVaults", "listBackupVaults", "listBackupVaults", "listBackupVaultsPagedCallable", "listBackupVaultsCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
             "ListKmsConfigs": {
               "methods": ["listKmsConfigs", "listKmsConfigs", "listKmsConfigs", "listKmsConfigsPagedCallable", "listKmsConfigsCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListQuotaRules": {
+              "methods": ["listQuotaRules", "listQuotaRules", "listQuotaRules", "listQuotaRulesPagedCallable", "listQuotaRulesCallable"]
             },
             "ListReplications": {
               "methods": ["listReplications", "listReplications", "listReplications", "listReplicationsPagedCallable", "listReplicationsCallable"]
@@ -103,11 +154,29 @@
             "StopReplication": {
               "methods": ["stopReplicationAsync", "stopReplicationOperationCallable", "stopReplicationCallable"]
             },
+            "SwitchActiveReplicaZone": {
+              "methods": ["switchActiveReplicaZoneAsync", "switchActiveReplicaZoneOperationCallable", "switchActiveReplicaZoneCallable"]
+            },
+            "SyncReplication": {
+              "methods": ["syncReplicationAsync", "syncReplicationOperationCallable", "syncReplicationCallable"]
+            },
             "UpdateActiveDirectory": {
               "methods": ["updateActiveDirectoryAsync", "updateActiveDirectoryAsync", "updateActiveDirectoryOperationCallable", "updateActiveDirectoryCallable"]
             },
+            "UpdateBackup": {
+              "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
+            },
+            "UpdateBackupPolicy": {
+              "methods": ["updateBackupPolicyAsync", "updateBackupPolicyAsync", "updateBackupPolicyOperationCallable", "updateBackupPolicyCallable"]
+            },
+            "UpdateBackupVault": {
+              "methods": ["updateBackupVaultAsync", "updateBackupVaultAsync", "updateBackupVaultOperationCallable", "updateBackupVaultCallable"]
+            },
             "UpdateKmsConfig": {
               "methods": ["updateKmsConfigAsync", "updateKmsConfigAsync", "updateKmsConfigOperationCallable", "updateKmsConfigCallable"]
+            },
+            "UpdateQuotaRule": {
+              "methods": ["updateQuotaRuleAsync", "updateQuotaRuleAsync", "updateQuotaRuleOperationCallable", "updateQuotaRuleCallable"]
             },
             "UpdateReplication": {
               "methods": ["updateReplicationAsync", "updateReplicationAsync", "updateReplicationOperationCallable", "updateReplicationCallable"]
@@ -120,6 +189,9 @@
             },
             "UpdateVolume": {
               "methods": ["updateVolumeAsync", "updateVolumeAsync", "updateVolumeOperationCallable", "updateVolumeCallable"]
+            },
+            "ValidateDirectoryService": {
+              "methods": ["validateDirectoryServiceAsync", "validateDirectoryServiceOperationCallable", "validateDirectoryServiceCallable"]
             },
             "VerifyKmsConfig": {
               "methods": ["verifyKmsConfig", "verifyKmsConfigCallable"]

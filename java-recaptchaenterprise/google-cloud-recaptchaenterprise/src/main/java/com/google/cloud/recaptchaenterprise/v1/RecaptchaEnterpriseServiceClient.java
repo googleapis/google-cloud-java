@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -44,10 +46,13 @@ import com.google.recaptchaenterprise.v1.FirewallPolicyName;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -61,6 +66,10 @@ import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -97,19 +106,439 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAssessment</td>
+ *      <td><p> Creates an Assessment of the likelihood an event is legitimate.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAssessment(CreateAssessmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAssessment(ProjectName parent, Assessment assessment)
+ *           <li><p> createAssessment(String parent, Assessment assessment)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAssessmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AnnotateAssessment</td>
+ *      <td><p> Annotates a previously created Assessment to provide additional information on whether the event turned out to be authentic or fraudulent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> annotateAssessment(AnnotateAssessmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> annotateAssessment(AssessmentName name, AnnotateAssessmentRequest.Annotation annotation)
+ *           <li><p> annotateAssessment(String name, AnnotateAssessmentRequest.Annotation annotation)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> annotateAssessmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateKey</td>
+ *      <td><p> Creates a new reCAPTCHA Enterprise key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createKey(CreateKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createKey(ProjectName parent, Key key)
+ *           <li><p> createKey(String parent, Key key)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListKeys</td>
+ *      <td><p> Returns the list of all keys that belong to a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listKeys(ListKeysRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listKeys(ProjectName parent)
+ *           <li><p> listKeys(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listKeysPagedCallable()
+ *           <li><p> listKeysCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RetrieveLegacySecretKey</td>
+ *      <td><p> Returns the secret key related to the specified public key. You must use the legacy secret key only in a 3rd party integration with legacy reCAPTCHA.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> retrieveLegacySecretKey(RetrieveLegacySecretKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> retrieveLegacySecretKey(KeyName key)
+ *           <li><p> retrieveLegacySecretKey(String key)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> retrieveLegacySecretKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetKey</td>
+ *      <td><p> Returns the specified key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getKey(GetKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getKey(KeyName name)
+ *           <li><p> getKey(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateKey</td>
+ *      <td><p> Updates the specified key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateKey(UpdateKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateKey(Key key, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteKey</td>
+ *      <td><p> Deletes the specified key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteKey(DeleteKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteKey(KeyName name)
+ *           <li><p> deleteKey(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MigrateKey</td>
+ *      <td><p> Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise. Once a key is migrated, it can be used from either product. SiteVerify requests are billed as CreateAssessment calls. You must be authenticated as one of the current owners of the reCAPTCHA Key, and your user must have the reCAPTCHA Enterprise Admin IAM role in the destination project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> migrateKey(MigrateKeyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> migrateKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddIpOverride</td>
+ *      <td><p> Adds an IP override to a key. The following restrictions hold:
+ * <ul>
+ * <li>  The maximum number of IP overrides per key is 100.
+ * <li>  For any conflict (such as IP already exists or IP part of an existing   IP range), an error is returned.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addIpOverride(AddIpOverrideRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> addIpOverride(KeyName name, IpOverrideData ipOverrideData)
+ *           <li><p> addIpOverride(String name, IpOverrideData ipOverrideData)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addIpOverrideCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RemoveIpOverride</td>
+ *      <td><p> Removes an IP override from a key. The following restrictions hold:
+ * <ul>
+ * <li>  If the IP isn't found in an existing IP override, a `NOT_FOUND` error is returned.
+ * <li>  If the IP is found in an existing IP override, but the override type does not match, a `NOT_FOUND` error is returned.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeIpOverride(RemoveIpOverrideRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> removeIpOverride(KeyName name, IpOverrideData ipOverrideData)
+ *           <li><p> removeIpOverride(String name, IpOverrideData ipOverrideData)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeIpOverrideCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListIpOverrides</td>
+ *      <td><p> Lists all IP overrides for a key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listIpOverrides(ListIpOverridesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listIpOverrides(KeyName parent)
+ *           <li><p> listIpOverrides(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listIpOverridesPagedCallable()
+ *           <li><p> listIpOverridesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMetrics</td>
+ *      <td><p> Get some aggregated metrics for a Key. This data can be used to build dashboards.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMetrics(GetMetricsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMetrics(MetricsName name)
+ *           <li><p> getMetrics(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMetricsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateFirewallPolicy</td>
+ *      <td><p> Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can be executed. A project may have a maximum of 1000 policies.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createFirewallPolicy(CreateFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createFirewallPolicy(ProjectName parent, FirewallPolicy firewallPolicy)
+ *           <li><p> createFirewallPolicy(String parent, FirewallPolicy firewallPolicy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFirewallPolicies</td>
+ *      <td><p> Returns the list of all firewall policies that belong to a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFirewallPolicies(ListFirewallPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFirewallPolicies(ProjectName parent)
+ *           <li><p> listFirewallPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFirewallPoliciesPagedCallable()
+ *           <li><p> listFirewallPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFirewallPolicy</td>
+ *      <td><p> Returns the specified firewall policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFirewallPolicy(GetFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFirewallPolicy(FirewallPolicyName name)
+ *           <li><p> getFirewallPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateFirewallPolicy</td>
+ *      <td><p> Updates the specified firewall policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFirewallPolicy(UpdateFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateFirewallPolicy(FirewallPolicy firewallPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFirewallPolicy</td>
+ *      <td><p> Deletes the specified firewall policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFirewallPolicy(DeleteFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteFirewallPolicy(FirewallPolicyName name)
+ *           <li><p> deleteFirewallPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFirewallPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ReorderFirewallPolicies</td>
+ *      <td><p> Reorders all firewall policies.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPolicies(ReorderFirewallPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPolicies(ProjectName parent, List&lt;String&gt; names)
+ *           <li><p> reorderFirewallPolicies(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> reorderFirewallPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRelatedAccountGroups</td>
+ *      <td><p> List groups of related accounts.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroups(ListRelatedAccountGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroups(ProjectName parent)
+ *           <li><p> listRelatedAccountGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroupsPagedCallable()
+ *           <li><p> listRelatedAccountGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRelatedAccountGroupMemberships</td>
+ *      <td><p> Get memberships in a group of related accounts.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroupMemberships(ListRelatedAccountGroupMembershipsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroupMemberships(RelatedAccountGroupName parent)
+ *           <li><p> listRelatedAccountGroupMemberships(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRelatedAccountGroupMembershipsPagedCallable()
+ *           <li><p> listRelatedAccountGroupMembershipsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchRelatedAccountGroupMemberships</td>
+ *      <td><p> Search group memberships related to a given account.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchRelatedAccountGroupMemberships(SearchRelatedAccountGroupMembershipsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchRelatedAccountGroupMemberships(ProjectName project, ByteString hashedAccountId)
+ *           <li><p> searchRelatedAccountGroupMemberships(String project, ByteString hashedAccountId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchRelatedAccountGroupMembershipsPagedCallable()
+ *           <li><p> searchRelatedAccountGroupMembershipsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -224,7 +653,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the assessment will be created, in the
+   * @param parent Required. The name of the project in which the assessment is created, in the
    *     format `projects/{project}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -258,7 +687,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the assessment will be created, in the
+   * @param parent Required. The name of the project in which the assessment is created, in the
    *     format `projects/{project}`.
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -354,9 +783,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     `projects/{project}/assessments/{assessment}`.
-   * @param annotation Optional. The annotation that will be assigned to the Event. This field can
-   *     be left empty to provide reasons that apply to an event without concluding whether the
-   *     event is legitimate or fraudulent.
+   * @param annotation Optional. The annotation that is assigned to the Event. This field can be
+   *     left empty to provide reasons that apply to an event without concluding whether the event
+   *     is legitimate or fraudulent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
@@ -394,9 +823,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param name Required. The resource name of the Assessment, in the format
    *     `projects/{project}/assessments/{assessment}`.
-   * @param annotation Optional. The annotation that will be assigned to the Event. This field can
-   *     be left empty to provide reasons that apply to an event without concluding whether the
-   *     event is legitimate or fraudulent.
+   * @param annotation Optional. The annotation that is assigned to the Event. This field can be
+   *     left empty to provide reasons that apply to an event without concluding whether the event
+   *     is legitimate or fraudulent.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
@@ -425,6 +854,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       AnnotateAssessmentRequest.newBuilder()
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setTransactionEvent(TransactionEvent.newBuilder().build())
    *           .build();
@@ -459,6 +889,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *       AnnotateAssessmentRequest.newBuilder()
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setTransactionEvent(TransactionEvent.newBuilder().build())
    *           .build();
@@ -494,7 +925,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the key will be created, in the format
+   * @param parent Required. The name of the project in which the key is created, in the format
    *     `projects/{project}`.
    * @param key Required. Information to create a reCAPTCHA Enterprise key.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -528,7 +959,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project in which the key will be created, in the format
+   * @param parent Required. The name of the project in which the key is created, in the format
    *     `projects/{project}`.
    * @param key Required. Information to create a reCAPTCHA Enterprise key.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -619,8 +1050,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project that contains the keys that will be listed, in
-   *     the format `projects/{project}`.
+   * @param parent Required. The name of the project that contains the keys that is listed, in the
+   *     format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKeysPagedResponse listKeys(ProjectName parent) {
@@ -650,8 +1081,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project that contains the keys that will be listed, in
-   *     the format `projects/{project}`.
+   * @param parent Required. The name of the project that contains the keys that is listed, in the
+   *     format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListKeysPagedResponse listKeys(String parent) {
@@ -1024,7 +1455,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param key Required. The key to update.
    * @param updateMask Optional. The mask to control which fields of the key get updated. If the
-   *     mask is not present, all fields will be updated.
+   *     mask is not present, all fields are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Key updateKey(Key key, FieldMask updateMask) {
@@ -1276,6 +1707,489 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Adds an IP override to a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
+   *       is returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+   *   IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+   *   AddIpOverrideResponse response =
+   *       recaptchaEnterpriseServiceClient.addIpOverride(name, ipOverrideData);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the key to which the IP override is added, in the format
+   *     `projects/{project}/keys/{key}`.
+   * @param ipOverrideData Required. IP override added to the key.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddIpOverrideResponse addIpOverride(KeyName name, IpOverrideData ipOverrideData) {
+    AddIpOverrideRequest request =
+        AddIpOverrideRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setIpOverrideData(ipOverrideData)
+            .build();
+    return addIpOverride(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an IP override to a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
+   *       is returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = KeyName.of("[PROJECT]", "[KEY]").toString();
+   *   IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+   *   AddIpOverrideResponse response =
+   *       recaptchaEnterpriseServiceClient.addIpOverride(name, ipOverrideData);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the key to which the IP override is added, in the format
+   *     `projects/{project}/keys/{key}`.
+   * @param ipOverrideData Required. IP override added to the key.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddIpOverrideResponse addIpOverride(String name, IpOverrideData ipOverrideData) {
+    AddIpOverrideRequest request =
+        AddIpOverrideRequest.newBuilder().setName(name).setIpOverrideData(ipOverrideData).build();
+    return addIpOverride(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an IP override to a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
+   *       is returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   AddIpOverrideRequest request =
+   *       AddIpOverrideRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setIpOverrideData(IpOverrideData.newBuilder().build())
+   *           .build();
+   *   AddIpOverrideResponse response = recaptchaEnterpriseServiceClient.addIpOverride(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AddIpOverrideResponse addIpOverride(AddIpOverrideRequest request) {
+    return addIpOverrideCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds an IP override to a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>The maximum number of IP overrides per key is 100.
+   *   <li>For any conflict (such as IP already exists or IP part of an existing IP range), an error
+   *       is returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   AddIpOverrideRequest request =
+   *       AddIpOverrideRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setIpOverrideData(IpOverrideData.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AddIpOverrideResponse> future =
+   *       recaptchaEnterpriseServiceClient.addIpOverrideCallable().futureCall(request);
+   *   // Do something.
+   *   AddIpOverrideResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideCallable() {
+    return stub.addIpOverrideCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes an IP override from a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>If the IP isn't found in an existing IP override, a `NOT_FOUND` error is returned.
+   *   <li>If the IP is found in an existing IP override, but the override type does not match, a
+   *       `NOT_FOUND` error is returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+   *   IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+   *   RemoveIpOverrideResponse response =
+   *       recaptchaEnterpriseServiceClient.removeIpOverride(name, ipOverrideData);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the key from which the IP override is removed, in the format
+   *     `projects/{project}/keys/{key}`.
+   * @param ipOverrideData Required. IP override to be removed from the key.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveIpOverrideResponse removeIpOverride(
+      KeyName name, IpOverrideData ipOverrideData) {
+    RemoveIpOverrideRequest request =
+        RemoveIpOverrideRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setIpOverrideData(ipOverrideData)
+            .build();
+    return removeIpOverride(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes an IP override from a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>If the IP isn't found in an existing IP override, a `NOT_FOUND` error is returned.
+   *   <li>If the IP is found in an existing IP override, but the override type does not match, a
+   *       `NOT_FOUND` error is returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = KeyName.of("[PROJECT]", "[KEY]").toString();
+   *   IpOverrideData ipOverrideData = IpOverrideData.newBuilder().build();
+   *   RemoveIpOverrideResponse response =
+   *       recaptchaEnterpriseServiceClient.removeIpOverride(name, ipOverrideData);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the key from which the IP override is removed, in the format
+   *     `projects/{project}/keys/{key}`.
+   * @param ipOverrideData Required. IP override to be removed from the key.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveIpOverrideResponse removeIpOverride(
+      String name, IpOverrideData ipOverrideData) {
+    RemoveIpOverrideRequest request =
+        RemoveIpOverrideRequest.newBuilder()
+            .setName(name)
+            .setIpOverrideData(ipOverrideData)
+            .build();
+    return removeIpOverride(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes an IP override from a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>If the IP isn't found in an existing IP override, a `NOT_FOUND` error is returned.
+   *   <li>If the IP is found in an existing IP override, but the override type does not match, a
+   *       `NOT_FOUND` error is returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   RemoveIpOverrideRequest request =
+   *       RemoveIpOverrideRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setIpOverrideData(IpOverrideData.newBuilder().build())
+   *           .build();
+   *   RemoveIpOverrideResponse response =
+   *       recaptchaEnterpriseServiceClient.removeIpOverride(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveIpOverrideResponse removeIpOverride(RemoveIpOverrideRequest request) {
+    return removeIpOverrideCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes an IP override from a key. The following restrictions hold:
+   *
+   * <ul>
+   *   <li>If the IP isn't found in an existing IP override, a `NOT_FOUND` error is returned.
+   *   <li>If the IP is found in an existing IP override, but the override type does not match, a
+   *       `NOT_FOUND` error is returned.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   RemoveIpOverrideRequest request =
+   *       RemoveIpOverrideRequest.newBuilder()
+   *           .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setIpOverrideData(IpOverrideData.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RemoveIpOverrideResponse> future =
+   *       recaptchaEnterpriseServiceClient.removeIpOverrideCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveIpOverrideResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideCallable() {
+    return stub.removeIpOverrideCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all IP overrides for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   KeyName parent = KeyName.of("[PROJECT]", "[KEY]");
+   *   for (IpOverrideData element :
+   *       recaptchaEnterpriseServiceClient.listIpOverrides(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent key for which the IP overrides are listed, in the format
+   *     `projects/{project}/keys/{key}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIpOverridesPagedResponse listIpOverrides(KeyName parent) {
+    ListIpOverridesRequest request =
+        ListIpOverridesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listIpOverrides(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all IP overrides for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = KeyName.of("[PROJECT]", "[KEY]").toString();
+   *   for (IpOverrideData element :
+   *       recaptchaEnterpriseServiceClient.listIpOverrides(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent key for which the IP overrides are listed, in the format
+   *     `projects/{project}/keys/{key}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIpOverridesPagedResponse listIpOverrides(String parent) {
+    ListIpOverridesRequest request = ListIpOverridesRequest.newBuilder().setParent(parent).build();
+    return listIpOverrides(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all IP overrides for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListIpOverridesRequest request =
+   *       ListIpOverridesRequest.newBuilder()
+   *           .setParent(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (IpOverrideData element :
+   *       recaptchaEnterpriseServiceClient.listIpOverrides(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListIpOverridesPagedResponse listIpOverrides(ListIpOverridesRequest request) {
+    return listIpOverridesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all IP overrides for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListIpOverridesRequest request =
+   *       ListIpOverridesRequest.newBuilder()
+   *           .setParent(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<IpOverrideData> future =
+   *       recaptchaEnterpriseServiceClient.listIpOverridesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (IpOverrideData element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListIpOverridesRequest, ListIpOverridesPagedResponse>
+      listIpOverridesPagedCallable() {
+    return stub.listIpOverridesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all IP overrides for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ListIpOverridesRequest request =
+   *       ListIpOverridesRequest.newBuilder()
+   *           .setParent(KeyName.of("[PROJECT]", "[KEY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListIpOverridesResponse response =
+   *         recaptchaEnterpriseServiceClient.listIpOverridesCallable().call(request);
+   *     for (IpOverrideData element : response.getIpOverridesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListIpOverridesRequest, ListIpOverridesResponse>
+      listIpOverridesCallable() {
+    return stub.listIpOverridesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Get some aggregated metrics for a Key. This data can be used to build dashboards.
    *
    * <p>Sample code:
@@ -1411,7 +2325,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project this policy will apply to, in the format
+   * @param parent Required. The name of the project this policy applies to, in the format
    *     `projects/{project}`.
    * @param firewallPolicy Required. Information to create the policy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1448,7 +2362,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project this policy will apply to, in the format
+   * @param parent Required. The name of the project this policy applies to, in the format
    *     `projects/{project}`.
    * @param firewallPolicy Required. Information to create the policy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1841,7 +2755,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param firewallPolicy Required. The policy to update.
    * @param updateMask Optional. The mask to control which fields of the policy get updated. If the
-   *     mask is not present, all fields will be updated.
+   *     mask is not present, all fields are updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirewallPolicy updateFirewallPolicy(
@@ -2031,6 +2945,140 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable() {
     return stub.deleteFirewallPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   List<String> names = new ArrayList<>();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list the policies for, in the format
+   *     `projects/{project}`.
+   * @param names Required. A list containing all policy names, in the new order. Each name is in
+   *     the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      ProjectName parent, List<String> names) {
+    ReorderFirewallPoliciesRequest request =
+        ReorderFirewallPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return reorderFirewallPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project to list the policies for, in the format
+   *     `projects/{project}`.
+   * @param names Required. A list containing all policy names, in the new order. Each name is in
+   *     the format `projects/{project}/firewallpolicies/{firewallpolicy}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      String parent, List<String> names) {
+    ReorderFirewallPoliciesRequest request =
+        ReorderFirewallPoliciesRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return reorderFirewallPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ReorderFirewallPoliciesRequest request =
+   *       ReorderFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ReorderFirewallPoliciesResponse response =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPolicies(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
+      ReorderFirewallPoliciesRequest request) {
+    return reorderFirewallPoliciesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reorders all firewall policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ReorderFirewallPoliciesRequest request =
+   *       ReorderFirewallPoliciesRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<ReorderFirewallPoliciesResponse> future =
+   *       recaptchaEnterpriseServiceClient.reorderFirewallPoliciesCallable().futureCall(request);
+   *   // Do something.
+   *   ReorderFirewallPoliciesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesCallable() {
+    return stub.reorderFirewallPoliciesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2421,8 +3469,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   RelatedAccountGroupName project =
-   *       RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+   *   ProjectName project = ProjectName.of("[PROJECT]");
    *   ByteString hashedAccountId = ByteString.EMPTY;
    *   for (RelatedAccountGroupMembership element :
    *       recaptchaEnterpriseServiceClient
@@ -2435,14 +3482,14 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param project Required. The name of the project to search related account group memberships
    *     from. Specify the project name in the following format: `projects/{project}`.
-   * @param hashedAccountId Optional. The unique stable hashed user identifier used to search
-   *     connections. The identifier should correspond to a `hashed_account_id` provided in a
-   *     previous `CreateAssessment` or `AnnotateAssessment` call.
+   * @param hashedAccountId Optional. Deprecated: use `account_id` instead. The unique stable hashed
+   *     account identifier used to search connections. The identifier should correspond to a
+   *     `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+   *     Either hashed_account_id or account_id must be set, but not both.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
-      searchRelatedAccountGroupMemberships(
-          RelatedAccountGroupName project, ByteString hashedAccountId) {
+      searchRelatedAccountGroupMemberships(ProjectName project, ByteString hashedAccountId) {
     SearchRelatedAccountGroupMembershipsRequest request =
         SearchRelatedAccountGroupMembershipsRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -2465,7 +3512,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   String project = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
+   *   String project = ProjectName.of("[PROJECT]").toString();
    *   ByteString hashedAccountId = ByteString.EMPTY;
    *   for (RelatedAccountGroupMembership element :
    *       recaptchaEnterpriseServiceClient
@@ -2478,9 +3525,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *
    * @param project Required. The name of the project to search related account group memberships
    *     from. Specify the project name in the following format: `projects/{project}`.
-   * @param hashedAccountId Optional. The unique stable hashed user identifier used to search
-   *     connections. The identifier should correspond to a `hashed_account_id` provided in a
-   *     previous `CreateAssessment` or `AnnotateAssessment` call.
+   * @param hashedAccountId Optional. Deprecated: use `account_id` instead. The unique stable hashed
+   *     account identifier used to search connections. The identifier should correspond to a
+   *     `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+   *     Either hashed_account_id or account_id must be set, but not both.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
@@ -2509,8 +3557,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setProject(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setProject(ProjectName.of("[PROJECT]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2548,8 +3596,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setProject(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setProject(ProjectName.of("[PROJECT]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2588,8 +3636,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setProject(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setProject(ProjectName.of("[PROJECT]").toString())
+   *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
@@ -2709,6 +3757,83 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
     protected ListKeysFixedSizeCollection createCollection(
         List<ListKeysPage> pages, int collectionSize) {
       return new ListKeysFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListIpOverridesPagedResponse
+      extends AbstractPagedListResponse<
+          ListIpOverridesRequest,
+          ListIpOverridesResponse,
+          IpOverrideData,
+          ListIpOverridesPage,
+          ListIpOverridesFixedSizeCollection> {
+
+    public static ApiFuture<ListIpOverridesPagedResponse> createAsync(
+        PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData> context,
+        ApiFuture<ListIpOverridesResponse> futureResponse) {
+      ApiFuture<ListIpOverridesPage> futurePage =
+          ListIpOverridesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListIpOverridesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListIpOverridesPagedResponse(ListIpOverridesPage page) {
+      super(page, ListIpOverridesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListIpOverridesPage
+      extends AbstractPage<
+          ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData, ListIpOverridesPage> {
+
+    private ListIpOverridesPage(
+        PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData> context,
+        ListIpOverridesResponse response) {
+      super(context, response);
+    }
+
+    private static ListIpOverridesPage createEmptyPage() {
+      return new ListIpOverridesPage(null, null);
+    }
+
+    @Override
+    protected ListIpOverridesPage createPage(
+        PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData> context,
+        ListIpOverridesResponse response) {
+      return new ListIpOverridesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListIpOverridesPage> createPageAsync(
+        PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData> context,
+        ApiFuture<ListIpOverridesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListIpOverridesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListIpOverridesRequest,
+          ListIpOverridesResponse,
+          IpOverrideData,
+          ListIpOverridesPage,
+          ListIpOverridesFixedSizeCollection> {
+
+    private ListIpOverridesFixedSizeCollection(
+        List<ListIpOverridesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListIpOverridesFixedSizeCollection createEmptyCollection() {
+      return new ListIpOverridesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListIpOverridesFixedSizeCollection createCollection(
+        List<ListIpOverridesPage> pages, int collectionSize) {
+      return new ListIpOverridesFixedSizeCollection(pages, collectionSize);
     }
   }
 

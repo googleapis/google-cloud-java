@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.networkmanagement.v1;
 
 import static com.google.cloud.networkmanagement.v1.ReachabilityServiceClient.ListConnectivityTestsPagedResponse;
+import static com.google.cloud.networkmanagement.v1.ReachabilityServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -27,10 +28,23 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.networkmanagement.v1.stub.HttpJsonReachabilityServiceStub;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.GetPolicyOptions;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -46,6 +60,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
@@ -83,8 +98,59 @@ public class ReachabilityServiceClientHttpJsonTest {
     mockService.reset();
   }
 
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
   @Test
   public void listConnectivityTestsTest() throws Exception {
+    ConnectivityTest responsesElement = ConnectivityTest.newBuilder().build();
+    ListConnectivityTestsResponse expectedResponse =
+        ListConnectivityTestsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListConnectivityTestsPagedResponse pagedListResponse = client.listConnectivityTests(parent);
+
+    List<ConnectivityTest> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listConnectivityTestsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listConnectivityTests(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectivityTestsTest2() throws Exception {
     ConnectivityTest responsesElement = ConnectivityTest.newBuilder().build();
     ListConnectivityTestsResponse expectedResponse =
         ListConnectivityTestsResponse.newBuilder()
@@ -118,7 +184,7 @@ public class ReachabilityServiceClientHttpJsonTest {
   }
 
   @Test
-  public void listConnectivityTestsExceptionTest() throws Exception {
+  public void listConnectivityTestsExceptionTest2() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -137,7 +203,7 @@ public class ReachabilityServiceClientHttpJsonTest {
   public void getConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -149,10 +215,13 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name = "projects/project-4569/locations/global/connectivityTests/connectivityTest-4569";
+    ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
 
     ConnectivityTest actualResponse = client.getConnectivityTest(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -180,8 +249,7 @@ public class ReachabilityServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String name =
-          "projects/project-4569/locations/global/connectivityTests/connectivityTest-4569";
+      ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
       client.getConnectivityTest(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -190,10 +258,10 @@ public class ReachabilityServiceClientHttpJsonTest {
   }
 
   @Test
-  public void createConnectivityTestTest() throws Exception {
+  public void getConnectivityTestTest2() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -205,6 +273,137 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-4569/locations/global/connectivityTests/connectivityTest-4569";
+
+    ConnectivityTest actualResponse = client.getConnectivityTest(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getConnectivityTestExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4569/locations/global/connectivityTests/connectivityTest-4569";
+      client.getConnectivityTest(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+  @Test
+  public void createConnectivityTestTest() throws Exception {
+    ConnectivityTest expectedResponse =
+        ConnectivityTest.newBuilder()
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setDescription("description-1724546052")
+            .setSource(Endpoint.newBuilder().build())
+            .setDestination(Endpoint.newBuilder().build())
+            .setProtocol("protocol-989163880")
+            .addAllRelatedProjects(new ArrayList<String>())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createConnectivityTestTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    String testId = "testId-877170355";
+    ConnectivityTest resource = ConnectivityTest.newBuilder().build();
+
+    ConnectivityTest actualResponse =
+        client.createConnectivityTestAsync(parent, testId, resource).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createConnectivityTestExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      String testId = "testId-877170355";
+      ConnectivityTest resource = ConnectivityTest.newBuilder().build();
+      client.createConnectivityTestAsync(parent, testId, resource).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createConnectivityTestTest2() throws Exception {
+    ConnectivityTest expectedResponse =
+        ConnectivityTest.newBuilder()
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setDescription("description-1724546052")
+            .setSource(Endpoint.newBuilder().build())
+            .setDestination(Endpoint.newBuilder().build())
+            .setProtocol("protocol-989163880")
+            .addAllRelatedProjects(new ArrayList<String>())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -238,7 +437,7 @@ public class ReachabilityServiceClientHttpJsonTest {
   }
 
   @Test
-  public void createConnectivityTestExceptionTest() throws Exception {
+  public void createConnectivityTestExceptionTest2() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -258,7 +457,7 @@ public class ReachabilityServiceClientHttpJsonTest {
   public void updateConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -270,6 +469,9 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -282,8 +484,7 @@ public class ReachabilityServiceClientHttpJsonTest {
     FieldMask updateMask = FieldMask.newBuilder().build();
     ConnectivityTest resource =
         ConnectivityTest.newBuilder()
-            .setName(
-                "projects/project-4569/locations/global/connectivityTests/connectivityTest-4569")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -295,6 +496,9 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
 
     ConnectivityTest actualResponse =
@@ -327,8 +531,7 @@ public class ReachabilityServiceClientHttpJsonTest {
       FieldMask updateMask = FieldMask.newBuilder().build();
       ConnectivityTest resource =
           ConnectivityTest.newBuilder()
-              .setName(
-                  "projects/project-4569/locations/global/connectivityTests/connectivityTest-4569")
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .setDescription("description-1724546052")
               .setSource(Endpoint.newBuilder().build())
               .setDestination(Endpoint.newBuilder().build())
@@ -340,6 +543,9 @@ public class ReachabilityServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
               .setProbingDetails(ProbingDetails.newBuilder().build())
+              .setRoundTrip(true)
+              .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
+              .setBypassFirewallChecks(true)
               .build();
       client.updateConnectivityTestAsync(updateMask, resource).get();
       Assert.fail("No exception raised");
@@ -351,7 +557,7 @@ public class ReachabilityServiceClientHttpJsonTest {
   public void rerunConnectivityTestTest() throws Exception {
     ConnectivityTest expectedResponse =
         ConnectivityTest.newBuilder()
-            .setName("name3373707")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .setDescription("description-1724546052")
             .setSource(Endpoint.newBuilder().build())
             .setDestination(Endpoint.newBuilder().build())
@@ -363,6 +569,9 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setRoundTrip(true)
+            .setReturnReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -374,8 +583,7 @@ public class ReachabilityServiceClientHttpJsonTest {
 
     RerunConnectivityTestRequest request =
         RerunConnectivityTestRequest.newBuilder()
-            .setName(
-                "projects/project-4569/locations/global/connectivityTests/connectivityTest-4569")
+            .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
             .build();
 
     ConnectivityTest actualResponse = client.rerunConnectivityTestAsync(request).get();
@@ -406,8 +614,7 @@ public class ReachabilityServiceClientHttpJsonTest {
     try {
       RerunConnectivityTestRequest request =
           RerunConnectivityTestRequest.newBuilder()
-              .setName(
-                  "projects/project-4569/locations/global/connectivityTests/connectivityTest-4569")
+              .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
               .build();
       client.rerunConnectivityTestAsync(request).get();
       Assert.fail("No exception raised");
@@ -417,6 +624,51 @@ public class ReachabilityServiceClientHttpJsonTest {
 
   @Test
   public void deleteConnectivityTestTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteConnectivityTestTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
+
+    client.deleteConnectivityTestAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteConnectivityTestExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ConnectivityTestName name = ConnectivityTestName.of("[PROJECT]", "[TEST]");
+      client.deleteConnectivityTestAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteConnectivityTestTest2() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -446,7 +698,7 @@ public class ReachabilityServiceClientHttpJsonTest {
   }
 
   @Test
-  public void deleteConnectivityTestExceptionTest() throws Exception {
+  public void deleteConnectivityTestExceptionTest2() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -458,6 +710,287 @@ public class ReachabilityServiceClientHttpJsonTest {
       client.deleteConnectivityTestAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listLocationsTest() throws Exception {
+    Location responsesElement = Location.newBuilder().build();
+    ListLocationsResponse expectedResponse =
+        ListLocationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListLocationsRequest request =
+        ListLocationsRequest.newBuilder()
+            .setName("projects/project-3664")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListLocationsPagedResponse pagedListResponse = client.listLocations(request);
+
+    List<Location> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLocationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("projects/project-3664")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listLocations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLocationTest() throws Exception {
+    Location expectedResponse =
+        Location.newBuilder()
+            .setName("name3373707")
+            .setLocationId("locationId1541836720")
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setMetadata(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetLocationRequest request =
+        GetLocationRequest.newBuilder()
+            .setName("projects/project-9062/locations/location-9062")
+            .build();
+
+    Location actualResponse = client.getLocation(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getLocationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetLocationRequest request =
+          GetLocationRequest.newBuilder()
+              .setName("projects/project-9062/locations/location-9062")
+              .build();
+      client.getLocation(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setPolicy(Policy.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.setIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SetIamPolicyRequest request =
+          SetIamPolicyRequest.newBuilder()
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .setPolicy(Policy.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.setIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .setOptions(GetPolicyOptions.newBuilder().build())
+            .build();
+
+    Policy actualResponse = client.getIamPolicy(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GetIamPolicyRequest request =
+          GetIamPolicyRequest.newBuilder()
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .setOptions(GetPolicyOptions.newBuilder().build())
+              .build();
+      client.getIamPolicy(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

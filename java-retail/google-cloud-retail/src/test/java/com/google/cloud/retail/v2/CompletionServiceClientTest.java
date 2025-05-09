@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -46,6 +47,7 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class CompletionServiceClientTest {
   private static MockCompletionService mockCompletionService;
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
   private CompletionServiceClient client;
@@ -53,9 +55,11 @@ public class CompletionServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockCompletionService = new MockCompletionService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockCompletionService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockCompletionService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -88,6 +92,7 @@ public class CompletionServiceClientTest {
             .addAllCompletionResults(new ArrayList<CompleteQueryResponse.CompletionResult>())
             .setAttributionToken("attributionToken104706234")
             .addAllRecentSearchResults(new ArrayList<CompleteQueryResponse.RecentSearchResult>())
+            .putAllAttributeResults(new HashMap<String, CompleteQueryResponse.AttributeResult>())
             .build();
     mockCompletionService.addResponse(expectedResponse);
 
@@ -100,6 +105,7 @@ public class CompletionServiceClientTest {
             .setDeviceType("deviceType781190832")
             .setDataset("dataset1443214456")
             .setMaxSuggestions(618824852)
+            .setEnableAttributeSuggestions(true)
             .setEntity("entity-1298275357")
             .build();
 
@@ -117,6 +123,8 @@ public class CompletionServiceClientTest {
     Assert.assertEquals(request.getDeviceType(), actualRequest.getDeviceType());
     Assert.assertEquals(request.getDataset(), actualRequest.getDataset());
     Assert.assertEquals(request.getMaxSuggestions(), actualRequest.getMaxSuggestions());
+    Assert.assertEquals(
+        request.getEnableAttributeSuggestions(), actualRequest.getEnableAttributeSuggestions());
     Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -139,6 +147,7 @@ public class CompletionServiceClientTest {
               .setDeviceType("deviceType781190832")
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
+              .setEnableAttributeSuggestions(true)
               .setEntity("entity-1298275357")
               .build();
       client.completeQuery(request);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.privacy.dlp.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class DlpJobName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectDlpJobBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationDlpJobBuilder newProjectLocationDlpJobBuilder() {
     return new ProjectLocationDlpJobBuilder();
   }
@@ -98,12 +95,10 @@ public class DlpJobName implements ResourceName {
     return newBuilder().setProject(project).setDlpJob(dlpJob).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DlpJobName ofProjectDlpJobName(String project, String dlpJob) {
     return newBuilder().setProject(project).setDlpJob(dlpJob).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DlpJobName ofProjectLocationDlpJobName(
       String project, String location, String dlpJob) {
     return newProjectLocationDlpJobBuilder()
@@ -117,12 +112,10 @@ public class DlpJobName implements ResourceName {
     return newBuilder().setProject(project).setDlpJob(dlpJob).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectDlpJobName(String project, String dlpJob) {
     return newBuilder().setProject(project).setDlpJob(dlpJob).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDlpJobName(
       String project, String location, String dlpJob) {
     return newProjectLocationDlpJobBuilder()
@@ -260,7 +253,8 @@ public class DlpJobName implements ResourceName {
     private Builder(DlpJobName dlpJobName) {
       Preconditions.checkArgument(
           Objects.equals(dlpJobName.pathTemplate, PROJECT_DLP_JOB),
-          "toBuilder is only supported when DlpJobName has the pattern of projects/{project}/dlpJobs/{dlp_job}");
+          "toBuilder is only supported when DlpJobName has the pattern of"
+              + " projects/{project}/dlpJobs/{dlp_job}");
       this.project = dlpJobName.project;
       this.dlpJob = dlpJobName.dlpJob;
     }
@@ -271,7 +265,6 @@ public class DlpJobName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/dlpJobs/{dlp_job}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationDlpJobBuilder {
     private String project;
     private String location;

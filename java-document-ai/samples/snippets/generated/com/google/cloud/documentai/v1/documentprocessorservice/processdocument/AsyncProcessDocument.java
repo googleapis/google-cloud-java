@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.cloud.documentai.v1.ProcessRequest;
 import com.google.cloud.documentai.v1.ProcessResponse;
 import com.google.cloud.documentai.v1.ProcessorName;
 import com.google.protobuf.FieldMask;
+import java.util.HashMap;
 
 public class AsyncProcessDocument {
 
@@ -45,6 +46,8 @@ public class AsyncProcessDocument {
               .setSkipHumanReview(true)
               .setFieldMask(FieldMask.newBuilder().build())
               .setProcessOptions(ProcessOptions.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setImagelessMode(true)
               .build();
       ApiFuture<ProcessResponse> future =
           documentProcessorServiceClient.processDocumentCallable().futureCall(request);

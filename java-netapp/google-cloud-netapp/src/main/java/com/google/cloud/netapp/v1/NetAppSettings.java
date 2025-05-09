@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,12 @@
 package com.google.cloud.netapp.v1;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -63,7 +67,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getStoragePool to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getStoragePool:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -79,9 +85,45 @@ import javax.annotation.Generated;
  *             .getStoragePoolSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * NetAppSettings netAppSettings = netAppSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createStoragePool:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * NetAppSettings.Builder netAppSettingsBuilder = NetAppSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * netAppSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -130,6 +172,30 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
   public OperationCallSettings<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationSettings() {
     return ((NetAppStubSettings) getStubSettings()).deleteStoragePoolOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public UnaryCallSettings<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceSettings() {
+    return ((NetAppStubSettings) getStubSettings()).validateDirectoryServiceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to validateDirectoryService. */
+  public OperationCallSettings<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).validateDirectoryServiceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
+  public UnaryCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneSettings() {
+    return ((NetAppStubSettings) getStubSettings()).switchActiveReplicaZoneSettings();
+  }
+
+  /** Returns the object with the settings used for calls to switchActiveReplicaZone. */
+  public OperationCallSettings<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).switchActiveReplicaZoneOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listVolumes. */
@@ -423,6 +489,207 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return ((NetAppStubSettings) getStubSettings()).reverseReplicationDirectionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public UnaryCallSettings<EstablishPeeringRequest, Operation> establishPeeringSettings() {
+    return ((NetAppStubSettings) getStubSettings()).establishPeeringSettings();
+  }
+
+  /** Returns the object with the settings used for calls to establishPeering. */
+  public OperationCallSettings<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).establishPeeringOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public UnaryCallSettings<SyncReplicationRequest, Operation> syncReplicationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).syncReplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to syncReplication. */
+  public OperationCallSettings<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).syncReplicationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackupVault. */
+  public UnaryCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackupVault. */
+  public OperationCallSettings<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupVaultOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackupVault. */
+  public UnaryCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultSettings() {
+    return ((NetAppStubSettings) getStubSettings()).getBackupVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupVaults. */
+  public PagedCallSettings<
+          ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+      listBackupVaultsSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listBackupVaultsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupVault. */
+  public UnaryCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupVault. */
+  public OperationCallSettings<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupVaultOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupVault. */
+  public UnaryCallSettings<DeleteBackupVaultRequest, Operation> deleteBackupVaultSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupVaultSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupVault. */
+  public OperationCallSettings<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupVaultOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public OperationCallSettings<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).getBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public UnaryCallSettings<UpdateBackupRequest, Operation> updateBackupSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public OperationCallSettings<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPolicy. */
+  public UnaryCallSettings<CreateBackupPolicyRequest, Operation> createBackupPolicySettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackupPolicy. */
+  public OperationCallSettings<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      createBackupPolicyOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createBackupPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackupPolicy. */
+  public UnaryCallSettings<GetBackupPolicyRequest, BackupPolicy> getBackupPolicySettings() {
+    return ((NetAppStubSettings) getStubSettings()).getBackupPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupPolicies. */
+  public PagedCallSettings<
+          ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+      listBackupPoliciesSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listBackupPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPolicy. */
+  public UnaryCallSettings<UpdateBackupPolicyRequest, Operation> updateBackupPolicySettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupPolicy. */
+  public OperationCallSettings<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      updateBackupPolicyOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPolicy. */
+  public UnaryCallSettings<DeleteBackupPolicyRequest, Operation> deleteBackupPolicySettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackupPolicy. */
+  public OperationCallSettings<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+      deleteBackupPolicyOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteBackupPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listQuotaRules. */
+  public PagedCallSettings<
+          ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+      listQuotaRulesSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listQuotaRulesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getQuotaRule. */
+  public UnaryCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings() {
+    return ((NetAppStubSettings) getStubSettings()).getQuotaRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createQuotaRule. */
+  public UnaryCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createQuotaRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createQuotaRule. */
+  public OperationCallSettings<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).createQuotaRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateQuotaRule. */
+  public UnaryCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateQuotaRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateQuotaRule. */
+  public OperationCallSettings<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateQuotaRuleOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteQuotaRule. */
+  public UnaryCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteQuotaRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteQuotaRule. */
+  public OperationCallSettings<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).deleteQuotaRuleOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -474,7 +741,6 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return NetAppStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return NetAppStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -485,7 +751,6 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -527,7 +792,6 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
       return new Builder(NetAppStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(NetAppStubSettings.newHttpJsonBuilder());
     }
@@ -594,6 +858,31 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings() {
       return getStubSettingsBuilder().deleteStoragePoolOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public UnaryCallSettings.Builder<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceSettings() {
+      return getStubSettingsBuilder().validateDirectoryServiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateDirectoryService. */
+    public OperationCallSettings.Builder<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+        validateDirectoryServiceOperationSettings() {
+      return getStubSettingsBuilder().validateDirectoryServiceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
+    public UnaryCallSettings.Builder<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneSettings() {
+      return getStubSettingsBuilder().switchActiveReplicaZoneSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to switchActiveReplicaZone. */
+    public OperationCallSettings.Builder<
+            SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+        switchActiveReplicaZoneOperationSettings() {
+      return getStubSettingsBuilder().switchActiveReplicaZoneOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listVolumes. */
@@ -894,6 +1183,216 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings() {
       return getStubSettingsBuilder().reverseReplicationDirectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public UnaryCallSettings.Builder<EstablishPeeringRequest, Operation>
+        establishPeeringSettings() {
+      return getStubSettingsBuilder().establishPeeringSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to establishPeering. */
+    public OperationCallSettings.Builder<EstablishPeeringRequest, Replication, OperationMetadata>
+        establishPeeringOperationSettings() {
+      return getStubSettingsBuilder().establishPeeringOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public UnaryCallSettings.Builder<SyncReplicationRequest, Operation> syncReplicationSettings() {
+      return getStubSettingsBuilder().syncReplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to syncReplication. */
+    public OperationCallSettings.Builder<SyncReplicationRequest, Replication, OperationMetadata>
+        syncReplicationOperationSettings() {
+      return getStubSettingsBuilder().syncReplicationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupVault. */
+    public UnaryCallSettings.Builder<CreateBackupVaultRequest, Operation>
+        createBackupVaultSettings() {
+      return getStubSettingsBuilder().createBackupVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupVault. */
+    public OperationCallSettings.Builder<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+        createBackupVaultOperationSettings() {
+      return getStubSettingsBuilder().createBackupVaultOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupVault. */
+    public UnaryCallSettings.Builder<GetBackupVaultRequest, BackupVault> getBackupVaultSettings() {
+      return getStubSettingsBuilder().getBackupVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupVaults. */
+    public PagedCallSettings.Builder<
+            ListBackupVaultsRequest, ListBackupVaultsResponse, ListBackupVaultsPagedResponse>
+        listBackupVaultsSettings() {
+      return getStubSettingsBuilder().listBackupVaultsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupVault. */
+    public UnaryCallSettings.Builder<UpdateBackupVaultRequest, Operation>
+        updateBackupVaultSettings() {
+      return getStubSettingsBuilder().updateBackupVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupVault. */
+    public OperationCallSettings.Builder<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+        updateBackupVaultOperationSettings() {
+      return getStubSettingsBuilder().updateBackupVaultOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupVault. */
+    public UnaryCallSettings.Builder<DeleteBackupVaultRequest, Operation>
+        deleteBackupVaultSettings() {
+      return getStubSettingsBuilder().deleteBackupVaultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupVault. */
+    public OperationCallSettings.Builder<DeleteBackupVaultRequest, Empty, OperationMetadata>
+        deleteBackupVaultOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupVaultOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
+      return getStubSettingsBuilder().createBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
+        createBackupOperationSettings() {
+      return getStubSettingsBuilder().createBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getStubSettingsBuilder().getBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return getStubSettingsBuilder().listBackupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return getStubSettingsBuilder().deleteBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public UnaryCallSettings.Builder<UpdateBackupRequest, Operation> updateBackupSettings() {
+      return getStubSettingsBuilder().updateBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
+        updateBackupOperationSettings() {
+      return getStubSettingsBuilder().updateBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPolicy. */
+    public UnaryCallSettings.Builder<CreateBackupPolicyRequest, Operation>
+        createBackupPolicySettings() {
+      return getStubSettingsBuilder().createBackupPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackupPolicy. */
+    public OperationCallSettings.Builder<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+        createBackupPolicyOperationSettings() {
+      return getStubSettingsBuilder().createBackupPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupPolicy. */
+    public UnaryCallSettings.Builder<GetBackupPolicyRequest, BackupPolicy>
+        getBackupPolicySettings() {
+      return getStubSettingsBuilder().getBackupPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupPolicies. */
+    public PagedCallSettings.Builder<
+            ListBackupPoliciesRequest, ListBackupPoliciesResponse, ListBackupPoliciesPagedResponse>
+        listBackupPoliciesSettings() {
+      return getStubSettingsBuilder().listBackupPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPolicy. */
+    public UnaryCallSettings.Builder<UpdateBackupPolicyRequest, Operation>
+        updateBackupPolicySettings() {
+      return getStubSettingsBuilder().updateBackupPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupPolicy. */
+    public OperationCallSettings.Builder<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+        updateBackupPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateBackupPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPolicy. */
+    public UnaryCallSettings.Builder<DeleteBackupPolicyRequest, Operation>
+        deleteBackupPolicySettings() {
+      return getStubSettingsBuilder().deleteBackupPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackupPolicy. */
+    public OperationCallSettings.Builder<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+        deleteBackupPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteBackupPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listQuotaRules. */
+    public PagedCallSettings.Builder<
+            ListQuotaRulesRequest, ListQuotaRulesResponse, ListQuotaRulesPagedResponse>
+        listQuotaRulesSettings() {
+      return getStubSettingsBuilder().listQuotaRulesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getQuotaRule. */
+    public UnaryCallSettings.Builder<GetQuotaRuleRequest, QuotaRule> getQuotaRuleSettings() {
+      return getStubSettingsBuilder().getQuotaRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createQuotaRule. */
+    public UnaryCallSettings.Builder<CreateQuotaRuleRequest, Operation> createQuotaRuleSettings() {
+      return getStubSettingsBuilder().createQuotaRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createQuotaRule. */
+    public OperationCallSettings.Builder<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        createQuotaRuleOperationSettings() {
+      return getStubSettingsBuilder().createQuotaRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateQuotaRule. */
+    public UnaryCallSettings.Builder<UpdateQuotaRuleRequest, Operation> updateQuotaRuleSettings() {
+      return getStubSettingsBuilder().updateQuotaRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateQuotaRule. */
+    public OperationCallSettings.Builder<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+        updateQuotaRuleOperationSettings() {
+      return getStubSettingsBuilder().updateQuotaRuleOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQuotaRule. */
+    public UnaryCallSettings.Builder<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleSettings() {
+      return getStubSettingsBuilder().deleteQuotaRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQuotaRule. */
+    public OperationCallSettings.Builder<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+        deleteQuotaRuleOperationSettings() {
+      return getStubSettingsBuilder().deleteQuotaRuleOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

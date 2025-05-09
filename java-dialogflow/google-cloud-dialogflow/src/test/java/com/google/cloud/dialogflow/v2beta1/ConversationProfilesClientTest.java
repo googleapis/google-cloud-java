@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -249,6 +249,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -309,6 +310,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -365,6 +367,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -425,6 +428,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -485,6 +489,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -545,6 +550,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -679,6 +685,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -744,6 +751,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -823,6 +831,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")
@@ -888,6 +897,7 @@ public class ConversationProfilesClientTest {
             .setNotificationConfig(NotificationConfig.newBuilder().build())
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setNewMessageEventNotificationConfig(NotificationConfig.newBuilder().build())
+            .setNewRecognitionResultNotificationConfig(NotificationConfig.newBuilder().build())
             .setSttConfig(SpeechToTextConfig.newBuilder().build())
             .setLanguageCode("languageCode-2092349083")
             .setTimeZone("timeZone-2077180903")

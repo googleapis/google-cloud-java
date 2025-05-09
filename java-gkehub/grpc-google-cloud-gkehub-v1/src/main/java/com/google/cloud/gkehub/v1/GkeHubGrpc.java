@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -529,6 +529,19 @@ public final class GkeHubGrpc {
     return GkeHubStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static GkeHubBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<GkeHubBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GkeHubBlockingV2Stub>() {
+          @java.lang.Override
+          public GkeHubBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GkeHubBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return GkeHubBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -987,6 +1000,188 @@ public final class GkeHubGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service GkeHub.
+   *
+   * <pre>
+   * The GKE Hub service handles the registration of many Kubernetes clusters to
+   * Google Cloud, and the management of multi-cluster features over those
+   * clusters.
+   * The GKE Hub service operates on the following resources:
+   * * [Membership][google.cloud.gkehub.v1.Membership]
+   * * [Feature][google.cloud.gkehub.v1.Feature]
+   * GKE Hub is currently available in the global region and all regions in
+   * https://cloud.google.com/compute/docs/regions-zones. Feature is only
+   * available in global region while membership is global region and all the
+   * regions.
+   * **Membership management may be non-trivial:** it is recommended to use one
+   * of the Google-provided client libraries or tools where possible when working
+   * with Membership resources.
+   * </pre>
+   */
+  public static final class GkeHubBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<GkeHubBlockingV2Stub> {
+    private GkeHubBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected GkeHubBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new GkeHubBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Memberships in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListMembershipsResponse listMemberships(
+        com.google.cloud.gkehub.v1.ListMembershipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMembershipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Features in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.ListFeaturesResponse listFeatures(
+        com.google.cloud.gkehub.v1.ListFeaturesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFeaturesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a Membership.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.Membership getMembership(
+        com.google.cloud.gkehub.v1.GetMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Feature.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.Feature getFeature(
+        com.google.cloud.gkehub.v1.GetFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To register other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMembership(
+        com.google.cloud.gkehub.v1.CreateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a new Feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createFeature(
+        com.google.cloud.gkehub.v1.CreateFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a Membership.
+     * **This is currently only supported for GKE clusters on Google Cloud**.
+     * To unregister other clusters, follow the instructions at
+     * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMembership(
+        com.google.cloud.gkehub.v1.DeleteMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a Feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFeature(
+        com.google.cloud.gkehub.v1.DeleteFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing Membership.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMembership(
+        com.google.cloud.gkehub.v1.UpdateMembershipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMembershipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing Feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateFeature(
+        com.google.cloud.gkehub.v1.UpdateFeatureRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFeatureMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates the manifest for deployment of the GKE connect agent.
+     * **This method is used internally by Google-provided libraries.**
+     * Most clients should not need to call this method directly.
+     * </pre>
+     */
+    public com.google.cloud.gkehub.v1.GenerateConnectManifestResponse generateConnectManifest(
+        com.google.cloud.gkehub.v1.GenerateConnectManifestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateConnectManifestMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service GkeHub.
    *
    * <pre>
    * The GKE Hub service handles the registration of many Kubernetes clusters to

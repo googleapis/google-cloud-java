@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ import static com.google.cloud.discoveryengine.v1.DocumentServiceClient.ListDocu
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataRequest;
+import com.google.cloud.discoveryengine.v1.BatchGetDocumentsMetadataResponse;
 import com.google.cloud.discoveryengine.v1.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1.Document;
@@ -97,6 +99,11 @@ public abstract class DocumentServiceStub implements BackgroundResource {
 
   public UnaryCallable<PurgeDocumentsRequest, Operation> purgeDocumentsCallable() {
     throw new UnsupportedOperationException("Not implemented: purgeDocumentsCallable()");
+  }
+
+  public UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchGetDocumentsMetadataCallable()");
   }
 
   @Override

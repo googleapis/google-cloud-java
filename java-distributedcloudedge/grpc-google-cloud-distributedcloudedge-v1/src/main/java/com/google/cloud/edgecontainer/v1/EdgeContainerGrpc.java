@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -217,6 +217,50 @@ public final class EdgeContainerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.edgecontainer.v1.UpgradeClusterRequest, com.google.longrunning.Operation>
+      getUpgradeClusterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpgradeCluster",
+      requestType = com.google.cloud.edgecontainer.v1.UpgradeClusterRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.edgecontainer.v1.UpgradeClusterRequest, com.google.longrunning.Operation>
+      getUpgradeClusterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.edgecontainer.v1.UpgradeClusterRequest,
+            com.google.longrunning.Operation>
+        getUpgradeClusterMethod;
+    if ((getUpgradeClusterMethod = EdgeContainerGrpc.getUpgradeClusterMethod) == null) {
+      synchronized (EdgeContainerGrpc.class) {
+        if ((getUpgradeClusterMethod = EdgeContainerGrpc.getUpgradeClusterMethod) == null) {
+          EdgeContainerGrpc.getUpgradeClusterMethod =
+              getUpgradeClusterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.edgecontainer.v1.UpgradeClusterRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpgradeCluster"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.edgecontainer.v1.UpgradeClusterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EdgeContainerMethodDescriptorSupplier("UpgradeCluster"))
+                      .build();
+        }
+      }
+    }
+    return getUpgradeClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.edgecontainer.v1.DeleteClusterRequest, com.google.longrunning.Operation>
       getDeleteClusterMethod;
 
@@ -307,6 +351,57 @@ public final class EdgeContainerGrpc {
       }
     }
     return getGenerateAccessTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest,
+          com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>
+      getGenerateOfflineCredentialMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateOfflineCredential",
+      requestType = com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest.class,
+      responseType = com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest,
+          com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>
+      getGenerateOfflineCredentialMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest,
+            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>
+        getGenerateOfflineCredentialMethod;
+    if ((getGenerateOfflineCredentialMethod = EdgeContainerGrpc.getGenerateOfflineCredentialMethod)
+        == null) {
+      synchronized (EdgeContainerGrpc.class) {
+        if ((getGenerateOfflineCredentialMethod =
+                EdgeContainerGrpc.getGenerateOfflineCredentialMethod)
+            == null) {
+          EdgeContainerGrpc.getGenerateOfflineCredentialMethod =
+              getGenerateOfflineCredentialMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest,
+                          com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateOfflineCredential"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EdgeContainerMethodDescriptorSupplier("GenerateOfflineCredential"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateOfflineCredentialMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -814,6 +909,52 @@ public final class EdgeContainerGrpc {
     return getDeleteVpnConnectionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.edgecontainer.v1.GetServerConfigRequest,
+          com.google.cloud.edgecontainer.v1.ServerConfig>
+      getGetServerConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetServerConfig",
+      requestType = com.google.cloud.edgecontainer.v1.GetServerConfigRequest.class,
+      responseType = com.google.cloud.edgecontainer.v1.ServerConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.edgecontainer.v1.GetServerConfigRequest,
+          com.google.cloud.edgecontainer.v1.ServerConfig>
+      getGetServerConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.edgecontainer.v1.GetServerConfigRequest,
+            com.google.cloud.edgecontainer.v1.ServerConfig>
+        getGetServerConfigMethod;
+    if ((getGetServerConfigMethod = EdgeContainerGrpc.getGetServerConfigMethod) == null) {
+      synchronized (EdgeContainerGrpc.class) {
+        if ((getGetServerConfigMethod = EdgeContainerGrpc.getGetServerConfigMethod) == null) {
+          EdgeContainerGrpc.getGetServerConfigMethod =
+              getGetServerConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.edgecontainer.v1.GetServerConfigRequest,
+                          com.google.cloud.edgecontainer.v1.ServerConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetServerConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.edgecontainer.v1.GetServerConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.edgecontainer.v1.ServerConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EdgeContainerMethodDescriptorSupplier("GetServerConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetServerConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EdgeContainerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EdgeContainerStub> factory =
@@ -825,6 +966,19 @@ public final class EdgeContainerGrpc {
           }
         };
     return EdgeContainerStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EdgeContainerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EdgeContainerBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EdgeContainerBlockingV2Stub>() {
+          @java.lang.Override
+          public EdgeContainerBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EdgeContainerBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EdgeContainerBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -925,6 +1079,20 @@ public final class EdgeContainerGrpc {
      *
      *
      * <pre>
+     * Upgrades a single cluster.
+     * </pre>
+     */
+    default void upgradeCluster(
+        com.google.cloud.edgecontainer.v1.UpgradeClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpgradeClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Cluster.
      * </pre>
      */
@@ -948,6 +1116,22 @@ public final class EdgeContainerGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateAccessTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an offline credential for a Cluster.
+     * </pre>
+     */
+    default void generateOfflineCredential(
+        com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateOfflineCredentialMethod(), responseObserver);
     }
 
     /**
@@ -1106,6 +1290,21 @@ public final class EdgeContainerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteVpnConnectionMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the server config.
+     * </pre>
+     */
+    default void getServerConfig(
+        com.google.cloud.edgecontainer.v1.GetServerConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.edgecontainer.v1.ServerConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetServerConfigMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1211,6 +1410,22 @@ public final class EdgeContainerGrpc {
      *
      *
      * <pre>
+     * Upgrades a single cluster.
+     * </pre>
+     */
+    public void upgradeCluster(
+        com.google.cloud.edgecontainer.v1.UpgradeClusterRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpgradeClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Cluster.
      * </pre>
      */
@@ -1236,6 +1451,24 @@ public final class EdgeContainerGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateAccessTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an offline credential for a Cluster.
+     * </pre>
+     */
+    public void generateOfflineCredential(
+        com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateOfflineCredentialMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1417,6 +1650,23 @@ public final class EdgeContainerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the server config.
+     * </pre>
+     */
+    public void getServerConfig(
+        com.google.cloud.edgecontainer.v1.GetServerConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.edgecontainer.v1.ServerConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetServerConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1427,16 +1677,16 @@ public final class EdgeContainerGrpc {
    * Cloud deployments.
    * </pre>
    */
-  public static final class EdgeContainerBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<EdgeContainerBlockingStub> {
-    private EdgeContainerBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+  public static final class EdgeContainerBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EdgeContainerBlockingV2Stub> {
+    private EdgeContainerBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected EdgeContainerBlockingStub build(
+    protected EdgeContainerBlockingV2Stub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new EdgeContainerBlockingStub(channel, callOptions);
+      return new EdgeContainerBlockingV2Stub(channel, callOptions);
     }
 
     /**
@@ -1495,6 +1745,19 @@ public final class EdgeContainerGrpc {
      *
      *
      * <pre>
+     * Upgrades a single cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeCluster(
+        com.google.cloud.edgecontainer.v1.UpgradeClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpgradeClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Cluster.
      * </pre>
      */
@@ -1515,6 +1778,20 @@ public final class EdgeContainerGrpc {
         com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an offline credential for a Cluster.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse
+        generateOfflineCredential(
+            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateOfflineCredentialMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1659,6 +1936,301 @@ public final class EdgeContainerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteVpnConnectionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the server config.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ServerConfig getServerConfig(
+        com.google.cloud.edgecontainer.v1.GetServerConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service EdgeContainer.
+   *
+   * <pre>
+   * EdgeContainer API provides management of Kubernetes Clusters on Google Edge
+   * Cloud deployments.
+   * </pre>
+   */
+  public static final class EdgeContainerBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<EdgeContainerBlockingStub> {
+    private EdgeContainerBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EdgeContainerBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EdgeContainerBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Clusters in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ListClustersResponse listClusters(
+        com.google.cloud.edgecontainer.v1.ListClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Cluster.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.Cluster getCluster(
+        com.google.cloud.edgecontainer.v1.GetClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Cluster in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCluster(
+        com.google.cloud.edgecontainer.v1.CreateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCluster(
+        com.google.cloud.edgecontainer.v1.UpdateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrades a single cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeCluster(
+        com.google.cloud.edgecontainer.v1.UpgradeClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpgradeClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCluster(
+        com.google.cloud.edgecontainer.v1.DeleteClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an access token for a Cluster.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse generateAccessToken(
+        com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAccessTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an offline credential for a Cluster.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse
+        generateOfflineCredential(
+            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateOfflineCredentialMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists NodePools in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ListNodePoolsResponse listNodePools(
+        com.google.cloud.edgecontainer.v1.ListNodePoolsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodePoolsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single NodePool.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.NodePool getNodePool(
+        com.google.cloud.edgecontainer.v1.GetNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new NodePool in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNodePool(
+        com.google.cloud.edgecontainer.v1.CreateNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single NodePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateNodePool(
+        com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single NodePool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNodePool(
+        com.google.cloud.edgecontainer.v1.DeleteNodePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNodePoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Machines in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ListMachinesResponse listMachines(
+        com.google.cloud.edgecontainer.v1.ListMachinesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMachinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Machine.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.Machine getMachine(
+        com.google.cloud.edgecontainer.v1.GetMachineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMachineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists VPN connections in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ListVpnConnectionsResponse listVpnConnections(
+        com.google.cloud.edgecontainer.v1.ListVpnConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVpnConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single VPN connection.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.VpnConnection getVpnConnection(
+        com.google.cloud.edgecontainer.v1.GetVpnConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVpnConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new VPN connection in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createVpnConnection(
+        com.google.cloud.edgecontainer.v1.CreateVpnConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateVpnConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single VPN connection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteVpnConnection(
+        com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteVpnConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the server config.
+     * </pre>
+     */
+    public com.google.cloud.edgecontainer.v1.ServerConfig getServerConfig(
+        com.google.cloud.edgecontainer.v1.GetServerConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServerConfigMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1739,6 +2311,19 @@ public final class EdgeContainerGrpc {
      *
      *
      * <pre>
+     * Upgrades a single cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        upgradeCluster(com.google.cloud.edgecontainer.v1.UpgradeClusterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpgradeClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Cluster.
      * </pre>
      */
@@ -1760,6 +2345,21 @@ public final class EdgeContainerGrpc {
         generateAccessToken(com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateAccessTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates an offline credential for a Cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>
+        generateOfflineCredential(
+            com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateOfflineCredentialMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1910,25 +2510,42 @@ public final class EdgeContainerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteVpnConnectionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the server config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.edgecontainer.v1.ServerConfig>
+        getServerConfig(com.google.cloud.edgecontainer.v1.GetServerConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetServerConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
   private static final int METHODID_GET_CLUSTER = 1;
   private static final int METHODID_CREATE_CLUSTER = 2;
   private static final int METHODID_UPDATE_CLUSTER = 3;
-  private static final int METHODID_DELETE_CLUSTER = 4;
-  private static final int METHODID_GENERATE_ACCESS_TOKEN = 5;
-  private static final int METHODID_LIST_NODE_POOLS = 6;
-  private static final int METHODID_GET_NODE_POOL = 7;
-  private static final int METHODID_CREATE_NODE_POOL = 8;
-  private static final int METHODID_UPDATE_NODE_POOL = 9;
-  private static final int METHODID_DELETE_NODE_POOL = 10;
-  private static final int METHODID_LIST_MACHINES = 11;
-  private static final int METHODID_GET_MACHINE = 12;
-  private static final int METHODID_LIST_VPN_CONNECTIONS = 13;
-  private static final int METHODID_GET_VPN_CONNECTION = 14;
-  private static final int METHODID_CREATE_VPN_CONNECTION = 15;
-  private static final int METHODID_DELETE_VPN_CONNECTION = 16;
+  private static final int METHODID_UPGRADE_CLUSTER = 4;
+  private static final int METHODID_DELETE_CLUSTER = 5;
+  private static final int METHODID_GENERATE_ACCESS_TOKEN = 6;
+  private static final int METHODID_GENERATE_OFFLINE_CREDENTIAL = 7;
+  private static final int METHODID_LIST_NODE_POOLS = 8;
+  private static final int METHODID_GET_NODE_POOL = 9;
+  private static final int METHODID_CREATE_NODE_POOL = 10;
+  private static final int METHODID_UPDATE_NODE_POOL = 11;
+  private static final int METHODID_DELETE_NODE_POOL = 12;
+  private static final int METHODID_LIST_MACHINES = 13;
+  private static final int METHODID_GET_MACHINE = 14;
+  private static final int METHODID_LIST_VPN_CONNECTIONS = 15;
+  private static final int METHODID_GET_VPN_CONNECTION = 16;
+  private static final int METHODID_CREATE_VPN_CONNECTION = 17;
+  private static final int METHODID_DELETE_VPN_CONNECTION = 18;
+  private static final int METHODID_GET_SERVER_CONFIG = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1969,6 +2586,11 @@ public final class EdgeContainerGrpc {
               (com.google.cloud.edgecontainer.v1.UpdateClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPGRADE_CLUSTER:
+          serviceImpl.upgradeCluster(
+              (com.google.cloud.edgecontainer.v1.UpgradeClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_CLUSTER:
           serviceImpl.deleteCluster(
               (com.google.cloud.edgecontainer.v1.DeleteClusterRequest) request,
@@ -1979,6 +2601,13 @@ public final class EdgeContainerGrpc {
               (com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_OFFLINE_CREDENTIAL:
+          serviceImpl.generateOfflineCredential(
+              (com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_NODE_POOLS:
@@ -2043,6 +2672,12 @@ public final class EdgeContainerGrpc {
               (com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_GET_SERVER_CONFIG:
+          serviceImpl.getServerConfig(
+              (com.google.cloud.edgecontainer.v1.GetServerConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.edgecontainer.v1.ServerConfig>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2087,6 +2722,12 @@ public final class EdgeContainerGrpc {
                     com.google.cloud.edgecontainer.v1.UpdateClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_CLUSTER)))
         .addMethod(
+            getUpgradeClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.edgecontainer.v1.UpgradeClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPGRADE_CLUSTER)))
+        .addMethod(
             getDeleteClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2099,6 +2740,13 @@ public final class EdgeContainerGrpc {
                     com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest,
                     com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse>(
                     service, METHODID_GENERATE_ACCESS_TOKEN)))
+        .addMethod(
+            getGenerateOfflineCredentialMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest,
+                    com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse>(
+                    service, METHODID_GENERATE_OFFLINE_CREDENTIAL)))
         .addMethod(
             getListNodePoolsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2169,6 +2817,13 @@ public final class EdgeContainerGrpc {
                 new MethodHandlers<
                     com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_VPN_CONNECTION)))
+        .addMethod(
+            getGetServerConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.edgecontainer.v1.GetServerConfigRequest,
+                    com.google.cloud.edgecontainer.v1.ServerConfig>(
+                    service, METHODID_GET_SERVER_CONFIG)))
         .build();
   }
 
@@ -2224,8 +2879,10 @@ public final class EdgeContainerGrpc {
                       .addMethod(getGetClusterMethod())
                       .addMethod(getCreateClusterMethod())
                       .addMethod(getUpdateClusterMethod())
+                      .addMethod(getUpgradeClusterMethod())
                       .addMethod(getDeleteClusterMethod())
                       .addMethod(getGenerateAccessTokenMethod())
+                      .addMethod(getGenerateOfflineCredentialMethod())
                       .addMethod(getListNodePoolsMethod())
                       .addMethod(getGetNodePoolMethod())
                       .addMethod(getCreateNodePoolMethod())
@@ -2237,6 +2894,7 @@ public final class EdgeContainerGrpc {
                       .addMethod(getGetVpnConnectionMethod())
                       .addMethod(getCreateVpnConnectionMethod())
                       .addMethod(getDeleteVpnConnectionMethod())
+                      .addMethod(getGetServerConfigMethod())
                       .build();
         }
       }

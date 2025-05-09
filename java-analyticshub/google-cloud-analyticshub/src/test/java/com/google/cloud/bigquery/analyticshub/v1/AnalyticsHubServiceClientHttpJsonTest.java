@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -259,6 +259,8 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -310,6 +312,8 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -361,6 +365,8 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -414,6 +420,8 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -467,6 +475,8 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -480,6 +490,8 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
             .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -519,6 +531,8 @@ public class AnalyticsHubServiceClientHttpJsonTest {
               .setListingCount(-1101038700)
               .setIcon(ByteString.EMPTY)
               .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
+              .setDiscoveryType(DiscoveryType.forNumber(0))
+              .setLogLinkedDatasetQueryUserEmail(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataExchange(dataExchange, updateMask);
@@ -726,6 +740,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -782,6 +799,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -840,6 +860,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -898,6 +921,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -957,6 +983,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -975,6 +1004,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+            .setDiscoveryType(DiscoveryType.forNumber(0))
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1019,6 +1051,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
               .setPublisher(Publisher.newBuilder().build())
               .setRequestAccess("requestAccess871967955")
               .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
+              .setDiscoveryType(DiscoveryType.forNumber(0))
+              .setResourceType(SharedResourceType.forNumber(0))
+              .setLogLinkedDatasetQueryUserEmail(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateListing(listing, updateMask);
@@ -1407,6 +1442,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setOrganizationDisplayName("organizationDisplayName-1353817286")
             .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
             .setSubscriberContact("subscriberContact-847205736")
+            .addAllLinkedResources(new ArrayList<Subscription.LinkedResource>())
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1457,6 +1495,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setOrganizationDisplayName("organizationDisplayName-1353817286")
             .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
             .setSubscriberContact("subscriberContact-847205736")
+            .addAllLinkedResources(new ArrayList<Subscription.LinkedResource>())
+            .setResourceType(SharedResourceType.forNumber(0))
+            .setLogLinkedDatasetQueryUserEmail(true)
             .build();
     mockService.addResponse(expectedResponse);
 

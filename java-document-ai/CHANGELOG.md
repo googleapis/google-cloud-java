@@ -1,5 +1,205 @@
 # Changelog
 
+## 2.66.0 (2025-05-06)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.46.3 ([#11531](https://github.com/googleapis/google-cloud-java/issues/11531)) ([5f9a9e7](https://github.com/googleapis/google-cloud-java/commit/5f9a9e73df5e44ae38a8d18780873b7896d31c04))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#11561](https://github.com/googleapis/google-cloud-java/issues/11561)) ([9e84230](https://github.com/googleapis/google-cloud-java/commit/9e842300aa2e3e654785cc929aef0d6bb9a1a0a9))
+
+
+## 2.63.0 (2025-02-26)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.44.0 ([#11456](https://github.com/googleapis/google-cloud-java/issues/11456)) ([6b0ad6f](https://github.com/googleapis/google-cloud-java/commit/6b0ad6f8243cc60de7ee608237fa61445f0b0526))
+
+
+## 2.62.0 (2025-02-11)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.43.0 ([#11426](https://github.com/googleapis/google-cloud-java/issues/11426)) ([afdc294](https://github.com/googleapis/google-cloud-java/commit/afdc2944304a077ce4cbdd8c7675f1ca707b2be0))
+
+
+## 2.61.0 (2025-01-29)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.42.0 ([#11410](https://github.com/googleapis/google-cloud-java/issues/11410)) ([34dfd0d](https://github.com/googleapis/google-cloud-java/commit/34dfd0dc9c5ca042aca0778e8d34b2ca072bfeb1))
+
+
+## 2.60.0 (2025-01-09)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.1 ([#11382](https://github.com/googleapis/google-cloud-java/issues/11382)) ([a4fd23c](https://github.com/googleapis/google-cloud-java/commit/a4fd23ce1dfa364959de1e97e3b769996f3c7d0d))
+
+
+## 2.59.0 (2024-12-13)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.41.0 ([#11349](https://github.com/googleapis/google-cloud-java/issues/11349)) ([9bb6334](https://github.com/googleapis/google-cloud-java/commit/9bb6334458fdec53ba9fdec501de534d6516f102))
+
+
+## 2.58.0 (2024-11-18)
+
+* No change
+
+
+## 2.57.0 (2024-10-28)
+
+* No change
+
+
+## 2.56.0 (2024-10-09)
+
+### ⚠ BREAKING CHANGES
+
+* remove deprecated v1beta1 and v1beta2 ([#11228](https://github.com/googleapis/google-cloud-java/issues/11228))
+
+### Features
+
+* remove deprecated v1beta1 and v1beta2 ([#11228](https://github.com/googleapis/google-cloud-java/issues/11228)) ([5876f54](https://github.com/googleapis/google-cloud-java/commit/5876f54b761610596aa0fe76cc78e47f0a9bf122))
+
+
+
+## 2.54.0 (2024-09-26)
+
+* No change
+
+
+## 2.53.0 (2024-09-11)
+
+* No change
+
+
+## 2.52.0 (2024-08-21)
+
+* No change
+
+
+## 2.51.0 (2024-07-31)
+
+* No change
+
+
+## 2.50.0 (2024-06-27)
+
+* No change
+
+
+## 2.49.0 (None)
+
+* No change
+
+
+## 2.48.0 (2024-05-23)
+
+* No change
+
+
+## 2.47.0 (2024-05-08)
+
+* No change
+
+
+## 2.46.0 (2024-04-25)
+
+* No change
+
+
+## 2.45.0 (2024-04-04)
+
+* No change
+
+
+## 2.43.0 (2024-03-28)
+
+* No change
+
+
+## 2.42.0 (2024-03-22)
+
+* No change
+
+
+## 2.41.0 (2024-03-06)
+
+* No change
+
+
+## 2.40.0 (2024-02-20)
+
+### Features
+
+* A new field `schema_override` is added to message `ProcessOptions` ([#10386](https://github.com/googleapis/google-cloud-java/issues/10386)) ([728f841](https://github.com/googleapis/google-cloud-java/commit/728f84161537795d9d4fd551bf680afe16e87e3a))
+* updated comments ([#10392](https://github.com/googleapis/google-cloud-java/issues/10392)) ([71e4fdb](https://github.com/googleapis/google-cloud-java/commit/71e4fdb7c77b6b7b65c5aa2a90d0aef728bec22d))
+
+
+
+## 2.39.0 (2024-02-09)
+
+### Features
+
+* expose model_type in v1 processor, so that user can see the model_type after get or list processor version ([#10322](https://github.com/googleapis/google-cloud-java/issues/10322)) ([2dd5b35](https://github.com/googleapis/google-cloud-java/commit/2dd5b3512a1f9dde2e54d711a4984d5c6bdedf3d))
+
+
+
+## 2.38.0 (2024-01-23)
+
+* No change
+
+
+## 2.37.0 (2024-01-10)
+
+### Features
+
+* Clarify Properties documentation ([#10145](https://github.com/googleapis/google-cloud-java/issues/10145)) ([e95f706](https://github.com/googleapis/google-cloud-java/commit/e95f7060a9175a5570578c70b17586e80629c2fc))
+
+
+
+## 2.36.0 (2023-12-12)
+
+* No change
+
+
+## 2.35.0 (2023-12-04)
+
+### Features
+
+* update comment for ProcessOptions.page_range ([#10076](https://github.com/googleapis/google-cloud-java/issues/10076)) ([84fe051](https://github.com/googleapis/google-cloud-java/commit/84fe051733c88f13d0db34080b3191b09c742527))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.20.0 ([#10093](https://github.com/googleapis/google-cloud-java/issues/10093)) ([91a4e4e](https://github.com/googleapis/google-cloud-java/commit/91a4e4e20252f667b8fc6bda0d9ceaf947348274))
+
+
+## 2.34.0 (2023-11-06)
+
+### Features
+
+* updated comments ([#10015](https://github.com/googleapis/google-cloud-java/issues/10015)) ([2bd259f](https://github.com/googleapis/google-cloud-java/commit/2bd259f0bd17e9e059b4a1d7cd2acae6b5a254e8))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.1 ([#10014](https://github.com/googleapis/google-cloud-java/issues/10014)) ([7b1b742](https://github.com/googleapis/google-cloud-java/commit/7b1b742dab21139398032549fb03e127b1a03841))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.19.0 ([#10018](https://github.com/googleapis/google-cloud-java/issues/10018)) ([d9b705a](https://github.com/googleapis/google-cloud-java/commit/d9b705aaed8ea4447c7a02d5c54300f8909a30b1))
+
+
+## 2.33.0 (2023-10-25)
+
+### Features
+
+* minor clarification on fields related to page range ([#9955](https://github.com/googleapis/google-cloud-java/issues/9955)) ([ff54c9f](https://github.com/googleapis/google-cloud-java/commit/ff54c9fc8293782dc10af0622ea79f41dbcb007b))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.0 ([#9969](https://github.com/googleapis/google-cloud-java/issues/9969)) ([9e2be39](https://github.com/googleapis/google-cloud-java/commit/9e2be39c5b2d7764421325f65a6d0d06351fcda5))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#9984](https://github.com/googleapis/google-cloud-java/issues/9984)) ([9814dc0](https://github.com/googleapis/google-cloud-java/commit/9814dc092ad7edb7b1b21f87fa48d76a2423d731))
+
+
 ## 2.32.0 (2023-10-11)
 
 ### Dependencies

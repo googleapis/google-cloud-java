@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.texttospeech.v1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -26,10 +25,13 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.texttospeech.v1.ListVoicesRequest;
 import com.google.cloud.texttospeech.v1.ListVoicesResponse;
+import com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest;
+import com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse;
 import com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest;
 import com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse;
 import com.google.protobuf.TypeRegistry;
@@ -48,7 +50,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonTextToSpeechStub extends TextToSpeechStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -209,6 +210,14 @@ public class HttpJsonTextToSpeechStub extends TextToSpeechStub {
   public UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {
     return synthesizeSpeechCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<StreamingSynthesizeRequest, StreamingSynthesizeResponse>
+      streamingSynthesizeCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingSynthesizeCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override

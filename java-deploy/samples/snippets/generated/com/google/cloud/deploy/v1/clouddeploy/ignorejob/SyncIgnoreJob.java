@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.google.cloud.deploy.v1.CloudDeployClient;
 import com.google.cloud.deploy.v1.IgnoreJobRequest;
 import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.RolloutName;
+import java.util.ArrayList;
 
 public class SyncIgnoreJob {
 
@@ -47,6 +48,7 @@ public class SyncIgnoreJob {
                       .toString())
               .setPhaseId("phaseId-608264202")
               .setJobId("jobId101296568")
+              .addAllOverrideDeployPolicy(new ArrayList<String>())
               .build();
       IgnoreJobResponse response = cloudDeployClient.ignoreJob(request);
     }

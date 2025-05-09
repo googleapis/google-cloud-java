@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -524,6 +524,19 @@ public final class ProjectsGrpc {
           }
         };
     return ProjectsStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ProjectsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ProjectsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ProjectsBlockingV2Stub>() {
+          @java.lang.Override
+          public ProjectsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ProjectsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ProjectsBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -1132,6 +1145,267 @@ public final class ProjectsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Projects.
+   *
+   * <pre>
+   * Manages Google Cloud Projects.
+   * </pre>
+   */
+  public static final class ProjectsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ProjectsBlockingV2Stub> {
+    private ProjectsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ProjectsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ProjectsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the project identified by the specified `name` (for example,
+     * `projects/415104041262`).
+     * The caller must have `resourcemanager.projects.get` permission
+     * for this project.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.Project getProject(
+        com.google.cloud.resourcemanager.v3.GetProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists projects that are direct children of the specified folder or
+     * organization resource. `list()` provides a strongly consistent view of the
+     * projects underneath the specified parent resource. `list()` returns
+     * projects sorted based upon the (ascending) lexical ordering of their
+     * `display_name`. The caller must have `resourcemanager.projects.list`
+     * permission on the identified parent.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.ListProjectsResponse listProjects(
+        com.google.cloud.resourcemanager.v3.ListProjectsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProjectsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search for projects that the caller has both `resourcemanager.projects.get`
+     * permission on, and also satisfy the specified query.
+     * This method returns projects in an unspecified order.
+     * This method is eventually consistent with project mutations; this means
+     * that a newly created project may not appear in the results or recent
+     * updates to an existing project may not be reflected in the results. To
+     * retrieve the latest state of a project, use the
+     * [GetProject][google.cloud.resourcemanager.v3.Projects.GetProject] method.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.SearchProjectsResponse searchProjects(
+        com.google.cloud.resourcemanager.v3.SearchProjectsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchProjectsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Request that a new project be created. The result is an `Operation` which
+     * can be used to track the creation process. This process usually takes a few
+     * seconds, but can sometimes take much longer. The tracking `Operation` is
+     * automatically deleted after a few hours, so there is no need to call
+     * `DeleteOperation`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createProject(
+        com.google.cloud.resourcemanager.v3.CreateProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the `display_name` and labels of the project identified by the
+     * specified `name` (for example, `projects/415104041262`). Deleting all
+     * labels requires an update mask for labels field.
+     * The caller must have `resourcemanager.projects.update` permission for this
+     * project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateProject(
+        com.google.cloud.resourcemanager.v3.UpdateProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Move a project to another place in your resource hierarchy, under a new
+     * resource parent.
+     * Returns an operation which can be used to track the process of the project
+     * move workflow.
+     * Upon success, the `Operation.response` field will be populated with the
+     * moved project.
+     * The caller must have `resourcemanager.projects.move` permission on the
+     * project, on the project's current and proposed new parent.
+     * If project has no current parent, or it currently does not have an
+     * associated organization resource, you will also need the
+     * `resourcemanager.projects.setIamPolicy` permission in the project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation moveProject(
+        com.google.cloud.resourcemanager.v3.MoveProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks the project identified by the specified
+     * `name` (for example, `projects/415104041262`) for deletion.
+     * This method will only affect the project if it has a lifecycle state of
+     * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE].
+     * This method changes the Project's lifecycle state from
+     * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE]
+     * to
+     * [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
+     * The deletion starts at an unspecified time,
+     * at which point the Project is no longer accessible.
+     * Until the deletion completes, you can check the lifecycle state
+     * checked by retrieving the project with [GetProject]
+     * [google.cloud.resourcemanager.v3.Projects.GetProject],
+     * and the project remains visible to [ListProjects]
+     * [google.cloud.resourcemanager.v3.Projects.ListProjects].
+     * However, you cannot update the project.
+     * After the deletion completes, the project is not retrievable by
+     * the  [GetProject]
+     * [google.cloud.resourcemanager.v3.Projects.GetProject],
+     * [ListProjects]
+     * [google.cloud.resourcemanager.v3.Projects.ListProjects], and
+     * [SearchProjects][google.cloud.resourcemanager.v3.Projects.SearchProjects]
+     * methods.
+     * This method behaves idempotently, such that deleting a `DELETE_REQUESTED`
+     * project will not cause an error, but also won't do anything.
+     * The caller must have `resourcemanager.projects.delete` permissions for this
+     * project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProject(
+        com.google.cloud.resourcemanager.v3.DeleteProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores the project identified by the specified
+     * `name` (for example, `projects/415104041262`).
+     * You can only use this method for a project that has a lifecycle state of
+     * [DELETE_REQUESTED]
+     * [Projects.State.DELETE_REQUESTED].
+     * After deletion starts, the project cannot be restored.
+     * The caller must have `resourcemanager.projects.undelete` permission for
+     * this project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeleteProject(
+        com.google.cloud.resourcemanager.v3.UndeleteProjectRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteProjectMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
+     * Permission is denied if the policy or the resource do not exist.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
+     * CAUTION: This method will replace the existing policy, and cannot be used
+     * to append additional IAM settings.
+     * Note: Removing service accounts from policies or changing their roles can
+     * render services completely inoperable. It is important to understand how
+     * the service account is being used before removing or updating its roles.
+     * The following constraints apply when using `setIamPolicy()`:
+     * + Project does not support `allUsers` and `allAuthenticatedUsers` as
+     * `members` in a `Binding` of a `Policy`.
+     * + The owner role can be granted to a `user`, `serviceAccount`, or a group
+     * that is part of an organization. For example,
+     * group&#64;myownpersonaldomain.com could be added as an owner to a project in
+     * the myownpersonaldomain.com organization, but not the examplepetstore.com
+     * organization.
+     * + Service accounts can be made owners of a project directly
+     * without any restrictions. However, to be added as an owner, a user must be
+     * invited using the Cloud Platform console and must accept the invitation.
+     * + A user cannot be granted the owner role using `setIamPolicy()`. The user
+     * must be granted the owner role using the Cloud Platform Console and must
+     * explicitly accept the invitation.
+     * + Invitations to grant the owner role cannot be sent using
+     * `setIamPolicy()`;
+     * they must be sent only using the Cloud Platform Console.
+     * + If the project is not part of an organization, there must be at least
+     * one owner who has accepted the Terms of Service (ToS) agreement in the
+     * policy. Calling `setIamPolicy()` to remove the last ToS-accepted owner
+     * from the policy will fail. This restriction also applies to legacy
+     * projects that no longer have owners who have accepted the ToS. Edits to
+     * IAM policies will be rejected until the lack of a ToS-accepting owner is
+     * rectified. If the project is part of an organization, you can remove all
+     * owners, potentially making the organization inaccessible.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123..
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Projects.
    *
    * <pre>
    * Manages Google Cloud Projects.

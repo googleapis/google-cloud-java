@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import com.google.cloud.discoveryengine.v1beta.DocumentServiceClient;
 import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsMetadata;
 import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest;
 import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeErrorConfig;
 
 public class AsyncPurgeDocumentsLRO {
 
@@ -44,6 +45,7 @@ public class AsyncPurgeDocumentsLRO {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setErrorConfig(PurgeErrorConfig.newBuilder().build())
               .setForce(true)
               .build();
       OperationFuture<PurgeDocumentsResponse, PurgeDocumentsMetadata> future =

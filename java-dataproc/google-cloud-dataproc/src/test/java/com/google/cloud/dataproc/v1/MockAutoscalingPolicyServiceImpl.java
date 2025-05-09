@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,8 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAutoscalingPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method CreateAutoscalingPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AutoscalingPolicy.class.getName(),
                   Exception.class.getName())));
@@ -94,7 +95,8 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateAutoscalingPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateAutoscalingPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AutoscalingPolicy.class.getName(),
                   Exception.class.getName())));
@@ -115,7 +117,8 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAutoscalingPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method GetAutoscalingPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   AutoscalingPolicy.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +140,8 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAutoscalingPolicies, expected %s or %s",
+                  "Unrecognized response type %s for method ListAutoscalingPolicies, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAutoscalingPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +162,8 @@ public class MockAutoscalingPolicyServiceImpl extends AutoscalingPolicyServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAutoscalingPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteAutoscalingPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

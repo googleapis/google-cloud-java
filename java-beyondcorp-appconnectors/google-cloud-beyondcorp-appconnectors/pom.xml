@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-appconnectors</artifactId>
-  <version>0.26.0</version><!-- {x-version-update:google-cloud-beyondcorp-appconnectors:current} -->
+  <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnectors:current} -->
   <packaging>jar</packaging>
   <name>Google BeyondCorp AppConnectors</name>
   <description>BeyondCorp AppConnectors provides methods to manage (create/read/update/delete) BeyondCorp AppConnectors.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-appconnectors-parent</artifactId>
-    <version>0.26.0</version><!-- {x-version-update:google-cloud-beyondcorp-appconnectors:current} -->
+    <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-appconnectors:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-beyondcorp-appconnectors</site.installationModule>
@@ -60,6 +60,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -68,6 +69,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

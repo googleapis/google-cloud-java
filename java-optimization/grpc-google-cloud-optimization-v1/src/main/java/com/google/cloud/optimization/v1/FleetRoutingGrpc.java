@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -153,6 +153,19 @@ public final class FleetRoutingGrpc {
           }
         };
     return FleetRoutingStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FleetRoutingBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FleetRoutingBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FleetRoutingBlockingV2Stub>() {
+          @java.lang.Override
+          public FleetRoutingBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FleetRoutingBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FleetRoutingBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -372,6 +385,85 @@ public final class FleetRoutingGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service FleetRouting.
+   *
+   * <pre>
+   * A service for optimizing vehicle tours.
+   * Validity of certain types of fields:
+   *   * `google.protobuf.Timestamp`
+   *     * Times are in Unix time: seconds since 1970-01-01T00:00:00+00:00.
+   *     * seconds must be in [0, 253402300799],
+   *       i.e. in [1970-01-01T00:00:00+00:00, 9999-12-31T23:59:59+00:00].
+   *     * nanos must be unset or set to 0.
+   *   * `google.protobuf.Duration`
+   *     * seconds must be in [0, 253402300799],
+   *       i.e. in [1970-01-01T00:00:00+00:00, 9999-12-31T23:59:59+00:00].
+   *     * nanos must be unset or set to 0.
+   *   * `google.type.LatLng`
+   *     * latitude must be in [-90.0, 90.0].
+   *     * longitude must be in [-180.0, 180.0].
+   *     * at least one of latitude and longitude must be non-zero.
+   * </pre>
+   */
+  public static final class FleetRoutingBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FleetRoutingBlockingV2Stub> {
+    private FleetRoutingBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FleetRoutingBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FleetRoutingBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sends an `OptimizeToursRequest` containing a `ShipmentModel` and returns an
+     * `OptimizeToursResponse` containing `ShipmentRoute`s, which are a set of
+     * routes to be performed by vehicles minimizing the overall cost.
+     * A `ShipmentModel` model consists mainly of `Shipment`s that need to be
+     * carried out and `Vehicle`s that can be used to transport the `Shipment`s.
+     * The `ShipmentRoute`s assign `Shipment`s to `Vehicle`s. More specifically,
+     * they assign a series of `Visit`s to each vehicle, where a `Visit`
+     * corresponds to a `VisitRequest`, which is a pickup or delivery for a
+     * `Shipment`.
+     * The goal is to provide an assignment of `ShipmentRoute`s to `Vehicle`s that
+     * minimizes the total cost where cost has many components defined in the
+     * `ShipmentModel`.
+     * </pre>
+     */
+    public com.google.cloud.optimization.v1.OptimizeToursResponse optimizeTours(
+        com.google.cloud.optimization.v1.OptimizeToursRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getOptimizeToursMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optimizes vehicle tours for one or more `OptimizeToursRequest`
+     * messages as a batch.
+     * This method is a Long Running Operation (LRO). The inputs for optimization
+     * (`OptimizeToursRequest` messages) and outputs (`OptimizeToursResponse`
+     * messages) are read/written from/to Cloud Storage in user-specified
+     * format. Like the `OptimizeTours` method, each `OptimizeToursRequest`
+     * contains a `ShipmentModel` and returns an `OptimizeToursResponse`
+     * containing `ShipmentRoute`s, which are a set of routes to be performed by
+     * vehicles minimizing the overall cost.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchOptimizeTours(
+        com.google.cloud.optimization.v1.BatchOptimizeToursRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchOptimizeToursMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service FleetRouting.
    *
    * <pre>
    * A service for optimizing vehicle tours.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,12 +96,10 @@ public class EndpointName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationEndpointBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationPublisherModelBuilder newProjectLocationPublisherModelBuilder() {
     return new ProjectLocationPublisherModelBuilder();
   }
@@ -115,13 +112,11 @@ public class EndpointName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).setEndpoint(endpoint).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EndpointName ofProjectLocationEndpointName(
       String project, String location, String endpoint) {
     return newBuilder().setProject(project).setLocation(location).setEndpoint(endpoint).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EndpointName ofProjectLocationPublisherModelName(
       String project, String location, String publisher, String model) {
     return newProjectLocationPublisherModelBuilder()
@@ -141,7 +136,6 @@ public class EndpointName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEndpointName(
       String project, String location, String endpoint) {
     return newBuilder()
@@ -152,7 +146,6 @@ public class EndpointName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationPublisherModelName(
       String project, String location, String publisher, String model) {
     return newProjectLocationPublisherModelBuilder()
@@ -317,7 +310,8 @@ public class EndpointName implements ResourceName {
     private Builder(EndpointName endpointName) {
       Preconditions.checkArgument(
           Objects.equals(endpointName.pathTemplate, PROJECT_LOCATION_ENDPOINT),
-          "toBuilder is only supported when EndpointName has the pattern of projects/{project}/locations/{location}/endpoints/{endpoint}");
+          "toBuilder is only supported when EndpointName has the pattern of"
+              + " projects/{project}/locations/{location}/endpoints/{endpoint}");
       this.project = endpointName.project;
       this.location = endpointName.location;
       this.endpoint = endpointName.endpoint;
@@ -329,7 +323,6 @@ public class EndpointName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/publishers/{publisher}/models/{model}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationPublisherModelBuilder {
     private String project;
     private String location;

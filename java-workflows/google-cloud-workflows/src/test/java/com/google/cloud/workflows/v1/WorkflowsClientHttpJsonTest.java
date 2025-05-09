@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.workflows.v1;
 
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListLocationsPagedResponse;
+import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowRevisionsPagedResponse;
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -40,6 +41,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -201,6 +203,11 @@ public class WorkflowsClientHttpJsonTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -255,6 +262,11 @@ public class WorkflowsClientHttpJsonTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -309,6 +321,11 @@ public class WorkflowsClientHttpJsonTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -372,6 +389,11 @@ public class WorkflowsClientHttpJsonTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -525,6 +547,11 @@ public class WorkflowsClientHttpJsonTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -547,6 +574,11 @@ public class WorkflowsClientHttpJsonTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -589,11 +621,76 @@ public class WorkflowsClientHttpJsonTest {
               .setCryptoKeyName("cryptoKeyName1447084425")
               .setStateError(Workflow.StateError.newBuilder().build())
               .putAllUserEnvVars(new HashMap<String, String>())
+              .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+              .addAllAllKmsKeys(new ArrayList<String>())
+              .addAllAllKmsKeysVersions(new ArrayList<String>())
+              .setCryptoKeyVersion("cryptoKeyVersion135105818")
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateWorkflowAsync(workflow, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listWorkflowRevisionsTest() throws Exception {
+    Workflow responsesElement = Workflow.newBuilder().build();
+    ListWorkflowRevisionsResponse expectedResponse =
+        ListWorkflowRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkflows(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListWorkflowRevisionsRequest request =
+        ListWorkflowRevisionsRequest.newBuilder()
+            .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListWorkflowRevisionsPagedResponse pagedListResponse = client.listWorkflowRevisions(request);
+
+    List<Workflow> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkflowsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listWorkflowRevisionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListWorkflowRevisionsRequest request =
+          ListWorkflowRevisionsRequest.newBuilder()
+              .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listWorkflowRevisions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

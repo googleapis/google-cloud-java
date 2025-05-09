@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RegionSecurityPoliciesClient.ListPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -33,15 +32,21 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AddRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.DeleteRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.GetRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.InsertRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.ListRegionSecurityPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.PatchRuleRegionSecurityPolicyRequest;
+import com.google.cloud.compute.v1.RemoveRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.SecurityPolicy;
 import com.google.cloud.compute.v1.SecurityPolicyList;
+import com.google.cloud.compute.v1.SecurityPolicyRule;
+import com.google.cloud.compute.v1.SetLabelsRegionSecurityPolicyRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,10 +63,68 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
+  private static final ApiMethodDescriptor<AddRuleRegionSecurityPolicyRequest, Operation>
+      addRuleMethodDescriptor =
+          ApiMethodDescriptor.<AddRuleRegionSecurityPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/AddRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddRuleRegionSecurityPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/securityPolicies/{securityPolicy}/addRule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddRuleRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "securityPolicy", request.getSecurityPolicy());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddRuleRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasValidateOnly()) {
+                              serializer.putQueryParam(
+                                  fields, "validateOnly", request.getValidateOnly());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityPolicyRuleResource",
+                                      request.getSecurityPolicyRuleResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddRuleRegionSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
 
   private static final ApiMethodDescriptor<DeleteRegionSecurityPolicyRequest, Operation>
       deleteMethodDescriptor =
@@ -147,6 +210,45 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
               .setResponseParser(
                   ProtoMessageResponseParser.<SecurityPolicy>newBuilder()
                       .setDefaultInstance(SecurityPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+      getRuleMethodDescriptor =
+          ApiMethodDescriptor.<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/GetRule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetRuleRegionSecurityPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/securityPolicies/{securityPolicy}/getRule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRuleRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "securityPolicy", request.getSecurityPolicy());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetRuleRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecurityPolicyRule>newBuilder()
+                      .setDefaultInstance(SecurityPolicyRule.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -292,6 +394,10 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(
@@ -322,10 +428,190 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                   })
               .build();
 
+  private static final ApiMethodDescriptor<PatchRuleRegionSecurityPolicyRequest, Operation>
+      patchRuleMethodDescriptor =
+          ApiMethodDescriptor.<PatchRuleRegionSecurityPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/PatchRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PatchRuleRegionSecurityPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/securityPolicies/{securityPolicy}/patchRule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRuleRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "securityPolicy", request.getSecurityPolicy());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchRuleRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
+                            }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
+                            }
+                            if (request.hasValidateOnly()) {
+                              serializer.putQueryParam(
+                                  fields, "validateOnly", request.getValidateOnly());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityPolicyRuleResource",
+                                      request.getSecurityPolicyRuleResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PatchRuleRegionSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<RemoveRuleRegionSecurityPolicyRequest, Operation>
+      removeRuleMethodDescriptor =
+          ApiMethodDescriptor.<RemoveRuleRegionSecurityPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/RemoveRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RemoveRuleRegionSecurityPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/securityPolicies/{securityPolicy}/removeRule",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveRuleRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(
+                                fields, "securityPolicy", request.getSecurityPolicy());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveRuleRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPriority()) {
+                              serializer.putQueryParam(fields, "priority", request.getPriority());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RemoveRuleRegionSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<SetLabelsRegionSecurityPolicyRequest, Operation>
+      setLabelsMethodDescriptor =
+          ApiMethodDescriptor.<SetLabelsRegionSecurityPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionSecurityPolicies/SetLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetLabelsRegionSecurityPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/securityPolicies/{resource}/setLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetLabelsRegionSecurityPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "regionSetLabelsRequestResource",
+                                      request.getRegionSetLabelsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetLabelsRegionSecurityPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private final UnaryCallable<AddRuleRegionSecurityPolicyRequest, Operation> addRuleCallable;
+  private final OperationCallable<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationCallable;
   private final UnaryCallable<DeleteRegionSecurityPolicyRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteRegionSecurityPolicyRequest, Operation, Operation>
       deleteOperationCallable;
   private final UnaryCallable<GetRegionSecurityPolicyRequest, SecurityPolicy> getCallable;
+  private final UnaryCallable<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+      getRuleCallable;
   private final UnaryCallable<InsertRegionSecurityPolicyRequest, Operation> insertCallable;
   private final OperationCallable<InsertRegionSecurityPolicyRequest, Operation, Operation>
       insertOperationCallable;
@@ -335,6 +621,15 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
   private final UnaryCallable<PatchRegionSecurityPolicyRequest, Operation> patchCallable;
   private final OperationCallable<PatchRegionSecurityPolicyRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<PatchRuleRegionSecurityPolicyRequest, Operation> patchRuleCallable;
+  private final OperationCallable<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable;
+  private final UnaryCallable<RemoveRuleRegionSecurityPolicyRequest, Operation> removeRuleCallable;
+  private final OperationCallable<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable;
+  private final UnaryCallable<SetLabelsRegionSecurityPolicyRequest, Operation> setLabelsCallable;
+  private final OperationCallable<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -381,6 +676,19 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
     this.httpJsonOperationsStub =
         HttpJsonRegionOperationsStub.create(clientContext, callableFactory);
 
+    HttpJsonCallSettings<AddRuleRegionSecurityPolicyRequest, Operation> addRuleTransportSettings =
+        HttpJsonCallSettings.<AddRuleRegionSecurityPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(addRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("region", String.valueOf(request.getRegion()));
+                  builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteRegionSecurityPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
@@ -407,6 +715,21 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
+        getRuleTransportSettings =
+            HttpJsonCallSettings
+                .<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>newBuilder()
+                .setMethodDescriptor(getRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<InsertRegionSecurityPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionSecurityPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(insertMethodDescriptor)
@@ -445,7 +768,58 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation>
+        patchRuleTransportSettings =
+            HttpJsonCallSettings.<PatchRuleRegionSecurityPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation>
+        removeRuleTransportSettings =
+            HttpJsonCallSettings.<RemoveRuleRegionSecurityPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(removeRuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation>
+        setLabelsTransportSettings =
+            HttpJsonCallSettings.<SetLabelsRegionSecurityPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(setLabelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
+    this.addRuleCallable =
+        callableFactory.createUnaryCallable(
+            addRuleTransportSettings, settings.addRuleSettings(), clientContext);
+    this.addRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            addRuleTransportSettings,
+            settings.addRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -458,6 +832,9 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getRuleCallable =
+        callableFactory.createUnaryCallable(
+            getRuleTransportSettings, settings.getRuleSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -482,6 +859,33 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.patchRuleCallable =
+        callableFactory.createUnaryCallable(
+            patchRuleTransportSettings, settings.patchRuleSettings(), clientContext);
+    this.patchRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            patchRuleTransportSettings,
+            settings.patchRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.removeRuleCallable =
+        callableFactory.createUnaryCallable(
+            removeRuleTransportSettings, settings.removeRuleSettings(), clientContext);
+    this.removeRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            removeRuleTransportSettings,
+            settings.removeRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.setLabelsCallable =
+        callableFactory.createUnaryCallable(
+            setLabelsTransportSettings, settings.setLabelsSettings(), clientContext);
+    this.setLabelsOperationCallable =
+        callableFactory.createOperationCallable(
+            setLabelsTransportSettings,
+            settings.setLabelsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -490,12 +894,28 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(addRuleMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getRuleMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(patchRuleMethodDescriptor);
+    methodDescriptors.add(removeRuleMethodDescriptor);
+    methodDescriptors.add(setLabelsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<AddRuleRegionSecurityPolicyRequest, Operation> addRuleCallable() {
+    return addRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
+      addRuleOperationCallable() {
+    return addRuleOperationCallable;
   }
 
   @Override
@@ -512,6 +932,11 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
   @Override
   public UnaryCallable<GetRegionSecurityPolicyRequest, SecurityPolicy> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule> getRuleCallable() {
+    return getRuleCallable;
   }
 
   @Override
@@ -544,6 +969,39 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
   public OperationCallable<PatchRegionSecurityPolicyRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PatchRuleRegionSecurityPolicyRequest, Operation> patchRuleCallable() {
+    return patchRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
+      patchRuleOperationCallable() {
+    return patchRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveRuleRegionSecurityPolicyRequest, Operation> removeRuleCallable() {
+    return removeRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
+      removeRuleOperationCallable() {
+    return removeRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetLabelsRegionSecurityPolicyRequest, Operation> setLabelsCallable() {
+    return setLabelsCallable;
+  }
+
+  @Override
+  public OperationCallable<SetLabelsRegionSecurityPolicyRequest, Operation, Operation>
+      setLabelsOperationCallable() {
+    return setLabelsOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_image_object_detection.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 /**
@@ -28,6 +29,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs)
     AutoMlImageObjectDetectionInputsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlImageObjectDetectionInputs.newBuilder() to construct.
   private AutoMlImageObjectDetectionInputs(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -155,6 +157,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -167,6 +170,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * <code>CLOUD_HIGH_ACCURACY_1 = 1;</code>
      */
     public static final int CLOUD_HIGH_ACCURACY_1_VALUE = 1;
+
     /**
      *
      *
@@ -179,6 +183,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * <code>CLOUD_LOW_LATENCY_1 = 2;</code>
      */
     public static final int CLOUD_LOW_LATENCY_1_VALUE = 2;
+
     /**
      *
      *
@@ -193,6 +198,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * <code>MOBILE_TF_LOW_LATENCY_1 = 3;</code>
      */
     public static final int MOBILE_TF_LOW_LATENCY_1_VALUE = 3;
+
     /**
      *
      *
@@ -205,6 +211,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * <code>MOBILE_TF_VERSATILE_1 = 4;</code>
      */
     public static final int MOBILE_TF_VERSATILE_1_VALUE = 4;
+
     /**
      *
      *
@@ -314,6 +321,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
   private int modelType_ = 0;
+
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;
@@ -325,6 +333,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
   public int getModelTypeValue() {
     return modelType_;
   }
+
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;
@@ -349,6 +358,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
 
   public static final int BUDGET_MILLI_NODE_HOURS_FIELD_NUMBER = 2;
   private long budgetMilliNodeHours_ = 0L;
+
   /**
    *
    *
@@ -381,6 +391,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
 
   public static final int DISABLE_EARLY_STOPPING_FIELD_NUMBER = 3;
   private boolean disableEarlyStopping_ = false;
+
   /**
    *
    *
@@ -609,6 +620,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs}
@@ -842,6 +854,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     private int bitField0_;
 
     private int modelType_ = 0;
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;
@@ -853,6 +866,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     public int getModelTypeValue() {
       return modelType_;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;
@@ -867,6 +881,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;
@@ -888,6 +903,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
               .AutoMlImageObjectDetectionInputs.ModelType.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;
@@ -908,6 +924,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;
@@ -923,6 +940,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     }
 
     private long budgetMilliNodeHours_;
+
     /**
      *
      *
@@ -952,6 +970,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     public long getBudgetMilliNodeHours() {
       return budgetMilliNodeHours_;
     }
+
     /**
      *
      *
@@ -985,6 +1004,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1038,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     }
 
     private boolean disableEarlyStopping_;
+
     /**
      *
      *
@@ -1036,6 +1057,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     public boolean getDisableEarlyStopping() {
       return disableEarlyStopping_;
     }
+
     /**
      *
      *
@@ -1058,6 +1080,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

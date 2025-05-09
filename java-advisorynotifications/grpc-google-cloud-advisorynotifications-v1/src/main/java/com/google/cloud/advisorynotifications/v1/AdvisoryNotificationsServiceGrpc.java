@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -248,6 +248,20 @@ public final class AdvisoryNotificationsServiceGrpc {
     return AdvisoryNotificationsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AdvisoryNotificationsServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AdvisoryNotificationsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AdvisoryNotificationsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AdvisoryNotificationsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AdvisoryNotificationsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AdvisoryNotificationsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -455,6 +469,80 @@ public final class AdvisoryNotificationsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AdvisoryNotificationsService.
+   *
+   * <pre>
+   * Service to manage Security and Privacy Notifications.
+   * </pre>
+   */
+  public static final class AdvisoryNotificationsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AdvisoryNotificationsServiceBlockingV2Stub> {
+    private AdvisoryNotificationsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AdvisoryNotificationsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AdvisoryNotificationsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists notifications under a given parent.
+     * </pre>
+     */
+    public com.google.cloud.advisorynotifications.v1.ListNotificationsResponse listNotifications(
+        com.google.cloud.advisorynotifications.v1.ListNotificationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNotificationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a notification.
+     * </pre>
+     */
+    public com.google.cloud.advisorynotifications.v1.Notification getNotification(
+        com.google.cloud.advisorynotifications.v1.GetNotificationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get notification settings.
+     * </pre>
+     */
+    public com.google.cloud.advisorynotifications.v1.Settings getSettings(
+        com.google.cloud.advisorynotifications.v1.GetSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update notification settings.
+     * </pre>
+     */
+    public com.google.cloud.advisorynotifications.v1.Settings updateSettings(
+        com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * AdvisoryNotificationsService.
    *
    * <pre>
    * Service to manage Security and Privacy Notifications.

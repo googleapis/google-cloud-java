@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -452,7 +452,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTagTemplateField, expected %s or %s",
+                  "Unrecognized response type %s for method CreateTagTemplateField, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TagTemplateField.class.getName(),
                   Exception.class.getName())));
@@ -473,7 +474,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateTagTemplateField, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateTagTemplateField, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TagTemplateField.class.getName(),
                   Exception.class.getName())));
@@ -494,7 +496,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RenameTagTemplateField, expected %s or %s",
+                  "Unrecognized response type %s for method RenameTagTemplateField, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   TagTemplateField.class.getName(),
                   Exception.class.getName())));
@@ -516,7 +519,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RenameTagTemplateFieldEnumValue, expected %s or %s",
+                  "Unrecognized response type %s for method RenameTagTemplateFieldEnumValue,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TagTemplateField.class.getName(),
                   Exception.class.getName())));
@@ -537,7 +541,8 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteTagTemplateField, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteTagTemplateField, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -766,6 +771,70 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
                   "Unrecognized response type %s for method ImportEntries, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void setConfig(
+      SetConfigRequest request, StreamObserver<MigrationConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MigrationConfig) {
+      requests.add(request);
+      responseObserver.onNext(((MigrationConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MigrationConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void retrieveConfig(
+      RetrieveConfigRequest request, StreamObserver<OrganizationConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OrganizationConfig) {
+      requests.add(request);
+      responseObserver.onNext(((OrganizationConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetrieveConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OrganizationConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void retrieveEffectiveConfig(
+      RetrieveEffectiveConfigRequest request, StreamObserver<MigrationConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MigrationConfig) {
+      requests.add(request);
+      responseObserver.onNext(((MigrationConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetrieveEffectiveConfig, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MigrationConfig.class.getName(),
                   Exception.class.getName())));
     }
   }

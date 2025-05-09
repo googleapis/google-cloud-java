@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.google.maps.mapsplatformdatasets.v1.stub.MapsPlatformDatasetsStub;
 import com.google.maps.mapsplatformdatasets.v1.stub.MapsPlatformDatasetsStubSettings;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -59,19 +60,129 @@ import javax.annotation.Generated;
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDataset</td>
+ *      <td><p> Creates a new dataset for the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDataset(CreateDatasetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createDataset(ProjectName parent, Dataset dataset)
+ *           <li><p> createDataset(String parent, Dataset dataset)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDatasetMetadata</td>
+ *      <td><p> Updates the metadata for the dataset.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDatasetMetadata(UpdateDatasetMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDatasetMetadata(Dataset dataset, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDatasetMetadataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDataset</td>
+ *      <td><p> Gets the dataset.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDataset(GetDatasetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDataset(DatasetName name)
+ *           <li><p> getDataset(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchDatasetErrors</td>
+ *      <td><p> Gets all the errors of a dataset.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchDatasetErrors(FetchDatasetErrorsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchDatasetErrors(DatasetName dataset)
+ *           <li><p> fetchDatasetErrors(String dataset)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchDatasetErrorsPagedCallable()
+ *           <li><p> fetchDatasetErrorsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDatasets</td>
+ *      <td><p> Lists all the datasets for the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDatasets(ListDatasetsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDatasets(ProjectName parent)
+ *           <li><p> listDatasets(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDatasetsPagedCallable()
+ *           <li><p> listDatasetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDataset</td>
+ *      <td><p> Deletes the specified dataset.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDataset(DeleteDatasetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteDataset(DatasetName name)
+ *           <li><p> deleteDataset(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -181,7 +292,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new dataset for the specified project.
+   * Creates a new dataset for the specified project.
    *
    * <p>Sample code:
    *
@@ -199,7 +310,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent project that will own the dataset. Format: projects/{$project}
+   * @param parent Required. Parent project that will own the dataset. Format: projects/{project}
    * @param dataset Required. The dataset version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -214,7 +325,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new dataset for the specified project.
+   * Creates a new dataset for the specified project.
    *
    * <p>Sample code:
    *
@@ -232,7 +343,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent project that will own the dataset. Format: projects/{$project}
+   * @param parent Required. Parent project that will own the dataset. Format: projects/{project}
    * @param dataset Required. The dataset version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -244,7 +355,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new dataset for the specified project.
+   * Creates a new dataset for the specified project.
    *
    * <p>Sample code:
    *
@@ -274,7 +385,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new dataset for the specified project.
+   * Creates a new dataset for the specified project.
    *
    * <p>Sample code:
    *
@@ -304,7 +415,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the metadata for the dataset.
+   * Updates the metadata for the dataset.
    *
    * <p>Sample code:
    *
@@ -322,10 +433,10 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param dataset Required. The dataset to update. The dataset's name is used to identify the
-   *     dataset to be updated. The name has the format: projects/{project}/datasets/{dataset_id}
-   * @param updateMask The list of fields to be updated. Support the value "&#42;" for full
-   *     replacement.
+   * @param dataset Required. Resource name of the dataset to update. Format:
+   *     projects/{project}/datasets/{dataset_id}
+   * @param updateMask The list of fields to be updated.
+   *     <p>The value "&#42;" is used for full replacement (default).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset updateDatasetMetadata(Dataset dataset, FieldMask updateMask) {
@@ -339,7 +450,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the metadata for the dataset.
+   * Updates the metadata for the dataset.
    *
    * <p>Sample code:
    *
@@ -369,7 +480,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the metadata for the dataset.
+   * Updates the metadata for the dataset.
    *
    * <p>Sample code:
    *
@@ -400,7 +511,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the dataset.
+   * Gets the dataset.
    *
    * <p>Sample code:
    *
@@ -417,7 +528,11 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name. projects/{project}/datasets/{dataset_id}
+   * @param name Required. Resource name. Format: projects/{project}/datasets/{dataset_id}
+   *     <p>Can also fetch some special versions by appending "{@literal @}" and a tag. Format:
+   *     projects/{project}/datasets/{dataset_id}{@literal @}{tag}
+   *     <p>Tag "active": The info of the latest completed version will be included, and NOT_FOUND
+   *     if the dataset does not have one.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(DatasetName name) {
@@ -428,7 +543,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the dataset.
+   * Gets the dataset.
    *
    * <p>Sample code:
    *
@@ -445,7 +560,11 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Resource name. projects/{project}/datasets/{dataset_id}
+   * @param name Required. Resource name. Format: projects/{project}/datasets/{dataset_id}
+   *     <p>Can also fetch some special versions by appending "{@literal @}" and a tag. Format:
+   *     projects/{project}/datasets/{dataset_id}{@literal @}{tag}
+   *     <p>Tag "active": The info of the latest completed version will be included, and NOT_FOUND
+   *     if the dataset does not have one.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Dataset getDataset(String name) {
@@ -455,7 +574,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the dataset.
+   * Gets the dataset.
    *
    * <p>Sample code:
    *
@@ -484,7 +603,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the dataset.
+   * Gets the dataset.
    *
    * <p>Sample code:
    *
@@ -513,7 +632,180 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   DatasetName dataset = DatasetName.of("[PROJECT]", "[DATASET]");
+   *   for (Status element : mapsPlatformDatasetsClient.fetchDatasetErrors(dataset).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The name of the dataset to list all the errors for. Format:
+   *     projects/{project}/datasets/{dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchDatasetErrorsPagedResponse fetchDatasetErrors(DatasetName dataset) {
+    FetchDatasetErrorsRequest request =
+        FetchDatasetErrorsRequest.newBuilder()
+            .setDataset(dataset == null ? null : dataset.toString())
+            .build();
+    return fetchDatasetErrors(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   String dataset = DatasetName.of("[PROJECT]", "[DATASET]").toString();
+   *   for (Status element : mapsPlatformDatasetsClient.fetchDatasetErrors(dataset).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The name of the dataset to list all the errors for. Format:
+   *     projects/{project}/datasets/{dataset_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchDatasetErrorsPagedResponse fetchDatasetErrors(String dataset) {
+    FetchDatasetErrorsRequest request =
+        FetchDatasetErrorsRequest.newBuilder().setDataset(dataset).build();
+    return fetchDatasetErrors(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   FetchDatasetErrorsRequest request =
+   *       FetchDatasetErrorsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Status element : mapsPlatformDatasetsClient.fetchDatasetErrors(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchDatasetErrorsPagedResponse fetchDatasetErrors(
+      FetchDatasetErrorsRequest request) {
+    return fetchDatasetErrorsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   FetchDatasetErrorsRequest request =
+   *       FetchDatasetErrorsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Status> future =
+   *       mapsPlatformDatasetsClient.fetchDatasetErrorsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Status element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable() {
+    return stub.fetchDatasetErrorsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets all the errors of a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MapsPlatformDatasetsClient mapsPlatformDatasetsClient =
+   *     MapsPlatformDatasetsClient.create()) {
+   *   FetchDatasetErrorsRequest request =
+   *       FetchDatasetErrorsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[DATASET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchDatasetErrorsResponse response =
+   *         mapsPlatformDatasetsClient.fetchDatasetErrorsCallable().call(request);
+   *     for (Status element : response.getErrorsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable() {
+    return stub.fetchDatasetErrorsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -532,7 +824,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project to list all the datasets for.
+   * @param parent Required. The name of the project to list all the datasets for. Format:
+   *     projects/{project}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDatasetsPagedResponse listDatasets(ProjectName parent) {
@@ -545,7 +838,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -564,7 +857,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the project to list all the datasets for.
+   * @param parent Required. The name of the project to list all the datasets for. Format:
+   *     projects/{project}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDatasetsPagedResponse listDatasets(String parent) {
@@ -574,7 +868,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -591,6 +885,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setTag("tag114586")
    *           .build();
    *   for (Dataset element : mapsPlatformDatasetsClient.listDatasets(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -607,7 +902,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -624,6 +919,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setTag("tag114586")
    *           .build();
    *   ApiFuture<Dataset> future =
    *       mapsPlatformDatasetsClient.listDatasetsPagedCallable().futureCall(request);
@@ -641,7 +937,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List all the datasets for the specified project.
+   * Lists all the datasets for the specified project.
    *
    * <p>Sample code:
    *
@@ -658,6 +954,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setTag("tag114586")
    *           .build();
    *   while (true) {
    *     ListDatasetsResponse response =
@@ -681,7 +978,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the specified dataset .
+   * Deletes the specified dataset.
    *
    * <p>Sample code:
    *
@@ -698,7 +995,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format: projects/${project}/datasets/{dataset_id}
+   * @param name Required. The name of the dataset to delete. Format:
+   *     projects/{project}/datasets/{dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataset(DatasetName name) {
@@ -709,7 +1007,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the specified dataset .
+   * Deletes the specified dataset.
    *
    * <p>Sample code:
    *
@@ -726,7 +1024,8 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format: projects/${project}/datasets/{dataset_id}
+   * @param name Required. The name of the dataset to delete. Format:
+   *     projects/{project}/datasets/{dataset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataset(String name) {
@@ -736,7 +1035,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the specified dataset .
+   * Deletes the specified dataset.
    *
    * <p>Sample code:
    *
@@ -765,7 +1064,7 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete the specified dataset .
+   * Deletes the specified dataset.
    *
    * <p>Sample code:
    *
@@ -820,6 +1119,83 @@ public class MapsPlatformDatasetsClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class FetchDatasetErrorsPagedResponse
+      extends AbstractPagedListResponse<
+          FetchDatasetErrorsRequest,
+          FetchDatasetErrorsResponse,
+          Status,
+          FetchDatasetErrorsPage,
+          FetchDatasetErrorsFixedSizeCollection> {
+
+    public static ApiFuture<FetchDatasetErrorsPagedResponse> createAsync(
+        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        ApiFuture<FetchDatasetErrorsResponse> futureResponse) {
+      ApiFuture<FetchDatasetErrorsPage> futurePage =
+          FetchDatasetErrorsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchDatasetErrorsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchDatasetErrorsPagedResponse(FetchDatasetErrorsPage page) {
+      super(page, FetchDatasetErrorsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchDatasetErrorsPage
+      extends AbstractPage<
+          FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status, FetchDatasetErrorsPage> {
+
+    private FetchDatasetErrorsPage(
+        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        FetchDatasetErrorsResponse response) {
+      super(context, response);
+    }
+
+    private static FetchDatasetErrorsPage createEmptyPage() {
+      return new FetchDatasetErrorsPage(null, null);
+    }
+
+    @Override
+    protected FetchDatasetErrorsPage createPage(
+        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        FetchDatasetErrorsResponse response) {
+      return new FetchDatasetErrorsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchDatasetErrorsPage> createPageAsync(
+        PageContext<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse, Status> context,
+        ApiFuture<FetchDatasetErrorsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchDatasetErrorsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchDatasetErrorsRequest,
+          FetchDatasetErrorsResponse,
+          Status,
+          FetchDatasetErrorsPage,
+          FetchDatasetErrorsFixedSizeCollection> {
+
+    private FetchDatasetErrorsFixedSizeCollection(
+        List<FetchDatasetErrorsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchDatasetErrorsFixedSizeCollection createEmptyCollection() {
+      return new FetchDatasetErrorsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchDatasetErrorsFixedSizeCollection createCollection(
+        List<FetchDatasetErrorsPage> pages, int collectionSize) {
+      return new FetchDatasetErrorsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListDatasetsPagedResponse

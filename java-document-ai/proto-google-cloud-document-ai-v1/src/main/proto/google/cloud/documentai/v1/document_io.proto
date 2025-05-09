@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -66,7 +66,8 @@ message GcsPrefix {
 
 // The common config to specify a set of documents used as input.
 message BatchDocumentsInputConfig {
-  // The source.
+  // The source. Make sure that the caller of the API has storage.objects.get
+  // access to the buckets.
   oneof source {
     // The set of documents that match the specified Cloud Storage `gcs_prefix`.
     GcsPrefix gcs_prefix = 1;
@@ -124,8 +125,8 @@ message OcrConfig {
 
   // Configurations for premium OCR features.
   message PremiumFeatures {
-    // Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-    // processors.
+    // Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+    // (and later) processors.
     bool enable_selection_mark_detection = 3;
 
     // Turn on font identification model and return font style information.
@@ -166,7 +167,7 @@ message OcrConfig {
   bool compute_style_info = 8 [deprecated = true];
 
   // Turn off character box detector in OCR engine. Character box detection is
-  // enabled by default in OCR 2.0+ processors.
+  // enabled by default in OCR 2.0 (and later) processors.
   bool disable_character_boxes_detection = 10;
 
   // Configurations for premium OCR features.

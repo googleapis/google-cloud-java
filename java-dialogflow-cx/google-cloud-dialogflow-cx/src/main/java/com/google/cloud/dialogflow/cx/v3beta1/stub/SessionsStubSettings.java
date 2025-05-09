@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import static com.google.cloud.dialogflow.cx.v3beta1.SessionsClient.ListLocation
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -38,12 +39,14 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest;
@@ -52,6 +55,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.SubmitAnswerFeedbackRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -61,9 +65,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -80,7 +84,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of detectIntent to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of detectIntent:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -96,10 +102,21 @@ import org.threeten.bp.Duration;
  *             .detectIntentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * SessionsStubSettings sessionsSettings = sessionsSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -112,11 +129,15 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
           .build();
 
   private final UnaryCallSettings<DetectIntentRequest, DetectIntentResponse> detectIntentSettings;
+  private final ServerStreamingCallSettings<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentSettings;
   private final StreamingCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentSettings;
   private final UnaryCallSettings<MatchIntentRequest, MatchIntentResponse> matchIntentSettings;
   private final UnaryCallSettings<FulfillIntentRequest, FulfillIntentResponse>
       fulfillIntentSettings;
+  private final UnaryCallSettings<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -152,9 +173,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -180,6 +199,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     return detectIntentSettings;
   }
 
+  /** Returns the object with the settings used for calls to serverStreamingDetectIntent. */
+  public ServerStreamingCallSettings<DetectIntentRequest, DetectIntentResponse>
+      serverStreamingDetectIntentSettings() {
+    return serverStreamingDetectIntentSettings;
+  }
+
   /** Returns the object with the settings used for calls to streamingDetectIntent. */
   public StreamingCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentSettings() {
@@ -194,6 +219,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
   /** Returns the object with the settings used for calls to fulfillIntent. */
   public UnaryCallSettings<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentSettings() {
     return fulfillIntentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitAnswerFeedback. */
+  public UnaryCallSettings<SubmitAnswerFeedbackRequest, AnswerFeedback>
+      submitAnswerFeedbackSettings() {
+    return submitAnswerFeedbackSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -223,12 +254,19 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dialogflow";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dialogflow.googleapis.com:443";
   }
@@ -267,7 +305,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(SessionsStubSettings.class))
@@ -275,7 +312,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(SessionsStubSettings.class))
@@ -312,9 +348,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     super(settingsBuilder);
 
     detectIntentSettings = settingsBuilder.detectIntentSettings().build();
+    serverStreamingDetectIntentSettings =
+        settingsBuilder.serverStreamingDetectIntentSettings().build();
     streamingDetectIntentSettings = settingsBuilder.streamingDetectIntentSettings().build();
     matchIntentSettings = settingsBuilder.matchIntentSettings().build();
     fulfillIntentSettings = settingsBuilder.fulfillIntentSettings().build();
+    submitAnswerFeedbackSettings = settingsBuilder.submitAnswerFeedbackSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -324,6 +363,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
         detectIntentSettings;
+    private final ServerStreamingCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentSettings;
     private final StreamingCallSettings.Builder<
             StreamingDetectIntentRequest, StreamingDetectIntentResponse>
         streamingDetectIntentSettings;
@@ -331,6 +372,8 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
         matchIntentSettings;
     private final UnaryCallSettings.Builder<FulfillIntentRequest, FulfillIntentResponse>
         fulfillIntentSettings;
+    private final UnaryCallSettings.Builder<SubmitAnswerFeedbackRequest, AnswerFeedback>
+        submitAnswerFeedbackSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -359,32 +402,32 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(220000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(220000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(220000L))
               .build();
       definitions.put("retry_policy_2_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(220000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(220000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(220000L))
               .build();
       definitions.put("no_retry_3_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -398,9 +441,11 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       super(clientContext);
 
       detectIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      serverStreamingDetectIntentSettings = ServerStreamingCallSettings.newBuilder();
       streamingDetectIntentSettings = StreamingCallSettings.newBuilder();
       matchIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fulfillIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      submitAnswerFeedbackSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -409,6 +454,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
               detectIntentSettings,
               matchIntentSettings,
               fulfillIntentSettings,
+              submitAnswerFeedbackSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -418,9 +464,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       super(settings);
 
       detectIntentSettings = settings.detectIntentSettings.toBuilder();
+      serverStreamingDetectIntentSettings =
+          settings.serverStreamingDetectIntentSettings.toBuilder();
       streamingDetectIntentSettings = settings.streamingDetectIntentSettings.toBuilder();
       matchIntentSettings = settings.matchIntentSettings.toBuilder();
       fulfillIntentSettings = settings.fulfillIntentSettings.toBuilder();
+      submitAnswerFeedbackSettings = settings.submitAnswerFeedbackSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -429,6 +478,7 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
               detectIntentSettings,
               matchIntentSettings,
               fulfillIntentSettings,
+              submitAnswerFeedbackSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -439,7 +489,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -452,7 +501,6 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -466,12 +514,22 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
+          .serverStreamingDetectIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+
+      builder
           .matchIntentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .fulfillIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .submitAnswerFeedbackSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -509,6 +567,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
       return detectIntentSettings;
     }
 
+    /** Returns the builder for the settings used for calls to serverStreamingDetectIntent. */
+    public ServerStreamingCallSettings.Builder<DetectIntentRequest, DetectIntentResponse>
+        serverStreamingDetectIntentSettings() {
+      return serverStreamingDetectIntentSettings;
+    }
+
     /** Returns the builder for the settings used for calls to streamingDetectIntent. */
     public StreamingCallSettings.Builder<
             StreamingDetectIntentRequest, StreamingDetectIntentResponse>
@@ -526,6 +590,12 @@ public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
     public UnaryCallSettings.Builder<FulfillIntentRequest, FulfillIntentResponse>
         fulfillIntentSettings() {
       return fulfillIntentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitAnswerFeedback. */
+    public UnaryCallSettings.Builder<SubmitAnswerFeedbackRequest, AnswerFeedback>
+        submitAnswerFeedbackSettings() {
+      return submitAnswerFeedbackSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

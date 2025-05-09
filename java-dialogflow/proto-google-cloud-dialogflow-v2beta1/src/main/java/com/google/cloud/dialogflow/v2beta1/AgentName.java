@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -71,12 +70,10 @@ public class AgentName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectAgentBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationAgentBuilder newProjectLocationAgentBuilder() {
     return new ProjectLocationAgentBuilder();
   }
@@ -89,23 +86,25 @@ public class AgentName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AgentName ofProjectName(String project) {
     return newBuilder().setProject(project).build();
   }
 
-  /** @deprecated Please use {@link #ofProjectName()} instead */
+  /**
+   * @deprecated Please use {@link #ofProjectName()} instead
+   */
   @Deprecated
   public static AgentName ofProjectAgentName(String project) {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AgentName ofProjectLocationName(String project, String location) {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
   }
 
-  /** @deprecated Please use {@link #ofProjectLocationName()} instead */
+  /**
+   * @deprecated Please use {@link #ofProjectLocationName()} instead
+   */
   @Deprecated
   public static AgentName ofProjectLocationAgentName(String project, String location) {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
@@ -115,12 +114,10 @@ public class AgentName implements ResourceName {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectAgentName(String project) {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationAgentName(String project, String location) {
     return newProjectLocationAgentBuilder()
         .setProject(project)
@@ -248,7 +245,6 @@ public class AgentName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/agent. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationAgentBuilder {
     private String project;
     private String location;

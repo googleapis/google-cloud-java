@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.securityposture.v1",
+  "libraryPackage": "com.google.cloud.securityposture.v1",
+  "services": {
+    "SecurityPosture": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SecurityPostureClient",
+          "rpcs": {
+            "CreatePosture": {
+              "methods": ["createPostureAsync", "createPostureAsync", "createPostureAsync", "createPostureOperationCallable", "createPostureCallable"]
+            },
+            "CreatePostureDeployment": {
+              "methods": ["createPostureDeploymentAsync", "createPostureDeploymentAsync", "createPostureDeploymentAsync", "createPostureDeploymentOperationCallable", "createPostureDeploymentCallable"]
+            },
+            "DeletePosture": {
+              "methods": ["deletePostureAsync", "deletePostureAsync", "deletePostureAsync", "deletePostureOperationCallable", "deletePostureCallable"]
+            },
+            "DeletePostureDeployment": {
+              "methods": ["deletePostureDeploymentAsync", "deletePostureDeploymentAsync", "deletePostureDeploymentAsync", "deletePostureDeploymentOperationCallable", "deletePostureDeploymentCallable"]
+            },
+            "ExtractPosture": {
+              "methods": ["extractPostureAsync", "extractPostureAsync", "extractPostureAsync", "extractPostureOperationCallable", "extractPostureCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPosture": {
+              "methods": ["getPosture", "getPosture", "getPosture", "getPostureCallable"]
+            },
+            "GetPostureDeployment": {
+              "methods": ["getPostureDeployment", "getPostureDeployment", "getPostureDeployment", "getPostureDeploymentCallable"]
+            },
+            "GetPostureTemplate": {
+              "methods": ["getPostureTemplate", "getPostureTemplate", "getPostureTemplate", "getPostureTemplateCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPostureDeployments": {
+              "methods": ["listPostureDeployments", "listPostureDeployments", "listPostureDeployments", "listPostureDeploymentsPagedCallable", "listPostureDeploymentsCallable"]
+            },
+            "ListPostureRevisions": {
+              "methods": ["listPostureRevisions", "listPostureRevisionsPagedCallable", "listPostureRevisionsCallable"]
+            },
+            "ListPostureTemplates": {
+              "methods": ["listPostureTemplates", "listPostureTemplates", "listPostureTemplates", "listPostureTemplatesPagedCallable", "listPostureTemplatesCallable"]
+            },
+            "ListPostures": {
+              "methods": ["listPostures", "listPostures", "listPostures", "listPosturesPagedCallable", "listPosturesCallable"]
+            },
+            "UpdatePosture": {
+              "methods": ["updatePostureAsync", "updatePostureAsync", "updatePostureOperationCallable", "updatePostureCallable"]
+            },
+            "UpdatePostureDeployment": {
+              "methods": ["updatePostureDeploymentAsync", "updatePostureDeploymentAsync", "updatePostureDeploymentOperationCallable", "updatePostureDeploymentCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.servicehealth.v1",
+  "libraryPackage": "com.google.cloud.servicehealth.v1",
+  "services": {
+    "ServiceHealth": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServiceHealthClient",
+          "rpcs": {
+            "GetEvent": {
+              "methods": ["getEvent", "getEvent", "getEvent", "getEventCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetOrganizationEvent": {
+              "methods": ["getOrganizationEvent", "getOrganizationEvent", "getOrganizationEvent", "getOrganizationEventCallable"]
+            },
+            "GetOrganizationImpact": {
+              "methods": ["getOrganizationImpact", "getOrganizationImpact", "getOrganizationImpact", "getOrganizationImpactCallable"]
+            },
+            "ListEvents": {
+              "methods": ["listEvents", "listEvents", "listEvents", "listEventsPagedCallable", "listEventsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListOrganizationEvents": {
+              "methods": ["listOrganizationEvents", "listOrganizationEvents", "listOrganizationEvents", "listOrganizationEventsPagedCallable", "listOrganizationEventsCallable"]
+            },
+            "ListOrganizationImpacts": {
+              "methods": ["listOrganizationImpacts", "listOrganizationImpacts", "listOrganizationImpacts", "listOrganizationImpactsPagedCallable", "listOrganizationImpactsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

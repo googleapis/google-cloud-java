@@ -1,4 +1,4 @@
-// Copyright 2023 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import "google/longrunning/operations.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 
-option cc_enable_arenas = true;
 option csharp_namespace = "Google.Cloud.Dialogflow.V2";
 option go_package = "cloud.google.com/go/dialogflow/apiv2/dialogflowpb;dialogflowpb";
 option java_multiple_files = true;
@@ -301,6 +300,14 @@ message ConversationModel {
     // Metadata for smart reply models.
     SmartReplyModelMetadata smart_reply_model_metadata = 9;
   }
+
+  // Output only. A read only boolean field reflecting Zone Separation
+  // status of the model.
+  optional bool satisfies_pzs = 25 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. A read only boolean field reflecting Zone Isolation status
+  // of the model.
+  optional bool satisfies_pzi = 26 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Represents evaluation result of a conversation model.
@@ -335,7 +342,7 @@ message ConversationModelEvaluation {
   }
 
   // Output only. Human eval template in csv format.
-  // It tooks real-world conversations provided through input dataset, generates
+  // It takes real-world conversations provided through input dataset, generates
   // example suggestions for customer to verify quality of the model.
   // For Smart Reply, the generated csv file contains columns of
   // Context, (Suggestions,Q1,Q2)*3, Actual reply.
@@ -392,10 +399,10 @@ message EvaluationConfig {
 
   // Specific configurations for different models in order to do evaluation.
   oneof model_specific_config {
-    // Configuration for smart reply model evalution.
+    // Configuration for smart reply model evaluation.
     SmartReplyConfig smart_reply_config = 2;
 
-    // Configuration for smart compose model evalution.
+    // Configuration for smart compose model evaluation.
     SmartComposeConfig smart_compose_config = 4;
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.eventarc.publishing.v1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -33,6 +32,8 @@ import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsReq
 import com.google.cloud.eventarc.publishing.v1.PublishChannelConnectionEventsResponse;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsRequest;
 import com.google.cloud.eventarc.publishing.v1.PublishEventsResponse;
+import com.google.cloud.eventarc.publishing.v1.PublishRequest;
+import com.google.cloud.eventarc.publishing.v1.PublishResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -49,7 +50,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonPublisherStub extends PublisherStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -136,10 +136,48 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PublishRequest, PublishResponse>
+      publishMethodDescriptor =
+          ApiMethodDescriptor.<PublishRequest, PublishResponse>newBuilder()
+              .setFullMethodName("google.cloud.eventarc.publishing.v1.Publisher/Publish")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PublishRequest>newBuilder()
+                      .setPath(
+                          "/v1/{messageBus=projects/*/locations/*/messageBuses/*}:publish",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PublishRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "messageBus", request.getMessageBus());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PublishRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearMessageBus().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PublishResponse>newBuilder()
+                      .setDefaultInstance(PublishResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<
           PublishChannelConnectionEventsRequest, PublishChannelConnectionEventsResponse>
       publishChannelConnectionEventsCallable;
   private final UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable;
+  private final UnaryCallable<PublishRequest, PublishResponse> publishCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -210,6 +248,17 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<PublishRequest, PublishResponse> publishTransportSettings =
+        HttpJsonCallSettings.<PublishRequest, PublishResponse>newBuilder()
+            .setMethodDescriptor(publishMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("message_bus", String.valueOf(request.getMessageBus()));
+                  return builder.build();
+                })
+            .build();
 
     this.publishChannelConnectionEventsCallable =
         callableFactory.createUnaryCallable(
@@ -219,6 +268,9 @@ public class HttpJsonPublisherStub extends PublisherStub {
     this.publishEventsCallable =
         callableFactory.createUnaryCallable(
             publishEventsTransportSettings, settings.publishEventsSettings(), clientContext);
+    this.publishCallable =
+        callableFactory.createUnaryCallable(
+            publishTransportSettings, settings.publishSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -229,6 +281,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(publishChannelConnectionEventsMethodDescriptor);
     methodDescriptors.add(publishEventsMethodDescriptor);
+    methodDescriptors.add(publishMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -242,6 +295,11 @@ public class HttpJsonPublisherStub extends PublisherStub {
   @Override
   public UnaryCallable<PublishEventsRequest, PublishEventsResponse> publishEventsCallable() {
     return publishEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+    return publishCallable;
   }
 
   @Override

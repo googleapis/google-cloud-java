@@ -1,0 +1,81 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.securesourcemanager.v1",
+  "libraryPackage": "com.google.cloud.securesourcemanager.v1",
+  "services": {
+    "SecureSourceManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SecureSourceManagerClient",
+          "rpcs": {
+            "CreateBranchRule": {
+              "methods": ["createBranchRuleAsync", "createBranchRuleAsync", "createBranchRuleAsync", "createBranchRuleOperationCallable", "createBranchRuleCallable"]
+            },
+            "CreateInstance": {
+              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "CreateRepository": {
+              "methods": ["createRepositoryAsync", "createRepositoryAsync", "createRepositoryAsync", "createRepositoryOperationCallable", "createRepositoryCallable"]
+            },
+            "DeleteBranchRule": {
+              "methods": ["deleteBranchRuleAsync", "deleteBranchRuleAsync", "deleteBranchRuleAsync", "deleteBranchRuleOperationCallable", "deleteBranchRuleCallable"]
+            },
+            "DeleteInstance": {
+              "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
+            },
+            "DeleteRepository": {
+              "methods": ["deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryAsync", "deleteRepositoryOperationCallable", "deleteRepositoryCallable"]
+            },
+            "GetBranchRule": {
+              "methods": ["getBranchRule", "getBranchRule", "getBranchRule", "getBranchRuleCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetIamPolicyRepo": {
+              "methods": ["getIamPolicyRepo", "getIamPolicyRepo", "getIamPolicyRepo", "getIamPolicyRepoCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRepository": {
+              "methods": ["getRepository", "getRepository", "getRepository", "getRepositoryCallable"]
+            },
+            "ListBranchRules": {
+              "methods": ["listBranchRules", "listBranchRules", "listBranchRules", "listBranchRulesPagedCallable", "listBranchRulesCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRepositories": {
+              "methods": ["listRepositories", "listRepositories", "listRepositories", "listRepositoriesPagedCallable", "listRepositoriesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SetIamPolicyRepo": {
+              "methods": ["setIamPolicyRepo", "setIamPolicyRepo", "setIamPolicyRepo", "setIamPolicyRepoCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "TestIamPermissionsRepo": {
+              "methods": ["testIamPermissionsRepo", "testIamPermissionsRepo", "testIamPermissionsRepo", "testIamPermissionsRepoCallable"]
+            },
+            "UpdateBranchRule": {
+              "methods": ["updateBranchRuleAsync", "updateBranchRuleAsync", "updateBranchRuleOperationCallable", "updateBranchRuleCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

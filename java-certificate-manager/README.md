@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.23.0</version>
+      <version>26.59.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -35,32 +35,31 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-certificate-manager</artifactId>
   </dependency>
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-certificate-manager:released} -->
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-certificate-manager</artifactId>
-  <version>0.31.0</version>
+  <version>0.64.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-certificate-manager:0.31.0'
+implementation 'com.google.cloud:google-cloud-certificate-manager:0.64.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-certificate-manager" % "0.31.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-certificate-manager" % "0.64.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -104,7 +103,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Certificate Manager uses gRPC for the transport layer.
+Certificate Manager uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -201,7 +200,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-certificate-manager.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-certificate-manager/0.27.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-certificate-manager/0.64.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
@@ -214,7 +213,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=certificate-manager.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=certificatemanager.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 

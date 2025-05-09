@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,6 +87,7 @@ public class ExecutionsClientHttpJsonTest {
         Execution.newBuilder()
             .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .setUid("uid115792")
+            .setCreator("creator1028554796")
             .setGeneration(305703192)
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
@@ -157,6 +158,7 @@ public class ExecutionsClientHttpJsonTest {
         Execution.newBuilder()
             .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .setUid("uid115792")
+            .setCreator("creator1028554796")
             .setGeneration(305703192)
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
@@ -329,6 +331,7 @@ public class ExecutionsClientHttpJsonTest {
         Execution.newBuilder()
             .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .setUid("uid115792")
+            .setCreator("creator1028554796")
             .setGeneration(305703192)
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
@@ -404,6 +407,7 @@ public class ExecutionsClientHttpJsonTest {
         Execution.newBuilder()
             .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .setUid("uid115792")
+            .setCreator("creator1028554796")
             .setGeneration(305703192)
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
@@ -481,6 +485,7 @@ public class ExecutionsClientHttpJsonTest {
         Execution.newBuilder()
             .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .setUid("uid115792")
+            .setCreator("creator1028554796")
             .setGeneration(305703192)
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())
@@ -556,6 +561,7 @@ public class ExecutionsClientHttpJsonTest {
         Execution.newBuilder()
             .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
             .setUid("uid115792")
+            .setCreator("creator1028554796")
             .setGeneration(305703192)
             .putAllLabels(new HashMap<String, String>())
             .putAllAnnotations(new HashMap<String, String>())

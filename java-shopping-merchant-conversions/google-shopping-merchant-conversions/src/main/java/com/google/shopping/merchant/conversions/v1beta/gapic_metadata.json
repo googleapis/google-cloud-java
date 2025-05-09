@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.conversions.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.conversions.v1beta",
+  "services": {
+    "ConversionSourcesService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ConversionSourcesServiceClient",
+          "rpcs": {
+            "CreateConversionSource": {
+              "methods": ["createConversionSource", "createConversionSource", "createConversionSource", "createConversionSourceCallable"]
+            },
+            "DeleteConversionSource": {
+              "methods": ["deleteConversionSource", "deleteConversionSource", "deleteConversionSource", "deleteConversionSourceCallable"]
+            },
+            "GetConversionSource": {
+              "methods": ["getConversionSource", "getConversionSource", "getConversionSource", "getConversionSourceCallable"]
+            },
+            "ListConversionSources": {
+              "methods": ["listConversionSources", "listConversionSources", "listConversionSources", "listConversionSourcesPagedCallable", "listConversionSourcesCallable"]
+            },
+            "UndeleteConversionSource": {
+              "methods": ["undeleteConversionSource", "undeleteConversionSourceCallable"]
+            },
+            "UpdateConversionSource": {
+              "methods": ["updateConversionSource", "updateConversionSource", "updateConversionSourceCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

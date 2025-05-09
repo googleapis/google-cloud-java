@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_object_tracking.proto
 
+// Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 /**
@@ -28,6 +29,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs)
     AutoMlVideoObjectTrackingInputsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoMlVideoObjectTrackingInputs.newBuilder() to construct.
   private AutoMlVideoObjectTrackingInputs(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -158,6 +160,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
      * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -169,6 +172,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
      * <code>CLOUD = 1;</code>
      */
     public static final int CLOUD_VALUE = 1;
+
     /**
      *
      *
@@ -181,6 +185,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
      * <code>MOBILE_VERSATILE_1 = 2;</code>
      */
     public static final int MOBILE_VERSATILE_1_VALUE = 2;
+
     /**
      *
      *
@@ -192,6 +197,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
      * <code>MOBILE_CORAL_VERSATILE_1 = 3;</code>
      */
     public static final int MOBILE_CORAL_VERSATILE_1_VALUE = 3;
+
     /**
      *
      *
@@ -203,6 +209,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
      * <code>MOBILE_CORAL_LOW_LATENCY_1 = 4;</code>
      */
     public static final int MOBILE_CORAL_LOW_LATENCY_1_VALUE = 4;
+
     /**
      *
      *
@@ -214,6 +221,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
      * <code>MOBILE_JETSON_VERSATILE_1 = 5;</code>
      */
     public static final int MOBILE_JETSON_VERSATILE_1_VALUE = 5;
+
     /**
      *
      *
@@ -322,6 +330,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
   private int modelType_ = 0;
+
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType model_type = 1;
@@ -333,6 +342,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
   public int getModelTypeValue() {
     return modelType_;
   }
+
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType model_type = 1;
@@ -546,6 +556,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs}
@@ -751,6 +762,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
     private int bitField0_;
 
     private int modelType_ = 0;
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType model_type = 1;
@@ -762,6 +774,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
     public int getModelTypeValue() {
       return modelType_;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType model_type = 1;
@@ -776,6 +789,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType model_type = 1;
@@ -797,6 +811,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
               .AutoMlVideoObjectTrackingInputs.ModelType.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType model_type = 1;
@@ -817,6 +832,7 @@ public final class AutoMlVideoObjectTrackingInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType model_type = 1;

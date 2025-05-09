@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -129,6 +129,9 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -190,6 +193,9 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -251,6 +257,9 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -301,6 +310,9 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -351,6 +363,9 @@ public class DatasetServiceClientTest {
             .addAllSavedQueries(new ArrayList<SavedQuery>())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -756,6 +771,11 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -812,6 +832,11 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -854,6 +879,59 @@ public class DatasetServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateDatasetVersionTest() throws Exception {
+    DatasetVersion expectedResponse =
+        DatasetVersion.newBuilder()
+            .setName(
+                DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .build();
+    mockDatasetService.addResponse(expectedResponse);
+
+    DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DatasetVersion actualResponse = client.updateDatasetVersion(datasetVersion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDatasetVersionRequest actualRequest =
+        ((UpdateDatasetVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(datasetVersion, actualRequest.getDatasetVersion());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDatasetVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDatasetVersion(datasetVersion, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -956,6 +1034,11 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1002,6 +1085,11 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1134,6 +1222,11 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1189,6 +1282,11 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
+            .setModelReference("modelReference-1524178398")
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1755,6 +1853,131 @@ public class DatasetServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void assessDataTest() throws Exception {
+    AssessDataResponse expectedResponse = AssessDataResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("assessDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    AssessDataRequest request =
+        AssessDataRequest.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
+            .build();
+
+    AssessDataResponse actualResponse = client.assessDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AssessDataRequest actualRequest = ((AssessDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        request.getTuningValidationAssessmentConfig(),
+        actualRequest.getTuningValidationAssessmentConfig());
+    Assert.assertEquals(
+        request.getTuningResourceUsageAssessmentConfig(),
+        actualRequest.getTuningResourceUsageAssessmentConfig());
+    Assert.assertEquals(
+        request.getBatchPredictionValidationAssessmentConfig(),
+        actualRequest.getBatchPredictionValidationAssessmentConfig());
+    Assert.assertEquals(
+        request.getBatchPredictionResourceUsageAssessmentConfig(),
+        actualRequest.getBatchPredictionResourceUsageAssessmentConfig());
+    Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
+    Assert.assertEquals(request.getRequestColumnName(), actualRequest.getRequestColumnName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(
+        request.getGeminiRequestReadConfig(), actualRequest.getGeminiRequestReadConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void assessDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      AssessDataRequest request =
+          AssessDataRequest.newBuilder()
+              .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
+              .build();
+      client.assessDataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void assembleDataTest() throws Exception {
+    AssembleDataResponse expectedResponse =
+        AssembleDataResponse.newBuilder()
+            .setBigqueryDestination("bigqueryDestination1980924710")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("assembleDataTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDatasetService.addResponse(resultOperation);
+
+    AssembleDataRequest request =
+        AssembleDataRequest.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+            .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
+            .build();
+
+    AssembleDataResponse actualResponse = client.assembleDataAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDatasetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AssembleDataRequest actualRequest = ((AssembleDataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getGeminiTemplateConfig(), actualRequest.getGeminiTemplateConfig());
+    Assert.assertEquals(request.getRequestColumnName(), actualRequest.getRequestColumnName());
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(
+        request.getGeminiRequestReadConfig(), actualRequest.getGeminiRequestReadConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void assembleDataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDatasetService.addException(exception);
+
+    try {
+      AssembleDataRequest request =
+          AssembleDataRequest.newBuilder()
+              .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+              .setGeminiRequestReadConfig(GeminiRequestReadConfig.newBuilder().build())
+              .build();
+      client.assembleDataAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

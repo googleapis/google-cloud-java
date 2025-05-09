@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ package com.google.cloud.aiplatform.v1beta1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1beta1.Feature;
 import com.google.cloud.aiplatform.v1beta1.FeatureName;
+import com.google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomalySpec;
 import com.google.cloud.aiplatform.v1beta1.FeaturestoreServiceClient;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureRequest;
 
@@ -42,6 +43,7 @@ public class AsyncGetFeature {
                   FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                           "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                       .toString())
+              .setFeatureStatsAndAnomalySpec(FeatureStatsAndAnomalySpec.newBuilder().build())
               .build();
       ApiFuture<Feature> future =
           featurestoreServiceClient.getFeatureCallable().futureCall(request);

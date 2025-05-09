@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -220,7 +220,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method EnableInteractiveSerialConsole, expected %s or %s",
+                  "Unrecognized response type %s for method EnableInteractiveSerialConsole,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -241,7 +242,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DisableInteractiveSerialConsole, expected %s or %s",
+                  "Unrecognized response type %s for method DisableInteractiveSerialConsole,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -549,7 +551,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateVolumeSnapshot, expected %s or %s",
+                  "Unrecognized response type %s for method CreateVolumeSnapshot, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   VolumeSnapshot.class.getName(),
                   Exception.class.getName())));
@@ -570,7 +573,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RestoreVolumeSnapshot, expected %s or %s",
+                  "Unrecognized response type %s for method RestoreVolumeSnapshot, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -591,7 +595,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteVolumeSnapshot, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteVolumeSnapshot, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -841,7 +846,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListProvisioningQuotas, expected %s or %s",
+                  "Unrecognized response type %s for method ListProvisioningQuotas, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListProvisioningQuotasResponse.class.getName(),
                   Exception.class.getName())));
@@ -863,7 +869,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SubmitProvisioningConfig, expected %s or %s",
+                  "Unrecognized response type %s for method SubmitProvisioningConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SubmitProvisioningConfigResponse.class.getName(),
                   Exception.class.getName())));
@@ -884,7 +891,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetProvisioningConfig, expected %s or %s",
+                  "Unrecognized response type %s for method GetProvisioningConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProvisioningConfig.class.getName(),
                   Exception.class.getName())));
@@ -906,7 +914,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateProvisioningConfig, expected %s or %s",
+                  "Unrecognized response type %s for method CreateProvisioningConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProvisioningConfig.class.getName(),
                   Exception.class.getName())));
@@ -928,7 +937,8 @@ public class MockBareMetalSolutionImpl extends BareMetalSolutionImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateProvisioningConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateProvisioningConfig, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProvisioningConfig.class.getName(),
                   Exception.class.getName())));

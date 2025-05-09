@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.cx.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,12 +96,10 @@ public class TransitionRouteGroupName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationAgentFlowTransitionRouteGroupBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationAgentTransitionRouteGroupBuilder
       newProjectLocationAgentTransitionRouteGroupBuilder() {
     return new ProjectLocationAgentTransitionRouteGroupBuilder();
@@ -123,7 +120,6 @@ public class TransitionRouteGroupName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TransitionRouteGroupName ofProjectLocationAgentFlowTransitionRouteGroupName(
       String project, String location, String agent, String flow, String transitionRouteGroup) {
     return newBuilder()
@@ -135,7 +131,6 @@ public class TransitionRouteGroupName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TransitionRouteGroupName ofProjectLocationAgentTransitionRouteGroupName(
       String project, String location, String agent, String transitionRouteGroup) {
     return newProjectLocationAgentTransitionRouteGroupBuilder()
@@ -158,7 +153,6 @@ public class TransitionRouteGroupName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationAgentFlowTransitionRouteGroupName(
       String project, String location, String agent, String flow, String transitionRouteGroup) {
     return newBuilder()
@@ -171,7 +165,6 @@ public class TransitionRouteGroupName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationAgentTransitionRouteGroupName(
       String project, String location, String agent, String transitionRouteGroup) {
     return newProjectLocationAgentTransitionRouteGroupBuilder()
@@ -368,7 +361,8 @@ public class TransitionRouteGroupName implements ResourceName {
           Objects.equals(
               transitionRouteGroupName.pathTemplate,
               PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP),
-          "toBuilder is only supported when TransitionRouteGroupName has the pattern of projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}");
+          "toBuilder is only supported when TransitionRouteGroupName has the pattern of"
+              + " projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/transitionRouteGroups/{transition_route_group}");
       this.project = transitionRouteGroupName.project;
       this.location = transitionRouteGroupName.location;
       this.agent = transitionRouteGroupName.agent;
@@ -385,7 +379,6 @@ public class TransitionRouteGroupName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/agents/{agent}/transitionRouteGroups/{transition_route_group}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationAgentTransitionRouteGroupBuilder {
     private String project;
     private String location;

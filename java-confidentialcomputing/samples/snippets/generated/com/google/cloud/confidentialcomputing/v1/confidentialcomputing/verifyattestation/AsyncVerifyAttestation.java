@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ public class AsyncVerifyAttestation {
               .setTpmAttestation(TpmAttestation.newBuilder().build())
               .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
               .setTokenOptions(TokenOptions.newBuilder().build())
+              .setAttester("attester542920370")
               .build();
       ApiFuture<VerifyAttestationResponse> future =
           confidentialComputingClient.verifyAttestationCallable().futureCall(request);

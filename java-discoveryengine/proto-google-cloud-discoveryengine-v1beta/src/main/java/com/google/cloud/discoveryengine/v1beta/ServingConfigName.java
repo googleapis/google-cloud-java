@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.discoveryengine.v1beta;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -37,6 +36,9 @@ public class ServingConfigName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_COLLECTION_DATA_STORE_SERVING_CONFIG =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config}");
+  private static final PathTemplate PROJECT_LOCATION_COLLECTION_ENGINE_SERVING_CONFIG =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -45,6 +47,7 @@ public class ServingConfigName implements ResourceName {
   private final String dataStore;
   private final String servingConfig;
   private final String collection;
+  private final String engine;
 
   @Deprecated
   protected ServingConfigName() {
@@ -53,6 +56,7 @@ public class ServingConfigName implements ResourceName {
     dataStore = null;
     servingConfig = null;
     collection = null;
+    engine = null;
   }
 
   private ServingConfigName(Builder builder) {
@@ -61,6 +65,7 @@ public class ServingConfigName implements ResourceName {
     dataStore = Preconditions.checkNotNull(builder.getDataStore());
     servingConfig = Preconditions.checkNotNull(builder.getServingConfig());
     collection = null;
+    engine = null;
     pathTemplate = PROJECT_LOCATION_DATA_STORE_SERVING_CONFIG;
   }
 
@@ -70,7 +75,18 @@ public class ServingConfigName implements ResourceName {
     collection = Preconditions.checkNotNull(builder.getCollection());
     dataStore = Preconditions.checkNotNull(builder.getDataStore());
     servingConfig = Preconditions.checkNotNull(builder.getServingConfig());
+    engine = null;
     pathTemplate = PROJECT_LOCATION_COLLECTION_DATA_STORE_SERVING_CONFIG;
+  }
+
+  private ServingConfigName(ProjectLocationCollectionEngineServingConfigBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    collection = Preconditions.checkNotNull(builder.getCollection());
+    engine = Preconditions.checkNotNull(builder.getEngine());
+    servingConfig = Preconditions.checkNotNull(builder.getServingConfig());
+    dataStore = null;
+    pathTemplate = PROJECT_LOCATION_COLLECTION_ENGINE_SERVING_CONFIG;
   }
 
   public String getProject() {
@@ -93,19 +109,26 @@ public class ServingConfigName implements ResourceName {
     return collection;
   }
 
+  public String getEngine() {
+    return engine;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationDataStoreServingConfigBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationCollectionDataStoreServingConfigBuilder
       newProjectLocationCollectionDataStoreServingConfigBuilder() {
     return new ProjectLocationCollectionDataStoreServingConfigBuilder();
+  }
+
+  public static ProjectLocationCollectionEngineServingConfigBuilder
+      newProjectLocationCollectionEngineServingConfigBuilder() {
+    return new ProjectLocationCollectionEngineServingConfigBuilder();
   }
 
   public Builder toBuilder() {
@@ -122,7 +145,6 @@ public class ServingConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServingConfigName ofProjectLocationDataStoreServingConfigName(
       String project, String location, String dataStore, String servingConfig) {
     return newBuilder()
@@ -133,7 +155,6 @@ public class ServingConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServingConfigName ofProjectLocationCollectionDataStoreServingConfigName(
       String project, String location, String collection, String dataStore, String servingConfig) {
     return newProjectLocationCollectionDataStoreServingConfigBuilder()
@@ -141,6 +162,17 @@ public class ServingConfigName implements ResourceName {
         .setLocation(location)
         .setCollection(collection)
         .setDataStore(dataStore)
+        .setServingConfig(servingConfig)
+        .build();
+  }
+
+  public static ServingConfigName ofProjectLocationCollectionEngineServingConfigName(
+      String project, String location, String collection, String engine, String servingConfig) {
+    return newProjectLocationCollectionEngineServingConfigBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setEngine(engine)
         .setServingConfig(servingConfig)
         .build();
   }
@@ -156,7 +188,6 @@ public class ServingConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDataStoreServingConfigName(
       String project, String location, String dataStore, String servingConfig) {
     return newBuilder()
@@ -168,7 +199,6 @@ public class ServingConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationCollectionDataStoreServingConfigName(
       String project, String location, String collection, String dataStore, String servingConfig) {
     return newProjectLocationCollectionDataStoreServingConfigBuilder()
@@ -176,6 +206,18 @@ public class ServingConfigName implements ResourceName {
         .setLocation(location)
         .setCollection(collection)
         .setDataStore(dataStore)
+        .setServingConfig(servingConfig)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationCollectionEngineServingConfigName(
+      String project, String location, String collection, String engine, String servingConfig) {
+    return newProjectLocationCollectionEngineServingConfigBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setEngine(engine)
         .setServingConfig(servingConfig)
         .build()
         .toString();
@@ -201,6 +243,15 @@ public class ServingConfigName implements ResourceName {
           matchMap.get("location"),
           matchMap.get("collection"),
           matchMap.get("data_store"),
+          matchMap.get("serving_config"));
+    } else if (PROJECT_LOCATION_COLLECTION_ENGINE_SERVING_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_COLLECTION_ENGINE_SERVING_CONFIG.match(formattedString);
+      return ofProjectLocationCollectionEngineServingConfigName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("collection"),
+          matchMap.get("engine"),
           matchMap.get("serving_config"));
     }
     throw new ValidationException("ServingConfigName.parse: formattedString not in valid format");
@@ -228,7 +279,8 @@ public class ServingConfigName implements ResourceName {
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_LOCATION_DATA_STORE_SERVING_CONFIG.matches(formattedString)
-        || PROJECT_LOCATION_COLLECTION_DATA_STORE_SERVING_CONFIG.matches(formattedString);
+        || PROJECT_LOCATION_COLLECTION_DATA_STORE_SERVING_CONFIG.matches(formattedString)
+        || PROJECT_LOCATION_COLLECTION_ENGINE_SERVING_CONFIG.matches(formattedString);
   }
 
   @Override
@@ -251,6 +303,9 @@ public class ServingConfigName implements ResourceName {
           }
           if (collection != null) {
             fieldMapBuilder.put("collection", collection);
+          }
+          if (engine != null) {
+            fieldMapBuilder.put("engine", engine);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -279,7 +334,8 @@ public class ServingConfigName implements ResourceName {
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.dataStore, that.dataStore)
           && Objects.equals(this.servingConfig, that.servingConfig)
-          && Objects.equals(this.collection, that.collection);
+          && Objects.equals(this.collection, that.collection)
+          && Objects.equals(this.engine, that.engine);
     }
     return false;
   }
@@ -299,6 +355,8 @@ public class ServingConfigName implements ResourceName {
     h ^= Objects.hashCode(servingConfig);
     h *= 1000003;
     h ^= Objects.hashCode(collection);
+    h *= 1000003;
+    h ^= Objects.hashCode(engine);
     return h;
   }
 
@@ -354,7 +412,8 @@ public class ServingConfigName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               servingConfigName.pathTemplate, PROJECT_LOCATION_DATA_STORE_SERVING_CONFIG),
-          "toBuilder is only supported when ServingConfigName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/servingConfigs/{serving_config}");
+          "toBuilder is only supported when ServingConfigName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/servingConfigs/{serving_config}");
       this.project = servingConfigName.project;
       this.location = servingConfigName.location;
       this.dataStore = servingConfigName.dataStore;
@@ -370,7 +429,6 @@ public class ServingConfigName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationCollectionDataStoreServingConfigBuilder {
     private String project;
     private String location;
@@ -421,6 +479,70 @@ public class ServingConfigName implements ResourceName {
     }
 
     public ProjectLocationCollectionDataStoreServingConfigBuilder setServingConfig(
+        String servingConfig) {
+      this.servingConfig = servingConfig;
+      return this;
+    }
+
+    public ServingConfigName build() {
+      return new ServingConfigName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}.
+   */
+  public static class ProjectLocationCollectionEngineServingConfigBuilder {
+    private String project;
+    private String location;
+    private String collection;
+    private String engine;
+    private String servingConfig;
+
+    protected ProjectLocationCollectionEngineServingConfigBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getCollection() {
+      return collection;
+    }
+
+    public String getEngine() {
+      return engine;
+    }
+
+    public String getServingConfig() {
+      return servingConfig;
+    }
+
+    public ProjectLocationCollectionEngineServingConfigBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineServingConfigBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineServingConfigBuilder setCollection(String collection) {
+      this.collection = collection;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineServingConfigBuilder setEngine(String engine) {
+      this.engine = engine;
+      return this;
+    }
+
+    public ProjectLocationCollectionEngineServingConfigBuilder setServingConfig(
         String servingConfig) {
       this.servingConfig = servingConfig;
       return this;

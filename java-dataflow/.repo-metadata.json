@@ -5,7 +5,7 @@
   "api_description": "is a managed service for executing a wide variety of data processing patterns.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/overview",
   "release_level": "preview",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-dataflow",

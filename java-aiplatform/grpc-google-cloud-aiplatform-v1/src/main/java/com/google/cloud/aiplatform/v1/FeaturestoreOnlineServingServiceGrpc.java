@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -206,6 +206,21 @@ public final class FeaturestoreOnlineServingServiceGrpc {
     return FeaturestoreOnlineServingServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FeaturestoreOnlineServingServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FeaturestoreOnlineServingServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<
+            FeaturestoreOnlineServingServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public FeaturestoreOnlineServingServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FeaturestoreOnlineServingServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FeaturestoreOnlineServingServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -395,6 +410,77 @@ public final class FeaturestoreOnlineServingServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service
+   * FeaturestoreOnlineServingService.
+   *
+   * <pre>
+   * A service for serving online feature values.
+   * </pre>
+   */
+  public static final class FeaturestoreOnlineServingServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FeaturestoreOnlineServingServiceBlockingV2Stub> {
+    private FeaturestoreOnlineServingServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FeaturestoreOnlineServingServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FeaturestoreOnlineServingServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads Feature values of a specific entity of an EntityType. For reading
+     * feature values of multiple entities of an EntityType, please use
+     * StreamingReadFeatureValues.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse readFeatureValues(
+        com.google.cloud.aiplatform.v1.ReadFeatureValuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReadFeatureValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads Feature values for multiple entities. Depending on their size, data
+     * for different entities may be broken
+     * up across multiple responses.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.cloud.aiplatform.v1.ReadFeatureValuesResponse>
+        streamingReadFeatureValues(
+            com.google.cloud.aiplatform.v1.StreamingReadFeatureValuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getStreamingReadFeatureValuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes Feature values of one or more entities of an EntityType.
+     * The Feature values are merged into existing entities if any. The Feature
+     * values to be written must have timestamp within the online storage
+     * retention.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.WriteFeatureValuesResponse writeFeatureValues(
+        com.google.cloud.aiplatform.v1.WriteFeatureValuesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getWriteFeatureValuesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
    * FeaturestoreOnlineServingService.
    *
    * <pre>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -124,6 +124,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -186,6 +188,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -248,6 +252,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -299,6 +305,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -438,6 +446,8 @@ public class IndexEndpointServiceClientTest {
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 

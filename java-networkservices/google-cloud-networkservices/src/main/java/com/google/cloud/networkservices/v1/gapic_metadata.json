@@ -1,0 +1,204 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.networkservices.v1",
+  "libraryPackage": "com.google.cloud.networkservices.v1",
+  "services": {
+    "DepService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DepServiceClient",
+          "rpcs": {
+            "CreateLbRouteExtension": {
+              "methods": ["createLbRouteExtensionAsync", "createLbRouteExtensionAsync", "createLbRouteExtensionAsync", "createLbRouteExtensionOperationCallable", "createLbRouteExtensionCallable"]
+            },
+            "CreateLbTrafficExtension": {
+              "methods": ["createLbTrafficExtensionAsync", "createLbTrafficExtensionAsync", "createLbTrafficExtensionAsync", "createLbTrafficExtensionOperationCallable", "createLbTrafficExtensionCallable"]
+            },
+            "DeleteLbRouteExtension": {
+              "methods": ["deleteLbRouteExtensionAsync", "deleteLbRouteExtensionAsync", "deleteLbRouteExtensionAsync", "deleteLbRouteExtensionOperationCallable", "deleteLbRouteExtensionCallable"]
+            },
+            "DeleteLbTrafficExtension": {
+              "methods": ["deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionOperationCallable", "deleteLbTrafficExtensionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLbRouteExtension": {
+              "methods": ["getLbRouteExtension", "getLbRouteExtension", "getLbRouteExtension", "getLbRouteExtensionCallable"]
+            },
+            "GetLbTrafficExtension": {
+              "methods": ["getLbTrafficExtension", "getLbTrafficExtension", "getLbTrafficExtension", "getLbTrafficExtensionCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLbRouteExtensions": {
+              "methods": ["listLbRouteExtensions", "listLbRouteExtensions", "listLbRouteExtensions", "listLbRouteExtensionsPagedCallable", "listLbRouteExtensionsCallable"]
+            },
+            "ListLbTrafficExtensions": {
+              "methods": ["listLbTrafficExtensions", "listLbTrafficExtensions", "listLbTrafficExtensions", "listLbTrafficExtensionsPagedCallable", "listLbTrafficExtensionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateLbRouteExtension": {
+              "methods": ["updateLbRouteExtensionAsync", "updateLbRouteExtensionAsync", "updateLbRouteExtensionOperationCallable", "updateLbRouteExtensionCallable"]
+            },
+            "UpdateLbTrafficExtension": {
+              "methods": ["updateLbTrafficExtensionAsync", "updateLbTrafficExtensionAsync", "updateLbTrafficExtensionOperationCallable", "updateLbTrafficExtensionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "NetworkServices": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NetworkServicesClient",
+          "rpcs": {
+            "CreateEndpointPolicy": {
+              "methods": ["createEndpointPolicyAsync", "createEndpointPolicyAsync", "createEndpointPolicyAsync", "createEndpointPolicyOperationCallable", "createEndpointPolicyCallable"]
+            },
+            "CreateGateway": {
+              "methods": ["createGatewayAsync", "createGatewayAsync", "createGatewayAsync", "createGatewayOperationCallable", "createGatewayCallable"]
+            },
+            "CreateGrpcRoute": {
+              "methods": ["createGrpcRouteAsync", "createGrpcRouteAsync", "createGrpcRouteAsync", "createGrpcRouteOperationCallable", "createGrpcRouteCallable"]
+            },
+            "CreateHttpRoute": {
+              "methods": ["createHttpRouteAsync", "createHttpRouteAsync", "createHttpRouteAsync", "createHttpRouteOperationCallable", "createHttpRouteCallable"]
+            },
+            "CreateMesh": {
+              "methods": ["createMeshAsync", "createMeshAsync", "createMeshAsync", "createMeshOperationCallable", "createMeshCallable"]
+            },
+            "CreateServiceBinding": {
+              "methods": ["createServiceBindingAsync", "createServiceBindingAsync", "createServiceBindingAsync", "createServiceBindingOperationCallable", "createServiceBindingCallable"]
+            },
+            "CreateTcpRoute": {
+              "methods": ["createTcpRouteAsync", "createTcpRouteAsync", "createTcpRouteAsync", "createTcpRouteOperationCallable", "createTcpRouteCallable"]
+            },
+            "CreateTlsRoute": {
+              "methods": ["createTlsRouteAsync", "createTlsRouteAsync", "createTlsRouteAsync", "createTlsRouteOperationCallable", "createTlsRouteCallable"]
+            },
+            "DeleteEndpointPolicy": {
+              "methods": ["deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyOperationCallable", "deleteEndpointPolicyCallable"]
+            },
+            "DeleteGateway": {
+              "methods": ["deleteGatewayAsync", "deleteGatewayAsync", "deleteGatewayAsync", "deleteGatewayOperationCallable", "deleteGatewayCallable"]
+            },
+            "DeleteGrpcRoute": {
+              "methods": ["deleteGrpcRouteAsync", "deleteGrpcRouteAsync", "deleteGrpcRouteAsync", "deleteGrpcRouteOperationCallable", "deleteGrpcRouteCallable"]
+            },
+            "DeleteHttpRoute": {
+              "methods": ["deleteHttpRouteAsync", "deleteHttpRouteAsync", "deleteHttpRouteAsync", "deleteHttpRouteOperationCallable", "deleteHttpRouteCallable"]
+            },
+            "DeleteMesh": {
+              "methods": ["deleteMeshAsync", "deleteMeshAsync", "deleteMeshAsync", "deleteMeshOperationCallable", "deleteMeshCallable"]
+            },
+            "DeleteServiceBinding": {
+              "methods": ["deleteServiceBindingAsync", "deleteServiceBindingAsync", "deleteServiceBindingAsync", "deleteServiceBindingOperationCallable", "deleteServiceBindingCallable"]
+            },
+            "DeleteTcpRoute": {
+              "methods": ["deleteTcpRouteAsync", "deleteTcpRouteAsync", "deleteTcpRouteAsync", "deleteTcpRouteOperationCallable", "deleteTcpRouteCallable"]
+            },
+            "DeleteTlsRoute": {
+              "methods": ["deleteTlsRouteAsync", "deleteTlsRouteAsync", "deleteTlsRouteAsync", "deleteTlsRouteOperationCallable", "deleteTlsRouteCallable"]
+            },
+            "GetEndpointPolicy": {
+              "methods": ["getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicyCallable"]
+            },
+            "GetGateway": {
+              "methods": ["getGateway", "getGateway", "getGateway", "getGatewayCallable"]
+            },
+            "GetGrpcRoute": {
+              "methods": ["getGrpcRoute", "getGrpcRoute", "getGrpcRoute", "getGrpcRouteCallable"]
+            },
+            "GetHttpRoute": {
+              "methods": ["getHttpRoute", "getHttpRoute", "getHttpRoute", "getHttpRouteCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMesh": {
+              "methods": ["getMesh", "getMesh", "getMesh", "getMeshCallable"]
+            },
+            "GetServiceBinding": {
+              "methods": ["getServiceBinding", "getServiceBinding", "getServiceBinding", "getServiceBindingCallable"]
+            },
+            "GetTcpRoute": {
+              "methods": ["getTcpRoute", "getTcpRoute", "getTcpRoute", "getTcpRouteCallable"]
+            },
+            "GetTlsRoute": {
+              "methods": ["getTlsRoute", "getTlsRoute", "getTlsRoute", "getTlsRouteCallable"]
+            },
+            "ListEndpointPolicies": {
+              "methods": ["listEndpointPolicies", "listEndpointPolicies", "listEndpointPolicies", "listEndpointPoliciesPagedCallable", "listEndpointPoliciesCallable"]
+            },
+            "ListGateways": {
+              "methods": ["listGateways", "listGateways", "listGateways", "listGatewaysPagedCallable", "listGatewaysCallable"]
+            },
+            "ListGrpcRoutes": {
+              "methods": ["listGrpcRoutes", "listGrpcRoutes", "listGrpcRoutes", "listGrpcRoutesPagedCallable", "listGrpcRoutesCallable"]
+            },
+            "ListHttpRoutes": {
+              "methods": ["listHttpRoutes", "listHttpRoutes", "listHttpRoutes", "listHttpRoutesPagedCallable", "listHttpRoutesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMeshes": {
+              "methods": ["listMeshes", "listMeshes", "listMeshes", "listMeshesPagedCallable", "listMeshesCallable"]
+            },
+            "ListServiceBindings": {
+              "methods": ["listServiceBindings", "listServiceBindings", "listServiceBindings", "listServiceBindingsPagedCallable", "listServiceBindingsCallable"]
+            },
+            "ListTcpRoutes": {
+              "methods": ["listTcpRoutes", "listTcpRoutes", "listTcpRoutes", "listTcpRoutesPagedCallable", "listTcpRoutesCallable"]
+            },
+            "ListTlsRoutes": {
+              "methods": ["listTlsRoutes", "listTlsRoutes", "listTlsRoutes", "listTlsRoutesPagedCallable", "listTlsRoutesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateEndpointPolicy": {
+              "methods": ["updateEndpointPolicyAsync", "updateEndpointPolicyAsync", "updateEndpointPolicyOperationCallable", "updateEndpointPolicyCallable"]
+            },
+            "UpdateGateway": {
+              "methods": ["updateGatewayAsync", "updateGatewayAsync", "updateGatewayOperationCallable", "updateGatewayCallable"]
+            },
+            "UpdateGrpcRoute": {
+              "methods": ["updateGrpcRouteAsync", "updateGrpcRouteAsync", "updateGrpcRouteOperationCallable", "updateGrpcRouteCallable"]
+            },
+            "UpdateHttpRoute": {
+              "methods": ["updateHttpRouteAsync", "updateHttpRouteAsync", "updateHttpRouteOperationCallable", "updateHttpRouteCallable"]
+            },
+            "UpdateMesh": {
+              "methods": ["updateMeshAsync", "updateMeshAsync", "updateMeshOperationCallable", "updateMeshCallable"]
+            },
+            "UpdateTcpRoute": {
+              "methods": ["updateTcpRouteAsync", "updateTcpRouteAsync", "updateTcpRouteOperationCallable", "updateTcpRouteCallable"]
+            },
+            "UpdateTlsRoute": {
+              "methods": ["updateTlsRouteAsync", "updateTlsRouteAsync", "updateTlsRouteOperationCallable", "updateTlsRouteCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

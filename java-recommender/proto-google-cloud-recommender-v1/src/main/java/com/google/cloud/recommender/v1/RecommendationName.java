@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.recommender.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -141,24 +140,20 @@ public class RecommendationName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationRecommenderRecommendationBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static BillingAccountLocationRecommenderRecommendationBuilder
       newBillingAccountLocationRecommenderRecommendationBuilder() {
     return new BillingAccountLocationRecommenderRecommendationBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationRecommenderRecommendationBuilder
       newFolderLocationRecommenderRecommendationBuilder() {
     return new FolderLocationRecommenderRecommendationBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationRecommenderRecommendationBuilder
       newOrganizationLocationRecommenderRecommendationBuilder() {
     return new OrganizationLocationRecommenderRecommendationBuilder();
@@ -178,7 +173,6 @@ public class RecommendationName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommendationName ofProjectLocationRecommenderRecommendationName(
       String project, String location, String recommender, String recommendation) {
     return newBuilder()
@@ -189,7 +183,6 @@ public class RecommendationName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommendationName ofBillingAccountLocationRecommenderRecommendationName(
       String billingAccount, String location, String recommender, String recommendation) {
     return newBillingAccountLocationRecommenderRecommendationBuilder()
@@ -200,7 +193,6 @@ public class RecommendationName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommendationName ofFolderLocationRecommenderRecommendationName(
       String folder, String location, String recommender, String recommendation) {
     return newFolderLocationRecommenderRecommendationBuilder()
@@ -211,7 +203,6 @@ public class RecommendationName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommendationName ofOrganizationLocationRecommenderRecommendationName(
       String organization, String location, String recommender, String recommendation) {
     return newOrganizationLocationRecommenderRecommendationBuilder()
@@ -233,7 +224,6 @@ public class RecommendationName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationRecommenderRecommendationName(
       String project, String location, String recommender, String recommendation) {
     return newBuilder()
@@ -245,7 +235,6 @@ public class RecommendationName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatBillingAccountLocationRecommenderRecommendationName(
       String billingAccount, String location, String recommender, String recommendation) {
     return newBillingAccountLocationRecommenderRecommendationBuilder()
@@ -257,7 +246,6 @@ public class RecommendationName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationRecommenderRecommendationName(
       String folder, String location, String recommender, String recommendation) {
     return newFolderLocationRecommenderRecommendationBuilder()
@@ -269,7 +257,6 @@ public class RecommendationName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationRecommenderRecommendationName(
       String organization, String location, String recommender, String recommendation) {
     return newOrganizationLocationRecommenderRecommendationBuilder()
@@ -483,7 +470,8 @@ public class RecommendationName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               recommendationName.pathTemplate, PROJECT_LOCATION_RECOMMENDER_RECOMMENDATION),
-          "toBuilder is only supported when RecommendationName has the pattern of projects/{project}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}");
+          "toBuilder is only supported when RecommendationName has the pattern of"
+              + " projects/{project}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}");
       this.project = recommendationName.project;
       this.location = recommendationName.location;
       this.recommender = recommendationName.recommender;
@@ -499,7 +487,6 @@ public class RecommendationName implements ResourceName {
    * Builder for
    * billingAccounts/{billing_account}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountLocationRecommenderRecommendationBuilder {
     private String billingAccount;
     private String location;
@@ -556,7 +543,6 @@ public class RecommendationName implements ResourceName {
    * Builder for
    * folders/{folder}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationRecommenderRecommendationBuilder {
     private String folder;
     private String location;
@@ -610,7 +596,6 @@ public class RecommendationName implements ResourceName {
    * Builder for
    * organizations/{organization}/locations/{location}/recommenders/{recommender}/recommendations/{recommendation}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationRecommenderRecommendationBuilder {
     private String organization;
     private String location;

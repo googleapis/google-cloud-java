@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.talent.v4beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class CompanyName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectTenantCompanyBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectCompanyBuilder newProjectCompanyBuilder() {
     return new ProjectCompanyBuilder();
   }
@@ -98,13 +95,11 @@ public class CompanyName implements ResourceName {
     return newBuilder().setProject(project).setTenant(tenant).setCompany(company).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static CompanyName ofProjectTenantCompanyName(
       String project, String tenant, String company) {
     return newBuilder().setProject(project).setTenant(tenant).setCompany(company).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static CompanyName ofProjectCompanyName(String project, String company) {
     return newProjectCompanyBuilder().setProject(project).setCompany(company).build();
   }
@@ -118,7 +113,6 @@ public class CompanyName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectTenantCompanyName(
       String project, String tenant, String company) {
     return newBuilder()
@@ -129,7 +123,6 @@ public class CompanyName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectCompanyName(String project, String company) {
     return newProjectCompanyBuilder().setProject(project).setCompany(company).build().toString();
   }
@@ -271,7 +264,8 @@ public class CompanyName implements ResourceName {
     private Builder(CompanyName companyName) {
       Preconditions.checkArgument(
           Objects.equals(companyName.pathTemplate, PROJECT_TENANT_COMPANY),
-          "toBuilder is only supported when CompanyName has the pattern of projects/{project}/tenants/{tenant}/companies/{company}");
+          "toBuilder is only supported when CompanyName has the pattern of"
+              + " projects/{project}/tenants/{tenant}/companies/{company}");
       this.project = companyName.project;
       this.tenant = companyName.tenant;
       this.company = companyName.company;
@@ -283,7 +277,6 @@ public class CompanyName implements ResourceName {
   }
 
   /** Builder for projects/{project}/companies/{company}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectCompanyBuilder {
     private String project;
     private String company;

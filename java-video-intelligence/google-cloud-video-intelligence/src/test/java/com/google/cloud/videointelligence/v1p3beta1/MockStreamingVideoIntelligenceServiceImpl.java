@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,8 @@ public class MockStreamingVideoIntelligenceServiceImpl
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingAnnotateVideo, expected %s or %s",
+                          "Unrecognized response type %s for method StreamingAnnotateVideo,"
+                              + " expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingAnnotateVideoResponse.class.getName(),
                           Exception.class.getName())));

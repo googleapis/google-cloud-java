@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ public class SyncAddSecretVersionSecretnameSecretpayload {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SecretManagerServiceClient secretManagerServiceClient =
         SecretManagerServiceClient.create()) {
-      SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
+      SecretName parent = SecretName.ofProjectSecretName("[PROJECT]", "[SECRET]");
       SecretPayload payload = SecretPayload.newBuilder().build();
       SecretVersion response = secretManagerServiceClient.addSecretVersion(parent, payload);
     }

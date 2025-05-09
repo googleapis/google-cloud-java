@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service Interface for the Analytics Admin API (GA4).
+ * Service Interface for the Google Analytics Admin API.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -551,480 +551,6 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getUpdatePropertyMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.GetUserLinkRequest,
-          com.google.analytics.admin.v1alpha.UserLink>
-      getGetUserLinkMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetUserLink",
-      requestType = com.google.analytics.admin.v1alpha.GetUserLinkRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.UserLink.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.GetUserLinkRequest,
-          com.google.analytics.admin.v1alpha.UserLink>
-      getGetUserLinkMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.GetUserLinkRequest,
-            com.google.analytics.admin.v1alpha.UserLink>
-        getGetUserLinkMethod;
-    if ((getGetUserLinkMethod = AnalyticsAdminServiceGrpc.getGetUserLinkMethod) == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getGetUserLinkMethod = AnalyticsAdminServiceGrpc.getGetUserLinkMethod) == null) {
-          AnalyticsAdminServiceGrpc.getGetUserLinkMethod =
-              getGetUserLinkMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.GetUserLinkRequest,
-                          com.google.analytics.admin.v1alpha.UserLink>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUserLink"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.GetUserLinkRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.UserLink.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetUserLink"))
-                      .build();
-        }
-      }
-    }
-    return getGetUserLinkMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest,
-          com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
-      getBatchGetUserLinksMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BatchGetUserLinks",
-      requestType = com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest,
-          com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
-      getBatchGetUserLinksMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest,
-            com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
-        getBatchGetUserLinksMethod;
-    if ((getBatchGetUserLinksMethod = AnalyticsAdminServiceGrpc.getBatchGetUserLinksMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getBatchGetUserLinksMethod = AnalyticsAdminServiceGrpc.getBatchGetUserLinksMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getBatchGetUserLinksMethod =
-              getBatchGetUserLinksMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest,
-                          com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchGetUserLinks"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("BatchGetUserLinks"))
-                      .build();
-        }
-      }
-    }
-    return getBatchGetUserLinksMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.ListUserLinksRequest,
-          com.google.analytics.admin.v1alpha.ListUserLinksResponse>
-      getListUserLinksMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListUserLinks",
-      requestType = com.google.analytics.admin.v1alpha.ListUserLinksRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.ListUserLinksResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.ListUserLinksRequest,
-          com.google.analytics.admin.v1alpha.ListUserLinksResponse>
-      getListUserLinksMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.ListUserLinksRequest,
-            com.google.analytics.admin.v1alpha.ListUserLinksResponse>
-        getListUserLinksMethod;
-    if ((getListUserLinksMethod = AnalyticsAdminServiceGrpc.getListUserLinksMethod) == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getListUserLinksMethod = AnalyticsAdminServiceGrpc.getListUserLinksMethod) == null) {
-          AnalyticsAdminServiceGrpc.getListUserLinksMethod =
-              getListUserLinksMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.ListUserLinksRequest,
-                          com.google.analytics.admin.v1alpha.ListUserLinksResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUserLinks"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.ListUserLinksRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.ListUserLinksResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListUserLinks"))
-                      .build();
-        }
-      }
-    }
-    return getListUserLinksMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.AuditUserLinksRequest,
-          com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
-      getAuditUserLinksMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "AuditUserLinks",
-      requestType = com.google.analytics.admin.v1alpha.AuditUserLinksRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.AuditUserLinksResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.AuditUserLinksRequest,
-          com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
-      getAuditUserLinksMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.AuditUserLinksRequest,
-            com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
-        getAuditUserLinksMethod;
-    if ((getAuditUserLinksMethod = AnalyticsAdminServiceGrpc.getAuditUserLinksMethod) == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getAuditUserLinksMethod = AnalyticsAdminServiceGrpc.getAuditUserLinksMethod) == null) {
-          AnalyticsAdminServiceGrpc.getAuditUserLinksMethod =
-              getAuditUserLinksMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.AuditUserLinksRequest,
-                          com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AuditUserLinks"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.AuditUserLinksRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.AuditUserLinksResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("AuditUserLinks"))
-                      .build();
-        }
-      }
-    }
-    return getAuditUserLinksMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.CreateUserLinkRequest,
-          com.google.analytics.admin.v1alpha.UserLink>
-      getCreateUserLinkMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateUserLink",
-      requestType = com.google.analytics.admin.v1alpha.CreateUserLinkRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.UserLink.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.CreateUserLinkRequest,
-          com.google.analytics.admin.v1alpha.UserLink>
-      getCreateUserLinkMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.CreateUserLinkRequest,
-            com.google.analytics.admin.v1alpha.UserLink>
-        getCreateUserLinkMethod;
-    if ((getCreateUserLinkMethod = AnalyticsAdminServiceGrpc.getCreateUserLinkMethod) == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getCreateUserLinkMethod = AnalyticsAdminServiceGrpc.getCreateUserLinkMethod) == null) {
-          AnalyticsAdminServiceGrpc.getCreateUserLinkMethod =
-              getCreateUserLinkMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.CreateUserLinkRequest,
-                          com.google.analytics.admin.v1alpha.UserLink>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateUserLink"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.CreateUserLinkRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.UserLink.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateUserLink"))
-                      .build();
-        }
-      }
-    }
-    return getCreateUserLinkMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest,
-          com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
-      getBatchCreateUserLinksMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BatchCreateUserLinks",
-      requestType = com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest,
-          com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
-      getBatchCreateUserLinksMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest,
-            com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
-        getBatchCreateUserLinksMethod;
-    if ((getBatchCreateUserLinksMethod = AnalyticsAdminServiceGrpc.getBatchCreateUserLinksMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getBatchCreateUserLinksMethod =
-                AnalyticsAdminServiceGrpc.getBatchCreateUserLinksMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getBatchCreateUserLinksMethod =
-              getBatchCreateUserLinksMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest,
-                          com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "BatchCreateUserLinks"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("BatchCreateUserLinks"))
-                      .build();
-        }
-      }
-    }
-    return getBatchCreateUserLinksMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.UpdateUserLinkRequest,
-          com.google.analytics.admin.v1alpha.UserLink>
-      getUpdateUserLinkMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateUserLink",
-      requestType = com.google.analytics.admin.v1alpha.UpdateUserLinkRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.UserLink.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.UpdateUserLinkRequest,
-          com.google.analytics.admin.v1alpha.UserLink>
-      getUpdateUserLinkMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.UpdateUserLinkRequest,
-            com.google.analytics.admin.v1alpha.UserLink>
-        getUpdateUserLinkMethod;
-    if ((getUpdateUserLinkMethod = AnalyticsAdminServiceGrpc.getUpdateUserLinkMethod) == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getUpdateUserLinkMethod = AnalyticsAdminServiceGrpc.getUpdateUserLinkMethod) == null) {
-          AnalyticsAdminServiceGrpc.getUpdateUserLinkMethod =
-              getUpdateUserLinkMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.UpdateUserLinkRequest,
-                          com.google.analytics.admin.v1alpha.UserLink>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateUserLink"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.UpdateUserLinkRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.UserLink.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateUserLink"))
-                      .build();
-        }
-      }
-    }
-    return getUpdateUserLinkMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest,
-          com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
-      getBatchUpdateUserLinksMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BatchUpdateUserLinks",
-      requestType = com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest,
-          com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
-      getBatchUpdateUserLinksMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest,
-            com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
-        getBatchUpdateUserLinksMethod;
-    if ((getBatchUpdateUserLinksMethod = AnalyticsAdminServiceGrpc.getBatchUpdateUserLinksMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getBatchUpdateUserLinksMethod =
-                AnalyticsAdminServiceGrpc.getBatchUpdateUserLinksMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getBatchUpdateUserLinksMethod =
-              getBatchUpdateUserLinksMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest,
-                          com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "BatchUpdateUserLinks"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("BatchUpdateUserLinks"))
-                      .build();
-        }
-      }
-    }
-    return getBatchUpdateUserLinksMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.DeleteUserLinkRequest, com.google.protobuf.Empty>
-      getDeleteUserLinkMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteUserLink",
-      requestType = com.google.analytics.admin.v1alpha.DeleteUserLinkRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.DeleteUserLinkRequest, com.google.protobuf.Empty>
-      getDeleteUserLinkMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.DeleteUserLinkRequest, com.google.protobuf.Empty>
-        getDeleteUserLinkMethod;
-    if ((getDeleteUserLinkMethod = AnalyticsAdminServiceGrpc.getDeleteUserLinkMethod) == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getDeleteUserLinkMethod = AnalyticsAdminServiceGrpc.getDeleteUserLinkMethod) == null) {
-          AnalyticsAdminServiceGrpc.getDeleteUserLinkMethod =
-              getDeleteUserLinkMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.DeleteUserLinkRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteUserLink"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.DeleteUserLinkRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteUserLink"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteUserLinkMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest, com.google.protobuf.Empty>
-      getBatchDeleteUserLinksMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteUserLinks",
-      requestType = com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest, com.google.protobuf.Empty>
-      getBatchDeleteUserLinksMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest,
-            com.google.protobuf.Empty>
-        getBatchDeleteUserLinksMethod;
-    if ((getBatchDeleteUserLinksMethod = AnalyticsAdminServiceGrpc.getBatchDeleteUserLinksMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getBatchDeleteUserLinksMethod =
-                AnalyticsAdminServiceGrpc.getBatchDeleteUserLinksMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getBatchDeleteUserLinksMethod =
-              getBatchDeleteUserLinksMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "BatchDeleteUserLinks"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier("BatchDeleteUserLinks"))
-                      .build();
-        }
-      }
-    }
-    return getBatchDeleteUserLinksMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2482,6 +2008,234 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getListConversionEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateKeyEventRequest,
+          com.google.analytics.admin.v1alpha.KeyEvent>
+      getCreateKeyEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateKeyEvent",
+      requestType = com.google.analytics.admin.v1alpha.CreateKeyEventRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.KeyEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateKeyEventRequest,
+          com.google.analytics.admin.v1alpha.KeyEvent>
+      getCreateKeyEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateKeyEventRequest,
+            com.google.analytics.admin.v1alpha.KeyEvent>
+        getCreateKeyEventMethod;
+    if ((getCreateKeyEventMethod = AnalyticsAdminServiceGrpc.getCreateKeyEventMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateKeyEventMethod = AnalyticsAdminServiceGrpc.getCreateKeyEventMethod) == null) {
+          AnalyticsAdminServiceGrpc.getCreateKeyEventMethod =
+              getCreateKeyEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateKeyEventRequest,
+                          com.google.analytics.admin.v1alpha.KeyEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateKeyEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateKeyEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateKeyEvent"))
+                      .build();
+        }
+      }
+    }
+    return getCreateKeyEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateKeyEventRequest,
+          com.google.analytics.admin.v1alpha.KeyEvent>
+      getUpdateKeyEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateKeyEvent",
+      requestType = com.google.analytics.admin.v1alpha.UpdateKeyEventRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.KeyEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateKeyEventRequest,
+          com.google.analytics.admin.v1alpha.KeyEvent>
+      getUpdateKeyEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateKeyEventRequest,
+            com.google.analytics.admin.v1alpha.KeyEvent>
+        getUpdateKeyEventMethod;
+    if ((getUpdateKeyEventMethod = AnalyticsAdminServiceGrpc.getUpdateKeyEventMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateKeyEventMethod = AnalyticsAdminServiceGrpc.getUpdateKeyEventMethod) == null) {
+          AnalyticsAdminServiceGrpc.getUpdateKeyEventMethod =
+              getUpdateKeyEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateKeyEventRequest,
+                          com.google.analytics.admin.v1alpha.KeyEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateKeyEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateKeyEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateKeyEvent"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateKeyEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetKeyEventRequest,
+          com.google.analytics.admin.v1alpha.KeyEvent>
+      getGetKeyEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetKeyEvent",
+      requestType = com.google.analytics.admin.v1alpha.GetKeyEventRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.KeyEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetKeyEventRequest,
+          com.google.analytics.admin.v1alpha.KeyEvent>
+      getGetKeyEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetKeyEventRequest,
+            com.google.analytics.admin.v1alpha.KeyEvent>
+        getGetKeyEventMethod;
+    if ((getGetKeyEventMethod = AnalyticsAdminServiceGrpc.getGetKeyEventMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetKeyEventMethod = AnalyticsAdminServiceGrpc.getGetKeyEventMethod) == null) {
+          AnalyticsAdminServiceGrpc.getGetKeyEventMethod =
+              getGetKeyEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetKeyEventRequest,
+                          com.google.analytics.admin.v1alpha.KeyEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetKeyEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetKeyEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetKeyEvent"))
+                      .build();
+        }
+      }
+    }
+    return getGetKeyEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteKeyEventRequest, com.google.protobuf.Empty>
+      getDeleteKeyEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteKeyEvent",
+      requestType = com.google.analytics.admin.v1alpha.DeleteKeyEventRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteKeyEventRequest, com.google.protobuf.Empty>
+      getDeleteKeyEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteKeyEventRequest, com.google.protobuf.Empty>
+        getDeleteKeyEventMethod;
+    if ((getDeleteKeyEventMethod = AnalyticsAdminServiceGrpc.getDeleteKeyEventMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteKeyEventMethod = AnalyticsAdminServiceGrpc.getDeleteKeyEventMethod) == null) {
+          AnalyticsAdminServiceGrpc.getDeleteKeyEventMethod =
+              getDeleteKeyEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteKeyEventRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteKeyEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteKeyEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteKeyEvent"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteKeyEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListKeyEventsRequest,
+          com.google.analytics.admin.v1alpha.ListKeyEventsResponse>
+      getListKeyEventsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListKeyEvents",
+      requestType = com.google.analytics.admin.v1alpha.ListKeyEventsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListKeyEventsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListKeyEventsRequest,
+          com.google.analytics.admin.v1alpha.ListKeyEventsResponse>
+      getListKeyEventsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListKeyEventsRequest,
+            com.google.analytics.admin.v1alpha.ListKeyEventsResponse>
+        getListKeyEventsMethod;
+    if ((getListKeyEventsMethod = AnalyticsAdminServiceGrpc.getListKeyEventsMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListKeyEventsMethod = AnalyticsAdminServiceGrpc.getListKeyEventsMethod) == null) {
+          AnalyticsAdminServiceGrpc.getListKeyEventsMethod =
+              getListKeyEventsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListKeyEventsRequest,
+                          com.google.analytics.admin.v1alpha.ListKeyEventsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListKeyEvents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListKeyEventsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListKeyEventsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListKeyEvents"))
+                      .build();
+        }
+      }
+    }
+    return getListKeyEventsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -5659,6 +5413,54 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest,
+          com.google.analytics.admin.v1alpha.BigQueryLink>
+      getCreateBigQueryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBigQueryLink",
+      requestType = com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.BigQueryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest,
+          com.google.analytics.admin.v1alpha.BigQueryLink>
+      getCreateBigQueryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest,
+            com.google.analytics.admin.v1alpha.BigQueryLink>
+        getCreateBigQueryLinkMethod;
+    if ((getCreateBigQueryLinkMethod = AnalyticsAdminServiceGrpc.getCreateBigQueryLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateBigQueryLinkMethod = AnalyticsAdminServiceGrpc.getCreateBigQueryLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateBigQueryLinkMethod =
+              getCreateBigQueryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest,
+                          com.google.analytics.admin.v1alpha.BigQueryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBigQueryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateBigQueryLink"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBigQueryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest,
           com.google.analytics.admin.v1alpha.BigQueryLink>
       getGetBigQueryLinkMethod;
@@ -5752,6 +5554,99 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getListBigQueryLinksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest, com.google.protobuf.Empty>
+      getDeleteBigQueryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBigQueryLink",
+      requestType = com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest, com.google.protobuf.Empty>
+      getDeleteBigQueryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest, com.google.protobuf.Empty>
+        getDeleteBigQueryLinkMethod;
+    if ((getDeleteBigQueryLinkMethod = AnalyticsAdminServiceGrpc.getDeleteBigQueryLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteBigQueryLinkMethod = AnalyticsAdminServiceGrpc.getDeleteBigQueryLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteBigQueryLinkMethod =
+              getDeleteBigQueryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBigQueryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteBigQueryLink"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBigQueryLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest,
+          com.google.analytics.admin.v1alpha.BigQueryLink>
+      getUpdateBigQueryLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBigQueryLink",
+      requestType = com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.BigQueryLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest,
+          com.google.analytics.admin.v1alpha.BigQueryLink>
+      getUpdateBigQueryLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest,
+            com.google.analytics.admin.v1alpha.BigQueryLink>
+        getUpdateBigQueryLinkMethod;
+    if ((getUpdateBigQueryLinkMethod = AnalyticsAdminServiceGrpc.getUpdateBigQueryLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateBigQueryLinkMethod = AnalyticsAdminServiceGrpc.getUpdateBigQueryLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateBigQueryLinkMethod =
+              getUpdateBigQueryLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest,
+                          com.google.analytics.admin.v1alpha.BigQueryLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBigQueryLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateBigQueryLink"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBigQueryLinkMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -6513,6 +6408,1557 @@ public final class AnalyticsAdminServiceGrpc {
     return getDeleteEventCreateRuleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetEventEditRuleRequest,
+          com.google.analytics.admin.v1alpha.EventEditRule>
+      getGetEventEditRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEventEditRule",
+      requestType = com.google.analytics.admin.v1alpha.GetEventEditRuleRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.EventEditRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetEventEditRuleRequest,
+          com.google.analytics.admin.v1alpha.EventEditRule>
+      getGetEventEditRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetEventEditRuleRequest,
+            com.google.analytics.admin.v1alpha.EventEditRule>
+        getGetEventEditRuleMethod;
+    if ((getGetEventEditRuleMethod = AnalyticsAdminServiceGrpc.getGetEventEditRuleMethod) == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetEventEditRuleMethod = AnalyticsAdminServiceGrpc.getGetEventEditRuleMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetEventEditRuleMethod =
+              getGetEventEditRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetEventEditRuleRequest,
+                          com.google.analytics.admin.v1alpha.EventEditRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetEventEditRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetEventEditRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.EventEditRule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetEventEditRule"))
+                      .build();
+        }
+      }
+    }
+    return getGetEventEditRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListEventEditRulesRequest,
+          com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>
+      getListEventEditRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListEventEditRules",
+      requestType = com.google.analytics.admin.v1alpha.ListEventEditRulesRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListEventEditRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListEventEditRulesRequest,
+          com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>
+      getListEventEditRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListEventEditRulesRequest,
+            com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>
+        getListEventEditRulesMethod;
+    if ((getListEventEditRulesMethod = AnalyticsAdminServiceGrpc.getListEventEditRulesMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListEventEditRulesMethod = AnalyticsAdminServiceGrpc.getListEventEditRulesMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListEventEditRulesMethod =
+              getListEventEditRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListEventEditRulesRequest,
+                          com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListEventEditRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListEventEditRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListEventEditRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ListEventEditRules"))
+                      .build();
+        }
+      }
+    }
+    return getListEventEditRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest,
+          com.google.analytics.admin.v1alpha.EventEditRule>
+      getCreateEventEditRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateEventEditRule",
+      requestType = com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.EventEditRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest,
+          com.google.analytics.admin.v1alpha.EventEditRule>
+      getCreateEventEditRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest,
+            com.google.analytics.admin.v1alpha.EventEditRule>
+        getCreateEventEditRuleMethod;
+    if ((getCreateEventEditRuleMethod = AnalyticsAdminServiceGrpc.getCreateEventEditRuleMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateEventEditRuleMethod = AnalyticsAdminServiceGrpc.getCreateEventEditRuleMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateEventEditRuleMethod =
+              getCreateEventEditRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest,
+                          com.google.analytics.admin.v1alpha.EventEditRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateEventEditRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.EventEditRule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateEventEditRule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateEventEditRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest,
+          com.google.analytics.admin.v1alpha.EventEditRule>
+      getUpdateEventEditRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEventEditRule",
+      requestType = com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.EventEditRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest,
+          com.google.analytics.admin.v1alpha.EventEditRule>
+      getUpdateEventEditRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest,
+            com.google.analytics.admin.v1alpha.EventEditRule>
+        getUpdateEventEditRuleMethod;
+    if ((getUpdateEventEditRuleMethod = AnalyticsAdminServiceGrpc.getUpdateEventEditRuleMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateEventEditRuleMethod = AnalyticsAdminServiceGrpc.getUpdateEventEditRuleMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateEventEditRuleMethod =
+              getUpdateEventEditRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest,
+                          com.google.analytics.admin.v1alpha.EventEditRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateEventEditRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.EventEditRule
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("UpdateEventEditRule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEventEditRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest, com.google.protobuf.Empty>
+      getDeleteEventEditRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteEventEditRule",
+      requestType = com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest, com.google.protobuf.Empty>
+      getDeleteEventEditRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest,
+            com.google.protobuf.Empty>
+        getDeleteEventEditRuleMethod;
+    if ((getDeleteEventEditRuleMethod = AnalyticsAdminServiceGrpc.getDeleteEventEditRuleMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteEventEditRuleMethod = AnalyticsAdminServiceGrpc.getDeleteEventEditRuleMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteEventEditRuleMethod =
+              getDeleteEventEditRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteEventEditRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("DeleteEventEditRule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteEventEditRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest,
+          com.google.protobuf.Empty>
+      getReorderEventEditRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReorderEventEditRules",
+      requestType = com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest,
+          com.google.protobuf.Empty>
+      getReorderEventEditRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest,
+            com.google.protobuf.Empty>
+        getReorderEventEditRulesMethod;
+    if ((getReorderEventEditRulesMethod = AnalyticsAdminServiceGrpc.getReorderEventEditRulesMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getReorderEventEditRulesMethod =
+                AnalyticsAdminServiceGrpc.getReorderEventEditRulesMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getReorderEventEditRulesMethod =
+              getReorderEventEditRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ReorderEventEditRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ReorderEventEditRules"))
+                      .build();
+        }
+      }
+    }
+    return getReorderEventEditRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest,
+          com.google.analytics.admin.v1alpha.DataRedactionSettings>
+      getUpdateDataRedactionSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDataRedactionSettings",
+      requestType = com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DataRedactionSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest,
+          com.google.analytics.admin.v1alpha.DataRedactionSettings>
+      getUpdateDataRedactionSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest,
+            com.google.analytics.admin.v1alpha.DataRedactionSettings>
+        getUpdateDataRedactionSettingsMethod;
+    if ((getUpdateDataRedactionSettingsMethod =
+            AnalyticsAdminServiceGrpc.getUpdateDataRedactionSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateDataRedactionSettingsMethod =
+                AnalyticsAdminServiceGrpc.getUpdateDataRedactionSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateDataRedactionSettingsMethod =
+              getUpdateDataRedactionSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest,
+                          com.google.analytics.admin.v1alpha.DataRedactionSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDataRedactionSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DataRedactionSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateDataRedactionSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDataRedactionSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest,
+          com.google.analytics.admin.v1alpha.DataRedactionSettings>
+      getGetDataRedactionSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDataRedactionSettings",
+      requestType = com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.DataRedactionSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest,
+          com.google.analytics.admin.v1alpha.DataRedactionSettings>
+      getGetDataRedactionSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest,
+            com.google.analytics.admin.v1alpha.DataRedactionSettings>
+        getGetDataRedactionSettingsMethod;
+    if ((getGetDataRedactionSettingsMethod =
+            AnalyticsAdminServiceGrpc.getGetDataRedactionSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetDataRedactionSettingsMethod =
+                AnalyticsAdminServiceGrpc.getGetDataRedactionSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetDataRedactionSettingsMethod =
+              getGetDataRedactionSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest,
+                          com.google.analytics.admin.v1alpha.DataRedactionSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDataRedactionSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DataRedactionSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetDataRedactionSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetDataRedactionSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getGetCalculatedMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCalculatedMetric",
+      requestType = com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CalculatedMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getGetCalculatedMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        getGetCalculatedMetricMethod;
+    if ((getGetCalculatedMetricMethod = AnalyticsAdminServiceGrpc.getGetCalculatedMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetCalculatedMetricMethod = AnalyticsAdminServiceGrpc.getGetCalculatedMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetCalculatedMetricMethod =
+              getGetCalculatedMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+                          com.google.analytics.admin.v1alpha.CalculatedMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetCalculatedMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CalculatedMetric
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("GetCalculatedMetric"))
+                      .build();
+        }
+      }
+    }
+    return getGetCalculatedMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getCreateCalculatedMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateCalculatedMetric",
+      requestType = com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CalculatedMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getCreateCalculatedMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        getCreateCalculatedMetricMethod;
+    if ((getCreateCalculatedMetricMethod =
+            AnalyticsAdminServiceGrpc.getCreateCalculatedMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateCalculatedMetricMethod =
+                AnalyticsAdminServiceGrpc.getCreateCalculatedMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateCalculatedMetricMethod =
+              getCreateCalculatedMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+                          com.google.analytics.admin.v1alpha.CalculatedMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateCalculatedMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CalculatedMetric
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateCalculatedMetric"))
+                      .build();
+        }
+      }
+    }
+    return getCreateCalculatedMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+          com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+      getListCalculatedMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListCalculatedMetrics",
+      requestType = com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+          com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+      getListCalculatedMetricsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+            com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+        getListCalculatedMetricsMethod;
+    if ((getListCalculatedMetricsMethod = AnalyticsAdminServiceGrpc.getListCalculatedMetricsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListCalculatedMetricsMethod =
+                AnalyticsAdminServiceGrpc.getListCalculatedMetricsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListCalculatedMetricsMethod =
+              getListCalculatedMetricsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+                          com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListCalculatedMetrics"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListCalculatedMetrics"))
+                      .build();
+        }
+      }
+    }
+    return getListCalculatedMetricsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getUpdateCalculatedMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCalculatedMetric",
+      requestType = com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CalculatedMetric.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+          com.google.analytics.admin.v1alpha.CalculatedMetric>
+      getUpdateCalculatedMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        getUpdateCalculatedMetricMethod;
+    if ((getUpdateCalculatedMetricMethod =
+            AnalyticsAdminServiceGrpc.getUpdateCalculatedMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateCalculatedMetricMethod =
+                AnalyticsAdminServiceGrpc.getUpdateCalculatedMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateCalculatedMetricMethod =
+              getUpdateCalculatedMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+                          com.google.analytics.admin.v1alpha.CalculatedMetric>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateCalculatedMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CalculatedMetric
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateCalculatedMetric"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCalculatedMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+          com.google.protobuf.Empty>
+      getDeleteCalculatedMetricMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteCalculatedMetric",
+      requestType = com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+          com.google.protobuf.Empty>
+      getDeleteCalculatedMetricMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+            com.google.protobuf.Empty>
+        getDeleteCalculatedMetricMethod;
+    if ((getDeleteCalculatedMetricMethod =
+            AnalyticsAdminServiceGrpc.getDeleteCalculatedMetricMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteCalculatedMetricMethod =
+                AnalyticsAdminServiceGrpc.getDeleteCalculatedMetricMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteCalculatedMetricMethod =
+              getDeleteCalculatedMetricMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteCalculatedMetric"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteCalculatedMetric"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteCalculatedMetricMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest,
+          com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>
+      getCreateRollupPropertyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRollupProperty",
+      requestType = com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest,
+          com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>
+      getCreateRollupPropertyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest,
+            com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>
+        getCreateRollupPropertyMethod;
+    if ((getCreateRollupPropertyMethod = AnalyticsAdminServiceGrpc.getCreateRollupPropertyMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateRollupPropertyMethod =
+                AnalyticsAdminServiceGrpc.getCreateRollupPropertyMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateRollupPropertyMethod =
+              getCreateRollupPropertyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest,
+                          com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateRollupProperty"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("CreateRollupProperty"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRollupPropertyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest,
+          com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+      getGetRollupPropertySourceLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRollupPropertySourceLink",
+      requestType = com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.RollupPropertySourceLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest,
+          com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+      getGetRollupPropertySourceLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest,
+            com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+        getGetRollupPropertySourceLinkMethod;
+    if ((getGetRollupPropertySourceLinkMethod =
+            AnalyticsAdminServiceGrpc.getGetRollupPropertySourceLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetRollupPropertySourceLinkMethod =
+                AnalyticsAdminServiceGrpc.getGetRollupPropertySourceLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetRollupPropertySourceLinkMethod =
+              getGetRollupPropertySourceLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest,
+                          com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetRollupPropertySourceLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.RollupPropertySourceLink
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetRollupPropertySourceLink"))
+                      .build();
+        }
+      }
+    }
+    return getGetRollupPropertySourceLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest,
+          com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>
+      getListRollupPropertySourceLinksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRollupPropertySourceLinks",
+      requestType = com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest,
+          com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>
+      getListRollupPropertySourceLinksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest,
+            com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>
+        getListRollupPropertySourceLinksMethod;
+    if ((getListRollupPropertySourceLinksMethod =
+            AnalyticsAdminServiceGrpc.getListRollupPropertySourceLinksMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListRollupPropertySourceLinksMethod =
+                AnalyticsAdminServiceGrpc.getListRollupPropertySourceLinksMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListRollupPropertySourceLinksMethod =
+              getListRollupPropertySourceLinksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest,
+                          com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListRollupPropertySourceLinks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListRollupPropertySourceLinksRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListRollupPropertySourceLinksResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListRollupPropertySourceLinks"))
+                      .build();
+        }
+      }
+    }
+    return getListRollupPropertySourceLinksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest,
+          com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+      getCreateRollupPropertySourceLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRollupPropertySourceLink",
+      requestType = com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.RollupPropertySourceLink.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest,
+          com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+      getCreateRollupPropertySourceLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest,
+            com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+        getCreateRollupPropertySourceLinkMethod;
+    if ((getCreateRollupPropertySourceLinkMethod =
+            AnalyticsAdminServiceGrpc.getCreateRollupPropertySourceLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateRollupPropertySourceLinkMethod =
+                AnalyticsAdminServiceGrpc.getCreateRollupPropertySourceLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateRollupPropertySourceLinkMethod =
+              getCreateRollupPropertySourceLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest,
+                          com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateRollupPropertySourceLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .CreateRollupPropertySourceLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.RollupPropertySourceLink
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateRollupPropertySourceLink"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRollupPropertySourceLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest,
+          com.google.protobuf.Empty>
+      getDeleteRollupPropertySourceLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRollupPropertySourceLink",
+      requestType = com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest,
+          com.google.protobuf.Empty>
+      getDeleteRollupPropertySourceLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest,
+            com.google.protobuf.Empty>
+        getDeleteRollupPropertySourceLinkMethod;
+    if ((getDeleteRollupPropertySourceLinkMethod =
+            AnalyticsAdminServiceGrpc.getDeleteRollupPropertySourceLinkMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteRollupPropertySourceLinkMethod =
+                AnalyticsAdminServiceGrpc.getDeleteRollupPropertySourceLinkMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteRollupPropertySourceLinkMethod =
+              getDeleteRollupPropertySourceLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteRollupPropertySourceLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DeleteRollupPropertySourceLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteRollupPropertySourceLink"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRollupPropertySourceLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest,
+          com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>
+      getProvisionSubpropertyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ProvisionSubproperty",
+      requestType = com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest,
+          com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>
+      getProvisionSubpropertyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest,
+            com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>
+        getProvisionSubpropertyMethod;
+    if ((getProvisionSubpropertyMethod = AnalyticsAdminServiceGrpc.getProvisionSubpropertyMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getProvisionSubpropertyMethod =
+                AnalyticsAdminServiceGrpc.getProvisionSubpropertyMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getProvisionSubpropertyMethod =
+              getProvisionSubpropertyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest,
+                          com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ProvisionSubproperty"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("ProvisionSubproperty"))
+                      .build();
+        }
+      }
+    }
+    return getProvisionSubpropertyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getCreateSubpropertyEventFilterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSubpropertyEventFilter",
+      requestType = com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertyEventFilter.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getCreateSubpropertyEventFilterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest,
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        getCreateSubpropertyEventFilterMethod;
+    if ((getCreateSubpropertyEventFilterMethod =
+            AnalyticsAdminServiceGrpc.getCreateSubpropertyEventFilterMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateSubpropertyEventFilterMethod =
+                AnalyticsAdminServiceGrpc.getCreateSubpropertyEventFilterMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateSubpropertyEventFilterMethod =
+              getCreateSubpropertyEventFilterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateSubpropertyEventFilter"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertyEventFilter
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateSubpropertyEventFilter"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSubpropertyEventFilterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getGetSubpropertyEventFilterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSubpropertyEventFilter",
+      requestType = com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertyEventFilter.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getGetSubpropertyEventFilterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        getGetSubpropertyEventFilterMethod;
+    if ((getGetSubpropertyEventFilterMethod =
+            AnalyticsAdminServiceGrpc.getGetSubpropertyEventFilterMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetSubpropertyEventFilterMethod =
+                AnalyticsAdminServiceGrpc.getGetSubpropertyEventFilterMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetSubpropertyEventFilterMethod =
+              getGetSubpropertyEventFilterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSubpropertyEventFilter"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertyEventFilter
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetSubpropertyEventFilter"))
+                      .build();
+        }
+      }
+    }
+    return getGetSubpropertyEventFilterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+      getListSubpropertyEventFiltersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSubpropertyEventFilters",
+      requestType = com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+      getListSubpropertyEventFiltersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+        getListSubpropertyEventFiltersMethod;
+    if ((getListSubpropertyEventFiltersMethod =
+            AnalyticsAdminServiceGrpc.getListSubpropertyEventFiltersMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListSubpropertyEventFiltersMethod =
+                AnalyticsAdminServiceGrpc.getListSubpropertyEventFiltersMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListSubpropertyEventFiltersMethod =
+              getListSubpropertyEventFiltersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+                          com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSubpropertyEventFilters"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListSubpropertyEventFilters"))
+                      .build();
+        }
+      }
+    }
+    return getListSubpropertyEventFiltersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getUpdateSubpropertyEventFilterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSubpropertyEventFilter",
+      requestType = com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertyEventFilter.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+      getUpdateSubpropertyEventFilterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        getUpdateSubpropertyEventFilterMethod;
+    if ((getUpdateSubpropertyEventFilterMethod =
+            AnalyticsAdminServiceGrpc.getUpdateSubpropertyEventFilterMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateSubpropertyEventFilterMethod =
+                AnalyticsAdminServiceGrpc.getUpdateSubpropertyEventFilterMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateSubpropertyEventFilterMethod =
+              getUpdateSubpropertyEventFilterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSubpropertyEventFilter"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertyEventFilter
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateSubpropertyEventFilter"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSubpropertyEventFilterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+          com.google.protobuf.Empty>
+      getDeleteSubpropertyEventFilterMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSubpropertyEventFilter",
+      requestType = com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+          com.google.protobuf.Empty>
+      getDeleteSubpropertyEventFilterMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+            com.google.protobuf.Empty>
+        getDeleteSubpropertyEventFilterMethod;
+    if ((getDeleteSubpropertyEventFilterMethod =
+            AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteSubpropertyEventFilterMethod =
+                AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteSubpropertyEventFilterMethod =
+              getDeleteSubpropertyEventFilterMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteSubpropertyEventFilter"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteSubpropertyEventFilter"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSubpropertyEventFilterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getCreateReportingDataAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReportingDataAnnotation",
+      requestType = com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ReportingDataAnnotation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getCreateReportingDataAnnotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        getCreateReportingDataAnnotationMethod;
+    if ((getCreateReportingDataAnnotationMethod =
+            AnalyticsAdminServiceGrpc.getCreateReportingDataAnnotationMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateReportingDataAnnotationMethod =
+                AnalyticsAdminServiceGrpc.getCreateReportingDataAnnotationMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateReportingDataAnnotationMethod =
+              getCreateReportingDataAnnotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+                          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateReportingDataAnnotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .CreateReportingDataAnnotationRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReportingDataAnnotation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateReportingDataAnnotation"))
+                      .build();
+        }
+      }
+    }
+    return getCreateReportingDataAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getGetReportingDataAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReportingDataAnnotation",
+      requestType = com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ReportingDataAnnotation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getGetReportingDataAnnotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        getGetReportingDataAnnotationMethod;
+    if ((getGetReportingDataAnnotationMethod =
+            AnalyticsAdminServiceGrpc.getGetReportingDataAnnotationMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetReportingDataAnnotationMethod =
+                AnalyticsAdminServiceGrpc.getGetReportingDataAnnotationMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetReportingDataAnnotationMethod =
+              getGetReportingDataAnnotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+                          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetReportingDataAnnotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReportingDataAnnotation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetReportingDataAnnotation"))
+                      .build();
+        }
+      }
+    }
+    return getGetReportingDataAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+      getListReportingDataAnnotationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReportingDataAnnotations",
+      requestType = com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+      getListReportingDataAnnotationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+        getListReportingDataAnnotationsMethod;
+    if ((getListReportingDataAnnotationsMethod =
+            AnalyticsAdminServiceGrpc.getListReportingDataAnnotationsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListReportingDataAnnotationsMethod =
+                AnalyticsAdminServiceGrpc.getListReportingDataAnnotationsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListReportingDataAnnotationsMethod =
+              getListReportingDataAnnotationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+                          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListReportingDataAnnotations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListReportingDataAnnotationsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListReportingDataAnnotations"))
+                      .build();
+        }
+      }
+    }
+    return getListReportingDataAnnotationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getUpdateReportingDataAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateReportingDataAnnotation",
+      requestType = com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ReportingDataAnnotation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getUpdateReportingDataAnnotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        getUpdateReportingDataAnnotationMethod;
+    if ((getUpdateReportingDataAnnotationMethod =
+            AnalyticsAdminServiceGrpc.getUpdateReportingDataAnnotationMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateReportingDataAnnotationMethod =
+                AnalyticsAdminServiceGrpc.getUpdateReportingDataAnnotationMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateReportingDataAnnotationMethod =
+              getUpdateReportingDataAnnotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+                          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateReportingDataAnnotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .UpdateReportingDataAnnotationRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReportingDataAnnotation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateReportingDataAnnotation"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateReportingDataAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+          com.google.protobuf.Empty>
+      getDeleteReportingDataAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteReportingDataAnnotation",
+      requestType = com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+          com.google.protobuf.Empty>
+      getDeleteReportingDataAnnotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+            com.google.protobuf.Empty>
+        getDeleteReportingDataAnnotationMethod;
+    if ((getDeleteReportingDataAnnotationMethod =
+            AnalyticsAdminServiceGrpc.getDeleteReportingDataAnnotationMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteReportingDataAnnotationMethod =
+                AnalyticsAdminServiceGrpc.getDeleteReportingDataAnnotationMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteReportingDataAnnotationMethod =
+              getDeleteReportingDataAnnotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteReportingDataAnnotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DeleteReportingDataAnnotationRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteReportingDataAnnotation"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteReportingDataAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+          com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+      getSubmitUserDeletionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitUserDeletion",
+      requestType = com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+          com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+      getSubmitUserDeletionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+            com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+        getSubmitUserDeletionMethod;
+    if ((getSubmitUserDeletionMethod = AnalyticsAdminServiceGrpc.getSubmitUserDeletionMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getSubmitUserDeletionMethod = AnalyticsAdminServiceGrpc.getSubmitUserDeletionMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getSubmitUserDeletionMethod =
+              getSubmitUserDeletionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+                          com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitUserDeletion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("SubmitUserDeletion"))
+                      .build();
+        }
+      }
+    }
+    return getSubmitUserDeletionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -6524,6 +7970,19 @@ public final class AnalyticsAdminServiceGrpc {
           }
         };
     return AnalyticsAdminServiceStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AnalyticsAdminServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AnalyticsAdminServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AnalyticsAdminServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AnalyticsAdminServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -6558,7 +8017,7 @@ public final class AnalyticsAdminServiceGrpc {
    *
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public interface AsyncService {
@@ -6581,7 +8040,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns all accounts accessible by the caller.
-     * Note that these accounts might not currently have GA4 properties.
+     * Note that these accounts might not currently have GA properties.
      * Soft-deleted (ie: "trashed") accounts are excluded by default.
      * Returns an empty list if no relevant accounts are found.
      * </pre>
@@ -6603,7 +8062,7 @@ public final class AnalyticsAdminServiceGrpc {
      * However, they can be restored using the Trash Can UI.
      * If the accounts are not restored before the expiration time, the account
      * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
-     * UserLinks) will be permanently purged.
+     * AccessBindings) will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found.
      * </pre>
@@ -6664,7 +8123,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" Property.
+     * Lookup for a single GA Property.
      * </pre>
      */
     default void getProperty(
@@ -6679,7 +8138,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns child Properties under the specified parent Account.
-     * Only "GA4" properties will be returned.
      * Properties will be excluded if the caller does not have access.
      * Soft-deleted (ie: "trashed") properties are excluded by default.
      * Returns an empty list if no relevant properties are found.
@@ -6697,7 +8155,8 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an "GA4" property with the specified location and attributes.
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
      * </pre>
      */
     default void createProperty(
@@ -6715,10 +8174,10 @@ public final class AnalyticsAdminServiceGrpc {
      * This API does not have a method to restore soft-deleted properties.
      * However, they can be restored using the Trash Can UI.
      * If the properties are not restored before the expiration time, the Property
-     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not a GA4 Property.
+     * Returns an error if the target is not found.
      * </pre>
      */
     default void deleteProperty(
@@ -6740,163 +8199,6 @@ public final class AnalyticsAdminServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdatePropertyMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets information about a user's link to an account or property.
-     * </pre>
-     */
-    default void getUserLink(
-        com.google.analytics.admin.v1alpha.GetUserLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getGetUserLinkMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets information about multiple users' links to an account or property.
-     * </pre>
-     */
-    default void batchGetUserLinks(
-        com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getBatchGetUserLinksMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all user links on an account or property.
-     * </pre>
-     */
-    default void listUserLinks(
-        com.google.analytics.admin.v1alpha.ListUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListUserLinksMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all user links on an account or property, including implicit ones
-     * that come from effective permissions granted by groups or organization
-     * admin roles.
-     * If a returned user link does not have direct permissions, they cannot
-     * be removed from the account or property directly with the DeleteUserLink
-     * command. They have to be removed from the group/etc that gives them
-     * permissions, which is currently only usable/discoverable in the GA or GMP
-     * UIs.
-     * </pre>
-     */
-    default void auditUserLinks(
-        com.google.analytics.admin.v1alpha.AuditUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getAuditUserLinksMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a user link on an account or property.
-     * If the user with the specified email already has permissions on the
-     * account or property, then the user's existing permissions will be unioned
-     * with the permissions specified in the new UserLink.
-     * </pre>
-     */
-    default void createUserLink(
-        com.google.analytics.admin.v1alpha.CreateUserLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateUserLinkMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates information about multiple users' links to an account or property.
-     * This method is transactional. If any UserLink cannot be created, none of
-     * the UserLinks will be created.
-     * </pre>
-     */
-    default void batchCreateUserLinks(
-        com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getBatchCreateUserLinksMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a user link on an account or property.
-     * </pre>
-     */
-    default void updateUserLink(
-        com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getUpdateUserLinkMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates information about multiple users' links to an account or property.
-     * </pre>
-     */
-    default void batchUpdateUserLinks(
-        com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getBatchUpdateUserLinksMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a user link on an account or property.
-     * </pre>
-     */
-    default void deleteUserLink(
-        com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteUserLinkMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes information about multiple users' links to an account or property.
-     * </pre>
-     */
-    default void batchDeleteUserLinks(
-        com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getBatchDeleteUserLinksMethod(), responseObserver);
     }
 
     /**
@@ -7040,7 +8342,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * Lookup for a single MeasurementProtocolSecret.
      * </pre>
      */
     default void getMeasurementProtocolSecret(
@@ -7216,6 +8518,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
      * </pre>
      */
     default void searchChangeHistoryEvents(
@@ -7261,9 +8565,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createConversionEvent(
         com.google.analytics.admin.v1alpha.CreateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
@@ -7276,9 +8582,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
      * Updates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateConversionEvent(
         com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
@@ -7291,9 +8599,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
      * Retrieve a single conversion event.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getConversionEvent(
         com.google.analytics.admin.v1alpha.GetConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
@@ -7306,9 +8616,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
      * Deletes a conversion event in a property.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteConversionEvent(
         com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -7320,16 +8632,90 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
      * Returns a list of conversion events in the specified parent property.
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listConversionEvents(
         com.google.analytics.admin.v1alpha.ListConversionEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListConversionEventsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    default void createKeyEvent(
+        com.google.analytics.admin.v1alpha.CreateKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateKeyEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    default void updateKeyEvent(
+        com.google.analytics.admin.v1alpha.UpdateKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateKeyEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    default void getKeyEvent(
+        com.google.analytics.admin.v1alpha.GetKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetKeyEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    default void deleteKeyEvent(
+        com.google.analytics.admin.v1alpha.DeleteKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteKeyEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    default void listKeyEvents(
+        com.google.analytics.admin.v1alpha.ListKeyEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListKeyEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListKeyEventsMethod(), responseObserver);
     }
 
     /**
@@ -7961,14 +9347,20 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
-     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
-     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
      * property configuration changes like adding a stream or changing a
      * property's time zone. For configuration change history, see
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
      * </pre>
      */
     default void runAccessReport(
@@ -8307,6 +9699,21 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Creates a BigQueryLink.
+     * </pre>
+     */
+    default void createBigQueryLink(
+        com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateBigQueryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a single BigQuery Link.
      * </pre>
      */
@@ -8331,6 +9738,35 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListBigQueryLinksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BigQueryLink on a property.
+     * </pre>
+     */
+    default void deleteBigQueryLink(
+        com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBigQueryLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQueryLink.
+     * </pre>
+     */
+    default void updateBigQueryLink(
+        com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBigQueryLinkMethod(), responseObserver);
     }
 
     /**
@@ -8567,13 +10003,470 @@ public final class AnalyticsAdminServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEventCreateRuleMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventEditRule.
+     * </pre>
+     */
+    default void getEventEditRule(
+        com.google.analytics.admin.v1alpha.GetEventEditRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEventEditRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventEditRules on a web data stream.
+     * </pre>
+     */
+    default void listEventEditRules(
+        com.google.analytics.admin.v1alpha.ListEventEditRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListEventEditRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventEditRule.
+     * </pre>
+     */
+    default void createEventEditRule(
+        com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateEventEditRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventEditRule.
+     * </pre>
+     */
+    default void updateEventEditRule(
+        com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEventEditRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventEditRule.
+     * </pre>
+     */
+    default void deleteEventEditRule(
+        com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteEventEditRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the processing order of event edit rules on the specified stream.
+     * </pre>
+     */
+    default void reorderEventEditRules(
+        com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReorderEventEditRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataRedactionSettings on a property.
+     * </pre>
+     */
+    default void updateDataRedactionSettings(
+        com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRedactionSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDataRedactionSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataRedactionSettings.
+     * </pre>
+     */
+    default void getDataRedactionSettings(
+        com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRedactionSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDataRedactionSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    default void getCalculatedMetric(
+        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCalculatedMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    default void createCalculatedMetric(
+        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateCalculatedMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    default void listCalculatedMetrics(
+        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListCalculatedMetricsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    default void updateCalculatedMetric(
+        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCalculatedMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    default void deleteCalculatedMetric(
+        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteCalculatedMetricMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a roll-up property and all roll-up property source links.
+     * </pre>
+     */
+    default void createRollupProperty(
+        com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRollupPropertyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single roll-up property source Link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    default void getRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRollupPropertySourceLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists roll-up property source Links on a property.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    default void listRollupPropertySourceLinks(
+        com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRollupPropertySourceLinksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    default void createRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRollupPropertySourceLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    default void deleteRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRollupPropertySourceLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a subproperty and a subproperty event filter that applies to the
+     * created subproperty.
+     * </pre>
+     */
+    default void provisionSubproperty(
+        com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getProvisionSubpropertyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subproperty Event Filter.
+     * </pre>
+     */
+    default void createSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSubpropertyEventFilterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    default void getSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSubpropertyEventFilterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    default void listSubpropertyEventFilters(
+        com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSubpropertyEventFiltersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    default void updateSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSubpropertyEventFilterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    default void deleteSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSubpropertyEventFilterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    default void createReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateReportingDataAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    default void getReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReportingDataAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    default void listReportingDataAnnotations(
+        com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReportingDataAnnotationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    default void updateReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateReportingDataAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    default void deleteReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteReportingDataAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    default void submitUserDeletion(
+        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSubmitUserDeletionMethod(), responseObserver);
+    }
   }
 
   /**
    * Base class for the server implementation of the service AnalyticsAdminService.
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public abstract static class AnalyticsAdminServiceImplBase
@@ -8589,7 +10482,7 @@ public final class AnalyticsAdminServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service AnalyticsAdminService.
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public static final class AnalyticsAdminServiceStub
@@ -8623,7 +10516,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns all accounts accessible by the caller.
-     * Note that these accounts might not currently have GA4 properties.
+     * Note that these accounts might not currently have GA properties.
      * Soft-deleted (ie: "trashed") accounts are excluded by default.
      * Returns an empty list if no relevant accounts are found.
      * </pre>
@@ -8647,7 +10540,7 @@ public final class AnalyticsAdminServiceGrpc {
      * However, they can be restored using the Trash Can UI.
      * If the accounts are not restored before the expiration time, the account
      * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
-     * UserLinks) will be permanently purged.
+     * AccessBindings) will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found.
      * </pre>
@@ -8716,7 +10609,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" Property.
+     * Lookup for a single GA Property.
      * </pre>
      */
     public void getProperty(
@@ -8733,7 +10626,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns child Properties under the specified parent Account.
-     * Only "GA4" properties will be returned.
      * Properties will be excluded if the caller does not have access.
      * Soft-deleted (ie: "trashed") properties are excluded by default.
      * Returns an empty list if no relevant properties are found.
@@ -8753,7 +10645,8 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an "GA4" property with the specified location and attributes.
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
      * </pre>
      */
     public void createProperty(
@@ -8773,10 +10666,10 @@ public final class AnalyticsAdminServiceGrpc {
      * This API does not have a method to restore soft-deleted properties.
      * However, they can be restored using the Trash Can UI.
      * If the properties are not restored before the expiration time, the Property
-     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not a GA4 Property.
+     * Returns an error if the target is not found.
      * </pre>
      */
     public void deleteProperty(
@@ -8800,183 +10693,6 @@ public final class AnalyticsAdminServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdatePropertyMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets information about a user's link to an account or property.
-     * </pre>
-     */
-    public void getUserLink(
-        com.google.analytics.admin.v1alpha.GetUserLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getGetUserLinkMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public void batchGetUserLinks(
-        com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getBatchGetUserLinksMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all user links on an account or property.
-     * </pre>
-     */
-    public void listUserLinks(
-        com.google.analytics.admin.v1alpha.ListUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListUserLinksMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all user links on an account or property, including implicit ones
-     * that come from effective permissions granted by groups or organization
-     * admin roles.
-     * If a returned user link does not have direct permissions, they cannot
-     * be removed from the account or property directly with the DeleteUserLink
-     * command. They have to be removed from the group/etc that gives them
-     * permissions, which is currently only usable/discoverable in the GA or GMP
-     * UIs.
-     * </pre>
-     */
-    public void auditUserLinks(
-        com.google.analytics.admin.v1alpha.AuditUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getAuditUserLinksMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a user link on an account or property.
-     * If the user with the specified email already has permissions on the
-     * account or property, then the user's existing permissions will be unioned
-     * with the permissions specified in the new UserLink.
-     * </pre>
-     */
-    public void createUserLink(
-        com.google.analytics.admin.v1alpha.CreateUserLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateUserLinkMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates information about multiple users' links to an account or property.
-     * This method is transactional. If any UserLink cannot be created, none of
-     * the UserLinks will be created.
-     * </pre>
-     */
-    public void batchCreateUserLinks(
-        com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getBatchCreateUserLinksMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a user link on an account or property.
-     * </pre>
-     */
-    public void updateUserLink(
-        com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateUserLinkMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public void batchUpdateUserLinks(
-        com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getBatchUpdateUserLinksMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a user link on an account or property.
-     * </pre>
-     */
-    public void deleteUserLink(
-        com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteUserLinkMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public void batchDeleteUserLinks(
-        com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getBatchDeleteUserLinksMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -9140,7 +10856,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * Lookup for a single MeasurementProtocolSecret.
      * </pre>
      */
     public void getMeasurementProtocolSecret(
@@ -9338,6 +11054,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
      * </pre>
      */
     public void searchChangeHistoryEvents(
@@ -9389,9 +11107,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createConversionEvent(
         com.google.analytics.admin.v1alpha.CreateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
@@ -9406,9 +11126,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
      * Updates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateConversionEvent(
         com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
@@ -9423,9 +11145,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
      * Retrieve a single conversion event.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getConversionEvent(
         com.google.analytics.admin.v1alpha.GetConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
@@ -9440,9 +11164,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
      * Deletes a conversion event in a property.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteConversionEvent(
         com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -9456,16 +11182,100 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
      * Returns a list of conversion events in the specified parent property.
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listConversionEvents(
         com.google.analytics.admin.v1alpha.ListConversionEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListConversionEventsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    public void createKeyEvent(
+        com.google.analytics.admin.v1alpha.CreateKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateKeyEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    public void updateKeyEvent(
+        com.google.analytics.admin.v1alpha.UpdateKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateKeyEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    public void getKeyEvent(
+        com.google.analytics.admin.v1alpha.GetKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetKeyEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    public void deleteKeyEvent(
+        com.google.analytics.admin.v1alpha.DeleteKeyEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteKeyEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    public void listKeyEvents(
+        com.google.analytics.admin.v1alpha.ListKeyEventsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListKeyEventsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListKeyEventsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -10185,14 +11995,20 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
-     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
-     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
      * property configuration changes like adding a stream or changing a
      * property's time zone. For configuration change history, see
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
      * </pre>
      */
     public void runAccessReport(
@@ -10575,6 +12391,23 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Creates a BigQueryLink.
+     * </pre>
+     */
+    public void createBigQueryLink(
+        com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBigQueryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a single BigQuery Link.
      * </pre>
      */
@@ -10601,6 +12434,39 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListBigQueryLinksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BigQueryLink on a property.
+     * </pre>
+     */
+    public void deleteBigQueryLink(
+        com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBigQueryLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQueryLink.
+     * </pre>
+     */
+    public void updateBigQueryLink(
+        com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBigQueryLinkMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -10869,26 +12735,543 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventEditRule.
+     * </pre>
+     */
+    public void getEventEditRule(
+        com.google.analytics.admin.v1alpha.GetEventEditRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEventEditRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventEditRules on a web data stream.
+     * </pre>
+     */
+    public void listEventEditRules(
+        com.google.analytics.admin.v1alpha.ListEventEditRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListEventEditRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventEditRule.
+     * </pre>
+     */
+    public void createEventEditRule(
+        com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateEventEditRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventEditRule.
+     * </pre>
+     */
+    public void updateEventEditRule(
+        com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEventEditRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventEditRule.
+     * </pre>
+     */
+    public void deleteEventEditRule(
+        com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteEventEditRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the processing order of event edit rules on the specified stream.
+     * </pre>
+     */
+    public void reorderEventEditRules(
+        com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReorderEventEditRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataRedactionSettings on a property.
+     * </pre>
+     */
+    public void updateDataRedactionSettings(
+        com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRedactionSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDataRedactionSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataRedactionSettings.
+     * </pre>
+     */
+    public void getDataRedactionSettings(
+        com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRedactionSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDataRedactionSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    public void getCalculatedMetric(
+        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCalculatedMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    public void createCalculatedMetric(
+        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateCalculatedMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    public void listCalculatedMetrics(
+        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListCalculatedMetricsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    public void updateCalculatedMetric(
+        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCalculatedMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    public void deleteCalculatedMetric(
+        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteCalculatedMetricMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a roll-up property and all roll-up property source links.
+     * </pre>
+     */
+    public void createRollupProperty(
+        com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRollupPropertyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single roll-up property source Link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public void getRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRollupPropertySourceLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists roll-up property source Links on a property.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public void listRollupPropertySourceLinks(
+        com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRollupPropertySourceLinksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public void createRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRollupPropertySourceLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public void deleteRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRollupPropertySourceLinkMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a subproperty and a subproperty event filter that applies to the
+     * created subproperty.
+     * </pre>
+     */
+    public void provisionSubproperty(
+        com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getProvisionSubpropertyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subproperty Event Filter.
+     * </pre>
+     */
+    public void createSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSubpropertyEventFilterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    public void getSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSubpropertyEventFilterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    public void listSubpropertyEventFilters(
+        com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSubpropertyEventFiltersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    public void updateSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSubpropertyEventFilterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    public void deleteSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSubpropertyEventFilterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    public void createReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateReportingDataAnnotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    public void getReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReportingDataAnnotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    public void listReportingDataAnnotations(
+        com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListReportingDataAnnotationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    public void updateReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateReportingDataAnnotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    public void deleteReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteReportingDataAnnotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    public void submitUserDeletion(
+        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitUserDeletionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AnalyticsAdminService.
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
-  public static final class AnalyticsAdminServiceBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<AnalyticsAdminServiceBlockingStub> {
-    private AnalyticsAdminServiceBlockingStub(
+  public static final class AnalyticsAdminServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AnalyticsAdminServiceBlockingV2Stub> {
+    private AnalyticsAdminServiceBlockingV2Stub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected AnalyticsAdminServiceBlockingStub build(
+    protected AnalyticsAdminServiceBlockingV2Stub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new AnalyticsAdminServiceBlockingStub(channel, callOptions);
+      return new AnalyticsAdminServiceBlockingV2Stub(channel, callOptions);
     }
 
     /**
@@ -10909,7 +13292,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns all accounts accessible by the caller.
-     * Note that these accounts might not currently have GA4 properties.
+     * Note that these accounts might not currently have GA properties.
      * Soft-deleted (ie: "trashed") accounts are excluded by default.
      * Returns an empty list if no relevant accounts are found.
      * </pre>
@@ -10929,7 +13312,7 @@ public final class AnalyticsAdminServiceGrpc {
      * However, they can be restored using the Trash Can UI.
      * If the accounts are not restored before the expiration time, the account
      * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
-     * UserLinks) will be permanently purged.
+     * AccessBindings) will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found.
      * </pre>
@@ -10983,7 +13366,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" Property.
+     * Lookup for a single GA Property.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property getProperty(
@@ -10997,7 +13380,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns child Properties under the specified parent Account.
-     * Only "GA4" properties will be returned.
      * Properties will be excluded if the caller does not have access.
      * Soft-deleted (ie: "trashed") properties are excluded by default.
      * Returns an empty list if no relevant properties are found.
@@ -11013,7 +13395,8 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an "GA4" property with the specified location and attributes.
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property createProperty(
@@ -11030,10 +13413,10 @@ public final class AnalyticsAdminServiceGrpc {
      * This API does not have a method to restore soft-deleted properties.
      * However, they can be restored using the Trash Can UI.
      * If the properties are not restored before the expiration time, the Property
-     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not a GA4 Property.
+     * Returns an error if the target is not found.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property deleteProperty(
@@ -11053,148 +13436,6 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.UpdatePropertyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdatePropertyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets information about a user's link to an account or property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.UserLink getUserLink(
-        com.google.analytics.admin.v1alpha.GetUserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetUserLinkMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse batchGetUserLinks(
-        com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBatchGetUserLinksMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all user links on an account or property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.ListUserLinksResponse listUserLinks(
-        com.google.analytics.admin.v1alpha.ListUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListUserLinksMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all user links on an account or property, including implicit ones
-     * that come from effective permissions granted by groups or organization
-     * admin roles.
-     * If a returned user link does not have direct permissions, they cannot
-     * be removed from the account or property directly with the DeleteUserLink
-     * command. They have to be removed from the group/etc that gives them
-     * permissions, which is currently only usable/discoverable in the GA or GMP
-     * UIs.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.AuditUserLinksResponse auditUserLinks(
-        com.google.analytics.admin.v1alpha.AuditUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAuditUserLinksMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a user link on an account or property.
-     * If the user with the specified email already has permissions on the
-     * account or property, then the user's existing permissions will be unioned
-     * with the permissions specified in the new UserLink.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.UserLink createUserLink(
-        com.google.analytics.admin.v1alpha.CreateUserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateUserLinkMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates information about multiple users' links to an account or property.
-     * This method is transactional. If any UserLink cannot be created, none of
-     * the UserLinks will be created.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse batchCreateUserLinks(
-        com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBatchCreateUserLinksMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a user link on an account or property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.UserLink updateUserLink(
-        com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateUserLinkMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse batchUpdateUserLinks(
-        com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBatchUpdateUserLinksMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a user link on an account or property.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteUserLink(
-        com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteUserLinkMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public com.google.protobuf.Empty batchDeleteUserLinks(
-        com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBatchDeleteUserLinksMethod(), getCallOptions(), request);
     }
 
     /**
@@ -11322,7 +13563,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * Lookup for a single MeasurementProtocolSecret.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
@@ -11496,6 +13737,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse
@@ -11535,9 +13778,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.analytics.admin.v1alpha.ConversionEvent createConversionEvent(
         com.google.analytics.admin.v1alpha.CreateConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -11548,9 +13793,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
      * Updates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.analytics.admin.v1alpha.ConversionEvent updateConversionEvent(
         com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -11561,9 +13808,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
      * Retrieve a single conversion event.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent(
         com.google.analytics.admin.v1alpha.GetConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -11574,9 +13823,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
      * Deletes a conversion event in a property.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Empty deleteConversionEvent(
         com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -11587,14 +13838,82 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
      * Returns a list of conversion events in the specified parent property.
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.analytics.admin.v1alpha.ListConversionEventsResponse listConversionEvents(
         com.google.analytics.admin.v1alpha.ListConversionEventsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListConversionEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.KeyEvent createKeyEvent(
+        com.google.analytics.admin.v1alpha.CreateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.KeyEvent updateKeyEvent(
+        com.google.analytics.admin.v1alpha.UpdateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.KeyEvent getKeyEvent(
+        com.google.analytics.admin.v1alpha.GetKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteKeyEvent(
+        com.google.analytics.admin.v1alpha.DeleteKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListKeyEventsResponse listKeyEvents(
+        com.google.analytics.admin.v1alpha.ListKeyEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListKeyEventsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12172,14 +14491,20 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
-     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
-     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
      * property configuration changes like adding a stream or changing a
      * property's time zone. For configuration change history, see
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.RunAccessReportResponse runAccessReport(
@@ -12478,6 +14803,19 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Creates a BigQueryLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BigQueryLink createBigQueryLink(
+        com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBigQueryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a single BigQuery Link.
      * </pre>
      */
@@ -12498,6 +14836,32 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBigQueryLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BigQueryLink on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBigQueryLink(
+        com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBigQueryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQueryLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BigQueryLink updateBigQueryLink(
+        com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBigQueryLinkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12707,6 +15071,2631 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteEventCreateRuleMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventEditRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventEditRule getEventEditRule(
+        com.google.analytics.admin.v1alpha.GetEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEventEditRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventEditRules on a web data stream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListEventEditRulesResponse listEventEditRules(
+        com.google.analytics.admin.v1alpha.ListEventEditRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventEditRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventEditRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventEditRule createEventEditRule(
+        com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEventEditRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventEditRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventEditRule updateEventEditRule(
+        com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEventEditRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventEditRule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEventEditRule(
+        com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEventEditRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the processing order of event edit rules on the specified stream.
+     * </pre>
+     */
+    public com.google.protobuf.Empty reorderEventEditRules(
+        com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReorderEventEditRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataRedactionSettings on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataRedactionSettings updateDataRedactionSettings(
+        com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataRedactionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataRedactionSettings.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataRedactionSettings getDataRedactionSettings(
+        com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataRedactionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric getCalculatedMetric(
+        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric createCalculatedMetric(
+        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse listCalculatedMetrics(
+        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCalculatedMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric updateCalculatedMetric(
+        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCalculatedMetric(
+        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a roll-up property and all roll-up property source links.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse createRollupProperty(
+        com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRollupPropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single roll-up property source Link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.RollupPropertySourceLink getRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRollupPropertySourceLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists roll-up property source Links on a property.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse
+        listRollupPropertySourceLinks(
+            com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRollupPropertySourceLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.RollupPropertySourceLink
+        createRollupPropertySourceLink(
+            com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRollupPropertySourceLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRollupPropertySourceLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a subproperty and a subproperty event filter that applies to the
+     * created subproperty.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse provisionSubproperty(
+        com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProvisionSubpropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertyEventFilter createSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertyEventFilter getSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse
+        listSubpropertyEventFilters(
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubpropertyEventFiltersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertyEventFilter updateSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation createReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation getReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse
+        listReportingDataAnnotations(
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReportingDataAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation updateReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse submitUserDeletion(
+        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitUserDeletionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AnalyticsAdminService.
+   *
+   * <pre>
+   * Service Interface for the Google Analytics Admin API.
+   * </pre>
+   */
+  public static final class AnalyticsAdminServiceBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<AnalyticsAdminServiceBlockingStub> {
+    private AnalyticsAdminServiceBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AnalyticsAdminServiceBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AnalyticsAdminServiceBlockingStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Account.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Account getAccount(
+        com.google.analytics.admin.v1alpha.GetAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all accounts accessible by the caller.
+     * Note that these accounts might not currently have GA properties.
+     * Soft-deleted (ie: "trashed") accounts are excluded by default.
+     * Returns an empty list if no relevant accounts are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAccountsResponse listAccounts(
+        com.google.analytics.admin.v1alpha.ListAccountsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccountsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Account as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted accounts.
+     * However, they can be restored using the Trash Can UI.
+     * If the accounts are not restored before the expiration time, the account
+     * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
+     * AccessBindings) will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAccount(
+        com.google.analytics.admin.v1alpha.DeleteAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an account.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Account updateAccount(
+        com.google.analytics.admin.v1alpha.UpdateAccountRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccountMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Requests a ticket for creating an account.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse provisionAccountTicket(
+        com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProvisionAccountTicketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns summaries of all accounts accessible by the caller.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAccountSummariesResponse listAccountSummaries(
+        com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccountSummariesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single GA Property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Property getProperty(
+        com.google.analytics.admin.v1alpha.GetPropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns child Properties under the specified parent Account.
+     * Properties will be excluded if the caller does not have access.
+     * Soft-deleted (ie: "trashed") properties are excluded by default.
+     * Returns an empty list if no relevant properties are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListPropertiesResponse listProperties(
+        com.google.analytics.admin.v1alpha.ListPropertiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPropertiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Property createProperty(
+        com.google.analytics.admin.v1alpha.CreatePropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks target Property as soft-deleted (ie: "trashed") and returns it.
+     * This API does not have a method to restore soft-deleted properties.
+     * However, they can be restored using the Trash Can UI.
+     * If the properties are not restored before the expiration time, the Property
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
+     * will be permanently purged.
+     * https://support.google.com/analytics/answer/6154772
+     * Returns an error if the target is not found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Property deleteProperty(
+        com.google.analytics.admin.v1alpha.DeletePropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Property updateProperty(
+        com.google.analytics.admin.v1alpha.UpdatePropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a FirebaseLink.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.FirebaseLink createFirebaseLink(
+        com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFirebaseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a FirebaseLink on a property
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteFirebaseLink(
+        com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFirebaseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists FirebaseLinks on a property.
+     * Properties can have at most one FirebaseLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse listFirebaseLinks(
+        com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFirebaseLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the Site Tag for the specified web stream.
+     * Site Tags are immutable singletons.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.GlobalSiteTag getGlobalSiteTag(
+        com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGlobalSiteTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a GoogleAdsLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.GoogleAdsLink createGoogleAdsLink(
+        com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGoogleAdsLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a GoogleAdsLink on a property
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.GoogleAdsLink updateGoogleAdsLink(
+        com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoogleAdsLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a GoogleAdsLink on a property
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteGoogleAdsLink(
+        com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGoogleAdsLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists GoogleAdsLinks on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse listGoogleAdsLinks(
+        com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGoogleAdsLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get data sharing settings on an account.
+     * Data sharing settings are singletons.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataSharingSettings getDataSharingSettings(
+        com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataSharingSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single MeasurementProtocolSecret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+        getMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns child MeasurementProtocolSecrets under the specified parent
+     * Property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse
+        listMeasurementProtocolSecrets(
+            com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMeasurementProtocolSecretsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a measurement protocol secret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+        createMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target MeasurementProtocolSecret.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMeasurementProtocolSecret(
+        com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a measurement protocol secret.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
+        updateMeasurementProtocolSecret(
+            com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMeasurementProtocolSecretMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges the terms of user data collection for the specified property.
+     * This acknowledgement must be completed (either in the Google Analytics UI
+     * or through this API) before MeasurementProtocolSecret resources may be
+     * created.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse
+        acknowledgeUserDataCollection(
+            com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAcknowledgeUserDataCollectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+        getSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSKAdNetworkConversionValueSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+        createSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getCreateSKAdNetworkConversionValueSchemaMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getDeleteSKAdNetworkConversionValueSchemaMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+        updateSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getUpdateSKAdNetworkConversionValueSchemaMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists SKAdNetworkConversionValueSchema on a stream.
+     * Properties can have at most one SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse
+        listSKAdNetworkConversionValueSchemas(
+            com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getListSKAdNetworkConversionValueSchemasMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches through all changes to an account or its children given the
+     * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse
+        searchChangeHistoryEvents(
+            com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchChangeHistoryEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for Google Signals settings for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.GoogleSignalsSettings getGoogleSignalsSettings(
+        com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGoogleSignalsSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates Google Signals settings for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.GoogleSignalsSettings updateGoogleSignalsSettings(
+        com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoogleSignalsSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
+     * Creates a conversion event with the specified attributes.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.analytics.admin.v1alpha.ConversionEvent createConversionEvent(
+        com.google.analytics.admin.v1alpha.CreateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.analytics.admin.v1alpha.ConversionEvent updateConversionEvent(
+        com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
+     * Retrieve a single conversion event.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent(
+        com.google.analytics.admin.v1alpha.GetConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
+     * Deletes a conversion event in a property.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.Empty deleteConversionEvent(
+        com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
+     * Returns a list of conversion events in the specified parent property.
+     * Returns an empty list if no conversion events are found.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.analytics.admin.v1alpha.ListConversionEventsResponse listConversionEvents(
+        com.google.analytics.admin.v1alpha.ListConversionEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversionEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.KeyEvent createKeyEvent(
+        com.google.analytics.admin.v1alpha.CreateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.KeyEvent updateKeyEvent(
+        com.google.analytics.admin.v1alpha.UpdateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.KeyEvent getKeyEvent(
+        com.google.analytics.admin.v1alpha.GetKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteKeyEvent(
+        com.google.analytics.admin.v1alpha.DeleteKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteKeyEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListKeyEventsResponse listKeyEvents(
+        com.google.analytics.admin.v1alpha.ListKeyEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListKeyEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Look up a single DisplayVideo360AdvertiserLink
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+        getDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all DisplayVideo360AdvertiserLinks on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse
+        listDisplayVideo360AdvertiserLinks(
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDisplayVideo360AdvertiserLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLink.
+     * This can only be utilized by users who have proper authorization both on
+     * the Google Analytics property and on the Display &amp; Video 360 advertiser.
+     * Users who do not have access to the Display &amp; Video 360 advertiser should
+     * instead seek to create a DisplayVideo360LinkProposal.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+        createDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDisplayVideo360AdvertiserLink(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DisplayVideo360AdvertiserLink on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+        updateDisplayVideo360AdvertiserLink(
+            com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+        getDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGetDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DisplayVideo360AdvertiserLinkProposals on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse
+        listDisplayVideo360AdvertiserLinkProposals(
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getListDisplayVideo360AdvertiserLinkProposalsMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DisplayVideo360AdvertiserLinkProposal.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+        createDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getCreateDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DisplayVideo360AdvertiserLinkProposal on a property.
+     * This can only be used on cancelled proposals.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDisplayVideo360AdvertiserLinkProposal(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getDeleteDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a DisplayVideo360AdvertiserLinkProposal.
+     * The DisplayVideo360AdvertiserLinkProposal will be deleted and a new
+     * DisplayVideo360AdvertiserLink will be created.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse
+        approveDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getApproveDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a DisplayVideo360AdvertiserLinkProposal.
+     * Cancelling can mean either:
+     * - Declining a proposal initiated from Display &amp; Video 360
+     * - Withdrawing a proposal initiated from Google Analytics
+     * After being cancelled, a proposal will eventually be deleted automatically.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+        cancelDisplayVideo360AdvertiserLinkProposal(
+            com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getCancelDisplayVideo360AdvertiserLinkProposalMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomDimension.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomDimension createCustomDimension(
+        com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomDimension on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomDimension updateCustomDimension(
+        com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomDimensions on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse listCustomDimensions(
+        com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomDimensionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomDimension on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty archiveCustomDimension(
+        com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArchiveCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomDimension.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension(
+        com.google.analytics.admin.v1alpha.GetCustomDimensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomDimensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CustomMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomMetric createCustomMetric(
+        com.google.analytics.admin.v1alpha.CreateCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CustomMetric on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomMetric updateCustomMetric(
+        com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomMetrics on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListCustomMetricsResponse listCustomMetrics(
+        com.google.analytics.admin.v1alpha.ListCustomMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives a CustomMetric on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty archiveCustomMetric(
+        com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArchiveCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CustomMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CustomMetric getCustomMetric(
+        com.google.analytics.admin.v1alpha.GetCustomMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataRetentionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataRetentionSettings updateDataRetentionSettings(
+        com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataRetentionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DataStream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataStream createDataStream(
+        com.google.analytics.admin.v1alpha.CreateDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a DataStream on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataStream(
+        com.google.analytics.admin.v1alpha.DeleteDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataStream on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataStream updateDataStream(
+        com.google.analytics.admin.v1alpha.UpdateDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DataStreams on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListDataStreamsResponse listDataStreams(
+        com.google.analytics.admin.v1alpha.ListDataStreamsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataStreamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataStream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataStream getDataStream(
+        com.google.analytics.admin.v1alpha.GetDataStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single Audience.
+     * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Audience getAudience(
+        com.google.analytics.admin.v1alpha.GetAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAudienceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Audiences on a property.
+     * Audiences created before 2020 may not be supported.
+     * Default audiences will not show filter definitions.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAudiencesResponse listAudiences(
+        com.google.analytics.admin.v1alpha.ListAudiencesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAudiencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Audience.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Audience createAudience(
+        com.google.analytics.admin.v1alpha.CreateAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAudienceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Audience on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.Audience updateAudience(
+        com.google.analytics.admin.v1alpha.UpdateAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAudienceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Archives an Audience on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty archiveAudience(
+        com.google.analytics.admin.v1alpha.ArchiveAudienceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getArchiveAudienceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Look up a single SearchAds360Link
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link(
+        com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSearchAds360LinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all SearchAds360Links on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse listSearchAds360Links(
+        com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSearchAds360LinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SearchAds360Link.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SearchAds360Link createSearchAds360Link(
+        com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSearchAds360LinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a SearchAds360Link on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSearchAds360Link(
+        com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSearchAds360LinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SearchAds360Link on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SearchAds360Link updateSearchAds360Link(
+        com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSearchAds360LinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a AttributionSettings singleton.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AttributionSettings getAttributionSettings(
+        com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAttributionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates attribution settings on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AttributionSettings updateAttributionSettings(
+        com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAttributionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a customized report of data access records. The report provides
+     * records of each time a user reads Google Analytics reporting data. Access
+     * records are retained for up to 2 years.
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
+     * data from Google Analytics through a linkage. These records don't include
+     * property configuration changes like adding a stream or changing a
+     * property's time zone. For configuration change history, see
+     * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.RunAccessReportResponse runAccessReport(
+        com.google.analytics.admin.v1alpha.RunAccessReportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunAccessReportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AccessBinding createAccessBinding(
+        com.google.analytics.admin.v1alpha.CreateAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an access binding.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AccessBinding getAccessBinding(
+        com.google.analytics.admin.v1alpha.GetAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AccessBinding updateAccessBinding(
+        com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an access binding on an account or property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAccessBinding(
+        com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all access bindings on an account or property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAccessBindingsResponse listAccessBindings(
+        com.google.analytics.admin.v1alpha.ListAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates information about multiple access bindings to an account or
+     * property.
+     * This method is transactional. If any AccessBinding cannot be created, none
+     * of the AccessBindings will be created.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse
+        batchCreateAccessBindings(
+            com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about multiple access bindings to an account or property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse batchGetAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates information about multiple access bindings to an account or
+     * property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse
+        batchUpdateAccessBindings(
+            com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes information about multiple users' links to an account or property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteAccessBindings(
+        com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single ExpandedDataSet.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet(
+        com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExpandedDataSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ExpandedDataSets on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse listExpandedDataSets(
+        com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExpandedDataSetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ExpandedDataSet.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ExpandedDataSet createExpandedDataSet(
+        com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateExpandedDataSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ExpandedDataSet updateExpandedDataSet(
+        com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExpandedDataSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ExpandedDataSet on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteExpandedDataSet(
+        com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteExpandedDataSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single ChannelGroup.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup(
+        com.google.analytics.admin.v1alpha.GetChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ChannelGroups on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListChannelGroupsResponse listChannelGroups(
+        com.google.analytics.admin.v1alpha.ListChannelGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ChannelGroup.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ChannelGroup createChannelGroup(
+        com.google.analytics.admin.v1alpha.CreateChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a ChannelGroup.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ChannelGroup updateChannelGroup(
+        com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateChannelGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ChannelGroup on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteChannelGroup(
+        com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse
+        setAutomatedGa4ConfigurationOptOut(
+            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetAutomatedGa4ConfigurationOptOutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the opt out status for the automated GA4 setup process for a UA
+     * property.
+     * Note: this has no effect on GA4 property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse
+        fetchAutomatedGa4ConfigurationOptOut(
+            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchAutomatedGa4ConfigurationOptOutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a BigQueryLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BigQueryLink createBigQueryLink(
+        com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBigQueryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single BigQuery Link.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BigQueryLink getBigQueryLink(
+        com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBigQueryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery Links on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse listBigQueryLinks(
+        com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBigQueryLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BigQueryLink on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBigQueryLink(
+        com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBigQueryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQueryLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.BigQueryLink updateBigQueryLink(
+        com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBigQueryLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+        getEnhancedMeasurementSettings(
+            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+        updateEnhancedMeasurementSettings(
+            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a connected site tag for a Universal Analytics property. You can
+     * create a maximum of 20 connected site tags per property.
+     * Note: This API cannot be used on GA4 properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse createConnectedSiteTag(
+        com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConnectedSiteTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a connected site tag for a Universal Analytics property.
+     * Note: this has no effect on GA4 properties.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConnectedSiteTag(
+        com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConnectedSiteTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the connected site tags for a Universal Analytics property. A maximum
+     * of 20 connected site tags will be returned. Note: this has no effect on GA4
+     * property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse listConnectedSiteTags(
+        com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConnectedSiteTagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given a specified UA property, looks up the GA4 property connected to it.
+     * Note: this cannot be used with GA4 properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse
+        fetchConnectedGa4Property(
+            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchConnectedGa4PropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single AdSenseLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AdSenseLink getAdSenseLink(
+        com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAdSenseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an AdSenseLink.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.AdSenseLink createAdSenseLink(
+        com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAdSenseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an AdSenseLink.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAdSenseLink(
+        com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAdSenseLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AdSenseLinks on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse listAdSenseLinks(
+        com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdSenseLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventCreateRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule(
+        com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEventCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventCreateRules on a web data stream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse listEventCreateRules(
+        com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventCreateRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventCreateRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventCreateRule createEventCreateRule(
+        com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEventCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventCreateRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventCreateRule updateEventCreateRule(
+        com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEventCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventCreateRule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEventCreateRule(
+        com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEventCreateRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventEditRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventEditRule getEventEditRule(
+        com.google.analytics.admin.v1alpha.GetEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEventEditRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventEditRules on a web data stream.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListEventEditRulesResponse listEventEditRules(
+        com.google.analytics.admin.v1alpha.ListEventEditRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventEditRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventEditRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventEditRule createEventEditRule(
+        com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEventEditRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventEditRule.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EventEditRule updateEventEditRule(
+        com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEventEditRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventEditRule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEventEditRule(
+        com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEventEditRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the processing order of event edit rules on the specified stream.
+     * </pre>
+     */
+    public com.google.protobuf.Empty reorderEventEditRules(
+        com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReorderEventEditRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataRedactionSettings on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataRedactionSettings updateDataRedactionSettings(
+        com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDataRedactionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataRedactionSettings.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.DataRedactionSettings getDataRedactionSettings(
+        com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataRedactionSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric getCalculatedMetric(
+        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric createCalculatedMetric(
+        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse listCalculatedMetrics(
+        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCalculatedMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CalculatedMetric updateCalculatedMetric(
+        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCalculatedMetric(
+        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCalculatedMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a roll-up property and all roll-up property source links.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse createRollupProperty(
+        com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRollupPropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single roll-up property source Link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.RollupPropertySourceLink getRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRollupPropertySourceLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists roll-up property source Links on a property.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse
+        listRollupPropertySourceLinks(
+            com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRollupPropertySourceLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.RollupPropertySourceLink
+        createRollupPropertySourceLink(
+            com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRollupPropertySourceLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteRollupPropertySourceLink(
+        com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRollupPropertySourceLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a subproperty and a subproperty event filter that applies to the
+     * created subproperty.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse provisionSubproperty(
+        com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProvisionSubpropertyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertyEventFilter createSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertyEventFilter getSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse
+        listSubpropertyEventFilters(
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubpropertyEventFiltersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertyEventFilter updateSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSubpropertyEventFilter(
+        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation createReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation getReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse
+        listReportingDataAnnotations(
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReportingDataAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation updateReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse submitUserDeletion(
+        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitUserDeletionMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -12714,7 +17703,7 @@ public final class AnalyticsAdminServiceGrpc {
    * AnalyticsAdminService.
    *
    * <pre>
-   * Service Interface for the Analytics Admin API (GA4).
+   * Service Interface for the Google Analytics Admin API.
    * </pre>
    */
   public static final class AnalyticsAdminServiceFutureStub
@@ -12749,7 +17738,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns all accounts accessible by the caller.
-     * Note that these accounts might not currently have GA4 properties.
+     * Note that these accounts might not currently have GA properties.
      * Soft-deleted (ie: "trashed") accounts are excluded by default.
      * Returns an empty list if no relevant accounts are found.
      * </pre>
@@ -12770,7 +17759,7 @@ public final class AnalyticsAdminServiceGrpc {
      * However, they can be restored using the Trash Can UI.
      * If the accounts are not restored before the expiration time, the account
      * and all child resources (eg: Properties, GoogleAdsLinks, Streams,
-     * UserLinks) will be permanently purged.
+     * AccessBindings) will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
      * Returns an error if the target is not found.
      * </pre>
@@ -12829,7 +17818,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" Property.
+     * Lookup for a single GA Property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -12844,7 +17833,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      * <pre>
      * Returns child Properties under the specified parent Account.
-     * Only "GA4" properties will be returned.
      * Properties will be excluded if the caller does not have access.
      * Soft-deleted (ie: "trashed") properties are excluded by default.
      * Returns an empty list if no relevant properties are found.
@@ -12861,7 +17849,8 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Creates an "GA4" property with the specified location and attributes.
+     * Creates a Google Analytics property with the specified location and
+     * attributes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -12879,10 +17868,10 @@ public final class AnalyticsAdminServiceGrpc {
      * This API does not have a method to restore soft-deleted properties.
      * However, they can be restored using the Trash Can UI.
      * If the properties are not restored before the expiration time, the Property
-     * and all child resources (eg: GoogleAdsLinks, Streams, UserLinks)
+     * and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings)
      * will be permanently purged.
      * https://support.google.com/analytics/answer/6154772
-     * Returns an error if the target is not found, or is not a GA4 Property.
+     * Returns an error if the target is not found.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -12904,159 +17893,6 @@ public final class AnalyticsAdminServiceGrpc {
         updateProperty(com.google.analytics.admin.v1alpha.UpdatePropertyRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdatePropertyMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets information about a user's link to an account or property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.UserLink>
-        getUserLink(com.google.analytics.admin.v1alpha.GetUserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetUserLinkMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
-        batchGetUserLinks(com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getBatchGetUserLinksMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all user links on an account or property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.ListUserLinksResponse>
-        listUserLinks(com.google.analytics.admin.v1alpha.ListUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListUserLinksMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists all user links on an account or property, including implicit ones
-     * that come from effective permissions granted by groups or organization
-     * admin roles.
-     * If a returned user link does not have direct permissions, they cannot
-     * be removed from the account or property directly with the DeleteUserLink
-     * command. They have to be removed from the group/etc that gives them
-     * permissions, which is currently only usable/discoverable in the GA or GMP
-     * UIs.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
-        auditUserLinks(com.google.analytics.admin.v1alpha.AuditUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getAuditUserLinksMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a user link on an account or property.
-     * If the user with the specified email already has permissions on the
-     * account or property, then the user's existing permissions will be unioned
-     * with the permissions specified in the new UserLink.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.UserLink>
-        createUserLink(com.google.analytics.admin.v1alpha.CreateUserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateUserLinkMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates information about multiple users' links to an account or property.
-     * This method is transactional. If any UserLink cannot be created, none of
-     * the UserLinks will be created.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
-        batchCreateUserLinks(
-            com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getBatchCreateUserLinksMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a user link on an account or property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.UserLink>
-        updateUserLink(com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateUserLinkMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
-        batchUpdateUserLinks(
-            com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getBatchUpdateUserLinksMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a user link on an account or property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        deleteUserLink(com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteUserLinkMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes information about multiple users' links to an account or property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        batchDeleteUserLinks(
-            com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getBatchDeleteUserLinksMethod(), getCallOptions()), request);
     }
 
     /**
@@ -13192,7 +18028,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single "GA4" MeasurementProtocolSecret.
+     * Lookup for a single MeasurementProtocolSecret.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -13376,6 +18212,8 @@ public final class AnalyticsAdminServiceGrpc {
      * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
+     * Only returns the subset of changes supported by the API. The UI may return
+     * additional changes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -13420,9 +18258,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `CreateKeyEvent` instead.
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ConversionEvent>
         createConversionEvent(
@@ -13435,9 +18275,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `UpdateKeyEvent` instead.
      * Updates a conversion event with the specified attributes.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ConversionEvent>
         updateConversionEvent(
@@ -13450,9 +18292,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `GetKeyEvent` instead.
      * Retrieve a single conversion event.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ConversionEvent>
         getConversionEvent(com.google.analytics.admin.v1alpha.GetConversionEventRequest request) {
@@ -13464,9 +18308,11 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `DeleteKeyEvent` instead.
      * Deletes a conversion event in a property.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteConversionEvent(
             com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request) {
@@ -13478,16 +18324,88 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Deprecated: Use `ListKeyEvents` instead.
      * Returns a list of conversion events in the specified parent property.
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
         listConversionEvents(
             com.google.analytics.admin.v1alpha.ListConversionEventsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListConversionEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Key Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.KeyEvent>
+        createKeyEvent(com.google.analytics.admin.v1alpha.CreateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateKeyEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Key Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.KeyEvent>
+        updateKeyEvent(com.google.analytics.admin.v1alpha.UpdateKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateKeyEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve a single Key Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.KeyEvent>
+        getKeyEvent(com.google.analytics.admin.v1alpha.GetKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetKeyEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Key Event.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteKeyEvent(com.google.analytics.admin.v1alpha.DeleteKeyEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteKeyEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Key Events in the specified parent property.
+     * Returns an empty list if no Key Events are found.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListKeyEventsResponse>
+        listKeyEvents(com.google.analytics.admin.v1alpha.ListKeyEventsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListKeyEventsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -14111,14 +19029,20 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns a customized report of data access records. The report provides
      * records of each time a user reads Google Analytics reporting data. Access
      * records are retained for up to 2 years.
-     * Data Access Reports can be requested for a property. The property must be
-     * in Google Analytics 360. This method is only available to Administrators.
-     * These data access records include GA4 UI Reporting, GA4 UI Explorations,
-     * GA4 Data API, and other products like Firebase &amp; Admob that can retrieve
+     * Data Access Reports can be requested for a property. Reports may be
+     * requested for any property, but dimensions that aren't related to quota can
+     * only be requested on Google Analytics 360 properties. This method is only
+     * available to Administrators.
+     * These data access records include GA UI Reporting, GA UI Explorations,
+     * GA Data API, and other products like Firebase &amp; Admob that can retrieve
      * data from Google Analytics through a linkage. These records don't include
      * property configuration changes like adding a stream or changing a
      * property's time zone. For configuration change history, see
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+     * To give your feedback on this API, complete the [Google Analytics Access
+     * Reports
+     * feedback](https://docs.google.com/forms/d/e/1FAIpQLSdmEBUrMzAEdiEKk5TV5dEHvDUZDRlgWYdQdAeSdtR4hVjEhw/viewform)
+     * form.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -14443,6 +19367,20 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Creates a BigQueryLink.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.BigQueryLink>
+        createBigQueryLink(com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBigQueryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lookup for a single BigQuery Link.
      * </pre>
      */
@@ -14465,6 +19403,33 @@ public final class AnalyticsAdminServiceGrpc {
         listBigQueryLinks(com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBigQueryLinksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a BigQueryLink on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteBigQueryLink(com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBigQueryLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQueryLink.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.BigQueryLink>
+        updateBigQueryLink(com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBigQueryLinkMethod(), getCallOptions()), request);
     }
 
     /**
@@ -14695,6 +19660,458 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteEventCreateRuleMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single EventEditRule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.EventEditRule>
+        getEventEditRule(com.google.analytics.admin.v1alpha.GetEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEventEditRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists EventEditRules on a web data stream.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>
+        listEventEditRules(com.google.analytics.admin.v1alpha.ListEventEditRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListEventEditRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an EventEditRule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.EventEditRule>
+        createEventEditRule(com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateEventEditRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an EventEditRule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.EventEditRule>
+        updateEventEditRule(com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEventEditRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an EventEditRule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteEventEditRule(com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteEventEditRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes the processing order of event edit rules on the specified stream.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        reorderEventEditRules(
+            com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReorderEventEditRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a DataRedactionSettings on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DataRedactionSettings>
+        updateDataRedactionSettings(
+            com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDataRedactionSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single DataRedactionSettings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.DataRedactionSettings>
+        getDataRedactionSettings(
+            com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDataRedactionSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single CalculatedMetric.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        getCalculatedMetric(com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCalculatedMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a CalculatedMetric.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        createCalculatedMetric(
+            com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateCalculatedMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CalculatedMetrics on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>
+        listCalculatedMetrics(
+            com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListCalculatedMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CalculatedMetric>
+        updateCalculatedMetric(
+            com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCalculatedMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a CalculatedMetric on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteCalculatedMetric(
+            com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteCalculatedMetricMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a roll-up property and all roll-up property source links.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>
+        createRollupProperty(
+            com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRollupPropertyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single roll-up property source Link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+        getRollupPropertySourceLink(
+            com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRollupPropertySourceLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists roll-up property source Links on a property.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>
+        listRollupPropertySourceLinks(
+            com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRollupPropertySourceLinksMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.RollupPropertySourceLink>
+        createRollupPropertySourceLink(
+            com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRollupPropertySourceLinkMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a roll-up property source link.
+     * Only roll-up properties can have source links, so this method will throw an
+     * error if used on other types of properties.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteRollupPropertySourceLink(
+            com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRollupPropertySourceLinkMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a subproperty and a subproperty event filter that applies to the
+     * created subproperty.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>
+        provisionSubproperty(
+            com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getProvisionSubpropertyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        createSubpropertyEventFilter(
+            com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSubpropertyEventFilterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        getSubpropertyEventFilter(
+            com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSubpropertyEventFilterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all subproperty Event Filters on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>
+        listSubpropertyEventFilters(
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSubpropertyEventFiltersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a subproperty Event Filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertyEventFilter>
+        updateSubpropertyEventFilter(
+            com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSubpropertyEventFilterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subproperty event filter.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSubpropertyEventFilter(
+            com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSubpropertyEventFilterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        createReportingDataAnnotation(
+            com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateReportingDataAnnotationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        getReportingDataAnnotation(
+            com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReportingDataAnnotationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+        listReportingDataAnnotations(
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListReportingDataAnnotationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        updateReportingDataAnnotation(
+            com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateReportingDataAnnotationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteReportingDataAnnotation(
+            com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteReportingDataAnnotationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+        submitUserDeletion(com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitUserDeletionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -14708,123 +20125,151 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_CREATE_PROPERTY = 8;
   private static final int METHODID_DELETE_PROPERTY = 9;
   private static final int METHODID_UPDATE_PROPERTY = 10;
-  private static final int METHODID_GET_USER_LINK = 11;
-  private static final int METHODID_BATCH_GET_USER_LINKS = 12;
-  private static final int METHODID_LIST_USER_LINKS = 13;
-  private static final int METHODID_AUDIT_USER_LINKS = 14;
-  private static final int METHODID_CREATE_USER_LINK = 15;
-  private static final int METHODID_BATCH_CREATE_USER_LINKS = 16;
-  private static final int METHODID_UPDATE_USER_LINK = 17;
-  private static final int METHODID_BATCH_UPDATE_USER_LINKS = 18;
-  private static final int METHODID_DELETE_USER_LINK = 19;
-  private static final int METHODID_BATCH_DELETE_USER_LINKS = 20;
-  private static final int METHODID_CREATE_FIREBASE_LINK = 21;
-  private static final int METHODID_DELETE_FIREBASE_LINK = 22;
-  private static final int METHODID_LIST_FIREBASE_LINKS = 23;
-  private static final int METHODID_GET_GLOBAL_SITE_TAG = 24;
-  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 25;
-  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 26;
-  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 27;
-  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 28;
-  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 29;
-  private static final int METHODID_GET_MEASUREMENT_PROTOCOL_SECRET = 30;
-  private static final int METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS = 31;
-  private static final int METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET = 32;
-  private static final int METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET = 33;
-  private static final int METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET = 34;
-  private static final int METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION = 35;
-  private static final int METHODID_GET_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 36;
-  private static final int METHODID_CREATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 37;
-  private static final int METHODID_DELETE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 38;
-  private static final int METHODID_UPDATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 39;
-  private static final int METHODID_LIST_SKAD_NETWORK_CONVERSION_VALUE_SCHEMAS = 40;
-  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 41;
-  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 42;
-  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 43;
-  private static final int METHODID_CREATE_CONVERSION_EVENT = 44;
-  private static final int METHODID_UPDATE_CONVERSION_EVENT = 45;
-  private static final int METHODID_GET_CONVERSION_EVENT = 46;
-  private static final int METHODID_DELETE_CONVERSION_EVENT = 47;
-  private static final int METHODID_LIST_CONVERSION_EVENTS = 48;
-  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK = 49;
-  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS = 50;
-  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK = 51;
-  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK = 52;
-  private static final int METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK = 53;
-  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 54;
-  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS = 55;
-  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 56;
-  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 57;
-  private static final int METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 58;
-  private static final int METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 59;
-  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 60;
-  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 61;
-  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 62;
-  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 63;
-  private static final int METHODID_GET_CUSTOM_DIMENSION = 64;
-  private static final int METHODID_CREATE_CUSTOM_METRIC = 65;
-  private static final int METHODID_UPDATE_CUSTOM_METRIC = 66;
-  private static final int METHODID_LIST_CUSTOM_METRICS = 67;
-  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 68;
-  private static final int METHODID_GET_CUSTOM_METRIC = 69;
-  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 70;
-  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 71;
-  private static final int METHODID_CREATE_DATA_STREAM = 72;
-  private static final int METHODID_DELETE_DATA_STREAM = 73;
-  private static final int METHODID_UPDATE_DATA_STREAM = 74;
-  private static final int METHODID_LIST_DATA_STREAMS = 75;
-  private static final int METHODID_GET_DATA_STREAM = 76;
-  private static final int METHODID_GET_AUDIENCE = 77;
-  private static final int METHODID_LIST_AUDIENCES = 78;
-  private static final int METHODID_CREATE_AUDIENCE = 79;
-  private static final int METHODID_UPDATE_AUDIENCE = 80;
-  private static final int METHODID_ARCHIVE_AUDIENCE = 81;
-  private static final int METHODID_GET_SEARCH_ADS360LINK = 82;
-  private static final int METHODID_LIST_SEARCH_ADS360LINKS = 83;
-  private static final int METHODID_CREATE_SEARCH_ADS360LINK = 84;
-  private static final int METHODID_DELETE_SEARCH_ADS360LINK = 85;
-  private static final int METHODID_UPDATE_SEARCH_ADS360LINK = 86;
-  private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 87;
-  private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 88;
-  private static final int METHODID_RUN_ACCESS_REPORT = 89;
-  private static final int METHODID_CREATE_ACCESS_BINDING = 90;
-  private static final int METHODID_GET_ACCESS_BINDING = 91;
-  private static final int METHODID_UPDATE_ACCESS_BINDING = 92;
-  private static final int METHODID_DELETE_ACCESS_BINDING = 93;
-  private static final int METHODID_LIST_ACCESS_BINDINGS = 94;
-  private static final int METHODID_BATCH_CREATE_ACCESS_BINDINGS = 95;
-  private static final int METHODID_BATCH_GET_ACCESS_BINDINGS = 96;
-  private static final int METHODID_BATCH_UPDATE_ACCESS_BINDINGS = 97;
-  private static final int METHODID_BATCH_DELETE_ACCESS_BINDINGS = 98;
-  private static final int METHODID_GET_EXPANDED_DATA_SET = 99;
-  private static final int METHODID_LIST_EXPANDED_DATA_SETS = 100;
-  private static final int METHODID_CREATE_EXPANDED_DATA_SET = 101;
-  private static final int METHODID_UPDATE_EXPANDED_DATA_SET = 102;
-  private static final int METHODID_DELETE_EXPANDED_DATA_SET = 103;
-  private static final int METHODID_GET_CHANNEL_GROUP = 104;
-  private static final int METHODID_LIST_CHANNEL_GROUPS = 105;
-  private static final int METHODID_CREATE_CHANNEL_GROUP = 106;
-  private static final int METHODID_UPDATE_CHANNEL_GROUP = 107;
-  private static final int METHODID_DELETE_CHANNEL_GROUP = 108;
-  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 109;
-  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 110;
-  private static final int METHODID_GET_BIG_QUERY_LINK = 111;
-  private static final int METHODID_LIST_BIG_QUERY_LINKS = 112;
-  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 113;
-  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 114;
-  private static final int METHODID_CREATE_CONNECTED_SITE_TAG = 115;
-  private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 116;
-  private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 117;
-  private static final int METHODID_FETCH_CONNECTED_GA4PROPERTY = 118;
-  private static final int METHODID_GET_AD_SENSE_LINK = 119;
-  private static final int METHODID_CREATE_AD_SENSE_LINK = 120;
-  private static final int METHODID_DELETE_AD_SENSE_LINK = 121;
-  private static final int METHODID_LIST_AD_SENSE_LINKS = 122;
-  private static final int METHODID_GET_EVENT_CREATE_RULE = 123;
-  private static final int METHODID_LIST_EVENT_CREATE_RULES = 124;
-  private static final int METHODID_CREATE_EVENT_CREATE_RULE = 125;
-  private static final int METHODID_UPDATE_EVENT_CREATE_RULE = 126;
-  private static final int METHODID_DELETE_EVENT_CREATE_RULE = 127;
+  private static final int METHODID_CREATE_FIREBASE_LINK = 11;
+  private static final int METHODID_DELETE_FIREBASE_LINK = 12;
+  private static final int METHODID_LIST_FIREBASE_LINKS = 13;
+  private static final int METHODID_GET_GLOBAL_SITE_TAG = 14;
+  private static final int METHODID_CREATE_GOOGLE_ADS_LINK = 15;
+  private static final int METHODID_UPDATE_GOOGLE_ADS_LINK = 16;
+  private static final int METHODID_DELETE_GOOGLE_ADS_LINK = 17;
+  private static final int METHODID_LIST_GOOGLE_ADS_LINKS = 18;
+  private static final int METHODID_GET_DATA_SHARING_SETTINGS = 19;
+  private static final int METHODID_GET_MEASUREMENT_PROTOCOL_SECRET = 20;
+  private static final int METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS = 21;
+  private static final int METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET = 22;
+  private static final int METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET = 23;
+  private static final int METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET = 24;
+  private static final int METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION = 25;
+  private static final int METHODID_GET_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 26;
+  private static final int METHODID_CREATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 27;
+  private static final int METHODID_DELETE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 28;
+  private static final int METHODID_UPDATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 29;
+  private static final int METHODID_LIST_SKAD_NETWORK_CONVERSION_VALUE_SCHEMAS = 30;
+  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 31;
+  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 32;
+  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 33;
+  private static final int METHODID_CREATE_CONVERSION_EVENT = 34;
+  private static final int METHODID_UPDATE_CONVERSION_EVENT = 35;
+  private static final int METHODID_GET_CONVERSION_EVENT = 36;
+  private static final int METHODID_DELETE_CONVERSION_EVENT = 37;
+  private static final int METHODID_LIST_CONVERSION_EVENTS = 38;
+  private static final int METHODID_CREATE_KEY_EVENT = 39;
+  private static final int METHODID_UPDATE_KEY_EVENT = 40;
+  private static final int METHODID_GET_KEY_EVENT = 41;
+  private static final int METHODID_DELETE_KEY_EVENT = 42;
+  private static final int METHODID_LIST_KEY_EVENTS = 43;
+  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK = 44;
+  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS = 45;
+  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK = 46;
+  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK = 47;
+  private static final int METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK = 48;
+  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 49;
+  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS = 50;
+  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 51;
+  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 52;
+  private static final int METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 53;
+  private static final int METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 54;
+  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 55;
+  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 56;
+  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 57;
+  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 58;
+  private static final int METHODID_GET_CUSTOM_DIMENSION = 59;
+  private static final int METHODID_CREATE_CUSTOM_METRIC = 60;
+  private static final int METHODID_UPDATE_CUSTOM_METRIC = 61;
+  private static final int METHODID_LIST_CUSTOM_METRICS = 62;
+  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 63;
+  private static final int METHODID_GET_CUSTOM_METRIC = 64;
+  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 65;
+  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 66;
+  private static final int METHODID_CREATE_DATA_STREAM = 67;
+  private static final int METHODID_DELETE_DATA_STREAM = 68;
+  private static final int METHODID_UPDATE_DATA_STREAM = 69;
+  private static final int METHODID_LIST_DATA_STREAMS = 70;
+  private static final int METHODID_GET_DATA_STREAM = 71;
+  private static final int METHODID_GET_AUDIENCE = 72;
+  private static final int METHODID_LIST_AUDIENCES = 73;
+  private static final int METHODID_CREATE_AUDIENCE = 74;
+  private static final int METHODID_UPDATE_AUDIENCE = 75;
+  private static final int METHODID_ARCHIVE_AUDIENCE = 76;
+  private static final int METHODID_GET_SEARCH_ADS360LINK = 77;
+  private static final int METHODID_LIST_SEARCH_ADS360LINKS = 78;
+  private static final int METHODID_CREATE_SEARCH_ADS360LINK = 79;
+  private static final int METHODID_DELETE_SEARCH_ADS360LINK = 80;
+  private static final int METHODID_UPDATE_SEARCH_ADS360LINK = 81;
+  private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 82;
+  private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 83;
+  private static final int METHODID_RUN_ACCESS_REPORT = 84;
+  private static final int METHODID_CREATE_ACCESS_BINDING = 85;
+  private static final int METHODID_GET_ACCESS_BINDING = 86;
+  private static final int METHODID_UPDATE_ACCESS_BINDING = 87;
+  private static final int METHODID_DELETE_ACCESS_BINDING = 88;
+  private static final int METHODID_LIST_ACCESS_BINDINGS = 89;
+  private static final int METHODID_BATCH_CREATE_ACCESS_BINDINGS = 90;
+  private static final int METHODID_BATCH_GET_ACCESS_BINDINGS = 91;
+  private static final int METHODID_BATCH_UPDATE_ACCESS_BINDINGS = 92;
+  private static final int METHODID_BATCH_DELETE_ACCESS_BINDINGS = 93;
+  private static final int METHODID_GET_EXPANDED_DATA_SET = 94;
+  private static final int METHODID_LIST_EXPANDED_DATA_SETS = 95;
+  private static final int METHODID_CREATE_EXPANDED_DATA_SET = 96;
+  private static final int METHODID_UPDATE_EXPANDED_DATA_SET = 97;
+  private static final int METHODID_DELETE_EXPANDED_DATA_SET = 98;
+  private static final int METHODID_GET_CHANNEL_GROUP = 99;
+  private static final int METHODID_LIST_CHANNEL_GROUPS = 100;
+  private static final int METHODID_CREATE_CHANNEL_GROUP = 101;
+  private static final int METHODID_UPDATE_CHANNEL_GROUP = 102;
+  private static final int METHODID_DELETE_CHANNEL_GROUP = 103;
+  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 104;
+  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 105;
+  private static final int METHODID_CREATE_BIG_QUERY_LINK = 106;
+  private static final int METHODID_GET_BIG_QUERY_LINK = 107;
+  private static final int METHODID_LIST_BIG_QUERY_LINKS = 108;
+  private static final int METHODID_DELETE_BIG_QUERY_LINK = 109;
+  private static final int METHODID_UPDATE_BIG_QUERY_LINK = 110;
+  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 111;
+  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 112;
+  private static final int METHODID_CREATE_CONNECTED_SITE_TAG = 113;
+  private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 114;
+  private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 115;
+  private static final int METHODID_FETCH_CONNECTED_GA4PROPERTY = 116;
+  private static final int METHODID_GET_AD_SENSE_LINK = 117;
+  private static final int METHODID_CREATE_AD_SENSE_LINK = 118;
+  private static final int METHODID_DELETE_AD_SENSE_LINK = 119;
+  private static final int METHODID_LIST_AD_SENSE_LINKS = 120;
+  private static final int METHODID_GET_EVENT_CREATE_RULE = 121;
+  private static final int METHODID_LIST_EVENT_CREATE_RULES = 122;
+  private static final int METHODID_CREATE_EVENT_CREATE_RULE = 123;
+  private static final int METHODID_UPDATE_EVENT_CREATE_RULE = 124;
+  private static final int METHODID_DELETE_EVENT_CREATE_RULE = 125;
+  private static final int METHODID_GET_EVENT_EDIT_RULE = 126;
+  private static final int METHODID_LIST_EVENT_EDIT_RULES = 127;
+  private static final int METHODID_CREATE_EVENT_EDIT_RULE = 128;
+  private static final int METHODID_UPDATE_EVENT_EDIT_RULE = 129;
+  private static final int METHODID_DELETE_EVENT_EDIT_RULE = 130;
+  private static final int METHODID_REORDER_EVENT_EDIT_RULES = 131;
+  private static final int METHODID_UPDATE_DATA_REDACTION_SETTINGS = 132;
+  private static final int METHODID_GET_DATA_REDACTION_SETTINGS = 133;
+  private static final int METHODID_GET_CALCULATED_METRIC = 134;
+  private static final int METHODID_CREATE_CALCULATED_METRIC = 135;
+  private static final int METHODID_LIST_CALCULATED_METRICS = 136;
+  private static final int METHODID_UPDATE_CALCULATED_METRIC = 137;
+  private static final int METHODID_DELETE_CALCULATED_METRIC = 138;
+  private static final int METHODID_CREATE_ROLLUP_PROPERTY = 139;
+  private static final int METHODID_GET_ROLLUP_PROPERTY_SOURCE_LINK = 140;
+  private static final int METHODID_LIST_ROLLUP_PROPERTY_SOURCE_LINKS = 141;
+  private static final int METHODID_CREATE_ROLLUP_PROPERTY_SOURCE_LINK = 142;
+  private static final int METHODID_DELETE_ROLLUP_PROPERTY_SOURCE_LINK = 143;
+  private static final int METHODID_PROVISION_SUBPROPERTY = 144;
+  private static final int METHODID_CREATE_SUBPROPERTY_EVENT_FILTER = 145;
+  private static final int METHODID_GET_SUBPROPERTY_EVENT_FILTER = 146;
+  private static final int METHODID_LIST_SUBPROPERTY_EVENT_FILTERS = 147;
+  private static final int METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER = 148;
+  private static final int METHODID_DELETE_SUBPROPERTY_EVENT_FILTER = 149;
+  private static final int METHODID_CREATE_REPORTING_DATA_ANNOTATION = 150;
+  private static final int METHODID_GET_REPORTING_DATA_ANNOTATION = 151;
+  private static final int METHODID_LIST_REPORTING_DATA_ANNOTATIONS = 152;
+  private static final int METHODID_UPDATE_REPORTING_DATA_ANNOTATION = 153;
+  private static final int METHODID_DELETE_REPORTING_DATA_ANNOTATION = 154;
+  private static final int METHODID_SUBMIT_USER_DELETION = 155;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -14910,69 +20355,6 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.UpdatePropertyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property>)
                   responseObserver);
-          break;
-        case METHODID_GET_USER_LINK:
-          serviceImpl.getUserLink(
-              (com.google.analytics.admin.v1alpha.GetUserLinkRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink>)
-                  responseObserver);
-          break;
-        case METHODID_BATCH_GET_USER_LINKS:
-          serviceImpl.batchGetUserLinks(
-              (com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>)
-                  responseObserver);
-          break;
-        case METHODID_LIST_USER_LINKS:
-          serviceImpl.listUserLinks(
-              (com.google.analytics.admin.v1alpha.ListUserLinksRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.ListUserLinksResponse>)
-                  responseObserver);
-          break;
-        case METHODID_AUDIT_USER_LINKS:
-          serviceImpl.auditUserLinks(
-              (com.google.analytics.admin.v1alpha.AuditUserLinksRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.AuditUserLinksResponse>)
-                  responseObserver);
-          break;
-        case METHODID_CREATE_USER_LINK:
-          serviceImpl.createUserLink(
-              (com.google.analytics.admin.v1alpha.CreateUserLinkRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink>)
-                  responseObserver);
-          break;
-        case METHODID_BATCH_CREATE_USER_LINKS:
-          serviceImpl.batchCreateUserLinks(
-              (com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>)
-                  responseObserver);
-          break;
-        case METHODID_UPDATE_USER_LINK:
-          serviceImpl.updateUserLink(
-              (com.google.analytics.admin.v1alpha.UpdateUserLinkRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink>)
-                  responseObserver);
-          break;
-        case METHODID_BATCH_UPDATE_USER_LINKS:
-          serviceImpl.batchUpdateUserLinks(
-              (com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>)
-                  responseObserver);
-          break;
-        case METHODID_DELETE_USER_LINK:
-          serviceImpl.deleteUserLink(
-              (com.google.analytics.admin.v1alpha.DeleteUserLinkRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_BATCH_DELETE_USER_LINKS:
-          serviceImpl.batchDeleteUserLinks(
-              (com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CREATE_FIREBASE_LINK:
           serviceImpl.createFirebaseLink(
@@ -15156,6 +20538,36 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.ListConversionEventsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.ListConversionEventsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_KEY_EVENT:
+          serviceImpl.createKeyEvent(
+              (com.google.analytics.admin.v1alpha.CreateKeyEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_KEY_EVENT:
+          serviceImpl.updateKeyEvent(
+              (com.google.analytics.admin.v1alpha.UpdateKeyEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent>)
+                  responseObserver);
+          break;
+        case METHODID_GET_KEY_EVENT:
+          serviceImpl.getKeyEvent(
+              (com.google.analytics.admin.v1alpha.GetKeyEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.KeyEvent>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_KEY_EVENT:
+          serviceImpl.deleteKeyEvent(
+              (com.google.analytics.admin.v1alpha.DeleteKeyEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_KEY_EVENTS:
+          serviceImpl.listKeyEvents(
+              (com.google.analytics.admin.v1alpha.ListKeyEventsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListKeyEventsResponse>)
                   responseObserver);
           break;
         case METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK:
@@ -15565,6 +20977,12 @@ public final class AnalyticsAdminServiceGrpc {
                           .FetchAutomatedGa4ConfigurationOptOutResponse>)
                   responseObserver);
           break;
+        case METHODID_CREATE_BIG_QUERY_LINK:
+          serviceImpl.createBigQueryLink(
+              (com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>)
+                  responseObserver);
+          break;
         case METHODID_GET_BIG_QUERY_LINK:
           serviceImpl.getBigQueryLink(
               (com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest) request,
@@ -15576,6 +20994,17 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_BIG_QUERY_LINK:
+          serviceImpl.deleteBigQueryLink(
+              (com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_BIG_QUERY_LINK:
+          serviceImpl.updateBigQueryLink(
+              (com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>)
                   responseObserver);
           break;
         case METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS:
@@ -15672,6 +21101,198 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_GET_EVENT_EDIT_RULE:
+          serviceImpl.getEventEditRule(
+              (com.google.analytics.admin.v1alpha.GetEventEditRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_EVENT_EDIT_RULES:
+          serviceImpl.listEventEditRules(
+              (com.google.analytics.admin.v1alpha.ListEventEditRulesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_EVENT_EDIT_RULE:
+          serviceImpl.createEventEditRule(
+              (com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_EVENT_EDIT_RULE:
+          serviceImpl.updateEventEditRule(
+              (com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EventEditRule>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_EVENT_EDIT_RULE:
+          serviceImpl.deleteEventEditRule(
+              (com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_REORDER_EVENT_EDIT_RULES:
+          serviceImpl.reorderEventEditRules(
+              (com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_DATA_REDACTION_SETTINGS:
+          serviceImpl.updateDataRedactionSettings(
+              (com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DataRedactionSettings>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DATA_REDACTION_SETTINGS:
+          serviceImpl.getDataRedactionSettings(
+              (com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.DataRedactionSettings>)
+                  responseObserver);
+          break;
+        case METHODID_GET_CALCULATED_METRIC:
+          serviceImpl.getCalculatedMetric(
+              (com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CALCULATED_METRIC:
+          serviceImpl.createCalculatedMetric(
+              (com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_CALCULATED_METRICS:
+          serviceImpl.listCalculatedMetrics(
+              (com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CALCULATED_METRIC:
+          serviceImpl.updateCalculatedMetric(
+              (com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CalculatedMetric>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CALCULATED_METRIC:
+          serviceImpl.deleteCalculatedMetric(
+              (com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_ROLLUP_PROPERTY:
+          serviceImpl.createRollupProperty(
+              (com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ROLLUP_PROPERTY_SOURCE_LINK:
+          serviceImpl.getRollupPropertySourceLink(
+              (com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.RollupPropertySourceLink>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ROLLUP_PROPERTY_SOURCE_LINKS:
+          serviceImpl.listRollupPropertySourceLinks(
+              (com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ROLLUP_PROPERTY_SOURCE_LINK:
+          serviceImpl.createRollupPropertySourceLink(
+              (com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.RollupPropertySourceLink>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ROLLUP_PROPERTY_SOURCE_LINK:
+          serviceImpl.deleteRollupPropertySourceLink(
+              (com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_PROVISION_SUBPROPERTY:
+          serviceImpl.provisionSubproperty(
+              (com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SUBPROPERTY_EVENT_FILTER:
+          serviceImpl.createSubpropertyEventFilter(
+              (com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertyEventFilter>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SUBPROPERTY_EVENT_FILTER:
+          serviceImpl.getSubpropertyEventFilter(
+              (com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertyEventFilter>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SUBPROPERTY_EVENT_FILTERS:
+          serviceImpl.listSubpropertyEventFilters(
+              (com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER:
+          serviceImpl.updateSubpropertyEventFilter(
+              (com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertyEventFilter>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SUBPROPERTY_EVENT_FILTER:
+          serviceImpl.deleteSubpropertyEventFilter(
+              (com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_REPORTING_DATA_ANNOTATION:
+          serviceImpl.createReportingDataAnnotation(
+              (com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ReportingDataAnnotation>)
+                  responseObserver);
+          break;
+        case METHODID_GET_REPORTING_DATA_ANNOTATION:
+          serviceImpl.getReportingDataAnnotation(
+              (com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ReportingDataAnnotation>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_REPORTING_DATA_ANNOTATIONS:
+          serviceImpl.listReportingDataAnnotations(
+              (com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_REPORTING_DATA_ANNOTATION:
+          serviceImpl.updateReportingDataAnnotation(
+              (com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ReportingDataAnnotation>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_REPORTING_DATA_ANNOTATION:
+          serviceImpl.deleteReportingDataAnnotation(
+              (com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_SUBMIT_USER_DELETION:
+          serviceImpl.submitUserDeletion(
+              (com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -15763,73 +21384,6 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.UpdatePropertyRequest,
                     com.google.analytics.admin.v1alpha.Property>(
                     service, METHODID_UPDATE_PROPERTY)))
-        .addMethod(
-            getGetUserLinkMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.GetUserLinkRequest,
-                    com.google.analytics.admin.v1alpha.UserLink>(service, METHODID_GET_USER_LINK)))
-        .addMethod(
-            getBatchGetUserLinksMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest,
-                    com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>(
-                    service, METHODID_BATCH_GET_USER_LINKS)))
-        .addMethod(
-            getListUserLinksMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.ListUserLinksRequest,
-                    com.google.analytics.admin.v1alpha.ListUserLinksResponse>(
-                    service, METHODID_LIST_USER_LINKS)))
-        .addMethod(
-            getAuditUserLinksMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.AuditUserLinksRequest,
-                    com.google.analytics.admin.v1alpha.AuditUserLinksResponse>(
-                    service, METHODID_AUDIT_USER_LINKS)))
-        .addMethod(
-            getCreateUserLinkMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.CreateUserLinkRequest,
-                    com.google.analytics.admin.v1alpha.UserLink>(
-                    service, METHODID_CREATE_USER_LINK)))
-        .addMethod(
-            getBatchCreateUserLinksMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest,
-                    com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>(
-                    service, METHODID_BATCH_CREATE_USER_LINKS)))
-        .addMethod(
-            getUpdateUserLinkMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.UpdateUserLinkRequest,
-                    com.google.analytics.admin.v1alpha.UserLink>(
-                    service, METHODID_UPDATE_USER_LINK)))
-        .addMethod(
-            getBatchUpdateUserLinksMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest,
-                    com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>(
-                    service, METHODID_BATCH_UPDATE_USER_LINKS)))
-        .addMethod(
-            getDeleteUserLinkMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.DeleteUserLinkRequest,
-                    com.google.protobuf.Empty>(service, METHODID_DELETE_USER_LINK)))
-        .addMethod(
-            getBatchDeleteUserLinksMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest,
-                    com.google.protobuf.Empty>(service, METHODID_BATCH_DELETE_USER_LINKS)))
         .addMethod(
             getCreateFirebaseLinkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -16027,6 +21581,39 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.ListConversionEventsRequest,
                     com.google.analytics.admin.v1alpha.ListConversionEventsResponse>(
                     service, METHODID_LIST_CONVERSION_EVENTS)))
+        .addMethod(
+            getCreateKeyEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateKeyEventRequest,
+                    com.google.analytics.admin.v1alpha.KeyEvent>(
+                    service, METHODID_CREATE_KEY_EVENT)))
+        .addMethod(
+            getUpdateKeyEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateKeyEventRequest,
+                    com.google.analytics.admin.v1alpha.KeyEvent>(
+                    service, METHODID_UPDATE_KEY_EVENT)))
+        .addMethod(
+            getGetKeyEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetKeyEventRequest,
+                    com.google.analytics.admin.v1alpha.KeyEvent>(service, METHODID_GET_KEY_EVENT)))
+        .addMethod(
+            getDeleteKeyEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteKeyEventRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_KEY_EVENT)))
+        .addMethod(
+            getListKeyEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListKeyEventsRequest,
+                    com.google.analytics.admin.v1alpha.ListKeyEventsResponse>(
+                    service, METHODID_LIST_KEY_EVENTS)))
         .addMethod(
             getGetDisplayVideo360AdvertiserLinkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -16461,6 +22048,13 @@ public final class AnalyticsAdminServiceGrpc {
                         .FetchAutomatedGa4ConfigurationOptOutResponse>(
                     service, METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
         .addMethod(
+            getCreateBigQueryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest,
+                    com.google.analytics.admin.v1alpha.BigQueryLink>(
+                    service, METHODID_CREATE_BIG_QUERY_LINK)))
+        .addMethod(
             getGetBigQueryLinkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -16474,6 +22068,19 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest,
                     com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>(
                     service, METHODID_LIST_BIG_QUERY_LINKS)))
+        .addMethod(
+            getDeleteBigQueryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_BIG_QUERY_LINK)))
+        .addMethod(
+            getUpdateBigQueryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest,
+                    com.google.analytics.admin.v1alpha.BigQueryLink>(
+                    service, METHODID_UPDATE_BIG_QUERY_LINK)))
         .addMethod(
             getGetEnhancedMeasurementSettingsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -16576,6 +22183,211 @@ public final class AnalyticsAdminServiceGrpc {
                 new MethodHandlers<
                     com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_EVENT_CREATE_RULE)))
+        .addMethod(
+            getGetEventEditRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetEventEditRuleRequest,
+                    com.google.analytics.admin.v1alpha.EventEditRule>(
+                    service, METHODID_GET_EVENT_EDIT_RULE)))
+        .addMethod(
+            getListEventEditRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListEventEditRulesRequest,
+                    com.google.analytics.admin.v1alpha.ListEventEditRulesResponse>(
+                    service, METHODID_LIST_EVENT_EDIT_RULES)))
+        .addMethod(
+            getCreateEventEditRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest,
+                    com.google.analytics.admin.v1alpha.EventEditRule>(
+                    service, METHODID_CREATE_EVENT_EDIT_RULE)))
+        .addMethod(
+            getUpdateEventEditRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest,
+                    com.google.analytics.admin.v1alpha.EventEditRule>(
+                    service, METHODID_UPDATE_EVENT_EDIT_RULE)))
+        .addMethod(
+            getDeleteEventEditRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_EVENT_EDIT_RULE)))
+        .addMethod(
+            getReorderEventEditRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest,
+                    com.google.protobuf.Empty>(service, METHODID_REORDER_EVENT_EDIT_RULES)))
+        .addMethod(
+            getUpdateDataRedactionSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest,
+                    com.google.analytics.admin.v1alpha.DataRedactionSettings>(
+                    service, METHODID_UPDATE_DATA_REDACTION_SETTINGS)))
+        .addMethod(
+            getGetDataRedactionSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest,
+                    com.google.analytics.admin.v1alpha.DataRedactionSettings>(
+                    service, METHODID_GET_DATA_REDACTION_SETTINGS)))
+        .addMethod(
+            getGetCalculatedMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest,
+                    com.google.analytics.admin.v1alpha.CalculatedMetric>(
+                    service, METHODID_GET_CALCULATED_METRIC)))
+        .addMethod(
+            getCreateCalculatedMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest,
+                    com.google.analytics.admin.v1alpha.CalculatedMetric>(
+                    service, METHODID_CREATE_CALCULATED_METRIC)))
+        .addMethod(
+            getListCalculatedMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest,
+                    com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse>(
+                    service, METHODID_LIST_CALCULATED_METRICS)))
+        .addMethod(
+            getUpdateCalculatedMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest,
+                    com.google.analytics.admin.v1alpha.CalculatedMetric>(
+                    service, METHODID_UPDATE_CALCULATED_METRIC)))
+        .addMethod(
+            getDeleteCalculatedMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CALCULATED_METRIC)))
+        .addMethod(
+            getCreateRollupPropertyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest,
+                    com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse>(
+                    service, METHODID_CREATE_ROLLUP_PROPERTY)))
+        .addMethod(
+            getGetRollupPropertySourceLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest,
+                    com.google.analytics.admin.v1alpha.RollupPropertySourceLink>(
+                    service, METHODID_GET_ROLLUP_PROPERTY_SOURCE_LINK)))
+        .addMethod(
+            getListRollupPropertySourceLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest,
+                    com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse>(
+                    service, METHODID_LIST_ROLLUP_PROPERTY_SOURCE_LINKS)))
+        .addMethod(
+            getCreateRollupPropertySourceLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest,
+                    com.google.analytics.admin.v1alpha.RollupPropertySourceLink>(
+                    service, METHODID_CREATE_ROLLUP_PROPERTY_SOURCE_LINK)))
+        .addMethod(
+            getDeleteRollupPropertySourceLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_ROLLUP_PROPERTY_SOURCE_LINK)))
+        .addMethod(
+            getProvisionSubpropertyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest,
+                    com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse>(
+                    service, METHODID_PROVISION_SUBPROPERTY)))
+        .addMethod(
+            getCreateSubpropertyEventFilterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertyEventFilter>(
+                    service, METHODID_CREATE_SUBPROPERTY_EVENT_FILTER)))
+        .addMethod(
+            getGetSubpropertyEventFilterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertyEventFilter>(
+                    service, METHODID_GET_SUBPROPERTY_EVENT_FILTER)))
+        .addMethod(
+            getListSubpropertyEventFiltersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest,
+                    com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse>(
+                    service, METHODID_LIST_SUBPROPERTY_EVENT_FILTERS)))
+        .addMethod(
+            getUpdateSubpropertyEventFilterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertyEventFilter>(
+                    service, METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER)))
+        .addMethod(
+            getDeleteSubpropertyEventFilterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SUBPROPERTY_EVENT_FILTER)))
+        .addMethod(
+            getCreateReportingDataAnnotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+                    com.google.analytics.admin.v1alpha.ReportingDataAnnotation>(
+                    service, METHODID_CREATE_REPORTING_DATA_ANNOTATION)))
+        .addMethod(
+            getGetReportingDataAnnotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+                    com.google.analytics.admin.v1alpha.ReportingDataAnnotation>(
+                    service, METHODID_GET_REPORTING_DATA_ANNOTATION)))
+        .addMethod(
+            getListReportingDataAnnotationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+                    com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>(
+                    service, METHODID_LIST_REPORTING_DATA_ANNOTATIONS)))
+        .addMethod(
+            getUpdateReportingDataAnnotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+                    com.google.analytics.admin.v1alpha.ReportingDataAnnotation>(
+                    service, METHODID_UPDATE_REPORTING_DATA_ANNOTATION)))
+        .addMethod(
+            getDeleteReportingDataAnnotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_REPORTING_DATA_ANNOTATION)))
+        .addMethod(
+            getSubmitUserDeletionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+                    com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>(
+                    service, METHODID_SUBMIT_USER_DELETION)))
         .build();
   }
 
@@ -16638,16 +22450,6 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getCreatePropertyMethod())
                       .addMethod(getDeletePropertyMethod())
                       .addMethod(getUpdatePropertyMethod())
-                      .addMethod(getGetUserLinkMethod())
-                      .addMethod(getBatchGetUserLinksMethod())
-                      .addMethod(getListUserLinksMethod())
-                      .addMethod(getAuditUserLinksMethod())
-                      .addMethod(getCreateUserLinkMethod())
-                      .addMethod(getBatchCreateUserLinksMethod())
-                      .addMethod(getUpdateUserLinkMethod())
-                      .addMethod(getBatchUpdateUserLinksMethod())
-                      .addMethod(getDeleteUserLinkMethod())
-                      .addMethod(getBatchDeleteUserLinksMethod())
                       .addMethod(getCreateFirebaseLinkMethod())
                       .addMethod(getDeleteFirebaseLinkMethod())
                       .addMethod(getListFirebaseLinksMethod())
@@ -16676,6 +22478,11 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getGetConversionEventMethod())
                       .addMethod(getDeleteConversionEventMethod())
                       .addMethod(getListConversionEventsMethod())
+                      .addMethod(getCreateKeyEventMethod())
+                      .addMethod(getUpdateKeyEventMethod())
+                      .addMethod(getGetKeyEventMethod())
+                      .addMethod(getDeleteKeyEventMethod())
+                      .addMethod(getListKeyEventsMethod())
                       .addMethod(getGetDisplayVideo360AdvertiserLinkMethod())
                       .addMethod(getListDisplayVideo360AdvertiserLinksMethod())
                       .addMethod(getCreateDisplayVideo360AdvertiserLinkMethod())
@@ -16738,8 +22545,11 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getDeleteChannelGroupMethod())
                       .addMethod(getSetAutomatedGa4ConfigurationOptOutMethod())
                       .addMethod(getFetchAutomatedGa4ConfigurationOptOutMethod())
+                      .addMethod(getCreateBigQueryLinkMethod())
                       .addMethod(getGetBigQueryLinkMethod())
                       .addMethod(getListBigQueryLinksMethod())
+                      .addMethod(getDeleteBigQueryLinkMethod())
+                      .addMethod(getUpdateBigQueryLinkMethod())
                       .addMethod(getGetEnhancedMeasurementSettingsMethod())
                       .addMethod(getUpdateEnhancedMeasurementSettingsMethod())
                       .addMethod(getCreateConnectedSiteTagMethod())
@@ -16755,6 +22565,36 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getCreateEventCreateRuleMethod())
                       .addMethod(getUpdateEventCreateRuleMethod())
                       .addMethod(getDeleteEventCreateRuleMethod())
+                      .addMethod(getGetEventEditRuleMethod())
+                      .addMethod(getListEventEditRulesMethod())
+                      .addMethod(getCreateEventEditRuleMethod())
+                      .addMethod(getUpdateEventEditRuleMethod())
+                      .addMethod(getDeleteEventEditRuleMethod())
+                      .addMethod(getReorderEventEditRulesMethod())
+                      .addMethod(getUpdateDataRedactionSettingsMethod())
+                      .addMethod(getGetDataRedactionSettingsMethod())
+                      .addMethod(getGetCalculatedMetricMethod())
+                      .addMethod(getCreateCalculatedMetricMethod())
+                      .addMethod(getListCalculatedMetricsMethod())
+                      .addMethod(getUpdateCalculatedMetricMethod())
+                      .addMethod(getDeleteCalculatedMetricMethod())
+                      .addMethod(getCreateRollupPropertyMethod())
+                      .addMethod(getGetRollupPropertySourceLinkMethod())
+                      .addMethod(getListRollupPropertySourceLinksMethod())
+                      .addMethod(getCreateRollupPropertySourceLinkMethod())
+                      .addMethod(getDeleteRollupPropertySourceLinkMethod())
+                      .addMethod(getProvisionSubpropertyMethod())
+                      .addMethod(getCreateSubpropertyEventFilterMethod())
+                      .addMethod(getGetSubpropertyEventFilterMethod())
+                      .addMethod(getListSubpropertyEventFiltersMethod())
+                      .addMethod(getUpdateSubpropertyEventFilterMethod())
+                      .addMethod(getDeleteSubpropertyEventFilterMethod())
+                      .addMethod(getCreateReportingDataAnnotationMethod())
+                      .addMethod(getGetReportingDataAnnotationMethod())
+                      .addMethod(getListReportingDataAnnotationsMethod())
+                      .addMethod(getUpdateReportingDataAnnotationMethod())
+                      .addMethod(getDeleteReportingDataAnnotationMethod())
+                      .addMethod(getSubmitUserDeletionMethod())
                       .build();
         }
       }

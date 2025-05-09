@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,15 +20,29 @@ import static com.google.cloud.aiplatform.v1.PredictionServiceClient.ListLocatio
 
 import com.google.api.HttpBody;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.DirectPredictRequest;
+import com.google.cloud.aiplatform.v1.DirectPredictResponse;
+import com.google.cloud.aiplatform.v1.DirectRawPredictRequest;
+import com.google.cloud.aiplatform.v1.DirectRawPredictResponse;
 import com.google.cloud.aiplatform.v1.ExplainRequest;
 import com.google.cloud.aiplatform.v1.ExplainResponse;
+import com.google.cloud.aiplatform.v1.GenerateContentRequest;
+import com.google.cloud.aiplatform.v1.GenerateContentResponse;
 import com.google.cloud.aiplatform.v1.PredictRequest;
 import com.google.cloud.aiplatform.v1.PredictResponse;
 import com.google.cloud.aiplatform.v1.RawPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamDirectPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamDirectPredictResponse;
+import com.google.cloud.aiplatform.v1.StreamDirectRawPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamDirectRawPredictResponse;
+import com.google.cloud.aiplatform.v1.StreamRawPredictRequest;
 import com.google.cloud.aiplatform.v1.StreamingPredictRequest;
 import com.google.cloud.aiplatform.v1.StreamingPredictResponse;
+import com.google.cloud.aiplatform.v1.StreamingRawPredictRequest;
+import com.google.cloud.aiplatform.v1.StreamingRawPredictResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -57,13 +71,55 @@ public abstract class PredictionServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: rawPredictCallable()");
   }
 
+  public ServerStreamingCallable<StreamRawPredictRequest, HttpBody> streamRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamRawPredictCallable()");
+  }
+
+  public UnaryCallable<DirectPredictRequest, DirectPredictResponse> directPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: directPredictCallable()");
+  }
+
+  public UnaryCallable<DirectRawPredictRequest, DirectRawPredictResponse>
+      directRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: directRawPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
+      streamDirectPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamDirectPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
+      streamDirectRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamDirectRawPredictCallable()");
+  }
+
+  public BidiStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      streamingPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamingPredictCallable()");
+  }
+
   public ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       serverStreamingPredictCallable() {
     throw new UnsupportedOperationException("Not implemented: serverStreamingPredictCallable()");
   }
 
+  public BidiStreamingCallable<StreamingRawPredictRequest, StreamingRawPredictResponse>
+      streamingRawPredictCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamingRawPredictCallable()");
+  }
+
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     throw new UnsupportedOperationException("Not implemented: explainCallable()");
+  }
+
+  public UnaryCallable<GenerateContentRequest, GenerateContentResponse> generateContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateContentCallable()");
+  }
+
+  public ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
+      streamGenerateContentCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamGenerateContentCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

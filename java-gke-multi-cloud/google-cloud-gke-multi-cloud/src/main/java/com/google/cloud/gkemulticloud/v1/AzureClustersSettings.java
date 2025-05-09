@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,9 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAzureClient to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getAzureClient:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -71,9 +73,45 @@ import javax.annotation.Generated;
  *             .getAzureClientSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AzureClustersSettings azureClustersSettings = azureClustersSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createAzureClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * AzureClustersSettings.Builder azureClustersSettingsBuilder = AzureClustersSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * azureClustersSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -158,6 +196,13 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     return ((AzureClustersStubSettings) getStubSettings()).deleteAzureClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateAzureClusterAgentToken. */
+  public UnaryCallSettings<
+          GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+      generateAzureClusterAgentTokenSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).generateAzureClusterAgentTokenSettings();
+  }
+
   /** Returns the object with the settings used for calls to generateAzureAccessToken. */
   public UnaryCallSettings<GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
       generateAzureAccessTokenSettings() {
@@ -209,6 +254,18 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     return ((AzureClustersStubSettings) getStubSettings()).deleteAzureNodePoolOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getAzureOpenIdConfig. */
+  public UnaryCallSettings<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+      getAzureOpenIdConfigSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).getAzureOpenIdConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAzureJsonWebKeys. */
+  public UnaryCallSettings<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+      getAzureJsonWebKeysSettings() {
+    return ((AzureClustersStubSettings) getStubSettings()).getAzureJsonWebKeysSettings();
+  }
+
   /** Returns the object with the settings used for calls to getAzureServerConfig. */
   public UnaryCallSettings<GetAzureServerConfigRequest, AzureServerConfig>
       getAzureServerConfigSettings() {
@@ -256,7 +313,6 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     return AzureClustersStubSettings.defaultTransportChannelProvider();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return AzureClustersStubSettings.defaultApiClientHeaderProviderBuilder();
   }
@@ -267,7 +323,6 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -309,7 +364,6 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
       return new Builder(AzureClustersStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AzureClustersStubSettings.newHttpJsonBuilder());
     }
@@ -415,6 +469,13 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
       return getStubSettingsBuilder().deleteAzureClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to generateAzureClusterAgentToken. */
+    public UnaryCallSettings.Builder<
+            GenerateAzureClusterAgentTokenRequest, GenerateAzureClusterAgentTokenResponse>
+        generateAzureClusterAgentTokenSettings() {
+      return getStubSettingsBuilder().generateAzureClusterAgentTokenSettings();
+    }
+
     /** Returns the builder for the settings used for calls to generateAzureAccessToken. */
     public UnaryCallSettings.Builder<
             GenerateAzureAccessTokenRequest, GenerateAzureAccessTokenResponse>
@@ -471,6 +532,18 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
     public OperationCallSettings.Builder<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
         deleteAzureNodePoolOperationSettings() {
       return getStubSettingsBuilder().deleteAzureNodePoolOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAzureOpenIdConfig. */
+    public UnaryCallSettings.Builder<GetAzureOpenIdConfigRequest, AzureOpenIdConfig>
+        getAzureOpenIdConfigSettings() {
+      return getStubSettingsBuilder().getAzureOpenIdConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAzureJsonWebKeys. */
+    public UnaryCallSettings.Builder<GetAzureJsonWebKeysRequest, AzureJsonWebKeys>
+        getAzureJsonWebKeysSettings() {
+      return getStubSettingsBuilder().getAzureJsonWebKeysSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAzureServerConfig. */

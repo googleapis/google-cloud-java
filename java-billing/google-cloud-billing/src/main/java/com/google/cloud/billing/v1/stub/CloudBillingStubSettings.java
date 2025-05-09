@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static com.google.cloud.billing.v1.CloudBillingClient.ListProjectBillingI
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -52,6 +53,7 @@ import com.google.cloud.billing.v1.ListBillingAccountsRequest;
 import com.google.cloud.billing.v1.ListBillingAccountsResponse;
 import com.google.cloud.billing.v1.ListProjectBillingInfoRequest;
 import com.google.cloud.billing.v1.ListProjectBillingInfoResponse;
+import com.google.cloud.billing.v1.MoveBillingAccountRequest;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
 import com.google.cloud.billing.v1.UpdateBillingAccountRequest;
 import com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest;
@@ -65,9 +67,9 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,7 +86,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getBillingAccount to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getBillingAccount:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -101,10 +105,21 @@ import org.threeten.bp.Duration;
  *             .getBillingAccountSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * CloudBillingStubSettings cloudBillingSettings = cloudBillingSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSettings> {
@@ -138,6 +153,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<MoveBillingAccountRequest, BillingAccount>
+      moveBillingAccountSettings;
 
   private static final PagedListDescriptor<
           ListBillingAccountsRequest, ListBillingAccountsResponse, BillingAccount>
@@ -173,9 +190,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
 
             @Override
             public Iterable<BillingAccount> extractResources(ListBillingAccountsResponse payload) {
-              return payload.getBillingAccountsList() == null
-                  ? ImmutableList.<BillingAccount>of()
-                  : payload.getBillingAccountsList();
+              return payload.getBillingAccountsList();
             }
           };
 
@@ -216,9 +231,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
             @Override
             public Iterable<ProjectBillingInfo> extractResources(
                 ListProjectBillingInfoResponse payload) {
-              return payload.getProjectBillingInfoList() == null
-                  ? ImmutableList.<ProjectBillingInfo>of()
-                  : payload.getProjectBillingInfoList();
+              return payload.getProjectBillingInfoList();
             }
           };
 
@@ -331,6 +344,11 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to moveBillingAccount. */
+  public UnaryCallSettings<MoveBillingAccountRequest, BillingAccount> moveBillingAccountSettings() {
+    return moveBillingAccountSettings;
+  }
+
   public CloudBillingStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -347,12 +365,19 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "cloudbilling";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "cloudbilling.googleapis.com:443";
   }
@@ -391,7 +416,6 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -400,7 +424,6 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -447,6 +470,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    moveBillingAccountSettings = settingsBuilder.moveBillingAccountSettings().build();
   }
 
   /** Builder for CloudBillingStubSettings. */
@@ -476,6 +500,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<MoveBillingAccountRequest, BillingAccount>
+        moveBillingAccountSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -489,6 +515,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -499,23 +526,25 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -538,6 +567,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      moveBillingAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -550,7 +580,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
               updateProjectBillingInfoSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              moveBillingAccountSettings);
       initDefaults(this);
     }
 
@@ -567,6 +598,7 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      moveBillingAccountSettings = settings.moveBillingAccountSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -579,7 +611,8 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
               updateProjectBillingInfoSettings,
               getIamPolicySettings,
               setIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              moveBillingAccountSettings);
     }
 
     private static Builder createDefault() {
@@ -588,7 +621,6 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -601,7 +633,6 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -658,6 +689,11 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .moveBillingAccountSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       return builder;
     }
@@ -739,6 +775,12 @@ public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSetti
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to moveBillingAccount. */
+    public UnaryCallSettings.Builder<MoveBillingAccountRequest, BillingAccount>
+        moveBillingAccountSettings() {
+      return moveBillingAccountSettings;
     }
 
     @Override

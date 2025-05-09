@@ -16,6 +16,9 @@
             "CreateChannel": {
               "methods": ["createChannelAsync", "createChannelAsync", "createChannelAsync", "createChannelOperationCallable", "createChannelCallable"]
             },
+            "CreateClip": {
+              "methods": ["createClipAsync", "createClipAsync", "createClipAsync", "createClipOperationCallable", "createClipCallable"]
+            },
             "CreateEvent": {
               "methods": ["createEvent", "createEvent", "createEvent", "createEventCallable"]
             },
@@ -28,6 +31,9 @@
             "DeleteChannel": {
               "methods": ["deleteChannelAsync", "deleteChannelAsync", "deleteChannelAsync", "deleteChannelOperationCallable", "deleteChannelCallable"]
             },
+            "DeleteClip": {
+              "methods": ["deleteClipAsync", "deleteClipAsync", "deleteClipAsync", "deleteClipOperationCallable", "deleteClipCallable"]
+            },
             "DeleteEvent": {
               "methods": ["deleteEvent", "deleteEvent", "deleteEvent", "deleteEventCallable"]
             },
@@ -39,6 +45,9 @@
             },
             "GetChannel": {
               "methods": ["getChannel", "getChannel", "getChannel", "getChannelCallable"]
+            },
+            "GetClip": {
+              "methods": ["getClip", "getClip", "getClip", "getClipCallable"]
             },
             "GetEvent": {
               "methods": ["getEvent", "getEvent", "getEvent", "getEventCallable"]
@@ -57,6 +66,9 @@
             },
             "ListChannels": {
               "methods": ["listChannels", "listChannels", "listChannels", "listChannelsPagedCallable", "listChannelsCallable"]
+            },
+            "ListClips": {
+              "methods": ["listClips", "listClips", "listClips", "listClipsPagedCallable", "listClipsCallable"]
             },
             "ListEvents": {
               "methods": ["listEvents", "listEvents", "listEvents", "listEventsPagedCallable", "listEventsCallable"]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,6 +159,29 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
                   "Unrecognized response type %s for method UpdateWorkflow, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listWorkflowRevisions(
+      ListWorkflowRevisionsRequest request,
+      StreamObserver<ListWorkflowRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListWorkflowRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListWorkflowRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkflowRevisions, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListWorkflowRevisionsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

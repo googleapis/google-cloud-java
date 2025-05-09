@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClien
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -93,7 +92,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
@@ -830,7 +828,8 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:getIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/subscriptions/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -869,7 +868,8 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:setIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/subscriptions/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

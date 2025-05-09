@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocat
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.QueryHubStatusPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -33,6 +34,8 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
@@ -57,11 +60,16 @@ import com.google.cloud.networkconnectivity.v1.ListRoutesResponse;
 import com.google.cloud.networkconnectivity.v1.ListSpokesRequest;
 import com.google.cloud.networkconnectivity.v1.ListSpokesResponse;
 import com.google.cloud.networkconnectivity.v1.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1.QueryHubStatusRequest;
+import com.google.cloud.networkconnectivity.v1.QueryHubStatusResponse;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.RejectHubSpokeResponse;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest;
+import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateGroupRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -133,6 +141,15 @@ public abstract class HubServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listHubSpokesCallable()");
   }
 
+  public UnaryCallable<QueryHubStatusRequest, QueryHubStatusPagedResponse>
+      queryHubStatusPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryHubStatusPagedCallable()");
+  }
+
+  public UnaryCallable<QueryHubStatusRequest, QueryHubStatusResponse> queryHubStatusCallable() {
+    throw new UnsupportedOperationException("Not implemented: queryHubStatusCallable()");
+  }
+
   public UnaryCallable<ListSpokesRequest, ListSpokesPagedResponse> listSpokesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSpokesPagedCallable()");
   }
@@ -181,6 +198,26 @@ public abstract class HubServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: acceptHubSpokeCallable()");
   }
 
+  public OperationCallable<AcceptSpokeUpdateRequest, AcceptSpokeUpdateResponse, OperationMetadata>
+      acceptSpokeUpdateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: acceptSpokeUpdateOperationCallable()");
+  }
+
+  public UnaryCallable<AcceptSpokeUpdateRequest, Operation> acceptSpokeUpdateCallable() {
+    throw new UnsupportedOperationException("Not implemented: acceptSpokeUpdateCallable()");
+  }
+
+  public OperationCallable<RejectSpokeUpdateRequest, RejectSpokeUpdateResponse, OperationMetadata>
+      rejectSpokeUpdateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rejectSpokeUpdateOperationCallable()");
+  }
+
+  public UnaryCallable<RejectSpokeUpdateRequest, Operation> rejectSpokeUpdateCallable() {
+    throw new UnsupportedOperationException("Not implemented: rejectSpokeUpdateCallable()");
+  }
+
   public OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSpokeOperationCallable()");
@@ -225,6 +262,15 @@ public abstract class HubServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
     throw new UnsupportedOperationException("Not implemented: listGroupsCallable()");
+  }
+
+  public OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
+      updateGroupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateGroupOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateGroupCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

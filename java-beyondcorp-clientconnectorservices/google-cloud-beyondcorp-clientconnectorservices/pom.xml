@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-beyondcorp-clientconnectorservices</artifactId>
-  <version>0.26.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
+  <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
   <packaging>jar</packaging>
   <name>Google BeyondCorp ClientConnectorServices</name>
   <description>BeyondCorp ClientConnectorServices A zero trust solution that enables secure access to applications and resources, and offers integrated threat and data protection.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-beyondcorp-clientconnectorservices-parent</artifactId>
-    <version>0.26.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
+    <version>0.61.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-beyondcorp-clientconnectorservices</site.installationModule>
@@ -60,6 +60,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -68,6 +69,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

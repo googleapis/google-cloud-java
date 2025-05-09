@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,18 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.networkmanagement.v1beta1.stub.ReachabilityServiceStub;
 import com.google.cloud.networkmanagement.v1beta1.stub.ReachabilityServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -60,7 +69,9 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
  *   GetConnectivityTestRequest request =
- *       GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+ *       GetConnectivityTestRequest.newBuilder()
+ *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+ *           .build();
  *   ConnectivityTest response = reachabilityServiceClient.getConnectivityTest(request);
  * }
  * }</pre>
@@ -69,19 +80,182 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListConnectivityTests</td>
+ *      <td><p> Lists all Connectivity Tests owned by a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listConnectivityTests(ListConnectivityTestsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listConnectivityTestsPagedCallable()
+ *           <li><p> listConnectivityTestsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetConnectivityTest</td>
+ *      <td><p> Gets the details of a specific Connectivity Test.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getConnectivityTest(GetConnectivityTestRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getConnectivityTestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateConnectivityTest</td>
+ *      <td><p> Creates a new Connectivity Test. After you create a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
+ * <p>  If the endpoint specifications in `ConnectivityTest` are invalid (for example, containing non-existent resources in the network, or you don't have read permissions to the network configurations of listed projects), then the reachability result returns a value of `UNKNOWN`.
+ * <p>  If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result returns a value of &lt;code&gt;AMBIGUOUS&lt;/code&gt;. For more information, see the Connectivity Test documentation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createConnectivityTestAsync(CreateConnectivityTestRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createConnectivityTestOperationCallable()
+ *           <li><p> createConnectivityTestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateConnectivityTest</td>
+ *      <td><p> Updates the configuration of an existing `ConnectivityTest`. After you update a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes. The Reachability state in the test resource is updated with the new result.
+ * <p>  If the endpoint specifications in `ConnectivityTest` are invalid (for example, they contain non-existent resources in the network, or the user does not have read permissions to the network configurations of listed projects), then the reachability result returns a value of &lt;code&gt;UNKNOWN&lt;/code&gt;.
+ * <p>  If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateConnectivityTestAsync(UpdateConnectivityTestRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateConnectivityTestOperationCallable()
+ *           <li><p> updateConnectivityTestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RerunConnectivityTest</td>
+ *      <td><p> Rerun an existing `ConnectivityTest`. After the user triggers the rerun, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes.
+ * <p>  Even though the test configuration remains the same, the reachability result may change due to underlying network configuration changes.
+ * <p>  If the endpoint specifications in `ConnectivityTest` become invalid (for example, specified resources are deleted in the network, or you lost read permissions to the network configurations of listed projects), then the reachability result returns a value of `UNKNOWN`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rerunConnectivityTestAsync(RerunConnectivityTestRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rerunConnectivityTestOperationCallable()
+ *           <li><p> rerunConnectivityTestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteConnectivityTest</td>
+ *      <td><p> Deletes a specific `ConnectivityTest`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteConnectivityTestAsync(DeleteConnectivityTestRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteConnectivityTestOperationCallable()
+ *           <li><p> deleteConnectivityTestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -230,7 +404,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   ListConnectivityTestsRequest request =
    *       ListConnectivityTestsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -266,7 +440,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   ListConnectivityTestsRequest request =
    *       ListConnectivityTestsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -301,7 +475,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   ListConnectivityTestsRequest request =
    *       ListConnectivityTestsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
@@ -342,7 +516,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   GetConnectivityTestRequest request =
-   *       GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       GetConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ConnectivityTest response = reachabilityServiceClient.getConnectivityTest(request);
    * }
    * }</pre>
@@ -368,7 +544,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   GetConnectivityTestRequest request =
-   *       GetConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       GetConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ApiFuture<ConnectivityTest> future =
    *       reachabilityServiceClient.getConnectivityTestCallable().futureCall(request);
    *   // Do something.
@@ -405,7 +583,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   CreateConnectivityTestRequest request =
    *       CreateConnectivityTestRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setTestId("testId-877170355")
    *           .setResource(ConnectivityTest.newBuilder().build())
    *           .build();
@@ -446,7 +624,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   CreateConnectivityTestRequest request =
    *       CreateConnectivityTestRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setTestId("testId-877170355")
    *           .setResource(ConnectivityTest.newBuilder().build())
    *           .build();
@@ -486,7 +664,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   CreateConnectivityTestRequest request =
    *       CreateConnectivityTestRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setTestId("testId-877170355")
    *           .setResource(ConnectivityTest.newBuilder().build())
    *           .build();
@@ -515,8 +693,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * &lt;code&gt;UNKNOWN&lt;/code&gt;.
    *
    * <p>If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result
-   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more
-   * details.
+   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.
    *
    * <p>Sample code:
    *
@@ -558,8 +735,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * &lt;code&gt;UNKNOWN&lt;/code&gt;.
    *
    * <p>If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result
-   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more
-   * details.
+   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.
    *
    * <p>Sample code:
    *
@@ -600,8 +776,7 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * &lt;code&gt;UNKNOWN&lt;/code&gt;.
    *
    * <p>If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result
-   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more
-   * details.
+   * returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.
    *
    * <p>Sample code:
    *
@@ -652,7 +827,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   RerunConnectivityTestRequest request =
-   *       RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       RerunConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ConnectivityTest response =
    *       reachabilityServiceClient.rerunConnectivityTestAsync(request).get();
    * }
@@ -689,7 +866,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   RerunConnectivityTestRequest request =
-   *       RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       RerunConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   OperationFuture<ConnectivityTest, OperationMetadata> future =
    *       reachabilityServiceClient.rerunConnectivityTestOperationCallable().futureCall(request);
    *   // Do something.
@@ -725,7 +904,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   RerunConnectivityTestRequest request =
-   *       RerunConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       RerunConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ApiFuture<Operation> future =
    *       reachabilityServiceClient.rerunConnectivityTestCallable().futureCall(request);
    *   // Do something.
@@ -752,7 +933,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   DeleteConnectivityTestRequest request =
-   *       DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       DeleteConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   reachabilityServiceClient.deleteConnectivityTestAsync(request).get();
    * }
    * }</pre>
@@ -779,7 +962,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   DeleteConnectivityTestRequest request =
-   *       DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       DeleteConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       reachabilityServiceClient.deleteConnectivityTestOperationCallable().futureCall(request);
    *   // Do something.
@@ -806,7 +991,9 @@ public class ReachabilityServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
    *   DeleteConnectivityTestRequest request =
-   *       DeleteConnectivityTestRequest.newBuilder().setName("name3373707").build();
+   *       DeleteConnectivityTestRequest.newBuilder()
+   *           .setName(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .build();
    *   ApiFuture<Operation> future =
    *       reachabilityServiceClient.deleteConnectivityTestCallable().futureCall(request);
    *   // Do something.
@@ -817,6 +1004,356 @@ public class ReachabilityServiceClient implements BackgroundResource {
   public final UnaryCallable<DeleteConnectivityTestRequest, Operation>
       deleteConnectivityTestCallable() {
     return stub.deleteConnectivityTestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : reachabilityServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       reachabilityServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response =
+   *         reachabilityServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = reachabilityServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future =
+   *       reachabilityServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = reachabilityServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       reachabilityServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = reachabilityServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       reachabilityServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = reachabilityServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReachabilityServiceClient reachabilityServiceClient = ReachabilityServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ConnectivityTestName.of("[PROJECT]", "[TEST]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       reachabilityServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override
@@ -930,6 +1467,82 @@ public class ReachabilityServiceClient implements BackgroundResource {
     protected ListConnectivityTestsFixedSizeCollection createCollection(
         List<ListConnectivityTestsPage> pages, int collectionSize) {
       return new ListConnectivityTestsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -96,6 +96,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -156,6 +157,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -216,6 +218,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -269,6 +272,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -324,6 +328,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -377,6 +382,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -432,6 +438,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -669,6 +676,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -684,6 +692,7 @@ public class ModelServiceClientHttpJsonTest {
             .setTuningOperation("tuningOperation-1269747150")
             .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
             .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -725,6 +734,7 @@ public class ModelServiceClientHttpJsonTest {
               .setTuningOperation("tuningOperation-1269747150")
               .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
               .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+              .setModelFeaturesConfig(Model.ModelFeaturesConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateModel(model, updateMask);

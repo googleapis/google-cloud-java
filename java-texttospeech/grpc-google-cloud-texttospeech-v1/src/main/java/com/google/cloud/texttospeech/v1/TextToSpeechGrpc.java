@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,6 +128,55 @@ public final class TextToSpeechGrpc {
     return getSynthesizeSpeechMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest,
+          com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>
+      getStreamingSynthesizeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamingSynthesize",
+      requestType = com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest.class,
+      responseType = com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest,
+          com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>
+      getStreamingSynthesizeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest,
+            com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>
+        getStreamingSynthesizeMethod;
+    if ((getStreamingSynthesizeMethod = TextToSpeechGrpc.getStreamingSynthesizeMethod) == null) {
+      synchronized (TextToSpeechGrpc.class) {
+        if ((getStreamingSynthesizeMethod = TextToSpeechGrpc.getStreamingSynthesizeMethod)
+            == null) {
+          TextToSpeechGrpc.getStreamingSynthesizeMethod =
+              getStreamingSynthesizeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest,
+                          com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamingSynthesize"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TextToSpeechMethodDescriptorSupplier("StreamingSynthesize"))
+                      .build();
+        }
+      }
+    }
+    return getStreamingSynthesizeMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static TextToSpeechStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<TextToSpeechStub> factory =
@@ -139,6 +188,19 @@ public final class TextToSpeechGrpc {
           }
         };
     return TextToSpeechStub.newStub(factory, channel);
+  }
+
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TextToSpeechBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TextToSpeechBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TextToSpeechBlockingV2Stub>() {
+          @java.lang.Override
+          public TextToSpeechBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TextToSpeechBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TextToSpeechBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -206,6 +268,23 @@ public final class TextToSpeechGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSynthesizeSpeechMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech synthesis: receives audio while
+     * sending text.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest>
+        streamingSynthesize(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamingSynthesizeMethod(), responseObserver);
     }
   }
 
@@ -275,10 +354,91 @@ public final class TextToSpeechGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech synthesis: receives audio while
+     * sending text.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest>
+        streamingSynthesize(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getStreamingSynthesizeMethod(), getCallOptions()), responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TextToSpeech.
+   *
+   * <pre>
+   * Service that implements Google Cloud Text-to-Speech API.
+   * </pre>
+   */
+  public static final class TextToSpeechBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TextToSpeechBlockingV2Stub> {
+    private TextToSpeechBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TextToSpeechBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TextToSpeechBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of Voice supported for synthesis.
+     * </pre>
+     */
+    public com.google.cloud.texttospeech.v1.ListVoicesResponse listVoices(
+        com.google.cloud.texttospeech.v1.ListVoicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVoicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Synthesizes speech synchronously: receive results after all text input
+     * has been processed.
+     * </pre>
+     */
+    public com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse synthesizeSpeech(
+        com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSynthesizeSpeechMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs bidirectional streaming speech synthesis: receives audio while
+     * sending text.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest,
+            com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>
+        streamingSynthesize() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingSynthesizeMethod(), getCallOptions());
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TextToSpeech.
    *
    * <pre>
    * Service that implements Google Cloud Text-to-Speech API.
@@ -375,6 +535,7 @@ public final class TextToSpeechGrpc {
 
   private static final int METHODID_LIST_VOICES = 0;
   private static final int METHODID_SYNTHESIZE_SPEECH = 1;
+  private static final int METHODID_STREAMING_SYNTHESIZE = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -416,6 +577,12 @@ public final class TextToSpeechGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_STREAMING_SYNTHESIZE:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.streamingSynthesize(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -438,6 +605,13 @@ public final class TextToSpeechGrpc {
                     com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest,
                     com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse>(
                     service, METHODID_SYNTHESIZE_SPEECH)))
+        .addMethod(
+            getStreamingSynthesizeMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.texttospeech.v1.StreamingSynthesizeRequest,
+                    com.google.cloud.texttospeech.v1.StreamingSynthesizeResponse>(
+                    service, METHODID_STREAMING_SYNTHESIZE)))
         .build();
   }
 
@@ -491,6 +665,7 @@ public final class TextToSpeechGrpc {
                       .setSchemaDescriptor(new TextToSpeechFileDescriptorSupplier())
                       .addMethod(getListVoicesMethod())
                       .addMethod(getSynthesizeSpeechMethod())
+                      .addMethod(getStreamingSynthesizeMethod())
                       .build();
         }
       }

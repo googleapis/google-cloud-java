@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.discoveryengine.v1beta;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,12 +96,10 @@ public class SchemaName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationDataStoreSchemaBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationCollectionDataStoreSchemaBuilder
       newProjectLocationCollectionDataStoreSchemaBuilder() {
     return new ProjectLocationCollectionDataStoreSchemaBuilder();
@@ -121,7 +118,6 @@ public class SchemaName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SchemaName ofProjectLocationDataStoreSchemaName(
       String project, String location, String dataStore, String schema) {
     return newBuilder()
@@ -132,7 +128,6 @@ public class SchemaName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SchemaName ofProjectLocationCollectionDataStoreSchemaName(
       String project, String location, String collection, String dataStore, String schema) {
     return newProjectLocationCollectionDataStoreSchemaBuilder()
@@ -154,7 +149,6 @@ public class SchemaName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDataStoreSchemaName(
       String project, String location, String dataStore, String schema) {
     return newBuilder()
@@ -166,7 +160,6 @@ public class SchemaName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationCollectionDataStoreSchemaName(
       String project, String location, String collection, String dataStore, String schema) {
     return newProjectLocationCollectionDataStoreSchemaBuilder()
@@ -349,7 +342,8 @@ public class SchemaName implements ResourceName {
     private Builder(SchemaName schemaName) {
       Preconditions.checkArgument(
           Objects.equals(schemaName.pathTemplate, PROJECT_LOCATION_DATA_STORE_SCHEMA),
-          "toBuilder is only supported when SchemaName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/schemas/{schema}");
+          "toBuilder is only supported when SchemaName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/schemas/{schema}");
       this.project = schemaName.project;
       this.location = schemaName.location;
       this.dataStore = schemaName.dataStore;
@@ -365,7 +359,6 @@ public class SchemaName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationCollectionDataStoreSchemaBuilder {
     private String project;
     private String location;

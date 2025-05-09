@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ public class AsyncCompleteQuery {
               .setDeviceType("deviceType781190832")
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
+              .setEnableAttributeSuggestions(true)
               .setEntity("entity-1298275357")
               .build();
       ApiFuture<CompleteQueryResponse> future =

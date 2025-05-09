@@ -11,8 +11,8 @@
   "repo_short": "java-aiplatform",
   "distribution_name": "com.google.cloud:google-cloud-aiplatform",
   "api_id": "aiplatform.googleapis.com",
-  "requires_billing": true,
   "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
   "rest_documentation": "https://cloud.google.com/vertex-ai/docs/reference/rest",
   "rpc_documentation": "https://cloud.google.com/vertex-ai/docs/reference/rpc"
 }

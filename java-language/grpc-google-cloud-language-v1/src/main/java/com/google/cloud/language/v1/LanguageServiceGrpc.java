@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -381,6 +381,19 @@ public final class LanguageServiceGrpc {
     return LanguageServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LanguageServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LanguageServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LanguageServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public LanguageServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LanguageServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LanguageServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -699,6 +712,127 @@ public final class LanguageServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LanguageService.
+   *
+   * <pre>
+   * Provides text analysis operations such as sentiment analysis and entity
+   * recognition.
+   * </pre>
+   */
+  public static final class LanguageServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LanguageServiceBlockingV2Stub> {
+    private LanguageServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LanguageServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LanguageServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes the sentiment of the provided text.
+     * </pre>
+     */
+    public com.google.cloud.language.v1.AnalyzeSentimentResponse analyzeSentiment(
+        com.google.cloud.language.v1.AnalyzeSentimentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeSentimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds named entities (currently proper names and common nouns) in the text
+     * along with entity types, salience, mentions for each entity, and
+     * other properties.
+     * </pre>
+     */
+    public com.google.cloud.language.v1.AnalyzeEntitiesResponse analyzeEntities(
+        com.google.cloud.language.v1.AnalyzeEntitiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeEntitiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
+     * </pre>
+     */
+    public com.google.cloud.language.v1.AnalyzeEntitySentimentResponse analyzeEntitySentiment(
+        com.google.cloud.language.v1.AnalyzeEntitySentimentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeEntitySentimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes the syntax of the text and provides sentence boundaries and
+     * tokenization along with part of speech tags, dependency trees, and other
+     * properties.
+     * </pre>
+     */
+    public com.google.cloud.language.v1.AnalyzeSyntaxResponse analyzeSyntax(
+        com.google.cloud.language.v1.AnalyzeSyntaxRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeSyntaxMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Classifies a document into categories.
+     * </pre>
+     */
+    public com.google.cloud.language.v1.ClassifyTextResponse classifyText(
+        com.google.cloud.language.v1.ClassifyTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getClassifyTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Moderates a document for harmful and sensitive categories.
+     * </pre>
+     */
+    public com.google.cloud.language.v1.ModerateTextResponse moderateText(
+        com.google.cloud.language.v1.ModerateTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModerateTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A convenience method that provides all the features that analyzeSentiment,
+     * analyzeEntities, and analyzeSyntax provide in one call.
+     * </pre>
+     */
+    public com.google.cloud.language.v1.AnnotateTextResponse annotateText(
+        com.google.cloud.language.v1.AnnotateTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnnotateTextMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service LanguageService.
    *
    * <pre>
    * Provides text analysis operations such as sentiment analysis and entity

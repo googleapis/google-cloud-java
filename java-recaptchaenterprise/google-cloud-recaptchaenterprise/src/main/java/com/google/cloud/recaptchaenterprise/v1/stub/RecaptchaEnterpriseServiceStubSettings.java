@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -24,7 +25,7 @@ import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -49,6 +50,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -61,9 +64,12 @@ import com.google.recaptchaenterprise.v1.FirewallPolicy;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -74,6 +80,10 @@ import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -81,9 +91,9 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRes
 import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -101,7 +111,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createAssessment to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of createAssessment:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -118,11 +130,22 @@ import org.threeten.bp.Duration;
  *             .createAssessmentSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * RecaptchaEnterpriseServiceStubSettings recaptchaEnterpriseServiceSettings =
  *     recaptchaEnterpriseServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceStubSettings
@@ -143,6 +166,13 @@ public class RecaptchaEnterpriseServiceStubSettings
   private final UnaryCallSettings<UpdateKeyRequest, Key> updateKeySettings;
   private final UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings;
   private final UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings;
+  private final UnaryCallSettings<AddIpOverrideRequest, AddIpOverrideResponse>
+      addIpOverrideSettings;
+  private final UnaryCallSettings<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideSettings;
+  private final PagedCallSettings<
+          ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+      listIpOverridesSettings;
   private final UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings;
   private final UnaryCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
       createFirewallPolicySettings;
@@ -156,6 +186,8 @@ public class RecaptchaEnterpriseServiceStubSettings
   private final UnaryCallSettings<UpdateFirewallPolicyRequest, FirewallPolicy>
       updateFirewallPolicySettings;
   private final UnaryCallSettings<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicySettings;
+  private final UnaryCallSettings<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesSettings;
   private final PagedCallSettings<
           ListRelatedAccountGroupsRequest,
           ListRelatedAccountGroupsResponse,
@@ -202,9 +234,45 @@ public class RecaptchaEnterpriseServiceStubSettings
 
             @Override
             public Iterable<Key> extractResources(ListKeysResponse payload) {
-              return payload.getKeysList() == null
-                  ? ImmutableList.<Key>of()
-                  : payload.getKeysList();
+              return payload.getKeysList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData>
+      LIST_IP_OVERRIDES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListIpOverridesRequest injectToken(
+                ListIpOverridesRequest payload, String token) {
+              return ListIpOverridesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListIpOverridesRequest injectPageSize(
+                ListIpOverridesRequest payload, int pageSize) {
+              return ListIpOverridesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListIpOverridesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListIpOverridesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<IpOverrideData> extractResources(ListIpOverridesResponse payload) {
+              return payload.getIpOverridesList();
             }
           };
 
@@ -242,9 +310,7 @@ public class RecaptchaEnterpriseServiceStubSettings
 
             @Override
             public Iterable<FirewallPolicy> extractResources(ListFirewallPoliciesResponse payload) {
-              return payload.getFirewallPoliciesList() == null
-                  ? ImmutableList.<FirewallPolicy>of()
-                  : payload.getFirewallPoliciesList();
+              return payload.getFirewallPoliciesList();
             }
           };
 
@@ -289,9 +355,7 @@ public class RecaptchaEnterpriseServiceStubSettings
             @Override
             public Iterable<RelatedAccountGroup> extractResources(
                 ListRelatedAccountGroupsResponse payload) {
-              return payload.getRelatedAccountGroupsList() == null
-                  ? ImmutableList.<RelatedAccountGroup>of()
-                  : payload.getRelatedAccountGroupsList();
+              return payload.getRelatedAccountGroupsList();
             }
           };
 
@@ -338,9 +402,7 @@ public class RecaptchaEnterpriseServiceStubSettings
             @Override
             public Iterable<RelatedAccountGroupMembership> extractResources(
                 ListRelatedAccountGroupMembershipsResponse payload) {
-              return payload.getRelatedAccountGroupMembershipsList() == null
-                  ? ImmutableList.<RelatedAccountGroupMembership>of()
-                  : payload.getRelatedAccountGroupMembershipsList();
+              return payload.getRelatedAccountGroupMembershipsList();
             }
           };
 
@@ -387,9 +449,7 @@ public class RecaptchaEnterpriseServiceStubSettings
             @Override
             public Iterable<RelatedAccountGroupMembership> extractResources(
                 SearchRelatedAccountGroupMembershipsResponse payload) {
-              return payload.getRelatedAccountGroupMembershipsList() == null
-                  ? ImmutableList.<RelatedAccountGroupMembership>of()
-                  : payload.getRelatedAccountGroupMembershipsList();
+              return payload.getRelatedAccountGroupMembershipsList();
             }
           };
 
@@ -406,6 +466,25 @@ public class RecaptchaEnterpriseServiceStubSettings
               PageContext<ListKeysRequest, ListKeysResponse, Key> pageContext =
                   PageContext.create(callable, LIST_KEYS_PAGE_STR_DESC, request, context);
               return ListKeysPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+      LIST_IP_OVERRIDES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>() {
+            @Override
+            public ApiFuture<ListIpOverridesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListIpOverridesRequest, ListIpOverridesResponse> callable,
+                ListIpOverridesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListIpOverridesResponse> futureResponse) {
+              PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_IP_OVERRIDES_PAGE_STR_DESC, request, context);
+              return ListIpOverridesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -575,6 +654,24 @@ public class RecaptchaEnterpriseServiceStubSettings
     return migrateKeySettings;
   }
 
+  /** Returns the object with the settings used for calls to addIpOverride. */
+  public UnaryCallSettings<AddIpOverrideRequest, AddIpOverrideResponse> addIpOverrideSettings() {
+    return addIpOverrideSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeIpOverride. */
+  public UnaryCallSettings<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+      removeIpOverrideSettings() {
+    return removeIpOverrideSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listIpOverrides. */
+  public PagedCallSettings<
+          ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+      listIpOverridesSettings() {
+    return listIpOverridesSettings;
+  }
+
   /** Returns the object with the settings used for calls to getMetrics. */
   public UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings() {
     return getMetricsSettings;
@@ -609,6 +706,12 @@ public class RecaptchaEnterpriseServiceStubSettings
   /** Returns the object with the settings used for calls to deleteFirewallPolicy. */
   public UnaryCallSettings<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicySettings() {
     return deleteFirewallPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to reorderFirewallPolicies. */
+  public UnaryCallSettings<ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+      reorderFirewallPoliciesSettings() {
+    return reorderFirewallPoliciesSettings;
   }
 
   /** Returns the object with the settings used for calls to listRelatedAccountGroups. */
@@ -651,12 +754,19 @@ public class RecaptchaEnterpriseServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "recaptchaenterprise";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "recaptchaenterprise.googleapis.com:443";
   }
@@ -688,7 +798,6 @@ public class RecaptchaEnterpriseServiceStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -724,12 +833,16 @@ public class RecaptchaEnterpriseServiceStubSettings
     updateKeySettings = settingsBuilder.updateKeySettings().build();
     deleteKeySettings = settingsBuilder.deleteKeySettings().build();
     migrateKeySettings = settingsBuilder.migrateKeySettings().build();
+    addIpOverrideSettings = settingsBuilder.addIpOverrideSettings().build();
+    removeIpOverrideSettings = settingsBuilder.removeIpOverrideSettings().build();
+    listIpOverridesSettings = settingsBuilder.listIpOverridesSettings().build();
     getMetricsSettings = settingsBuilder.getMetricsSettings().build();
     createFirewallPolicySettings = settingsBuilder.createFirewallPolicySettings().build();
     listFirewallPoliciesSettings = settingsBuilder.listFirewallPoliciesSettings().build();
     getFirewallPolicySettings = settingsBuilder.getFirewallPolicySettings().build();
     updateFirewallPolicySettings = settingsBuilder.updateFirewallPolicySettings().build();
     deleteFirewallPolicySettings = settingsBuilder.deleteFirewallPolicySettings().build();
+    reorderFirewallPoliciesSettings = settingsBuilder.reorderFirewallPoliciesSettings().build();
     listRelatedAccountGroupsSettings = settingsBuilder.listRelatedAccountGroupsSettings().build();
     listRelatedAccountGroupMembershipsSettings =
         settingsBuilder.listRelatedAccountGroupMembershipsSettings().build();
@@ -756,6 +869,13 @@ public class RecaptchaEnterpriseServiceStubSettings
     private final UnaryCallSettings.Builder<UpdateKeyRequest, Key> updateKeySettings;
     private final UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings;
     private final UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings;
+    private final UnaryCallSettings.Builder<AddIpOverrideRequest, AddIpOverrideResponse>
+        addIpOverrideSettings;
+    private final UnaryCallSettings.Builder<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+        removeIpOverrideSettings;
+    private final PagedCallSettings.Builder<
+            ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+        listIpOverridesSettings;
     private final UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings;
     private final UnaryCallSettings.Builder<CreateFirewallPolicyRequest, FirewallPolicy>
         createFirewallPolicySettings;
@@ -770,6 +890,9 @@ public class RecaptchaEnterpriseServiceStubSettings
         updateFirewallPolicySettings;
     private final UnaryCallSettings.Builder<DeleteFirewallPolicyRequest, Empty>
         deleteFirewallPolicySettings;
+    private final UnaryCallSettings.Builder<
+            ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+        reorderFirewallPoliciesSettings;
     private final PagedCallSettings.Builder<
             ListRelatedAccountGroupsRequest,
             ListRelatedAccountGroupsResponse,
@@ -804,10 +927,10 @@ public class RecaptchaEnterpriseServiceStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("no_retry_0_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
@@ -831,6 +954,9 @@ public class RecaptchaEnterpriseServiceStubSettings
       updateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       migrateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addIpOverrideSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeIpOverrideSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listIpOverridesSettings = PagedCallSettings.newBuilder(LIST_IP_OVERRIDES_PAGE_STR_FACT);
       getMetricsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFirewallPoliciesSettings =
@@ -838,6 +964,7 @@ public class RecaptchaEnterpriseServiceStubSettings
       getFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      reorderFirewallPoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRelatedAccountGroupsSettings =
           PagedCallSettings.newBuilder(LIST_RELATED_ACCOUNT_GROUPS_PAGE_STR_FACT);
       listRelatedAccountGroupMembershipsSettings =
@@ -856,12 +983,16 @@ public class RecaptchaEnterpriseServiceStubSettings
               updateKeySettings,
               deleteKeySettings,
               migrateKeySettings,
+              addIpOverrideSettings,
+              removeIpOverrideSettings,
+              listIpOverridesSettings,
               getMetricsSettings,
               createFirewallPolicySettings,
               listFirewallPoliciesSettings,
               getFirewallPolicySettings,
               updateFirewallPolicySettings,
               deleteFirewallPolicySettings,
+              reorderFirewallPoliciesSettings,
               listRelatedAccountGroupsSettings,
               listRelatedAccountGroupMembershipsSettings,
               searchRelatedAccountGroupMembershipsSettings);
@@ -880,12 +1011,16 @@ public class RecaptchaEnterpriseServiceStubSettings
       updateKeySettings = settings.updateKeySettings.toBuilder();
       deleteKeySettings = settings.deleteKeySettings.toBuilder();
       migrateKeySettings = settings.migrateKeySettings.toBuilder();
+      addIpOverrideSettings = settings.addIpOverrideSettings.toBuilder();
+      removeIpOverrideSettings = settings.removeIpOverrideSettings.toBuilder();
+      listIpOverridesSettings = settings.listIpOverridesSettings.toBuilder();
       getMetricsSettings = settings.getMetricsSettings.toBuilder();
       createFirewallPolicySettings = settings.createFirewallPolicySettings.toBuilder();
       listFirewallPoliciesSettings = settings.listFirewallPoliciesSettings.toBuilder();
       getFirewallPolicySettings = settings.getFirewallPolicySettings.toBuilder();
       updateFirewallPolicySettings = settings.updateFirewallPolicySettings.toBuilder();
       deleteFirewallPolicySettings = settings.deleteFirewallPolicySettings.toBuilder();
+      reorderFirewallPoliciesSettings = settings.reorderFirewallPoliciesSettings.toBuilder();
       listRelatedAccountGroupsSettings = settings.listRelatedAccountGroupsSettings.toBuilder();
       listRelatedAccountGroupMembershipsSettings =
           settings.listRelatedAccountGroupMembershipsSettings.toBuilder();
@@ -903,12 +1038,16 @@ public class RecaptchaEnterpriseServiceStubSettings
               updateKeySettings,
               deleteKeySettings,
               migrateKeySettings,
+              addIpOverrideSettings,
+              removeIpOverrideSettings,
+              listIpOverridesSettings,
               getMetricsSettings,
               createFirewallPolicySettings,
               listFirewallPoliciesSettings,
               getFirewallPolicySettings,
               updateFirewallPolicySettings,
               deleteFirewallPolicySettings,
+              reorderFirewallPoliciesSettings,
               listRelatedAccountGroupsSettings,
               listRelatedAccountGroupMembershipsSettings,
               searchRelatedAccountGroupMembershipsSettings);
@@ -920,7 +1059,6 @@ public class RecaptchaEnterpriseServiceStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -974,6 +1112,21 @@ public class RecaptchaEnterpriseServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .addIpOverrideSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .removeIpOverrideSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listIpOverridesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .getMetricsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1000,6 +1153,11 @@ public class RecaptchaEnterpriseServiceStubSettings
 
       builder
           .deleteFirewallPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .reorderFirewallPoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1086,6 +1244,25 @@ public class RecaptchaEnterpriseServiceStubSettings
       return migrateKeySettings;
     }
 
+    /** Returns the builder for the settings used for calls to addIpOverride. */
+    public UnaryCallSettings.Builder<AddIpOverrideRequest, AddIpOverrideResponse>
+        addIpOverrideSettings() {
+      return addIpOverrideSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeIpOverride. */
+    public UnaryCallSettings.Builder<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
+        removeIpOverrideSettings() {
+      return removeIpOverrideSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listIpOverrides. */
+    public PagedCallSettings.Builder<
+            ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
+        listIpOverridesSettings() {
+      return listIpOverridesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getMetrics. */
     public UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings() {
       return getMetricsSettings;
@@ -1122,6 +1299,13 @@ public class RecaptchaEnterpriseServiceStubSettings
     public UnaryCallSettings.Builder<DeleteFirewallPolicyRequest, Empty>
         deleteFirewallPolicySettings() {
       return deleteFirewallPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reorderFirewallPolicies. */
+    public UnaryCallSettings.Builder<
+            ReorderFirewallPoliciesRequest, ReorderFirewallPoliciesResponse>
+        reorderFirewallPoliciesSettings() {
+      return reorderFirewallPoliciesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listRelatedAccountGroups. */

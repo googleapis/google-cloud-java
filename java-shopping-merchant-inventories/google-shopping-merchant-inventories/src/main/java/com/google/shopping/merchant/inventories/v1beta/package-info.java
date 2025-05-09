@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@
  *     LocalInventoryServiceClient.create()) {
  *   InsertLocalInventoryRequest request =
  *       InsertLocalInventoryRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setLocalInventory(LocalInventory.newBuilder().build())
  *           .build();
  *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
@@ -59,7 +59,7 @@
  *     RegionalInventoryServiceClient.create()) {
  *   InsertRegionalInventoryRequest request =
  *       InsertRegionalInventoryRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setRegionalInventory(RegionalInventory.newBuilder().build())
  *           .build();
  *   RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);

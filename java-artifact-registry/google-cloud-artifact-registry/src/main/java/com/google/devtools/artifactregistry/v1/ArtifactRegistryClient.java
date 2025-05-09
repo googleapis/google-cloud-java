@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -85,19 +85,954 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDockerImages</td>
+ *      <td><p> Lists docker images.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDockerImages(ListDockerImagesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDockerImages(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDockerImagesPagedCallable()
+ *           <li><p> listDockerImagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDockerImage</td>
+ *      <td><p> Gets a docker image.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDockerImage(GetDockerImageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDockerImage(DockerImageName name)
+ *           <li><p> getDockerImage(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDockerImageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMavenArtifacts</td>
+ *      <td><p> Lists maven artifacts.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMavenArtifacts(ListMavenArtifactsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMavenArtifacts(RepositoryName parent)
+ *           <li><p> listMavenArtifacts(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMavenArtifactsPagedCallable()
+ *           <li><p> listMavenArtifactsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMavenArtifact</td>
+ *      <td><p> Gets a maven artifact.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMavenArtifact(GetMavenArtifactRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMavenArtifact(MavenArtifactName name)
+ *           <li><p> getMavenArtifact(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMavenArtifactCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListNpmPackages</td>
+ *      <td><p> Lists npm packages.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNpmPackages(ListNpmPackagesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listNpmPackages(RepositoryName parent)
+ *           <li><p> listNpmPackages(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNpmPackagesPagedCallable()
+ *           <li><p> listNpmPackagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetNpmPackage</td>
+ *      <td><p> Gets a npm package.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getNpmPackage(GetNpmPackageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getNpmPackage(NpmPackageName name)
+ *           <li><p> getNpmPackage(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getNpmPackageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPythonPackages</td>
+ *      <td><p> Lists python packages.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPythonPackages(ListPythonPackagesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPythonPackages(RepositoryName parent)
+ *           <li><p> listPythonPackages(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPythonPackagesPagedCallable()
+ *           <li><p> listPythonPackagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPythonPackage</td>
+ *      <td><p> Gets a python package.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPythonPackage(GetPythonPackageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPythonPackage(PythonPackageName name)
+ *           <li><p> getPythonPackage(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPythonPackageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportAptArtifacts</td>
+ *      <td><p> Imports Apt artifacts. The returned Operation will complete once the resources are imported. Package, Version, and File resources are created based on the imported artifacts. Imported artifacts that conflict with existing resources are ignored.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importAptArtifactsAsync(ImportAptArtifactsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importAptArtifactsOperationCallable()
+ *           <li><p> importAptArtifactsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportYumArtifacts</td>
+ *      <td><p> Imports Yum (RPM) artifacts. The returned Operation will complete once the resources are imported. Package, Version, and File resources are created based on the imported artifacts. Imported artifacts that conflict with existing resources are ignored.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importYumArtifactsAsync(ImportYumArtifactsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importYumArtifactsOperationCallable()
+ *           <li><p> importYumArtifactsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRepositories</td>
+ *      <td><p> Lists repositories.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRepositories(ListRepositoriesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRepositories(LocationName parent)
+ *           <li><p> listRepositories(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRepositoriesPagedCallable()
+ *           <li><p> listRepositoriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRepository</td>
+ *      <td><p> Gets a repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRepository(GetRepositoryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRepository(RepositoryName name)
+ *           <li><p> getRepository(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRepositoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRepository</td>
+ *      <td><p> Creates a repository. The returned Operation will finish once the repository has been created. Its response will be the created Repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRepositoryAsync(CreateRepositoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createRepositoryAsync(LocationName parent, Repository repository, String repositoryId)
+ *           <li><p> createRepositoryAsync(String parent, Repository repository, String repositoryId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRepositoryOperationCallable()
+ *           <li><p> createRepositoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateRepository</td>
+ *      <td><p> Updates a repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRepository(UpdateRepositoryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateRepository(Repository repository, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRepositoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRepository</td>
+ *      <td><p> Deletes a repository and all of its contents. The returned Operation will finish once the repository has been deleted. It will not have any Operation metadata and will return a google.protobuf.Empty response.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRepositoryAsync(DeleteRepositoryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteRepositoryAsync(RepositoryName name)
+ *           <li><p> deleteRepositoryAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRepositoryOperationCallable()
+ *           <li><p> deleteRepositoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPackages</td>
+ *      <td><p> Lists packages.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPackages(ListPackagesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPackages(RepositoryName parent)
+ *           <li><p> listPackages(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPackagesPagedCallable()
+ *           <li><p> listPackagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPackage</td>
+ *      <td><p> Gets a package.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPackage(GetPackageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPackage(PackageName name)
+ *           <li><p> getPackage(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPackageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeletePackage</td>
+ *      <td><p> Deletes a package and all of its versions and tags. The returned operation will complete once the package has been deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deletePackageAsync(DeletePackageRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deletePackageAsync(PackageName name)
+ *           <li><p> deletePackageAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deletePackageOperationCallable()
+ *           <li><p> deletePackageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListVersions</td>
+ *      <td><p> Lists versions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listVersions(ListVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listVersionsPagedCallable()
+ *           <li><p> listVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetVersion</td>
+ *      <td><p> Gets a version</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getVersion(GetVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteVersion</td>
+ *      <td><p> Deletes a version and all of its content. The returned operation will complete once the version has been deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteVersionAsync(DeleteVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteVersionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteVersionOperationCallable()
+ *           <li><p> deleteVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeleteVersions</td>
+ *      <td><p> Deletes multiple versions across a repository. The returned operation will complete once the versions have been deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeleteVersionsAsync(BatchDeleteVersionsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteVersionsAsync(PackageName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeleteVersionsAsync(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteVersionsOperationCallable()
+ *           <li><p> batchDeleteVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateVersion</td>
+ *      <td><p> Updates a version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateVersion(UpdateVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateVersion(Version version, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFiles</td>
+ *      <td><p> Lists files.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFiles(ListFilesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFiles(RepositoryName parent)
+ *           <li><p> listFiles(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFilesPagedCallable()
+ *           <li><p> listFilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFile</td>
+ *      <td><p> Gets a file.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFile(GetFileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFile(FileName name)
+ *           <li><p> getFile(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteFile</td>
+ *      <td><p> Deletes a file and all of its content. It is only allowed on generic repositories. The returned operation will complete once the file has been deleted.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteFileAsync(DeleteFileRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteFileAsync(FileName name)
+ *           <li><p> deleteFileAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteFileOperationCallable()
+ *           <li><p> deleteFileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateFile</td>
+ *      <td><p> Updates a file.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateFile(UpdateFileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateFile(File file, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateFileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListTags</td>
+ *      <td><p> Lists tags.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTags(ListTagsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTags(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTagsPagedCallable()
+ *           <li><p> listTagsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTag</td>
+ *      <td><p> Gets a tag.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTag(GetTagRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTag(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTagCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateTag</td>
+ *      <td><p> Creates a tag.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createTag(CreateTagRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createTag(String parent, Tag tag, String tagId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createTagCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateTag</td>
+ *      <td><p> Updates a tag.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateTag(UpdateTagRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateTag(Tag tag, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateTagCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTag</td>
+ *      <td><p> Deletes a tag.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTag(DeleteTagRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTag(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTagCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRule</td>
+ *      <td><p> Creates a rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRule(CreateRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createRule(RepositoryName parent, Rule rule, String ruleId)
+ *           <li><p> createRule(String parent, Rule rule, String ruleId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRules</td>
+ *      <td><p> Lists rules.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRules(ListRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRules(RepositoryName parent)
+ *           <li><p> listRules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRulesPagedCallable()
+ *           <li><p> listRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRule</td>
+ *      <td><p> Gets a rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRule(GetRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRule(RuleName name)
+ *           <li><p> getRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateRule</td>
+ *      <td><p> Updates a rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRule(UpdateRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateRule(Rule rule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteRule</td>
+ *      <td><p> Deletes a rule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteRule(DeleteRuleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteRule(RuleName name)
+ *           <li><p> deleteRule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteRuleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Updates the IAM policy for a given resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the IAM policy for a given resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Tests if the caller has a list of permissions on a resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProjectSettings</td>
+ *      <td><p> Retrieves the Settings for the Project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProjectSettings(GetProjectSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProjectSettings(ProjectSettingsName name)
+ *           <li><p> getProjectSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProjectSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateProjectSettings</td>
+ *      <td><p> Updates the Settings for the Project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateProjectSettings(UpdateProjectSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateProjectSettings(ProjectSettings projectSettings, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateProjectSettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetVPCSCConfig</td>
+ *      <td><p> Retrieves the VPCSC Config for the Project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getVPCSCConfig(GetVPCSCConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getVPCSCConfig(VpcscConfigName name)
+ *           <li><p> getVPCSCConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getVPCSCConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateVPCSCConfig</td>
+ *      <td><p> Updates the VPCSC Config for the Project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateVPCSCConfig(UpdateVPCSCConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateVPCSCConfig(VPCSCConfig vpcscConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateVPCSCConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdatePackage</td>
+ *      <td><p> Updates a package.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updatePackage(UpdatePackageRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updatePackage(Package package_, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updatePackageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAttachments</td>
+ *      <td><p> Lists attachments.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAttachments(ListAttachmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAttachments(RepositoryName parent)
+ *           <li><p> listAttachments(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAttachmentsPagedCallable()
+ *           <li><p> listAttachmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAttachment</td>
+ *      <td><p> Gets an attachment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAttachment(GetAttachmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAttachment(AttachmentName name)
+ *           <li><p> getAttachment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAttachmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAttachment</td>
+ *      <td><p> Creates an attachment. The returned Operation will finish once the attachment has been created. Its response will be the created attachment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAttachmentAsync(CreateAttachmentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAttachmentAsync(RepositoryName parent, Attachment attachment, String attachmentId)
+ *           <li><p> createAttachmentAsync(String parent, Attachment attachment, String attachmentId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAttachmentOperationCallable()
+ *           <li><p> createAttachmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAttachment</td>
+ *      <td><p> Deletes an attachment. The returned Operation will finish once the attachments has been deleted. It will not have any Operation metadata and will return a `google.protobuf.Empty` response.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAttachmentAsync(DeleteAttachmentRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAttachmentAsync(AttachmentName name)
+ *           <li><p> deleteAttachmentAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAttachmentOperationCallable()
+ *           <li><p> deleteAttachmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -1586,6 +2521,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Repository element : artifactRegistryClient.listRepositories(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1618,6 +2555,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Repository> future =
    *       artifactRegistryClient.listRepositoriesPagedCallable().futureCall(request);
@@ -1651,6 +2590,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListRepositoriesResponse response =
@@ -1805,8 +2746,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the parent resource where the repository will be created.
-   * @param repository The repository to be created.
-   * @param repositoryId The repository id to use for this repository.
+   * @param repository Required. The repository to be created.
+   * @param repositoryId Required. The repository id to use for this repository.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Repository, OperationMetadata> createRepositoryAsync(
@@ -1843,8 +2784,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The name of the parent resource where the repository will be created.
-   * @param repository The repository to be created.
-   * @param repositoryId The repository id to use for this repository.
+   * @param repository Required. The repository to be created.
+   * @param repositoryId Required. The repository id to use for this repository.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Repository, OperationMetadata> createRepositoryAsync(
@@ -2271,6 +3212,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Package element : artifactRegistryClient.listPackages(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2303,6 +3246,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Package> future =
    *       artifactRegistryClient.listPackagesPagedCallable().futureCall(request);
@@ -2336,6 +3281,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListPackagesResponse response = artifactRegistryClient.listPackagesCallable().call(request);
@@ -2663,6 +3610,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setView(VersionView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (Version element : artifactRegistryClient.listVersions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2697,6 +3645,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setView(VersionView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Version> future =
    *       artifactRegistryClient.listVersionsPagedCallable().futureCall(request);
@@ -2732,6 +3681,7 @@ public class ArtifactRegistryClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setView(VersionView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListVersionsResponse response = artifactRegistryClient.listVersionsCallable().call(request);
@@ -2943,6 +3893,262 @@ public class ArtifactRegistryClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteVersionRequest, Operation> deleteVersionCallable() {
     return stub.deleteVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   PackageName parent = PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]");
+   *   List<String> names = new ArrayList<>();
+   *   artifactRegistryClient.batchDeleteVersionsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent The name of the repository holding all requested versions.
+   * @param names Required. The names of the versions to delete. The maximum number of versions
+   *     deleted per batch is determined by the service and is dependent on the available resources
+   *     in the region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteVersionsMetadata> batchDeleteVersionsAsync(
+      PackageName parent, List<String> names) {
+    BatchDeleteVersionsRequest request =
+        BatchDeleteVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeleteVersionsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent =
+   *       PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   artifactRegistryClient.batchDeleteVersionsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent The name of the repository holding all requested versions.
+   * @param names Required. The names of the versions to delete. The maximum number of versions
+   *     deleted per batch is determined by the service and is dependent on the available resources
+   *     in the region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteVersionsMetadata> batchDeleteVersionsAsync(
+      String parent, List<String> names) {
+    BatchDeleteVersionsRequest request =
+        BatchDeleteVersionsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchDeleteVersionsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   BatchDeleteVersionsRequest request =
+   *       BatchDeleteVersionsRequest.newBuilder()
+   *           .setParent(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   artifactRegistryClient.batchDeleteVersionsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteVersionsMetadata> batchDeleteVersionsAsync(
+      BatchDeleteVersionsRequest request) {
+    return batchDeleteVersionsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   BatchDeleteVersionsRequest request =
+   *       BatchDeleteVersionsRequest.newBuilder()
+   *           .setParent(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Empty, BatchDeleteVersionsMetadata> future =
+   *       artifactRegistryClient.batchDeleteVersionsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BatchDeleteVersionsRequest, Empty, BatchDeleteVersionsMetadata>
+      batchDeleteVersionsOperationCallable() {
+    return stub.batchDeleteVersionsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple versions across a repository. The returned operation will complete once the
+   * versions have been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   BatchDeleteVersionsRequest request =
+   *       BatchDeleteVersionsRequest.newBuilder()
+   *           .setParent(
+   *               PackageName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[PACKAGE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.batchDeleteVersionsCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteVersionsRequest, Operation> batchDeleteVersionsCallable() {
+    return stub.batchDeleteVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   Version version = Version.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Version response = artifactRegistryClient.updateVersion(version, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param version Required. The Version that replaces the resource on the server.
+   * @param updateMask The update mask applies to the resource. For the `FieldMask` definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Version updateVersion(Version version, FieldMask updateMask) {
+    UpdateVersionRequest request =
+        UpdateVersionRequest.newBuilder().setVersion(version).setUpdateMask(updateMask).build();
+    return updateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateVersionRequest request =
+   *       UpdateVersionRequest.newBuilder()
+   *           .setVersion(Version.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Version response = artifactRegistryClient.updateVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Version updateVersion(UpdateVersionRequest request) {
+    return updateVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateVersionRequest request =
+   *       UpdateVersionRequest.newBuilder()
+   *           .setVersion(Version.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Version> future =
+   *       artifactRegistryClient.updateVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Version response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable() {
+    return stub.updateVersionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3221,6 +4427,237 @@ public class ArtifactRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a file and all of its content. It is only allowed on generic repositories. The returned
+   * operation will complete once the file has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   FileName name = FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]");
+   *   artifactRegistryClient.deleteFileAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the file to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteFileAsync(FileName name) {
+    DeleteFileRequest request =
+        DeleteFileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteFileAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a file and all of its content. It is only allowed on generic repositories. The returned
+   * operation will complete once the file has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString();
+   *   artifactRegistryClient.deleteFileAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the file to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteFileAsync(String name) {
+    DeleteFileRequest request = DeleteFileRequest.newBuilder().setName(name).build();
+    return deleteFileAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a file and all of its content. It is only allowed on generic repositories. The returned
+   * operation will complete once the file has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteFileRequest request =
+   *       DeleteFileRequest.newBuilder()
+   *           .setName(FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString())
+   *           .build();
+   *   artifactRegistryClient.deleteFileAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteFileAsync(
+      DeleteFileRequest request) {
+    return deleteFileOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a file and all of its content. It is only allowed on generic repositories. The returned
+   * operation will complete once the file has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteFileRequest request =
+   *       DeleteFileRequest.newBuilder()
+   *           .setName(FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       artifactRegistryClient.deleteFileOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteFileRequest, Empty, OperationMetadata>
+      deleteFileOperationCallable() {
+    return stub.deleteFileOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a file and all of its content. It is only allowed on generic repositories. The returned
+   * operation will complete once the file has been deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteFileRequest request =
+   *       DeleteFileRequest.newBuilder()
+   *           .setName(FileName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[FILE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = artifactRegistryClient.deleteFileCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteFileRequest, Operation> deleteFileCallable() {
+    return stub.deleteFileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   File file = File.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   File response = artifactRegistryClient.updateFile(file, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param file Required. The File that replaces the resource on the server.
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
+   *     definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final File updateFile(File file, FieldMask updateMask) {
+    UpdateFileRequest request =
+        UpdateFileRequest.newBuilder().setFile(file).setUpdateMask(updateMask).build();
+    return updateFile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateFileRequest request =
+   *       UpdateFileRequest.newBuilder()
+   *           .setFile(File.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   File response = artifactRegistryClient.updateFile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final File updateFile(UpdateFileRequest request) {
+    return updateFileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateFileRequest request =
+   *       UpdateFileRequest.newBuilder()
+   *           .setFile(File.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<File> future = artifactRegistryClient.updateFileCallable().futureCall(request);
+   *   // Do something.
+   *   File response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateFileRequest, File> updateFileCallable() {
+    return stub.updateFileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists tags.
    *
    * <p>Sample code:
@@ -3239,7 +4676,8 @@ public class ArtifactRegistryClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The name of the parent resource whose tags will be listed.
+   * @param parent The name of the parent package whose tags will be listed. For example:
+   *     `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagsPagedResponse listTags(String parent) {
@@ -3676,6 +5114,594 @@ public class ArtifactRegistryClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     return stub.deleteTagCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   Rule rule = Rule.newBuilder().build();
+   *   String ruleId = "ruleId-919875273";
+   *   Rule response = artifactRegistryClient.createRule(parent, rule, ruleId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource where the rule will be created.
+   * @param rule The rule to be created.
+   * @param ruleId The rule id to use for this repository.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Rule createRule(RepositoryName parent, Rule rule, String ruleId) {
+    CreateRuleRequest request =
+        CreateRuleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRule(rule)
+            .setRuleId(ruleId)
+            .build();
+    return createRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   Rule rule = Rule.newBuilder().build();
+   *   String ruleId = "ruleId-919875273";
+   *   Rule response = artifactRegistryClient.createRule(parent, rule, ruleId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource where the rule will be created.
+   * @param rule The rule to be created.
+   * @param ruleId The rule id to use for this repository.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Rule createRule(String parent, Rule rule, String ruleId) {
+    CreateRuleRequest request =
+        CreateRuleRequest.newBuilder().setParent(parent).setRule(rule).setRuleId(ruleId).build();
+    return createRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateRuleRequest request =
+   *       CreateRuleRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setRuleId("ruleId-919875273")
+   *           .setRule(Rule.newBuilder().build())
+   *           .build();
+   *   Rule response = artifactRegistryClient.createRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Rule createRule(CreateRuleRequest request) {
+    return createRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateRuleRequest request =
+   *       CreateRuleRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setRuleId("ruleId-919875273")
+   *           .setRule(Rule.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Rule> future = artifactRegistryClient.createRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Rule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRuleRequest, Rule> createRuleCallable() {
+    return stub.createRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (Rule element : artifactRegistryClient.listRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent repository whose rules will be listed. For
+   *     example: `projects/p1/locations/us-central1/repositories/repo1`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRulesPagedResponse listRules(RepositoryName parent) {
+    ListRulesRequest request =
+        ListRulesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (Rule element : artifactRegistryClient.listRules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent repository whose rules will be listed. For
+   *     example: `projects/p1/locations/us-central1/repositories/repo1`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRulesPagedResponse listRules(String parent) {
+    ListRulesRequest request = ListRulesRequest.newBuilder().setParent(parent).build();
+    return listRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListRulesRequest request =
+   *       ListRulesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Rule element : artifactRegistryClient.listRules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRulesPagedResponse listRules(ListRulesRequest request) {
+    return listRulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListRulesRequest request =
+   *       ListRulesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Rule> future = artifactRegistryClient.listRulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Rule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRulesRequest, ListRulesPagedResponse> listRulesPagedCallable() {
+    return stub.listRulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListRulesRequest request =
+   *       ListRulesRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRulesResponse response = artifactRegistryClient.listRulesCallable().call(request);
+   *     for (Rule element : response.getRulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRulesRequest, ListRulesResponse> listRulesCallable() {
+    return stub.listRulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RuleName name = RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]");
+   *   Rule response = artifactRegistryClient.getRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the rule to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Rule getRule(RuleName name) {
+    GetRuleRequest request =
+        GetRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString();
+   *   Rule response = artifactRegistryClient.getRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the rule to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Rule getRule(String name) {
+    GetRuleRequest request = GetRuleRequest.newBuilder().setName(name).build();
+    return getRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetRuleRequest request =
+   *       GetRuleRequest.newBuilder()
+   *           .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+   *           .build();
+   *   Rule response = artifactRegistryClient.getRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Rule getRule(GetRuleRequest request) {
+    return getRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetRuleRequest request =
+   *       GetRuleRequest.newBuilder()
+   *           .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+   *           .build();
+   *   ApiFuture<Rule> future = artifactRegistryClient.getRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Rule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRuleRequest, Rule> getRuleCallable() {
+    return stub.getRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   Rule rule = Rule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Rule response = artifactRegistryClient.updateRule(rule, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param rule The rule that replaces the resource on the server.
+   * @param updateMask The update mask applies to the resource. For the `FieldMask` definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Rule updateRule(Rule rule, FieldMask updateMask) {
+    UpdateRuleRequest request =
+        UpdateRuleRequest.newBuilder().setRule(rule).setUpdateMask(updateMask).build();
+    return updateRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateRuleRequest request =
+   *       UpdateRuleRequest.newBuilder()
+   *           .setRule(Rule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Rule response = artifactRegistryClient.updateRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Rule updateRule(UpdateRuleRequest request) {
+    return updateRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdateRuleRequest request =
+   *       UpdateRuleRequest.newBuilder()
+   *           .setRule(Rule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Rule> future = artifactRegistryClient.updateRuleCallable().futureCall(request);
+   *   // Do something.
+   *   Rule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRuleRequest, Rule> updateRuleCallable() {
+    return stub.updateRuleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RuleName name = RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]");
+   *   artifactRegistryClient.deleteRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the rule to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRule(RuleName name) {
+    DeleteRuleRequest request =
+        DeleteRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name = RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString();
+   *   artifactRegistryClient.deleteRule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the rule to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRule(String name) {
+    DeleteRuleRequest request = DeleteRuleRequest.newBuilder().setName(name).build();
+    deleteRule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteRuleRequest request =
+   *       DeleteRuleRequest.newBuilder()
+   *           .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+   *           .build();
+   *   artifactRegistryClient.deleteRule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRule(DeleteRuleRequest request) {
+    deleteRuleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a rule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteRuleRequest request =
+   *       DeleteRuleRequest.newBuilder()
+   *           .setName(RuleName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[RULE]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = artifactRegistryClient.deleteRuleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
+    return stub.deleteRuleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4256,6 +6282,705 @@ public class ArtifactRegistryClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateVPCSCConfigRequest, VPCSCConfig> updateVPCSCConfigCallable() {
     return stub.updateVPCSCConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   Package package_ = Package.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Package response = artifactRegistryClient.updatePackage(package_, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param package_ The package that replaces the resource on the server.
+   * @param updateMask The update mask applies to the resource. For the `FieldMask` definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Package updatePackage(Package package_, FieldMask updateMask) {
+    UpdatePackageRequest request =
+        UpdatePackageRequest.newBuilder().setPackage(package_).setUpdateMask(updateMask).build();
+    return updatePackage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdatePackageRequest request =
+   *       UpdatePackageRequest.newBuilder()
+   *           .setPackage(Package.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Package response = artifactRegistryClient.updatePackage(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Package updatePackage(UpdatePackageRequest request) {
+    return updatePackageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a package.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   UpdatePackageRequest request =
+   *       UpdatePackageRequest.newBuilder()
+   *           .setPackage(Package.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Package> future =
+   *       artifactRegistryClient.updatePackageCallable().futureCall(request);
+   *   // Do something.
+   *   Package response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePackageRequest, Package> updatePackageCallable() {
+    return stub.updatePackageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists attachments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   for (Attachment element : artifactRegistryClient.listAttachments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose attachments will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAttachmentsPagedResponse listAttachments(RepositoryName parent) {
+    ListAttachmentsRequest request =
+        ListAttachmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAttachments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists attachments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   for (Attachment element : artifactRegistryClient.listAttachments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource whose attachments will be listed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAttachmentsPagedResponse listAttachments(String parent) {
+    ListAttachmentsRequest request = ListAttachmentsRequest.newBuilder().setParent(parent).build();
+    return listAttachments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists attachments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListAttachmentsRequest request =
+   *       ListAttachmentsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Attachment element : artifactRegistryClient.listAttachments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAttachmentsPagedResponse listAttachments(ListAttachmentsRequest request) {
+    return listAttachmentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists attachments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListAttachmentsRequest request =
+   *       ListAttachmentsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Attachment> future =
+   *       artifactRegistryClient.listAttachmentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Attachment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
+      listAttachmentsPagedCallable() {
+    return stub.listAttachmentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists attachments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   ListAttachmentsRequest request =
+   *       ListAttachmentsRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAttachmentsResponse response =
+   *         artifactRegistryClient.listAttachmentsCallable().call(request);
+   *     for (Attachment element : response.getAttachmentsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse>
+      listAttachmentsCallable() {
+    return stub.listAttachmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   AttachmentName name =
+   *       AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]");
+   *   Attachment response = artifactRegistryClient.getAttachment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attachment to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(AttachmentName name) {
+    GetAttachmentRequest request =
+        GetAttachmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAttachment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name =
+   *       AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]").toString();
+   *   Attachment response = artifactRegistryClient.getAttachment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attachment to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(String name) {
+    GetAttachmentRequest request = GetAttachmentRequest.newBuilder().setName(name).build();
+    return getAttachment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetAttachmentRequest request =
+   *       GetAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+   *                   .toString())
+   *           .build();
+   *   Attachment response = artifactRegistryClient.getAttachment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Attachment getAttachment(GetAttachmentRequest request) {
+    return getAttachmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   GetAttachmentRequest request =
+   *       GetAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Attachment> future =
+   *       artifactRegistryClient.getAttachmentCallable().futureCall(request);
+   *   // Do something.
+   *   Attachment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    return stub.getAttachmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an attachment. The returned Operation will finish once the attachment has been created.
+   * Its response will be the created attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+   *   Attachment attachment = Attachment.newBuilder().build();
+   *   String attachmentId = "attachmentId-1434081890";
+   *   Attachment response =
+   *       artifactRegistryClient.createAttachmentAsync(parent, attachment, attachmentId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource where the attachment will be created.
+   * @param attachment Required. The attachment to be created.
+   * @param attachmentId Required. The attachment id to use for this attachment.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Attachment, OperationMetadata> createAttachmentAsync(
+      RepositoryName parent, Attachment attachment, String attachmentId) {
+    CreateAttachmentRequest request =
+        CreateAttachmentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAttachment(attachment)
+            .setAttachmentId(attachmentId)
+            .build();
+    return createAttachmentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an attachment. The returned Operation will finish once the attachment has been created.
+   * Its response will be the created attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString();
+   *   Attachment attachment = Attachment.newBuilder().build();
+   *   String attachmentId = "attachmentId-1434081890";
+   *   Attachment response =
+   *       artifactRegistryClient.createAttachmentAsync(parent, attachment, attachmentId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource where the attachment will be created.
+   * @param attachment Required. The attachment to be created.
+   * @param attachmentId Required. The attachment id to use for this attachment.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Attachment, OperationMetadata> createAttachmentAsync(
+      String parent, Attachment attachment, String attachmentId) {
+    CreateAttachmentRequest request =
+        CreateAttachmentRequest.newBuilder()
+            .setParent(parent)
+            .setAttachment(attachment)
+            .setAttachmentId(attachmentId)
+            .build();
+    return createAttachmentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an attachment. The returned Operation will finish once the attachment has been created.
+   * Its response will be the created attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateAttachmentRequest request =
+   *       CreateAttachmentRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setAttachmentId("attachmentId-1434081890")
+   *           .setAttachment(Attachment.newBuilder().build())
+   *           .build();
+   *   Attachment response = artifactRegistryClient.createAttachmentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Attachment, OperationMetadata> createAttachmentAsync(
+      CreateAttachmentRequest request) {
+    return createAttachmentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an attachment. The returned Operation will finish once the attachment has been created.
+   * Its response will be the created attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateAttachmentRequest request =
+   *       CreateAttachmentRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setAttachmentId("attachmentId-1434081890")
+   *           .setAttachment(Attachment.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Attachment, OperationMetadata> future =
+   *       artifactRegistryClient.createAttachmentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Attachment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateAttachmentRequest, Attachment, OperationMetadata>
+      createAttachmentOperationCallable() {
+    return stub.createAttachmentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an attachment. The returned Operation will finish once the attachment has been created.
+   * Its response will be the created attachment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   CreateAttachmentRequest request =
+   *       CreateAttachmentRequest.newBuilder()
+   *           .setParent(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setAttachmentId("attachmentId-1434081890")
+   *           .setAttachment(Attachment.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.createAttachmentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAttachmentRequest, Operation> createAttachmentCallable() {
+    return stub.createAttachmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an attachment. The returned Operation will finish once the attachments has been
+   * deleted. It will not have any Operation metadata and will return a `google.protobuf.Empty`
+   * response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   AttachmentName name =
+   *       AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]");
+   *   artifactRegistryClient.deleteAttachmentAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attachment to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAttachmentAsync(
+      AttachmentName name) {
+    DeleteAttachmentRequest request =
+        DeleteAttachmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteAttachmentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an attachment. The returned Operation will finish once the attachments has been
+   * deleted. It will not have any Operation metadata and will return a `google.protobuf.Empty`
+   * response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   String name =
+   *       AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]").toString();
+   *   artifactRegistryClient.deleteAttachmentAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the attachment to delete.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAttachmentAsync(String name) {
+    DeleteAttachmentRequest request = DeleteAttachmentRequest.newBuilder().setName(name).build();
+    return deleteAttachmentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an attachment. The returned Operation will finish once the attachments has been
+   * deleted. It will not have any Operation metadata and will return a `google.protobuf.Empty`
+   * response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteAttachmentRequest request =
+   *       DeleteAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+   *                   .toString())
+   *           .build();
+   *   artifactRegistryClient.deleteAttachmentAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAttachmentAsync(
+      DeleteAttachmentRequest request) {
+    return deleteAttachmentOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an attachment. The returned Operation will finish once the attachments has been
+   * deleted. It will not have any Operation metadata and will return a `google.protobuf.Empty`
+   * response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteAttachmentRequest request =
+   *       DeleteAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       artifactRegistryClient.deleteAttachmentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
+      deleteAttachmentOperationCallable() {
+    return stub.deleteAttachmentOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an attachment. The returned Operation will finish once the attachments has been
+   * deleted. It will not have any Operation metadata and will return a `google.protobuf.Empty`
+   * response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.create()) {
+   *   DeleteAttachmentRequest request =
+   *       DeleteAttachmentRequest.newBuilder()
+   *           .setName(
+   *               AttachmentName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[ATTACHMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       artifactRegistryClient.deleteAttachmentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable() {
+    return stub.deleteAttachmentCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5110,6 +7835,148 @@ public class ArtifactRegistryClient implements BackgroundResource {
     protected ListTagsFixedSizeCollection createCollection(
         List<ListTagsPage> pages, int collectionSize) {
       return new ListTagsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListRulesRequest, ListRulesResponse, Rule, ListRulesPage, ListRulesFixedSizeCollection> {
+
+    public static ApiFuture<ListRulesPagedResponse> createAsync(
+        PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
+        ApiFuture<ListRulesResponse> futureResponse) {
+      ApiFuture<ListRulesPage> futurePage =
+          ListRulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListRulesPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListRulesPagedResponse(ListRulesPage page) {
+      super(page, ListRulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRulesPage
+      extends AbstractPage<ListRulesRequest, ListRulesResponse, Rule, ListRulesPage> {
+
+    private ListRulesPage(
+        PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
+        ListRulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListRulesPage createEmptyPage() {
+      return new ListRulesPage(null, null);
+    }
+
+    @Override
+    protected ListRulesPage createPage(
+        PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
+        ListRulesResponse response) {
+      return new ListRulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRulesPage> createPageAsync(
+        PageContext<ListRulesRequest, ListRulesResponse, Rule> context,
+        ApiFuture<ListRulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRulesRequest, ListRulesResponse, Rule, ListRulesPage, ListRulesFixedSizeCollection> {
+
+    private ListRulesFixedSizeCollection(List<ListRulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRulesFixedSizeCollection createEmptyCollection() {
+      return new ListRulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRulesFixedSizeCollection createCollection(
+        List<ListRulesPage> pages, int collectionSize) {
+      return new ListRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAttachmentsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAttachmentsRequest,
+          ListAttachmentsResponse,
+          Attachment,
+          ListAttachmentsPage,
+          ListAttachmentsFixedSizeCollection> {
+
+    public static ApiFuture<ListAttachmentsPagedResponse> createAsync(
+        PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
+        ApiFuture<ListAttachmentsResponse> futureResponse) {
+      ApiFuture<ListAttachmentsPage> futurePage =
+          ListAttachmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAttachmentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAttachmentsPagedResponse(ListAttachmentsPage page) {
+      super(page, ListAttachmentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAttachmentsPage
+      extends AbstractPage<
+          ListAttachmentsRequest, ListAttachmentsResponse, Attachment, ListAttachmentsPage> {
+
+    private ListAttachmentsPage(
+        PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
+        ListAttachmentsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAttachmentsPage createEmptyPage() {
+      return new ListAttachmentsPage(null, null);
+    }
+
+    @Override
+    protected ListAttachmentsPage createPage(
+        PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
+        ListAttachmentsResponse response) {
+      return new ListAttachmentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAttachmentsPage> createPageAsync(
+        PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
+        ApiFuture<ListAttachmentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAttachmentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAttachmentsRequest,
+          ListAttachmentsResponse,
+          Attachment,
+          ListAttachmentsPage,
+          ListAttachmentsFixedSizeCollection> {
+
+    private ListAttachmentsFixedSizeCollection(
+        List<ListAttachmentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAttachmentsFixedSizeCollection createEmptyCollection() {
+      return new ListAttachmentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAttachmentsFixedSizeCollection createCollection(
+        List<ListAttachmentsPage> pages, int collectionSize) {
+      return new ListAttachmentsFixedSizeCollection(pages, collectionSize);
     }
   }
 

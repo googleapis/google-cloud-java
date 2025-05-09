@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataRequest;
+import com.google.cloud.discoveryengine.v1beta.BatchGetDocumentsMetadataResponse;
 import com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1beta.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1beta.Document;
@@ -133,6 +135,20 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataMethodDescriptor =
+          MethodDescriptor
+              .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.DocumentService/BatchGetDocumentsMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchGetDocumentsMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchGetDocumentsMetadataResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
@@ -148,6 +164,8 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   private final OperationCallable<
           PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
       purgeDocumentsOperationCallable;
+  private final UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -263,6 +281,18 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+        batchGetDocumentsMetadataTransportSettings =
+            GrpcCallSettings
+                .<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>newBuilder()
+                .setMethodDescriptor(batchGetDocumentsMetadataMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getDocumentCallable =
         callableFactory.createUnaryCallable(
@@ -300,6 +330,11 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
             settings.purgeDocumentsOperationSettings(),
             clientContext,
             operationsStub);
+    this.batchGetDocumentsMetadataCallable =
+        callableFactory.createUnaryCallable(
+            batchGetDocumentsMetadataTransportSettings,
+            settings.batchGetDocumentsMetadataSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -360,6 +395,12 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   public OperationCallable<PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
       purgeDocumentsOperationCallable() {
     return purgeDocumentsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchGetDocumentsMetadataRequest, BatchGetDocumentsMetadataResponse>
+      batchGetDocumentsMetadataCallable() {
+    return batchGetDocumentsMetadataCallable;
   }
 
   @Override

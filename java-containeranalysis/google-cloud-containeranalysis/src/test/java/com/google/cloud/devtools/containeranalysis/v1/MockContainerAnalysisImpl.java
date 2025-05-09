@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ package com.google.cloud.devtools.containeranalysis.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.containeranalysis.v1.ContainerAnalysisGrpc.ContainerAnalysisImplBase;
+import com.google.containeranalysis.v1.ExportSBOMRequest;
+import com.google.containeranalysis.v1.ExportSBOMResponse;
 import com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest;
 import com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -142,9 +144,31 @@ public class MockContainerAnalysisImpl extends ContainerAnalysisImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetVulnerabilityOccurrencesSummary, expected %s or %s",
+                  "Unrecognized response type %s for method GetVulnerabilityOccurrencesSummary,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   VulnerabilityOccurrencesSummary.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void exportSBOM(
+      ExportSBOMRequest request, StreamObserver<ExportSBOMResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExportSBOMResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExportSBOMResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportSBOM, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExportSBOMResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

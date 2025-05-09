@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 
 package com.google.maps.mapsplatformdatasets.v1.stub;
 
+import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.FetchDatasetErrorsPagedResponse;
 import static com.google.maps.mapsplatformdatasets.v1.MapsPlatformDatasetsClient.ListDatasetsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -34,6 +34,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.maps.mapsplatformdatasets.v1.CreateDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.Dataset;
 import com.google.maps.mapsplatformdatasets.v1.DeleteDatasetRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsRequest;
+import com.google.maps.mapsplatformdatasets.v1.FetchDatasetErrorsResponse;
 import com.google.maps.mapsplatformdatasets.v1.GetDatasetRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsRequest;
 import com.google.maps.mapsplatformdatasets.v1.ListDatasetsResponse;
@@ -55,7 +57,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -170,6 +171,43 @@ public class HttpJsonMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsMethodDescriptor =
+          ApiMethodDescriptor.<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.maps.mapsplatformdatasets.v1.MapsPlatformDatasets/FetchDatasetErrors")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchDatasetErrorsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{dataset=projects/*/datasets/*}:fetchDatasetErrors",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchDatasetErrorsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "dataset", request.getDataset());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchDatasetErrorsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchDatasetErrorsResponse>newBuilder()
+                      .setDefaultInstance(FetchDatasetErrorsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
       listDatasetsMethodDescriptor =
           ApiMethodDescriptor.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -195,6 +233,7 @@ public class HttpJsonMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "tag", request.getTag());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -245,6 +284,10 @@ public class HttpJsonMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;
   private final UnaryCallable<UpdateDatasetMetadataRequest, Dataset> updateDatasetMetadataCallable;
   private final UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable;
+  private final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable;
+  private final UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable;
   private final UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse>
       listDatasetsPagedCallable;
@@ -328,6 +371,18 @@ public class HttpJsonMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+        fetchDatasetErrorsTransportSettings =
+            HttpJsonCallSettings.<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>newBuilder()
+                .setMethodDescriptor(fetchDatasetErrorsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("dataset", String.valueOf(request.getDataset()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         HttpJsonCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
             .setMethodDescriptor(listDatasetsMethodDescriptor)
@@ -362,6 +417,16 @@ public class HttpJsonMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
     this.getDatasetCallable =
         callableFactory.createUnaryCallable(
             getDatasetTransportSettings, settings.getDatasetSettings(), clientContext);
+    this.fetchDatasetErrorsCallable =
+        callableFactory.createUnaryCallable(
+            fetchDatasetErrorsTransportSettings,
+            settings.fetchDatasetErrorsSettings(),
+            clientContext);
+    this.fetchDatasetErrorsPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchDatasetErrorsTransportSettings,
+            settings.fetchDatasetErrorsSettings(),
+            clientContext);
     this.listDatasetsCallable =
         callableFactory.createUnaryCallable(
             listDatasetsTransportSettings, settings.listDatasetsSettings(), clientContext);
@@ -382,6 +447,7 @@ public class HttpJsonMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
     methodDescriptors.add(createDatasetMethodDescriptor);
     methodDescriptors.add(updateDatasetMetadataMethodDescriptor);
     methodDescriptors.add(getDatasetMethodDescriptor);
+    methodDescriptors.add(fetchDatasetErrorsMethodDescriptor);
     methodDescriptors.add(listDatasetsMethodDescriptor);
     methodDescriptors.add(deleteDatasetMethodDescriptor);
     return methodDescriptors;
@@ -400,6 +466,18 @@ public class HttpJsonMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
   @Override
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     return getDatasetCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
+      fetchDatasetErrorsCallable() {
+    return fetchDatasetErrorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchDatasetErrorsRequest, FetchDatasetErrorsPagedResponse>
+      fetchDatasetErrorsPagedCallable() {
+    return fetchDatasetErrorsPagedCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.TargetInstancesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.TargetInstancesClient.ListPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -41,6 +40,7 @@ import com.google.cloud.compute.v1.InsertTargetInstanceRequest;
 import com.google.cloud.compute.v1.ListTargetInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.SetSecurityPolicyTargetInstanceRequest;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceAggregatedList;
 import com.google.cloud.compute.v1.TargetInstanceList;
@@ -60,7 +60,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -111,6 +110,12 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
                             }
                             return fields;
                           })
@@ -320,6 +325,64 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetSecurityPolicyTargetInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetInstances/SetSecurityPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetSecurityPolicyTargetInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/targetInstances/{targetInstance}/setSecurityPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyTargetInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "targetInstance", request.getTargetInstance());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyTargetInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityPolicyReferenceResource",
+                                      request.getSecurityPolicyReferenceResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetSecurityPolicyTargetInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AggregatedListTargetInstancesRequest, TargetInstanceAggregatedList>
       aggregatedListCallable;
   private final UnaryCallable<AggregatedListTargetInstancesRequest, AggregatedListPagedResponse>
@@ -333,6 +396,10 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
       insertOperationCallable;
   private final UnaryCallable<ListTargetInstancesRequest, TargetInstanceList> listCallable;
   private final UnaryCallable<ListTargetInstancesRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicyCallable;
+  private final OperationCallable<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
@@ -441,6 +508,20 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SetSecurityPolicyTargetInstanceRequest, Operation>
+        setSecurityPolicyTransportSettings =
+            HttpJsonCallSettings.<SetSecurityPolicyTargetInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(setSecurityPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("target_instance", String.valueOf(request.getTargetInstance()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
 
     this.aggregatedListCallable =
         callableFactory.createUnaryCallable(
@@ -475,6 +556,17 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.setSecurityPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicySettings(),
+            clientContext);
+    this.setSecurityPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -488,6 +580,7 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(setSecurityPolicyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -538,6 +631,18 @@ public class HttpJsonTargetInstancesStub extends TargetInstancesStub {
   @Override
   public UnaryCallable<ListTargetInstancesRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetSecurityPolicyTargetInstanceRequest, Operation>
+      setSecurityPolicyCallable() {
+    return setSecurityPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<SetSecurityPolicyTargetInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    return setSecurityPolicyOperationCallable;
   }
 
   @Override

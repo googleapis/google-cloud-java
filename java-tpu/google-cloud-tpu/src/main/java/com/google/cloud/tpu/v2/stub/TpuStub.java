@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.google.cloud.tpu.v2.stub;
 import static com.google.cloud.tpu.v2.TpuClient.ListAcceleratorTypesPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListNodesPagedResponse;
+import static com.google.cloud.tpu.v2.TpuClient.ListQueuedResourcesPagedResponse;
 import static com.google.cloud.tpu.v2.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -30,22 +31,29 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.tpu.v2.AcceleratorType;
 import com.google.cloud.tpu.v2.CreateNodeRequest;
+import com.google.cloud.tpu.v2.CreateQueuedResourceRequest;
 import com.google.cloud.tpu.v2.DeleteNodeRequest;
+import com.google.cloud.tpu.v2.DeleteQueuedResourceRequest;
 import com.google.cloud.tpu.v2.GenerateServiceIdentityRequest;
 import com.google.cloud.tpu.v2.GenerateServiceIdentityResponse;
 import com.google.cloud.tpu.v2.GetAcceleratorTypeRequest;
 import com.google.cloud.tpu.v2.GetGuestAttributesRequest;
 import com.google.cloud.tpu.v2.GetGuestAttributesResponse;
 import com.google.cloud.tpu.v2.GetNodeRequest;
+import com.google.cloud.tpu.v2.GetQueuedResourceRequest;
 import com.google.cloud.tpu.v2.GetRuntimeVersionRequest;
 import com.google.cloud.tpu.v2.ListAcceleratorTypesRequest;
 import com.google.cloud.tpu.v2.ListAcceleratorTypesResponse;
 import com.google.cloud.tpu.v2.ListNodesRequest;
 import com.google.cloud.tpu.v2.ListNodesResponse;
+import com.google.cloud.tpu.v2.ListQueuedResourcesRequest;
+import com.google.cloud.tpu.v2.ListQueuedResourcesResponse;
 import com.google.cloud.tpu.v2.ListRuntimeVersionsRequest;
 import com.google.cloud.tpu.v2.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2.Node;
 import com.google.cloud.tpu.v2.OperationMetadata;
+import com.google.cloud.tpu.v2.QueuedResource;
+import com.google.cloud.tpu.v2.ResetQueuedResourceRequest;
 import com.google.cloud.tpu.v2.RuntimeVersion;
 import com.google.cloud.tpu.v2.StartNodeRequest;
 import com.google.cloud.tpu.v2.StopNodeRequest;
@@ -125,6 +133,50 @@ public abstract class TpuStub implements BackgroundResource {
 
   public UnaryCallable<UpdateNodeRequest, Operation> updateNodeCallable() {
     throw new UnsupportedOperationException("Not implemented: updateNodeCallable()");
+  }
+
+  public UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesPagedResponse>
+      listQueuedResourcesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listQueuedResourcesPagedCallable()");
+  }
+
+  public UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
+      listQueuedResourcesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listQueuedResourcesCallable()");
+  }
+
+  public UnaryCallable<GetQueuedResourceRequest, QueuedResource> getQueuedResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getQueuedResourceCallable()");
+  }
+
+  public OperationCallable<CreateQueuedResourceRequest, QueuedResource, OperationMetadata>
+      createQueuedResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createQueuedResourceOperationCallable()");
+  }
+
+  public UnaryCallable<CreateQueuedResourceRequest, Operation> createQueuedResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: createQueuedResourceCallable()");
+  }
+
+  public OperationCallable<DeleteQueuedResourceRequest, Empty, OperationMetadata>
+      deleteQueuedResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteQueuedResourceOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteQueuedResourceRequest, Operation> deleteQueuedResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteQueuedResourceCallable()");
+  }
+
+  public OperationCallable<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: resetQueuedResourceOperationCallable()");
+  }
+
+  public UnaryCallable<ResetQueuedResourceRequest, Operation> resetQueuedResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: resetQueuedResourceCallable()");
   }
 
   public UnaryCallable<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>

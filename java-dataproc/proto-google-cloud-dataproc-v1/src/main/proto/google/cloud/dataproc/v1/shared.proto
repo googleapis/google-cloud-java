@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,6 +33,10 @@ option (google.api.resource_definition) = {
   type: "metastore.googleapis.com/Service"
   pattern: "projects/{project}/locations/{location}/services/{service}"
 };
+option (google.api.resource_definition) = {
+  type: "cloudkms.googleapis.com/CryptoKey"
+  pattern: "projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}"
+};
 
 // Runtime configuration for a workload.
 message RuntimeConfig {
@@ -46,6 +50,18 @@ message RuntimeConfig {
   // Optional. A mapping of property names to values, which are used to
   // configure workload execution.
   map<string, string> properties = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Dependency repository configuration.
+  RepositoryConfig repository_config = 5
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Autotuning configuration of the workload.
+  AutotuningConfig autotuning_config = 6
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Cohort identifier. Identifies families of the workloads having
+  // the same shape, e.g. daily ETL jobs.
+  string cohort = 7 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Environment configuration for a workload.
@@ -78,16 +94,33 @@ message ExecutionConfig {
   // Optional. The Cloud KMS key to use for encryption.
   string kms_key = 7 [(google.api.field_behavior) = OPTIONAL];
 
-  // Optional. The duration after which the workload will be terminated.
-  // When the workload passes this ttl, it will be unconditionally killed
-  // without waiting for ongoing work to finish.
-  // Minimum value is 10 minutes; maximum value is 14 days (see JSON
-  // representation of
+  // Optional. Applies to sessions only. The duration to keep the session alive
+  // while it's idling. Exceeding this threshold causes the session to
+  // terminate. This field cannot be set on a batch workload. Minimum value is
+  // 10 minutes; maximum value is 14 days (see JSON representation of
   // [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
-  // If both ttl and idle_ttl are specified, the conditions are treated as
-  // and OR: the workload will be terminated when it has been idle for idle_ttl
-  // or when the ttl has passed, whichever comes first.
-  // If ttl is not specified for a session, it defaults to 24h.
+  // Defaults to 1 hour if not set.
+  // If both `ttl` and `idle_ttl` are specified for an interactive session,
+  // the conditions are treated as `OR` conditions: the workload will be
+  // terminated when it has been idle for `idle_ttl` or when `ttl` has been
+  // exceeded, whichever occurs first.
+  google.protobuf.Duration idle_ttl = 8
+      [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The duration after which the workload will be terminated,
+  // specified as the JSON representation for
+  // [Duration](https://protobuf.dev/programming-guides/proto3/#json).
+  // When the workload exceeds this duration, it will be unconditionally
+  // terminated without waiting for ongoing work to finish. If `ttl` is not
+  // specified for a batch workload, the workload will be allowed to run until
+  // it exits naturally (or run forever without exiting). If `ttl` is not
+  // specified for an interactive session, it defaults to 24 hours. If `ttl` is
+  // not specified for a batch that uses 2.1+ runtime version, it defaults to 4
+  // hours. Minimum value is 10 minutes; maximum value is 14 days. If both `ttl`
+  // and `idle_ttl` are specified (for an interactive session), the conditions
+  // are treated as `OR` conditions: the workload will be terminated when it has
+  // been idle for `idle_ttl` or when `ttl` has been exceeded, whichever occurs
+  // first.
   google.protobuf.Duration ttl = 9 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. A Cloud Storage bucket used to stage workload dependencies,
@@ -99,6 +132,13 @@ message ExecutionConfig {
   // **This field requires a Cloud Storage bucket name, not a `gs://...` URI to
   // a Cloud Storage bucket.**
   string staging_bucket = 10 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Authentication configuration used to set the default identity for
+  // the workload execution. The config specifies the type of identity
+  // (service account or user) that will be used by workloads to access
+  // resources on the project(s).
+  AuthenticationConfig authentication_config = 11
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Spark History Server configuration for the workload.
@@ -144,9 +184,17 @@ message RuntimeInfo {
   // Output only. A URI pointing to the location of the diagnostics tarball.
   string diagnostic_output_uri = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // Output only. Approximate workload resource usage calculated after workload
-  // finishes (see [Dataproc Serverless pricing]
+  // Output only. Approximate workload resource usage, calculated when
+  // the workload completes (see [Dataproc Serverless pricing]
   // (https://cloud.google.com/dataproc-serverless/pricing)).
+  //
+  // **Note:** This metric calculation may change in the future, for
+  // example, to capture cumulative workload resource
+  // consumption during workload execution (see the
+  // [Dataproc Serverless release notes]
+  // (https://cloud.google.com/dataproc-serverless/docs/release-notes)
+  // for announcements, changes, fixes
+  // and other Dataproc developments).
   UsageMetrics approximate_usage = 6
       [(google.api.field_behavior) = OUTPUT_ONLY];
 
@@ -165,9 +213,17 @@ message UsageMetrics {
   // [Dataproc Serverless pricing]
   // (https://cloud.google.com/dataproc-serverless/pricing)).
   int64 shuffle_storage_gb_seconds = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Accelerator usage in (`milliAccelerator` x `seconds`) (see
+  // [Dataproc Serverless pricing]
+  // (https://cloud.google.com/dataproc-serverless/pricing)).
+  int64 milli_accelerator_seconds = 3 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Accelerator type being used, if any
+  string accelerator_type = 4 [(google.api.field_behavior) = OPTIONAL];
 }
 
-// The usage snaphot represents the resources consumed by a workload at a
+// The usage snapshot represents the resources consumed by a workload at a
 // specified time.
 message UsageSnapshot {
   // Optional. Milli (one-thousandth) Dataproc Compute Units (DCUs) (see
@@ -178,6 +234,23 @@ message UsageSnapshot {
   // Optional. Shuffle Storage in gigabytes (GB). (see [Dataproc Serverless
   // pricing] (https://cloud.google.com/dataproc-serverless/pricing))
   int64 shuffle_storage_gb = 2 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Milli (one-thousandth) Dataproc Compute Units (DCUs) charged at
+  // premium tier (see [Dataproc Serverless pricing]
+  // (https://cloud.google.com/dataproc-serverless/pricing)).
+  int64 milli_dcu_premium = 4 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Shuffle Storage in gigabytes (GB) charged at premium tier. (see
+  // [Dataproc Serverless pricing]
+  // (https://cloud.google.com/dataproc-serverless/pricing))
+  int64 shuffle_storage_gb_premium = 5 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Milli (one-thousandth) accelerator. (see [Dataproc
+  // Serverless pricing] (https://cloud.google.com/dataproc-serverless/pricing))
+  int64 milli_accelerator = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Accelerator type being used, if any
+  string accelerator_type = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. The timestamp of the usage snapshot.
   google.protobuf.Timestamp snapshot_time = 3
@@ -410,16 +483,76 @@ message GkeNodePoolConfig {
       [(google.api.field_behavior) = OPTIONAL];
 }
 
+// Authentication configuration for a workload is used to set the default
+// identity for the workload execution.
+// The config specifies the type of identity (service account or user) that
+// will be used by workloads to access resources on the project(s).
+message AuthenticationConfig {
+  // Authentication types for workload execution.
+  enum AuthenticationType {
+    // If AuthenticationType is unspecified then END_USER_CREDENTIALS is used
+    // for 3.0 and newer runtimes, and SERVICE_ACCOUNT is used for older
+    // runtimes.
+    AUTHENTICATION_TYPE_UNSPECIFIED = 0;
+
+    // Use service account credentials for authenticating to other services.
+    SERVICE_ACCOUNT = 1;
+
+    // Use OAuth credentials associated with the workload creator/user for
+    // authenticating to other services.
+    END_USER_CREDENTIALS = 2;
+  }
+
+  // Optional. Authentication type for the user workload running in containers.
+  AuthenticationType user_workload_authentication_type = 1
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Autotuning configuration of the workload.
+message AutotuningConfig {
+  // Scenario represents a specific goal that autotuning will attempt to achieve
+  // by modifying workloads.
+  enum Scenario {
+    // Default value.
+    SCENARIO_UNSPECIFIED = 0;
+
+    // Scaling recommendations such as initialExecutors.
+    SCALING = 2;
+
+    // Adding hints for potential relation broadcasts.
+    BROADCAST_HASH_JOIN = 3;
+
+    // Memory management for workloads.
+    MEMORY = 4;
+  }
+
+  // Optional. Scenarios for which tunings are applied.
+  repeated Scenario scenarios = 2 [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Configuration for dependency repositories
+message RepositoryConfig {
+  // Optional. Configuration for PyPi repository.
+  PyPiRepositoryConfig pypi_repository_config = 1
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// Configuration for PyPi repository
+message PyPiRepositoryConfig {
+  // Optional. PyPi repository address
+  string pypi_repository = 1 [(google.api.field_behavior) = OPTIONAL];
+}
+
 // Cluster components that can be activated.
 enum Component {
   // Unspecified component. Specifying this will cause Cluster creation to fail.
   COMPONENT_UNSPECIFIED = 0;
 
-  // The Anaconda python distribution. The Anaconda component is not supported
-  // in the Dataproc
-  // <a
-  // href="/dataproc/docs/concepts/versioning/dataproc-release-2.0">2.0
-  // image</a>. The 2.0 image is pre-installed with Miniconda.
+  // The Anaconda component is no longer supported or applicable to
+  // [supported Dataproc on Compute Engine image versions]
+  // (https://cloud.google.com/dataproc/docs/concepts/versioning/dataproc-version-clusters#supported-dataproc-image-versions).
+  // It cannot be activated on clusters created with supported Dataproc on
+  // Compute Engine image versions.
   ANACONDA = 5;
 
   // Docker

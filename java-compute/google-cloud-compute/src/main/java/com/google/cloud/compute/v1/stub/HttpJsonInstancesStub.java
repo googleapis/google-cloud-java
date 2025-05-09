@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.InstancesClient.AggregatedListPagedRes
 import static com.google.cloud.compute.v1.InstancesClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.InstancesClient.ListReferrersPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -61,8 +60,10 @@ import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
+import com.google.cloud.compute.v1.ReportHostAsFaultyInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
@@ -79,6 +80,7 @@ import com.google.cloud.compute.v1.SetMetadataInstanceRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceRequest;
 import com.google.cloud.compute.v1.SetNameInstanceRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyInstanceRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceRequest;
 import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceRequest;
@@ -111,7 +113,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonInstancesStub extends InstancesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -276,6 +277,12 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasServiceProjectNumber()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "serviceProjectNumber",
+                                  request.getServiceProjectNumber());
                             }
                             return fields;
                           })
@@ -1005,6 +1012,57 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<PerformMaintenanceInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/PerformMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PerformMaintenanceInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/performMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PerformMaintenanceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PerformMaintenanceInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesMethodDescriptor =
           ApiMethodDescriptor.<RemoveResourcePoliciesInstanceRequest, Operation>newBuilder()
@@ -1049,6 +1107,63 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .setOperationSnapshotFactory(
                   (RemoveResourcePoliciesInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultyMethodDescriptor =
+          ApiMethodDescriptor.<ReportHostAsFaultyInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/ReportHostAsFaulty")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ReportHostAsFaultyInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/reportHostAsFaulty",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportHostAsFaultyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportHostAsFaultyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "instancesReportHostAsFaultyRequestResource",
+                                      request.getInstancesReportHostAsFaultyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ReportHostAsFaultyInstanceRequest request, Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getZone());
@@ -1745,6 +1860,63 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetSecurityPolicyInstanceRequest, Operation>
+      setSecurityPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetSecurityPolicyInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetSecurityPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetSecurityPolicyInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setSecurityPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetSecurityPolicyInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "instancesSetSecurityPolicyRequestResource",
+                                      request.getInstancesSetSecurityPolicyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetSecurityPolicyInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetServiceAccountInstanceRequest, Operation>
       setServiceAccountMethodDescriptor =
           ApiMethodDescriptor.<SetServiceAccountInstanceRequest, Operation>newBuilder()
@@ -1944,6 +2116,12 @@ public class HttpJsonInstancesStub extends InstancesStub {
                                 serializer = ProtoRestSerializer.create();
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            if (request.hasWithExtendedNotifications()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "withExtendedNotifications",
+                                  request.getWithExtendedNotifications());
                             }
                             return fields;
                           })
@@ -2573,10 +2751,18 @@ public class HttpJsonInstancesStub extends InstancesStub {
       listReferrersCallable;
   private final UnaryCallable<ListReferrersInstancesRequest, ListReferrersPagedResponse>
       listReferrersPagedCallable;
+  private final UnaryCallable<PerformMaintenanceInstanceRequest, Operation>
+      performMaintenanceCallable;
+  private final OperationCallable<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationCallable;
   private final UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable;
   private final OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationCallable;
+  private final UnaryCallable<ReportHostAsFaultyInstanceRequest, Operation>
+      reportHostAsFaultyCallable;
+  private final OperationCallable<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationCallable;
   private final UnaryCallable<ResetInstanceRequest, Operation> resetCallable;
   private final OperationCallable<ResetInstanceRequest, Operation, Operation>
       resetOperationCallable;
@@ -2618,6 +2804,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
   private final UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable;
   private final OperationCallable<SetSchedulingInstanceRequest, Operation, Operation>
       setSchedulingOperationCallable;
+  private final UnaryCallable<SetSecurityPolicyInstanceRequest, Operation>
+      setSecurityPolicyCallable;
+  private final OperationCallable<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable;
   private final UnaryCallable<SetServiceAccountInstanceRequest, Operation>
       setServiceAccountCallable;
   private final OperationCallable<SetServiceAccountInstanceRequest, Operation, Operation>
@@ -2953,10 +3143,38 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<PerformMaintenanceInstanceRequest, Operation>
+        performMaintenanceTransportSettings =
+            HttpJsonCallSettings.<PerformMaintenanceInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(performMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesTransportSettings =
             HttpJsonCallSettings.<RemoveResourcePoliciesInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(removeResourcePoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<ReportHostAsFaultyInstanceRequest, Operation>
+        reportHostAsFaultyTransportSettings =
+            HttpJsonCallSettings.<ReportHostAsFaultyInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(reportHostAsFaultyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -3144,6 +3362,20 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SetSecurityPolicyInstanceRequest, Operation>
+        setSecurityPolicyTransportSettings =
+            HttpJsonCallSettings.<SetSecurityPolicyInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(setSecurityPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SetServiceAccountInstanceRequest, Operation>
         setServiceAccountTransportSettings =
             HttpJsonCallSettings.<SetServiceAccountInstanceRequest, Operation>newBuilder()
@@ -3462,6 +3694,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
     this.listReferrersPagedCallable =
         callableFactory.createPagedCallable(
             listReferrersTransportSettings, settings.listReferrersSettings(), clientContext);
+    this.performMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceSettings(),
+            clientContext);
+    this.performMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.removeResourcePoliciesCallable =
         callableFactory.createUnaryCallable(
             removeResourcePoliciesTransportSettings,
@@ -3471,6 +3714,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
         callableFactory.createOperationCallable(
             removeResourcePoliciesTransportSettings,
             settings.removeResourcePoliciesOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.reportHostAsFaultyCallable =
+        callableFactory.createUnaryCallable(
+            reportHostAsFaultyTransportSettings,
+            settings.reportHostAsFaultySettings(),
+            clientContext);
+    this.reportHostAsFaultyOperationCallable =
+        callableFactory.createOperationCallable(
+            reportHostAsFaultyTransportSettings,
+            settings.reportHostAsFaultyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.resetCallable =
@@ -3586,6 +3840,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
         callableFactory.createOperationCallable(
             setSchedulingTransportSettings,
             settings.setSchedulingOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.setSecurityPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicySettings(),
+            clientContext);
+    this.setSecurityPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            setSecurityPolicyTransportSettings,
+            settings.setSecurityPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.setServiceAccountCallable =
@@ -3752,7 +4017,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(listReferrersMethodDescriptor);
+    methodDescriptors.add(performMaintenanceMethodDescriptor);
     methodDescriptors.add(removeResourcePoliciesMethodDescriptor);
+    methodDescriptors.add(reportHostAsFaultyMethodDescriptor);
     methodDescriptors.add(resetMethodDescriptor);
     methodDescriptors.add(resumeMethodDescriptor);
     methodDescriptors.add(sendDiagnosticInterruptMethodDescriptor);
@@ -3766,6 +4033,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
     methodDescriptors.add(setMinCpuPlatformMethodDescriptor);
     methodDescriptors.add(setNameMethodDescriptor);
     methodDescriptors.add(setSchedulingMethodDescriptor);
+    methodDescriptors.add(setSecurityPolicyMethodDescriptor);
     methodDescriptors.add(setServiceAccountMethodDescriptor);
     methodDescriptors.add(setShieldedInstanceIntegrityPolicyMethodDescriptor);
     methodDescriptors.add(setTagsMethodDescriptor);
@@ -3944,6 +4212,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
   }
 
   @Override
+  public UnaryCallable<PerformMaintenanceInstanceRequest, Operation> performMaintenanceCallable() {
+    return performMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    return performMaintenanceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable() {
     return removeResourcePoliciesCallable;
@@ -3953,6 +4232,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationCallable() {
     return removeResourcePoliciesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReportHostAsFaultyInstanceRequest, Operation> reportHostAsFaultyCallable() {
+    return reportHostAsFaultyCallable;
+  }
+
+  @Override
+  public OperationCallable<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationCallable() {
+    return reportHostAsFaultyOperationCallable;
   }
 
   @Override
@@ -4086,6 +4376,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public OperationCallable<SetSchedulingInstanceRequest, Operation, Operation>
       setSchedulingOperationCallable() {
     return setSchedulingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetSecurityPolicyInstanceRequest, Operation> setSecurityPolicyCallable() {
+    return setSecurityPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    return setSecurityPolicyOperationCallable;
   }
 
   @Override

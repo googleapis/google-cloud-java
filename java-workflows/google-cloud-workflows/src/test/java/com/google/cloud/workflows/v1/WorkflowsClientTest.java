@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.workflows.v1;
 
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListLocationsPagedResponse;
+import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowRevisionsPagedResponse;
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -40,6 +41,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -197,6 +199,11 @@ public class WorkflowsClientTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockWorkflows.addResponse(expectedResponse);
 
@@ -245,6 +252,11 @@ public class WorkflowsClientTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockWorkflows.addResponse(expectedResponse);
 
@@ -293,6 +305,11 @@ public class WorkflowsClientTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -355,6 +372,11 @@ public class WorkflowsClientTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -501,6 +523,11 @@ public class WorkflowsClientTest {
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setStateError(Workflow.StateError.newBuilder().build())
             .putAllUserEnvVars(new HashMap<String, String>())
+            .setExecutionHistoryLevel(ExecutionHistoryLevel.forNumber(0))
+            .addAllAllKmsKeys(new ArrayList<String>())
+            .addAllAllKmsKeysVersions(new ArrayList<String>())
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -542,6 +569,63 @@ public class WorkflowsClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listWorkflowRevisionsTest() throws Exception {
+    Workflow responsesElement = Workflow.newBuilder().build();
+    ListWorkflowRevisionsResponse expectedResponse =
+        ListWorkflowRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllWorkflows(Arrays.asList(responsesElement))
+            .build();
+    mockWorkflows.addResponse(expectedResponse);
+
+    ListWorkflowRevisionsRequest request =
+        ListWorkflowRevisionsRequest.newBuilder()
+            .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListWorkflowRevisionsPagedResponse pagedListResponse = client.listWorkflowRevisions(request);
+
+    List<Workflow> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getWorkflowsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockWorkflows.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListWorkflowRevisionsRequest actualRequest =
+        ((ListWorkflowRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listWorkflowRevisionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockWorkflows.addException(exception);
+
+    try {
+      ListWorkflowRevisionsRequest request =
+          ListWorkflowRevisionsRequest.newBuilder()
+              .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listWorkflowRevisions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

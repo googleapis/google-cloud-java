@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,17 +96,14 @@ public class SourceName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationSourceBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderSourceBuilder newFolderSourceBuilder() {
     return new FolderSourceBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectSourceBuilder newProjectSourceBuilder() {
     return new ProjectSourceBuilder();
   }
@@ -120,17 +116,14 @@ public class SourceName implements ResourceName {
     return newBuilder().setOrganization(organization).setSource(source).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SourceName ofOrganizationSourceName(String organization, String source) {
     return newBuilder().setOrganization(organization).setSource(source).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SourceName ofFolderSourceName(String folder, String source) {
     return newFolderSourceBuilder().setFolder(folder).setSource(source).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SourceName ofProjectSourceName(String project, String source) {
     return newProjectSourceBuilder().setProject(project).setSource(source).build();
   }
@@ -139,17 +132,14 @@ public class SourceName implements ResourceName {
     return newBuilder().setOrganization(organization).setSource(source).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationSourceName(String organization, String source) {
     return newBuilder().setOrganization(organization).setSource(source).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderSourceName(String folder, String source) {
     return newFolderSourceBuilder().setFolder(folder).setSource(source).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectSourceName(String project, String source) {
     return newProjectSourceBuilder().setProject(project).setSource(source).build().toString();
   }
@@ -232,7 +222,7 @@ public class SourceName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (o == this) {
       return true;
     }
@@ -290,7 +280,8 @@ public class SourceName implements ResourceName {
     private Builder(SourceName sourceName) {
       Preconditions.checkArgument(
           Objects.equals(sourceName.pathTemplate, ORGANIZATION_SOURCE),
-          "toBuilder is only supported when SourceName has the pattern of organizations/{organization}/sources/{source}");
+          "toBuilder is only supported when SourceName has the pattern of"
+              + " organizations/{organization}/sources/{source}");
       this.organization = sourceName.organization;
       this.source = sourceName.source;
     }
@@ -301,7 +292,6 @@ public class SourceName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/sources/{source}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderSourceBuilder {
     private String folder;
     private String source;
@@ -332,7 +322,6 @@ public class SourceName implements ResourceName {
   }
 
   /** Builder for projects/{project}/sources/{source}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectSourceBuilder {
     private String project;
     private String source;

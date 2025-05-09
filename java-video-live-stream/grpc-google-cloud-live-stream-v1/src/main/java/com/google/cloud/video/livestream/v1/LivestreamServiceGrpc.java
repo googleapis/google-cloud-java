@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -769,6 +769,186 @@ public final class LivestreamServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.ListClipsRequest,
+          com.google.cloud.video.livestream.v1.ListClipsResponse>
+      getListClipsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListClips",
+      requestType = com.google.cloud.video.livestream.v1.ListClipsRequest.class,
+      responseType = com.google.cloud.video.livestream.v1.ListClipsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.ListClipsRequest,
+          com.google.cloud.video.livestream.v1.ListClipsResponse>
+      getListClipsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.ListClipsRequest,
+            com.google.cloud.video.livestream.v1.ListClipsResponse>
+        getListClipsMethod;
+    if ((getListClipsMethod = LivestreamServiceGrpc.getListClipsMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getListClipsMethod = LivestreamServiceGrpc.getListClipsMethod) == null) {
+          LivestreamServiceGrpc.getListClipsMethod =
+              getListClipsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.ListClipsRequest,
+                          com.google.cloud.video.livestream.v1.ListClipsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListClips"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.ListClipsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.ListClipsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("ListClips"))
+                      .build();
+        }
+      }
+    }
+    return getListClipsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.GetClipRequest,
+          com.google.cloud.video.livestream.v1.Clip>
+      getGetClipMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetClip",
+      requestType = com.google.cloud.video.livestream.v1.GetClipRequest.class,
+      responseType = com.google.cloud.video.livestream.v1.Clip.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.GetClipRequest,
+          com.google.cloud.video.livestream.v1.Clip>
+      getGetClipMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.GetClipRequest,
+            com.google.cloud.video.livestream.v1.Clip>
+        getGetClipMethod;
+    if ((getGetClipMethod = LivestreamServiceGrpc.getGetClipMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getGetClipMethod = LivestreamServiceGrpc.getGetClipMethod) == null) {
+          LivestreamServiceGrpc.getGetClipMethod =
+              getGetClipMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.GetClipRequest,
+                          com.google.cloud.video.livestream.v1.Clip>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetClip"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.GetClipRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.Clip.getDefaultInstance()))
+                      .setSchemaDescriptor(new LivestreamServiceMethodDescriptorSupplier("GetClip"))
+                      .build();
+        }
+      }
+    }
+    return getGetClipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.CreateClipRequest, com.google.longrunning.Operation>
+      getCreateClipMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateClip",
+      requestType = com.google.cloud.video.livestream.v1.CreateClipRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.CreateClipRequest, com.google.longrunning.Operation>
+      getCreateClipMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.CreateClipRequest,
+            com.google.longrunning.Operation>
+        getCreateClipMethod;
+    if ((getCreateClipMethod = LivestreamServiceGrpc.getCreateClipMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getCreateClipMethod = LivestreamServiceGrpc.getCreateClipMethod) == null) {
+          LivestreamServiceGrpc.getCreateClipMethod =
+              getCreateClipMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.CreateClipRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateClip"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.CreateClipRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("CreateClip"))
+                      .build();
+        }
+      }
+    }
+    return getCreateClipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.DeleteClipRequest, com.google.longrunning.Operation>
+      getDeleteClipMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteClip",
+      requestType = com.google.cloud.video.livestream.v1.DeleteClipRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.DeleteClipRequest, com.google.longrunning.Operation>
+      getDeleteClipMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.DeleteClipRequest,
+            com.google.longrunning.Operation>
+        getDeleteClipMethod;
+    if ((getDeleteClipMethod = LivestreamServiceGrpc.getDeleteClipMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getDeleteClipMethod = LivestreamServiceGrpc.getDeleteClipMethod) == null) {
+          LivestreamServiceGrpc.getDeleteClipMethod =
+              getDeleteClipMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.DeleteClipRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteClip"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.DeleteClipRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("DeleteClip"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteClipMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.video.livestream.v1.CreateAssetRequest, com.google.longrunning.Operation>
       getCreateAssetMethod;
 
@@ -1051,6 +1231,19 @@ public final class LivestreamServiceGrpc {
     return LivestreamServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LivestreamServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LivestreamServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LivestreamServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public LivestreamServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LivestreamServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LivestreamServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1316,6 +1509,60 @@ public final class LivestreamServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all clips in the specified channel.
+     * </pre>
+     */
+    default void listClips(
+        com.google.cloud.video.livestream.v1.ListClipsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListClipsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListClipsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified clip.
+     * </pre>
+     */
+    default void getClip(
+        com.google.cloud.video.livestream.v1.GetClipRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Clip> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClipMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a clip with the provided clip ID in the specified channel.
+     * </pre>
+     */
+    default void createClip(
+        com.google.cloud.video.livestream.v1.CreateClipRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateClipMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified clip job resource. This method only deletes the clip
+     * job and does not delete the VOD clip stored in the GCS.
+     * </pre>
+     */
+    default void deleteClip(
+        com.google.cloud.video.livestream.v1.DeleteClipRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteClipMethod(), responseObserver);
     }
 
     /**
@@ -1701,6 +1948,64 @@ public final class LivestreamServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of all clips in the specified channel.
+     * </pre>
+     */
+    public void listClips(
+        com.google.cloud.video.livestream.v1.ListClipsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListClipsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListClipsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified clip.
+     * </pre>
+     */
+    public void getClip(
+        com.google.cloud.video.livestream.v1.GetClipRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Clip> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetClipMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a clip with the provided clip ID in the specified channel.
+     * </pre>
+     */
+    public void createClip(
+        com.google.cloud.video.livestream.v1.CreateClipRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateClipMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified clip job resource. This method only deletes the clip
+     * job and does not delete the VOD clip stored in the GCS.
+     * </pre>
+     */
+    public void deleteClip(
+        com.google.cloud.video.livestream.v1.DeleteClipRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteClipMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a Asset with the provided unique ID in the specified
      * region.
      * </pre>
@@ -1790,6 +2095,374 @@ public final class LivestreamServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LivestreamService.
+   *
+   * <pre>
+   * Using Live Stream API, you can generate live streams in the various
+   * renditions and streaming formats. The streaming format include HTTP Live
+   * Streaming (HLS) and Dynamic Adaptive Streaming over HTTP (DASH). You can send
+   * a source stream in the various ways, including Real-Time Messaging
+   * Protocol (RTMP) and Secure Reliable Transport (SRT).
+   * </pre>
+   */
+  public static final class LivestreamServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LivestreamServiceBlockingV2Stub> {
+    private LivestreamServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LivestreamServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LivestreamServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a channel with the provided unique ID in the specified
+     * region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createChannel(
+        com.google.cloud.video.livestream.v1.CreateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all channels in the specified region.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListChannelsResponse listChannels(
+        com.google.cloud.video.livestream.v1.ListChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Channel getChannel(
+        com.google.cloud.video.livestream.v1.GetChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteChannel(
+        com.google.cloud.video.livestream.v1.DeleteChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateChannel(
+        com.google.cloud.video.livestream.v1.UpdateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts the specified channel. Part of the video pipeline will be created
+     * only when the StartChannel request is received by the server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startChannel(
+        com.google.cloud.video.livestream.v1.StartChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops the specified channel. Part of the video pipeline will be released
+     * when the StopChannel request is received by the server.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopChannel(
+        com.google.cloud.video.livestream.v1.StopChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an input with the provided unique ID in the specified region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInput(
+        com.google.cloud.video.livestream.v1.CreateInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all inputs in the specified region.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListInputsResponse listInputs(
+        com.google.cloud.video.livestream.v1.ListInputsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInputsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified input.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Input getInput(
+        com.google.cloud.video.livestream.v1.GetInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified input.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInput(
+        com.google.cloud.video.livestream.v1.DeleteInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified input.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInput(
+        com.google.cloud.video.livestream.v1.UpdateInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an event with the provided unique ID in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Event createEvent(
+        com.google.cloud.video.livestream.v1.CreateEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all events in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListEventsResponse listEvents(
+        com.google.cloud.video.livestream.v1.ListEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified event.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Event getEvent(
+        com.google.cloud.video.livestream.v1.GetEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified event.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEvent(
+        com.google.cloud.video.livestream.v1.DeleteEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all clips in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListClipsResponse listClips(
+        com.google.cloud.video.livestream.v1.ListClipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified clip.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Clip getClip(
+        com.google.cloud.video.livestream.v1.GetClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a clip with the provided clip ID in the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createClip(
+        com.google.cloud.video.livestream.v1.CreateClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified clip job resource. This method only deletes the clip
+     * job and does not delete the VOD clip stored in the GCS.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteClip(
+        com.google.cloud.video.livestream.v1.DeleteClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Asset with the provided unique ID in the specified
+     * region.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAsset(
+        com.google.cloud.video.livestream.v1.CreateAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified asset if it is not used.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAsset(
+        com.google.cloud.video.livestream.v1.DeleteAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified asset.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Asset getAsset(
+        com.google.cloud.video.livestream.v1.GetAssetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAssetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all assets in the specified region.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListAssetsResponse listAssets(
+        com.google.cloud.video.livestream.v1.ListAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified pool.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Pool getPool(
+        com.google.cloud.video.livestream.v1.GetPoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPoolMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified pool.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePool(
+        com.google.cloud.video.livestream.v1.UpdatePoolRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePoolMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service LivestreamService.
    *
    * <pre>
    * Using Live Stream API, you can generate live streams in the various
@@ -2021,6 +2694,59 @@ public final class LivestreamServiceGrpc {
         com.google.cloud.video.livestream.v1.DeleteEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all clips in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListClipsResponse listClips(
+        com.google.cloud.video.livestream.v1.ListClipsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClipsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified clip.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.Clip getClip(
+        com.google.cloud.video.livestream.v1.GetClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a clip with the provided clip ID in the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createClip(
+        com.google.cloud.video.livestream.v1.CreateClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified clip job resource. This method only deletes the clip
+     * job and does not delete the VOD clip stored in the GCS.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteClip(
+        com.google.cloud.video.livestream.v1.DeleteClipRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClipMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2348,6 +3074,61 @@ public final class LivestreamServiceGrpc {
      *
      *
      * <pre>
+     * Returns a list of all clips in the specified channel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.livestream.v1.ListClipsResponse>
+        listClips(com.google.cloud.video.livestream.v1.ListClipsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListClipsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified clip.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.livestream.v1.Clip>
+        getClip(com.google.cloud.video.livestream.v1.GetClipRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetClipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a clip with the provided clip ID in the specified channel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createClip(com.google.cloud.video.livestream.v1.CreateClipRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateClipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified clip job resource. This method only deletes the clip
+     * job and does not delete the VOD clip stored in the GCS.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteClip(com.google.cloud.video.livestream.v1.DeleteClipRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteClipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a Asset with the provided unique ID in the specified
      * region.
      * </pre>
@@ -2443,12 +3224,16 @@ public final class LivestreamServiceGrpc {
   private static final int METHODID_LIST_EVENTS = 13;
   private static final int METHODID_GET_EVENT = 14;
   private static final int METHODID_DELETE_EVENT = 15;
-  private static final int METHODID_CREATE_ASSET = 16;
-  private static final int METHODID_DELETE_ASSET = 17;
-  private static final int METHODID_GET_ASSET = 18;
-  private static final int METHODID_LIST_ASSETS = 19;
-  private static final int METHODID_GET_POOL = 20;
-  private static final int METHODID_UPDATE_POOL = 21;
+  private static final int METHODID_LIST_CLIPS = 16;
+  private static final int METHODID_GET_CLIP = 17;
+  private static final int METHODID_CREATE_CLIP = 18;
+  private static final int METHODID_DELETE_CLIP = 19;
+  private static final int METHODID_CREATE_ASSET = 20;
+  private static final int METHODID_DELETE_ASSET = 21;
+  private static final int METHODID_GET_ASSET = 22;
+  private static final int METHODID_LIST_ASSETS = 23;
+  private static final int METHODID_GET_POOL = 24;
+  private static final int METHODID_UPDATE_POOL = 25;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2554,6 +3339,28 @@ public final class LivestreamServiceGrpc {
           serviceImpl.deleteEvent(
               (com.google.cloud.video.livestream.v1.DeleteEventRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_CLIPS:
+          serviceImpl.listClips(
+              (com.google.cloud.video.livestream.v1.ListClipsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListClipsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_CLIP:
+          serviceImpl.getClip(
+              (com.google.cloud.video.livestream.v1.GetClipRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Clip>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CLIP:
+          serviceImpl.createClip(
+              (com.google.cloud.video.livestream.v1.CreateClipRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_CLIP:
+          serviceImpl.deleteClip(
+              (com.google.cloud.video.livestream.v1.DeleteClipRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_ASSET:
           serviceImpl.createAsset(
@@ -2706,6 +3513,31 @@ public final class LivestreamServiceGrpc {
                     com.google.cloud.video.livestream.v1.DeleteEventRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_EVENT)))
         .addMethod(
+            getListClipsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.ListClipsRequest,
+                    com.google.cloud.video.livestream.v1.ListClipsResponse>(
+                    service, METHODID_LIST_CLIPS)))
+        .addMethod(
+            getGetClipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.GetClipRequest,
+                    com.google.cloud.video.livestream.v1.Clip>(service, METHODID_GET_CLIP)))
+        .addMethod(
+            getCreateClipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.CreateClipRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CLIP)))
+        .addMethod(
+            getDeleteClipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.DeleteClipRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CLIP)))
+        .addMethod(
             getCreateAssetMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2809,6 +3641,10 @@ public final class LivestreamServiceGrpc {
                       .addMethod(getListEventsMethod())
                       .addMethod(getGetEventMethod())
                       .addMethod(getDeleteEventMethod())
+                      .addMethod(getListClipsMethod())
+                      .addMethod(getGetClipMethod())
+                      .addMethod(getCreateClipMethod())
+                      .addMethod(getDeleteClipMethod())
                       .addMethod(getCreateAssetMethod())
                       .addMethod(getDeleteAssetMethod())
                       .addMethod(getGetAssetMethod())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -524,6 +524,19 @@ public final class TranslationServiceGrpc {
     return TranslationServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TranslationServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TranslationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TranslationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TranslationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TranslationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TranslationServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -940,6 +953,172 @@ public final class TranslationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TranslationService.
+   *
+   * <pre>
+   * Provides natural language translation operations.
+   * </pre>
+   */
+  public static final class TranslationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TranslationServiceBlockingV2Stub> {
+    private TranslationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TranslationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TranslationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates input text and returns translated text.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.TranslateTextResponse translateText(
+        com.google.cloud.translate.v3beta1.TranslateTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTranslateTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detects the language of text within a request.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.DetectLanguageResponse detectLanguage(
+        com.google.cloud.translate.v3beta1.DetectLanguageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDetectLanguageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of supported languages for translation.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.SupportedLanguages getSupportedLanguages(
+        com.google.cloud.translate.v3beta1.GetSupportedLanguagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSupportedLanguagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates documents in synchronous mode.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.TranslateDocumentResponse translateDocument(
+        com.google.cloud.translate.v3beta1.TranslateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTranslateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates a large volume of text in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can
+     * use google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchTranslateText(
+        com.google.cloud.translate.v3beta1.BatchTranslateTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchTranslateTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Translates a large volume of document in asynchronous batch mode.
+     * This function provides real-time output as the inputs are being processed.
+     * If caller cancels a request, the partial results (for an input file, it's
+     * all or nothing) may still be available on the specified output location.
+     * This call returns immediately and you can use
+     * google.longrunning.Operation.name to poll the status of the call.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchTranslateDocument(
+        com.google.cloud.translate.v3beta1.BatchTranslateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchTranslateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a glossary and returns the long-running operation. Returns
+     * NOT_FOUND, if the project doesn't exist.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGlossary(
+        com.google.cloud.translate.v3beta1.CreateGlossaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't
+     * exist.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.ListGlossariesResponse listGlossaries(
+        com.google.cloud.translate.v3beta1.ListGlossariesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGlossariesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a glossary. Returns NOT_FOUND, if the glossary doesn't
+     * exist.
+     * </pre>
+     */
+    public com.google.cloud.translate.v3beta1.Glossary getGlossary(
+        com.google.cloud.translate.v3beta1.GetGlossaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGlossaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a glossary, or cancels glossary construction
+     * if the glossary isn't created yet.
+     * Returns NOT_FOUND, if the glossary doesn't exist.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGlossary(
+        com.google.cloud.translate.v3beta1.DeleteGlossaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGlossaryMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TranslationService.
    *
    * <pre>
    * Provides natural language translation operations.

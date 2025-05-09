@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 package com.google.cloud.discoveryengine.v1beta.stub;
 
+import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchLitePagedResponse;
 import static com.google.cloud.discoveryengine.v1beta.SearchServiceClient.SearchPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -52,8 +53,18 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<SearchRequest, SearchResponse> searchLiteMethodDescriptor =
+      MethodDescriptor.<SearchRequest, SearchResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.discoveryengine.v1beta.SearchService/SearchLite")
+          .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<SearchRequest, SearchResponse> searchCallable;
   private final UnaryCallable<SearchRequest, SearchPagedResponse> searchPagedCallable;
+  private final UnaryCallable<SearchRequest, SearchResponse> searchLiteCallable;
+  private final UnaryCallable<SearchRequest, SearchLitePagedResponse> searchLitePagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -107,6 +118,16 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<SearchRequest, SearchResponse> searchLiteTransportSettings =
+        GrpcCallSettings.<SearchRequest, SearchResponse>newBuilder()
+            .setMethodDescriptor(searchLiteMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                  return builder.build();
+                })
+            .build();
 
     this.searchCallable =
         callableFactory.createUnaryCallable(
@@ -114,6 +135,12 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
     this.searchPagedCallable =
         callableFactory.createPagedCallable(
             searchTransportSettings, settings.searchSettings(), clientContext);
+    this.searchLiteCallable =
+        callableFactory.createUnaryCallable(
+            searchLiteTransportSettings, settings.searchLiteSettings(), clientContext);
+    this.searchLitePagedCallable =
+        callableFactory.createPagedCallable(
+            searchLiteTransportSettings, settings.searchLiteSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -131,6 +158,16 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
   @Override
   public UnaryCallable<SearchRequest, SearchPagedResponse> searchPagedCallable() {
     return searchPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchRequest, SearchResponse> searchLiteCallable() {
+    return searchLiteCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchRequest, SearchLitePagedResponse> searchLitePagedCallable() {
+    return searchLitePagedCallable;
   }
 
   @Override

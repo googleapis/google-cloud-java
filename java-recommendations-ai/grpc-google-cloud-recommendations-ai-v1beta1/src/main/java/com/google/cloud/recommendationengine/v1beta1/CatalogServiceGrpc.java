@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -330,6 +330,19 @@ public final class CatalogServiceGrpc {
     return CatalogServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CatalogServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CatalogServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CatalogServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CatalogServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CatalogServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CatalogServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -605,6 +618,109 @@ public final class CatalogServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CatalogService.
+   *
+   * <pre>
+   * Service for ingesting catalog information of the customer's website.
+   * </pre>
+   */
+  public static final class CatalogServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CatalogServiceBlockingV2Stub> {
+    private CatalogServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CatalogServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CatalogServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a catalog item.
+     * </pre>
+     */
+    public com.google.cloud.recommendationengine.v1beta1.CatalogItem createCatalogItem(
+        com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCatalogItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific catalog item.
+     * </pre>
+     */
+    public com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItem(
+        com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCatalogItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a list of catalog items.
+     * </pre>
+     */
+    public com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse listCatalogItems(
+        com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCatalogItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a catalog item. Partial updating is supported. Non-existing
+     * items will be created.
+     * </pre>
+     */
+    public com.google.cloud.recommendationengine.v1beta1.CatalogItem updateCatalogItem(
+        com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCatalogItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a catalog item.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCatalogItem(
+        com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCatalogItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of multiple catalog items. Request processing may be
+     * synchronous. No partial updating supported. Non-existing items will be
+     * created.
+     * Operation.response is of type ImportResponse. Note that it is
+     * possible for a subset of the items to be successfully updated.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importCatalogItems(
+        com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportCatalogItemsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CatalogService.
    *
    * <pre>
    * Service for ingesting catalog information of the customer's website.

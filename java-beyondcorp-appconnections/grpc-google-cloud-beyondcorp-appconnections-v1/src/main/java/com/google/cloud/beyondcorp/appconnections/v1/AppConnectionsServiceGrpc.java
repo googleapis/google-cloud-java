@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -356,6 +356,19 @@ public final class AppConnectionsServiceGrpc {
     return AppConnectionsServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AppConnectionsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AppConnectionsServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AppConnectionsServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AppConnectionsServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AppConnectionsServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AppConnectionsServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -650,6 +663,117 @@ public final class AppConnectionsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AppConnectionsService.
+   *
+   * <pre>
+   * API Overview:
+   * The `beyondcorp.googleapis.com` service implements the Google Cloud
+   * BeyondCorp API.
+   * Data Model:
+   * The AppConnectionsService exposes the following resources:
+   * * AppConnections, named as follows:
+   *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
+   * The AppConnectionsService service provides methods to manage
+   * (create/read/update/delete) BeyondCorp AppConnections.
+   * </pre>
+   */
+  public static final class AppConnectionsServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AppConnectionsServiceBlockingV2Stub> {
+    private AppConnectionsServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AppConnectionsServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AppConnectionsServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AppConnections in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsResponse
+        listAppConnections(
+            com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAppConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AppConnection.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.appconnections.v1.AppConnection getAppConnection(
+        com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAppConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AppConnection in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAppConnection(
+        com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAppConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AppConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAppConnection(
+        com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAppConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AppConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAppConnection(
+        com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAppConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolves AppConnections details for a given AppConnector.
+     * An internal method called by a connector to find AppConnections to connect
+     * to.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
+        resolveAppConnections(
+            com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResolveAppConnectionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AppConnectionsService.
    *
    * <pre>
    * API Overview:

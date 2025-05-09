@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,19 +55,59 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateJobFromTemplate</td>
+ *      <td><p> Creates a Cloud Dataflow job from a template. Do not enter confidential information when you supply string values using the API.
+ * <p>  To create a job, we recommend using `projects.locations.templates.create` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.create` is not recommended, because your job will always start in `us-central1`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createJobFromTemplate(CreateJobFromTemplateRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createJobFromTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> LaunchTemplate</td>
+ *      <td><p> Launches a template.
+ * <p>  To launch a template, we recommend using `projects.locations.templates.launch` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.launch` is not recommended, because jobs launched from the template will always start in `us-central1`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> launchTemplate(LaunchTemplateRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> launchTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTemplate</td>
+ *      <td><p> Get the template associated with a template.
+ * <p>  To get the template, we recommend using `projects.locations.templates.get` with a [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using `projects.templates.get` is not recommended, because only templates that are running in `us-central1` are retrieved.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTemplate(GetTemplateRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -178,7 +218,13 @@ public class TemplatesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Cloud Dataflow job from a template.
+   * Creates a Cloud Dataflow job from a template. Do not enter confidential information when you
+   * supply string values using the API.
+   *
+   * <p>To create a job, we recommend using `projects.locations.templates.create` with a [regional
+   * endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+   * `projects.templates.create` is not recommended, because your job will always start in
+   * `us-central1`.
    *
    * <p>Sample code:
    *
@@ -210,7 +256,13 @@ public class TemplatesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a Cloud Dataflow job from a template.
+   * Creates a Cloud Dataflow job from a template. Do not enter confidential information when you
+   * supply string values using the API.
+   *
+   * <p>To create a job, we recommend using `projects.locations.templates.create` with a [regional
+   * endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+   * `projects.templates.create` is not recommended, because your job will always start in
+   * `us-central1`.
    *
    * <p>Sample code:
    *
@@ -242,7 +294,12 @@ public class TemplatesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Launch a template.
+   * Launches a template.
+   *
+   * <p>To launch a template, we recommend using `projects.locations.templates.launch` with a
+   * [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+   * `projects.templates.launch` is not recommended, because jobs launched from the template will
+   * always start in `us-central1`.
    *
    * <p>Sample code:
    *
@@ -273,7 +330,12 @@ public class TemplatesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Launch a template.
+   * Launches a template.
+   *
+   * <p>To launch a template, we recommend using `projects.locations.templates.launch` with a
+   * [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+   * `projects.templates.launch` is not recommended, because jobs launched from the template will
+   * always start in `us-central1`.
    *
    * <p>Sample code:
    *
@@ -307,6 +369,11 @@ public class TemplatesServiceClient implements BackgroundResource {
   /**
    * Get the template associated with a template.
    *
+   * <p>To get the template, we recommend using `projects.locations.templates.get` with a [regional
+   * endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+   * `projects.templates.get` is not recommended, because only templates that are running in
+   * `us-central1` are retrieved.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -335,6 +402,11 @@ public class TemplatesServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get the template associated with a template.
+   *
+   * <p>To get the template, we recommend using `projects.locations.templates.get` with a [regional
+   * endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints). Using
+   * `projects.templates.get` is not recommended, because only templates that are running in
+   * `us-central1` are retrieved.
    *
    * <p>Sample code:
    *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -351,6 +351,19 @@ public final class UptimeCheckServiceGrpc {
     return UptimeCheckServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static UptimeCheckServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<UptimeCheckServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<UptimeCheckServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public UptimeCheckServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new UptimeCheckServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return UptimeCheckServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -476,7 +489,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IP addresses that checkers run from
+     * Returns the list of IP addresses that checkers run from.
      * </pre>
      */
     default void listUptimeCheckIps(
@@ -628,7 +641,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IP addresses that checkers run from
+     * Returns the list of IP addresses that checkers run from.
      * </pre>
      */
     public void listUptimeCheckIps(
@@ -644,6 +657,118 @@ public final class UptimeCheckServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service UptimeCheckService.
+   *
+   * <pre>
+   * The UptimeCheckService API is used to manage (list, create, delete, edit)
+   * Uptime check configurations in the Cloud Monitoring product. An Uptime
+   * check is a piece of configuration that determines which resources and
+   * services to monitor for availability. These configurations can also be
+   * configured interactively by navigating to the [Cloud console]
+   * (https://console.cloud.google.com), selecting the appropriate project,
+   * clicking on "Monitoring" on the left-hand side to navigate to Cloud
+   * Monitoring, and then clicking on "Uptime".
+   * </pre>
+   */
+  public static final class UptimeCheckServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<UptimeCheckServiceBlockingV2Stub> {
+    private UptimeCheckServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected UptimeCheckServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new UptimeCheckServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the existing valid Uptime check configurations for the project
+     * (leaving out any invalid configurations).
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListUptimeCheckConfigsResponse listUptimeCheckConfigs(
+        com.google.monitoring.v3.ListUptimeCheckConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUptimeCheckConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single Uptime check configuration.
+     * </pre>
+     */
+    public com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig(
+        com.google.monitoring.v3.GetUptimeCheckConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUptimeCheckConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Uptime check configuration.
+     * </pre>
+     */
+    public com.google.monitoring.v3.UptimeCheckConfig createUptimeCheckConfig(
+        com.google.monitoring.v3.CreateUptimeCheckConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUptimeCheckConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Uptime check configuration. You can either replace the entire
+     * configuration with a new one or replace only certain fields in the current
+     * configuration by specifying the fields to be updated via `updateMask`.
+     * Returns the updated configuration.
+     * </pre>
+     */
+    public com.google.monitoring.v3.UptimeCheckConfig updateUptimeCheckConfig(
+        com.google.monitoring.v3.UpdateUptimeCheckConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUptimeCheckConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Uptime check configuration. Note that this method will fail
+     * if the Uptime check configuration is referenced by an alert policy or
+     * other dependent configs that would be rendered invalid by the deletion.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUptimeCheckConfig(
+        com.google.monitoring.v3.DeleteUptimeCheckConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUptimeCheckConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of IP addresses that checkers run from.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListUptimeCheckIpsResponse listUptimeCheckIps(
+        com.google.monitoring.v3.ListUptimeCheckIpsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUptimeCheckIpsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service UptimeCheckService.
    *
    * <pre>
    * The UptimeCheckService API is used to manage (list, create, delete, edit)
@@ -744,7 +869,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IP addresses that checkers run from
+     * Returns the list of IP addresses that checkers run from.
      * </pre>
      */
     public com.google.monitoring.v3.ListUptimeCheckIpsResponse listUptimeCheckIps(
@@ -859,7 +984,7 @@ public final class UptimeCheckServiceGrpc {
      *
      *
      * <pre>
-     * Returns the list of IP addresses that checkers run from
+     * Returns the list of IP addresses that checkers run from.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

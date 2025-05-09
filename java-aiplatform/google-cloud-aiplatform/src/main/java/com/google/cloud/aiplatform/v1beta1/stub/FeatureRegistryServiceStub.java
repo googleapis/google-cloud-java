@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,8 @@
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureGroupsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorJobsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeatureMonitorsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListFeaturesPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.FeatureRegistryServiceClient.ListLocationsPagedResponse;
 
@@ -24,23 +26,40 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest;
+import com.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorJobRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureMonitorRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateFeatureRequest;
-import com.google.cloud.aiplatform.v1beta1.CreateRegistryFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.Feature;
 import com.google.cloud.aiplatform.v1beta1.FeatureGroup;
+import com.google.cloud.aiplatform.v1beta1.FeatureMonitor;
+import com.google.cloud.aiplatform.v1beta1.FeatureMonitorJob;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.GetFeatureMonitorJobRequest;
+import com.google.cloud.aiplatform.v1beta1.GetFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.GetFeatureRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeatureGroupsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeatureGroupsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorJobsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorJobsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListFeatureMonitorsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListFeaturesResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureGroupRequest;
+import com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdateFeatureMonitorRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -117,13 +136,26 @@ public abstract class FeatureRegistryServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteFeatureGroupCallable()");
   }
 
-  public OperationCallable<CreateFeatureRequest, Feature, CreateRegistryFeatureOperationMetadata>
+  public OperationCallable<CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
       createFeatureOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createFeatureOperationCallable()");
   }
 
   public UnaryCallable<CreateFeatureRequest, Operation> createFeatureCallable() {
     throw new UnsupportedOperationException("Not implemented: createFeatureCallable()");
+  }
+
+  public OperationCallable<
+          BatchCreateFeaturesRequest,
+          BatchCreateFeaturesResponse,
+          BatchCreateFeaturesOperationMetadata>
+      batchCreateFeaturesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateFeaturesOperationCallable()");
+  }
+
+  public UnaryCallable<BatchCreateFeaturesRequest, Operation> batchCreateFeaturesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateFeaturesCallable()");
   }
 
   public UnaryCallable<GetFeatureRequest, Feature> getFeatureCallable() {
@@ -154,6 +186,73 @@ public abstract class FeatureRegistryServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteFeatureRequest, Operation> deleteFeatureCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteFeatureCallable()");
+  }
+
+  public OperationCallable<
+          CreateFeatureMonitorRequest, FeatureMonitor, CreateFeatureMonitorOperationMetadata>
+      createFeatureMonitorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createFeatureMonitorOperationCallable()");
+  }
+
+  public UnaryCallable<CreateFeatureMonitorRequest, Operation> createFeatureMonitorCallable() {
+    throw new UnsupportedOperationException("Not implemented: createFeatureMonitorCallable()");
+  }
+
+  public UnaryCallable<GetFeatureMonitorRequest, FeatureMonitor> getFeatureMonitorCallable() {
+    throw new UnsupportedOperationException("Not implemented: getFeatureMonitorCallable()");
+  }
+
+  public UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsPagedResponse>
+      listFeatureMonitorsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFeatureMonitorsPagedCallable()");
+  }
+
+  public UnaryCallable<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse>
+      listFeatureMonitorsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFeatureMonitorsCallable()");
+  }
+
+  public OperationCallable<
+          UpdateFeatureMonitorRequest, FeatureMonitor, UpdateFeatureMonitorOperationMetadata>
+      updateFeatureMonitorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateFeatureMonitorOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateFeatureMonitorRequest, Operation> updateFeatureMonitorCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateFeatureMonitorCallable()");
+  }
+
+  public OperationCallable<DeleteFeatureMonitorRequest, Empty, DeleteOperationMetadata>
+      deleteFeatureMonitorOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteFeatureMonitorOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteFeatureMonitorRequest, Operation> deleteFeatureMonitorCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFeatureMonitorCallable()");
+  }
+
+  public UnaryCallable<CreateFeatureMonitorJobRequest, FeatureMonitorJob>
+      createFeatureMonitorJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createFeatureMonitorJobCallable()");
+  }
+
+  public UnaryCallable<GetFeatureMonitorJobRequest, FeatureMonitorJob>
+      getFeatureMonitorJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getFeatureMonitorJobCallable()");
+  }
+
+  public UnaryCallable<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsPagedResponse>
+      listFeatureMonitorJobsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listFeatureMonitorJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse>
+      listFeatureMonitorJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFeatureMonitorJobsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

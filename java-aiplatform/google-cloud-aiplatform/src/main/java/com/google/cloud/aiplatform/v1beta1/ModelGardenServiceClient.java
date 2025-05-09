@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,11 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.ModelGardenServiceStub;
@@ -37,6 +39,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -65,19 +69,212 @@ import javax.annotation.Generated;
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPublisherModel</td>
+ *      <td><p> Gets a Model Garden publisher model.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPublisherModel(GetPublisherModelRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPublisherModel(PublisherModelName name)
+ *           <li><p> getPublisherModel(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPublisherModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPublisherModels</td>
+ *      <td><p> Lists publisher models in Model Garden.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPublisherModels(ListPublisherModelsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPublisherModels(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPublisherModelsPagedCallable()
+ *           <li><p> listPublisherModelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Deploy</td>
+ *      <td><p> Deploys a model to a new endpoint.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deployAsync(DeployRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deployOperationCallable()
+ *           <li><p> deployCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeployPublisherModel</td>
+ *      <td><p> Deploys publisher models.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deployPublisherModelAsync(DeployPublisherModelRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deployPublisherModelOperationCallable()
+ *           <li><p> deployPublisherModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportPublisherModel</td>
+ *      <td><p> Exports a publisher model to a user provided Google Cloud Storage bucket.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportPublisherModelAsync(ExportPublisherModelRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportPublisherModelOperationCallable()
+ *           <li><p> exportPublisherModelCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CheckPublisherModelEulaAcceptance</td>
+ *      <td><p> Checks the EULA acceptance status of a publisher model.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> checkPublisherModelEulaAcceptance(CheckPublisherModelEulaAcceptanceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> checkPublisherModelEulaAcceptance(ProjectName parent, PublisherModelName publisherModel)
+ *           <li><p> checkPublisherModelEulaAcceptance(ProjectName parent, String publisherModel)
+ *           <li><p> checkPublisherModelEulaAcceptance(String parent, PublisherModelName publisherModel)
+ *           <li><p> checkPublisherModelEulaAcceptance(String parent, String publisherModel)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> checkPublisherModelEulaAcceptanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AcceptPublisherModelEula</td>
+ *      <td><p> Accepts the EULA acceptance status of a publisher model.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> acceptPublisherModelEula(AcceptPublisherModelEulaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> acceptPublisherModelEula(ProjectName parent, PublisherModelName publisherModel)
+ *           <li><p> acceptPublisherModelEula(ProjectName parent, String publisherModel)
+ *           <li><p> acceptPublisherModelEula(String parent, PublisherModelName publisherModel)
+ *           <li><p> acceptPublisherModelEula(String parent, String publisherModel)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> acceptPublisherModelEulaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified resource. Replacesany existing policy.
+ * <p> Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. Returns an empty policyif the resource exists and does not have a policy set.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource. If theresource does not exist, this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+ * <p> Note: This operation is designed to be used for buildingpermission-aware UIs and command-line tools, not for authorizationchecking. This operation may "fail open" without warning.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -125,6 +322,7 @@ import javax.annotation.Generated;
 public class ModelGardenServiceClient implements BackgroundResource {
   private final ModelGardenServiceSettings settings;
   private final ModelGardenServiceStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of ModelGardenServiceClient with default settings. */
   public static final ModelGardenServiceClient create() throws IOException {
@@ -156,11 +354,13 @@ public class ModelGardenServiceClient implements BackgroundResource {
   protected ModelGardenServiceClient(ModelGardenServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ModelGardenServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected ModelGardenServiceClient(ModelGardenServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   public final ModelGardenServiceSettings getSettings() {
@@ -169,6 +369,14 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
   public ModelGardenServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -246,6 +454,9 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setName(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setView(PublisherModelView.forNumber(0))
+   *           .setIsHuggingFaceModel(true)
+   *           .setHuggingFaceToken("huggingFaceToken74062599")
+   *           .setIncludeEquivalentModelGardenModelDeploymentConfigs(true)
    *           .build();
    *   PublisherModel response = modelGardenServiceClient.getPublisherModel(request);
    * }
@@ -276,6 +487,9 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setName(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setView(PublisherModelView.forNumber(0))
+   *           .setIsHuggingFaceModel(true)
+   *           .setHuggingFaceToken("huggingFaceToken74062599")
+   *           .setIncludeEquivalentModelGardenModelDeploymentConfigs(true)
    *           .build();
    *   ApiFuture<PublisherModel> future =
    *       modelGardenServiceClient.getPublisherModelCallable().futureCall(request);
@@ -341,6 +555,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setView(PublisherModelView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setListAllVersions(true)
    *           .build();
    *   for (PublisherModel element :
    *       modelGardenServiceClient.listPublisherModels(request).iterateAll()) {
@@ -379,6 +594,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setView(PublisherModelView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setListAllVersions(true)
    *           .build();
    *   ApiFuture<PublisherModel> future =
    *       modelGardenServiceClient.listPublisherModelsPagedCallable().futureCall(request);
@@ -416,6 +632,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *           .setView(PublisherModelView.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setListAllVersions(true)
    *           .build();
    *   while (true) {
    *     ListPublisherModelsResponse response =
@@ -436,6 +653,732 @@ public class ModelGardenServiceClient implements BackgroundResource {
   public final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
       listPublisherModelsCallable() {
     return stub.listPublisherModelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   DeployResponse response = modelGardenServiceClient.deployAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeployResponse, DeployOperationMetadata> deployAsync(
+      DeployRequest request) {
+    return deployOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<DeployResponse, DeployOperationMetadata> future =
+   *       modelGardenServiceClient.deployOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    return stub.deployOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys a model to a new endpoint.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployRequest request =
+   *       DeployRequest.newBuilder()
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModelConfig(DeployRequest.ModelConfig.newBuilder().build())
+   *           .setEndpointConfig(DeployRequest.EndpointConfig.newBuilder().build())
+   *           .setDeployConfig(DeployRequest.DeployConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = modelGardenServiceClient.deployCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeployRequest, Operation> deployCallable() {
+    return stub.deployCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployPublisherModelRequest request =
+   *       DeployPublisherModelRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setEndpointDisplayName("endpointDisplayName697270680")
+   *           .setDedicatedResources(DedicatedResources.newBuilder().build())
+   *           .setModelDisplayName("modelDisplayName1578770308")
+   *           .setHuggingFaceAccessToken("huggingFaceAccessToken-159927933")
+   *           .setAcceptEula(true)
+   *           .build();
+   *   DeployPublisherModelResponse response =
+   *       modelGardenServiceClient.deployPublisherModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
+  public final OperationFuture<DeployPublisherModelResponse, DeployPublisherModelOperationMetadata>
+      deployPublisherModelAsync(DeployPublisherModelRequest request) {
+    return deployPublisherModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployPublisherModelRequest request =
+   *       DeployPublisherModelRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setEndpointDisplayName("endpointDisplayName697270680")
+   *           .setDedicatedResources(DedicatedResources.newBuilder().build())
+   *           .setModelDisplayName("modelDisplayName1578770308")
+   *           .setHuggingFaceAccessToken("huggingFaceAccessToken-159927933")
+   *           .setAcceptEula(true)
+   *           .build();
+   *   OperationFuture<DeployPublisherModelResponse, DeployPublisherModelOperationMetadata> future =
+   *       modelGardenServiceClient.deployPublisherModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeployPublisherModelResponse response = future.get();
+   * }
+   * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
+  public final OperationCallable<
+          DeployPublisherModelRequest,
+          DeployPublisherModelResponse,
+          DeployPublisherModelOperationMetadata>
+      deployPublisherModelOperationCallable() {
+    return stub.deployPublisherModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deploys publisher models.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   DeployPublisherModelRequest request =
+   *       DeployPublisherModelRequest.newBuilder()
+   *           .setModel("model104069929")
+   *           .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setEndpointDisplayName("endpointDisplayName697270680")
+   *           .setDedicatedResources(DedicatedResources.newBuilder().build())
+   *           .setModelDisplayName("modelDisplayName1578770308")
+   *           .setHuggingFaceAccessToken("huggingFaceAccessToken-159927933")
+   *           .setAcceptEula(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       modelGardenServiceClient.deployPublisherModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
+  public final UnaryCallable<DeployPublisherModelRequest, Operation>
+      deployPublisherModelCallable() {
+    return stub.deployPublisherModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a publisher model to a user provided Google Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ExportPublisherModelRequest request =
+   *       ExportPublisherModelRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setDestination(GcsDestination.newBuilder().build())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ExportPublisherModelResponse response =
+   *       modelGardenServiceClient.exportPublisherModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportPublisherModelResponse, ExportPublisherModelOperationMetadata>
+      exportPublisherModelAsync(ExportPublisherModelRequest request) {
+    return exportPublisherModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a publisher model to a user provided Google Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ExportPublisherModelRequest request =
+   *       ExportPublisherModelRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setDestination(GcsDestination.newBuilder().build())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   OperationFuture<ExportPublisherModelResponse, ExportPublisherModelOperationMetadata> future =
+   *       modelGardenServiceClient.exportPublisherModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportPublisherModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationCallable() {
+    return stub.exportPublisherModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a publisher model to a user provided Google Cloud Storage bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ExportPublisherModelRequest request =
+   *       ExportPublisherModelRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setDestination(GcsDestination.newBuilder().build())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       modelGardenServiceClient.exportPublisherModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportPublisherModelRequest, Operation>
+      exportPublisherModelCallable() {
+    return stub.exportPublisherModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checks the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.checkPublisherModelEulaAcceptance(parent, publisherModel);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project requesting access for named model. The format is
+   *     `projects/{project}`.
+   * @param publisherModel Required. The name of the PublisherModel resource. Format:
+   *     `publishers/{publisher}/models/{publisher_model}`, or
+   *     `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance checkPublisherModelEulaAcceptance(
+      ProjectName parent, PublisherModelName publisherModel) {
+    CheckPublisherModelEulaAcceptanceRequest request =
+        CheckPublisherModelEulaAcceptanceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPublisherModel(publisherModel == null ? null : publisherModel.toString())
+            .build();
+    return checkPublisherModelEulaAcceptance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checks the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString();
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.checkPublisherModelEulaAcceptance(parent, publisherModel);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project requesting access for named model. The format is
+   *     `projects/{project}`.
+   * @param publisherModel Required. The name of the PublisherModel resource. Format:
+   *     `publishers/{publisher}/models/{publisher_model}`, or
+   *     `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance checkPublisherModelEulaAcceptance(
+      ProjectName parent, String publisherModel) {
+    CheckPublisherModelEulaAcceptanceRequest request =
+        CheckPublisherModelEulaAcceptanceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPublisherModel(publisherModel)
+            .build();
+    return checkPublisherModelEulaAcceptance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checks the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.checkPublisherModelEulaAcceptance(parent, publisherModel);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project requesting access for named model. The format is
+   *     `projects/{project}`.
+   * @param publisherModel Required. The name of the PublisherModel resource. Format:
+   *     `publishers/{publisher}/models/{publisher_model}`, or
+   *     `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance checkPublisherModelEulaAcceptance(
+      String parent, PublisherModelName publisherModel) {
+    CheckPublisherModelEulaAcceptanceRequest request =
+        CheckPublisherModelEulaAcceptanceRequest.newBuilder()
+            .setParent(parent)
+            .setPublisherModel(publisherModel == null ? null : publisherModel.toString())
+            .build();
+    return checkPublisherModelEulaAcceptance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checks the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   String publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString();
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.checkPublisherModelEulaAcceptance(parent, publisherModel);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project requesting access for named model. The format is
+   *     `projects/{project}`.
+   * @param publisherModel Required. The name of the PublisherModel resource. Format:
+   *     `publishers/{publisher}/models/{publisher_model}`, or
+   *     `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance checkPublisherModelEulaAcceptance(
+      String parent, String publisherModel) {
+    CheckPublisherModelEulaAcceptanceRequest request =
+        CheckPublisherModelEulaAcceptanceRequest.newBuilder()
+            .setParent(parent)
+            .setPublisherModel(publisherModel)
+            .build();
+    return checkPublisherModelEulaAcceptance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checks the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   CheckPublisherModelEulaAcceptanceRequest request =
+   *       CheckPublisherModelEulaAcceptanceRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPublisherModel(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
+   *           .build();
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.checkPublisherModelEulaAcceptance(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance checkPublisherModelEulaAcceptance(
+      CheckPublisherModelEulaAcceptanceRequest request) {
+    return checkPublisherModelEulaAcceptanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checks the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   CheckPublisherModelEulaAcceptanceRequest request =
+   *       CheckPublisherModelEulaAcceptanceRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPublisherModel(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
+   *           .build();
+   *   ApiFuture<PublisherModelEulaAcceptance> future =
+   *       modelGardenServiceClient.checkPublisherModelEulaAcceptanceCallable().futureCall(request);
+   *   // Do something.
+   *   PublisherModelEulaAcceptance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceCallable() {
+    return stub.checkPublisherModelEulaAcceptanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.acceptPublisherModelEula(parent, publisherModel);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project requesting access for named model. The format is
+   *     `projects/{project}`.
+   * @param publisherModel Required. The name of the PublisherModel resource. Format:
+   *     `publishers/{publisher}/models/{publisher_model}`, or
+   *     `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance acceptPublisherModelEula(
+      ProjectName parent, PublisherModelName publisherModel) {
+    AcceptPublisherModelEulaRequest request =
+        AcceptPublisherModelEulaRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPublisherModel(publisherModel == null ? null : publisherModel.toString())
+            .build();
+    return acceptPublisherModelEula(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString();
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.acceptPublisherModelEula(parent, publisherModel);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project requesting access for named model. The format is
+   *     `projects/{project}`.
+   * @param publisherModel Required. The name of the PublisherModel resource. Format:
+   *     `publishers/{publisher}/models/{publisher_model}`, or
+   *     `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance acceptPublisherModelEula(
+      ProjectName parent, String publisherModel) {
+    AcceptPublisherModelEulaRequest request =
+        AcceptPublisherModelEulaRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setPublisherModel(publisherModel)
+            .build();
+    return acceptPublisherModelEula(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   PublisherModelName publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]");
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.acceptPublisherModelEula(parent, publisherModel);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project requesting access for named model. The format is
+   *     `projects/{project}`.
+   * @param publisherModel Required. The name of the PublisherModel resource. Format:
+   *     `publishers/{publisher}/models/{publisher_model}`, or
+   *     `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance acceptPublisherModelEula(
+      String parent, PublisherModelName publisherModel) {
+    AcceptPublisherModelEulaRequest request =
+        AcceptPublisherModelEulaRequest.newBuilder()
+            .setParent(parent)
+            .setPublisherModel(publisherModel == null ? null : publisherModel.toString())
+            .build();
+    return acceptPublisherModelEula(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   String publisherModel = PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString();
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.acceptPublisherModelEula(parent, publisherModel);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project requesting access for named model. The format is
+   *     `projects/{project}`.
+   * @param publisherModel Required. The name of the PublisherModel resource. Format:
+   *     `publishers/{publisher}/models/{publisher_model}`, or
+   *     `publishers/hf-{hugging-face-author}/models/{hugging-face-model-name}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance acceptPublisherModelEula(
+      String parent, String publisherModel) {
+    AcceptPublisherModelEulaRequest request =
+        AcceptPublisherModelEulaRequest.newBuilder()
+            .setParent(parent)
+            .setPublisherModel(publisherModel)
+            .build();
+    return acceptPublisherModelEula(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   AcceptPublisherModelEulaRequest request =
+   *       AcceptPublisherModelEulaRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPublisherModel(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
+   *           .build();
+   *   PublisherModelEulaAcceptance response =
+   *       modelGardenServiceClient.acceptPublisherModelEula(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PublisherModelEulaAcceptance acceptPublisherModelEula(
+      AcceptPublisherModelEulaRequest request) {
+    return acceptPublisherModelEulaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts the EULA acceptance status of a publisher model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   AcceptPublisherModelEulaRequest request =
+   *       AcceptPublisherModelEulaRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPublisherModel(PublisherModelName.of("[PUBLISHER]", "[MODEL]").toString())
+   *           .build();
+   *   ApiFuture<PublisherModelEulaAcceptance> future =
+   *       modelGardenServiceClient.acceptPublisherModelEulaCallable().futureCall(request);
+   *   // Do something.
+   *   PublisherModelEulaAcceptance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaCallable() {
+    return stub.acceptPublisherModelEulaCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

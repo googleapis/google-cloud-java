@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import static com.google.cloud.tpu.v2alpha1.TpuClient.ListAcceleratorTypesPagedR
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListLocationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListNodesPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListQueuedResourcesPagedResponse;
+import static com.google.cloud.tpu.v2alpha1.TpuClient.ListReservationsPagedResponse;
 import static com.google.cloud.tpu.v2alpha1.TpuClient.ListRuntimeVersionsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -54,10 +55,14 @@ import com.google.cloud.tpu.v2alpha1.ListNodesRequest;
 import com.google.cloud.tpu.v2alpha1.ListNodesResponse;
 import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesRequest;
 import com.google.cloud.tpu.v2alpha1.ListQueuedResourcesResponse;
+import com.google.cloud.tpu.v2alpha1.ListReservationsRequest;
+import com.google.cloud.tpu.v2alpha1.ListReservationsResponse;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsRequest;
 import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
+import com.google.cloud.tpu.v2alpha1.PerformMaintenanceQueuedResourceRequest;
+import com.google.cloud.tpu.v2alpha1.PerformMaintenanceRequest;
 import com.google.cloud.tpu.v2alpha1.QueuedResource;
 import com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
@@ -140,6 +145,16 @@ public class GrpcTpuStub extends TpuStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<PerformMaintenanceRequest, Operation>
+      performMaintenanceMethodDescriptor =
+          MethodDescriptor.<PerformMaintenanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/PerformMaintenance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PerformMaintenanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
       listQueuedResourcesMethodDescriptor =
           MethodDescriptor.<ListQueuedResourcesRequest, ListQueuedResourcesResponse>newBuilder()
@@ -188,6 +203,17 @@ public class GrpcTpuStub extends TpuStub {
               .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/ResetQueuedResource")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetQueuedResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceMethodDescriptor =
+          MethodDescriptor.<PerformMaintenanceQueuedResourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/PerformMaintenanceQueuedResource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      PerformMaintenanceQueuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -257,6 +283,17 @@ public class GrpcTpuStub extends TpuStub {
                   ProtoUtils.marshaller(GetGuestAttributesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListReservationsRequest, ListReservationsResponse>
+      listReservationsMethodDescriptor =
+          MethodDescriptor.<ListReservationsRequest, ListReservationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tpu.v2alpha1.Tpu/ListReservations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListReservationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListReservationsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SimulateMaintenanceEventRequest, Operation>
       simulateMaintenanceEventMethodDescriptor =
           MethodDescriptor.<SimulateMaintenanceEventRequest, Operation>newBuilder()
@@ -304,6 +341,9 @@ public class GrpcTpuStub extends TpuStub {
   private final UnaryCallable<UpdateNodeRequest, Operation> updateNodeCallable;
   private final OperationCallable<UpdateNodeRequest, Node, OperationMetadata>
       updateNodeOperationCallable;
+  private final UnaryCallable<PerformMaintenanceRequest, Operation> performMaintenanceCallable;
+  private final OperationCallable<PerformMaintenanceRequest, Node, OperationMetadata>
+      performMaintenanceOperationCallable;
   private final UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
       listQueuedResourcesCallable;
   private final UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesPagedResponse>
@@ -318,6 +358,11 @@ public class GrpcTpuStub extends TpuStub {
   private final UnaryCallable<ResetQueuedResourceRequest, Operation> resetQueuedResourceCallable;
   private final OperationCallable<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
       resetQueuedResourceOperationCallable;
+  private final UnaryCallable<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceCallable;
+  private final OperationCallable<
+          PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceOperationCallable;
   private final UnaryCallable<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentityCallable;
   private final UnaryCallable<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse>
@@ -333,6 +378,10 @@ public class GrpcTpuStub extends TpuStub {
   private final UnaryCallable<GetRuntimeVersionRequest, RuntimeVersion> getRuntimeVersionCallable;
   private final UnaryCallable<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesCallable;
+  private final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
+      listReservationsCallable;
+  private final UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
+      listReservationsPagedCallable;
   private final UnaryCallable<SimulateMaintenanceEventRequest, Operation>
       simulateMaintenanceEventCallable;
   private final OperationCallable<SimulateMaintenanceEventRequest, Node, OperationMetadata>
@@ -449,6 +498,16 @@ public class GrpcTpuStub extends TpuStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<PerformMaintenanceRequest, Operation> performMaintenanceTransportSettings =
+        GrpcCallSettings.<PerformMaintenanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(performMaintenanceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
         listQueuedResourcesTransportSettings =
             GrpcCallSettings.<ListQueuedResourcesRequest, ListQueuedResourcesResponse>newBuilder()
@@ -500,6 +559,17 @@ public class GrpcTpuStub extends TpuStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<PerformMaintenanceQueuedResourceRequest, Operation>
+        performMaintenanceQueuedResourceTransportSettings =
+            GrpcCallSettings.<PerformMaintenanceQueuedResourceRequest, Operation>newBuilder()
+                .setMethodDescriptor(performMaintenanceQueuedResourceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
         generateServiceIdentityTransportSettings =
             GrpcCallSettings
@@ -563,6 +633,17 @@ public class GrpcTpuStub extends TpuStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListReservationsRequest, ListReservationsResponse>
+        listReservationsTransportSettings =
+            GrpcCallSettings.<ListReservationsRequest, ListReservationsResponse>newBuilder()
+                .setMethodDescriptor(listReservationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
                 .build();
@@ -652,6 +733,17 @@ public class GrpcTpuStub extends TpuStub {
             settings.updateNodeOperationSettings(),
             clientContext,
             operationsStub);
+    this.performMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceSettings(),
+            clientContext);
+    this.performMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            performMaintenanceTransportSettings,
+            settings.performMaintenanceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listQueuedResourcesCallable =
         callableFactory.createUnaryCallable(
             listQueuedResourcesTransportSettings,
@@ -700,6 +792,17 @@ public class GrpcTpuStub extends TpuStub {
             settings.resetQueuedResourceOperationSettings(),
             clientContext,
             operationsStub);
+    this.performMaintenanceQueuedResourceCallable =
+        callableFactory.createUnaryCallable(
+            performMaintenanceQueuedResourceTransportSettings,
+            settings.performMaintenanceQueuedResourceSettings(),
+            clientContext);
+    this.performMaintenanceQueuedResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            performMaintenanceQueuedResourceTransportSettings,
+            settings.performMaintenanceQueuedResourceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.generateServiceIdentityCallable =
         callableFactory.createUnaryCallable(
             generateServiceIdentityTransportSettings,
@@ -740,6 +843,12 @@ public class GrpcTpuStub extends TpuStub {
             getGuestAttributesTransportSettings,
             settings.getGuestAttributesSettings(),
             clientContext);
+    this.listReservationsCallable =
+        callableFactory.createUnaryCallable(
+            listReservationsTransportSettings, settings.listReservationsSettings(), clientContext);
+    this.listReservationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listReservationsTransportSettings, settings.listReservationsSettings(), clientContext);
     this.simulateMaintenanceEventCallable =
         callableFactory.createUnaryCallable(
             simulateMaintenanceEventTransportSettings,
@@ -838,6 +947,17 @@ public class GrpcTpuStub extends TpuStub {
   }
 
   @Override
+  public UnaryCallable<PerformMaintenanceRequest, Operation> performMaintenanceCallable() {
+    return performMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<PerformMaintenanceRequest, Node, OperationMetadata>
+      performMaintenanceOperationCallable() {
+    return performMaintenanceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ListQueuedResourcesRequest, ListQueuedResourcesResponse>
       listQueuedResourcesCallable() {
     return listQueuedResourcesCallable;
@@ -888,6 +1008,19 @@ public class GrpcTpuStub extends TpuStub {
   }
 
   @Override
+  public UnaryCallable<PerformMaintenanceQueuedResourceRequest, Operation>
+      performMaintenanceQueuedResourceCallable() {
+    return performMaintenanceQueuedResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          PerformMaintenanceQueuedResourceRequest, QueuedResource, OperationMetadata>
+      performMaintenanceQueuedResourceOperationCallable() {
+    return performMaintenanceQueuedResourceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentityCallable() {
     return generateServiceIdentityCallable;
@@ -931,6 +1064,18 @@ public class GrpcTpuStub extends TpuStub {
   public UnaryCallable<GetGuestAttributesRequest, GetGuestAttributesResponse>
       getGuestAttributesCallable() {
     return getGuestAttributesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReservationsRequest, ListReservationsResponse>
+      listReservationsCallable() {
+    return listReservationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
+      listReservationsPagedCallable() {
+    return listReservationsPagedCallable;
   }
 
   @Override

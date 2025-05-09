@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -105,12 +104,10 @@ public class FeatureName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationFeaturestoreEntityTypeFeatureBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationFeatureGroupFeatureBuilder
       newProjectLocationFeatureGroupFeatureBuilder() {
     return new ProjectLocationFeatureGroupFeatureBuilder();
@@ -131,7 +128,6 @@ public class FeatureName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static FeatureName ofProjectLocationFeaturestoreEntityTypeFeatureName(
       String project, String location, String featurestore, String entityType, String feature) {
     return newBuilder()
@@ -143,7 +139,6 @@ public class FeatureName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static FeatureName ofProjectLocationFeatureGroupFeatureName(
       String project, String location, String featureGroup, String feature) {
     return newProjectLocationFeatureGroupFeatureBuilder()
@@ -166,7 +161,6 @@ public class FeatureName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationFeaturestoreEntityTypeFeatureName(
       String project, String location, String featurestore, String entityType, String feature) {
     return newBuilder()
@@ -179,7 +173,6 @@ public class FeatureName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationFeatureGroupFeatureName(
       String project, String location, String featureGroup, String feature) {
     return newProjectLocationFeatureGroupFeatureBuilder()
@@ -379,7 +372,8 @@ public class FeatureName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               featureName.pathTemplate, PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE),
-          "toBuilder is only supported when FeatureName has the pattern of projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}");
+          "toBuilder is only supported when FeatureName has the pattern of"
+              + " projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}");
       this.project = featureName.project;
       this.location = featureName.location;
       this.featurestore = featureName.featurestore;
@@ -396,7 +390,6 @@ public class FeatureName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationFeatureGroupFeatureBuilder {
     private String project;
     private String location;

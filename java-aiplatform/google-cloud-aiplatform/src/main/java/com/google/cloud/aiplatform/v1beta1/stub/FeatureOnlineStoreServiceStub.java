@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,11 +20,16 @@ import static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreServiceClien
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest;
+import com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteResponse;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -51,9 +56,21 @@ public abstract class FeatureOnlineStoreServiceStub implements BackgroundResourc
     throw new UnsupportedOperationException("Not implemented: fetchFeatureValuesCallable()");
   }
 
+  public BidiStreamingCallable<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingFetchFeatureValuesCallable()");
+  }
+
   public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesCallable() {
     throw new UnsupportedOperationException("Not implemented: searchNearestEntitiesCallable()");
+  }
+
+  public BidiStreamingCallable<FeatureViewDirectWriteRequest, FeatureViewDirectWriteResponse>
+      featureViewDirectWriteCallable() {
+    throw new UnsupportedOperationException("Not implemented: featureViewDirectWriteCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

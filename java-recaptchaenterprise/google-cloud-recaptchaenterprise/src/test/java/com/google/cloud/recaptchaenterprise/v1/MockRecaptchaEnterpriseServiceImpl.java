@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package com.google.cloud.recaptchaenterprise.v1;
 import com.google.api.core.BetaApi;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
+import com.google.recaptchaenterprise.v1.AddIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.AddIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -34,6 +36,8 @@ import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
+import com.google.recaptchaenterprise.v1.ListIpOverridesRequest;
+import com.google.recaptchaenterprise.v1.ListIpOverridesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -43,6 +47,10 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.RecaptchaEnterpriseServiceGrpc.RecaptchaEnterpriseServiceImplBase;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
+import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
@@ -186,7 +194,8 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RetrieveLegacySecretKey, expected %s or %s",
+                  "Unrecognized response type %s for method RetrieveLegacySecretKey, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   RetrieveLegacySecretKeyResponse.class.getName(),
                   Exception.class.getName())));
@@ -274,6 +283,69 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
   }
 
   @Override
+  public void addIpOverride(
+      AddIpOverrideRequest request, StreamObserver<AddIpOverrideResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AddIpOverrideResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AddIpOverrideResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddIpOverride, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AddIpOverrideResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void removeIpOverride(
+      RemoveIpOverrideRequest request, StreamObserver<RemoveIpOverrideResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveIpOverrideResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveIpOverrideResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveIpOverride, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveIpOverrideResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listIpOverrides(
+      ListIpOverridesRequest request, StreamObserver<ListIpOverridesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListIpOverridesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListIpOverridesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListIpOverrides, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListIpOverridesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getMetrics(GetMetricsRequest request, StreamObserver<Metrics> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Metrics) {
@@ -307,7 +379,8 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateFirewallPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method CreateFirewallPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   FirewallPolicy.class.getName(),
                   Exception.class.getName())));
@@ -329,7 +402,8 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListFirewallPolicies, expected %s or %s",
+                  "Unrecognized response type %s for method ListFirewallPolicies, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListFirewallPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -371,7 +445,8 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateFirewallPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateFirewallPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   FirewallPolicy.class.getName(),
                   Exception.class.getName())));
@@ -392,9 +467,33 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteFirewallPolicy, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteFirewallPolicy, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void reorderFirewallPolicies(
+      ReorderFirewallPoliciesRequest request,
+      StreamObserver<ReorderFirewallPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReorderFirewallPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ReorderFirewallPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ReorderFirewallPolicies, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReorderFirewallPoliciesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -414,7 +513,8 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListRelatedAccountGroups, expected %s or %s",
+                  "Unrecognized response type %s for method ListRelatedAccountGroups, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListRelatedAccountGroupsResponse.class.getName(),
                   Exception.class.getName())));
@@ -436,7 +536,8 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListRelatedAccountGroupMemberships, expected %s or %s",
+                  "Unrecognized response type %s for method ListRelatedAccountGroupMemberships,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListRelatedAccountGroupMembershipsResponse.class.getName(),
                   Exception.class.getName())));
@@ -458,7 +559,8 @@ public class MockRecaptchaEnterpriseServiceImpl extends RecaptchaEnterpriseServi
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchRelatedAccountGroupMemberships, expected %s or %s",
+                  "Unrecognized response type %s for method SearchRelatedAccountGroupMemberships,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchRelatedAccountGroupMembershipsResponse.class.getName(),
                   Exception.class.getName())));

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,13 @@
 package com.google.cloud.orgpolicy.v2.stub;
 
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPagedResponse;
+import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -45,15 +47,22 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.orgpolicy.v2.Constraint;
+import com.google.cloud.orgpolicy.v2.CreateCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.CreatePolicyRequest;
+import com.google.cloud.orgpolicy.v2.CustomConstraint;
+import com.google.cloud.orgpolicy.v2.DeleteCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.DeletePolicyRequest;
+import com.google.cloud.orgpolicy.v2.GetCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest;
 import com.google.cloud.orgpolicy.v2.GetPolicyRequest;
 import com.google.cloud.orgpolicy.v2.ListConstraintsRequest;
 import com.google.cloud.orgpolicy.v2.ListConstraintsResponse;
+import com.google.cloud.orgpolicy.v2.ListCustomConstraintsRequest;
+import com.google.cloud.orgpolicy.v2.ListCustomConstraintsResponse;
 import com.google.cloud.orgpolicy.v2.ListPoliciesRequest;
 import com.google.cloud.orgpolicy.v2.ListPoliciesResponse;
 import com.google.cloud.orgpolicy.v2.Policy;
+import com.google.cloud.orgpolicy.v2.UpdateCustomConstraintRequest;
 import com.google.cloud.orgpolicy.v2.UpdatePolicyRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -61,9 +70,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -80,7 +89,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getPolicy to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getPolicy:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -96,10 +107,21 @@ import org.threeten.bp.Duration;
  *             .getPolicySettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * OrgPolicyStubSettings orgPolicySettings = orgPolicySettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @Generated("by gapic-generator-java")
 public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
@@ -118,6 +140,19 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
   private final UnaryCallSettings<CreatePolicyRequest, Policy> createPolicySettings;
   private final UnaryCallSettings<UpdatePolicyRequest, Policy> updatePolicySettings;
   private final UnaryCallSettings<DeletePolicyRequest, Empty> deletePolicySettings;
+  private final UnaryCallSettings<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintSettings;
+  private final UnaryCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintSettings;
+  private final UnaryCallSettings<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintSettings;
+  private final PagedCallSettings<
+          ListCustomConstraintsRequest,
+          ListCustomConstraintsResponse,
+          ListCustomConstraintsPagedResponse>
+      listCustomConstraintsSettings;
+  private final UnaryCallSettings<DeleteCustomConstraintRequest, Empty>
+      deleteCustomConstraintSettings;
 
   private static final PagedListDescriptor<
           ListConstraintsRequest, ListConstraintsResponse, Constraint>
@@ -152,9 +187,7 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
 
             @Override
             public Iterable<Constraint> extractResources(ListConstraintsResponse payload) {
-              return payload.getConstraintsList() == null
-                  ? ImmutableList.<Constraint>of()
-                  : payload.getConstraintsList();
+              return payload.getConstraintsList();
             }
           };
 
@@ -188,9 +221,46 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
 
             @Override
             public Iterable<Policy> extractResources(ListPoliciesResponse payload) {
-              return payload.getPoliciesList() == null
-                  ? ImmutableList.<Policy>of()
-                  : payload.getPoliciesList();
+              return payload.getPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+      LIST_CUSTOM_CONSTRAINTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCustomConstraintsRequest injectToken(
+                ListCustomConstraintsRequest payload, String token) {
+              return ListCustomConstraintsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCustomConstraintsRequest injectPageSize(
+                ListCustomConstraintsRequest payload, int pageSize) {
+              return ListCustomConstraintsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCustomConstraintsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCustomConstraintsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CustomConstraint> extractResources(
+                ListCustomConstraintsResponse payload) {
+              return payload.getCustomConstraintsList();
             }
           };
 
@@ -225,6 +295,30 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
               PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> pageContext =
                   PageContext.create(callable, LIST_POLICIES_PAGE_STR_DESC, request, context);
               return ListPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCustomConstraintsRequest,
+          ListCustomConstraintsResponse,
+          ListCustomConstraintsPagedResponse>
+      LIST_CUSTOM_CONSTRAINTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCustomConstraintsRequest,
+              ListCustomConstraintsResponse,
+              ListCustomConstraintsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCustomConstraintsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCustomConstraintsRequest, ListCustomConstraintsResponse> callable,
+                ListCustomConstraintsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCustomConstraintsResponse> futureResponse) {
+              PageContext<
+                      ListCustomConstraintsRequest, ListCustomConstraintsResponse, CustomConstraint>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CUSTOM_CONSTRAINTS_PAGE_STR_DESC, request, context);
+              return ListCustomConstraintsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -266,6 +360,38 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
     return deletePolicySettings;
   }
 
+  /** Returns the object with the settings used for calls to createCustomConstraint. */
+  public UnaryCallSettings<CreateCustomConstraintRequest, CustomConstraint>
+      createCustomConstraintSettings() {
+    return createCustomConstraintSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomConstraint. */
+  public UnaryCallSettings<UpdateCustomConstraintRequest, CustomConstraint>
+      updateCustomConstraintSettings() {
+    return updateCustomConstraintSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCustomConstraint. */
+  public UnaryCallSettings<GetCustomConstraintRequest, CustomConstraint>
+      getCustomConstraintSettings() {
+    return getCustomConstraintSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCustomConstraints. */
+  public PagedCallSettings<
+          ListCustomConstraintsRequest,
+          ListCustomConstraintsResponse,
+          ListCustomConstraintsPagedResponse>
+      listCustomConstraintsSettings() {
+    return listCustomConstraintsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCustomConstraint. */
+  public UnaryCallSettings<DeleteCustomConstraintRequest, Empty> deleteCustomConstraintSettings() {
+    return deleteCustomConstraintSettings;
+  }
+
   public OrgPolicyStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -282,12 +408,19 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "orgpolicy";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "orgpolicy.googleapis.com:443";
   }
@@ -326,7 +459,6 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(OrgPolicyStubSettings.class))
@@ -334,7 +466,6 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(OrgPolicyStubSettings.class))
@@ -377,6 +508,11 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
     createPolicySettings = settingsBuilder.createPolicySettings().build();
     updatePolicySettings = settingsBuilder.updatePolicySettings().build();
     deletePolicySettings = settingsBuilder.deletePolicySettings().build();
+    createCustomConstraintSettings = settingsBuilder.createCustomConstraintSettings().build();
+    updateCustomConstraintSettings = settingsBuilder.updateCustomConstraintSettings().build();
+    getCustomConstraintSettings = settingsBuilder.getCustomConstraintSettings().build();
+    listCustomConstraintsSettings = settingsBuilder.listCustomConstraintsSettings().build();
+    deleteCustomConstraintSettings = settingsBuilder.deleteCustomConstraintSettings().build();
   }
 
   /** Builder for OrgPolicyStubSettings. */
@@ -394,6 +530,19 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
     private final UnaryCallSettings.Builder<CreatePolicyRequest, Policy> createPolicySettings;
     private final UnaryCallSettings.Builder<UpdatePolicyRequest, Policy> updatePolicySettings;
     private final UnaryCallSettings.Builder<DeletePolicyRequest, Empty> deletePolicySettings;
+    private final UnaryCallSettings.Builder<CreateCustomConstraintRequest, CustomConstraint>
+        createCustomConstraintSettings;
+    private final UnaryCallSettings.Builder<UpdateCustomConstraintRequest, CustomConstraint>
+        updateCustomConstraintSettings;
+    private final UnaryCallSettings.Builder<GetCustomConstraintRequest, CustomConstraint>
+        getCustomConstraintSettings;
+    private final PagedCallSettings.Builder<
+            ListCustomConstraintsRequest,
+            ListCustomConstraintsResponse,
+            ListCustomConstraintsPagedResponse>
+        listCustomConstraintsSettings;
+    private final UnaryCallSettings.Builder<DeleteCustomConstraintRequest, Empty>
+        deleteCustomConstraintSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -415,13 +564,13 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -441,6 +590,12 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
       createPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updatePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deletePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCustomConstraintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCustomConstraintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCustomConstraintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listCustomConstraintsSettings =
+          PagedCallSettings.newBuilder(LIST_CUSTOM_CONSTRAINTS_PAGE_STR_FACT);
+      deleteCustomConstraintSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -450,7 +605,12 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
               getEffectivePolicySettings,
               createPolicySettings,
               updatePolicySettings,
-              deletePolicySettings);
+              deletePolicySettings,
+              createCustomConstraintSettings,
+              updateCustomConstraintSettings,
+              getCustomConstraintSettings,
+              listCustomConstraintsSettings,
+              deleteCustomConstraintSettings);
       initDefaults(this);
     }
 
@@ -464,6 +624,11 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
       createPolicySettings = settings.createPolicySettings.toBuilder();
       updatePolicySettings = settings.updatePolicySettings.toBuilder();
       deletePolicySettings = settings.deletePolicySettings.toBuilder();
+      createCustomConstraintSettings = settings.createCustomConstraintSettings.toBuilder();
+      updateCustomConstraintSettings = settings.updateCustomConstraintSettings.toBuilder();
+      getCustomConstraintSettings = settings.getCustomConstraintSettings.toBuilder();
+      listCustomConstraintsSettings = settings.listCustomConstraintsSettings.toBuilder();
+      deleteCustomConstraintSettings = settings.deleteCustomConstraintSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -473,7 +638,12 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
               getEffectivePolicySettings,
               createPolicySettings,
               updatePolicySettings,
-              deletePolicySettings);
+              deletePolicySettings,
+              createCustomConstraintSettings,
+              updateCustomConstraintSettings,
+              getCustomConstraintSettings,
+              listCustomConstraintsSettings,
+              deleteCustomConstraintSettings);
     }
 
     private static Builder createDefault() {
@@ -482,7 +652,6 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -495,7 +664,6 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -535,6 +703,31 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
 
       builder
           .deletePolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCustomConstraintSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCustomConstraintSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCustomConstraintSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCustomConstraintsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteCustomConstraintSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -594,6 +787,39 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
     /** Returns the builder for the settings used for calls to deletePolicy. */
     public UnaryCallSettings.Builder<DeletePolicyRequest, Empty> deletePolicySettings() {
       return deletePolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomConstraint. */
+    public UnaryCallSettings.Builder<CreateCustomConstraintRequest, CustomConstraint>
+        createCustomConstraintSettings() {
+      return createCustomConstraintSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomConstraint. */
+    public UnaryCallSettings.Builder<UpdateCustomConstraintRequest, CustomConstraint>
+        updateCustomConstraintSettings() {
+      return updateCustomConstraintSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCustomConstraint. */
+    public UnaryCallSettings.Builder<GetCustomConstraintRequest, CustomConstraint>
+        getCustomConstraintSettings() {
+      return getCustomConstraintSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCustomConstraints. */
+    public PagedCallSettings.Builder<
+            ListCustomConstraintsRequest,
+            ListCustomConstraintsResponse,
+            ListCustomConstraintsPagedResponse>
+        listCustomConstraintsSettings() {
+      return listCustomConstraintsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCustomConstraint. */
+    public UnaryCallSettings.Builder<DeleteCustomConstraintRequest, Empty>
+        deleteCustomConstraintSettings() {
+      return deleteCustomConstraintSettings;
     }
 
     @Override

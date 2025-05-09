@@ -25,6 +25,9 @@
             "CreateDnsAuthorization": {
               "methods": ["createDnsAuthorizationAsync", "createDnsAuthorizationAsync", "createDnsAuthorizationAsync", "createDnsAuthorizationOperationCallable", "createDnsAuthorizationCallable"]
             },
+            "CreateTrustConfig": {
+              "methods": ["createTrustConfigAsync", "createTrustConfigAsync", "createTrustConfigAsync", "createTrustConfigOperationCallable", "createTrustConfigCallable"]
+            },
             "DeleteCertificate": {
               "methods": ["deleteCertificateAsync", "deleteCertificateAsync", "deleteCertificateAsync", "deleteCertificateOperationCallable", "deleteCertificateCallable"]
             },
@@ -39,6 +42,9 @@
             },
             "DeleteDnsAuthorization": {
               "methods": ["deleteDnsAuthorizationAsync", "deleteDnsAuthorizationAsync", "deleteDnsAuthorizationAsync", "deleteDnsAuthorizationOperationCallable", "deleteDnsAuthorizationCallable"]
+            },
+            "DeleteTrustConfig": {
+              "methods": ["deleteTrustConfigAsync", "deleteTrustConfigAsync", "deleteTrustConfigAsync", "deleteTrustConfigOperationCallable", "deleteTrustConfigCallable"]
             },
             "GetCertificate": {
               "methods": ["getCertificate", "getCertificate", "getCertificate", "getCertificateCallable"]
@@ -58,6 +64,9 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetTrustConfig": {
+              "methods": ["getTrustConfig", "getTrustConfig", "getTrustConfig", "getTrustConfigCallable"]
+            },
             "ListCertificateIssuanceConfigs": {
               "methods": ["listCertificateIssuanceConfigs", "listCertificateIssuanceConfigs", "listCertificateIssuanceConfigs", "listCertificateIssuanceConfigsPagedCallable", "listCertificateIssuanceConfigsCallable"]
             },
@@ -76,6 +85,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListTrustConfigs": {
+              "methods": ["listTrustConfigs", "listTrustConfigs", "listTrustConfigs", "listTrustConfigsPagedCallable", "listTrustConfigsCallable"]
+            },
             "UpdateCertificate": {
               "methods": ["updateCertificateAsync", "updateCertificateAsync", "updateCertificateOperationCallable", "updateCertificateCallable"]
             },
@@ -87,6 +99,9 @@
             },
             "UpdateDnsAuthorization": {
               "methods": ["updateDnsAuthorizationAsync", "updateDnsAuthorizationAsync", "updateDnsAuthorizationOperationCallable", "updateDnsAuthorizationCallable"]
+            },
+            "UpdateTrustConfig": {
+              "methods": ["updateTrustConfigAsync", "updateTrustConfigAsync", "updateTrustConfigOperationCallable", "updateTrustConfigCallable"]
             }
           }
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,12 @@ package com.google.cloud.video.livestream.v1.stub;
 
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -46,17 +46,21 @@ import com.google.cloud.location.Location;
 import com.google.cloud.video.livestream.v1.Asset;
 import com.google.cloud.video.livestream.v1.Channel;
 import com.google.cloud.video.livestream.v1.ChannelOperationResponse;
+import com.google.cloud.video.livestream.v1.Clip;
 import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
+import com.google.cloud.video.livestream.v1.CreateClipRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
 import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
+import com.google.cloud.video.livestream.v1.DeleteClipRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
 import com.google.cloud.video.livestream.v1.Event;
 import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
+import com.google.cloud.video.livestream.v1.GetClipRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
 import com.google.cloud.video.livestream.v1.GetPoolRequest;
@@ -65,6 +69,8 @@ import com.google.cloud.video.livestream.v1.ListAssetsRequest;
 import com.google.cloud.video.livestream.v1.ListAssetsResponse;
 import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
+import com.google.cloud.video.livestream.v1.ListClipsRequest;
+import com.google.cloud.video.livestream.v1.ListClipsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
 import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
@@ -95,7 +101,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
@@ -104,6 +109,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
           .add(Channel.getDescriptor())
           .add(Input.getDescriptor())
           .add(Asset.getDescriptor())
+          .add(Clip.getDescriptor())
           .add(Pool.getDescriptor())
           .add(ChannelOperationResponse.getDescriptor())
           .build();
@@ -719,6 +725,156 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<ListClipsRequest, ListClipsResponse>
+      listClipsMethodDescriptor =
+          ApiMethodDescriptor.<ListClipsRequest, ListClipsResponse>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListClips")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListClipsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/channels/*}/clips",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListClipsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListClipsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListClipsResponse>newBuilder()
+                      .setDefaultInstance(ListClipsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetClipRequest, Clip> getClipMethodDescriptor =
+      ApiMethodDescriptor.<GetClipRequest, Clip>newBuilder()
+          .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetClip")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetClipRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/channels/*/clips/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetClipRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetClipRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Clip>newBuilder()
+                  .setDefaultInstance(Clip.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<CreateClipRequest, Operation>
+      createClipMethodDescriptor =
+          ApiMethodDescriptor.<CreateClipRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateClip")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateClipRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/channels/*}/clips",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateClipRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateClipRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "clipId", request.getClipId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create().toBody("clip", request.getClip(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateClipRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteClipRequest, Operation>
+      deleteClipMethodDescriptor =
+          ApiMethodDescriptor.<DeleteClipRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteClip")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteClipRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/channels/*/clips/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteClipRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteClipRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteClipRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<CreateAssetRequest, Operation>
       createAssetMethodDescriptor =
           ApiMethodDescriptor.<CreateAssetRequest, Operation>newBuilder()
@@ -1049,6 +1205,15 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<GetEventRequest, Event> getEventCallable;
   private final UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable;
+  private final UnaryCallable<ListClipsRequest, ListClipsResponse> listClipsCallable;
+  private final UnaryCallable<ListClipsRequest, ListClipsPagedResponse> listClipsPagedCallable;
+  private final UnaryCallable<GetClipRequest, Clip> getClipCallable;
+  private final UnaryCallable<CreateClipRequest, Operation> createClipCallable;
+  private final OperationCallable<CreateClipRequest, Clip, OperationMetadata>
+      createClipOperationCallable;
+  private final UnaryCallable<DeleteClipRequest, Operation> deleteClipCallable;
+  private final OperationCallable<DeleteClipRequest, Empty, OperationMetadata>
+      deleteClipOperationCallable;
   private final UnaryCallable<CreateAssetRequest, Operation> createAssetCallable;
   private final OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
       createAssetOperationCallable;
@@ -1313,6 +1478,50 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListClipsRequest, ListClipsResponse> listClipsTransportSettings =
+        HttpJsonCallSettings.<ListClipsRequest, ListClipsResponse>newBuilder()
+            .setMethodDescriptor(listClipsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetClipRequest, Clip> getClipTransportSettings =
+        HttpJsonCallSettings.<GetClipRequest, Clip>newBuilder()
+            .setMethodDescriptor(getClipMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateClipRequest, Operation> createClipTransportSettings =
+        HttpJsonCallSettings.<CreateClipRequest, Operation>newBuilder()
+            .setMethodDescriptor(createClipMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteClipRequest, Operation> deleteClipTransportSettings =
+        HttpJsonCallSettings.<DeleteClipRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteClipMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<CreateAssetRequest, Operation> createAssetTransportSettings =
         HttpJsonCallSettings.<CreateAssetRequest, Operation>newBuilder()
             .setMethodDescriptor(createAssetMethodDescriptor)
@@ -1508,6 +1717,33 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
     this.deleteEventCallable =
         callableFactory.createUnaryCallable(
             deleteEventTransportSettings, settings.deleteEventSettings(), clientContext);
+    this.listClipsCallable =
+        callableFactory.createUnaryCallable(
+            listClipsTransportSettings, settings.listClipsSettings(), clientContext);
+    this.listClipsPagedCallable =
+        callableFactory.createPagedCallable(
+            listClipsTransportSettings, settings.listClipsSettings(), clientContext);
+    this.getClipCallable =
+        callableFactory.createUnaryCallable(
+            getClipTransportSettings, settings.getClipSettings(), clientContext);
+    this.createClipCallable =
+        callableFactory.createUnaryCallable(
+            createClipTransportSettings, settings.createClipSettings(), clientContext);
+    this.createClipOperationCallable =
+        callableFactory.createOperationCallable(
+            createClipTransportSettings,
+            settings.createClipOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteClipCallable =
+        callableFactory.createUnaryCallable(
+            deleteClipTransportSettings, settings.deleteClipSettings(), clientContext);
+    this.deleteClipOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteClipTransportSettings,
+            settings.deleteClipOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createAssetCallable =
         callableFactory.createUnaryCallable(
             createAssetTransportSettings, settings.createAssetSettings(), clientContext);
@@ -1580,6 +1816,10 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
     methodDescriptors.add(listEventsMethodDescriptor);
     methodDescriptors.add(getEventMethodDescriptor);
     methodDescriptors.add(deleteEventMethodDescriptor);
+    methodDescriptors.add(listClipsMethodDescriptor);
+    methodDescriptors.add(getClipMethodDescriptor);
+    methodDescriptors.add(createClipMethodDescriptor);
+    methodDescriptors.add(deleteClipMethodDescriptor);
     methodDescriptors.add(createAssetMethodDescriptor);
     methodDescriptors.add(deleteAssetMethodDescriptor);
     methodDescriptors.add(getAssetMethodDescriptor);
@@ -1736,6 +1976,43 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   @Override
   public UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable() {
     return deleteEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListClipsRequest, ListClipsResponse> listClipsCallable() {
+    return listClipsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListClipsRequest, ListClipsPagedResponse> listClipsPagedCallable() {
+    return listClipsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetClipRequest, Clip> getClipCallable() {
+    return getClipCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateClipRequest, Operation> createClipCallable() {
+    return createClipCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateClipRequest, Clip, OperationMetadata>
+      createClipOperationCallable() {
+    return createClipOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteClipRequest, Operation> deleteClipCallable() {
+    return deleteClipCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteClipRequest, Empty, OperationMetadata>
+      deleteClipOperationCallable() {
+    return deleteClipOperationCallable;
   }
 
   @Override

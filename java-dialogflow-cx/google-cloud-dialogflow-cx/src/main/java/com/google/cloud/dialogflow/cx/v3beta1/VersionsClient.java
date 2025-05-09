@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,19 +67,182 @@ import javax.annotation.Generated;
  * <p>Note: close() needs to be called on the VersionsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListVersions</td>
+ *      <td><p> Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listVersions(ListVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listVersions(FlowName parent)
+ *           <li><p> listVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listVersionsPagedCallable()
+ *           <li><p> listVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetVersion</td>
+ *      <td><p> Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getVersion(GetVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getVersion(VersionName name)
+ *           <li><p> getVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateVersion</td>
+ *      <td><p> Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+ * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
+ * <p>  - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3beta1.CreateVersionOperationMetadata] - `response`: [Version][google.cloud.dialogflow.cx.v3beta1.Version]</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createVersionAsync(CreateVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createVersionAsync(FlowName parent, Version version)
+ *           <li><p> createVersionAsync(String parent, Version version)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createVersionOperationCallable()
+ *           <li><p> createVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateVersion</td>
+ *      <td><p> Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateVersion(UpdateVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateVersion(Version version, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteVersion</td>
+ *      <td><p> Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteVersion(DeleteVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteVersion(VersionName name)
+ *           <li><p> deleteVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> LoadVersion</td>
+ *      <td><p> Loads resources in the specified version to the draft flow.
+ * <p>  This method is a [long-running operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation). The returned `Operation` type has the following method-specific fields:
+ * <p>  - `metadata`: An empty [Struct   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct) - `response`: An [Empty   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> loadVersionAsync(LoadVersionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> loadVersionAsync(VersionName name)
+ *           <li><p> loadVersionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> loadVersionOperationCallable()
+ *           <li><p> loadVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CompareVersions</td>
+ *      <td><p> Compares the specified base version with target version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> compareVersions(CompareVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> compareVersions(VersionName baseVersion)
+ *           <li><p> compareVersions(String baseVersion)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> compareVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListLocations</td>
+ *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listLocations(ListLocationsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listLocationsPagedCallable()
+ *           <li><p> listLocationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetLocation</td>
+ *      <td><p> Gets information about a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getLocation(GetLocationRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getLocationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -229,8 +392,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
-   *     versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     versions for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVersionsPagedResponse listVersions(FlowName parent) {
@@ -263,8 +426,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
-   *     versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     versions for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVersionsPagedResponse listVersions(String parent) {
@@ -397,8 +560,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version getVersion(VersionName name) {
@@ -427,8 +590,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-   *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version getVersion(String name) {
@@ -524,8 +687,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
-   *     [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @param version Required. The version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -568,8 +731,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
-   *     [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format: `projects/&lt;Project
-   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   *     [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @param version Required. The version to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -802,8 +965,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to
-   *     delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteVersion(VersionName name) {
@@ -832,8 +995,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to
-   *     delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     delete. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteVersion(String name) {
@@ -929,8 +1092,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to
-   *     draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     draft flow. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> loadVersionAsync(VersionName name) {
@@ -968,8 +1131,8 @@ public class VersionsClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to
-   *     draft flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     draft flow. Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, Struct> loadVersionAsync(String name) {
@@ -1117,8 +1280,8 @@ public class VersionsClient implements BackgroundResource {
    *
    * @param baseVersion Required. Name of the base flow version to compare with the target version.
    *     Use version ID `0` to indicate the draft version of the specified flow.
-   *     <p>Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/ &lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     <p>Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompareVersionsResponse compareVersions(VersionName baseVersion) {
@@ -1150,8 +1313,8 @@ public class VersionsClient implements BackgroundResource {
    *
    * @param baseVersion Required. Name of the base flow version to compare with the target version.
    *     Use version ID `0` to indicate the draft version of the specified flow.
-   *     <p>Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/ &lt;Agent
-   *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
+   *     <p>Format:
+   *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CompareVersionsResponse compareVersions(String baseVersion) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
 
 package com.google.analytics.admin.v1alpha.stub;
 
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.AuditUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccessBindingsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAdSenseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCalculatedMetricsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
@@ -31,14 +31,18 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinkProposalsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListDisplayVideo360AdvertiserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventCreateRulesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListEventEditRulesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListExpandedDataSetsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.AccessBinding;
@@ -54,24 +58,15 @@ import com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.AttributionSettings;
 import com.google.analytics.admin.v1alpha.Audience;
-import com.google.analytics.admin.v1alpha.AuditUserLink;
-import com.google.analytics.admin.v1alpha.AuditUserLinksRequest;
-import com.google.analytics.admin.v1alpha.AuditUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest;
-import com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse;
-import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
-import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
+import com.google.analytics.admin.v1alpha.CalculatedMetric;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.ChannelGroup;
@@ -79,6 +74,8 @@ import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
@@ -89,22 +86,31 @@ import com.google.analytics.admin.v1alpha.CreateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse;
+import com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
+import com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
 import com.google.analytics.admin.v1alpha.CustomMetric;
+import com.google.analytics.admin.v1alpha.DataRedactionSettings;
 import com.google.analytics.admin.v1alpha.DataRetentionSettings;
 import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
 import com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
@@ -112,18 +118,23 @@ import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
+import com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
 import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.EventCreateRule;
+import com.google.analytics.admin.v1alpha.EventEditRule;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -136,10 +147,12 @@ import com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
@@ -147,17 +160,22 @@ import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkPropos
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.GetEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
+import com.google.analytics.admin.v1alpha.GetKeyEventRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
+import com.google.analytics.admin.v1alpha.KeyEvent;
 import com.google.analytics.admin.v1alpha.ListAccessBindingsRequest;
 import com.google.analytics.admin.v1alpha.ListAccessBindingsResponse;
 import com.google.analytics.admin.v1alpha.ListAccountSummariesRequest;
@@ -170,6 +188,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest;
+import com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
 import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
@@ -188,26 +208,39 @@ import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequ
 import com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse;
 import com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest;
 import com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse;
+import com.google.analytics.admin.v1alpha.ListEventEditRulesRequest;
+import com.google.analytics.admin.v1alpha.ListEventEditRulesResponse;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest;
 import com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest;
 import com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest;
 import com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse;
+import com.google.analytics.admin.v1alpha.ListKeyEventsRequest;
+import com.google.analytics.admin.v1alpha.ListKeyEventsResponse;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest;
+import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse;
+import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest;
+import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
-import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
-import com.google.analytics.admin.v1alpha.ListUserLinksResponse;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest;
+import com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse;
 import com.google.analytics.admin.v1alpha.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1alpha.Property;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest;
+import com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse;
+import com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest;
+import com.google.analytics.admin.v1alpha.ReportingDataAnnotation;
+import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
 import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
@@ -216,31 +249,40 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
+import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
+import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
+import com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest;
+import com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
+import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
-import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
-import com.google.analytics.admin.v1alpha.UserLink;
+import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -269,9 +311,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -289,7 +331,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getAccount to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getAccount:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -306,11 +350,22 @@ import org.threeten.bp.Duration;
  *             .getAccountSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * AnalyticsAdminServiceStubSettings analyticsAdminServiceSettings =
  *     analyticsAdminServiceSettingsBuilder.build();
  * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
  */
 @BetaApi
 @Generated("by gapic-generator-java")
@@ -345,23 +400,6 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<CreatePropertyRequest, Property> createPropertySettings;
   private final UnaryCallSettings<DeletePropertyRequest, Property> deletePropertySettings;
   private final UnaryCallSettings<UpdatePropertyRequest, Property> updatePropertySettings;
-  private final UnaryCallSettings<GetUserLinkRequest, UserLink> getUserLinkSettings;
-  private final UnaryCallSettings<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksSettings;
-  private final PagedCallSettings<
-          ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>
-      listUserLinksSettings;
-  private final PagedCallSettings<
-          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>
-      auditUserLinksSettings;
-  private final UnaryCallSettings<CreateUserLinkRequest, UserLink> createUserLinkSettings;
-  private final UnaryCallSettings<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksSettings;
-  private final UnaryCallSettings<UpdateUserLinkRequest, UserLink> updateUserLinkSettings;
-  private final UnaryCallSettings<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksSettings;
-  private final UnaryCallSettings<DeleteUserLinkRequest, Empty> deleteUserLinkSettings;
-  private final UnaryCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksSettings;
   private final UnaryCallSettings<CreateFirebaseLinkRequest, FirebaseLink>
       createFirebaseLinkSettings;
   private final UnaryCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkSettings;
@@ -433,6 +471,13 @@ public class AnalyticsAdminServiceStubSettings
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings;
+  private final UnaryCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventSettings;
+  private final UnaryCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings;
+  private final UnaryCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventSettings;
+  private final UnaryCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventSettings;
+  private final PagedCallSettings<
+          ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      listKeyEventsSettings;
   private final UnaryCallSettings<
           GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
       getDisplayVideo360AdvertiserLinkSettings;
@@ -575,10 +620,15 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<
           FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
       fetchAutomatedGa4ConfigurationOptOutSettings;
+  private final UnaryCallSettings<CreateBigQueryLinkRequest, BigQueryLink>
+      createBigQueryLinkSettings;
   private final UnaryCallSettings<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkSettings;
   private final PagedCallSettings<
           ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
       listBigQueryLinksSettings;
+  private final UnaryCallSettings<DeleteBigQueryLinkRequest, Empty> deleteBigQueryLinkSettings;
+  private final UnaryCallSettings<UpdateBigQueryLinkRequest, BigQueryLink>
+      updateBigQueryLinkSettings;
   private final UnaryCallSettings<
           GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       getEnhancedMeasurementSettingsSettings;
@@ -613,6 +663,77 @@ public class AnalyticsAdminServiceStubSettings
       updateEventCreateRuleSettings;
   private final UnaryCallSettings<DeleteEventCreateRuleRequest, Empty>
       deleteEventCreateRuleSettings;
+  private final UnaryCallSettings<GetEventEditRuleRequest, EventEditRule> getEventEditRuleSettings;
+  private final PagedCallSettings<
+          ListEventEditRulesRequest, ListEventEditRulesResponse, ListEventEditRulesPagedResponse>
+      listEventEditRulesSettings;
+  private final UnaryCallSettings<CreateEventEditRuleRequest, EventEditRule>
+      createEventEditRuleSettings;
+  private final UnaryCallSettings<UpdateEventEditRuleRequest, EventEditRule>
+      updateEventEditRuleSettings;
+  private final UnaryCallSettings<DeleteEventEditRuleRequest, Empty> deleteEventEditRuleSettings;
+  private final UnaryCallSettings<ReorderEventEditRulesRequest, Empty>
+      reorderEventEditRulesSettings;
+  private final UnaryCallSettings<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsSettings;
+  private final UnaryCallSettings<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsSettings;
+  private final UnaryCallSettings<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricSettings;
+  private final UnaryCallSettings<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricSettings;
+  private final PagedCallSettings<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsSettings;
+  private final UnaryCallSettings<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricSettings;
+  private final UnaryCallSettings<DeleteCalculatedMetricRequest, Empty>
+      deleteCalculatedMetricSettings;
+  private final UnaryCallSettings<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertySettings;
+  private final UnaryCallSettings<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkSettings;
+  private final PagedCallSettings<
+          ListRollupPropertySourceLinksRequest,
+          ListRollupPropertySourceLinksResponse,
+          ListRollupPropertySourceLinksPagedResponse>
+      listRollupPropertySourceLinksSettings;
+  private final UnaryCallSettings<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkSettings;
+  private final UnaryCallSettings<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkSettings;
+  private final UnaryCallSettings<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+      provisionSubpropertySettings;
+  private final UnaryCallSettings<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterSettings;
+  private final UnaryCallSettings<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterSettings;
+  private final PagedCallSettings<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersSettings;
+  private final UnaryCallSettings<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterSettings;
+  private final UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterSettings;
+  private final UnaryCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationSettings;
+  private final UnaryCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationSettings;
+  private final PagedCallSettings<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsSettings;
+  private final UnaryCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationSettings;
+  private final UnaryCallSettings<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationSettings;
+  private final UnaryCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -644,9 +765,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<Account> extractResources(ListAccountsResponse payload) {
-              return payload.getAccountsList() == null
-                  ? ImmutableList.<Account>of()
-                  : payload.getAccountsList();
+              return payload.getAccountsList();
             }
           };
 
@@ -684,9 +803,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<AccountSummary> extractResources(ListAccountSummariesResponse payload) {
-              return payload.getAccountSummariesList() == null
-                  ? ImmutableList.<AccountSummary>of()
-                  : payload.getAccountSummariesList();
+              return payload.getAccountSummariesList();
             }
           };
 
@@ -721,83 +838,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<Property> extractResources(ListPropertiesResponse payload) {
-              return payload.getPropertiesList() == null
-                  ? ImmutableList.<Property>of()
-                  : payload.getPropertiesList();
-            }
-          };
-
-  private static final PagedListDescriptor<ListUserLinksRequest, ListUserLinksResponse, UserLink>
-      LIST_USER_LINKS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListUserLinksRequest, ListUserLinksResponse, UserLink>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListUserLinksRequest injectToken(ListUserLinksRequest payload, String token) {
-              return ListUserLinksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListUserLinksRequest injectPageSize(ListUserLinksRequest payload, int pageSize) {
-              return ListUserLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListUserLinksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListUserLinksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<UserLink> extractResources(ListUserLinksResponse payload) {
-              return payload.getUserLinksList() == null
-                  ? ImmutableList.<UserLink>of()
-                  : payload.getUserLinksList();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>
-      AUDIT_USER_LINKS_PAGE_STR_DESC =
-          new PagedListDescriptor<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public AuditUserLinksRequest injectToken(AuditUserLinksRequest payload, String token) {
-              return AuditUserLinksRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public AuditUserLinksRequest injectPageSize(
-                AuditUserLinksRequest payload, int pageSize) {
-              return AuditUserLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(AuditUserLinksRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(AuditUserLinksResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<AuditUserLink> extractResources(AuditUserLinksResponse payload) {
-              return payload.getUserLinksList() == null
-                  ? ImmutableList.<AuditUserLink>of()
-                  : payload.getUserLinksList();
+              return payload.getPropertiesList();
             }
           };
 
@@ -835,9 +876,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<FirebaseLink> extractResources(ListFirebaseLinksResponse payload) {
-              return payload.getFirebaseLinksList() == null
-                  ? ImmutableList.<FirebaseLink>of()
-                  : payload.getFirebaseLinksList();
+              return payload.getFirebaseLinksList();
             }
           };
 
@@ -875,9 +914,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<GoogleAdsLink> extractResources(ListGoogleAdsLinksResponse payload) {
-              return payload.getGoogleAdsLinksList() == null
-                  ? ImmutableList.<GoogleAdsLink>of()
-                  : payload.getGoogleAdsLinksList();
+              return payload.getGoogleAdsLinksList();
             }
           };
 
@@ -924,9 +961,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<MeasurementProtocolSecret> extractResources(
                 ListMeasurementProtocolSecretsResponse payload) {
-              return payload.getMeasurementProtocolSecretsList() == null
-                  ? ImmutableList.<MeasurementProtocolSecret>of()
-                  : payload.getMeasurementProtocolSecretsList();
+              return payload.getMeasurementProtocolSecretsList();
             }
           };
 
@@ -973,9 +1008,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<SKAdNetworkConversionValueSchema> extractResources(
                 ListSKAdNetworkConversionValueSchemasResponse payload) {
-              return payload.getSkadnetworkConversionValueSchemasList() == null
-                  ? ImmutableList.<SKAdNetworkConversionValueSchema>of()
-                  : payload.getSkadnetworkConversionValueSchemasList();
+              return payload.getSkadnetworkConversionValueSchemasList();
             }
           };
 
@@ -1020,9 +1053,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<ChangeHistoryEvent> extractResources(
                 SearchChangeHistoryEventsResponse payload) {
-              return payload.getChangeHistoryEventsList() == null
-                  ? ImmutableList.<ChangeHistoryEvent>of()
-                  : payload.getChangeHistoryEventsList();
+              return payload.getChangeHistoryEventsList();
             }
           };
 
@@ -1061,9 +1092,41 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<ConversionEvent> extractResources(
                 ListConversionEventsResponse payload) {
-              return payload.getConversionEventsList() == null
-                  ? ImmutableList.<ConversionEvent>of()
-                  : payload.getConversionEventsList();
+              return payload.getConversionEventsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent>
+      LIST_KEY_EVENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListKeyEventsRequest injectToken(ListKeyEventsRequest payload, String token) {
+              return ListKeyEventsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListKeyEventsRequest injectPageSize(ListKeyEventsRequest payload, int pageSize) {
+              return ListKeyEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListKeyEventsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListKeyEventsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<KeyEvent> extractResources(ListKeyEventsResponse payload) {
+              return payload.getKeyEventsList();
             }
           };
 
@@ -1110,9 +1173,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<DisplayVideo360AdvertiserLink> extractResources(
                 ListDisplayVideo360AdvertiserLinksResponse payload) {
-              return payload.getDisplayVideo360AdvertiserLinksList() == null
-                  ? ImmutableList.<DisplayVideo360AdvertiserLink>of()
-                  : payload.getDisplayVideo360AdvertiserLinksList();
+              return payload.getDisplayVideo360AdvertiserLinksList();
             }
           };
 
@@ -1161,9 +1222,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<DisplayVideo360AdvertiserLinkProposal> extractResources(
                 ListDisplayVideo360AdvertiserLinkProposalsResponse payload) {
-              return payload.getDisplayVideo360AdvertiserLinkProposalsList() == null
-                  ? ImmutableList.<DisplayVideo360AdvertiserLinkProposal>of()
-                  : payload.getDisplayVideo360AdvertiserLinkProposalsList();
+              return payload.getDisplayVideo360AdvertiserLinkProposalsList();
             }
           };
 
@@ -1202,9 +1261,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<CustomDimension> extractResources(
                 ListCustomDimensionsResponse payload) {
-              return payload.getCustomDimensionsList() == null
-                  ? ImmutableList.<CustomDimension>of()
-                  : payload.getCustomDimensionsList();
+              return payload.getCustomDimensionsList();
             }
           };
 
@@ -1242,9 +1299,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<CustomMetric> extractResources(ListCustomMetricsResponse payload) {
-              return payload.getCustomMetricsList() == null
-                  ? ImmutableList.<CustomMetric>of()
-                  : payload.getCustomMetricsList();
+              return payload.getCustomMetricsList();
             }
           };
 
@@ -1281,9 +1336,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<DataStream> extractResources(ListDataStreamsResponse payload) {
-              return payload.getDataStreamsList() == null
-                  ? ImmutableList.<DataStream>of()
-                  : payload.getDataStreamsList();
+              return payload.getDataStreamsList();
             }
           };
 
@@ -1317,9 +1370,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<Audience> extractResources(ListAudiencesResponse payload) {
-              return payload.getAudiencesList() == null
-                  ? ImmutableList.<Audience>of()
-                  : payload.getAudiencesList();
+              return payload.getAudiencesList();
             }
           };
 
@@ -1358,9 +1409,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<SearchAds360Link> extractResources(
                 ListSearchAds360LinksResponse payload) {
-              return payload.getSearchAds360LinksList() == null
-                  ? ImmutableList.<SearchAds360Link>of()
-                  : payload.getSearchAds360LinksList();
+              return payload.getSearchAds360LinksList();
             }
           };
 
@@ -1398,9 +1447,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<AccessBinding> extractResources(ListAccessBindingsResponse payload) {
-              return payload.getAccessBindingsList() == null
-                  ? ImmutableList.<AccessBinding>of()
-                  : payload.getAccessBindingsList();
+              return payload.getAccessBindingsList();
             }
           };
 
@@ -1439,9 +1486,7 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<ExpandedDataSet> extractResources(
                 ListExpandedDataSetsResponse payload) {
-              return payload.getExpandedDataSetsList() == null
-                  ? ImmutableList.<ExpandedDataSet>of()
-                  : payload.getExpandedDataSetsList();
+              return payload.getExpandedDataSetsList();
             }
           };
 
@@ -1479,9 +1524,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<ChannelGroup> extractResources(ListChannelGroupsResponse payload) {
-              return payload.getChannelGroupsList() == null
-                  ? ImmutableList.<ChannelGroup>of()
-                  : payload.getChannelGroupsList();
+              return payload.getChannelGroupsList();
             }
           };
 
@@ -1519,9 +1562,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<BigQueryLink> extractResources(ListBigQueryLinksResponse payload) {
-              return payload.getBigqueryLinksList() == null
-                  ? ImmutableList.<BigQueryLink>of()
-                  : payload.getBigqueryLinksList();
+              return payload.getBigqueryLinksList();
             }
           };
 
@@ -1559,9 +1600,7 @@ public class AnalyticsAdminServiceStubSettings
 
             @Override
             public Iterable<AdSenseLink> extractResources(ListAdSenseLinksResponse payload) {
-              return payload.getAdsenseLinksList() == null
-                  ? ImmutableList.<AdSenseLink>of()
-                  : payload.getAdsenseLinksList();
+              return payload.getAdsenseLinksList();
             }
           };
 
@@ -1600,9 +1639,225 @@ public class AnalyticsAdminServiceStubSettings
             @Override
             public Iterable<EventCreateRule> extractResources(
                 ListEventCreateRulesResponse payload) {
-              return payload.getEventCreateRulesList() == null
-                  ? ImmutableList.<EventCreateRule>of()
-                  : payload.getEventCreateRulesList();
+              return payload.getEventCreateRulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListEventEditRulesRequest, ListEventEditRulesResponse, EventEditRule>
+      LIST_EVENT_EDIT_RULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEventEditRulesRequest, ListEventEditRulesResponse, EventEditRule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEventEditRulesRequest injectToken(
+                ListEventEditRulesRequest payload, String token) {
+              return ListEventEditRulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEventEditRulesRequest injectPageSize(
+                ListEventEditRulesRequest payload, int pageSize) {
+              return ListEventEditRulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEventEditRulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEventEditRulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EventEditRule> extractResources(ListEventEditRulesResponse payload) {
+              return payload.getEventEditRulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+      LIST_CALCULATED_METRICS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListCalculatedMetricsRequest injectToken(
+                ListCalculatedMetricsRequest payload, String token) {
+              return ListCalculatedMetricsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListCalculatedMetricsRequest injectPageSize(
+                ListCalculatedMetricsRequest payload, int pageSize) {
+              return ListCalculatedMetricsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListCalculatedMetricsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListCalculatedMetricsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<CalculatedMetric> extractResources(
+                ListCalculatedMetricsResponse payload) {
+              return payload.getCalculatedMetricsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRollupPropertySourceLinksRequest,
+          ListRollupPropertySourceLinksResponse,
+          RollupPropertySourceLink>
+      LIST_ROLLUP_PROPERTY_SOURCE_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRollupPropertySourceLinksRequest,
+              ListRollupPropertySourceLinksResponse,
+              RollupPropertySourceLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRollupPropertySourceLinksRequest injectToken(
+                ListRollupPropertySourceLinksRequest payload, String token) {
+              return ListRollupPropertySourceLinksRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListRollupPropertySourceLinksRequest injectPageSize(
+                ListRollupPropertySourceLinksRequest payload, int pageSize) {
+              return ListRollupPropertySourceLinksRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRollupPropertySourceLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRollupPropertySourceLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RollupPropertySourceLink> extractResources(
+                ListRollupPropertySourceLinksResponse payload) {
+              return payload.getRollupPropertySourceLinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          SubpropertyEventFilter>
+      LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSubpropertyEventFiltersRequest,
+              ListSubpropertyEventFiltersResponse,
+              SubpropertyEventFilter>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSubpropertyEventFiltersRequest injectToken(
+                ListSubpropertyEventFiltersRequest payload, String token) {
+              return ListSubpropertyEventFiltersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListSubpropertyEventFiltersRequest injectPageSize(
+                ListSubpropertyEventFiltersRequest payload, int pageSize) {
+              return ListSubpropertyEventFiltersRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubpropertyEventFiltersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSubpropertyEventFiltersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SubpropertyEventFilter> extractResources(
+                ListSubpropertyEventFiltersResponse payload) {
+              return payload.getSubpropertyEventFiltersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ReportingDataAnnotation>
+      LIST_REPORTING_DATA_ANNOTATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListReportingDataAnnotationsRequest,
+              ListReportingDataAnnotationsResponse,
+              ReportingDataAnnotation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListReportingDataAnnotationsRequest injectToken(
+                ListReportingDataAnnotationsRequest payload, String token) {
+              return ListReportingDataAnnotationsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListReportingDataAnnotationsRequest injectPageSize(
+                ListReportingDataAnnotationsRequest payload, int pageSize) {
+              return ListReportingDataAnnotationsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListReportingDataAnnotationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListReportingDataAnnotationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ReportingDataAnnotation> extractResources(
+                ListReportingDataAnnotationsResponse payload) {
+              return payload.getReportingDataAnnotationsList();
             }
           };
 
@@ -1660,42 +1915,6 @@ public class AnalyticsAdminServiceStubSettings
               PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> pageContext =
                   PageContext.create(callable, LIST_PROPERTIES_PAGE_STR_DESC, request, context);
               return ListPropertiesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>
-      LIST_USER_LINKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>() {
-            @Override
-            public ApiFuture<ListUserLinksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> callable,
-                ListUserLinksRequest request,
-                ApiCallContext context,
-                ApiFuture<ListUserLinksResponse> futureResponse) {
-              PageContext<ListUserLinksRequest, ListUserLinksResponse, UserLink> pageContext =
-                  PageContext.create(callable, LIST_USER_LINKS_PAGE_STR_DESC, request, context);
-              return ListUserLinksPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>
-      AUDIT_USER_LINKS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>() {
-            @Override
-            public ApiFuture<AuditUserLinksPagedResponse> getFuturePagedResponse(
-                UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse> callable,
-                AuditUserLinksRequest request,
-                ApiCallContext context,
-                ApiFuture<AuditUserLinksResponse> futureResponse) {
-              PageContext<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink>
-                  pageContext =
-                      PageContext.create(
-                          callable, AUDIT_USER_LINKS_PAGE_STR_DESC, request, context);
-              return AuditUserLinksPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1857,6 +2076,23 @@ public class AnalyticsAdminServiceStubSettings
                       PageContext.create(
                           callable, LIST_CONVERSION_EVENTS_PAGE_STR_DESC, request, context);
               return ListConversionEventsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      LIST_KEY_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>() {
+            @Override
+            public ApiFuture<ListKeyEventsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListKeyEventsRequest, ListKeyEventsResponse> callable,
+                ListKeyEventsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListKeyEventsResponse> futureResponse) {
+              PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> pageContext =
+                  PageContext.create(callable, LIST_KEY_EVENTS_PAGE_STR_DESC, request, context);
+              return ListKeyEventsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -2161,6 +2397,144 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListEventEditRulesRequest, ListEventEditRulesResponse, ListEventEditRulesPagedResponse>
+      LIST_EVENT_EDIT_RULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEventEditRulesRequest,
+              ListEventEditRulesResponse,
+              ListEventEditRulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEventEditRulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEventEditRulesRequest, ListEventEditRulesResponse> callable,
+                ListEventEditRulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEventEditRulesResponse> futureResponse) {
+              PageContext<ListEventEditRulesRequest, ListEventEditRulesResponse, EventEditRule>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_EVENT_EDIT_RULES_PAGE_STR_DESC, request, context);
+              return ListEventEditRulesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          ListCalculatedMetricsPagedResponse>
+      LIST_CALCULATED_METRICS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListCalculatedMetricsRequest,
+              ListCalculatedMetricsResponse,
+              ListCalculatedMetricsPagedResponse>() {
+            @Override
+            public ApiFuture<ListCalculatedMetricsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListCalculatedMetricsRequest, ListCalculatedMetricsResponse> callable,
+                ListCalculatedMetricsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListCalculatedMetricsResponse> futureResponse) {
+              PageContext<
+                      ListCalculatedMetricsRequest, ListCalculatedMetricsResponse, CalculatedMetric>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CALCULATED_METRICS_PAGE_STR_DESC, request, context);
+              return ListCalculatedMetricsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRollupPropertySourceLinksRequest,
+          ListRollupPropertySourceLinksResponse,
+          ListRollupPropertySourceLinksPagedResponse>
+      LIST_ROLLUP_PROPERTY_SOURCE_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRollupPropertySourceLinksRequest,
+              ListRollupPropertySourceLinksResponse,
+              ListRollupPropertySourceLinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListRollupPropertySourceLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+                    callable,
+                ListRollupPropertySourceLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRollupPropertySourceLinksResponse> futureResponse) {
+              PageContext<
+                      ListRollupPropertySourceLinksRequest,
+                      ListRollupPropertySourceLinksResponse,
+                      RollupPropertySourceLink>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_ROLLUP_PROPERTY_SOURCE_LINKS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListRollupPropertySourceLinksPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          ListSubpropertyEventFiltersPagedResponse>
+      LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubpropertyEventFiltersRequest,
+              ListSubpropertyEventFiltersResponse,
+              ListSubpropertyEventFiltersPagedResponse>() {
+            @Override
+            public ApiFuture<ListSubpropertyEventFiltersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListSubpropertyEventFiltersRequest, ListSubpropertyEventFiltersResponse>
+                    callable,
+                ListSubpropertyEventFiltersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSubpropertyEventFiltersResponse> futureResponse) {
+              PageContext<
+                      ListSubpropertyEventFiltersRequest,
+                      ListSubpropertyEventFiltersResponse,
+                      SubpropertyEventFilter>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_DESC, request, context);
+              return ListSubpropertyEventFiltersPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ListReportingDataAnnotationsPagedResponse>
+      LIST_REPORTING_DATA_ANNOTATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListReportingDataAnnotationsRequest,
+              ListReportingDataAnnotationsResponse,
+              ListReportingDataAnnotationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListReportingDataAnnotationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
+                    callable,
+                ListReportingDataAnnotationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListReportingDataAnnotationsResponse> futureResponse) {
+              PageContext<
+                      ListReportingDataAnnotationsRequest,
+                      ListReportingDataAnnotationsResponse,
+                      ReportingDataAnnotation>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_REPORTING_DATA_ANNOTATIONS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListReportingDataAnnotationsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to getAccount. */
   public UnaryCallSettings<GetAccountRequest, Account> getAccountSettings() {
     return getAccountSettings;
@@ -2222,62 +2596,6 @@ public class AnalyticsAdminServiceStubSettings
   /** Returns the object with the settings used for calls to updateProperty. */
   public UnaryCallSettings<UpdatePropertyRequest, Property> updatePropertySettings() {
     return updatePropertySettings;
-  }
-
-  /** Returns the object with the settings used for calls to getUserLink. */
-  public UnaryCallSettings<GetUserLinkRequest, UserLink> getUserLinkSettings() {
-    return getUserLinkSettings;
-  }
-
-  /** Returns the object with the settings used for calls to batchGetUserLinks. */
-  public UnaryCallSettings<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksSettings() {
-    return batchGetUserLinksSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listUserLinks. */
-  public PagedCallSettings<ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>
-      listUserLinksSettings() {
-    return listUserLinksSettings;
-  }
-
-  /** Returns the object with the settings used for calls to auditUserLinks. */
-  public PagedCallSettings<
-          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>
-      auditUserLinksSettings() {
-    return auditUserLinksSettings;
-  }
-
-  /** Returns the object with the settings used for calls to createUserLink. */
-  public UnaryCallSettings<CreateUserLinkRequest, UserLink> createUserLinkSettings() {
-    return createUserLinkSettings;
-  }
-
-  /** Returns the object with the settings used for calls to batchCreateUserLinks. */
-  public UnaryCallSettings<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksSettings() {
-    return batchCreateUserLinksSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateUserLink. */
-  public UnaryCallSettings<UpdateUserLinkRequest, UserLink> updateUserLinkSettings() {
-    return updateUserLinkSettings;
-  }
-
-  /** Returns the object with the settings used for calls to batchUpdateUserLinks. */
-  public UnaryCallSettings<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksSettings() {
-    return batchUpdateUserLinksSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteUserLink. */
-  public UnaryCallSettings<DeleteUserLinkRequest, Empty> deleteUserLinkSettings() {
-    return deleteUserLinkSettings;
-  }
-
-  /** Returns the object with the settings used for calls to batchDeleteUserLinks. */
-  public UnaryCallSettings<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksSettings() {
-    return batchDeleteUserLinksSettings;
   }
 
   /** Returns the object with the settings used for calls to createFirebaseLink. */
@@ -2437,36 +2755,87 @@ public class AnalyticsAdminServiceStubSettings
     return updateGoogleSignalsSettingsSettings;
   }
 
-  /** Returns the object with the settings used for calls to createConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to createConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateConversionEventRequest, ConversionEvent>
       createConversionEventSettings() {
     return createConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to updateConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to updateConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateConversionEventRequest, ConversionEvent>
       updateConversionEventSettings() {
     return updateConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to getConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to getConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetConversionEventRequest, ConversionEvent>
       getConversionEventSettings() {
     return getConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteConversionEvent. */
+  /**
+   * Returns the object with the settings used for calls to deleteConversionEvent.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventSettings() {
     return deleteConversionEventSettings;
   }
 
-  /** Returns the object with the settings used for calls to listConversionEvents. */
+  /**
+   * Returns the object with the settings used for calls to listConversionEvents.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListConversionEventsRequest,
           ListConversionEventsResponse,
           ListConversionEventsPagedResponse>
       listConversionEventsSettings() {
     return listConversionEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createKeyEvent. */
+  public UnaryCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+    return createKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateKeyEvent. */
+  public UnaryCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+    return updateKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getKeyEvent. */
+  public UnaryCallSettings<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+    return getKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteKeyEvent. */
+  public UnaryCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+    return deleteKeyEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listKeyEvents. */
+  public PagedCallSettings<ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+      listKeyEventsSettings() {
+    return listKeyEventsSettings;
   }
 
   /** Returns the object with the settings used for calls to getDisplayVideo360AdvertiserLink. */
@@ -2868,6 +3237,11 @@ public class AnalyticsAdminServiceStubSettings
     return fetchAutomatedGa4ConfigurationOptOutSettings;
   }
 
+  /** Returns the object with the settings used for calls to createBigQueryLink. */
+  public UnaryCallSettings<CreateBigQueryLinkRequest, BigQueryLink> createBigQueryLinkSettings() {
+    return createBigQueryLinkSettings;
+  }
+
   /** Returns the object with the settings used for calls to getBigQueryLink. */
   public UnaryCallSettings<GetBigQueryLinkRequest, BigQueryLink> getBigQueryLinkSettings() {
     return getBigQueryLinkSettings;
@@ -2878,6 +3252,16 @@ public class AnalyticsAdminServiceStubSettings
           ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
       listBigQueryLinksSettings() {
     return listBigQueryLinksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBigQueryLink. */
+  public UnaryCallSettings<DeleteBigQueryLinkRequest, Empty> deleteBigQueryLinkSettings() {
+    return deleteBigQueryLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBigQueryLink. */
+  public UnaryCallSettings<UpdateBigQueryLinkRequest, BigQueryLink> updateBigQueryLinkSettings() {
+    return updateBigQueryLinkSettings;
   }
 
   /** Returns the object with the settings used for calls to getEnhancedMeasurementSettings. */
@@ -2969,6 +3353,195 @@ public class AnalyticsAdminServiceStubSettings
     return deleteEventCreateRuleSettings;
   }
 
+  /** Returns the object with the settings used for calls to getEventEditRule. */
+  public UnaryCallSettings<GetEventEditRuleRequest, EventEditRule> getEventEditRuleSettings() {
+    return getEventEditRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEventEditRules. */
+  public PagedCallSettings<
+          ListEventEditRulesRequest, ListEventEditRulesResponse, ListEventEditRulesPagedResponse>
+      listEventEditRulesSettings() {
+    return listEventEditRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createEventEditRule. */
+  public UnaryCallSettings<CreateEventEditRuleRequest, EventEditRule>
+      createEventEditRuleSettings() {
+    return createEventEditRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEventEditRule. */
+  public UnaryCallSettings<UpdateEventEditRuleRequest, EventEditRule>
+      updateEventEditRuleSettings() {
+    return updateEventEditRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEventEditRule. */
+  public UnaryCallSettings<DeleteEventEditRuleRequest, Empty> deleteEventEditRuleSettings() {
+    return deleteEventEditRuleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to reorderEventEditRules. */
+  public UnaryCallSettings<ReorderEventEditRulesRequest, Empty> reorderEventEditRulesSettings() {
+    return reorderEventEditRulesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDataRedactionSettings. */
+  public UnaryCallSettings<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsSettings() {
+    return updateDataRedactionSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDataRedactionSettings. */
+  public UnaryCallSettings<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsSettings() {
+    return getDataRedactionSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCalculatedMetric. */
+  public UnaryCallSettings<GetCalculatedMetricRequest, CalculatedMetric>
+      getCalculatedMetricSettings() {
+    return getCalculatedMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCalculatedMetric. */
+  public UnaryCallSettings<CreateCalculatedMetricRequest, CalculatedMetric>
+      createCalculatedMetricSettings() {
+    return createCalculatedMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listCalculatedMetrics. */
+  public PagedCallSettings<
+          ListCalculatedMetricsRequest,
+          ListCalculatedMetricsResponse,
+          ListCalculatedMetricsPagedResponse>
+      listCalculatedMetricsSettings() {
+    return listCalculatedMetricsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCalculatedMetric. */
+  public UnaryCallSettings<UpdateCalculatedMetricRequest, CalculatedMetric>
+      updateCalculatedMetricSettings() {
+    return updateCalculatedMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteCalculatedMetric. */
+  public UnaryCallSettings<DeleteCalculatedMetricRequest, Empty> deleteCalculatedMetricSettings() {
+    return deleteCalculatedMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRollupProperty. */
+  public UnaryCallSettings<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertySettings() {
+    return createRollupPropertySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRollupPropertySourceLink. */
+  public UnaryCallSettings<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkSettings() {
+    return getRollupPropertySourceLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRollupPropertySourceLinks. */
+  public PagedCallSettings<
+          ListRollupPropertySourceLinksRequest,
+          ListRollupPropertySourceLinksResponse,
+          ListRollupPropertySourceLinksPagedResponse>
+      listRollupPropertySourceLinksSettings() {
+    return listRollupPropertySourceLinksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRollupPropertySourceLink. */
+  public UnaryCallSettings<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkSettings() {
+    return createRollupPropertySourceLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRollupPropertySourceLink. */
+  public UnaryCallSettings<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkSettings() {
+    return deleteRollupPropertySourceLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to provisionSubproperty. */
+  public UnaryCallSettings<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+      provisionSubpropertySettings() {
+    return provisionSubpropertySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSubpropertyEventFilter. */
+  public UnaryCallSettings<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterSettings() {
+    return createSubpropertyEventFilterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSubpropertyEventFilter. */
+  public UnaryCallSettings<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      getSubpropertyEventFilterSettings() {
+    return getSubpropertyEventFilterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSubpropertyEventFilters. */
+  public PagedCallSettings<
+          ListSubpropertyEventFiltersRequest,
+          ListSubpropertyEventFiltersResponse,
+          ListSubpropertyEventFiltersPagedResponse>
+      listSubpropertyEventFiltersSettings() {
+    return listSubpropertyEventFiltersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSubpropertyEventFilter. */
+  public UnaryCallSettings<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      updateSubpropertyEventFilterSettings() {
+    return updateSubpropertyEventFilterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubpropertyEventFilter. */
+  public UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterSettings() {
+    return deleteSubpropertyEventFilterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createReportingDataAnnotation. */
+  public UnaryCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      createReportingDataAnnotationSettings() {
+    return createReportingDataAnnotationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getReportingDataAnnotation. */
+  public UnaryCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+      getReportingDataAnnotationSettings() {
+    return getReportingDataAnnotationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listReportingDataAnnotations. */
+  public PagedCallSettings<
+          ListReportingDataAnnotationsRequest,
+          ListReportingDataAnnotationsResponse,
+          ListReportingDataAnnotationsPagedResponse>
+      listReportingDataAnnotationsSettings() {
+    return listReportingDataAnnotationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateReportingDataAnnotation. */
+  public UnaryCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+      updateReportingDataAnnotationSettings() {
+    return updateReportingDataAnnotationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteReportingDataAnnotation. */
+  public UnaryCallSettings<DeleteReportingDataAnnotationRequest, Empty>
+      deleteReportingDataAnnotationSettings() {
+    return deleteReportingDataAnnotationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to submitUserDeletion. */
+  public UnaryCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+      submitUserDeletionSettings() {
+    return submitUserDeletionSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -2985,12 +3558,19 @@ public class AnalyticsAdminServiceStubSettings
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "analyticsadmin";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "analyticsadmin.googleapis.com:443";
   }
@@ -3029,7 +3609,6 @@ public class AnalyticsAdminServiceStubSettings
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -3038,7 +3617,6 @@ public class AnalyticsAdminServiceStubSettings
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -3086,16 +3664,6 @@ public class AnalyticsAdminServiceStubSettings
     createPropertySettings = settingsBuilder.createPropertySettings().build();
     deletePropertySettings = settingsBuilder.deletePropertySettings().build();
     updatePropertySettings = settingsBuilder.updatePropertySettings().build();
-    getUserLinkSettings = settingsBuilder.getUserLinkSettings().build();
-    batchGetUserLinksSettings = settingsBuilder.batchGetUserLinksSettings().build();
-    listUserLinksSettings = settingsBuilder.listUserLinksSettings().build();
-    auditUserLinksSettings = settingsBuilder.auditUserLinksSettings().build();
-    createUserLinkSettings = settingsBuilder.createUserLinkSettings().build();
-    batchCreateUserLinksSettings = settingsBuilder.batchCreateUserLinksSettings().build();
-    updateUserLinkSettings = settingsBuilder.updateUserLinkSettings().build();
-    batchUpdateUserLinksSettings = settingsBuilder.batchUpdateUserLinksSettings().build();
-    deleteUserLinkSettings = settingsBuilder.deleteUserLinkSettings().build();
-    batchDeleteUserLinksSettings = settingsBuilder.batchDeleteUserLinksSettings().build();
     createFirebaseLinkSettings = settingsBuilder.createFirebaseLinkSettings().build();
     deleteFirebaseLinkSettings = settingsBuilder.deleteFirebaseLinkSettings().build();
     listFirebaseLinksSettings = settingsBuilder.listFirebaseLinksSettings().build();
@@ -3136,6 +3704,11 @@ public class AnalyticsAdminServiceStubSettings
     getConversionEventSettings = settingsBuilder.getConversionEventSettings().build();
     deleteConversionEventSettings = settingsBuilder.deleteConversionEventSettings().build();
     listConversionEventsSettings = settingsBuilder.listConversionEventsSettings().build();
+    createKeyEventSettings = settingsBuilder.createKeyEventSettings().build();
+    updateKeyEventSettings = settingsBuilder.updateKeyEventSettings().build();
+    getKeyEventSettings = settingsBuilder.getKeyEventSettings().build();
+    deleteKeyEventSettings = settingsBuilder.deleteKeyEventSettings().build();
+    listKeyEventsSettings = settingsBuilder.listKeyEventsSettings().build();
     getDisplayVideo360AdvertiserLinkSettings =
         settingsBuilder.getDisplayVideo360AdvertiserLinkSettings().build();
     listDisplayVideo360AdvertiserLinksSettings =
@@ -3212,8 +3785,11 @@ public class AnalyticsAdminServiceStubSettings
         settingsBuilder.setAutomatedGa4ConfigurationOptOutSettings().build();
     fetchAutomatedGa4ConfigurationOptOutSettings =
         settingsBuilder.fetchAutomatedGa4ConfigurationOptOutSettings().build();
+    createBigQueryLinkSettings = settingsBuilder.createBigQueryLinkSettings().build();
     getBigQueryLinkSettings = settingsBuilder.getBigQueryLinkSettings().build();
     listBigQueryLinksSettings = settingsBuilder.listBigQueryLinksSettings().build();
+    deleteBigQueryLinkSettings = settingsBuilder.deleteBigQueryLinkSettings().build();
+    updateBigQueryLinkSettings = settingsBuilder.updateBigQueryLinkSettings().build();
     getEnhancedMeasurementSettingsSettings =
         settingsBuilder.getEnhancedMeasurementSettingsSettings().build();
     updateEnhancedMeasurementSettingsSettings =
@@ -3231,6 +3807,50 @@ public class AnalyticsAdminServiceStubSettings
     createEventCreateRuleSettings = settingsBuilder.createEventCreateRuleSettings().build();
     updateEventCreateRuleSettings = settingsBuilder.updateEventCreateRuleSettings().build();
     deleteEventCreateRuleSettings = settingsBuilder.deleteEventCreateRuleSettings().build();
+    getEventEditRuleSettings = settingsBuilder.getEventEditRuleSettings().build();
+    listEventEditRulesSettings = settingsBuilder.listEventEditRulesSettings().build();
+    createEventEditRuleSettings = settingsBuilder.createEventEditRuleSettings().build();
+    updateEventEditRuleSettings = settingsBuilder.updateEventEditRuleSettings().build();
+    deleteEventEditRuleSettings = settingsBuilder.deleteEventEditRuleSettings().build();
+    reorderEventEditRulesSettings = settingsBuilder.reorderEventEditRulesSettings().build();
+    updateDataRedactionSettingsSettings =
+        settingsBuilder.updateDataRedactionSettingsSettings().build();
+    getDataRedactionSettingsSettings = settingsBuilder.getDataRedactionSettingsSettings().build();
+    getCalculatedMetricSettings = settingsBuilder.getCalculatedMetricSettings().build();
+    createCalculatedMetricSettings = settingsBuilder.createCalculatedMetricSettings().build();
+    listCalculatedMetricsSettings = settingsBuilder.listCalculatedMetricsSettings().build();
+    updateCalculatedMetricSettings = settingsBuilder.updateCalculatedMetricSettings().build();
+    deleteCalculatedMetricSettings = settingsBuilder.deleteCalculatedMetricSettings().build();
+    createRollupPropertySettings = settingsBuilder.createRollupPropertySettings().build();
+    getRollupPropertySourceLinkSettings =
+        settingsBuilder.getRollupPropertySourceLinkSettings().build();
+    listRollupPropertySourceLinksSettings =
+        settingsBuilder.listRollupPropertySourceLinksSettings().build();
+    createRollupPropertySourceLinkSettings =
+        settingsBuilder.createRollupPropertySourceLinkSettings().build();
+    deleteRollupPropertySourceLinkSettings =
+        settingsBuilder.deleteRollupPropertySourceLinkSettings().build();
+    provisionSubpropertySettings = settingsBuilder.provisionSubpropertySettings().build();
+    createSubpropertyEventFilterSettings =
+        settingsBuilder.createSubpropertyEventFilterSettings().build();
+    getSubpropertyEventFilterSettings = settingsBuilder.getSubpropertyEventFilterSettings().build();
+    listSubpropertyEventFiltersSettings =
+        settingsBuilder.listSubpropertyEventFiltersSettings().build();
+    updateSubpropertyEventFilterSettings =
+        settingsBuilder.updateSubpropertyEventFilterSettings().build();
+    deleteSubpropertyEventFilterSettings =
+        settingsBuilder.deleteSubpropertyEventFilterSettings().build();
+    createReportingDataAnnotationSettings =
+        settingsBuilder.createReportingDataAnnotationSettings().build();
+    getReportingDataAnnotationSettings =
+        settingsBuilder.getReportingDataAnnotationSettings().build();
+    listReportingDataAnnotationsSettings =
+        settingsBuilder.listReportingDataAnnotationsSettings().build();
+    updateReportingDataAnnotationSettings =
+        settingsBuilder.updateReportingDataAnnotationSettings().build();
+    deleteReportingDataAnnotationSettings =
+        settingsBuilder.deleteReportingDataAnnotationSettings().build();
+    submitUserDeletionSettings = settingsBuilder.submitUserDeletionSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -3258,26 +3878,6 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<CreatePropertyRequest, Property> createPropertySettings;
     private final UnaryCallSettings.Builder<DeletePropertyRequest, Property> deletePropertySettings;
     private final UnaryCallSettings.Builder<UpdatePropertyRequest, Property> updatePropertySettings;
-    private final UnaryCallSettings.Builder<GetUserLinkRequest, UserLink> getUserLinkSettings;
-    private final UnaryCallSettings.Builder<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-        batchGetUserLinksSettings;
-    private final PagedCallSettings.Builder<
-            ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>
-        listUserLinksSettings;
-    private final PagedCallSettings.Builder<
-            AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>
-        auditUserLinksSettings;
-    private final UnaryCallSettings.Builder<CreateUserLinkRequest, UserLink> createUserLinkSettings;
-    private final UnaryCallSettings.Builder<
-            BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-        batchCreateUserLinksSettings;
-    private final UnaryCallSettings.Builder<UpdateUserLinkRequest, UserLink> updateUserLinkSettings;
-    private final UnaryCallSettings.Builder<
-            BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-        batchUpdateUserLinksSettings;
-    private final UnaryCallSettings.Builder<DeleteUserLinkRequest, Empty> deleteUserLinkSettings;
-    private final UnaryCallSettings.Builder<BatchDeleteUserLinksRequest, Empty>
-        batchDeleteUserLinksSettings;
     private final UnaryCallSettings.Builder<CreateFirebaseLinkRequest, FirebaseLink>
         createFirebaseLinkSettings;
     private final UnaryCallSettings.Builder<DeleteFirebaseLinkRequest, Empty>
@@ -3356,6 +3956,13 @@ public class AnalyticsAdminServiceStubSettings
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings;
+    private final UnaryCallSettings.Builder<CreateKeyEventRequest, KeyEvent> createKeyEventSettings;
+    private final UnaryCallSettings.Builder<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings;
+    private final UnaryCallSettings.Builder<GetKeyEventRequest, KeyEvent> getKeyEventSettings;
+    private final UnaryCallSettings.Builder<DeleteKeyEventRequest, Empty> deleteKeyEventSettings;
+    private final PagedCallSettings.Builder<
+            ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+        listKeyEventsSettings;
     private final UnaryCallSettings.Builder<
             GetDisplayVideo360AdvertiserLinkRequest, DisplayVideo360AdvertiserLink>
         getDisplayVideo360AdvertiserLinkSettings;
@@ -3513,11 +4120,17 @@ public class AnalyticsAdminServiceStubSettings
             FetchAutomatedGa4ConfigurationOptOutRequest,
             FetchAutomatedGa4ConfigurationOptOutResponse>
         fetchAutomatedGa4ConfigurationOptOutSettings;
+    private final UnaryCallSettings.Builder<CreateBigQueryLinkRequest, BigQueryLink>
+        createBigQueryLinkSettings;
     private final UnaryCallSettings.Builder<GetBigQueryLinkRequest, BigQueryLink>
         getBigQueryLinkSettings;
     private final PagedCallSettings.Builder<
             ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
         listBigQueryLinksSettings;
+    private final UnaryCallSettings.Builder<DeleteBigQueryLinkRequest, Empty>
+        deleteBigQueryLinkSettings;
+    private final UnaryCallSettings.Builder<UpdateBigQueryLinkRequest, BigQueryLink>
+        updateBigQueryLinkSettings;
     private final UnaryCallSettings.Builder<
             GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
         getEnhancedMeasurementSettingsSettings;
@@ -3557,6 +4170,90 @@ public class AnalyticsAdminServiceStubSettings
         updateEventCreateRuleSettings;
     private final UnaryCallSettings.Builder<DeleteEventCreateRuleRequest, Empty>
         deleteEventCreateRuleSettings;
+    private final UnaryCallSettings.Builder<GetEventEditRuleRequest, EventEditRule>
+        getEventEditRuleSettings;
+    private final PagedCallSettings.Builder<
+            ListEventEditRulesRequest, ListEventEditRulesResponse, ListEventEditRulesPagedResponse>
+        listEventEditRulesSettings;
+    private final UnaryCallSettings.Builder<CreateEventEditRuleRequest, EventEditRule>
+        createEventEditRuleSettings;
+    private final UnaryCallSettings.Builder<UpdateEventEditRuleRequest, EventEditRule>
+        updateEventEditRuleSettings;
+    private final UnaryCallSettings.Builder<DeleteEventEditRuleRequest, Empty>
+        deleteEventEditRuleSettings;
+    private final UnaryCallSettings.Builder<ReorderEventEditRulesRequest, Empty>
+        reorderEventEditRulesSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+        updateDataRedactionSettingsSettings;
+    private final UnaryCallSettings.Builder<GetDataRedactionSettingsRequest, DataRedactionSettings>
+        getDataRedactionSettingsSettings;
+    private final UnaryCallSettings.Builder<GetCalculatedMetricRequest, CalculatedMetric>
+        getCalculatedMetricSettings;
+    private final UnaryCallSettings.Builder<CreateCalculatedMetricRequest, CalculatedMetric>
+        createCalculatedMetricSettings;
+    private final PagedCallSettings.Builder<
+            ListCalculatedMetricsRequest,
+            ListCalculatedMetricsResponse,
+            ListCalculatedMetricsPagedResponse>
+        listCalculatedMetricsSettings;
+    private final UnaryCallSettings.Builder<UpdateCalculatedMetricRequest, CalculatedMetric>
+        updateCalculatedMetricSettings;
+    private final UnaryCallSettings.Builder<DeleteCalculatedMetricRequest, Empty>
+        deleteCalculatedMetricSettings;
+    private final UnaryCallSettings.Builder<
+            CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+        createRollupPropertySettings;
+    private final UnaryCallSettings.Builder<
+            GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+        getRollupPropertySourceLinkSettings;
+    private final PagedCallSettings.Builder<
+            ListRollupPropertySourceLinksRequest,
+            ListRollupPropertySourceLinksResponse,
+            ListRollupPropertySourceLinksPagedResponse>
+        listRollupPropertySourceLinksSettings;
+    private final UnaryCallSettings.Builder<
+            CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+        createRollupPropertySourceLinkSettings;
+    private final UnaryCallSettings.Builder<DeleteRollupPropertySourceLinkRequest, Empty>
+        deleteRollupPropertySourceLinkSettings;
+    private final UnaryCallSettings.Builder<
+            ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+        provisionSubpropertySettings;
+    private final UnaryCallSettings.Builder<
+            CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        createSubpropertyEventFilterSettings;
+    private final UnaryCallSettings.Builder<
+            GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        getSubpropertyEventFilterSettings;
+    private final PagedCallSettings.Builder<
+            ListSubpropertyEventFiltersRequest,
+            ListSubpropertyEventFiltersResponse,
+            ListSubpropertyEventFiltersPagedResponse>
+        listSubpropertyEventFiltersSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        updateSubpropertyEventFilterSettings;
+    private final UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
+        deleteSubpropertyEventFilterSettings;
+    private final UnaryCallSettings.Builder<
+            CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        createReportingDataAnnotationSettings;
+    private final UnaryCallSettings.Builder<
+            GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+        getReportingDataAnnotationSettings;
+    private final PagedCallSettings.Builder<
+            ListReportingDataAnnotationsRequest,
+            ListReportingDataAnnotationsResponse,
+            ListReportingDataAnnotationsPagedResponse>
+        listReportingDataAnnotationsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        updateReportingDataAnnotationSettings;
+    private final UnaryCallSettings.Builder<DeleteReportingDataAnnotationRequest, Empty>
+        deleteReportingDataAnnotationSettings;
+    private final UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+        submitUserDeletionSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -3580,21 +4277,21 @@ public class AnalyticsAdminServiceStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -3619,16 +4316,6 @@ public class AnalyticsAdminServiceStubSettings
       createPropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deletePropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updatePropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      getUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      batchGetUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listUserLinksSettings = PagedCallSettings.newBuilder(LIST_USER_LINKS_PAGE_STR_FACT);
-      auditUserLinksSettings = PagedCallSettings.newBuilder(AUDIT_USER_LINKS_PAGE_STR_FACT);
-      createUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      batchCreateUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      updateUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      batchUpdateUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteUserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      batchDeleteUserLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFirebaseLinksSettings = PagedCallSettings.newBuilder(LIST_FIREBASE_LINKS_PAGE_STR_FACT);
@@ -3665,6 +4352,11 @@ public class AnalyticsAdminServiceStubSettings
       deleteConversionEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversionEventsSettings =
           PagedCallSettings.newBuilder(LIST_CONVERSION_EVENTS_PAGE_STR_FACT);
+      createKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteKeyEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listKeyEventsSettings = PagedCallSettings.newBuilder(LIST_KEY_EVENTS_PAGE_STR_FACT);
       getDisplayVideo360AdvertiserLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDisplayVideo360AdvertiserLinksSettings =
           PagedCallSettings.newBuilder(LIST_DISPLAY_VIDEO360_ADVERTISER_LINKS_PAGE_STR_FACT);
@@ -3739,8 +4431,11 @@ public class AnalyticsAdminServiceStubSettings
       setAutomatedGa4ConfigurationOptOutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchAutomatedGa4ConfigurationOptOutSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBigQueryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBigQueryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBigQueryLinksSettings = PagedCallSettings.newBuilder(LIST_BIG_QUERY_LINKS_PAGE_STR_FACT);
+      deleteBigQueryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBigQueryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createConnectedSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -3757,6 +4452,41 @@ public class AnalyticsAdminServiceStubSettings
       createEventCreateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateEventCreateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEventCreateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getEventEditRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listEventEditRulesSettings =
+          PagedCallSettings.newBuilder(LIST_EVENT_EDIT_RULES_PAGE_STR_FACT);
+      createEventEditRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEventEditRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteEventEditRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      reorderEventEditRulesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDataRedactionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getDataRedactionSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCalculatedMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createCalculatedMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listCalculatedMetricsSettings =
+          PagedCallSettings.newBuilder(LIST_CALCULATED_METRICS_PAGE_STR_FACT);
+      updateCalculatedMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteCalculatedMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createRollupPropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getRollupPropertySourceLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRollupPropertySourceLinksSettings =
+          PagedCallSettings.newBuilder(LIST_ROLLUP_PROPERTY_SOURCE_LINKS_PAGE_STR_FACT);
+      createRollupPropertySourceLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRollupPropertySourceLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      provisionSubpropertySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSubpropertyEventFiltersSettings =
+          PagedCallSettings.newBuilder(LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_FACT);
+      updateSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listReportingDataAnnotationsSettings =
+          PagedCallSettings.newBuilder(LIST_REPORTING_DATA_ANNOTATIONS_PAGE_STR_FACT);
+      updateReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      submitUserDeletionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -3771,16 +4501,6 @@ public class AnalyticsAdminServiceStubSettings
               createPropertySettings,
               deletePropertySettings,
               updatePropertySettings,
-              getUserLinkSettings,
-              batchGetUserLinksSettings,
-              listUserLinksSettings,
-              auditUserLinksSettings,
-              createUserLinkSettings,
-              batchCreateUserLinksSettings,
-              updateUserLinkSettings,
-              batchUpdateUserLinksSettings,
-              deleteUserLinkSettings,
-              batchDeleteUserLinksSettings,
               createFirebaseLinkSettings,
               deleteFirebaseLinkSettings,
               listFirebaseLinksSettings,
@@ -3809,6 +4529,11 @@ public class AnalyticsAdminServiceStubSettings
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
+              createKeyEventSettings,
+              updateKeyEventSettings,
+              getKeyEventSettings,
+              deleteKeyEventSettings,
+              listKeyEventsSettings,
               getDisplayVideo360AdvertiserLinkSettings,
               listDisplayVideo360AdvertiserLinksSettings,
               createDisplayVideo360AdvertiserLinkSettings,
@@ -3871,8 +4596,11 @@ public class AnalyticsAdminServiceStubSettings
               deleteChannelGroupSettings,
               setAutomatedGa4ConfigurationOptOutSettings,
               fetchAutomatedGa4ConfigurationOptOutSettings,
+              createBigQueryLinkSettings,
               getBigQueryLinkSettings,
               listBigQueryLinksSettings,
+              deleteBigQueryLinkSettings,
+              updateBigQueryLinkSettings,
               getEnhancedMeasurementSettingsSettings,
               updateEnhancedMeasurementSettingsSettings,
               createConnectedSiteTagSettings,
@@ -3887,7 +4615,37 @@ public class AnalyticsAdminServiceStubSettings
               listEventCreateRulesSettings,
               createEventCreateRuleSettings,
               updateEventCreateRuleSettings,
-              deleteEventCreateRuleSettings);
+              deleteEventCreateRuleSettings,
+              getEventEditRuleSettings,
+              listEventEditRulesSettings,
+              createEventEditRuleSettings,
+              updateEventEditRuleSettings,
+              deleteEventEditRuleSettings,
+              reorderEventEditRulesSettings,
+              updateDataRedactionSettingsSettings,
+              getDataRedactionSettingsSettings,
+              getCalculatedMetricSettings,
+              createCalculatedMetricSettings,
+              listCalculatedMetricsSettings,
+              updateCalculatedMetricSettings,
+              deleteCalculatedMetricSettings,
+              createRollupPropertySettings,
+              getRollupPropertySourceLinkSettings,
+              listRollupPropertySourceLinksSettings,
+              createRollupPropertySourceLinkSettings,
+              deleteRollupPropertySourceLinkSettings,
+              provisionSubpropertySettings,
+              createSubpropertyEventFilterSettings,
+              getSubpropertyEventFilterSettings,
+              listSubpropertyEventFiltersSettings,
+              updateSubpropertyEventFilterSettings,
+              deleteSubpropertyEventFilterSettings,
+              createReportingDataAnnotationSettings,
+              getReportingDataAnnotationSettings,
+              listReportingDataAnnotationsSettings,
+              updateReportingDataAnnotationSettings,
+              deleteReportingDataAnnotationSettings,
+              submitUserDeletionSettings);
       initDefaults(this);
     }
 
@@ -3905,16 +4663,6 @@ public class AnalyticsAdminServiceStubSettings
       createPropertySettings = settings.createPropertySettings.toBuilder();
       deletePropertySettings = settings.deletePropertySettings.toBuilder();
       updatePropertySettings = settings.updatePropertySettings.toBuilder();
-      getUserLinkSettings = settings.getUserLinkSettings.toBuilder();
-      batchGetUserLinksSettings = settings.batchGetUserLinksSettings.toBuilder();
-      listUserLinksSettings = settings.listUserLinksSettings.toBuilder();
-      auditUserLinksSettings = settings.auditUserLinksSettings.toBuilder();
-      createUserLinkSettings = settings.createUserLinkSettings.toBuilder();
-      batchCreateUserLinksSettings = settings.batchCreateUserLinksSettings.toBuilder();
-      updateUserLinkSettings = settings.updateUserLinkSettings.toBuilder();
-      batchUpdateUserLinksSettings = settings.batchUpdateUserLinksSettings.toBuilder();
-      deleteUserLinkSettings = settings.deleteUserLinkSettings.toBuilder();
-      batchDeleteUserLinksSettings = settings.batchDeleteUserLinksSettings.toBuilder();
       createFirebaseLinkSettings = settings.createFirebaseLinkSettings.toBuilder();
       deleteFirebaseLinkSettings = settings.deleteFirebaseLinkSettings.toBuilder();
       listFirebaseLinksSettings = settings.listFirebaseLinksSettings.toBuilder();
@@ -3955,6 +4703,11 @@ public class AnalyticsAdminServiceStubSettings
       getConversionEventSettings = settings.getConversionEventSettings.toBuilder();
       deleteConversionEventSettings = settings.deleteConversionEventSettings.toBuilder();
       listConversionEventsSettings = settings.listConversionEventsSettings.toBuilder();
+      createKeyEventSettings = settings.createKeyEventSettings.toBuilder();
+      updateKeyEventSettings = settings.updateKeyEventSettings.toBuilder();
+      getKeyEventSettings = settings.getKeyEventSettings.toBuilder();
+      deleteKeyEventSettings = settings.deleteKeyEventSettings.toBuilder();
+      listKeyEventsSettings = settings.listKeyEventsSettings.toBuilder();
       getDisplayVideo360AdvertiserLinkSettings =
           settings.getDisplayVideo360AdvertiserLinkSettings.toBuilder();
       listDisplayVideo360AdvertiserLinksSettings =
@@ -4031,8 +4784,11 @@ public class AnalyticsAdminServiceStubSettings
           settings.setAutomatedGa4ConfigurationOptOutSettings.toBuilder();
       fetchAutomatedGa4ConfigurationOptOutSettings =
           settings.fetchAutomatedGa4ConfigurationOptOutSettings.toBuilder();
+      createBigQueryLinkSettings = settings.createBigQueryLinkSettings.toBuilder();
       getBigQueryLinkSettings = settings.getBigQueryLinkSettings.toBuilder();
       listBigQueryLinksSettings = settings.listBigQueryLinksSettings.toBuilder();
+      deleteBigQueryLinkSettings = settings.deleteBigQueryLinkSettings.toBuilder();
+      updateBigQueryLinkSettings = settings.updateBigQueryLinkSettings.toBuilder();
       getEnhancedMeasurementSettingsSettings =
           settings.getEnhancedMeasurementSettingsSettings.toBuilder();
       updateEnhancedMeasurementSettingsSettings =
@@ -4050,6 +4806,49 @@ public class AnalyticsAdminServiceStubSettings
       createEventCreateRuleSettings = settings.createEventCreateRuleSettings.toBuilder();
       updateEventCreateRuleSettings = settings.updateEventCreateRuleSettings.toBuilder();
       deleteEventCreateRuleSettings = settings.deleteEventCreateRuleSettings.toBuilder();
+      getEventEditRuleSettings = settings.getEventEditRuleSettings.toBuilder();
+      listEventEditRulesSettings = settings.listEventEditRulesSettings.toBuilder();
+      createEventEditRuleSettings = settings.createEventEditRuleSettings.toBuilder();
+      updateEventEditRuleSettings = settings.updateEventEditRuleSettings.toBuilder();
+      deleteEventEditRuleSettings = settings.deleteEventEditRuleSettings.toBuilder();
+      reorderEventEditRulesSettings = settings.reorderEventEditRulesSettings.toBuilder();
+      updateDataRedactionSettingsSettings =
+          settings.updateDataRedactionSettingsSettings.toBuilder();
+      getDataRedactionSettingsSettings = settings.getDataRedactionSettingsSettings.toBuilder();
+      getCalculatedMetricSettings = settings.getCalculatedMetricSettings.toBuilder();
+      createCalculatedMetricSettings = settings.createCalculatedMetricSettings.toBuilder();
+      listCalculatedMetricsSettings = settings.listCalculatedMetricsSettings.toBuilder();
+      updateCalculatedMetricSettings = settings.updateCalculatedMetricSettings.toBuilder();
+      deleteCalculatedMetricSettings = settings.deleteCalculatedMetricSettings.toBuilder();
+      createRollupPropertySettings = settings.createRollupPropertySettings.toBuilder();
+      getRollupPropertySourceLinkSettings =
+          settings.getRollupPropertySourceLinkSettings.toBuilder();
+      listRollupPropertySourceLinksSettings =
+          settings.listRollupPropertySourceLinksSettings.toBuilder();
+      createRollupPropertySourceLinkSettings =
+          settings.createRollupPropertySourceLinkSettings.toBuilder();
+      deleteRollupPropertySourceLinkSettings =
+          settings.deleteRollupPropertySourceLinkSettings.toBuilder();
+      provisionSubpropertySettings = settings.provisionSubpropertySettings.toBuilder();
+      createSubpropertyEventFilterSettings =
+          settings.createSubpropertyEventFilterSettings.toBuilder();
+      getSubpropertyEventFilterSettings = settings.getSubpropertyEventFilterSettings.toBuilder();
+      listSubpropertyEventFiltersSettings =
+          settings.listSubpropertyEventFiltersSettings.toBuilder();
+      updateSubpropertyEventFilterSettings =
+          settings.updateSubpropertyEventFilterSettings.toBuilder();
+      deleteSubpropertyEventFilterSettings =
+          settings.deleteSubpropertyEventFilterSettings.toBuilder();
+      createReportingDataAnnotationSettings =
+          settings.createReportingDataAnnotationSettings.toBuilder();
+      getReportingDataAnnotationSettings = settings.getReportingDataAnnotationSettings.toBuilder();
+      listReportingDataAnnotationsSettings =
+          settings.listReportingDataAnnotationsSettings.toBuilder();
+      updateReportingDataAnnotationSettings =
+          settings.updateReportingDataAnnotationSettings.toBuilder();
+      deleteReportingDataAnnotationSettings =
+          settings.deleteReportingDataAnnotationSettings.toBuilder();
+      submitUserDeletionSettings = settings.submitUserDeletionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -4064,16 +4863,6 @@ public class AnalyticsAdminServiceStubSettings
               createPropertySettings,
               deletePropertySettings,
               updatePropertySettings,
-              getUserLinkSettings,
-              batchGetUserLinksSettings,
-              listUserLinksSettings,
-              auditUserLinksSettings,
-              createUserLinkSettings,
-              batchCreateUserLinksSettings,
-              updateUserLinkSettings,
-              batchUpdateUserLinksSettings,
-              deleteUserLinkSettings,
-              batchDeleteUserLinksSettings,
               createFirebaseLinkSettings,
               deleteFirebaseLinkSettings,
               listFirebaseLinksSettings,
@@ -4102,6 +4891,11 @@ public class AnalyticsAdminServiceStubSettings
               getConversionEventSettings,
               deleteConversionEventSettings,
               listConversionEventsSettings,
+              createKeyEventSettings,
+              updateKeyEventSettings,
+              getKeyEventSettings,
+              deleteKeyEventSettings,
+              listKeyEventsSettings,
               getDisplayVideo360AdvertiserLinkSettings,
               listDisplayVideo360AdvertiserLinksSettings,
               createDisplayVideo360AdvertiserLinkSettings,
@@ -4164,8 +4958,11 @@ public class AnalyticsAdminServiceStubSettings
               deleteChannelGroupSettings,
               setAutomatedGa4ConfigurationOptOutSettings,
               fetchAutomatedGa4ConfigurationOptOutSettings,
+              createBigQueryLinkSettings,
               getBigQueryLinkSettings,
               listBigQueryLinksSettings,
+              deleteBigQueryLinkSettings,
+              updateBigQueryLinkSettings,
               getEnhancedMeasurementSettingsSettings,
               updateEnhancedMeasurementSettingsSettings,
               createConnectedSiteTagSettings,
@@ -4180,7 +4977,37 @@ public class AnalyticsAdminServiceStubSettings
               listEventCreateRulesSettings,
               createEventCreateRuleSettings,
               updateEventCreateRuleSettings,
-              deleteEventCreateRuleSettings);
+              deleteEventCreateRuleSettings,
+              getEventEditRuleSettings,
+              listEventEditRulesSettings,
+              createEventEditRuleSettings,
+              updateEventEditRuleSettings,
+              deleteEventEditRuleSettings,
+              reorderEventEditRulesSettings,
+              updateDataRedactionSettingsSettings,
+              getDataRedactionSettingsSettings,
+              getCalculatedMetricSettings,
+              createCalculatedMetricSettings,
+              listCalculatedMetricsSettings,
+              updateCalculatedMetricSettings,
+              deleteCalculatedMetricSettings,
+              createRollupPropertySettings,
+              getRollupPropertySourceLinkSettings,
+              listRollupPropertySourceLinksSettings,
+              createRollupPropertySourceLinkSettings,
+              deleteRollupPropertySourceLinkSettings,
+              provisionSubpropertySettings,
+              createSubpropertyEventFilterSettings,
+              getSubpropertyEventFilterSettings,
+              listSubpropertyEventFiltersSettings,
+              updateSubpropertyEventFilterSettings,
+              deleteSubpropertyEventFilterSettings,
+              createReportingDataAnnotationSettings,
+              getReportingDataAnnotationSettings,
+              listReportingDataAnnotationsSettings,
+              updateReportingDataAnnotationSettings,
+              deleteReportingDataAnnotationSettings,
+              submitUserDeletionSettings);
     }
 
     private static Builder createDefault() {
@@ -4189,7 +5016,6 @@ public class AnalyticsAdminServiceStubSettings
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -4202,7 +5028,6 @@ public class AnalyticsAdminServiceStubSettings
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -4262,56 +5087,6 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .updatePropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .getUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .batchGetUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .listUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .auditUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .createUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .batchCreateUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .batchUpdateUserLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteUserLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .batchDeleteUserLinksSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -4452,6 +5227,31 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .listConversionEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteKeyEventSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listKeyEventsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4766,12 +5566,27 @@ public class AnalyticsAdminServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .createBigQueryLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getBigQueryLinkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listBigQueryLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteBigQueryLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateBigQueryLinkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4847,6 +5662,156 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .deleteEventCreateRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEventEditRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listEventEditRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createEventEditRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateEventEditRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteEventEditRuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .reorderEventEditRulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateDataRedactionSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDataRedactionSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getCalculatedMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createCalculatedMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listCalculatedMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCalculatedMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteCalculatedMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createRollupPropertySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getRollupPropertySourceLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listRollupPropertySourceLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createRollupPropertySourceLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteRollupPropertySourceLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .provisionSubpropertySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createSubpropertyEventFilterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSubpropertyEventFilterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSubpropertyEventFiltersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSubpropertyEventFilterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSubpropertyEventFilterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createReportingDataAnnotationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getReportingDataAnnotationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listReportingDataAnnotationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateReportingDataAnnotationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteReportingDataAnnotationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .submitUserDeletionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4930,64 +5895,6 @@ public class AnalyticsAdminServiceStubSettings
     /** Returns the builder for the settings used for calls to updateProperty. */
     public UnaryCallSettings.Builder<UpdatePropertyRequest, Property> updatePropertySettings() {
       return updatePropertySettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getUserLink. */
-    public UnaryCallSettings.Builder<GetUserLinkRequest, UserLink> getUserLinkSettings() {
-      return getUserLinkSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to batchGetUserLinks. */
-    public UnaryCallSettings.Builder<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-        batchGetUserLinksSettings() {
-      return batchGetUserLinksSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listUserLinks. */
-    public PagedCallSettings.Builder<
-            ListUserLinksRequest, ListUserLinksResponse, ListUserLinksPagedResponse>
-        listUserLinksSettings() {
-      return listUserLinksSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to auditUserLinks. */
-    public PagedCallSettings.Builder<
-            AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLinksPagedResponse>
-        auditUserLinksSettings() {
-      return auditUserLinksSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createUserLink. */
-    public UnaryCallSettings.Builder<CreateUserLinkRequest, UserLink> createUserLinkSettings() {
-      return createUserLinkSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to batchCreateUserLinks. */
-    public UnaryCallSettings.Builder<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-        batchCreateUserLinksSettings() {
-      return batchCreateUserLinksSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateUserLink. */
-    public UnaryCallSettings.Builder<UpdateUserLinkRequest, UserLink> updateUserLinkSettings() {
-      return updateUserLinkSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to batchUpdateUserLinks. */
-    public UnaryCallSettings.Builder<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-        batchUpdateUserLinksSettings() {
-      return batchUpdateUserLinksSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteUserLink. */
-    public UnaryCallSettings.Builder<DeleteUserLinkRequest, Empty> deleteUserLinkSettings() {
-      return deleteUserLinkSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to batchDeleteUserLinks. */
-    public UnaryCallSettings.Builder<BatchDeleteUserLinksRequest, Empty>
-        batchDeleteUserLinksSettings() {
-      return batchDeleteUserLinksSettings;
     }
 
     /** Returns the builder for the settings used for calls to createFirebaseLink. */
@@ -5158,37 +6065,89 @@ public class AnalyticsAdminServiceStubSettings
       return updateGoogleSignalsSettingsSettings;
     }
 
-    /** Returns the builder for the settings used for calls to createConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to createConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateConversionEventRequest, ConversionEvent>
         createConversionEventSettings() {
       return createConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to updateConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to updateConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateConversionEventRequest, ConversionEvent>
         updateConversionEventSettings() {
       return updateConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to getConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetConversionEventRequest, ConversionEvent>
         getConversionEventSettings() {
       return getConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteConversionEvent. */
+    /**
+     * Returns the builder for the settings used for calls to deleteConversionEvent.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteConversionEventRequest, Empty>
         deleteConversionEventSettings() {
       return deleteConversionEventSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listConversionEvents. */
+    /**
+     * Returns the builder for the settings used for calls to listConversionEvents.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListConversionEventsRequest,
             ListConversionEventsResponse,
             ListConversionEventsPagedResponse>
         listConversionEventsSettings() {
       return listConversionEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createKeyEvent. */
+    public UnaryCallSettings.Builder<CreateKeyEventRequest, KeyEvent> createKeyEventSettings() {
+      return createKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKeyEvent. */
+    public UnaryCallSettings.Builder<UpdateKeyEventRequest, KeyEvent> updateKeyEventSettings() {
+      return updateKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getKeyEvent. */
+    public UnaryCallSettings.Builder<GetKeyEventRequest, KeyEvent> getKeyEventSettings() {
+      return getKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteKeyEvent. */
+    public UnaryCallSettings.Builder<DeleteKeyEventRequest, Empty> deleteKeyEventSettings() {
+      return deleteKeyEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listKeyEvents. */
+    public PagedCallSettings.Builder<
+            ListKeyEventsRequest, ListKeyEventsResponse, ListKeyEventsPagedResponse>
+        listKeyEventsSettings() {
+      return listKeyEventsSettings;
     }
 
     /** Returns the builder for the settings used for calls to getDisplayVideo360AdvertiserLink. */
@@ -5622,6 +6581,12 @@ public class AnalyticsAdminServiceStubSettings
       return fetchAutomatedGa4ConfigurationOptOutSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createBigQueryLink. */
+    public UnaryCallSettings.Builder<CreateBigQueryLinkRequest, BigQueryLink>
+        createBigQueryLinkSettings() {
+      return createBigQueryLinkSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getBigQueryLink. */
     public UnaryCallSettings.Builder<GetBigQueryLinkRequest, BigQueryLink>
         getBigQueryLinkSettings() {
@@ -5633,6 +6598,18 @@ public class AnalyticsAdminServiceStubSettings
             ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
         listBigQueryLinksSettings() {
       return listBigQueryLinksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBigQueryLink. */
+    public UnaryCallSettings.Builder<DeleteBigQueryLinkRequest, Empty>
+        deleteBigQueryLinkSettings() {
+      return deleteBigQueryLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBigQueryLink. */
+    public UnaryCallSettings.Builder<UpdateBigQueryLinkRequest, BigQueryLink>
+        updateBigQueryLinkSettings() {
+      return updateBigQueryLinkSettings;
     }
 
     /** Returns the builder for the settings used for calls to getEnhancedMeasurementSettings. */
@@ -5728,6 +6705,200 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<DeleteEventCreateRuleRequest, Empty>
         deleteEventCreateRuleSettings() {
       return deleteEventCreateRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEventEditRule. */
+    public UnaryCallSettings.Builder<GetEventEditRuleRequest, EventEditRule>
+        getEventEditRuleSettings() {
+      return getEventEditRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEventEditRules. */
+    public PagedCallSettings.Builder<
+            ListEventEditRulesRequest, ListEventEditRulesResponse, ListEventEditRulesPagedResponse>
+        listEventEditRulesSettings() {
+      return listEventEditRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEventEditRule. */
+    public UnaryCallSettings.Builder<CreateEventEditRuleRequest, EventEditRule>
+        createEventEditRuleSettings() {
+      return createEventEditRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEventEditRule. */
+    public UnaryCallSettings.Builder<UpdateEventEditRuleRequest, EventEditRule>
+        updateEventEditRuleSettings() {
+      return updateEventEditRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEventEditRule. */
+    public UnaryCallSettings.Builder<DeleteEventEditRuleRequest, Empty>
+        deleteEventEditRuleSettings() {
+      return deleteEventEditRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to reorderEventEditRules. */
+    public UnaryCallSettings.Builder<ReorderEventEditRulesRequest, Empty>
+        reorderEventEditRulesSettings() {
+      return reorderEventEditRulesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDataRedactionSettings. */
+    public UnaryCallSettings.Builder<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+        updateDataRedactionSettingsSettings() {
+      return updateDataRedactionSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDataRedactionSettings. */
+    public UnaryCallSettings.Builder<GetDataRedactionSettingsRequest, DataRedactionSettings>
+        getDataRedactionSettingsSettings() {
+      return getDataRedactionSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCalculatedMetric. */
+    public UnaryCallSettings.Builder<GetCalculatedMetricRequest, CalculatedMetric>
+        getCalculatedMetricSettings() {
+      return getCalculatedMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCalculatedMetric. */
+    public UnaryCallSettings.Builder<CreateCalculatedMetricRequest, CalculatedMetric>
+        createCalculatedMetricSettings() {
+      return createCalculatedMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listCalculatedMetrics. */
+    public PagedCallSettings.Builder<
+            ListCalculatedMetricsRequest,
+            ListCalculatedMetricsResponse,
+            ListCalculatedMetricsPagedResponse>
+        listCalculatedMetricsSettings() {
+      return listCalculatedMetricsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCalculatedMetric. */
+    public UnaryCallSettings.Builder<UpdateCalculatedMetricRequest, CalculatedMetric>
+        updateCalculatedMetricSettings() {
+      return updateCalculatedMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteCalculatedMetric. */
+    public UnaryCallSettings.Builder<DeleteCalculatedMetricRequest, Empty>
+        deleteCalculatedMetricSettings() {
+      return deleteCalculatedMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRollupProperty. */
+    public UnaryCallSettings.Builder<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+        createRollupPropertySettings() {
+      return createRollupPropertySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRollupPropertySourceLink. */
+    public UnaryCallSettings.Builder<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+        getRollupPropertySourceLinkSettings() {
+      return getRollupPropertySourceLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRollupPropertySourceLinks. */
+    public PagedCallSettings.Builder<
+            ListRollupPropertySourceLinksRequest,
+            ListRollupPropertySourceLinksResponse,
+            ListRollupPropertySourceLinksPagedResponse>
+        listRollupPropertySourceLinksSettings() {
+      return listRollupPropertySourceLinksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRollupPropertySourceLink. */
+    public UnaryCallSettings.Builder<
+            CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+        createRollupPropertySourceLinkSettings() {
+      return createRollupPropertySourceLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRollupPropertySourceLink. */
+    public UnaryCallSettings.Builder<DeleteRollupPropertySourceLinkRequest, Empty>
+        deleteRollupPropertySourceLinkSettings() {
+      return deleteRollupPropertySourceLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to provisionSubproperty. */
+    public UnaryCallSettings.Builder<ProvisionSubpropertyRequest, ProvisionSubpropertyResponse>
+        provisionSubpropertySettings() {
+      return provisionSubpropertySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        createSubpropertyEventFilterSettings() {
+      return createSubpropertyEventFilterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<GetSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        getSubpropertyEventFilterSettings() {
+      return getSubpropertyEventFilterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSubpropertyEventFilters. */
+    public PagedCallSettings.Builder<
+            ListSubpropertyEventFiltersRequest,
+            ListSubpropertyEventFiltersResponse,
+            ListSubpropertyEventFiltersPagedResponse>
+        listSubpropertyEventFiltersSettings() {
+      return listSubpropertyEventFiltersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<UpdateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+        updateSubpropertyEventFilterSettings() {
+      return updateSubpropertyEventFilterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubpropertyEventFilter. */
+    public UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
+        deleteSubpropertyEventFilterSettings() {
+      return deleteSubpropertyEventFilterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createReportingDataAnnotation. */
+    public UnaryCallSettings.Builder<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        createReportingDataAnnotationSettings() {
+      return createReportingDataAnnotationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getReportingDataAnnotation. */
+    public UnaryCallSettings.Builder<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
+        getReportingDataAnnotationSettings() {
+      return getReportingDataAnnotationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listReportingDataAnnotations. */
+    public PagedCallSettings.Builder<
+            ListReportingDataAnnotationsRequest,
+            ListReportingDataAnnotationsResponse,
+            ListReportingDataAnnotationsPagedResponse>
+        listReportingDataAnnotationsSettings() {
+      return listReportingDataAnnotationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateReportingDataAnnotation. */
+    public UnaryCallSettings.Builder<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
+        updateReportingDataAnnotationSettings() {
+      return updateReportingDataAnnotationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteReportingDataAnnotation. */
+    public UnaryCallSettings.Builder<DeleteReportingDataAnnotationRequest, Empty>
+        deleteReportingDataAnnotationSettings() {
+      return deleteReportingDataAnnotationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to submitUserDeletion. */
+    public UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
+        submitUserDeletionSettings() {
+      return submitUserDeletionSettings;
     }
 
     @Override

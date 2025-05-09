@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.google.cloud.recommender.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -109,17 +108,14 @@ public class RecommenderConfigName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationRecommenderBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationRecommenderBuilder newOrganizationLocationRecommenderBuilder() {
     return new OrganizationLocationRecommenderBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static BillingAccountLocationRecommenderBuilder
       newBillingAccountLocationRecommenderBuilder() {
     return new BillingAccountLocationRecommenderBuilder();
@@ -137,7 +133,6 @@ public class RecommenderConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommenderConfigName ofProjectLocationRecommenderName(
       String project, String location, String recommender) {
     return newBuilder()
@@ -147,7 +142,6 @@ public class RecommenderConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommenderConfigName ofOrganizationLocationRecommenderName(
       String organization, String location, String recommender) {
     return newOrganizationLocationRecommenderBuilder()
@@ -157,7 +151,6 @@ public class RecommenderConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommenderConfigName ofBillingAccountLocationRecommenderName(
       String billingAccount, String location, String recommender) {
     return newBillingAccountLocationRecommenderBuilder()
@@ -176,7 +169,6 @@ public class RecommenderConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationRecommenderName(
       String project, String location, String recommender) {
     return newBuilder()
@@ -187,7 +179,6 @@ public class RecommenderConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationRecommenderName(
       String organization, String location, String recommender) {
     return newOrganizationLocationRecommenderBuilder()
@@ -198,7 +189,6 @@ public class RecommenderConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatBillingAccountLocationRecommenderName(
       String billingAccount, String location, String recommender) {
     return newBillingAccountLocationRecommenderBuilder()
@@ -365,7 +355,8 @@ public class RecommenderConfigName implements ResourceName {
     private Builder(RecommenderConfigName recommenderConfigName) {
       Preconditions.checkArgument(
           Objects.equals(recommenderConfigName.pathTemplate, PROJECT_LOCATION_RECOMMENDER),
-          "toBuilder is only supported when RecommenderConfigName has the pattern of projects/{project}/locations/{location}/recommenders/{recommender}/config");
+          "toBuilder is only supported when RecommenderConfigName has the pattern of"
+              + " projects/{project}/locations/{location}/recommenders/{recommender}/config");
       this.project = recommenderConfigName.project;
       this.location = recommenderConfigName.location;
       this.recommender = recommenderConfigName.recommender;
@@ -380,7 +371,6 @@ public class RecommenderConfigName implements ResourceName {
    * Builder for
    * organizations/{organization}/locations/{location}/recommenders/{recommender}/config.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationRecommenderBuilder {
     private String organization;
     private String location;
@@ -424,7 +414,6 @@ public class RecommenderConfigName implements ResourceName {
    * Builder for
    * billingAccounts/{billing_account}/locations/{location}/recommenders/{recommender}/config.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountLocationRecommenderBuilder {
     private String billingAccount;
     private String location;

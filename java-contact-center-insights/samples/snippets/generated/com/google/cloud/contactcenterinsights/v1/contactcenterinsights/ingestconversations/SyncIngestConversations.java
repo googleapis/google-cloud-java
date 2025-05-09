@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,8 @@ import com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest;
 import com.google.cloud.contactcenterinsights.v1.IngestConversationsResponse;
 import com.google.cloud.contactcenterinsights.v1.LocationName;
+import com.google.cloud.contactcenterinsights.v1.RedactionConfig;
+import com.google.cloud.contactcenterinsights.v1.SpeechConfig;
 
 public class SyncIngestConversations {
 
@@ -41,6 +43,9 @@ public class SyncIngestConversations {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setConversationConfig(
                   IngestConversationsRequest.ConversationConfig.newBuilder().build())
+              .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
+              .setSampleSize(153230710)
               .build();
       IngestConversationsResponse response =
           contactCenterInsightsClient.ingestConversationsAsync(request).get();

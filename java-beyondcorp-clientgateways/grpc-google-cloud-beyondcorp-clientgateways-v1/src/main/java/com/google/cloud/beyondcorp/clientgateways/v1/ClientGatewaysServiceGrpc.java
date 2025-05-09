@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,6 +250,19 @@ public final class ClientGatewaysServiceGrpc {
     return ClientGatewaysServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ClientGatewaysServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ClientGatewaysServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ClientGatewaysServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ClientGatewaysServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ClientGatewaysServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ClientGatewaysServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -470,6 +483,86 @@ public final class ClientGatewaysServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ClientGatewaysService.
+   *
+   * <pre>
+   * API Overview:
+   * The `beyondcorp.googleapis.com` service implements the Google Cloud
+   * BeyondCorp API.
+   * Data Model:
+   * The ClientGatewaysService exposes the following resources:
+   * * Client Gateways, named as follows:
+   *   `projects/{project_id}/locations/{location_id}/clientGateways/{client_gateway_id}`.
+   * </pre>
+   */
+  public static final class ClientGatewaysServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ClientGatewaysServiceBlockingV2Stub> {
+    private ClientGatewaysServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ClientGatewaysServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ClientGatewaysServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ClientGateways in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.clientgateways.v1.ListClientGatewaysResponse
+        listClientGateways(
+            com.google.cloud.beyondcorp.clientgateways.v1.ListClientGatewaysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClientGatewaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ClientGateway.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.clientgateways.v1.ClientGateway getClientGateway(
+        com.google.cloud.beyondcorp.clientgateways.v1.GetClientGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClientGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ClientGateway in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createClientGateway(
+        com.google.cloud.beyondcorp.clientgateways.v1.CreateClientGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClientGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ClientGateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteClientGateway(
+        com.google.cloud.beyondcorp.clientgateways.v1.DeleteClientGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClientGatewayMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ClientGatewaysService.
    *
    * <pre>
    * API Overview:

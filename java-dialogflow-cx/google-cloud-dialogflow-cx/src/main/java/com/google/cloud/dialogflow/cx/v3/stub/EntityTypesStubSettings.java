@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,19 +22,24 @@ import static com.google.cloud.dialogflow.cx.v3.EntityTypesClient.ListLocationsP
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -47,7 +52,13 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateEntityTypeRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest;
 import com.google.cloud.dialogflow.cx.v3.EntityType;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesMetadata;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesRequest;
+import com.google.cloud.dialogflow.cx.v3.ExportEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.GetEntityTypeRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesMetadata;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesRequest;
+import com.google.cloud.dialogflow.cx.v3.ImportEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.ListEntityTypesRequest;
 import com.google.cloud.dialogflow.cx.v3.ListEntityTypesResponse;
 import com.google.cloud.dialogflow.cx.v3.UpdateEntityTypeRequest;
@@ -59,11 +70,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -80,7 +92,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getEntityType to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getEntityType:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -97,9 +111,46 @@ import org.threeten.bp.Duration;
  *             .getEntityTypeSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * EntityTypesStubSettings entityTypesSettings = entityTypesSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for exportEntityTypes:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EntityTypesStubSettings.Builder entityTypesSettingsBuilder =
+ *     EntityTypesStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * entityTypesSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -111,13 +162,21 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .add("https://www.googleapis.com/auth/dialogflow")
           .build();
 
-  private final PagedCallSettings<
-          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-      listEntityTypesSettings;
   private final UnaryCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeSettings;
   private final UnaryCallSettings<CreateEntityTypeRequest, EntityType> createEntityTypeSettings;
   private final UnaryCallSettings<UpdateEntityTypeRequest, EntityType> updateEntityTypeSettings;
   private final UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings;
+  private final PagedCallSettings<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      listEntityTypesSettings;
+  private final UnaryCallSettings<ExportEntityTypesRequest, Operation> exportEntityTypesSettings;
+  private final OperationCallSettings<
+          ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+      exportEntityTypesOperationSettings;
+  private final UnaryCallSettings<ImportEntityTypesRequest, Operation> importEntityTypesSettings;
+  private final OperationCallSettings<
+          ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+      importEntityTypesOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -156,9 +215,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
             @Override
             public Iterable<EntityType> extractResources(ListEntityTypesResponse payload) {
-              return payload.getEntityTypesList() == null
-                  ? ImmutableList.<EntityType>of()
-                  : payload.getEntityTypesList();
+              return payload.getEntityTypesList();
             }
           };
 
@@ -192,9 +249,7 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
             @Override
             public Iterable<Location> extractResources(ListLocationsResponse payload) {
-              return payload.getLocationsList() == null
-                  ? ImmutableList.<Location>of()
-                  : payload.getLocationsList();
+              return payload.getLocationsList();
             }
           };
 
@@ -232,13 +287,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
             }
           };
 
-  /** Returns the object with the settings used for calls to listEntityTypes. */
-  public PagedCallSettings<
-          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-      listEntityTypesSettings() {
-    return listEntityTypesSettings;
-  }
-
   /** Returns the object with the settings used for calls to getEntityType. */
   public UnaryCallSettings<GetEntityTypeRequest, EntityType> getEntityTypeSettings() {
     return getEntityTypeSettings;
@@ -257,6 +305,37 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   /** Returns the object with the settings used for calls to deleteEntityType. */
   public UnaryCallSettings<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
     return deleteEntityTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEntityTypes. */
+  public PagedCallSettings<
+          ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+      listEntityTypesSettings() {
+    return listEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportEntityTypes. */
+  public UnaryCallSettings<ExportEntityTypesRequest, Operation> exportEntityTypesSettings() {
+    return exportEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportEntityTypes. */
+  public OperationCallSettings<
+          ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+      exportEntityTypesOperationSettings() {
+    return exportEntityTypesOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importEntityTypes. */
+  public UnaryCallSettings<ImportEntityTypesRequest, Operation> importEntityTypesSettings() {
+    return importEntityTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importEntityTypes. */
+  public OperationCallSettings<
+          ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+      importEntityTypesOperationSettings() {
+    return importEntityTypesOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -286,12 +365,19 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "dialogflow";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "dialogflow.googleapis.com:443";
   }
@@ -330,7 +416,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -339,7 +424,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -376,11 +460,17 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   protected EntityTypesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    listEntityTypesSettings = settingsBuilder.listEntityTypesSettings().build();
     getEntityTypeSettings = settingsBuilder.getEntityTypeSettings().build();
     createEntityTypeSettings = settingsBuilder.createEntityTypeSettings().build();
     updateEntityTypeSettings = settingsBuilder.updateEntityTypeSettings().build();
     deleteEntityTypeSettings = settingsBuilder.deleteEntityTypeSettings().build();
+    listEntityTypesSettings = settingsBuilder.listEntityTypesSettings().build();
+    exportEntityTypesSettings = settingsBuilder.exportEntityTypesSettings().build();
+    exportEntityTypesOperationSettings =
+        settingsBuilder.exportEntityTypesOperationSettings().build();
+    importEntityTypesSettings = settingsBuilder.importEntityTypesSettings().build();
+    importEntityTypesOperationSettings =
+        settingsBuilder.importEntityTypesOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -388,9 +478,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
   /** Builder for EntityTypesStubSettings. */
   public static class Builder extends StubSettings.Builder<EntityTypesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-    private final PagedCallSettings.Builder<
-            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-        listEntityTypesSettings;
     private final UnaryCallSettings.Builder<GetEntityTypeRequest, EntityType> getEntityTypeSettings;
     private final UnaryCallSettings.Builder<CreateEntityTypeRequest, EntityType>
         createEntityTypeSettings;
@@ -398,6 +485,19 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
         updateEntityTypeSettings;
     private final UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty>
         deleteEntityTypeSettings;
+    private final PagedCallSettings.Builder<
+            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+        listEntityTypesSettings;
+    private final UnaryCallSettings.Builder<ExportEntityTypesRequest, Operation>
+        exportEntityTypesSettings;
+    private final OperationCallSettings.Builder<
+            ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+        exportEntityTypesOperationSettings;
+    private final UnaryCallSettings.Builder<ImportEntityTypesRequest, Operation>
+        importEntityTypesSettings;
+    private final OperationCallSettings.Builder<
+            ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+        importEntityTypesOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -421,13 +521,13 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -440,21 +540,27 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      listEntityTypesSettings = PagedCallSettings.newBuilder(LIST_ENTITY_TYPES_PAGE_STR_FACT);
       getEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteEntityTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listEntityTypesSettings = PagedCallSettings.newBuilder(LIST_ENTITY_TYPES_PAGE_STR_FACT);
+      exportEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportEntityTypesOperationSettings = OperationCallSettings.newBuilder();
+      importEntityTypesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importEntityTypesOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listEntityTypesSettings,
               getEntityTypeSettings,
               createEntityTypeSettings,
               updateEntityTypeSettings,
               deleteEntityTypeSettings,
+              listEntityTypesSettings,
+              exportEntityTypesSettings,
+              importEntityTypesSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -463,21 +569,27 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     protected Builder(EntityTypesStubSettings settings) {
       super(settings);
 
-      listEntityTypesSettings = settings.listEntityTypesSettings.toBuilder();
       getEntityTypeSettings = settings.getEntityTypeSettings.toBuilder();
       createEntityTypeSettings = settings.createEntityTypeSettings.toBuilder();
       updateEntityTypeSettings = settings.updateEntityTypeSettings.toBuilder();
       deleteEntityTypeSettings = settings.deleteEntityTypeSettings.toBuilder();
+      listEntityTypesSettings = settings.listEntityTypesSettings.toBuilder();
+      exportEntityTypesSettings = settings.exportEntityTypesSettings.toBuilder();
+      exportEntityTypesOperationSettings = settings.exportEntityTypesOperationSettings.toBuilder();
+      importEntityTypesSettings = settings.importEntityTypesSettings.toBuilder();
+      importEntityTypesOperationSettings = settings.importEntityTypesOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listEntityTypesSettings,
               getEntityTypeSettings,
               createEntityTypeSettings,
               updateEntityTypeSettings,
               deleteEntityTypeSettings,
+              listEntityTypesSettings,
+              exportEntityTypesSettings,
+              importEntityTypesSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -488,7 +600,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -501,7 +612,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -509,11 +619,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     }
 
     private static Builder initDefaults(Builder builder) {
-      builder
-          .listEntityTypesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
       builder
           .getEntityTypeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
@@ -535,6 +640,21 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .importEntityTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -543,6 +663,58 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
           .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exportEntityTypesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ExportEntityTypesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ExportEntityTypesMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .importEntityTypesOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportEntityTypesRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ImportEntityTypesResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ImportEntityTypesMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -560,13 +732,6 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to listEntityTypes. */
-    public PagedCallSettings.Builder<
-            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
-        listEntityTypesSettings() {
-      return listEntityTypesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getEntityType. */
@@ -589,6 +754,39 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
     /** Returns the builder for the settings used for calls to deleteEntityType. */
     public UnaryCallSettings.Builder<DeleteEntityTypeRequest, Empty> deleteEntityTypeSettings() {
       return deleteEntityTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEntityTypes. */
+    public PagedCallSettings.Builder<
+            ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
+        listEntityTypesSettings() {
+      return listEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportEntityTypes. */
+    public UnaryCallSettings.Builder<ExportEntityTypesRequest, Operation>
+        exportEntityTypesSettings() {
+      return exportEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportEntityTypes. */
+    public OperationCallSettings.Builder<
+            ExportEntityTypesRequest, ExportEntityTypesResponse, ExportEntityTypesMetadata>
+        exportEntityTypesOperationSettings() {
+      return exportEntityTypesOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importEntityTypes. */
+    public UnaryCallSettings.Builder<ImportEntityTypesRequest, Operation>
+        importEntityTypesSettings() {
+      return importEntityTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importEntityTypes. */
+    public OperationCallSettings.Builder<
+            ImportEntityTypesRequest, ImportEntityTypesResponse, ImportEntityTypesMetadata>
+        importEntityTypesOperationSettings() {
+      return importEntityTypesOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

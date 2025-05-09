@@ -16,8 +16,14 @@
             "CancelDlpJob": {
               "methods": ["cancelDlpJob", "cancelDlpJobCallable"]
             },
+            "CreateConnection": {
+              "methods": ["createConnection", "createConnection", "createConnection", "createConnection", "createConnectionCallable"]
+            },
             "CreateDeidentifyTemplate": {
               "methods": ["createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplateCallable"]
+            },
+            "CreateDiscoveryConfig": {
+              "methods": ["createDiscoveryConfig", "createDiscoveryConfig", "createDiscoveryConfig", "createDiscoveryConfigCallable"]
             },
             "CreateDlpJob": {
               "methods": ["createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJobCallable"]
@@ -34,11 +40,20 @@
             "DeidentifyContent": {
               "methods": ["deidentifyContent", "deidentifyContentCallable"]
             },
+            "DeleteConnection": {
+              "methods": ["deleteConnection", "deleteConnection", "deleteConnection", "deleteConnectionCallable"]
+            },
             "DeleteDeidentifyTemplate": {
               "methods": ["deleteDeidentifyTemplate", "deleteDeidentifyTemplate", "deleteDeidentifyTemplate", "deleteDeidentifyTemplateCallable"]
             },
+            "DeleteDiscoveryConfig": {
+              "methods": ["deleteDiscoveryConfig", "deleteDiscoveryConfig", "deleteDiscoveryConfig", "deleteDiscoveryConfigCallable"]
+            },
             "DeleteDlpJob": {
               "methods": ["deleteDlpJob", "deleteDlpJob", "deleteDlpJob", "deleteDlpJobCallable"]
+            },
+            "DeleteFileStoreDataProfile": {
+              "methods": ["deleteFileStoreDataProfile", "deleteFileStoreDataProfile", "deleteFileStoreDataProfile", "deleteFileStoreDataProfileCallable"]
             },
             "DeleteInspectTemplate": {
               "methods": ["deleteInspectTemplate", "deleteInspectTemplate", "deleteInspectTemplate", "deleteInspectTemplateCallable"]
@@ -49,14 +64,29 @@
             "DeleteStoredInfoType": {
               "methods": ["deleteStoredInfoType", "deleteStoredInfoType", "deleteStoredInfoType", "deleteStoredInfoTypeCallable"]
             },
+            "DeleteTableDataProfile": {
+              "methods": ["deleteTableDataProfile", "deleteTableDataProfile", "deleteTableDataProfile", "deleteTableDataProfileCallable"]
+            },
             "FinishDlpJob": {
               "methods": ["finishDlpJob", "finishDlpJobCallable"]
+            },
+            "GetColumnDataProfile": {
+              "methods": ["getColumnDataProfile", "getColumnDataProfile", "getColumnDataProfile", "getColumnDataProfileCallable"]
+            },
+            "GetConnection": {
+              "methods": ["getConnection", "getConnection", "getConnection", "getConnectionCallable"]
             },
             "GetDeidentifyTemplate": {
               "methods": ["getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplateCallable"]
             },
+            "GetDiscoveryConfig": {
+              "methods": ["getDiscoveryConfig", "getDiscoveryConfig", "getDiscoveryConfig", "getDiscoveryConfigCallable"]
+            },
             "GetDlpJob": {
               "methods": ["getDlpJob", "getDlpJob", "getDlpJob", "getDlpJobCallable"]
+            },
+            "GetFileStoreDataProfile": {
+              "methods": ["getFileStoreDataProfile", "getFileStoreDataProfile", "getFileStoreDataProfile", "getFileStoreDataProfileCallable"]
             },
             "GetInspectTemplate": {
               "methods": ["getInspectTemplate", "getInspectTemplate", "getInspectTemplate", "getInspectTemplateCallable"]
@@ -64,8 +94,14 @@
             "GetJobTrigger": {
               "methods": ["getJobTrigger", "getJobTrigger", "getJobTrigger", "getJobTriggerCallable"]
             },
+            "GetProjectDataProfile": {
+              "methods": ["getProjectDataProfile", "getProjectDataProfile", "getProjectDataProfile", "getProjectDataProfileCallable"]
+            },
             "GetStoredInfoType": {
               "methods": ["getStoredInfoType", "getStoredInfoType", "getStoredInfoType", "getStoredInfoTypeCallable"]
+            },
+            "GetTableDataProfile": {
+              "methods": ["getTableDataProfile", "getTableDataProfile", "getTableDataProfile", "getTableDataProfileCallable"]
             },
             "HybridInspectDlpJob": {
               "methods": ["hybridInspectDlpJob", "hybridInspectDlpJob", "hybridInspectDlpJob", "hybridInspectDlpJobCallable"]
@@ -76,11 +112,23 @@
             "InspectContent": {
               "methods": ["inspectContent", "inspectContentCallable"]
             },
+            "ListColumnDataProfiles": {
+              "methods": ["listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfilesPagedCallable", "listColumnDataProfilesCallable"]
+            },
+            "ListConnections": {
+              "methods": ["listConnections", "listConnections", "listConnections", "listConnections", "listConnectionsPagedCallable", "listConnectionsCallable"]
+            },
             "ListDeidentifyTemplates": {
               "methods": ["listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplatesPagedCallable", "listDeidentifyTemplatesCallable"]
             },
+            "ListDiscoveryConfigs": {
+              "methods": ["listDiscoveryConfigs", "listDiscoveryConfigs", "listDiscoveryConfigs", "listDiscoveryConfigsPagedCallable", "listDiscoveryConfigsCallable"]
+            },
             "ListDlpJobs": {
               "methods": ["listDlpJobs", "listDlpJobs", "listDlpJobs", "listDlpJobs", "listDlpJobsPagedCallable", "listDlpJobsCallable"]
+            },
+            "ListFileStoreDataProfiles": {
+              "methods": ["listFileStoreDataProfiles", "listFileStoreDataProfiles", "listFileStoreDataProfiles", "listFileStoreDataProfiles", "listFileStoreDataProfilesPagedCallable", "listFileStoreDataProfilesCallable"]
             },
             "ListInfoTypes": {
               "methods": ["listInfoTypes", "listInfoTypes", "listInfoTypesCallable"]
@@ -91,8 +139,14 @@
             "ListJobTriggers": {
               "methods": ["listJobTriggers", "listJobTriggers", "listJobTriggers", "listJobTriggers", "listJobTriggersPagedCallable", "listJobTriggersCallable"]
             },
+            "ListProjectDataProfiles": {
+              "methods": ["listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfilesPagedCallable", "listProjectDataProfilesCallable"]
+            },
             "ListStoredInfoTypes": {
               "methods": ["listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypesPagedCallable", "listStoredInfoTypesCallable"]
+            },
+            "ListTableDataProfiles": {
+              "methods": ["listTableDataProfiles", "listTableDataProfiles", "listTableDataProfiles", "listTableDataProfiles", "listTableDataProfilesPagedCallable", "listTableDataProfilesCallable"]
             },
             "RedactImage": {
               "methods": ["redactImage", "redactImageCallable"]
@@ -100,8 +154,17 @@
             "ReidentifyContent": {
               "methods": ["reidentifyContent", "reidentifyContentCallable"]
             },
+            "SearchConnections": {
+              "methods": ["searchConnections", "searchConnections", "searchConnections", "searchConnections", "searchConnectionsPagedCallable", "searchConnectionsCallable"]
+            },
+            "UpdateConnection": {
+              "methods": ["updateConnection", "updateConnection", "updateConnection", "updateConnectionCallable"]
+            },
             "UpdateDeidentifyTemplate": {
               "methods": ["updateDeidentifyTemplate", "updateDeidentifyTemplate", "updateDeidentifyTemplate", "updateDeidentifyTemplateCallable"]
+            },
+            "UpdateDiscoveryConfig": {
+              "methods": ["updateDiscoveryConfig", "updateDiscoveryConfig", "updateDiscoveryConfig", "updateDiscoveryConfigCallable"]
             },
             "UpdateInspectTemplate": {
               "methods": ["updateInspectTemplate", "updateInspectTemplate", "updateInspectTemplate", "updateInspectTemplateCallable"]

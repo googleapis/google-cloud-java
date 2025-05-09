@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatapolicy</artifactId>
-  <version>0.25.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+  <version>0.60.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   <packaging>jar</packaging>
   <name>Google BigQuery DataPolicy API</name>
   <description>BigQuery DataPolicy API </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerydatapolicy-parent</artifactId>
-    <version>0.25.0</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
+    <version>0.60.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatapolicy:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerydatapolicy</site.installationModule>
@@ -68,6 +68,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -81,6 +82,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>

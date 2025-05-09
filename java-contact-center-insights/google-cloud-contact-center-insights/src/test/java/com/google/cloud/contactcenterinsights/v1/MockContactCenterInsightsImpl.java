@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -284,7 +284,30 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BulkAnalyzeConversations, expected %s or %s",
+                  "Unrecognized response type %s for method BulkAnalyzeConversations, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void bulkDeleteConversations(
+      BulkDeleteConversationsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BulkDeleteConversations, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -481,6 +504,48 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
   }
 
   @Override
+  public void exportIssueModel(
+      ExportIssueModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void importIssueModel(
+      ImportIssueModelRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportIssueModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getIssue(GetIssueRequest request, StreamObserver<Issue> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Issue) {
@@ -576,7 +641,8 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CalculateIssueModelStats, expected %s or %s",
+                  "Unrecognized response type %s for method CalculateIssueModelStats, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CalculateIssueModelStatsResponse.class.getName(),
                   Exception.class.getName())));
@@ -752,6 +818,155 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
   }
 
   @Override
+  public void createAnalysisRule(
+      CreateAnalysisRuleRequest request, StreamObserver<AnalysisRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnalysisRule) {
+      requests.add(request);
+      responseObserver.onNext(((AnalysisRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAnalysisRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnalysisRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAnalysisRule(
+      GetAnalysisRuleRequest request, StreamObserver<AnalysisRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnalysisRule) {
+      requests.add(request);
+      responseObserver.onNext(((AnalysisRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAnalysisRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnalysisRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAnalysisRules(
+      ListAnalysisRulesRequest request,
+      StreamObserver<ListAnalysisRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAnalysisRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAnalysisRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAnalysisRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAnalysisRulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAnalysisRule(
+      UpdateAnalysisRuleRequest request, StreamObserver<AnalysisRule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnalysisRule) {
+      requests.add(request);
+      responseObserver.onNext(((AnalysisRule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAnalysisRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnalysisRule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAnalysisRule(
+      DeleteAnalysisRuleRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAnalysisRule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getEncryptionSpec(
+      GetEncryptionSpecRequest request, StreamObserver<EncryptionSpec> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EncryptionSpec) {
+      requests.add(request);
+      responseObserver.onNext(((EncryptionSpec) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEncryptionSpec, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EncryptionSpec.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void initializeEncryptionSpec(
+      InitializeEncryptionSpecRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InitializeEncryptionSpec, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createView(CreateViewRequest request, StreamObserver<View> responseObserver) {
     Object response = responses.poll();
     if (response instanceof View) {
@@ -848,6 +1063,568 @@ public class MockContactCenterInsightsImpl extends ContactCenterInsightsImplBase
                   "Unrecognized response type %s for method DeleteView, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void queryMetrics(
+      QueryMetricsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryMetrics, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createQaQuestion(
+      CreateQaQuestionRequest request, StreamObserver<QaQuestion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaQuestion) {
+      requests.add(request);
+      responseObserver.onNext(((QaQuestion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateQaQuestion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaQuestion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getQaQuestion(
+      GetQaQuestionRequest request, StreamObserver<QaQuestion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaQuestion) {
+      requests.add(request);
+      responseObserver.onNext(((QaQuestion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetQaQuestion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaQuestion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateQaQuestion(
+      UpdateQaQuestionRequest request, StreamObserver<QaQuestion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaQuestion) {
+      requests.add(request);
+      responseObserver.onNext(((QaQuestion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateQaQuestion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaQuestion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteQaQuestion(
+      DeleteQaQuestionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteQaQuestion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listQaQuestions(
+      ListQaQuestionsRequest request, StreamObserver<ListQaQuestionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListQaQuestionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListQaQuestionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListQaQuestions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListQaQuestionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createQaScorecard(
+      CreateQaScorecardRequest request, StreamObserver<QaScorecard> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaScorecard) {
+      requests.add(request);
+      responseObserver.onNext(((QaScorecard) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateQaScorecard, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaScorecard.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getQaScorecard(
+      GetQaScorecardRequest request, StreamObserver<QaScorecard> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaScorecard) {
+      requests.add(request);
+      responseObserver.onNext(((QaScorecard) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetQaScorecard, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaScorecard.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateQaScorecard(
+      UpdateQaScorecardRequest request, StreamObserver<QaScorecard> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaScorecard) {
+      requests.add(request);
+      responseObserver.onNext(((QaScorecard) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateQaScorecard, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaScorecard.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteQaScorecard(
+      DeleteQaScorecardRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteQaScorecard, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listQaScorecards(
+      ListQaScorecardsRequest request, StreamObserver<ListQaScorecardsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListQaScorecardsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListQaScorecardsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListQaScorecards, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListQaScorecardsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createQaScorecardRevision(
+      CreateQaScorecardRevisionRequest request,
+      StreamObserver<QaScorecardRevision> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaScorecardRevision) {
+      requests.add(request);
+      responseObserver.onNext(((QaScorecardRevision) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateQaScorecardRevision, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaScorecardRevision.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getQaScorecardRevision(
+      GetQaScorecardRevisionRequest request, StreamObserver<QaScorecardRevision> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaScorecardRevision) {
+      requests.add(request);
+      responseObserver.onNext(((QaScorecardRevision) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetQaScorecardRevision, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaScorecardRevision.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void tuneQaScorecardRevision(
+      TuneQaScorecardRevisionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TuneQaScorecardRevision, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deployQaScorecardRevision(
+      DeployQaScorecardRevisionRequest request,
+      StreamObserver<QaScorecardRevision> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaScorecardRevision) {
+      requests.add(request);
+      responseObserver.onNext(((QaScorecardRevision) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeployQaScorecardRevision, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaScorecardRevision.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void undeployQaScorecardRevision(
+      UndeployQaScorecardRevisionRequest request,
+      StreamObserver<QaScorecardRevision> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QaScorecardRevision) {
+      requests.add(request);
+      responseObserver.onNext(((QaScorecardRevision) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UndeployQaScorecardRevision, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QaScorecardRevision.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteQaScorecardRevision(
+      DeleteQaScorecardRevisionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteQaScorecardRevision, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listQaScorecardRevisions(
+      ListQaScorecardRevisionsRequest request,
+      StreamObserver<ListQaScorecardRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListQaScorecardRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListQaScorecardRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListQaScorecardRevisions, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListQaScorecardRevisionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createFeedbackLabel(
+      CreateFeedbackLabelRequest request, StreamObserver<FeedbackLabel> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FeedbackLabel) {
+      requests.add(request);
+      responseObserver.onNext(((FeedbackLabel) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateFeedbackLabel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FeedbackLabel.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listFeedbackLabels(
+      ListFeedbackLabelsRequest request,
+      StreamObserver<ListFeedbackLabelsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListFeedbackLabelsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListFeedbackLabelsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFeedbackLabels, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListFeedbackLabelsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getFeedbackLabel(
+      GetFeedbackLabelRequest request, StreamObserver<FeedbackLabel> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FeedbackLabel) {
+      requests.add(request);
+      responseObserver.onNext(((FeedbackLabel) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFeedbackLabel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FeedbackLabel.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateFeedbackLabel(
+      UpdateFeedbackLabelRequest request, StreamObserver<FeedbackLabel> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FeedbackLabel) {
+      requests.add(request);
+      responseObserver.onNext(((FeedbackLabel) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateFeedbackLabel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FeedbackLabel.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteFeedbackLabel(
+      DeleteFeedbackLabelRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFeedbackLabel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAllFeedbackLabels(
+      ListAllFeedbackLabelsRequest request,
+      StreamObserver<ListAllFeedbackLabelsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAllFeedbackLabelsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAllFeedbackLabelsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAllFeedbackLabels, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAllFeedbackLabelsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void bulkUploadFeedbackLabels(
+      BulkUploadFeedbackLabelsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BulkUploadFeedbackLabels, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void bulkDownloadFeedbackLabels(
+      BulkDownloadFeedbackLabelsRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BulkDownloadFeedbackLabels, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

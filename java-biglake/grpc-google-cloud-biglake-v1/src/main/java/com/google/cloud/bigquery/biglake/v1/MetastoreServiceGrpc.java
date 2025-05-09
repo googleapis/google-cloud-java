@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -748,6 +748,19 @@ public final class MetastoreServiceGrpc {
     return MetastoreServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MetastoreServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MetastoreServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MetastoreServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public MetastoreServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MetastoreServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MetastoreServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1305,6 +1318,229 @@ public final class MetastoreServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MetastoreService.
+   *
+   * <pre>
+   * BigLake Metastore is a serverless, highly available, multi-tenant runtime
+   * metastore for Google Cloud Data Analytics products.
+   * The BigLake Metastore API defines the following resource model:
+   * * A collection of Google Cloud projects: `/projects/&#42;`
+   * * Each project has a collection of available locations: `/locations/&#42;`
+   * * Each location has a collection of catalogs: `/catalogs/&#42;`
+   * * Each catalog has a collection of databases: `/databases/&#42;`
+   * * Each database has a collection of tables: `/tables/&#42;`
+   * </pre>
+   */
+  public static final class MetastoreServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MetastoreServiceBlockingV2Stub> {
+    private MetastoreServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MetastoreServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MetastoreServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new catalog.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Catalog createCatalog(
+        com.google.cloud.bigquery.biglake.v1.CreateCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCatalogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing catalog specified by the catalog ID.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Catalog deleteCatalog(
+        com.google.cloud.bigquery.biglake.v1.DeleteCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCatalogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the catalog specified by the resource name.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Catalog getCatalog(
+        com.google.cloud.bigquery.biglake.v1.GetCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCatalogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all catalogs in a specified project.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.ListCatalogsResponse listCatalogs(
+        com.google.cloud.bigquery.biglake.v1.ListCatalogsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCatalogsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Database createDatabase(
+        com.google.cloud.bigquery.biglake.v1.CreateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing database specified by the database ID.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Database deleteDatabase(
+        com.google.cloud.bigquery.biglake.v1.DeleteDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing database specified by the database ID.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Database updateDatabase(
+        com.google.cloud.bigquery.biglake.v1.UpdateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the database specified by the resource name.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Database getDatabase(
+        com.google.cloud.bigquery.biglake.v1.GetDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all databases in a specified catalog.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.ListDatabasesResponse listDatabases(
+        com.google.cloud.bigquery.biglake.v1.ListDatabasesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatabasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new table.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Table createTable(
+        com.google.cloud.bigquery.biglake.v1.CreateTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing table specified by the table ID.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Table deleteTable(
+        com.google.cloud.bigquery.biglake.v1.DeleteTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing table specified by the table ID.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Table updateTable(
+        com.google.cloud.bigquery.biglake.v1.UpdateTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Renames an existing table specified by the table ID.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Table renameTable(
+        com.google.cloud.bigquery.biglake.v1.RenameTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the table specified by the resource name.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.Table getTable(
+        com.google.cloud.bigquery.biglake.v1.GetTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all tables in a specified database.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1.ListTablesResponse listTables(
+        com.google.cloud.bigquery.biglake.v1.ListTablesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTablesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service MetastoreService.
    *
    * <pre>
    * BigLake Metastore is a serverless, highly available, multi-tenant runtime

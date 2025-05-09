@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,8 +48,10 @@ import com.google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponse;
 import com.google.cloud.compute.v1.ListInstancesRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PerformMaintenanceInstanceRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
+import com.google.cloud.compute.v1.ReportHostAsFaultyInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.ResumeInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
@@ -66,6 +68,7 @@ import com.google.cloud.compute.v1.SetMetadataInstanceRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceRequest;
 import com.google.cloud.compute.v1.SetNameInstanceRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceRequest;
+import com.google.cloud.compute.v1.SetSecurityPolicyInstanceRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceRequest;
 import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceRequest;
 import com.google.cloud.compute.v1.SetTagsInstanceRequest;
@@ -227,6 +230,16 @@ public abstract class InstancesStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listReferrersCallable()");
   }
 
+  public OperationCallable<PerformMaintenanceInstanceRequest, Operation, Operation>
+      performMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: performMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<PerformMaintenanceInstanceRequest, Operation> performMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: performMaintenanceCallable()");
+  }
+
   public OperationCallable<RemoveResourcePoliciesInstanceRequest, Operation, Operation>
       removeResourcePoliciesOperationCallable() {
     throw new UnsupportedOperationException(
@@ -236,6 +249,16 @@ public abstract class InstancesStub implements BackgroundResource {
   public UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable() {
     throw new UnsupportedOperationException("Not implemented: removeResourcePoliciesCallable()");
+  }
+
+  public OperationCallable<ReportHostAsFaultyInstanceRequest, Operation, Operation>
+      reportHostAsFaultyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: reportHostAsFaultyOperationCallable()");
+  }
+
+  public UnaryCallable<ReportHostAsFaultyInstanceRequest, Operation> reportHostAsFaultyCallable() {
+    throw new UnsupportedOperationException("Not implemented: reportHostAsFaultyCallable()");
   }
 
   public OperationCallable<ResetInstanceRequest, Operation, Operation> resetOperationCallable() {
@@ -349,6 +372,16 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable() {
     throw new UnsupportedOperationException("Not implemented: setSchedulingCallable()");
+  }
+
+  public OperationCallable<SetSecurityPolicyInstanceRequest, Operation, Operation>
+      setSecurityPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setSecurityPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<SetSecurityPolicyInstanceRequest, Operation> setSecurityPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
   }
 
   public OperationCallable<SetServiceAccountInstanceRequest, Operation, Operation>

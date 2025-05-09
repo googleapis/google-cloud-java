@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +30,15 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.CreateConversationRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionResponse;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest;
 import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsRequest;
+import com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse;
 import com.google.cloud.dialogflow.v2.GetConversationRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesRequest;
+import com.google.cloud.dialogflow.v2.IngestContextReferencesResponse;
 import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
 import com.google.cloud.dialogflow.v2.ListMessagesRequest;
@@ -101,6 +107,19 @@ public class GrpcConversationsStub extends ConversationsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesMethodDescriptor =
+          MethodDescriptor
+              .<IngestContextReferencesRequest, IngestContextReferencesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.Conversations/IngestContextReferences")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(IngestContextReferencesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(IngestContextReferencesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListMessagesRequest, ListMessagesResponse>
       listMessagesMethodDescriptor =
           MethodDescriptor.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -139,6 +158,20 @@ public class GrpcConversationsStub extends ConversationsStub {
                   ProtoUtils.marshaller(GenerateStatelessSummaryResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionMethodDescriptor =
+          MethodDescriptor
+              .<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.Conversations/GenerateStatelessSuggestion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateStatelessSuggestionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateStatelessSuggestionResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeMethodDescriptor =
           MethodDescriptor.<SearchKnowledgeRequest, SearchKnowledgeResponse>newBuilder()
@@ -148,6 +181,17 @@ public class GrpcConversationsStub extends ConversationsStub {
                   ProtoUtils.marshaller(SearchKnowledgeRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchKnowledgeResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsMethodDescriptor =
+          MethodDescriptor.<GenerateSuggestionsRequest, GenerateSuggestionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.Conversations/GenerateSuggestions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateSuggestionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateSuggestionsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -177,6 +221,8 @@ public class GrpcConversationsStub extends ConversationsStub {
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
   private final UnaryCallable<CompleteConversationRequest, Conversation>
       completeConversationCallable;
+  private final UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
       listMessagesPagedCallable;
@@ -184,8 +230,13 @@ public class GrpcConversationsStub extends ConversationsStub {
       suggestConversationSummaryCallable;
   private final UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
       generateStatelessSummaryCallable;
+  private final UnaryCallable<
+          GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable;
   private final UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse>
       searchKnowledgeCallable;
+  private final UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -275,6 +326,18 @@ public class GrpcConversationsStub extends ConversationsStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
+        ingestContextReferencesTransportSettings =
+            GrpcCallSettings
+                .<IngestContextReferencesRequest, IngestContextReferencesResponse>newBuilder()
+                .setMethodDescriptor(ingestContextReferencesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("conversation", String.valueOf(request.getConversation()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         GrpcCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
             .setMethodDescriptor(listMessagesMethodDescriptor)
@@ -311,6 +374,19 @@ public class GrpcConversationsStub extends ConversationsStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+        generateStatelessSuggestionTransportSettings =
+            GrpcCallSettings
+                .<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateStatelessSuggestionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeTransportSettings =
             GrpcCallSettings.<SearchKnowledgeRequest, SearchKnowledgeResponse>newBuilder()
@@ -320,6 +396,17 @@ public class GrpcConversationsStub extends ConversationsStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("conversation", String.valueOf(request.getConversation()));
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+        generateSuggestionsTransportSettings =
+            GrpcCallSettings.<GenerateSuggestionsRequest, GenerateSuggestionsResponse>newBuilder()
+                .setMethodDescriptor(generateSuggestionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("conversation", String.valueOf(request.getConversation()));
                       return builder.build();
                     })
                 .build();
@@ -367,6 +454,11 @@ public class GrpcConversationsStub extends ConversationsStub {
             completeConversationTransportSettings,
             settings.completeConversationSettings(),
             clientContext);
+    this.ingestContextReferencesCallable =
+        callableFactory.createUnaryCallable(
+            ingestContextReferencesTransportSettings,
+            settings.ingestContextReferencesSettings(),
+            clientContext);
     this.listMessagesCallable =
         callableFactory.createUnaryCallable(
             listMessagesTransportSettings, settings.listMessagesSettings(), clientContext);
@@ -383,9 +475,19 @@ public class GrpcConversationsStub extends ConversationsStub {
             generateStatelessSummaryTransportSettings,
             settings.generateStatelessSummarySettings(),
             clientContext);
+    this.generateStatelessSuggestionCallable =
+        callableFactory.createUnaryCallable(
+            generateStatelessSuggestionTransportSettings,
+            settings.generateStatelessSuggestionSettings(),
+            clientContext);
     this.searchKnowledgeCallable =
         callableFactory.createUnaryCallable(
             searchKnowledgeTransportSettings, settings.searchKnowledgeSettings(), clientContext);
+    this.generateSuggestionsCallable =
+        callableFactory.createUnaryCallable(
+            generateSuggestionsTransportSettings,
+            settings.generateSuggestionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -432,6 +534,12 @@ public class GrpcConversationsStub extends ConversationsStub {
   }
 
   @Override
+  public UnaryCallable<IngestContextReferencesRequest, IngestContextReferencesResponse>
+      ingestContextReferencesCallable() {
+    return ingestContextReferencesCallable;
+  }
+
+  @Override
   public UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable() {
     return listMessagesCallable;
   }
@@ -454,8 +562,20 @@ public class GrpcConversationsStub extends ConversationsStub {
   }
 
   @Override
+  public UnaryCallable<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
+      generateStatelessSuggestionCallable() {
+    return generateStatelessSuggestionCallable;
+  }
+
+  @Override
   public UnaryCallable<SearchKnowledgeRequest, SearchKnowledgeResponse> searchKnowledgeCallable() {
     return searchKnowledgeCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
+      generateSuggestionsCallable() {
+    return generateSuggestionsCallable;
   }
 
   @Override

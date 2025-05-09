@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,15 +17,18 @@
 package com.google.cloud.netapp.v1.stub;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListQuotaRulesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListVolumesPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -46,21 +49,37 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.netapp.v1.ActiveDirectory;
+import com.google.cloud.netapp.v1.Backup;
+import com.google.cloud.netapp.v1.BackupPolicy;
+import com.google.cloud.netapp.v1.BackupVault;
 import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.CreateBackupPolicyRequest;
+import com.google.cloud.netapp.v1.CreateBackupRequest;
+import com.google.cloud.netapp.v1.CreateBackupVaultRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
+import com.google.cloud.netapp.v1.CreateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.CreateReplicationRequest;
 import com.google.cloud.netapp.v1.CreateSnapshotRequest;
 import com.google.cloud.netapp.v1.CreateStoragePoolRequest;
 import com.google.cloud.netapp.v1.CreateVolumeRequest;
 import com.google.cloud.netapp.v1.DeleteActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.DeleteBackupPolicyRequest;
+import com.google.cloud.netapp.v1.DeleteBackupRequest;
+import com.google.cloud.netapp.v1.DeleteBackupVaultRequest;
 import com.google.cloud.netapp.v1.DeleteKmsConfigRequest;
+import com.google.cloud.netapp.v1.DeleteQuotaRuleRequest;
 import com.google.cloud.netapp.v1.DeleteReplicationRequest;
 import com.google.cloud.netapp.v1.DeleteSnapshotRequest;
 import com.google.cloud.netapp.v1.DeleteStoragePoolRequest;
 import com.google.cloud.netapp.v1.DeleteVolumeRequest;
 import com.google.cloud.netapp.v1.EncryptVolumesRequest;
+import com.google.cloud.netapp.v1.EstablishPeeringRequest;
 import com.google.cloud.netapp.v1.GetActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.GetBackupPolicyRequest;
+import com.google.cloud.netapp.v1.GetBackupRequest;
+import com.google.cloud.netapp.v1.GetBackupVaultRequest;
 import com.google.cloud.netapp.v1.GetKmsConfigRequest;
+import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
@@ -68,8 +87,16 @@ import com.google.cloud.netapp.v1.GetVolumeRequest;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
+import com.google.cloud.netapp.v1.ListBackupPoliciesRequest;
+import com.google.cloud.netapp.v1.ListBackupPoliciesResponse;
+import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
+import com.google.cloud.netapp.v1.ListBackupVaultsResponse;
+import com.google.cloud.netapp.v1.ListBackupsRequest;
+import com.google.cloud.netapp.v1.ListBackupsResponse;
 import com.google.cloud.netapp.v1.ListKmsConfigsRequest;
 import com.google.cloud.netapp.v1.ListKmsConfigsResponse;
+import com.google.cloud.netapp.v1.ListQuotaRulesRequest;
+import com.google.cloud.netapp.v1.ListQuotaRulesResponse;
 import com.google.cloud.netapp.v1.ListReplicationsRequest;
 import com.google.cloud.netapp.v1.ListReplicationsResponse;
 import com.google.cloud.netapp.v1.ListSnapshotsRequest;
@@ -79,6 +106,7 @@ import com.google.cloud.netapp.v1.ListStoragePoolsResponse;
 import com.google.cloud.netapp.v1.ListVolumesRequest;
 import com.google.cloud.netapp.v1.ListVolumesResponse;
 import com.google.cloud.netapp.v1.OperationMetadata;
+import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
@@ -86,12 +114,19 @@ import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
+import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
+import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
+import com.google.cloud.netapp.v1.UpdateBackupRequest;
+import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
 import com.google.cloud.netapp.v1.UpdateKmsConfigRequest;
+import com.google.cloud.netapp.v1.UpdateQuotaRuleRequest;
 import com.google.cloud.netapp.v1.UpdateReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateSnapshotRequest;
 import com.google.cloud.netapp.v1.UpdateStoragePoolRequest;
 import com.google.cloud.netapp.v1.UpdateVolumeRequest;
+import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
@@ -114,18 +149,21 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonNetAppStub extends NetAppStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(StoragePool.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(QuotaRule.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(BackupPolicy.getDescriptor())
           .add(Volume.getDescriptor())
           .add(KmsConfig.getDescriptor())
           .add(Snapshot.getDescriptor())
+          .add(BackupVault.getDescriptor())
           .add(ActiveDirectory.getDescriptor())
           .add(Replication.getDescriptor())
+          .add(Backup.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<ListStoragePoolsRequest, ListStoragePoolsResponse>
@@ -318,6 +356,86 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteStoragePoolRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceMethodDescriptor =
+          ApiMethodDescriptor.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ValidateDirectoryService")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ValidateDirectoryServiceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/storagePools/*}:validateDirectoryService",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateDirectoryServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ValidateDirectoryServiceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ValidateDirectoryServiceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneMethodDescriptor =
+          ApiMethodDescriptor.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SwitchActiveReplicaZone")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SwitchActiveReplicaZoneRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/storagePools/*}:switch",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SwitchActiveReplicaZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SwitchActiveReplicaZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SwitchActiveReplicaZoneRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1525,6 +1643,856 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<EstablishPeeringRequest, Operation>
+      establishPeeringMethodDescriptor =
+          ApiMethodDescriptor.<EstablishPeeringRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/EstablishPeering")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<EstablishPeeringRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/replications/*}:establishPeering",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EstablishPeeringRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EstablishPeeringRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (EstablishPeeringRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<SyncReplicationRequest, Operation>
+      syncReplicationMethodDescriptor =
+          ApiMethodDescriptor.<SyncReplicationRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/SyncReplication")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SyncReplicationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/replications/*}:sync",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SyncReplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SyncReplicationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SyncReplicationRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateBackupVaultRequest, Operation>
+      createBackupVaultMethodDescriptor =
+          ApiMethodDescriptor.<CreateBackupVaultRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateBackupVault")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateBackupVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupVaults",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "backupVaultId", request.getBackupVaultId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backupVault", request.getBackupVault(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateBackupVaultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupVaultRequest, BackupVault>
+      getBackupVaultMethodDescriptor =
+          ApiMethodDescriptor.<GetBackupVaultRequest, BackupVault>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetBackupVault")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupVaults/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackupVault>newBuilder()
+                      .setDefaultInstance(BackupVault.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListBackupVaultsRequest, ListBackupVaultsResponse>
+      listBackupVaultsMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupVaultsRequest, ListBackupVaultsResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListBackupVaults")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupVaultsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupVaults",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupVaultsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupVaultsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupVaultsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupVaultsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBackupVaultRequest, Operation>
+      updateBackupVaultMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBackupVaultRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateBackupVault")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBackupVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{backupVault.name=projects/*/locations/*/backupVaults/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backupVault.name", request.getBackupVault().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backupVault", request.getBackupVault(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackupVaultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupVaultRequest, Operation>
+      deleteBackupVaultMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupVaultRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteBackupVault")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupVaultRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupVaults/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupVaultRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupVaultRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateBackupRequest, Operation>
+      createBackupMethodDescriptor =
+          ApiMethodDescriptor.<CreateBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateBackup")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupVaults/*}/backups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "backupId", request.getBackupId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backup", request.getBackup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
+      ApiMethodDescriptor.<GetBackupRequest, Backup>newBuilder()
+          .setFullMethodName("google.cloud.netapp.v1.NetApp/GetBackup")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetBackupRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/backupVaults/*/backups/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBackupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetBackupRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Backup>newBuilder()
+                  .setDefaultInstance(Backup.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListBackupsRequest, ListBackupsResponse>
+      listBackupsMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListBackups")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupVaults/*}/backups",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupRequest, Operation>
+      deleteBackupMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteBackup")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupVaults/*/backups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBackupRequest, Operation>
+      updateBackupMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBackupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateBackup")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBackupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{backup.name=projects/*/locations/*/backupVaults/*/backups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backup.name", request.getBackup().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backup", request.getBackup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackupRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateBackupPolicyRequest, Operation>
+      createBackupPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateBackupPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateBackupPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateBackupPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateBackupPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "backupPolicyId", request.getBackupPolicyId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backupPolicy", request.getBackupPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateBackupPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetBackupPolicyRequest, BackupPolicy>
+      getBackupPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetBackupPolicyRequest, BackupPolicy>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetBackupPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BackupPolicy>newBuilder()
+                      .setDefaultInstance(BackupPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
+      listBackupPoliciesMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupPoliciesRequest, ListBackupPoliciesResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListBackupPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/backupPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListBackupPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBackupPolicyRequest, Operation>
+      updateBackupPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBackupPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateBackupPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBackupPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{backupPolicy.name=projects/*/locations/*/backupPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "backupPolicy.name", request.getBackupPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("backupPolicy", request.getBackupPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackupPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBackupPolicyRequest, Operation>
+      deleteBackupPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBackupPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteBackupPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBackupPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/backupPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBackupPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteBackupPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse>
+      listQuotaRulesMethodDescriptor =
+          ApiMethodDescriptor.<ListQuotaRulesRequest, ListQuotaRulesResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListQuotaRules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListQuotaRulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/volumes/*}/quotaRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQuotaRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListQuotaRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListQuotaRulesResponse>newBuilder()
+                      .setDefaultInstance(ListQuotaRulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetQuotaRuleRequest, QuotaRule>
+      getQuotaRuleMethodDescriptor =
+          ApiMethodDescriptor.<GetQuotaRuleRequest, QuotaRule>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetQuotaRule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetQuotaRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/quotaRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<QuotaRule>newBuilder()
+                      .setDefaultInstance(QuotaRule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateQuotaRuleRequest, Operation>
+      createQuotaRuleMethodDescriptor =
+          ApiMethodDescriptor.<CreateQuotaRuleRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateQuotaRule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateQuotaRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/volumes/*}/quotaRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "quotaRuleId", request.getQuotaRuleId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("quotaRule", request.getQuotaRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateQuotaRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateQuotaRuleRequest, Operation>
+      updateQuotaRuleMethodDescriptor =
+          ApiMethodDescriptor.<UpdateQuotaRuleRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateQuotaRule")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateQuotaRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{quotaRule.name=projects/*/locations/*/volumes/*/quotaRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "quotaRule.name", request.getQuotaRule().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("quotaRule", request.getQuotaRule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateQuotaRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteQuotaRuleRequest, Operation>
+      deleteQuotaRuleMethodDescriptor =
+          ApiMethodDescriptor.<DeleteQuotaRuleRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteQuotaRule")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteQuotaRuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*/quotaRules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteQuotaRuleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteQuotaRuleRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1607,6 +2575,14 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<DeleteStoragePoolRequest, Operation> deleteStoragePoolCallable;
   private final OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable;
+  private final UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable;
+  private final OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable;
+  private final UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable;
+  private final OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesResponse> listVolumesCallable;
   private final UnaryCallable<ListVolumesRequest, ListVolumesPagedResponse>
       listVolumesPagedCallable;
@@ -1697,6 +2673,66 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final OperationCallable<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable;
+  private final UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable;
+  private final OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable;
+  private final UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable;
+  private final OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable;
+  private final UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable;
+  private final OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationCallable;
+  private final UnaryCallable<GetBackupVaultRequest, BackupVault> getBackupVaultCallable;
+  private final UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsResponse>
+      listBackupVaultsCallable;
+  private final UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsPagedResponse>
+      listBackupVaultsPagedCallable;
+  private final UnaryCallable<UpdateBackupVaultRequest, Operation> updateBackupVaultCallable;
+  private final OperationCallable<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationCallable;
+  private final UnaryCallable<DeleteBackupVaultRequest, Operation> deleteBackupVaultCallable;
+  private final OperationCallable<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationCallable;
+  private final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable;
+  private final OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationCallable;
+  private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable;
+  private final UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable;
+  private final OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable;
+  private final UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable;
+  private final OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationCallable;
+  private final UnaryCallable<CreateBackupPolicyRequest, Operation> createBackupPolicyCallable;
+  private final OperationCallable<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      createBackupPolicyOperationCallable;
+  private final UnaryCallable<GetBackupPolicyRequest, BackupPolicy> getBackupPolicyCallable;
+  private final UnaryCallable<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
+      listBackupPoliciesCallable;
+  private final UnaryCallable<ListBackupPoliciesRequest, ListBackupPoliciesPagedResponse>
+      listBackupPoliciesPagedCallable;
+  private final UnaryCallable<UpdateBackupPolicyRequest, Operation> updateBackupPolicyCallable;
+  private final OperationCallable<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      updateBackupPolicyOperationCallable;
+  private final UnaryCallable<DeleteBackupPolicyRequest, Operation> deleteBackupPolicyCallable;
+  private final OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+      deleteBackupPolicyOperationCallable;
+  private final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable;
+  private final UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable;
+  private final UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable;
+  private final UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable;
+  private final OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable;
+  private final UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable;
+  private final OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable;
+  private final UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable;
+  private final OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1826,6 +2862,30 @@ public class HttpJsonNetAppStub extends NetAppStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ValidateDirectoryServiceRequest, Operation>
+        validateDirectoryServiceTransportSettings =
+            HttpJsonCallSettings.<ValidateDirectoryServiceRequest, Operation>newBuilder()
+                .setMethodDescriptor(validateDirectoryServiceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<SwitchActiveReplicaZoneRequest, Operation>
+        switchActiveReplicaZoneTransportSettings =
+            HttpJsonCallSettings.<SwitchActiveReplicaZoneRequest, Operation>newBuilder()
+                .setMethodDescriptor(switchActiveReplicaZoneMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         HttpJsonCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
             .setMethodDescriptor(listVolumesMethodDescriptor)
@@ -2181,6 +3241,253 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<EstablishPeeringRequest, Operation> establishPeeringTransportSettings =
+        HttpJsonCallSettings.<EstablishPeeringRequest, Operation>newBuilder()
+            .setMethodDescriptor(establishPeeringMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<SyncReplicationRequest, Operation> syncReplicationTransportSettings =
+        HttpJsonCallSettings.<SyncReplicationRequest, Operation>newBuilder()
+            .setMethodDescriptor(syncReplicationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateBackupVaultRequest, Operation> createBackupVaultTransportSettings =
+        HttpJsonCallSettings.<CreateBackupVaultRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBackupVaultMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetBackupVaultRequest, BackupVault> getBackupVaultTransportSettings =
+        HttpJsonCallSettings.<GetBackupVaultRequest, BackupVault>newBuilder()
+            .setMethodDescriptor(getBackupVaultMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListBackupVaultsRequest, ListBackupVaultsResponse>
+        listBackupVaultsTransportSettings =
+            HttpJsonCallSettings.<ListBackupVaultsRequest, ListBackupVaultsResponse>newBuilder()
+                .setMethodDescriptor(listBackupVaultsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateBackupVaultRequest, Operation> updateBackupVaultTransportSettings =
+        HttpJsonCallSettings.<UpdateBackupVaultRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupVaultMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "backup_vault.name", String.valueOf(request.getBackupVault().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteBackupVaultRequest, Operation> deleteBackupVaultTransportSettings =
+        HttpJsonCallSettings.<DeleteBackupVaultRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupVaultMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
+        HttpJsonCallSettings.<CreateBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
+        HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(getBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteBackupRequest, Operation> deleteBackupTransportSettings =
+        HttpJsonCallSettings.<DeleteBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateBackupRequest, Operation> updateBackupTransportSettings =
+        HttpJsonCallSettings.<UpdateBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("backup.name", String.valueOf(request.getBackup().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateBackupPolicyRequest, Operation> createBackupPolicyTransportSettings =
+        HttpJsonCallSettings.<CreateBackupPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBackupPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetBackupPolicyRequest, BackupPolicy> getBackupPolicyTransportSettings =
+        HttpJsonCallSettings.<GetBackupPolicyRequest, BackupPolicy>newBuilder()
+            .setMethodDescriptor(getBackupPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
+        listBackupPoliciesTransportSettings =
+            HttpJsonCallSettings.<ListBackupPoliciesRequest, ListBackupPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listBackupPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateBackupPolicyRequest, Operation> updateBackupPolicyTransportSettings =
+        HttpJsonCallSettings.<UpdateBackupPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "backup_policy.name", String.valueOf(request.getBackupPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteBackupPolicyRequest, Operation> deleteBackupPolicyTransportSettings =
+        HttpJsonCallSettings.<DeleteBackupPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteBackupPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListQuotaRulesRequest, ListQuotaRulesResponse>
+        listQuotaRulesTransportSettings =
+            HttpJsonCallSettings.<ListQuotaRulesRequest, ListQuotaRulesResponse>newBuilder()
+                .setMethodDescriptor(listQuotaRulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetQuotaRuleRequest, QuotaRule> getQuotaRuleTransportSettings =
+        HttpJsonCallSettings.<GetQuotaRuleRequest, QuotaRule>newBuilder()
+            .setMethodDescriptor(getQuotaRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateQuotaRuleRequest, Operation> createQuotaRuleTransportSettings =
+        HttpJsonCallSettings.<CreateQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(createQuotaRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateQuotaRuleRequest, Operation> updateQuotaRuleTransportSettings =
+        HttpJsonCallSettings.<UpdateQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateQuotaRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("quota_rule.name", String.valueOf(request.getQuotaRule().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleTransportSettings =
+        HttpJsonCallSettings.<DeleteQuotaRuleRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteQuotaRuleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2245,6 +3552,28 @@ public class HttpJsonNetAppStub extends NetAppStub {
         callableFactory.createOperationCallable(
             deleteStoragePoolTransportSettings,
             settings.deleteStoragePoolOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.validateDirectoryServiceCallable =
+        callableFactory.createUnaryCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceSettings(),
+            clientContext);
+    this.validateDirectoryServiceOperationCallable =
+        callableFactory.createOperationCallable(
+            validateDirectoryServiceTransportSettings,
+            settings.validateDirectoryServiceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.switchActiveReplicaZoneCallable =
+        callableFactory.createUnaryCallable(
+            switchActiveReplicaZoneTransportSettings,
+            settings.switchActiveReplicaZoneSettings(),
+            clientContext);
+    this.switchActiveReplicaZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            switchActiveReplicaZoneTransportSettings,
+            settings.switchActiveReplicaZoneOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.listVolumesCallable =
@@ -2497,6 +3826,184 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.reverseReplicationDirectionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.establishPeeringCallable =
+        callableFactory.createUnaryCallable(
+            establishPeeringTransportSettings, settings.establishPeeringSettings(), clientContext);
+    this.establishPeeringOperationCallable =
+        callableFactory.createOperationCallable(
+            establishPeeringTransportSettings,
+            settings.establishPeeringOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.syncReplicationCallable =
+        callableFactory.createUnaryCallable(
+            syncReplicationTransportSettings, settings.syncReplicationSettings(), clientContext);
+    this.syncReplicationOperationCallable =
+        callableFactory.createOperationCallable(
+            syncReplicationTransportSettings,
+            settings.syncReplicationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createBackupVaultCallable =
+        callableFactory.createUnaryCallable(
+            createBackupVaultTransportSettings,
+            settings.createBackupVaultSettings(),
+            clientContext);
+    this.createBackupVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupVaultTransportSettings,
+            settings.createBackupVaultOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getBackupVaultCallable =
+        callableFactory.createUnaryCallable(
+            getBackupVaultTransportSettings, settings.getBackupVaultSettings(), clientContext);
+    this.listBackupVaultsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupVaultsTransportSettings, settings.listBackupVaultsSettings(), clientContext);
+    this.listBackupVaultsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupVaultsTransportSettings, settings.listBackupVaultsSettings(), clientContext);
+    this.updateBackupVaultCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupVaultTransportSettings,
+            settings.updateBackupVaultSettings(),
+            clientContext);
+    this.updateBackupVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupVaultTransportSettings,
+            settings.updateBackupVaultOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteBackupVaultCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupVaultTransportSettings,
+            settings.deleteBackupVaultSettings(),
+            clientContext);
+    this.deleteBackupVaultOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupVaultTransportSettings,
+            settings.deleteBackupVaultOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createBackupCallable =
+        callableFactory.createUnaryCallable(
+            createBackupTransportSettings, settings.createBackupSettings(), clientContext);
+    this.createBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupTransportSettings,
+            settings.createBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getBackupCallable =
+        callableFactory.createUnaryCallable(
+            getBackupTransportSettings, settings.getBackupSettings(), clientContext);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.deleteBackupCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.deleteBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupTransportSettings,
+            settings.deleteBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateBackupCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupTransportSettings, settings.updateBackupSettings(), clientContext);
+    this.updateBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupTransportSettings,
+            settings.updateBackupOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createBackupPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createBackupPolicyTransportSettings,
+            settings.createBackupPolicySettings(),
+            clientContext);
+    this.createBackupPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupPolicyTransportSettings,
+            settings.createBackupPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getBackupPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getBackupPolicyTransportSettings, settings.getBackupPolicySettings(), clientContext);
+    this.listBackupPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listBackupPoliciesTransportSettings,
+            settings.listBackupPoliciesSettings(),
+            clientContext);
+    this.listBackupPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupPoliciesTransportSettings,
+            settings.listBackupPoliciesSettings(),
+            clientContext);
+    this.updateBackupPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupPolicyTransportSettings,
+            settings.updateBackupPolicySettings(),
+            clientContext);
+    this.updateBackupPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupPolicyTransportSettings,
+            settings.updateBackupPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteBackupPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupPolicyTransportSettings,
+            settings.deleteBackupPolicySettings(),
+            clientContext);
+    this.deleteBackupPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteBackupPolicyTransportSettings,
+            settings.deleteBackupPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listQuotaRulesCallable =
+        callableFactory.createUnaryCallable(
+            listQuotaRulesTransportSettings, settings.listQuotaRulesSettings(), clientContext);
+    this.listQuotaRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listQuotaRulesTransportSettings, settings.listQuotaRulesSettings(), clientContext);
+    this.getQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            getQuotaRuleTransportSettings, settings.getQuotaRuleSettings(), clientContext);
+    this.createQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            createQuotaRuleTransportSettings, settings.createQuotaRuleSettings(), clientContext);
+    this.createQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            createQuotaRuleTransportSettings,
+            settings.createQuotaRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            updateQuotaRuleTransportSettings, settings.updateQuotaRuleSettings(), clientContext);
+    this.updateQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            updateQuotaRuleTransportSettings,
+            settings.updateQuotaRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteQuotaRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteQuotaRuleTransportSettings, settings.deleteQuotaRuleSettings(), clientContext);
+    this.deleteQuotaRuleOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteQuotaRuleTransportSettings,
+            settings.deleteQuotaRuleOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2519,6 +4026,8 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(getStoragePoolMethodDescriptor);
     methodDescriptors.add(updateStoragePoolMethodDescriptor);
     methodDescriptors.add(deleteStoragePoolMethodDescriptor);
+    methodDescriptors.add(validateDirectoryServiceMethodDescriptor);
+    methodDescriptors.add(switchActiveReplicaZoneMethodDescriptor);
     methodDescriptors.add(listVolumesMethodDescriptor);
     methodDescriptors.add(getVolumeMethodDescriptor);
     methodDescriptors.add(createVolumeMethodDescriptor);
@@ -2550,6 +4059,28 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(stopReplicationMethodDescriptor);
     methodDescriptors.add(resumeReplicationMethodDescriptor);
     methodDescriptors.add(reverseReplicationDirectionMethodDescriptor);
+    methodDescriptors.add(establishPeeringMethodDescriptor);
+    methodDescriptors.add(syncReplicationMethodDescriptor);
+    methodDescriptors.add(createBackupVaultMethodDescriptor);
+    methodDescriptors.add(getBackupVaultMethodDescriptor);
+    methodDescriptors.add(listBackupVaultsMethodDescriptor);
+    methodDescriptors.add(updateBackupVaultMethodDescriptor);
+    methodDescriptors.add(deleteBackupVaultMethodDescriptor);
+    methodDescriptors.add(createBackupMethodDescriptor);
+    methodDescriptors.add(getBackupMethodDescriptor);
+    methodDescriptors.add(listBackupsMethodDescriptor);
+    methodDescriptors.add(deleteBackupMethodDescriptor);
+    methodDescriptors.add(updateBackupMethodDescriptor);
+    methodDescriptors.add(createBackupPolicyMethodDescriptor);
+    methodDescriptors.add(getBackupPolicyMethodDescriptor);
+    methodDescriptors.add(listBackupPoliciesMethodDescriptor);
+    methodDescriptors.add(updateBackupPolicyMethodDescriptor);
+    methodDescriptors.add(deleteBackupPolicyMethodDescriptor);
+    methodDescriptors.add(listQuotaRulesMethodDescriptor);
+    methodDescriptors.add(getQuotaRuleMethodDescriptor);
+    methodDescriptors.add(createQuotaRuleMethodDescriptor);
+    methodDescriptors.add(updateQuotaRuleMethodDescriptor);
+    methodDescriptors.add(deleteQuotaRuleMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -2607,6 +4138,30 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<DeleteStoragePoolRequest, Empty, OperationMetadata>
       deleteStoragePoolOperationCallable() {
     return deleteStoragePoolOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ValidateDirectoryServiceRequest, Operation>
+      validateDirectoryServiceCallable() {
+    return validateDirectoryServiceCallable;
+  }
+
+  @Override
+  public OperationCallable<ValidateDirectoryServiceRequest, Empty, OperationMetadata>
+      validateDirectoryServiceOperationCallable() {
+    return validateDirectoryServiceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SwitchActiveReplicaZoneRequest, Operation>
+      switchActiveReplicaZoneCallable() {
+    return switchActiveReplicaZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<SwitchActiveReplicaZoneRequest, StoragePool, OperationMetadata>
+      switchActiveReplicaZoneOperationCallable() {
+    return switchActiveReplicaZoneOperationCallable;
   }
 
   @Override
@@ -2914,6 +4469,225 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationCallable() {
     return reverseReplicationDirectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<EstablishPeeringRequest, Operation> establishPeeringCallable() {
+    return establishPeeringCallable;
+  }
+
+  @Override
+  public OperationCallable<EstablishPeeringRequest, Replication, OperationMetadata>
+      establishPeeringOperationCallable() {
+    return establishPeeringOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SyncReplicationRequest, Operation> syncReplicationCallable() {
+    return syncReplicationCallable;
+  }
+
+  @Override
+  public OperationCallable<SyncReplicationRequest, Replication, OperationMetadata>
+      syncReplicationOperationCallable() {
+    return syncReplicationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBackupVaultRequest, Operation> createBackupVaultCallable() {
+    return createBackupVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBackupVaultRequest, BackupVault, OperationMetadata>
+      createBackupVaultOperationCallable() {
+    return createBackupVaultOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupVaultRequest, BackupVault> getBackupVaultCallable() {
+    return getBackupVaultCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsResponse>
+      listBackupVaultsCallable() {
+    return listBackupVaultsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupVaultsRequest, ListBackupVaultsPagedResponse>
+      listBackupVaultsPagedCallable() {
+    return listBackupVaultsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupVaultRequest, Operation> updateBackupVaultCallable() {
+    return updateBackupVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
+      updateBackupVaultOperationCallable() {
+    return updateBackupVaultOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupVaultRequest, Operation> deleteBackupVaultCallable() {
+    return deleteBackupVaultCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupVaultRequest, Empty, OperationMetadata>
+      deleteBackupVaultOperationCallable() {
+    return deleteBackupVaultOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    return createBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBackupRequest, Backup, OperationMetadata>
+      createBackupOperationCallable() {
+    return createBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupRequest, Operation> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationCallable() {
+    return deleteBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable() {
+    return updateBackupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
+      updateBackupOperationCallable() {
+    return updateBackupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBackupPolicyRequest, Operation> createBackupPolicyCallable() {
+    return createBackupPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      createBackupPolicyOperationCallable() {
+    return createBackupPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupPolicyRequest, BackupPolicy> getBackupPolicyCallable() {
+    return getBackupPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
+      listBackupPoliciesCallable() {
+    return listBackupPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupPoliciesRequest, ListBackupPoliciesPagedResponse>
+      listBackupPoliciesPagedCallable() {
+    return listBackupPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupPolicyRequest, Operation> updateBackupPolicyCallable() {
+    return updateBackupPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
+      updateBackupPolicyOperationCallable() {
+    return updateBackupPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBackupPolicyRequest, Operation> deleteBackupPolicyCallable() {
+    return deleteBackupPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteBackupPolicyRequest, Empty, OperationMetadata>
+      deleteBackupPolicyOperationCallable() {
+    return deleteBackupPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesResponse> listQuotaRulesCallable() {
+    return listQuotaRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQuotaRulesRequest, ListQuotaRulesPagedResponse>
+      listQuotaRulesPagedCallable() {
+    return listQuotaRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQuotaRuleRequest, QuotaRule> getQuotaRuleCallable() {
+    return getQuotaRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQuotaRuleRequest, Operation> createQuotaRuleCallable() {
+    return createQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      createQuotaRuleOperationCallable() {
+    return createQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQuotaRuleRequest, Operation> updateQuotaRuleCallable() {
+    return updateQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateQuotaRuleRequest, QuotaRule, OperationMetadata>
+      updateQuotaRuleOperationCallable() {
+    return updateQuotaRuleOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQuotaRuleRequest, Operation> deleteQuotaRuleCallable() {
+    return deleteQuotaRuleCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteQuotaRuleRequest, Empty, OperationMetadata>
+      deleteQuotaRuleOperationCallable() {
+    return deleteQuotaRuleOperationCallable;
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.shopping.merchant.inventories.v1beta.samples;
 
 // [START merchantapi_v1beta_generated_RegionalInventoryService_ListRegionalInventories_sync]
 import com.google.shopping.merchant.inventories.v1beta.ListRegionalInventoriesRequest;
+import com.google.shopping.merchant.inventories.v1beta.ProductName;
 import com.google.shopping.merchant.inventories.v1beta.RegionalInventory;
 import com.google.shopping.merchant.inventories.v1beta.RegionalInventoryServiceClient;
 
@@ -37,7 +38,7 @@ public class SyncListRegionalInventories {
         RegionalInventoryServiceClient.create()) {
       ListRegionalInventoriesRequest request =
           ListRegionalInventoriesRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

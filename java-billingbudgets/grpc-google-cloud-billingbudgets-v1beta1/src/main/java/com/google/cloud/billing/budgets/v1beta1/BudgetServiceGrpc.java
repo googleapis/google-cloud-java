@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -276,6 +276,19 @@ public final class BudgetServiceGrpc {
     return BudgetServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BudgetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BudgetServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BudgetServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public BudgetServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BudgetServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BudgetServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -535,6 +548,105 @@ public final class BudgetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BudgetService.
+   *
+   * <pre>
+   * BudgetService stores Cloud Billing budgets, which define a
+   * budget plan and rules to execute as we track spend against that plan.
+   * </pre>
+   */
+  public static final class BudgetServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BudgetServiceBlockingV2Stub> {
+    private BudgetServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BudgetServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BudgetServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new budget. See
+     * [Quotas and limits](https://cloud.google.com/billing/quotas)
+     * for more information on the limits of the number of budgets you can create.
+     * </pre>
+     */
+    public com.google.cloud.billing.budgets.v1beta1.Budget createBudget(
+        com.google.cloud.billing.budgets.v1beta1.CreateBudgetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBudgetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a budget and returns the updated budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren't available on this API. Budget fields that are not exposed in
+     * this API will not be changed by this method.
+     * </pre>
+     */
+    public com.google.cloud.billing.budgets.v1beta1.Budget updateBudget(
+        com.google.cloud.billing.budgets.v1beta1.UpdateBudgetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBudgetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a budget.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren't available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
+     * </pre>
+     */
+    public com.google.cloud.billing.budgets.v1beta1.Budget getBudget(
+        com.google.cloud.billing.budgets.v1beta1.GetBudgetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBudgetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of budgets for a billing account.
+     * WARNING: There are some fields exposed on the Google Cloud Console that
+     * aren't available on this API. When reading from the API, you will not
+     * see these fields in the return value, though they may have been set
+     * in the Cloud Console.
+     * </pre>
+     */
+    public com.google.cloud.billing.budgets.v1beta1.ListBudgetsResponse listBudgets(
+        com.google.cloud.billing.budgets.v1beta1.ListBudgetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBudgetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a budget. Returns successfully if already deleted.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBudget(
+        com.google.cloud.billing.budgets.v1beta1.DeleteBudgetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBudgetMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BudgetService.
    *
    * <pre>
    * BudgetService stores Cloud Billing budgets, which define a

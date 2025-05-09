@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.google.cloud.edgecontainer.v1.stub;
 
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListClustersPagedResponse;
+import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListLocationsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListMachinesPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListNodePoolsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListVpnConnectionsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListVpnConne
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -59,9 +61,12 @@ import com.google.cloud.edgecontainer.v1.DeleteNodePoolRequest;
 import com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest;
 import com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest;
 import com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse;
+import com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest;
+import com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse;
 import com.google.cloud.edgecontainer.v1.GetClusterRequest;
 import com.google.cloud.edgecontainer.v1.GetMachineRequest;
 import com.google.cloud.edgecontainer.v1.GetNodePoolRequest;
+import com.google.cloud.edgecontainer.v1.GetServerConfigRequest;
 import com.google.cloud.edgecontainer.v1.GetVpnConnectionRequest;
 import com.google.cloud.edgecontainer.v1.ListClustersRequest;
 import com.google.cloud.edgecontainer.v1.ListClustersResponse;
@@ -74,9 +79,15 @@ import com.google.cloud.edgecontainer.v1.ListVpnConnectionsResponse;
 import com.google.cloud.edgecontainer.v1.Machine;
 import com.google.cloud.edgecontainer.v1.NodePool;
 import com.google.cloud.edgecontainer.v1.OperationMetadata;
+import com.google.cloud.edgecontainer.v1.ServerConfig;
 import com.google.cloud.edgecontainer.v1.UpdateClusterRequest;
 import com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest;
+import com.google.cloud.edgecontainer.v1.UpgradeClusterRequest;
 import com.google.cloud.edgecontainer.v1.VpnConnection;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -84,9 +95,9 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
-import org.threeten.bp.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -103,7 +114,9 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of getCluster to 30 seconds:
+ * <p>For example, to set the
+ * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
+ * of getCluster:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -120,9 +133,46 @@ import org.threeten.bp.Duration;
  *             .getClusterSettings()
  *             .getRetrySettings()
  *             .toBuilder()
- *             .setTotalTimeout(Duration.ofSeconds(30))
+ *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+ *             .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+ *             .setMaxAttempts(5)
+ *             .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+ *             .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
+ *             .setRetryDelayMultiplier(1.3)
+ *             .setRpcTimeoutMultiplier(1.5)
+ *             .setTotalTimeoutDuration(Duration.ofSeconds(300))
  *             .build());
  * EdgeContainerStubSettings edgeContainerSettings = edgeContainerSettingsBuilder.build();
+ * }</pre>
+ *
+ * Please refer to the [Client Side Retry
+ * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
+ * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createCluster:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * EdgeContainerStubSettings.Builder edgeContainerSettingsBuilder =
+ *     EdgeContainerStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * edgeContainerSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
@@ -141,11 +191,17 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
   private final UnaryCallSettings<UpdateClusterRequest, Operation> updateClusterSettings;
   private final OperationCallSettings<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationSettings;
+  private final UnaryCallSettings<UpgradeClusterRequest, Operation> upgradeClusterSettings;
+  private final OperationCallSettings<UpgradeClusterRequest, Cluster, OperationMetadata>
+      upgradeClusterOperationSettings;
   private final UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings;
   private final OperationCallSettings<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationSettings;
   private final UnaryCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenSettings;
+  private final UnaryCallSettings<
+          GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialSettings;
   private final PagedCallSettings<
           ListNodePoolsRequest, ListNodePoolsResponse, ListNodePoolsPagedResponse>
       listNodePoolsSettings;
@@ -175,6 +231,11 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
       deleteVpnConnectionSettings;
   private final OperationCallSettings<DeleteVpnConnectionRequest, Empty, OperationMetadata>
       deleteVpnConnectionOperationSettings;
+  private final UnaryCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<ListClustersRequest, ListClustersResponse, Cluster>
       LIST_CLUSTERS_PAGE_STR_DESC =
@@ -206,9 +267,7 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
 
             @Override
             public Iterable<Cluster> extractResources(ListClustersResponse payload) {
-              return payload.getClustersList() == null
-                  ? ImmutableList.<Cluster>of()
-                  : payload.getClustersList();
+              return payload.getClustersList();
             }
           };
 
@@ -242,9 +301,7 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
 
             @Override
             public Iterable<NodePool> extractResources(ListNodePoolsResponse payload) {
-              return payload.getNodePoolsList() == null
-                  ? ImmutableList.<NodePool>of()
-                  : payload.getNodePoolsList();
+              return payload.getNodePoolsList();
             }
           };
 
@@ -278,9 +335,7 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
 
             @Override
             public Iterable<Machine> extractResources(ListMachinesResponse payload) {
-              return payload.getMachinesList() == null
-                  ? ImmutableList.<Machine>of()
-                  : payload.getMachinesList();
+              return payload.getMachinesList();
             }
           };
 
@@ -318,9 +373,41 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
 
             @Override
             public Iterable<VpnConnection> extractResources(ListVpnConnectionsResponse payload) {
-              return payload.getVpnConnectionsList() == null
-                  ? ImmutableList.<VpnConnection>of()
-                  : payload.getVpnConnectionsList();
+              return payload.getVpnConnectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList();
             }
           };
 
@@ -396,6 +483,23 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to listClusters. */
   public PagedCallSettings<ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
       listClustersSettings() {
@@ -429,6 +533,17 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     return updateClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to upgradeCluster. */
+  public UnaryCallSettings<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
+    return upgradeClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to upgradeCluster. */
+  public OperationCallSettings<UpgradeClusterRequest, Cluster, OperationMetadata>
+      upgradeClusterOperationSettings() {
+    return upgradeClusterOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
     return deleteClusterSettings;
@@ -444,6 +559,12 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
   public UnaryCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenSettings() {
     return generateAccessTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateOfflineCredential. */
+  public UnaryCallSettings<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialSettings() {
+    return generateOfflineCredentialSettings;
   }
 
   /** Returns the object with the settings used for calls to listNodePools. */
@@ -535,6 +656,22 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     return deleteVpnConnectionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getServerConfig. */
+  public UnaryCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigSettings() {
+    return getServerConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public EdgeContainerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -551,12 +688,19 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
             "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
+  /** Returns the default service name. */
+  @Override
+  public String getServiceName() {
+    return "edgecontainer";
+  }
+
   /** Returns a builder for the default ExecutorProvider for this service. */
   public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
     return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service endpoint. */
+  @ObsoleteApi("Use getEndpoint() instead")
   public static String getDefaultEndpoint() {
     return "edgecontainer.googleapis.com:443";
   }
@@ -595,7 +739,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     return defaultGrpcTransportProviderBuilder().build();
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultGrpcApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -604,7 +747,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
             GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
   }
 
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
   public static ApiClientHeaderProvider.Builder defaultHttpJsonApiClientHeaderProviderBuilder() {
     return ApiClientHeaderProvider.newBuilder()
         .setGeneratedLibToken(
@@ -647,9 +789,12 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
     updateClusterSettings = settingsBuilder.updateClusterSettings().build();
     updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
+    upgradeClusterSettings = settingsBuilder.upgradeClusterSettings().build();
+    upgradeClusterOperationSettings = settingsBuilder.upgradeClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     deleteClusterOperationSettings = settingsBuilder.deleteClusterOperationSettings().build();
     generateAccessTokenSettings = settingsBuilder.generateAccessTokenSettings().build();
+    generateOfflineCredentialSettings = settingsBuilder.generateOfflineCredentialSettings().build();
     listNodePoolsSettings = settingsBuilder.listNodePoolsSettings().build();
     getNodePoolSettings = settingsBuilder.getNodePoolSettings().build();
     createNodePoolSettings = settingsBuilder.createNodePoolSettings().build();
@@ -668,6 +813,9 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     deleteVpnConnectionSettings = settingsBuilder.deleteVpnConnectionSettings().build();
     deleteVpnConnectionOperationSettings =
         settingsBuilder.deleteVpnConnectionOperationSettings().build();
+    getServerConfigSettings = settingsBuilder.getServerConfigSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for EdgeContainerStubSettings. */
@@ -683,11 +831,18 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     private final UnaryCallSettings.Builder<UpdateClusterRequest, Operation> updateClusterSettings;
     private final OperationCallSettings.Builder<UpdateClusterRequest, Cluster, OperationMetadata>
         updateClusterOperationSettings;
+    private final UnaryCallSettings.Builder<UpgradeClusterRequest, Operation>
+        upgradeClusterSettings;
+    private final OperationCallSettings.Builder<UpgradeClusterRequest, Cluster, OperationMetadata>
+        upgradeClusterOperationSettings;
     private final UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings;
     private final OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings;
     private final UnaryCallSettings.Builder<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenSettings;
+    private final UnaryCallSettings.Builder<
+            GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+        generateOfflineCredentialSettings;
     private final PagedCallSettings.Builder<
             ListNodePoolsRequest, ListNodePoolsResponse, ListNodePoolsPagedResponse>
         listNodePoolsSettings;
@@ -723,6 +878,12 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     private final OperationCallSettings.Builder<
             DeleteVpnConnectionRequest, Empty, OperationMetadata>
         deleteVpnConnectionOperationSettings;
+    private final UnaryCallSettings.Builder<GetServerConfigRequest, ServerConfig>
+        getServerConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -734,6 +895,7 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -744,23 +906,25 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(10000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -777,9 +941,12 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
       createClusterOperationSettings = OperationCallSettings.newBuilder();
       updateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateClusterOperationSettings = OperationCallSettings.newBuilder();
+      upgradeClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      upgradeClusterOperationSettings = OperationCallSettings.newBuilder();
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteClusterOperationSettings = OperationCallSettings.newBuilder();
       generateAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateOfflineCredentialSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listNodePoolsSettings = PagedCallSettings.newBuilder(LIST_NODE_POOLS_PAGE_STR_FACT);
       getNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createNodePoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -796,6 +963,9 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
       createVpnConnectionOperationSettings = OperationCallSettings.newBuilder();
       deleteVpnConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteVpnConnectionOperationSettings = OperationCallSettings.newBuilder();
+      getServerConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -803,8 +973,10 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
               getClusterSettings,
               createClusterSettings,
               updateClusterSettings,
+              upgradeClusterSettings,
               deleteClusterSettings,
               generateAccessTokenSettings,
+              generateOfflineCredentialSettings,
               listNodePoolsSettings,
               getNodePoolSettings,
               createNodePoolSettings,
@@ -815,7 +987,10 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
               listVpnConnectionsSettings,
               getVpnConnectionSettings,
               createVpnConnectionSettings,
-              deleteVpnConnectionSettings);
+              deleteVpnConnectionSettings,
+              getServerConfigSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -828,9 +1003,12 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
       updateClusterSettings = settings.updateClusterSettings.toBuilder();
       updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
+      upgradeClusterSettings = settings.upgradeClusterSettings.toBuilder();
+      upgradeClusterOperationSettings = settings.upgradeClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       deleteClusterOperationSettings = settings.deleteClusterOperationSettings.toBuilder();
       generateAccessTokenSettings = settings.generateAccessTokenSettings.toBuilder();
+      generateOfflineCredentialSettings = settings.generateOfflineCredentialSettings.toBuilder();
       listNodePoolsSettings = settings.listNodePoolsSettings.toBuilder();
       getNodePoolSettings = settings.getNodePoolSettings.toBuilder();
       createNodePoolSettings = settings.createNodePoolSettings.toBuilder();
@@ -849,6 +1027,9 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
       deleteVpnConnectionSettings = settings.deleteVpnConnectionSettings.toBuilder();
       deleteVpnConnectionOperationSettings =
           settings.deleteVpnConnectionOperationSettings.toBuilder();
+      getServerConfigSettings = settings.getServerConfigSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -856,8 +1037,10 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
               getClusterSettings,
               createClusterSettings,
               updateClusterSettings,
+              upgradeClusterSettings,
               deleteClusterSettings,
               generateAccessTokenSettings,
+              generateOfflineCredentialSettings,
               listNodePoolsSettings,
               getNodePoolSettings,
               createNodePoolSettings,
@@ -868,7 +1051,10 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
               listVpnConnectionsSettings,
               getVpnConnectionSettings,
               createVpnConnectionSettings,
-              deleteVpnConnectionSettings);
+              deleteVpnConnectionSettings,
+              getServerConfigSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -877,7 +1063,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -890,7 +1075,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
       builder.setTransportChannelProvider(defaultHttpJsonTransportProviderBuilder().build());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultHttpJsonApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
       builder.setMtlsEndpoint(getDefaultMtlsEndpoint());
       builder.setSwitchToMtlsEndpointAllowed(true);
 
@@ -919,14 +1103,24 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .upgradeClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .generateAccessTokenSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateOfflineCredentialSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listNodePoolsSettings()
@@ -984,6 +1178,21 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .getServerConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createClusterOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -998,13 +1207,13 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+                      .setRetryDelayMultiplier(2.0)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(2700000L))
                       .build()));
 
       builder
@@ -1022,13 +1231,37 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .upgradeClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpgradeClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1046,13 +1279,13 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+                      .setRetryDelayMultiplier(2.0)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(1800000L))
                       .build()));
 
       builder
@@ -1070,13 +1303,13 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+                      .setRetryDelayMultiplier(2.0)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(68400000L))
                       .build()));
 
       builder
@@ -1094,13 +1327,13 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+                      .setRetryDelayMultiplier(2.0)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(68400000L))
                       .build()));
 
       builder
@@ -1118,13 +1351,13 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
+                      .setRetryDelayMultiplier(2.0)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(1800000L))
                       .build()));
 
       builder
@@ -1142,13 +1375,13 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1166,13 +1399,13 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
                       .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
@@ -1211,8 +1444,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, OperationMetadata>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
@@ -1224,11 +1455,20 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, OperationMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeCluster. */
+    public UnaryCallSettings.Builder<UpgradeClusterRequest, Operation> upgradeClusterSettings() {
+      return upgradeClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to upgradeCluster. */
+    public OperationCallSettings.Builder<UpgradeClusterRequest, Cluster, OperationMetadata>
+        upgradeClusterOperationSettings() {
+      return upgradeClusterOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
@@ -1237,8 +1477,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings() {
       return deleteClusterOperationSettings;
@@ -1248,6 +1486,13 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     public UnaryCallSettings.Builder<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenSettings() {
       return generateAccessTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateOfflineCredential. */
+    public UnaryCallSettings.Builder<
+            GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+        generateOfflineCredentialSettings() {
+      return generateOfflineCredentialSettings;
     }
 
     /** Returns the builder for the settings used for calls to listNodePools. */
@@ -1268,8 +1513,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to createNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateNodePoolRequest, NodePool, OperationMetadata>
         createNodePoolOperationSettings() {
       return createNodePoolOperationSettings;
@@ -1281,8 +1524,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateNodePoolRequest, NodePool, OperationMetadata>
         updateNodePoolOperationSettings() {
       return updateNodePoolOperationSettings;
@@ -1294,8 +1535,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteNodePoolRequest, Empty, OperationMetadata>
         deleteNodePoolOperationSettings() {
       return deleteNodePoolOperationSettings;
@@ -1333,8 +1572,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to createVpnConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateVpnConnectionRequest, VpnConnection, OperationMetadata>
         createVpnConnectionOperationSettings() {
@@ -1348,11 +1585,27 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteVpnConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteVpnConnectionRequest, Empty, OperationMetadata>
         deleteVpnConnectionOperationSettings() {
       return deleteVpnConnectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getServerConfig. */
+    public UnaryCallSettings.Builder<GetServerConfigRequest, ServerConfig>
+        getServerConfigSettings() {
+      return getServerConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

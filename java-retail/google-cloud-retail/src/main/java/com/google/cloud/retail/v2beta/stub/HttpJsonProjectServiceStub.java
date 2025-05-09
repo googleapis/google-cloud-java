@@ -1,0 +1,263 @@
+/*
+ * Copyright 2025 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.retail.v2beta.stub;
+
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.retail.v2beta.AlertConfig;
+import com.google.cloud.retail.v2beta.GetAlertConfigRequest;
+import com.google.cloud.retail.v2beta.UpdateAlertConfigRequest;
+import com.google.protobuf.TypeRegistry;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the ProjectService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@BetaApi
+@Generated("by gapic-generator-java")
+public class HttpJsonProjectServiceStub extends ProjectServiceStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<GetAlertConfigRequest, AlertConfig>
+      getAlertConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetAlertConfigRequest, AlertConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2beta.ProjectService/GetAlertConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAlertConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2beta/{name=projects/*/alertConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAlertConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAlertConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AlertConfig>newBuilder()
+                      .setDefaultInstance(AlertConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAlertConfigRequest, AlertConfig>
+      updateAlertConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAlertConfigRequest, AlertConfig>newBuilder()
+              .setFullMethodName("google.cloud.retail.v2beta.ProjectService/UpdateAlertConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAlertConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2beta/{alertConfig.name=projects/*/alertConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAlertConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "alertConfig.name", request.getAlertConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAlertConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("alertConfig", request.getAlertConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AlertConfig>newBuilder()
+                      .setDefaultInstance(AlertConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final UnaryCallable<GetAlertConfigRequest, AlertConfig> getAlertConfigCallable;
+  private final UnaryCallable<UpdateAlertConfigRequest, AlertConfig> updateAlertConfigCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  public static final HttpJsonProjectServiceStub create(ProjectServiceStubSettings settings)
+      throws IOException {
+    return new HttpJsonProjectServiceStub(settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonProjectServiceStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonProjectServiceStub(
+        ProjectServiceStubSettings.newHttpJsonBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonProjectServiceStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonProjectServiceStub(
+        ProjectServiceStubSettings.newHttpJsonBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonProjectServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonProjectServiceStub(
+      ProjectServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new HttpJsonProjectServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonProjectServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonProjectServiceStub(
+      ProjectServiceStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+
+    HttpJsonCallSettings<GetAlertConfigRequest, AlertConfig> getAlertConfigTransportSettings =
+        HttpJsonCallSettings.<GetAlertConfigRequest, AlertConfig>newBuilder()
+            .setMethodDescriptor(getAlertConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateAlertConfigRequest, AlertConfig> updateAlertConfigTransportSettings =
+        HttpJsonCallSettings.<UpdateAlertConfigRequest, AlertConfig>newBuilder()
+            .setMethodDescriptor(updateAlertConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "alert_config.name", String.valueOf(request.getAlertConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+
+    this.getAlertConfigCallable =
+        callableFactory.createUnaryCallable(
+            getAlertConfigTransportSettings, settings.getAlertConfigSettings(), clientContext);
+    this.updateAlertConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateAlertConfigTransportSettings,
+            settings.updateAlertConfigSettings(),
+            clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(getAlertConfigMethodDescriptor);
+    methodDescriptors.add(updateAlertConfigMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<GetAlertConfigRequest, AlertConfig> getAlertConfigCallable() {
+    return getAlertConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAlertConfigRequest, AlertConfig> updateAlertConfigCallable() {
+    return updateAlertConfigCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

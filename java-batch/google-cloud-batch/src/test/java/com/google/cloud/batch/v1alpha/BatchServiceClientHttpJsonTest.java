@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package com.google.cloud.batch.v1alpha;
 
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListResourceAllowancesPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListTasksPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -38,6 +39,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -366,6 +368,186 @@ public class BatchServiceClientHttpJsonTest {
   }
 
   @Test
+  public void cancelJobTest() throws Exception {
+    CancelJobResponse expectedResponse = CancelJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    CancelJobResponse actualResponse = client.cancelJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.cancelJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void cancelJobTest2() throws Exception {
+    CancelJobResponse expectedResponse = CancelJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3306/locations/location-3306/jobs/job-3306";
+
+    CancelJobResponse actualResponse = client.cancelJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3306/locations/location-3306/jobs/job-3306";
+      client.cancelJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateJobTest() throws Exception {
+    Job expectedResponse =
+        Job.newBuilder()
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setUid("uid115792")
+            .setPriority(-1165461084)
+            .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
+            .setAllocationPolicy(AllocationPolicy.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLogsPolicy(LogsPolicy.newBuilder().build())
+            .addAllNotifications(new ArrayList<JobNotification>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Job job =
+        Job.newBuilder()
+            .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setUid("uid115792")
+            .setPriority(-1165461084)
+            .addAllTaskGroups(new ArrayList<TaskGroup>())
+            .addAllDependencies(new ArrayList<JobDependency>())
+            .setAllocationPolicy(AllocationPolicy.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStatus(JobStatus.newBuilder().build())
+            .setNotification(JobNotification.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setLogsPolicy(LogsPolicy.newBuilder().build())
+            .addAllNotifications(new ArrayList<JobNotification>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Job actualResponse = client.updateJob(job, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Job job =
+          Job.newBuilder()
+              .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+              .setUid("uid115792")
+              .setPriority(-1165461084)
+              .addAllTaskGroups(new ArrayList<TaskGroup>())
+              .addAllDependencies(new ArrayList<JobDependency>())
+              .setAllocationPolicy(AllocationPolicy.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setStatus(JobStatus.newBuilder().build())
+              .setNotification(JobNotification.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setLogsPolicy(LogsPolicy.newBuilder().build())
+              .addAllNotifications(new ArrayList<JobNotification>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateJob(job, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listJobsTest() throws Exception {
     Job responsesElement = Job.newBuilder().build();
     ListJobsResponse expectedResponse =
@@ -607,6 +789,485 @@ public class BatchServiceClientHttpJsonTest {
       String parent =
           "projects/project-6196/locations/location-6196/jobs/job-6196/taskGroups/taskGroup-6196";
       client.listTasks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createResourceAllowanceTest() throws Exception {
+    ResourceAllowance expectedResponse =
+        ResourceAllowance.newBuilder()
+            .setName(
+                ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllNotifications(new ArrayList<Notification>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ResourceAllowance resourceAllowance = ResourceAllowance.newBuilder().build();
+    String resourceAllowanceId = "resourceAllowanceId-786470299";
+
+    ResourceAllowance actualResponse =
+        client.createResourceAllowance(parent, resourceAllowance, resourceAllowanceId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createResourceAllowanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ResourceAllowance resourceAllowance = ResourceAllowance.newBuilder().build();
+      String resourceAllowanceId = "resourceAllowanceId-786470299";
+      client.createResourceAllowance(parent, resourceAllowance, resourceAllowanceId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createResourceAllowanceTest2() throws Exception {
+    ResourceAllowance expectedResponse =
+        ResourceAllowance.newBuilder()
+            .setName(
+                ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllNotifications(new ArrayList<Notification>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    ResourceAllowance resourceAllowance = ResourceAllowance.newBuilder().build();
+    String resourceAllowanceId = "resourceAllowanceId-786470299";
+
+    ResourceAllowance actualResponse =
+        client.createResourceAllowance(parent, resourceAllowance, resourceAllowanceId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createResourceAllowanceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      ResourceAllowance resourceAllowance = ResourceAllowance.newBuilder().build();
+      String resourceAllowanceId = "resourceAllowanceId-786470299";
+      client.createResourceAllowance(parent, resourceAllowance, resourceAllowanceId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceAllowanceTest() throws Exception {
+    ResourceAllowance expectedResponse =
+        ResourceAllowance.newBuilder()
+            .setName(
+                ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllNotifications(new ArrayList<Notification>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceAllowanceName name =
+        ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]");
+
+    ResourceAllowance actualResponse = client.getResourceAllowance(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getResourceAllowanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceAllowanceName name =
+          ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]");
+      client.getResourceAllowance(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getResourceAllowanceTest2() throws Exception {
+    ResourceAllowance expectedResponse =
+        ResourceAllowance.newBuilder()
+            .setName(
+                ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllNotifications(new ArrayList<Notification>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-1945/locations/location-1945/resourceAllowances/resourceAllowance-1945";
+
+    ResourceAllowance actualResponse = client.getResourceAllowance(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getResourceAllowanceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1945/locations/location-1945/resourceAllowances/resourceAllowance-1945";
+      client.getResourceAllowance(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteResourceAllowanceTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteResourceAllowanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ResourceAllowanceName name =
+        ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]");
+
+    client.deleteResourceAllowanceAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteResourceAllowanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceAllowanceName name =
+          ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]");
+      client.deleteResourceAllowanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteResourceAllowanceTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteResourceAllowanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-1945/locations/location-1945/resourceAllowances/resourceAllowance-1945";
+
+    client.deleteResourceAllowanceAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteResourceAllowanceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-1945/locations/location-1945/resourceAllowances/resourceAllowance-1945";
+      client.deleteResourceAllowanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listResourceAllowancesTest() throws Exception {
+    ResourceAllowance responsesElement = ResourceAllowance.newBuilder().build();
+    ListResourceAllowancesResponse expectedResponse =
+        ListResourceAllowancesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceAllowances(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListResourceAllowancesPagedResponse pagedListResponse = client.listResourceAllowances(parent);
+
+    List<ResourceAllowance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceAllowancesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceAllowancesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listResourceAllowances(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listResourceAllowancesTest2() throws Exception {
+    ResourceAllowance responsesElement = ResourceAllowance.newBuilder().build();
+    ListResourceAllowancesResponse expectedResponse =
+        ListResourceAllowancesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceAllowances(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListResourceAllowancesPagedResponse pagedListResponse = client.listResourceAllowances(parent);
+
+    List<ResourceAllowance> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourceAllowancesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listResourceAllowancesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listResourceAllowances(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateResourceAllowanceTest() throws Exception {
+    ResourceAllowance expectedResponse =
+        ResourceAllowance.newBuilder()
+            .setName(
+                ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllNotifications(new ArrayList<Notification>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceAllowance resourceAllowance =
+        ResourceAllowance.newBuilder()
+            .setName(
+                ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+                    .toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .addAllNotifications(new ArrayList<Notification>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ResourceAllowance actualResponse =
+        client.updateResourceAllowance(resourceAllowance, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateResourceAllowanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceAllowance resourceAllowance =
+          ResourceAllowance.newBuilder()
+              .setName(
+                  ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+                      .toString())
+              .setUid("uid115792")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .addAllNotifications(new ArrayList<Notification>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateResourceAllowance(resourceAllowance, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

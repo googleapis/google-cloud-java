@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import com.google.cloud.discoveryengine.v1.ImportDocumentsMetadata;
 import com.google.cloud.discoveryengine.v1.ImportDocumentsRequest;
 import com.google.cloud.discoveryengine.v1.ImportDocumentsResponse;
 import com.google.cloud.discoveryengine.v1.ImportErrorConfig;
+import com.google.protobuf.FieldMask;
 
 public class AsyncImportDocumentsLRO {
 
@@ -45,8 +46,10 @@ public class AsyncImportDocumentsLRO {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
+              .setForceRefreshContent(true)
               .build();
       OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata> future =
           documentServiceClient.importDocumentsOperationCallable().futureCall(request);
