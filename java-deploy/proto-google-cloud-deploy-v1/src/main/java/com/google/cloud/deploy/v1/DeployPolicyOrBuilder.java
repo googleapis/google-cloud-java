@@ -611,7 +611,7 @@ public interface DeployPolicyOrBuilder
    *
    *
    * <pre>
-   * The weak etag of the `Automation` resource.
+   * The weak etag of the `DeployPolicy` resource.
    * This checksum is computed by the server based on the value of other
    * fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
@@ -627,7 +627,7 @@ public interface DeployPolicyOrBuilder
    *
    *
    * <pre>
-   * The weak etag of the `Automation` resource.
+   * The weak etag of the `DeployPolicy` resource.
    * This checksum is computed by the server based on the value of other
    * fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.

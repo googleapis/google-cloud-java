@@ -23,6 +23,7 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
+ * LINT: LEGACY_NAMES
  * Represents a hardware accelerator type.
  * </pre>
  *
@@ -141,6 +142,26 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_H100_MEGA_80GB = 14;</code>
    */
   NVIDIA_H100_MEGA_80GB(14),
+  /**
+   *
+   *
+   * <pre>
+   * Nvidia H200 141Gb GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_H200_141GB = 15;</code>
+   */
+  NVIDIA_H200_141GB(15),
+  /**
+   *
+   *
+   * <pre>
+   * Nvidia B200 GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_B200 = 16;</code>
+   */
+  NVIDIA_B200(16),
   /**
    *
    *
@@ -310,6 +331,28 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia H200 141Gb GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_H200_141GB = 15;</code>
+   */
+  public static final int NVIDIA_H200_141GB_VALUE = 15;
+
+  /**
+   *
+   *
+   * <pre>
+   * Nvidia B200 GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_B200 = 16;</code>
+   */
+  public static final int NVIDIA_B200_VALUE = 16;
+
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -396,6 +439,10 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
         return NVIDIA_H100_80GB;
       case 14:
         return NVIDIA_H100_MEGA_80GB;
+      case 15:
+        return NVIDIA_H200_141GB;
+      case 16:
+        return NVIDIA_B200;
       case 6:
         return TPU_V2;
       case 7:

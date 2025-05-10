@@ -205,7 +205,7 @@ public interface RagCorpusOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=284
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=285
    * @return Whether the ragEmbeddingModelConfig field is set.
    */
   @java.lang.Deprecated
@@ -223,7 +223,7 @@ public interface RagCorpusOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=284
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=285
    * @return The ragEmbeddingModelConfig.
    */
   @java.lang.Deprecated
@@ -256,7 +256,7 @@ public interface RagCorpusOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=291
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=292
    * @return Whether the ragVectorDbConfig field is set.
    */
   @java.lang.Deprecated
@@ -274,7 +274,7 @@ public interface RagCorpusOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=291
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=292
    * @return The ragVectorDbConfig.
    */
   @java.lang.Deprecated
@@ -429,6 +429,58 @@ public interface RagCorpusOrBuilder
    * @return The ragFilesCount.
    */
   int getRagFilesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The CMEK key name used to encrypt at-rest data related
+   * to this Corpus. Only applicable to RagManagedDb option for Vector DB. This
+   * field can only be set at corpus creation time, and cannot be updated or
+   * deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.RagCorpus.BackendConfigCase getBackendConfigCase();
 }

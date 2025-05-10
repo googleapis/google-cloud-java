@@ -141,7 +141,8 @@ public interface OperationMetadataOrBuilder
    * have
    * [google.longrunning.Operation.error][google.longrunning.Operation.error]
    * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
-   * corresponding to `Code.CANCELLED`.
+   * corresponding to
+   * `[Code.CANCELLED][google.rpc.Code.CANCELLED]`.
    * </pre>
    *
    * <code>bool requested_cancellation = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

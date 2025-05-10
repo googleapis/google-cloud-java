@@ -28,7 +28,7 @@ public interface StandardOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to verify a deployment.
+   * Optional. Whether to verify a deployment via `skaffold verify`.
    * </pre>
    *
    * <code>bool verify = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -42,7 +42,7 @@ public interface StandardOrBuilder
    *
    * <pre>
    * Optional. Configuration for the predeploy job. If this is not configured,
-   * predeploy job will not be present.
+   * the predeploy job will not be present.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface StandardOrBuilder
    *
    * <pre>
    * Optional. Configuration for the predeploy job. If this is not configured,
-   * predeploy job will not be present.
+   * the predeploy job will not be present.
    * </pre>
    *
    * <code>
@@ -74,7 +74,7 @@ public interface StandardOrBuilder
    *
    * <pre>
    * Optional. Configuration for the predeploy job. If this is not configured,
-   * predeploy job will not be present.
+   * the predeploy job will not be present.
    * </pre>
    *
    * <code>
@@ -88,7 +88,7 @@ public interface StandardOrBuilder
    *
    * <pre>
    * Optional. Configuration for the postdeploy job. If this is not configured,
-   * postdeploy job will not be present.
+   * the postdeploy job will not be present.
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public interface StandardOrBuilder
    *
    * <pre>
    * Optional. Configuration for the postdeploy job. If this is not configured,
-   * postdeploy job will not be present.
+   * the postdeploy job will not be present.
    * </pre>
    *
    * <code>
@@ -120,7 +120,7 @@ public interface StandardOrBuilder
    *
    * <pre>
    * Optional. Configuration for the postdeploy job. If this is not configured,
-   * postdeploy job will not be present.
+   * the postdeploy job will not be present.
    * </pre>
    *
    * <code>

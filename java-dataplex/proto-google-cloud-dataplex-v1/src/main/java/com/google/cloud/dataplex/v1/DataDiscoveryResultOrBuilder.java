@@ -72,7 +72,7 @@ public interface DataDiscoveryResultOrBuilder
    *
    *
    * <pre>
-   * Output only. Statistics of the DataDiscoveryScan.
+   * Output only. Describes result statistics of a data scan discovery job.
    * </pre>
    *
    * <code>
@@ -87,7 +87,7 @@ public interface DataDiscoveryResultOrBuilder
    *
    *
    * <pre>
-   * Output only. Statistics of the DataDiscoveryScan.
+   * Output only. Describes result statistics of a data scan discovery job.
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public interface DataDiscoveryResultOrBuilder
    *
    *
    * <pre>
-   * Output only. Statistics of the DataDiscoveryScan.
+   * Output only. Describes result statistics of a data scan discovery job.
    * </pre>
    *
    * <code>

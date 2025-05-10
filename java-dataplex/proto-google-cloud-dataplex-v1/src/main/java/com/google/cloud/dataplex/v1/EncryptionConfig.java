@@ -395,7 +395,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Error because of internal server error, will be retried automatically..
+       * Error because of internal server error, will be retried automatically.
        * </pre>
        *
        * <code>INTERNAL_ERROR = 1;</code>
@@ -429,7 +429,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Error because of internal server error, will be retried automatically..
+       * Error because of internal server error, will be retried automatically.
        * </pre>
        *
        * <code>INTERNAL_ERROR = 1;</code>

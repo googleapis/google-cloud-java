@@ -353,10 +353,9 @@ public class CmekServiceClient implements BackgroundResource {
    *
    * @param parent Required. The location at which the EncryptionConfig is to be created.
    * @param encryptionConfig Required. The EncryptionConfig to create.
-   * @param encryptionConfigId Required. The ID of the EncryptionConfig to create. The ID must
-   *     contain only letters (a-z, A-Z), numbers (0-9), and hyphens (-). The maximum size is 63
-   *     characters. The first character must be a letter. The last character must be a letter or a
-   *     number.
+   * @param encryptionConfigId Required. The ID of the
+   *     [EncryptionConfig][google.cloud.dataplex.v1.EncryptionConfig] to create. Currently, only a
+   *     value of "default" is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EncryptionConfig, OperationMetadata> createEncryptionConfigAsync(
@@ -397,10 +396,9 @@ public class CmekServiceClient implements BackgroundResource {
    *
    * @param parent Required. The location at which the EncryptionConfig is to be created.
    * @param encryptionConfig Required. The EncryptionConfig to create.
-   * @param encryptionConfigId Required. The ID of the EncryptionConfig to create. The ID must
-   *     contain only letters (a-z, A-Z), numbers (0-9), and hyphens (-). The maximum size is 63
-   *     characters. The first character must be a letter. The last character must be a letter or a
-   *     number.
+   * @param encryptionConfigId Required. The ID of the
+   *     [EncryptionConfig][google.cloud.dataplex.v1.EncryptionConfig] to create. Currently, only a
+   *     value of "default" is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EncryptionConfig, OperationMetadata> createEncryptionConfigAsync(
