@@ -523,7 +523,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Override
@@ -545,7 +545,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
    * @return The partialFailureGcsSink.
    */
   @java.lang.Override
@@ -599,7 +599,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Override
@@ -626,7 +626,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Override
@@ -808,7 +808,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
@@ -829,7 +829,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
@@ -3094,7 +3094,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
      * @return Whether the partialFailureGcsSink field is set.
      */
     @java.lang.Override
@@ -3116,7 +3116,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=555
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
      * @return The partialFailureGcsSink.
      */
     @java.lang.Override
@@ -3363,7 +3363,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
      * @return Whether the partialFailureBigquerySink field is set.
      */
     @java.lang.Override
@@ -3391,7 +3391,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=564
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
      * @return The partialFailureBigquerySink.
      */
     @java.lang.Override
@@ -4169,7 +4169,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
      * @return Whether the ragFileChunkingConfig field is set.
      */
     @java.lang.Deprecated
@@ -4189,7 +4189,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=583
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
      * @return The ragFileChunkingConfig.
      */
     @java.lang.Deprecated
