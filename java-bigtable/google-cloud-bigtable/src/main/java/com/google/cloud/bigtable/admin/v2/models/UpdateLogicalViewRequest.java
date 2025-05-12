@@ -80,6 +80,13 @@ public final class UpdateLogicalViewRequest {
     return this;
   }
 
+  /** Changes the deletion protection of an existing logical view. */
+  public UpdateLogicalViewRequest setDeletionProtection(boolean deletionProtection) {
+    requestBuilder.getLogicalViewBuilder().setDeletionProtection(deletionProtection);
+    updateFieldMask(com.google.bigtable.admin.v2.LogicalView.DELETION_PROTECTION_FIELD_NUMBER);
+    return this;
+  }
+
   private void updateFieldMask(int fieldNumber) {
     FieldMask newMask =
         FieldMaskUtil.fromFieldNumbers(com.google.bigtable.admin.v2.LogicalView.class, fieldNumber);

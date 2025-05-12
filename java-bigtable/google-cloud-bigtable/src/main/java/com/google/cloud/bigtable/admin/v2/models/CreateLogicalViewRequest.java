@@ -28,7 +28,7 @@ import javax.annotation.Nonnull;
  * <pre>{@code
  * LogicalView existingLogicalView = ...;
  * CreateLogicalViewRequest logicalViewRequest = CreateLogicalViewRequest.of("my-instance", "my-new-logical-view")
- *   .setQuery("...");
+ *   .setQuery("...").setDeletionProtection(true);
  * }</pre>
  *
  * @see LogicalView for more details
@@ -53,6 +53,13 @@ public final class CreateLogicalViewRequest {
   @SuppressWarnings("WeakerAccess")
   public CreateLogicalViewRequest setQuery(@Nonnull String query) {
     proto.getLogicalViewBuilder().setQuery(query);
+    return this;
+  }
+
+  /** Configures if the logical view is deletion protected. */
+  @SuppressWarnings("WeakerAccess")
+  public CreateLogicalViewRequest setDeletionProtection(boolean value) {
+    proto.getLogicalViewBuilder().setDeletionProtection(value);
     return this;
   }
 

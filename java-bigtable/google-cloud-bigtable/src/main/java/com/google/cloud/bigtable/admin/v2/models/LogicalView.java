@@ -75,6 +75,11 @@ public final class LogicalView {
     return proto.getQuery();
   }
 
+  /** Returns whether this logical view is deletion protected. */
+  public boolean isDeletionProtected() {
+    return proto.getDeletionProtection();
+  }
+
   /**
    * Creates the request protobuf. This method is considered an internal implementation detail and
    * not meant to be used by applications.

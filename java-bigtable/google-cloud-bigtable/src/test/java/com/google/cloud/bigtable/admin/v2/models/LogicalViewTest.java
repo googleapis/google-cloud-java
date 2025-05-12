@@ -37,12 +37,14 @@ public class LogicalViewTest {
         com.google.bigtable.admin.v2.LogicalView.newBuilder()
             .setName(logicalViewName.toString())
             .setQuery("SELECT 1 from Table")
+            .setDeletionProtection(true)
             .build();
 
     LogicalView result = LogicalView.fromProto(logicalViewProto);
 
     assertThat(result.getId()).isEqualTo(LOGICAL_VIEW_ID);
     assertThat(result.getQuery()).isEqualTo("SELECT 1 from Table");
+    assertThat(result.isDeletionProtected()).isEqualTo(true);
   }
 
   @Test
@@ -70,6 +72,7 @@ public class LogicalViewTest {
         com.google.bigtable.admin.v2.LogicalView.newBuilder()
             .setName(logicalViewName.toString())
             .setQuery("SELECT 1 FROM Table")
+            .setDeletionProtection(true)
             .build();
     LogicalView logicalView = LogicalView.fromProto(proto);
 
@@ -80,6 +83,7 @@ public class LogicalViewTest {
             com.google.bigtable.admin.v2.LogicalView.newBuilder()
                 .setName(logicalViewName.toString())
                 .setQuery("SELECT 2 FROM Table")
+                .setDeletionProtection(true)
                 .build());
   }
 
@@ -90,6 +94,7 @@ public class LogicalViewTest {
         com.google.bigtable.admin.v2.LogicalView.newBuilder()
             .setName(logicalViewName.toString())
             .setQuery("SELECT 1 FROM Table")
+            .setDeletionProtection(true)
             .build();
     LogicalView logicalView = LogicalView.fromProto(proto);
 
@@ -100,6 +105,7 @@ public class LogicalViewTest {
             com.google.bigtable.admin.v2.LogicalView.newBuilder()
                 .setName(logicalViewName.toString())
                 .setQuery("SELECT 2 FROM Table")
+                .setDeletionProtection(true)
                 .build()
                 .hashCode());
   }

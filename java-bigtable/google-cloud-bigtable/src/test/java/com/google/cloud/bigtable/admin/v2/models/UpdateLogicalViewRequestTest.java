@@ -33,16 +33,20 @@ public class UpdateLogicalViewRequestTest {
   @Test
   public void testToProto() {
     UpdateLogicalViewRequest request =
-        UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID).setQuery("query 1");
+        UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
+            .setQuery("query 1")
+            .setDeletionProtection(true);
 
     com.google.bigtable.admin.v2.UpdateLogicalViewRequest requestProto =
         com.google.bigtable.admin.v2.UpdateLogicalViewRequest.newBuilder()
             .setLogicalView(
                 com.google.bigtable.admin.v2.LogicalView.newBuilder()
                     .setQuery("query 1")
+                    .setDeletionProtection(true)
                     .setName(
                         NameUtil.formatLogicalViewName(PROJECT_ID, INSTANCE_ID, LOGICAL_VIEW_ID)))
-            .setUpdateMask(FieldMask.newBuilder().addPaths("query").build())
+            .setUpdateMask(
+                FieldMask.newBuilder().addPaths("deletion_protection").addPaths("query").build())
             .build();
     assertThat(request.toProto(PROJECT_ID)).isEqualTo(requestProto);
   }
@@ -50,31 +54,42 @@ public class UpdateLogicalViewRequestTest {
   @Test
   public void testEquality() {
     UpdateLogicalViewRequest request =
-        UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID).setQuery("query 1");
+        UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
+            .setQuery("query 1")
+            .setDeletionProtection(true);
 
     assertThat(request)
-        .isEqualTo(UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID).setQuery("query 1"));
+        .isEqualTo(
+            UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
+                .setQuery("query 1")
+                .setDeletionProtection(true));
 
     assertThat(request)
         .isNotEqualTo(
-            UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID).setQuery("query 2"));
+            UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
+                .setQuery("query 2")
+                .setDeletionProtection(true));
   }
 
   @Test
   public void testHashCode() {
     UpdateLogicalViewRequest request =
-        UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID).setQuery("query 1");
+        UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
+            .setQuery("query 1")
+            .setDeletionProtection(true);
 
     assertThat(request.hashCode())
         .isEqualTo(
             UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
                 .setQuery("query 1")
+                .setDeletionProtection(true)
                 .hashCode());
 
     assertThat(request.hashCode())
         .isNotEqualTo(
             UpdateLogicalViewRequest.of(INSTANCE_ID, LOGICAL_VIEW_ID)
                 .setQuery("query 2")
+                .setDeletionProtection(true)
                 .hashCode());
   }
 }

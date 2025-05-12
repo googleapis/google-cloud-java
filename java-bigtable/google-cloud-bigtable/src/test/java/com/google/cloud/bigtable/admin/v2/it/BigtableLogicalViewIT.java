@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
 
+import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
@@ -37,14 +38,12 @@ import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-@Ignore("Not fully working yet in production")
 public class BigtableLogicalViewIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
@@ -77,12 +76,17 @@ public class BigtableLogicalViewIT {
     String logicalViewId = prefixGenerator.newPrefix();
 
     CreateLogicalViewRequest request =
-        CreateLogicalViewRequest.of(instanceId, logicalViewId).setQuery(getQuery());
+        CreateLogicalViewRequest.of(instanceId, logicalViewId)
+            .setQuery(getQuery())
+            .setDeletionProtection(false);
     try {
       LogicalView response = client.createLogicalView(request);
       assertWithMessage("Got wrong logical view Id in CreateLogicalView")
           .that(response.getId())
           .isEqualTo(logicalViewId);
+      assertWithMessage("Got wrong deletion protection in CreateLogicalView")
+          .that(response.isDeletionProtected())
+          .isFalse();
       assertWithMessage("Got wrong query in CreateLogicalView")
           .that(response.getQuery())
           .isEqualTo(getQuery());
@@ -91,6 +95,9 @@ public class BigtableLogicalViewIT {
       assertWithMessage("Got wrong logical view Id in getLogicalView")
           .that(response.getId())
           .isEqualTo(logicalViewId);
+      assertWithMessage("Got wrong deletion protection in getLogicalView")
+          .that(response.isDeletionProtected())
+          .isFalse();
       assertWithMessage("Got wrong query in getLogicalView")
           .that(response.getQuery())
           .isEqualTo(getQuery());
@@ -119,15 +126,33 @@ public class BigtableLogicalViewIT {
   public void updateLogicalViewAndDeleteLogicalViewTest() throws InterruptedException {
     String logicalViewId = prefixGenerator.newPrefix();
 
-    // Create a logical view.
-    CreateLogicalViewRequest request = createLogicalViewRequest(logicalViewId);
+    // Create a deletion-protected logical view.
+    CreateLogicalViewRequest request =
+        createLogicalViewRequest(logicalViewId).setDeletionProtection(true);
 
     LogicalView response = client.createLogicalView(request);
+    assertWithMessage("Got wrong deletion protection in CreateLogicalView")
+        .that(response.isDeletionProtected())
+        .isTrue();
 
-    // Update the query of the logical view.
+    // We should not be able to delete the logical view.
+    try {
+      client.deleteLogicalView(instanceId, logicalViewId);
+      fail("A delete-protected logical view should not have been able to be deleted");
+    } catch (FailedPreconditionException e) {
+      assertWithMessage("Incorrect exception type")
+          .that(e.getCause())
+          .isInstanceOf(StatusRuntimeException.class);
+    }
+
+    // Update the deletion protection bit and query of the logical view.
     String query = "SELECT 1 AS value";
-    UpdateLogicalViewRequest updateRequest = UpdateLogicalViewRequest.of(response).setQuery(query);
+    UpdateLogicalViewRequest updateRequest =
+        UpdateLogicalViewRequest.of(response).setQuery(query).setDeletionProtection(false);
     response = client.updateLogicalView(updateRequest);
+    assertWithMessage("Got wrong deletion protection in UpdateLogicalView")
+        .that(response.isDeletionProtected())
+        .isFalse();
     assertWithMessage("Got wrong query in UpdateLogicalView")
         .that(response.getQuery())
         .isEqualTo(query);
