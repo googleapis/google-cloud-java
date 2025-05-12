@@ -24,28 +24,31 @@ import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateMaterializedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.Instance;
 import com.google.cloud.bigtable.admin.v2.models.MaterializedView;
+import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import io.grpc.StatusRuntimeException;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-@Ignore("Not fully working yet in production")
 public class BigtableMaterializedViewIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
@@ -53,24 +56,44 @@ public class BigtableMaterializedViewIT {
   private static final int[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 
   private static BigtableInstanceAdminClient client;
+  private static BigtableTableAdminClient tableAdminClient;
   private static Table testTable;
-
-  private String instanceId = testEnvRule.env().getInstanceId();
+  private static String instanceId = "";
 
   // TODO: Update this test once emulator supports InstanceAdmin operation
   // https://github.com/googleapis/google-cloud-go/issues/1069
   @BeforeClass
-  public static void validatePlatform() {
+  public static void validatePlatform() throws IOException {
     assume()
         .withMessage("BigtableInstanceAdminClient doesn't support on Emulator")
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
+
+    createInstance();
+  }
+
+  public static void createInstance() throws IOException {
+    client = testEnvRule.env().getInstanceAdminClient();
+
+    Instance instance =
+        client.createInstance(
+            CreateInstanceRequest.of(new PrefixGenerator().newPrefix())
+                .addCluster("my-cluster", "us-east1-c", 3, StorageType.SSD));
+    instanceId = instance.getId();
+    tableAdminClient =
+        BigtableTableAdminClient.create(testEnvRule.env().getProjectId(), instanceId);
+  }
+
+  @AfterClass
+  public static void deleteInstance() {
+    if (!instanceId.isEmpty()) {
+      client.deleteInstance(instanceId);
+    }
   }
 
   @Before
   public void setUp() throws InterruptedException {
-    client = testEnvRule.env().getInstanceAdminClient();
-    testTable = createTestTable(testEnvRule.env().getTableAdminClient());
+    testTable = createTestTable(tableAdminClient);
   }
 
   @Test
