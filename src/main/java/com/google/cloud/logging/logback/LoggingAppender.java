@@ -538,19 +538,19 @@ public class LoggingAppender extends UnsynchronizedAppenderBase<ILoggingEvent> {
    */
   private static Severity severityFor(Level level) {
     switch (level.toInt()) {
-        // TRACE
+      // TRACE
       case 5000:
         return Severity.DEBUG;
-        // DEBUG
+      // DEBUG
       case 10000:
         return Severity.DEBUG;
-        // INFO
+      // INFO
       case 20000:
         return Severity.INFO;
-        // WARNING
+      // WARNING
       case 30000:
         return Severity.WARNING;
-        // ERROR
+      // ERROR
       case 40000:
         return Severity.ERROR;
       default:
