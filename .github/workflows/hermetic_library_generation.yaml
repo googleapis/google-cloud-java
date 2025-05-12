@@ -45,7 +45,7 @@ jobs:
         git checkout "${googleapis_commitish}"
         bash .github/scripts/prepare_vertexai_protos.sh "${api_def_dir}"
         echo "API_DEF_DIR=${api_def_dir}" >> $GITHUB_ENV
-    - uses: googleapis/sdk-platform-java/.github/scripts@v4b27d31578ff58f903dd0930651c7a7a21bf7d74
+    - uses: googleapis/sdk-platform-java/.github/scripts@hermetic-library-generation-with-custom-api-def-dir
       if: env.SHOULD_RUN == 'true'
       with:
         base_ref: ${{ github.base_ref }}
