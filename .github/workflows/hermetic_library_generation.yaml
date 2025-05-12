@@ -44,6 +44,7 @@ jobs:
         googleapis_commitish=$(grep googleapis_commitish generation_config.yaml | cut -d ":" -f 2 | xargs)
         api_def_dir=$(mktemp -d)
         git clone https://github.com/googleapis/googleapis.git "${api_def_dir}"
+        pushd "${api_def_dir}"
         git checkout "${googleapis_commitish}"
         bash .github/scripts/prepare_vertexai_protos.sh "${api_def_dir}"
         echo "API_DEF_DIR=${api_def_dir}" >> $GITHUB_ENV
