@@ -21,4 +21,3 @@
 ./v1/tool.proto
 ./v1/types.proto
 ./v1/vertex_rag_data.proto
-
