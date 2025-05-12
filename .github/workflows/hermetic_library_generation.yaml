@@ -39,7 +39,9 @@ jobs:
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - name: prepare googleapis dir
       run: |
-        googleapis_commitish=$(grep googleapis_commitish "${generation_config}" | cut -d ":" -f 2 | xargs)
+        set -ex
+        ls generation_config.yaml
+        googleapis_commitish=$(grep googleapis_commitish generation_config.yaml | cut -d ":" -f 2 | xargs)
         api_def_dir=$(mktemp -d)
         git clone https://github.com/googleapis/googleapis.git "${api_def_dir}"
         git checkout "${googleapis_commitish}"
