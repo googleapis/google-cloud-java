@@ -2527,6 +2527,14 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/video/transcoder/v1
 
+- api_shortname: vertexai
+  name_pretty: Java Idiomatic SDK for Vertex AI
+  api_description: Vertex AI is a machine learning (ML) platform that lets you train and deploy ML models and AI applications.
+  product_documentation: https://cloud.google.com/vertex-ai/docs
+  distribution_name: com.google.cloud:google-cloud-vertexai
+  GAPICs:
+  - proto_path: google/cloud/vertexai/v1
+
 - api_shortname: vision
   name_pretty: Cloud Vision
   product_documentation: https://cloud.google.com/vision/docs/

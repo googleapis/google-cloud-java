@@ -37,9 +37,18 @@ jobs:
       with:
         fetch-depth: 0
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
-    - uses: googleapis/sdk-platform-java/.github/scripts@v2.56.3
+    - name: prepare googleapis dir
+      run: |
+        googleapis_commitish=$(grep googleapis_commitish "${generation_config}" | cut -d ":" -f 2 | xargs)
+        api_def_dir=$(mktemp -d)
+        git clone https://github.com/googleapis/googleapis.git "${api_def_dir}"
+        git checkout "${googleapis_commitish}"
+        bash .github/scripts/prepare_vertexai_protos.sh "${api_def_dir}"
+        echo "API_DEF_DIR=${api_def_dir}" >> $GITHUB_ENV
+    - uses: googleapis/sdk-platform-java/.github/scripts@v4b27d31578ff58f903dd0930651c7a7a21bf7d74
       if: env.SHOULD_RUN == 'true'
       with:
         base_ref: ${{ github.base_ref }}
         head_ref: ${{ github.head_ref }}
         token: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+        api_def_dir: ${{ env.API_DEF_DIR }}
