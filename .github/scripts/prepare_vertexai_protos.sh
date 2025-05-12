@@ -7,7 +7,7 @@ VERTEXAI_API_DIR="${API_DIR}/google/cloud/vertexai"
 
 # A manually maintained file that lists all the proto files needed
 # to generate gapic clients for Java SDK (with only Gemini support)
-files=".github/scripts/vertexai_files_to_keep.txt"
+files=".github/scripts/files_to_keep.txt"
 
 # Get the proto file names into an array
 proto_file_names=$(awk -F / '/.proto$/ {print $NF}' $files)
@@ -41,6 +41,8 @@ for ele in ${aiplatform_proto_file_names_array[@]}; do
     excluded_proto_file_names+=($ele)
   fi
 done
+
+cat "${files}"
 
 # Now we copy and process the target files one by one.
 mkdir -p "${VERTEXAI_API_DIR}/v1"
