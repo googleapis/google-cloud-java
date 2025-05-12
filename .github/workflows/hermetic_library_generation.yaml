@@ -46,6 +46,7 @@ jobs:
         git clone https://github.com/googleapis/googleapis.git "${api_def_dir}"
         pushd "${api_def_dir}"
         git checkout "${googleapis_commitish}"
+        popd
         bash .github/scripts/prepare_vertexai_protos.sh "${api_def_dir}"
         echo "API_DEF_DIR=${api_def_dir}" >> $GITHUB_ENV
     - uses: googleapis/sdk-platform-java/.github/scripts@hermetic-library-generation-with-custom-api-def-dir
