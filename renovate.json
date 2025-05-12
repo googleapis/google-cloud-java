@@ -25,6 +25,7 @@
     "**/README.md",
     "google-cloud-pom-parent/pom.xml",
     "google-cloud-jar-parent/pom.xml",
+    "java-samples/native-image-sample/pom.xml",
     "java-shared-dependencies/first-party-dependencies/pom.xml",
     "java-shared-dependencies/third-party-dependencies/pom.xml",
     ".kokoro/nightly/graalvm-native*.cfg",
