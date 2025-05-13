@@ -42,11 +42,10 @@ for ele in ${aiplatform_proto_file_names_array[@]}; do
   fi
 done
 
-cat "${files}"
 
 # Now we copy and process the target files one by one.
 mkdir -p "${VERTEXAI_API_DIR}/v1"
-while IFS= read -r file_relative_path; do
+for file_relative_path in $(cat "${files}"); do
   # copy the file over
   cp "${AIPLATFORM_API_DIR}/${file_relative_path}" "${VERTEXAI_API_DIR}/${file_relative_path}"
   file_path="${VERTEXAI_API_DIR}/${file_relative_path}"
@@ -110,4 +109,4 @@ while IFS= read -r file_relative_path; do
       } !in_list {print}' ${file_path} > "/tmp/BUILD.bazel.step4" && \
       cp "/tmp/BUILD.bazel.step4" $file_path
   fi
-done < ${files}
+done
