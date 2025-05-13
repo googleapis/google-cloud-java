@@ -19,14 +19,14 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.59.0</version>
+      <version>26.60.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-bom</artifactId>
-      <version>1.49.0</version>
+      <version>1.50.0</version>
       <type>pom</type>
       <scope>import</scope>
      </dependency>
