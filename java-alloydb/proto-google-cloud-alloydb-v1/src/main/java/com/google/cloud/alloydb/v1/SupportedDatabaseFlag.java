@@ -48,6 +48,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     flagName_ = "";
     valueType_ = 0;
     supportedDbVersions_ = java.util.Collections.emptyList();
+    scope_ = 0;
   }
 
   @java.lang.Override
@@ -278,6 +279,167 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.alloydb.v1.SupportedDatabaseFlag.ValueType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The scope of the flag.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope}
+   */
+  public enum Scope implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The scope of the flag is not specified. Default is DATABASE.
+     * </pre>
+     *
+     * <code>SCOPE_UNSPECIFIED = 0;</code>
+     */
+    SCOPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The flag is a database flag.
+     * </pre>
+     *
+     * <code>DATABASE = 1;</code>
+     */
+    DATABASE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The flag is a connection pool flag.
+     * </pre>
+     *
+     * <code>CONNECTION_POOL = 2;</code>
+     */
+    CONNECTION_POOL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The scope of the flag is not specified. Default is DATABASE.
+     * </pre>
+     *
+     * <code>SCOPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SCOPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The flag is a database flag.
+     * </pre>
+     *
+     * <code>DATABASE = 1;</code>
+     */
+    public static final int DATABASE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The flag is a connection pool flag.
+     * </pre>
+     *
+     * <code>CONNECTION_POOL = 2;</code>
+     */
+    public static final int CONNECTION_POOL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Scope valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Scope forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SCOPE_UNSPECIFIED;
+        case 1:
+          return DATABASE;
+        case 2:
+          return CONNECTION_POOL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Scope> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Scope> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Scope>() {
+          public Scope findValueByNumber(int number) {
+            return Scope.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1.SupportedDatabaseFlag.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final Scope[] VALUES = values();
+
+    public static Scope valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Scope(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope)
   }
 
   public interface StringRestrictionsOrBuilder
@@ -2230,6 +2392,56 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     return RestrictionsCase.forNumber(restrictionsCase_);
   }
 
+  private int recommendedValueCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object recommendedValue_;
+
+  public enum RecommendedValueCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    RECOMMENDED_STRING_VALUE(10),
+    RECOMMENDED_INTEGER_VALUE(11),
+    RECOMMENDEDVALUE_NOT_SET(0);
+    private final int value;
+
+    private RecommendedValueCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RecommendedValueCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RecommendedValueCase forNumber(int value) {
+      switch (value) {
+        case 10:
+          return RECOMMENDED_STRING_VALUE;
+        case 11:
+          return RECOMMENDED_INTEGER_VALUE;
+        case 0:
+          return RECOMMENDEDVALUE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RecommendedValueCase getRecommendedValueCase() {
+    return RecommendedValueCase.forNumber(recommendedValueCase_);
+  }
+
   public static final int STRING_RESTRICTIONS_FIELD_NUMBER = 7;
 
   /**
@@ -2356,6 +2568,133 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.alloydb.v1.SupportedDatabaseFlag.IntegerRestrictions
         .getDefaultInstance();
+  }
+
+  public static final int RECOMMENDED_STRING_VALUE_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for a STRING flag.
+   * </pre>
+   *
+   * <code>string recommended_string_value = 10;</code>
+   *
+   * @return Whether the recommendedStringValue field is set.
+   */
+  public boolean hasRecommendedStringValue() {
+    return recommendedValueCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for a STRING flag.
+   * </pre>
+   *
+   * <code>string recommended_string_value = 10;</code>
+   *
+   * @return The recommendedStringValue.
+   */
+  public java.lang.String getRecommendedStringValue() {
+    java.lang.Object ref = "";
+    if (recommendedValueCase_ == 10) {
+      ref = recommendedValue_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (recommendedValueCase_ == 10) {
+        recommendedValue_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for a STRING flag.
+   * </pre>
+   *
+   * <code>string recommended_string_value = 10;</code>
+   *
+   * @return The bytes for recommendedStringValue.
+   */
+  public com.google.protobuf.ByteString getRecommendedStringValueBytes() {
+    java.lang.Object ref = "";
+    if (recommendedValueCase_ == 10) {
+      ref = recommendedValue_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (recommendedValueCase_ == 10) {
+        recommendedValue_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RECOMMENDED_INTEGER_VALUE_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for an INTEGER flag.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+   *
+   * @return Whether the recommendedIntegerValue field is set.
+   */
+  @java.lang.Override
+  public boolean hasRecommendedIntegerValue() {
+    return recommendedValueCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for an INTEGER flag.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+   *
+   * @return The recommendedIntegerValue.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64Value getRecommendedIntegerValue() {
+    if (recommendedValueCase_ == 11) {
+      return (com.google.protobuf.Int64Value) recommendedValue_;
+    }
+    return com.google.protobuf.Int64Value.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for an INTEGER flag.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Int64ValueOrBuilder getRecommendedIntegerValueOrBuilder() {
+    if (recommendedValueCase_ == 11) {
+      return (com.google.protobuf.Int64Value) recommendedValue_;
+    }
+    return com.google.protobuf.Int64Value.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -2644,6 +2983,45 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     return requiresDbRestart_;
   }
 
+  public static final int SCOPE_FIELD_NUMBER = 9;
+  private int scope_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The scope of the flag.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 9;</code>
+   *
+   * @return The enum numeric value on the wire for scope.
+   */
+  @java.lang.Override
+  public int getScopeValue() {
+    return scope_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The scope of the flag.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 9;</code>
+   *
+   * @return The scope.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope getScope() {
+    com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope result =
+        com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.forNumber(scope_);
+    return result == null
+        ? com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2690,6 +3068,16 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     if (restrictionsCase_ == 8) {
       output.writeMessage(
           8, (com.google.cloud.alloydb.v1.SupportedDatabaseFlag.IntegerRestrictions) restrictions_);
+    }
+    if (scope_
+        != com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.SCOPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(9, scope_);
+    }
+    if (recommendedValueCase_ == 10) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, recommendedValue_);
+    }
+    if (recommendedValueCase_ == 11) {
+      output.writeMessage(11, (com.google.protobuf.Int64Value) recommendedValue_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2743,6 +3131,18 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
               (com.google.cloud.alloydb.v1.SupportedDatabaseFlag.IntegerRestrictions)
                   restrictions_);
     }
+    if (scope_
+        != com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.SCOPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, scope_);
+    }
+    if (recommendedValueCase_ == 10) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, recommendedValue_);
+    }
+    if (recommendedValueCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.protobuf.Int64Value) recommendedValue_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2765,6 +3165,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     if (getAcceptsMultipleValues() != other.getAcceptsMultipleValues()) return false;
     if (!supportedDbVersions_.equals(other.supportedDbVersions_)) return false;
     if (getRequiresDbRestart() != other.getRequiresDbRestart()) return false;
+    if (scope_ != other.scope_) return false;
     if (!getRestrictionsCase().equals(other.getRestrictionsCase())) return false;
     switch (restrictionsCase_) {
       case 7:
@@ -2772,6 +3173,17 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         break;
       case 8:
         if (!getIntegerRestrictions().equals(other.getIntegerRestrictions())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getRecommendedValueCase().equals(other.getRecommendedValueCase())) return false;
+    switch (recommendedValueCase_) {
+      case 10:
+        if (!getRecommendedStringValue().equals(other.getRecommendedStringValue())) return false;
+        break;
+      case 11:
+        if (!getRecommendedIntegerValue().equals(other.getRecommendedIntegerValue())) return false;
         break;
       case 0:
       default:
@@ -2801,6 +3213,8 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + REQUIRES_DB_RESTART_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequiresDbRestart());
+    hash = (37 * hash) + SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + scope_;
     switch (restrictionsCase_) {
       case 7:
         hash = (37 * hash) + STRING_RESTRICTIONS_FIELD_NUMBER;
@@ -2809,6 +3223,18 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       case 8:
         hash = (37 * hash) + INTEGER_RESTRICTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getIntegerRestrictions().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (recommendedValueCase_) {
+      case 10:
+        hash = (37 * hash) + RECOMMENDED_STRING_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getRecommendedStringValue().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + RECOMMENDED_INTEGER_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getRecommendedIntegerValue().hashCode();
         break;
       case 0:
       default:
@@ -2963,15 +3389,21 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       if (integerRestrictionsBuilder_ != null) {
         integerRestrictionsBuilder_.clear();
       }
+      if (recommendedIntegerValueBuilder_ != null) {
+        recommendedIntegerValueBuilder_.clear();
+      }
       name_ = "";
       flagName_ = "";
       valueType_ = 0;
       acceptsMultipleValues_ = false;
       supportedDbVersions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       requiresDbRestart_ = false;
+      scope_ = 0;
       restrictionsCase_ = 0;
       restrictions_ = null;
+      recommendedValueCase_ = 0;
+      recommendedValue_ = null;
       return this;
     }
 
@@ -3010,29 +3442,32 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
 
     private void buildPartialRepeatedFields(
         com.google.cloud.alloydb.v1.SupportedDatabaseFlag result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         supportedDbVersions_ = java.util.Collections.unmodifiableList(supportedDbVersions_);
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.supportedDbVersions_ = supportedDbVersions_;
     }
 
     private void buildPartial0(com.google.cloud.alloydb.v1.SupportedDatabaseFlag result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.flagName_ = flagName_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.valueType_ = valueType_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.acceptsMultipleValues_ = acceptsMultipleValues_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.requiresDbRestart_ = requiresDbRestart_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.scope_ = scope_;
       }
     }
 
@@ -3044,6 +3479,11 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       }
       if (restrictionsCase_ == 8 && integerRestrictionsBuilder_ != null) {
         result.restrictions_ = integerRestrictionsBuilder_.build();
+      }
+      result.recommendedValueCase_ = recommendedValueCase_;
+      result.recommendedValue_ = this.recommendedValue_;
+      if (recommendedValueCase_ == 11 && recommendedIntegerValueBuilder_ != null) {
+        result.recommendedValue_ = recommendedIntegerValueBuilder_.build();
       }
     }
 
@@ -3095,12 +3535,12 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getFlagName().isEmpty()) {
         flagName_ = other.flagName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.valueType_ != 0) {
@@ -3112,7 +3552,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       if (!other.supportedDbVersions_.isEmpty()) {
         if (supportedDbVersions_.isEmpty()) {
           supportedDbVersions_ = other.supportedDbVersions_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureSupportedDbVersionsIsMutable();
           supportedDbVersions_.addAll(other.supportedDbVersions_);
@@ -3121,6 +3561,9 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       }
       if (other.getRequiresDbRestart() != false) {
         setRequiresDbRestart(other.getRequiresDbRestart());
+      }
+      if (other.scope_ != 0) {
+        setScopeValue(other.getScopeValue());
       }
       switch (other.getRestrictionsCase()) {
         case STRING_RESTRICTIONS:
@@ -3134,6 +3577,24 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             break;
           }
         case RESTRICTIONS_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getRecommendedValueCase()) {
+        case RECOMMENDED_STRING_VALUE:
+          {
+            recommendedValueCase_ = 10;
+            recommendedValue_ = other.recommendedValue_;
+            onChanged();
+            break;
+          }
+        case RECOMMENDED_INTEGER_VALUE:
+          {
+            mergeRecommendedIntegerValue(other.getRecommendedIntegerValue());
+            break;
+          }
+        case RECOMMENDEDVALUE_NOT_SET:
           {
             break;
           }
@@ -3167,25 +3628,25 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 flagName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 24:
               {
                 valueType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 24
             case 32:
               {
                 acceptsMultipleValues_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 32
             case 40:
@@ -3210,7 +3671,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
             case 48:
               {
                 requiresDbRestart_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 48
             case 58:
@@ -3227,6 +3688,26 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
                 restrictionsCase_ = 8;
                 break;
               } // case 66
+            case 72:
+              {
+                scope_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 72
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                recommendedValueCase_ = 10;
+                recommendedValue_ = s;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getRecommendedIntegerValueFieldBuilder().getBuilder(), extensionRegistry);
+                recommendedValueCase_ = 11;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3254,6 +3735,20 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public Builder clearRestrictions() {
       restrictionsCase_ = 0;
       restrictions_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int recommendedValueCase_ = 0;
+    private java.lang.Object recommendedValue_;
+
+    public RecommendedValueCase getRecommendedValueCase() {
+      return RecommendedValueCase.forNumber(recommendedValueCase_);
+    }
+
+    public Builder clearRecommendedValue() {
+      recommendedValueCase_ = 0;
+      recommendedValue_ = null;
       onChanged();
       return this;
     }
@@ -3766,6 +4261,363 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       return integerRestrictionsBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for a STRING flag.
+     * </pre>
+     *
+     * <code>string recommended_string_value = 10;</code>
+     *
+     * @return Whether the recommendedStringValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasRecommendedStringValue() {
+      return recommendedValueCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for a STRING flag.
+     * </pre>
+     *
+     * <code>string recommended_string_value = 10;</code>
+     *
+     * @return The recommendedStringValue.
+     */
+    @java.lang.Override
+    public java.lang.String getRecommendedStringValue() {
+      java.lang.Object ref = "";
+      if (recommendedValueCase_ == 10) {
+        ref = recommendedValue_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (recommendedValueCase_ == 10) {
+          recommendedValue_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for a STRING flag.
+     * </pre>
+     *
+     * <code>string recommended_string_value = 10;</code>
+     *
+     * @return The bytes for recommendedStringValue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRecommendedStringValueBytes() {
+      java.lang.Object ref = "";
+      if (recommendedValueCase_ == 10) {
+        ref = recommendedValue_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (recommendedValueCase_ == 10) {
+          recommendedValue_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for a STRING flag.
+     * </pre>
+     *
+     * <code>string recommended_string_value = 10;</code>
+     *
+     * @param value The recommendedStringValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecommendedStringValue(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      recommendedValueCase_ = 10;
+      recommendedValue_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for a STRING flag.
+     * </pre>
+     *
+     * <code>string recommended_string_value = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRecommendedStringValue() {
+      if (recommendedValueCase_ == 10) {
+        recommendedValueCase_ = 0;
+        recommendedValue_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for a STRING flag.
+     * </pre>
+     *
+     * <code>string recommended_string_value = 10;</code>
+     *
+     * @param value The bytes for recommendedStringValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecommendedStringValueBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      recommendedValueCase_ = 10;
+      recommendedValue_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        recommendedIntegerValueBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     *
+     * @return Whether the recommendedIntegerValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasRecommendedIntegerValue() {
+      return recommendedValueCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     *
+     * @return The recommendedIntegerValue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int64Value getRecommendedIntegerValue() {
+      if (recommendedIntegerValueBuilder_ == null) {
+        if (recommendedValueCase_ == 11) {
+          return (com.google.protobuf.Int64Value) recommendedValue_;
+        }
+        return com.google.protobuf.Int64Value.getDefaultInstance();
+      } else {
+        if (recommendedValueCase_ == 11) {
+          return recommendedIntegerValueBuilder_.getMessage();
+        }
+        return com.google.protobuf.Int64Value.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     */
+    public Builder setRecommendedIntegerValue(com.google.protobuf.Int64Value value) {
+      if (recommendedIntegerValueBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        recommendedValue_ = value;
+        onChanged();
+      } else {
+        recommendedIntegerValueBuilder_.setMessage(value);
+      }
+      recommendedValueCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     */
+    public Builder setRecommendedIntegerValue(
+        com.google.protobuf.Int64Value.Builder builderForValue) {
+      if (recommendedIntegerValueBuilder_ == null) {
+        recommendedValue_ = builderForValue.build();
+        onChanged();
+      } else {
+        recommendedIntegerValueBuilder_.setMessage(builderForValue.build());
+      }
+      recommendedValueCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     */
+    public Builder mergeRecommendedIntegerValue(com.google.protobuf.Int64Value value) {
+      if (recommendedIntegerValueBuilder_ == null) {
+        if (recommendedValueCase_ == 11
+            && recommendedValue_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          recommendedValue_ =
+              com.google.protobuf.Int64Value.newBuilder(
+                      (com.google.protobuf.Int64Value) recommendedValue_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          recommendedValue_ = value;
+        }
+        onChanged();
+      } else {
+        if (recommendedValueCase_ == 11) {
+          recommendedIntegerValueBuilder_.mergeFrom(value);
+        } else {
+          recommendedIntegerValueBuilder_.setMessage(value);
+        }
+      }
+      recommendedValueCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     */
+    public Builder clearRecommendedIntegerValue() {
+      if (recommendedIntegerValueBuilder_ == null) {
+        if (recommendedValueCase_ == 11) {
+          recommendedValueCase_ = 0;
+          recommendedValue_ = null;
+          onChanged();
+        }
+      } else {
+        if (recommendedValueCase_ == 11) {
+          recommendedValueCase_ = 0;
+          recommendedValue_ = null;
+        }
+        recommendedIntegerValueBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     */
+    public com.google.protobuf.Int64Value.Builder getRecommendedIntegerValueBuilder() {
+      return getRecommendedIntegerValueFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.Int64ValueOrBuilder getRecommendedIntegerValueOrBuilder() {
+      if ((recommendedValueCase_ == 11) && (recommendedIntegerValueBuilder_ != null)) {
+        return recommendedIntegerValueBuilder_.getMessageOrBuilder();
+      } else {
+        if (recommendedValueCase_ == 11) {
+          return (com.google.protobuf.Int64Value) recommendedValue_;
+        }
+        return com.google.protobuf.Int64Value.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The recommended value for an INTEGER flag.
+     * </pre>
+     *
+     * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Int64Value,
+            com.google.protobuf.Int64Value.Builder,
+            com.google.protobuf.Int64ValueOrBuilder>
+        getRecommendedIntegerValueFieldBuilder() {
+      if (recommendedIntegerValueBuilder_ == null) {
+        if (!(recommendedValueCase_ == 11)) {
+          recommendedValue_ = com.google.protobuf.Int64Value.getDefaultInstance();
+        }
+        recommendedIntegerValueBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Int64Value,
+                com.google.protobuf.Int64Value.Builder,
+                com.google.protobuf.Int64ValueOrBuilder>(
+                (com.google.protobuf.Int64Value) recommendedValue_,
+                getParentForChildren(),
+                isClean());
+        recommendedValue_ = null;
+      }
+      recommendedValueCase_ = 11;
+      onChanged();
+      return recommendedIntegerValueBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -3837,7 +4689,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3857,7 +4709,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3882,7 +4734,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3955,7 +4807,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       flagName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3974,7 +4826,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      */
     public Builder clearFlagName() {
       flagName_ = getDefaultInstance().getFlagName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3998,7 +4850,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       flagName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4023,7 +4875,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      */
     public Builder setValueTypeValue(int value) {
       valueType_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4052,7 +4904,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       valueType_ = value.getNumber();
       onChanged();
       return this;
@@ -4064,7 +4916,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearValueType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       valueType_ = 0;
       onChanged();
       return this;
@@ -4105,7 +4957,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public Builder setAcceptsMultipleValues(boolean value) {
 
       acceptsMultipleValues_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4123,7 +4975,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAcceptsMultipleValues() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       acceptsMultipleValues_ = false;
       onChanged();
       return this;
@@ -4133,9 +4985,9 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
         java.util.Collections.emptyList();
 
     private void ensureSupportedDbVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         supportedDbVersions_ = new java.util.ArrayList<java.lang.Integer>(supportedDbVersions_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -4269,7 +5121,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      */
     public Builder clearSupportedDbVersions() {
       supportedDbVersions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4404,7 +5256,7 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
     public Builder setRequiresDbRestart(boolean value) {
 
       requiresDbRestart_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4424,8 +5276,105 @@ public final class SupportedDatabaseFlag extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearRequiresDbRestart() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       requiresDbRestart_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int scope_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The scope of the flag.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 9;</code>
+     *
+     * @return The enum numeric value on the wire for scope.
+     */
+    @java.lang.Override
+    public int getScopeValue() {
+      return scope_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scope of the flag.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 9;</code>
+     *
+     * @param value The enum numeric value on the wire for scope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScopeValue(int value) {
+      scope_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scope of the flag.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 9;</code>
+     *
+     * @return The scope.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope getScope() {
+      com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope result =
+          com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.forNumber(scope_);
+      return result == null
+          ? com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scope of the flag.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 9;</code>
+     *
+     * @param value The scope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScope(com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      scope_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The scope of the flag.
+     * </pre>
+     *
+     * <code>.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScope() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      scope_ = 0;
       onChanged();
       return this;
     }

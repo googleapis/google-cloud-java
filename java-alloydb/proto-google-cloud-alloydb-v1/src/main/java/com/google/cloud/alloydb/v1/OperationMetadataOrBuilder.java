@@ -72,6 +72,49 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upgradeClusterStatus field is set.
+   */
+  boolean hasUpgradeClusterStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upgradeClusterStatus.
+   */
+  com.google.cloud.alloydb.v1.UpgradeClusterStatus getUpgradeClusterStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. UpgradeClusterStatus related metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.UpgradeClusterStatus upgrade_cluster_status = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.UpgradeClusterStatusOrBuilder getUpgradeClusterStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time the operation was created.
    * </pre>
    *
@@ -232,9 +275,10 @@ public interface OperationMetadataOrBuilder
    * <pre>
    * Output only. Identifies whether the user has requested cancellation
    * of the operation. Operations that have successfully been cancelled
-   * have [Operation.error][] value with a
-   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-   * `Code.CANCELLED`.
+   * have
+   * [google.longrunning.Operation.error][google.longrunning.Operation.error]
+   * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+   * corresponding to `Code.CANCELLED`.
    * </pre>
    *
    * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

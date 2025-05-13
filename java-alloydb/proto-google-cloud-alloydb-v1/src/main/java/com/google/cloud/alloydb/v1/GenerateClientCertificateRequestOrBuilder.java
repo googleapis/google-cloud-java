@@ -188,9 +188,9 @@ public interface GenerateClientCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An optional hint to the endpoint to generate a client
-   * ceritificate that can be used by AlloyDB connectors to exchange additional
-   * metadata with the server after TLS handshake.
+   * Optional. An optional hint to the endpoint to generate a client certificate
+   * that can be used by AlloyDB connectors to exchange additional metadata with
+   * the server after TLS handshake.
    * </pre>
    *
    * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

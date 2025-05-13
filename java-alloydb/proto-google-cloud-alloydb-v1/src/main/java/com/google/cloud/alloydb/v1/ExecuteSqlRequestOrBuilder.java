@@ -134,7 +134,7 @@ public interface ExecuteSqlRequestOrBuilder
    * `SELECT current_user;` and NOT as a resource reference.
    * </pre>
    *
-   * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string user = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The user.
    */
@@ -149,7 +149,7 @@ public interface ExecuteSqlRequestOrBuilder
    * `SELECT current_user;` and NOT as a resource reference.
    * </pre>
    *
-   * <code>string user = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string user = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for user.
    */

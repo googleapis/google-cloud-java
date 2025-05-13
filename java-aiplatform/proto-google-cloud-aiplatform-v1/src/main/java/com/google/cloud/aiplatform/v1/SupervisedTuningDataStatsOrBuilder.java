@@ -64,7 +64,7 @@ public interface SupervisedTuningDataStatsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.SupervisedTuningDataStats.total_billable_character_count
-   *     is deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=221
+   *     is deprecated. See google/cloud/aiplatform/v1/tuning_job.proto;l=228
    * @return The totalBillableCharacterCount.
    */
   @java.lang.Deprecated
@@ -301,11 +301,13 @@ public interface SupervisedTuningDataStatsOrBuilder
    *
    *
    * <pre>
-   * The number of examples in the dataset that have been truncated by any
-   * amount.
+   * Output only. The number of examples in the dataset that have been dropped.
+   * An example can be dropped for reasons including: too many tokens, contains
+   * an invalid image, contains too many images, etc.
    * </pre>
    *
-   * <code>int64 total_truncated_example_count = 10;</code>
+   * <code>int64 total_truncated_example_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The totalTruncatedExampleCount.
    */
@@ -315,11 +317,13 @@ public interface SupervisedTuningDataStatsOrBuilder
    *
    *
    * <pre>
-   * A partial sample of the indices (starting from 1) of the truncated
-   * examples.
+   * Output only. A partial sample of the indices (starting from 1) of the
+   * dropped examples.
    * </pre>
    *
-   * <code>repeated int64 truncated_example_indices = 11;</code>
+   * <code>
+   * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return A list containing the truncatedExampleIndices.
    */
@@ -329,11 +333,13 @@ public interface SupervisedTuningDataStatsOrBuilder
    *
    *
    * <pre>
-   * A partial sample of the indices (starting from 1) of the truncated
-   * examples.
+   * Output only. A partial sample of the indices (starting from 1) of the
+   * dropped examples.
    * </pre>
    *
-   * <code>repeated int64 truncated_example_indices = 11;</code>
+   * <code>
+   * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The count of truncatedExampleIndices.
    */
@@ -343,14 +349,82 @@ public interface SupervisedTuningDataStatsOrBuilder
    *
    *
    * <pre>
-   * A partial sample of the indices (starting from 1) of the truncated
-   * examples.
+   * Output only. A partial sample of the indices (starting from 1) of the
+   * dropped examples.
    * </pre>
    *
-   * <code>repeated int64 truncated_example_indices = 11;</code>
+   * <code>
+   * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The truncatedExampleIndices at the given index.
    */
   long getTruncatedExampleIndices(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For each index in `truncated_example_indices`, the user-facing
+   * reason why the example was dropped.
+   * </pre>
+   *
+   * <code>
+   * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the droppedExampleReasons.
+   */
+  java.util.List<java.lang.String> getDroppedExampleReasonsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For each index in `truncated_example_indices`, the user-facing
+   * reason why the example was dropped.
+   * </pre>
+   *
+   * <code>
+   * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of droppedExampleReasons.
+   */
+  int getDroppedExampleReasonsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For each index in `truncated_example_indices`, the user-facing
+   * reason why the example was dropped.
+   * </pre>
+   *
+   * <code>
+   * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The droppedExampleReasons at the given index.
+   */
+  java.lang.String getDroppedExampleReasons(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For each index in `truncated_example_indices`, the user-facing
+   * reason why the example was dropped.
+   * </pre>
+   *
+   * <code>
+   * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the droppedExampleReasons at the given index.
+   */
+  com.google.protobuf.ByteString getDroppedExampleReasonsBytes(int index);
 }

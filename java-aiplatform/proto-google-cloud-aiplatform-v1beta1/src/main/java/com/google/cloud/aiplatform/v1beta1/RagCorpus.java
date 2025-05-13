@@ -418,7 +418,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=285
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=325
    * @return Whether the ragEmbeddingModelConfig field is set.
    */
   @java.lang.Override
@@ -439,7 +439,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=285
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=325
    * @return The ragEmbeddingModelConfig.
    */
   @java.lang.Override
@@ -485,7 +485,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=292
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=332
    * @return Whether the ragVectorDbConfig field is set.
    */
   @java.lang.Override
@@ -506,7 +506,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=292
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=332
    * @return The ragVectorDbConfig.
    */
   @java.lang.Override
@@ -2368,7 +2368,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=285
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=325
      * @return Whether the ragEmbeddingModelConfig field is set.
      */
     @java.lang.Deprecated
@@ -2388,7 +2388,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=285
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=325
      * @return The ragEmbeddingModelConfig.
      */
     @java.lang.Deprecated
@@ -2600,7 +2600,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=292
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=332
      * @return Whether the ragVectorDbConfig field is set.
      */
     @java.lang.Deprecated
@@ -2620,7 +2620,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=292
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=332
      * @return The ragVectorDbConfig.
      */
     @java.lang.Deprecated

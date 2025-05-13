@@ -87,4 +87,81 @@ public interface TunedModelOrBuilder
    * @return The bytes for endpoint.
    */
   com.google.protobuf.ByteString getEndpointBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The checkpoints associated with this TunedModel.
+   * This field is only populated for tuning jobs that enable intermediate
+   * checkpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TunedModelCheckpoint checkpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.TunedModelCheckpoint> getCheckpointsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The checkpoints associated with this TunedModel.
+   * This field is only populated for tuning jobs that enable intermediate
+   * checkpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TunedModelCheckpoint checkpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TunedModelCheckpoint getCheckpoints(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The checkpoints associated with this TunedModel.
+   * This field is only populated for tuning jobs that enable intermediate
+   * checkpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TunedModelCheckpoint checkpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getCheckpointsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The checkpoints associated with this TunedModel.
+   * This field is only populated for tuning jobs that enable intermediate
+   * checkpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TunedModelCheckpoint checkpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TunedModelCheckpointOrBuilder>
+      getCheckpointsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The checkpoints associated with this TunedModel.
+   * This field is only populated for tuning jobs that enable intermediate
+   * checkpoints.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.TunedModelCheckpoint checkpoints = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.TunedModelCheckpointOrBuilder getCheckpointsOrBuilder(
+      int index);
 }

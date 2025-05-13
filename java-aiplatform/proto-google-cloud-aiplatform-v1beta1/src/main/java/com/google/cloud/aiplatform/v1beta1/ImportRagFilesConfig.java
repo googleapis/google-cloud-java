@@ -523,7 +523,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=605
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Override
@@ -545,7 +545,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=605
    * @return The partialFailureGcsSink.
    */
   @java.lang.Override
@@ -599,7 +599,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=614
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Override
@@ -626,7 +626,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=614
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Override
@@ -808,7 +808,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=633
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Override
@@ -829,7 +829,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=633
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Override
@@ -1035,6 +1035,31 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     return globalMaxEmbeddingRequestsPerMin_;
   }
 
+  public static final int REBUILD_ANN_INDEX_FIELD_NUMBER = 19;
+  private boolean rebuildAnnIndex_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Rebuilds the ANN index to optimize for recall on the imported data.
+   * Only applicable for RagCorpora running on RagManagedDb with
+   * `retrieval_strategy` set to `ANN`. The rebuild will be performed using the
+   * existing ANN config set on the RagCorpus. To change the ANN config, please
+   * use the UpdateRagCorpus API.
+   *
+   * Default is false, i.e., index is not rebuilt.
+   * </pre>
+   *
+   * <code>bool rebuild_ann_index = 19;</code>
+   *
+   * @return The rebuildAnnIndex.
+   */
+  @java.lang.Override
+  public boolean getRebuildAnnIndex() {
+    return rebuildAnnIndex_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1095,6 +1120,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     }
     if (globalMaxEmbeddingRequestsPerMin_ != 0) {
       output.writeInt32(18, globalMaxEmbeddingRequestsPerMin_);
+    }
+    if (rebuildAnnIndex_ != false) {
+      output.writeBool(19, rebuildAnnIndex_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1172,6 +1200,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               18, globalMaxEmbeddingRequestsPerMin_);
     }
+    if (rebuildAnnIndex_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, rebuildAnnIndex_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1204,6 +1235,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     if (getMaxEmbeddingRequestsPerMin() != other.getMaxEmbeddingRequestsPerMin()) return false;
     if (getGlobalMaxEmbeddingRequestsPerMin() != other.getGlobalMaxEmbeddingRequestsPerMin())
       return false;
+    if (getRebuildAnnIndex() != other.getRebuildAnnIndex()) return false;
     if (!getImportSourceCase().equals(other.getImportSourceCase())) return false;
     switch (importSourceCase_) {
       case 2:
@@ -1275,6 +1307,8 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getMaxEmbeddingRequestsPerMin();
     hash = (37 * hash) + GLOBAL_MAX_EMBEDDING_REQUESTS_PER_MIN_FIELD_NUMBER;
     hash = (53 * hash) + getGlobalMaxEmbeddingRequestsPerMin();
+    hash = (37 * hash) + REBUILD_ANN_INDEX_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRebuildAnnIndex());
     switch (importSourceCase_) {
       case 2:
         hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
@@ -1519,6 +1553,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       maxEmbeddingRequestsPerMin_ = 0;
       globalMaxEmbeddingRequestsPerMin_ = 0;
+      rebuildAnnIndex_ = false;
       importSourceCase_ = 0;
       importSource_ = null;
       partialFailureSinkCase_ = 0;
@@ -1589,6 +1624,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.globalMaxEmbeddingRequestsPerMin_ = globalMaxEmbeddingRequestsPerMin_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.rebuildAnnIndex_ = rebuildAnnIndex_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1690,6 +1728,9 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
       }
       if (other.getGlobalMaxEmbeddingRequestsPerMin() != 0) {
         setGlobalMaxEmbeddingRequestsPerMin(other.getGlobalMaxEmbeddingRequestsPerMin());
+      }
+      if (other.getRebuildAnnIndex() != false) {
+        setRebuildAnnIndex(other.getRebuildAnnIndex());
       }
       switch (other.getImportSourceCase()) {
         case GCS_SOURCE:
@@ -1873,6 +1914,12 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00002000;
                 break;
               } // case 144
+            case 152:
+              {
+                rebuildAnnIndex_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3094,7 +3141,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=605
      * @return Whether the partialFailureGcsSink field is set.
      */
     @java.lang.Override
@@ -3116,7 +3163,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=605
      * @return The partialFailureGcsSink.
      */
     @java.lang.Override
@@ -3363,7 +3410,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=614
      * @return Whether the partialFailureBigquerySink field is set.
      */
     @java.lang.Override
@@ -3391,7 +3438,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=614
      * @return The partialFailureBigquerySink.
      */
     @java.lang.Override
@@ -4169,7 +4216,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=633
      * @return Whether the ragFileChunkingConfig field is set.
      */
     @java.lang.Deprecated
@@ -4189,7 +4236,7 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=633
      * @return The ragFileChunkingConfig.
      */
     @java.lang.Deprecated
@@ -4972,6 +5019,80 @@ public final class ImportRagFilesConfig extends com.google.protobuf.GeneratedMes
     public Builder clearGlobalMaxEmbeddingRequestsPerMin() {
       bitField0_ = (bitField0_ & ~0x00002000);
       globalMaxEmbeddingRequestsPerMin_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean rebuildAnnIndex_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Rebuilds the ANN index to optimize for recall on the imported data.
+     * Only applicable for RagCorpora running on RagManagedDb with
+     * `retrieval_strategy` set to `ANN`. The rebuild will be performed using the
+     * existing ANN config set on the RagCorpus. To change the ANN config, please
+     * use the UpdateRagCorpus API.
+     *
+     * Default is false, i.e., index is not rebuilt.
+     * </pre>
+     *
+     * <code>bool rebuild_ann_index = 19;</code>
+     *
+     * @return The rebuildAnnIndex.
+     */
+    @java.lang.Override
+    public boolean getRebuildAnnIndex() {
+      return rebuildAnnIndex_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rebuilds the ANN index to optimize for recall on the imported data.
+     * Only applicable for RagCorpora running on RagManagedDb with
+     * `retrieval_strategy` set to `ANN`. The rebuild will be performed using the
+     * existing ANN config set on the RagCorpus. To change the ANN config, please
+     * use the UpdateRagCorpus API.
+     *
+     * Default is false, i.e., index is not rebuilt.
+     * </pre>
+     *
+     * <code>bool rebuild_ann_index = 19;</code>
+     *
+     * @param value The rebuildAnnIndex to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRebuildAnnIndex(boolean value) {
+
+      rebuildAnnIndex_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rebuilds the ANN index to optimize for recall on the imported data.
+     * Only applicable for RagCorpora running on RagManagedDb with
+     * `retrieval_strategy` set to `ANN`. The rebuild will be performed using the
+     * existing ANN config set on the RagCorpus. To change the ANN config, please
+     * use the UpdateRagCorpus API.
+     *
+     * Default is false, i.e., index is not rebuilt.
+     * </pre>
+     *
+     * <code>bool rebuild_ann_index = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRebuildAnnIndex() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      rebuildAnnIndex_ = false;
       onChanged();
       return this;
     }

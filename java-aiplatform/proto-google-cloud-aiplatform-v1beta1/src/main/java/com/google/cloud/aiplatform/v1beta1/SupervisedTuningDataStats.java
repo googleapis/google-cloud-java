@@ -42,6 +42,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   private SupervisedTuningDataStats() {
     userDatasetExamples_ = java.util.Collections.emptyList();
     truncatedExampleIndices_ = emptyLongList();
+    droppedExampleReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -122,7 +123,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
    *
    * @deprecated
    *     google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.total_billable_character_count is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=238
+   *     deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=245
    * @return The totalBillableCharacterCount.
    */
   @java.lang.Override
@@ -455,11 +456,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The number of examples in the dataset that have been truncated by any
-   * amount.
+   * Output only. The number of examples in the dataset that have been dropped.
+   * An example can be dropped for reasons including: too many tokens, contains
+   * an invalid image, contains too many images, etc.
    * </pre>
    *
-   * <code>int64 total_truncated_example_count = 10;</code>
+   * <code>int64 total_truncated_example_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The totalTruncatedExampleCount.
    */
@@ -477,11 +480,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A partial sample of the indices (starting from 1) of the truncated
-   * examples.
+   * Output only. A partial sample of the indices (starting from 1) of the
+   * dropped examples.
    * </pre>
    *
-   * <code>repeated int64 truncated_example_indices = 11;</code>
+   * <code>
+   * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return A list containing the truncatedExampleIndices.
    */
@@ -494,11 +499,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A partial sample of the indices (starting from 1) of the truncated
-   * examples.
+   * Output only. A partial sample of the indices (starting from 1) of the
+   * dropped examples.
    * </pre>
    *
-   * <code>repeated int64 truncated_example_indices = 11;</code>
+   * <code>
+   * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The count of truncatedExampleIndices.
    */
@@ -510,11 +517,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A partial sample of the indices (starting from 1) of the truncated
-   * examples.
+   * Output only. A partial sample of the indices (starting from 1) of the
+   * dropped examples.
    * </pre>
    *
-   * <code>repeated int64 truncated_example_indices = 11;</code>
+   * <code>
+   * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The truncatedExampleIndices at the given index.
@@ -524,6 +533,86 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   }
 
   private int truncatedExampleIndicesMemoizedSerializedSize = -1;
+
+  public static final int DROPPED_EXAMPLE_REASONS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList droppedExampleReasons_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For each index in `truncated_example_indices`, the user-facing
+   * reason why the example was dropped.
+   * </pre>
+   *
+   * <code>
+   * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the droppedExampleReasons.
+   */
+  public com.google.protobuf.ProtocolStringList getDroppedExampleReasonsList() {
+    return droppedExampleReasons_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For each index in `truncated_example_indices`, the user-facing
+   * reason why the example was dropped.
+   * </pre>
+   *
+   * <code>
+   * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of droppedExampleReasons.
+   */
+  public int getDroppedExampleReasonsCount() {
+    return droppedExampleReasons_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For each index in `truncated_example_indices`, the user-facing
+   * reason why the example was dropped.
+   * </pre>
+   *
+   * <code>
+   * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The droppedExampleReasons at the given index.
+   */
+  public java.lang.String getDroppedExampleReasons(int index) {
+    return droppedExampleReasons_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For each index in `truncated_example_indices`, the user-facing
+   * reason why the example was dropped.
+   * </pre>
+   *
+   * <code>
+   * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the droppedExampleReasons at the given index.
+   */
+  public com.google.protobuf.ByteString getDroppedExampleReasonsBytes(int index) {
+    return droppedExampleReasons_.getByteString(index);
+  }
 
   private byte memoizedIsInitialized = -1;
 
@@ -576,6 +665,10 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     }
     for (int i = 0; i < truncatedExampleIndices_.size(); i++) {
       output.writeInt64NoTag(truncatedExampleIndices_.getLong(i));
+    }
+    for (int i = 0; i < droppedExampleReasons_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 12, droppedExampleReasons_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -639,6 +732,14 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       truncatedExampleIndicesMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < droppedExampleReasons_.size(); i++) {
+        dataSize += computeStringSizeNoTag(droppedExampleReasons_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDroppedExampleReasonsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -680,6 +781,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     if (getTotalTruncatedExampleCount() != other.getTotalTruncatedExampleCount()) return false;
     if (!getTruncatedExampleIndicesList().equals(other.getTruncatedExampleIndicesList()))
       return false;
+    if (!getDroppedExampleReasonsList().equals(other.getDroppedExampleReasonsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -722,6 +824,10 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     if (getTruncatedExampleIndicesCount() > 0) {
       hash = (37 * hash) + TRUNCATED_EXAMPLE_INDICES_FIELD_NUMBER;
       hash = (53 * hash) + getTruncatedExampleIndicesList().hashCode();
+    }
+    if (getDroppedExampleReasonsCount() > 0) {
+      hash = (37 * hash) + DROPPED_EXAMPLE_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDroppedExampleReasonsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -905,6 +1011,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       bitField0_ = (bitField0_ & ~0x00000100);
       totalTruncatedExampleCount_ = 0L;
       truncatedExampleIndices_ = emptyLongList();
+      droppedExampleReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1000,6 +1107,10 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       if (((from_bitField0_ & 0x00000400) != 0)) {
         truncatedExampleIndices_.makeImmutable();
         result.truncatedExampleIndices_ = truncatedExampleIndices_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        droppedExampleReasons_.makeImmutable();
+        result.droppedExampleReasons_ = droppedExampleReasons_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1113,6 +1224,16 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         } else {
           ensureTruncatedExampleIndicesIsMutable();
           truncatedExampleIndices_.addAll(other.truncatedExampleIndices_);
+        }
+        onChanged();
+      }
+      if (!other.droppedExampleReasons_.isEmpty()) {
+        if (droppedExampleReasons_.isEmpty()) {
+          droppedExampleReasons_ = other.droppedExampleReasons_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureDroppedExampleReasonsIsMutable();
+          droppedExampleReasons_.addAll(other.droppedExampleReasons_);
         }
         onChanged();
       }
@@ -1231,6 +1352,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
                 input.popLimit(limit);
                 break;
               } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDroppedExampleReasonsIsMutable();
+                droppedExampleReasons_.add(s);
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1383,7 +1511,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.total_billable_character_count
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=238
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=245
      * @return The totalBillableCharacterCount.
      */
     @java.lang.Override
@@ -1405,7 +1533,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.total_billable_character_count
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=238
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=245
      * @param value The totalBillableCharacterCount to set.
      * @return This builder for chaining.
      */
@@ -1431,7 +1559,7 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats.total_billable_character_count
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=238
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/tuning_job.proto;l=245
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2649,11 +2777,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of examples in the dataset that have been truncated by any
-     * amount.
+     * Output only. The number of examples in the dataset that have been dropped.
+     * An example can be dropped for reasons including: too many tokens, contains
+     * an invalid image, contains too many images, etc.
      * </pre>
      *
-     * <code>int64 total_truncated_example_count = 10;</code>
+     * <code>int64 total_truncated_example_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The totalTruncatedExampleCount.
      */
@@ -2666,11 +2796,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of examples in the dataset that have been truncated by any
-     * amount.
+     * Output only. The number of examples in the dataset that have been dropped.
+     * An example can be dropped for reasons including: too many tokens, contains
+     * an invalid image, contains too many images, etc.
      * </pre>
      *
-     * <code>int64 total_truncated_example_count = 10;</code>
+     * <code>int64 total_truncated_example_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The totalTruncatedExampleCount to set.
      * @return This builder for chaining.
@@ -2687,11 +2819,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The number of examples in the dataset that have been truncated by any
-     * amount.
+     * Output only. The number of examples in the dataset that have been dropped.
+     * An example can be dropped for reasons including: too many tokens, contains
+     * an invalid image, contains too many images, etc.
      * </pre>
      *
-     * <code>int64 total_truncated_example_count = 10;</code>
+     * <code>int64 total_truncated_example_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2715,11 +2849,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A partial sample of the indices (starting from 1) of the truncated
-     * examples.
+     * Output only. A partial sample of the indices (starting from 1) of the
+     * dropped examples.
      * </pre>
      *
-     * <code>repeated int64 truncated_example_indices = 11;</code>
+     * <code>
+     * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return A list containing the truncatedExampleIndices.
      */
@@ -2732,11 +2868,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A partial sample of the indices (starting from 1) of the truncated
-     * examples.
+     * Output only. A partial sample of the indices (starting from 1) of the
+     * dropped examples.
      * </pre>
      *
-     * <code>repeated int64 truncated_example_indices = 11;</code>
+     * <code>
+     * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The count of truncatedExampleIndices.
      */
@@ -2748,11 +2886,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A partial sample of the indices (starting from 1) of the truncated
-     * examples.
+     * Output only. A partial sample of the indices (starting from 1) of the
+     * dropped examples.
      * </pre>
      *
-     * <code>repeated int64 truncated_example_indices = 11;</code>
+     * <code>
+     * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The truncatedExampleIndices at the given index.
@@ -2765,11 +2905,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A partial sample of the indices (starting from 1) of the truncated
-     * examples.
+     * Output only. A partial sample of the indices (starting from 1) of the
+     * dropped examples.
      * </pre>
      *
-     * <code>repeated int64 truncated_example_indices = 11;</code>
+     * <code>
+     * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The truncatedExampleIndices to set.
@@ -2788,11 +2930,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A partial sample of the indices (starting from 1) of the truncated
-     * examples.
+     * Output only. A partial sample of the indices (starting from 1) of the
+     * dropped examples.
      * </pre>
      *
-     * <code>repeated int64 truncated_example_indices = 11;</code>
+     * <code>
+     * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The truncatedExampleIndices to add.
      * @return This builder for chaining.
@@ -2810,11 +2954,13 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A partial sample of the indices (starting from 1) of the truncated
-     * examples.
+     * Output only. A partial sample of the indices (starting from 1) of the
+     * dropped examples.
      * </pre>
      *
-     * <code>repeated int64 truncated_example_indices = 11;</code>
+     * <code>
+     * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param values The truncatedExampleIndices to add.
      * @return This builder for chaining.
@@ -2832,17 +2978,230 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A partial sample of the indices (starting from 1) of the truncated
-     * examples.
+     * Output only. A partial sample of the indices (starting from 1) of the
+     * dropped examples.
      * </pre>
      *
-     * <code>repeated int64 truncated_example_indices = 11;</code>
+     * <code>
+     * repeated int64 truncated_example_indices = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTruncatedExampleIndices() {
       truncatedExampleIndices_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList droppedExampleReasons_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDroppedExampleReasonsIsMutable() {
+      if (!droppedExampleReasons_.isModifiable()) {
+        droppedExampleReasons_ =
+            new com.google.protobuf.LazyStringArrayList(droppedExampleReasons_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the droppedExampleReasons.
+     */
+    public com.google.protobuf.ProtocolStringList getDroppedExampleReasonsList() {
+      droppedExampleReasons_.makeImmutable();
+      return droppedExampleReasons_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of droppedExampleReasons.
+     */
+    public int getDroppedExampleReasonsCount() {
+      return droppedExampleReasons_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The droppedExampleReasons at the given index.
+     */
+    public java.lang.String getDroppedExampleReasons(int index) {
+      return droppedExampleReasons_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the droppedExampleReasons at the given index.
+     */
+    public com.google.protobuf.ByteString getDroppedExampleReasonsBytes(int index) {
+      return droppedExampleReasons_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The droppedExampleReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDroppedExampleReasons(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDroppedExampleReasonsIsMutable();
+      droppedExampleReasons_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The droppedExampleReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDroppedExampleReasons(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDroppedExampleReasonsIsMutable();
+      droppedExampleReasons_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The droppedExampleReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDroppedExampleReasons(java.lang.Iterable<java.lang.String> values) {
+      ensureDroppedExampleReasonsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, droppedExampleReasons_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDroppedExampleReasons() {
+      droppedExampleReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For each index in `truncated_example_indices`, the user-facing
+     * reason why the example was dropped.
+     * </pre>
+     *
+     * <code>
+     * repeated string dropped_example_reasons = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the droppedExampleReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDroppedExampleReasonsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDroppedExampleReasonsIsMutable();
+      droppedExampleReasons_.add(value);
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

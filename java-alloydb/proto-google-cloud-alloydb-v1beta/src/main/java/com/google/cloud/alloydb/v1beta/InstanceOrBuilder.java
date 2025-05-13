@@ -1337,4 +1337,47 @@ public interface InstanceOrBuilder
    * @return The bytes of the outboundPublicIpAddresses at the given index.
    */
   com.google.protobuf.ByteString getOutboundPublicIpAddressesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration parameters related to Gemini Cloud Assist.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GCAInstanceConfig gca_config = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gcaConfig field is set.
+   */
+  boolean hasGcaConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration parameters related to Gemini Cloud Assist.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GCAInstanceConfig gca_config = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gcaConfig.
+   */
+  com.google.cloud.alloydb.v1beta.GCAInstanceConfig getGcaConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Configuration parameters related to Gemini Cloud Assist.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.GCAInstanceConfig gca_config = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.GCAInstanceConfigOrBuilder getGcaConfigOrBuilder();
 }

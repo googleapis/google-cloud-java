@@ -242,4 +242,56 @@ public interface ReviewOrBuilder
    * <code>.google.protobuf.Timestamp publish_time = 14;</code>
    */
   com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A link where users can flag a problem with the review.
+   * </pre>
+   *
+   * <code>string flag_content_uri = 15;</code>
+   *
+   * @return The flagContentUri.
+   */
+  java.lang.String getFlagContentUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * A link where users can flag a problem with the review.
+   * </pre>
+   *
+   * <code>string flag_content_uri = 15;</code>
+   *
+   * @return The bytes for flagContentUri.
+   */
+  com.google.protobuf.ByteString getFlagContentUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A link to show the review on Google Maps.
+   * </pre>
+   *
+   * <code>string google_maps_uri = 16;</code>
+   *
+   * @return The googleMapsUri.
+   */
+  java.lang.String getGoogleMapsUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * A link to show the review on Google Maps.
+   * </pre>
+   *
+   * <code>string google_maps_uri = 16;</code>
+   *
+   * @return The bytes for googleMapsUri.
+   */
+  com.google.protobuf.ByteString getGoogleMapsUriBytes();
 }

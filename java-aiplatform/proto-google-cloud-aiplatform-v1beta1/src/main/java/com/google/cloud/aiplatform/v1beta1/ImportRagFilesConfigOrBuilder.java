@@ -234,7 +234,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=605
    * @return Whether the partialFailureGcsSink field is set.
    */
   @java.lang.Deprecated
@@ -253,7 +253,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_gcs_sink is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=565
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=605
    * @return The partialFailureGcsSink.
    */
   @java.lang.Deprecated
@@ -292,7 +292,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=614
    * @return Whether the partialFailureBigquerySink field is set.
    */
   @java.lang.Deprecated
@@ -316,7 +316,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.partial_failure_bigquery_sink
-   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=574
+   *     is deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=614
    * @return The partialFailureBigquerySink.
    */
   @java.lang.Deprecated
@@ -448,7 +448,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=633
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Deprecated
@@ -466,7 +466,7 @@ public interface ImportRagFilesConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=593
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=633
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Deprecated
@@ -615,6 +615,25 @@ public interface ImportRagFilesConfigOrBuilder
    * @return The globalMaxEmbeddingRequestsPerMin.
    */
   int getGlobalMaxEmbeddingRequestsPerMin();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rebuilds the ANN index to optimize for recall on the imported data.
+   * Only applicable for RagCorpora running on RagManagedDb with
+   * `retrieval_strategy` set to `ANN`. The rebuild will be performed using the
+   * existing ANN config set on the RagCorpus. To change the ANN config, please
+   * use the UpdateRagCorpus API.
+   *
+   * Default is false, i.e., index is not rebuilt.
+   * </pre>
+   *
+   * <code>bool rebuild_ann_index = 19;</code>
+   *
+   * @return The rebuildAnnIndex.
+   */
+  boolean getRebuildAnnIndex();
 
   com.google.cloud.aiplatform.v1beta1.ImportRagFilesConfig.ImportSourceCase getImportSourceCase();
 
