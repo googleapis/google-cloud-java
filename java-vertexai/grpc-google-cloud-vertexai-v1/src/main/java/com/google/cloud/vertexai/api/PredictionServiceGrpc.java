@@ -32,8 +32,7 @@ public final class PredictionServiceGrpc {
 
   private PredictionServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME =
-      "google.cloud.aiplatform.v1.PredictionService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.vertexai.v1.PredictionService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<

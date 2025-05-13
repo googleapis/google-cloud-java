@@ -32,8 +32,7 @@ public final class LlmUtilityServiceGrpc {
 
   private LlmUtilityServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME =
-      "google.cloud.aiplatform.v1.LlmUtilityService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.vertexai.v1.LlmUtilityService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<

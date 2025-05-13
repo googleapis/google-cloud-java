@@ -1035,28 +1035,32 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   public BidiStreamingCallable<StreamDirectPredictRequest, StreamDirectPredictResponse>
       streamDirectPredictCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamDirectPredictCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamDirectPredictCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public BidiStreamingCallable<StreamDirectRawPredictRequest, StreamDirectRawPredictResponse>
       streamDirectRawPredictCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamDirectRawPredictCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamDirectRawPredictCallable(). REST transport is not implemented for"
+            + " this method yet.");
   }
 
   @Override
   public BidiStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
       streamingPredictCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingPredictCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingPredictCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override
   public BidiStreamingCallable<StreamingRawPredictRequest, StreamingRawPredictResponse>
       streamingRawPredictCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingRawPredictCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingRawPredictCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override

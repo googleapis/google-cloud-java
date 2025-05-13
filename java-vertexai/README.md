@@ -1,14 +1,19 @@
-# Google Vertex AI SDK for Java
+# Google Java Idiomatic SDK for Vertex AI Client for Java
 
-Java idiomatic SDK for [Vertex AI][product-docs].
+Java idiomatic client for [Java Idiomatic SDK for Vertex AI][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
 
 - [Product Documentation][product-docs]
+- [Client Library Documentation][javadocs]
+
+> Note: This client is a work-in-progress, and may occasionally
+> make backwards-incompatible changes.
 
 
-## Add dependency
+## Quickstart
+
 
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
@@ -18,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.54.0</version>
+      <version>26.59.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -30,11 +35,11 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vertexai</artifactId>
   </dependency>
+</dependencies>
 ```
 
-If you're using Maven without the BOM, add the following to your dependencies:
+If you are using Maven without the BOM, add this to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-vertexai:released} -->
 
 ```xml
 <dependency>
@@ -55,646 +60,50 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-vertexai" % "1.22.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
-To learn how to authenticate to the API, see the [Authentication][authentication].
+See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-When a client application makes a call to the Vertex AI API, the application
-must be granted the [authorization scopes][auth-scopes] that are required for
-the API. Additionally, the authenticated principal must have the
-[IAM role(s)][predefined-iam-roles] that are required to access the Google Cloud
-resources being called.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Java Idiomatic SDK for Vertex AI APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Java Idiomatic SDK for Vertex AI API calls.
 
 ## Getting Started
 
-Follow the instructions in this section to get started using the Vertex AI SDK for Java.
-
 ### Prerequisites
 
-To use the Vertex AI SDK for Java, you must have completed the following:
+You will need a [Google Cloud Platform Console][developer-console] project with the Java Idiomatic SDK for Vertex AI [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google Java Idiomatic SDK for Vertex AI.
+[Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
+[installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
+`gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
-*   [Create a Google Cloud project][create-project].
-*   [Enable the Vertex AI API][enable-api] for your project.
-*   [Enable billing][enable-billing] for your project.
-*   [Install the Google Cloud Command Line Interface][cloud-cli] and run the
-    following commands in command line:
+### Installation and setup
 
-    ```sh
-    gcloud auth login &&
-    gcloud config set project <var>PROJECT_ID</var>
-    ```
+You'll need to obtain the `google-cloud-vertexai` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-vertexai` as a dependency in your code.
 
-To acquire user credentials to use for [Application Default Credentials][adc],
-run `gcloud auth application-default login`.
+## About Java Idiomatic SDK for Vertex AI
 
-### Install and setup the SDK
 
-You must install the `google-cloud-vertexai` library.  See the
-[Add Dependency](#add-dependency) section
-to learn how to add `google-cloud-vertexai` as a dependency in your code.
+[Java Idiomatic SDK for Vertex AI][product-docs] Vertex AI is a machine learning (ML) platform that lets you train and deploy ML models and AI applications.
 
-### Use the Vertex AI SDK for Java
+See the [Java Idiomatic SDK for Vertex AI client library docs][javadocs] to learn how to
+use this Java Idiomatic SDK for Vertex AI Client Library.
 
-The following sections show you how to perform common tasks by using the
-Vertex AI SDK for Java.
 
-#### Basic Text Generation
-Vertex AI SDK allows you to access the service programmatically. The following code snippet is the most basic usage of SDK
 
-```java
-package <your package name>
 
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import java.io.IOException;
 
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
-
-      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
-
-      GenerateContentResponse response = model.generateContent("How are you?");
-      // Do something with the response
-    }
-  }
-}
-```
-
-#### Stream generated output
-
-To get a streamed output, you can use the `generateContentStream` method:
-
-```java
-package <your package name>
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.ResponseStream;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import java.io.IOException;
-
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
-
-      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
-
-      ResponseStream<GenerateContentResponse> responseStream = model.generateContentStream("How are you?");
-      // Do something with the ResponseStream, which is an iterable.
-    }
-  }
-}
-```
-
-#### Text Generation with Async
-To get a future response, you can use the `generateContentAsync` method
-
-```java
-package <your package name>
-
-import com.google.api.core.ApiFuture;
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import java.io.IOException;
-
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
-
-      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
-
-      ApiFuture<GenerateContentResponse> future = model.generateContentAsync("How are you?");
-
-      // Do something else.
-
-      // Get the response from Future
-      GenerateContentResponse response = future.get();
-
-      // Do something with the response.
-    }
-  }
-}
-```
-
-#### Generate text from multi-modal input
-
-To generate text from a prompt that contains multiple modalities of data, use
-`ContentMaker` to make a `Content`:
-
-```java
-package <your package name>;
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.ResponseStream;
-import com.google.cloud.vertexai.generativeai.ContentMaker;
-import com.google.cloud.vertexai.generativeai.PartMaker;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import java.util.Arrays;
-
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-  private static final String IMAGE_URI = <gcs uri to your image>
-
-  public static void main(String[] args) throws Exception {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION); ) {
-      // Vision model must be used for multi-modal input
-      GenerativeModel model = new GenerativeModel("gemini-pro-vision", vertexAi);
-
-      ResponseStream<GenerateContentResponse> stream =
-          model.generateContentStream(ContentMaker.fromMultiModalData(
-            "Please describe this image",
-            PartMaker.fromMimeTypeAndData("image/jpeg", IMAGE_URI)
-          ));
-      // Do something with the ResponseStream, which is an iterable.
-    }
-  }
-}
-```
-
-#### Role Change for Multi-turn Conversation
-For a multi-turn conversation, one needs to make a `Content` list to represent the whole conversation between two roles: "user" and "model".
-
-```java
-package <your package name>;
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.api.Content;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import com.google.cloud.vertexai.generativeai.ContentMaker;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.ResponseHandler;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-  private static final String MODEL_NAME = "gemini-pro";
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION); ) {
-      GenerativeModel model =
-          new GenerativeModel(MODEL_NAME, vertexAi);
-
-      // Put all the contents in a Content list
-      List<Content> contents =
-          Arrays.asList(
-              ContentMaker.fromString("Hi!"),
-              ContentMaker.forRole("model")
-                  .fromString("Hello! How may I assist you?"),
-              ContentMaker.fromString(
-                  "Can you explain quantum mechanis as well in only a few sentences?"));
-
-      // generate the result
-      GenerateContentResponse response = model.generateContent(contents);
-
-      // ResponseHandler.getText is a helper function to retrieve the text part of the answer.
-      System.out.println("\nPrint response: ");
-      System.out.println(ResponseHandler.getText(response));
-      System.out.println("\n");
-    }
-  }
-}
-```
-
-#### Use `ChatSession` for multi-turn chat
-
-The Vertex AI SDK for Java provides a `ChatSession` class that lets you easily
-chat with the model:
-
-```java
-package <your package name>;
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.ChatSession;
-import com.google.cloud.vertexai.generativeai.ResponseStream;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION); ) {
-      GenerativeModel model =
-          new GenerativeModel("gemini-pro", vertexAi);
-      ChatSession chat = model.startChat();
-
-      // Send the first message.
-      // ChatSession also has two versions of sendMessage, stream and non-stream
-      ResponseStream<GenerateContentResponse> response = chat.sendMessageStream("Hi!");
-
-      // Do something with the output stream, possibly with ResponseHandler
-
-      // Now send another message. The history will be remembered by the ChatSession.
-      // Note: the stream needs to be consumed before you send another message
-      // or fetch the history.
-      ResponseStream<GenerateContentResponse> anotherResponse = chat.sendMessageStream("Can you explain quantum mechanis as well in a few sentences?");
-
-      // Do something with the second response
-
-      // See the whole history. Make sure you have consumed the stream.
-      List<Content> history = chat.getHistory();
-    }
-  }
-}
-```
-
-#### Update configurations
-
-The Vertex AI SDK for Java provides configurations for customizing content
-generation. You can configure options like
-[GenerationConfig][generationconfig-ref], [SafetySetting][safetysetting-ref], and
-[system instructions][system-instruction], or add [Tool][tool-ref] for function
-calling.
-
-You can choose between two configuration approaches: 1) set configurations
-during model instantiation for consistency across all text generations, or 2)
-adjust them on a per-request basis for fine-grained control.
-
-##### Model level configurations
-
-Below is an example of configure `GenerationConfig` for a `GenerativeModel`:
-```java
-package <PACKAGE_NAME>
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import com.google.cloud.vertexai.api.GenerationConfig;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.ResponseHandler;
-import java.io.IOException;
-
-public class Main {
-  private static final String PROJECT_ID = <PROJECT_ID>;
-  private static final String LOCATION = <LOCATION>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
-      // Build a GenerationConfig instance.
-      GenerationConfig generationConfig =
-          GenerationConfig.newBuilder().setMaxOutputTokens(50).build();
-
-      // Use the builder to instantialize the model with the configuration.
-      GenerativeModel model =
-          new GenerativeModel.Builder()
-              .setModelName("gemino-pro")
-              .setVertexAi(vertexAi)
-              .setGenerationConfig(generationConfig)
-              .build();
-
-      // Generate the response.
-      GenerateContentResponse response = model.generateContent("Please explain LLM?");
-
-      // Do something with the response.
-    }
-  }
-}
-```
-
-And an example of configuring preambles as a [system instruction][system-instruction].
-```java
-package <your package name>
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.ContentMaker;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import java.io.IOException;
-
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
-
-      GenerativeModel model =
-          new GenerativeModel.Builder()
-              .setModelName("gemino-pro")
-              .setVertexAi(vertexAi)
-              .setSystemInstruction(
-                ContentMaker.fromString(
-                  "You're a helpful assistant that starts all its answers with: \"COOL\"")
-                  )
-              .build();
-
-      GenerateContentResponse response = model.generateContent("How are you?");
-      // Do something with the response
-    }
-  }
-}
-```
-
-
-##### Update request-level configurations
-
-The Vertex AI SDK for Java provides fluent APIs to control request-level
-configurations.
-
-```java
-package <PACKAGE_NAME>
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import com.google.cloud.vertexai.api.HarmCategory;
-import com.google.cloud.vertexai.api.SafetySetting;
-import com.google.cloud.vertexai.api.SafetySetting.HarmBlockThreshold;
-import com.google.cloud.vertexai.generativeai.GenerateContentConfig;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import java.io.IOException;
-import java.util.Arrays;
-
-public class Main {
-  private static final String PROJECT_ID = <PROJECT_ID>;
-  private static final String LOCATION = <LOCATION>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION); ) {
-      // Build a SafetySetting instance.
-      SafetySetting safetySetting =
-          SafetySetting.newBuilder()
-              .setCategory(HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT)
-              .setThreshold(HarmBlockThreshold.BLOCK_LOW_AND_ABOVE)
-              .build();
-
-      // Generate the response with the fluent API `withSafetySetting`.
-      GenerateContentResponse response =
-          model
-              .withSafetySetting(Arrays.asList(SafetySetting))
-              .generateContent("Please explain LLM?");
-
-      // Do something with the response.
-    }
-  }
-}
-```
-
-#### Configurations for ChatSession
-
-When a chat session is started (`ChatSesson chat = model.startChat()`),
-it inherits all configurations from the model. You can also use fluent APIs
-to update these settings during the chat.
-
-```java
-package <PACKAGE_NAME>
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import com.google.cloud.vertexai.api.GenerationConfig;
-import com.google.cloud.vertexai.generativeai.ChatSession;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.ResponseHandler;
-import java.io.IOException;
-
-public class Main {
-  private static final String PROJECT_ID = <PROJECT_ID>;
-  private static final String LOCATION = <LOCATION>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
-      // Instantiate a model with GenerationConfig
-      GenerationConfig generationConfig =
-          GenerationConfig.newBuilder().setMaxOutputTokens(50).build();
-      GenerativeModel model =
-          new GenerativeModel.Builder()
-              .setModelName("gemino-pro")
-              .setVertexAi(vertexAi)
-              .setGenerationConfig(generationConfig)
-              .build();
-
-      // Start a chat session
-      ChatSession chat = model.startChat();
-
-      // Send a message. The model level GenerationConfig will be applied here
-      GenerateContentResponse response = chat.sendMessage("Please explain LLM?");
-
-      // Do something with the response
-
-      // Send another message, using Fluent API to update the GenerationConfig
-      response =
-          chat.withGenerationConfig(GenerationConfig.getDefaultInstance())
-              .sendMessage("Tell me more about what you can do.");
-
-      // Do something with the response
-    }
-  }
-}
-```
-
-
-#### Use ChatSession for function calling
-
-You can perfrom a function call in a `ChatSession` as follows:
-
-```java
-package <your package name>;
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.ChatSession;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.ResponseHandler;
-import com.google.cloud.vertexai.generativeai.ResponseStream;
-import com.google.cloud.vertexai.api.Content;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import java.io.IOException;
-
-public class Main {
-  private static final String PROJECT_ID = "<your project>";
-  private static final String LOCATION = "<location>";
-  private static final String MODEL_NAME = "gemini-pro";
-  private static final String TEXT = "What's the weather in Vancouver?";
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION); ) {
-      // Declare a function to be used in a request.
-      // We construct a jsonString that corresponds to the following function
-      // declaration.
-      // {
-      //   "name": "getCurrentWeather",
-      //   "description": "Get the current weather in a given location",
-      //   "parameters": {
-      //     "type": "OBJECT",
-      //     "properties": {
-      //       "location": {
-      //         "type": "STRING",
-      //         "description": "location"
-      //       }
-      //     }
-      //   }
-      // }
-      // With JDK 15 and above, you can do
-      //
-      // String jsonString = """
-      //   {
-      //     "name": "getCurrentWeather",
-      //     "description": "Get the current weather in a given location",
-      //     "parameters": {
-      //       "type": "OBJECT",
-      //       "properties": {
-      //         "location": {
-      //           "type": "STRING",
-      //           "description": "location"
-      //         }
-      //       }
-      //     }
-      //   }
-      //  """
-      String jsonString =
-              "{\n"
-            + " \"name\": \"getCurrentWeather\",\n"
-            + " \"description\": \"Get the current weather in a given location\",\n"
-            + " \"parameters\": {\n"
-            + "   \"type\": \"OBJECT\", \n"
-            + "   \"properties\": {\n"
-            + "     \"location\": {\n"
-            + "       \"type\": \"STRING\",\n"
-            + "       \"description\": \"location\"\n"
-            + "     }\n"
-            + "   }\n"
-            + " }\n"
-            + "}";
-      Tool tool =
-          Tool.newBuilder()
-              .addFunctionDeclarations(
-                FunctionDeclarationMaker.fromJsonString(jsonString)
-              )
-              .build();
-
-      // Start a chat session from a model, with the use of the declared
-      // function.
-      GenerativeModel model =
-          new GenerativeModel.Builder()
-              .setModelName(MODEL_NAME)
-              .setVertexAi(vertexAi)
-              .setTools(Arrays.asList(tool))
-              .build();
-      ChatSession chat = model.startChat();
-
-      System.out.println(String.format("Ask the question: %s", TEXT));
-      GenerateContentResponse response = chat.sendMessage(TEXT);
-
-      // The model will most likely return a function call to the declared
-      // function `getCurrentWeather` with "Vancouver" as the value for the
-      // argument `location`.
-      System.out.println("\nPrint response: ");
-      System.out.println(ResponseHandler.getContent(response));
-      System.out.println("\n");
-
-      // Provide an answer to the model so that it knows what the result of a
-      // "function call" is.
-      Content content =
-          ContentMaker.fromMultiModalData(
-              PartMaker.fromFunctionResponse(
-                  "getCurrentWeather", Collections.singletonMap("currentWeather", "snowing")));
-      System.out.println("Provide the function response: ");
-      System.out.println(content);
-      System.out.println("\n");
-      response = chat.sendMessage(content);
-
-      // See what the model replies now
-      System.out.println("\nPrint response: ");
-      System.out.println(ResponseHandler.getText(response));
-      System.out.println("\n");
-    }
-  }
-}
-```
-
-See the [Vertex AI SDK docs][javadocs] to learn more about how to use this Vertex AI SDK in more advanced ways.
 
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
 
-## Other Configurations
-### Vertex-scoped Configurations
-#### Transport
+## Transport
 
-Vertex AI uses gRPC and rest for the transport layer. By default, we use gRPC transport. To use rest, passing a `Transport.REST` to the `VertexAI` constructor as the example below:
-
-```java
-package <your package name>
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.generativeai.Transport;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import java.io.IOException;
-
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI.Builder()
-                                  .setProjectId(PROJECT_ID)
-                                  .setLocation(LOCATION)
-                                  .setTransport(Transport.REST);) {
-
-      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
-
-      GenerateContentResponse response = model.generateContent("How are you?");
-      // Do something with the response
-    }
-  }
-}
-```
-
-#### Change API endpoints
-
-To use a different API endpoint, specify the endpoint that you want to use when
-you instantiate `VertexAI`:
-
-```java
-package <your package name>
-
-import com.google.cloud.vertexai.VertexAI;
-import com.google.cloud.vertexai.generativeai.GenerativeModel;
-import com.google.cloud.vertexai.api.GenerateContentResponse;
-import java.io.IOException;
-
-public class Main {
-  private static final String PROJECT_ID = <your project id>;
-  private static final String LOCATION = <location>;
-
-  public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI.Builder()
-                                  .setProjectId(PROJECT_ID)
-                                  .setLocation(LOCATION)
-                                  .setApiEndpoint(<new_endpoint>);) {
-
-      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
-
-      GenerateContentResponse response = model.generateContent("How are you?");
-      // Do something with the response
-    }
-  }
-}
-```
-
+Java Idiomatic SDK for Vertex AI uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -746,8 +155,11 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
+It is currently in major version zero (``0.y.z``), which means that anything may change at any time
+and the public API should not be considered stable.
 
-## Contribute to this library
+
+## Contributing
 
 
 Contributions to this library are always welcome and highly encouraged.
@@ -786,9 +198,9 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
-[stability-image]: https://img.shields.io/badge/stability-stable-green
+[stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-vertexai.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-vertexai/0.0.1
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-vertexai/1.22.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
@@ -801,18 +213,12 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
-[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=aiplatform.googleapis.com
+[enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=vertexai.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
-[aiplatform-client-libraries]: https://cloud.google.com/java/docs/reference/google-cloud-aiplatform/latest/overview
-[adc]: https://cloud.google.com/docs/authentication/application-default-credentials
+
 [semver]: https://semver.org/
 [cloudlibs]: https://cloud.google.com/apis/docs/client-libraries-explained
 [apilibs]: https://cloud.google.com/apis/docs/client-libraries-explained#google_api_client_libraries
 [oracle]: https://www.oracle.com/java/technologies/java-se-support-roadmap.html
 [g-c-j]: http://github.com/googleapis/google-cloud-java
-[generative-ai-studio]: https://cloud.google.com/generative-ai-studio?hl=en
-[generationconfig-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.GenerationConfig.Builder
-[safetysetting-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.SafetySetting.Builder
-[tool-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.Tool.Builder
-[system-instruction]: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/system-instructions
