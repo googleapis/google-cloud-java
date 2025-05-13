@@ -32,7 +32,7 @@ public final class EndpointServiceGrpc {
 
   private EndpointServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "google.cloud.aiplatform.v1.EndpointService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.vertexai.v1.EndpointService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<

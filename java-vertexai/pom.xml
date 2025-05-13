@@ -50,4 +50,5 @@
     <module>proto-google-cloud-vertexai-v1</module>
     <module>google-cloud-vertexai-bom</module>
   </modules>
-</project>
+
+  </project>
