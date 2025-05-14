@@ -51,7 +51,7 @@ public final class OpenApiProto {
     java.lang.String[] descriptorData = {
       "\n"
           + "-google/cloud/aiplatform/v1beta1/openapi.proto\022\037google.cloud.aiplatform.v1beta1"
-          + "\032\037google/api/field_behavior.proto\032\034google/protobuf/struct.proto\"\367\007\n"
+          + "\032\037google/api/field_behavior.proto\032\034google/protobuf/struct.proto\"\263\010\n"
           + "\006Schema\0228\n"
           + "\004type\030\001"
           + " \001(\0162%.google.cloud.aiplatform.v1beta1.TypeB\003\340A\001\022\023\n"
@@ -78,10 +78,12 @@ public final class OpenApiProto {
           + "\007pattern\030\024 \001(\tB\003\340A\001\022,\n"
           + "\007example\030\004 \001(\0132\026.google.protobuf.ValueB\003\340A\001\022<\n"
           + "\006any_of\030\013"
-          + " \003(\0132\'.google.cloud.aiplatform.v1beta1.SchemaB\003\340A\001\022\020\n"
+          + " \003(\0132\'.google.cloud.aiplatform.v1beta1.SchemaB\003\340A\001\022:\n"
+          + "\025additional_properties\030\032"
+          + " \001(\0132\026.google.protobuf.ValueB\003\340A\001\022\020\n"
           + "\003ref\030\033 \001(\tB\003\340A\001\022D\n"
-          + "\004defs\030\034"
-          + " \003(\01321.google.cloud.aiplatform.v1beta1.Schema.DefsEntryB\003\340A\001\032Z\n"
+          + "\004defs\030\034 \003(\01321.google.clo"
+          + "ud.aiplatform.v1beta1.Schema.DefsEntryB\003\340A\001\032Z\n"
           + "\017PropertiesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002 \001(\0132\'.google.cloud.aiplatform.v1beta1.Schema:\0028\001\032T\n"
@@ -96,11 +98,11 @@ public final class OpenApiProto {
           + "\007BOOLEAN\020\004\022\t\n"
           + "\005ARRAY\020\005\022\n\n"
           + "\006OBJECT\020\006B\343\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\014OpenApiProtoP\001"
-          + "ZCcloud.google.com/go/aiplatform/apiv1be"
-          + "ta1/aiplatformpb;aiplatformpb\252\002\037Google.C"
-          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
-          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\014OpenApiProtoP\001ZCcloud.google.com/g"
+          + "o/aiplatform/apiv1beta1/aiplatformpb;aip"
+          + "latformpb\252\002\037Google.Cloud.AIPlatform.V1Be"
+          + "ta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\""
+          + "Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -137,6 +139,7 @@ public final class OpenApiProto {
               "Pattern",
               "Example",
               "AnyOf",
+              "AdditionalProperties",
               "Ref",
               "Defs",
             });

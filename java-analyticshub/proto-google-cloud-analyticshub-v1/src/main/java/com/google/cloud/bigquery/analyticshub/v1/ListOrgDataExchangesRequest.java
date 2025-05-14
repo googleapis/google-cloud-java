@@ -76,7 +76,7 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The organization resource path of the projects containing
-   * DataExchanges. e.g. `organizations/myorg/locations/US`.
+   * DataExchanges. e.g. `organizations/myorg/locations/us`.
    * </pre>
    *
    * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,7 +101,7 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The organization resource path of the projects containing
-   * DataExchanges. e.g. `organizations/myorg/locations/US`.
+   * DataExchanges. e.g. `organizations/myorg/locations/us`.
    * </pre>
    *
    * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -602,7 +602,7 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The organization resource path of the projects containing
-     * DataExchanges. e.g. `organizations/myorg/locations/US`.
+     * DataExchanges. e.g. `organizations/myorg/locations/us`.
      * </pre>
      *
      * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -626,7 +626,7 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The organization resource path of the projects containing
-     * DataExchanges. e.g. `organizations/myorg/locations/US`.
+     * DataExchanges. e.g. `organizations/myorg/locations/us`.
      * </pre>
      *
      * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -650,7 +650,7 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The organization resource path of the projects containing
-     * DataExchanges. e.g. `organizations/myorg/locations/US`.
+     * DataExchanges. e.g. `organizations/myorg/locations/us`.
      * </pre>
      *
      * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -673,7 +673,7 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The organization resource path of the projects containing
-     * DataExchanges. e.g. `organizations/myorg/locations/US`.
+     * DataExchanges. e.g. `organizations/myorg/locations/us`.
      * </pre>
      *
      * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -692,7 +692,7 @@ public final class ListOrgDataExchangesRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The organization resource path of the projects containing
-     * DataExchanges. e.g. `organizations/myorg/locations/US`.
+     * DataExchanges. e.g. `organizations/myorg/locations/us`.
      * </pre>
      *
      * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>

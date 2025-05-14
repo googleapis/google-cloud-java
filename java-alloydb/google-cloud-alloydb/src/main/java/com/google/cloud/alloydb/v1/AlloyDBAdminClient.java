@@ -151,6 +151,66 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportCluster</td>
+ *      <td><p> Exports data from the cluster. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportClusterAsync(ExportClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> exportClusterAsync(ClusterName name, GcsDestination gcsDestination, String database, ExportClusterRequest.CsvExportOptions csvExportOptions, ExportClusterRequest.SqlExportOptions sqlExportOptions)
+ *           <li><p> exportClusterAsync(String name, GcsDestination gcsDestination, String database, ExportClusterRequest.CsvExportOptions csvExportOptions, ExportClusterRequest.SqlExportOptions sqlExportOptions)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportClusterOperationCallable()
+ *           <li><p> exportClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportCluster</td>
+ *      <td><p> Imports data to the cluster. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importClusterAsync(ImportClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> importClusterAsync(ClusterName name, String gcsUri, String database, String user)
+ *           <li><p> importClusterAsync(String name, String gcsUri, String database, String user)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importClusterOperationCallable()
+ *           <li><p> importClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpgradeCluster</td>
+ *      <td><p> Upgrades a single Cluster. Imperative only.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterAsync(UpgradeClusterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterAsync(ClusterName name, DatabaseVersion version)
+ *           <li><p> upgradeClusterAsync(String name, DatabaseVersion version)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> upgradeClusterOperationCallable()
+ *           <li><p> upgradeClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteCluster</td>
  *      <td><p> Deletes a single Cluster.</td>
  *      <td>
@@ -1470,6 +1530,550 @@ public class AlloyDBAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return stub.updateClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+   *   String database = "database1789464955";
+   *   ExportClusterRequest.CsvExportOptions csvExportOptions =
+   *       ExportClusterRequest.CsvExportOptions.newBuilder().build();
+   *   ExportClusterRequest.SqlExportOptions sqlExportOptions =
+   *       ExportClusterRequest.SqlExportOptions.newBuilder().build();
+   *   ExportClusterResponse response =
+   *       alloyDBAdminClient
+   *           .exportClusterAsync(
+   *               name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param gcsDestination Required. Option to export data to cloud storage.
+   * @param database Required. Name of the database where the export command will be executed. Note
+   *     - Value provided should be the same as expected from `SELECT current_database();` and NOT
+   *     as a resource reference.
+   * @param csvExportOptions Options for exporting data in CSV format. Required field to be set for
+   *     CSV file type.
+   * @param sqlExportOptions Options for exporting data in SQL format. Required field to be set for
+   *     SQL file type.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportClusterResponse, OperationMetadata> exportClusterAsync(
+      ClusterName name,
+      GcsDestination gcsDestination,
+      String database,
+      ExportClusterRequest.CsvExportOptions csvExportOptions,
+      ExportClusterRequest.SqlExportOptions sqlExportOptions) {
+    ExportClusterRequest request =
+        ExportClusterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setGcsDestination(gcsDestination)
+            .setDatabase(database)
+            .setCsvExportOptions(csvExportOptions)
+            .setSqlExportOptions(sqlExportOptions)
+            .build();
+    return exportClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+   *   String database = "database1789464955";
+   *   ExportClusterRequest.CsvExportOptions csvExportOptions =
+   *       ExportClusterRequest.CsvExportOptions.newBuilder().build();
+   *   ExportClusterRequest.SqlExportOptions sqlExportOptions =
+   *       ExportClusterRequest.SqlExportOptions.newBuilder().build();
+   *   ExportClusterResponse response =
+   *       alloyDBAdminClient
+   *           .exportClusterAsync(
+   *               name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param gcsDestination Required. Option to export data to cloud storage.
+   * @param database Required. Name of the database where the export command will be executed. Note
+   *     - Value provided should be the same as expected from `SELECT current_database();` and NOT
+   *     as a resource reference.
+   * @param csvExportOptions Options for exporting data in CSV format. Required field to be set for
+   *     CSV file type.
+   * @param sqlExportOptions Options for exporting data in SQL format. Required field to be set for
+   *     SQL file type.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportClusterResponse, OperationMetadata> exportClusterAsync(
+      String name,
+      GcsDestination gcsDestination,
+      String database,
+      ExportClusterRequest.CsvExportOptions csvExportOptions,
+      ExportClusterRequest.SqlExportOptions sqlExportOptions) {
+    ExportClusterRequest request =
+        ExportClusterRequest.newBuilder()
+            .setName(name)
+            .setGcsDestination(gcsDestination)
+            .setDatabase(database)
+            .setCsvExportOptions(csvExportOptions)
+            .setSqlExportOptions(sqlExportOptions)
+            .build();
+    return exportClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExportClusterRequest request =
+   *       ExportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setDatabase("database1789464955")
+   *           .build();
+   *   ExportClusterResponse response = alloyDBAdminClient.exportClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportClusterResponse, OperationMetadata> exportClusterAsync(
+      ExportClusterRequest request) {
+    return exportClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExportClusterRequest request =
+   *       ExportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setDatabase("database1789464955")
+   *           .build();
+   *   OperationFuture<ExportClusterResponse, OperationMetadata> future =
+   *       alloyDBAdminClient.exportClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportClusterResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable() {
+    return stub.exportClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports data from the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ExportClusterRequest request =
+   *       ExportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setDatabase("database1789464955")
+   *           .build();
+   *   ApiFuture<Operation> future = alloyDBAdminClient.exportClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
+    return stub.exportClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports data to the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   String gcsUri = "gcsUri-1251224875";
+   *   String database = "database1789464955";
+   *   String user = "user3599307";
+   *   ImportClusterResponse response =
+   *       alloyDBAdminClient.importClusterAsync(name, gcsUri, database, user).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param gcsUri Required. The path to the file in Google Cloud Storage where the source file for
+   *     import will be stored. The URI is in the form `gs://bucketName/fileName`.
+   * @param database Optional. Name of the database to which the import will be done. For import
+   *     from SQL file, this is required only if the file does not specify a database. Note - Value
+   *     provided should be the same as expected from `SELECT current_database();` and NOT as a
+   *     resource reference.
+   * @param user Optional. Database user to be used for importing the data. Note - Value provided
+   *     should be the same as expected from `SELECT current_user;` and NOT as a resource reference.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportClusterResponse, OperationMetadata> importClusterAsync(
+      ClusterName name, String gcsUri, String database, String user) {
+    ImportClusterRequest request =
+        ImportClusterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setGcsUri(gcsUri)
+            .setDatabase(database)
+            .setUser(user)
+            .build();
+    return importClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports data to the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   String gcsUri = "gcsUri-1251224875";
+   *   String database = "database1789464955";
+   *   String user = "user3599307";
+   *   ImportClusterResponse response =
+   *       alloyDBAdminClient.importClusterAsync(name, gcsUri, database, user).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param gcsUri Required. The path to the file in Google Cloud Storage where the source file for
+   *     import will be stored. The URI is in the form `gs://bucketName/fileName`.
+   * @param database Optional. Name of the database to which the import will be done. For import
+   *     from SQL file, this is required only if the file does not specify a database. Note - Value
+   *     provided should be the same as expected from `SELECT current_database();` and NOT as a
+   *     resource reference.
+   * @param user Optional. Database user to be used for importing the data. Note - Value provided
+   *     should be the same as expected from `SELECT current_user;` and NOT as a resource reference.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportClusterResponse, OperationMetadata> importClusterAsync(
+      String name, String gcsUri, String database, String user) {
+    ImportClusterRequest request =
+        ImportClusterRequest.newBuilder()
+            .setName(name)
+            .setGcsUri(gcsUri)
+            .setDatabase(database)
+            .setUser(user)
+            .build();
+    return importClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports data to the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ImportClusterRequest request =
+   *       ImportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setGcsUri("gcsUri-1251224875")
+   *           .setDatabase("database1789464955")
+   *           .setUser("user3599307")
+   *           .build();
+   *   ImportClusterResponse response = alloyDBAdminClient.importClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportClusterResponse, OperationMetadata> importClusterAsync(
+      ImportClusterRequest request) {
+    return importClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports data to the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ImportClusterRequest request =
+   *       ImportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setGcsUri("gcsUri-1251224875")
+   *           .setDatabase("database1789464955")
+   *           .setUser("user3599307")
+   *           .build();
+   *   OperationFuture<ImportClusterResponse, OperationMetadata> future =
+   *       alloyDBAdminClient.importClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportClusterResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable() {
+    return stub.importClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports data to the cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ImportClusterRequest request =
+   *       ImportClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setGcsUri("gcsUri-1251224875")
+   *           .setDatabase("database1789464955")
+   *           .setUser("user3599307")
+   *           .build();
+   *   ApiFuture<Operation> future = alloyDBAdminClient.importClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportClusterRequest, Operation> importClusterCallable() {
+    return stub.importClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   DatabaseVersion version = DatabaseVersion.forNumber(0);
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(name, version).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param version Required. The version the cluster is going to be upgraded to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      ClusterName name, DatabaseVersion version) {
+    UpgradeClusterRequest request =
+        UpgradeClusterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setVersion(version)
+            .build();
+    return upgradeClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   DatabaseVersion version = DatabaseVersion.forNumber(0);
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(name, version).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the cluster.
+   * @param version Required. The version the cluster is going to be upgraded to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      String name, DatabaseVersion version) {
+    UpgradeClusterRequest request =
+        UpgradeClusterRequest.newBuilder().setName(name).setVersion(version).build();
+    return upgradeClusterAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   UpgradeClusterResponse response = alloyDBAdminClient.upgradeClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpgradeClusterResponse, OperationMetadata> upgradeClusterAsync(
+      UpgradeClusterRequest request) {
+    return upgradeClusterOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<UpgradeClusterResponse, OperationMetadata> future =
+   *       alloyDBAdminClient.upgradeClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   UpgradeClusterResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    return stub.upgradeClusterOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Upgrades a single Cluster. Imperative only.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   UpgradeClusterRequest request =
+   *       UpgradeClusterRequest.newBuilder()
+   *           .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setVersion(DatabaseVersion.forNumber(0))
+   *           .setRequestId("requestId693933066")
+   *           .setValidateOnly(true)
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future = alloyDBAdminClient.upgradeClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    return stub.upgradeClusterCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

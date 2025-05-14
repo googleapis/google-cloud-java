@@ -19,15 +19,7 @@
 // Protobuf Java Version: 3.25.5
 package com.google.cloud.aiplatform.v1beta1;
 
-/**
- *
- *
- * <pre>
- * Post startup script config.
- * </pre>
- *
- * Protobuf type {@code google.cloud.aiplatform.v1beta1.PostStartupScriptConfig}
- */
+/** Protobuf type {@code google.cloud.aiplatform.v1beta1.PostStartupScriptConfig} */
 public final class PostStartupScriptConfig extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PostStartupScriptConfig)
@@ -67,101 +59,31 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
   }
 
   /**
-   *
-   *
-   * <pre>
-   * Represents a notebook runtime post startup script behavior.
-   * </pre>
-   *
    * Protobuf enum {@code
    * google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior}
    */
   public enum PostStartupScriptBehavior implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     *
-     *
-     * <pre>
-     * Unspecified post startup script behavior.
-     * </pre>
-     *
-     * <code>POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 0;</code>
-     */
+    /** <code>POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 0;</code> */
     POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED(0),
-    /**
-     *
-     *
-     * <pre>
-     * Run post startup script after runtime is started.
-     * </pre>
-     *
-     * <code>RUN_ONCE = 1;</code>
-     */
+    /** <code>RUN_ONCE = 1;</code> */
     RUN_ONCE(1),
-    /**
-     *
-     *
-     * <pre>
-     * Run post startup script after runtime is stopped.
-     * </pre>
-     *
-     * <code>RUN_EVERY_START = 2;</code>
-     */
+    /** <code>RUN_EVERY_START = 2;</code> */
     RUN_EVERY_START(2),
-    /**
-     *
-     *
-     * <pre>
-     * Download and run post startup script every time runtime is started.
-     * </pre>
-     *
-     * <code>DOWNLOAD_AND_RUN_EVERY_START = 3;</code>
-     */
+    /** <code>DOWNLOAD_AND_RUN_EVERY_START = 3;</code> */
     DOWNLOAD_AND_RUN_EVERY_START(3),
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     *
-     *
-     * <pre>
-     * Unspecified post startup script behavior.
-     * </pre>
-     *
-     * <code>POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 0;</code>
-     */
+    /** <code>POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED = 0;</code> */
     public static final int POST_STARTUP_SCRIPT_BEHAVIOR_UNSPECIFIED_VALUE = 0;
 
-    /**
-     *
-     *
-     * <pre>
-     * Run post startup script after runtime is started.
-     * </pre>
-     *
-     * <code>RUN_ONCE = 1;</code>
-     */
+    /** <code>RUN_ONCE = 1;</code> */
     public static final int RUN_ONCE_VALUE = 1;
 
-    /**
-     *
-     *
-     * <pre>
-     * Run post startup script after runtime is stopped.
-     * </pre>
-     *
-     * <code>RUN_EVERY_START = 2;</code>
-     */
+    /** <code>RUN_EVERY_START = 2;</code> */
     public static final int RUN_EVERY_START_VALUE = 2;
 
-    /**
-     *
-     *
-     * <pre>
-     * Download and run post startup script every time runtime is started.
-     * </pre>
-     *
-     * <code>DOWNLOAD_AND_RUN_EVERY_START = 3;</code>
-     */
+    /** <code>DOWNLOAD_AND_RUN_EVERY_START = 3;</code> */
     public static final int DOWNLOAD_AND_RUN_EVERY_START_VALUE = 3;
 
     public final int getNumber() {
@@ -260,12 +182,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
   private volatile java.lang.Object postStartupScript_ = "";
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script to run after runtime is started.
-   * </pre>
-   *
    * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The postStartupScript.
@@ -284,12 +200,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
   }
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script to run after runtime is started.
-   * </pre>
-   *
    * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for postStartupScript.
@@ -313,13 +223,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
   private volatile java.lang.Object postStartupScriptUrl_ = "";
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script url to download. Example:
-   * https://bucket/script.sh
-   * </pre>
-   *
    * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The postStartupScriptUrl.
@@ -338,13 +241,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
   }
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script url to download. Example:
-   * https://bucket/script.sh
-   * </pre>
-   *
    * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for postStartupScriptUrl.
@@ -366,13 +262,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
   private int postStartupScriptBehavior_ = 0;
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script behavior that defines download and execution
-   * behavior.
-   * </pre>
-   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -385,13 +274,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
   }
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script behavior that defines download and execution
-   * behavior.
-   * </pre>
-   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -595,15 +477,7 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     return builder;
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Post startup script config.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.aiplatform.v1beta1.PostStartupScriptConfig}
-   */
+  /** Protobuf type {@code google.cloud.aiplatform.v1beta1.PostStartupScriptConfig} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.PostStartupScriptConfig)
@@ -809,12 +683,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     private java.lang.Object postStartupScript_ = "";
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script to run after runtime is started.
-     * </pre>
-     *
      * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The postStartupScript.
@@ -832,12 +700,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script to run after runtime is started.
-     * </pre>
-     *
      * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for postStartupScript.
@@ -855,12 +717,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script to run after runtime is started.
-     * </pre>
-     *
      * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The postStartupScript to set.
@@ -877,12 +733,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script to run after runtime is started.
-     * </pre>
-     *
      * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
@@ -895,12 +745,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script to run after runtime is started.
-     * </pre>
-     *
      * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for postStartupScript to set.
@@ -920,13 +764,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     private java.lang.Object postStartupScriptUrl_ = "";
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script url to download. Example:
-     * https://bucket/script.sh
-     * </pre>
-     *
      * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The postStartupScriptUrl.
@@ -944,13 +781,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script url to download. Example:
-     * https://bucket/script.sh
-     * </pre>
-     *
      * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for postStartupScriptUrl.
@@ -968,13 +798,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script url to download. Example:
-     * https://bucket/script.sh
-     * </pre>
-     *
      * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The postStartupScriptUrl to set.
@@ -991,13 +814,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script url to download. Example:
-     * https://bucket/script.sh
-     * </pre>
-     *
      * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
@@ -1010,13 +826,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script url to download. Example:
-     * https://bucket/script.sh
-     * </pre>
-     *
      * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for postStartupScriptUrl to set.
@@ -1036,13 +845,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     private int postStartupScriptBehavior_ = 0;
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script behavior that defines download and execution
-     * behavior.
-     * </pre>
-     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1055,13 +857,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script behavior that defines download and execution
-     * behavior.
-     * </pre>
-     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1077,13 +872,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script behavior that defines download and execution
-     * behavior.
-     * </pre>
-     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1103,13 +891,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script behavior that defines download and execution
-     * behavior.
-     * </pre>
-     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1130,13 +911,6 @@ public final class PostStartupScriptConfig extends com.google.protobuf.Generated
     }
 
     /**
-     *
-     *
-     * <pre>
-     * Optional. Post startup script behavior that defines download and execution
-     * behavior.
-     * </pre>
-     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>

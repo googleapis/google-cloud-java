@@ -25,12 +25,6 @@ public interface PostStartupScriptConfigOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script to run after runtime is started.
-   * </pre>
-   *
    * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The postStartupScript.
@@ -38,12 +32,6 @@ public interface PostStartupScriptConfigOrBuilder
   java.lang.String getPostStartupScript();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script to run after runtime is started.
-   * </pre>
-   *
    * <code>string post_startup_script = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for postStartupScript.
@@ -51,13 +39,6 @@ public interface PostStartupScriptConfigOrBuilder
   com.google.protobuf.ByteString getPostStartupScriptBytes();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script url to download. Example:
-   * https://bucket/script.sh
-   * </pre>
-   *
    * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The postStartupScriptUrl.
@@ -65,13 +46,6 @@ public interface PostStartupScriptConfigOrBuilder
   java.lang.String getPostStartupScriptUrl();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script url to download. Example:
-   * https://bucket/script.sh
-   * </pre>
-   *
    * <code>string post_startup_script_url = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for postStartupScriptUrl.
@@ -79,13 +53,6 @@ public interface PostStartupScriptConfigOrBuilder
   com.google.protobuf.ByteString getPostStartupScriptUrlBytes();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script behavior that defines download and execution
-   * behavior.
-   * </pre>
-   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -95,13 +62,6 @@ public interface PostStartupScriptConfigOrBuilder
   int getPostStartupScriptBehaviorValue();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. Post startup script behavior that defines download and execution
-   * behavior.
-   * </pre>
-   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig.PostStartupScriptBehavior post_startup_script_behavior = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>

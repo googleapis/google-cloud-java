@@ -392,10 +392,13 @@ public class PlacesClientTest {
             .setFuelOptions(FuelOptions.newBuilder().build())
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
             .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
-            .setAreaSummary(Place.AreaSummary.newBuilder().build())
             .addAllContainingPlaces(new ArrayList<Place.ContainingPlace>())
             .setPureServiceAreaBusiness(true)
+            .setAddressDescriptor(AddressDescriptor.newBuilder().build())
             .setPriceRange(PriceRange.newBuilder().build())
+            .setReviewSummary(Place.ReviewSummary.newBuilder().build())
+            .setEvChargeAmenitySummary(Place.EvChargeAmenitySummary.newBuilder().build())
+            .setNeighborhoodSummary(Place.NeighborhoodSummary.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 
@@ -496,10 +499,13 @@ public class PlacesClientTest {
             .setFuelOptions(FuelOptions.newBuilder().build())
             .setEvChargeOptions(EVChargeOptions.newBuilder().build())
             .setGenerativeSummary(Place.GenerativeSummary.newBuilder().build())
-            .setAreaSummary(Place.AreaSummary.newBuilder().build())
             .addAllContainingPlaces(new ArrayList<Place.ContainingPlace>())
             .setPureServiceAreaBusiness(true)
+            .setAddressDescriptor(AddressDescriptor.newBuilder().build())
             .setPriceRange(PriceRange.newBuilder().build())
+            .setReviewSummary(Place.ReviewSummary.newBuilder().build())
+            .setEvChargeAmenitySummary(Place.EvChargeAmenitySummary.newBuilder().build())
+            .setNeighborhoodSummary(Place.NeighborhoodSummary.newBuilder().build())
             .build();
     mockPlaces.addResponse(expectedResponse);
 

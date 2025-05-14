@@ -75,7 +75,7 @@ public final class ListListingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The parent resource path of the listing.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class ListListingsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The parent resource path of the listing.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -599,7 +599,7 @@ public final class ListListingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent resource path of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -625,7 +625,7 @@ public final class ListListingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent resource path of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -651,7 +651,7 @@ public final class ListListingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent resource path of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -676,7 +676,7 @@ public final class ListListingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent resource path of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -697,7 +697,7 @@ public final class ListListingsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent resource path of the listing.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>

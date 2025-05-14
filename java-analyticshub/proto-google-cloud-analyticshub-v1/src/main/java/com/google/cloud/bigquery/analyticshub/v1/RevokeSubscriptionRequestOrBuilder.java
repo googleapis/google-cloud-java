@@ -29,7 +29,7 @@ public interface RevokeSubscriptionRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the subscription to revoke.
-   * e.g. projects/123/locations/US/subscriptions/456
+   * e.g. projects/123/locations/us/subscriptions/456
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface RevokeSubscriptionRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the subscription to revoke.
-   * e.g. projects/123/locations/US/subscriptions/456
+   * e.g. projects/123/locations/us/subscriptions/456
    * </pre>
    *
    * <code>
@@ -55,4 +55,19 @@ public interface RevokeSubscriptionRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the subscription is commercial then this field must be set to
+   * true, otherwise a failure is thrown. This acts as a safety guard to avoid
+   * revoking commercial subscriptions accidentally.
+   * </pre>
+   *
+   * <code>bool revoke_commercial = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The revokeCommercial.
+   */
+  boolean getRevokeCommercial();
 }

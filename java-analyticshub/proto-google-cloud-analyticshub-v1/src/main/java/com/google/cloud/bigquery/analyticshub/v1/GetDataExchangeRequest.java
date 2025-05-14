@@ -74,7 +74,7 @@ public final class GetDataExchangeRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the data exchange.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class GetDataExchangeRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The resource name of the data exchange.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -478,7 +478,7 @@ public final class GetDataExchangeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the data exchange.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -504,7 +504,7 @@ public final class GetDataExchangeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the data exchange.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -530,7 +530,7 @@ public final class GetDataExchangeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the data exchange.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -555,7 +555,7 @@ public final class GetDataExchangeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the data exchange.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>
@@ -576,7 +576,7 @@ public final class GetDataExchangeRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The resource name of the data exchange.
-     * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+     * e.g. `projects/myproject/locations/us/dataExchanges/123`.
      * </pre>
      *
      * <code>

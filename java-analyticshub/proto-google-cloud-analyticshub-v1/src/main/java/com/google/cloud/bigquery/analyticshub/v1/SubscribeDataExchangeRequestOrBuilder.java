@@ -29,7 +29,7 @@ public interface SubscribeDataExchangeRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the Data Exchange.
-   * e.g. `projects/publisherproject/locations/US/dataExchanges/123`
+   * e.g. `projects/publisherproject/locations/us/dataExchanges/123`
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface SubscribeDataExchangeRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the Data Exchange.
-   * e.g. `projects/publisherproject/locations/US/dataExchanges/123`
+   * e.g. `projects/publisherproject/locations/us/dataExchanges/123`
    * </pre>
    *
    * <code>
@@ -61,7 +61,7 @@ public interface SubscribeDataExchangeRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource path of the Subscription.
-   * e.g. `projects/subscriberproject/locations/US`
+   * e.g. `projects/subscriberproject/locations/us`
    * </pre>
    *
    * <code>
@@ -77,7 +77,7 @@ public interface SubscribeDataExchangeRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource path of the Subscription.
-   * e.g. `projects/subscriberproject/locations/US`
+   * e.g. `projects/subscriberproject/locations/us`
    * </pre>
    *
    * <code>

@@ -1340,8 +1340,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     default void subscribeDataExchange(
@@ -1745,8 +1747,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     public void subscribeDataExchange(
@@ -2104,8 +2108,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     public com.google.longrunning.Operation subscribeDataExchange(
@@ -2425,8 +2431,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     public com.google.longrunning.Operation subscribeDataExchange(
@@ -2761,8 +2769,10 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
-     * Creates a Subscription to a Data Clean Room. This is a long-running
-     * operation as it will create one or more linked datasets.
+     * Creates a Subscription to a Data Clean Room. This is a
+     * long-running operation as it will create one or more linked datasets.
+     * Throws a Bad Request error if the Data Exchange does not contain any
+     * listings.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

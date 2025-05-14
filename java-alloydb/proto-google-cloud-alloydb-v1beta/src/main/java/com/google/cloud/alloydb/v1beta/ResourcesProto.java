@@ -165,6 +165,14 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_alloydb_v1beta_Instance_ClientConnectionConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1beta_Instance_PscAutoConnectionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1beta_Instance_PscAutoConnectionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_fieldAccessorTable;
@@ -343,7 +351,7 @@ public final class ResourcesProto {
           + "\003day\030\001 \001(\0162\026.google.type.DayOfWeek\022*\n\n"
           + "start_time\030\002 \001(\0132\026.google.type.TimeOfDay\"J\n"
           + "\023MaintenanceSchedule\0223\n\n"
-          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\335\031\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\210\032\n"
           + "\007Cluster\022G\n\r"
           + "backup_source\030\017 \001(\0132).google.c"
           + "loud.alloydb.v1beta.BackupSourceB\003\340A\003H\000\022M\n"
@@ -415,9 +423,10 @@ public final class ResourcesProto {
           + "\024primary_cluster_name\030\001 \001(\t\0325\n"
           + "\r"
           + "PrimaryConfig\022$\n"
-          + "\027secondary_cluster_names\030\001 \003(\tB\003\340A\003\032%\n"
+          + "\027secondary_cluster_names\030\001 \003(\tB\003\340A\003\032P\n"
           + "\tPscConfig\022\030\n"
-          + "\013psc_enabled\030\001 \001(\010B\003\340A\001\032\323\001\n\r"
+          + "\013psc_enabled\030\001 \001(\010B\003\340A\001\022)\n"
+          + "\034service_owned_project_number\030\003 \001(\003B\003\340A\003\032\323\001\n\r"
           + "TrialMetadata\022.\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\0220\n"
@@ -439,8 +448,7 @@ public final class ResourcesProto {
           + "\005EMPTY\020\003\022\014\n"
           + "\010CREATING\020\004\022\014\n"
           + "\010DELETING\020\005\022\n\n"
-          + "\006FAILED\020\006\022\021\n"
-          + "\r"
+          + "\006FAILED\020\006\022\021\n\r"
           + "BOOTSTRAPPING\020\007\022\017\n"
           + "\013MAINTENANCE\020\010\022\r\n"
           + "\tPROMOTING\020\t\"G\n"
@@ -448,9 +456,9 @@ public final class ResourcesProto {
           + "\030CLUSTER_TYPE_UNSPECIFIED\020\000\022\013\n"
           + "\007PRIMARY\020\001\022\r\n"
           + "\tSECONDARY\020\002:u\352Ar\n"
-          + "\036alloydb.googleapis.com/Cluster\022:projects/{project}/locations/{location}/"
-          + "clusters/{cluster}*\010clusters2\007clusterR\001\001B\010\n"
-          + "\006source\"\341\037\n"
+          + "\036alloydb.googleapis.com/Cluster\022:projects/{project}/locations/{locatio"
+          + "n}/clusters/{cluster}*\010clusters2\007clusterR\001\001B\010\n"
+          + "\006source\"\350#\n"
           + "\010Instance\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\024\n"
           + "\014display_name\030\002 \001(\t\022\020\n"
@@ -461,25 +469,25 @@ public final class ResourcesProto {
           + "\006labels\030\007 \003(\01321.google.cloud.alloydb.v1beta.Instance.LabelsEntry\022?\n"
           + "\005state\030\010"
           + " \001(\0162+.google.cloud.alloydb.v1beta.Instance.StateB\003\340A\003\022N\n\r"
-          + "instance_type\030\t \001(\0162"
-          + "2.google.cloud.alloydb.v1beta.Instance.InstanceTypeB\003\340A\002\022K\n"
+          + "instance_type\030\t \001"
+          + "(\01622.google.cloud.alloydb.v1beta.Instance.InstanceTypeB\003\340A\002\022K\n"
           + "\016machine_config\030\n"
           + " \001(\01323.google.cloud.alloydb.v1beta.Instance.MachineConfig\022Q\n"
-          + "\021availability_type\030\013 \001(\016"
-          + "26.google.cloud.alloydb.v1beta.Instance.AvailabilityType\022\020\n"
+          + "\021availability_type\030\013 "
+          + "\001(\01626.google.cloud.alloydb.v1beta.Instance.AvailabilityType\022\020\n"
           + "\010gce_zone\030\014 \001(\t\022P\n"
           + "\016database_flags\030\r"
           + " \003(\01328.google.cloud.alloydb.v1beta.Instance.DatabaseFlagsEntry\022F\n\r"
           + "writable_node\030\023"
           + " \001(\0132*.google.cloud.alloydb.v1beta.Instance.NodeB\003\340A\003\022>\n"
-          + "\005nodes\030\024 "
-          + "\003(\0132*.google.cloud.alloydb.v1beta.Instance.NodeB\003\340A\003\022`\n"
-          + "\025query_insights_config\030\025 "
-          + "\001(\0132A.google.cloud.alloydb.v1beta.Instance.QueryInsightsInstanceConfig\022_\n"
-          + "\024observability_config\030\032 \001(\0132A.google.cloud.allo"
-          + "ydb.v1beta.Instance.ObservabilityInstanceConfig\022N\n"
-          + "\020read_pool_config\030\016 \001(\01324.goog"
-          + "le.cloud.alloydb.v1beta.Instance.ReadPoolConfig\022\027\n\n"
+          + "\005nodes\030\024"
+          + " \003(\0132*.google.cloud.alloydb.v1beta.Instance.NodeB\003\340A\003\022`\n"
+          + "\025query_insights_config\030\025"
+          + " \001(\0132A.google.cloud.alloydb.v1beta.Instance.QueryInsightsInstanceConfig\022_\n"
+          + "\024observability_config\030\032 \001(\0132A.google.cloud.a"
+          + "lloydb.v1beta.Instance.ObservabilityInstanceConfig\022N\n"
+          + "\020read_pool_config\030\016 \001(\01324.g"
+          + "oogle.cloud.alloydb.v1beta.Instance.ReadPoolConfig\022\027\n\n"
           + "ip_address\030\017 \001(\tB\003\340A\003\022&\n"
           + "\021public_ip_address\030\033 \001("
           + "\tB\013\340A\003\342\214\317\327\010\002\010\002\022\030\n"
@@ -489,19 +497,22 @@ public final class ResourcesProto {
           + " \003(\01326.google.cloud.alloydb.v1beta.Instance.AnnotationsEntry\022I\n\r"
           + "update_policy\030\026"
           + " \001(\01322.google.cloud.alloydb.v1beta.Instance.UpdatePolicy\022c\n"
-          + "\030client_connection_config\030\027 \001(\0132<.google.cloud.alloyd"
-          + "b.v1beta.Instance.ClientConnectionConfigB\003\340A\001\022\032\n\r"
+          + "\030client_connection_config\030\027 \001(\0132<.google.cloud.all"
+          + "oydb.v1beta.Instance.ClientConnectionConfigB\003\340A\001\022\032\n\r"
           + "satisfies_pzs\030\030 \001(\010B\003\340A\003\022Y\n"
-          + "\023psc_instance_config\030\034 \001(\01327.google.cloud.al"
-          + "loydb.v1beta.Instance.PscInstanceConfigB\003\340A\001\022X\n"
-          + "\016network_config\030\035 \001(\0132;.google.cl"
-          + "oud.alloydb.v1beta.Instance.InstanceNetworkConfigB\003\340A\001\022M\n\r"
-          + "gemini_config\030! \001(\01321."
-          + "google.cloud.alloydb.v1beta.GeminiInstanceConfigB\003\340A\001\0221\n"
+          + "\023psc_instance_config\030\034 \001(\01327.google.cloud"
+          + ".alloydb.v1beta.Instance.PscInstanceConfigB\003\340A\001\022X\n"
+          + "\016network_config\030\035 \001(\0132;.google"
+          + ".cloud.alloydb.v1beta.Instance.InstanceNetworkConfigB\003\340A\001\022M\n\r"
+          + "gemini_config\030! \001(\013"
+          + "21.google.cloud.alloydb.v1beta.GeminiInstanceConfigB\003\340A\001\0221\n"
           + "\034outbound_public_ip_addresses\030\" \003("
-          + "\tB\013\340A\003\342\214\317\327\010\002\010\002\032\"\n\r"
+          + "\tB\013\340A\003\342\214\317\327\010\002\010\002\022G\n\n"
+          + "gca_config\030&"
+          + " \001(\0132..google.cloud.alloydb.v1beta.GCAInstanceConfigB\003\340A\003\0328\n\r"
           + "MachineConfig\022\021\n"
-          + "\tcpu_count\030\001 \001(\005\032R\n"
+          + "\tcpu_count\030\001 \001(\005\022\024\n"
+          + "\014machine_type\030\004 \001(\t\032R\n"
           + "\004Node\022\024\n"
           + "\007zone_id\030\001 \001(\tB\003\340A\003\022\017\n"
           + "\002id\030\002 \001(\tB\003\340A\003\022\017\n"
@@ -526,7 +537,8 @@ public final class ResourcesProto {
           + "\027record_application_tags\030\006 \001(\010H\005\210\001\001\022#\n"
           + "\026query_plans_per_minute\030\007 \001(\005H\006\210\001\001\022!\n"
           + "\024track_active_queries\030\010 \001(\010H\007\210\001\001\022!\n"
-          + "\024track_client_address\030\t \001(\010H\010\210\001\001B\n\n"
+          + "\024track_client_address\030\t \001(\010H\010\210\001\001B\n"
+          + "\n"
           + "\010_enabledB\024\n"
           + "\022_preserve_commentsB\024\n"
           + "\022_track_wait_eventsB\031\n"
@@ -539,23 +551,35 @@ public final class ResourcesProto {
           + "\016ReadPoolConfig\022\022\n\n"
           + "node_count\030\001 \001(\005\032\221\001\n"
           + "\014UpdatePolicy\022E\n"
-          + "\004mode\030\001 \001(\01627.google.cloud"
-          + ".alloydb.v1beta.Instance.UpdatePolicy.Mode\":\n"
+          + "\004mode\030\001 "
+          + "\001(\01627.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Mode\":\n"
           + "\004Mode\022\024\n"
           + "\020MODE_UNSPECIFIED\020\000\022\013\n"
           + "\007DEFAULT\020\001\022\017\n"
           + "\013FORCE_APPLY\020\002\032z\n"
           + "\026ClientConnectionConfig\022\037\n"
           + "\022require_connectors\030\001 \001(\010B\003\340A\001\022?\n\n"
-          + "ssl_config\030\002"
-          + " \001(\0132&.google.cloud.alloydb.v1beta.SslConfigB\003\340A\001\032|\n"
+          + "ssl_config\030\002 \001(\0132"
+          + "&.google.cloud.alloydb.v1beta.SslConfigB\003\340A\001\0329\n"
+          + "\022PscInterfaceConfig\022#\n"
+          + "\033network_attachment_resource\030\001 \001(\t\032\251\001\n"
+          + "\027PscAutoConnectionConfig\022\030\n"
+          + "\020consumer_project\030\001 \001(\t\022\030\n"
+          + "\020consumer_network\030\002 \001(\t\022\037\n\n"
+          + "ip_address\030\003 \001(\tB\013\340A\003\342\214\317\327\010\002\010\002\022\023\n"
+          + "\006status\030\004 \001(\tB\003\340A\003\022$\n"
+          + "\027consumer_network_status\030\005 \001(\tB\003\340A\003\032\274\002\n"
           + "\021PscInstanceConfig\022$\n"
           + "\027service_attachment_link\030\001 \001(\tB\003\340A\003\022&\n"
           + "\031allowed_consumer_projects\030\002 \003(\tB\003\340A\001\022\031\n"
-          + "\014psc_dns_name\030\007 \001(\tB\003\340A\003\032\213\002\n"
+          + "\014psc_dns_name\030\007 \001(\tB\003\340A\003\022\\\n"
+          + "\025psc_interface_configs\030\010 \003(\01328.goog"
+          + "le.cloud.alloydb.v1beta.Instance.PscInterfaceConfigB\003\340A\001\022`\n"
+          + "\024psc_auto_connections\030\t"
+          + " \003(\0132=.google.cloud.alloydb.v1beta.Instance.PscAutoConnectionConfigB\003\340A\001\032\213\002\n"
           + "\025InstanceNetworkConfig\022x\n"
-          + "\034authorized_external_networks\030\001 \003(\0132M.google.cloud.alloydb."
-          + "v1beta.Instance.InstanceNetworkConfig.AuthorizedNetworkB\003\340A\001\022\035\n"
+          + "\034authorized_external_networks\030\001 \003(\0132M.google.cloud.alloyd"
+          + "b.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetworkB\003\340A\001\022\035\n"
           + "\020enable_public_ip\030\002 \001(\010B\003\340A\001\022&\n"
           + "\031enable_outbound_public_ip\030\003 \001(\010B\003\340A\001\0321\n"
           + "\021AuthorizedNetwork\022\034\n\n"
@@ -567,7 +591,8 @@ public final class ResourcesProto {
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
+          + "\003key\030\001 \001(\t\022\r"
+          + "\n"
           + "\005value\030\002 \001(\t:\0028\001\"\221\001\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\t\n"
@@ -582,15 +607,14 @@ public final class ResourcesProto {
           + "\014InstanceType\022\035\n"
           + "\031INSTANCE_TYPE_UNSPECIFIED\020\000\022\013\n"
           + "\007PRIMARY\020\001\022\r\n"
-          + "\tREAD_POOL\020\002\022\r"
-          + "\n"
+          + "\tREAD_POOL\020\002\022\r\n"
           + "\tSECONDARY\020\003\"N\n"
           + "\020AvailabilityType\022!\n"
           + "\035AVAILABILITY_TYPE_UNSPECIFIED\020\000\022\t\n"
           + "\005ZONAL\020\001\022\014\n"
           + "\010REGIONAL\020\002:\216\001\352A\212\001\n"
-          + "\037alloydb.googleapis.com/Instance\022Oprojects/{project}/locati"
-          + "ons/{location}/clusters/{cluster}/instances/{instance}*"
+          + "\037alloydb.googleapis.com/Instance\022Oprojects/{project}/loca"
+          + "tions/{location}/clusters/{cluster}/instances/{instance}*"
           + "\tinstances2\010instanceR\001\001\"\352\002\n"
           + "\016ConnectionInfo\022\014\n"
           + "\004name\030\001 \001(\t\022\027\n\n"
@@ -600,9 +624,9 @@ public final class ResourcesProto {
           + "\025pem_certificate_chain\030\003 \003(\tB\005\030\001\340A\003\022\031\n"
           + "\014instance_uid\030\004 \001(\tB\003\340A\003\022\031\n"
           + "\014psc_dns_name\030\006 \001(\tB\003\340A\003:\254\001\352A\250\001\n"
-          + "%alloydb.googleapis.com/ConnectionInfo\022^proj"
-          + "ects/{project}/locations/{location}/clusters/{cluster}/instances/{instance}/conn"
-          + "ectionInfo*\017connectionInfos2\016connectionInfo\"\350\014\n"
+          + "%alloydb.googleapis.com/ConnectionInfo\022^projects/{project}/locations/{location}/cl"
+          + "usters/{cluster}/instances/{instance}/co"
+          + "nnectionInfo*\017connectionInfos2\016connectionInfo\"\350\014\n"
           + "\006Backup\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\024\n"
           + "\014display_name\030\002 \001(\t\022\020\n"
@@ -611,8 +635,8 @@ public final class ResourcesProto {
           + "\013update_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013delete_time\030\017 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
           + "\006labels\030\006 \003(\0132/.google.cloud.alloydb.v1beta.Backup.LabelsEntry\022=\n"
-          + "\005state\030\007 \001(\0162).go"
-          + "ogle.cloud.alloydb.v1beta.Backup.StateB\003\340A\003\0226\n"
+          + "\005state\030\007 \001(\0162)."
+          + "google.cloud.alloydb.v1beta.Backup.StateB\003\340A\003\0226\n"
           + "\004type\030\010 \001(\0162(.google.cloud.alloydb.v1beta.Backup.Type\022\023\n"
           + "\013description\030\t \001(\t\022\030\n"
           + "\013cluster_uid\030\022 \001(\tB\003\340A\003\022<\n"
@@ -625,13 +649,12 @@ public final class ResourcesProto {
           + "\017encryption_info\030\r"
           + " \001(\0132+.google.cloud.alloydb.v1beta.EncryptionInfoB\003\340A\003\022\014\n"
           + "\004etag\030\016 \001(\t\022I\n"
-          + "\013annotations\030\020"
-          + " \003(\01324.google.cloud.alloydb.v1beta.Backup.AnnotationsEntry\022\027\n"
-          + "\n"
+          + "\013annotations\030\020 \003(\01324.google.cloud"
+          + ".alloydb.v1beta.Backup.AnnotationsEntry\022\027\n\n"
           + "size_bytes\030\021 \001(\003B\003\340A\003\0224\n"
           + "\013expiry_time\030\023 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022U\n"
-          + "\017expiry_quantity\030\024 \001(\01327.google.cloud.all"
-          + "oydb.v1beta.Backup.QuantityBasedExpiryB\003\340A\003\022\032\n\r"
+          + "\017expiry_quantity\030\024 \001(\01327.google.cloud.a"
+          + "lloydb.v1beta.Backup.QuantityBasedExpiryB\003\340A\003\022\032\n\r"
           + "satisfies_pzs\030\025 \001(\010B\003\340A\003\022K\n"
           + "\020database_version\030\026"
           + " \001(\0162,.google.cloud.alloydb.v1beta.DatabaseVersionB\003\340A\003\022F\n"
@@ -660,21 +683,27 @@ public final class ResourcesProto {
           + "\tON_DEMAND\020\001\022\r\n"
           + "\tAUTOMATED\020\002\022\016\n\n"
           + "CONTINUOUS\020\003:p\352Am\n"
-          + "\035alloydb.googleapis.com/Backup\0228projects/{project}/locations/{"
-          + "location}/backups/{backup}*\007backups2\006backupR\001\001\"\211\007\n"
+          + "\035alloydb.googleapis.com/Backup\0228projects/{project}/locations"
+          + "/{location}/backups/{backup}*\007backups2\006backupR\001\001\"\220\t\n"
           + "\025SupportedDatabaseFlag\022d\n"
-          + "\023string_restrictions\030\007 \001(\0132E.google.cloud.all"
-          + "oydb.v1beta.SupportedDatabaseFlag.StringRestrictionsH\000\022f\n"
-          + "\024integer_restrictions\030\010 \001(\0132F.google.cloud.alloydb.v1beta.Suppo"
-          + "rtedDatabaseFlag.IntegerRestrictionsH\000\022\014\n"
+          + "\023string_restrictions\030\007 \001(\0132E.google.cloud.a"
+          + "lloydb.v1beta.SupportedDatabaseFlag.StringRestrictionsH\000\022f\n"
+          + "\024integer_restrictions\030\010 \001(\0132F.google.cloud.alloydb.v1beta.Sup"
+          + "portedDatabaseFlag.IntegerRestrictionsH\000\022\"\n"
+          + "\030recommended_string_value\030\n"
+          + " \001(\tH\001\022@\n"
+          + "\031recommended_integer_value\030\013"
+          + " \001(\0132\033.google.protobuf.Int64ValueH\001\022\014\n"
           + "\004name\030\001 \001(\t\022\021\n"
           + "\tflag_name\030\002 \001(\t\022P\n\n"
-          + "value_type\030\003"
-          + " \001(\0162<.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType\022\037\n"
+          + "value_type\030\003 \001(\0162<.go"
+          + "ogle.cloud.alloydb.v1beta.SupportedDatabaseFlag.ValueType\022\037\n"
           + "\027accepts_multiple_values\030\004 \001(\010\022K\n"
-          + "\025supported_db_versions\030\005"
-          + " \003(\0162,.google.cloud.alloydb.v1beta.DatabaseVersion\022\033\n"
-          + "\023requires_db_restart\030\006 \001(\010\032,\n"
+          + "\025supported_db_versions\030\005 \003("
+          + "\0162,.google.cloud.alloydb.v1beta.DatabaseVersion\022\033\n"
+          + "\023requires_db_restart\030\006 \001(\010\022G\n"
+          + "\005scope\030\t"
+          + " \001(\01628.google.cloud.alloydb.v1beta.SupportedDatabaseFlag.Scope\032,\n"
           + "\022StringRestrictions\022\026\n"
           + "\016allowed_values\030\001 \003(\t\032u\n"
           + "\023IntegerRestrictions\022.\n"
@@ -685,31 +714,35 @@ public final class ResourcesProto {
           + "\006STRING\020\001\022\013\n"
           + "\007INTEGER\020\002\022\t\n"
           + "\005FLOAT\020\003\022\010\n"
-          + "\004NONE\020\004:\227\001\352A\223\001\n"
-          + ",alloydb.googleapis.com/SupportedDatabaseFlag\0224p"
-          + "rojects/{project}/locations/{location}/f"
-          + "lags/{flag}*\026supportedDatabaseFlags2\025supportedDatabaseFlagB\016\n"
-          + "\014restrictions\"\376\002\n"
+          + "\004NONE\020\004\"A\n"
+          + "\005Scope\022\025\n"
+          + "\021SCOPE_UNSPECIFIED\020\000\022\014\n"
+          + "\010DATABASE\020\001\022\023\n"
+          + "\017CONNECTION_POOL\020\002:\227\001\352A\223\001\n"
+          + ",alloydb.googleapis.com/SupportedDatabaseFla"
+          + "g\0224projects/{project}/locations/{locatio"
+          + "n}/flags/{flag}*\026supportedDatabaseFlags2\025supportedDatabaseFlagB\016\n"
+          + "\014restrictionsB\023\n"
+          + "\021recommended_value\"\376\002\n"
           + "\004User\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\025\n"
           + "\010password\030\002 \001(\tB\003\340A\004\022\033\n"
           + "\016database_roles\030\004 \003(\tB\003\340A\001\022B\n"
-          + "\tuser_type\030\005"
-          + " \001(\0162*.google.cloud.alloydb.v1beta.User.UserTypeB\003\340A\001\022\035\n"
+          + "\tuser_type\030\005 \001(\0162*"
+          + ".google.cloud.alloydb.v1beta.User.UserTypeB\003\340A\001\022\035\n"
           + "\020keep_extra_roles\030\006 \001(\010B\003\340A\004\"Q\n"
           + "\010UserType\022\031\n"
           + "\025USER_TYPE_UNSPECIFIED\020\000\022\024\n"
           + "\020ALLOYDB_BUILT_IN\020\001\022\024\n"
           + "\020ALLOYDB_IAM_USER\020\002:y\352Av\n"
-          + "\033alloydb.googleapis.com/User\022Gprojects/{project}/locations"
-          + "/{location}/clusters/{cluster}/users/{user}*\005users2\004userR\001\001\"\334\001\n"
+          + "\033alloydb.googleapis.com/User\022Gprojects/{project}/locations/{location}/clu"
+          + "sters/{cluster}/users/{user}*\005users2\004userR\001\001\"\334\001\n"
           + "\010Database\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\024\n"
           + "\007charset\030\002 \001(\tB\003\340A\001\022\026\n"
           + "\tcollation\030\003 \001(\tB\003\340A\001:\216\001\352A\212\001\n"
-          + "\037alloydb.googleapis.com/Database\022Oprojects/{project}/lo"
-          + "cations/{location}/clusters/{cluster}/databases/{database}*"
-          + "\tdatabases2\010databaseR\001\001*^\n"
+          + "\037alloydb.googleapis.com/Database\022Oprojects/{project}/locations/{locati"
+          + "on}/clusters/{cluster}/databases/{database}*\tdatabases2\010databaseR\001\001*^\n"
           + "\014InstanceView\022\035\n"
           + "\031INSTANCE_VIEW_UNSPECIFIED\020\000\022\027\n"
           + "\023INSTANCE_VIEW_BASIC\020\001\022\026\n"
@@ -728,15 +761,16 @@ public final class ResourcesProto {
           + "\035SUBSCRIPTION_TYPE_UNSPECIFIED\020\000\022\014\n"
           + "\010STANDARD\020\001\022\t\n"
           + "\005TRIAL\020\002B\306\003\n"
-          + "\037com.google.cloud.alloydb.v1betaB\016ResourcesProtoP\001Z9cloud.google.com"
-          + "/go/alloydb/apiv1beta/alloydbpb;alloydbp"
-          + "b\252\002\033Google.Cloud.AlloyDb.V1Beta\312\002\033Google"
-          + "\\Cloud\\AlloyDb\\V1beta\352\002\036Google::Cloud::AlloyDB::V1beta\352A\246\001\n"
-          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}"
-          + "/locations/{location}/keyRings/{key_ring"
-          + "}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}\352AN\n"
-          + "\036compute.googleapis.com/Network\022,projects/{project}/"
-          + "global/networks/{network}b\006proto3"
+          + "\037com.google.cloud.alloydb.v1betaB\016Resources"
+          + "ProtoP\001Z9cloud.google.com/go/alloydb/api"
+          + "v1beta/alloydbpb;alloydbpb\252\002\033Google.Clou"
+          + "d.AlloyDb.V1Beta\312\002\033Google\\Cloud\\AlloyDb\\"
+          + "V1beta\352\002\036Google::Cloud::AlloyDB::V1beta\352A\246\001\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}/locations/{loc"
+          + "ation}/keyRings/{key_ring}/cryptoKeys/{c"
+          + "rypto_key}/cryptoKeyVersions/{crypto_key_version}\352AN\n"
+          + "\036compute.googleapis.com/Network\022,projects/{project}/global/networks"
+          + "/{network}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -981,7 +1015,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1beta_Cluster_PscConfig_descriptor,
             new java.lang.String[] {
-              "PscEnabled",
+              "PscEnabled", "ServiceOwnedProjectNumber",
             });
     internal_static_google_cloud_alloydb_v1beta_Cluster_TrialMetadata_descriptor =
         internal_static_google_cloud_alloydb_v1beta_Cluster_descriptor.getNestedTypes().get(4);
@@ -1051,6 +1085,7 @@ public final class ResourcesProto {
               "NetworkConfig",
               "GeminiConfig",
               "OutboundPublicIpAddresses",
+              "GcaConfig",
             });
     internal_static_google_cloud_alloydb_v1beta_Instance_MachineConfig_descriptor =
         internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(0);
@@ -1058,7 +1093,7 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1beta_Instance_MachineConfig_descriptor,
             new java.lang.String[] {
-              "CpuCount",
+              "CpuCount", "MachineType",
             });
     internal_static_google_cloud_alloydb_v1beta_Instance_Node_descriptor =
         internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(1);
@@ -1119,16 +1154,36 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "RequireConnectors", "SslConfig",
             });
-    internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_descriptor =
+    internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_descriptor =
         internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(7);
+    internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_descriptor,
+            new java.lang.String[] {
+              "NetworkAttachmentResource",
+            });
+    internal_static_google_cloud_alloydb_v1beta_Instance_PscAutoConnectionConfig_descriptor =
+        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(8);
+    internal_static_google_cloud_alloydb_v1beta_Instance_PscAutoConnectionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1beta_Instance_PscAutoConnectionConfig_descriptor,
+            new java.lang.String[] {
+              "ConsumerProject", "ConsumerNetwork", "IpAddress", "Status", "ConsumerNetworkStatus",
+            });
+    internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_descriptor =
+        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(9);
     internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_descriptor,
             new java.lang.String[] {
-              "ServiceAttachmentLink", "AllowedConsumerProjects", "PscDnsName",
+              "ServiceAttachmentLink",
+              "AllowedConsumerProjects",
+              "PscDnsName",
+              "PscInterfaceConfigs",
+              "PscAutoConnections",
             });
     internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_descriptor =
-        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(8);
+        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(10);
     internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_descriptor,
@@ -1146,7 +1201,7 @@ public final class ResourcesProto {
               "CidrRange",
             });
     internal_static_google_cloud_alloydb_v1beta_Instance_LabelsEntry_descriptor =
-        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(9);
+        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(11);
     internal_static_google_cloud_alloydb_v1beta_Instance_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1beta_Instance_LabelsEntry_descriptor,
@@ -1154,7 +1209,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_alloydb_v1beta_Instance_DatabaseFlagsEntry_descriptor =
-        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(10);
+        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(12);
     internal_static_google_cloud_alloydb_v1beta_Instance_DatabaseFlagsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1beta_Instance_DatabaseFlagsEntry_descriptor,
@@ -1162,7 +1217,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_alloydb_v1beta_Instance_AnnotationsEntry_descriptor =
-        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(11);
+        internal_static_google_cloud_alloydb_v1beta_Instance_descriptor.getNestedTypes().get(13);
     internal_static_google_cloud_alloydb_v1beta_Instance_AnnotationsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_alloydb_v1beta_Instance_AnnotationsEntry_descriptor,
@@ -1252,13 +1307,17 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "StringRestrictions",
               "IntegerRestrictions",
+              "RecommendedStringValue",
+              "RecommendedIntegerValue",
               "Name",
               "FlagName",
               "ValueType",
               "AcceptsMultipleValues",
               "SupportedDbVersions",
               "RequiresDbRestart",
+              "Scope",
               "Restrictions",
+              "RecommendedValue",
             });
     internal_static_google_cloud_alloydb_v1beta_SupportedDatabaseFlag_StringRestrictions_descriptor =
         internal_static_google_cloud_alloydb_v1beta_SupportedDatabaseFlag_descriptor

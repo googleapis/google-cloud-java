@@ -36,7 +36,7 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=520
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=570
    * @return Whether the ragFileChunkingConfig field is set.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UploadRagFileConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.UploadRagFileConfig.rag_file_chunking_config is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=520
+   *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=570
    * @return The ragFileChunkingConfig.
    */
   @java.lang.Deprecated

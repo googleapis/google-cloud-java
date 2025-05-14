@@ -3094,6 +3094,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return The pscEnabled.
      */
     boolean getPscEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project number that needs to be allowlisted on the
+     * network attachment to enable outbound connectivity.
+     * </pre>
+     *
+     * <code>int64 service_owned_project_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The serviceOwnedProjectNumber.
+     */
+    long getServiceOwnedProjectNumber();
   }
 
   /**
@@ -3159,6 +3174,27 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return pscEnabled_;
     }
 
+    public static final int SERVICE_OWNED_PROJECT_NUMBER_FIELD_NUMBER = 3;
+    private long serviceOwnedProjectNumber_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The project number that needs to be allowlisted on the
+     * network attachment to enable outbound connectivity.
+     * </pre>
+     *
+     * <code>int64 service_owned_project_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The serviceOwnedProjectNumber.
+     */
+    @java.lang.Override
+    public long getServiceOwnedProjectNumber() {
+      return serviceOwnedProjectNumber_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3176,6 +3212,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (pscEnabled_ != false) {
         output.writeBool(1, pscEnabled_);
       }
+      if (serviceOwnedProjectNumber_ != 0L) {
+        output.writeInt64(3, serviceOwnedProjectNumber_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3187,6 +3226,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (pscEnabled_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, pscEnabled_);
+      }
+      if (serviceOwnedProjectNumber_ != 0L) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt64Size(3, serviceOwnedProjectNumber_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3205,6 +3248,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.alloydb.v1beta.Cluster.PscConfig) obj;
 
       if (getPscEnabled() != other.getPscEnabled()) return false;
+      if (getServiceOwnedProjectNumber() != other.getServiceOwnedProjectNumber()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3218,6 +3262,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PSC_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPscEnabled());
+      hash = (37 * hash) + SERVICE_OWNED_PROJECT_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getServiceOwnedProjectNumber());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3361,6 +3407,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         pscEnabled_ = false;
+        serviceOwnedProjectNumber_ = 0L;
         return this;
       }
 
@@ -3399,6 +3446,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.pscEnabled_ = pscEnabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.serviceOwnedProjectNumber_ = serviceOwnedProjectNumber_;
         }
       }
 
@@ -3453,6 +3503,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         if (other.getPscEnabled() != false) {
           setPscEnabled(other.getPscEnabled());
         }
+        if (other.getServiceOwnedProjectNumber() != 0L) {
+          setServiceOwnedProjectNumber(other.getServiceOwnedProjectNumber());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3485,6 +3538,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 24:
+                {
+                  serviceOwnedProjectNumber_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3559,6 +3618,68 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public Builder clearPscEnabled() {
         bitField0_ = (bitField0_ & ~0x00000001);
         pscEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long serviceOwnedProjectNumber_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project number that needs to be allowlisted on the
+       * network attachment to enable outbound connectivity.
+       * </pre>
+       *
+       * <code>int64 service_owned_project_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The serviceOwnedProjectNumber.
+       */
+      @java.lang.Override
+      public long getServiceOwnedProjectNumber() {
+        return serviceOwnedProjectNumber_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project number that needs to be allowlisted on the
+       * network attachment to enable outbound connectivity.
+       * </pre>
+       *
+       * <code>int64 service_owned_project_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The serviceOwnedProjectNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceOwnedProjectNumber(long value) {
+
+        serviceOwnedProjectNumber_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The project number that needs to be allowlisted on the
+       * network attachment to enable outbound connectivity.
+       * </pre>
+       *
+       * <code>int64 service_owned_project_number = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceOwnedProjectNumber() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        serviceOwnedProjectNumber_ = 0L;
         onChanged();
         return this;
       }
@@ -6202,7 +6323,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=622
+   *     google/cloud/alloydb/v1beta/resources.proto;l=625
    * @return The network.
    */
   @java.lang.Override
@@ -6235,7 +6356,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=622
+   *     google/cloud/alloydb/v1beta/resources.proto;l=625
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -6591,7 +6712,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=657
+   *     google/cloud/alloydb/v1beta/resources.proto;l=660
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -6610,7 +6731,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=657
+   *     google/cloud/alloydb/v1beta/resources.proto;l=660
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -11419,7 +11540,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=622
+     *     google/cloud/alloydb/v1beta/resources.proto;l=625
      * @return The network.
      */
     @java.lang.Deprecated
@@ -11451,7 +11572,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=622
+     *     google/cloud/alloydb/v1beta/resources.proto;l=625
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -11483,7 +11604,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=622
+     *     google/cloud/alloydb/v1beta/resources.proto;l=625
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -11514,7 +11635,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=622
+     *     google/cloud/alloydb/v1beta/resources.proto;l=625
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11541,7 +11662,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=622
+     *     google/cloud/alloydb/v1beta/resources.proto;l=625
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -12418,7 +12539,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=657
+     *     google/cloud/alloydb/v1beta/resources.proto;l=660
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -12436,7 +12557,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=657
+     *     google/cloud/alloydb/v1beta/resources.proto;l=660
      * @return The sslConfig.
      */
     @java.lang.Deprecated

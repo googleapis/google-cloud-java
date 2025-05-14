@@ -112,7 +112,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Export job type.
+     * Export job.
      * </pre>
      *
      * <code>EXPORT = 2;</code>
@@ -147,7 +147,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Export job type.
+     * Export job.
      * </pre>
      *
      * <code>EXPORT = 2;</code>
@@ -1588,7 +1588,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The number of entries that have been exported.
+     * Output only. The number of entries that were exported.
      * </pre>
      *
      * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1601,7 +1601,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The error message if the export job failed.
+     * Output only. The error message if the metadata export job failed.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1614,7 +1614,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The error message if the export job failed.
+     * Output only. The error message if the metadata export job failed.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1628,8 +1628,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Export Job Results. The result is based on the snapshot at the time when
-   * the job is created.
+   * Summary results from a metadata export job. The results are a snapshot of
+   * the metadata at the time when the job was created. The exported entries are
+   * saved to a Cloud Storage bucket.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobResult}
@@ -1677,7 +1678,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The number of entries that have been exported.
+     * Output only. The number of entries that were exported.
      * </pre>
      *
      * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1698,7 +1699,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The error message if the export job failed.
+     * Output only. The error message if the metadata export job failed.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1722,7 +1723,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The error message if the export job failed.
+     * Output only. The error message if the metadata export job failed.
      * </pre>
      *
      * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1917,8 +1918,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Export Job Results. The result is based on the snapshot at the time when
-     * the job is created.
+     * Summary results from a metadata export job. The results are a snapshot of
+     * the metadata at the time when the job was created. The exported entries are
+     * saved to a Cloud Storage bucket.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobResult}
@@ -2119,7 +2121,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The number of entries that have been exported.
+       * Output only. The number of entries that were exported.
        * </pre>
        *
        * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2135,7 +2137,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The number of entries that have been exported.
+       * Output only. The number of entries that were exported.
        * </pre>
        *
        * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2155,7 +2157,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The number of entries that have been exported.
+       * Output only. The number of entries that were exported.
        * </pre>
        *
        * <code>int64 exported_entries = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2175,7 +2177,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The error message if the export job failed.
+       * Output only. The error message if the metadata export job failed.
        * </pre>
        *
        * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2198,7 +2200,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The error message if the export job failed.
+       * Output only. The error message if the metadata export job failed.
        * </pre>
        *
        * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2221,7 +2223,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The error message if the export job failed.
+       * Output only. The error message if the metadata export job failed.
        * </pre>
        *
        * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2243,7 +2245,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The error message if the export job failed.
+       * Output only. The error message if the metadata export job failed.
        * </pre>
        *
        * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2261,7 +2263,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The error message if the export job failed.
+       * Output only. The error message if the metadata export job failed.
        * </pre>
        *
        * <code>string error_message = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2358,8 +2360,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * this job.
      *
      * A metadata import file defines the values to set for each of the entries
-     * and aspects in a metadata job. For more information about how to create a
-     * metadata import file and the file requirements, see [Metadata import
+     * and aspects in a metadata import job. For more information about how to
+     * create a metadata import file and the file requirements, see [Metadata
+     * import
      * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
      *
      * You can provide multiple metadata import files in the same metadata job.
@@ -2388,8 +2391,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * this job.
      *
      * A metadata import file defines the values to set for each of the entries
-     * and aspects in a metadata job. For more information about how to create a
-     * metadata import file and the file requirements, see [Metadata import
+     * and aspects in a metadata import job. For more information about how to
+     * create a metadata import file and the file requirements, see [Metadata
+     * import
      * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
      *
      * You can provide multiple metadata import files in the same metadata job.
@@ -2668,8 +2672,8 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how the entries and aspects in a metadata job are updated. For
-     * more information, see [Sync
+     * Specifies how the entries and aspects in a metadata import job are
+     * updated. For more information, see [Sync
      * mode](https://cloud.google.com/dataplex/docs/import-metadata#sync-mode).
      * </pre>
      *
@@ -5175,8 +5179,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * this job.
      *
      * A metadata import file defines the values to set for each of the entries
-     * and aspects in a metadata job. For more information about how to create a
-     * metadata import file and the file requirements, see [Metadata import
+     * and aspects in a metadata import job. For more information about how to
+     * create a metadata import file and the file requirements, see [Metadata
+     * import
      * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
      *
      * You can provide multiple metadata import files in the same metadata job.
@@ -5216,8 +5221,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      * this job.
      *
      * A metadata import file defines the values to set for each of the entries
-     * and aspects in a metadata job. For more information about how to create a
-     * metadata import file and the file requirements, see [Metadata import
+     * and aspects in a metadata import job. For more information about how to
+     * create a metadata import file and the file requirements, see [Metadata
+     * import
      * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
      *
      * You can provide multiple metadata import files in the same metadata job.
@@ -6045,8 +6051,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * this job.
        *
        * A metadata import file defines the values to set for each of the entries
-       * and aspects in a metadata job. For more information about how to create a
-       * metadata import file and the file requirements, see [Metadata import
+       * and aspects in a metadata import job. For more information about how to
+       * create a metadata import file and the file requirements, see [Metadata
+       * import
        * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
        *
        * You can provide multiple metadata import files in the same metadata job.
@@ -6085,8 +6092,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * this job.
        *
        * A metadata import file defines the values to set for each of the entries
-       * and aspects in a metadata job. For more information about how to create a
-       * metadata import file and the file requirements, see [Metadata import
+       * and aspects in a metadata import job. For more information about how to
+       * create a metadata import file and the file requirements, see [Metadata
+       * import
        * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
        *
        * You can provide multiple metadata import files in the same metadata job.
@@ -6125,8 +6133,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * this job.
        *
        * A metadata import file defines the values to set for each of the entries
-       * and aspects in a metadata job. For more information about how to create a
-       * metadata import file and the file requirements, see [Metadata import
+       * and aspects in a metadata import job. For more information about how to
+       * create a metadata import file and the file requirements, see [Metadata
+       * import
        * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
        *
        * You can provide multiple metadata import files in the same metadata job.
@@ -6164,8 +6173,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * this job.
        *
        * A metadata import file defines the values to set for each of the entries
-       * and aspects in a metadata job. For more information about how to create a
-       * metadata import file and the file requirements, see [Metadata import
+       * and aspects in a metadata import job. For more information about how to
+       * create a metadata import file and the file requirements, see [Metadata
+       * import
        * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
        *
        * You can provide multiple metadata import files in the same metadata job.
@@ -6199,8 +6209,9 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        * this job.
        *
        * A metadata import file defines the values to set for each of the entries
-       * and aspects in a metadata job. For more information about how to create a
-       * metadata import file and the file requirements, see [Metadata import
+       * and aspects in a metadata import job. For more information about how to
+       * create a metadata import file and the file requirements, see [Metadata
+       * import
        * file](https://cloud.google.com/dataplex/docs/import-metadata#metadata-import-file).
        *
        * You can provide multiple metadata import files in the same metadata job.
@@ -7116,7 +7127,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Selects the entries to be exported by this job.
+     * Required. The scope of the export job.
      * </pre>
      *
      * <code>
@@ -7131,7 +7142,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Selects the entries to be exported by this job.
+     * Required. The scope of the export job.
      * </pre>
      *
      * <code>
@@ -7146,7 +7157,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Selects the entries to be exported by this job.
+     * Required. The scope of the export job.
      * </pre>
      *
      * <code>
@@ -7160,12 +7171,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The root path of the exported metadata.
-     * Must be in the format: "gs://&lt;bucket_id&gt;"
-     * Or specify a customized prefix after the bucket:
-     * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-     * The length limit of the customized prefix is 128 characters.
-     * The bucket must be in the same VPC-SC perimeter with the job.
+     * Required. The root path of the Cloud Storage bucket to export the
+     * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+     * custom prefix after the bucket name, in the format
+     * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+     * characters. Dataplex constructs the object path for the exported files by
+     * using the bucket name and prefix that you provide, followed by a
+     * system-generated path.
+     *
+     * The bucket must be in the same VPC Service Controls perimeter as the job.
      * </pre>
      *
      * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7178,12 +7192,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The root path of the exported metadata.
-     * Must be in the format: "gs://&lt;bucket_id&gt;"
-     * Or specify a customized prefix after the bucket:
-     * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-     * The length limit of the customized prefix is 128 characters.
-     * The bucket must be in the same VPC-SC perimeter with the job.
+     * Required. The root path of the Cloud Storage bucket to export the
+     * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+     * custom prefix after the bucket name, in the format
+     * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+     * characters. Dataplex constructs the object path for the exported files by
+     * using the bucket name and prefix that you provide, followed by a
+     * system-generated path.
+     *
+     * The bucket must be in the same VPC Service Controls perimeter as the job.
      * </pre>
      *
      * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7197,7 +7214,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Export job specification.
+   * Job specification for a metadata export job.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobSpec}
@@ -7247,14 +7264,17 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicating if it is an organization level export job.
-       * - When set to true, exports all entries from entry groups and projects
-       * sharing the same organization id of the Metadata Job. Only projects and
-       * entry groups in the VPC-SC perimeter will be exported. The projects and
-       * entry groups are ignored.
-       * - When set to false, one of the projects or entry groups must be
-       * specified.
-       * - Default to false.
+       * Whether the metadata export job is an organization-level export job.
+       *
+       * - If `true`, the job exports the entries from the same organization and
+       * VPC Service Controls perimeter as the job. The project that the job
+       * belongs to determines the VPC Service Controls perimeter. If you set
+       * the job scope to be at the organization level, then don't provide a
+       * list of projects or entry groups.
+       * - If `false`, you must specify a list of projects or a list of entry
+       * groups whose entries you want to export.
+       *
+       * The default is `false`.
        * </pre>
        *
        * <code>bool organization_level = 1;</code>
@@ -7267,13 +7287,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The projects that are in the scope of the export job. Can either be
-       * project numbers or project IDs. If specified, only the entries from the
-       * specified projects will be exported. The projects must be in the same
-       * organization and in the VPC-SC perimeter. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false.
-       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * The projects whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}`. Only the entries from
+       * the specified projects are exported.
+       *
+       * The projects must be in the same organization and VPC Service Controls
+       * perimeter as the job.
+       *
+       * If you set the job scope to be a list of projects, then set the
+       * organization-level export flag to false and don't provide a list of
+       * entry groups.
        * </pre>
        *
        * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -7286,13 +7309,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The projects that are in the scope of the export job. Can either be
-       * project numbers or project IDs. If specified, only the entries from the
-       * specified projects will be exported. The projects must be in the same
-       * organization and in the VPC-SC perimeter. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false.
-       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * The projects whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}`. Only the entries from
+       * the specified projects are exported.
+       *
+       * The projects must be in the same organization and VPC Service Controls
+       * perimeter as the job.
+       *
+       * If you set the job scope to be a list of projects, then set the
+       * organization-level export flag to false and don't provide a list of
+       * entry groups.
        * </pre>
        *
        * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -7305,13 +7331,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The projects that are in the scope of the export job. Can either be
-       * project numbers or project IDs. If specified, only the entries from the
-       * specified projects will be exported. The projects must be in the same
-       * organization and in the VPC-SC perimeter. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false.
-       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * The projects whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}`. Only the entries from
+       * the specified projects are exported.
+       *
+       * The projects must be in the same organization and VPC Service Controls
+       * perimeter as the job.
+       *
+       * If you set the job scope to be a list of projects, then set the
+       * organization-level export flag to false and don't provide a list of
+       * entry groups.
        * </pre>
        *
        * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -7325,13 +7354,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The projects that are in the scope of the export job. Can either be
-       * project numbers or project IDs. If specified, only the entries from the
-       * specified projects will be exported. The projects must be in the same
-       * organization and in the VPC-SC perimeter. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false.
-       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * The projects whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}`. Only the entries from
+       * the specified projects are exported.
+       *
+       * The projects must be in the same organization and VPC Service Controls
+       * perimeter as the job.
+       *
+       * If you set the job scope to be a list of projects, then set the
+       * organization-level export flag to false and don't provide a list of
+       * entry groups.
        * </pre>
        *
        * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -7345,13 +7377,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entry groups that are in scope for the export job. Optional. If
-       * specified, only entries in the specified entry groups will be exported
-       * by the job. Must be in the VPC-SC perimeter of the job. The location of
-       * the entry groups must be the same as the job. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false. Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * The entry groups whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+       * Only the entries in the specified entry groups are exported.
+       *
+       * The entry groups must be in the same location and the same VPC Service
+       * Controls perimeter as the job.
+       *
+       * If you set the job scope to be a list of entry groups, then set the
+       * organization-level export flag to false and don't provide a list of
+       * projects.
        * </pre>
        *
        * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7364,13 +7399,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entry groups that are in scope for the export job. Optional. If
-       * specified, only entries in the specified entry groups will be exported
-       * by the job. Must be in the VPC-SC perimeter of the job. The location of
-       * the entry groups must be the same as the job. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false. Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * The entry groups whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+       * Only the entries in the specified entry groups are exported.
+       *
+       * The entry groups must be in the same location and the same VPC Service
+       * Controls perimeter as the job.
+       *
+       * If you set the job scope to be a list of entry groups, then set the
+       * organization-level export flag to false and don't provide a list of
+       * projects.
        * </pre>
        *
        * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7383,13 +7421,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entry groups that are in scope for the export job. Optional. If
-       * specified, only entries in the specified entry groups will be exported
-       * by the job. Must be in the VPC-SC perimeter of the job. The location of
-       * the entry groups must be the same as the job. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false. Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * The entry groups whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+       * Only the entries in the specified entry groups are exported.
+       *
+       * The entry groups must be in the same location and the same VPC Service
+       * Controls perimeter as the job.
+       *
+       * If you set the job scope to be a list of entry groups, then set the
+       * organization-level export flag to false and don't provide a list of
+       * projects.
        * </pre>
        *
        * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7403,13 +7444,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entry groups that are in scope for the export job. Optional. If
-       * specified, only entries in the specified entry groups will be exported
-       * by the job. Must be in the VPC-SC perimeter of the job. The location of
-       * the entry groups must be the same as the job. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false. Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * The entry groups whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+       * Only the entries in the specified entry groups are exported.
+       *
+       * The entry groups must be in the same location and the same VPC Service
+       * Controls perimeter as the job.
+       *
+       * If you set the job scope to be a list of entry groups, then set the
+       * organization-level export flag to false and don't provide a list of
+       * projects.
        * </pre>
        *
        * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7423,10 +7467,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If specified, only entries of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * The entry types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+       * Only entries that belong to the specified entry types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -7439,10 +7484,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If specified, only entries of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * The entry types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+       * Only entries that belong to the specified entry types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -7455,10 +7501,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If specified, only entries of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * The entry types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+       * Only entries that belong to the specified entry types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -7472,10 +7519,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If specified, only entries of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * The entry types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+       * Only entries that belong to the specified entry types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -7489,11 +7537,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The aspect types that are in scope for the export job.
-       * Optional. If specified, only aspects of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * The aspect types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+       * Only aspects that belong to the specified aspect types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -7506,11 +7554,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The aspect types that are in scope for the export job.
-       * Optional. If specified, only aspects of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * The aspect types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+       * Only aspects that belong to the specified aspect types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -7523,11 +7571,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The aspect types that are in scope for the export job.
-       * Optional. If specified, only aspects of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * The aspect types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+       * Only aspects that belong to the specified aspect types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -7541,11 +7589,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The aspect types that are in scope for the export job.
-       * Optional. If specified, only aspects of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * The aspect types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+       * Only aspects that belong to the specified aspect types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -7560,7 +7608,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Scope of the export job.
+     * The scope of the export job.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope}
@@ -7612,14 +7660,17 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicating if it is an organization level export job.
-       * - When set to true, exports all entries from entry groups and projects
-       * sharing the same organization id of the Metadata Job. Only projects and
-       * entry groups in the VPC-SC perimeter will be exported. The projects and
-       * entry groups are ignored.
-       * - When set to false, one of the projects or entry groups must be
-       * specified.
-       * - Default to false.
+       * Whether the metadata export job is an organization-level export job.
+       *
+       * - If `true`, the job exports the entries from the same organization and
+       * VPC Service Controls perimeter as the job. The project that the job
+       * belongs to determines the VPC Service Controls perimeter. If you set
+       * the job scope to be at the organization level, then don't provide a
+       * list of projects or entry groups.
+       * - If `false`, you must specify a list of projects or a list of entry
+       * groups whose entries you want to export.
+       *
+       * The default is `false`.
        * </pre>
        *
        * <code>bool organization_level = 1;</code>
@@ -7641,13 +7692,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The projects that are in the scope of the export job. Can either be
-       * project numbers or project IDs. If specified, only the entries from the
-       * specified projects will be exported. The projects must be in the same
-       * organization and in the VPC-SC perimeter. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false.
-       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * The projects whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}`. Only the entries from
+       * the specified projects are exported.
+       *
+       * The projects must be in the same organization and VPC Service Controls
+       * perimeter as the job.
+       *
+       * If you set the job scope to be a list of projects, then set the
+       * organization-level export flag to false and don't provide a list of
+       * entry groups.
        * </pre>
        *
        * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -7662,13 +7716,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The projects that are in the scope of the export job. Can either be
-       * project numbers or project IDs. If specified, only the entries from the
-       * specified projects will be exported. The projects must be in the same
-       * organization and in the VPC-SC perimeter. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false.
-       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * The projects whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}`. Only the entries from
+       * the specified projects are exported.
+       *
+       * The projects must be in the same organization and VPC Service Controls
+       * perimeter as the job.
+       *
+       * If you set the job scope to be a list of projects, then set the
+       * organization-level export flag to false and don't provide a list of
+       * entry groups.
        * </pre>
        *
        * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -7683,13 +7740,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The projects that are in the scope of the export job. Can either be
-       * project numbers or project IDs. If specified, only the entries from the
-       * specified projects will be exported. The projects must be in the same
-       * organization and in the VPC-SC perimeter. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false.
-       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * The projects whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}`. Only the entries from
+       * the specified projects are exported.
+       *
+       * The projects must be in the same organization and VPC Service Controls
+       * perimeter as the job.
+       *
+       * If you set the job scope to be a list of projects, then set the
+       * organization-level export flag to false and don't provide a list of
+       * entry groups.
        * </pre>
        *
        * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -7705,13 +7765,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The projects that are in the scope of the export job. Can either be
-       * project numbers or project IDs. If specified, only the entries from the
-       * specified projects will be exported. The projects must be in the same
-       * organization and in the VPC-SC perimeter. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false.
-       * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+       * The projects whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}`. Only the entries from
+       * the specified projects are exported.
+       *
+       * The projects must be in the same organization and VPC Service Controls
+       * perimeter as the job.
+       *
+       * If you set the job scope to be a list of projects, then set the
+       * organization-level export flag to false and don't provide a list of
+       * entry groups.
        * </pre>
        *
        * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -7733,13 +7796,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entry groups that are in scope for the export job. Optional. If
-       * specified, only entries in the specified entry groups will be exported
-       * by the job. Must be in the VPC-SC perimeter of the job. The location of
-       * the entry groups must be the same as the job. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false. Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * The entry groups whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+       * Only the entries in the specified entry groups are exported.
+       *
+       * The entry groups must be in the same location and the same VPC Service
+       * Controls perimeter as the job.
+       *
+       * If you set the job scope to be a list of entry groups, then set the
+       * organization-level export flag to false and don't provide a list of
+       * projects.
        * </pre>
        *
        * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7754,13 +7820,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entry groups that are in scope for the export job. Optional. If
-       * specified, only entries in the specified entry groups will be exported
-       * by the job. Must be in the VPC-SC perimeter of the job. The location of
-       * the entry groups must be the same as the job. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false. Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * The entry groups whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+       * Only the entries in the specified entry groups are exported.
+       *
+       * The entry groups must be in the same location and the same VPC Service
+       * Controls perimeter as the job.
+       *
+       * If you set the job scope to be a list of entry groups, then set the
+       * organization-level export flag to false and don't provide a list of
+       * projects.
        * </pre>
        *
        * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7775,13 +7844,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entry groups that are in scope for the export job. Optional. If
-       * specified, only entries in the specified entry groups will be exported
-       * by the job. Must be in the VPC-SC perimeter of the job. The location of
-       * the entry groups must be the same as the job. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false. Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * The entry groups whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+       * Only the entries in the specified entry groups are exported.
+       *
+       * The entry groups must be in the same location and the same VPC Service
+       * Controls perimeter as the job.
+       *
+       * If you set the job scope to be a list of entry groups, then set the
+       * organization-level export flag to false and don't provide a list of
+       * projects.
        * </pre>
        *
        * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7797,13 +7869,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The entry groups that are in scope for the export job. Optional. If
-       * specified, only entries in the specified entry groups will be exported
-       * by the job. Must be in the VPC-SC perimeter of the job. The location of
-       * the entry groups must be the same as the job. Either projects or
-       * entry_groups can be specified when organization_level_export is set to
-       * false. Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+       * The entry groups whose metadata you want to export, in the format
+       * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+       * Only the entries in the specified entry groups are exported.
+       *
+       * The entry groups must be in the same location and the same VPC Service
+       * Controls perimeter as the job.
+       *
+       * If you set the job scope to be a list of entry groups, then set the
+       * organization-level export flag to false and don't provide a list of
+       * projects.
        * </pre>
        *
        * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -7825,10 +7900,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If specified, only entries of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * The entry types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+       * Only entries that belong to the specified entry types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -7843,10 +7919,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If specified, only entries of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * The entry types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+       * Only entries that belong to the specified entry types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -7861,10 +7938,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If specified, only entries of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * The entry types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+       * Only entries that belong to the specified entry types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -7880,10 +7958,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If specified, only entries of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+       * The entry types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+       * Only entries that belong to the specified entry types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -7905,11 +7984,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The aspect types that are in scope for the export job.
-       * Optional. If specified, only aspects of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * The aspect types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+       * Only aspects that belong to the specified aspect types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -7924,11 +8003,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The aspect types that are in scope for the export job.
-       * Optional. If specified, only aspects of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * The aspect types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+       * Only aspects that belong to the specified aspect types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -7943,11 +8022,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The aspect types that are in scope for the export job.
-       * Optional. If specified, only aspects of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * The aspect types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+       * Only aspects that belong to the specified aspect types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -7963,11 +8042,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The aspect types that are in scope for the export job.
-       * Optional. If specified, only aspects of the specified types will be
-       * affected by the job.
-       * Must follow the format:
-       * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+       * The aspect types that are in scope for the export job, specified as
+       * relative resource names in the format
+       * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+       * Only aspects that belong to the specified aspect types are affected by
+       * the job.
        * </pre>
        *
        * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -8212,7 +8291,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Scope of the export job.
+       * The scope of the export job.
        * </pre>
        *
        * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobSpec.ExportJobScope}
@@ -8497,14 +8576,17 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Indicating if it is an organization level export job.
-         * - When set to true, exports all entries from entry groups and projects
-         * sharing the same organization id of the Metadata Job. Only projects and
-         * entry groups in the VPC-SC perimeter will be exported. The projects and
-         * entry groups are ignored.
-         * - When set to false, one of the projects or entry groups must be
-         * specified.
-         * - Default to false.
+         * Whether the metadata export job is an organization-level export job.
+         *
+         * - If `true`, the job exports the entries from the same organization and
+         * VPC Service Controls perimeter as the job. The project that the job
+         * belongs to determines the VPC Service Controls perimeter. If you set
+         * the job scope to be at the organization level, then don't provide a
+         * list of projects or entry groups.
+         * - If `false`, you must specify a list of projects or a list of entry
+         * groups whose entries you want to export.
+         *
+         * The default is `false`.
          * </pre>
          *
          * <code>bool organization_level = 1;</code>
@@ -8520,14 +8602,17 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Indicating if it is an organization level export job.
-         * - When set to true, exports all entries from entry groups and projects
-         * sharing the same organization id of the Metadata Job. Only projects and
-         * entry groups in the VPC-SC perimeter will be exported. The projects and
-         * entry groups are ignored.
-         * - When set to false, one of the projects or entry groups must be
-         * specified.
-         * - Default to false.
+         * Whether the metadata export job is an organization-level export job.
+         *
+         * - If `true`, the job exports the entries from the same organization and
+         * VPC Service Controls perimeter as the job. The project that the job
+         * belongs to determines the VPC Service Controls perimeter. If you set
+         * the job scope to be at the organization level, then don't provide a
+         * list of projects or entry groups.
+         * - If `false`, you must specify a list of projects or a list of entry
+         * groups whose entries you want to export.
+         *
+         * The default is `false`.
          * </pre>
          *
          * <code>bool organization_level = 1;</code>
@@ -8547,14 +8632,17 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Indicating if it is an organization level export job.
-         * - When set to true, exports all entries from entry groups and projects
-         * sharing the same organization id of the Metadata Job. Only projects and
-         * entry groups in the VPC-SC perimeter will be exported. The projects and
-         * entry groups are ignored.
-         * - When set to false, one of the projects or entry groups must be
-         * specified.
-         * - Default to false.
+         * Whether the metadata export job is an organization-level export job.
+         *
+         * - If `true`, the job exports the entries from the same organization and
+         * VPC Service Controls perimeter as the job. The project that the job
+         * belongs to determines the VPC Service Controls perimeter. If you set
+         * the job scope to be at the organization level, then don't provide a
+         * list of projects or entry groups.
+         * - If `false`, you must specify a list of projects or a list of entry
+         * groups whose entries you want to export.
+         *
+         * The default is `false`.
          * </pre>
          *
          * <code>bool organization_level = 1;</code>
@@ -8582,13 +8670,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8604,13 +8695,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8625,13 +8719,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8647,13 +8744,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8669,13 +8769,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8699,13 +8802,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8728,13 +8834,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8754,13 +8863,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8779,13 +8891,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The projects that are in the scope of the export job. Can either be
-         * project numbers or project IDs. If specified, only the entries from the
-         * specified projects will be exported. The projects must be in the same
-         * organization and in the VPC-SC perimeter. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false.
-         * Must follow the format: "projects/&lt;project_id_or_number&gt;"
+         * The projects whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}`. Only the entries from
+         * the specified projects are exported.
+         *
+         * The projects must be in the same organization and VPC Service Controls
+         * perimeter as the job.
+         *
+         * If you set the job scope to be a list of projects, then set the
+         * organization-level export flag to false and don't provide a list of
+         * entry groups.
          * </pre>
          *
          * <code>repeated string projects = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -8819,13 +8934,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8841,13 +8959,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8862,13 +8983,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8884,13 +9008,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8906,13 +9033,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8936,13 +9066,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8965,13 +9098,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -8991,13 +9127,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -9016,13 +9155,16 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The entry groups that are in scope for the export job. Optional. If
-         * specified, only entries in the specified entry groups will be exported
-         * by the job. Must be in the VPC-SC perimeter of the job. The location of
-         * the entry groups must be the same as the job. Either projects or
-         * entry_groups can be specified when organization_level_export is set to
-         * false. Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryGroups/&lt;entry_group_id&gt;"
+         * The entry groups whose metadata you want to export, in the format
+         * `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+         * Only the entries in the specified entry groups are exported.
+         *
+         * The entry groups must be in the same location and the same VPC Service
+         * Controls perimeter as the job.
+         *
+         * If you set the job scope to be a list of entry groups, then set the
+         * organization-level export flag to false and don't provide a list of
+         * projects.
          * </pre>
          *
          * <code>repeated string entry_groups = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -9056,10 +9198,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9075,10 +9218,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9093,10 +9237,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9112,10 +9257,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9131,10 +9277,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9158,10 +9305,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9184,10 +9332,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9207,10 +9356,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9229,10 +9379,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * If specified, only entries of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/entryTypes/&lt;entry_type_id&gt;"
+         * The entry types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/entryTypes/{entry_type_id}`.
+         * Only entries that belong to the specified entry types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string entry_types = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -9266,11 +9417,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9286,11 +9437,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9305,11 +9456,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9325,11 +9476,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9345,11 +9496,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9373,11 +9524,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9400,11 +9551,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9424,11 +9575,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9447,11 +9598,11 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The aspect types that are in scope for the export job.
-         * Optional. If specified, only aspects of the specified types will be
-         * affected by the job.
-         * Must follow the format:
-         * "projects/&lt;project_id_or_number&gt;/locations/&lt;location&gt;/aspectTypes/&lt;aspect_type_id&gt;"
+         * The aspect types that are in scope for the export job, specified as
+         * relative resource names in the format
+         * `projects/{project_id_or_number}/locations/{location}/aspectTypes/{aspect_type_id}`.
+         * Only aspects that belong to the specified aspect types are affected by
+         * the job.
          * </pre>
          *
          * <code>repeated string aspect_types = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -9547,7 +9698,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Selects the entries to be exported by this job.
+     * Required. The scope of the export job.
      * </pre>
      *
      * <code>
@@ -9565,7 +9716,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Selects the entries to be exported by this job.
+     * Required. The scope of the export job.
      * </pre>
      *
      * <code>
@@ -9586,7 +9737,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Selects the entries to be exported by this job.
+     * Required. The scope of the export job.
      * </pre>
      *
      * <code>
@@ -9611,12 +9762,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The root path of the exported metadata.
-     * Must be in the format: "gs://&lt;bucket_id&gt;"
-     * Or specify a customized prefix after the bucket:
-     * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-     * The length limit of the customized prefix is 128 characters.
-     * The bucket must be in the same VPC-SC perimeter with the job.
+     * Required. The root path of the Cloud Storage bucket to export the
+     * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+     * custom prefix after the bucket name, in the format
+     * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+     * characters. Dataplex constructs the object path for the exported files by
+     * using the bucket name and prefix that you provide, followed by a
+     * system-generated path.
+     *
+     * The bucket must be in the same VPC Service Controls perimeter as the job.
      * </pre>
      *
      * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9640,12 +9794,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The root path of the exported metadata.
-     * Must be in the format: "gs://&lt;bucket_id&gt;"
-     * Or specify a customized prefix after the bucket:
-     * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-     * The length limit of the customized prefix is 128 characters.
-     * The bucket must be in the same VPC-SC perimeter with the job.
+     * Required. The root path of the Cloud Storage bucket to export the
+     * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+     * custom prefix after the bucket name, in the format
+     * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+     * characters. Dataplex constructs the object path for the exported files by
+     * using the bucket name and prefix that you provide, followed by a
+     * system-generated path.
+     *
+     * The bucket must be in the same VPC Service Controls perimeter as the job.
      * </pre>
      *
      * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9845,7 +10002,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Export job specification.
+     * Job specification for a metadata export job.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.MetadataJob.ExportJobSpec}
@@ -10067,7 +10224,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10084,7 +10241,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10108,7 +10265,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10134,7 +10291,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10158,7 +10315,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10191,7 +10348,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10213,7 +10370,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10231,7 +10388,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10254,7 +10411,7 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Selects the entries to be exported by this job.
+       * Required. The scope of the export job.
        * </pre>
        *
        * <code>
@@ -10284,12 +10441,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The root path of the exported metadata.
-       * Must be in the format: "gs://&lt;bucket_id&gt;"
-       * Or specify a customized prefix after the bucket:
-       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-       * The length limit of the customized prefix is 128 characters.
-       * The bucket must be in the same VPC-SC perimeter with the job.
+       * Required. The root path of the Cloud Storage bucket to export the
+       * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+       * custom prefix after the bucket name, in the format
+       * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+       * characters. Dataplex constructs the object path for the exported files by
+       * using the bucket name and prefix that you provide, followed by a
+       * system-generated path.
+       *
+       * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
        *
        * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10312,12 +10472,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The root path of the exported metadata.
-       * Must be in the format: "gs://&lt;bucket_id&gt;"
-       * Or specify a customized prefix after the bucket:
-       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-       * The length limit of the customized prefix is 128 characters.
-       * The bucket must be in the same VPC-SC perimeter with the job.
+       * Required. The root path of the Cloud Storage bucket to export the
+       * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+       * custom prefix after the bucket name, in the format
+       * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+       * characters. Dataplex constructs the object path for the exported files by
+       * using the bucket name and prefix that you provide, followed by a
+       * system-generated path.
+       *
+       * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
        *
        * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10340,12 +10503,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The root path of the exported metadata.
-       * Must be in the format: "gs://&lt;bucket_id&gt;"
-       * Or specify a customized prefix after the bucket:
-       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-       * The length limit of the customized prefix is 128 characters.
-       * The bucket must be in the same VPC-SC perimeter with the job.
+       * Required. The root path of the Cloud Storage bucket to export the
+       * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+       * custom prefix after the bucket name, in the format
+       * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+       * characters. Dataplex constructs the object path for the exported files by
+       * using the bucket name and prefix that you provide, followed by a
+       * system-generated path.
+       *
+       * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
        *
        * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10367,12 +10533,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The root path of the exported metadata.
-       * Must be in the format: "gs://&lt;bucket_id&gt;"
-       * Or specify a customized prefix after the bucket:
-       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-       * The length limit of the customized prefix is 128 characters.
-       * The bucket must be in the same VPC-SC perimeter with the job.
+       * Required. The root path of the Cloud Storage bucket to export the
+       * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+       * custom prefix after the bucket name, in the format
+       * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+       * characters. Dataplex constructs the object path for the exported files by
+       * using the bucket name and prefix that you provide, followed by a
+       * system-generated path.
+       *
+       * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
        *
        * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -10390,12 +10559,15 @@ public final class MetadataJob extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The root path of the exported metadata.
-       * Must be in the format: "gs://&lt;bucket_id&gt;"
-       * Or specify a customized prefix after the bucket:
-       * "gs://&lt;bucket_id&gt;/&lt;folder1&gt;/&lt;folder2&gt;/.../".
-       * The length limit of the customized prefix is 128 characters.
-       * The bucket must be in the same VPC-SC perimeter with the job.
+       * Required. The root path of the Cloud Storage bucket to export the
+       * metadata to, in the format `gs://{bucket}/`. You can optionally specify a
+       * custom prefix after the bucket name, in the format
+       * `gs://{bucket}/{prefix}/`. The maximum length of the custom prefix is 128
+       * characters. Dataplex constructs the object path for the exported files by
+       * using the bucket name and prefix that you provide, followed by a
+       * system-generated path.
+       *
+       * The bucket must be in the same VPC Service Controls perimeter as the job.
        * </pre>
        *
        * <code>string output_path = 3 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -490,6 +490,8 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteListingRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "deleteCommercial", request.getDeleteCommercial());
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

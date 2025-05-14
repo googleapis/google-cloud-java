@@ -118,6 +118,8 @@ public class RevisionsClientHttpJsonTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -194,6 +196,8 @@ public class RevisionsClientHttpJsonTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -372,6 +376,8 @@ public class RevisionsClientHttpJsonTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -453,6 +459,8 @@ public class RevisionsClientHttpJsonTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

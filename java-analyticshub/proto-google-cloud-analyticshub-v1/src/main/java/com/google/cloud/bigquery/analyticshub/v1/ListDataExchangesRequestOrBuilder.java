@@ -29,7 +29,7 @@ public interface ListDataExchangesRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource path of the data exchanges.
-   * e.g. `projects/myproject/locations/US`.
+   * e.g. `projects/myproject/locations/us`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface ListDataExchangesRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource path of the data exchanges.
-   * e.g. `projects/myproject/locations/US`.
+   * e.g. `projects/myproject/locations/us`.
    * </pre>
    *
    * <code>

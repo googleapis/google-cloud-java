@@ -66,7 +66,7 @@ public interface AnalyzeMoveRequestOrBuilder
    * <pre>
    * Required. Name of the Google Cloud folder or organization to reparent the
    * target resource. The analysis will be performed against hypothetically
-   * moving the resource to this specified desitination parent. This can only be
+   * moving the resource to this specified destination parent. This can only be
    * a folder number (such as "folders/123") or an organization number (such as
    * "organizations/123").
    * </pre>
@@ -85,7 +85,7 @@ public interface AnalyzeMoveRequestOrBuilder
    * <pre>
    * Required. Name of the Google Cloud folder or organization to reparent the
    * target resource. The analysis will be performed against hypothetically
-   * moving the resource to this specified desitination parent. This can only be
+   * moving the resource to this specified destination parent. This can only be
    * a folder number (such as "folders/123") or an organization number (such as
    * "organizations/123").
    * </pre>

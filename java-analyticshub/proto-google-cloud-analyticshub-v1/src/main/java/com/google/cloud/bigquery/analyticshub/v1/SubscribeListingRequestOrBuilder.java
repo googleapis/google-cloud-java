@@ -121,7 +121,7 @@ public interface SubscribeListingRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the listing that you want to subscribe to.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * </pre>
    *
    * <code>
@@ -137,7 +137,7 @@ public interface SubscribeListingRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the listing that you want to subscribe to.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * </pre>
    *
    * <code>

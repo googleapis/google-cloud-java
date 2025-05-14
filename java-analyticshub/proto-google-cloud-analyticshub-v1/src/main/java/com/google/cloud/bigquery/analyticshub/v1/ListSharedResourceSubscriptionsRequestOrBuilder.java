@@ -30,8 +30,8 @@ public interface ListSharedResourceSubscriptionsRequestOrBuilder
    * <pre>
    * Required. Resource name of the requested target. This resource may be
    * either a Listing or a DataExchange. e.g.
-   * projects/123/locations/US/dataExchanges/456 OR e.g.
-   * projects/123/locations/US/dataExchanges/456/listings/789
+   * projects/123/locations/us/dataExchanges/456 OR e.g.
+   * projects/123/locations/us/dataExchanges/456/listings/789
    * </pre>
    *
    * <code>
@@ -48,8 +48,8 @@ public interface ListSharedResourceSubscriptionsRequestOrBuilder
    * <pre>
    * Required. Resource name of the requested target. This resource may be
    * either a Listing or a DataExchange. e.g.
-   * projects/123/locations/US/dataExchanges/456 OR e.g.
-   * projects/123/locations/US/dataExchanges/456/listings/789
+   * projects/123/locations/us/dataExchanges/456 OR e.g.
+   * projects/123/locations/us/dataExchanges/456/listings/789
    * </pre>
    *
    * <code>

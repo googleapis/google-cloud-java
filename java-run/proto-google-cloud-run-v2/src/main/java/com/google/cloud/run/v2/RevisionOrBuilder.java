@@ -1180,6 +1180,64 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
+   * Optional. Output only. True if GPU zonal redundancy is disabled on this
+   * revision.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 48 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gpuZonalRedundancyDisabled field is set.
+   */
+  boolean hasGpuZonalRedundancyDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. True if GPU zonal redundancy is disabled on this
+   * revision.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 48 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gpuZonalRedundancyDisabled.
+   */
+  boolean getGpuZonalRedundancyDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of the authenticated creator.
+   * </pre>
+   *
+   * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The creator.
+   */
+  java.lang.String getCreator();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of the authenticated creator.
+   * </pre>
+   *
+   * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for creator.
+   */
+  com.google.protobuf.ByteString getCreatorBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>
