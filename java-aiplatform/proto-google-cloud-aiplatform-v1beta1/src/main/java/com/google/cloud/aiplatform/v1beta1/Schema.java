@@ -1127,6 +1127,68 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return anyOf_.get(index);
   }
 
+  public static final int ADDITIONAL_PROPERTIES_FIELD_NUMBER = 26;
+  private com.google.protobuf.Value additionalProperties_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Can either be a boolean or an object; controls the presence of
+   * additional properties.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the additionalProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdditionalProperties() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Can either be a boolean or an object; controls the presence of
+   * additional properties.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The additionalProperties.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getAdditionalProperties() {
+    return additionalProperties_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : additionalProperties_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Can either be a boolean or an object; controls the presence of
+   * additional properties.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getAdditionalPropertiesOrBuilder() {
+    return additionalProperties_ == null
+        ? com.google.protobuf.Value.getDefaultInstance()
+        : additionalProperties_;
+  }
+
   public static final int REF_FIELD_NUMBER = 27;
 
   @SuppressWarnings("serial")
@@ -1425,6 +1487,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < propertyOrdering_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, propertyOrdering_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(26, getAdditionalProperties());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ref_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, ref_);
     }
@@ -1528,6 +1593,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getPropertyOrderingList().size();
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(26, getAdditionalProperties());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ref_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, ref_);
     }
@@ -1591,6 +1660,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (!getExample().equals(other.getExample())) return false;
     }
     if (!getAnyOfList().equals(other.getAnyOfList())) return false;
+    if (hasAdditionalProperties() != other.hasAdditionalProperties()) return false;
+    if (hasAdditionalProperties()) {
+      if (!getAdditionalProperties().equals(other.getAdditionalProperties())) return false;
+    }
     if (!getRef().equals(other.getRef())) return false;
     if (!internalGetDefs().equals(other.internalGetDefs())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1669,6 +1742,10 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (getAnyOfCount() > 0) {
       hash = (37 * hash) + ANY_OF_FIELD_NUMBER;
       hash = (53 * hash) + getAnyOfList().hashCode();
+    }
+    if (hasAdditionalProperties()) {
+      hash = (37 * hash) + ADDITIONAL_PROPERTIES_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalProperties().hashCode();
     }
     hash = (37 * hash) + REF_FIELD_NUMBER;
     hash = (53 * hash) + getRef().hashCode();
@@ -1850,6 +1927,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         getItemsFieldBuilder();
         getExampleFieldBuilder();
         getAnyOfFieldBuilder();
+        getAdditionalPropertiesFieldBuilder();
       }
     }
 
@@ -1897,6 +1975,11 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         anyOfBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00200000);
+      additionalProperties_ = null;
+      if (additionalPropertiesBuilder_ != null) {
+        additionalPropertiesBuilder_.dispose();
+        additionalPropertiesBuilder_ = null;
+      }
       ref_ = "";
       internalGetMutableDefs().clear();
       return this;
@@ -2020,9 +2103,16 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.ref_ = ref_;
+        result.additionalProperties_ =
+            additionalPropertiesBuilder_ == null
+                ? additionalProperties_
+                : additionalPropertiesBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.ref_ = ref_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.defs_ = internalGetDefs().build(DefsDefaultEntryHolder.defaultEntry);
       }
       result.bitField0_ |= to_bitField0_;
@@ -2191,13 +2281,16 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasAdditionalProperties()) {
+        mergeAdditionalProperties(other.getAdditionalProperties());
+      }
       if (!other.getRef().isEmpty()) {
         ref_ = other.ref_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       internalGetMutableDefs().mergeFrom(other.internalGetDefs());
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2374,10 +2467,17 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                 propertyOrdering_.add(s);
                 break;
               } // case 202
+            case 210:
+              {
+                input.readMessage(
+                    getAdditionalPropertiesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 210
             case 218:
               {
                 ref_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 218
             case 226:
@@ -2389,7 +2489,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                             DefsDefaultEntryHolder.defaultEntry.getParserForType(),
                             extensionRegistry);
                 internalGetMutableDefs().ensureBuilderMap().put(defs__.getKey(), defs__.getValue());
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 226
             default:
@@ -5389,6 +5489,227 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return anyOfBuilder_;
     }
 
+    private com.google.protobuf.Value additionalProperties_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        additionalPropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the additionalProperties field is set.
+     */
+    public boolean hasAdditionalProperties() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The additionalProperties.
+     */
+    public com.google.protobuf.Value getAdditionalProperties() {
+      if (additionalPropertiesBuilder_ == null) {
+        return additionalProperties_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : additionalProperties_;
+      } else {
+        return additionalPropertiesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdditionalProperties(com.google.protobuf.Value value) {
+      if (additionalPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        additionalProperties_ = value;
+      } else {
+        additionalPropertiesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdditionalProperties(com.google.protobuf.Value.Builder builderForValue) {
+      if (additionalPropertiesBuilder_ == null) {
+        additionalProperties_ = builderForValue.build();
+      } else {
+        additionalPropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAdditionalProperties(com.google.protobuf.Value value) {
+      if (additionalPropertiesBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && additionalProperties_ != null
+            && additionalProperties_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getAdditionalPropertiesBuilder().mergeFrom(value);
+        } else {
+          additionalProperties_ = value;
+        }
+      } else {
+        additionalPropertiesBuilder_.mergeFrom(value);
+      }
+      if (additionalProperties_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdditionalProperties() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      additionalProperties_ = null;
+      if (additionalPropertiesBuilder_ != null) {
+        additionalPropertiesBuilder_.dispose();
+        additionalPropertiesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Value.Builder getAdditionalPropertiesBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getAdditionalPropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.ValueOrBuilder getAdditionalPropertiesOrBuilder() {
+      if (additionalPropertiesBuilder_ != null) {
+        return additionalPropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        return additionalProperties_ == null
+            ? com.google.protobuf.Value.getDefaultInstance()
+            : additionalProperties_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Can either be a boolean or an object; controls the presence of
+     * additional properties.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getAdditionalPropertiesFieldBuilder() {
+      if (additionalPropertiesBuilder_ == null) {
+        additionalPropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getAdditionalProperties(), getParentForChildren(), isClean());
+        additionalProperties_ = null;
+      }
+      return additionalPropertiesBuilder_;
+    }
+
     private java.lang.Object ref_ = "";
 
     /**
@@ -5514,7 +5835,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       ref_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5552,7 +5873,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRef() {
       ref_ = getDefaultInstance().getRef();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -5595,7 +5916,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       ref_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5653,7 +5974,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (defs_ == null) {
         defs_ = new com.google.protobuf.MapFieldBuilder<>(defsConverter);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return defs_;
     }
@@ -5758,7 +6079,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDefs() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       internalGetMutableDefs().clear();
       return this;
     }
@@ -5787,7 +6108,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
         getMutableDefs() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return internalGetMutableDefs().ensureMessageMap();
     }
 
@@ -5811,7 +6132,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableDefs().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return this;
     }
 
@@ -5836,7 +6157,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableDefs().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return this;
     }
 

@@ -318,9 +318,10 @@ public interface OperationMetadataOrBuilder
    * <pre>
    * Output only. Identifies whether the user has requested cancellation
    * of the operation. Operations that have successfully been cancelled
-   * have [Operation.error][] value with a
-   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-   * `Code.CANCELLED`.
+   * have
+   * [google.longrunning.Operation.error][google.longrunning.Operation.error]
+   * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+   * corresponding to `Code.CANCELLED`.
    * </pre>
    *
    * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

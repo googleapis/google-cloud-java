@@ -28,7 +28,8 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -41,7 +42,8 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -54,7 +56,8 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -142,7 +145,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Tuning Spec for open sourced and third party partner models.
+   * Tuning Spec for open sourced and third party Partner models.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PartnerModelTuningSpec partner_model_tuning_spec = 21;
@@ -156,7 +159,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Tuning Spec for open sourced and third party partner models.
+   * Tuning Spec for open sourced and third party Partner models.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PartnerModelTuningSpec partner_model_tuning_spec = 21;
@@ -170,7 +173,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Tuning Spec for open sourced and third party partner models.
+   * Tuning Spec for open sourced and third party Partner models.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.PartnerModelTuningSpec partner_model_tuning_spec = 21;
@@ -664,7 +667,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The tuned model resources assiociated with this
+   * Output only. The tuned model resources associated with this
    * [TuningJob][google.cloud.aiplatform.v1.TuningJob].
    * </pre>
    *
@@ -680,7 +683,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The tuned model resources assiociated with this
+   * Output only. The tuned model resources associated with this
    * [TuningJob][google.cloud.aiplatform.v1.TuningJob].
    * </pre>
    *
@@ -696,7 +699,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The tuned model resources assiociated with this
+   * Output only. The tuned model resources associated with this
    * [TuningJob][google.cloud.aiplatform.v1.TuningJob].
    * </pre>
    *

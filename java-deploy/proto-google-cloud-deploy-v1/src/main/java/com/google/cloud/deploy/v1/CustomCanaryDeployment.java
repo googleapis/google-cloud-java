@@ -183,7 +183,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Whether to run verify tests after the deployment.
+     * Optional. Whether to run verify tests after the deployment via `skaffold
+     * verify`.
      * </pre>
      *
      * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -496,7 +497,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Whether to run verify tests after the deployment.
+     * Optional. Whether to run verify tests after the deployment via `skaffold
+     * verify`.
      * </pre>
      *
      * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1538,7 +1540,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Whether to run verify tests after the deployment.
+       * Optional. Whether to run verify tests after the deployment via `skaffold
+       * verify`.
        * </pre>
        *
        * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1554,7 +1557,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Whether to run verify tests after the deployment.
+       * Optional. Whether to run verify tests after the deployment via `skaffold
+       * verify`.
        * </pre>
        *
        * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1574,7 +1578,8 @@ public final class CustomCanaryDeployment extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. Whether to run verify tests after the deployment.
+       * Optional. Whether to run verify tests after the deployment via `skaffold
+       * verify`.
        * </pre>
        *
        * <code>bool verify = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

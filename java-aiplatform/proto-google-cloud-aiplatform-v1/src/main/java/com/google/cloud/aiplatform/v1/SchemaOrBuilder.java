@@ -747,6 +747,52 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
+   * Optional. Can either be a boolean or an object; controls the presence of
+   * additional properties.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the additionalProperties field is set.
+   */
+  boolean hasAdditionalProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Can either be a boolean or an object; controls the presence of
+   * additional properties.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The additionalProperties.
+   */
+  com.google.protobuf.Value getAdditionalProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Can either be a boolean or an object; controls the presence of
+   * additional properties.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value additional_properties = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.ValueOrBuilder getAdditionalPropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Allows indirect references between schema nodes. The value should
    * be a valid reference to a child of the root `defs`.
    *

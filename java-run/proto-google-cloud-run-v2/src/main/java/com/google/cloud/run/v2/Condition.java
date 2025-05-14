@@ -614,6 +614,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERNAL = 16;</code>
      */
     INTERNAL(16),
+    /**
+     *
+     *
+     * <pre>
+     * User-provided VPC network was not found.
+     * </pre>
+     *
+     * <code>VPC_NETWORK_NOT_FOUND = 17;</code>
+     */
+    VPC_NETWORK_NOT_FOUND(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -782,6 +792,17 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int INTERNAL_VALUE = 16;
 
+    /**
+     *
+     *
+     * <pre>
+     * User-provided VPC network was not found.
+     * </pre>
+     *
+     * <code>VPC_NETWORK_NOT_FOUND = 17;</code>
+     */
+    public static final int VPC_NETWORK_NOT_FOUND_VALUE = 17;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -836,6 +857,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return POSTPONED_RETRY;
         case 16:
           return INTERNAL;
+        case 17:
+          return VPC_NETWORK_NOT_FOUND;
         default:
           return null;
       }

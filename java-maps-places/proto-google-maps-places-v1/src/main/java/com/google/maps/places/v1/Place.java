@@ -13111,7 +13111,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the sub destination.
+     * The resource name of the sub-destination.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13124,7 +13124,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the sub destination.
+     * The resource name of the sub-destination.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13137,7 +13137,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The place id of the sub destination.
+     * The place id of the sub-destination.
      * </pre>
      *
      * <code>string id = 2;</code>
@@ -13150,7 +13150,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The place id of the sub destination.
+     * The place id of the sub-destination.
      * </pre>
      *
      * <code>string id = 2;</code>
@@ -13164,8 +13164,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Place resource name and id of sub destinations that relate to the place.
-   * For example, different terminals are different destinations of an airport.
+   * Sub-destinations are specific places associated with a main place. These
+   * provide more specific destinations for users who are searching within a
+   * large or complex place, like an airport, national park, university, or
+   * stadium. For example, sub-destinations at an airport might include
+   * associated terminals and parking lots. Sub-destinations return the place ID
+   * and place resource name, which can be used in subsequent Place Details
+   * (New) requests to fetch richer details, including the sub-destination's
+   * display name and location.
    * </pre>
    *
    * Protobuf type {@code google.maps.places.v1.Place.SubDestination}
@@ -13216,7 +13222,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the sub destination.
+     * The resource name of the sub-destination.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13240,7 +13246,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the sub destination.
+     * The resource name of the sub-destination.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13269,7 +13275,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The place id of the sub destination.
+     * The place id of the sub-destination.
      * </pre>
      *
      * <code>string id = 2;</code>
@@ -13293,7 +13299,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The place id of the sub destination.
+     * The place id of the sub-destination.
      * </pre>
      *
      * <code>string id = 2;</code>
@@ -13487,8 +13493,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Place resource name and id of sub destinations that relate to the place.
-     * For example, different terminals are different destinations of an airport.
+     * Sub-destinations are specific places associated with a main place. These
+     * provide more specific destinations for users who are searching within a
+     * large or complex place, like an airport, national park, university, or
+     * stadium. For example, sub-destinations at an airport might include
+     * associated terminals and parking lots. Sub-destinations return the place ID
+     * and place resource name, which can be used in subsequent Place Details
+     * (New) requests to fetch richer details, including the sub-destination's
+     * display name and location.
      * </pre>
      *
      * Protobuf type {@code google.maps.places.v1.Place.SubDestination}
@@ -13691,7 +13703,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the sub destination.
+       * The resource name of the sub-destination.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13714,7 +13726,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the sub destination.
+       * The resource name of the sub-destination.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13737,7 +13749,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the sub destination.
+       * The resource name of the sub-destination.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13759,7 +13771,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the sub destination.
+       * The resource name of the sub-destination.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13777,7 +13789,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The resource name of the sub destination.
+       * The resource name of the sub-destination.
        * </pre>
        *
        * <code>string name = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -13802,7 +13814,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The place id of the sub destination.
+       * The place id of the sub-destination.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -13825,7 +13837,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The place id of the sub destination.
+       * The place id of the sub-destination.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -13848,7 +13860,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The place id of the sub destination.
+       * The place id of the sub-destination.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -13870,7 +13882,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The place id of the sub destination.
+       * The place id of the sub-destination.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -13888,7 +13900,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The place id of the sub destination.
+       * The place id of the sub-destination.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -15119,85 +15131,76 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The detailed description of the place.
+     * A link where users can flag a problem with the overview summary.
      * </pre>
      *
-     * <code>.google.type.LocalizedText description = 2;</code>
+     * <code>string overview_flag_content_uri = 4;</code>
      *
-     * @return Whether the description field is set.
+     * @return The overviewFlagContentUri.
      */
-    boolean hasDescription();
+    java.lang.String getOverviewFlagContentUri();
 
     /**
      *
      *
      * <pre>
-     * The detailed description of the place.
+     * A link where users can flag a problem with the overview summary.
      * </pre>
      *
-     * <code>.google.type.LocalizedText description = 2;</code>
+     * <code>string overview_flag_content_uri = 4;</code>
      *
-     * @return The description.
+     * @return The bytes for overviewFlagContentUri.
      */
-    com.google.type.LocalizedText getDescription();
+    com.google.protobuf.ByteString getOverviewFlagContentUriBytes();
 
     /**
      *
      *
      * <pre>
-     * The detailed description of the place.
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
      * </pre>
      *
-     * <code>.google.type.LocalizedText description = 2;</code>
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+     *
+     * @return Whether the disclosureText field is set.
      */
-    com.google.type.LocalizedTextOrBuilder getDescriptionOrBuilder();
+    boolean hasDisclosureText();
 
     /**
      *
      *
      * <pre>
-     * References that are used to generate the summary description.
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
      * </pre>
      *
-     * <code>.google.maps.places.v1.References references = 3;</code>
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
      *
-     * @return Whether the references field is set.
+     * @return The disclosureText.
      */
-    boolean hasReferences();
+    com.google.type.LocalizedText getDisclosureText();
 
     /**
      *
      *
      * <pre>
-     * References that are used to generate the summary description.
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
      * </pre>
      *
-     * <code>.google.maps.places.v1.References references = 3;</code>
-     *
-     * @return The references.
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
      */
-    com.google.maps.places.v1.References getReferences();
-
-    /**
-     *
-     *
-     * <pre>
-     * References that are used to generate the summary description.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.References references = 3;</code>
-     */
-    com.google.maps.places.v1.ReferencesOrBuilder getReferencesOrBuilder();
+    com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder();
   }
 
   /**
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
    * AI-generated summary of the place.
    * </pre>
    *
@@ -15214,7 +15217,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private GenerativeSummary() {}
+    private GenerativeSummary() {
+      overviewFlagContentUri_ = "";
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -15287,22 +15292,77 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return overview_ == null ? com.google.type.LocalizedText.getDefaultInstance() : overview_;
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private com.google.type.LocalizedText description_;
+    public static final int OVERVIEW_FLAG_CONTENT_URI_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object overviewFlagContentUri_ = "";
 
     /**
      *
      *
      * <pre>
-     * The detailed description of the place.
+     * A link where users can flag a problem with the overview summary.
      * </pre>
      *
-     * <code>.google.type.LocalizedText description = 2;</code>
+     * <code>string overview_flag_content_uri = 4;</code>
      *
-     * @return Whether the description field is set.
+     * @return The overviewFlagContentUri.
      */
     @java.lang.Override
-    public boolean hasDescription() {
+    public java.lang.String getOverviewFlagContentUri() {
+      java.lang.Object ref = overviewFlagContentUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        overviewFlagContentUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the overview summary.
+     * </pre>
+     *
+     * <code>string overview_flag_content_uri = 4;</code>
+     *
+     * @return The bytes for overviewFlagContentUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOverviewFlagContentUriBytes() {
+      java.lang.Object ref = overviewFlagContentUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        overviewFlagContentUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISCLOSURE_TEXT_FIELD_NUMBER = 6;
+    private com.google.type.LocalizedText disclosureText_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+     *
+     * @return Whether the disclosureText field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisclosureText() {
       return ((bitField0_ & 0x00000002) != 0);
     }
 
@@ -15310,87 +15370,38 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The detailed description of the place.
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
      * </pre>
      *
-     * <code>.google.type.LocalizedText description = 2;</code>
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
      *
-     * @return The description.
+     * @return The disclosureText.
      */
     @java.lang.Override
-    public com.google.type.LocalizedText getDescription() {
-      return description_ == null
+    public com.google.type.LocalizedText getDisclosureText() {
+      return disclosureText_ == null
           ? com.google.type.LocalizedText.getDefaultInstance()
-          : description_;
+          : disclosureText_;
     }
 
     /**
      *
      *
      * <pre>
-     * The detailed description of the place.
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
      * </pre>
      *
-     * <code>.google.type.LocalizedText description = 2;</code>
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
      */
     @java.lang.Override
-    public com.google.type.LocalizedTextOrBuilder getDescriptionOrBuilder() {
-      return description_ == null
+    public com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder() {
+      return disclosureText_ == null
           ? com.google.type.LocalizedText.getDefaultInstance()
-          : description_;
-    }
-
-    public static final int REFERENCES_FIELD_NUMBER = 3;
-    private com.google.maps.places.v1.References references_;
-
-    /**
-     *
-     *
-     * <pre>
-     * References that are used to generate the summary description.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.References references = 3;</code>
-     *
-     * @return Whether the references field is set.
-     */
-    @java.lang.Override
-    public boolean hasReferences() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * References that are used to generate the summary description.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.References references = 3;</code>
-     *
-     * @return The references.
-     */
-    @java.lang.Override
-    public com.google.maps.places.v1.References getReferences() {
-      return references_ == null
-          ? com.google.maps.places.v1.References.getDefaultInstance()
-          : references_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * References that are used to generate the summary description.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.References references = 3;</code>
-     */
-    @java.lang.Override
-    public com.google.maps.places.v1.ReferencesOrBuilder getReferencesOrBuilder() {
-      return references_ == null
-          ? com.google.maps.places.v1.References.getDefaultInstance()
-          : references_;
+          : disclosureText_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -15410,11 +15421,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getOverview());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(2, getDescription());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(overviewFlagContentUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, overviewFlagContentUri_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(3, getReferences());
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(6, getDisclosureText());
       }
       getUnknownFields().writeTo(output);
     }
@@ -15428,11 +15439,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getOverview());
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDescription());
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(overviewFlagContentUri_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(4, overviewFlagContentUri_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getReferences());
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDisclosureText());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -15454,13 +15466,10 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (hasOverview()) {
         if (!getOverview().equals(other.getOverview())) return false;
       }
-      if (hasDescription() != other.hasDescription()) return false;
-      if (hasDescription()) {
-        if (!getDescription().equals(other.getDescription())) return false;
-      }
-      if (hasReferences() != other.hasReferences()) return false;
-      if (hasReferences()) {
-        if (!getReferences().equals(other.getReferences())) return false;
+      if (!getOverviewFlagContentUri().equals(other.getOverviewFlagContentUri())) return false;
+      if (hasDisclosureText() != other.hasDisclosureText()) return false;
+      if (hasDisclosureText()) {
+        if (!getDisclosureText().equals(other.getDisclosureText())) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -15477,13 +15486,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
         hash = (53 * hash) + getOverview().hashCode();
       }
-      if (hasDescription()) {
-        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-        hash = (53 * hash) + getDescription().hashCode();
-      }
-      if (hasReferences()) {
-        hash = (37 * hash) + REFERENCES_FIELD_NUMBER;
-        hash = (53 * hash) + getReferences().hashCode();
+      hash = (37 * hash) + OVERVIEW_FLAG_CONTENT_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getOverviewFlagContentUri().hashCode();
+      if (hasDisclosureText()) {
+        hash = (37 * hash) + DISCLOSURE_TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getDisclosureText().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -15591,10 +15598,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -15633,8 +15636,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getOverviewFieldBuilder();
-          getDescriptionFieldBuilder();
-          getReferencesFieldBuilder();
+          getDisclosureTextFieldBuilder();
         }
       }
 
@@ -15647,15 +15649,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           overviewBuilder_.dispose();
           overviewBuilder_ = null;
         }
-        description_ = null;
-        if (descriptionBuilder_ != null) {
-          descriptionBuilder_.dispose();
-          descriptionBuilder_ = null;
-        }
-        references_ = null;
-        if (referencesBuilder_ != null) {
-          referencesBuilder_.dispose();
-          referencesBuilder_ = null;
+        overviewFlagContentUri_ = "";
+        disclosureText_ = null;
+        if (disclosureTextBuilder_ != null) {
+          disclosureTextBuilder_.dispose();
+          disclosureTextBuilder_ = null;
         }
         return this;
       }
@@ -15699,14 +15697,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.description_ =
-              descriptionBuilder_ == null ? description_ : descriptionBuilder_.build();
-          to_bitField0_ |= 0x00000002;
+          result.overviewFlagContentUri_ = overviewFlagContentUri_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.references_ =
-              referencesBuilder_ == null ? references_ : referencesBuilder_.build();
-          to_bitField0_ |= 0x00000004;
+          result.disclosureText_ =
+              disclosureTextBuilder_ == null ? disclosureText_ : disclosureTextBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -15762,11 +15758,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         if (other.hasOverview()) {
           mergeOverview(other.getOverview());
         }
-        if (other.hasDescription()) {
-          mergeDescription(other.getDescription());
+        if (!other.getOverviewFlagContentUri().isEmpty()) {
+          overviewFlagContentUri_ = other.overviewFlagContentUri_;
+          bitField0_ |= 0x00000002;
+          onChanged();
         }
-        if (other.hasReferences()) {
-          mergeReferences(other.getReferences());
+        if (other.hasDisclosureText()) {
+          mergeDisclosureText(other.getDisclosureText());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -15800,18 +15798,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
-              case 18:
+              case 34:
                 {
-                  input.readMessage(getDescriptionFieldBuilder().getBuilder(), extensionRegistry);
+                  overviewFlagContentUri_ = input.readStringRequireUtf8();
                   bitField0_ |= 0x00000002;
                   break;
-                } // case 18
-              case 26:
+                } // case 34
+              case 50:
                 {
-                  input.readMessage(getReferencesFieldBuilder().getBuilder(), extensionRegistry);
+                  input.readMessage(
+                      getDisclosureTextFieldBuilder().getBuilder(), extensionRegistry);
                   bitField0_ |= 0x00000004;
                   break;
-                } // case 26
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16021,46 +16020,28 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         return overviewBuilder_;
       }
 
-      private com.google.type.LocalizedText description_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.type.LocalizedText,
-              com.google.type.LocalizedText.Builder,
-              com.google.type.LocalizedTextOrBuilder>
-          descriptionBuilder_;
+      private java.lang.Object overviewFlagContentUri_ = "";
 
       /**
        *
        *
        * <pre>
-       * The detailed description of the place.
+       * A link where users can flag a problem with the overview summary.
        * </pre>
        *
-       * <code>.google.type.LocalizedText description = 2;</code>
+       * <code>string overview_flag_content_uri = 4;</code>
        *
-       * @return Whether the description field is set.
+       * @return The overviewFlagContentUri.
        */
-      public boolean hasDescription() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The detailed description of the place.
-       * </pre>
-       *
-       * <code>.google.type.LocalizedText description = 2;</code>
-       *
-       * @return The description.
-       */
-      public com.google.type.LocalizedText getDescription() {
-        if (descriptionBuilder_ == null) {
-          return description_ == null
-              ? com.google.type.LocalizedText.getDefaultInstance()
-              : description_;
+      public java.lang.String getOverviewFlagContentUri() {
+        java.lang.Object ref = overviewFlagContentUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          overviewFlagContentUri_ = s;
+          return s;
         } else {
-          return descriptionBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
 
@@ -16068,20 +16049,42 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The detailed description of the place.
+       * A link where users can flag a problem with the overview summary.
        * </pre>
        *
-       * <code>.google.type.LocalizedText description = 2;</code>
+       * <code>string overview_flag_content_uri = 4;</code>
+       *
+       * @return The bytes for overviewFlagContentUri.
        */
-      public Builder setDescription(com.google.type.LocalizedText value) {
-        if (descriptionBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          description_ = value;
+      public com.google.protobuf.ByteString getOverviewFlagContentUriBytes() {
+        java.lang.Object ref = overviewFlagContentUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          overviewFlagContentUri_ = b;
+          return b;
         } else {
-          descriptionBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the overview summary.
+       * </pre>
+       *
+       * <code>string overview_flag_content_uri = 4;</code>
+       *
+       * @param value The overviewFlagContentUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOverviewFlagContentUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        overviewFlagContentUri_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
@@ -16091,66 +16094,16 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The detailed description of the place.
+       * A link where users can flag a problem with the overview summary.
        * </pre>
        *
-       * <code>.google.type.LocalizedText description = 2;</code>
+       * <code>string overview_flag_content_uri = 4;</code>
+       *
+       * @return This builder for chaining.
        */
-      public Builder setDescription(com.google.type.LocalizedText.Builder builderForValue) {
-        if (descriptionBuilder_ == null) {
-          description_ = builderForValue.build();
-        } else {
-          descriptionBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The detailed description of the place.
-       * </pre>
-       *
-       * <code>.google.type.LocalizedText description = 2;</code>
-       */
-      public Builder mergeDescription(com.google.type.LocalizedText value) {
-        if (descriptionBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)
-              && description_ != null
-              && description_ != com.google.type.LocalizedText.getDefaultInstance()) {
-            getDescriptionBuilder().mergeFrom(value);
-          } else {
-            description_ = value;
-          }
-        } else {
-          descriptionBuilder_.mergeFrom(value);
-        }
-        if (description_ != null) {
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The detailed description of the place.
-       * </pre>
-       *
-       * <code>.google.type.LocalizedText description = 2;</code>
-       */
-      public Builder clearDescription() {
+      public Builder clearOverviewFlagContentUri() {
+        overviewFlagContentUri_ = getDefaultInstance().getOverviewFlagContentUri();
         bitField0_ = (bitField0_ & ~0x00000002);
-        description_ = null;
-        if (descriptionBuilder_ != null) {
-          descriptionBuilder_.dispose();
-          descriptionBuilder_ = null;
-        }
         onChanged();
         return this;
       }
@@ -16159,81 +16112,46 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The detailed description of the place.
+       * A link where users can flag a problem with the overview summary.
        * </pre>
        *
-       * <code>.google.type.LocalizedText description = 2;</code>
+       * <code>string overview_flag_content_uri = 4;</code>
+       *
+       * @param value The bytes for overviewFlagContentUri to set.
+       * @return This builder for chaining.
        */
-      public com.google.type.LocalizedText.Builder getDescriptionBuilder() {
+      public Builder setOverviewFlagContentUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        overviewFlagContentUri_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
-        return getDescriptionFieldBuilder().getBuilder();
+        return this;
       }
 
-      /**
-       *
-       *
-       * <pre>
-       * The detailed description of the place.
-       * </pre>
-       *
-       * <code>.google.type.LocalizedText description = 2;</code>
-       */
-      public com.google.type.LocalizedTextOrBuilder getDescriptionOrBuilder() {
-        if (descriptionBuilder_ != null) {
-          return descriptionBuilder_.getMessageOrBuilder();
-        } else {
-          return description_ == null
-              ? com.google.type.LocalizedText.getDefaultInstance()
-              : description_;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The detailed description of the place.
-       * </pre>
-       *
-       * <code>.google.type.LocalizedText description = 2;</code>
-       */
+      private com.google.type.LocalizedText disclosureText_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.LocalizedText,
               com.google.type.LocalizedText.Builder,
               com.google.type.LocalizedTextOrBuilder>
-          getDescriptionFieldBuilder() {
-        if (descriptionBuilder_ == null) {
-          descriptionBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.type.LocalizedText,
-                  com.google.type.LocalizedText.Builder,
-                  com.google.type.LocalizedTextOrBuilder>(
-                  getDescription(), getParentForChildren(), isClean());
-          description_ = null;
-        }
-        return descriptionBuilder_;
-      }
-
-      private com.google.maps.places.v1.References references_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.maps.places.v1.References,
-              com.google.maps.places.v1.References.Builder,
-              com.google.maps.places.v1.ReferencesOrBuilder>
-          referencesBuilder_;
+          disclosureTextBuilder_;
 
       /**
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        *
-       * @return Whether the references field is set.
+       * @return Whether the disclosureText field is set.
        */
-      public boolean hasReferences() {
+      public boolean hasDisclosureText() {
         return ((bitField0_ & 0x00000004) != 0);
       }
 
@@ -16241,20 +16159,22 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        *
-       * @return The references.
+       * @return The disclosureText.
        */
-      public com.google.maps.places.v1.References getReferences() {
-        if (referencesBuilder_ == null) {
-          return references_ == null
-              ? com.google.maps.places.v1.References.getDefaultInstance()
-              : references_;
+      public com.google.type.LocalizedText getDisclosureText() {
+        if (disclosureTextBuilder_ == null) {
+          return disclosureText_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : disclosureText_;
         } else {
-          return referencesBuilder_.getMessage();
+          return disclosureTextBuilder_.getMessage();
         }
       }
 
@@ -16262,19 +16182,21 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        */
-      public Builder setReferences(com.google.maps.places.v1.References value) {
-        if (referencesBuilder_ == null) {
+      public Builder setDisclosureText(com.google.type.LocalizedText value) {
+        if (disclosureTextBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          references_ = value;
+          disclosureText_ = value;
         } else {
-          referencesBuilder_.setMessage(value);
+          disclosureTextBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
         onChanged();
@@ -16285,16 +16207,18 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        */
-      public Builder setReferences(com.google.maps.places.v1.References.Builder builderForValue) {
-        if (referencesBuilder_ == null) {
-          references_ = builderForValue.build();
+      public Builder setDisclosureText(com.google.type.LocalizedText.Builder builderForValue) {
+        if (disclosureTextBuilder_ == null) {
+          disclosureText_ = builderForValue.build();
         } else {
-          referencesBuilder_.setMessage(builderForValue.build());
+          disclosureTextBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
         onChanged();
@@ -16305,24 +16229,26 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        */
-      public Builder mergeReferences(com.google.maps.places.v1.References value) {
-        if (referencesBuilder_ == null) {
+      public Builder mergeDisclosureText(com.google.type.LocalizedText value) {
+        if (disclosureTextBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)
-              && references_ != null
-              && references_ != com.google.maps.places.v1.References.getDefaultInstance()) {
-            getReferencesBuilder().mergeFrom(value);
+              && disclosureText_ != null
+              && disclosureText_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDisclosureTextBuilder().mergeFrom(value);
           } else {
-            references_ = value;
+            disclosureText_ = value;
           }
         } else {
-          referencesBuilder_.mergeFrom(value);
+          disclosureTextBuilder_.mergeFrom(value);
         }
-        if (references_ != null) {
+        if (disclosureText_ != null) {
           bitField0_ |= 0x00000004;
           onChanged();
         }
@@ -16333,17 +16259,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        */
-      public Builder clearReferences() {
+      public Builder clearDisclosureText() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        references_ = null;
-        if (referencesBuilder_ != null) {
-          referencesBuilder_.dispose();
-          referencesBuilder_ = null;
+        disclosureText_ = null;
+        if (disclosureTextBuilder_ != null) {
+          disclosureTextBuilder_.dispose();
+          disclosureTextBuilder_ = null;
         }
         onChanged();
         return this;
@@ -16353,33 +16281,37 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        */
-      public com.google.maps.places.v1.References.Builder getReferencesBuilder() {
+      public com.google.type.LocalizedText.Builder getDisclosureTextBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
-        return getReferencesFieldBuilder().getBuilder();
+        return getDisclosureTextFieldBuilder().getBuilder();
       }
 
       /**
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        */
-      public com.google.maps.places.v1.ReferencesOrBuilder getReferencesOrBuilder() {
-        if (referencesBuilder_ != null) {
-          return referencesBuilder_.getMessageOrBuilder();
+      public com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder() {
+        if (disclosureTextBuilder_ != null) {
+          return disclosureTextBuilder_.getMessageOrBuilder();
         } else {
-          return references_ == null
-              ? com.google.maps.places.v1.References.getDefaultInstance()
-              : references_;
+          return disclosureText_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : disclosureText_;
         }
       }
 
@@ -16387,26 +16319,28 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * References that are used to generate the summary description.
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
        * </pre>
        *
-       * <code>.google.maps.places.v1.References references = 3;</code>
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.maps.places.v1.References,
-              com.google.maps.places.v1.References.Builder,
-              com.google.maps.places.v1.ReferencesOrBuilder>
-          getReferencesFieldBuilder() {
-        if (referencesBuilder_ == null) {
-          referencesBuilder_ =
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDisclosureTextFieldBuilder() {
+        if (disclosureTextBuilder_ == null) {
+          disclosureTextBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.maps.places.v1.References,
-                  com.google.maps.places.v1.References.Builder,
-                  com.google.maps.places.v1.ReferencesOrBuilder>(
-                  getReferences(), getParentForChildren(), isClean());
-          references_ = null;
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDisclosureText(), getParentForChildren(), isClean());
+          disclosureText_ = null;
         }
-        return referencesBuilder_;
+        return disclosureTextBuilder_;
       }
 
       @java.lang.Override
@@ -16469,1053 +16403,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.maps.places.v1.Place.GenerativeSummary getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-  }
-
-  public interface AreaSummaryOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Place.AreaSummary)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    java.util.List<com.google.maps.places.v1.ContentBlock> getContentBlocksList();
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    com.google.maps.places.v1.ContentBlock getContentBlocks(int index);
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    int getContentBlocksCount();
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    java.util.List<? extends com.google.maps.places.v1.ContentBlockOrBuilder>
-        getContentBlocksOrBuilderList();
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    com.google.maps.places.v1.ContentBlockOrBuilder getContentBlocksOrBuilder(int index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * AI-generated summary of the area that the place is in.
-   * </pre>
-   *
-   * Protobuf type {@code google.maps.places.v1.Place.AreaSummary}
-   */
-  public static final class AreaSummary extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.maps.places.v1.Place.AreaSummary)
-      AreaSummaryOrBuilder {
-    private static final long serialVersionUID = 0L;
-
-    // Use AreaSummary.newBuilder() to construct.
-    private AreaSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private AreaSummary() {
-      contentBlocks_ = java.util.Collections.emptyList();
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new AreaSummary();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.maps.places.v1.PlaceProto
-          .internal_static_google_maps_places_v1_Place_AreaSummary_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.maps.places.v1.PlaceProto
-          .internal_static_google_maps_places_v1_Place_AreaSummary_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.maps.places.v1.Place.AreaSummary.class,
-              com.google.maps.places.v1.Place.AreaSummary.Builder.class);
-    }
-
-    public static final int CONTENT_BLOCKS_FIELD_NUMBER = 4;
-
-    @SuppressWarnings("serial")
-    private java.util.List<com.google.maps.places.v1.ContentBlock> contentBlocks_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.google.maps.places.v1.ContentBlock> getContentBlocksList() {
-      return contentBlocks_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends com.google.maps.places.v1.ContentBlockOrBuilder>
-        getContentBlocksOrBuilderList() {
-      return contentBlocks_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    @java.lang.Override
-    public int getContentBlocksCount() {
-      return contentBlocks_.size();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    @java.lang.Override
-    public com.google.maps.places.v1.ContentBlock getContentBlocks(int index) {
-      return contentBlocks_.get(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Content blocks that compose the area summary. Each block has a separate
-     * topic about the area.
-     * </pre>
-     *
-     * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-     */
-    @java.lang.Override
-    public com.google.maps.places.v1.ContentBlockOrBuilder getContentBlocksOrBuilder(int index) {
-      return contentBlocks_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      for (int i = 0; i < contentBlocks_.size(); i++) {
-        output.writeMessage(4, contentBlocks_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (int i = 0; i < contentBlocks_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, contentBlocks_.get(i));
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj instanceof com.google.maps.places.v1.Place.AreaSummary)) {
-        return super.equals(obj);
-      }
-      com.google.maps.places.v1.Place.AreaSummary other =
-          (com.google.maps.places.v1.Place.AreaSummary) obj;
-
-      if (!getContentBlocksList().equals(other.getContentBlocksList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getContentBlocksCount() > 0) {
-        hash = (37 * hash) + CONTENT_BLOCKS_FIELD_NUMBER;
-        hash = (53 * hash) + getContentBlocksList().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(
-        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(
-        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseDelimitedFrom(
-        java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseDelimitedFrom(
-        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(
-        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(com.google.maps.places.v1.Place.AreaSummary prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * Protobuf type {@code google.maps.places.v1.Place.AreaSummary}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.Place.AreaSummary)
-        com.google.maps.places.v1.Place.AreaSummaryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.maps.places.v1.PlaceProto
-            .internal_static_google_maps_places_v1_Place_AreaSummary_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.maps.places.v1.PlaceProto
-            .internal_static_google_maps_places_v1_Place_AreaSummary_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.maps.places.v1.Place.AreaSummary.class,
-                com.google.maps.places.v1.Place.AreaSummary.Builder.class);
-      }
-
-      // Construct using com.google.maps.places.v1.Place.AreaSummary.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        if (contentBlocksBuilder_ == null) {
-          contentBlocks_ = java.util.Collections.emptyList();
-        } else {
-          contentBlocks_ = null;
-          contentBlocksBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.maps.places.v1.PlaceProto
-            .internal_static_google_maps_places_v1_Place_AreaSummary_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.maps.places.v1.Place.AreaSummary getDefaultInstanceForType() {
-        return com.google.maps.places.v1.Place.AreaSummary.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.maps.places.v1.Place.AreaSummary build() {
-        com.google.maps.places.v1.Place.AreaSummary result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.maps.places.v1.Place.AreaSummary buildPartial() {
-        com.google.maps.places.v1.Place.AreaSummary result =
-            new com.google.maps.places.v1.Place.AreaSummary(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(com.google.maps.places.v1.Place.AreaSummary result) {
-        if (contentBlocksBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            contentBlocks_ = java.util.Collections.unmodifiableList(contentBlocks_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.contentBlocks_ = contentBlocks_;
-        } else {
-          result.contentBlocks_ = contentBlocksBuilder_.build();
-        }
-      }
-
-      private void buildPartial0(com.google.maps.places.v1.Place.AreaSummary result) {
-        int from_bitField0_ = bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.maps.places.v1.Place.AreaSummary) {
-          return mergeFrom((com.google.maps.places.v1.Place.AreaSummary) other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.maps.places.v1.Place.AreaSummary other) {
-        if (other == com.google.maps.places.v1.Place.AreaSummary.getDefaultInstance()) return this;
-        if (contentBlocksBuilder_ == null) {
-          if (!other.contentBlocks_.isEmpty()) {
-            if (contentBlocks_.isEmpty()) {
-              contentBlocks_ = other.contentBlocks_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureContentBlocksIsMutable();
-              contentBlocks_.addAll(other.contentBlocks_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.contentBlocks_.isEmpty()) {
-            if (contentBlocksBuilder_.isEmpty()) {
-              contentBlocksBuilder_.dispose();
-              contentBlocksBuilder_ = null;
-              contentBlocks_ = other.contentBlocks_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              contentBlocksBuilder_ =
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                      ? getContentBlocksFieldBuilder()
-                      : null;
-            } else {
-              contentBlocksBuilder_.addAllMessages(other.contentBlocks_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 34:
-                {
-                  com.google.maps.places.v1.ContentBlock m =
-                      input.readMessage(
-                          com.google.maps.places.v1.ContentBlock.parser(), extensionRegistry);
-                  if (contentBlocksBuilder_ == null) {
-                    ensureContentBlocksIsMutable();
-                    contentBlocks_.add(m);
-                  } else {
-                    contentBlocksBuilder_.addMessage(m);
-                  }
-                  break;
-                } // case 34
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private java.util.List<com.google.maps.places.v1.ContentBlock> contentBlocks_ =
-          java.util.Collections.emptyList();
-
-      private void ensureContentBlocksIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          contentBlocks_ =
-              new java.util.ArrayList<com.google.maps.places.v1.ContentBlock>(contentBlocks_);
-          bitField0_ |= 0x00000001;
-        }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.maps.places.v1.ContentBlock,
-              com.google.maps.places.v1.ContentBlock.Builder,
-              com.google.maps.places.v1.ContentBlockOrBuilder>
-          contentBlocksBuilder_;
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public java.util.List<com.google.maps.places.v1.ContentBlock> getContentBlocksList() {
-        if (contentBlocksBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(contentBlocks_);
-        } else {
-          return contentBlocksBuilder_.getMessageList();
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public int getContentBlocksCount() {
-        if (contentBlocksBuilder_ == null) {
-          return contentBlocks_.size();
-        } else {
-          return contentBlocksBuilder_.getCount();
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public com.google.maps.places.v1.ContentBlock getContentBlocks(int index) {
-        if (contentBlocksBuilder_ == null) {
-          return contentBlocks_.get(index);
-        } else {
-          return contentBlocksBuilder_.getMessage(index);
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder setContentBlocks(int index, com.google.maps.places.v1.ContentBlock value) {
-        if (contentBlocksBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureContentBlocksIsMutable();
-          contentBlocks_.set(index, value);
-          onChanged();
-        } else {
-          contentBlocksBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder setContentBlocks(
-          int index, com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
-        if (contentBlocksBuilder_ == null) {
-          ensureContentBlocksIsMutable();
-          contentBlocks_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          contentBlocksBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder addContentBlocks(com.google.maps.places.v1.ContentBlock value) {
-        if (contentBlocksBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureContentBlocksIsMutable();
-          contentBlocks_.add(value);
-          onChanged();
-        } else {
-          contentBlocksBuilder_.addMessage(value);
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder addContentBlocks(int index, com.google.maps.places.v1.ContentBlock value) {
-        if (contentBlocksBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureContentBlocksIsMutable();
-          contentBlocks_.add(index, value);
-          onChanged();
-        } else {
-          contentBlocksBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder addContentBlocks(
-          com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
-        if (contentBlocksBuilder_ == null) {
-          ensureContentBlocksIsMutable();
-          contentBlocks_.add(builderForValue.build());
-          onChanged();
-        } else {
-          contentBlocksBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder addContentBlocks(
-          int index, com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
-        if (contentBlocksBuilder_ == null) {
-          ensureContentBlocksIsMutable();
-          contentBlocks_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          contentBlocksBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder addAllContentBlocks(
-          java.lang.Iterable<? extends com.google.maps.places.v1.ContentBlock> values) {
-        if (contentBlocksBuilder_ == null) {
-          ensureContentBlocksIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contentBlocks_);
-          onChanged();
-        } else {
-          contentBlocksBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder clearContentBlocks() {
-        if (contentBlocksBuilder_ == null) {
-          contentBlocks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          contentBlocksBuilder_.clear();
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public Builder removeContentBlocks(int index) {
-        if (contentBlocksBuilder_ == null) {
-          ensureContentBlocksIsMutable();
-          contentBlocks_.remove(index);
-          onChanged();
-        } else {
-          contentBlocksBuilder_.remove(index);
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public com.google.maps.places.v1.ContentBlock.Builder getContentBlocksBuilder(int index) {
-        return getContentBlocksFieldBuilder().getBuilder(index);
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public com.google.maps.places.v1.ContentBlockOrBuilder getContentBlocksOrBuilder(int index) {
-        if (contentBlocksBuilder_ == null) {
-          return contentBlocks_.get(index);
-        } else {
-          return contentBlocksBuilder_.getMessageOrBuilder(index);
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public java.util.List<? extends com.google.maps.places.v1.ContentBlockOrBuilder>
-          getContentBlocksOrBuilderList() {
-        if (contentBlocksBuilder_ != null) {
-          return contentBlocksBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(contentBlocks_);
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public com.google.maps.places.v1.ContentBlock.Builder addContentBlocksBuilder() {
-        return getContentBlocksFieldBuilder()
-            .addBuilder(com.google.maps.places.v1.ContentBlock.getDefaultInstance());
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public com.google.maps.places.v1.ContentBlock.Builder addContentBlocksBuilder(int index) {
-        return getContentBlocksFieldBuilder()
-            .addBuilder(index, com.google.maps.places.v1.ContentBlock.getDefaultInstance());
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Content blocks that compose the area summary. Each block has a separate
-       * topic about the area.
-       * </pre>
-       *
-       * <code>repeated .google.maps.places.v1.ContentBlock content_blocks = 4;</code>
-       */
-      public java.util.List<com.google.maps.places.v1.ContentBlock.Builder>
-          getContentBlocksBuilderList() {
-        return getContentBlocksFieldBuilder().getBuilderList();
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.maps.places.v1.ContentBlock,
-              com.google.maps.places.v1.ContentBlock.Builder,
-              com.google.maps.places.v1.ContentBlockOrBuilder>
-          getContentBlocksFieldBuilder() {
-        if (contentBlocksBuilder_ == null) {
-          contentBlocksBuilder_ =
-              new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.google.maps.places.v1.ContentBlock,
-                  com.google.maps.places.v1.ContentBlock.Builder,
-                  com.google.maps.places.v1.ContentBlockOrBuilder>(
-                  contentBlocks_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          contentBlocks_ = null;
-        }
-        return contentBlocksBuilder_;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place.AreaSummary)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.maps.places.v1.Place.AreaSummary)
-    private static final com.google.maps.places.v1.Place.AreaSummary DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE = new com.google.maps.places.v1.Place.AreaSummary();
-    }
-
-    public static com.google.maps.places.v1.Place.AreaSummary getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AreaSummary> PARSER =
-        new com.google.protobuf.AbstractParser<AreaSummary>() {
-          @java.lang.Override
-          public AreaSummary parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<AreaSummary> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AreaSummary> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.maps.places.v1.Place.AreaSummary getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -18383,6 +17270,5273 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.maps.places.v1.Place.ContainingPlace getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ReviewSummaryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Place.ReviewSummary)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of user reviews.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText text = 1;</code>
+     *
+     * @return Whether the text field is set.
+     */
+    boolean hasText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of user reviews.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText text = 1;</code>
+     *
+     * @return The text.
+     */
+    com.google.type.LocalizedText getText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of user reviews.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText text = 1;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getTextOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 2;</code>
+     *
+     * @return The flagContentUri.
+     */
+    java.lang.String getFlagContentUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 2;</code>
+     *
+     * @return The bytes for flagContentUri.
+     */
+    com.google.protobuf.ByteString getFlagContentUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+     *
+     * @return Whether the disclosureText field is set.
+     */
+    boolean hasDisclosureText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+     *
+     * @return The disclosureText.
+     */
+    com.google.type.LocalizedText getDisclosureText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * AI-generated summary of the place using user reviews.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.places.v1.Place.ReviewSummary}
+   */
+  public static final class ReviewSummary extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.places.v1.Place.ReviewSummary)
+      ReviewSummaryOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ReviewSummary.newBuilder() to construct.
+    private ReviewSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReviewSummary() {
+      flagContentUri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReviewSummary();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_ReviewSummary_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_ReviewSummary_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.places.v1.Place.ReviewSummary.class,
+              com.google.maps.places.v1.Place.ReviewSummary.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TEXT_FIELD_NUMBER = 1;
+    private com.google.type.LocalizedText text_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of user reviews.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText text = 1;</code>
+     *
+     * @return Whether the text field is set.
+     */
+    @java.lang.Override
+    public boolean hasText() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of user reviews.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText text = 1;</code>
+     *
+     * @return The text.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getText() {
+      return text_ == null ? com.google.type.LocalizedText.getDefaultInstance() : text_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of user reviews.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText text = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getTextOrBuilder() {
+      return text_ == null ? com.google.type.LocalizedText.getDefaultInstance() : text_;
+    }
+
+    public static final int FLAG_CONTENT_URI_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object flagContentUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 2;</code>
+     *
+     * @return The flagContentUri.
+     */
+    @java.lang.Override
+    public java.lang.String getFlagContentUri() {
+      java.lang.Object ref = flagContentUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flagContentUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 2;</code>
+     *
+     * @return The bytes for flagContentUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFlagContentUriBytes() {
+      java.lang.Object ref = flagContentUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        flagContentUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISCLOSURE_TEXT_FIELD_NUMBER = 3;
+    private com.google.type.LocalizedText disclosureText_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+     *
+     * @return Whether the disclosureText field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisclosureText() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+     *
+     * @return The disclosureText.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDisclosureText() {
+      return disclosureText_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : disclosureText_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder() {
+      return disclosureText_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : disclosureText_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getText());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flagContentUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, flagContentUri_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(3, getDisclosureText());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getText());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flagContentUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, flagContentUri_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDisclosureText());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.places.v1.Place.ReviewSummary)) {
+        return super.equals(obj);
+      }
+      com.google.maps.places.v1.Place.ReviewSummary other =
+          (com.google.maps.places.v1.Place.ReviewSummary) obj;
+
+      if (hasText() != other.hasText()) return false;
+      if (hasText()) {
+        if (!getText().equals(other.getText())) return false;
+      }
+      if (!getFlagContentUri().equals(other.getFlagContentUri())) return false;
+      if (hasDisclosureText() != other.hasDisclosureText()) return false;
+      if (hasDisclosureText()) {
+        if (!getDisclosureText().equals(other.getDisclosureText())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasText()) {
+        hash = (37 * hash) + TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getText().hashCode();
+      }
+      hash = (37 * hash) + FLAG_CONTENT_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getFlagContentUri().hashCode();
+      if (hasDisclosureText()) {
+        hash = (37 * hash) + DISCLOSURE_TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getDisclosureText().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.maps.places.v1.Place.ReviewSummary prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.places.v1.Place.ReviewSummary}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.Place.ReviewSummary)
+        com.google.maps.places.v1.Place.ReviewSummaryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ReviewSummary_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ReviewSummary_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.places.v1.Place.ReviewSummary.class,
+                com.google.maps.places.v1.Place.ReviewSummary.Builder.class);
+      }
+
+      // Construct using com.google.maps.places.v1.Place.ReviewSummary.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getTextFieldBuilder();
+          getDisclosureTextFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        text_ = null;
+        if (textBuilder_ != null) {
+          textBuilder_.dispose();
+          textBuilder_ = null;
+        }
+        flagContentUri_ = "";
+        disclosureText_ = null;
+        if (disclosureTextBuilder_ != null) {
+          disclosureTextBuilder_.dispose();
+          disclosureTextBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ReviewSummary_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ReviewSummary getDefaultInstanceForType() {
+        return com.google.maps.places.v1.Place.ReviewSummary.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ReviewSummary build() {
+        com.google.maps.places.v1.Place.ReviewSummary result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ReviewSummary buildPartial() {
+        com.google.maps.places.v1.Place.ReviewSummary result =
+            new com.google.maps.places.v1.Place.ReviewSummary(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.places.v1.Place.ReviewSummary result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.text_ = textBuilder_ == null ? text_ : textBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.flagContentUri_ = flagContentUri_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.disclosureText_ =
+              disclosureTextBuilder_ == null ? disclosureText_ : disclosureTextBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.places.v1.Place.ReviewSummary) {
+          return mergeFrom((com.google.maps.places.v1.Place.ReviewSummary) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.places.v1.Place.ReviewSummary other) {
+        if (other == com.google.maps.places.v1.Place.ReviewSummary.getDefaultInstance())
+          return this;
+        if (other.hasText()) {
+          mergeText(other.getText());
+        }
+        if (!other.getFlagContentUri().isEmpty()) {
+          flagContentUri_ = other.flagContentUri_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasDisclosureText()) {
+          mergeDisclosureText(other.getDisclosureText());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getTextFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  flagContentUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getDisclosureTextFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.type.LocalizedText text_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          textBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       *
+       * @return Whether the text field is set.
+       */
+      public boolean hasText() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       *
+       * @return The text.
+       */
+      public com.google.type.LocalizedText getText() {
+        if (textBuilder_ == null) {
+          return text_ == null ? com.google.type.LocalizedText.getDefaultInstance() : text_;
+        } else {
+          return textBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       */
+      public Builder setText(com.google.type.LocalizedText value) {
+        if (textBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          text_ = value;
+        } else {
+          textBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       */
+      public Builder setText(com.google.type.LocalizedText.Builder builderForValue) {
+        if (textBuilder_ == null) {
+          text_ = builderForValue.build();
+        } else {
+          textBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       */
+      public Builder mergeText(com.google.type.LocalizedText value) {
+        if (textBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && text_ != null
+              && text_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getTextBuilder().mergeFrom(value);
+          } else {
+            text_ = value;
+          }
+        } else {
+          textBuilder_.mergeFrom(value);
+        }
+        if (text_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       */
+      public Builder clearText() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        text_ = null;
+        if (textBuilder_ != null) {
+          textBuilder_.dispose();
+          textBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       */
+      public com.google.type.LocalizedText.Builder getTextBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getTextFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getTextOrBuilder() {
+        if (textBuilder_ != null) {
+          return textBuilder_.getMessageOrBuilder();
+        } else {
+          return text_ == null ? com.google.type.LocalizedText.getDefaultInstance() : text_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The summary of user reviews.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText text = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getTextFieldBuilder() {
+        if (textBuilder_ == null) {
+          textBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getText(), getParentForChildren(), isClean());
+          text_ = null;
+        }
+        return textBuilder_;
+      }
+
+      private java.lang.Object flagContentUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 2;</code>
+       *
+       * @return The flagContentUri.
+       */
+      public java.lang.String getFlagContentUri() {
+        java.lang.Object ref = flagContentUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flagContentUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 2;</code>
+       *
+       * @return The bytes for flagContentUri.
+       */
+      public com.google.protobuf.ByteString getFlagContentUriBytes() {
+        java.lang.Object ref = flagContentUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          flagContentUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 2;</code>
+       *
+       * @param value The flagContentUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlagContentUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        flagContentUri_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFlagContentUri() {
+        flagContentUri_ = getDefaultInstance().getFlagContentUri();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 2;</code>
+       *
+       * @param value The bytes for flagContentUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlagContentUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        flagContentUri_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.type.LocalizedText disclosureText_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          disclosureTextBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       *
+       * @return Whether the disclosureText field is set.
+       */
+      public boolean hasDisclosureText() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       *
+       * @return The disclosureText.
+       */
+      public com.google.type.LocalizedText getDisclosureText() {
+        if (disclosureTextBuilder_ == null) {
+          return disclosureText_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : disclosureText_;
+        } else {
+          return disclosureTextBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       */
+      public Builder setDisclosureText(com.google.type.LocalizedText value) {
+        if (disclosureTextBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          disclosureText_ = value;
+        } else {
+          disclosureTextBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       */
+      public Builder setDisclosureText(com.google.type.LocalizedText.Builder builderForValue) {
+        if (disclosureTextBuilder_ == null) {
+          disclosureText_ = builderForValue.build();
+        } else {
+          disclosureTextBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       */
+      public Builder mergeDisclosureText(com.google.type.LocalizedText value) {
+        if (disclosureTextBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && disclosureText_ != null
+              && disclosureText_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDisclosureTextBuilder().mergeFrom(value);
+          } else {
+            disclosureText_ = value;
+          }
+        } else {
+          disclosureTextBuilder_.mergeFrom(value);
+        }
+        if (disclosureText_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       */
+      public Builder clearDisclosureText() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        disclosureText_ = null;
+        if (disclosureTextBuilder_ != null) {
+          disclosureTextBuilder_.dispose();
+          disclosureTextBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDisclosureTextBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getDisclosureTextFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder() {
+        if (disclosureTextBuilder_ != null) {
+          return disclosureTextBuilder_.getMessageOrBuilder();
+        } else {
+          return disclosureText_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : disclosureText_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDisclosureTextFieldBuilder() {
+        if (disclosureTextBuilder_ == null) {
+          disclosureTextBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDisclosureText(), getParentForChildren(), isClean());
+          disclosureText_ = null;
+        }
+        return disclosureTextBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place.ReviewSummary)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.places.v1.Place.ReviewSummary)
+    private static final com.google.maps.places.v1.Place.ReviewSummary DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.places.v1.Place.ReviewSummary();
+    }
+
+    public static com.google.maps.places.v1.Place.ReviewSummary getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReviewSummary> PARSER =
+        new com.google.protobuf.AbstractParser<ReviewSummary>() {
+          @java.lang.Override
+          public ReviewSummary parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReviewSummary> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReviewSummary> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.places.v1.Place.ReviewSummary getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface EvChargeAmenitySummaryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Place.EvChargeAmenitySummary)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview of the available amenities. This is guaranteed to be
+     * provided.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     *
+     * @return Whether the overview field is set.
+     */
+    boolean hasOverview();
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview of the available amenities. This is guaranteed to be
+     * provided.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     *
+     * @return The overview.
+     */
+    com.google.maps.places.v1.ContentBlock getOverview();
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview of the available amenities. This is guaranteed to be
+     * provided.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     */
+    com.google.maps.places.v1.ContentBlockOrBuilder getOverviewOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby coffee options.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+     *
+     * @return Whether the coffee field is set.
+     */
+    boolean hasCoffee();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby coffee options.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+     *
+     * @return The coffee.
+     */
+    com.google.maps.places.v1.ContentBlock getCoffee();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby coffee options.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+     */
+    com.google.maps.places.v1.ContentBlockOrBuilder getCoffeeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby restaurants.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+     *
+     * @return Whether the restaurant field is set.
+     */
+    boolean hasRestaurant();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby restaurants.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+     *
+     * @return The restaurant.
+     */
+    com.google.maps.places.v1.ContentBlock getRestaurant();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby restaurants.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+     */
+    com.google.maps.places.v1.ContentBlockOrBuilder getRestaurantOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby gas stations.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+     *
+     * @return Whether the store field is set.
+     */
+    boolean hasStore();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby gas stations.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+     *
+     * @return The store.
+     */
+    com.google.maps.places.v1.ContentBlock getStore();
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby gas stations.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+     */
+    com.google.maps.places.v1.ContentBlockOrBuilder getStoreOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 5;</code>
+     *
+     * @return The flagContentUri.
+     */
+    java.lang.String getFlagContentUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 5;</code>
+     *
+     * @return The bytes for flagContentUri.
+     */
+    com.google.protobuf.ByteString getFlagContentUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+     *
+     * @return Whether the disclosureText field is set.
+     */
+    boolean hasDisclosureText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+     *
+     * @return The disclosureText.
+     */
+    com.google.type.LocalizedText getDisclosureText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The summary of amenities near the EV charging station. This only applies to
+   * places with type `electric_vehicle_charging_station`. The `overview` field
+   * is guaranteed to be provided while the other fields are optional.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.places.v1.Place.EvChargeAmenitySummary}
+   */
+  public static final class EvChargeAmenitySummary extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.places.v1.Place.EvChargeAmenitySummary)
+      EvChargeAmenitySummaryOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use EvChargeAmenitySummary.newBuilder() to construct.
+    private EvChargeAmenitySummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EvChargeAmenitySummary() {
+      flagContentUri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EvChargeAmenitySummary();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_EvChargeAmenitySummary_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_EvChargeAmenitySummary_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.places.v1.Place.EvChargeAmenitySummary.class,
+              com.google.maps.places.v1.Place.EvChargeAmenitySummary.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int OVERVIEW_FIELD_NUMBER = 1;
+    private com.google.maps.places.v1.ContentBlock overview_;
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview of the available amenities. This is guaranteed to be
+     * provided.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     *
+     * @return Whether the overview field is set.
+     */
+    @java.lang.Override
+    public boolean hasOverview() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview of the available amenities. This is guaranteed to be
+     * provided.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     *
+     * @return The overview.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlock getOverview() {
+      return overview_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : overview_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview of the available amenities. This is guaranteed to be
+     * provided.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlockOrBuilder getOverviewOrBuilder() {
+      return overview_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : overview_;
+    }
+
+    public static final int COFFEE_FIELD_NUMBER = 2;
+    private com.google.maps.places.v1.ContentBlock coffee_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby coffee options.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+     *
+     * @return Whether the coffee field is set.
+     */
+    @java.lang.Override
+    public boolean hasCoffee() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby coffee options.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+     *
+     * @return The coffee.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlock getCoffee() {
+      return coffee_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : coffee_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby coffee options.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlockOrBuilder getCoffeeOrBuilder() {
+      return coffee_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : coffee_;
+    }
+
+    public static final int RESTAURANT_FIELD_NUMBER = 3;
+    private com.google.maps.places.v1.ContentBlock restaurant_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby restaurants.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+     *
+     * @return Whether the restaurant field is set.
+     */
+    @java.lang.Override
+    public boolean hasRestaurant() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby restaurants.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+     *
+     * @return The restaurant.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlock getRestaurant() {
+      return restaurant_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : restaurant_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby restaurants.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlockOrBuilder getRestaurantOrBuilder() {
+      return restaurant_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : restaurant_;
+    }
+
+    public static final int STORE_FIELD_NUMBER = 4;
+    private com.google.maps.places.v1.ContentBlock store_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby gas stations.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+     *
+     * @return Whether the store field is set.
+     */
+    @java.lang.Override
+    public boolean hasStore() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby gas stations.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+     *
+     * @return The store.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlock getStore() {
+      return store_ == null ? com.google.maps.places.v1.ContentBlock.getDefaultInstance() : store_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of the nearby gas stations.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlockOrBuilder getStoreOrBuilder() {
+      return store_ == null ? com.google.maps.places.v1.ContentBlock.getDefaultInstance() : store_;
+    }
+
+    public static final int FLAG_CONTENT_URI_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object flagContentUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 5;</code>
+     *
+     * @return The flagContentUri.
+     */
+    @java.lang.Override
+    public java.lang.String getFlagContentUri() {
+      java.lang.Object ref = flagContentUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flagContentUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 5;</code>
+     *
+     * @return The bytes for flagContentUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFlagContentUriBytes() {
+      java.lang.Object ref = flagContentUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        flagContentUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISCLOSURE_TEXT_FIELD_NUMBER = 6;
+    private com.google.type.LocalizedText disclosureText_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+     *
+     * @return Whether the disclosureText field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisclosureText() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+     *
+     * @return The disclosureText.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDisclosureText() {
+      return disclosureText_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : disclosureText_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder() {
+      return disclosureText_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : disclosureText_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getOverview());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getCoffee());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getRestaurant());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(4, getStore());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flagContentUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, flagContentUri_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeMessage(6, getDisclosureText());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getOverview());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCoffee());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRestaurant());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStore());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flagContentUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, flagContentUri_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDisclosureText());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.places.v1.Place.EvChargeAmenitySummary)) {
+        return super.equals(obj);
+      }
+      com.google.maps.places.v1.Place.EvChargeAmenitySummary other =
+          (com.google.maps.places.v1.Place.EvChargeAmenitySummary) obj;
+
+      if (hasOverview() != other.hasOverview()) return false;
+      if (hasOverview()) {
+        if (!getOverview().equals(other.getOverview())) return false;
+      }
+      if (hasCoffee() != other.hasCoffee()) return false;
+      if (hasCoffee()) {
+        if (!getCoffee().equals(other.getCoffee())) return false;
+      }
+      if (hasRestaurant() != other.hasRestaurant()) return false;
+      if (hasRestaurant()) {
+        if (!getRestaurant().equals(other.getRestaurant())) return false;
+      }
+      if (hasStore() != other.hasStore()) return false;
+      if (hasStore()) {
+        if (!getStore().equals(other.getStore())) return false;
+      }
+      if (!getFlagContentUri().equals(other.getFlagContentUri())) return false;
+      if (hasDisclosureText() != other.hasDisclosureText()) return false;
+      if (hasDisclosureText()) {
+        if (!getDisclosureText().equals(other.getDisclosureText())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasOverview()) {
+        hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getOverview().hashCode();
+      }
+      if (hasCoffee()) {
+        hash = (37 * hash) + COFFEE_FIELD_NUMBER;
+        hash = (53 * hash) + getCoffee().hashCode();
+      }
+      if (hasRestaurant()) {
+        hash = (37 * hash) + RESTAURANT_FIELD_NUMBER;
+        hash = (53 * hash) + getRestaurant().hashCode();
+      }
+      if (hasStore()) {
+        hash = (37 * hash) + STORE_FIELD_NUMBER;
+        hash = (53 * hash) + getStore().hashCode();
+      }
+      hash = (37 * hash) + FLAG_CONTENT_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getFlagContentUri().hashCode();
+      if (hasDisclosureText()) {
+        hash = (37 * hash) + DISCLOSURE_TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getDisclosureText().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.places.v1.Place.EvChargeAmenitySummary prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station. This only applies to
+     * places with type `electric_vehicle_charging_station`. The `overview` field
+     * is guaranteed to be provided while the other fields are optional.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.places.v1.Place.EvChargeAmenitySummary}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.Place.EvChargeAmenitySummary)
+        com.google.maps.places.v1.Place.EvChargeAmenitySummaryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_EvChargeAmenitySummary_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_EvChargeAmenitySummary_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.places.v1.Place.EvChargeAmenitySummary.class,
+                com.google.maps.places.v1.Place.EvChargeAmenitySummary.Builder.class);
+      }
+
+      // Construct using com.google.maps.places.v1.Place.EvChargeAmenitySummary.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getOverviewFieldBuilder();
+          getCoffeeFieldBuilder();
+          getRestaurantFieldBuilder();
+          getStoreFieldBuilder();
+          getDisclosureTextFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        overview_ = null;
+        if (overviewBuilder_ != null) {
+          overviewBuilder_.dispose();
+          overviewBuilder_ = null;
+        }
+        coffee_ = null;
+        if (coffeeBuilder_ != null) {
+          coffeeBuilder_.dispose();
+          coffeeBuilder_ = null;
+        }
+        restaurant_ = null;
+        if (restaurantBuilder_ != null) {
+          restaurantBuilder_.dispose();
+          restaurantBuilder_ = null;
+        }
+        store_ = null;
+        if (storeBuilder_ != null) {
+          storeBuilder_.dispose();
+          storeBuilder_ = null;
+        }
+        flagContentUri_ = "";
+        disclosureText_ = null;
+        if (disclosureTextBuilder_ != null) {
+          disclosureTextBuilder_.dispose();
+          disclosureTextBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_EvChargeAmenitySummary_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.EvChargeAmenitySummary getDefaultInstanceForType() {
+        return com.google.maps.places.v1.Place.EvChargeAmenitySummary.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.EvChargeAmenitySummary build() {
+        com.google.maps.places.v1.Place.EvChargeAmenitySummary result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.EvChargeAmenitySummary buildPartial() {
+        com.google.maps.places.v1.Place.EvChargeAmenitySummary result =
+            new com.google.maps.places.v1.Place.EvChargeAmenitySummary(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.places.v1.Place.EvChargeAmenitySummary result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.overview_ = overviewBuilder_ == null ? overview_ : overviewBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.coffee_ = coffeeBuilder_ == null ? coffee_ : coffeeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.restaurant_ =
+              restaurantBuilder_ == null ? restaurant_ : restaurantBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.store_ = storeBuilder_ == null ? store_ : storeBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.flagContentUri_ = flagContentUri_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.disclosureText_ =
+              disclosureTextBuilder_ == null ? disclosureText_ : disclosureTextBuilder_.build();
+          to_bitField0_ |= 0x00000010;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.places.v1.Place.EvChargeAmenitySummary) {
+          return mergeFrom((com.google.maps.places.v1.Place.EvChargeAmenitySummary) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.places.v1.Place.EvChargeAmenitySummary other) {
+        if (other == com.google.maps.places.v1.Place.EvChargeAmenitySummary.getDefaultInstance())
+          return this;
+        if (other.hasOverview()) {
+          mergeOverview(other.getOverview());
+        }
+        if (other.hasCoffee()) {
+          mergeCoffee(other.getCoffee());
+        }
+        if (other.hasRestaurant()) {
+          mergeRestaurant(other.getRestaurant());
+        }
+        if (other.hasStore()) {
+          mergeStore(other.getStore());
+        }
+        if (!other.getFlagContentUri().isEmpty()) {
+          flagContentUri_ = other.flagContentUri_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (other.hasDisclosureText()) {
+          mergeDisclosureText(other.getDisclosureText());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getOverviewFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getCoffeeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(getRestaurantFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(getStoreFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  flagContentUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getDisclosureTextFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.maps.places.v1.ContentBlock overview_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          overviewBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       *
+       * @return Whether the overview field is set.
+       */
+      public boolean hasOverview() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       *
+       * @return The overview.
+       */
+      public com.google.maps.places.v1.ContentBlock getOverview() {
+        if (overviewBuilder_ == null) {
+          return overview_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : overview_;
+        } else {
+          return overviewBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public Builder setOverview(com.google.maps.places.v1.ContentBlock value) {
+        if (overviewBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          overview_ = value;
+        } else {
+          overviewBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public Builder setOverview(com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
+        if (overviewBuilder_ == null) {
+          overview_ = builderForValue.build();
+        } else {
+          overviewBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public Builder mergeOverview(com.google.maps.places.v1.ContentBlock value) {
+        if (overviewBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && overview_ != null
+              && overview_ != com.google.maps.places.v1.ContentBlock.getDefaultInstance()) {
+            getOverviewBuilder().mergeFrom(value);
+          } else {
+            overview_ = value;
+          }
+        } else {
+          overviewBuilder_.mergeFrom(value);
+        }
+        if (overview_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public Builder clearOverview() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        overview_ = null;
+        if (overviewBuilder_ != null) {
+          overviewBuilder_.dispose();
+          overviewBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public com.google.maps.places.v1.ContentBlock.Builder getOverviewBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getOverviewFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public com.google.maps.places.v1.ContentBlockOrBuilder getOverviewOrBuilder() {
+        if (overviewBuilder_ != null) {
+          return overviewBuilder_.getMessageOrBuilder();
+        } else {
+          return overview_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : overview_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview of the available amenities. This is guaranteed to be
+       * provided.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          getOverviewFieldBuilder() {
+        if (overviewBuilder_ == null) {
+          overviewBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.places.v1.ContentBlock,
+                  com.google.maps.places.v1.ContentBlock.Builder,
+                  com.google.maps.places.v1.ContentBlockOrBuilder>(
+                  getOverview(), getParentForChildren(), isClean());
+          overview_ = null;
+        }
+        return overviewBuilder_;
+      }
+
+      private com.google.maps.places.v1.ContentBlock coffee_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          coffeeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       *
+       * @return Whether the coffee field is set.
+       */
+      public boolean hasCoffee() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       *
+       * @return The coffee.
+       */
+      public com.google.maps.places.v1.ContentBlock getCoffee() {
+        if (coffeeBuilder_ == null) {
+          return coffee_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : coffee_;
+        } else {
+          return coffeeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       */
+      public Builder setCoffee(com.google.maps.places.v1.ContentBlock value) {
+        if (coffeeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          coffee_ = value;
+        } else {
+          coffeeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       */
+      public Builder setCoffee(com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
+        if (coffeeBuilder_ == null) {
+          coffee_ = builderForValue.build();
+        } else {
+          coffeeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       */
+      public Builder mergeCoffee(com.google.maps.places.v1.ContentBlock value) {
+        if (coffeeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && coffee_ != null
+              && coffee_ != com.google.maps.places.v1.ContentBlock.getDefaultInstance()) {
+            getCoffeeBuilder().mergeFrom(value);
+          } else {
+            coffee_ = value;
+          }
+        } else {
+          coffeeBuilder_.mergeFrom(value);
+        }
+        if (coffee_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       */
+      public Builder clearCoffee() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        coffee_ = null;
+        if (coffeeBuilder_ != null) {
+          coffeeBuilder_.dispose();
+          coffeeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       */
+      public com.google.maps.places.v1.ContentBlock.Builder getCoffeeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getCoffeeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       */
+      public com.google.maps.places.v1.ContentBlockOrBuilder getCoffeeOrBuilder() {
+        if (coffeeBuilder_ != null) {
+          return coffeeBuilder_.getMessageOrBuilder();
+        } else {
+          return coffee_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : coffee_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby coffee options.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock coffee = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          getCoffeeFieldBuilder() {
+        if (coffeeBuilder_ == null) {
+          coffeeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.places.v1.ContentBlock,
+                  com.google.maps.places.v1.ContentBlock.Builder,
+                  com.google.maps.places.v1.ContentBlockOrBuilder>(
+                  getCoffee(), getParentForChildren(), isClean());
+          coffee_ = null;
+        }
+        return coffeeBuilder_;
+      }
+
+      private com.google.maps.places.v1.ContentBlock restaurant_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          restaurantBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       *
+       * @return Whether the restaurant field is set.
+       */
+      public boolean hasRestaurant() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       *
+       * @return The restaurant.
+       */
+      public com.google.maps.places.v1.ContentBlock getRestaurant() {
+        if (restaurantBuilder_ == null) {
+          return restaurant_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : restaurant_;
+        } else {
+          return restaurantBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       */
+      public Builder setRestaurant(com.google.maps.places.v1.ContentBlock value) {
+        if (restaurantBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          restaurant_ = value;
+        } else {
+          restaurantBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       */
+      public Builder setRestaurant(com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
+        if (restaurantBuilder_ == null) {
+          restaurant_ = builderForValue.build();
+        } else {
+          restaurantBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       */
+      public Builder mergeRestaurant(com.google.maps.places.v1.ContentBlock value) {
+        if (restaurantBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && restaurant_ != null
+              && restaurant_ != com.google.maps.places.v1.ContentBlock.getDefaultInstance()) {
+            getRestaurantBuilder().mergeFrom(value);
+          } else {
+            restaurant_ = value;
+          }
+        } else {
+          restaurantBuilder_.mergeFrom(value);
+        }
+        if (restaurant_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       */
+      public Builder clearRestaurant() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        restaurant_ = null;
+        if (restaurantBuilder_ != null) {
+          restaurantBuilder_.dispose();
+          restaurantBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       */
+      public com.google.maps.places.v1.ContentBlock.Builder getRestaurantBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getRestaurantFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       */
+      public com.google.maps.places.v1.ContentBlockOrBuilder getRestaurantOrBuilder() {
+        if (restaurantBuilder_ != null) {
+          return restaurantBuilder_.getMessageOrBuilder();
+        } else {
+          return restaurant_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : restaurant_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby restaurants.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock restaurant = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          getRestaurantFieldBuilder() {
+        if (restaurantBuilder_ == null) {
+          restaurantBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.places.v1.ContentBlock,
+                  com.google.maps.places.v1.ContentBlock.Builder,
+                  com.google.maps.places.v1.ContentBlockOrBuilder>(
+                  getRestaurant(), getParentForChildren(), isClean());
+          restaurant_ = null;
+        }
+        return restaurantBuilder_;
+      }
+
+      private com.google.maps.places.v1.ContentBlock store_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          storeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       *
+       * @return Whether the store field is set.
+       */
+      public boolean hasStore() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       *
+       * @return The store.
+       */
+      public com.google.maps.places.v1.ContentBlock getStore() {
+        if (storeBuilder_ == null) {
+          return store_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : store_;
+        } else {
+          return storeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       */
+      public Builder setStore(com.google.maps.places.v1.ContentBlock value) {
+        if (storeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          store_ = value;
+        } else {
+          storeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       */
+      public Builder setStore(com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
+        if (storeBuilder_ == null) {
+          store_ = builderForValue.build();
+        } else {
+          storeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       */
+      public Builder mergeStore(com.google.maps.places.v1.ContentBlock value) {
+        if (storeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && store_ != null
+              && store_ != com.google.maps.places.v1.ContentBlock.getDefaultInstance()) {
+            getStoreBuilder().mergeFrom(value);
+          } else {
+            store_ = value;
+          }
+        } else {
+          storeBuilder_.mergeFrom(value);
+        }
+        if (store_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       */
+      public Builder clearStore() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        store_ = null;
+        if (storeBuilder_ != null) {
+          storeBuilder_.dispose();
+          storeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       */
+      public com.google.maps.places.v1.ContentBlock.Builder getStoreBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getStoreFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       */
+      public com.google.maps.places.v1.ContentBlockOrBuilder getStoreOrBuilder() {
+        if (storeBuilder_ != null) {
+          return storeBuilder_.getMessageOrBuilder();
+        } else {
+          return store_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : store_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A summary of the nearby gas stations.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          getStoreFieldBuilder() {
+        if (storeBuilder_ == null) {
+          storeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.places.v1.ContentBlock,
+                  com.google.maps.places.v1.ContentBlock.Builder,
+                  com.google.maps.places.v1.ContentBlockOrBuilder>(
+                  getStore(), getParentForChildren(), isClean());
+          store_ = null;
+        }
+        return storeBuilder_;
+      }
+
+      private java.lang.Object flagContentUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 5;</code>
+       *
+       * @return The flagContentUri.
+       */
+      public java.lang.String getFlagContentUri() {
+        java.lang.Object ref = flagContentUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flagContentUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 5;</code>
+       *
+       * @return The bytes for flagContentUri.
+       */
+      public com.google.protobuf.ByteString getFlagContentUriBytes() {
+        java.lang.Object ref = flagContentUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          flagContentUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 5;</code>
+       *
+       * @param value The flagContentUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlagContentUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        flagContentUri_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFlagContentUri() {
+        flagContentUri_ = getDefaultInstance().getFlagContentUri();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 5;</code>
+       *
+       * @param value The bytes for flagContentUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlagContentUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        flagContentUri_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private com.google.type.LocalizedText disclosureText_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          disclosureTextBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       *
+       * @return Whether the disclosureText field is set.
+       */
+      public boolean hasDisclosureText() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       *
+       * @return The disclosureText.
+       */
+      public com.google.type.LocalizedText getDisclosureText() {
+        if (disclosureTextBuilder_ == null) {
+          return disclosureText_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : disclosureText_;
+        } else {
+          return disclosureTextBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       */
+      public Builder setDisclosureText(com.google.type.LocalizedText value) {
+        if (disclosureTextBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          disclosureText_ = value;
+        } else {
+          disclosureTextBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       */
+      public Builder setDisclosureText(com.google.type.LocalizedText.Builder builderForValue) {
+        if (disclosureTextBuilder_ == null) {
+          disclosureText_ = builderForValue.build();
+        } else {
+          disclosureTextBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       */
+      public Builder mergeDisclosureText(com.google.type.LocalizedText value) {
+        if (disclosureTextBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && disclosureText_ != null
+              && disclosureText_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDisclosureTextBuilder().mergeFrom(value);
+          } else {
+            disclosureText_ = value;
+          }
+        } else {
+          disclosureTextBuilder_.mergeFrom(value);
+        }
+        if (disclosureText_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       */
+      public Builder clearDisclosureText() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        disclosureText_ = null;
+        if (disclosureTextBuilder_ != null) {
+          disclosureTextBuilder_.dispose();
+          disclosureTextBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDisclosureTextBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getDisclosureTextFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder() {
+        if (disclosureTextBuilder_ != null) {
+          return disclosureTextBuilder_.getMessageOrBuilder();
+        } else {
+          return disclosureText_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : disclosureText_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDisclosureTextFieldBuilder() {
+        if (disclosureTextBuilder_ == null) {
+          disclosureTextBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDisclosureText(), getParentForChildren(), isClean());
+          disclosureText_ = null;
+        }
+        return disclosureTextBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place.EvChargeAmenitySummary)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.places.v1.Place.EvChargeAmenitySummary)
+    private static final com.google.maps.places.v1.Place.EvChargeAmenitySummary DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.places.v1.Place.EvChargeAmenitySummary();
+    }
+
+    public static com.google.maps.places.v1.Place.EvChargeAmenitySummary getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EvChargeAmenitySummary> PARSER =
+        new com.google.protobuf.AbstractParser<EvChargeAmenitySummary>() {
+          @java.lang.Override
+          public EvChargeAmenitySummary parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EvChargeAmenitySummary> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EvChargeAmenitySummary> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.places.v1.Place.EvChargeAmenitySummary getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface NeighborhoodSummaryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Place.NeighborhoodSummary)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview summary of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     *
+     * @return Whether the overview field is set.
+     */
+    boolean hasOverview();
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview summary of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     *
+     * @return The overview.
+     */
+    com.google.maps.places.v1.ContentBlock getOverview();
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview summary of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     */
+    com.google.maps.places.v1.ContentBlockOrBuilder getOverviewOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A detailed description of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    boolean hasDescription();
+
+    /**
+     *
+     *
+     * <pre>
+     * A detailed description of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+     *
+     * @return The description.
+     */
+    com.google.maps.places.v1.ContentBlock getDescription();
+
+    /**
+     *
+     *
+     * <pre>
+     * A detailed description of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+     */
+    com.google.maps.places.v1.ContentBlockOrBuilder getDescriptionOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 3;</code>
+     *
+     * @return The flagContentUri.
+     */
+    java.lang.String getFlagContentUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 3;</code>
+     *
+     * @return The bytes for flagContentUri.
+     */
+    com.google.protobuf.ByteString getFlagContentUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+     *
+     * @return Whether the disclosureText field is set.
+     */
+    boolean hasDisclosureText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+     *
+     * @return The disclosureText.
+     */
+    com.google.type.LocalizedText getDisclosureText();
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+     */
+    com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A summary of points of interest near the place.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.places.v1.Place.NeighborhoodSummary}
+   */
+  public static final class NeighborhoodSummary extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.places.v1.Place.NeighborhoodSummary)
+      NeighborhoodSummaryOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use NeighborhoodSummary.newBuilder() to construct.
+    private NeighborhoodSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NeighborhoodSummary() {
+      flagContentUri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NeighborhoodSummary();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_NeighborhoodSummary_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_NeighborhoodSummary_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.places.v1.Place.NeighborhoodSummary.class,
+              com.google.maps.places.v1.Place.NeighborhoodSummary.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int OVERVIEW_FIELD_NUMBER = 1;
+    private com.google.maps.places.v1.ContentBlock overview_;
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview summary of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     *
+     * @return Whether the overview field is set.
+     */
+    @java.lang.Override
+    public boolean hasOverview() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview summary of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     *
+     * @return The overview.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlock getOverview() {
+      return overview_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : overview_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An overview summary of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlockOrBuilder getOverviewOrBuilder() {
+      return overview_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : overview_;
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 2;
+    private com.google.maps.places.v1.ContentBlock description_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A detailed description of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+     *
+     * @return Whether the description field is set.
+     */
+    @java.lang.Override
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A detailed description of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+     *
+     * @return The description.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlock getDescription() {
+      return description_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : description_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A detailed description of the neighborhood.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.ContentBlockOrBuilder getDescriptionOrBuilder() {
+      return description_ == null
+          ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+          : description_;
+    }
+
+    public static final int FLAG_CONTENT_URI_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object flagContentUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 3;</code>
+     *
+     * @return The flagContentUri.
+     */
+    @java.lang.Override
+    public java.lang.String getFlagContentUri() {
+      java.lang.Object ref = flagContentUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        flagContentUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A link where users can flag a problem with the summary.
+     * </pre>
+     *
+     * <code>string flag_content_uri = 3;</code>
+     *
+     * @return The bytes for flagContentUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFlagContentUriBytes() {
+      java.lang.Object ref = flagContentUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        flagContentUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISCLOSURE_TEXT_FIELD_NUMBER = 4;
+    private com.google.type.LocalizedText disclosureText_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+     *
+     * @return Whether the disclosureText field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisclosureText() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+     *
+     * @return The disclosureText.
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedText getDisclosureText() {
+      return disclosureText_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : disclosureText_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The AI disclosure message "Summarized with Gemini"
+     * (and its localized variants). This will be in the language specified in
+     * the request if available.
+     * </pre>
+     *
+     * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder() {
+      return disclosureText_ == null
+          ? com.google.type.LocalizedText.getDefaultInstance()
+          : disclosureText_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getOverview());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getDescription());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flagContentUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, flagContentUri_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(4, getDisclosureText());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getOverview());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDescription());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(flagContentUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, flagContentUri_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDisclosureText());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.places.v1.Place.NeighborhoodSummary)) {
+        return super.equals(obj);
+      }
+      com.google.maps.places.v1.Place.NeighborhoodSummary other =
+          (com.google.maps.places.v1.Place.NeighborhoodSummary) obj;
+
+      if (hasOverview() != other.hasOverview()) return false;
+      if (hasOverview()) {
+        if (!getOverview().equals(other.getOverview())) return false;
+      }
+      if (hasDescription() != other.hasDescription()) return false;
+      if (hasDescription()) {
+        if (!getDescription().equals(other.getDescription())) return false;
+      }
+      if (!getFlagContentUri().equals(other.getFlagContentUri())) return false;
+      if (hasDisclosureText() != other.hasDisclosureText()) return false;
+      if (hasDisclosureText()) {
+        if (!getDisclosureText().equals(other.getDisclosureText())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasOverview()) {
+        hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getOverview().hashCode();
+      }
+      if (hasDescription()) {
+        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDescription().hashCode();
+      }
+      hash = (37 * hash) + FLAG_CONTENT_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getFlagContentUri().hashCode();
+      if (hasDisclosureText()) {
+        hash = (37 * hash) + DISCLOSURE_TEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getDisclosureText().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.places.v1.Place.NeighborhoodSummary prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.places.v1.Place.NeighborhoodSummary}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.Place.NeighborhoodSummary)
+        com.google.maps.places.v1.Place.NeighborhoodSummaryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_NeighborhoodSummary_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_NeighborhoodSummary_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.places.v1.Place.NeighborhoodSummary.class,
+                com.google.maps.places.v1.Place.NeighborhoodSummary.Builder.class);
+      }
+
+      // Construct using com.google.maps.places.v1.Place.NeighborhoodSummary.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getOverviewFieldBuilder();
+          getDescriptionFieldBuilder();
+          getDisclosureTextFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        overview_ = null;
+        if (overviewBuilder_ != null) {
+          overviewBuilder_.dispose();
+          overviewBuilder_ = null;
+        }
+        description_ = null;
+        if (descriptionBuilder_ != null) {
+          descriptionBuilder_.dispose();
+          descriptionBuilder_ = null;
+        }
+        flagContentUri_ = "";
+        disclosureText_ = null;
+        if (disclosureTextBuilder_ != null) {
+          disclosureTextBuilder_.dispose();
+          disclosureTextBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_NeighborhoodSummary_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.NeighborhoodSummary getDefaultInstanceForType() {
+        return com.google.maps.places.v1.Place.NeighborhoodSummary.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.NeighborhoodSummary build() {
+        com.google.maps.places.v1.Place.NeighborhoodSummary result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.NeighborhoodSummary buildPartial() {
+        com.google.maps.places.v1.Place.NeighborhoodSummary result =
+            new com.google.maps.places.v1.Place.NeighborhoodSummary(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.places.v1.Place.NeighborhoodSummary result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.overview_ = overviewBuilder_ == null ? overview_ : overviewBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.description_ =
+              descriptionBuilder_ == null ? description_ : descriptionBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.flagContentUri_ = flagContentUri_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.disclosureText_ =
+              disclosureTextBuilder_ == null ? disclosureText_ : disclosureTextBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.places.v1.Place.NeighborhoodSummary) {
+          return mergeFrom((com.google.maps.places.v1.Place.NeighborhoodSummary) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.places.v1.Place.NeighborhoodSummary other) {
+        if (other == com.google.maps.places.v1.Place.NeighborhoodSummary.getDefaultInstance())
+          return this;
+        if (other.hasOverview()) {
+          mergeOverview(other.getOverview());
+        }
+        if (other.hasDescription()) {
+          mergeDescription(other.getDescription());
+        }
+        if (!other.getFlagContentUri().isEmpty()) {
+          flagContentUri_ = other.flagContentUri_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasDisclosureText()) {
+          mergeDisclosureText(other.getDisclosureText());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getOverviewFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getDescriptionFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  flagContentUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getDisclosureTextFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.maps.places.v1.ContentBlock overview_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          overviewBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       *
+       * @return Whether the overview field is set.
+       */
+      public boolean hasOverview() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       *
+       * @return The overview.
+       */
+      public com.google.maps.places.v1.ContentBlock getOverview() {
+        if (overviewBuilder_ == null) {
+          return overview_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : overview_;
+        } else {
+          return overviewBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public Builder setOverview(com.google.maps.places.v1.ContentBlock value) {
+        if (overviewBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          overview_ = value;
+        } else {
+          overviewBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public Builder setOverview(com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
+        if (overviewBuilder_ == null) {
+          overview_ = builderForValue.build();
+        } else {
+          overviewBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public Builder mergeOverview(com.google.maps.places.v1.ContentBlock value) {
+        if (overviewBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && overview_ != null
+              && overview_ != com.google.maps.places.v1.ContentBlock.getDefaultInstance()) {
+            getOverviewBuilder().mergeFrom(value);
+          } else {
+            overview_ = value;
+          }
+        } else {
+          overviewBuilder_.mergeFrom(value);
+        }
+        if (overview_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public Builder clearOverview() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        overview_ = null;
+        if (overviewBuilder_ != null) {
+          overviewBuilder_.dispose();
+          overviewBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public com.google.maps.places.v1.ContentBlock.Builder getOverviewBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getOverviewFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      public com.google.maps.places.v1.ContentBlockOrBuilder getOverviewOrBuilder() {
+        if (overviewBuilder_ != null) {
+          return overviewBuilder_.getMessageOrBuilder();
+        } else {
+          return overview_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : overview_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An overview summary of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock overview = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          getOverviewFieldBuilder() {
+        if (overviewBuilder_ == null) {
+          overviewBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.places.v1.ContentBlock,
+                  com.google.maps.places.v1.ContentBlock.Builder,
+                  com.google.maps.places.v1.ContentBlockOrBuilder>(
+                  getOverview(), getParentForChildren(), isClean());
+          overview_ = null;
+        }
+        return overviewBuilder_;
+      }
+
+      private com.google.maps.places.v1.ContentBlock description_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          descriptionBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       *
+       * @return Whether the description field is set.
+       */
+      public boolean hasDescription() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       *
+       * @return The description.
+       */
+      public com.google.maps.places.v1.ContentBlock getDescription() {
+        if (descriptionBuilder_ == null) {
+          return description_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : description_;
+        } else {
+          return descriptionBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       */
+      public Builder setDescription(com.google.maps.places.v1.ContentBlock value) {
+        if (descriptionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          description_ = value;
+        } else {
+          descriptionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       */
+      public Builder setDescription(
+          com.google.maps.places.v1.ContentBlock.Builder builderForValue) {
+        if (descriptionBuilder_ == null) {
+          description_ = builderForValue.build();
+        } else {
+          descriptionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       */
+      public Builder mergeDescription(com.google.maps.places.v1.ContentBlock value) {
+        if (descriptionBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && description_ != null
+              && description_ != com.google.maps.places.v1.ContentBlock.getDefaultInstance()) {
+            getDescriptionBuilder().mergeFrom(value);
+          } else {
+            description_ = value;
+          }
+        } else {
+          descriptionBuilder_.mergeFrom(value);
+        }
+        if (description_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       */
+      public Builder clearDescription() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        description_ = null;
+        if (descriptionBuilder_ != null) {
+          descriptionBuilder_.dispose();
+          descriptionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       */
+      public com.google.maps.places.v1.ContentBlock.Builder getDescriptionBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getDescriptionFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       */
+      public com.google.maps.places.v1.ContentBlockOrBuilder getDescriptionOrBuilder() {
+        if (descriptionBuilder_ != null) {
+          return descriptionBuilder_.getMessageOrBuilder();
+        } else {
+          return description_ == null
+              ? com.google.maps.places.v1.ContentBlock.getDefaultInstance()
+              : description_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A detailed description of the neighborhood.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.ContentBlock description = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.ContentBlock,
+              com.google.maps.places.v1.ContentBlock.Builder,
+              com.google.maps.places.v1.ContentBlockOrBuilder>
+          getDescriptionFieldBuilder() {
+        if (descriptionBuilder_ == null) {
+          descriptionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.places.v1.ContentBlock,
+                  com.google.maps.places.v1.ContentBlock.Builder,
+                  com.google.maps.places.v1.ContentBlockOrBuilder>(
+                  getDescription(), getParentForChildren(), isClean());
+          description_ = null;
+        }
+        return descriptionBuilder_;
+      }
+
+      private java.lang.Object flagContentUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 3;</code>
+       *
+       * @return The flagContentUri.
+       */
+      public java.lang.String getFlagContentUri() {
+        java.lang.Object ref = flagContentUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          flagContentUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 3;</code>
+       *
+       * @return The bytes for flagContentUri.
+       */
+      public com.google.protobuf.ByteString getFlagContentUriBytes() {
+        java.lang.Object ref = flagContentUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          flagContentUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 3;</code>
+       *
+       * @param value The flagContentUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlagContentUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        flagContentUri_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFlagContentUri() {
+        flagContentUri_ = getDefaultInstance().getFlagContentUri();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link where users can flag a problem with the summary.
+       * </pre>
+       *
+       * <code>string flag_content_uri = 3;</code>
+       *
+       * @param value The bytes for flagContentUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFlagContentUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        flagContentUri_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.type.LocalizedText disclosureText_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          disclosureTextBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       *
+       * @return Whether the disclosureText field is set.
+       */
+      public boolean hasDisclosureText() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       *
+       * @return The disclosureText.
+       */
+      public com.google.type.LocalizedText getDisclosureText() {
+        if (disclosureTextBuilder_ == null) {
+          return disclosureText_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : disclosureText_;
+        } else {
+          return disclosureTextBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       */
+      public Builder setDisclosureText(com.google.type.LocalizedText value) {
+        if (disclosureTextBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          disclosureText_ = value;
+        } else {
+          disclosureTextBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       */
+      public Builder setDisclosureText(com.google.type.LocalizedText.Builder builderForValue) {
+        if (disclosureTextBuilder_ == null) {
+          disclosureText_ = builderForValue.build();
+        } else {
+          disclosureTextBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       */
+      public Builder mergeDisclosureText(com.google.type.LocalizedText value) {
+        if (disclosureTextBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && disclosureText_ != null
+              && disclosureText_ != com.google.type.LocalizedText.getDefaultInstance()) {
+            getDisclosureTextBuilder().mergeFrom(value);
+          } else {
+            disclosureText_ = value;
+          }
+        } else {
+          disclosureTextBuilder_.mergeFrom(value);
+        }
+        if (disclosureText_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       */
+      public Builder clearDisclosureText() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        disclosureText_ = null;
+        if (disclosureTextBuilder_ != null) {
+          disclosureTextBuilder_.dispose();
+          disclosureTextBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       */
+      public com.google.type.LocalizedText.Builder getDisclosureTextBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getDisclosureTextFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       */
+      public com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder() {
+        if (disclosureTextBuilder_ != null) {
+          return disclosureTextBuilder_.getMessageOrBuilder();
+        } else {
+          return disclosureText_ == null
+              ? com.google.type.LocalizedText.getDefaultInstance()
+              : disclosureText_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The AI disclosure message "Summarized with Gemini"
+       * (and its localized variants). This will be in the language specified in
+       * the request if available.
+       * </pre>
+       *
+       * <code>.google.type.LocalizedText disclosure_text = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.type.LocalizedText,
+              com.google.type.LocalizedText.Builder,
+              com.google.type.LocalizedTextOrBuilder>
+          getDisclosureTextFieldBuilder() {
+        if (disclosureTextBuilder_ == null) {
+          disclosureTextBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.LocalizedText,
+                  com.google.type.LocalizedText.Builder,
+                  com.google.type.LocalizedTextOrBuilder>(
+                  getDisclosureText(), getParentForChildren(), isClean());
+          disclosureText_ = null;
+        }
+        return disclosureTextBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place.NeighborhoodSummary)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.places.v1.Place.NeighborhoodSummary)
+    private static final com.google.maps.places.v1.Place.NeighborhoodSummary DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.places.v1.Place.NeighborhoodSummary();
+    }
+
+    public static com.google.maps.places.v1.Place.NeighborhoodSummary getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NeighborhoodSummary> PARSER =
+        new com.google.protobuf.AbstractParser<NeighborhoodSummary>() {
+          @java.lang.Override
+          public NeighborhoodSummary parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NeighborhoodSummary> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NeighborhoodSummary> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.places.v1.Place.NeighborhoodSummary getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -19539,9 +23693,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    * The regular hours of operation. Note that if a place is always open (24
    * hours), the `close` field will not be set. Clients can rely on always open
    * (24 hours) being represented as an
-   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-   * value `0`, and [minute][Point.minute] with value `0`.
+   * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+   * period containing
+   * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`,
+   * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`, and
+   * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -19560,9 +23719,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    * The regular hours of operation. Note that if a place is always open (24
    * hours), the `close` field will not be set. Clients can rely on always open
    * (24 hours) being represented as an
-   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-   * value `0`, and [minute][Point.minute] with value `0`.
+   * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+   * period containing
+   * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`,
+   * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`, and
+   * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -19583,9 +23747,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    * The regular hours of operation. Note that if a place is always open (24
    * hours), the `close` field will not be set. Clients can rely on always open
    * (24 hours) being represented as an
-   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-   * value `0`, and [minute][Point.minute] with value `0`.
+   * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+   * period containing
+   * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`,
+   * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`, and
+   * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -21384,7 +25553,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -21398,7 +25567,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -21413,7 +25582,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -21427,7 +25596,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -21441,7 +25610,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -21625,10 +25794,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
    * AI-generated summary of the place.
    * </pre>
    *
@@ -21645,10 +25810,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
    * AI-generated summary of the place.
    * </pre>
    *
@@ -21667,10 +25828,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
    * AI-generated summary of the place.
    * </pre>
    *
@@ -21682,71 +25839,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     return generativeSummary_ == null
         ? com.google.maps.places.v1.Place.GenerativeSummary.getDefaultInstance()
         : generativeSummary_;
-  }
-
-  public static final int AREA_SUMMARY_FIELD_NUMBER = 81;
-  private com.google.maps.places.v1.Place.AreaSummary areaSummary_;
-
-  /**
-   *
-   *
-   * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * AI-generated summary of the area that the place is in.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-   *
-   * @return Whether the areaSummary field is set.
-   */
-  @java.lang.Override
-  public boolean hasAreaSummary() {
-    return ((bitField1_ & 0x00000200) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * AI-generated summary of the area that the place is in.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-   *
-   * @return The areaSummary.
-   */
-  @java.lang.Override
-  public com.google.maps.places.v1.Place.AreaSummary getAreaSummary() {
-    return areaSummary_ == null
-        ? com.google.maps.places.v1.Place.AreaSummary.getDefaultInstance()
-        : areaSummary_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * AI-generated summary of the area that the place is in.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-   */
-  @java.lang.Override
-  public com.google.maps.places.v1.Place.AreaSummaryOrBuilder getAreaSummaryOrBuilder() {
-    return areaSummary_ == null
-        ? com.google.maps.places.v1.Place.AreaSummary.getDefaultInstance()
-        : areaSummary_;
   }
 
   public static final int CONTAINING_PLACES_FIELD_NUMBER = 82;
@@ -21846,7 +25938,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPureServiceAreaBusiness() {
-    return ((bitField1_ & 0x00000400) != 0);
+    return ((bitField1_ & 0x00000200) != 0);
   }
 
   /**
@@ -21867,6 +25959,68 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getPureServiceAreaBusiness() {
     return pureServiceAreaBusiness_;
+  }
+
+  public static final int ADDRESS_DESCRIPTOR_FIELD_NUMBER = 84;
+  private com.google.maps.places.v1.AddressDescriptor addressDescriptor_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The address descriptor of the place. Address descriptors include additional
+   * information that help describe a location using landmarks and areas. See
+   * address descriptor regional coverage in
+   * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+   *
+   * @return Whether the addressDescriptor field is set.
+   */
+  @java.lang.Override
+  public boolean hasAddressDescriptor() {
+    return ((bitField1_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The address descriptor of the place. Address descriptors include additional
+   * information that help describe a location using landmarks and areas. See
+   * address descriptor regional coverage in
+   * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+   *
+   * @return The addressDescriptor.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.AddressDescriptor getAddressDescriptor() {
+    return addressDescriptor_ == null
+        ? com.google.maps.places.v1.AddressDescriptor.getDefaultInstance()
+        : addressDescriptor_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The address descriptor of the place. Address descriptors include additional
+   * information that help describe a location using landmarks and areas. See
+   * address descriptor regional coverage in
+   * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.AddressDescriptorOrBuilder getAddressDescriptorOrBuilder() {
+    return addressDescriptor_ == null
+        ? com.google.maps.places.v1.AddressDescriptor.getDefaultInstance()
+        : addressDescriptor_;
   }
 
   public static final int PRICE_RANGE_FIELD_NUMBER = 86;
@@ -21920,6 +26074,170 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     return priceRange_ == null
         ? com.google.maps.places.v1.PriceRange.getDefaultInstance()
         : priceRange_;
+  }
+
+  public static final int REVIEW_SUMMARY_FIELD_NUMBER = 87;
+  private com.google.maps.places.v1.Place.ReviewSummary reviewSummary_;
+
+  /**
+   *
+   *
+   * <pre>
+   * AI-generated summary of the place using user reviews.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+   *
+   * @return Whether the reviewSummary field is set.
+   */
+  @java.lang.Override
+  public boolean hasReviewSummary() {
+    return ((bitField1_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * AI-generated summary of the place using user reviews.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+   *
+   * @return The reviewSummary.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.ReviewSummary getReviewSummary() {
+    return reviewSummary_ == null
+        ? com.google.maps.places.v1.Place.ReviewSummary.getDefaultInstance()
+        : reviewSummary_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * AI-generated summary of the place using user reviews.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.ReviewSummaryOrBuilder getReviewSummaryOrBuilder() {
+    return reviewSummary_ == null
+        ? com.google.maps.places.v1.Place.ReviewSummary.getDefaultInstance()
+        : reviewSummary_;
+  }
+
+  public static final int EV_CHARGE_AMENITY_SUMMARY_FIELD_NUMBER = 89;
+  private com.google.maps.places.v1.Place.EvChargeAmenitySummary evChargeAmenitySummary_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The summary of amenities near the EV charging station.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+   * </code>
+   *
+   * @return Whether the evChargeAmenitySummary field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvChargeAmenitySummary() {
+    return ((bitField1_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The summary of amenities near the EV charging station.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+   * </code>
+   *
+   * @return The evChargeAmenitySummary.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.EvChargeAmenitySummary getEvChargeAmenitySummary() {
+    return evChargeAmenitySummary_ == null
+        ? com.google.maps.places.v1.Place.EvChargeAmenitySummary.getDefaultInstance()
+        : evChargeAmenitySummary_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The summary of amenities near the EV charging station.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.EvChargeAmenitySummaryOrBuilder
+      getEvChargeAmenitySummaryOrBuilder() {
+    return evChargeAmenitySummary_ == null
+        ? com.google.maps.places.v1.Place.EvChargeAmenitySummary.getDefaultInstance()
+        : evChargeAmenitySummary_;
+  }
+
+  public static final int NEIGHBORHOOD_SUMMARY_FIELD_NUMBER = 91;
+  private com.google.maps.places.v1.Place.NeighborhoodSummary neighborhoodSummary_;
+
+  /**
+   *
+   *
+   * <pre>
+   * A summary of points of interest near the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+   *
+   * @return Whether the neighborhoodSummary field is set.
+   */
+  @java.lang.Override
+  public boolean hasNeighborhoodSummary() {
+    return ((bitField1_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A summary of points of interest near the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+   *
+   * @return The neighborhoodSummary.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.NeighborhoodSummary getNeighborhoodSummary() {
+    return neighborhoodSummary_ == null
+        ? com.google.maps.places.v1.Place.NeighborhoodSummary.getDefaultInstance()
+        : neighborhoodSummary_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A summary of points of interest near the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.NeighborhoodSummaryOrBuilder
+      getNeighborhoodSummaryOrBuilder() {
+    return neighborhoodSummary_ == null
+        ? com.google.maps.places.v1.Place.NeighborhoodSummary.getDefaultInstance()
+        : neighborhoodSummary_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -22123,23 +26441,32 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (((bitField1_ & 0x00000100) != 0)) {
       output.writeMessage(80, getGenerativeSummary());
     }
-    if (((bitField1_ & 0x00000200) != 0)) {
-      output.writeMessage(81, getAreaSummary());
-    }
     for (int i = 0; i < containingPlaces_.size(); i++) {
       output.writeMessage(82, containingPlaces_.get(i));
     }
-    if (((bitField1_ & 0x00000400) != 0)) {
+    if (((bitField1_ & 0x00000200) != 0)) {
       output.writeBool(83, pureServiceAreaBusiness_);
+    }
+    if (((bitField1_ & 0x00000400) != 0)) {
+      output.writeMessage(84, getAddressDescriptor());
     }
     if (((bitField1_ & 0x00000800) != 0)) {
       output.writeMessage(86, getPriceRange());
     }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      output.writeMessage(87, getReviewSummary());
+    }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(88, getTimeZone());
     }
+    if (((bitField1_ & 0x00002000) != 0)) {
+      output.writeMessage(89, getEvChargeAmenitySummary());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(90, getPostalAddress());
+    }
+    if (((bitField1_ & 0x00004000) != 0)) {
+      output.writeMessage(91, getNeighborhoodSummary());
     }
     getUnknownFields().writeTo(output);
   }
@@ -22352,24 +26679,35 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (((bitField1_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(80, getGenerativeSummary());
     }
-    if (((bitField1_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(81, getAreaSummary());
-    }
     for (int i = 0; i < containingPlaces_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(82, containingPlaces_.get(i));
     }
-    if (((bitField1_ & 0x00000400) != 0)) {
+    if (((bitField1_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(83, pureServiceAreaBusiness_);
+    }
+    if (((bitField1_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(84, getAddressDescriptor());
     }
     if (((bitField1_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(86, getPriceRange());
     }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(87, getReviewSummary());
+    }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(88, getTimeZone());
     }
+    if (((bitField1_ & 0x00002000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(89, getEvChargeAmenitySummary());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(90, getPostalAddress());
+    }
+    if (((bitField1_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(91, getNeighborhoodSummary());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -22576,18 +26914,30 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (hasGenerativeSummary()) {
       if (!getGenerativeSummary().equals(other.getGenerativeSummary())) return false;
     }
-    if (hasAreaSummary() != other.hasAreaSummary()) return false;
-    if (hasAreaSummary()) {
-      if (!getAreaSummary().equals(other.getAreaSummary())) return false;
-    }
     if (!getContainingPlacesList().equals(other.getContainingPlacesList())) return false;
     if (hasPureServiceAreaBusiness() != other.hasPureServiceAreaBusiness()) return false;
     if (hasPureServiceAreaBusiness()) {
       if (getPureServiceAreaBusiness() != other.getPureServiceAreaBusiness()) return false;
     }
+    if (hasAddressDescriptor() != other.hasAddressDescriptor()) return false;
+    if (hasAddressDescriptor()) {
+      if (!getAddressDescriptor().equals(other.getAddressDescriptor())) return false;
+    }
     if (hasPriceRange() != other.hasPriceRange()) return false;
     if (hasPriceRange()) {
       if (!getPriceRange().equals(other.getPriceRange())) return false;
+    }
+    if (hasReviewSummary() != other.hasReviewSummary()) return false;
+    if (hasReviewSummary()) {
+      if (!getReviewSummary().equals(other.getReviewSummary())) return false;
+    }
+    if (hasEvChargeAmenitySummary() != other.hasEvChargeAmenitySummary()) return false;
+    if (hasEvChargeAmenitySummary()) {
+      if (!getEvChargeAmenitySummary().equals(other.getEvChargeAmenitySummary())) return false;
+    }
+    if (hasNeighborhoodSummary() != other.hasNeighborhoodSummary()) return false;
+    if (hasNeighborhoodSummary()) {
+      if (!getNeighborhoodSummary().equals(other.getNeighborhoodSummary())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -22828,10 +27178,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GENERATIVE_SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getGenerativeSummary().hashCode();
     }
-    if (hasAreaSummary()) {
-      hash = (37 * hash) + AREA_SUMMARY_FIELD_NUMBER;
-      hash = (53 * hash) + getAreaSummary().hashCode();
-    }
     if (getContainingPlacesCount() > 0) {
       hash = (37 * hash) + CONTAINING_PLACES_FIELD_NUMBER;
       hash = (53 * hash) + getContainingPlacesList().hashCode();
@@ -22840,9 +27186,25 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PURE_SERVICE_AREA_BUSINESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPureServiceAreaBusiness());
     }
+    if (hasAddressDescriptor()) {
+      hash = (37 * hash) + ADDRESS_DESCRIPTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getAddressDescriptor().hashCode();
+    }
     if (hasPriceRange()) {
       hash = (37 * hash) + PRICE_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getPriceRange().hashCode();
+    }
+    if (hasReviewSummary()) {
+      hash = (37 * hash) + REVIEW_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getReviewSummary().hashCode();
+    }
+    if (hasEvChargeAmenitySummary()) {
+      hash = (37 * hash) + EV_CHARGE_AMENITY_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getEvChargeAmenitySummary().hashCode();
+    }
+    if (hasNeighborhoodSummary()) {
+      hash = (37 * hash) + NEIGHBORHOOD_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getNeighborhoodSummary().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -23006,9 +27368,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         getFuelOptionsFieldBuilder();
         getEvChargeOptionsFieldBuilder();
         getGenerativeSummaryFieldBuilder();
-        getAreaSummaryFieldBuilder();
         getContainingPlacesFieldBuilder();
+        getAddressDescriptorFieldBuilder();
         getPriceRangeFieldBuilder();
+        getReviewSummaryFieldBuilder();
+        getEvChargeAmenitySummaryFieldBuilder();
+        getNeighborhoodSummaryFieldBuilder();
       }
     }
 
@@ -23188,23 +27553,38 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         generativeSummaryBuilder_.dispose();
         generativeSummaryBuilder_ = null;
       }
-      areaSummary_ = null;
-      if (areaSummaryBuilder_ != null) {
-        areaSummaryBuilder_.dispose();
-        areaSummaryBuilder_ = null;
-      }
       if (containingPlacesBuilder_ == null) {
         containingPlaces_ = java.util.Collections.emptyList();
       } else {
         containingPlaces_ = null;
         containingPlacesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x00000002);
+      bitField2_ = (bitField2_ & ~0x00000001);
       pureServiceAreaBusiness_ = false;
+      addressDescriptor_ = null;
+      if (addressDescriptorBuilder_ != null) {
+        addressDescriptorBuilder_.dispose();
+        addressDescriptorBuilder_ = null;
+      }
       priceRange_ = null;
       if (priceRangeBuilder_ != null) {
         priceRangeBuilder_.dispose();
         priceRangeBuilder_ = null;
+      }
+      reviewSummary_ = null;
+      if (reviewSummaryBuilder_ != null) {
+        reviewSummaryBuilder_.dispose();
+        reviewSummaryBuilder_ = null;
+      }
+      evChargeAmenitySummary_ = null;
+      if (evChargeAmenitySummaryBuilder_ != null) {
+        evChargeAmenitySummaryBuilder_.dispose();
+        evChargeAmenitySummaryBuilder_ = null;
+      }
+      neighborhoodSummary_ = null;
+      if (neighborhoodSummaryBuilder_ != null) {
+        neighborhoodSummaryBuilder_.dispose();
+        neighborhoodSummaryBuilder_ = null;
       }
       return this;
     }
@@ -23313,9 +27693,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         result.subDestinations_ = subDestinationsBuilder_.build();
       }
       if (containingPlacesBuilder_ == null) {
-        if (((bitField2_ & 0x00000002) != 0)) {
+        if (((bitField2_ & 0x00000001) != 0)) {
           containingPlaces_ = java.util.Collections.unmodifiableList(containingPlaces_);
-          bitField2_ = (bitField2_ & ~0x00000002);
+          bitField2_ = (bitField2_ & ~0x00000001);
         }
         result.containingPlaces_ = containingPlaces_;
       } else {
@@ -23575,18 +27955,39 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial2(com.google.maps.places.v1.Place result) {
       int from_bitField2_ = bitField2_;
       int to_bitField1_ = 0;
-      if (((from_bitField2_ & 0x00000001) != 0)) {
-        result.areaSummary_ =
-            areaSummaryBuilder_ == null ? areaSummary_ : areaSummaryBuilder_.build();
+      if (((from_bitField2_ & 0x00000002) != 0)) {
+        result.pureServiceAreaBusiness_ = pureServiceAreaBusiness_;
         to_bitField1_ |= 0x00000200;
       }
       if (((from_bitField2_ & 0x00000004) != 0)) {
-        result.pureServiceAreaBusiness_ = pureServiceAreaBusiness_;
+        result.addressDescriptor_ =
+            addressDescriptorBuilder_ == null
+                ? addressDescriptor_
+                : addressDescriptorBuilder_.build();
         to_bitField1_ |= 0x00000400;
       }
       if (((from_bitField2_ & 0x00000008) != 0)) {
         result.priceRange_ = priceRangeBuilder_ == null ? priceRange_ : priceRangeBuilder_.build();
         to_bitField1_ |= 0x00000800;
+      }
+      if (((from_bitField2_ & 0x00000010) != 0)) {
+        result.reviewSummary_ =
+            reviewSummaryBuilder_ == null ? reviewSummary_ : reviewSummaryBuilder_.build();
+        to_bitField1_ |= 0x00001000;
+      }
+      if (((from_bitField2_ & 0x00000020) != 0)) {
+        result.evChargeAmenitySummary_ =
+            evChargeAmenitySummaryBuilder_ == null
+                ? evChargeAmenitySummary_
+                : evChargeAmenitySummaryBuilder_.build();
+        to_bitField1_ |= 0x00002000;
+      }
+      if (((from_bitField2_ & 0x00000040) != 0)) {
+        result.neighborhoodSummary_ =
+            neighborhoodSummaryBuilder_ == null
+                ? neighborhoodSummary_
+                : neighborhoodSummaryBuilder_.build();
+        to_bitField1_ |= 0x00004000;
       }
       result.bitField1_ |= to_bitField1_;
     }
@@ -24029,14 +28430,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGenerativeSummary()) {
         mergeGenerativeSummary(other.getGenerativeSummary());
       }
-      if (other.hasAreaSummary()) {
-        mergeAreaSummary(other.getAreaSummary());
-      }
       if (containingPlacesBuilder_ == null) {
         if (!other.containingPlaces_.isEmpty()) {
           if (containingPlaces_.isEmpty()) {
             containingPlaces_ = other.containingPlaces_;
-            bitField2_ = (bitField2_ & ~0x00000002);
+            bitField2_ = (bitField2_ & ~0x00000001);
           } else {
             ensureContainingPlacesIsMutable();
             containingPlaces_.addAll(other.containingPlaces_);
@@ -24049,7 +28447,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             containingPlacesBuilder_.dispose();
             containingPlacesBuilder_ = null;
             containingPlaces_ = other.containingPlaces_;
-            bitField2_ = (bitField2_ & ~0x00000002);
+            bitField2_ = (bitField2_ & ~0x00000001);
             containingPlacesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContainingPlacesFieldBuilder()
@@ -24062,8 +28460,20 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPureServiceAreaBusiness()) {
         setPureServiceAreaBusiness(other.getPureServiceAreaBusiness());
       }
+      if (other.hasAddressDescriptor()) {
+        mergeAddressDescriptor(other.getAddressDescriptor());
+      }
       if (other.hasPriceRange()) {
         mergePriceRange(other.getPriceRange());
+      }
+      if (other.hasReviewSummary()) {
+        mergeReviewSummary(other.getReviewSummary());
+      }
+      if (other.hasEvChargeAmenitySummary()) {
+        mergeEvChargeAmenitySummary(other.getEvChargeAmenitySummary());
+      }
+      if (other.hasNeighborhoodSummary()) {
+        mergeNeighborhoodSummary(other.getNeighborhoodSummary());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -24518,12 +28928,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x80000000;
                 break;
               } // case 642
-            case 650:
-              {
-                input.readMessage(getAreaSummaryFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x00000001;
-                break;
-              } // case 650
             case 658:
               {
                 com.google.maps.places.v1.Place.ContainingPlace m =
@@ -24541,27 +28945,54 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
             case 664:
               {
                 pureServiceAreaBusiness_ = input.readBool();
-                bitField2_ |= 0x00000004;
+                bitField2_ |= 0x00000002;
                 break;
               } // case 664
+            case 674:
+              {
+                input.readMessage(
+                    getAddressDescriptorFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000004;
+                break;
+              } // case 674
             case 690:
               {
                 input.readMessage(getPriceRangeFieldBuilder().getBuilder(), extensionRegistry);
                 bitField2_ |= 0x00000008;
                 break;
               } // case 690
+            case 698:
+              {
+                input.readMessage(getReviewSummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000010;
+                break;
+              } // case 698
             case 706:
               {
                 input.readMessage(getTimeZoneFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00200000;
                 break;
               } // case 706
+            case 714:
+              {
+                input.readMessage(
+                    getEvChargeAmenitySummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000020;
+                break;
+              } // case 714
             case 722:
               {
                 input.readMessage(getPostalAddressFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000400;
                 break;
               } // case 722
+            case 730:
+              {
+                input.readMessage(
+                    getNeighborhoodSummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000040;
+                break;
+              } // case 730
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -28101,9 +32532,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -28121,9 +32557,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -28147,9 +32588,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -28175,9 +32621,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -28201,9 +32652,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -28235,9 +32691,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -28260,9 +32721,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -28280,9 +32746,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -28304,9 +32775,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * The regular hours of operation. Note that if a place is always open (24
      * hours), the `close` field will not be set. Clients can rely on always open
      * (24 hours) being represented as an
-     * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-     * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-     * value `0`, and [minute][Point.minute] with value `0`.
+     * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+     * period containing
+     * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`,
+     * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`, and
+     * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+     * with value `0`.
      * </pre>
      *
      * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -33512,7 +37988,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33529,7 +38005,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33546,7 +38022,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33563,7 +38039,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33587,7 +38063,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33608,7 +38084,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33631,7 +38107,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33655,7 +38131,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33676,7 +38152,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33697,7 +38173,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33718,7 +38194,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33738,7 +38214,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33758,7 +38234,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33772,7 +38248,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33790,7 +38266,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33808,7 +38284,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33822,7 +38298,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -33837,7 +38313,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of sub destinations related to the place.
+     * A list of sub-destinations related to the place.
      * </pre>
      *
      * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -34485,10 +38961,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34504,10 +38976,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34529,10 +38997,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34556,10 +39020,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34581,10 +39041,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34614,10 +39070,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34638,10 +39090,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34657,10 +39105,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34681,10 +39125,6 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
      * AI-generated summary of the place.
      * </pre>
      *
@@ -34707,246 +39147,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       return generativeSummaryBuilder_;
     }
 
-    private com.google.maps.places.v1.Place.AreaSummary areaSummary_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.maps.places.v1.Place.AreaSummary,
-            com.google.maps.places.v1.Place.AreaSummary.Builder,
-            com.google.maps.places.v1.Place.AreaSummaryOrBuilder>
-        areaSummaryBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     *
-     * @return Whether the areaSummary field is set.
-     */
-    public boolean hasAreaSummary() {
-      return ((bitField2_ & 0x00000001) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     *
-     * @return The areaSummary.
-     */
-    public com.google.maps.places.v1.Place.AreaSummary getAreaSummary() {
-      if (areaSummaryBuilder_ == null) {
-        return areaSummary_ == null
-            ? com.google.maps.places.v1.Place.AreaSummary.getDefaultInstance()
-            : areaSummary_;
-      } else {
-        return areaSummaryBuilder_.getMessage();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     */
-    public Builder setAreaSummary(com.google.maps.places.v1.Place.AreaSummary value) {
-      if (areaSummaryBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        areaSummary_ = value;
-      } else {
-        areaSummaryBuilder_.setMessage(value);
-      }
-      bitField2_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     */
-    public Builder setAreaSummary(
-        com.google.maps.places.v1.Place.AreaSummary.Builder builderForValue) {
-      if (areaSummaryBuilder_ == null) {
-        areaSummary_ = builderForValue.build();
-      } else {
-        areaSummaryBuilder_.setMessage(builderForValue.build());
-      }
-      bitField2_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     */
-    public Builder mergeAreaSummary(com.google.maps.places.v1.Place.AreaSummary value) {
-      if (areaSummaryBuilder_ == null) {
-        if (((bitField2_ & 0x00000001) != 0)
-            && areaSummary_ != null
-            && areaSummary_ != com.google.maps.places.v1.Place.AreaSummary.getDefaultInstance()) {
-          getAreaSummaryBuilder().mergeFrom(value);
-        } else {
-          areaSummary_ = value;
-        }
-      } else {
-        areaSummaryBuilder_.mergeFrom(value);
-      }
-      if (areaSummary_ != null) {
-        bitField2_ |= 0x00000001;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     */
-    public Builder clearAreaSummary() {
-      bitField2_ = (bitField2_ & ~0x00000001);
-      areaSummary_ = null;
-      if (areaSummaryBuilder_ != null) {
-        areaSummaryBuilder_.dispose();
-        areaSummaryBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     */
-    public com.google.maps.places.v1.Place.AreaSummary.Builder getAreaSummaryBuilder() {
-      bitField2_ |= 0x00000001;
-      onChanged();
-      return getAreaSummaryFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     */
-    public com.google.maps.places.v1.Place.AreaSummaryOrBuilder getAreaSummaryOrBuilder() {
-      if (areaSummaryBuilder_ != null) {
-        return areaSummaryBuilder_.getMessageOrBuilder();
-      } else {
-        return areaSummary_ == null
-            ? com.google.maps.places.v1.Place.AreaSummary.getDefaultInstance()
-            : areaSummary_;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Experimental: See
-     * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-     * for more details.
-     *
-     * AI-generated summary of the area that the place is in.
-     * </pre>
-     *
-     * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.maps.places.v1.Place.AreaSummary,
-            com.google.maps.places.v1.Place.AreaSummary.Builder,
-            com.google.maps.places.v1.Place.AreaSummaryOrBuilder>
-        getAreaSummaryFieldBuilder() {
-      if (areaSummaryBuilder_ == null) {
-        areaSummaryBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.maps.places.v1.Place.AreaSummary,
-                com.google.maps.places.v1.Place.AreaSummary.Builder,
-                com.google.maps.places.v1.Place.AreaSummaryOrBuilder>(
-                getAreaSummary(), getParentForChildren(), isClean());
-        areaSummary_ = null;
-      }
-      return areaSummaryBuilder_;
-    }
-
     private java.util.List<com.google.maps.places.v1.Place.ContainingPlace> containingPlaces_ =
         java.util.Collections.emptyList();
 
     private void ensureContainingPlacesIsMutable() {
-      if (!((bitField2_ & 0x00000002) != 0)) {
+      if (!((bitField2_ & 0x00000001) != 0)) {
         containingPlaces_ =
             new java.util.ArrayList<com.google.maps.places.v1.Place.ContainingPlace>(
                 containingPlaces_);
-        bitField2_ |= 0x00000002;
+        bitField2_ |= 0x00000001;
       }
     }
 
@@ -35175,7 +39384,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder clearContainingPlaces() {
       if (containingPlacesBuilder_ == null) {
         containingPlaces_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x00000002);
+        bitField2_ = (bitField2_ & ~0x00000001);
         onChanged();
       } else {
         containingPlacesBuilder_.clear();
@@ -35308,7 +39517,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.places.v1.Place.ContainingPlace.Builder,
                 com.google.maps.places.v1.Place.ContainingPlaceOrBuilder>(
                 containingPlaces_,
-                ((bitField2_ & 0x00000002) != 0),
+                ((bitField2_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         containingPlaces_ = null;
@@ -35335,7 +39544,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPureServiceAreaBusiness() {
-      return ((bitField2_ & 0x00000004) != 0);
+      return ((bitField2_ & 0x00000002) != 0);
     }
 
     /**
@@ -35377,7 +39586,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     public Builder setPureServiceAreaBusiness(boolean value) {
 
       pureServiceAreaBusiness_ = value;
-      bitField2_ |= 0x00000004;
+      bitField2_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -35398,10 +39607,233 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPureServiceAreaBusiness() {
-      bitField2_ = (bitField2_ & ~0x00000004);
+      bitField2_ = (bitField2_ & ~0x00000002);
       pureServiceAreaBusiness_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.maps.places.v1.AddressDescriptor addressDescriptor_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.AddressDescriptor,
+            com.google.maps.places.v1.AddressDescriptor.Builder,
+            com.google.maps.places.v1.AddressDescriptorOrBuilder>
+        addressDescriptorBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     *
+     * @return Whether the addressDescriptor field is set.
+     */
+    public boolean hasAddressDescriptor() {
+      return ((bitField2_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     *
+     * @return The addressDescriptor.
+     */
+    public com.google.maps.places.v1.AddressDescriptor getAddressDescriptor() {
+      if (addressDescriptorBuilder_ == null) {
+        return addressDescriptor_ == null
+            ? com.google.maps.places.v1.AddressDescriptor.getDefaultInstance()
+            : addressDescriptor_;
+      } else {
+        return addressDescriptorBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     */
+    public Builder setAddressDescriptor(com.google.maps.places.v1.AddressDescriptor value) {
+      if (addressDescriptorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        addressDescriptor_ = value;
+      } else {
+        addressDescriptorBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     */
+    public Builder setAddressDescriptor(
+        com.google.maps.places.v1.AddressDescriptor.Builder builderForValue) {
+      if (addressDescriptorBuilder_ == null) {
+        addressDescriptor_ = builderForValue.build();
+      } else {
+        addressDescriptorBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     */
+    public Builder mergeAddressDescriptor(com.google.maps.places.v1.AddressDescriptor value) {
+      if (addressDescriptorBuilder_ == null) {
+        if (((bitField2_ & 0x00000004) != 0)
+            && addressDescriptor_ != null
+            && addressDescriptor_
+                != com.google.maps.places.v1.AddressDescriptor.getDefaultInstance()) {
+          getAddressDescriptorBuilder().mergeFrom(value);
+        } else {
+          addressDescriptor_ = value;
+        }
+      } else {
+        addressDescriptorBuilder_.mergeFrom(value);
+      }
+      if (addressDescriptor_ != null) {
+        bitField2_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     */
+    public Builder clearAddressDescriptor() {
+      bitField2_ = (bitField2_ & ~0x00000004);
+      addressDescriptor_ = null;
+      if (addressDescriptorBuilder_ != null) {
+        addressDescriptorBuilder_.dispose();
+        addressDescriptorBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     */
+    public com.google.maps.places.v1.AddressDescriptor.Builder getAddressDescriptorBuilder() {
+      bitField2_ |= 0x00000004;
+      onChanged();
+      return getAddressDescriptorFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     */
+    public com.google.maps.places.v1.AddressDescriptorOrBuilder getAddressDescriptorOrBuilder() {
+      if (addressDescriptorBuilder_ != null) {
+        return addressDescriptorBuilder_.getMessageOrBuilder();
+      } else {
+        return addressDescriptor_ == null
+            ? com.google.maps.places.v1.AddressDescriptor.getDefaultInstance()
+            : addressDescriptor_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The address descriptor of the place. Address descriptors include additional
+     * information that help describe a location using landmarks and areas. See
+     * address descriptor regional coverage in
+     * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.AddressDescriptor,
+            com.google.maps.places.v1.AddressDescriptor.Builder,
+            com.google.maps.places.v1.AddressDescriptorOrBuilder>
+        getAddressDescriptorFieldBuilder() {
+      if (addressDescriptorBuilder_ == null) {
+        addressDescriptorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.AddressDescriptor,
+                com.google.maps.places.v1.AddressDescriptor.Builder,
+                com.google.maps.places.v1.AddressDescriptorOrBuilder>(
+                getAddressDescriptor(), getParentForChildren(), isClean());
+        addressDescriptor_ = null;
+      }
+      return addressDescriptorBuilder_;
     }
 
     private com.google.maps.places.v1.PriceRange priceRange_;
@@ -35596,6 +40028,611 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         priceRange_ = null;
       }
       return priceRangeBuilder_;
+    }
+
+    private com.google.maps.places.v1.Place.ReviewSummary reviewSummary_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.Place.ReviewSummary,
+            com.google.maps.places.v1.Place.ReviewSummary.Builder,
+            com.google.maps.places.v1.Place.ReviewSummaryOrBuilder>
+        reviewSummaryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     *
+     * @return Whether the reviewSummary field is set.
+     */
+    public boolean hasReviewSummary() {
+      return ((bitField2_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     *
+     * @return The reviewSummary.
+     */
+    public com.google.maps.places.v1.Place.ReviewSummary getReviewSummary() {
+      if (reviewSummaryBuilder_ == null) {
+        return reviewSummary_ == null
+            ? com.google.maps.places.v1.Place.ReviewSummary.getDefaultInstance()
+            : reviewSummary_;
+      } else {
+        return reviewSummaryBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     */
+    public Builder setReviewSummary(com.google.maps.places.v1.Place.ReviewSummary value) {
+      if (reviewSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reviewSummary_ = value;
+      } else {
+        reviewSummaryBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     */
+    public Builder setReviewSummary(
+        com.google.maps.places.v1.Place.ReviewSummary.Builder builderForValue) {
+      if (reviewSummaryBuilder_ == null) {
+        reviewSummary_ = builderForValue.build();
+      } else {
+        reviewSummaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     */
+    public Builder mergeReviewSummary(com.google.maps.places.v1.Place.ReviewSummary value) {
+      if (reviewSummaryBuilder_ == null) {
+        if (((bitField2_ & 0x00000010) != 0)
+            && reviewSummary_ != null
+            && reviewSummary_
+                != com.google.maps.places.v1.Place.ReviewSummary.getDefaultInstance()) {
+          getReviewSummaryBuilder().mergeFrom(value);
+        } else {
+          reviewSummary_ = value;
+        }
+      } else {
+        reviewSummaryBuilder_.mergeFrom(value);
+      }
+      if (reviewSummary_ != null) {
+        bitField2_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     */
+    public Builder clearReviewSummary() {
+      bitField2_ = (bitField2_ & ~0x00000010);
+      reviewSummary_ = null;
+      if (reviewSummaryBuilder_ != null) {
+        reviewSummaryBuilder_.dispose();
+        reviewSummaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     */
+    public com.google.maps.places.v1.Place.ReviewSummary.Builder getReviewSummaryBuilder() {
+      bitField2_ |= 0x00000010;
+      onChanged();
+      return getReviewSummaryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     */
+    public com.google.maps.places.v1.Place.ReviewSummaryOrBuilder getReviewSummaryOrBuilder() {
+      if (reviewSummaryBuilder_ != null) {
+        return reviewSummaryBuilder_.getMessageOrBuilder();
+      } else {
+        return reviewSummary_ == null
+            ? com.google.maps.places.v1.Place.ReviewSummary.getDefaultInstance()
+            : reviewSummary_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AI-generated summary of the place using user reviews.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.Place.ReviewSummary,
+            com.google.maps.places.v1.Place.ReviewSummary.Builder,
+            com.google.maps.places.v1.Place.ReviewSummaryOrBuilder>
+        getReviewSummaryFieldBuilder() {
+      if (reviewSummaryBuilder_ == null) {
+        reviewSummaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.Place.ReviewSummary,
+                com.google.maps.places.v1.Place.ReviewSummary.Builder,
+                com.google.maps.places.v1.Place.ReviewSummaryOrBuilder>(
+                getReviewSummary(), getParentForChildren(), isClean());
+        reviewSummary_ = null;
+      }
+      return reviewSummaryBuilder_;
+    }
+
+    private com.google.maps.places.v1.Place.EvChargeAmenitySummary evChargeAmenitySummary_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.Place.EvChargeAmenitySummary,
+            com.google.maps.places.v1.Place.EvChargeAmenitySummary.Builder,
+            com.google.maps.places.v1.Place.EvChargeAmenitySummaryOrBuilder>
+        evChargeAmenitySummaryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     *
+     * @return Whether the evChargeAmenitySummary field is set.
+     */
+    public boolean hasEvChargeAmenitySummary() {
+      return ((bitField2_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     *
+     * @return The evChargeAmenitySummary.
+     */
+    public com.google.maps.places.v1.Place.EvChargeAmenitySummary getEvChargeAmenitySummary() {
+      if (evChargeAmenitySummaryBuilder_ == null) {
+        return evChargeAmenitySummary_ == null
+            ? com.google.maps.places.v1.Place.EvChargeAmenitySummary.getDefaultInstance()
+            : evChargeAmenitySummary_;
+      } else {
+        return evChargeAmenitySummaryBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     */
+    public Builder setEvChargeAmenitySummary(
+        com.google.maps.places.v1.Place.EvChargeAmenitySummary value) {
+      if (evChargeAmenitySummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evChargeAmenitySummary_ = value;
+      } else {
+        evChargeAmenitySummaryBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     */
+    public Builder setEvChargeAmenitySummary(
+        com.google.maps.places.v1.Place.EvChargeAmenitySummary.Builder builderForValue) {
+      if (evChargeAmenitySummaryBuilder_ == null) {
+        evChargeAmenitySummary_ = builderForValue.build();
+      } else {
+        evChargeAmenitySummaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     */
+    public Builder mergeEvChargeAmenitySummary(
+        com.google.maps.places.v1.Place.EvChargeAmenitySummary value) {
+      if (evChargeAmenitySummaryBuilder_ == null) {
+        if (((bitField2_ & 0x00000020) != 0)
+            && evChargeAmenitySummary_ != null
+            && evChargeAmenitySummary_
+                != com.google.maps.places.v1.Place.EvChargeAmenitySummary.getDefaultInstance()) {
+          getEvChargeAmenitySummaryBuilder().mergeFrom(value);
+        } else {
+          evChargeAmenitySummary_ = value;
+        }
+      } else {
+        evChargeAmenitySummaryBuilder_.mergeFrom(value);
+      }
+      if (evChargeAmenitySummary_ != null) {
+        bitField2_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     */
+    public Builder clearEvChargeAmenitySummary() {
+      bitField2_ = (bitField2_ & ~0x00000020);
+      evChargeAmenitySummary_ = null;
+      if (evChargeAmenitySummaryBuilder_ != null) {
+        evChargeAmenitySummaryBuilder_.dispose();
+        evChargeAmenitySummaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     */
+    public com.google.maps.places.v1.Place.EvChargeAmenitySummary.Builder
+        getEvChargeAmenitySummaryBuilder() {
+      bitField2_ |= 0x00000020;
+      onChanged();
+      return getEvChargeAmenitySummaryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     */
+    public com.google.maps.places.v1.Place.EvChargeAmenitySummaryOrBuilder
+        getEvChargeAmenitySummaryOrBuilder() {
+      if (evChargeAmenitySummaryBuilder_ != null) {
+        return evChargeAmenitySummaryBuilder_.getMessageOrBuilder();
+      } else {
+        return evChargeAmenitySummary_ == null
+            ? com.google.maps.places.v1.Place.EvChargeAmenitySummary.getDefaultInstance()
+            : evChargeAmenitySummary_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The summary of amenities near the EV charging station.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.Place.EvChargeAmenitySummary,
+            com.google.maps.places.v1.Place.EvChargeAmenitySummary.Builder,
+            com.google.maps.places.v1.Place.EvChargeAmenitySummaryOrBuilder>
+        getEvChargeAmenitySummaryFieldBuilder() {
+      if (evChargeAmenitySummaryBuilder_ == null) {
+        evChargeAmenitySummaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.Place.EvChargeAmenitySummary,
+                com.google.maps.places.v1.Place.EvChargeAmenitySummary.Builder,
+                com.google.maps.places.v1.Place.EvChargeAmenitySummaryOrBuilder>(
+                getEvChargeAmenitySummary(), getParentForChildren(), isClean());
+        evChargeAmenitySummary_ = null;
+      }
+      return evChargeAmenitySummaryBuilder_;
+    }
+
+    private com.google.maps.places.v1.Place.NeighborhoodSummary neighborhoodSummary_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.Place.NeighborhoodSummary,
+            com.google.maps.places.v1.Place.NeighborhoodSummary.Builder,
+            com.google.maps.places.v1.Place.NeighborhoodSummaryOrBuilder>
+        neighborhoodSummaryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     *
+     * @return Whether the neighborhoodSummary field is set.
+     */
+    public boolean hasNeighborhoodSummary() {
+      return ((bitField2_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     *
+     * @return The neighborhoodSummary.
+     */
+    public com.google.maps.places.v1.Place.NeighborhoodSummary getNeighborhoodSummary() {
+      if (neighborhoodSummaryBuilder_ == null) {
+        return neighborhoodSummary_ == null
+            ? com.google.maps.places.v1.Place.NeighborhoodSummary.getDefaultInstance()
+            : neighborhoodSummary_;
+      } else {
+        return neighborhoodSummaryBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     */
+    public Builder setNeighborhoodSummary(
+        com.google.maps.places.v1.Place.NeighborhoodSummary value) {
+      if (neighborhoodSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        neighborhoodSummary_ = value;
+      } else {
+        neighborhoodSummaryBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     */
+    public Builder setNeighborhoodSummary(
+        com.google.maps.places.v1.Place.NeighborhoodSummary.Builder builderForValue) {
+      if (neighborhoodSummaryBuilder_ == null) {
+        neighborhoodSummary_ = builderForValue.build();
+      } else {
+        neighborhoodSummaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     */
+    public Builder mergeNeighborhoodSummary(
+        com.google.maps.places.v1.Place.NeighborhoodSummary value) {
+      if (neighborhoodSummaryBuilder_ == null) {
+        if (((bitField2_ & 0x00000040) != 0)
+            && neighborhoodSummary_ != null
+            && neighborhoodSummary_
+                != com.google.maps.places.v1.Place.NeighborhoodSummary.getDefaultInstance()) {
+          getNeighborhoodSummaryBuilder().mergeFrom(value);
+        } else {
+          neighborhoodSummary_ = value;
+        }
+      } else {
+        neighborhoodSummaryBuilder_.mergeFrom(value);
+      }
+      if (neighborhoodSummary_ != null) {
+        bitField2_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     */
+    public Builder clearNeighborhoodSummary() {
+      bitField2_ = (bitField2_ & ~0x00000040);
+      neighborhoodSummary_ = null;
+      if (neighborhoodSummaryBuilder_ != null) {
+        neighborhoodSummaryBuilder_.dispose();
+        neighborhoodSummaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     */
+    public com.google.maps.places.v1.Place.NeighborhoodSummary.Builder
+        getNeighborhoodSummaryBuilder() {
+      bitField2_ |= 0x00000040;
+      onChanged();
+      return getNeighborhoodSummaryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     */
+    public com.google.maps.places.v1.Place.NeighborhoodSummaryOrBuilder
+        getNeighborhoodSummaryOrBuilder() {
+      if (neighborhoodSummaryBuilder_ != null) {
+        return neighborhoodSummaryBuilder_.getMessageOrBuilder();
+      } else {
+        return neighborhoodSummary_ == null
+            ? com.google.maps.places.v1.Place.NeighborhoodSummary.getDefaultInstance()
+            : neighborhoodSummary_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A summary of points of interest near the place.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.Place.NeighborhoodSummary,
+            com.google.maps.places.v1.Place.NeighborhoodSummary.Builder,
+            com.google.maps.places.v1.Place.NeighborhoodSummaryOrBuilder>
+        getNeighborhoodSummaryFieldBuilder() {
+      if (neighborhoodSummaryBuilder_ == null) {
+        neighborhoodSummaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.Place.NeighborhoodSummary,
+                com.google.maps.places.v1.Place.NeighborhoodSummary.Builder,
+                com.google.maps.places.v1.Place.NeighborhoodSummaryOrBuilder>(
+                getNeighborhoodSummary(), getParentForChildren(), isClean());
+        neighborhoodSummary_ = null;
+      }
+      return neighborhoodSummaryBuilder_;
     }
 
     @java.lang.Override

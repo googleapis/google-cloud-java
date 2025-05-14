@@ -105,4 +105,36 @@ public interface ListSupportedDatabaseFlagsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scope for which supported flags are requested. If not
+   * specified, default is DATABASE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for scope.
+   */
+  int getScopeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scope for which supported flags are requested. If not
+   * specified, default is DATABASE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scope.
+   */
+  com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope getScope();
 }

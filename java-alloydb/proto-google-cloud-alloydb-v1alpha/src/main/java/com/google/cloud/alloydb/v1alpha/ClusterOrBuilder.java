@@ -570,7 +570,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=627
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=625
    * @return The network.
    */
   @java.lang.Deprecated
@@ -592,7 +592,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=627
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=625
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -826,7 +826,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=662
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=660
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -842,7 +842,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=662
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=660
    * @return The sslConfig.
    */
   @java.lang.Deprecated

@@ -74,7 +74,7 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Resource name of the subscription to delete.
-   * e.g. projects/123/locations/US/subscriptions/456
+   * e.g. projects/123/locations/us/subscriptions/456
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. Resource name of the subscription to delete.
-   * e.g. projects/123/locations/US/subscriptions/456
+   * e.g. projects/123/locations/us/subscriptions/456
    * </pre>
    *
    * <code>
@@ -482,7 +482,7 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Resource name of the subscription to delete.
-     * e.g. projects/123/locations/US/subscriptions/456
+     * e.g. projects/123/locations/us/subscriptions/456
      * </pre>
      *
      * <code>
@@ -508,7 +508,7 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Resource name of the subscription to delete.
-     * e.g. projects/123/locations/US/subscriptions/456
+     * e.g. projects/123/locations/us/subscriptions/456
      * </pre>
      *
      * <code>
@@ -534,7 +534,7 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Resource name of the subscription to delete.
-     * e.g. projects/123/locations/US/subscriptions/456
+     * e.g. projects/123/locations/us/subscriptions/456
      * </pre>
      *
      * <code>
@@ -559,7 +559,7 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Resource name of the subscription to delete.
-     * e.g. projects/123/locations/US/subscriptions/456
+     * e.g. projects/123/locations/us/subscriptions/456
      * </pre>
      *
      * <code>
@@ -580,7 +580,7 @@ public final class DeleteSubscriptionRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. Resource name of the subscription to delete.
-     * e.g. projects/123/locations/US/subscriptions/456
+     * e.g. projects/123/locations/us/subscriptions/456
      * </pre>
      *
      * <code>

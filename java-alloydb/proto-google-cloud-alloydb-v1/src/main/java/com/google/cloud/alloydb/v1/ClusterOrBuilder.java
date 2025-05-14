@@ -114,6 +114,50 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudsqlBackupRunSource field is set.
+   */
+  boolean hasCloudsqlBackupRunSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudsqlBackupRunSource.
+   */
+  com.google.cloud.alloydb.v1.CloudSQLBackupRunSource getCloudsqlBackupRunSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cluster created from CloudSQL snapshot.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.CloudSQLBackupRunSource cloudsql_backup_run_source = 42 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.CloudSQLBackupRunSourceOrBuilder
+      getCloudsqlBackupRunSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The name of the cluster resource with the format:
    *  * projects/{project}/locations/{region}/clusters/{cluster_id}
    * where the cluster ID segment should satisfy the regex expression
@@ -526,7 +570,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=616
+   *     google/cloud/alloydb/v1/resources.proto;l=624
    * @return The network.
    */
   @java.lang.Deprecated
@@ -548,7 +592,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=616
+   *     google/cloud/alloydb/v1/resources.proto;l=624
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -781,7 +825,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=651
+   *     google/cloud/alloydb/v1/resources.proto;l=659
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -797,7 +841,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=651
+   *     google/cloud/alloydb/v1/resources.proto;l=659
    * @return The sslConfig.
    */
   @java.lang.Deprecated

@@ -36,6 +36,10 @@ public final class GeminiProto {
       internal_static_google_cloud_alloydb_v1beta_GeminiInstanceConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_alloydb_v1beta_GeminiInstanceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_alloydb_v1beta_GCAInstanceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_alloydb_v1beta_GCAInstanceConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -49,13 +53,17 @@ public final class GeminiProto {
           + "to\022\033google.cloud.alloydb.v1beta\032\037google/"
           + "api/field_behavior.proto\",\n\023GeminiCluste"
           + "rConfig\022\025\n\010entitled\030\001 \001(\010B\003\340A\003\"-\n\024Gemini"
-          + "InstanceConfig\022\025\n\010entitled\030\001 \001(\010B\003\340A\003B\310\001"
-          + "\n\037com.google.cloud.alloydb.v1betaB\013Gemin"
-          + "iProtoP\001Z9cloud.google.com/go/alloydb/ap"
-          + "iv1beta/alloydbpb;alloydbpb\252\002\033Google.Clo"
-          + "ud.AlloyDb.V1Beta\312\002\033Google\\Cloud\\AlloyDb"
-          + "\\V1beta\352\002\036Google::Cloud::AlloyDB::V1beta"
-          + "b\006proto3"
+          + "InstanceConfig\022\025\n\010entitled\030\001 \001(\010B\003\340A\003\"b\n"
+          + "\021GCAInstanceConfig\022M\n\017gca_entitlement\030\001 "
+          + "\001(\0162/.google.cloud.alloydb.v1beta.GCAEnt"
+          + "itlementTypeB\003\340A\003*L\n\022GCAEntitlementType\022"
+          + "$\n GCA_ENTITLEMENT_TYPE_UNSPECIFIED\020\000\022\020\n"
+          + "\014GCA_STANDARD\020\001B\310\001\n\037com.google.cloud.all"
+          + "oydb.v1betaB\013GeminiProtoP\001Z9cloud.google"
+          + ".com/go/alloydb/apiv1beta/alloydbpb;allo"
+          + "ydbpb\252\002\033Google.Cloud.AlloyDb.V1Beta\312\002\033Go"
+          + "ogle\\Cloud\\AlloyDb\\V1beta\352\002\036Google::Clou"
+          + "d::AlloyDB::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -78,6 +86,14 @@ public final class GeminiProto {
             internal_static_google_cloud_alloydb_v1beta_GeminiInstanceConfig_descriptor,
             new java.lang.String[] {
               "Entitled",
+            });
+    internal_static_google_cloud_alloydb_v1beta_GCAInstanceConfig_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_alloydb_v1beta_GCAInstanceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_alloydb_v1beta_GCAInstanceConfig_descriptor,
+            new java.lang.String[] {
+              "GcaEntitlement",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

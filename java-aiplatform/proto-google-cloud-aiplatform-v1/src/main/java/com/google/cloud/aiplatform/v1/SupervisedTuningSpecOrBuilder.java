@@ -122,4 +122,19 @@ public interface SupervisedTuningSpecOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.SupervisedHyperParametersOrBuilder getHyperParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, disable intermediate checkpoints for SFT and only
+   * the last checkpoint will be exported. Otherwise, enable intermediate
+   * checkpoints for SFT. Default is false.
+   * </pre>
+   *
+   * <code>bool export_last_checkpoint_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The exportLastCheckpointOnly.
+   */
+  boolean getExportLastCheckpointOnly();
 }

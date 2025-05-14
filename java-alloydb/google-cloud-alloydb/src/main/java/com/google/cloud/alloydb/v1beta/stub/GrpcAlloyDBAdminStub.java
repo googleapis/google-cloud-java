@@ -60,6 +60,8 @@ import com.google.cloud.alloydb.v1beta.GetClusterRequest;
 import com.google.cloud.alloydb.v1beta.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1beta.GetInstanceRequest;
 import com.google.cloud.alloydb.v1beta.GetUserRequest;
+import com.google.cloud.alloydb.v1beta.ImportClusterRequest;
+import com.google.cloud.alloydb.v1beta.ImportClusterResponse;
 import com.google.cloud.alloydb.v1beta.InjectFaultRequest;
 import com.google.cloud.alloydb.v1beta.Instance;
 import com.google.cloud.alloydb.v1beta.ListBackupsRequest;
@@ -153,6 +155,16 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/ExportCluster")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportClusterRequest, Operation>
+      importClusterMethodDescriptor =
+          MethodDescriptor.<ImportClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/ImportCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -489,6 +501,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable;
   private final OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
       exportClusterOperationCallable;
+  private final UnaryCallable<ImportClusterRequest, Operation> importClusterCallable;
+  private final OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable;
   private final UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable;
   private final OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
       upgradeClusterOperationCallable;
@@ -659,6 +674,16 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
     GrpcCallSettings<ExportClusterRequest, Operation> exportClusterTransportSettings =
         GrpcCallSettings.<ExportClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(exportClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ImportClusterRequest, Operation> importClusterTransportSettings =
+        GrpcCallSettings.<ImportClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(importClusterMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1039,6 +1064,15 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
             settings.exportClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.importClusterCallable =
+        callableFactory.createUnaryCallable(
+            importClusterTransportSettings, settings.importClusterSettings(), clientContext);
+    this.importClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            importClusterTransportSettings,
+            settings.importClusterOperationSettings(),
+            clientContext,
+            operationsStub);
     this.upgradeClusterCallable =
         callableFactory.createUnaryCallable(
             upgradeClusterTransportSettings, settings.upgradeClusterSettings(), clientContext);
@@ -1329,6 +1363,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   public OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
       exportClusterOperationCallable() {
     return exportClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportClusterRequest, Operation> importClusterCallable() {
+    return importClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable() {
+    return importClusterOperationCallable;
   }
 
   @Override

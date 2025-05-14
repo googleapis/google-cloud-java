@@ -84,7 +84,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1811
+   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
    * @return The pemCertificate.
    */
   @java.lang.Override
@@ -113,7 +113,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1811
+   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
    * @return The bytes for pemCertificate.
    */
   @java.lang.Override
@@ -685,7 +685,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1811
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
      * @return The pemCertificate.
      */
     @java.lang.Deprecated
@@ -713,7 +713,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1811
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
      * @return The bytes for pemCertificate.
      */
     @java.lang.Deprecated
@@ -741,7 +741,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1811
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
      * @param value The pemCertificate to set.
      * @return This builder for chaining.
      */
@@ -768,7 +768,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1811
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -791,7 +791,7 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
-     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1811
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1901
      * @param value The bytes for pemCertificate to set.
      * @return This builder for chaining.
      */

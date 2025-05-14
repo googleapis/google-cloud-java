@@ -41,6 +41,7 @@ public class AsyncDeleteListing {
               .setName(
                   ListingName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[LISTING]")
                       .toString())
+              .setDeleteCommercial(true)
               .build();
       ApiFuture<Empty> future =
           analyticsHubServiceClient.deleteListingCallable().futureCall(request);

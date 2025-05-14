@@ -155,7 +155,6 @@ public class SubscriptionsServiceStubSettings
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/chat.bot")
           .add("https://www.googleapis.com/auth/chat.memberships")
           .add("https://www.googleapis.com/auth/chat.memberships.readonly")
           .add("https://www.googleapis.com/auth/chat.messages")

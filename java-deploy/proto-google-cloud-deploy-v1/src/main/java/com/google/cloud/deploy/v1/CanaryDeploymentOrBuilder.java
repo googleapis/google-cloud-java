@@ -80,7 +80,8 @@ public interface CanaryDeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to run verify tests after each percentage deployment.
+   * Optional. Whether to run verify tests after each percentage deployment via
+   * `skaffold verify`.
    * </pre>
    *
    * <code>bool verify = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

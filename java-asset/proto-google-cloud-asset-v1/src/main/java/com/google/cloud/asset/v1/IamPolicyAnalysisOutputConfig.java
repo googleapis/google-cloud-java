@@ -1041,7 +1041,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        * <pre>
        * The time when the request is received. If specified as partition key,
-       * the result table(s) is partitoned by the RequestTime column, an
+       * the result table(s) is partitioned by the RequestTime column, an
        * additional timestamp column representing when the request was received.
        * </pre>
        *
@@ -1068,7 +1068,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        * <pre>
        * The time when the request is received. If specified as partition key,
-       * the result table(s) is partitoned by the RequestTime column, an
+       * the result table(s) is partitioned by the RequestTime column, an
        * additional timestamp column representing when the request was received.
        * </pre>
        *

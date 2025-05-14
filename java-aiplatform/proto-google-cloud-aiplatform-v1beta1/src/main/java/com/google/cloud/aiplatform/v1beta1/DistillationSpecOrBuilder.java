@@ -28,8 +28,8 @@ public interface DistillationSpecOrBuilder
    *
    *
    * <pre>
-   * The base teacher model that is being distilled, e.g.,
-   * "gemini-1.0-pro-002".
+   * The base teacher model that is being distilled. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_teacher_model = 5;</code>
@@ -42,8 +42,8 @@ public interface DistillationSpecOrBuilder
    *
    *
    * <pre>
-   * The base teacher model that is being distilled, e.g.,
-   * "gemini-1.0-pro-002".
+   * The base teacher model that is being distilled. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_teacher_model = 5;</code>
@@ -56,8 +56,8 @@ public interface DistillationSpecOrBuilder
    *
    *
    * <pre>
-   * The base teacher model that is being distilled, e.g.,
-   * "gemini-1.0-pro-002".
+   * The base teacher model that is being distilled. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_teacher_model = 5;</code>

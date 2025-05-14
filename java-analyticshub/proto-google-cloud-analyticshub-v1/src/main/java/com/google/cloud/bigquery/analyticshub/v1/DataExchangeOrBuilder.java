@@ -29,7 +29,7 @@ public interface DataExchangeOrBuilder
    *
    * <pre>
    * Output only. The resource name of the data exchange.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -43,7 +43,7 @@ public interface DataExchangeOrBuilder
    *
    * <pre>
    * Output only. The resource name of the data exchange.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -303,7 +303,6 @@ public interface DataExchangeOrBuilder
    * <pre>
    * Optional. By default, false.
    * If true, the DataExchange has an email sharing mandate enabled.
-   * Publishers can view the logged email of the subscriber.
    * </pre>
    *
    * <code>
@@ -320,7 +319,6 @@ public interface DataExchangeOrBuilder
    * <pre>
    * Optional. By default, false.
    * If true, the DataExchange has an email sharing mandate enabled.
-   * Publishers can view the logged email of the subscriber.
    * </pre>
    *
    * <code>

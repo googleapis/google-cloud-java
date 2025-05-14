@@ -310,7 +310,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SubscribeDataExchange</td>
- *      <td><p> Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create one or more linked datasets.</td>
+ *      <td><p> Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create one or more linked datasets. Throws a Bad Request error if the Data Exchange does not contain any listings.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -643,7 +643,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the data exchanges. e.g.
-   *     `projects/myproject/locations/US`.
+   *     `projects/myproject/locations/us`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataExchangesPagedResponse listDataExchanges(LocationName parent) {
@@ -676,7 +676,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the data exchanges. e.g.
-   *     `projects/myproject/locations/US`.
+   *     `projects/myproject/locations/us`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataExchangesPagedResponse listDataExchanges(String parent) {
@@ -813,7 +813,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param organization Required. The organization resource path of the projects containing
-   *     DataExchanges. e.g. `organizations/myorg/locations/US`.
+   *     DataExchanges. e.g. `organizations/myorg/locations/us`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOrgDataExchangesPagedResponse listOrgDataExchanges(String organization) {
@@ -948,7 +948,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the data exchange. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123`.
+   *     `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataExchange getDataExchange(DataExchangeName name) {
@@ -976,7 +976,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the data exchange. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123`.
+   *     `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataExchange getDataExchange(String name) {
@@ -1060,7 +1060,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the data exchange. e.g.
-   *     `projects/myproject/locations/US`.
+   *     `projects/myproject/locations/us`.
    * @param dataExchange Required. The data exchange to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1093,7 +1093,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the data exchange. e.g.
-   *     `projects/myproject/locations/US`.
+   *     `projects/myproject/locations/us`.
    * @param dataExchange Required. The data exchange to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1278,7 +1278,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the data exchange resource that you want to delete. For
-   *     example, `projects/myproject/locations/US/dataExchanges/123`.
+   *     example, `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataExchange(DataExchangeName name) {
@@ -1308,7 +1308,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full name of the data exchange resource that you want to delete. For
-   *     example, `projects/myproject/locations/US/dataExchanges/123`.
+   *     example, `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDataExchange(String name) {
@@ -1394,7 +1394,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the listing. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123`.
+   *     `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListListingsPagedResponse listListings(DataExchangeName parent) {
@@ -1426,7 +1426,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the listing. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123`.
+   *     `projects/myproject/locations/us/dataExchanges/123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListListingsPagedResponse listListings(String parent) {
@@ -1560,7 +1560,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the listing. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Listing getListing(ListingName name) {
@@ -1589,7 +1589,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the listing. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Listing getListing(String name) {
@@ -1677,7 +1677,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the listing. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123`.
+   *     `projects/myproject/locations/us/dataExchanges/123`.
    * @param listing Required. The listing to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1710,7 +1710,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the listing. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123`.
+   *     `projects/myproject/locations/us/dataExchanges/123`.
    * @param listing Required. The listing to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1890,7 +1890,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the listing to delete. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteListing(ListingName name) {
@@ -1919,7 +1919,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the listing to delete. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteListing(String name) {
@@ -1945,6 +1945,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *           .setName(
    *               ListingName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[LISTING]")
    *                   .toString())
+   *           .setDeleteCommercial(true)
    *           .build();
    *   analyticsHubServiceClient.deleteListing(request);
    * }
@@ -1975,6 +1976,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *           .setName(
    *               ListingName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[LISTING]")
    *                   .toString())
+   *           .setDeleteCommercial(true)
    *           .build();
    *   ApiFuture<Empty> future =
    *       analyticsHubServiceClient.deleteListingCallable().futureCall(request);
@@ -2010,7 +2012,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the listing that you want to subscribe to. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SubscribeListingResponse subscribeListing(ListingName name) {
@@ -2043,7 +2045,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the listing that you want to subscribe to. e.g.
-   *     `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   *     `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SubscribeListingResponse subscribeListing(String name) {
@@ -2123,7 +2125,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
-   * one or more linked datasets.
+   * one or more linked datasets. Throws a Bad Request error if the Data Exchange does not contain
+   * any listings.
    *
    * <p>Sample code:
    *
@@ -2141,7 +2144,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the Data Exchange. e.g.
-   *     `projects/publisherproject/locations/US/dataExchanges/123`
+   *     `projects/publisherproject/locations/us/dataExchanges/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SubscribeDataExchangeResponse, OperationMetadata>
@@ -2156,7 +2159,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
-   * one or more linked datasets.
+   * one or more linked datasets. Throws a Bad Request error if the Data Exchange does not contain
+   * any listings.
    *
    * <p>Sample code:
    *
@@ -2174,7 +2178,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the Data Exchange. e.g.
-   *     `projects/publisherproject/locations/US/dataExchanges/123`
+   *     `projects/publisherproject/locations/us/dataExchanges/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SubscribeDataExchangeResponse, OperationMetadata>
@@ -2187,7 +2191,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
-   * one or more linked datasets.
+   * one or more linked datasets. Throws a Bad Request error if the Data Exchange does not contain
+   * any listings.
    *
    * <p>Sample code:
    *
@@ -2222,7 +2227,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
-   * one or more linked datasets.
+   * one or more linked datasets. Throws a Bad Request error if the Data Exchange does not contain
+   * any listings.
    *
    * <p>Sample code:
    *
@@ -2257,7 +2263,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create
-   * one or more linked datasets.
+   * one or more linked datasets. Throws a Bad Request error if the Data Exchange does not contain
+   * any listings.
    *
    * <p>Sample code:
    *
@@ -2309,7 +2316,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the Subscription to refresh. e.g.
-   *     `projects/subscriberproject/locations/US/subscriptions/123`
+   *     `projects/subscriberproject/locations/us/subscriptions/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RefreshSubscriptionResponse, OperationMetadata>
@@ -2342,7 +2349,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the Subscription to refresh. e.g.
-   *     `projects/subscriberproject/locations/US/subscriptions/123`
+   *     `projects/subscriberproject/locations/us/subscriptions/123`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RefreshSubscriptionResponse, OperationMetadata>
@@ -2462,7 +2469,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the subscription. e.g.
-   *     projects/123/locations/US/subscriptions/456
+   *     projects/123/locations/us/subscriptions/456
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription getSubscription(SubscriptionName name) {
@@ -2490,7 +2497,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the subscription. e.g.
-   *     projects/123/locations/US/subscriptions/456
+   *     projects/123/locations/us/subscriptions/456
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription getSubscription(String name) {
@@ -2576,7 +2583,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the subscription. e.g.
-   *     projects/myproject/locations/US
+   *     projects/myproject/locations/us
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSubscriptionsPagedResponse listSubscriptions(LocationName parent) {
@@ -2609,7 +2616,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource path of the subscription. e.g.
-   *     projects/myproject/locations/US
+   *     projects/myproject/locations/us
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSubscriptionsPagedResponse listSubscriptions(String parent) {
@@ -2749,8 +2756,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param resource Required. Resource name of the requested target. This resource may be either a
-   *     Listing or a DataExchange. e.g. projects/123/locations/US/dataExchanges/456 OR e.g.
-   *     projects/123/locations/US/dataExchanges/456/listings/789
+   *     Listing or a DataExchange. e.g. projects/123/locations/us/dataExchanges/456 OR e.g.
+   *     projects/123/locations/us/dataExchanges/456/listings/789
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSharedResourceSubscriptionsPagedResponse listSharedResourceSubscriptions(
@@ -2785,8 +2792,8 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param resource Required. Resource name of the requested target. This resource may be either a
-   *     Listing or a DataExchange. e.g. projects/123/locations/US/dataExchanges/456 OR e.g.
-   *     projects/123/locations/US/dataExchanges/456/listings/789
+   *     Listing or a DataExchange. e.g. projects/123/locations/us/dataExchanges/456 OR e.g.
+   *     projects/123/locations/us/dataExchanges/456/listings/789
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSharedResourceSubscriptionsPagedResponse listSharedResourceSubscriptions(
@@ -2932,7 +2939,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the subscription to revoke. e.g.
-   *     projects/123/locations/US/subscriptions/456
+   *     projects/123/locations/us/subscriptions/456
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RevokeSubscriptionResponse revokeSubscription(SubscriptionName name) {
@@ -2962,7 +2969,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the subscription to revoke. e.g.
-   *     projects/123/locations/US/subscriptions/456
+   *     projects/123/locations/us/subscriptions/456
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RevokeSubscriptionResponse revokeSubscription(String name) {
@@ -2987,6 +2994,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *   RevokeSubscriptionRequest request =
    *       RevokeSubscriptionRequest.newBuilder()
    *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .setRevokeCommercial(true)
    *           .build();
    *   RevokeSubscriptionResponse response = analyticsHubServiceClient.revokeSubscription(request);
    * }
@@ -3015,6 +3023,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    *   RevokeSubscriptionRequest request =
    *       RevokeSubscriptionRequest.newBuilder()
    *           .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+   *           .setRevokeCommercial(true)
    *           .build();
    *   ApiFuture<RevokeSubscriptionResponse> future =
    *       analyticsHubServiceClient.revokeSubscriptionCallable().futureCall(request);
@@ -3047,7 +3056,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the subscription to delete. e.g.
-   *     projects/123/locations/US/subscriptions/456
+   *     projects/123/locations/us/subscriptions/456
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSubscriptionAsync(
@@ -3078,7 +3087,7 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. Resource name of the subscription to delete. e.g.
-   *     projects/123/locations/US/subscriptions/456
+   *     projects/123/locations/us/subscriptions/456
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteSubscriptionAsync(String name) {

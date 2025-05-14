@@ -742,7 +742,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
+            .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
             .setLogLinkedDatasetQueryUserEmail(true)
+            .setAllowOnlyMetadataSharing(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -801,7 +803,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
+            .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
             .setLogLinkedDatasetQueryUserEmail(true)
+            .setAllowOnlyMetadataSharing(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -862,7 +866,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
+            .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
             .setLogLinkedDatasetQueryUserEmail(true)
+            .setAllowOnlyMetadataSharing(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -923,7 +929,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
+            .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
             .setLogLinkedDatasetQueryUserEmail(true)
+            .setAllowOnlyMetadataSharing(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -985,7 +993,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
+            .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
             .setLogLinkedDatasetQueryUserEmail(true)
+            .setAllowOnlyMetadataSharing(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1006,7 +1016,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .setDiscoveryType(DiscoveryType.forNumber(0))
             .setResourceType(SharedResourceType.forNumber(0))
+            .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
             .setLogLinkedDatasetQueryUserEmail(true)
+            .setAllowOnlyMetadataSharing(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1053,7 +1065,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
               .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
               .setDiscoveryType(DiscoveryType.forNumber(0))
               .setResourceType(SharedResourceType.forNumber(0))
+              .setCommercialInfo(Listing.CommercialInfo.newBuilder().build())
               .setLogLinkedDatasetQueryUserEmail(true)
+              .setAllowOnlyMetadataSharing(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateListing(listing, updateMask);
@@ -1444,7 +1458,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setSubscriberContact("subscriberContact-847205736")
             .addAllLinkedResources(new ArrayList<Subscription.LinkedResource>())
             .setResourceType(SharedResourceType.forNumber(0))
+            .setCommercialInfo(Subscription.CommercialInfo.newBuilder().build())
             .setLogLinkedDatasetQueryUserEmail(true)
+            .setDestinationDataset(DestinationDataset.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1497,7 +1513,9 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setSubscriberContact("subscriberContact-847205736")
             .addAllLinkedResources(new ArrayList<Subscription.LinkedResource>())
             .setResourceType(SharedResourceType.forNumber(0))
+            .setCommercialInfo(Subscription.CommercialInfo.newBuilder().build())
             .setLogLinkedDatasetQueryUserEmail(true)
+            .setDestinationDataset(DestinationDataset.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

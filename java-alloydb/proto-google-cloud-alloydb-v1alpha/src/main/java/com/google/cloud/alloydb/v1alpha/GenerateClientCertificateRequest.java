@@ -222,7 +222,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
    * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1684
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
    * @return The pemCsr.
    */
   @java.lang.Override
@@ -250,7 +250,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
    * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1684
+   *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
    * @return The bytes for pemCsr.
    */
   @java.lang.Override
@@ -395,9 +395,9 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. An optional hint to the endpoint to generate a client
-   * ceritificate that can be used by AlloyDB connectors to exchange additional
-   * metadata with the server after TLS handshake.
+   * Optional. An optional hint to the endpoint to generate a client certificate
+   * that can be used by AlloyDB connectors to exchange additional metadata with
+   * the server after TLS handshake.
    * </pre>
    *
    * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1208,7 +1208,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
      * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1684
+     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
      * @return The pemCsr.
      */
     @java.lang.Deprecated
@@ -1235,7 +1235,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
      * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1684
+     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
      * @return The bytes for pemCsr.
      */
     @java.lang.Deprecated
@@ -1262,7 +1262,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
      * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1684
+     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
      * @param value The pemCsr to set.
      * @return This builder for chaining.
      */
@@ -1288,7 +1288,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
      * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1684
+     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1310,7 +1310,7 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
      * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest.pem_csr is
-     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1684
+     *     deprecated. See google/cloud/alloydb/v1alpha/service.proto;l=1878
      * @param value The bytes for pemCsr to set.
      * @return This builder for chaining.
      */
@@ -1682,9 +1682,9 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. An optional hint to the endpoint to generate a client
-     * ceritificate that can be used by AlloyDB connectors to exchange additional
-     * metadata with the server after TLS handshake.
+     * Optional. An optional hint to the endpoint to generate a client certificate
+     * that can be used by AlloyDB connectors to exchange additional metadata with
+     * the server after TLS handshake.
      * </pre>
      *
      * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1700,9 +1700,9 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. An optional hint to the endpoint to generate a client
-     * ceritificate that can be used by AlloyDB connectors to exchange additional
-     * metadata with the server after TLS handshake.
+     * Optional. An optional hint to the endpoint to generate a client certificate
+     * that can be used by AlloyDB connectors to exchange additional metadata with
+     * the server after TLS handshake.
      * </pre>
      *
      * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1722,9 +1722,9 @@ public final class GenerateClientCertificateRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. An optional hint to the endpoint to generate a client
-     * ceritificate that can be used by AlloyDB connectors to exchange additional
-     * metadata with the server after TLS handshake.
+     * Optional. An optional hint to the endpoint to generate a client certificate
+     * that can be used by AlloyDB connectors to exchange additional metadata with
+     * the server after TLS handshake.
      * </pre>
      *
      * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

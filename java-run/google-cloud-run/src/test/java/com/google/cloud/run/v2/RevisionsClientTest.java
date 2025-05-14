@@ -126,6 +126,8 @@ public class RevisionsClientTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -196,6 +198,8 @@ public class RevisionsClientTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -354,6 +358,8 @@ public class RevisionsClientTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -432,6 +438,8 @@ public class RevisionsClientTest {
             .setSessionAffinity(true)
             .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setNodeSelector(NodeSelector.newBuilder().build())
+            .setGpuZonalRedundancyDisabled(true)
+            .setCreator("creator1028554796")
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
