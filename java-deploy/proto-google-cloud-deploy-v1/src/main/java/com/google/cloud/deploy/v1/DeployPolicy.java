@@ -1057,7 +1057,7 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The weak etag of the `Automation` resource.
+   * The weak etag of the `DeployPolicy` resource.
    * This checksum is computed by the server based on the value of other
    * fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
@@ -1084,7 +1084,7 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The weak etag of the `Automation` resource.
+   * The weak etag of the `DeployPolicy` resource.
    * This checksum is computed by the server based on the value of other
    * fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
@@ -4099,7 +4099,7 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The weak etag of the `Automation` resource.
+     * The weak etag of the `DeployPolicy` resource.
      * This checksum is computed by the server based on the value of other
      * fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
@@ -4125,7 +4125,7 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The weak etag of the `Automation` resource.
+     * The weak etag of the `DeployPolicy` resource.
      * This checksum is computed by the server based on the value of other
      * fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
@@ -4151,7 +4151,7 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The weak etag of the `Automation` resource.
+     * The weak etag of the `DeployPolicy` resource.
      * This checksum is computed by the server based on the value of other
      * fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
@@ -4176,7 +4176,7 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The weak etag of the `Automation` resource.
+     * The weak etag of the `DeployPolicy` resource.
      * This checksum is computed by the server based on the value of other
      * fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
@@ -4197,7 +4197,7 @@ public final class DeployPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The weak etag of the `Automation` resource.
+     * The weak etag of the `DeployPolicy` resource.
      * This checksum is computed by the server based on the value of other
      * fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.

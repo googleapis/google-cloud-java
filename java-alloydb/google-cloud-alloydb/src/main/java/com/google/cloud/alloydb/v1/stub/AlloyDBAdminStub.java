@@ -44,6 +44,8 @@ import com.google.cloud.alloydb.v1.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1.DeleteUserRequest;
 import com.google.cloud.alloydb.v1.ExecuteSqlRequest;
 import com.google.cloud.alloydb.v1.ExecuteSqlResponse;
+import com.google.cloud.alloydb.v1.ExportClusterRequest;
+import com.google.cloud.alloydb.v1.ExportClusterResponse;
 import com.google.cloud.alloydb.v1.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1.GenerateClientCertificateResponse;
@@ -52,6 +54,8 @@ import com.google.cloud.alloydb.v1.GetClusterRequest;
 import com.google.cloud.alloydb.v1.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1.GetInstanceRequest;
 import com.google.cloud.alloydb.v1.GetUserRequest;
+import com.google.cloud.alloydb.v1.ImportClusterRequest;
+import com.google.cloud.alloydb.v1.ImportClusterResponse;
 import com.google.cloud.alloydb.v1.InjectFaultRequest;
 import com.google.cloud.alloydb.v1.Instance;
 import com.google.cloud.alloydb.v1.ListBackupsRequest;
@@ -75,6 +79,8 @@ import com.google.cloud.alloydb.v1.UpdateBackupRequest;
 import com.google.cloud.alloydb.v1.UpdateClusterRequest;
 import com.google.cloud.alloydb.v1.UpdateInstanceRequest;
 import com.google.cloud.alloydb.v1.UpdateUserRequest;
+import com.google.cloud.alloydb.v1.UpgradeClusterRequest;
+import com.google.cloud.alloydb.v1.UpgradeClusterResponse;
 import com.google.cloud.alloydb.v1.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -130,6 +136,33 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
+  }
+
+  public OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportClusterOperationCallable()");
+  }
+
+  public UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportClusterCallable()");
+  }
+
+  public OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importClusterOperationCallable()");
+  }
+
+  public UnaryCallable<ImportClusterRequest, Operation> importClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: importClusterCallable()");
+  }
+
+  public OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeClusterOperationCallable()");
+  }
+
+  public UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: upgradeClusterCallable()");
   }
 
   public OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>

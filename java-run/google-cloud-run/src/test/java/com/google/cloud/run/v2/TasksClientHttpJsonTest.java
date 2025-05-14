@@ -114,6 +114,7 @@ public class TasksClientHttpJsonTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
+            .setNodeSelector(NodeSelector.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -190,6 +191,7 @@ public class TasksClientHttpJsonTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
+            .setNodeSelector(NodeSelector.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);

@@ -1167,6 +1167,49 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
+   * Output only. The node selector for the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the nodeSelector field is set.
+   */
+  boolean hasNodeSelector();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The node selector for the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The nodeSelector.
+   */
+  com.google.cloud.run.v2.NodeSelector getNodeSelector();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The node selector for the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.run.v2.NodeSelectorOrBuilder getNodeSelectorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>

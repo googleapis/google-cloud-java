@@ -39,6 +39,7 @@ public class AsyncRevokeSubscription {
       RevokeSubscriptionRequest request =
           RevokeSubscriptionRequest.newBuilder()
               .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+              .setRevokeCommercial(true)
               .build();
       ApiFuture<RevokeSubscriptionResponse> future =
           analyticsHubServiceClient.revokeSubscriptionCallable().futureCall(request);

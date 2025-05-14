@@ -641,6 +641,346 @@ public class AlloyDBAdminClientHttpJsonTest {
   }
 
   @Test
+  public void exportClusterTest() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportClusterTest2() throws Exception {
+    ExportClusterResponse expectedResponse = ExportClusterResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+    GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+    String database = "database1789464955";
+    ExportClusterRequest.CsvExportOptions csvExportOptions =
+        ExportClusterRequest.CsvExportOptions.newBuilder().build();
+    ExportClusterRequest.SqlExportOptions sqlExportOptions =
+        ExportClusterRequest.SqlExportOptions.newBuilder().build();
+
+    ExportClusterResponse actualResponse =
+        client
+            .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      GcsDestination gcsDestination = GcsDestination.newBuilder().build();
+      String database = "database1789464955";
+      ExportClusterRequest.CsvExportOptions csvExportOptions =
+          ExportClusterRequest.CsvExportOptions.newBuilder().build();
+      ExportClusterRequest.SqlExportOptions sqlExportOptions =
+          ExportClusterRequest.SqlExportOptions.newBuilder().build();
+      client
+          .exportClusterAsync(name, gcsDestination, database, csvExportOptions, sqlExportOptions)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importClusterTest() throws Exception {
+    ImportClusterResponse expectedResponse =
+        ImportClusterResponse.newBuilder().setBytesDownloaded(1945339771).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    String gcsUri = "gcsUri-1251224875";
+    String database = "database1789464955";
+    String user = "user3599307";
+
+    ImportClusterResponse actualResponse =
+        client.importClusterAsync(name, gcsUri, database, user).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      String gcsUri = "gcsUri-1251224875";
+      String database = "database1789464955";
+      String user = "user3599307";
+      client.importClusterAsync(name, gcsUri, database, user).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importClusterTest2() throws Exception {
+    ImportClusterResponse expectedResponse =
+        ImportClusterResponse.newBuilder().setBytesDownloaded(1945339771).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+    String gcsUri = "gcsUri-1251224875";
+    String database = "database1789464955";
+    String user = "user3599307";
+
+    ImportClusterResponse actualResponse =
+        client.importClusterAsync(name, gcsUri, database, user).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      String gcsUri = "gcsUri-1251224875";
+      String database = "database1789464955";
+      String user = "user3599307";
+      client.importClusterAsync(name, gcsUri, database, user).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void upgradeClusterTest() throws Exception {
+    UpgradeClusterResponse expectedResponse =
+        UpgradeClusterResponse.newBuilder()
+            .setMessage("message954925063")
+            .addAllClusterUpgradeDetails(
+                new ArrayList<UpgradeClusterResponse.ClusterUpgradeDetails>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    DatabaseVersion version = DatabaseVersion.forNumber(0);
+
+    UpgradeClusterResponse actualResponse = client.upgradeClusterAsync(name, version).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void upgradeClusterExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName name = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      DatabaseVersion version = DatabaseVersion.forNumber(0);
+      client.upgradeClusterAsync(name, version).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void upgradeClusterTest2() throws Exception {
+    UpgradeClusterResponse expectedResponse =
+        UpgradeClusterResponse.newBuilder()
+            .setMessage("message954925063")
+            .addAllClusterUpgradeDetails(
+                new ArrayList<UpgradeClusterResponse.ClusterUpgradeDetails>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("upgradeClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+    DatabaseVersion version = DatabaseVersion.forNumber(0);
+
+    UpgradeClusterResponse actualResponse = client.upgradeClusterAsync(name, version).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void upgradeClusterExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
+      DatabaseVersion version = DatabaseVersion.forNumber(0);
+      client.upgradeClusterAsync(name, version).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void deleteClusterTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -1409,6 +1749,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1477,6 +1818,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1547,6 +1889,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1624,6 +1967,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1701,6 +2045,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1779,6 +2124,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1916,6 +2262,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -1952,6 +2299,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2008,6 +2356,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setWritableNode(Instance.Node.newBuilder().build())
               .addAllNodes(new ArrayList<Instance.Node>())
               .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+              .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
               .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
               .setIpAddress("ipAddress1634032845")
               .setPublicIpAddress("publicIpAddress2055303268")
@@ -2137,6 +2486,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2210,6 +2560,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2285,6 +2636,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2360,6 +2712,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2437,6 +2790,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")
@@ -2510,6 +2864,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setWritableNode(Instance.Node.newBuilder().build())
             .addAllNodes(new ArrayList<Instance.Node>())
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
+            .setObservabilityConfig(Instance.ObservabilityInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
             .setPublicIpAddress("publicIpAddress2055303268")

@@ -782,9 +782,14 @@ public interface PlaceOrBuilder
    * The regular hours of operation. Note that if a place is always open (24
    * hours), the `close` field will not be set. Clients can rely on always open
    * (24 hours) being represented as an
-   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-   * value `0`, and [minute][Point.minute] with value `0`.
+   * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+   * period containing
+   * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`,
+   * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`, and
+   * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -800,9 +805,14 @@ public interface PlaceOrBuilder
    * The regular hours of operation. Note that if a place is always open (24
    * hours), the `close` field will not be set. Clients can rely on always open
    * (24 hours) being represented as an
-   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-   * value `0`, and [minute][Point.minute] with value `0`.
+   * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+   * period containing
+   * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`,
+   * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`, and
+   * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -818,9 +828,14 @@ public interface PlaceOrBuilder
    * The regular hours of operation. Note that if a place is always open (24
    * hours), the `close` field will not be set. Clients can rely on always open
    * (24 hours) being represented as an
-   * [open][google.maps.places.v1.Place.OpeningHours.Period.open] period
-   * containing [day][Point.day] with value `0`, [hour][Point.hour] with
-   * value `0`, and [minute][Point.minute] with value `0`.
+   * [`open`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Period)
+   * period containing
+   * [`day`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`,
+   * [`hour`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`, and
+   * [`minute`](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places#Point)
+   * with value `0`.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.OpeningHours regular_opening_hours = 21;</code>
@@ -2122,7 +2137,7 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -2133,7 +2148,7 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -2144,7 +2159,7 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -2155,7 +2170,7 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -2167,7 +2182,7 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * A list of sub destinations related to the place.
+   * A list of sub-destinations related to the place.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Place.SubDestination sub_destinations = 71;</code>
@@ -2295,10 +2310,6 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
    * AI-generated summary of the place.
    * </pre>
    *
@@ -2312,10 +2323,6 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
    * AI-generated summary of the place.
    * </pre>
    *
@@ -2329,65 +2336,12 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
    * AI-generated summary of the place.
    * </pre>
    *
    * <code>.google.maps.places.v1.Place.GenerativeSummary generative_summary = 80;</code>
    */
   com.google.maps.places.v1.Place.GenerativeSummaryOrBuilder getGenerativeSummaryOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * AI-generated summary of the area that the place is in.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-   *
-   * @return Whether the areaSummary field is set.
-   */
-  boolean hasAreaSummary();
-
-  /**
-   *
-   *
-   * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * AI-generated summary of the area that the place is in.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-   *
-   * @return The areaSummary.
-   */
-  com.google.maps.places.v1.Place.AreaSummary getAreaSummary();
-
-  /**
-   *
-   *
-   * <pre>
-   * Experimental: See
-   * https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative
-   * for more details.
-   *
-   * AI-generated summary of the area that the place is in.
-   * </pre>
-   *
-   * <code>.google.maps.places.v1.Place.AreaSummary area_summary = 81;</code>
-   */
-  com.google.maps.places.v1.Place.AreaSummaryOrBuilder getAreaSummaryOrBuilder();
 
   /**
    *
@@ -2483,6 +2437,52 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
+   * The address descriptor of the place. Address descriptors include additional
+   * information that help describe a location using landmarks and areas. See
+   * address descriptor regional coverage in
+   * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+   *
+   * @return Whether the addressDescriptor field is set.
+   */
+  boolean hasAddressDescriptor();
+
+  /**
+   *
+   *
+   * <pre>
+   * The address descriptor of the place. Address descriptors include additional
+   * information that help describe a location using landmarks and areas. See
+   * address descriptor regional coverage in
+   * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+   *
+   * @return The addressDescriptor.
+   */
+  com.google.maps.places.v1.AddressDescriptor getAddressDescriptor();
+
+  /**
+   *
+   *
+   * <pre>
+   * The address descriptor of the place. Address descriptors include additional
+   * information that help describe a location using landmarks and areas. See
+   * address descriptor regional coverage in
+   * https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.AddressDescriptor address_descriptor = 84;</code>
+   */
+  com.google.maps.places.v1.AddressDescriptorOrBuilder getAddressDescriptorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The price range associated with a Place.
    * </pre>
    *
@@ -2515,4 +2515,119 @@ public interface PlaceOrBuilder
    * <code>.google.maps.places.v1.PriceRange price_range = 86;</code>
    */
   com.google.maps.places.v1.PriceRangeOrBuilder getPriceRangeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * AI-generated summary of the place using user reviews.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+   *
+   * @return Whether the reviewSummary field is set.
+   */
+  boolean hasReviewSummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * AI-generated summary of the place using user reviews.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+   *
+   * @return The reviewSummary.
+   */
+  com.google.maps.places.v1.Place.ReviewSummary getReviewSummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * AI-generated summary of the place using user reviews.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ReviewSummary review_summary = 87;</code>
+   */
+  com.google.maps.places.v1.Place.ReviewSummaryOrBuilder getReviewSummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The summary of amenities near the EV charging station.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+   * </code>
+   *
+   * @return Whether the evChargeAmenitySummary field is set.
+   */
+  boolean hasEvChargeAmenitySummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * The summary of amenities near the EV charging station.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+   * </code>
+   *
+   * @return The evChargeAmenitySummary.
+   */
+  com.google.maps.places.v1.Place.EvChargeAmenitySummary getEvChargeAmenitySummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * The summary of amenities near the EV charging station.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.EvChargeAmenitySummary ev_charge_amenity_summary = 89;
+   * </code>
+   */
+  com.google.maps.places.v1.Place.EvChargeAmenitySummaryOrBuilder
+      getEvChargeAmenitySummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A summary of points of interest near the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+   *
+   * @return Whether the neighborhoodSummary field is set.
+   */
+  boolean hasNeighborhoodSummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * A summary of points of interest near the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+   *
+   * @return The neighborhoodSummary.
+   */
+  com.google.maps.places.v1.Place.NeighborhoodSummary getNeighborhoodSummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * A summary of points of interest near the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.NeighborhoodSummary neighborhood_summary = 91;</code>
+   */
+  com.google.maps.places.v1.Place.NeighborhoodSummaryOrBuilder getNeighborhoodSummaryOrBuilder();
 }

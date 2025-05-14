@@ -43,6 +43,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
   private ListSupportedDatabaseFlagsRequest() {
     parent_ = "";
     pageToken_ = "";
+    scope_ = 0;
   }
 
   @java.lang.Override
@@ -208,6 +209,51 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
     }
   }
 
+  public static final int SCOPE_FIELD_NUMBER = 6;
+  private int scope_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scope for which supported flags are requested. If not
+   * specified, default is DATABASE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for scope.
+   */
+  @java.lang.Override
+  public int getScopeValue() {
+    return scope_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scope for which supported flags are requested. If not
+   * specified, default is DATABASE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scope.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope getScope() {
+    com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope result =
+        com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.forNumber(scope_);
+    return result == null
+        ? com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -231,6 +277,10 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
     }
+    if (scope_
+        != com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.SCOPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, scope_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -248,6 +298,10 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    }
+    if (scope_
+        != com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.SCOPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, scope_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -268,6 +322,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
     if (!getParent().equals(other.getParent())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (scope_ != other.scope_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -285,6 +340,8 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + SCOPE_FIELD_NUMBER;
+    hash = (53 * hash) + scope_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -429,6 +486,7 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
       parent_ = "";
       pageSize_ = 0;
       pageToken_ = "";
+      scope_ = 0;
       return this;
     }
 
@@ -475,6 +533,9 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.scope_ = scope_;
       }
     }
 
@@ -538,6 +599,9 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.scope_ != 0) {
+        setScopeValue(other.getScopeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -582,6 +646,12 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 48:
+              {
+                scope_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -918,6 +988,118 @@ public final class ListSupportedDatabaseFlagsRequest extends com.google.protobuf
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private int scope_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope for which supported flags are requested. If not
+     * specified, default is DATABASE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for scope.
+     */
+    @java.lang.Override
+    public int getScopeValue() {
+      return scope_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope for which supported flags are requested. If not
+     * specified, default is DATABASE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for scope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScopeValue(int value) {
+      scope_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope for which supported flags are requested. If not
+     * specified, default is DATABASE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scope.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope getScope() {
+      com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope result =
+          com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.forNumber(scope_);
+      return result == null
+          ? com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope for which supported flags are requested. If not
+     * specified, default is DATABASE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The scope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScope(com.google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      scope_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scope for which supported flags are requested. If not
+     * specified, default is DATABASE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.SupportedDatabaseFlag.Scope scope = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScope() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      scope_ = 0;
       onChanged();
       return this;
     }

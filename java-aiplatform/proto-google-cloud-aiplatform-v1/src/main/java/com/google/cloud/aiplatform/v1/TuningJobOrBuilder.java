@@ -28,7 +28,8 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -41,7 +42,8 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -54,7 +56,8 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * The base model that is being tuned, e.g., "gemini-1.0-pro-002".
+   * The base model that is being tuned. See [Supported
+   * models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
    * </pre>
    *
    * <code>string base_model = 4;</code>
@@ -585,7 +588,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The tuned model resources assiociated with this
+   * Output only. The tuned model resources associated with this
    * [TuningJob][google.cloud.aiplatform.v1.TuningJob].
    * </pre>
    *
@@ -601,7 +604,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The tuned model resources assiociated with this
+   * Output only. The tuned model resources associated with this
    * [TuningJob][google.cloud.aiplatform.v1.TuningJob].
    * </pre>
    *
@@ -617,7 +620,7 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
-   * Output only. The tuned model resources assiociated with this
+   * Output only. The tuned model resources associated with this
    * [TuningJob][google.cloud.aiplatform.v1.TuningJob].
    * </pre>
    *

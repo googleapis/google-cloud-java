@@ -45,21 +45,23 @@ public final class ReviewProto {
           + "ogle.maps.places.v1\032\031google/api/resource"
           + ".proto\032\'google/maps/places/v1/attributio"
           + "n.proto\032\037google/protobuf/timestamp.proto"
-          + "\032 google/type/localized_text.proto\"\373\002\n\006R"
-          + "eview\022\014\n\004name\030\001 \001(\t\022)\n!relative_publish_"
-          + "time_description\030\002 \001(\t\022(\n\004text\030\t \001(\0132\032.g"
-          + "oogle.type.LocalizedText\0221\n\roriginal_tex"
-          + "t\030\014 \001(\0132\032.google.type.LocalizedText\022\016\n\006r"
-          + "ating\030\007 \001(\001\022D\n\022author_attribution\030\r \001(\0132"
-          + "(.google.maps.places.v1.AuthorAttributio"
-          + "n\0220\n\014publish_time\030\016 \001(\0132\032.google.protobu"
-          + "f.Timestamp:S\352AP\n\034places.googleapis.com/"
-          + "Review\022\037places/{place}/reviews/{review}*"
-          + "\007reviews2\006reviewB\234\001\n\031com.google.maps.pla"
-          + "ces.v1B\013ReviewProtoP\001Z7cloud.google.com/"
-          + "go/maps/places/apiv1/placespb;placespb\242\002"
-          + "\006GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Google"
-          + "\\Maps\\Places\\V1b\006proto3"
+          + "\032\026google/type/date.proto\032 google/type/lo"
+          + "calized_text.proto\"\256\003\n\006Review\022\014\n\004name\030\001 "
+          + "\001(\t\022)\n!relative_publish_time_description"
+          + "\030\002 \001(\t\022(\n\004text\030\t \001(\0132\032.google.type.Local"
+          + "izedText\0221\n\roriginal_text\030\014 \001(\0132\032.google"
+          + ".type.LocalizedText\022\016\n\006rating\030\007 \001(\001\022D\n\022a"
+          + "uthor_attribution\030\r \001(\0132(.google.maps.pl"
+          + "aces.v1.AuthorAttribution\0220\n\014publish_tim"
+          + "e\030\016 \001(\0132\032.google.protobuf.Timestamp\022\030\n\020f"
+          + "lag_content_uri\030\017 \001(\t\022\027\n\017google_maps_uri"
+          + "\030\020 \001(\t:S\352AP\n\034places.googleapis.com/Revie"
+          + "w\022\037places/{place}/reviews/{review}*\007revi"
+          + "ews2\006reviewB\234\001\n\031com.google.maps.places.v"
+          + "1B\013ReviewProtoP\001Z7cloud.google.com/go/ma"
+          + "ps/places/apiv1/placespb;placespb\242\002\006GMPS"
+          + "V1\252\002\025Google.Maps.Places.V1\312\002\025Google\\Maps"
+          + "\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -68,6 +70,7 @@ public final class ReviewProto {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.maps.places.v1.AttributionProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.type.DateProto.getDescriptor(),
               com.google.type.LocalizedTextProto.getDescriptor(),
             });
     internal_static_google_maps_places_v1_Review_descriptor =
@@ -83,6 +86,8 @@ public final class ReviewProto {
               "Rating",
               "AuthorAttribution",
               "PublishTime",
+              "FlagContentUri",
+              "GoogleMapsUri",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -92,6 +97,7 @@ public final class ReviewProto {
     com.google.api.ResourceProto.getDescriptor();
     com.google.maps.places.v1.AttributionProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.DateProto.getDescriptor();
     com.google.type.LocalizedTextProto.getDescriptor();
   }
 

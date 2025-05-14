@@ -135,4 +135,56 @@ public interface PhotoOrBuilder
    * <code>repeated .google.maps.places.v1.AuthorAttribution author_attributions = 4;</code>
    */
   com.google.maps.places.v1.AuthorAttributionOrBuilder getAuthorAttributionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A link where users can flag a problem with the photo.
+   * </pre>
+   *
+   * <code>string flag_content_uri = 5;</code>
+   *
+   * @return The flagContentUri.
+   */
+  java.lang.String getFlagContentUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * A link where users can flag a problem with the photo.
+   * </pre>
+   *
+   * <code>string flag_content_uri = 5;</code>
+   *
+   * @return The bytes for flagContentUri.
+   */
+  com.google.protobuf.ByteString getFlagContentUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A link to show the photo on Google Maps.
+   * </pre>
+   *
+   * <code>string google_maps_uri = 6;</code>
+   *
+   * @return The googleMapsUri.
+   */
+  java.lang.String getGoogleMapsUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * A link to show the photo on Google Maps.
+   * </pre>
+   *
+   * <code>string google_maps_uri = 6;</code>
+   *
+   * @return The bytes for googleMapsUri.
+   */
+  com.google.protobuf.ByteString getGoogleMapsUriBytes();
 }

@@ -46,7 +46,7 @@ public final class TaskTemplateProto {
           + "_behavior.proto\032\031google/api/resource.pro"
           + "to\032!google/cloud/run/v2/k8s.min.proto\032)g"
           + "oogle/cloud/run/v2/vendor_settings.proto"
-          + "\032\036google/protobuf/duration.proto\"\256\003\n\014Tas"
+          + "\032\036google/protobuf/duration.proto\"\355\003\n\014Tas"
           + "kTemplate\0222\n\ncontainers\030\001 \003(\0132\036.google.c"
           + "loud.run.v2.Container\0221\n\007volumes\030\002 \003(\0132\033"
           + ".google.cloud.run.v2.VolumeB\003\340A\001\022\025\n\013max_"
@@ -57,10 +57,11 @@ public final class TaskTemplateProto {
           + "ironmentB\003\340A\001\022>\n\016encryption_key\030\007 \001(\tB&\372"
           + "A#\n!cloudkms.googleapis.com/CryptoKey\0227\n"
           + "\nvpc_access\030\010 \001(\0132\036.google.cloud.run.v2."
-          + "VpcAccessB\003\340A\001B\t\n\007retriesBY\n\027com.google."
-          + "cloud.run.v2B\021TaskTemplateProtoP\001Z)cloud"
-          + ".google.com/go/run/apiv2/runpb;runpbb\006pr"
-          + "oto3"
+          + "VpcAccessB\003\340A\001\022=\n\rnode_selector\030\013 \001(\0132!."
+          + "google.cloud.run.v2.NodeSelectorB\003\340A\001B\t\n"
+          + "\007retriesBY\n\027com.google.cloud.run.v2B\021Tas"
+          + "kTemplateProtoP\001Z)cloud.google.com/go/ru"
+          + "n/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -86,6 +87,7 @@ public final class TaskTemplateProto {
               "ExecutionEnvironment",
               "EncryptionKey",
               "VpcAccess",
+              "NodeSelector",
               "Retries",
             });
     com.google.protobuf.ExtensionRegistry registry =

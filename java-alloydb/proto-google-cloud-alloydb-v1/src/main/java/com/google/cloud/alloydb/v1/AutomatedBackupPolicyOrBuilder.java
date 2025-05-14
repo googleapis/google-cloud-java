@@ -237,8 +237,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * <pre>
    * Optional. The encryption config can be specified to encrypt the
    * backups with a customer-managed encryption key (CMEK). When this field is
-   * not specified, the backup will then use default encryption scheme to
-   * protect the user data.
+   * not specified, the backup will use the cluster's encryption config.
    * </pre>
    *
    * <code>
@@ -255,8 +254,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * <pre>
    * Optional. The encryption config can be specified to encrypt the
    * backups with a customer-managed encryption key (CMEK). When this field is
-   * not specified, the backup will then use default encryption scheme to
-   * protect the user data.
+   * not specified, the backup will use the cluster's encryption config.
    * </pre>
    *
    * <code>
@@ -273,8 +271,7 @@ public interface AutomatedBackupPolicyOrBuilder
    * <pre>
    * Optional. The encryption config can be specified to encrypt the
    * backups with a customer-managed encryption key (CMEK). When this field is
-   * not specified, the backup will then use default encryption scheme to
-   * protect the user data.
+   * not specified, the backup will use the cluster's encryption config.
    * </pre>
    *
    * <code>

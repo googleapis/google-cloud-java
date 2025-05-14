@@ -29,7 +29,7 @@ public interface GetListingRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the listing.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface GetListingRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the listing.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * </pre>
    *
    * <code>

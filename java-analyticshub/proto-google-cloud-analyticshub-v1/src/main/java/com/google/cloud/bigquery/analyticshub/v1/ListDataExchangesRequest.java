@@ -75,7 +75,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The parent resource path of the data exchanges.
-   * e.g. `projects/myproject/locations/US`.
+   * e.g. `projects/myproject/locations/us`.
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
    *
    * <pre>
    * Required. The parent resource path of the data exchanges.
-   * e.g. `projects/myproject/locations/US`.
+   * e.g. `projects/myproject/locations/us`.
    * </pre>
    *
    * <code>
@@ -604,7 +604,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource path of the data exchanges.
-     * e.g. `projects/myproject/locations/US`.
+     * e.g. `projects/myproject/locations/us`.
      * </pre>
      *
      * <code>
@@ -630,7 +630,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource path of the data exchanges.
-     * e.g. `projects/myproject/locations/US`.
+     * e.g. `projects/myproject/locations/us`.
      * </pre>
      *
      * <code>
@@ -656,7 +656,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource path of the data exchanges.
-     * e.g. `projects/myproject/locations/US`.
+     * e.g. `projects/myproject/locations/us`.
      * </pre>
      *
      * <code>
@@ -681,7 +681,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource path of the data exchanges.
-     * e.g. `projects/myproject/locations/US`.
+     * e.g. `projects/myproject/locations/us`.
      * </pre>
      *
      * <code>
@@ -702,7 +702,7 @@ public final class ListDataExchangesRequest extends com.google.protobuf.Generate
      *
      * <pre>
      * Required. The parent resource path of the data exchanges.
-     * e.g. `projects/myproject/locations/US`.
+     * e.g. `projects/myproject/locations/us`.
      * </pre>
      *
      * <code>

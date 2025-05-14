@@ -29,7 +29,7 @@ public interface DeleteListingRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the listing to delete.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface DeleteListingRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the listing to delete.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`.
    * </pre>
    *
    * <code>
@@ -55,4 +55,19 @@ public interface DeleteListingRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the listing is commercial then this field must be set to true,
+   * otherwise a failure is thrown. This acts as a safety guard to avoid
+   * deleting commercial listings accidentally.
+   * </pre>
+   *
+   * <code>bool delete_commercial = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deleteCommercial.
+   */
+  boolean getDeleteCommercial();
 }

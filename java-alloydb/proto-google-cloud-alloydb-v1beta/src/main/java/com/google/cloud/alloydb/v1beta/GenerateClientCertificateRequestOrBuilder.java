@@ -117,7 +117,7 @@ public interface GenerateClientCertificateRequestOrBuilder
    * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateRequest.pem_csr is deprecated.
-   *     See google/cloud/alloydb/v1beta/service.proto;l=1788
+   *     See google/cloud/alloydb/v1beta/service.proto;l=1878
    * @return The pemCsr.
    */
   @java.lang.Deprecated
@@ -134,7 +134,7 @@ public interface GenerateClientCertificateRequestOrBuilder
    * <code>string pem_csr = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateRequest.pem_csr is deprecated.
-   *     See google/cloud/alloydb/v1beta/service.proto;l=1788
+   *     See google/cloud/alloydb/v1beta/service.proto;l=1878
    * @return The bytes for pemCsr.
    */
   @java.lang.Deprecated
@@ -222,9 +222,9 @@ public interface GenerateClientCertificateRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. An optional hint to the endpoint to generate a client
-   * ceritificate that can be used by AlloyDB connectors to exchange additional
-   * metadata with the server after TLS handshake.
+   * Optional. An optional hint to the endpoint to generate a client certificate
+   * that can be used by AlloyDB connectors to exchange additional metadata with
+   * the server after TLS handshake.
    * </pre>
    *
    * <code>bool use_metadata_exchange = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -45,18 +45,21 @@ public final class PhotoProto {
           + "!google/maps/places/v1/photo.proto\022\025goo"
           + "gle.maps.places.v1\032\037google/api/field_beh"
           + "avior.proto\032\031google/api/resource.proto\032\'"
-          + "google/maps/places/v1/attribution.proto\"\326\001\n"
+          + "google/maps/places/v1/attribution.proto\"\211\002\n"
           + "\005Photo\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\020\n"
           + "\010width_px\030\002 \001(\005\022\021\n"
           + "\theight_px\030\003 \001(\005\022E\n"
           + "\023author_attributions\030\004"
-          + " \003(\0132(.google.maps.places.v1.AuthorAttribution:N\352AK\n"
-          + "\033places.googleapis"
-          + ".com/Photo\022\035places/{place}/photos/{photo}*\006photos2\005photoB\233\001\n"
+          + " \003(\0132(.google.maps.places.v1.AuthorAttribution\022\030\n"
+          + "\020flag_content_uri\030\005 \001(\t\022\027\n"
+          + "\017google_maps_uri\030\006 \001(\t:N\352AK\n"
+          + "\033places"
+          + ".googleapis.com/Photo\022\035places/{place}/photos/{photo}*\006photos2\005photoB\233\001\n"
           + "\031com.google.maps.places.v1B\n"
-          + "PhotoProtoP\001Z7cloud.google.com/go/maps/places/apiv1/placespb;placespb\242\002\006"
-          + "GMPSV1\252\002\025Google.Maps.Places.V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
+          + "PhotoProtoP\001Z7cloud.google.com/go/maps/places/apiv1/placespb;"
+          + "placespb\242\002\006GMPSV1\252\002\025Google.Maps.Places.V"
+          + "1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -72,7 +75,12 @@ public final class PhotoProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_maps_places_v1_Photo_descriptor,
             new java.lang.String[] {
-              "Name", "WidthPx", "HeightPx", "AuthorAttributions",
+              "Name",
+              "WidthPx",
+              "HeightPx",
+              "AuthorAttributions",
+              "FlagContentUri",
+              "GoogleMapsUri",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
