@@ -58,6 +58,8 @@ import com.google.cloud.alloydb.v1alpha.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteUserRequest;
 import com.google.cloud.alloydb.v1alpha.ExecuteSqlRequest;
 import com.google.cloud.alloydb.v1alpha.ExecuteSqlResponse;
+import com.google.cloud.alloydb.v1alpha.ExportClusterRequest;
+import com.google.cloud.alloydb.v1alpha.ExportClusterResponse;
 import com.google.cloud.alloydb.v1alpha.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse;
@@ -66,6 +68,8 @@ import com.google.cloud.alloydb.v1alpha.GetClusterRequest;
 import com.google.cloud.alloydb.v1alpha.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1alpha.GetInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GetUserRequest;
+import com.google.cloud.alloydb.v1alpha.ImportClusterRequest;
+import com.google.cloud.alloydb.v1alpha.ImportClusterResponse;
 import com.google.cloud.alloydb.v1alpha.InjectFaultRequest;
 import com.google.cloud.alloydb.v1alpha.Instance;
 import com.google.cloud.alloydb.v1alpha.ListBackupsRequest;
@@ -124,6 +128,8 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
           .add(BatchCreateInstancesResponse.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Instance.getDescriptor())
+          .add(ImportClusterResponse.getDescriptor())
+          .add(ExportClusterResponse.getDescriptor())
           .add(Backup.getDescriptor())
           .add(Cluster.getDescriptor())
           .build();
@@ -288,6 +294,86 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       .build())
               .setOperationSnapshotFactory(
                   (UpdateClusterRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ExportClusterRequest, Operation>
+      exportClusterMethodDescriptor =
+          ApiMethodDescriptor.<ExportClusterRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/ExportCluster")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportClusterRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/clusters/*}:export",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportClusterRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ImportClusterRequest, Operation>
+      importClusterMethodDescriptor =
+          ApiMethodDescriptor.<ImportClusterRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/ImportCluster")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ImportClusterRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=projects/*/locations/*/clusters/*}:import",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportClusterRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ImportClusterRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -1215,6 +1301,7 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "scope", request.getScopeValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1600,6 +1687,12 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable;
   private final OperationCallable<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationCallable;
+  private final UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable;
+  private final OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable;
+  private final UnaryCallable<ImportClusterRequest, Operation> importClusterCallable;
+  private final OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable;
   private final UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable;
   private final OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>
       upgradeClusterOperationCallable;
@@ -1796,6 +1889,28 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("cluster.name", String.valueOf(request.getCluster().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ExportClusterRequest, Operation> exportClusterTransportSettings =
+        HttpJsonCallSettings.<ExportClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportClusterMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ImportClusterRequest, Operation> importClusterTransportSettings =
+        HttpJsonCallSettings.<ImportClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(importClusterMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -2201,6 +2316,24 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
             settings.updateClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.exportClusterCallable =
+        callableFactory.createUnaryCallable(
+            exportClusterTransportSettings, settings.exportClusterSettings(), clientContext);
+    this.exportClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            exportClusterTransportSettings,
+            settings.exportClusterOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.importClusterCallable =
+        callableFactory.createUnaryCallable(
+            importClusterTransportSettings, settings.importClusterSettings(), clientContext);
+    this.importClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            importClusterTransportSettings,
+            settings.importClusterOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.upgradeClusterCallable =
         callableFactory.createUnaryCallable(
             upgradeClusterTransportSettings, settings.upgradeClusterSettings(), clientContext);
@@ -2448,6 +2581,8 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
     methodDescriptors.add(getClusterMethodDescriptor);
     methodDescriptors.add(createClusterMethodDescriptor);
     methodDescriptors.add(updateClusterMethodDescriptor);
+    methodDescriptors.add(exportClusterMethodDescriptor);
+    methodDescriptors.add(importClusterMethodDescriptor);
     methodDescriptors.add(upgradeClusterMethodDescriptor);
     methodDescriptors.add(deleteClusterMethodDescriptor);
     methodDescriptors.add(promoteClusterMethodDescriptor);
@@ -2523,6 +2658,28 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
   public OperationCallable<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
+    return exportClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable() {
+    return exportClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportClusterRequest, Operation> importClusterCallable() {
+    return importClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable() {
+    return importClusterOperationCallable;
   }
 
   @Override

@@ -29,7 +29,7 @@ public interface GetSubscriptionRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the subscription.
-   * e.g. projects/123/locations/US/subscriptions/456
+   * e.g. projects/123/locations/us/subscriptions/456
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface GetSubscriptionRequestOrBuilder
    *
    * <pre>
    * Required. Resource name of the subscription.
-   * e.g. projects/123/locations/US/subscriptions/456
+   * e.g. projects/123/locations/us/subscriptions/456
    * </pre>
    *
    * <code>

@@ -1744,6 +1744,65 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int NODE_SELECTOR_FIELD_NUMBER = 36;
+  private com.google.cloud.run.v2.NodeSelector nodeSelector_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The node selector for the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the nodeSelector field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeSelector() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The node selector for the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The nodeSelector.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.NodeSelector getNodeSelector() {
+    return nodeSelector_ == null
+        ? com.google.cloud.run.v2.NodeSelector.getDefaultInstance()
+        : nodeSelector_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The node selector for the task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.NodeSelectorOrBuilder getNodeSelectorOrBuilder() {
+    return nodeSelector_ == null
+        ? com.google.cloud.run.v2.NodeSelector.getDefaultInstance()
+        : nodeSelector_;
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
@@ -1903,6 +1962,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(34, getScheduledTime());
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(36, getNodeSelector());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
@@ -2021,6 +2083,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, getScheduledTime());
     }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(36, getNodeSelector());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -2099,6 +2164,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getLogUri().equals(other.getLogUri())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasNodeSelector() != other.hasNodeSelector()) return false;
+    if (hasNodeSelector()) {
+      if (!getNodeSelector().equals(other.getNodeSelector())) return false;
+    }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2201,6 +2270,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getLogUri().hashCode();
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasNodeSelector()) {
+      hash = (37 * hash) + NODE_SELECTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeSelector().hashCode();
+    }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -2380,6 +2453,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         getConditionsFieldBuilder();
         getLastAttemptResultFieldBuilder();
         getVpcAccessFieldBuilder();
+        getNodeSelectorFieldBuilder();
       }
     }
 
@@ -2475,6 +2549,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       logUri_ = "";
       satisfiesPzs_ = false;
+      nodeSelector_ = null;
+      if (nodeSelectorBuilder_ != null) {
+        nodeSelectorBuilder_.dispose();
+        nodeSelectorBuilder_ = null;
+      }
       etag_ = "";
       return this;
     }
@@ -2641,6 +2720,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.nodeSelector_ =
+            nodeSelectorBuilder_ == null ? nodeSelector_ : nodeSelectorBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2865,9 +2949,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.hasNodeSelector()) {
+        mergeNodeSelector(other.getNodeSelector());
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3109,10 +3196,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 274
+            case 290:
+              {
+                input.readMessage(getNodeSelectorFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 290
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 794
             default:
@@ -8287,6 +8380,218 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.run.v2.NodeSelector nodeSelector_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.NodeSelector,
+            com.google.cloud.run.v2.NodeSelector.Builder,
+            com.google.cloud.run.v2.NodeSelectorOrBuilder>
+        nodeSelectorBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the nodeSelector field is set.
+     */
+    public boolean hasNodeSelector() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The nodeSelector.
+     */
+    public com.google.cloud.run.v2.NodeSelector getNodeSelector() {
+      if (nodeSelectorBuilder_ == null) {
+        return nodeSelector_ == null
+            ? com.google.cloud.run.v2.NodeSelector.getDefaultInstance()
+            : nodeSelector_;
+      } else {
+        return nodeSelectorBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setNodeSelector(com.google.cloud.run.v2.NodeSelector value) {
+      if (nodeSelectorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeSelector_ = value;
+      } else {
+        nodeSelectorBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setNodeSelector(com.google.cloud.run.v2.NodeSelector.Builder builderForValue) {
+      if (nodeSelectorBuilder_ == null) {
+        nodeSelector_ = builderForValue.build();
+      } else {
+        nodeSelectorBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeNodeSelector(com.google.cloud.run.v2.NodeSelector value) {
+      if (nodeSelectorBuilder_ == null) {
+        if (((bitField0_ & 0x40000000) != 0)
+            && nodeSelector_ != null
+            && nodeSelector_ != com.google.cloud.run.v2.NodeSelector.getDefaultInstance()) {
+          getNodeSelectorBuilder().mergeFrom(value);
+        } else {
+          nodeSelector_ = value;
+        }
+      } else {
+        nodeSelectorBuilder_.mergeFrom(value);
+      }
+      if (nodeSelector_ != null) {
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearNodeSelector() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      nodeSelector_ = null;
+      if (nodeSelectorBuilder_ != null) {
+        nodeSelectorBuilder_.dispose();
+        nodeSelectorBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.NodeSelector.Builder getNodeSelectorBuilder() {
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return getNodeSelectorFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.NodeSelectorOrBuilder getNodeSelectorOrBuilder() {
+      if (nodeSelectorBuilder_ != null) {
+        return nodeSelectorBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeSelector_ == null
+            ? com.google.cloud.run.v2.NodeSelector.getDefaultInstance()
+            : nodeSelector_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The node selector for the task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.NodeSelector node_selector = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.NodeSelector,
+            com.google.cloud.run.v2.NodeSelector.Builder,
+            com.google.cloud.run.v2.NodeSelectorOrBuilder>
+        getNodeSelectorFieldBuilder() {
+      if (nodeSelectorBuilder_ == null) {
+        nodeSelectorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.NodeSelector,
+                com.google.cloud.run.v2.NodeSelector.Builder,
+                com.google.cloud.run.v2.NodeSelectorOrBuilder>(
+                getNodeSelector(), getParentForChildren(), isClean());
+        nodeSelector_ = null;
+      }
+      return nodeSelectorBuilder_;
+    }
+
     private java.lang.Object etag_ = "";
 
     /**
@@ -8355,7 +8660,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8374,7 +8679,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -8398,7 +8703,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }

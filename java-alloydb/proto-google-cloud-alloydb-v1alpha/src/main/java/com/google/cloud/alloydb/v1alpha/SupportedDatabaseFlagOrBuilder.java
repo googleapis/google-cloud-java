@@ -117,6 +117,82 @@ public interface SupportedDatabaseFlagOrBuilder
    *
    *
    * <pre>
+   * The recommended value for a STRING flag.
+   * </pre>
+   *
+   * <code>string recommended_string_value = 10;</code>
+   *
+   * @return Whether the recommendedStringValue field is set.
+   */
+  boolean hasRecommendedStringValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for a STRING flag.
+   * </pre>
+   *
+   * <code>string recommended_string_value = 10;</code>
+   *
+   * @return The recommendedStringValue.
+   */
+  java.lang.String getRecommendedStringValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for a STRING flag.
+   * </pre>
+   *
+   * <code>string recommended_string_value = 10;</code>
+   *
+   * @return The bytes for recommendedStringValue.
+   */
+  com.google.protobuf.ByteString getRecommendedStringValueBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for an INTEGER flag.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+   *
+   * @return Whether the recommendedIntegerValue field is set.
+   */
+  boolean hasRecommendedIntegerValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for an INTEGER flag.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+   *
+   * @return The recommendedIntegerValue.
+   */
+  com.google.protobuf.Int64Value getRecommendedIntegerValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The recommended value for an INTEGER flag.
+   * </pre>
+   *
+   * <code>.google.protobuf.Int64Value recommended_integer_value = 11;</code>
+   */
+  com.google.protobuf.Int64ValueOrBuilder getRecommendedIntegerValueOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The name of the flag resource, following Google Cloud conventions, e.g.:
    *  * projects/{project}/locations/{location}/flags/{flag}
    * This field currently has no semantic meaning.
@@ -282,5 +358,34 @@ public interface SupportedDatabaseFlagOrBuilder
    */
   boolean getRequiresDbRestart();
 
+  /**
+   *
+   *
+   * <pre>
+   * The scope of the flag.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1alpha.SupportedDatabaseFlag.Scope scope = 9;</code>
+   *
+   * @return The enum numeric value on the wire for scope.
+   */
+  int getScopeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The scope of the flag.
+   * </pre>
+   *
+   * <code>.google.cloud.alloydb.v1alpha.SupportedDatabaseFlag.Scope scope = 9;</code>
+   *
+   * @return The scope.
+   */
+  com.google.cloud.alloydb.v1alpha.SupportedDatabaseFlag.Scope getScope();
+
   com.google.cloud.alloydb.v1alpha.SupportedDatabaseFlag.RestrictionsCase getRestrictionsCase();
+
+  com.google.cloud.alloydb.v1alpha.SupportedDatabaseFlag.RecommendedValueCase
+      getRecommendedValueCase();
 }

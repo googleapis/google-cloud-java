@@ -40,6 +40,7 @@ public class SyncDeleteListing {
               .setName(
                   ListingName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[LISTING]")
                       .toString())
+              .setDeleteCommercial(true)
               .build();
       analyticsHubServiceClient.deleteListing(request);
     }

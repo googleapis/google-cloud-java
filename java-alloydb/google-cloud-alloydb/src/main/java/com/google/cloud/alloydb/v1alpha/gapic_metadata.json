@@ -5,6 +5,24 @@
   "protoPackage": "google.cloud.alloydb.v1alpha",
   "libraryPackage": "com.google.cloud.alloydb.v1alpha",
   "services": {
+    "AlloyDBCSQLAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AlloyDBCSQLAdminClient",
+          "rpcs": {
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RestoreFromCloudSQL": {
+              "methods": ["restoreFromCloudSQLAsync", "restoreFromCloudSQLAsync", "restoreFromCloudSQLAsync", "restoreFromCloudSQLOperationCallable", "restoreFromCloudSQLCallable"]
+            }
+          }
+        }
+      }
+    },
     "AlloyDBAdmin": {
       "clients": {
         "grpc": {
@@ -46,6 +64,9 @@
             "ExecuteSql": {
               "methods": ["executeSql", "executeSql", "executeSql", "executeSqlCallable"]
             },
+            "ExportCluster": {
+              "methods": ["exportClusterAsync", "exportClusterAsync", "exportClusterAsync", "exportClusterOperationCallable", "exportClusterCallable"]
+            },
             "FailoverInstance": {
               "methods": ["failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceAsync", "failoverInstanceOperationCallable", "failoverInstanceCallable"]
             },
@@ -69,6 +90,9 @@
             },
             "GetUser": {
               "methods": ["getUser", "getUser", "getUser", "getUserCallable"]
+            },
+            "ImportCluster": {
+              "methods": ["importClusterAsync", "importClusterAsync", "importClusterAsync", "importClusterOperationCallable", "importClusterCallable"]
             },
             "InjectFault": {
               "methods": ["injectFaultAsync", "injectFaultAsync", "injectFaultAsync", "injectFaultOperationCallable", "injectFaultCallable"]

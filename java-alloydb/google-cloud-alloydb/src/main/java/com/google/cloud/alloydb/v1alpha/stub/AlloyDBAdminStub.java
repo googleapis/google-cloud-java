@@ -45,6 +45,8 @@ import com.google.cloud.alloydb.v1alpha.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteUserRequest;
 import com.google.cloud.alloydb.v1alpha.ExecuteSqlRequest;
 import com.google.cloud.alloydb.v1alpha.ExecuteSqlResponse;
+import com.google.cloud.alloydb.v1alpha.ExportClusterRequest;
+import com.google.cloud.alloydb.v1alpha.ExportClusterResponse;
 import com.google.cloud.alloydb.v1alpha.FailoverInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateRequest;
 import com.google.cloud.alloydb.v1alpha.GenerateClientCertificateResponse;
@@ -53,6 +55,8 @@ import com.google.cloud.alloydb.v1alpha.GetClusterRequest;
 import com.google.cloud.alloydb.v1alpha.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1alpha.GetInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.GetUserRequest;
+import com.google.cloud.alloydb.v1alpha.ImportClusterRequest;
+import com.google.cloud.alloydb.v1alpha.ImportClusterResponse;
 import com.google.cloud.alloydb.v1alpha.InjectFaultRequest;
 import com.google.cloud.alloydb.v1alpha.Instance;
 import com.google.cloud.alloydb.v1alpha.ListBackupsRequest;
@@ -134,6 +138,24 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
 
   public UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
+  }
+
+  public OperationCallable<ExportClusterRequest, ExportClusterResponse, OperationMetadata>
+      exportClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportClusterOperationCallable()");
+  }
+
+  public UnaryCallable<ExportClusterRequest, Operation> exportClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportClusterCallable()");
+  }
+
+  public OperationCallable<ImportClusterRequest, ImportClusterResponse, OperationMetadata>
+      importClusterOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importClusterOperationCallable()");
+  }
+
+  public UnaryCallable<ImportClusterRequest, Operation> importClusterCallable() {
+    throw new UnsupportedOperationException("Not implemented: importClusterCallable()");
   }
 
   public OperationCallable<UpgradeClusterRequest, UpgradeClusterResponse, OperationMetadata>

@@ -54,6 +54,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     encryptionKeyRevocationAction_ = 0;
     conditions_ = java.util.Collections.emptyList();
     logUri_ = "";
+    creator_ = "";
     etag_ = "";
   }
 
@@ -1772,6 +1773,100 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         : nodeSelector_;
   }
 
+  public static final int GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER = 48;
+  private boolean gpuZonalRedundancyDisabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. True if GPU zonal redundancy is disabled on this
+   * revision.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 48 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gpuZonalRedundancyDisabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasGpuZonalRedundancyDisabled() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. True if GPU zonal redundancy is disabled on this
+   * revision.
+   * </pre>
+   *
+   * <code>
+   * optional bool gpu_zonal_redundancy_disabled = 48 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gpuZonalRedundancyDisabled.
+   */
+  @java.lang.Override
+  public boolean getGpuZonalRedundancyDisabled() {
+    return gpuZonalRedundancyDisabled_;
+  }
+
+  public static final int CREATOR_FIELD_NUMBER = 49;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creator_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of the authenticated creator.
+   * </pre>
+   *
+   * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The creator.
+   */
+  @java.lang.Override
+  public java.lang.String getCreator() {
+    java.lang.Object ref = creator_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      creator_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Email address of the authenticated creator.
+   * </pre>
+   *
+   * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for creator.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCreatorBytes() {
+    java.lang.Object ref = creator_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      creator_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
@@ -1937,6 +2032,12 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(40, getNodeSelector());
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeBool(48, gpuZonalRedundancyDisabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 49, creator_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
@@ -2066,6 +2167,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(40, getNodeSelector());
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(48, gpuZonalRedundancyDisabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(49, creator_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -2151,6 +2259,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (hasNodeSelector()) {
       if (!getNodeSelector().equals(other.getNodeSelector())) return false;
     }
+    if (hasGpuZonalRedundancyDisabled() != other.hasGpuZonalRedundancyDisabled()) return false;
+    if (hasGpuZonalRedundancyDisabled()) {
+      if (getGpuZonalRedundancyDisabled() != other.getGpuZonalRedundancyDisabled()) return false;
+    }
+    if (!getCreator().equals(other.getCreator())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2257,6 +2370,13 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NODE_SELECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getNodeSelector().hashCode();
     }
+    if (hasGpuZonalRedundancyDisabled()) {
+      hash = (37 * hash) + GPU_ZONAL_REDUNDANCY_DISABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGpuZonalRedundancyDisabled());
+    }
+    hash = (37 * hash) + CREATOR_FIELD_NUMBER;
+    hash = (53 * hash) + getCreator().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -2448,6 +2568,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       name_ = "";
       uid_ = "";
       generation_ = 0L;
@@ -2541,6 +2662,8 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         nodeSelectorBuilder_.dispose();
         nodeSelectorBuilder_ = null;
       }
+      gpuZonalRedundancyDisabled_ = false;
+      creator_ = "";
       etag_ = "";
       return this;
     }
@@ -2571,6 +2694,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
+      }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
       onBuilt();
       return result;
@@ -2713,9 +2839,20 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.etag_ = etag_;
+        result.gpuZonalRedundancyDisabled_ = gpuZonalRedundancyDisabled_;
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.run.v2.Revision result) {
+      int from_bitField1_ = bitField1_;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.creator_ = creator_;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -2938,9 +3075,17 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (other.hasNodeSelector()) {
         mergeNodeSelector(other.getNodeSelector());
       }
+      if (other.hasGpuZonalRedundancyDisabled()) {
+        setGpuZonalRedundancyDisabled(other.getGpuZonalRedundancyDisabled());
+      }
+      if (!other.getCreator().isEmpty()) {
+        creator_ = other.creator_;
+        bitField1_ |= 0x00000001;
+        onChanged();
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3188,10 +3333,22 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x40000000;
                 break;
               } // case 322
+            case 384:
+              {
+                gpuZonalRedundancyDisabled_ = input.readBool();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 384
+            case 394:
+              {
+                creator_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 394
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 794
             default:
@@ -3212,6 +3369,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object name_ = "";
 
@@ -8478,6 +8636,201 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       return nodeSelectorBuilder_;
     }
 
+    private boolean gpuZonalRedundancyDisabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. True if GPU zonal redundancy is disabled on this
+     * revision.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 48 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the gpuZonalRedundancyDisabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasGpuZonalRedundancyDisabled() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. True if GPU zonal redundancy is disabled on this
+     * revision.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 48 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The gpuZonalRedundancyDisabled.
+     */
+    @java.lang.Override
+    public boolean getGpuZonalRedundancyDisabled() {
+      return gpuZonalRedundancyDisabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. True if GPU zonal redundancy is disabled on this
+     * revision.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 48 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The gpuZonalRedundancyDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGpuZonalRedundancyDisabled(boolean value) {
+
+      gpuZonalRedundancyDisabled_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. True if GPU zonal redundancy is disabled on this
+     * revision.
+     * </pre>
+     *
+     * <code>
+     * optional bool gpu_zonal_redundancy_disabled = 48 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGpuZonalRedundancyDisabled() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      gpuZonalRedundancyDisabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object creator_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the authenticated creator.
+     * </pre>
+     *
+     * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The creator.
+     */
+    public java.lang.String getCreator() {
+      java.lang.Object ref = creator_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        creator_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the authenticated creator.
+     * </pre>
+     *
+     * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for creator.
+     */
+    public com.google.protobuf.ByteString getCreatorBytes() {
+      java.lang.Object ref = creator_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        creator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the authenticated creator.
+     * </pre>
+     *
+     * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The creator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreator(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      creator_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the authenticated creator.
+     * </pre>
+     *
+     * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCreator() {
+      creator_ = getDefaultInstance().getCreator();
+      bitField1_ = (bitField1_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the authenticated creator.
+     * </pre>
+     *
+     * <code>string creator = 49 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for creator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      creator_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object etag_ = "";
 
     /**
@@ -8546,7 +8899,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8565,7 +8918,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -8589,7 +8942,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -29,7 +29,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Resource name of the source Listing.
-   * e.g. projects/123/locations/US/dataExchanges/456/listings/789
+   * e.g. projects/123/locations/us/dataExchanges/456/listings/789
    * </pre>
    *
    * <code>string listing = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -43,7 +43,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Resource name of the source Listing.
-   * e.g. projects/123/locations/US/dataExchanges/456/listings/789
+   * e.g. projects/123/locations/us/dataExchanges/456/listings/789
    * </pre>
    *
    * <code>string listing = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -57,7 +57,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Resource name of the source Listing.
-   * e.g. projects/123/locations/US/dataExchanges/456/listings/789
+   * e.g. projects/123/locations/us/dataExchanges/456/listings/789
    * </pre>
    *
    * <code>string listing = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -71,7 +71,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Resource name of the source Data Exchange.
-   * e.g. projects/123/locations/US/dataExchanges/456
+   * e.g. projects/123/locations/us/dataExchanges/456
    * </pre>
    *
    * <code>string data_exchange = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -85,7 +85,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Resource name of the source Data Exchange.
-   * e.g. projects/123/locations/US/dataExchanges/456
+   * e.g. projects/123/locations/us/dataExchanges/456
    * </pre>
    *
    * <code>string data_exchange = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -99,7 +99,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Resource name of the source Data Exchange.
-   * e.g. projects/123/locations/US/dataExchanges/456
+   * e.g. projects/123/locations/us/dataExchanges/456
    * </pre>
    *
    * <code>string data_exchange = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -113,7 +113,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. The resource name of the subscription.
-   * e.g. `projects/myproject/locations/US/subscriptions/123`.
+   * e.g. `projects/myproject/locations/us/subscriptions/123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -127,7 +127,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. The resource name of the subscription.
-   * e.g. `projects/myproject/locations/US/subscriptions/123`.
+   * e.g. `projects/myproject/locations/us/subscriptions/123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -311,7 +311,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Map of listing resource names to associated linked resource,
-   * e.g. projects/123/locations/US/dataExchanges/456/listings/789
+   * e.g. projects/123/locations/us/dataExchanges/456/listings/789
    * -&gt;
    * projects/123/datasets/my_dataset
    *
@@ -330,7 +330,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Map of listing resource names to associated linked resource,
-   * e.g. projects/123/locations/US/dataExchanges/456/listings/789
+   * e.g. projects/123/locations/us/dataExchanges/456/listings/789
    * -&gt;
    * projects/123/datasets/my_dataset
    *
@@ -355,7 +355,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Map of listing resource names to associated linked resource,
-   * e.g. projects/123/locations/US/dataExchanges/456/listings/789
+   * e.g. projects/123/locations/us/dataExchanges/456/listings/789
    * -&gt;
    * projects/123/datasets/my_dataset
    *
@@ -376,7 +376,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Map of listing resource names to associated linked resource,
-   * e.g. projects/123/locations/US/dataExchanges/456/listings/789
+   * e.g. projects/123/locations/us/dataExchanges/456/listings/789
    * -&gt;
    * projects/123/datasets/my_dataset
    *
@@ -400,7 +400,7 @@ public interface SubscriptionOrBuilder
    *
    * <pre>
    * Output only. Map of listing resource names to associated linked resource,
-   * e.g. projects/123/locations/US/dataExchanges/456/listings/789
+   * e.g. projects/123/locations/us/dataExchanges/456/listings/789
    * -&gt;
    * projects/123/datasets/my_dataset
    *
@@ -550,6 +550,53 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
+   * Output only. This is set if this is a commercial subscription i.e. if this
+   * subscription was created from subscribing to a commercial listing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.Subscription.CommercialInfo commercial_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the commercialInfo field is set.
+   */
+  boolean hasCommercialInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This is set if this is a commercial subscription i.e. if this
+   * subscription was created from subscribing to a commercial listing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.Subscription.CommercialInfo commercial_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The commercialInfo.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Subscription.CommercialInfo getCommercialInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This is set if this is a commercial subscription i.e. if this
+   * subscription was created from subscribing to a commercial listing.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.Subscription.CommercialInfo commercial_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.Subscription.CommercialInfoOrBuilder
+      getCommercialInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. By default, false.
    * If true, the Subscriber agreed to the email sharing mandate
    * that is enabled for DataExchange/Listing.
@@ -579,6 +626,50 @@ public interface SubscriptionOrBuilder
    * @return The logLinkedDatasetQueryUserEmail.
    */
   boolean getLogLinkedDatasetQueryUserEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the destinationDataset field is set.
+   */
+  boolean hasDestinationDataset();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The destinationDataset.
+   */
+  com.google.cloud.bigquery.analyticshub.v1.DestinationDataset getDestinationDataset();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. BigQuery destination dataset to create for the subscriber.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.analyticshub.v1.DestinationDataset destination_dataset = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetOrBuilder
+      getDestinationDatasetOrBuilder();
 
   com.google.cloud.bigquery.analyticshub.v1.Subscription.ResourceNameCase getResourceNameCase();
 }

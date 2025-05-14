@@ -361,5 +361,48 @@ public interface TaskTemplateOrBuilder
    */
   com.google.cloud.run.v2.VpcAccessOrBuilder getVpcAccessOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The node selector for the task template.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeSelector field is set.
+   */
+  boolean hasNodeSelector();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The node selector for the task template.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeSelector.
+   */
+  com.google.cloud.run.v2.NodeSelector getNodeSelector();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The node selector for the task template.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.NodeSelector node_selector = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.NodeSelectorOrBuilder getNodeSelectorOrBuilder();
+
   com.google.cloud.run.v2.TaskTemplate.RetriesCase getRetriesCase();
 }

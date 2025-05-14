@@ -120,6 +120,7 @@ public class TasksClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
+            .setNodeSelector(NodeSelector.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockTasks.addResponse(expectedResponse);
@@ -190,6 +191,7 @@ public class TasksClientTest {
             .setVpcAccess(VpcAccess.newBuilder().build())
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
+            .setNodeSelector(NodeSelector.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockTasks.addResponse(expectedResponse);

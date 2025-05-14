@@ -29,7 +29,7 @@ public interface GetDataExchangeRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the data exchange.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface GetDataExchangeRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the data exchange.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>

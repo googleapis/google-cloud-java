@@ -29,7 +29,7 @@ public interface CreateListingRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource path of the listing.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface CreateListingRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource path of the listing.
-   * e.g. `projects/myproject/locations/US/dataExchanges/123`.
+   * e.g. `projects/myproject/locations/us/dataExchanges/123`.
    * </pre>
    *
    * <code>
@@ -61,7 +61,7 @@ public interface CreateListingRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the listing to create.
-   * Must contain only ASCII letters, numbers (0-9), underscores (_).
+   * Must contain only Unicode letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *
@@ -76,7 +76,7 @@ public interface CreateListingRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the listing to create.
-   * Must contain only ASCII letters, numbers (0-9), underscores (_).
+   * Must contain only Unicode letters, numbers (0-9), underscores (_).
    * Max length: 100 bytes.
    * </pre>
    *

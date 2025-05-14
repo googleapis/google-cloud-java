@@ -38,6 +38,7 @@ public class SyncRevokeSubscription {
       RevokeSubscriptionRequest request =
           RevokeSubscriptionRequest.newBuilder()
               .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+              .setRevokeCommercial(true)
               .build();
       RevokeSubscriptionResponse response = analyticsHubServiceClient.revokeSubscription(request);
     }
