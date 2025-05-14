@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.31.4](https://github.com/googleapis/java-firestore/compare/v3.31.3...v3.31.4) (2025-05-14)
+
+
+### Bug Fixes
+
+* Status is missing while creating FirestoreException from ApiException ([#2107](https://github.com/googleapis/java-firestore/issues/2107)) ([00a6f54](https://github.com/googleapis/java-firestore/commit/00a6f54e044c963ca960ab1cec022a21cc4da29e))
+
+
+### Dependencies
+
+* Update beam.version to v2.65.0 ([#2115](https://github.com/googleapis/java-firestore/issues/2115)) ([a46be91](https://github.com/googleapis/java-firestore/commit/a46be91dab65084c8badcfd309661378e7d5c54c))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.48.0 ([#2117](https://github.com/googleapis/java-firestore/issues/2117)) ([6d74fc8](https://github.com/googleapis/java-firestore/commit/6d74fc86f9e85070207a97c13a82146475ce4a07))
+* Update googleapis/sdk-platform-java action to v2.58.0 ([#2118](https://github.com/googleapis/java-firestore/issues/2118)) ([3a5cb13](https://github.com/googleapis/java-firestore/commit/3a5cb13b1b9c73ac6a077df295d40d5673e8aaa9))
+* Update opentelemetry.version to v1.50.0 ([#2114](https://github.com/googleapis/java-firestore/issues/2114)) ([66d5e21](https://github.com/googleapis/java-firestore/commit/66d5e211533bf0d219c8e582c12632c2072e03ed))
+
 ## [3.31.3](https://github.com/googleapis/java-firestore/compare/v3.31.2...v3.31.3) (2025-05-08)
 
 
