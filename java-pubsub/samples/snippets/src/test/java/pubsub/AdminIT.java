@@ -60,10 +60,12 @@ public class AdminIT {
       "confluent-cloud-ingestion-topic-" + _suffix;
   private static final String azureEventHubsIngestionTopicId =
       "azure-event-hubs-ingestion-topic-" + _suffix;
+  private static final String smtTopicId = "smt-topic-" + _suffix;
   private static final String pullSubscriptionId = "iam-pull-subscription-" + _suffix;
   private static final String pushSubscriptionId = "iam-push-subscription-" + _suffix;
   private static final String orderedSubscriptionId = "iam-ordered-subscription-" + _suffix;
   private static final String filteredSubscriptionId = "iam-filtered-subscription-" + _suffix;
+  private static final String smtSubscriptionId = "smt-subscription-" + _suffix;
   private static final String exactlyOnceSubscriptionId =
       "iam-exactly-once-subscription-" + _suffix;
   private static final String pushEndpoint = "https://my-test-project.appspot.com/push";
@@ -118,6 +120,8 @@ public class AdminIT {
       TopicName.of(projectId, confluentCloudIngestionTopicId);
   private static final TopicName azureEventHubsIngestionTopicName =
       TopicName.of(projectId, azureEventHubsIngestionTopicId);
+  private static final TopicName smtTopicName =
+      TopicName.of(projectId, smtTopicId);
   private static final SubscriptionName pullSubscriptionName =
       SubscriptionName.of(projectId, pullSubscriptionId);
   private static final SubscriptionName pushSubscriptionName =
@@ -128,6 +132,8 @@ public class AdminIT {
       SubscriptionName.of(projectId, filteredSubscriptionId);
   private static final SubscriptionName exactlyOnceSubscriptionName =
       SubscriptionName.of(projectId, exactlyOnceSubscriptionId);
+  private static final SubscriptionName smtSubscriptionName =
+      SubscriptionName.of(projectId, smtSubscriptionId);
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -456,5 +462,23 @@ public class AdminIT {
     // Test delete Azure Event Hubs ingestion topic.
     DeleteTopicExample.deleteTopicExample(projectId, azureEventHubsIngestionTopicId);
     assertThat(bout.toString()).contains("Deleted topic.");
+
+    bout.reset();
+    // Test create topic with an SMT.
+    CreateTopicWithSmtExample.createTopicWithSmtExample(
+        projectId, smtTopicId);
+    assertThat(bout.toString())
+        .contains("Created topic with SMT: " + smtTopicName.toString());
+
+    bout.reset();
+    // Test create topic with an SMT.
+    CreateSubscriptionWithSmtExample.createSubscriptionWithSmtExample(
+        projectId, smtTopicId, smtSubscriptionId);
+    assertThat(bout.toString())
+        .contains("Created subscription with SMT");
+    assertThat(bout.toString()).contains(smtSubscriptionName.toString());
+    assertThat(bout.toString()).contains("redactSSN");
+    DeleteSubscriptionExample.deleteSubscriptionExample(projectId, smtSubscriptionId);
+    DeleteTopicExample.deleteTopicExample(projectId, smtTopicId);
   }
 }
