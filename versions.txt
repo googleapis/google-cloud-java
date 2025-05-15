@@ -850,3 +850,5 @@ grpc-google-cloud-oracledatabase-v1:0.11.0:0.12.0-SNAPSHOT
 google-cloud-chronicle:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-chronicle-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-chronicle-v1:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-cloudsupport-v2beta:0.46.0:0.47.0-SNAPSHOT
+grpc-google-cloud-cloudsupport-v2beta:0.46.0:0.47.0-SNAPSHOT

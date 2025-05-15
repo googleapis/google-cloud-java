@@ -567,6 +567,7 @@ libraries:
     support offerings.
   GAPICs:
   - proto_path: google/cloud/support/v2
+  - proto_path: google/cloud/support/v2beta
 
 - api_shortname: compute
   name_pretty: Compute Engine
