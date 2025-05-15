@@ -256,6 +256,103 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
      * @return The bytes for lastSuccessfulBackup.
      */
     com.google.protobuf.ByteString getLastSuccessfulBackupBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the BackupConfig of Backups created
+     * via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the backupConfigDetails field is set.
+     */
+    boolean hasBackupConfigDetails();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the BackupConfig of Backups created
+     * via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The backupConfigDetails.
+     */
+    com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+        getBackupConfigDetails();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the BackupConfig of Backups created
+     * via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetailsOrBuilder
+        getBackupConfigDetailsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the RetentionPolicy of Backups
+     * created via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the retentionPolicyDetails field is set.
+     */
+    boolean hasRetentionPolicyDetails();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the RetentionPolicy of Backups
+     * created via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The retentionPolicyDetails.
+     */
+    com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+        getRetentionPolicyDetails();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the RetentionPolicy of Backups
+     * created via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+            .RetentionPolicyDetailsOrBuilder
+        getRetentionPolicyDetailsOrBuilder();
   }
 
   /**
@@ -557,6 +654,3008 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(enum_scope:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.State)
     }
 
+    public interface BackupConfigDetailsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, include all namespaced resources
+       * </pre>
+       *
+       * <code>bool all_namespaces = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the allNamespaces field is set.
+       */
+      boolean hasAllNamespaces();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, include all namespaced resources
+       * </pre>
+       *
+       * <code>bool all_namespaces = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The allNamespaces.
+       */
+      boolean getAllNamespaces();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources in the listed
+       * namespaces.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the selectedNamespaces field is set.
+       */
+      boolean hasSelectedNamespaces();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources in the listed
+       * namespaces.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The selectedNamespaces.
+       */
+      com.google.cloud.gkebackup.v1.Namespaces getSelectedNamespaces();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources in the listed
+       * namespaces.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.cloud.gkebackup.v1.NamespacesOrBuilder getSelectedNamespacesOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources referenced by the
+       * listed ProtectedApplications.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the selectedApplications field is set.
+       */
+      boolean hasSelectedApplications();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources referenced by the
+       * listed ProtectedApplications.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The selectedApplications.
+       */
+      com.google.cloud.gkebackup.v1.NamespacedNames getSelectedApplications();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources referenced by the
+       * listed ProtectedApplications.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.cloud.gkebackup.v1.NamespacedNamesOrBuilder getSelectedApplicationsOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This flag specifies whether volume data should be backed
+       * up when PVCs are included in the scope of a Backup.
+       *
+       * Default: False
+       * </pre>
+       *
+       * <code>bool include_volume_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The includeVolumeData.
+       */
+      boolean getIncludeVolumeData();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This flag specifies whether Kubernetes Secret resources
+       * should be included when they fall into the scope of Backups.
+       *
+       * Default: False
+       * </pre>
+       *
+       * <code>bool include_secrets = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The includeSecrets.
+       */
+      boolean getIncludeSecrets();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This defines a customer managed encryption key that will
+       * be used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
+       *
+       * Default (empty): Config backup artifacts will not be encrypted.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the encryptionKey field is set.
+       */
+      boolean hasEncryptionKey();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This defines a customer managed encryption key that will
+       * be used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
+       *
+       * Default (empty): Config backup artifacts will not be encrypted.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The encryptionKey.
+       */
+      com.google.cloud.gkebackup.v1.EncryptionKey getEncryptionKey();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This defines a customer managed encryption key that will
+       * be used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
+       *
+       * Default (empty): Config backup artifacts will not be encrypted.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder();
+
+      com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              .BackupScopeCase
+          getBackupScopeCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * BackupConfigDetails defines the configuration of Backups created via this
+     * BackupPlan.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails}
+     */
+    public static final class BackupConfigDetails extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails)
+        BackupConfigDetailsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use BackupConfigDetails.newBuilder() to construct.
+      private BackupConfigDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BackupConfigDetails() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BackupConfigDetails();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+            .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_BackupConfigDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+            .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_BackupConfigDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                    .BackupConfigDetails.class,
+                com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                    .BackupConfigDetails.Builder.class);
+      }
+
+      private int bitField0_;
+      private int backupScopeCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object backupScope_;
+
+      public enum BackupScopeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        ALL_NAMESPACES(1),
+        SELECTED_NAMESPACES(2),
+        SELECTED_APPLICATIONS(3),
+        BACKUPSCOPE_NOT_SET(0);
+        private final int value;
+
+        private BackupScopeCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static BackupScopeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static BackupScopeCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return ALL_NAMESPACES;
+            case 2:
+              return SELECTED_NAMESPACES;
+            case 3:
+              return SELECTED_APPLICATIONS;
+            case 0:
+              return BACKUPSCOPE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public BackupScopeCase getBackupScopeCase() {
+        return BackupScopeCase.forNumber(backupScopeCase_);
+      }
+
+      public static final int ALL_NAMESPACES_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, include all namespaced resources
+       * </pre>
+       *
+       * <code>bool all_namespaces = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the allNamespaces field is set.
+       */
+      @java.lang.Override
+      public boolean hasAllNamespaces() {
+        return backupScopeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, include all namespaced resources
+       * </pre>
+       *
+       * <code>bool all_namespaces = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The allNamespaces.
+       */
+      @java.lang.Override
+      public boolean getAllNamespaces() {
+        if (backupScopeCase_ == 1) {
+          return (java.lang.Boolean) backupScope_;
+        }
+        return false;
+      }
+
+      public static final int SELECTED_NAMESPACES_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources in the listed
+       * namespaces.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the selectedNamespaces field is set.
+       */
+      @java.lang.Override
+      public boolean hasSelectedNamespaces() {
+        return backupScopeCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources in the listed
+       * namespaces.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The selectedNamespaces.
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.Namespaces getSelectedNamespaces() {
+        if (backupScopeCase_ == 2) {
+          return (com.google.cloud.gkebackup.v1.Namespaces) backupScope_;
+        }
+        return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources in the listed
+       * namespaces.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.NamespacesOrBuilder getSelectedNamespacesOrBuilder() {
+        if (backupScopeCase_ == 2) {
+          return (com.google.cloud.gkebackup.v1.Namespaces) backupScope_;
+        }
+        return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+      }
+
+      public static final int SELECTED_APPLICATIONS_FIELD_NUMBER = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources referenced by the
+       * listed ProtectedApplications.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the selectedApplications field is set.
+       */
+      @java.lang.Override
+      public boolean hasSelectedApplications() {
+        return backupScopeCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources referenced by the
+       * listed ProtectedApplications.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The selectedApplications.
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.NamespacedNames getSelectedApplications() {
+        if (backupScopeCase_ == 3) {
+          return (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_;
+        }
+        return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If set, include just the resources referenced by the
+       * listed ProtectedApplications.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.NamespacedNamesOrBuilder
+          getSelectedApplicationsOrBuilder() {
+        if (backupScopeCase_ == 3) {
+          return (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_;
+        }
+        return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
+      }
+
+      public static final int INCLUDE_VOLUME_DATA_FIELD_NUMBER = 5;
+      private boolean includeVolumeData_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This flag specifies whether volume data should be backed
+       * up when PVCs are included in the scope of a Backup.
+       *
+       * Default: False
+       * </pre>
+       *
+       * <code>bool include_volume_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The includeVolumeData.
+       */
+      @java.lang.Override
+      public boolean getIncludeVolumeData() {
+        return includeVolumeData_;
+      }
+
+      public static final int INCLUDE_SECRETS_FIELD_NUMBER = 6;
+      private boolean includeSecrets_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This flag specifies whether Kubernetes Secret resources
+       * should be included when they fall into the scope of Backups.
+       *
+       * Default: False
+       * </pre>
+       *
+       * <code>bool include_secrets = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The includeSecrets.
+       */
+      @java.lang.Override
+      public boolean getIncludeSecrets() {
+        return includeSecrets_;
+      }
+
+      public static final int ENCRYPTION_KEY_FIELD_NUMBER = 7;
+      private com.google.cloud.gkebackup.v1.EncryptionKey encryptionKey_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This defines a customer managed encryption key that will
+       * be used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
+       *
+       * Default (empty): Config backup artifacts will not be encrypted.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the encryptionKey field is set.
+       */
+      @java.lang.Override
+      public boolean hasEncryptionKey() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This defines a customer managed encryption key that will
+       * be used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
+       *
+       * Default (empty): Config backup artifacts will not be encrypted.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The encryptionKey.
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.EncryptionKey getEncryptionKey() {
+        return encryptionKey_ == null
+            ? com.google.cloud.gkebackup.v1.EncryptionKey.getDefaultInstance()
+            : encryptionKey_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This defines a customer managed encryption key that will
+       * be used to encrypt the "config" portion (the Kubernetes resources) of
+       * Backups created via this plan.
+       *
+       * Default (empty): Config backup artifacts will not be encrypted.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder() {
+        return encryptionKey_ == null
+            ? com.google.cloud.gkebackup.v1.EncryptionKey.getDefaultInstance()
+            : encryptionKey_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (backupScopeCase_ == 1) {
+          output.writeBool(1, (boolean) ((java.lang.Boolean) backupScope_));
+        }
+        if (backupScopeCase_ == 2) {
+          output.writeMessage(2, (com.google.cloud.gkebackup.v1.Namespaces) backupScope_);
+        }
+        if (backupScopeCase_ == 3) {
+          output.writeMessage(3, (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_);
+        }
+        if (includeVolumeData_ != false) {
+          output.writeBool(5, includeVolumeData_);
+        }
+        if (includeSecrets_ != false) {
+          output.writeBool(6, includeSecrets_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(7, getEncryptionKey());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (backupScopeCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  1, (boolean) ((java.lang.Boolean) backupScope_));
+        }
+        if (backupScopeCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, (com.google.cloud.gkebackup.v1.Namespaces) backupScope_);
+        }
+        if (backupScopeCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3, (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_);
+        }
+        if (includeVolumeData_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, includeVolumeData_);
+        }
+        if (includeSecrets_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, includeSecrets_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getEncryptionKey());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                .BackupConfigDetails)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+            other =
+                (com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                        .BackupConfigDetails)
+                    obj;
+
+        if (getIncludeVolumeData() != other.getIncludeVolumeData()) return false;
+        if (getIncludeSecrets() != other.getIncludeSecrets()) return false;
+        if (hasEncryptionKey() != other.hasEncryptionKey()) return false;
+        if (hasEncryptionKey()) {
+          if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
+        }
+        if (!getBackupScopeCase().equals(other.getBackupScopeCase())) return false;
+        switch (backupScopeCase_) {
+          case 1:
+            if (getAllNamespaces() != other.getAllNamespaces()) return false;
+            break;
+          case 2:
+            if (!getSelectedNamespaces().equals(other.getSelectedNamespaces())) return false;
+            break;
+          case 3:
+            if (!getSelectedApplications().equals(other.getSelectedApplications())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + INCLUDE_VOLUME_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeVolumeData());
+        hash = (37 * hash) + INCLUDE_SECRETS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeSecrets());
+        if (hasEncryptionKey()) {
+          hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
+          hash = (53 * hash) + getEncryptionKey().hashCode();
+        }
+        switch (backupScopeCase_) {
+          case 1:
+            hash = (37 * hash) + ALL_NAMESPACES_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllNamespaces());
+            break;
+          case 2:
+            hash = (37 * hash) + SELECTED_NAMESPACES_FIELD_NUMBER;
+            hash = (53 * hash) + getSelectedNamespaces().hashCode();
+            break;
+          case 3:
+            hash = (37 * hash) + SELECTED_APPLICATIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getSelectedApplications().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * BackupConfigDetails defines the configuration of Backups created via this
+       * BackupPlan.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails)
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetailsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+              .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_BackupConfigDetails_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+              .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_BackupConfigDetails_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .BackupConfigDetails.class,
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .BackupConfigDetails.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getEncryptionKeyFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (selectedNamespacesBuilder_ != null) {
+            selectedNamespacesBuilder_.clear();
+          }
+          if (selectedApplicationsBuilder_ != null) {
+            selectedApplicationsBuilder_.clear();
+          }
+          includeVolumeData_ = false;
+          includeSecrets_ = false;
+          encryptionKey_ = null;
+          if (encryptionKeyBuilder_ != null) {
+            encryptionKeyBuilder_.dispose();
+            encryptionKeyBuilder_ = null;
+          }
+          backupScopeCase_ = 0;
+          backupScope_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+              .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_BackupConfigDetails_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+            getDefaultInstanceForType() {
+          return com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+            build() {
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+            buildPartial() {
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              result =
+                  new com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .BackupConfigDetails(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.includeVolumeData_ = includeVolumeData_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.includeSecrets_ = includeSecrets_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            result.encryptionKey_ =
+                encryptionKeyBuilder_ == null ? encryptionKey_ : encryptionKeyBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+                result) {
+          result.backupScopeCase_ = backupScopeCase_;
+          result.backupScope_ = this.backupScope_;
+          if (backupScopeCase_ == 2 && selectedNamespacesBuilder_ != null) {
+            result.backupScope_ = selectedNamespacesBuilder_.build();
+          }
+          if (backupScopeCase_ == 3 && selectedApplicationsBuilder_ != null) {
+            result.backupScope_ = selectedApplicationsBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .BackupConfigDetails) {
+            return mergeFrom(
+                (com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                        .BackupConfigDetails)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+                other) {
+          if (other
+              == com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .BackupConfigDetails.getDefaultInstance()) return this;
+          if (other.getIncludeVolumeData() != false) {
+            setIncludeVolumeData(other.getIncludeVolumeData());
+          }
+          if (other.getIncludeSecrets() != false) {
+            setIncludeSecrets(other.getIncludeSecrets());
+          }
+          if (other.hasEncryptionKey()) {
+            mergeEncryptionKey(other.getEncryptionKey());
+          }
+          switch (other.getBackupScopeCase()) {
+            case ALL_NAMESPACES:
+              {
+                setAllNamespaces(other.getAllNamespaces());
+                break;
+              }
+            case SELECTED_NAMESPACES:
+              {
+                mergeSelectedNamespaces(other.getSelectedNamespaces());
+                break;
+              }
+            case SELECTED_APPLICATIONS:
+              {
+                mergeSelectedApplications(other.getSelectedApplications());
+                break;
+              }
+            case BACKUPSCOPE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    backupScope_ = input.readBool();
+                    backupScopeCase_ = 1;
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    input.readMessage(
+                        getSelectedNamespacesFieldBuilder().getBuilder(), extensionRegistry);
+                    backupScopeCase_ = 2;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(
+                        getSelectedApplicationsFieldBuilder().getBuilder(), extensionRegistry);
+                    backupScopeCase_ = 3;
+                    break;
+                  } // case 26
+                case 40:
+                  {
+                    includeVolumeData_ = input.readBool();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 40
+                case 48:
+                  {
+                    includeSecrets_ = input.readBool();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 48
+                case 58:
+                  {
+                    input.readMessage(
+                        getEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000020;
+                    break;
+                  } // case 58
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int backupScopeCase_ = 0;
+        private java.lang.Object backupScope_;
+
+        public BackupScopeCase getBackupScopeCase() {
+          return BackupScopeCase.forNumber(backupScopeCase_);
+        }
+
+        public Builder clearBackupScope() {
+          backupScopeCase_ = 0;
+          backupScope_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If True, include all namespaced resources
+         * </pre>
+         *
+         * <code>bool all_namespaces = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return Whether the allNamespaces field is set.
+         */
+        public boolean hasAllNamespaces() {
+          return backupScopeCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If True, include all namespaced resources
+         * </pre>
+         *
+         * <code>bool all_namespaces = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The allNamespaces.
+         */
+        public boolean getAllNamespaces() {
+          if (backupScopeCase_ == 1) {
+            return (java.lang.Boolean) backupScope_;
+          }
+          return false;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If True, include all namespaced resources
+         * </pre>
+         *
+         * <code>bool all_namespaces = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The allNamespaces to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAllNamespaces(boolean value) {
+
+          backupScopeCase_ = 1;
+          backupScope_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If True, include all namespaced resources
+         * </pre>
+         *
+         * <code>bool all_namespaces = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAllNamespaces() {
+          if (backupScopeCase_ == 1) {
+            backupScopeCase_ = 0;
+            backupScope_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.Namespaces,
+                com.google.cloud.gkebackup.v1.Namespaces.Builder,
+                com.google.cloud.gkebackup.v1.NamespacesOrBuilder>
+            selectedNamespacesBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the selectedNamespaces field is set.
+         */
+        @java.lang.Override
+        public boolean hasSelectedNamespaces() {
+          return backupScopeCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The selectedNamespaces.
+         */
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.Namespaces getSelectedNamespaces() {
+          if (selectedNamespacesBuilder_ == null) {
+            if (backupScopeCase_ == 2) {
+              return (com.google.cloud.gkebackup.v1.Namespaces) backupScope_;
+            }
+            return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+          } else {
+            if (backupScopeCase_ == 2) {
+              return selectedNamespacesBuilder_.getMessage();
+            }
+            return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setSelectedNamespaces(com.google.cloud.gkebackup.v1.Namespaces value) {
+          if (selectedNamespacesBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            backupScope_ = value;
+            onChanged();
+          } else {
+            selectedNamespacesBuilder_.setMessage(value);
+          }
+          backupScopeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setSelectedNamespaces(
+            com.google.cloud.gkebackup.v1.Namespaces.Builder builderForValue) {
+          if (selectedNamespacesBuilder_ == null) {
+            backupScope_ = builderForValue.build();
+            onChanged();
+          } else {
+            selectedNamespacesBuilder_.setMessage(builderForValue.build());
+          }
+          backupScopeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder mergeSelectedNamespaces(com.google.cloud.gkebackup.v1.Namespaces value) {
+          if (selectedNamespacesBuilder_ == null) {
+            if (backupScopeCase_ == 2
+                && backupScope_ != com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance()) {
+              backupScope_ =
+                  com.google.cloud.gkebackup.v1.Namespaces.newBuilder(
+                          (com.google.cloud.gkebackup.v1.Namespaces) backupScope_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              backupScope_ = value;
+            }
+            onChanged();
+          } else {
+            if (backupScopeCase_ == 2) {
+              selectedNamespacesBuilder_.mergeFrom(value);
+            } else {
+              selectedNamespacesBuilder_.setMessage(value);
+            }
+          }
+          backupScopeCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearSelectedNamespaces() {
+          if (selectedNamespacesBuilder_ == null) {
+            if (backupScopeCase_ == 2) {
+              backupScopeCase_ = 0;
+              backupScope_ = null;
+              onChanged();
+            }
+          } else {
+            if (backupScopeCase_ == 2) {
+              backupScopeCase_ = 0;
+              backupScope_ = null;
+            }
+            selectedNamespacesBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.gkebackup.v1.Namespaces.Builder getSelectedNamespacesBuilder() {
+          return getSelectedNamespacesFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.NamespacesOrBuilder getSelectedNamespacesOrBuilder() {
+          if ((backupScopeCase_ == 2) && (selectedNamespacesBuilder_ != null)) {
+            return selectedNamespacesBuilder_.getMessageOrBuilder();
+          } else {
+            if (backupScopeCase_ == 2) {
+              return (com.google.cloud.gkebackup.v1.Namespaces) backupScope_;
+            }
+            return com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources in the listed
+         * namespaces.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.Namespaces selected_namespaces = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.Namespaces,
+                com.google.cloud.gkebackup.v1.Namespaces.Builder,
+                com.google.cloud.gkebackup.v1.NamespacesOrBuilder>
+            getSelectedNamespacesFieldBuilder() {
+          if (selectedNamespacesBuilder_ == null) {
+            if (!(backupScopeCase_ == 2)) {
+              backupScope_ = com.google.cloud.gkebackup.v1.Namespaces.getDefaultInstance();
+            }
+            selectedNamespacesBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.gkebackup.v1.Namespaces,
+                    com.google.cloud.gkebackup.v1.Namespaces.Builder,
+                    com.google.cloud.gkebackup.v1.NamespacesOrBuilder>(
+                    (com.google.cloud.gkebackup.v1.Namespaces) backupScope_,
+                    getParentForChildren(),
+                    isClean());
+            backupScope_ = null;
+          }
+          backupScopeCase_ = 2;
+          onChanged();
+          return selectedNamespacesBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.NamespacedNames,
+                com.google.cloud.gkebackup.v1.NamespacedNames.Builder,
+                com.google.cloud.gkebackup.v1.NamespacedNamesOrBuilder>
+            selectedApplicationsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the selectedApplications field is set.
+         */
+        @java.lang.Override
+        public boolean hasSelectedApplications() {
+          return backupScopeCase_ == 3;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The selectedApplications.
+         */
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.NamespacedNames getSelectedApplications() {
+          if (selectedApplicationsBuilder_ == null) {
+            if (backupScopeCase_ == 3) {
+              return (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_;
+            }
+            return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
+          } else {
+            if (backupScopeCase_ == 3) {
+              return selectedApplicationsBuilder_.getMessage();
+            }
+            return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setSelectedApplications(
+            com.google.cloud.gkebackup.v1.NamespacedNames value) {
+          if (selectedApplicationsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            backupScope_ = value;
+            onChanged();
+          } else {
+            selectedApplicationsBuilder_.setMessage(value);
+          }
+          backupScopeCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setSelectedApplications(
+            com.google.cloud.gkebackup.v1.NamespacedNames.Builder builderForValue) {
+          if (selectedApplicationsBuilder_ == null) {
+            backupScope_ = builderForValue.build();
+            onChanged();
+          } else {
+            selectedApplicationsBuilder_.setMessage(builderForValue.build());
+          }
+          backupScopeCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder mergeSelectedApplications(
+            com.google.cloud.gkebackup.v1.NamespacedNames value) {
+          if (selectedApplicationsBuilder_ == null) {
+            if (backupScopeCase_ == 3
+                && backupScope_
+                    != com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance()) {
+              backupScope_ =
+                  com.google.cloud.gkebackup.v1.NamespacedNames.newBuilder(
+                          (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              backupScope_ = value;
+            }
+            onChanged();
+          } else {
+            if (backupScopeCase_ == 3) {
+              selectedApplicationsBuilder_.mergeFrom(value);
+            } else {
+              selectedApplicationsBuilder_.setMessage(value);
+            }
+          }
+          backupScopeCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearSelectedApplications() {
+          if (selectedApplicationsBuilder_ == null) {
+            if (backupScopeCase_ == 3) {
+              backupScopeCase_ = 0;
+              backupScope_ = null;
+              onChanged();
+            }
+          } else {
+            if (backupScopeCase_ == 3) {
+              backupScopeCase_ = 0;
+              backupScope_ = null;
+            }
+            selectedApplicationsBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.gkebackup.v1.NamespacedNames.Builder
+            getSelectedApplicationsBuilder() {
+          return getSelectedApplicationsFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.NamespacedNamesOrBuilder
+            getSelectedApplicationsOrBuilder() {
+          if ((backupScopeCase_ == 3) && (selectedApplicationsBuilder_ != null)) {
+            return selectedApplicationsBuilder_.getMessageOrBuilder();
+          } else {
+            if (backupScopeCase_ == 3) {
+              return (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_;
+            }
+            return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. If set, include just the resources referenced by the
+         * listed ProtectedApplications.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.NamespacedNames selected_applications = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.NamespacedNames,
+                com.google.cloud.gkebackup.v1.NamespacedNames.Builder,
+                com.google.cloud.gkebackup.v1.NamespacedNamesOrBuilder>
+            getSelectedApplicationsFieldBuilder() {
+          if (selectedApplicationsBuilder_ == null) {
+            if (!(backupScopeCase_ == 3)) {
+              backupScope_ = com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
+            }
+            selectedApplicationsBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.gkebackup.v1.NamespacedNames,
+                    com.google.cloud.gkebackup.v1.NamespacedNames.Builder,
+                    com.google.cloud.gkebackup.v1.NamespacedNamesOrBuilder>(
+                    (com.google.cloud.gkebackup.v1.NamespacedNames) backupScope_,
+                    getParentForChildren(),
+                    isClean());
+            backupScope_ = null;
+          }
+          backupScopeCase_ = 3;
+          onChanged();
+          return selectedApplicationsBuilder_;
+        }
+
+        private boolean includeVolumeData_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This flag specifies whether volume data should be backed
+         * up when PVCs are included in the scope of a Backup.
+         *
+         * Default: False
+         * </pre>
+         *
+         * <code>bool include_volume_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The includeVolumeData.
+         */
+        @java.lang.Override
+        public boolean getIncludeVolumeData() {
+          return includeVolumeData_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This flag specifies whether volume data should be backed
+         * up when PVCs are included in the scope of a Backup.
+         *
+         * Default: False
+         * </pre>
+         *
+         * <code>bool include_volume_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The includeVolumeData to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIncludeVolumeData(boolean value) {
+
+          includeVolumeData_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This flag specifies whether volume data should be backed
+         * up when PVCs are included in the scope of a Backup.
+         *
+         * Default: False
+         * </pre>
+         *
+         * <code>bool include_volume_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIncludeVolumeData() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          includeVolumeData_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean includeSecrets_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This flag specifies whether Kubernetes Secret resources
+         * should be included when they fall into the scope of Backups.
+         *
+         * Default: False
+         * </pre>
+         *
+         * <code>bool include_secrets = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The includeSecrets.
+         */
+        @java.lang.Override
+        public boolean getIncludeSecrets() {
+          return includeSecrets_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This flag specifies whether Kubernetes Secret resources
+         * should be included when they fall into the scope of Backups.
+         *
+         * Default: False
+         * </pre>
+         *
+         * <code>bool include_secrets = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The includeSecrets to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIncludeSecrets(boolean value) {
+
+          includeSecrets_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This flag specifies whether Kubernetes Secret resources
+         * should be included when they fall into the scope of Backups.
+         *
+         * Default: False
+         * </pre>
+         *
+         * <code>bool include_secrets = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIncludeSecrets() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          includeSecrets_ = false;
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.gkebackup.v1.EncryptionKey encryptionKey_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.EncryptionKey,
+                com.google.cloud.gkebackup.v1.EncryptionKey.Builder,
+                com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder>
+            encryptionKeyBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the encryptionKey field is set.
+         */
+        public boolean hasEncryptionKey() {
+          return ((bitField0_ & 0x00000020) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The encryptionKey.
+         */
+        public com.google.cloud.gkebackup.v1.EncryptionKey getEncryptionKey() {
+          if (encryptionKeyBuilder_ == null) {
+            return encryptionKey_ == null
+                ? com.google.cloud.gkebackup.v1.EncryptionKey.getDefaultInstance()
+                : encryptionKey_;
+          } else {
+            return encryptionKeyBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setEncryptionKey(com.google.cloud.gkebackup.v1.EncryptionKey value) {
+          if (encryptionKeyBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            encryptionKey_ = value;
+          } else {
+            encryptionKeyBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setEncryptionKey(
+            com.google.cloud.gkebackup.v1.EncryptionKey.Builder builderForValue) {
+          if (encryptionKeyBuilder_ == null) {
+            encryptionKey_ = builderForValue.build();
+          } else {
+            encryptionKeyBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder mergeEncryptionKey(com.google.cloud.gkebackup.v1.EncryptionKey value) {
+          if (encryptionKeyBuilder_ == null) {
+            if (((bitField0_ & 0x00000020) != 0)
+                && encryptionKey_ != null
+                && encryptionKey_
+                    != com.google.cloud.gkebackup.v1.EncryptionKey.getDefaultInstance()) {
+              getEncryptionKeyBuilder().mergeFrom(value);
+            } else {
+              encryptionKey_ = value;
+            }
+          } else {
+            encryptionKeyBuilder_.mergeFrom(value);
+          }
+          if (encryptionKey_ != null) {
+            bitField0_ |= 0x00000020;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearEncryptionKey() {
+          bitField0_ = (bitField0_ & ~0x00000020);
+          encryptionKey_ = null;
+          if (encryptionKeyBuilder_ != null) {
+            encryptionKeyBuilder_.dispose();
+            encryptionKeyBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.gkebackup.v1.EncryptionKey.Builder getEncryptionKeyBuilder() {
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return getEncryptionKeyFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder() {
+          if (encryptionKeyBuilder_ != null) {
+            return encryptionKeyBuilder_.getMessageOrBuilder();
+          } else {
+            return encryptionKey_ == null
+                ? com.google.cloud.gkebackup.v1.EncryptionKey.getDefaultInstance()
+                : encryptionKey_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. This defines a customer managed encryption key that will
+         * be used to encrypt the "config" portion (the Kubernetes resources) of
+         * Backups created via this plan.
+         *
+         * Default (empty): Config backup artifacts will not be encrypted.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.gkebackup.v1.EncryptionKey encryption_key = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gkebackup.v1.EncryptionKey,
+                com.google.cloud.gkebackup.v1.EncryptionKey.Builder,
+                com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder>
+            getEncryptionKeyFieldBuilder() {
+          if (encryptionKeyBuilder_ == null) {
+            encryptionKeyBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.gkebackup.v1.EncryptionKey,
+                    com.google.cloud.gkebackup.v1.EncryptionKey.Builder,
+                    com.google.cloud.gkebackup.v1.EncryptionKeyOrBuilder>(
+                    getEncryptionKey(), getParentForChildren(), isClean());
+            encryptionKey_ = null;
+          }
+          return encryptionKeyBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails)
+      private static final com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                .BackupConfigDetails();
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetails
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BackupConfigDetails> PARSER =
+          new com.google.protobuf.AbstractParser<BackupConfigDetails>() {
+            @java.lang.Override
+            public BackupConfigDetails parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BackupConfigDetails> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BackupConfigDetails> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RetentionPolicyDetailsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum age for Backups created via this BackupPlan (in
+       * days). This field MUST be an integer value between 0-90 (inclusive). A
+       * Backup created under this BackupPlan will NOT be deletable until it
+       * reaches Backup's (create_time + backup_delete_lock_days).
+       * Updating this field of a BackupPlan does NOT affect existing Backups
+       * under it. Backups created AFTER a successful update will inherit
+       * the new value.
+       *
+       * Default: 0 (no delete blocking)
+       * </pre>
+       *
+       * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The backupDeleteLockDays.
+       */
+      int getBackupDeleteLockDays();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default maximum age of a Backup created via this
+       * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+       * specified, a Backup created under this BackupPlan will be automatically
+       * deleted after its age reaches (create_time + backup_retain_days). If
+       * not specified, Backups created under this BackupPlan will NOT be
+       * subject to automatic deletion.
+       * Default: 0 (no automatic deletion)
+       * </pre>
+       *
+       * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The backupRetainDays.
+       */
+      int getBackupRetainDays();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RetentionPolicyDetails defines a Backup retention policy for a
+     * BackupPlan.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails}
+     */
+    public static final class RetentionPolicyDetails extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails)
+        RetentionPolicyDetailsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use RetentionPolicyDetails.newBuilder() to construct.
+      private RetentionPolicyDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RetentionPolicyDetails() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new RetentionPolicyDetails();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+            .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_RetentionPolicyDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+            .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_RetentionPolicyDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                    .RetentionPolicyDetails.class,
+                com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                    .RetentionPolicyDetails.Builder.class);
+      }
+
+      public static final int BACKUP_DELETE_LOCK_DAYS_FIELD_NUMBER = 1;
+      private int backupDeleteLockDays_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum age for Backups created via this BackupPlan (in
+       * days). This field MUST be an integer value between 0-90 (inclusive). A
+       * Backup created under this BackupPlan will NOT be deletable until it
+       * reaches Backup's (create_time + backup_delete_lock_days).
+       * Updating this field of a BackupPlan does NOT affect existing Backups
+       * under it. Backups created AFTER a successful update will inherit
+       * the new value.
+       *
+       * Default: 0 (no delete blocking)
+       * </pre>
+       *
+       * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The backupDeleteLockDays.
+       */
+      @java.lang.Override
+      public int getBackupDeleteLockDays() {
+        return backupDeleteLockDays_;
+      }
+
+      public static final int BACKUP_RETAIN_DAYS_FIELD_NUMBER = 2;
+      private int backupRetainDays_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The default maximum age of a Backup created via this
+       * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+       * specified, a Backup created under this BackupPlan will be automatically
+       * deleted after its age reaches (create_time + backup_retain_days). If
+       * not specified, Backups created under this BackupPlan will NOT be
+       * subject to automatic deletion.
+       * Default: 0 (no automatic deletion)
+       * </pre>
+       *
+       * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The backupRetainDays.
+       */
+      @java.lang.Override
+      public int getBackupRetainDays() {
+        return backupRetainDays_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (backupDeleteLockDays_ != 0) {
+          output.writeInt32(1, backupDeleteLockDays_);
+        }
+        if (backupRetainDays_ != 0) {
+          output.writeInt32(2, backupRetainDays_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (backupDeleteLockDays_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, backupDeleteLockDays_);
+        }
+        if (backupRetainDays_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, backupRetainDays_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                .RetentionPolicyDetails)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+            other =
+                (com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                        .RetentionPolicyDetails)
+                    obj;
+
+        if (getBackupDeleteLockDays() != other.getBackupDeleteLockDays()) return false;
+        if (getBackupRetainDays() != other.getBackupRetainDays()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + BACKUP_DELETE_LOCK_DAYS_FIELD_NUMBER;
+        hash = (53 * hash) + getBackupDeleteLockDays();
+        hash = (37 * hash) + BACKUP_RETAIN_DAYS_FIELD_NUMBER;
+        hash = (53 * hash) + getBackupRetainDays();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * RetentionPolicyDetails defines a Backup retention policy for a
+       * BackupPlan.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails)
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetailsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+              .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_RetentionPolicyDetails_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+              .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_RetentionPolicyDetails_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .RetentionPolicyDetails.class,
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .RetentionPolicyDetails.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          backupDeleteLockDays_ = 0;
+          backupRetainDays_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.gkebackup.v1.BackupPlanBindingProto
+              .internal_static_google_cloud_gkebackup_v1_BackupPlanBinding_BackupPlanDetails_RetentionPolicyDetails_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                .RetentionPolicyDetails
+            getDefaultInstanceForType() {
+          return com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                .RetentionPolicyDetails
+            build() {
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                .RetentionPolicyDetails
+            buildPartial() {
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+              result =
+                  new com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .RetentionPolicyDetails(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.backupDeleteLockDays_ = backupDeleteLockDays_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.backupRetainDays_ = backupRetainDays_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetails) {
+            return mergeFrom(
+                (com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                        .RetentionPolicyDetails)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+                other) {
+          if (other
+              == com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetails.getDefaultInstance()) return this;
+          if (other.getBackupDeleteLockDays() != 0) {
+            setBackupDeleteLockDays(other.getBackupDeleteLockDays());
+          }
+          if (other.getBackupRetainDays() != 0) {
+            setBackupRetainDays(other.getBackupRetainDays());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    backupDeleteLockDays_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    backupRetainDays_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int backupDeleteLockDays_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Minimum age for Backups created via this BackupPlan (in
+         * days). This field MUST be an integer value between 0-90 (inclusive). A
+         * Backup created under this BackupPlan will NOT be deletable until it
+         * reaches Backup's (create_time + backup_delete_lock_days).
+         * Updating this field of a BackupPlan does NOT affect existing Backups
+         * under it. Backups created AFTER a successful update will inherit
+         * the new value.
+         *
+         * Default: 0 (no delete blocking)
+         * </pre>
+         *
+         * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The backupDeleteLockDays.
+         */
+        @java.lang.Override
+        public int getBackupDeleteLockDays() {
+          return backupDeleteLockDays_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Minimum age for Backups created via this BackupPlan (in
+         * days). This field MUST be an integer value between 0-90 (inclusive). A
+         * Backup created under this BackupPlan will NOT be deletable until it
+         * reaches Backup's (create_time + backup_delete_lock_days).
+         * Updating this field of a BackupPlan does NOT affect existing Backups
+         * under it. Backups created AFTER a successful update will inherit
+         * the new value.
+         *
+         * Default: 0 (no delete blocking)
+         * </pre>
+         *
+         * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The backupDeleteLockDays to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBackupDeleteLockDays(int value) {
+
+          backupDeleteLockDays_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Minimum age for Backups created via this BackupPlan (in
+         * days). This field MUST be an integer value between 0-90 (inclusive). A
+         * Backup created under this BackupPlan will NOT be deletable until it
+         * reaches Backup's (create_time + backup_delete_lock_days).
+         * Updating this field of a BackupPlan does NOT affect existing Backups
+         * under it. Backups created AFTER a successful update will inherit
+         * the new value.
+         *
+         * Default: 0 (no delete blocking)
+         * </pre>
+         *
+         * <code>int32 backup_delete_lock_days = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBackupDeleteLockDays() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          backupDeleteLockDays_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int backupRetainDays_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default maximum age of a Backup created via this
+         * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+         * specified, a Backup created under this BackupPlan will be automatically
+         * deleted after its age reaches (create_time + backup_retain_days). If
+         * not specified, Backups created under this BackupPlan will NOT be
+         * subject to automatic deletion.
+         * Default: 0 (no automatic deletion)
+         * </pre>
+         *
+         * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The backupRetainDays.
+         */
+        @java.lang.Override
+        public int getBackupRetainDays() {
+          return backupRetainDays_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default maximum age of a Backup created via this
+         * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+         * specified, a Backup created under this BackupPlan will be automatically
+         * deleted after its age reaches (create_time + backup_retain_days). If
+         * not specified, Backups created under this BackupPlan will NOT be
+         * subject to automatic deletion.
+         * Default: 0 (no automatic deletion)
+         * </pre>
+         *
+         * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The backupRetainDays to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBackupRetainDays(int value) {
+
+          backupRetainDays_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The default maximum age of a Backup created via this
+         * BackupPlan. This field MUST be an integer value &gt;= 0 and &lt;= 365. If
+         * specified, a Backup created under this BackupPlan will be automatically
+         * deleted after its age reaches (create_time + backup_retain_days). If
+         * not specified, Backups created under this BackupPlan will NOT be
+         * subject to automatic deletion.
+         * Default: 0 (no automatic deletion)
+         * </pre>
+         *
+         * <code>int32 backup_retain_days = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBackupRetainDays() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          backupRetainDays_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails)
+      private static final com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                .RetentionPolicyDetails();
+      }
+
+      public static com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RetentionPolicyDetails> PARSER =
+          new com.google.protobuf.AbstractParser<RetentionPolicyDetails>() {
+            @java.lang.Override
+            public RetentionPolicyDetails parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RetentionPolicyDetails> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RetentionPolicyDetails> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int PROTECTED_POD_COUNT_FIELD_NUMBER = 1;
     private int protectedPodCount_ = 0;
@@ -823,6 +3922,142 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public static final int BACKUP_CONFIG_DETAILS_FIELD_NUMBER = 7;
+    private com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+        backupConfigDetails_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the BackupConfig of Backups created
+     * via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the backupConfigDetails field is set.
+     */
+    @java.lang.Override
+    public boolean hasBackupConfigDetails() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the BackupConfig of Backups created
+     * via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The backupConfigDetails.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+        getBackupConfigDetails() {
+      return backupConfigDetails_ == null
+          ? com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              .getDefaultInstance()
+          : backupConfigDetails_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the BackupConfig of Backups created
+     * via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+            .BackupConfigDetailsOrBuilder
+        getBackupConfigDetailsOrBuilder() {
+      return backupConfigDetails_ == null
+          ? com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              .getDefaultInstance()
+          : backupConfigDetails_;
+    }
+
+    public static final int RETENTION_POLICY_DETAILS_FIELD_NUMBER = 8;
+    private com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+        retentionPolicyDetails_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the RetentionPolicy of Backups
+     * created via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the retentionPolicyDetails field is set.
+     */
+    @java.lang.Override
+    public boolean hasRetentionPolicyDetails() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the RetentionPolicy of Backups
+     * created via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The retentionPolicyDetails.
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+        getRetentionPolicyDetails() {
+      return retentionPolicyDetails_ == null
+          ? com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+              .getDefaultInstance()
+          : retentionPolicyDetails_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains details about the RetentionPolicy of Backups
+     * created via this BackupPlan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+            .RetentionPolicyDetailsOrBuilder
+        getRetentionPolicyDetailsOrBuilder() {
+      return retentionPolicyDetails_ == null
+          ? com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+              .getDefaultInstance()
+          : retentionPolicyDetails_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -858,6 +4093,12 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastSuccessfulBackup_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, lastSuccessfulBackup_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(7, getBackupConfigDetails());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(8, getRetentionPolicyDetails());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -892,6 +4133,15 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastSuccessfulBackup_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, lastSuccessfulBackup_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(7, getBackupConfigDetails());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8, getRetentionPolicyDetails());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -921,6 +4171,14 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
       }
       if (getRpoRiskLevel() != other.getRpoRiskLevel()) return false;
       if (!getLastSuccessfulBackup().equals(other.getLastSuccessfulBackup())) return false;
+      if (hasBackupConfigDetails() != other.hasBackupConfigDetails()) return false;
+      if (hasBackupConfigDetails()) {
+        if (!getBackupConfigDetails().equals(other.getBackupConfigDetails())) return false;
+      }
+      if (hasRetentionPolicyDetails() != other.hasRetentionPolicyDetails()) return false;
+      if (hasRetentionPolicyDetails()) {
+        if (!getRetentionPolicyDetails().equals(other.getRetentionPolicyDetails())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -948,6 +4206,14 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + getRpoRiskLevel();
       hash = (37 * hash) + LAST_SUCCESSFUL_BACKUP_FIELD_NUMBER;
       hash = (53 * hash) + getLastSuccessfulBackup().hashCode();
+      if (hasBackupConfigDetails()) {
+        hash = (37 * hash) + BACKUP_CONFIG_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getBackupConfigDetails().hashCode();
+      }
+      if (hasRetentionPolicyDetails()) {
+        hash = (37 * hash) + RETENTION_POLICY_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getRetentionPolicyDetails().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1096,6 +4362,8 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getLastSuccessfulBackupTimeFieldBuilder();
           getNextScheduledBackupTimeFieldBuilder();
+          getBackupConfigDetailsFieldBuilder();
+          getRetentionPolicyDetailsFieldBuilder();
         }
       }
 
@@ -1117,6 +4385,16 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
         }
         rpoRiskLevel_ = 0;
         lastSuccessfulBackup_ = "";
+        backupConfigDetails_ = null;
+        if (backupConfigDetailsBuilder_ != null) {
+          backupConfigDetailsBuilder_.dispose();
+          backupConfigDetailsBuilder_ = null;
+        }
+        retentionPolicyDetails_ = null;
+        if (retentionPolicyDetailsBuilder_ != null) {
+          retentionPolicyDetailsBuilder_.dispose();
+          retentionPolicyDetailsBuilder_ = null;
+        }
         return this;
       }
 
@@ -1182,6 +4460,20 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.lastSuccessfulBackup_ = lastSuccessfulBackup_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.backupConfigDetails_ =
+              backupConfigDetailsBuilder_ == null
+                  ? backupConfigDetails_
+                  : backupConfigDetailsBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.retentionPolicyDetails_ =
+              retentionPolicyDetailsBuilder_ == null
+                  ? retentionPolicyDetails_
+                  : retentionPolicyDetailsBuilder_.build();
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1257,6 +4549,12 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
           bitField0_ |= 0x00000020;
           onChanged();
         }
+        if (other.hasBackupConfigDetails()) {
+          mergeBackupConfigDetails(other.getBackupConfigDetails());
+        }
+        if (other.hasRetentionPolicyDetails()) {
+          mergeRetentionPolicyDetails(other.getRetentionPolicyDetails());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1321,6 +4619,20 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getBackupConfigDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      getRetentionPolicyDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2138,6 +5450,500 @@ public final class BackupPlanBinding extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+          backupConfigDetails_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails,
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+                  .Builder,
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .BackupConfigDetailsOrBuilder>
+          backupConfigDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the backupConfigDetails field is set.
+       */
+      public boolean hasBackupConfigDetails() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The backupConfigDetails.
+       */
+      public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+          getBackupConfigDetails() {
+        if (backupConfigDetailsBuilder_ == null) {
+          return backupConfigDetails_ == null
+              ? com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .BackupConfigDetails.getDefaultInstance()
+              : backupConfigDetails_;
+        } else {
+          return backupConfigDetailsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setBackupConfigDetails(
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              value) {
+        if (backupConfigDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          backupConfigDetails_ = value;
+        } else {
+          backupConfigDetailsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setBackupConfigDetails(
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+                  .Builder
+              builderForValue) {
+        if (backupConfigDetailsBuilder_ == null) {
+          backupConfigDetails_ = builderForValue.build();
+        } else {
+          backupConfigDetailsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeBackupConfigDetails(
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              value) {
+        if (backupConfigDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && backupConfigDetails_ != null
+              && backupConfigDetails_
+                  != com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .BackupConfigDetails.getDefaultInstance()) {
+            getBackupConfigDetailsBuilder().mergeFrom(value);
+          } else {
+            backupConfigDetails_ = value;
+          }
+        } else {
+          backupConfigDetailsBuilder_.mergeFrom(value);
+        }
+        if (backupConfigDetails_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearBackupConfigDetails() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        backupConfigDetails_ = null;
+        if (backupConfigDetailsBuilder_ != null) {
+          backupConfigDetailsBuilder_.dispose();
+          backupConfigDetailsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+              .Builder
+          getBackupConfigDetailsBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getBackupConfigDetailsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .BackupConfigDetailsOrBuilder
+          getBackupConfigDetailsOrBuilder() {
+        if (backupConfigDetailsBuilder_ != null) {
+          return backupConfigDetailsBuilder_.getMessageOrBuilder();
+        } else {
+          return backupConfigDetails_ == null
+              ? com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .BackupConfigDetails.getDefaultInstance()
+              : backupConfigDetails_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the BackupConfig of Backups created
+       * via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails backup_config_details = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails,
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.BackupConfigDetails
+                  .Builder,
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .BackupConfigDetailsOrBuilder>
+          getBackupConfigDetailsFieldBuilder() {
+        if (backupConfigDetailsBuilder_ == null) {
+          backupConfigDetailsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .BackupConfigDetails,
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .BackupConfigDetails.Builder,
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .BackupConfigDetailsOrBuilder>(
+                  getBackupConfigDetails(), getParentForChildren(), isClean());
+          backupConfigDetails_ = null;
+        }
+        return backupConfigDetailsBuilder_;
+      }
+
+      private com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          retentionPolicyDetails_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetails,
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetails.Builder,
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetailsOrBuilder>
+          retentionPolicyDetailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the retentionPolicyDetails field is set.
+       */
+      public boolean hasRetentionPolicyDetails() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The retentionPolicyDetails.
+       */
+      public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails
+          getRetentionPolicyDetails() {
+        if (retentionPolicyDetailsBuilder_ == null) {
+          return retentionPolicyDetails_ == null
+              ? com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetails.getDefaultInstance()
+              : retentionPolicyDetails_;
+        } else {
+          return retentionPolicyDetailsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRetentionPolicyDetails(
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+              value) {
+        if (retentionPolicyDetailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          retentionPolicyDetails_ = value;
+        } else {
+          retentionPolicyDetailsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRetentionPolicyDetails(
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+                  .Builder
+              builderForValue) {
+        if (retentionPolicyDetailsBuilder_ == null) {
+          retentionPolicyDetails_ = builderForValue.build();
+        } else {
+          retentionPolicyDetailsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeRetentionPolicyDetails(
+          com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails
+              value) {
+        if (retentionPolicyDetailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)
+              && retentionPolicyDetails_ != null
+              && retentionPolicyDetails_
+                  != com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .RetentionPolicyDetails.getDefaultInstance()) {
+            getRetentionPolicyDetailsBuilder().mergeFrom(value);
+          } else {
+            retentionPolicyDetails_ = value;
+          }
+        } else {
+          retentionPolicyDetailsBuilder_.mergeFrom(value);
+        }
+        if (retentionPolicyDetails_ != null) {
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearRetentionPolicyDetails() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        retentionPolicyDetails_ = null;
+        if (retentionPolicyDetailsBuilder_ != null) {
+          retentionPolicyDetailsBuilder_.dispose();
+          retentionPolicyDetailsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetails.Builder
+          getRetentionPolicyDetailsBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getRetentionPolicyDetailsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+              .RetentionPolicyDetailsOrBuilder
+          getRetentionPolicyDetailsOrBuilder() {
+        if (retentionPolicyDetailsBuilder_ != null) {
+          return retentionPolicyDetailsBuilder_.getMessageOrBuilder();
+        } else {
+          return retentionPolicyDetails_ == null
+              ? com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetails.getDefaultInstance()
+              : retentionPolicyDetails_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains details about the RetentionPolicy of Backups
+       * created via this BackupPlan.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails.RetentionPolicyDetails retention_policy_details = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetails,
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetails.Builder,
+              com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                  .RetentionPolicyDetailsOrBuilder>
+          getRetentionPolicyDetailsFieldBuilder() {
+        if (retentionPolicyDetailsBuilder_ == null) {
+          retentionPolicyDetailsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .RetentionPolicyDetails,
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .RetentionPolicyDetails.Builder,
+                  com.google.cloud.gkebackup.v1.BackupPlanBinding.BackupPlanDetails
+                      .RetentionPolicyDetailsOrBuilder>(
+                  getRetentionPolicyDetails(), getParentForChildren(), isClean());
+          retentionPolicyDetails_ = null;
+        }
+        return retentionPolicyDetailsBuilder_;
       }
 
       @java.lang.Override

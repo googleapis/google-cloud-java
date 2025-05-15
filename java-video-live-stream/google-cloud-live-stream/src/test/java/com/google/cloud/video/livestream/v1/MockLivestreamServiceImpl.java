@@ -469,6 +469,111 @@ public class MockLivestreamServiceImpl extends LivestreamServiceImplBase {
   }
 
   @Override
+  public void createDvrSession(
+      CreateDvrSessionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDvrSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDvrSessions(
+      ListDvrSessionsRequest request, StreamObserver<ListDvrSessionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDvrSessionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDvrSessionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDvrSessions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDvrSessionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDvrSession(
+      GetDvrSessionRequest request, StreamObserver<DvrSession> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DvrSession) {
+      requests.add(request);
+      responseObserver.onNext(((DvrSession) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDvrSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DvrSession.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDvrSession(
+      DeleteDvrSessionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDvrSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDvrSession(
+      UpdateDvrSessionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDvrSession, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createAsset(CreateAssetRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Operation) {

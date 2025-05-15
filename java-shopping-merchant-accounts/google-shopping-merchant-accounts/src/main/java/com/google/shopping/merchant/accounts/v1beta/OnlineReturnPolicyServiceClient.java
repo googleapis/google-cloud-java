@@ -26,6 +26,8 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.shopping.merchant.accounts.v1beta.stub.OnlineReturnPolicyServiceStub;
 import com.google.shopping.merchant.accounts.v1beta.stub.OnlineReturnPolicyServiceStubSettings;
 import java.io.IOException;
@@ -39,7 +41,7 @@ import javax.annotation.Generated;
  * configuration, encompassing return policies for both ads and free listings ## programs. This API
  * defines the following resource model:
  *
- * <p>[OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+ * <p>[OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -70,7 +72,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetOnlineReturnPolicy</td>
- *      <td><p> Gets an existing return policy for a given business.</td>
+ *      <td><p> Gets an existing return policy for a given merchant.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -89,7 +91,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListOnlineReturnPolicies</td>
- *      <td><p> Lists all existing return policies for a given business.</td>
+ *      <td><p> Lists all existing return policies for a given merchant.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -104,6 +106,62 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listOnlineReturnPoliciesPagedCallable()
  *           <li><p> listOnlineReturnPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateOnlineReturnPolicy</td>
+ *      <td><p> Creates a new return policy for a given merchant.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createOnlineReturnPolicy(CreateOnlineReturnPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createOnlineReturnPolicy(AccountName parent)
+ *           <li><p> createOnlineReturnPolicy(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createOnlineReturnPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateOnlineReturnPolicy</td>
+ *      <td><p> Updates an existing return policy for a given merchant.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateOnlineReturnPolicy(UpdateOnlineReturnPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateOnlineReturnPolicy(OnlineReturnPolicy onlineReturnPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOnlineReturnPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteOnlineReturnPolicy</td>
+ *      <td><p> Deletes an existing return policy for a given merchant.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteOnlineReturnPolicy(DeleteOnlineReturnPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteOnlineReturnPolicy(OnlineReturnPolicyName name)
+ *           <li><p> deleteOnlineReturnPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOnlineReturnPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -220,7 +278,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an existing return policy for a given business.
+   * Gets an existing return policy for a given merchant.
    *
    * <p>Sample code:
    *
@@ -251,7 +309,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an existing return policy for a given business.
+   * Gets an existing return policy for a given merchant.
    *
    * <p>Sample code:
    *
@@ -280,7 +338,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an existing return policy for a given business.
+   * Gets an existing return policy for a given merchant.
    *
    * <p>Sample code:
    *
@@ -309,7 +367,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an existing return policy for a given business.
+   * Gets an existing return policy for a given merchant.
    *
    * <p>Sample code:
    *
@@ -339,7 +397,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies for a given business.
+   * Lists all existing return policies for a given merchant.
    *
    * <p>Sample code:
    *
@@ -359,7 +417,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The business account for which to list return policies. Format:
+   * @param parent Required. The merchant account for which to list return policies. Format:
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -373,7 +431,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies for a given business.
+   * Lists all existing return policies for a given merchant.
    *
    * <p>Sample code:
    *
@@ -393,7 +451,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The business account for which to list return policies. Format:
+   * @param parent Required. The merchant account for which to list return policies. Format:
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -405,7 +463,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies for a given business.
+   * Lists all existing return policies for a given merchant.
    *
    * <p>Sample code:
    *
@@ -440,7 +498,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies for a given business.
+   * Lists all existing return policies for a given merchant.
    *
    * <p>Sample code:
    *
@@ -476,7 +534,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all existing return policies for a given business.
+   * Lists all existing return policies for a given merchant.
    *
    * <p>Sample code:
    *
@@ -513,6 +571,348 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
   public final UnaryCallable<ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesResponse>
       listOnlineReturnPoliciesCallable() {
     return stub.listOnlineReturnPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   OnlineReturnPolicy response =
+   *       onlineReturnPolicyServiceClient.createOnlineReturnPolicy(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The merchant account for which to create a return policy. Format:
+   *     `accounts/{account}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OnlineReturnPolicy createOnlineReturnPolicy(AccountName parent) {
+    CreateOnlineReturnPolicyRequest request =
+        CreateOnlineReturnPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return createOnlineReturnPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   String parent = AccountName.of("[ACCOUNT]").toString();
+   *   OnlineReturnPolicy response =
+   *       onlineReturnPolicyServiceClient.createOnlineReturnPolicy(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The merchant account for which to create a return policy. Format:
+   *     `accounts/{account}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OnlineReturnPolicy createOnlineReturnPolicy(String parent) {
+    CreateOnlineReturnPolicyRequest request =
+        CreateOnlineReturnPolicyRequest.newBuilder().setParent(parent).build();
+    return createOnlineReturnPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   CreateOnlineReturnPolicyRequest request =
+   *       CreateOnlineReturnPolicyRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .setOnlineReturnPolicy(OnlineReturnPolicy.newBuilder().build())
+   *           .build();
+   *   OnlineReturnPolicy response =
+   *       onlineReturnPolicyServiceClient.createOnlineReturnPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OnlineReturnPolicy createOnlineReturnPolicy(
+      CreateOnlineReturnPolicyRequest request) {
+    return createOnlineReturnPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   CreateOnlineReturnPolicyRequest request =
+   *       CreateOnlineReturnPolicyRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .setOnlineReturnPolicy(OnlineReturnPolicy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<OnlineReturnPolicy> future =
+   *       onlineReturnPolicyServiceClient.createOnlineReturnPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   OnlineReturnPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicyCallable() {
+    return stub.createOnlineReturnPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   OnlineReturnPolicy onlineReturnPolicy = OnlineReturnPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   OnlineReturnPolicy response =
+   *       onlineReturnPolicyServiceClient.updateOnlineReturnPolicy(onlineReturnPolicy, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param onlineReturnPolicy Required. The return policy to update.
+   * @param updateMask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OnlineReturnPolicy updateOnlineReturnPolicy(
+      OnlineReturnPolicy onlineReturnPolicy, FieldMask updateMask) {
+    UpdateOnlineReturnPolicyRequest request =
+        UpdateOnlineReturnPolicyRequest.newBuilder()
+            .setOnlineReturnPolicy(onlineReturnPolicy)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateOnlineReturnPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   UpdateOnlineReturnPolicyRequest request =
+   *       UpdateOnlineReturnPolicyRequest.newBuilder()
+   *           .setOnlineReturnPolicy(OnlineReturnPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OnlineReturnPolicy response =
+   *       onlineReturnPolicyServiceClient.updateOnlineReturnPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OnlineReturnPolicy updateOnlineReturnPolicy(
+      UpdateOnlineReturnPolicyRequest request) {
+    return updateOnlineReturnPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   UpdateOnlineReturnPolicyRequest request =
+   *       UpdateOnlineReturnPolicyRequest.newBuilder()
+   *           .setOnlineReturnPolicy(OnlineReturnPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<OnlineReturnPolicy> future =
+   *       onlineReturnPolicyServiceClient.updateOnlineReturnPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   OnlineReturnPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicyCallable() {
+    return stub.updateOnlineReturnPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   OnlineReturnPolicyName name = OnlineReturnPolicyName.of("[ACCOUNT]", "[RETURN_POLICY]");
+   *   onlineReturnPolicyServiceClient.deleteOnlineReturnPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the return policy to delete. Format:
+   *     `accounts/{account}/onlineReturnPolicies/{return_policy}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteOnlineReturnPolicy(OnlineReturnPolicyName name) {
+    DeleteOnlineReturnPolicyRequest request =
+        DeleteOnlineReturnPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteOnlineReturnPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   String name = OnlineReturnPolicyName.of("[ACCOUNT]", "[RETURN_POLICY]").toString();
+   *   onlineReturnPolicyServiceClient.deleteOnlineReturnPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the return policy to delete. Format:
+   *     `accounts/{account}/onlineReturnPolicies/{return_policy}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteOnlineReturnPolicy(String name) {
+    DeleteOnlineReturnPolicyRequest request =
+        DeleteOnlineReturnPolicyRequest.newBuilder().setName(name).build();
+    deleteOnlineReturnPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   DeleteOnlineReturnPolicyRequest request =
+   *       DeleteOnlineReturnPolicyRequest.newBuilder()
+   *           .setName(OnlineReturnPolicyName.of("[ACCOUNT]", "[RETURN_POLICY]").toString())
+   *           .build();
+   *   onlineReturnPolicyServiceClient.deleteOnlineReturnPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteOnlineReturnPolicy(DeleteOnlineReturnPolicyRequest request) {
+    deleteOnlineReturnPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an existing return policy for a given merchant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OnlineReturnPolicyServiceClient onlineReturnPolicyServiceClient =
+   *     OnlineReturnPolicyServiceClient.create()) {
+   *   DeleteOnlineReturnPolicyRequest request =
+   *       DeleteOnlineReturnPolicyRequest.newBuilder()
+   *           .setName(OnlineReturnPolicyName.of("[ACCOUNT]", "[RETURN_POLICY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       onlineReturnPolicyServiceClient.deleteOnlineReturnPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicyCallable() {
+    return stub.deleteOnlineReturnPolicyCallable();
   }
 
   @Override

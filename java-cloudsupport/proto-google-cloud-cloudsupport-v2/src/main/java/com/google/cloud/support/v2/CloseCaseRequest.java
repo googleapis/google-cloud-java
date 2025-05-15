@@ -73,7 +73,7 @@ public final class CloseCaseRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The fully qualified name of the case resource to be closed.
+   * Required. The name of the case to close.
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public final class CloseCaseRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The fully qualified name of the case resource to be closed.
+   * Required. The name of the case to close.
    * </pre>
    *
    * <code>
@@ -469,7 +469,7 @@ public final class CloseCaseRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The fully qualified name of the case resource to be closed.
+     * Required. The name of the case to close.
      * </pre>
      *
      * <code>
@@ -494,7 +494,7 @@ public final class CloseCaseRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The fully qualified name of the case resource to be closed.
+     * Required. The name of the case to close.
      * </pre>
      *
      * <code>
@@ -519,7 +519,7 @@ public final class CloseCaseRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The fully qualified name of the case resource to be closed.
+     * Required. The name of the case to close.
      * </pre>
      *
      * <code>
@@ -543,7 +543,7 @@ public final class CloseCaseRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The fully qualified name of the case resource to be closed.
+     * Required. The name of the case to close.
      * </pre>
      *
      * <code>
@@ -563,7 +563,7 @@ public final class CloseCaseRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The fully qualified name of the case resource to be closed.
+     * Required. The name of the case to close.
      * </pre>
      *
      * <code>

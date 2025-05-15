@@ -60,34 +60,42 @@ public interface ActorOrBuilder
    *
    *
    * <pre>
-   * The email address of the actor. If not provided, it is inferred from
-   * credentials supplied during case creation. If the authenticated principal
-   * does not have an email address, one must be provided. When a name is
-   * provided, an email must also be provided. This will be obfuscated if the
-   * user is a Google Support agent.
+   * The email address of the actor. If not provided, it is inferred from the
+   * credentials supplied during case creation. When a name is provided, an
+   * email must also be provided. If the user is a Google Support agent, this is
+   * obfuscated.
+   *
+   * This field is deprecated. Use **username** field instead.
    * </pre>
    *
-   * <code>string email = 2;</code>
+   * <code>string email = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.support.v2.Actor.email is deprecated. See
+   *     google/cloud/support/v2/actor.proto;l=44
    * @return The email.
    */
+  @java.lang.Deprecated
   java.lang.String getEmail();
 
   /**
    *
    *
    * <pre>
-   * The email address of the actor. If not provided, it is inferred from
-   * credentials supplied during case creation. If the authenticated principal
-   * does not have an email address, one must be provided. When a name is
-   * provided, an email must also be provided. This will be obfuscated if the
-   * user is a Google Support agent.
+   * The email address of the actor. If not provided, it is inferred from the
+   * credentials supplied during case creation. When a name is provided, an
+   * email must also be provided. If the user is a Google Support agent, this is
+   * obfuscated.
+   *
+   * This field is deprecated. Use **username** field instead.
    * </pre>
    *
-   * <code>string email = 2;</code>
+   * <code>string email = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.support.v2.Actor.email is deprecated. See
+   *     google/cloud/support/v2/actor.proto;l=44
    * @return The bytes for email.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getEmailBytes();
 
   /**
@@ -102,4 +110,38 @@ public interface ActorOrBuilder
    * @return The googleSupport.
    */
   boolean getGoogleSupport();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The username of the actor. It may look like an email or other
+   * format provided by the identity provider. If not provided, it is inferred
+   * from the credentials supplied. When a name is provided, a username must
+   * also be provided. If the user is a Google Support agent, this will not be
+   * set.
+   * </pre>
+   *
+   * <code>string username = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The username.
+   */
+  java.lang.String getUsername();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The username of the actor. It may look like an email or other
+   * format provided by the identity provider. If not provided, it is inferred
+   * from the credentials supplied. When a name is provided, a username must
+   * also be provided. If the user is a Google Support agent, this will not be
+   * set.
+   * </pre>
+   *
+   * <code>string username = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString getUsernameBytes();
 }

@@ -28,7 +28,7 @@ public interface GetCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The fully qualified name of a case to be retrieved.
+   * Required. The full name of a case to be retrieved.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The fully qualified name of a case to be retrieved.
+   * Required. The full name of a case to be retrieved.
    * </pre>
    *
    * <code>

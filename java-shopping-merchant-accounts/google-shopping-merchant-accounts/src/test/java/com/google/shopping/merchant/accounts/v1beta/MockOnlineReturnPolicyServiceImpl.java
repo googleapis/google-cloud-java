@@ -18,6 +18,7 @@ package com.google.shopping.merchant.accounts.v1beta;
 
 import com.google.api.core.BetaApi;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyServiceGrpc.OnlineReturnPolicyServiceImplBase;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -99,6 +100,74 @@ public class MockOnlineReturnPolicyServiceImpl extends OnlineReturnPolicyService
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListOnlineReturnPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createOnlineReturnPolicy(
+      CreateOnlineReturnPolicyRequest request,
+      StreamObserver<OnlineReturnPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OnlineReturnPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((OnlineReturnPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOnlineReturnPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OnlineReturnPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateOnlineReturnPolicy(
+      UpdateOnlineReturnPolicyRequest request,
+      StreamObserver<OnlineReturnPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OnlineReturnPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((OnlineReturnPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateOnlineReturnPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OnlineReturnPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteOnlineReturnPolicy(
+      DeleteOnlineReturnPolicyRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteOnlineReturnPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

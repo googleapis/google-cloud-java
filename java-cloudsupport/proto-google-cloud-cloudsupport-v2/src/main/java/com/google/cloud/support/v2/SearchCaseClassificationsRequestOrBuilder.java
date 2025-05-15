@@ -28,9 +28,10 @@ public interface SearchCaseClassificationsRequestOrBuilder
    *
    *
    * <pre>
-   * An expression written in the Google Cloud filter language. If non-empty,
-   * then only cases whose fields match the filter are returned. If empty, then
-   * no messages are filtered out.
+   * An expression used to filter case classifications.
+   *
+   * If it's an empty string, then no filtering happens. Otherwise, case
+   * classifications will be returned that match the filter.
    * </pre>
    *
    * <code>string query = 1;</code>
@@ -43,9 +44,10 @@ public interface SearchCaseClassificationsRequestOrBuilder
    *
    *
    * <pre>
-   * An expression written in the Google Cloud filter language. If non-empty,
-   * then only cases whose fields match the filter are returned. If empty, then
-   * no messages are filtered out.
+   * An expression used to filter case classifications.
+   *
+   * If it's an empty string, then no filtering happens. Otherwise, case
+   * classifications will be returned that match the filter.
    * </pre>
    *
    * <code>string query = 1;</code>
@@ -58,7 +60,7 @@ public interface SearchCaseClassificationsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of cases fetched with each request.
+   * The maximum number of classifications fetched with each request.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

@@ -64,7 +64,14 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetCase</td>
- *      <td><p> Retrieve the specified case.</td>
+ *      <td><p> Retrieve a case.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell case="projects/some-project/cases/16033687" curl \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$case" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+ * <p>  request = supportApiService.cases().get(     name="projects/some-project/cases/43595344", ) print(request.execute()) ```</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,8 +90,15 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCases</td>
- *      <td><p> Retrieve all cases under the specified parent.
- * <p>  Note: Listing cases under an Organization returns only the cases directly parented by that organization. To retrieve all cases under an organization, including cases parented by projects under that organization, use `cases.search`.</td>
+ *      <td><p> Retrieve all cases under a parent, but not its children.
+ * <p>  For example, listing cases under an organization only returns the cases that are directly parented by that organization. To retrieve cases under an organization and its projects, use `cases.search`.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell parent="projects/some-project" curl \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+ * <p>  request =   supportApiService.cases().list(parent="projects/some-project") print(request.execute()) ```</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +119,13 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchCases</td>
- *      <td><p> Search cases using the specified query.</td>
+ *      <td><p> Search for cases using a query.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell parent="projects/some-project" curl \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$parent/cases:search" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().search(     parent="projects/some-project", query="state=OPEN" ) print(request.execute()) ```</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -120,7 +140,14 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateCase</td>
- *      <td><p> Create a new case and associate it with the given Google Cloud Resource. The case object must have the following fields set: `display_name`, `description`, `classification`, and `priority`.</td>
+ *      <td><p> Create a new case and associate it with a parent.
+ * <p>  It must have the following fields set: `display_name`, `description`, `classification`, and `priority`. If you're just testing the API and don't want to route your case to an agent, set `testCase=true`.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell parent="projects/some-project" curl \\\\   --request POST \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   --header 'Content-Type: application/json' \\\\   --data '{     "display_name": "Test case created by me.",     "description": "a random test case, feel free to close",     "classification": {       "id":       "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"     },     "time_zone": "-07:00",     "subscriber_email_addresses": [       "foo{@literal @}domain.com",       "bar{@literal @}domain.com"     ],     "testCase": true,     "priority": "P3"   }' \\\\   "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().create(     parent="projects/some-project",     body={         "displayName": "A Test Case",         "description": "This is a test case.",         "testCase": True,         "priority": "P2",         "classification": {             "id":               "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"         },     }, ) print(request.execute()) ```</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +167,13 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateCase</td>
- *      <td><p> Update the specified case. Only a subset of fields can be updated.</td>
+ *      <td><p> Update a case. Only some fields can be updated.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell case="projects/some-project/cases/43595344" curl \\\\   --request PATCH \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   --header "Content-Type: application/json" \\\\   --data '{     "priority": "P1"   }' \\\\   "https://cloudsupport.googleapis.com/v2/$case?updateMask=priority" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().patch(     name="projects/some-project/cases/43112854",     body={         "displayName": "This is Now a New Title",         "priority": "P2",     }, ) print(request.execute()) ```</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,8 +191,14 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> EscalateCase</td>
- *      <td><p> Escalate a case. Escalating a case will initiate the Google Cloud Support escalation management process.
- * <p>  This operation is only available to certain Customer Care tiers. Go to https://cloud.google.com/support and look for 'Technical support escalations' in the feature list to find out which tiers are able to perform escalations.</td>
+ *      <td><p> Escalate a case, starting the Google Cloud Support escalation management process.
+ * <p>  This operation is only available for some support services. Go to https://cloud.google.com/support and look for 'Technical support escalations' in the feature list to find out which ones let you do that.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell case="projects/some-project/cases/43595344" curl \\\\   --request POST \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   --header "Content-Type: application/json" \\\\   --data '{     "escalation": {       "reason": "BUSINESS_IMPACT",       "justification": "This is a test escalation."     }   }' \\\\   "https://cloudsupport.googleapis.com/v2/$case:escalate" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().escalate(     name="projects/some-project/cases/43595344",     body={         "escalation": {             "reason": "BUSINESS_IMPACT",             "justification": "This is a test escalation.",         },     }, ) print(request.execute()) ```</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -173,7 +212,13 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CloseCase</td>
- *      <td><p> Close the specified case.</td>
+ *      <td><p> Close a case.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell case="projects/some-project/cases/43595344" curl \\\\   --request POST \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$case:close" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().close(     name="projects/some-project/cases/43595344" ) print(request.execute()) ```</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -187,7 +232,15 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchCaseClassifications</td>
- *      <td><p> Retrieve valid classifications to be used when creating a support case. The classications are hierarchical, with each classification containing all levels of the hierarchy, separated by " &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".</td>
+ *      <td><p> Retrieve valid classifications to use when creating a support case.
+ * <p>  Classifications are hierarchical. Each classification is a string containing all levels of the hierarchy separated by `" &gt; "`. For example, `"Technical Issue &gt; Compute &gt; Compute Engine"`.
+ * <p>  Classification IDs returned by this endpoint are valid for at least six months. When a classification is deactivated, this endpoint immediately stops returning it. After six months, `case.create` requests using the classification will fail.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell curl \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   'https://cloudsupport.googleapis.com/v2/caseClassifications:search?query=display_name:"&#42;Compute%20Engine&#42;"' ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version="v2",     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version=v2", ) request = supportApiService.caseClassifications().search(     query='display_name:"&#42;Compute Engine&#42;"' ) print(request.execute()) ```</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -305,7 +358,27 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve the specified case.
+   * Retrieve a case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/16033687" curl \\\\ --header "Authorization:
+   * Bearer $(gcloud auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$case"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().get( name="projects/some-project/cases/43595344", )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -321,7 +394,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The fully qualified name of a case to be retrieved.
+   * @param name Required. The full name of a case to be retrieved.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Case getCase(CaseName name) {
@@ -332,7 +405,27 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve the specified case.
+   * Retrieve a case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/16033687" curl \\\\ --header "Authorization:
+   * Bearer $(gcloud auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$case"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().get( name="projects/some-project/cases/43595344", )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -348,7 +441,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The fully qualified name of a case to be retrieved.
+   * @param name Required. The full name of a case to be retrieved.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Case getCase(String name) {
@@ -358,7 +451,27 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve the specified case.
+   * Retrieve a case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/16033687" curl \\\\ --header "Authorization:
+   * Bearer $(gcloud auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$case"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().get( name="projects/some-project/cases/43595344", )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -386,7 +499,27 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve the specified case.
+   * Retrieve a case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/16033687" curl \\\\ --header "Authorization:
+   * Bearer $(gcloud auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$case"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().get( name="projects/some-project/cases/43595344", )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -413,11 +546,30 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().list(parent="projects/some-project")
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -435,7 +587,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The fully qualified name of parent resource to list cases under.
+   * @param parent Required. The name of a parent to list cases under.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCasesPagedResponse listCases(OrganizationName parent) {
@@ -446,11 +598,30 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().list(parent="projects/some-project")
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -468,7 +639,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The fully qualified name of parent resource to list cases under.
+   * @param parent Required. The name of a parent to list cases under.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCasesPagedResponse listCases(ProjectName parent) {
@@ -479,11 +650,30 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().list(parent="projects/some-project")
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -501,7 +691,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The fully qualified name of parent resource to list cases under.
+   * @param parent Required. The name of a parent to list cases under.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCasesPagedResponse listCases(String parent) {
@@ -511,11 +701,30 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().list(parent="projects/some-project")
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -548,11 +757,30 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().list(parent="projects/some-project")
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -584,11 +812,30 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve all cases under the specified parent.
+   * Retrieve all cases under a parent, but not its children.
    *
-   * <p>Note: Listing cases under an Organization returns only the cases directly parented by that
-   * organization. To retrieve all cases under an organization, including cases parented by projects
-   * under that organization, use `cases.search`.
+   * <p>For example, listing cases under an organization only returns the cases that are directly
+   * parented by that organization. To retrieve cases under an organization and its projects, use
+   * `cases.search`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.cases().list(parent="projects/some-project")
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -627,7 +874,25 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Search cases using the specified query.
+   * Search for cases using a query.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases:search"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().search( parent="projects/some-project",
+   * query="state=OPEN" ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -660,7 +925,25 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Search cases using the specified query.
+   * Search for cases using a query.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases:search"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().search( parent="projects/some-project",
+   * query="state=OPEN" ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -693,7 +976,25 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Search cases using the specified query.
+   * Search for cases using a query.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --header "Authorization: Bearer $(gcloud
+   * auth print-access-token)" \\\\ "https://cloudsupport.googleapis.com/v2/$parent/cases:search"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().search( parent="projects/some-project",
+   * query="state=OPEN" ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -732,8 +1033,37 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
+   * application/json' \\\\ --data '{ "display_name": "Test case created by me.", "description": "a
+   * random test case, feel free to close", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, "time_zone": "-07:00", "subscriber_email_addresses": [ "foo{@literal @}domain.com",
+   * "bar{@literal @}domain.com" ], "testCase": true, "priority": "P3" }' \\\\
+   * "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().create( parent="projects/some-project", body={
+   * "displayName": "A Test Case", "description": "This is a test case.", "testCase": True,
+   * "priority": "P2", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, }, ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -750,8 +1080,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the Google Cloud Resource under which the case should be
-   *     created.
+   * @param parent Required. The name of the parent under which the case should be created.
    * @param case_ Required. The case to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -766,8 +1095,37 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
+   * application/json' \\\\ --data '{ "display_name": "Test case created by me.", "description": "a
+   * random test case, feel free to close", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, "time_zone": "-07:00", "subscriber_email_addresses": [ "foo{@literal @}domain.com",
+   * "bar{@literal @}domain.com" ], "testCase": true, "priority": "P3" }' \\\\
+   * "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().create( parent="projects/some-project", body={
+   * "displayName": "A Test Case", "description": "This is a test case.", "testCase": True,
+   * "priority": "P2", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, }, ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -784,8 +1142,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the Google Cloud Resource under which the case should be
-   *     created.
+   * @param parent Required. The name of the parent under which the case should be created.
    * @param case_ Required. The case to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -800,8 +1157,37 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
+   * application/json' \\\\ --data '{ "display_name": "Test case created by me.", "description": "a
+   * random test case, feel free to close", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, "time_zone": "-07:00", "subscriber_email_addresses": [ "foo{@literal @}domain.com",
+   * "bar{@literal @}domain.com" ], "testCase": true, "priority": "P3" }' \\\\
+   * "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().create( parent="projects/some-project", body={
+   * "displayName": "A Test Case", "description": "This is a test case.", "testCase": True,
+   * "priority": "P2", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, }, ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -818,8 +1204,7 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The name of the Google Cloud Resource under which the case should be
-   *     created.
+   * @param parent Required. The name of the parent under which the case should be created.
    * @param case_ Required. The case to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -831,8 +1216,37 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
+   * application/json' \\\\ --data '{ "display_name": "Test case created by me.", "description": "a
+   * random test case, feel free to close", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, "time_zone": "-07:00", "subscriber_email_addresses": [ "foo{@literal @}domain.com",
+   * "bar{@literal @}domain.com" ], "testCase": true, "priority": "P3" }' \\\\
+   * "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().create( parent="projects/some-project", body={
+   * "displayName": "A Test Case", "description": "This is a test case.", "testCase": True,
+   * "priority": "P2", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, }, ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -861,8 +1275,37 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Create a new case and associate it with the given Google Cloud Resource. The case object must
-   * have the following fields set: `display_name`, `description`, `classification`, and `priority`.
+   * Create a new case and associate it with a parent.
+   *
+   * <p>It must have the following fields set: `display_name`, `description`, `classification`, and
+   * `priority`. If you're just testing the API and don't want to route your case to an agent, set
+   * `testCase=true`.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell parent="projects/some-project" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header 'Content-Type:
+   * application/json' \\\\ --data '{ "display_name": "Test case created by me.", "description": "a
+   * random test case, feel free to close", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, "time_zone": "-07:00", "subscriber_email_addresses": [ "foo{@literal @}domain.com",
+   * "bar{@literal @}domain.com" ], "testCase": true, "priority": "P3" }' \\\\
+   * "https://cloudsupport.googleapis.com/v2/$parent/cases" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().create( parent="projects/some-project", body={
+   * "displayName": "A Test Case", "description": "This is a test case.", "testCase": True,
+   * "priority": "P2", "classification": { "id":
+   * "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8"
+   * }, }, ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -890,7 +1333,27 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the specified case. Only a subset of fields can be updated.
+   * Update a case. Only some fields can be updated.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --request PATCH \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header "Content-Type:
+   * application/json" \\\\ --data '{ "priority": "P1" }' \\\\
+   * "https://cloudsupport.googleapis.com/v2/$case?updateMask=priority" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().patch( name="projects/some-project/cases/43112854",
+   * body={ "displayName": "This is Now a New Title", "priority": "P2", }, )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -907,11 +1370,11 @@ public class CaseServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param case_ Required. The case object to update.
-   * @param updateMask A list of attributes of the case object that should be updated as part of
-   *     this request. Supported values are `priority`, `display_name`, and
-   *     `subscriber_email_addresses`. If no fields are specified, all supported fields are updated.
-   *     <p>WARNING: If you do not provide a field mask, then you might accidentally clear some
+   * @param case_ Required. The case to update.
+   * @param updateMask A list of attributes of the case that should be updated. Supported values are
+   *     `priority`, `display_name`, and `subscriber_email_addresses`. If no fields are specified,
+   *     all supported fields are updated.
+   *     <p>Be careful - if you do not provide a field mask, then you might accidentally clear some
    *     fields. For example, if you leave the field mask empty and do not provide a value for
    *     `subscriber_email_addresses`, then `subscriber_email_addresses` is updated to empty.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -924,7 +1387,27 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the specified case. Only a subset of fields can be updated.
+   * Update a case. Only some fields can be updated.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --request PATCH \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header "Content-Type:
+   * application/json" \\\\ --data '{ "priority": "P1" }' \\\\
+   * "https://cloudsupport.googleapis.com/v2/$case?updateMask=priority" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().patch( name="projects/some-project/cases/43112854",
+   * body={ "displayName": "This is Now a New Title", "priority": "P2", }, )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -953,7 +1436,27 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update the specified case. Only a subset of fields can be updated.
+   * Update a case. Only some fields can be updated.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --request PATCH \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header "Content-Type:
+   * application/json" \\\\ --data '{ "priority": "P1" }' \\\\
+   * "https://cloudsupport.googleapis.com/v2/$case?updateMask=priority" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().patch( name="projects/some-project/cases/43112854",
+   * body={ "displayName": "This is Now a New Title", "priority": "P2", }, )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -981,12 +1484,32 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Escalate a case. Escalating a case will initiate the Google Cloud Support escalation management
-   * process.
+   * Escalate a case, starting the Google Cloud Support escalation management process.
    *
-   * <p>This operation is only available to certain Customer Care tiers. Go to
+   * <p>This operation is only available for some support services. Go to
    * https://cloud.google.com/support and look for 'Technical support escalations' in the feature
-   * list to find out which tiers are able to perform escalations.
+   * list to find out which ones let you do that.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header "Content-Type:
+   * application/json" \\\\ --data '{ "escalation": { "reason": "BUSINESS_IMPACT", "justification":
+   * "This is a test escalation." } }' \\\\ "https://cloudsupport.googleapis.com/v2/$case:escalate"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().escalate( name="projects/some-project/cases/43595344",
+   * body={ "escalation": { "reason": "BUSINESS_IMPACT", "justification": "This is a test
+   * escalation.", }, }, ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -1015,12 +1538,32 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Escalate a case. Escalating a case will initiate the Google Cloud Support escalation management
-   * process.
+   * Escalate a case, starting the Google Cloud Support escalation management process.
    *
-   * <p>This operation is only available to certain Customer Care tiers. Go to
+   * <p>This operation is only available for some support services. Go to
    * https://cloud.google.com/support and look for 'Technical support escalations' in the feature
-   * list to find out which tiers are able to perform escalations.
+   * list to find out which ones let you do that.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\ --header "Content-Type:
+   * application/json" \\\\ --data '{ "escalation": { "reason": "BUSINESS_IMPACT", "justification":
+   * "This is a test escalation." } }' \\\\ "https://cloudsupport.googleapis.com/v2/$case:escalate"
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().escalate( name="projects/some-project/cases/43595344",
+   * body={ "escalation": { "reason": "BUSINESS_IMPACT", "justification": "This is a test
+   * escalation.", }, }, ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -1048,7 +1591,25 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Close the specified case.
+   * Close a case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$case:close" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().close( name="projects/some-project/cases/43595344" )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -1076,7 +1637,25 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Close the specified case.
+   * Close a case.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell case="projects/some-project/cases/43595344" curl \\\\ --request POST \\\\ --header
+   * "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$case:close" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * ) request = supportApiService.cases().close( name="projects/some-project/cases/43595344" )
+   * print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -1103,9 +1682,33 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve valid classifications to be used when creating a support case. The classications are
-   * hierarchical, with each classification containing all levels of the hierarchy, separated by "
-   * &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".
+   * Retrieve valid classifications to use when creating a support case.
+   *
+   * <p>Classifications are hierarchical. Each classification is a string containing all levels of
+   * the hierarchy separated by `" &gt; "`. For example, `"Technical Issue &gt; Compute &gt; Compute
+   * Engine"`.
+   *
+   * <p>Classification IDs returned by this endpoint are valid for at least six months. When a
+   * classification is deactivated, this endpoint immediately stops returning it. After six months,
+   * `case.create` requests using the classification will fail.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell curl \\\\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * 'https://cloudsupport.googleapis.com/v2/caseClassifications:search?query=display_name:"&#42;Compute%20Engine&#42;"'
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport",
+   * version="v2",
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version=v2", )
+   * request = supportApiService.caseClassifications().search( query='display_name:"&#42;Compute
+   * Engine&#42;"' ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -1139,9 +1742,33 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve valid classifications to be used when creating a support case. The classications are
-   * hierarchical, with each classification containing all levels of the hierarchy, separated by "
-   * &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".
+   * Retrieve valid classifications to use when creating a support case.
+   *
+   * <p>Classifications are hierarchical. Each classification is a string containing all levels of
+   * the hierarchy separated by `" &gt; "`. For example, `"Technical Issue &gt; Compute &gt; Compute
+   * Engine"`.
+   *
+   * <p>Classification IDs returned by this endpoint are valid for at least six months. When a
+   * classification is deactivated, this endpoint immediately stops returning it. After six months,
+   * `case.create` requests using the classification will fail.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell curl \\\\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * 'https://cloudsupport.googleapis.com/v2/caseClassifications:search?query=display_name:"&#42;Compute%20Engine&#42;"'
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport",
+   * version="v2",
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version=v2", )
+   * request = supportApiService.caseClassifications().search( query='display_name:"&#42;Compute
+   * Engine&#42;"' ) print(request.execute()) ```
    *
    * <p>Sample code:
    *
@@ -1175,9 +1802,33 @@ public class CaseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieve valid classifications to be used when creating a support case. The classications are
-   * hierarchical, with each classification containing all levels of the hierarchy, separated by "
-   * &gt; ". For example "Technical Issue &gt; Compute &gt; Compute Engine".
+   * Retrieve valid classifications to use when creating a support case.
+   *
+   * <p>Classifications are hierarchical. Each classification is a string containing all levels of
+   * the hierarchy separated by `" &gt; "`. For example, `"Technical Issue &gt; Compute &gt; Compute
+   * Engine"`.
+   *
+   * <p>Classification IDs returned by this endpoint are valid for at least six months. When a
+   * classification is deactivated, this endpoint immediately stops returning it. After six months,
+   * `case.create` requests using the classification will fail.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell curl \\\\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\
+   * 'https://cloudsupport.googleapis.com/v2/caseClassifications:search?query=display_name:"&#42;Compute%20Engine&#42;"'
+   * ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport",
+   * version="v2",
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version=v2", )
+   * request = supportApiService.caseClassifications().search( query='display_name:"&#42;Compute
+   * Engine&#42;"' ) print(request.execute()) ```
    *
    * <p>Sample code:
    *

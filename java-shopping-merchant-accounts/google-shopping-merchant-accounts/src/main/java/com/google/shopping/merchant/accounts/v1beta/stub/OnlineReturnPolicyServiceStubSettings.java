@@ -48,10 +48,14 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
+import com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest;
+import com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest;
 import com.google.shopping.merchant.accounts.v1beta.GetOnlineReturnPolicyRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse;
 import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy;
+import com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -123,6 +127,12 @@ public class OnlineReturnPolicyServiceStubSettings
           ListOnlineReturnPoliciesResponse,
           ListOnlineReturnPoliciesPagedResponse>
       listOnlineReturnPoliciesSettings;
+  private final UnaryCallSettings<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicySettings;
+  private final UnaryCallSettings<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicySettings;
+  private final UnaryCallSettings<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicySettings;
 
   private static final PagedListDescriptor<
           ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesResponse, OnlineReturnPolicy>
@@ -209,6 +219,24 @@ public class OnlineReturnPolicyServiceStubSettings
           ListOnlineReturnPoliciesPagedResponse>
       listOnlineReturnPoliciesSettings() {
     return listOnlineReturnPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOnlineReturnPolicy. */
+  public UnaryCallSettings<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicySettings() {
+    return createOnlineReturnPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateOnlineReturnPolicy. */
+  public UnaryCallSettings<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicySettings() {
+    return updateOnlineReturnPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOnlineReturnPolicy. */
+  public UnaryCallSettings<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicySettings() {
+    return deleteOnlineReturnPolicySettings;
   }
 
   public OnlineReturnPolicyServiceStub createStub() throws IOException {
@@ -324,6 +352,9 @@ public class OnlineReturnPolicyServiceStubSettings
 
     getOnlineReturnPolicySettings = settingsBuilder.getOnlineReturnPolicySettings().build();
     listOnlineReturnPoliciesSettings = settingsBuilder.listOnlineReturnPoliciesSettings().build();
+    createOnlineReturnPolicySettings = settingsBuilder.createOnlineReturnPolicySettings().build();
+    updateOnlineReturnPolicySettings = settingsBuilder.updateOnlineReturnPolicySettings().build();
+    deleteOnlineReturnPolicySettings = settingsBuilder.deleteOnlineReturnPolicySettings().build();
   }
 
   /** Builder for OnlineReturnPolicyServiceStubSettings. */
@@ -337,6 +368,12 @@ public class OnlineReturnPolicyServiceStubSettings
             ListOnlineReturnPoliciesResponse,
             ListOnlineReturnPoliciesPagedResponse>
         listOnlineReturnPoliciesSettings;
+    private final UnaryCallSettings.Builder<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        createOnlineReturnPolicySettings;
+    private final UnaryCallSettings.Builder<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        updateOnlineReturnPolicySettings;
+    private final UnaryCallSettings.Builder<DeleteOnlineReturnPolicyRequest, Empty>
+        deleteOnlineReturnPolicySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -378,10 +415,17 @@ public class OnlineReturnPolicyServiceStubSettings
       getOnlineReturnPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listOnlineReturnPoliciesSettings =
           PagedCallSettings.newBuilder(LIST_ONLINE_RETURN_POLICIES_PAGE_STR_FACT);
+      createOnlineReturnPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOnlineReturnPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOnlineReturnPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getOnlineReturnPolicySettings, listOnlineReturnPoliciesSettings);
+              getOnlineReturnPolicySettings,
+              listOnlineReturnPoliciesSettings,
+              createOnlineReturnPolicySettings,
+              updateOnlineReturnPolicySettings,
+              deleteOnlineReturnPolicySettings);
       initDefaults(this);
     }
 
@@ -390,10 +434,17 @@ public class OnlineReturnPolicyServiceStubSettings
 
       getOnlineReturnPolicySettings = settings.getOnlineReturnPolicySettings.toBuilder();
       listOnlineReturnPoliciesSettings = settings.listOnlineReturnPoliciesSettings.toBuilder();
+      createOnlineReturnPolicySettings = settings.createOnlineReturnPolicySettings.toBuilder();
+      updateOnlineReturnPolicySettings = settings.updateOnlineReturnPolicySettings.toBuilder();
+      deleteOnlineReturnPolicySettings = settings.deleteOnlineReturnPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getOnlineReturnPolicySettings, listOnlineReturnPoliciesSettings);
+              getOnlineReturnPolicySettings,
+              listOnlineReturnPoliciesSettings,
+              createOnlineReturnPolicySettings,
+              updateOnlineReturnPolicySettings,
+              deleteOnlineReturnPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -431,6 +482,21 @@ public class OnlineReturnPolicyServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .createOnlineReturnPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateOnlineReturnPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteOnlineReturnPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -462,6 +528,24 @@ public class OnlineReturnPolicyServiceStubSettings
             ListOnlineReturnPoliciesPagedResponse>
         listOnlineReturnPoliciesSettings() {
       return listOnlineReturnPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        createOnlineReturnPolicySettings() {
+      return createOnlineReturnPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        updateOnlineReturnPolicySettings() {
+      return updateOnlineReturnPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<DeleteOnlineReturnPolicyRequest, Empty>
+        deleteOnlineReturnPolicySettings() {
+      return deleteOnlineReturnPolicySettings;
     }
 
     @Override

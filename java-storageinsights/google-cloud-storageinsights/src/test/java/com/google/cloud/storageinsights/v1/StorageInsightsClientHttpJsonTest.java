@@ -16,6 +16,7 @@
 
 package com.google.cloud.storageinsights.v1;
 
+import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListDatasetConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListLocationsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportDetailsPagedResponse;
@@ -35,6 +36,7 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.storageinsights.v1.stub.HttpJsonStorageInsightsStub;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -45,6 +47,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -743,6 +746,716 @@ public class StorageInsightsClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatasetConfigsTest() throws Exception {
+    DatasetConfig responsesElement = DatasetConfig.newBuilder().build();
+    ListDatasetConfigsResponse expectedResponse =
+        ListDatasetConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasetConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDatasetConfigsPagedResponse pagedListResponse = client.listDatasetConfigs(parent);
+
+    List<DatasetConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatasetConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDatasetConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatasetConfigsTest2() throws Exception {
+    DatasetConfig responsesElement = DatasetConfig.newBuilder().build();
+    ListDatasetConfigsResponse expectedResponse =
+        ListDatasetConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasetConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListDatasetConfigsPagedResponse pagedListResponse = client.listDatasetConfigs(parent);
+
+    List<DatasetConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatasetConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listDatasetConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatasetConfigTest() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+
+    DatasetConfig actualResponse = client.getDatasetConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDatasetConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+      client.getDatasetConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatasetConfigTest2() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-647/locations/location-647/datasetConfigs/datasetConfig-647";
+
+    DatasetConfig actualResponse = client.getDatasetConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDatasetConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-647/locations/location-647/datasetConfigs/datasetConfig-647";
+      client.getDatasetConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatasetConfigTest() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+    String datasetConfigId = "datasetConfigId7070869";
+
+    DatasetConfig actualResponse =
+        client.createDatasetConfigAsync(parent, datasetConfig, datasetConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDatasetConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+      String datasetConfigId = "datasetConfigId7070869";
+      client.createDatasetConfigAsync(parent, datasetConfig, datasetConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createDatasetConfigTest2() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+    String datasetConfigId = "datasetConfigId7070869";
+
+    DatasetConfig actualResponse =
+        client.createDatasetConfigAsync(parent, datasetConfig, datasetConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDatasetConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+      String datasetConfigId = "datasetConfigId7070869";
+      client.createDatasetConfigAsync(parent, datasetConfig, datasetConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateDatasetConfigTest() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DatasetConfig datasetConfig =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DatasetConfig actualResponse = client.updateDatasetConfigAsync(datasetConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDatasetConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetConfig datasetConfig =
+          DatasetConfig.newBuilder()
+              .setName(
+                  DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setUid("uid115792")
+              .setOrganizationNumber(1902853077)
+              .setIncludeNewlyCreatedBuckets(true)
+              .setSkipVerificationAndIngest(true)
+              .setRetentionPeriodDays(-2064636812)
+              .setLink(DatasetConfig.Link.newBuilder().build())
+              .setIdentity(Identity.newBuilder().build())
+              .setStatus(Status.newBuilder().build())
+              .setDescription("description-1724546052")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDatasetConfigAsync(datasetConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDatasetConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+
+    client.deleteDatasetConfigAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDatasetConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+      client.deleteDatasetConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDatasetConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-647/locations/location-647/datasetConfigs/datasetConfig-647";
+
+    client.deleteDatasetConfigAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDatasetConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-647/locations/location-647/datasetConfigs/datasetConfig-647";
+      client.deleteDatasetConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void linkDatasetTest() throws Exception {
+    LinkDatasetResponse expectedResponse = LinkDatasetResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("linkDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+
+    LinkDatasetResponse actualResponse = client.linkDatasetAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void linkDatasetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+      client.linkDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void linkDatasetTest2() throws Exception {
+    LinkDatasetResponse expectedResponse = LinkDatasetResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("linkDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-647/locations/location-647/datasetConfigs/datasetConfig-647";
+
+    LinkDatasetResponse actualResponse = client.linkDatasetAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void linkDatasetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-647/locations/location-647/datasetConfigs/datasetConfig-647";
+      client.linkDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void unlinkDatasetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("unlinkDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+
+    client.unlinkDatasetAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void unlinkDatasetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+      client.unlinkDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void unlinkDatasetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("unlinkDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-647/locations/location-647/datasetConfigs/datasetConfig-647";
+
+    client.unlinkDatasetAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void unlinkDatasetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-647/locations/location-647/datasetConfigs/datasetConfig-647";
+      client.unlinkDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 
