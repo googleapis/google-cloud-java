@@ -16,6 +16,7 @@
 
 package com.google.cloud.storageinsights.v1;
 
+import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListDatasetConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListLocationsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportDetailsPagedResponse;
@@ -29,6 +30,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -37,6 +39,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.storageinsights.v1.stub.StorageInsightsStubSettings;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -92,6 +95,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDatasetConfig:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * StorageInsightsSettings.Builder storageInsightsSettingsBuilder =
+ *     StorageInsightsSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * storageInsightsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class StorageInsightsSettings extends ClientSettings<StorageInsightsSettings> {
@@ -133,6 +162,73 @@ public class StorageInsightsSettings extends ClientSettings<StorageInsightsSetti
   /** Returns the object with the settings used for calls to getReportDetail. */
   public UnaryCallSettings<GetReportDetailRequest, ReportDetail> getReportDetailSettings() {
     return ((StorageInsightsStubSettings) getStubSettings()).getReportDetailSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatasetConfigs. */
+  public PagedCallSettings<
+          ListDatasetConfigsRequest, ListDatasetConfigsResponse, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).listDatasetConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDatasetConfig. */
+  public UnaryCallSettings<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).getDatasetConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDatasetConfig. */
+  public UnaryCallSettings<CreateDatasetConfigRequest, Operation> createDatasetConfigSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).createDatasetConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDatasetConfig. */
+  public OperationCallSettings<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).createDatasetConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDatasetConfig. */
+  public UnaryCallSettings<UpdateDatasetConfigRequest, Operation> updateDatasetConfigSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).updateDatasetConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDatasetConfig. */
+  public OperationCallSettings<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).updateDatasetConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatasetConfig. */
+  public UnaryCallSettings<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).deleteDatasetConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatasetConfig. */
+  public OperationCallSettings<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).deleteDatasetConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to linkDataset. */
+  public UnaryCallSettings<LinkDatasetRequest, Operation> linkDatasetSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).linkDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to linkDataset. */
+  public OperationCallSettings<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).linkDatasetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to unlinkDataset. */
+  public UnaryCallSettings<UnlinkDatasetRequest, Operation> unlinkDatasetSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).unlinkDatasetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to unlinkDataset. */
+  public OperationCallSettings<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationSettings() {
+    return ((StorageInsightsStubSettings) getStubSettings()).unlinkDatasetOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -300,6 +396,79 @@ public class StorageInsightsSettings extends ClientSettings<StorageInsightsSetti
     public UnaryCallSettings.Builder<GetReportDetailRequest, ReportDetail>
         getReportDetailSettings() {
       return getStubSettingsBuilder().getReportDetailSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatasetConfigs. */
+    public PagedCallSettings.Builder<
+            ListDatasetConfigsRequest, ListDatasetConfigsResponse, ListDatasetConfigsPagedResponse>
+        listDatasetConfigsSettings() {
+      return getStubSettingsBuilder().listDatasetConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDatasetConfig. */
+    public UnaryCallSettings.Builder<GetDatasetConfigRequest, DatasetConfig>
+        getDatasetConfigSettings() {
+      return getStubSettingsBuilder().getDatasetConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDatasetConfig. */
+    public UnaryCallSettings.Builder<CreateDatasetConfigRequest, Operation>
+        createDatasetConfigSettings() {
+      return getStubSettingsBuilder().createDatasetConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDatasetConfig. */
+    public OperationCallSettings.Builder<
+            CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+        createDatasetConfigOperationSettings() {
+      return getStubSettingsBuilder().createDatasetConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatasetConfig. */
+    public UnaryCallSettings.Builder<UpdateDatasetConfigRequest, Operation>
+        updateDatasetConfigSettings() {
+      return getStubSettingsBuilder().updateDatasetConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatasetConfig. */
+    public OperationCallSettings.Builder<
+            UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+        updateDatasetConfigOperationSettings() {
+      return getStubSettingsBuilder().updateDatasetConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatasetConfig. */
+    public UnaryCallSettings.Builder<DeleteDatasetConfigRequest, Operation>
+        deleteDatasetConfigSettings() {
+      return getStubSettingsBuilder().deleteDatasetConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatasetConfig. */
+    public OperationCallSettings.Builder<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+        deleteDatasetConfigOperationSettings() {
+      return getStubSettingsBuilder().deleteDatasetConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to linkDataset. */
+    public UnaryCallSettings.Builder<LinkDatasetRequest, Operation> linkDatasetSettings() {
+      return getStubSettingsBuilder().linkDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to linkDataset. */
+    public OperationCallSettings.Builder<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+        linkDatasetOperationSettings() {
+      return getStubSettingsBuilder().linkDatasetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unlinkDataset. */
+    public UnaryCallSettings.Builder<UnlinkDatasetRequest, Operation> unlinkDatasetSettings() {
+      return getStubSettingsBuilder().unlinkDatasetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unlinkDataset. */
+    public OperationCallSettings.Builder<UnlinkDatasetRequest, Empty, OperationMetadata>
+        unlinkDatasetOperationSettings() {
+      return getStubSettingsBuilder().unlinkDatasetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

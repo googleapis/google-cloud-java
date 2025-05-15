@@ -31,6 +31,7 @@ public interface UpdateInputRequestOrBuilder
    * Field mask is used to specify the fields to be overwritten in the Input
    * resource by the update. You can only update the following fields:
    *
+   * * [`tier`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#Tier)
    * * [`preprocessingConfig`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#PreprocessingConfig)
    * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
    *
@@ -55,6 +56,7 @@ public interface UpdateInputRequestOrBuilder
    * Field mask is used to specify the fields to be overwritten in the Input
    * resource by the update. You can only update the following fields:
    *
+   * * [`tier`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#Tier)
    * * [`preprocessingConfig`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#PreprocessingConfig)
    * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
    *
@@ -79,6 +81,7 @@ public interface UpdateInputRequestOrBuilder
    * Field mask is used to specify the fields to be overwritten in the Input
    * resource by the update. You can only update the following fields:
    *
+   * * [`tier`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#Tier)
    * * [`preprocessingConfig`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#PreprocessingConfig)
    * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
    *

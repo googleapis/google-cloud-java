@@ -19,6 +19,7 @@ package com.google.cloud.video.livestream.v1;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListDvrSessionsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -288,6 +289,51 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
   public OperationCallSettings<DeleteClipRequest, Empty, OperationMetadata>
       deleteClipOperationSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).deleteClipOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDvrSession. */
+  public UnaryCallSettings<CreateDvrSessionRequest, Operation> createDvrSessionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createDvrSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDvrSession. */
+  public OperationCallSettings<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).createDvrSessionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDvrSessions. */
+  public PagedCallSettings<
+          ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+      listDvrSessionsSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).listDvrSessionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDvrSession. */
+  public UnaryCallSettings<GetDvrSessionRequest, DvrSession> getDvrSessionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).getDvrSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDvrSession. */
+  public UnaryCallSettings<DeleteDvrSessionRequest, Operation> deleteDvrSessionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteDvrSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDvrSession. */
+  public OperationCallSettings<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).deleteDvrSessionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDvrSession. */
+  public UnaryCallSettings<UpdateDvrSessionRequest, Operation> updateDvrSessionSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).updateDvrSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDvrSession. */
+  public OperationCallSettings<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).updateDvrSessionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createAsset. */
@@ -627,6 +673,54 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     public OperationCallSettings.Builder<DeleteClipRequest, Empty, OperationMetadata>
         deleteClipOperationSettings() {
       return getStubSettingsBuilder().deleteClipOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDvrSession. */
+    public UnaryCallSettings.Builder<CreateDvrSessionRequest, Operation>
+        createDvrSessionSettings() {
+      return getStubSettingsBuilder().createDvrSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDvrSession. */
+    public OperationCallSettings.Builder<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+        createDvrSessionOperationSettings() {
+      return getStubSettingsBuilder().createDvrSessionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDvrSessions. */
+    public PagedCallSettings.Builder<
+            ListDvrSessionsRequest, ListDvrSessionsResponse, ListDvrSessionsPagedResponse>
+        listDvrSessionsSettings() {
+      return getStubSettingsBuilder().listDvrSessionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDvrSession. */
+    public UnaryCallSettings.Builder<GetDvrSessionRequest, DvrSession> getDvrSessionSettings() {
+      return getStubSettingsBuilder().getDvrSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDvrSession. */
+    public UnaryCallSettings.Builder<DeleteDvrSessionRequest, Operation>
+        deleteDvrSessionSettings() {
+      return getStubSettingsBuilder().deleteDvrSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDvrSession. */
+    public OperationCallSettings.Builder<DeleteDvrSessionRequest, Empty, OperationMetadata>
+        deleteDvrSessionOperationSettings() {
+      return getStubSettingsBuilder().deleteDvrSessionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDvrSession. */
+    public UnaryCallSettings.Builder<UpdateDvrSessionRequest, Operation>
+        updateDvrSessionSettings() {
+      return getStubSettingsBuilder().updateDvrSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDvrSession. */
+    public OperationCallSettings.Builder<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+        updateDvrSessionOperationSettings() {
+      return getStubSettingsBuilder().updateDvrSessionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createAsset. */

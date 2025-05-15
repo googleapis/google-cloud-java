@@ -611,6 +611,42 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
+   * Output only. The fully qualified name of the BackupChannel to be used to
+   * create a backup. This field is set only if the cluster being backed up is
+   * in a different project.
+   * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+   * </pre>
+   *
+   * <code>
+   * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupChannel.
+   */
+  java.lang.String getBackupChannel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The fully qualified name of the BackupChannel to be used to
+   * create a backup. This field is set only if the cluster being backed up is
+   * in a different project.
+   * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+   * </pre>
+   *
+   * <code>
+   * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupChannel.
+   */
+  com.google.protobuf.ByteString getBackupChannelBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Completion time of the last successful Backup. This is sourced
    * from a successful Backup's complete_time field. This field is added to
    * maintain consistency with BackupPlanBinding to display last successful

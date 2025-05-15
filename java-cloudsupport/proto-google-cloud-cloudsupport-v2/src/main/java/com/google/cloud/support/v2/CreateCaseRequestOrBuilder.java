@@ -28,8 +28,7 @@ public interface CreateCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Google Cloud Resource under which the case should
-   * be created.
+   * Required. The name of the parent under which the case should be created.
    * </pre>
    *
    * <code>
@@ -44,8 +43,7 @@ public interface CreateCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the Google Cloud Resource under which the case should
-   * be created.
+   * Required. The name of the parent under which the case should be created.
    * </pre>
    *
    * <code>

@@ -949,6 +949,237 @@ public final class LivestreamServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.CreateDvrSessionRequest,
+          com.google.longrunning.Operation>
+      getCreateDvrSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDvrSession",
+      requestType = com.google.cloud.video.livestream.v1.CreateDvrSessionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.CreateDvrSessionRequest,
+          com.google.longrunning.Operation>
+      getCreateDvrSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.CreateDvrSessionRequest,
+            com.google.longrunning.Operation>
+        getCreateDvrSessionMethod;
+    if ((getCreateDvrSessionMethod = LivestreamServiceGrpc.getCreateDvrSessionMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getCreateDvrSessionMethod = LivestreamServiceGrpc.getCreateDvrSessionMethod) == null) {
+          LivestreamServiceGrpc.getCreateDvrSessionMethod =
+              getCreateDvrSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.CreateDvrSessionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDvrSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.CreateDvrSessionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("CreateDvrSession"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDvrSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.ListDvrSessionsRequest,
+          com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>
+      getListDvrSessionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDvrSessions",
+      requestType = com.google.cloud.video.livestream.v1.ListDvrSessionsRequest.class,
+      responseType = com.google.cloud.video.livestream.v1.ListDvrSessionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.ListDvrSessionsRequest,
+          com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>
+      getListDvrSessionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.ListDvrSessionsRequest,
+            com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>
+        getListDvrSessionsMethod;
+    if ((getListDvrSessionsMethod = LivestreamServiceGrpc.getListDvrSessionsMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getListDvrSessionsMethod = LivestreamServiceGrpc.getListDvrSessionsMethod) == null) {
+          LivestreamServiceGrpc.getListDvrSessionsMethod =
+              getListDvrSessionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.ListDvrSessionsRequest,
+                          com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDvrSessions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.ListDvrSessionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.ListDvrSessionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("ListDvrSessions"))
+                      .build();
+        }
+      }
+    }
+    return getListDvrSessionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.GetDvrSessionRequest,
+          com.google.cloud.video.livestream.v1.DvrSession>
+      getGetDvrSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDvrSession",
+      requestType = com.google.cloud.video.livestream.v1.GetDvrSessionRequest.class,
+      responseType = com.google.cloud.video.livestream.v1.DvrSession.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.GetDvrSessionRequest,
+          com.google.cloud.video.livestream.v1.DvrSession>
+      getGetDvrSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.GetDvrSessionRequest,
+            com.google.cloud.video.livestream.v1.DvrSession>
+        getGetDvrSessionMethod;
+    if ((getGetDvrSessionMethod = LivestreamServiceGrpc.getGetDvrSessionMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getGetDvrSessionMethod = LivestreamServiceGrpc.getGetDvrSessionMethod) == null) {
+          LivestreamServiceGrpc.getGetDvrSessionMethod =
+              getGetDvrSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.GetDvrSessionRequest,
+                          com.google.cloud.video.livestream.v1.DvrSession>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDvrSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.GetDvrSessionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.DvrSession.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("GetDvrSession"))
+                      .build();
+        }
+      }
+    }
+    return getGetDvrSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest,
+          com.google.longrunning.Operation>
+      getDeleteDvrSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDvrSession",
+      requestType = com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest,
+          com.google.longrunning.Operation>
+      getDeleteDvrSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest,
+            com.google.longrunning.Operation>
+        getDeleteDvrSessionMethod;
+    if ((getDeleteDvrSessionMethod = LivestreamServiceGrpc.getDeleteDvrSessionMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getDeleteDvrSessionMethod = LivestreamServiceGrpc.getDeleteDvrSessionMethod) == null) {
+          LivestreamServiceGrpc.getDeleteDvrSessionMethod =
+              getDeleteDvrSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteDvrSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("DeleteDvrSession"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDvrSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest,
+          com.google.longrunning.Operation>
+      getUpdateDvrSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDvrSession",
+      requestType = com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest,
+          com.google.longrunning.Operation>
+      getUpdateDvrSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest,
+            com.google.longrunning.Operation>
+        getUpdateDvrSessionMethod;
+    if ((getUpdateDvrSessionMethod = LivestreamServiceGrpc.getUpdateDvrSessionMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getUpdateDvrSessionMethod = LivestreamServiceGrpc.getUpdateDvrSessionMethod) == null) {
+          LivestreamServiceGrpc.getUpdateDvrSessionMethod =
+              getUpdateDvrSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDvrSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("UpdateDvrSession"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDvrSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.video.livestream.v1.CreateAssetRequest, com.google.longrunning.Operation>
       getCreateAssetMethod;
 
@@ -1556,13 +1787,85 @@ public final class LivestreamServiceGrpc {
      *
      * <pre>
      * Deletes the specified clip job resource. This method only deletes the clip
-     * job and does not delete the VOD clip stored in the GCS.
+     * job and does not delete the VOD clip stored in Cloud Storage.
      * </pre>
      */
     default void deleteClip(
         com.google.cloud.video.livestream.v1.DeleteClipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteClipMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DVR session with the provided unique ID in the specified channel.
+     * </pre>
+     */
+    default void createDvrSession(
+        com.google.cloud.video.livestream.v1.CreateDvrSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDvrSessionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all DVR sessions in the specified channel.
+     * </pre>
+     */
+    default void listDvrSessions(
+        com.google.cloud.video.livestream.v1.ListDvrSessionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDvrSessionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified DVR session.
+     * </pre>
+     */
+    default void getDvrSession(
+        com.google.cloud.video.livestream.v1.GetDvrSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.DvrSession>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDvrSessionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified DVR session.
+     * </pre>
+     */
+    default void deleteDvrSession(
+        com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDvrSessionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified DVR session.
+     * </pre>
+     */
+    default void updateDvrSession(
+        com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDvrSessionMethod(), responseObserver);
     }
 
     /**
@@ -1992,7 +2295,7 @@ public final class LivestreamServiceGrpc {
      *
      * <pre>
      * Deletes the specified clip job resource. This method only deletes the clip
-     * job and does not delete the VOD clip stored in the GCS.
+     * job and does not delete the VOD clip stored in Cloud Storage.
      * </pre>
      */
     public void deleteClip(
@@ -2000,6 +2303,88 @@ public final class LivestreamServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteClipMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DVR session with the provided unique ID in the specified channel.
+     * </pre>
+     */
+    public void createDvrSession(
+        com.google.cloud.video.livestream.v1.CreateDvrSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDvrSessionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all DVR sessions in the specified channel.
+     * </pre>
+     */
+    public void listDvrSessions(
+        com.google.cloud.video.livestream.v1.ListDvrSessionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDvrSessionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified DVR session.
+     * </pre>
+     */
+    public void getDvrSession(
+        com.google.cloud.video.livestream.v1.GetDvrSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.DvrSession>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDvrSessionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified DVR session.
+     * </pre>
+     */
+    public void deleteDvrSession(
+        com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDvrSessionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified DVR session.
+     * </pre>
+     */
+    public void updateDvrSession(
+        com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDvrSessionMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -2372,13 +2757,78 @@ public final class LivestreamServiceGrpc {
      *
      * <pre>
      * Deletes the specified clip job resource. This method only deletes the clip
-     * job and does not delete the VOD clip stored in the GCS.
+     * job and does not delete the VOD clip stored in Cloud Storage.
      * </pre>
      */
     public com.google.longrunning.Operation deleteClip(
         com.google.cloud.video.livestream.v1.DeleteClipRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DVR session with the provided unique ID in the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDvrSession(
+        com.google.cloud.video.livestream.v1.CreateDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDvrSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all DVR sessions in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListDvrSessionsResponse listDvrSessions(
+        com.google.cloud.video.livestream.v1.ListDvrSessionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDvrSessionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified DVR session.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.DvrSession getDvrSession(
+        com.google.cloud.video.livestream.v1.GetDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDvrSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified DVR session.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDvrSession(
+        com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDvrSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified DVR session.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDvrSession(
+        com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDvrSessionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2740,13 +3190,78 @@ public final class LivestreamServiceGrpc {
      *
      * <pre>
      * Deletes the specified clip job resource. This method only deletes the clip
-     * job and does not delete the VOD clip stored in the GCS.
+     * job and does not delete the VOD clip stored in Cloud Storage.
      * </pre>
      */
     public com.google.longrunning.Operation deleteClip(
         com.google.cloud.video.livestream.v1.DeleteClipRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteClipMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DVR session with the provided unique ID in the specified channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDvrSession(
+        com.google.cloud.video.livestream.v1.CreateDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDvrSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all DVR sessions in the specified channel.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.ListDvrSessionsResponse listDvrSessions(
+        com.google.cloud.video.livestream.v1.ListDvrSessionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDvrSessionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified DVR session.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.DvrSession getDvrSession(
+        com.google.cloud.video.livestream.v1.GetDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDvrSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified DVR session.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDvrSession(
+        com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDvrSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified DVR session.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDvrSession(
+        com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDvrSessionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3116,13 +3631,80 @@ public final class LivestreamServiceGrpc {
      *
      * <pre>
      * Deletes the specified clip job resource. This method only deletes the clip
-     * job and does not delete the VOD clip stored in the GCS.
+     * job and does not delete the VOD clip stored in Cloud Storage.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteClip(com.google.cloud.video.livestream.v1.DeleteClipRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteClipMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a DVR session with the provided unique ID in the specified channel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createDvrSession(com.google.cloud.video.livestream.v1.CreateDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDvrSessionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of all DVR sessions in the specified channel.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>
+        listDvrSessions(com.google.cloud.video.livestream.v1.ListDvrSessionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDvrSessionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the specified DVR session.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.livestream.v1.DvrSession>
+        getDvrSession(com.google.cloud.video.livestream.v1.GetDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDvrSessionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified DVR session.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDvrSession(com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDvrSessionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified DVR session.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDvrSession(com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDvrSessionMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3228,12 +3810,17 @@ public final class LivestreamServiceGrpc {
   private static final int METHODID_GET_CLIP = 17;
   private static final int METHODID_CREATE_CLIP = 18;
   private static final int METHODID_DELETE_CLIP = 19;
-  private static final int METHODID_CREATE_ASSET = 20;
-  private static final int METHODID_DELETE_ASSET = 21;
-  private static final int METHODID_GET_ASSET = 22;
-  private static final int METHODID_LIST_ASSETS = 23;
-  private static final int METHODID_GET_POOL = 24;
-  private static final int METHODID_UPDATE_POOL = 25;
+  private static final int METHODID_CREATE_DVR_SESSION = 20;
+  private static final int METHODID_LIST_DVR_SESSIONS = 21;
+  private static final int METHODID_GET_DVR_SESSION = 22;
+  private static final int METHODID_DELETE_DVR_SESSION = 23;
+  private static final int METHODID_UPDATE_DVR_SESSION = 24;
+  private static final int METHODID_CREATE_ASSET = 25;
+  private static final int METHODID_DELETE_ASSET = 26;
+  private static final int METHODID_GET_ASSET = 27;
+  private static final int METHODID_LIST_ASSETS = 28;
+  private static final int METHODID_GET_POOL = 29;
+  private static final int METHODID_UPDATE_POOL = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3360,6 +3947,34 @@ public final class LivestreamServiceGrpc {
         case METHODID_DELETE_CLIP:
           serviceImpl.deleteClip(
               (com.google.cloud.video.livestream.v1.DeleteClipRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_DVR_SESSION:
+          serviceImpl.createDvrSession(
+              (com.google.cloud.video.livestream.v1.CreateDvrSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_DVR_SESSIONS:
+          serviceImpl.listDvrSessions(
+              (com.google.cloud.video.livestream.v1.ListDvrSessionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DVR_SESSION:
+          serviceImpl.getDvrSession(
+              (com.google.cloud.video.livestream.v1.GetDvrSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.DvrSession>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_DVR_SESSION:
+          serviceImpl.deleteDvrSession(
+              (com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_DVR_SESSION:
+          serviceImpl.updateDvrSession(
+              (com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_ASSET:
@@ -3538,6 +4153,38 @@ public final class LivestreamServiceGrpc {
                     com.google.cloud.video.livestream.v1.DeleteClipRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_CLIP)))
         .addMethod(
+            getCreateDvrSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.CreateDvrSessionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DVR_SESSION)))
+        .addMethod(
+            getListDvrSessionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.ListDvrSessionsRequest,
+                    com.google.cloud.video.livestream.v1.ListDvrSessionsResponse>(
+                    service, METHODID_LIST_DVR_SESSIONS)))
+        .addMethod(
+            getGetDvrSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.GetDvrSessionRequest,
+                    com.google.cloud.video.livestream.v1.DvrSession>(
+                    service, METHODID_GET_DVR_SESSION)))
+        .addMethod(
+            getDeleteDvrSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DVR_SESSION)))
+        .addMethod(
+            getUpdateDvrSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DVR_SESSION)))
+        .addMethod(
             getCreateAssetMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3645,6 +4292,11 @@ public final class LivestreamServiceGrpc {
                       .addMethod(getGetClipMethod())
                       .addMethod(getCreateClipMethod())
                       .addMethod(getDeleteClipMethod())
+                      .addMethod(getCreateDvrSessionMethod())
+                      .addMethod(getListDvrSessionsMethod())
+                      .addMethod(getGetDvrSessionMethod())
+                      .addMethod(getDeleteDvrSessionMethod())
+                      .addMethod(getUpdateDvrSessionMethod())
                       .addMethod(getCreateAssetMethod())
                       .addMethod(getDeleteAssetMethod())
                       .addMethod(getGetAssetMethod())

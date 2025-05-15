@@ -28,7 +28,7 @@ public interface CloseCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The fully qualified name of the case resource to be closed.
+   * Required. The name of the case to close.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CloseCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The fully qualified name of the case resource to be closed.
+   * Required. The name of the case to close.
    * </pre>
    *
    * <code>

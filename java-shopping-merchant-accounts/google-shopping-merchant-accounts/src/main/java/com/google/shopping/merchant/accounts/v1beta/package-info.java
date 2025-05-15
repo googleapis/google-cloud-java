@@ -206,7 +206,7 @@
  * policy configuration, encompassing return policies for both ads and free listings ## programs.
  * This API defines the following resource model:
  *
- * <p>[OnlineReturnPolicy][google.shopping.merchant.accounts.v1.OnlineReturnPolicy]
+ * <p>[OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
  *
  * <p>Sample for OnlineReturnPolicyServiceClient:
  *

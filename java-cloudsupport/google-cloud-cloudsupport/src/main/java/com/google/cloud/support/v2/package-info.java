@@ -21,7 +21,7 @@
  *
  * <p>======================= CaseAttachmentServiceClient =======================
  *
- * <p>Service Description: A service to manage file attachment for Google Cloud support cases.
+ * <p>Service Description: A service to manage file attachments for Google Cloud support cases.
  *
  * <p>Sample for CaseAttachmentServiceClient:
  *

@@ -31,11 +31,15 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
+import com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest;
+import com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest;
 import com.google.shopping.merchant.accounts.v1beta.GetOnlineReturnPolicyRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest;
 import com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse;
 import com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy;
+import com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -129,6 +133,123 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyService/CreateOnlineReturnPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateOnlineReturnPolicyRequest>newBuilder()
+                      .setPath(
+                          "/accounts/v1beta/{parent=accounts/*}/onlineReturnPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateOnlineReturnPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateOnlineReturnPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "onlineReturnPolicy", request.getOnlineReturnPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<OnlineReturnPolicy>newBuilder()
+                      .setDefaultInstance(OnlineReturnPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyService/UpdateOnlineReturnPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateOnlineReturnPolicyRequest>newBuilder()
+                      .setPath(
+                          "/accounts/v1beta/{onlineReturnPolicy.name=accounts/*/onlineReturnPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateOnlineReturnPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "onlineReturnPolicy.name",
+                                request.getOnlineReturnPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateOnlineReturnPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "onlineReturnPolicy", request.getOnlineReturnPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<OnlineReturnPolicy>newBuilder()
+                      .setDefaultInstance(OnlineReturnPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteOnlineReturnPolicyRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1beta.OnlineReturnPolicyService/DeleteOnlineReturnPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteOnlineReturnPolicyRequest>newBuilder()
+                      .setPath(
+                          "/accounts/v1beta/{name=accounts/*/onlineReturnPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteOnlineReturnPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteOnlineReturnPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetOnlineReturnPolicyRequest, OnlineReturnPolicy>
       getOnlineReturnPolicyCallable;
   private final UnaryCallable<ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesResponse>
@@ -136,6 +257,12 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
   private final UnaryCallable<
           ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesPagedResponse>
       listOnlineReturnPoliciesPagedCallable;
+  private final UnaryCallable<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicyCallable;
+  private final UnaryCallable<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicyCallable;
+  private final UnaryCallable<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicyCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -207,6 +334,44 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        createOnlineReturnPolicyTransportSettings =
+            HttpJsonCallSettings.<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>newBuilder()
+                .setMethodDescriptor(createOnlineReturnPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        updateOnlineReturnPolicyTransportSettings =
+            HttpJsonCallSettings.<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>newBuilder()
+                .setMethodDescriptor(updateOnlineReturnPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "online_return_policy.name",
+                          String.valueOf(request.getOnlineReturnPolicy().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteOnlineReturnPolicyRequest, Empty>
+        deleteOnlineReturnPolicyTransportSettings =
+            HttpJsonCallSettings.<DeleteOnlineReturnPolicyRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteOnlineReturnPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getOnlineReturnPolicyCallable =
         callableFactory.createUnaryCallable(
@@ -223,6 +388,21 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
             listOnlineReturnPoliciesTransportSettings,
             settings.listOnlineReturnPoliciesSettings(),
             clientContext);
+    this.createOnlineReturnPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createOnlineReturnPolicyTransportSettings,
+            settings.createOnlineReturnPolicySettings(),
+            clientContext);
+    this.updateOnlineReturnPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateOnlineReturnPolicyTransportSettings,
+            settings.updateOnlineReturnPolicySettings(),
+            clientContext);
+    this.deleteOnlineReturnPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteOnlineReturnPolicyTransportSettings,
+            settings.deleteOnlineReturnPolicySettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -233,6 +413,9 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getOnlineReturnPolicyMethodDescriptor);
     methodDescriptors.add(listOnlineReturnPoliciesMethodDescriptor);
+    methodDescriptors.add(createOnlineReturnPolicyMethodDescriptor);
+    methodDescriptors.add(updateOnlineReturnPolicyMethodDescriptor);
+    methodDescriptors.add(deleteOnlineReturnPolicyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -252,6 +435,23 @@ public class HttpJsonOnlineReturnPolicyServiceStub extends OnlineReturnPolicySer
   public UnaryCallable<ListOnlineReturnPoliciesRequest, ListOnlineReturnPoliciesPagedResponse>
       listOnlineReturnPoliciesPagedCallable() {
     return listOnlineReturnPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicyCallable() {
+    return createOnlineReturnPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicyCallable() {
+    return updateOnlineReturnPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteOnlineReturnPolicyRequest, Empty> deleteOnlineReturnPolicyCallable() {
+    return deleteOnlineReturnPolicyCallable;
   }
 
   @Override

@@ -28,7 +28,7 @@ public interface CreateCommentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of Case to which this comment should be added.
+   * Required. The name of the case to which the comment should be added.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CreateCommentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of Case to which this comment should be added.
+   * Required. The name of the case to which the comment should be added.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface CreateCommentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Comment object to be added to this Case.
+   * Required. The comment to be added.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Comment comment = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -72,7 +72,7 @@ public interface CreateCommentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Comment object to be added to this Case.
+   * Required. The comment to be added.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Comment comment = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -86,7 +86,7 @@ public interface CreateCommentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Comment object to be added to this Case.
+   * Required. The comment to be added.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Comment comment = 2 [(.google.api.field_behavior) = REQUIRED];

@@ -23,7 +23,8 @@ package com.google.cloud.storageinsights.v1;
  *
  *
  * <pre>
- * Message for requesting list of ReportConfigs
+ * Request message for
+ * [`ListReportConfigs`][google.cloud.storageinsights.v1.StorageInsights.ListReportConfigs]
  * </pre>
  *
  * Protobuf type {@code google.cloud.storageinsights.v1.ListReportConfigsRequest}
@@ -504,7 +505,8 @@ public final class ListReportConfigsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Message for requesting list of ReportConfigs
+   * Request message for
+   * [`ListReportConfigs`][google.cloud.storageinsights.v1.StorageInsights.ListReportConfigs]
    * </pre>
    *
    * Protobuf type {@code google.cloud.storageinsights.v1.ListReportConfigsRequest}

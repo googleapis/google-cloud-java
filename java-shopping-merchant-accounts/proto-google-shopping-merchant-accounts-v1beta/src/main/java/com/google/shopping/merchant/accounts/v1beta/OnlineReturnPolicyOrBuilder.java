@@ -192,10 +192,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return policy.
+   * Optional. The return policy.
    * </pre>
    *
-   * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+   * <code>
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the policy field is set.
    */
@@ -205,10 +207,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return policy.
+   * Optional. The return policy.
    * </pre>
    *
-   * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+   * <code>
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The policy.
    */
@@ -218,10 +222,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return policy.
+   * Optional. The return policy.
    * </pre>
    *
-   * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+   * <code>
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.PolicyOrBuilder
       getPolicyOrBuilder();
@@ -307,12 +313,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The restocking fee that applies to all return reason categories. This would
-   * be treated as a free restocking fee if the value is not set.
+   * Optional. The restocking fee that applies to all return reason categories.
+   * This would be treated as a free restocking fee if the value is not set.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the restockingFee field is set.
@@ -323,12 +329,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The restocking fee that applies to all return reason categories. This would
-   * be treated as a free restocking fee if the value is not set.
+   * Optional. The restocking fee that applies to all return reason categories.
+   * This would be treated as a free restocking fee if the value is not set.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The restockingFee.
@@ -339,12 +345,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The restocking fee that applies to all return reason categories. This would
-   * be treated as a free restocking fee if the value is not set.
+   * Optional. The restocking fee that applies to all return reason categories.
+   * This would be treated as a free restocking fee if the value is not set.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFeeOrBuilder
@@ -354,12 +360,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the returnMethods.
@@ -371,12 +378,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of returnMethods.
@@ -387,12 +395,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
@@ -405,12 +414,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for returnMethods.
@@ -421,12 +431,13 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -438,12 +449,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the itemConditions.
@@ -455,12 +466,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of itemConditions.
@@ -471,12 +482,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
@@ -489,12 +500,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for itemConditions.
@@ -505,12 +516,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -522,12 +533,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return shipping fee. Should be set only when customer need to download
-   * and print the return label.
+   * Optional. The return shipping fee. Should be set only when customer need to
+   * download and print the return label.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the returnShippingFee field is set.
@@ -538,12 +549,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return shipping fee. Should be set only when customer need to download
-   * and print the return label.
+   * Optional. The return shipping fee. Should be set only when customer need to
+   * download and print the return label.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The returnShippingFee.
@@ -555,12 +566,12 @@ public interface OnlineReturnPolicyOrBuilder
    *
    *
    * <pre>
-   * The return shipping fee. Should be set only when customer need to download
-   * and print the return label.
+   * Optional. The return shipping fee. Should be set only when customer need to
+   * download and print the return label.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFeeOrBuilder
@@ -677,4 +688,53 @@ public interface OnlineReturnPolicyOrBuilder
    * @return The acceptExchange.
    */
   boolean getAcceptExchange();
+
+  /**
+   *
+   *
+   * <pre>
+   * The field specifies the return label source. This field is required when
+   * return method is BY_MAIL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * </code>
+   *
+   * @return Whether the returnLabelSource field is set.
+   */
+  boolean hasReturnLabelSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * The field specifies the return label source. This field is required when
+   * return method is BY_MAIL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for returnLabelSource.
+   */
+  int getReturnLabelSourceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The field specifies the return label source. This field is required when
+   * return method is BY_MAIL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * </code>
+   *
+   * @return The returnLabelSource.
+   */
+  com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource
+      getReturnLabelSource();
 }

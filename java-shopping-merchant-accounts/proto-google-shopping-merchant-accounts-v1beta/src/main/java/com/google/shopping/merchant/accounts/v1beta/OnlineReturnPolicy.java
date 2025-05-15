@@ -50,6 +50,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     returnMethods_ = java.util.Collections.emptyList();
     itemConditions_ = java.util.Collections.emptyList();
     returnPolicyUri_ = "";
+    returnLabelSource_ = 0;
   }
 
   @java.lang.Override
@@ -416,6 +417,194 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
 
     // @@protoc_insertion_point(enum_scope:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The available return label sources.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource}
+   */
+  public enum ReturnLabelSource implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>RETURN_LABEL_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    RETURN_LABEL_SOURCE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Download and print.
+     * </pre>
+     *
+     * <code>DOWNLOAD_AND_PRINT = 1;</code>
+     */
+    DOWNLOAD_AND_PRINT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Label include in the package.
+     * </pre>
+     *
+     * <code>IN_THE_PACKAGE = 2;</code>
+     */
+    IN_THE_PACKAGE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Customer to provide.
+     * </pre>
+     *
+     * <code>CUSTOMER_RESPONSIBILITY = 3;</code>
+     */
+    CUSTOMER_RESPONSIBILITY(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>RETURN_LABEL_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    public static final int RETURN_LABEL_SOURCE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Download and print.
+     * </pre>
+     *
+     * <code>DOWNLOAD_AND_PRINT = 1;</code>
+     */
+    public static final int DOWNLOAD_AND_PRINT_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Label include in the package.
+     * </pre>
+     *
+     * <code>IN_THE_PACKAGE = 2;</code>
+     */
+    public static final int IN_THE_PACKAGE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer to provide.
+     * </pre>
+     *
+     * <code>CUSTOMER_RESPONSIBILITY = 3;</code>
+     */
+    public static final int CUSTOMER_RESPONSIBILITY_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ReturnLabelSource valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ReturnLabelSource forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RETURN_LABEL_SOURCE_UNSPECIFIED;
+        case 1:
+          return DOWNLOAD_AND_PRINT;
+        case 2:
+          return IN_THE_PACKAGE;
+        case 3:
+          return CUSTOMER_RESPONSIBILITY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ReturnLabelSource>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ReturnLabelSource>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ReturnLabelSource>() {
+              public ReturnLabelSource findValueByNumber(int number) {
+                return ReturnLabelSource.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final ReturnLabelSource[] VALUES = values();
+
+    public static ReturnLabelSource valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ReturnLabelSource(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource)
   }
 
   public interface ReturnShippingFeeOrBuilder
@@ -5842,10 +6031,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return policy.
+   * Optional. The return policy.
    * </pre>
    *
-   * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+   * <code>
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the policy field is set.
    */
@@ -5858,10 +6049,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return policy.
+   * Optional. The return policy.
    * </pre>
    *
-   * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+   * <code>
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The policy.
    */
@@ -5877,10 +6070,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return policy.
+   * Optional. The return policy.
    * </pre>
    *
-   * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+   * <code>
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.PolicyOrBuilder
@@ -5999,12 +6194,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The restocking fee that applies to all return reason categories. This would
-   * be treated as a free restocking fee if the value is not set.
+   * Optional. The restocking fee that applies to all return reason categories.
+   * This would be treated as a free restocking fee if the value is not set.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the restockingFee field is set.
@@ -6018,12 +6213,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The restocking fee that applies to all return reason categories. This would
-   * be treated as a free restocking fee if the value is not set.
+   * Optional. The restocking fee that applies to all return reason categories.
+   * This would be treated as a free restocking fee if the value is not set.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The restockingFee.
@@ -6041,12 +6236,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The restocking fee that applies to all return reason categories. This would
-   * be treated as a free restocking fee if the value is not set.
+   * Optional. The restocking fee that applies to all return reason categories.
+   * This would be treated as a free restocking fee if the value is not set.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -6086,12 +6281,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the returnMethods.
@@ -6110,12 +6306,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of returnMethods.
@@ -6129,12 +6326,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
@@ -6150,12 +6348,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for returnMethods.
@@ -6169,12 +6368,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return methods of how customers can return an item. This value is
-   * required to not be empty unless the type of return policy is noReturns.
+   * Optional. The return methods of how customers can return an item. This
+   * value is required to not be empty unless the type of return policy is
+   * noReturns.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -6215,12 +6415,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the itemConditions.
@@ -6239,12 +6439,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The count of itemConditions.
@@ -6258,12 +6458,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the element to return.
@@ -6279,12 +6479,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for itemConditions.
@@ -6298,12 +6498,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The item conditions accepted for returns must not be empty unless the type
-   * of return policy is 'noReturns'.
+   * Optional. The item conditions accepted for returns must not be empty unless
+   * the type of return policy is 'noReturns'.
    * </pre>
    *
    * <code>
-   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+   * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @param index The index of the value to return.
@@ -6324,12 +6524,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return shipping fee. Should be set only when customer need to download
-   * and print the return label.
+   * Optional. The return shipping fee. Should be set only when customer need to
+   * download and print the return label.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the returnShippingFee field is set.
@@ -6343,12 +6543,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return shipping fee. Should be set only when customer need to download
-   * and print the return label.
+   * Optional. The return shipping fee. Should be set only when customer need to
+   * download and print the return label.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The returnShippingFee.
@@ -6366,12 +6566,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The return shipping fee. Should be set only when customer need to download
-   * and print the return label.
+   * Optional. The return shipping fee. Should be set only when customer need to
+   * download and print the return label.
    * </pre>
    *
    * <code>
-   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+   * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -6549,6 +6749,73 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     return acceptExchange_;
   }
 
+  public static final int RETURN_LABEL_SOURCE_FIELD_NUMBER = 15;
+  private int returnLabelSource_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The field specifies the return label source. This field is required when
+   * return method is BY_MAIL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * </code>
+   *
+   * @return Whether the returnLabelSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasReturnLabelSource() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The field specifies the return label source. This field is required when
+   * return method is BY_MAIL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for returnLabelSource.
+   */
+  @java.lang.Override
+  public int getReturnLabelSourceValue() {
+    return returnLabelSource_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The field specifies the return label source. This field is required when
+   * return method is BY_MAIL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+   * </code>
+   *
+   * @return The returnLabelSource.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource
+      getReturnLabelSource() {
+    com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource result =
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource.forNumber(
+            returnLabelSource_);
+    return result == null
+        ? com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6613,6 +6880,9 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     }
     for (int i = 0; i < seasonalOverrides_.size(); i++) {
       output.writeMessage(14, seasonalOverrides_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeEnum(15, returnLabelSource_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -6691,6 +6961,9 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, seasonalOverrides_.get(i));
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, returnLabelSource_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6738,6 +7011,10 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     if (hasAcceptExchange() != other.hasAcceptExchange()) return false;
     if (hasAcceptExchange()) {
       if (getAcceptExchange() != other.getAcceptExchange()) return false;
+    }
+    if (hasReturnLabelSource() != other.hasReturnLabelSource()) return false;
+    if (hasReturnLabelSource()) {
+      if (returnLabelSource_ != other.returnLabelSource_) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -6797,6 +7074,10 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     if (hasAcceptExchange()) {
       hash = (37 * hash) + ACCEPT_EXCHANGE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAcceptExchange());
+    }
+    if (hasReturnLabelSource()) {
+      hash = (37 * hash) + RETURN_LABEL_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + returnLabelSource_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -6987,6 +7268,7 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       acceptDefectiveOnly_ = false;
       processRefundDays_ = 0;
       acceptExchange_ = false;
+      returnLabelSource_ = 0;
       return this;
     }
 
@@ -7093,6 +7375,10 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.acceptExchange_ = acceptExchange_;
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.returnLabelSource_ = returnLabelSource_;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -7239,6 +7525,9 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasAcceptExchange()) {
         setAcceptExchange(other.getAcceptExchange());
+      }
+      if (other.hasReturnLabelSource()) {
+        setReturnLabelSource(other.getReturnLabelSource());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7387,6 +7676,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 114
+            case 120:
+              {
+                returnLabelSource_ = input.readEnum();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 120
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8010,10 +8305,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the policy field is set.
      */
@@ -8025,10 +8322,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The policy.
      */
@@ -8047,10 +8346,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPolicy(
         com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy value) {
@@ -8071,10 +8372,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setPolicy(
         com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy.Builder
@@ -8093,10 +8396,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergePolicy(
         com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy value) {
@@ -8124,10 +8429,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearPolicy() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -8144,10 +8451,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy.Builder
         getPolicyBuilder() {
@@ -8160,10 +8469,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.PolicyOrBuilder
         getPolicyOrBuilder() {
@@ -8181,10 +8492,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return policy.
+     * Optional. The return policy.
      * </pre>
      *
-     * <code>.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5;</code>
+     * <code>
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy policy = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.Policy,
@@ -8680,12 +8993,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the restockingFee field is set.
@@ -8698,12 +9011,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The restockingFee.
@@ -8724,12 +9037,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setRestockingFee(
@@ -8751,12 +9064,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setRestockingFee(
@@ -8776,12 +9089,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeRestockingFee(
@@ -8810,12 +9123,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearRestockingFee() {
@@ -8833,12 +9146,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee.Builder
@@ -8852,12 +9165,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFeeOrBuilder
@@ -8876,12 +9189,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The restocking fee that applies to all return reason categories. This would
-     * be treated as a free restocking fee if the value is not set.
+     * Optional. The restocking fee that applies to all return reason categories.
+     * This would be treated as a free restocking fee if the value is not set.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.RestockingFee restocking_fee = 6 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -8915,12 +9228,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the returnMethods.
@@ -8938,12 +9252,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The count of returnMethods.
@@ -8956,12 +9271,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the element to return.
@@ -8976,12 +9292,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -9004,12 +9321,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The returnMethods to add.
@@ -9030,12 +9348,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The returnMethods to add.
@@ -9059,12 +9378,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -9080,12 +9400,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for returnMethods.
@@ -9098,12 +9419,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the value to return.
@@ -9117,12 +9439,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -9140,12 +9463,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for returnMethods to add.
@@ -9162,12 +9486,13 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return methods of how customers can return an item. This value is
-     * required to not be empty unless the type of return policy is noReturns.
+     * Optional. The return methods of how customers can return an item. This
+     * value is required to not be empty unless the type of return policy is
+     * noReturns.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnMethod return_methods = 7 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The enum numeric values on the wire for returnMethods to add.
@@ -9195,12 +9520,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the itemConditions.
@@ -9218,12 +9543,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The count of itemConditions.
@@ -9236,12 +9561,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the element to return.
@@ -9256,12 +9581,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -9284,12 +9609,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The itemConditions to add.
@@ -9310,12 +9635,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The itemConditions to add.
@@ -9339,12 +9664,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -9360,12 +9685,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for itemConditions.
@@ -9378,12 +9703,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the value to return.
@@ -9397,12 +9722,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index to set the value at.
@@ -9420,12 +9745,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for itemConditions to add.
@@ -9442,12 +9767,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The item conditions accepted for returns must not be empty unless the type
-     * of return policy is 'noReturns'.
+     * Optional. The item conditions accepted for returns must not be empty unless
+     * the type of return policy is 'noReturns'.
      * </pre>
      *
      * <code>
-     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8;
+     * repeated .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ItemCondition item_conditions = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param values The enum numeric values on the wire for itemConditions to add.
@@ -9476,12 +9801,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the returnShippingFee field is set.
@@ -9494,12 +9819,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The returnShippingFee.
@@ -9520,12 +9845,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setReturnShippingFee(
@@ -9547,12 +9872,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setReturnShippingFee(
@@ -9572,12 +9897,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeReturnShippingFee(
@@ -9606,12 +9931,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearReturnShippingFee() {
@@ -9629,12 +9954,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee.Builder
@@ -9648,12 +9973,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy
@@ -9673,12 +9998,12 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The return shipping fee. Should be set only when customer need to download
-     * and print the return label.
+     * Optional. The return shipping fee. Should be set only when customer need to
+     * download and print the return label.
      * </pre>
      *
      * <code>
-     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9;
+     * .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnShippingFee return_shipping_fee = 9 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -10042,6 +10367,141 @@ public final class OnlineReturnPolicy extends com.google.protobuf.GeneratedMessa
     public Builder clearAcceptExchange() {
       bitField0_ = (bitField0_ & ~0x00002000);
       acceptExchange_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int returnLabelSource_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The field specifies the return label source. This field is required when
+     * return method is BY_MAIL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * </code>
+     *
+     * @return Whether the returnLabelSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasReturnLabelSource() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The field specifies the return label source. This field is required when
+     * return method is BY_MAIL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for returnLabelSource.
+     */
+    @java.lang.Override
+    public int getReturnLabelSourceValue() {
+      return returnLabelSource_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The field specifies the return label source. This field is required when
+     * return method is BY_MAIL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for returnLabelSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnLabelSourceValue(int value) {
+      returnLabelSource_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The field specifies the return label source. This field is required when
+     * return method is BY_MAIL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * </code>
+     *
+     * @return The returnLabelSource.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource
+        getReturnLabelSource() {
+      com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource result =
+          com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource
+              .forNumber(returnLabelSource_);
+      return result == null
+          ? com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The field specifies the return label source. This field is required when
+     * return method is BY_MAIL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * </code>
+     *
+     * @param value The returnLabelSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReturnLabelSource(
+        com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00004000;
+      returnLabelSource_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The field specifies the return label source. This field is required when
+     * return method is BY_MAIL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy.ReturnLabelSource return_label_source = 15;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReturnLabelSource() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      returnLabelSource_ = 0;
       onChanged();
       return this;
     }
