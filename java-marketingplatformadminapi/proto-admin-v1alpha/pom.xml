@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.ads-marketingplatform.api.grpc</groupId>
   <artifactId>proto-admin-v1alpha</artifactId>
-  <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:proto-admin-v1alpha:current} -->
+  <version>0.12.0</version><!-- {x-version-update:proto-admin-v1alpha:current} -->
   <name>proto-admin-v1alpha</name>
   <description>Proto library for admin</description>
   <parent>
     <groupId>com.google.ads-marketingplatform</groupId>
     <artifactId>admin-parent</artifactId>
-    <version>0.12.0-SNAPSHOT</version><!-- {x-version-update:admin:current} -->
+    <version>0.12.0</version><!-- {x-version-update:admin:current} -->
   </parent>
   <dependencies>
     <dependency>
