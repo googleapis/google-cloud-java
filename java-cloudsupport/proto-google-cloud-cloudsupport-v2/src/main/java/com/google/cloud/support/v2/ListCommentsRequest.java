@@ -74,8 +74,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of Case object for which comments should be
-   * listed.
+   * Required. The name of the case for which to list comments.
    * </pre>
    *
    * <code>
@@ -101,8 +100,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of Case object for which comments should be
-   * listed.
+   * Required. The name of the case for which to list comments.
    * </pre>
    *
    * <code>
@@ -131,7 +129,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The maximum number of comments fetched with each request. Defaults to 10.
+   * The maximum number of comments to fetch. Defaults to 10.
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
@@ -153,7 +151,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A token identifying the page of results to return. If unspecified, the
-   * first page is retrieved.
+   * first page is returned.
    * </pre>
    *
    * <code>string page_token = 5;</code>
@@ -178,7 +176,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A token identifying the page of results to return. If unspecified, the
-   * first page is retrieved.
+   * first page is returned.
    * </pre>
    *
    * <code>string page_token = 5;</code>
@@ -593,8 +591,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of Case object for which comments should be
-     * listed.
+     * Required. The name of the case for which to list comments.
      * </pre>
      *
      * <code>
@@ -619,8 +616,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of Case object for which comments should be
-     * listed.
+     * Required. The name of the case for which to list comments.
      * </pre>
      *
      * <code>
@@ -645,8 +641,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of Case object for which comments should be
-     * listed.
+     * Required. The name of the case for which to list comments.
      * </pre>
      *
      * <code>
@@ -670,8 +665,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of Case object for which comments should be
-     * listed.
+     * Required. The name of the case for which to list comments.
      * </pre>
      *
      * <code>
@@ -691,8 +685,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of Case object for which comments should be
-     * listed.
+     * Required. The name of the case for which to list comments.
      * </pre>
      *
      * <code>
@@ -719,7 +712,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The maximum number of comments fetched with each request. Defaults to 10.
+     * The maximum number of comments to fetch. Defaults to 10.
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
@@ -735,7 +728,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The maximum number of comments fetched with each request. Defaults to 10.
+     * The maximum number of comments to fetch. Defaults to 10.
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
@@ -755,7 +748,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The maximum number of comments fetched with each request. Defaults to 10.
+     * The maximum number of comments to fetch. Defaults to 10.
      * </pre>
      *
      * <code>int32 page_size = 4;</code>
@@ -776,7 +769,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token identifying the page of results to return. If unspecified, the
-     * first page is retrieved.
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 5;</code>
@@ -800,7 +793,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token identifying the page of results to return. If unspecified, the
-     * first page is retrieved.
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 5;</code>
@@ -824,7 +817,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token identifying the page of results to return. If unspecified, the
-     * first page is retrieved.
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 5;</code>
@@ -847,7 +840,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token identifying the page of results to return. If unspecified, the
-     * first page is retrieved.
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 5;</code>
@@ -866,7 +859,7 @@ public final class ListCommentsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token identifying the page of results to return. If unspecified, the
-     * first page is retrieved.
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 5;</code>

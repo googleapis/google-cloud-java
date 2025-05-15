@@ -19,6 +19,7 @@ package com.google.cloud.video.livestream.v1.stub;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListDvrSessionsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -37,17 +38,21 @@ import com.google.cloud.video.livestream.v1.Clip;
 import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
 import com.google.cloud.video.livestream.v1.CreateClipRequest;
+import com.google.cloud.video.livestream.v1.CreateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
 import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
 import com.google.cloud.video.livestream.v1.DeleteClipRequest;
+import com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
+import com.google.cloud.video.livestream.v1.DvrSession;
 import com.google.cloud.video.livestream.v1.Event;
 import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
 import com.google.cloud.video.livestream.v1.GetClipRequest;
+import com.google.cloud.video.livestream.v1.GetDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
 import com.google.cloud.video.livestream.v1.GetPoolRequest;
@@ -58,6 +63,8 @@ import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
 import com.google.cloud.video.livestream.v1.ListClipsRequest;
 import com.google.cloud.video.livestream.v1.ListClipsResponse;
+import com.google.cloud.video.livestream.v1.ListDvrSessionsRequest;
+import com.google.cloud.video.livestream.v1.ListDvrSessionsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
 import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
@@ -67,6 +74,7 @@ import com.google.cloud.video.livestream.v1.Pool;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
+import com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
 import com.google.cloud.video.livestream.v1.UpdatePoolRequest;
 import com.google.longrunning.Operation;
@@ -235,6 +243,46 @@ public abstract class LivestreamServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteClipRequest, Operation> deleteClipCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteClipCallable()");
+  }
+
+  public OperationCallable<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDvrSessionOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDvrSessionRequest, Operation> createDvrSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDvrSessionCallable()");
+  }
+
+  public UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsPagedResponse>
+      listDvrSessionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDvrSessionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsResponse> listDvrSessionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDvrSessionsCallable()");
+  }
+
+  public UnaryCallable<GetDvrSessionRequest, DvrSession> getDvrSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDvrSessionCallable()");
+  }
+
+  public OperationCallable<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDvrSessionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDvrSessionRequest, Operation> deleteDvrSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDvrSessionCallable()");
+  }
+
+  public OperationCallable<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDvrSessionOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDvrSessionRequest, Operation> updateDvrSessionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDvrSessionCallable()");
   }
 
   public OperationCallable<CreateAssetRequest, Asset, OperationMetadata>

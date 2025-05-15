@@ -28,7 +28,7 @@ public interface ListCasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface ListCasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -52,7 +52,7 @@ public interface ListCasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -64,7 +64,7 @@ public interface ListCasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -76,7 +76,7 @@ public interface ListCasesResponseOrBuilder
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -88,9 +88,9 @@ public interface ListCasesResponseOrBuilder
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of the subsequent `ListCasesRequest` message that is
-   * issued. If unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the `page_token`
+   * field of subsequent `cases.list` requests. If unspecified, there are no
+   * more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -103,9 +103,9 @@ public interface ListCasesResponseOrBuilder
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of the subsequent `ListCasesRequest` message that is
-   * issued. If unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the `page_token`
+   * field of subsequent `cases.list` requests. If unspecified, there are no
+   * more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

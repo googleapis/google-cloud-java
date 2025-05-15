@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * A service to manage file attachment for Google Cloud support cases.
+ * A service to manage file attachments for Google Cloud support cases.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -142,7 +142,7 @@ public final class CaseAttachmentServiceGrpc {
    *
    *
    * <pre>
-   * A service to manage file attachment for Google Cloud support cases.
+   * A service to manage file attachments for Google Cloud support cases.
    * </pre>
    */
   public interface AsyncService {
@@ -151,7 +151,31 @@ public final class CaseAttachmentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all attachments associated with a support case.
+     * List all the attachments associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * case="projects/some-project/cases/23598314"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .list(parent="projects/some-project/cases/43595344")
+     * )
+     * print(request.execute())
+     * ```
      * </pre>
      */
     default void listAttachments(
@@ -167,7 +191,7 @@ public final class CaseAttachmentServiceGrpc {
    * Base class for the server implementation of the service CaseAttachmentService.
    *
    * <pre>
-   * A service to manage file attachment for Google Cloud support cases.
+   * A service to manage file attachments for Google Cloud support cases.
    * </pre>
    */
   public abstract static class CaseAttachmentServiceImplBase
@@ -183,7 +207,7 @@ public final class CaseAttachmentServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service CaseAttachmentService.
    *
    * <pre>
-   * A service to manage file attachment for Google Cloud support cases.
+   * A service to manage file attachments for Google Cloud support cases.
    * </pre>
    */
   public static final class CaseAttachmentServiceStub
@@ -202,7 +226,31 @@ public final class CaseAttachmentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all attachments associated with a support case.
+     * List all the attachments associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * case="projects/some-project/cases/23598314"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .list(parent="projects/some-project/cases/43595344")
+     * )
+     * print(request.execute())
+     * ```
      * </pre>
      */
     public void listAttachments(
@@ -220,7 +268,7 @@ public final class CaseAttachmentServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service CaseAttachmentService.
    *
    * <pre>
-   * A service to manage file attachment for Google Cloud support cases.
+   * A service to manage file attachments for Google Cloud support cases.
    * </pre>
    */
   public static final class CaseAttachmentServiceBlockingV2Stub
@@ -240,7 +288,31 @@ public final class CaseAttachmentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all attachments associated with a support case.
+     * List all the attachments associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * case="projects/some-project/cases/23598314"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .list(parent="projects/some-project/cases/43595344")
+     * )
+     * print(request.execute())
+     * ```
      * </pre>
      */
     public com.google.cloud.support.v2.ListAttachmentsResponse listAttachments(
@@ -254,7 +326,7 @@ public final class CaseAttachmentServiceGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service CaseAttachmentService.
    *
    * <pre>
-   * A service to manage file attachment for Google Cloud support cases.
+   * A service to manage file attachments for Google Cloud support cases.
    * </pre>
    */
   public static final class CaseAttachmentServiceBlockingStub
@@ -274,7 +346,31 @@ public final class CaseAttachmentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all attachments associated with a support case.
+     * List all the attachments associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * case="projects/some-project/cases/23598314"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .list(parent="projects/some-project/cases/43595344")
+     * )
+     * print(request.execute())
+     * ```
      * </pre>
      */
     public com.google.cloud.support.v2.ListAttachmentsResponse listAttachments(
@@ -289,7 +385,7 @@ public final class CaseAttachmentServiceGrpc {
    * CaseAttachmentService.
    *
    * <pre>
-   * A service to manage file attachment for Google Cloud support cases.
+   * A service to manage file attachments for Google Cloud support cases.
    * </pre>
    */
   public static final class CaseAttachmentServiceFutureStub
@@ -309,7 +405,31 @@ public final class CaseAttachmentServiceGrpc {
      *
      *
      * <pre>
-     * Retrieve all attachments associated with a support case.
+     * List all the attachments associated with a support case.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * case="projects/some-project/cases/23598314"
+     * curl &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$case/attachments"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = (
+     *     supportApiService.cases()
+     *     .attachments()
+     *     .list(parent="projects/some-project/cases/43595344")
+     * )
+     * print(request.execute())
+     * ```
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

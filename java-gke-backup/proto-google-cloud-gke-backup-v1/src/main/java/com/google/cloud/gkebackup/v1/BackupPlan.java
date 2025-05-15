@@ -48,6 +48,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     stateReason_ = "";
     rpoRiskReason_ = "";
+    backupChannel_ = "";
   }
 
   @java.lang.Override
@@ -6076,6 +6077,69 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int BACKUP_CHANNEL_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupChannel_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The fully qualified name of the BackupChannel to be used to
+   * create a backup. This field is set only if the cluster being backed up is
+   * in a different project.
+   * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+   * </pre>
+   *
+   * <code>
+   * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backupChannel.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupChannel() {
+    java.lang.Object ref = backupChannel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupChannel_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The fully qualified name of the BackupChannel to be used to
+   * create a backup. This field is set only if the cluster being backed up is
+   * in a different project.
+   * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+   * </pre>
+   *
+   * <code>
+   * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backupChannel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupChannelBytes() {
+    java.lang.Object ref = backupChannel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupChannel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int LAST_SUCCESSFUL_BACKUP_TIME_FIELD_NUMBER = 19;
   private com.google.protobuf.Timestamp lastSuccessfulBackupTime_;
 
@@ -6208,6 +6272,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rpoRiskReason_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, rpoRiskReason_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupChannel_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, backupChannel_);
+    }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(19, getLastSuccessfulBackupTime());
     }
@@ -6278,6 +6345,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rpoRiskReason_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, rpoRiskReason_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupChannel_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, backupChannel_);
+    }
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -6330,6 +6400,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     if (!getStateReason().equals(other.getStateReason())) return false;
     if (getRpoRiskLevel() != other.getRpoRiskLevel()) return false;
     if (!getRpoRiskReason().equals(other.getRpoRiskReason())) return false;
+    if (!getBackupChannel().equals(other.getBackupChannel())) return false;
     if (hasLastSuccessfulBackupTime() != other.hasLastSuccessfulBackupTime()) return false;
     if (hasLastSuccessfulBackupTime()) {
       if (!getLastSuccessfulBackupTime().equals(other.getLastSuccessfulBackupTime())) return false;
@@ -6391,6 +6462,8 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getRpoRiskLevel();
     hash = (37 * hash) + RPO_RISK_REASON_FIELD_NUMBER;
     hash = (53 * hash) + getRpoRiskReason().hashCode();
+    hash = (37 * hash) + BACKUP_CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + getBackupChannel().hashCode();
     if (hasLastSuccessfulBackupTime()) {
       hash = (37 * hash) + LAST_SUCCESSFUL_BACKUP_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastSuccessfulBackupTime().hashCode();
@@ -6608,6 +6681,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       stateReason_ = "";
       rpoRiskLevel_ = 0;
       rpoRiskReason_ = "";
+      backupChannel_ = "";
       lastSuccessfulBackupTime_ = null;
       if (lastSuccessfulBackupTimeBuilder_ != null) {
         lastSuccessfulBackupTimeBuilder_.dispose();
@@ -6711,6 +6785,9 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         result.rpoRiskReason_ = rpoRiskReason_;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.backupChannel_ = backupChannel_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.lastSuccessfulBackupTime_ =
             lastSuccessfulBackupTimeBuilder_ == null
                 ? lastSuccessfulBackupTime_
@@ -6827,6 +6904,11 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       if (!other.getRpoRiskReason().isEmpty()) {
         rpoRiskReason_ = other.rpoRiskReason_;
         bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (!other.getBackupChannel().isEmpty()) {
+        backupChannel_ = other.backupChannel_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasLastSuccessfulBackupTime()) {
@@ -6966,11 +7048,17 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 138
+            case 146:
+              {
+                backupChannel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
             case 154:
               {
                 input.readMessage(
                     getLastSuccessfulBackupTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 154
             default:
@@ -9444,6 +9532,142 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object backupChannel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully qualified name of the BackupChannel to be used to
+     * create a backup. This field is set only if the cluster being backed up is
+     * in a different project.
+     * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+     * </pre>
+     *
+     * <code>
+     * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The backupChannel.
+     */
+    public java.lang.String getBackupChannel() {
+      java.lang.Object ref = backupChannel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupChannel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully qualified name of the BackupChannel to be used to
+     * create a backup. This field is set only if the cluster being backed up is
+     * in a different project.
+     * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+     * </pre>
+     *
+     * <code>
+     * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for backupChannel.
+     */
+    public com.google.protobuf.ByteString getBackupChannelBytes() {
+      java.lang.Object ref = backupChannel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupChannel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully qualified name of the BackupChannel to be used to
+     * create a backup. This field is set only if the cluster being backed up is
+     * in a different project.
+     * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+     * </pre>
+     *
+     * <code>
+     * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The backupChannel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupChannel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupChannel_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully qualified name of the BackupChannel to be used to
+     * create a backup. This field is set only if the cluster being backed up is
+     * in a different project.
+     * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+     * </pre>
+     *
+     * <code>
+     * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupChannel() {
+      backupChannel_ = getDefaultInstance().getBackupChannel();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fully qualified name of the BackupChannel to be used to
+     * create a backup. This field is set only if the cluster being backed up is
+     * in a different project.
+     * `projects/&#42;&#47;locations/&#42;&#47;backupChannels/&#42;`
+     * </pre>
+     *
+     * <code>
+     * string backup_channel = 18 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for backupChannel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupChannelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupChannel_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp lastSuccessfulBackupTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -9468,7 +9692,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastSuccessfulBackupTime field is set.
      */
     public boolean hasLastSuccessfulBackupTime() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -9520,7 +9744,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastSuccessfulBackupTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9546,7 +9770,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastSuccessfulBackupTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9567,7 +9791,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastSuccessfulBackupTime(com.google.protobuf.Timestamp value) {
       if (lastSuccessfulBackupTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && lastSuccessfulBackupTime_ != null
             && lastSuccessfulBackupTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastSuccessfulBackupTimeBuilder().mergeFrom(value);
@@ -9578,7 +9802,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
         lastSuccessfulBackupTimeBuilder_.mergeFrom(value);
       }
       if (lastSuccessfulBackupTime_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -9599,7 +9823,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastSuccessfulBackupTime() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       lastSuccessfulBackupTime_ = null;
       if (lastSuccessfulBackupTimeBuilder_ != null) {
         lastSuccessfulBackupTimeBuilder_.dispose();
@@ -9624,7 +9848,7 @@ public final class BackupPlan extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastSuccessfulBackupTimeBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getLastSuccessfulBackupTimeFieldBuilder().getBuilder();
     }

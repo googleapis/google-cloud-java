@@ -16,6 +16,7 @@
 
 package com.google.cloud.storageinsights.v1.stub;
 
+import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListDatasetConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListLocationsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportDetailsPagedResponse;
@@ -30,13 +31,17 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -50,21 +55,33 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.storageinsights.v1.CreateDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.CreateReportConfigRequest;
+import com.google.cloud.storageinsights.v1.DatasetConfig;
+import com.google.cloud.storageinsights.v1.DeleteDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.DeleteReportConfigRequest;
+import com.google.cloud.storageinsights.v1.GetDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.GetReportConfigRequest;
 import com.google.cloud.storageinsights.v1.GetReportDetailRequest;
+import com.google.cloud.storageinsights.v1.LinkDatasetRequest;
+import com.google.cloud.storageinsights.v1.LinkDatasetResponse;
+import com.google.cloud.storageinsights.v1.ListDatasetConfigsRequest;
+import com.google.cloud.storageinsights.v1.ListDatasetConfigsResponse;
 import com.google.cloud.storageinsights.v1.ListReportConfigsRequest;
 import com.google.cloud.storageinsights.v1.ListReportConfigsResponse;
 import com.google.cloud.storageinsights.v1.ListReportDetailsRequest;
 import com.google.cloud.storageinsights.v1.ListReportDetailsResponse;
+import com.google.cloud.storageinsights.v1.OperationMetadata;
 import com.google.cloud.storageinsights.v1.ReportConfig;
 import com.google.cloud.storageinsights.v1.ReportDetail;
+import com.google.cloud.storageinsights.v1.UnlinkDatasetRequest;
+import com.google.cloud.storageinsights.v1.UpdateDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.UpdateReportConfigRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
@@ -121,6 +138,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for createDatasetConfig:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * StorageInsightsStubSettings.Builder storageInsightsSettingsBuilder =
+ *     StorageInsightsStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * storageInsightsSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStubSettings> {
@@ -141,6 +184,28 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
           ListReportDetailsRequest, ListReportDetailsResponse, ListReportDetailsPagedResponse>
       listReportDetailsSettings;
   private final UnaryCallSettings<GetReportDetailRequest, ReportDetail> getReportDetailSettings;
+  private final PagedCallSettings<
+          ListDatasetConfigsRequest, ListDatasetConfigsResponse, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsSettings;
+  private final UnaryCallSettings<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigSettings;
+  private final UnaryCallSettings<CreateDatasetConfigRequest, Operation>
+      createDatasetConfigSettings;
+  private final OperationCallSettings<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationSettings;
+  private final UnaryCallSettings<UpdateDatasetConfigRequest, Operation>
+      updateDatasetConfigSettings;
+  private final OperationCallSettings<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationSettings;
+  private final UnaryCallSettings<DeleteDatasetConfigRequest, Operation>
+      deleteDatasetConfigSettings;
+  private final OperationCallSettings<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationSettings;
+  private final UnaryCallSettings<LinkDatasetRequest, Operation> linkDatasetSettings;
+  private final OperationCallSettings<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationSettings;
+  private final UnaryCallSettings<UnlinkDatasetRequest, Operation> unlinkDatasetSettings;
+  private final OperationCallSettings<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -222,6 +287,44 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
             }
           };
 
+  private static final PagedListDescriptor<
+          ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig>
+      LIST_DATASET_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDatasetConfigsRequest injectToken(
+                ListDatasetConfigsRequest payload, String token) {
+              return ListDatasetConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDatasetConfigsRequest injectPageSize(
+                ListDatasetConfigsRequest payload, int pageSize) {
+              return ListDatasetConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDatasetConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDatasetConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DatasetConfig> extractResources(ListDatasetConfigsResponse payload) {
+              return payload.getDatasetConfigsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -299,6 +402,27 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
           };
 
   private static final PagedListResponseFactory<
+          ListDatasetConfigsRequest, ListDatasetConfigsResponse, ListDatasetConfigsPagedResponse>
+      LIST_DATASET_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDatasetConfigsRequest,
+              ListDatasetConfigsResponse,
+              ListDatasetConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDatasetConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsResponse> callable,
+                ListDatasetConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDatasetConfigsResponse> futureResponse) {
+              PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DATASET_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListDatasetConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -352,6 +476,73 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
   /** Returns the object with the settings used for calls to getReportDetail. */
   public UnaryCallSettings<GetReportDetailRequest, ReportDetail> getReportDetailSettings() {
     return getReportDetailSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDatasetConfigs. */
+  public PagedCallSettings<
+          ListDatasetConfigsRequest, ListDatasetConfigsResponse, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsSettings() {
+    return listDatasetConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDatasetConfig. */
+  public UnaryCallSettings<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigSettings() {
+    return getDatasetConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDatasetConfig. */
+  public UnaryCallSettings<CreateDatasetConfigRequest, Operation> createDatasetConfigSettings() {
+    return createDatasetConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDatasetConfig. */
+  public OperationCallSettings<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationSettings() {
+    return createDatasetConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDatasetConfig. */
+  public UnaryCallSettings<UpdateDatasetConfigRequest, Operation> updateDatasetConfigSettings() {
+    return updateDatasetConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDatasetConfig. */
+  public OperationCallSettings<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationSettings() {
+    return updateDatasetConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatasetConfig. */
+  public UnaryCallSettings<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigSettings() {
+    return deleteDatasetConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatasetConfig. */
+  public OperationCallSettings<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationSettings() {
+    return deleteDatasetConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to linkDataset. */
+  public UnaryCallSettings<LinkDatasetRequest, Operation> linkDatasetSettings() {
+    return linkDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to linkDataset. */
+  public OperationCallSettings<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationSettings() {
+    return linkDatasetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to unlinkDataset. */
+  public UnaryCallSettings<UnlinkDatasetRequest, Operation> unlinkDatasetSettings() {
+    return unlinkDatasetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to unlinkDataset. */
+  public OperationCallSettings<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationSettings() {
+    return unlinkDatasetOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -483,6 +674,21 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
     deleteReportConfigSettings = settingsBuilder.deleteReportConfigSettings().build();
     listReportDetailsSettings = settingsBuilder.listReportDetailsSettings().build();
     getReportDetailSettings = settingsBuilder.getReportDetailSettings().build();
+    listDatasetConfigsSettings = settingsBuilder.listDatasetConfigsSettings().build();
+    getDatasetConfigSettings = settingsBuilder.getDatasetConfigSettings().build();
+    createDatasetConfigSettings = settingsBuilder.createDatasetConfigSettings().build();
+    createDatasetConfigOperationSettings =
+        settingsBuilder.createDatasetConfigOperationSettings().build();
+    updateDatasetConfigSettings = settingsBuilder.updateDatasetConfigSettings().build();
+    updateDatasetConfigOperationSettings =
+        settingsBuilder.updateDatasetConfigOperationSettings().build();
+    deleteDatasetConfigSettings = settingsBuilder.deleteDatasetConfigSettings().build();
+    deleteDatasetConfigOperationSettings =
+        settingsBuilder.deleteDatasetConfigOperationSettings().build();
+    linkDatasetSettings = settingsBuilder.linkDatasetSettings().build();
+    linkDatasetOperationSettings = settingsBuilder.linkDatasetOperationSettings().build();
+    unlinkDatasetSettings = settingsBuilder.unlinkDatasetSettings().build();
+    unlinkDatasetOperationSettings = settingsBuilder.unlinkDatasetOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -506,6 +712,33 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
         listReportDetailsSettings;
     private final UnaryCallSettings.Builder<GetReportDetailRequest, ReportDetail>
         getReportDetailSettings;
+    private final PagedCallSettings.Builder<
+            ListDatasetConfigsRequest, ListDatasetConfigsResponse, ListDatasetConfigsPagedResponse>
+        listDatasetConfigsSettings;
+    private final UnaryCallSettings.Builder<GetDatasetConfigRequest, DatasetConfig>
+        getDatasetConfigSettings;
+    private final UnaryCallSettings.Builder<CreateDatasetConfigRequest, Operation>
+        createDatasetConfigSettings;
+    private final OperationCallSettings.Builder<
+            CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+        createDatasetConfigOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDatasetConfigRequest, Operation>
+        updateDatasetConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+        updateDatasetConfigOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteDatasetConfigRequest, Operation>
+        deleteDatasetConfigSettings;
+    private final OperationCallSettings.Builder<
+            DeleteDatasetConfigRequest, Empty, OperationMetadata>
+        deleteDatasetConfigOperationSettings;
+    private final UnaryCallSettings.Builder<LinkDatasetRequest, Operation> linkDatasetSettings;
+    private final OperationCallSettings.Builder<
+            LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+        linkDatasetOperationSettings;
+    private final UnaryCallSettings.Builder<UnlinkDatasetRequest, Operation> unlinkDatasetSettings;
+    private final OperationCallSettings.Builder<UnlinkDatasetRequest, Empty, OperationMetadata>
+        unlinkDatasetOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -565,6 +798,18 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
       deleteReportConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReportDetailsSettings = PagedCallSettings.newBuilder(LIST_REPORT_DETAILS_PAGE_STR_FACT);
       getReportDetailSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDatasetConfigsSettings = PagedCallSettings.newBuilder(LIST_DATASET_CONFIGS_PAGE_STR_FACT);
+      getDatasetConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDatasetConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDatasetConfigOperationSettings = OperationCallSettings.newBuilder();
+      updateDatasetConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDatasetConfigOperationSettings = OperationCallSettings.newBuilder();
+      deleteDatasetConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDatasetConfigOperationSettings = OperationCallSettings.newBuilder();
+      linkDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      linkDatasetOperationSettings = OperationCallSettings.newBuilder();
+      unlinkDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      unlinkDatasetOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -577,6 +822,13 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
               deleteReportConfigSettings,
               listReportDetailsSettings,
               getReportDetailSettings,
+              listDatasetConfigsSettings,
+              getDatasetConfigSettings,
+              createDatasetConfigSettings,
+              updateDatasetConfigSettings,
+              deleteDatasetConfigSettings,
+              linkDatasetSettings,
+              unlinkDatasetSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -592,6 +844,21 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
       deleteReportConfigSettings = settings.deleteReportConfigSettings.toBuilder();
       listReportDetailsSettings = settings.listReportDetailsSettings.toBuilder();
       getReportDetailSettings = settings.getReportDetailSettings.toBuilder();
+      listDatasetConfigsSettings = settings.listDatasetConfigsSettings.toBuilder();
+      getDatasetConfigSettings = settings.getDatasetConfigSettings.toBuilder();
+      createDatasetConfigSettings = settings.createDatasetConfigSettings.toBuilder();
+      createDatasetConfigOperationSettings =
+          settings.createDatasetConfigOperationSettings.toBuilder();
+      updateDatasetConfigSettings = settings.updateDatasetConfigSettings.toBuilder();
+      updateDatasetConfigOperationSettings =
+          settings.updateDatasetConfigOperationSettings.toBuilder();
+      deleteDatasetConfigSettings = settings.deleteDatasetConfigSettings.toBuilder();
+      deleteDatasetConfigOperationSettings =
+          settings.deleteDatasetConfigOperationSettings.toBuilder();
+      linkDatasetSettings = settings.linkDatasetSettings.toBuilder();
+      linkDatasetOperationSettings = settings.linkDatasetOperationSettings.toBuilder();
+      unlinkDatasetSettings = settings.unlinkDatasetSettings.toBuilder();
+      unlinkDatasetOperationSettings = settings.unlinkDatasetOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -604,6 +871,13 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
               deleteReportConfigSettings,
               listReportDetailsSettings,
               getReportDetailSettings,
+              listDatasetConfigsSettings,
+              getDatasetConfigSettings,
+              createDatasetConfigSettings,
+              updateDatasetConfigSettings,
+              deleteDatasetConfigSettings,
+              linkDatasetSettings,
+              unlinkDatasetSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -669,6 +943,41 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listDatasetConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDatasetConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createDatasetConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateDatasetConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDatasetConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .linkDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .unlinkDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -677,6 +986,125 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
           .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createDatasetConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDatasetConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DatasetConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateDatasetConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDatasetConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DatasetConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDatasetConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDatasetConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .linkDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<LinkDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(LinkDatasetResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .unlinkDatasetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UnlinkDatasetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -738,6 +1166,79 @@ public class StorageInsightsStubSettings extends StubSettings<StorageInsightsStu
     public UnaryCallSettings.Builder<GetReportDetailRequest, ReportDetail>
         getReportDetailSettings() {
       return getReportDetailSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDatasetConfigs. */
+    public PagedCallSettings.Builder<
+            ListDatasetConfigsRequest, ListDatasetConfigsResponse, ListDatasetConfigsPagedResponse>
+        listDatasetConfigsSettings() {
+      return listDatasetConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDatasetConfig. */
+    public UnaryCallSettings.Builder<GetDatasetConfigRequest, DatasetConfig>
+        getDatasetConfigSettings() {
+      return getDatasetConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDatasetConfig. */
+    public UnaryCallSettings.Builder<CreateDatasetConfigRequest, Operation>
+        createDatasetConfigSettings() {
+      return createDatasetConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDatasetConfig. */
+    public OperationCallSettings.Builder<
+            CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+        createDatasetConfigOperationSettings() {
+      return createDatasetConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatasetConfig. */
+    public UnaryCallSettings.Builder<UpdateDatasetConfigRequest, Operation>
+        updateDatasetConfigSettings() {
+      return updateDatasetConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDatasetConfig. */
+    public OperationCallSettings.Builder<
+            UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+        updateDatasetConfigOperationSettings() {
+      return updateDatasetConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatasetConfig. */
+    public UnaryCallSettings.Builder<DeleteDatasetConfigRequest, Operation>
+        deleteDatasetConfigSettings() {
+      return deleteDatasetConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatasetConfig. */
+    public OperationCallSettings.Builder<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+        deleteDatasetConfigOperationSettings() {
+      return deleteDatasetConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to linkDataset. */
+    public UnaryCallSettings.Builder<LinkDatasetRequest, Operation> linkDatasetSettings() {
+      return linkDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to linkDataset. */
+    public OperationCallSettings.Builder<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+        linkDatasetOperationSettings() {
+      return linkDatasetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to unlinkDataset. */
+    public UnaryCallSettings.Builder<UnlinkDatasetRequest, Operation> unlinkDatasetSettings() {
+      return unlinkDatasetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to unlinkDataset. */
+    public OperationCallSettings.Builder<UnlinkDatasetRequest, Empty, OperationMetadata>
+        unlinkDatasetOperationSettings() {
+      return unlinkDatasetOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

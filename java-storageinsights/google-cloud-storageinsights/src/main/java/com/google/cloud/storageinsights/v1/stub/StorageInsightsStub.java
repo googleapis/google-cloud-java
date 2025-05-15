@@ -16,27 +16,42 @@
 
 package com.google.cloud.storageinsights.v1.stub;
 
+import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListDatasetConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListLocationsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportDetailsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.storageinsights.v1.CreateDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.CreateReportConfigRequest;
+import com.google.cloud.storageinsights.v1.DatasetConfig;
+import com.google.cloud.storageinsights.v1.DeleteDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.DeleteReportConfigRequest;
+import com.google.cloud.storageinsights.v1.GetDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.GetReportConfigRequest;
 import com.google.cloud.storageinsights.v1.GetReportDetailRequest;
+import com.google.cloud.storageinsights.v1.LinkDatasetRequest;
+import com.google.cloud.storageinsights.v1.LinkDatasetResponse;
+import com.google.cloud.storageinsights.v1.ListDatasetConfigsRequest;
+import com.google.cloud.storageinsights.v1.ListDatasetConfigsResponse;
 import com.google.cloud.storageinsights.v1.ListReportConfigsRequest;
 import com.google.cloud.storageinsights.v1.ListReportConfigsResponse;
 import com.google.cloud.storageinsights.v1.ListReportDetailsRequest;
 import com.google.cloud.storageinsights.v1.ListReportDetailsResponse;
+import com.google.cloud.storageinsights.v1.OperationMetadata;
 import com.google.cloud.storageinsights.v1.ReportConfig;
 import com.google.cloud.storageinsights.v1.ReportDetail;
+import com.google.cloud.storageinsights.v1.UnlinkDatasetRequest;
+import com.google.cloud.storageinsights.v1.UpdateDatasetConfigRequest;
 import com.google.cloud.storageinsights.v1.UpdateReportConfigRequest;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -48,6 +63,14 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class StorageInsightsStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
+  }
 
   public UnaryCallable<ListReportConfigsRequest, ListReportConfigsPagedResponse>
       listReportConfigsPagedCallable() {
@@ -87,6 +110,68 @@ public abstract class StorageInsightsStub implements BackgroundResource {
 
   public UnaryCallable<GetReportDetailRequest, ReportDetail> getReportDetailCallable() {
     throw new UnsupportedOperationException("Not implemented: getReportDetailCallable()");
+  }
+
+  public UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatasetConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+      listDatasetConfigsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatasetConfigsCallable()");
+  }
+
+  public UnaryCallable<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDatasetConfigCallable()");
+  }
+
+  public OperationCallable<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDatasetConfigOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDatasetConfigRequest, Operation> createDatasetConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDatasetConfigCallable()");
+  }
+
+  public OperationCallable<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDatasetConfigOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDatasetConfigRequest, Operation> updateDatasetConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDatasetConfigCallable()");
+  }
+
+  public OperationCallable<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDatasetConfigOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDatasetConfigCallable()");
+  }
+
+  public OperationCallable<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: linkDatasetOperationCallable()");
+  }
+
+  public UnaryCallable<LinkDatasetRequest, Operation> linkDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: linkDatasetCallable()");
+  }
+
+  public OperationCallable<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: unlinkDatasetOperationCallable()");
+  }
+
+  public UnaryCallable<UnlinkDatasetRequest, Operation> unlinkDatasetCallable() {
+    throw new UnsupportedOperationException("Not implemented: unlinkDatasetCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

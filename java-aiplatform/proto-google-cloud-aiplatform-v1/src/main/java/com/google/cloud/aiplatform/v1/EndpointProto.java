@@ -135,7 +135,7 @@ public final class EndpointProto {
           + "\005value\030\002 \001(\t:\0028\001:\265\001\352A\261\001\n"
           + "\"aiplatform.googleapis.com/Endpoint\022<projects/{proje"
           + "ct}/locations/{location}/endpoints/{endpoint}\022Mprojects/{project}/locations/{loc"
-          + "ation}/publishers/{publisher}/models/{model}\"\336\t\n\r"
+          + "ation}/publishers/{publisher}/models/{model}\"\365\t\n\r"
           + "DeployedModel\022M\n"
           + "\023dedicated_resources\030\007"
           + " \001(\0132..google.cloud.aiplatform.v1.DedicatedResourcesH\000\022M\n"
@@ -163,9 +163,10 @@ public final class EndpointProto {
           + "\006status\030\032"
           + " \001(\01320.google.cloud.aiplatform.v1.DeployedModel.StatusB\003\340A\003\022R\n\r"
           + "system_labels\030\034"
-          + " \003(\0132;.google.cloud.aiplatform.v1.DeployedModel.SystemLabelsEntry\022[\n"
-          + "\031speculative_decoding_spec\030\036 \001(\01323.google.c"
-          + "loud.aiplatform.v1.SpeculativeDecodingSpecB\003\340A\001\032\177\n"
+          + " \003(\0132;.google.cloud.aiplatform.v1.DeployedModel.SystemLabelsEntry\022\025\n\r"
+          + "checkpoint_id\030\035 \001(\t\022[\n"
+          + "\031speculative_decoding_spec\030\036"
+          + " \001(\01323.google.cloud.aiplatform.v1.SpeculativeDecodingSpecB\003\340A\001\032\177\n"
           + "\006Status\022\024\n"
           + "\007message\030\001 \001(\tB\003\340A\003\0229\n"
           + "\020last_update_time\030\002"
@@ -183,17 +184,17 @@ public final class EndpointProto {
           + "#PredictRequestResponseLoggingConfig\022\017\n"
           + "\007enabled\030\001 \001(\010\022\025\n\r"
           + "sampling_rate\030\002 \001(\001\022M\n"
-          + "\024bigquery_destination\030\003 \001(\0132/.google.c"
-          + "loud.aiplatform.v1.BigQueryDestination\"N\n"
+          + "\024bigquery_destination\030\003"
+          + " \001(\0132/.google.cloud.aiplatform.v1.BigQueryDestination\"N\n"
           + "\026ClientConnectionConfig\0224\n"
           + "\021inference_timeout\030\001 \001(\0132\031.google.protobuf.Duration\"5\n"
           + "\026FasterDeploymentConfig\022\033\n"
           + "\023fast_tryout_enabled\030\002 \001(\010\"\231\003\n"
           + "\027SpeculativeDecodingSpec\022l\n"
-          + "\027draft_model_speculation\030\002 \001(\0132I.goo"
-          + "gle.cloud.aiplatform.v1.SpeculativeDecodingSpec.DraftModelSpeculationH\000\022a\n"
-          + "\021ngram_speculation\030\003 \001(\0132D.google.cloud.aiplat"
-          + "form.v1.SpeculativeDecodingSpec.NgramSpeculationH\000\022\037\n"
+          + "\027draft_model_speculation\030\002 \001(\0132I.google.cloud.aiplatf"
+          + "orm.v1.SpeculativeDecodingSpec.DraftModelSpeculationH\000\022a\n"
+          + "\021ngram_speculation\030\003 \001("
+          + "\0132D.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.NgramSpeculationH\000\022\037\n"
           + "\027speculative_token_count\030\001 \001(\005\032U\n"
           + "\025DraftModelSpeculation\022<\n"
           + "\013draft_model\030\001 \001(\tB\'\340A\002\372A!\n"
@@ -202,10 +203,9 @@ public final class EndpointProto {
           + "ngram_size\030\001 \001(\005B\r\n"
           + "\013speculationB\313\001\n"
           + "\036com.google.cloud.aiplatform.v1B\r"
-          + "EndpointProtoP\001Z>cloud.google.com/go/aiplatform/apiv1/aipl"
-          + "atformpb;aiplatformpb\252\002\032Google.Cloud.AIP"
-          + "latform.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352"
-          + "\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "EndpointProtoP\001Z>cloud.google.com/go/aiplatform/apiv1/aiplatformpb;aiplatfo"
+          + "rmpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goog"
+          + "le\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -287,6 +287,7 @@ public final class EndpointProto {
               "FasterDeploymentConfig",
               "Status",
               "SystemLabels",
+              "CheckpointId",
               "SpeculativeDecodingSpec",
               "PredictionResources",
             });

@@ -18,10 +18,14 @@ package com.google.cloud.storageinsights.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -31,6 +35,7 @@ import com.google.cloud.location.Location;
 import com.google.cloud.storageinsights.v1.stub.StorageInsightsStub;
 import com.google.cloud.storageinsights.v1.stub.StorageInsightsStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -203,6 +208,144 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListDatasetConfigs</td>
+ *      <td><p> Lists the dataset configurations in a given project for a given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDatasetConfigs(ListDatasetConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDatasetConfigs(LocationName parent)
+ *           <li><p> listDatasetConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDatasetConfigsPagedCallable()
+ *           <li><p> listDatasetConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDatasetConfig</td>
+ *      <td><p> Gets the dataset configuration in a given project for a given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDatasetConfig(GetDatasetConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDatasetConfig(DatasetConfigName name)
+ *           <li><p> getDatasetConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDatasetConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDatasetConfig</td>
+ *      <td><p> Creates a dataset configuration in a given project for a given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDatasetConfigAsync(CreateDatasetConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createDatasetConfigAsync(LocationName parent, DatasetConfig datasetConfig, String datasetConfigId)
+ *           <li><p> createDatasetConfigAsync(String parent, DatasetConfig datasetConfig, String datasetConfigId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDatasetConfigOperationCallable()
+ *           <li><p> createDatasetConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDatasetConfig</td>
+ *      <td><p> Updates a dataset configuration in a given project for a given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDatasetConfigAsync(UpdateDatasetConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDatasetConfigAsync(DatasetConfig datasetConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDatasetConfigOperationCallable()
+ *           <li><p> updateDatasetConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDatasetConfig</td>
+ *      <td><p> Deletes a dataset configuration in a given project for a given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDatasetConfigAsync(DeleteDatasetConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteDatasetConfigAsync(DatasetConfigName name)
+ *           <li><p> deleteDatasetConfigAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDatasetConfigOperationCallable()
+ *           <li><p> deleteDatasetConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> LinkDataset</td>
+ *      <td><p> Links a dataset to BigQuery in a given project for a given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> linkDatasetAsync(LinkDatasetRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> linkDatasetAsync(DatasetConfigName name)
+ *           <li><p> linkDatasetAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> linkDatasetOperationCallable()
+ *           <li><p> linkDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UnlinkDataset</td>
+ *      <td><p> Unlinks a dataset from BigQuery in a given project for a given location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> unlinkDatasetAsync(UnlinkDatasetRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> unlinkDatasetAsync(DatasetConfigName name)
+ *           <li><p> unlinkDatasetAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> unlinkDatasetOperationCallable()
+ *           <li><p> unlinkDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -293,6 +436,8 @@ import javax.annotation.Generated;
 public class StorageInsightsClient implements BackgroundResource {
   private final StorageInsightsSettings settings;
   private final StorageInsightsStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of StorageInsightsClient with default settings. */
   public static final StorageInsightsClient create() throws IOException {
@@ -324,11 +469,17 @@ public class StorageInsightsClient implements BackgroundResource {
   protected StorageInsightsClient(StorageInsightsSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((StorageInsightsStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected StorageInsightsClient(StorageInsightsStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final StorageInsightsSettings getSettings() {
@@ -337,6 +488,23 @@ public class StorageInsightsClient implements BackgroundResource {
 
   public StorageInsightsStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1248,6 +1416,1030 @@ public class StorageInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists the dataset configurations in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DatasetConfig element : storageInsightsClient.listDatasetConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListDatasetConfigsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatasetConfigsPagedResponse listDatasetConfigs(LocationName parent) {
+    ListDatasetConfigsRequest request =
+        ListDatasetConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDatasetConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the dataset configurations in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (DatasetConfig element : storageInsightsClient.listDatasetConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListDatasetConfigsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatasetConfigsPagedResponse listDatasetConfigs(String parent) {
+    ListDatasetConfigsRequest request =
+        ListDatasetConfigsRequest.newBuilder().setParent(parent).build();
+    return listDatasetConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the dataset configurations in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   ListDatasetConfigsRequest request =
+   *       ListDatasetConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DatasetConfig element : storageInsightsClient.listDatasetConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatasetConfigsPagedResponse listDatasetConfigs(
+      ListDatasetConfigsRequest request) {
+    return listDatasetConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the dataset configurations in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   ListDatasetConfigsRequest request =
+   *       ListDatasetConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DatasetConfig> future =
+   *       storageInsightsClient.listDatasetConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DatasetConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsPagedResponse>
+      listDatasetConfigsPagedCallable() {
+    return stub.listDatasetConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the dataset configurations in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   ListDatasetConfigsRequest request =
+   *       ListDatasetConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDatasetConfigsResponse response =
+   *         storageInsightsClient.listDatasetConfigsCallable().call(request);
+   *     for (DatasetConfig element : response.getDatasetConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
+      listDatasetConfigsCallable() {
+    return stub.listDatasetConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+   *   DatasetConfig response = storageInsightsClient.getDatasetConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatasetConfig getDatasetConfig(DatasetConfigName name) {
+    GetDatasetConfigRequest request =
+        GetDatasetConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getDatasetConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   String name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString();
+   *   DatasetConfig response = storageInsightsClient.getDatasetConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatasetConfig getDatasetConfig(String name) {
+    GetDatasetConfigRequest request = GetDatasetConfigRequest.newBuilder().setName(name).build();
+    return getDatasetConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   GetDatasetConfigRequest request =
+   *       GetDatasetConfigRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .build();
+   *   DatasetConfig response = storageInsightsClient.getDatasetConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatasetConfig getDatasetConfig(GetDatasetConfigRequest request) {
+    return getDatasetConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   GetDatasetConfigRequest request =
+   *       GetDatasetConfigRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .build();
+   *   ApiFuture<DatasetConfig> future =
+   *       storageInsightsClient.getDatasetConfigCallable().futureCall(request);
+   *   // Do something.
+   *   DatasetConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDatasetConfigRequest, DatasetConfig> getDatasetConfigCallable() {
+    return stub.getDatasetConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+   *   String datasetConfigId = "datasetConfigId7070869";
+   *   DatasetConfig response =
+   *       storageInsightsClient
+   *           .createDatasetConfigAsync(parent, datasetConfig, datasetConfigId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param datasetConfig Required. The resource being created
+   * @param datasetConfigId Required. ID of the requesting object. If auto-generating ID is enabled
+   *     on the server-side, remove this field and `dataset_config_id` from the method_signature of
+   *     Create RPC Note: The value should not contain any hyphens.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetConfig, OperationMetadata> createDatasetConfigAsync(
+      LocationName parent, DatasetConfig datasetConfig, String datasetConfigId) {
+    CreateDatasetConfigRequest request =
+        CreateDatasetConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDatasetConfig(datasetConfig)
+            .setDatasetConfigId(datasetConfigId)
+            .build();
+    return createDatasetConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+   *   String datasetConfigId = "datasetConfigId7070869";
+   *   DatasetConfig response =
+   *       storageInsightsClient
+   *           .createDatasetConfigAsync(parent, datasetConfig, datasetConfigId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent.
+   * @param datasetConfig Required. The resource being created
+   * @param datasetConfigId Required. ID of the requesting object. If auto-generating ID is enabled
+   *     on the server-side, remove this field and `dataset_config_id` from the method_signature of
+   *     Create RPC Note: The value should not contain any hyphens.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetConfig, OperationMetadata> createDatasetConfigAsync(
+      String parent, DatasetConfig datasetConfig, String datasetConfigId) {
+    CreateDatasetConfigRequest request =
+        CreateDatasetConfigRequest.newBuilder()
+            .setParent(parent)
+            .setDatasetConfig(datasetConfig)
+            .setDatasetConfigId(datasetConfigId)
+            .build();
+    return createDatasetConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   CreateDatasetConfigRequest request =
+   *       CreateDatasetConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDatasetConfigId("datasetConfigId7070869")
+   *           .setDatasetConfig(DatasetConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DatasetConfig response = storageInsightsClient.createDatasetConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetConfig, OperationMetadata> createDatasetConfigAsync(
+      CreateDatasetConfigRequest request) {
+    return createDatasetConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   CreateDatasetConfigRequest request =
+   *       CreateDatasetConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDatasetConfigId("datasetConfigId7070869")
+   *           .setDatasetConfig(DatasetConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DatasetConfig, OperationMetadata> future =
+   *       storageInsightsClient.createDatasetConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DatasetConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      createDatasetConfigOperationCallable() {
+    return stub.createDatasetConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   CreateDatasetConfigRequest request =
+   *       CreateDatasetConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDatasetConfigId("datasetConfigId7070869")
+   *           .setDatasetConfig(DatasetConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       storageInsightsClient.createDatasetConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDatasetConfigRequest, Operation> createDatasetConfigCallable() {
+    return stub.createDatasetConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DatasetConfig response =
+   *       storageInsightsClient.updateDatasetConfigAsync(datasetConfig, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param datasetConfig Required. The resource being updated
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     `DatasetConfig` resource by the update. The fields specified in the `update_mask` are
+   *     relative to the resource, not the full request. A field is overwritten if it is in the
+   *     mask. If the user does not provide a mask then it returns an "Invalid Argument" error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetConfig, OperationMetadata> updateDatasetConfigAsync(
+      DatasetConfig datasetConfig, FieldMask updateMask) {
+    UpdateDatasetConfigRequest request =
+        UpdateDatasetConfigRequest.newBuilder()
+            .setDatasetConfig(datasetConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDatasetConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   UpdateDatasetConfigRequest request =
+   *       UpdateDatasetConfigRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDatasetConfig(DatasetConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DatasetConfig response = storageInsightsClient.updateDatasetConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetConfig, OperationMetadata> updateDatasetConfigAsync(
+      UpdateDatasetConfigRequest request) {
+    return updateDatasetConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   UpdateDatasetConfigRequest request =
+   *       UpdateDatasetConfigRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDatasetConfig(DatasetConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DatasetConfig, OperationMetadata> future =
+   *       storageInsightsClient.updateDatasetConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DatasetConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateDatasetConfigRequest, DatasetConfig, OperationMetadata>
+      updateDatasetConfigOperationCallable() {
+    return stub.updateDatasetConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   UpdateDatasetConfigRequest request =
+   *       UpdateDatasetConfigRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDatasetConfig(DatasetConfig.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       storageInsightsClient.updateDatasetConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDatasetConfigRequest, Operation> updateDatasetConfigCallable() {
+    return stub.updateDatasetConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+   *   storageInsightsClient.deleteDatasetConfigAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetConfigAsync(
+      DatasetConfigName name) {
+    DeleteDatasetConfigRequest request =
+        DeleteDatasetConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteDatasetConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   String name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString();
+   *   storageInsightsClient.deleteDatasetConfigAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetConfigAsync(String name) {
+    DeleteDatasetConfigRequest request =
+        DeleteDatasetConfigRequest.newBuilder().setName(name).build();
+    return deleteDatasetConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   DeleteDatasetConfigRequest request =
+   *       DeleteDatasetConfigRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   storageInsightsClient.deleteDatasetConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetConfigAsync(
+      DeleteDatasetConfigRequest request) {
+    return deleteDatasetConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   DeleteDatasetConfigRequest request =
+   *       DeleteDatasetConfigRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       storageInsightsClient.deleteDatasetConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteDatasetConfigRequest, Empty, OperationMetadata>
+      deleteDatasetConfigOperationCallable() {
+    return stub.deleteDatasetConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a dataset configuration in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   DeleteDatasetConfigRequest request =
+   *       DeleteDatasetConfigRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       storageInsightsClient.deleteDatasetConfigCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDatasetConfigRequest, Operation> deleteDatasetConfigCallable() {
+    return stub.deleteDatasetConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Links a dataset to BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+   *   LinkDatasetResponse response = storageInsightsClient.linkDatasetAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LinkDatasetResponse, OperationMetadata> linkDatasetAsync(
+      DatasetConfigName name) {
+    LinkDatasetRequest request =
+        LinkDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return linkDatasetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Links a dataset to BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   String name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString();
+   *   LinkDatasetResponse response = storageInsightsClient.linkDatasetAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LinkDatasetResponse, OperationMetadata> linkDatasetAsync(
+      String name) {
+    LinkDatasetRequest request = LinkDatasetRequest.newBuilder().setName(name).build();
+    return linkDatasetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Links a dataset to BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   LinkDatasetRequest request =
+   *       LinkDatasetRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .build();
+   *   LinkDatasetResponse response = storageInsightsClient.linkDatasetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LinkDatasetResponse, OperationMetadata> linkDatasetAsync(
+      LinkDatasetRequest request) {
+    return linkDatasetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Links a dataset to BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   LinkDatasetRequest request =
+   *       LinkDatasetRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .build();
+   *   OperationFuture<LinkDatasetResponse, OperationMetadata> future =
+   *       storageInsightsClient.linkDatasetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LinkDatasetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<LinkDatasetRequest, LinkDatasetResponse, OperationMetadata>
+      linkDatasetOperationCallable() {
+    return stub.linkDatasetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Links a dataset to BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   LinkDatasetRequest request =
+   *       LinkDatasetRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = storageInsightsClient.linkDatasetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LinkDatasetRequest, Operation> linkDatasetCallable() {
+    return stub.linkDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unlinks a dataset from BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+   *   storageInsightsClient.unlinkDatasetAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> unlinkDatasetAsync(
+      DatasetConfigName name) {
+    UnlinkDatasetRequest request =
+        UnlinkDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return unlinkDatasetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unlinks a dataset from BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   String name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString();
+   *   storageInsightsClient.unlinkDatasetAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> unlinkDatasetAsync(String name) {
+    UnlinkDatasetRequest request = UnlinkDatasetRequest.newBuilder().setName(name).build();
+    return unlinkDatasetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unlinks a dataset from BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   UnlinkDatasetRequest request =
+   *       UnlinkDatasetRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .build();
+   *   storageInsightsClient.unlinkDatasetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> unlinkDatasetAsync(
+      UnlinkDatasetRequest request) {
+    return unlinkDatasetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unlinks a dataset from BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   UnlinkDatasetRequest request =
+   *       UnlinkDatasetRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       storageInsightsClient.unlinkDatasetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UnlinkDatasetRequest, Empty, OperationMetadata>
+      unlinkDatasetOperationCallable() {
+    return stub.unlinkDatasetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unlinks a dataset from BigQuery in a given project for a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageInsightsClient storageInsightsClient = StorageInsightsClient.create()) {
+   *   UnlinkDatasetRequest request =
+   *       UnlinkDatasetRequest.newBuilder()
+   *           .setName(
+   *               DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       storageInsightsClient.unlinkDatasetCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UnlinkDatasetRequest, Operation> unlinkDatasetCallable() {
+    return stub.unlinkDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -1589,6 +2781,86 @@ public class StorageInsightsClient implements BackgroundResource {
     protected ListReportDetailsFixedSizeCollection createCollection(
         List<ListReportDetailsPage> pages, int collectionSize) {
       return new ListReportDetailsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDatasetConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDatasetConfigsRequest,
+          ListDatasetConfigsResponse,
+          DatasetConfig,
+          ListDatasetConfigsPage,
+          ListDatasetConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListDatasetConfigsPagedResponse> createAsync(
+        PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig> context,
+        ApiFuture<ListDatasetConfigsResponse> futureResponse) {
+      ApiFuture<ListDatasetConfigsPage> futurePage =
+          ListDatasetConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDatasetConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDatasetConfigsPagedResponse(ListDatasetConfigsPage page) {
+      super(page, ListDatasetConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDatasetConfigsPage
+      extends AbstractPage<
+          ListDatasetConfigsRequest,
+          ListDatasetConfigsResponse,
+          DatasetConfig,
+          ListDatasetConfigsPage> {
+
+    private ListDatasetConfigsPage(
+        PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig> context,
+        ListDatasetConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDatasetConfigsPage createEmptyPage() {
+      return new ListDatasetConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListDatasetConfigsPage createPage(
+        PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig> context,
+        ListDatasetConfigsResponse response) {
+      return new ListDatasetConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDatasetConfigsPage> createPageAsync(
+        PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig> context,
+        ApiFuture<ListDatasetConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDatasetConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDatasetConfigsRequest,
+          ListDatasetConfigsResponse,
+          DatasetConfig,
+          ListDatasetConfigsPage,
+          ListDatasetConfigsFixedSizeCollection> {
+
+    private ListDatasetConfigsFixedSizeCollection(
+        List<ListDatasetConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDatasetConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListDatasetConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDatasetConfigsFixedSizeCollection createCollection(
+        List<ListDatasetConfigsPage> pages, int collectionSize) {
+      return new ListDatasetConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

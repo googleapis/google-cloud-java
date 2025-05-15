@@ -153,9 +153,9 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of subsequent `SearchCaseClassificationsRequest` message
-   * that is issued. If unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the `page_token`
+   * field of subsequent `caseClassifications.list` requests. If unspecified,
+   * there are no more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -179,9 +179,9 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of subsequent `SearchCaseClassificationsRequest` message
-   * that is issued. If unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the `page_token`
+   * field of subsequent `caseClassifications.list` requests. If unspecified,
+   * there are no more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -1005,9 +1005,9 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseClassificationsRequest` message
-     * that is issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `caseClassifications.list` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1030,9 +1030,9 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseClassificationsRequest` message
-     * that is issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `caseClassifications.list` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1055,9 +1055,9 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseClassificationsRequest` message
-     * that is issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `caseClassifications.list` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1079,9 +1079,9 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseClassificationsRequest` message
-     * that is issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `caseClassifications.list` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1099,9 +1099,9 @@ public final class SearchCaseClassificationsResponse extends com.google.protobuf
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseClassificationsRequest` message
-     * that is issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `caseClassifications.list` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

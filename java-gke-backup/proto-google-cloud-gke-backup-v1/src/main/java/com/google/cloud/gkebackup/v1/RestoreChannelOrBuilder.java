@@ -57,9 +57,7 @@ public interface RestoreChannelOrBuilder
    *
    * <pre>
    * Required. Immutable. The project into which the backups will be restored.
-   * The format is `projects/{project}`.
-   * Currently, {project} can only be the project number. Support for project
-   * IDs will be added in the future.
+   * The format is `projects/{projectId}` or `projects/{projectNumber}`.
    * </pre>
    *
    * <code>
@@ -75,9 +73,7 @@ public interface RestoreChannelOrBuilder
    *
    * <pre>
    * Required. Immutable. The project into which the backups will be restored.
-   * The format is `projects/{project}`.
-   * Currently, {project} can only be the project number. Support for project
-   * IDs will be added in the future.
+   * The format is `projects/{projectId}` or `projects/{projectNumber}`.
    * </pre>
    *
    * <code>

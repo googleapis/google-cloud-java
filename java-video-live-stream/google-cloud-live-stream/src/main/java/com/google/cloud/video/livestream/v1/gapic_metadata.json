@@ -19,6 +19,9 @@
             "CreateClip": {
               "methods": ["createClipAsync", "createClipAsync", "createClipAsync", "createClipOperationCallable", "createClipCallable"]
             },
+            "CreateDvrSession": {
+              "methods": ["createDvrSessionAsync", "createDvrSessionAsync", "createDvrSessionAsync", "createDvrSessionOperationCallable", "createDvrSessionCallable"]
+            },
             "CreateEvent": {
               "methods": ["createEvent", "createEvent", "createEvent", "createEventCallable"]
             },
@@ -34,6 +37,9 @@
             "DeleteClip": {
               "methods": ["deleteClipAsync", "deleteClipAsync", "deleteClipAsync", "deleteClipOperationCallable", "deleteClipCallable"]
             },
+            "DeleteDvrSession": {
+              "methods": ["deleteDvrSessionAsync", "deleteDvrSessionAsync", "deleteDvrSessionAsync", "deleteDvrSessionOperationCallable", "deleteDvrSessionCallable"]
+            },
             "DeleteEvent": {
               "methods": ["deleteEvent", "deleteEvent", "deleteEvent", "deleteEventCallable"]
             },
@@ -48,6 +54,9 @@
             },
             "GetClip": {
               "methods": ["getClip", "getClip", "getClip", "getClipCallable"]
+            },
+            "GetDvrSession": {
+              "methods": ["getDvrSession", "getDvrSession", "getDvrSession", "getDvrSessionCallable"]
             },
             "GetEvent": {
               "methods": ["getEvent", "getEvent", "getEvent", "getEventCallable"]
@@ -70,6 +79,9 @@
             "ListClips": {
               "methods": ["listClips", "listClips", "listClips", "listClipsPagedCallable", "listClipsCallable"]
             },
+            "ListDvrSessions": {
+              "methods": ["listDvrSessions", "listDvrSessions", "listDvrSessions", "listDvrSessionsPagedCallable", "listDvrSessionsCallable"]
+            },
             "ListEvents": {
               "methods": ["listEvents", "listEvents", "listEvents", "listEventsPagedCallable", "listEventsCallable"]
             },
@@ -87,6 +99,9 @@
             },
             "UpdateChannel": {
               "methods": ["updateChannelAsync", "updateChannelAsync", "updateChannelOperationCallable", "updateChannelCallable"]
+            },
+            "UpdateDvrSession": {
+              "methods": ["updateDvrSessionAsync", "updateDvrSessionAsync", "updateDvrSessionOperationCallable", "updateDvrSessionCallable"]
             },
             "UpdateInput": {
               "methods": ["updateInputAsync", "updateInputAsync", "updateInputOperationCallable", "updateInputCallable"]
