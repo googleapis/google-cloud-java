@@ -24,6 +24,10 @@ package com.google.cloud.support.v2;
  *
  * <pre>
  * A comment associated with a support case.
+ *
+ * Case comments are the primary way for Google Support to communicate with a
+ * user who has opened a case. When a user responds to Google Support, the
+ * user's responses also appear as comments.
  * </pre>
  *
  * Protobuf type {@code google.cloud.support.v2.Comment}
@@ -76,10 +80,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name for the comment.
+   * Output only. Identifier. The resource name of the comment.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -100,10 +106,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name for the comment.
+   * Output only. Identifier. The resource name of the comment.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -127,7 +135,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when this comment was created.
+   * Output only. The time when the comment was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -144,7 +152,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when this comment was created.
+   * Output only. The time when the comment was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -161,7 +169,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time when this comment was created.
+   * Output only. The time when the comment was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -179,7 +187,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The user or Google Support agent created this comment.
+   * Output only. The user or Google Support agent who created the comment.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Actor creator = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -196,7 +204,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The user or Google Support agent created this comment.
+   * Output only. The user or Google Support agent who created the comment.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Actor creator = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -213,7 +221,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The user or Google Support agent created this comment.
+   * Output only. The user or Google Support agent who created the comment.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Actor creator = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -233,8 +241,9 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full comment body. Maximum of 12800 characters. This can contain rich
-   * text syntax.
+   * The full comment body.
+   *
+   * Maximum of 12800 characters.
    * </pre>
    *
    * <code>string body = 4;</code>
@@ -258,8 +267,9 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full comment body. Maximum of 12800 characters. This can contain rich
-   * text syntax.
+   * The full comment body.
+   *
+   * Maximum of 12800 characters.
    * </pre>
    *
    * <code>string body = 4;</code>
@@ -288,15 +298,23 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. DEPRECATED. An automatically generated plain text version of
-   * body with all rich text syntax stripped.
+   * Output only. DEPRECATED. DO NOT USE.
+   *
+   * A duplicate of the `body` field.
+   *
+   * This field is only present for legacy reasons.
    * </pre>
    *
-   * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+   *     google/cloud/support/v2/comment.proto;l=66
    * @return The plainTextBody.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getPlainTextBody() {
     java.lang.Object ref = plainTextBody_;
     if (ref instanceof java.lang.String) {
@@ -313,15 +331,23 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. DEPRECATED. An automatically generated plain text version of
-   * body with all rich text syntax stripped.
+   * Output only. DEPRECATED. DO NOT USE.
+   *
+   * A duplicate of the `body` field.
+   *
+   * This field is only present for legacy reasons.
    * </pre>
    *
-   * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+   *     google/cloud/support/v2/comment.proto;l=66
    * @return The bytes for plainTextBody.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getPlainTextBodyBytes() {
     java.lang.Object ref = plainTextBody_;
     if (ref instanceof java.lang.String) {
@@ -543,6 +569,10 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A comment associated with a support case.
+   *
+   * Case comments are the primary way for Google Support to communicate with a
+   * user who has opened a case. When a user responds to Google Support, the
+   * user's responses also appear as comments.
    * </pre>
    *
    * Protobuf type {@code google.cloud.support.v2.Comment}
@@ -803,10 +833,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the comment.
+     * Output only. Identifier. The resource name of the comment.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The name.
      */
@@ -826,10 +858,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the comment.
+     * Output only. Identifier. The resource name of the comment.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -849,10 +883,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the comment.
+     * Output only. Identifier. The resource name of the comment.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -871,10 +907,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the comment.
+     * Output only. Identifier. The resource name of the comment.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -889,10 +927,12 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name for the comment.
+     * Output only. Identifier. The resource name of the comment.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -919,7 +959,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -936,7 +976,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -959,7 +999,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -984,7 +1024,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -1006,7 +1046,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -1036,7 +1076,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -1058,7 +1098,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -1075,7 +1115,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -1096,7 +1136,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time when this comment was created.
+     * Output only. The time when the comment was created.
      * </pre>
      *
      * <code>
@@ -1131,7 +1171,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1148,7 +1188,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1169,7 +1209,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1194,7 +1234,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1216,7 +1256,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1246,7 +1286,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1268,7 +1308,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1285,7 +1325,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1304,7 +1344,7 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The user or Google Support agent created this comment.
+     * Output only. The user or Google Support agent who created the comment.
      * </pre>
      *
      * <code>
@@ -1334,8 +1374,9 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full comment body. Maximum of 12800 characters. This can contain rich
-     * text syntax.
+     * The full comment body.
+     *
+     * Maximum of 12800 characters.
      * </pre>
      *
      * <code>string body = 4;</code>
@@ -1358,8 +1399,9 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full comment body. Maximum of 12800 characters. This can contain rich
-     * text syntax.
+     * The full comment body.
+     *
+     * Maximum of 12800 characters.
      * </pre>
      *
      * <code>string body = 4;</code>
@@ -1382,8 +1424,9 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full comment body. Maximum of 12800 characters. This can contain rich
-     * text syntax.
+     * The full comment body.
+     *
+     * Maximum of 12800 characters.
      * </pre>
      *
      * <code>string body = 4;</code>
@@ -1405,8 +1448,9 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full comment body. Maximum of 12800 characters. This can contain rich
-     * text syntax.
+     * The full comment body.
+     *
+     * Maximum of 12800 characters.
      * </pre>
      *
      * <code>string body = 4;</code>
@@ -1424,8 +1468,9 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full comment body. Maximum of 12800 characters. This can contain rich
-     * text syntax.
+     * The full comment body.
+     *
+     * Maximum of 12800 characters.
      * </pre>
      *
      * <code>string body = 4;</code>
@@ -1450,14 +1495,22 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DEPRECATED. An automatically generated plain text version of
-     * body with all rich text syntax stripped.
+     * Output only. DEPRECATED. DO NOT USE.
+     *
+     * A duplicate of the `body` field.
+     *
+     * This field is only present for legacy reasons.
      * </pre>
      *
-     * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+     *     google/cloud/support/v2/comment.proto;l=66
      * @return The plainTextBody.
      */
+    @java.lang.Deprecated
     public java.lang.String getPlainTextBody() {
       java.lang.Object ref = plainTextBody_;
       if (!(ref instanceof java.lang.String)) {
@@ -1474,14 +1527,22 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DEPRECATED. An automatically generated plain text version of
-     * body with all rich text syntax stripped.
+     * Output only. DEPRECATED. DO NOT USE.
+     *
+     * A duplicate of the `body` field.
+     *
+     * This field is only present for legacy reasons.
      * </pre>
      *
-     * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+     *     google/cloud/support/v2/comment.proto;l=66
      * @return The bytes for plainTextBody.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getPlainTextBodyBytes() {
       java.lang.Object ref = plainTextBody_;
       if (ref instanceof String) {
@@ -1498,15 +1559,23 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DEPRECATED. An automatically generated plain text version of
-     * body with all rich text syntax stripped.
+     * Output only. DEPRECATED. DO NOT USE.
+     *
+     * A duplicate of the `body` field.
+     *
+     * This field is only present for legacy reasons.
      * </pre>
      *
-     * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+     *     google/cloud/support/v2/comment.proto;l=66
      * @param value The plainTextBody to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPlainTextBody(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1521,14 +1590,22 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DEPRECATED. An automatically generated plain text version of
-     * body with all rich text syntax stripped.
+     * Output only. DEPRECATED. DO NOT USE.
+     *
+     * A duplicate of the `body` field.
+     *
+     * This field is only present for legacy reasons.
      * </pre>
      *
-     * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+     *     google/cloud/support/v2/comment.proto;l=66
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPlainTextBody() {
       plainTextBody_ = getDefaultInstance().getPlainTextBody();
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1540,15 +1617,23 @@ public final class Comment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. DEPRECATED. An automatically generated plain text version of
-     * body with all rich text syntax stripped.
+     * Output only. DEPRECATED. DO NOT USE.
+     *
+     * A duplicate of the `body` field.
+     *
+     * This field is only present for legacy reasons.
      * </pre>
      *
-     * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+     *     google/cloud/support/v2/comment.proto;l=66
      * @param value The bytes for plainTextBody to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPlainTextBodyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

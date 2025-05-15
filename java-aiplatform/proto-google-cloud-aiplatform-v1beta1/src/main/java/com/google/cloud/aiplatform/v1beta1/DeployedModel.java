@@ -45,6 +45,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     modelVersionId_ = "";
     displayName_ = "";
     serviceAccount_ = "";
+    checkpointId_ = "";
   }
 
   @java.lang.Override
@@ -2338,6 +2339,59 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int CHECKPOINT_ID_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object checkpointId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The checkpoint id of the model.
+   * </pre>
+   *
+   * <code>string checkpoint_id = 29;</code>
+   *
+   * @return The checkpointId.
+   */
+  @java.lang.Override
+  public java.lang.String getCheckpointId() {
+    java.lang.Object ref = checkpointId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      checkpointId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The checkpoint id of the model.
+   * </pre>
+   *
+   * <code>string checkpoint_id = 29;</code>
+   *
+   * @return The bytes for checkpointId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCheckpointIdBytes() {
+    java.lang.Object ref = checkpointId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      checkpointId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2407,6 +2461,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSystemLabels(), SystemLabelsDefaultEntryHolder.defaultEntry, 28);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkpointId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, checkpointId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2482,6 +2539,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, systemLabels__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkpointId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, checkpointId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2531,6 +2591,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!internalGetSystemLabels().equals(other.internalGetSystemLabels())) return false;
+    if (!getCheckpointId().equals(other.getCheckpointId())) return false;
     if (!getPredictionResourcesCase().equals(other.getPredictionResourcesCase())) return false;
     switch (predictionResourcesCase_) {
       case 7:
@@ -2600,6 +2661,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SYSTEM_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSystemLabels().hashCode();
     }
+    hash = (37 * hash) + CHECKPOINT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCheckpointId().hashCode();
     switch (predictionResourcesCase_) {
       case 7:
         hash = (37 * hash) + DEDICATED_RESOURCES_FIELD_NUMBER;
@@ -2837,6 +2900,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         statusBuilder_ = null;
       }
       internalGetMutableSystemLabels().clear();
+      checkpointId_ = "";
       predictionResourcesCase_ = 0;
       predictionResources_ = null;
       return this;
@@ -2934,6 +2998,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.systemLabels_ = internalGetSystemLabels();
         result.systemLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.checkpointId_ = checkpointId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3049,6 +3116,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableSystemLabels().mergeFrom(other.internalGetSystemLabels());
       bitField0_ |= 0x00020000;
+      if (!other.getCheckpointId().isEmpty()) {
+        checkpointId_ = other.checkpointId_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
       switch (other.getPredictionResourcesCase()) {
         case DEDICATED_RESOURCES:
           {
@@ -3217,6 +3289,12 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00020000;
                 break;
               } // case 226
+            case 234:
+              {
+                checkpointId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6334,6 +6412,117 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllSystemLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSystemLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00020000;
+      return this;
+    }
+
+    private java.lang.Object checkpointId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @return The checkpointId.
+     */
+    public java.lang.String getCheckpointId() {
+      java.lang.Object ref = checkpointId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        checkpointId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @return The bytes for checkpointId.
+     */
+    public com.google.protobuf.ByteString getCheckpointIdBytes() {
+      java.lang.Object ref = checkpointId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        checkpointId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @param value The checkpointId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCheckpointId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkpointId_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCheckpointId() {
+      checkpointId_ = getDefaultInstance().getCheckpointId();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @param value The bytes for checkpointId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCheckpointIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      checkpointId_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
 

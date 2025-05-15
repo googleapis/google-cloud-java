@@ -707,6 +707,32 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * The checkpoint id of the model.
+   * </pre>
+   *
+   * <code>string checkpoint_id = 29;</code>
+   *
+   * @return The checkpointId.
+   */
+  java.lang.String getCheckpointId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The checkpoint id of the model.
+   * </pre>
+   *
+   * <code>string checkpoint_id = 29;</code>
+   *
+   * @return The bytes for checkpointId.
+   */
+  com.google.protobuf.ByteString getCheckpointIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Spec for configuring speculative decoding.
    * </pre>
    *

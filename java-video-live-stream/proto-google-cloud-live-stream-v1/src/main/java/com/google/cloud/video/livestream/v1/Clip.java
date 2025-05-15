@@ -47,6 +47,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     outputUri_ = "";
     slices_ = java.util.Collections.emptyList();
     clipManifests_ = java.util.Collections.emptyList();
+    outputType_ = 0;
   }
 
   @java.lang.Override
@@ -291,6 +292,165 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.video.livestream.v1.Clip.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * OutputType represents the output type of the clip.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.video.livestream.v1.Clip.OutputType}
+   */
+  public enum OutputType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * OutputType is not specified.
+     * </pre>
+     *
+     * <code>OUTPUT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    OUTPUT_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * OutputType is a VOD manifest. This is the default value.
+     * </pre>
+     *
+     * <code>MANIFEST = 1;</code>
+     */
+    MANIFEST(1),
+    /**
+     *
+     *
+     * <pre>
+     * OutputType is an MP4 file.
+     * </pre>
+     *
+     * <code>MP4 = 2;</code>
+     */
+    MP4(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * OutputType is not specified.
+     * </pre>
+     *
+     * <code>OUTPUT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int OUTPUT_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * OutputType is a VOD manifest. This is the default value.
+     * </pre>
+     *
+     * <code>MANIFEST = 1;</code>
+     */
+    public static final int MANIFEST_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * OutputType is an MP4 file.
+     * </pre>
+     *
+     * <code>MP4 = 2;</code>
+     */
+    public static final int MP4_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OutputType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OutputType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return OUTPUT_TYPE_UNSPECIFIED;
+        case 1:
+          return MANIFEST;
+        case 2:
+          return MP4;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OutputType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<OutputType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<OutputType>() {
+          public OutputType findValueByNumber(int number) {
+            return OutputType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.Clip.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final OutputType[] VALUES = values();
+
+    public static OutputType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OutputType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.video.livestream.v1.Clip.OutputType)
   }
 
   public interface TimeSliceOrBuilder
@@ -3181,7 +3341,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the clip, in the following format:
-   * `projects/{project}/locations/{location}/channels/{c}/clips/{clipId}`.
+   * `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
    * `{clipId}` is a user-specified resource id that conforms to the following
    * criteria:
    *
@@ -3211,7 +3371,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The resource name of the clip, in the following format:
-   * `projects/{project}/locations/{location}/channels/{c}/clips/{clipId}`.
+   * `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
    * `{clipId}` is a user-specified resource id that conforms to the following
    * criteria:
    *
@@ -3828,6 +3988,51 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     return clipManifests_.get(index);
   }
 
+  public static final int OUTPUT_TYPE_FIELD_NUMBER = 13;
+  private int outputType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OutputType of the clip. If not specified, the default value is
+   * MANIFEST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Clip.OutputType output_type = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for outputType.
+   */
+  @java.lang.Override
+  public int getOutputTypeValue() {
+    return outputType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. OutputType of the clip. If not specified, the default value is
+   * MANIFEST.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Clip.OutputType output_type = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The outputType.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Clip.OutputType getOutputType() {
+    com.google.cloud.video.livestream.v1.Clip.OutputType result =
+        com.google.cloud.video.livestream.v1.Clip.OutputType.forNumber(outputType_);
+    return result == null
+        ? com.google.cloud.video.livestream.v1.Clip.OutputType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3870,6 +4075,11 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < clipManifests_.size(); i++) {
       output.writeMessage(12, clipManifests_.get(i));
+    }
+    if (outputType_
+        != com.google.cloud.video.livestream.v1.Clip.OutputType.OUTPUT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(13, outputType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3917,6 +4127,11 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < clipManifests_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, clipManifests_.get(i));
     }
+    if (outputType_
+        != com.google.cloud.video.livestream.v1.Clip.OutputType.OUTPUT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, outputType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3955,6 +4170,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getSlicesList().equals(other.getSlicesList())) return false;
     if (!getClipManifestsList().equals(other.getClipManifestsList())) return false;
+    if (outputType_ != other.outputType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4000,6 +4216,8 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CLIP_MANIFESTS_FIELD_NUMBER;
       hash = (53 * hash) + getClipManifestsList().hashCode();
     }
+    hash = (37 * hash) + OUTPUT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + outputType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4216,6 +4434,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         clipManifestsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000200);
+      outputType_ = 0;
       return this;
     }
 
@@ -4303,6 +4522,9 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.outputType_ = outputType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4433,6 +4655,9 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.outputType_ != 0) {
+        setOutputTypeValue(other.getOutputTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4541,6 +4766,12 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 98
+            case 104:
+              {
+                outputType_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4567,7 +4798,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the clip, in the following format:
-     * `projects/{project}/locations/{location}/channels/{c}/clips/{clipId}`.
+     * `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
      * `{clipId}` is a user-specified resource id that conforms to the following
      * criteria:
      *
@@ -4596,7 +4827,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the clip, in the following format:
-     * `projects/{project}/locations/{location}/channels/{c}/clips/{clipId}`.
+     * `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
      * `{clipId}` is a user-specified resource id that conforms to the following
      * criteria:
      *
@@ -4625,7 +4856,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the clip, in the following format:
-     * `projects/{project}/locations/{location}/channels/{c}/clips/{clipId}`.
+     * `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
      * `{clipId}` is a user-specified resource id that conforms to the following
      * criteria:
      *
@@ -4653,7 +4884,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the clip, in the following format:
-     * `projects/{project}/locations/{location}/channels/{c}/clips/{clipId}`.
+     * `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
      * `{clipId}` is a user-specified resource id that conforms to the following
      * criteria:
      *
@@ -4677,7 +4908,7 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The resource name of the clip, in the following format:
-     * `projects/{project}/locations/{location}/channels/{c}/clips/{clipId}`.
+     * `projects/{project}/locations/{location}/channels/{channelId}/clips/{clipId}`.
      * `{clipId}` is a user-specified resource id that conforms to the following
      * criteria:
      *
@@ -6741,6 +6972,118 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         clipManifests_ = null;
       }
       return clipManifestsBuilder_;
+    }
+
+    private int outputType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OutputType of the clip. If not specified, the default value is
+     * MANIFEST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Clip.OutputType output_type = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for outputType.
+     */
+    @java.lang.Override
+    public int getOutputTypeValue() {
+      return outputType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OutputType of the clip. If not specified, the default value is
+     * MANIFEST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Clip.OutputType output_type = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for outputType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutputTypeValue(int value) {
+      outputType_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OutputType of the clip. If not specified, the default value is
+     * MANIFEST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Clip.OutputType output_type = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The outputType.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Clip.OutputType getOutputType() {
+      com.google.cloud.video.livestream.v1.Clip.OutputType result =
+          com.google.cloud.video.livestream.v1.Clip.OutputType.forNumber(outputType_);
+      return result == null
+          ? com.google.cloud.video.livestream.v1.Clip.OutputType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OutputType of the clip. If not specified, the default value is
+     * MANIFEST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Clip.OutputType output_type = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The outputType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutputType(com.google.cloud.video.livestream.v1.Clip.OutputType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      outputType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OutputType of the clip. If not specified, the default value is
+     * MANIFEST.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Clip.OutputType output_type = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOutputType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      outputType_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

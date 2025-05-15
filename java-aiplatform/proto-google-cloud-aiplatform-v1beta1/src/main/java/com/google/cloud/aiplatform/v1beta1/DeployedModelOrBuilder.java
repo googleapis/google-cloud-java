@@ -740,6 +740,32 @@ public interface DeployedModelOrBuilder
    */
   java.lang.String getSystemLabelsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * The checkpoint id of the model.
+   * </pre>
+   *
+   * <code>string checkpoint_id = 29;</code>
+   *
+   * @return The checkpointId.
+   */
+  java.lang.String getCheckpointId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The checkpoint id of the model.
+   * </pre>
+   *
+   * <code>string checkpoint_id = 29;</code>
+   *
+   * @return The bytes for checkpointId.
+   */
+  com.google.protobuf.ByteString getCheckpointIdBytes();
+
   com.google.cloud.aiplatform.v1beta1.DeployedModel.PredictionResourcesCase
       getPredictionResourcesCase();
 }

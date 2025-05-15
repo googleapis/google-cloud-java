@@ -16,6 +16,7 @@
 
 package com.google.cloud.storageinsights.v1;
 
+import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListDatasetConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListLocationsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportConfigsPagedResponse;
 import static com.google.cloud.storageinsights.v1.StorageInsightsClient.ListReportDetailsPagedResponse;
@@ -27,11 +28,13 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
@@ -45,6 +48,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -655,6 +659,639 @@ public class StorageInsightsClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatasetConfigsTest() throws Exception {
+    DatasetConfig responsesElement = DatasetConfig.newBuilder().build();
+    ListDatasetConfigsResponse expectedResponse =
+        ListDatasetConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasetConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockStorageInsights.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDatasetConfigsPagedResponse pagedListResponse = client.listDatasetConfigs(parent);
+
+    List<DatasetConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDatasetConfigsRequest actualRequest = ((ListDatasetConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDatasetConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDatasetConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatasetConfigsTest2() throws Exception {
+    DatasetConfig responsesElement = DatasetConfig.newBuilder().build();
+    ListDatasetConfigsResponse expectedResponse =
+        ListDatasetConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatasetConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockStorageInsights.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDatasetConfigsPagedResponse pagedListResponse = client.listDatasetConfigs(parent);
+
+    List<DatasetConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatasetConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDatasetConfigsRequest actualRequest = ((ListDatasetConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDatasetConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDatasetConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatasetConfigTest() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    mockStorageInsights.addResponse(expectedResponse);
+
+    DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+
+    DatasetConfig actualResponse = client.getDatasetConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDatasetConfigRequest actualRequest = ((GetDatasetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDatasetConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+      client.getDatasetConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDatasetConfigTest2() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    mockStorageInsights.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DatasetConfig actualResponse = client.getDatasetConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDatasetConfigRequest actualRequest = ((GetDatasetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDatasetConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDatasetConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDatasetConfigTest() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+    String datasetConfigId = "datasetConfigId7070869";
+
+    DatasetConfig actualResponse =
+        client.createDatasetConfigAsync(parent, datasetConfig, datasetConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatasetConfigRequest actualRequest = ((CreateDatasetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(datasetConfig, actualRequest.getDatasetConfig());
+    Assert.assertEquals(datasetConfigId, actualRequest.getDatasetConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatasetConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+      String datasetConfigId = "datasetConfigId7070869";
+      client.createDatasetConfigAsync(parent, datasetConfig, datasetConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDatasetConfigTest2() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+    String datasetConfigId = "datasetConfigId7070869";
+
+    DatasetConfig actualResponse =
+        client.createDatasetConfigAsync(parent, datasetConfig, datasetConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDatasetConfigRequest actualRequest = ((CreateDatasetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(datasetConfig, actualRequest.getDatasetConfig());
+    Assert.assertEquals(datasetConfigId, actualRequest.getDatasetConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDatasetConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+      String datasetConfigId = "datasetConfigId7070869";
+      client.createDatasetConfigAsync(parent, datasetConfig, datasetConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateDatasetConfigTest() throws Exception {
+    DatasetConfig expectedResponse =
+        DatasetConfig.newBuilder()
+            .setName(DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setUid("uid115792")
+            .setOrganizationNumber(1902853077)
+            .setIncludeNewlyCreatedBuckets(true)
+            .setSkipVerificationAndIngest(true)
+            .setRetentionPeriodDays(-2064636812)
+            .setLink(DatasetConfig.Link.newBuilder().build())
+            .setIdentity(Identity.newBuilder().build())
+            .setStatus(Status.newBuilder().build())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DatasetConfig actualResponse = client.updateDatasetConfigAsync(datasetConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDatasetConfigRequest actualRequest = ((UpdateDatasetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(datasetConfig, actualRequest.getDatasetConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDatasetConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      DatasetConfig datasetConfig = DatasetConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDatasetConfigAsync(datasetConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDatasetConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+
+    client.deleteDatasetConfigAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatasetConfigRequest actualRequest = ((DeleteDatasetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDatasetConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+      client.deleteDatasetConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDatasetConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDatasetConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteDatasetConfigAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDatasetConfigRequest actualRequest = ((DeleteDatasetConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDatasetConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDatasetConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void linkDatasetTest() throws Exception {
+    LinkDatasetResponse expectedResponse = LinkDatasetResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("linkDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+
+    LinkDatasetResponse actualResponse = client.linkDatasetAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LinkDatasetRequest actualRequest = ((LinkDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void linkDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+      client.linkDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void linkDatasetTest2() throws Exception {
+    LinkDatasetResponse expectedResponse = LinkDatasetResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("linkDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    LinkDatasetResponse actualResponse = client.linkDatasetAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LinkDatasetRequest actualRequest = ((LinkDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void linkDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.linkDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void unlinkDatasetTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("unlinkDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+
+    client.unlinkDatasetAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UnlinkDatasetRequest actualRequest = ((UnlinkDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void unlinkDatasetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      DatasetConfigName name = DatasetConfigName.of("[PROJECT]", "[LOCATION]", "[DATASET_CONFIG]");
+      client.unlinkDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void unlinkDatasetTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("unlinkDatasetTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageInsights.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.unlinkDatasetAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockStorageInsights.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UnlinkDatasetRequest actualRequest = ((UnlinkDatasetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void unlinkDatasetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageInsights.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.unlinkDatasetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

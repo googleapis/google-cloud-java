@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.protobuf.Empty;
 import com.google.shopping.merchant.accounts.v1beta.stub.OnlineReturnPolicyServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
@@ -106,6 +107,27 @@ public class OnlineReturnPolicyServiceSettings
       listOnlineReturnPoliciesSettings() {
     return ((OnlineReturnPolicyServiceStubSettings) getStubSettings())
         .listOnlineReturnPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOnlineReturnPolicy. */
+  public UnaryCallSettings<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      createOnlineReturnPolicySettings() {
+    return ((OnlineReturnPolicyServiceStubSettings) getStubSettings())
+        .createOnlineReturnPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateOnlineReturnPolicy. */
+  public UnaryCallSettings<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+      updateOnlineReturnPolicySettings() {
+    return ((OnlineReturnPolicyServiceStubSettings) getStubSettings())
+        .updateOnlineReturnPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOnlineReturnPolicy. */
+  public UnaryCallSettings<DeleteOnlineReturnPolicyRequest, Empty>
+      deleteOnlineReturnPolicySettings() {
+    return ((OnlineReturnPolicyServiceStubSettings) getStubSettings())
+        .deleteOnlineReturnPolicySettings();
   }
 
   public static final OnlineReturnPolicyServiceSettings create(
@@ -234,6 +256,24 @@ public class OnlineReturnPolicyServiceSettings
             ListOnlineReturnPoliciesPagedResponse>
         listOnlineReturnPoliciesSettings() {
       return getStubSettingsBuilder().listOnlineReturnPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<CreateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        createOnlineReturnPolicySettings() {
+      return getStubSettingsBuilder().createOnlineReturnPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<UpdateOnlineReturnPolicyRequest, OnlineReturnPolicy>
+        updateOnlineReturnPolicySettings() {
+      return getStubSettingsBuilder().updateOnlineReturnPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOnlineReturnPolicy. */
+    public UnaryCallSettings.Builder<DeleteOnlineReturnPolicyRequest, Empty>
+        deleteOnlineReturnPolicySettings() {
+      return getStubSettingsBuilder().deleteOnlineReturnPolicySettings();
     }
 
     @Override

@@ -19,6 +19,7 @@ package com.google.cloud.video.livestream.v1.stub;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListDvrSessionsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -50,17 +51,21 @@ import com.google.cloud.video.livestream.v1.Clip;
 import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
 import com.google.cloud.video.livestream.v1.CreateClipRequest;
+import com.google.cloud.video.livestream.v1.CreateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
 import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
 import com.google.cloud.video.livestream.v1.DeleteClipRequest;
+import com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
+import com.google.cloud.video.livestream.v1.DvrSession;
 import com.google.cloud.video.livestream.v1.Event;
 import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
 import com.google.cloud.video.livestream.v1.GetClipRequest;
+import com.google.cloud.video.livestream.v1.GetDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
 import com.google.cloud.video.livestream.v1.GetPoolRequest;
@@ -71,6 +76,8 @@ import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
 import com.google.cloud.video.livestream.v1.ListClipsRequest;
 import com.google.cloud.video.livestream.v1.ListClipsResponse;
+import com.google.cloud.video.livestream.v1.ListDvrSessionsRequest;
+import com.google.cloud.video.livestream.v1.ListDvrSessionsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
 import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
@@ -80,6 +87,7 @@ import com.google.cloud.video.livestream.v1.Pool;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
+import com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
 import com.google.cloud.video.livestream.v1.UpdatePoolRequest;
 import com.google.common.collect.ImmutableMap;
@@ -105,6 +113,7 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(DvrSession.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Channel.getDescriptor())
           .add(Input.getDescriptor())
@@ -875,6 +884,206 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<CreateDvrSessionRequest, Operation>
+      createDvrSessionMethodDescriptor =
+          ApiMethodDescriptor.<CreateDvrSessionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/CreateDvrSession")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDvrSessionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/channels/*}/dvrSessions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDvrSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDvrSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "dvrSessionId", request.getDvrSessionId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("dvrSession", request.getDvrSession(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateDvrSessionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListDvrSessionsRequest, ListDvrSessionsResponse>
+      listDvrSessionsMethodDescriptor =
+          ApiMethodDescriptor.<ListDvrSessionsRequest, ListDvrSessionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/ListDvrSessions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDvrSessionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/channels/*}/dvrSessions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDvrSessionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDvrSessionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDvrSessionsResponse>newBuilder()
+                      .setDefaultInstance(ListDvrSessionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetDvrSessionRequest, DvrSession>
+      getDvrSessionMethodDescriptor =
+          ApiMethodDescriptor.<GetDvrSessionRequest, DvrSession>newBuilder()
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetDvrSession")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDvrSessionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/channels/*/dvrSessions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDvrSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDvrSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DvrSession>newBuilder()
+                      .setDefaultInstance(DvrSession.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDvrSessionRequest, Operation>
+      deleteDvrSessionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDvrSessionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/DeleteDvrSession")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDvrSessionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/channels/*/dvrSessions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDvrSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDvrSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteDvrSessionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateDvrSessionRequest, Operation>
+      updateDvrSessionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateDvrSessionRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/UpdateDvrSession")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateDvrSessionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{dvrSession.name=projects/*/locations/*/channels/*/dvrSessions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDvrSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "dvrSession.name", request.getDvrSession().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateDvrSessionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("dvrSession", request.getDvrSession(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateDvrSessionRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<CreateAssetRequest, Operation>
       createAssetMethodDescriptor =
           ApiMethodDescriptor.<CreateAssetRequest, Operation>newBuilder()
@@ -1214,6 +1423,20 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<DeleteClipRequest, Operation> deleteClipCallable;
   private final OperationCallable<DeleteClipRequest, Empty, OperationMetadata>
       deleteClipOperationCallable;
+  private final UnaryCallable<CreateDvrSessionRequest, Operation> createDvrSessionCallable;
+  private final OperationCallable<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationCallable;
+  private final UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsResponse>
+      listDvrSessionsCallable;
+  private final UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsPagedResponse>
+      listDvrSessionsPagedCallable;
+  private final UnaryCallable<GetDvrSessionRequest, DvrSession> getDvrSessionCallable;
+  private final UnaryCallable<DeleteDvrSessionRequest, Operation> deleteDvrSessionCallable;
+  private final OperationCallable<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationCallable;
+  private final UnaryCallable<UpdateDvrSessionRequest, Operation> updateDvrSessionCallable;
+  private final OperationCallable<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationCallable;
   private final UnaryCallable<CreateAssetRequest, Operation> createAssetCallable;
   private final OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
       createAssetOperationCallable;
@@ -1522,6 +1745,63 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateDvrSessionRequest, Operation> createDvrSessionTransportSettings =
+        HttpJsonCallSettings.<CreateDvrSessionRequest, Operation>newBuilder()
+            .setMethodDescriptor(createDvrSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListDvrSessionsRequest, ListDvrSessionsResponse>
+        listDvrSessionsTransportSettings =
+            HttpJsonCallSettings.<ListDvrSessionsRequest, ListDvrSessionsResponse>newBuilder()
+                .setMethodDescriptor(listDvrSessionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetDvrSessionRequest, DvrSession> getDvrSessionTransportSettings =
+        HttpJsonCallSettings.<GetDvrSessionRequest, DvrSession>newBuilder()
+            .setMethodDescriptor(getDvrSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteDvrSessionRequest, Operation> deleteDvrSessionTransportSettings =
+        HttpJsonCallSettings.<DeleteDvrSessionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteDvrSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateDvrSessionRequest, Operation> updateDvrSessionTransportSettings =
+        HttpJsonCallSettings.<UpdateDvrSessionRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateDvrSessionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "dvr_session.name", String.valueOf(request.getDvrSession().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<CreateAssetRequest, Operation> createAssetTransportSettings =
         HttpJsonCallSettings.<CreateAssetRequest, Operation>newBuilder()
             .setMethodDescriptor(createAssetMethodDescriptor)
@@ -1744,6 +2024,42 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
             settings.deleteClipOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createDvrSessionCallable =
+        callableFactory.createUnaryCallable(
+            createDvrSessionTransportSettings, settings.createDvrSessionSettings(), clientContext);
+    this.createDvrSessionOperationCallable =
+        callableFactory.createOperationCallable(
+            createDvrSessionTransportSettings,
+            settings.createDvrSessionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listDvrSessionsCallable =
+        callableFactory.createUnaryCallable(
+            listDvrSessionsTransportSettings, settings.listDvrSessionsSettings(), clientContext);
+    this.listDvrSessionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDvrSessionsTransportSettings, settings.listDvrSessionsSettings(), clientContext);
+    this.getDvrSessionCallable =
+        callableFactory.createUnaryCallable(
+            getDvrSessionTransportSettings, settings.getDvrSessionSettings(), clientContext);
+    this.deleteDvrSessionCallable =
+        callableFactory.createUnaryCallable(
+            deleteDvrSessionTransportSettings, settings.deleteDvrSessionSettings(), clientContext);
+    this.deleteDvrSessionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDvrSessionTransportSettings,
+            settings.deleteDvrSessionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateDvrSessionCallable =
+        callableFactory.createUnaryCallable(
+            updateDvrSessionTransportSettings, settings.updateDvrSessionSettings(), clientContext);
+    this.updateDvrSessionOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDvrSessionTransportSettings,
+            settings.updateDvrSessionOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.createAssetCallable =
         callableFactory.createUnaryCallable(
             createAssetTransportSettings, settings.createAssetSettings(), clientContext);
@@ -1820,6 +2136,11 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
     methodDescriptors.add(getClipMethodDescriptor);
     methodDescriptors.add(createClipMethodDescriptor);
     methodDescriptors.add(deleteClipMethodDescriptor);
+    methodDescriptors.add(createDvrSessionMethodDescriptor);
+    methodDescriptors.add(listDvrSessionsMethodDescriptor);
+    methodDescriptors.add(getDvrSessionMethodDescriptor);
+    methodDescriptors.add(deleteDvrSessionMethodDescriptor);
+    methodDescriptors.add(updateDvrSessionMethodDescriptor);
     methodDescriptors.add(createAssetMethodDescriptor);
     methodDescriptors.add(deleteAssetMethodDescriptor);
     methodDescriptors.add(getAssetMethodDescriptor);
@@ -2013,6 +2334,55 @@ public class HttpJsonLivestreamServiceStub extends LivestreamServiceStub {
   public OperationCallable<DeleteClipRequest, Empty, OperationMetadata>
       deleteClipOperationCallable() {
     return deleteClipOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDvrSessionRequest, Operation> createDvrSessionCallable() {
+    return createDvrSessionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDvrSessionRequest, DvrSession, OperationMetadata>
+      createDvrSessionOperationCallable() {
+    return createDvrSessionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsResponse> listDvrSessionsCallable() {
+    return listDvrSessionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDvrSessionsRequest, ListDvrSessionsPagedResponse>
+      listDvrSessionsPagedCallable() {
+    return listDvrSessionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDvrSessionRequest, DvrSession> getDvrSessionCallable() {
+    return getDvrSessionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDvrSessionRequest, Operation> deleteDvrSessionCallable() {
+    return deleteDvrSessionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDvrSessionRequest, Empty, OperationMetadata>
+      deleteDvrSessionOperationCallable() {
+    return deleteDvrSessionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDvrSessionRequest, Operation> updateDvrSessionCallable() {
+    return updateDvrSessionCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDvrSessionRequest, DvrSession, OperationMetadata>
+      updateDvrSessionOperationCallable() {
+    return updateDvrSessionOperationCallable;
   }
 
   @Override

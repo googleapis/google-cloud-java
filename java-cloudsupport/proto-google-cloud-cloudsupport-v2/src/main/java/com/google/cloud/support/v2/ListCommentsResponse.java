@@ -74,7 +74,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of Comments associated with the given Case.
+   * List of the comments associated with the case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -88,7 +88,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of Comments associated with the given Case.
+   * List of the comments associated with the case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -103,7 +103,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of Comments associated with the given Case.
+   * List of the comments associated with the case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -117,7 +117,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of Comments associated with the given Case.
+   * List of the comments associated with the case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -131,7 +131,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of Comments associated with the given Case.
+   * List of the comments associated with the case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -150,9 +150,9 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of subsequent `ListCommentsRequest` message that is
-   * issued. If unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the `page_token`
+   * field of subsequent `cases.comments.list` requests. If unspecified, there
+   * are no more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -176,9 +176,9 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of subsequent `ListCommentsRequest` message that is
-   * issued. If unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the `page_token`
+   * field of subsequent `cases.comments.list` requests. If unspecified, there
+   * are no more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -633,7 +633,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -650,7 +650,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -667,7 +667,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -684,7 +684,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -707,7 +707,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -728,7 +728,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -751,7 +751,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -774,7 +774,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -794,7 +794,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -815,7 +815,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -836,7 +836,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -856,7 +856,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -876,7 +876,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -889,7 +889,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -906,7 +906,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -924,7 +924,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -938,7 +938,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -952,7 +952,7 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of Comments associated with the given Case.
+     * List of the comments associated with the case.
      * </pre>
      *
      * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
@@ -984,9 +984,9 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `ListCommentsRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `cases.comments.list` requests. If unspecified, there
+     * are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1009,9 +1009,9 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `ListCommentsRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `cases.comments.list` requests. If unspecified, there
+     * are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1034,9 +1034,9 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `ListCommentsRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `cases.comments.list` requests. If unspecified, there
+     * are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1058,9 +1058,9 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `ListCommentsRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `cases.comments.list` requests. If unspecified, there
+     * are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1078,9 +1078,9 @@ public final class ListCommentsResponse extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `ListCommentsRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the `page_token`
+     * field of subsequent `cases.comments.list` requests. If unspecified, there
+     * are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

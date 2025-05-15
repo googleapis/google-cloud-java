@@ -28,7 +28,7 @@ public interface UpdateCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The case object to update.
+   * Required. The case to update.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Case case = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface UpdateCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The case object to update.
+   * Required. The case to update.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Case case = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -54,7 +54,7 @@ public interface UpdateCaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The case object to update.
+   * Required. The case to update.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Case case = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -65,14 +65,13 @@ public interface UpdateCaseRequestOrBuilder
    *
    *
    * <pre>
-   * A list of attributes of the case object that should be updated
-   * as part of this request. Supported values are `priority`, `display_name`,
-   * and `subscriber_email_addresses`. If no fields are specified, all supported
-   * fields are updated.
+   * A list of attributes of the case that should be updated. Supported values
+   * are `priority`, `display_name`, and `subscriber_email_addresses`. If no
+   * fields are specified, all supported fields are updated.
    *
-   * WARNING: If you do not provide a field mask, then you might accidentally
-   * clear some fields. For example, if you leave the field mask empty and do
-   * not provide a value for `subscriber_email_addresses`, then
+   * Be careful - if you do not provide a field mask, then you might
+   * accidentally clear some fields. For example, if you leave the field mask
+   * empty and do not provide a value for `subscriber_email_addresses`, then
    * `subscriber_email_addresses` is updated to empty.
    * </pre>
    *
@@ -86,14 +85,13 @@ public interface UpdateCaseRequestOrBuilder
    *
    *
    * <pre>
-   * A list of attributes of the case object that should be updated
-   * as part of this request. Supported values are `priority`, `display_name`,
-   * and `subscriber_email_addresses`. If no fields are specified, all supported
-   * fields are updated.
+   * A list of attributes of the case that should be updated. Supported values
+   * are `priority`, `display_name`, and `subscriber_email_addresses`. If no
+   * fields are specified, all supported fields are updated.
    *
-   * WARNING: If you do not provide a field mask, then you might accidentally
-   * clear some fields. For example, if you leave the field mask empty and do
-   * not provide a value for `subscriber_email_addresses`, then
+   * Be careful - if you do not provide a field mask, then you might
+   * accidentally clear some fields. For example, if you leave the field mask
+   * empty and do not provide a value for `subscriber_email_addresses`, then
    * `subscriber_email_addresses` is updated to empty.
    * </pre>
    *
@@ -107,14 +105,13 @@ public interface UpdateCaseRequestOrBuilder
    *
    *
    * <pre>
-   * A list of attributes of the case object that should be updated
-   * as part of this request. Supported values are `priority`, `display_name`,
-   * and `subscriber_email_addresses`. If no fields are specified, all supported
-   * fields are updated.
+   * A list of attributes of the case that should be updated. Supported values
+   * are `priority`, `display_name`, and `subscriber_email_addresses`. If no
+   * fields are specified, all supported fields are updated.
    *
-   * WARNING: If you do not provide a field mask, then you might accidentally
-   * clear some fields. For example, if you leave the field mask empty and do
-   * not provide a value for `subscriber_email_addresses`, then
+   * Be careful - if you do not provide a field mask, then you might
+   * accidentally clear some fields. For example, if you leave the field mask
+   * empty and do not provide a value for `subscriber_email_addresses`, then
    * `subscriber_email_addresses` is updated to empty.
    * </pre>
    *
