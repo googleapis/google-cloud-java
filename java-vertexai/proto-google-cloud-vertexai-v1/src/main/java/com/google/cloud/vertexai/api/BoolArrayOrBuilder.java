@@ -36,7 +36,6 @@ public interface BoolArrayOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.Boolean> getValuesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BoolArrayOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
-
   /**
    *
    *

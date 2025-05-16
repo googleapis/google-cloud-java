@@ -36,7 +36,6 @@ public interface ClientConnectionConfigOrBuilder
    * @return Whether the inferenceTimeout field is set.
    */
   boolean hasInferenceTimeout();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ClientConnectionConfigOrBuilder
    * @return The inferenceTimeout.
    */
   com.google.protobuf.Duration getInferenceTimeout();
-
   /**
    *
    *
