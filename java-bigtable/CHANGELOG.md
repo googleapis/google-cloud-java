@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.59.0](https://github.com/googleapis/java-bigtable/compare/v2.58.2...v2.59.0) (2025-05-16)
+
+
+### Features
+
+* **bigtable:** Add DeletionProtection support for Logical Views ([#2539](https://github.com/googleapis/java-bigtable/issues/2539)) ([d9ba32b](https://github.com/googleapis/java-bigtable/commit/d9ba32b8e5792ceed054f67c58f5622e153e87d6))
+
+
+### Dependencies
+
+* Update googleapis/sdk-platform-java action to v2.58.0 ([#2581](https://github.com/googleapis/java-bigtable/issues/2581)) ([c9b0289](https://github.com/googleapis/java-bigtable/commit/c9b028902dc8aae9552181d65c9743be09d45ecf))
+* Update shared dependencies ([#2584](https://github.com/googleapis/java-bigtable/issues/2584)) ([ba82675](https://github.com/googleapis/java-bigtable/commit/ba82675c25dbe12443ac5ef48464dcb3f8c8894c))
+
 ## [2.58.2](https://github.com/googleapis/java-bigtable/compare/v2.58.1...v2.58.2) (2025-05-08)
 
 
