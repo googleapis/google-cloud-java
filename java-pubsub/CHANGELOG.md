@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.139.4](https://github.com/googleapis/java-pubsub/compare/v1.139.3...v1.139.4) (2025-05-15)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.57.0 ([017eb0f](https://github.com/googleapis/java-pubsub/commit/017eb0f78423fde3edd42a07677df49512085633))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.58.0 ([3713edb](https://github.com/googleapis/java-pubsub/commit/3713edb9420f792b7c7ad4e430ca05b5942656ff))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.50.0 ([#2422](https://github.com/googleapis/java-pubsub/issues/2422)) ([993b2d0](https://github.com/googleapis/java-pubsub/commit/993b2d06ce6b45bb72faa9d6959cddc14a9cf60e))
+* Update dependency com.google.cloud:google-cloud-core to v2.55.0 ([#2413](https://github.com/googleapis/java-pubsub/issues/2413)) ([3e181e7](https://github.com/googleapis/java-pubsub/commit/3e181e7c4469eadcf6f148ee0a30aae1cfa825f3))
+* Update dependency com.google.cloud:google-cloud-core to v2.56.0 ([#2427](https://github.com/googleapis/java-pubsub/issues/2427)) ([b2a3e35](https://github.com/googleapis/java-pubsub/commit/b2a3e35ced2d1715c37207f98740889635326dc1))
+* Update dependency com.google.cloud:google-cloud-storage to v2.52.2 ([#2421](https://github.com/googleapis/java-pubsub/issues/2421)) ([1224ee5](https://github.com/googleapis/java-pubsub/commit/1224ee51da27e447560076b0d51ba90515566bd9))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.47.0 ([#2418](https://github.com/googleapis/java-pubsub/issues/2418)) ([5f87661](https://github.com/googleapis/java-pubsub/commit/5f876612eb4a54faec3af2c9043aec0adf51e2ec))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.48.0 ([#2428](https://github.com/googleapis/java-pubsub/issues/2428)) ([cfa91fa](https://github.com/googleapis/java-pubsub/commit/cfa91fa0e85f3f1e517627da3e5befcd46f0803a))
+* Update dependency com.google.cloud.opentelemetry:exporter-trace to v0.34.0 ([#2376](https://github.com/googleapis/java-pubsub/issues/2376)) ([06768cd](https://github.com/googleapis/java-pubsub/commit/06768cd1ac86ae7ae7b91b020cc174b4423e1b9a))
+
+
+### Documentation
+
+* **sample:** Add samples for topic and subscription SMTs ([#2388](https://github.com/googleapis/java-pubsub/issues/2388)) ([f35de28](https://github.com/googleapis/java-pubsub/commit/f35de28396fda595e6ea68c1755a4253d6b097d6))
+
 ## [1.139.3](https://github.com/googleapis/java-pubsub/compare/v1.139.2...v1.139.3) (2025-05-06)
 
 

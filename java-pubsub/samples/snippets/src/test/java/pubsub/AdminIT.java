@@ -120,8 +120,7 @@ public class AdminIT {
       TopicName.of(projectId, confluentCloudIngestionTopicId);
   private static final TopicName azureEventHubsIngestionTopicName =
       TopicName.of(projectId, azureEventHubsIngestionTopicId);
-  private static final TopicName smtTopicName =
-      TopicName.of(projectId, smtTopicId);
+  private static final TopicName smtTopicName = TopicName.of(projectId, smtTopicId);
   private static final SubscriptionName pullSubscriptionName =
       SubscriptionName.of(projectId, pullSubscriptionId);
   private static final SubscriptionName pushSubscriptionName =
@@ -465,17 +464,14 @@ public class AdminIT {
 
     bout.reset();
     // Test create topic with an SMT.
-    CreateTopicWithSmtExample.createTopicWithSmtExample(
-        projectId, smtTopicId);
-    assertThat(bout.toString())
-        .contains("Created topic with SMT: " + smtTopicName.toString());
+    CreateTopicWithSmtExample.createTopicWithSmtExample(projectId, smtTopicId);
+    assertThat(bout.toString()).contains("Created topic with SMT: " + smtTopicName.toString());
 
     bout.reset();
     // Test create topic with an SMT.
     CreateSubscriptionWithSmtExample.createSubscriptionWithSmtExample(
         projectId, smtTopicId, smtSubscriptionId);
-    assertThat(bout.toString())
-        .contains("Created subscription with SMT");
+    assertThat(bout.toString()).contains("Created subscription with SMT");
     assertThat(bout.toString()).contains(smtSubscriptionName.toString());
     assertThat(bout.toString()).contains("redactSSN");
     DeleteSubscriptionExample.deleteSubscriptionExample(projectId, smtSubscriptionId);
