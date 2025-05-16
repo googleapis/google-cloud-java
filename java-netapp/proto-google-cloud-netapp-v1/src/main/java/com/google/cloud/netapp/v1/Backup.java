@@ -1189,6 +1189,65 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ENFORCED_RETENTION_END_TIME_FIELD_NUMBER = 15;
+  private com.google.protobuf.Timestamp enforcedRetentionEndTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time until which the backup is not deletable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the enforcedRetentionEndTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnforcedRetentionEndTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time until which the backup is not deletable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enforcedRetentionEndTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getEnforcedRetentionEndTime() {
+    return enforcedRetentionEndTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : enforcedRetentionEndTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time until which the backup is not deletable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getEnforcedRetentionEndTimeOrBuilder() {
+    return enforcedRetentionEndTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : enforcedRetentionEndTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1243,6 +1302,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupRegion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, backupRegion_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(15, getEnforcedRetentionEndTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1302,6 +1364,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupRegion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, backupRegion_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, getEnforcedRetentionEndTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1337,6 +1404,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getVolumeRegion().equals(other.getVolumeRegion())) return false;
     if (!getBackupRegion().equals(other.getBackupRegion())) return false;
+    if (hasEnforcedRetentionEndTime() != other.hasEnforcedRetentionEndTime()) return false;
+    if (hasEnforcedRetentionEndTime()) {
+      if (!getEnforcedRetentionEndTime().equals(other.getEnforcedRetentionEndTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1382,6 +1453,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getVolumeRegion().hashCode();
     hash = (37 * hash) + BACKUP_REGION_FIELD_NUMBER;
     hash = (53 * hash) + getBackupRegion().hashCode();
+    if (hasEnforcedRetentionEndTime()) {
+      hash = (37 * hash) + ENFORCED_RETENTION_END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEnforcedRetentionEndTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1545,6 +1620,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getEnforcedRetentionEndTimeFieldBuilder();
       }
     }
 
@@ -1570,6 +1646,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzi_ = false;
       volumeRegion_ = "";
       backupRegion_ = "";
+      enforcedRetentionEndTime_ = null;
+      if (enforcedRetentionEndTimeBuilder_ != null) {
+        enforcedRetentionEndTimeBuilder_.dispose();
+        enforcedRetentionEndTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1650,6 +1731,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.backupRegion_ = backupRegion_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.enforcedRetentionEndTime_ =
+            enforcedRetentionEndTimeBuilder_ == null
+                ? enforcedRetentionEndTime_
+                : enforcedRetentionEndTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1751,6 +1839,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         backupRegion_ = other.backupRegion_;
         bitField0_ |= 0x00002000;
         onChanged();
+      }
+      if (other.hasEnforcedRetentionEndTime()) {
+        mergeEnforcedRetentionEndTime(other.getEnforcedRetentionEndTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1868,6 +1959,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    getEnforcedRetentionEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3471,6 +3569,219 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00002000;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp enforcedRetentionEndTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        enforcedRetentionEndTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the enforcedRetentionEndTime field is set.
+     */
+    public boolean hasEnforcedRetentionEndTime() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enforcedRetentionEndTime.
+     */
+    public com.google.protobuf.Timestamp getEnforcedRetentionEndTime() {
+      if (enforcedRetentionEndTimeBuilder_ == null) {
+        return enforcedRetentionEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : enforcedRetentionEndTime_;
+      } else {
+        return enforcedRetentionEndTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEnforcedRetentionEndTime(com.google.protobuf.Timestamp value) {
+      if (enforcedRetentionEndTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        enforcedRetentionEndTime_ = value;
+      } else {
+        enforcedRetentionEndTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEnforcedRetentionEndTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (enforcedRetentionEndTimeBuilder_ == null) {
+        enforcedRetentionEndTime_ = builderForValue.build();
+      } else {
+        enforcedRetentionEndTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEnforcedRetentionEndTime(com.google.protobuf.Timestamp value) {
+      if (enforcedRetentionEndTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && enforcedRetentionEndTime_ != null
+            && enforcedRetentionEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEnforcedRetentionEndTimeBuilder().mergeFrom(value);
+        } else {
+          enforcedRetentionEndTime_ = value;
+        }
+      } else {
+        enforcedRetentionEndTimeBuilder_.mergeFrom(value);
+      }
+      if (enforcedRetentionEndTime_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEnforcedRetentionEndTime() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      enforcedRetentionEndTime_ = null;
+      if (enforcedRetentionEndTimeBuilder_ != null) {
+        enforcedRetentionEndTimeBuilder_.dispose();
+        enforcedRetentionEndTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEnforcedRetentionEndTimeBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getEnforcedRetentionEndTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEnforcedRetentionEndTimeOrBuilder() {
+      if (enforcedRetentionEndTimeBuilder_ != null) {
+        return enforcedRetentionEndTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return enforcedRetentionEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : enforcedRetentionEndTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time until which the backup is not deletable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp enforced_retention_end_time = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getEnforcedRetentionEndTimeFieldBuilder() {
+      if (enforcedRetentionEndTimeBuilder_ == null) {
+        enforcedRetentionEndTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEnforcedRetentionEndTime(), getParentForChildren(), isClean());
+        enforcedRetentionEndTime_ = null;
+      }
+      return enforcedRetentionEndTimeBuilder_;
     }
 
     @java.lang.Override

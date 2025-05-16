@@ -595,4 +595,45 @@ public interface StoragePoolOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. True if using Independent Scaling of capacity and performance
+   * (Hyperdisk) By default set to false
+   * </pre>
+   *
+   * <code>bool custom_performance_enabled = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customPerformanceEnabled.
+   */
+  boolean getCustomPerformanceEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom Performance Total Throughput of the pool (in MiB/s)
+   * </pre>
+   *
+   * <code>int64 total_throughput_mibps = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The totalThroughputMibps.
+   */
+  long getTotalThroughputMibps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom Performance Total IOPS of the pool
+   * If not provided, it will be calculated based on the total_throughput_mibps
+   * </pre>
+   *
+   * <code>int64 total_iops = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The totalIops.
+   */
+  long getTotalIops();
 }

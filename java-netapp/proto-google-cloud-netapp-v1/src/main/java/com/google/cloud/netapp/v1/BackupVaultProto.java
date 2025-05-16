@@ -33,6 +33,10 @@ public final class BackupVaultProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_BackupVault_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_netapp_v1_BackupVault_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_BackupVault_LabelsEntry_fieldAccessorTable;
@@ -73,7 +77,7 @@ public final class BackupVaultProto {
           + ")google/cloud/netapp/v1/backup_vault.pr"
           + "oto\022\026google.cloud.netapp.v1\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\311\007\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\221\n\n"
           + "\013BackupVault\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022=\n"
           + "\005state\030\002"
@@ -93,7 +97,15 @@ public final class BackupVaultProto {
           + "!netapp.googleapis.com/BackupVault\022K\n"
           + "\030destination_backup_vault\030\n"
           + " \001(\tB)\340A\003\372A#\n"
-          + "!netapp.googleapis.com/BackupVault\032-\n"
+          + "!netapp.googleapis.com/BackupVault\022_\n"
+          + "\027backup_retention_policy\030\013 \001(\01329.google"
+          + ".cloud.netapp.v1.BackupVault.BackupRetentionPolicyB\003\340A\001\032\344\001\n"
+          + "\025BackupRetentionPolicy\0223\n"
+          + "&backup_minimum_enforced_retention_days\030\001 \001(\005B\003\340A\002\022#\n"
+          + "\026daily_backup_immutable\030\002 \001(\010B\003\340A\001\022$\n"
+          + "\027weekly_backup_immutable\030\003 \001(\010B\003\340A\001\022%\n"
+          + "\030monthly_backup_immutable\030\004 \001(\010B\003\340A\001\022$\n"
+          + "\027manual_backup_immutable\030\005 \001(\010B\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"^\n"
@@ -108,9 +120,8 @@ public final class BackupVaultProto {
           + "\035BACKUP_VAULT_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tIN_REGION\020\001\022\020\n"
           + "\014CROSS_REGION\020\002:\207\001\352A\203\001\n"
-          + "!netapp.googleapis.com/BackupVault\022Cprojects"
-          + "/{project}/locations/{location}/backupVa"
-          + "ults/{backup_vault}*\014backupVaults2\013backupVault\"P\n"
+          + "!netapp.googleapis.com/BackupVault\022Cprojects/{project}/locations/{location}/"
+          + "backupVaults/{backup_vault}*\014backupVaults2\013backupVault\"P\n"
           + "\025GetBackupVaultRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!netapp.googleapis.com/BackupVault\"\235\001\n"
@@ -121,29 +132,27 @@ public final class BackupVaultProto {
           + "page_token\030\003 \001(\t\022\020\n"
           + "\010order_by\030\004 \001(\t\022\016\n"
           + "\006filter\030\005 \001(\t\"\204\001\n"
-          + "\030ListBackupVaultsResponse\022:\n"
-          + "\r"
+          + "\030ListBackupVaultsResponse\022:\n\r"
           + "backup_vaults\030\001 \003(\0132#.google.cloud.netapp.v1.BackupVault\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"\263\001\n"
           + "\030CreateBackupVaultRequest\0229\n"
-          + "\006parent\030\001 \001("
-          + "\tB)\340A\002\372A#\022!netapp.googleapis.com/BackupVault\022\034\n"
+          + "\006parent\030\001 \001(\tB)\340A"
+          + "\002\372A#\022!netapp.googleapis.com/BackupVault\022\034\n"
           + "\017backup_vault_id\030\002 \001(\tB\003\340A\002\022>\n"
-          + "\014backup_vault\030\003 "
-          + "\001(\0132#.google.cloud.netapp.v1.BackupVaultB\003\340A\002\"S\n"
+          + "\014backup_vault\030\003"
+          + " \001(\0132#.google.cloud.netapp.v1.BackupVaultB\003\340A\002\"S\n"
           + "\030DeleteBackupVaultRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!netapp.googleapis.com/BackupVault\"\220\001\n"
           + "\030UpdateBackupVaultRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022>\n"
-          + "\014backup_vault\030\002 \001(\0132#.go"
-          + "ogle.cloud.netapp.v1.BackupVaultB\003\340A\002B\262\001\n"
-          + "\032com.google.cloud.netapp.v1B\020BackupVaul"
-          + "tProtoP\001Z2cloud.google.com/go/netapp/api"
-          + "v1/netapppb;netapppb\252\002\026Google.Cloud.NetA"
-          + "pp.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031Google:"
-          + ":Cloud::NetApp::V1b\006proto3"
+          + "\014backup_vault\030\002 "
+          + "\001(\0132#.google.cloud.netapp.v1.BackupVaultB\003\340A\002B\262\001\n"
+          + "\032com.google.cloud.netapp.v1B\020BackupVaultProtoP\001Z2cloud.google.com/go/ne"
+          + "tapp/apiv1/netapppb;netapppb\252\002\026Google.Cl"
+          + "oud.NetApp.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002"
+          + "\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -170,9 +179,22 @@ public final class BackupVaultProto {
               "BackupRegion",
               "SourceBackupVault",
               "DestinationBackupVault",
+              "BackupRetentionPolicy",
+            });
+    internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_descriptor =
+        internal_static_google_cloud_netapp_v1_BackupVault_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_descriptor,
+            new java.lang.String[] {
+              "BackupMinimumEnforcedRetentionDays",
+              "DailyBackupImmutable",
+              "WeeklyBackupImmutable",
+              "MonthlyBackupImmutable",
+              "ManualBackupImmutable",
             });
     internal_static_google_cloud_netapp_v1_BackupVault_LabelsEntry_descriptor =
-        internal_static_google_cloud_netapp_v1_BackupVault_descriptor.getNestedTypes().get(0);
+        internal_static_google_cloud_netapp_v1_BackupVault_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_netapp_v1_BackupVault_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_BackupVault_LabelsEntry_descriptor,
