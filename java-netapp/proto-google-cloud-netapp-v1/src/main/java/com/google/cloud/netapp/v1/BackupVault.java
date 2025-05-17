@@ -472,6 +472,1057 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.BackupVault.BackupVaultType)
   }
 
+  public interface BackupRetentionPolicyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Minimum retention duration in days for backups in the backup
+     * vault.
+     * </pre>
+     *
+     * <code>
+     * int32 backup_minimum_enforced_retention_days = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The backupMinimumEnforcedRetentionDays.
+     */
+    int getBackupMinimumEnforcedRetentionDays();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the daily backups are immutable.
+     * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+     * monthly_backup_immutable and manual_backup_immutable must be true.
+     * </pre>
+     *
+     * <code>bool daily_backup_immutable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dailyBackupImmutable.
+     */
+    boolean getDailyBackupImmutable();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the weekly backups are immutable.
+     * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+     * monthly_backup_immutable and manual_backup_immutable must be true.
+     * </pre>
+     *
+     * <code>bool weekly_backup_immutable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The weeklyBackupImmutable.
+     */
+    boolean getWeeklyBackupImmutable();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the monthly backups are immutable.
+     * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+     * monthly_backup_immutable and manual_backup_immutable must be true.
+     * </pre>
+     *
+     * <code>bool monthly_backup_immutable = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The monthlyBackupImmutable.
+     */
+    boolean getMonthlyBackupImmutable();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the manual backups are immutable.
+     * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+     * monthly_backup_immutable and manual_backup_immutable must be true.
+     * </pre>
+     *
+     * <code>bool manual_backup_immutable = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The manualBackupImmutable.
+     */
+    boolean getManualBackupImmutable();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Retention policy for backups in the backup vault
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy}
+   */
+  public static final class BackupRetentionPolicy extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy)
+      BackupRetentionPolicyOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use BackupRetentionPolicy.newBuilder() to construct.
+    private BackupRetentionPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BackupRetentionPolicy() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BackupRetentionPolicy();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.netapp.v1.BackupVaultProto
+          .internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.netapp.v1.BackupVaultProto
+          .internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.class,
+              com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.Builder.class);
+    }
+
+    public static final int BACKUP_MINIMUM_ENFORCED_RETENTION_DAYS_FIELD_NUMBER = 1;
+    private int backupMinimumEnforcedRetentionDays_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Minimum retention duration in days for backups in the backup
+     * vault.
+     * </pre>
+     *
+     * <code>
+     * int32 backup_minimum_enforced_retention_days = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The backupMinimumEnforcedRetentionDays.
+     */
+    @java.lang.Override
+    public int getBackupMinimumEnforcedRetentionDays() {
+      return backupMinimumEnforcedRetentionDays_;
+    }
+
+    public static final int DAILY_BACKUP_IMMUTABLE_FIELD_NUMBER = 2;
+    private boolean dailyBackupImmutable_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the daily backups are immutable.
+     * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+     * monthly_backup_immutable and manual_backup_immutable must be true.
+     * </pre>
+     *
+     * <code>bool daily_backup_immutable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dailyBackupImmutable.
+     */
+    @java.lang.Override
+    public boolean getDailyBackupImmutable() {
+      return dailyBackupImmutable_;
+    }
+
+    public static final int WEEKLY_BACKUP_IMMUTABLE_FIELD_NUMBER = 3;
+    private boolean weeklyBackupImmutable_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the weekly backups are immutable.
+     * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+     * monthly_backup_immutable and manual_backup_immutable must be true.
+     * </pre>
+     *
+     * <code>bool weekly_backup_immutable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The weeklyBackupImmutable.
+     */
+    @java.lang.Override
+    public boolean getWeeklyBackupImmutable() {
+      return weeklyBackupImmutable_;
+    }
+
+    public static final int MONTHLY_BACKUP_IMMUTABLE_FIELD_NUMBER = 4;
+    private boolean monthlyBackupImmutable_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the monthly backups are immutable.
+     * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+     * monthly_backup_immutable and manual_backup_immutable must be true.
+     * </pre>
+     *
+     * <code>bool monthly_backup_immutable = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The monthlyBackupImmutable.
+     */
+    @java.lang.Override
+    public boolean getMonthlyBackupImmutable() {
+      return monthlyBackupImmutable_;
+    }
+
+    public static final int MANUAL_BACKUP_IMMUTABLE_FIELD_NUMBER = 5;
+    private boolean manualBackupImmutable_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the manual backups are immutable.
+     * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+     * monthly_backup_immutable and manual_backup_immutable must be true.
+     * </pre>
+     *
+     * <code>bool manual_backup_immutable = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The manualBackupImmutable.
+     */
+    @java.lang.Override
+    public boolean getManualBackupImmutable() {
+      return manualBackupImmutable_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (backupMinimumEnforcedRetentionDays_ != 0) {
+        output.writeInt32(1, backupMinimumEnforcedRetentionDays_);
+      }
+      if (dailyBackupImmutable_ != false) {
+        output.writeBool(2, dailyBackupImmutable_);
+      }
+      if (weeklyBackupImmutable_ != false) {
+        output.writeBool(3, weeklyBackupImmutable_);
+      }
+      if (monthlyBackupImmutable_ != false) {
+        output.writeBool(4, monthlyBackupImmutable_);
+      }
+      if (manualBackupImmutable_ != false) {
+        output.writeBool(5, manualBackupImmutable_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (backupMinimumEnforcedRetentionDays_ != 0) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                1, backupMinimumEnforcedRetentionDays_);
+      }
+      if (dailyBackupImmutable_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, dailyBackupImmutable_);
+      }
+      if (weeklyBackupImmutable_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, weeklyBackupImmutable_);
+      }
+      if (monthlyBackupImmutable_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, monthlyBackupImmutable_);
+      }
+      if (manualBackupImmutable_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, manualBackupImmutable_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy other =
+          (com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy) obj;
+
+      if (getBackupMinimumEnforcedRetentionDays() != other.getBackupMinimumEnforcedRetentionDays())
+        return false;
+      if (getDailyBackupImmutable() != other.getDailyBackupImmutable()) return false;
+      if (getWeeklyBackupImmutable() != other.getWeeklyBackupImmutable()) return false;
+      if (getMonthlyBackupImmutable() != other.getMonthlyBackupImmutable()) return false;
+      if (getManualBackupImmutable() != other.getManualBackupImmutable()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BACKUP_MINIMUM_ENFORCED_RETENTION_DAYS_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupMinimumEnforcedRetentionDays();
+      hash = (37 * hash) + DAILY_BACKUP_IMMUTABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDailyBackupImmutable());
+      hash = (37 * hash) + WEEKLY_BACKUP_IMMUTABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWeeklyBackupImmutable());
+      hash = (37 * hash) + MONTHLY_BACKUP_IMMUTABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMonthlyBackupImmutable());
+      hash = (37 * hash) + MANUAL_BACKUP_IMMUTABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManualBackupImmutable());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retention policy for backups in the backup vault
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy)
+        com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.netapp.v1.BackupVaultProto
+            .internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.netapp.v1.BackupVaultProto
+            .internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.class,
+                com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.Builder.class);
+      }
+
+      // Construct using com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        backupMinimumEnforcedRetentionDays_ = 0;
+        dailyBackupImmutable_ = false;
+        weeklyBackupImmutable_ = false;
+        monthlyBackupImmutable_ = false;
+        manualBackupImmutable_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.netapp.v1.BackupVaultProto
+            .internal_static_google_cloud_netapp_v1_BackupVault_BackupRetentionPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy
+          getDefaultInstanceForType() {
+        return com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy build() {
+        com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy buildPartial() {
+        com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy result =
+            new com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.backupMinimumEnforcedRetentionDays_ = backupMinimumEnforcedRetentionDays_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dailyBackupImmutable_ = dailyBackupImmutable_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.weeklyBackupImmutable_ = weeklyBackupImmutable_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.monthlyBackupImmutable_ = monthlyBackupImmutable_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.manualBackupImmutable_ = manualBackupImmutable_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy) {
+          return mergeFrom((com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy other) {
+        if (other
+            == com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.getDefaultInstance())
+          return this;
+        if (other.getBackupMinimumEnforcedRetentionDays() != 0) {
+          setBackupMinimumEnforcedRetentionDays(other.getBackupMinimumEnforcedRetentionDays());
+        }
+        if (other.getDailyBackupImmutable() != false) {
+          setDailyBackupImmutable(other.getDailyBackupImmutable());
+        }
+        if (other.getWeeklyBackupImmutable() != false) {
+          setWeeklyBackupImmutable(other.getWeeklyBackupImmutable());
+        }
+        if (other.getMonthlyBackupImmutable() != false) {
+          setMonthlyBackupImmutable(other.getMonthlyBackupImmutable());
+        }
+        if (other.getManualBackupImmutable() != false) {
+          setManualBackupImmutable(other.getManualBackupImmutable());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  backupMinimumEnforcedRetentionDays_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  dailyBackupImmutable_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  weeklyBackupImmutable_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  monthlyBackupImmutable_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  manualBackupImmutable_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int backupMinimumEnforcedRetentionDays_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Minimum retention duration in days for backups in the backup
+       * vault.
+       * </pre>
+       *
+       * <code>
+       * int32 backup_minimum_enforced_retention_days = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The backupMinimumEnforcedRetentionDays.
+       */
+      @java.lang.Override
+      public int getBackupMinimumEnforcedRetentionDays() {
+        return backupMinimumEnforcedRetentionDays_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Minimum retention duration in days for backups in the backup
+       * vault.
+       * </pre>
+       *
+       * <code>
+       * int32 backup_minimum_enforced_retention_days = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The backupMinimumEnforcedRetentionDays to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBackupMinimumEnforcedRetentionDays(int value) {
+
+        backupMinimumEnforcedRetentionDays_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Minimum retention duration in days for backups in the backup
+       * vault.
+       * </pre>
+       *
+       * <code>
+       * int32 backup_minimum_enforced_retention_days = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBackupMinimumEnforcedRetentionDays() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        backupMinimumEnforcedRetentionDays_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean dailyBackupImmutable_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the daily backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool daily_backup_immutable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The dailyBackupImmutable.
+       */
+      @java.lang.Override
+      public boolean getDailyBackupImmutable() {
+        return dailyBackupImmutable_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the daily backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool daily_backup_immutable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The dailyBackupImmutable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDailyBackupImmutable(boolean value) {
+
+        dailyBackupImmutable_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the daily backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool daily_backup_immutable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDailyBackupImmutable() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        dailyBackupImmutable_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean weeklyBackupImmutable_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the weekly backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool weekly_backup_immutable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The weeklyBackupImmutable.
+       */
+      @java.lang.Override
+      public boolean getWeeklyBackupImmutable() {
+        return weeklyBackupImmutable_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the weekly backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool weekly_backup_immutable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The weeklyBackupImmutable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWeeklyBackupImmutable(boolean value) {
+
+        weeklyBackupImmutable_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the weekly backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool weekly_backup_immutable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWeeklyBackupImmutable() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        weeklyBackupImmutable_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean monthlyBackupImmutable_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the monthly backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool monthly_backup_immutable = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The monthlyBackupImmutable.
+       */
+      @java.lang.Override
+      public boolean getMonthlyBackupImmutable() {
+        return monthlyBackupImmutable_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the monthly backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool monthly_backup_immutable = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The monthlyBackupImmutable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonthlyBackupImmutable(boolean value) {
+
+        monthlyBackupImmutable_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the monthly backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool monthly_backup_immutable = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMonthlyBackupImmutable() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        monthlyBackupImmutable_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean manualBackupImmutable_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the manual backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool manual_backup_immutable = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The manualBackupImmutable.
+       */
+      @java.lang.Override
+      public boolean getManualBackupImmutable() {
+        return manualBackupImmutable_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the manual backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool manual_backup_immutable = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The manualBackupImmutable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManualBackupImmutable(boolean value) {
+
+        manualBackupImmutable_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the manual backups are immutable.
+       * Atleast one of daily_backup_immutable, weekly_backup_immutable,
+       * monthly_backup_immutable and manual_backup_immutable must be true.
+       * </pre>
+       *
+       * <code>bool manual_backup_immutable = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearManualBackupImmutable() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        manualBackupImmutable_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy)
+    private static final com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy();
+    }
+
+    public static com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BackupRetentionPolicy> PARSER =
+        new com.google.protobuf.AbstractParser<BackupRetentionPolicy>() {
+          @java.lang.Override
+          public BackupRetentionPolicy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BackupRetentionPolicy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BackupRetentionPolicy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -1068,6 +2119,66 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int BACKUP_RETENTION_POLICY_FIELD_NUMBER = 11;
+  private com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backupRetentionPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backup retention policy defining the retenton of backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the backupRetentionPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupRetentionPolicy() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backup retention policy defining the retenton of backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The backupRetentionPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy getBackupRetentionPolicy() {
+    return backupRetentionPolicy_ == null
+        ? com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.getDefaultInstance()
+        : backupRetentionPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Backup retention policy defining the retenton of backups.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicyOrBuilder
+      getBackupRetentionPolicyOrBuilder() {
+    return backupRetentionPolicy_ == null
+        ? com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.getDefaultInstance()
+        : backupRetentionPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1112,6 +2223,9 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBackupVault_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, destinationBackupVault_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(11, getBackupRetentionPolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1161,6 +2275,10 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBackupVault_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, destinationBackupVault_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getBackupRetentionPolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1189,6 +2307,10 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     if (!getBackupRegion().equals(other.getBackupRegion())) return false;
     if (!getSourceBackupVault().equals(other.getSourceBackupVault())) return false;
     if (!getDestinationBackupVault().equals(other.getDestinationBackupVault())) return false;
+    if (hasBackupRetentionPolicy() != other.hasBackupRetentionPolicy()) return false;
+    if (hasBackupRetentionPolicy()) {
+      if (!getBackupRetentionPolicy().equals(other.getBackupRetentionPolicy())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1224,6 +2346,10 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getSourceBackupVault().hashCode();
     hash = (37 * hash) + DESTINATION_BACKUP_VAULT_FIELD_NUMBER;
     hash = (53 * hash) + getDestinationBackupVault().hashCode();
+    if (hasBackupRetentionPolicy()) {
+      hash = (37 * hash) + BACKUP_RETENTION_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupRetentionPolicy().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1388,6 +2514,7 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getBackupRetentionPolicyFieldBuilder();
       }
     }
 
@@ -1409,6 +2536,11 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       backupRegion_ = "";
       sourceBackupVault_ = "";
       destinationBackupVault_ = "";
+      backupRetentionPolicy_ = null;
+      if (backupRetentionPolicyBuilder_ != null) {
+        backupRetentionPolicyBuilder_.dispose();
+        backupRetentionPolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -1477,6 +2609,13 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.destinationBackupVault_ = destinationBackupVault_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.backupRetentionPolicy_ =
+            backupRetentionPolicyBuilder_ == null
+                ? backupRetentionPolicy_
+                : backupRetentionPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1566,6 +2705,9 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
         destinationBackupVault_ = other.destinationBackupVault_;
         bitField0_ |= 0x00000200;
         onChanged();
+      }
+      if (other.hasBackupRetentionPolicy()) {
+        mergeBackupRetentionPolicy(other.getBackupRetentionPolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1659,6 +2801,13 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getBackupRetentionPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3024,6 +4173,225 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backupRetentionPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy,
+            com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.Builder,
+            com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicyOrBuilder>
+        backupRetentionPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the backupRetentionPolicy field is set.
+     */
+    public boolean hasBackupRetentionPolicy() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The backupRetentionPolicy.
+     */
+    public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy getBackupRetentionPolicy() {
+      if (backupRetentionPolicyBuilder_ == null) {
+        return backupRetentionPolicy_ == null
+            ? com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.getDefaultInstance()
+            : backupRetentionPolicy_;
+      } else {
+        return backupRetentionPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBackupRetentionPolicy(
+        com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy value) {
+      if (backupRetentionPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupRetentionPolicy_ = value;
+      } else {
+        backupRetentionPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBackupRetentionPolicy(
+        com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.Builder builderForValue) {
+      if (backupRetentionPolicyBuilder_ == null) {
+        backupRetentionPolicy_ = builderForValue.build();
+      } else {
+        backupRetentionPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBackupRetentionPolicy(
+        com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy value) {
+      if (backupRetentionPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && backupRetentionPolicy_ != null
+            && backupRetentionPolicy_
+                != com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy
+                    .getDefaultInstance()) {
+          getBackupRetentionPolicyBuilder().mergeFrom(value);
+        } else {
+          backupRetentionPolicy_ = value;
+        }
+      } else {
+        backupRetentionPolicyBuilder_.mergeFrom(value);
+      }
+      if (backupRetentionPolicy_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBackupRetentionPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      backupRetentionPolicy_ = null;
+      if (backupRetentionPolicyBuilder_ != null) {
+        backupRetentionPolicyBuilder_.dispose();
+        backupRetentionPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.Builder
+        getBackupRetentionPolicyBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getBackupRetentionPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicyOrBuilder
+        getBackupRetentionPolicyOrBuilder() {
+      if (backupRetentionPolicyBuilder_ != null) {
+        return backupRetentionPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return backupRetentionPolicy_ == null
+            ? com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.getDefaultInstance()
+            : backupRetentionPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Backup retention policy defining the retenton of backups.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy backup_retention_policy = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy,
+            com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.Builder,
+            com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicyOrBuilder>
+        getBackupRetentionPolicyFieldBuilder() {
+      if (backupRetentionPolicyBuilder_ == null) {
+        backupRetentionPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy,
+                com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicy.Builder,
+                com.google.cloud.netapp.v1.BackupVault.BackupRetentionPolicyOrBuilder>(
+                getBackupRetentionPolicy(), getParentForChildren(), isClean());
+        backupRetentionPolicy_ = null;
+      }
+      return backupRetentionPolicyBuilder_;
     }
 
     @java.lang.Override

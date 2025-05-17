@@ -39,7 +39,9 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     super(builder);
   }
 
-  private NotebookRuntimeOptions() {}
+  private NotebookRuntimeOptions() {
+    aiPlatformNotebookRuntimeTemplate_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -185,6 +187,69 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int AI_PLATFORM_NOTEBOOK_RUNTIME_TEMPLATE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object aiPlatformNotebookRuntimeTemplate_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the [Colab runtime template]
+   * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+   * created for notebook executions. If not specified, a runtime is created
+   * with Colab's default specifications.
+   * </pre>
+   *
+   * <code>
+   * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The aiPlatformNotebookRuntimeTemplate.
+   */
+  @java.lang.Override
+  public java.lang.String getAiPlatformNotebookRuntimeTemplate() {
+    java.lang.Object ref = aiPlatformNotebookRuntimeTemplate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      aiPlatformNotebookRuntimeTemplate_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the [Colab runtime template]
+   * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+   * created for notebook executions. If not specified, a runtime is created
+   * with Colab's default specifications.
+   * </pre>
+   *
+   * <code>
+   * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for aiPlatformNotebookRuntimeTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAiPlatformNotebookRuntimeTemplateBytes() {
+    java.lang.Object ref = aiPlatformNotebookRuntimeTemplate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      aiPlatformNotebookRuntimeTemplate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -202,6 +267,10 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     if (executionSinkCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, executionSink_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aiPlatformNotebookRuntimeTemplate_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 2, aiPlatformNotebookRuntimeTemplate_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -213,6 +282,11 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     size = 0;
     if (executionSinkCase_ == 1) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, executionSink_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(aiPlatformNotebookRuntimeTemplate_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              2, aiPlatformNotebookRuntimeTemplate_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -230,6 +304,8 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions other =
         (com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions) obj;
 
+    if (!getAiPlatformNotebookRuntimeTemplate()
+        .equals(other.getAiPlatformNotebookRuntimeTemplate())) return false;
     if (!getExecutionSinkCase().equals(other.getExecutionSinkCase())) return false;
     switch (executionSinkCase_) {
       case 1:
@@ -249,6 +325,8 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + AI_PLATFORM_NOTEBOOK_RUNTIME_TEMPLATE_FIELD_NUMBER;
+    hash = (53 * hash) + getAiPlatformNotebookRuntimeTemplate().hashCode();
     switch (executionSinkCase_) {
       case 1:
         hash = (37 * hash) + GCS_OUTPUT_BUCKET_FIELD_NUMBER;
@@ -398,6 +476,7 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      aiPlatformNotebookRuntimeTemplate_ = "";
       executionSinkCase_ = 0;
       executionSink_ = null;
       return this;
@@ -437,6 +516,9 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
 
     private void buildPartial0(com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.aiPlatformNotebookRuntimeTemplate_ = aiPlatformNotebookRuntimeTemplate_;
+      }
     }
 
     private void buildPartialOneofs(
@@ -491,6 +573,11 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions other) {
       if (other == com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.getDefaultInstance())
         return this;
+      if (!other.getAiPlatformNotebookRuntimeTemplate().isEmpty()) {
+        aiPlatformNotebookRuntimeTemplate_ = other.aiPlatformNotebookRuntimeTemplate_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       switch (other.getExecutionSinkCase()) {
         case GCS_OUTPUT_BUCKET:
           {
@@ -537,6 +624,12 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
                 executionSink_ = s;
                 break;
               } // case 10
+            case 18:
+              {
+                aiPlatformNotebookRuntimeTemplate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -711,6 +804,143 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       executionSinkCase_ = 1;
       executionSink_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object aiPlatformNotebookRuntimeTemplate_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the [Colab runtime template]
+     * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+     * created for notebook executions. If not specified, a runtime is created
+     * with Colab's default specifications.
+     * </pre>
+     *
+     * <code>
+     * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The aiPlatformNotebookRuntimeTemplate.
+     */
+    public java.lang.String getAiPlatformNotebookRuntimeTemplate() {
+      java.lang.Object ref = aiPlatformNotebookRuntimeTemplate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aiPlatformNotebookRuntimeTemplate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the [Colab runtime template]
+     * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+     * created for notebook executions. If not specified, a runtime is created
+     * with Colab's default specifications.
+     * </pre>
+     *
+     * <code>
+     * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for aiPlatformNotebookRuntimeTemplate.
+     */
+    public com.google.protobuf.ByteString getAiPlatformNotebookRuntimeTemplateBytes() {
+      java.lang.Object ref = aiPlatformNotebookRuntimeTemplate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        aiPlatformNotebookRuntimeTemplate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the [Colab runtime template]
+     * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+     * created for notebook executions. If not specified, a runtime is created
+     * with Colab's default specifications.
+     * </pre>
+     *
+     * <code>
+     * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The aiPlatformNotebookRuntimeTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAiPlatformNotebookRuntimeTemplate(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      aiPlatformNotebookRuntimeTemplate_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the [Colab runtime template]
+     * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+     * created for notebook executions. If not specified, a runtime is created
+     * with Colab's default specifications.
+     * </pre>
+     *
+     * <code>
+     * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAiPlatformNotebookRuntimeTemplate() {
+      aiPlatformNotebookRuntimeTemplate_ =
+          getDefaultInstance().getAiPlatformNotebookRuntimeTemplate();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the [Colab runtime template]
+     * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+     * created for notebook executions. If not specified, a runtime is created
+     * with Colab's default specifications.
+     * </pre>
+     *
+     * <code>
+     * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for aiPlatformNotebookRuntimeTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAiPlatformNotebookRuntimeTemplateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      aiPlatformNotebookRuntimeTemplate_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -115,6 +115,10 @@ public interface ListCryptoKeysResponseOrBuilder
    * <pre>
    * The total number of [CryptoKeys][google.cloud.kms.v1.CryptoKey] that
    * matched the query.
+   *
+   * This field is not populated if
+   * [ListCryptoKeysRequest.filter][google.cloud.kms.v1.ListCryptoKeysRequest.filter]
+   * is applied.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

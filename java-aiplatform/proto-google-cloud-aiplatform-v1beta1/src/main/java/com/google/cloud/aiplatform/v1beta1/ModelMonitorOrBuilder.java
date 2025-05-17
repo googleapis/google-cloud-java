@@ -411,6 +411,49 @@ public interface ModelMonitorOrBuilder
    *
    *
    * <pre>
+   * Customer-managed encryption key spec for a ModelMonitor. If
+   * set, this ModelMonitor and all sub-resources of this
+   * ModelMonitor will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ModelMonitor. If
+   * set, this ModelMonitor and all sub-resources of this
+   * ModelMonitor will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ModelMonitor. If
+   * set, this ModelMonitor and all sub-resources of this
+   * ModelMonitor will be secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Timestamp when this ModelMonitor was created.
    * </pre>
    *

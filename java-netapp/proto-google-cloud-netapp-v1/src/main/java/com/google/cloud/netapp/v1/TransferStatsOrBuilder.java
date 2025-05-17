@@ -28,7 +28,7 @@ public interface TransferStatsOrBuilder
    *
    *
    * <pre>
-   * Cumulative bytes trasferred so far for the replication relatinonship.
+   * Cumulative bytes transferred so far for the replication relationship.
    * </pre>
    *
    * <code>optional int64 transfer_bytes = 1;</code>
@@ -41,7 +41,7 @@ public interface TransferStatsOrBuilder
    *
    *
    * <pre>
-   * Cumulative bytes trasferred so far for the replication relatinonship.
+   * Cumulative bytes transferred so far for the replication relationship.
    * </pre>
    *
    * <code>optional int64 transfer_bytes = 1;</code>

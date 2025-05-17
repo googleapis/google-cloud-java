@@ -116,6 +116,51 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
+   * Output only. The workflow action's data preparation action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataPreparationAction field is set.
+   */
+  boolean hasDataPreparationAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's data preparation action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataPreparationAction.
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction
+      getDataPreparationAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's data preparation action details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationAction data_preparation_action = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.DataPreparationActionOrBuilder
+      getDataPreparationActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. This action's identifier. Unique within the workflow
    * invocation.
    * </pre>

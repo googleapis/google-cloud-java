@@ -66,5 +66,41 @@ public interface NotebookRuntimeOptionsOrBuilder
    */
   com.google.protobuf.ByteString getGcsOutputBucketBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the [Colab runtime template]
+   * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+   * created for notebook executions. If not specified, a runtime is created
+   * with Colab's default specifications.
+   * </pre>
+   *
+   * <code>
+   * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The aiPlatformNotebookRuntimeTemplate.
+   */
+  java.lang.String getAiPlatformNotebookRuntimeTemplate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the [Colab runtime template]
+   * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
+   * created for notebook executions. If not specified, a runtime is created
+   * with Colab's default specifications.
+   * </pre>
+   *
+   * <code>
+   * string ai_platform_notebook_runtime_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for aiPlatformNotebookRuntimeTemplate.
+   */
+  com.google.protobuf.ByteString getAiPlatformNotebookRuntimeTemplateBytes();
+
   com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.ExecutionSinkCase getExecutionSinkCase();
 }

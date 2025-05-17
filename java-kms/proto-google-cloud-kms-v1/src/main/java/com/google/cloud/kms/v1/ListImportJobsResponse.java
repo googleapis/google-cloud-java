@@ -208,6 +208,10 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
    * <pre>
    * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
    * matched the query.
+   *
+   * This field is not populated if
+   * [ListImportJobsRequest.filter][google.cloud.kms.v1.ListImportJobsRequest.filter]
+   * is applied.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>
@@ -1149,6 +1153,10 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
      * matched the query.
+     *
+     * This field is not populated if
+     * [ListImportJobsRequest.filter][google.cloud.kms.v1.ListImportJobsRequest.filter]
+     * is applied.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1166,6 +1174,10 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
      * matched the query.
+     *
+     * This field is not populated if
+     * [ListImportJobsRequest.filter][google.cloud.kms.v1.ListImportJobsRequest.filter]
+     * is applied.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>
@@ -1187,6 +1199,10 @@ public final class ListImportJobsResponse extends com.google.protobuf.GeneratedM
      * <pre>
      * The total number of [ImportJobs][google.cloud.kms.v1.ImportJob] that
      * matched the query.
+     *
+     * This field is not populated if
+     * [ListImportJobsRequest.filter][google.cloud.kms.v1.ListImportJobsRequest.filter]
+     * is applied.
      * </pre>
      *
      * <code>int32 total_size = 3;</code>

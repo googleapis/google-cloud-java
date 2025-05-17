@@ -117,6 +117,10 @@ public interface ListCryptoKeyVersionsResponseOrBuilder
    * The total number of
    * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
    * query.
+   *
+   * This field is not populated if
+   * [ListCryptoKeyVersionsRequest.filter][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.filter]
+   * is applied.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

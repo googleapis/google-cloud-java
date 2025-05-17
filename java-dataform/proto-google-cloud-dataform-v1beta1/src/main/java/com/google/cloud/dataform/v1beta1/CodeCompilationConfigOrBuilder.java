@@ -286,6 +286,34 @@ public interface CodeCompilationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The prefix to prepend to built-in assertion names.
+   * </pre>
+   *
+   * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The builtinAssertionNamePrefix.
+   */
+  java.lang.String getBuiltinAssertionNamePrefix();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The prefix to prepend to built-in assertion names.
+   * </pre>
+   *
+   * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for builtinAssertionNamePrefix.
+   */
+  com.google.protobuf.ByteString getBuiltinAssertionNamePrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The default notebook runtime options.
    * </pre>
    *

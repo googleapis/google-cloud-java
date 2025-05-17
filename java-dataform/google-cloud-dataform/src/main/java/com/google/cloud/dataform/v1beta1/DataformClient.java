@@ -76,7 +76,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListRepositories</td>
- *      <td><p> Lists Repositories in a given project and location.</td>
+ *      <td><p> Lists Repositories in a given project and location.
+ * <p>  &#42;&#42;Note:&#42;&#42; &#42;This method can return repositories not shown in the [Dataform UI](https://console.cloud.google.com/bigquery/dataform)&#42;.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -135,7 +136,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> UpdateRepository</td>
  *      <td><p> Updates a single Repository.
- * <p>  &#42;&#42;Note:&#42;&#42; This method does not fully implement [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set   fields, the request is treated as a full update on all modifiable fields</td>
+ * <p>  &#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad request, and when the `field_mask` is omitted, the request is treated as a full update on all modifiable fields.&#42;</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -634,7 +635,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> UpdateReleaseConfig</td>
  *      <td><p> Updates a single ReleaseConfig.
- * <p>  &#42;&#42;Note:&#42;&#42; This method does not fully implement [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set   fields, the request is treated as a full update on all modifiable fields</td>
+ * <p>  &#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad request, and when the `field_mask` is omitted, the request is treated as a full update on all modifiable fields.&#42;</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -803,7 +804,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> UpdateWorkflowConfig</td>
  *      <td><p> Updates a single WorkflowConfig.
- * <p>  &#42;&#42;Note:&#42;&#42; This method does not fully implement [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set   fields, the request is treated as a full update on all modifiable fields</td>
+ * <p>  &#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad request, and when the `field_mask` is omitted, the request is treated as a full update on all modifiable fields.&#42;</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -966,7 +967,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> UpdateConfig</td>
  *      <td><p> Update default config for a given project and location.
- * <p>  &#42;&#42;Note:&#42;&#42; This method does not fully implement [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set   fields, the request is treated as a full update on all modifiable fields</td>
+ * <p>  &#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad request, and when the `field_mask` is omitted, the request is treated as a full update on all modifiable fields.&#42;</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1162,6 +1163,9 @@ public class DataformClient implements BackgroundResource {
   /**
    * Lists Repositories in a given project and location.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method can return repositories not shown in the
+   * [Dataform UI](https://console.cloud.google.com/bigquery/dataform)&#42;.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1194,6 +1198,9 @@ public class DataformClient implements BackgroundResource {
   /**
    * Lists Repositories in a given project and location.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method can return repositories not shown in the
+   * [Dataform UI](https://console.cloud.google.com/bigquery/dataform)&#42;.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1223,6 +1230,9 @@ public class DataformClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Repositories in a given project and location.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method can return repositories not shown in the
+   * [Dataform UI](https://console.cloud.google.com/bigquery/dataform)&#42;.
    *
    * <p>Sample code:
    *
@@ -1258,6 +1268,9 @@ public class DataformClient implements BackgroundResource {
   /**
    * Lists Repositories in a given project and location.
    *
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method can return repositories not shown in the
+   * [Dataform UI](https://console.cloud.google.com/bigquery/dataform)&#42;.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1292,6 +1305,9 @@ public class DataformClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Repositories in a given project and location.
+   *
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method can return repositories not shown in the
+   * [Dataform UI](https://console.cloud.google.com/bigquery/dataform)&#42;.
    *
    * <p>Sample code:
    *
@@ -1577,11 +1593,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single Repository.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -1616,11 +1631,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single Repository.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -1651,11 +1665,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single Repository.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -4405,11 +4418,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single ReleaseConfig.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -4445,11 +4457,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single ReleaseConfig.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -4480,11 +4491,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single ReleaseConfig.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -5612,11 +5622,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single WorkflowConfig.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -5652,11 +5661,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single WorkflowConfig.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -5687,11 +5695,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Updates a single WorkflowConfig.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -6688,11 +6695,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Update default config for a given project and location.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -6723,11 +6729,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Update default config for a given project and location.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *
@@ -6758,11 +6763,10 @@ public class DataformClient implements BackgroundResource {
   /**
    * Update default config for a given project and location.
    *
-   * <p>&#42;&#42;Note:&#42;&#42; This method does not fully implement
-   * [AIP-134](https://google.aip.dev/134); in particular: - The wildcard entry
-   * (&#42;&#42;\\\\&#42;&#42;&#42;) is treated as a bad request - When the
-   * &#42;&#42;field_mask&#42;&#42; is omitted, instead of only updating the set fields, the request
-   * is treated as a full update on all modifiable fields
+   * <p>&#42;&#42;Note:&#42;&#42; &#42;This method does not fully implement
+   * [AIP/134](https://google.aip.dev/134). The wildcard entry (\\\\&#42;) is treated as a bad
+   * request, and when the `field_mask` is omitted, the request is treated as a full update on all
+   * modifiable fields.&#42;
    *
    * <p>Sample code:
    *

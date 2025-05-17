@@ -115,6 +115,10 @@ public interface ListKeyRingsResponseOrBuilder
    * <pre>
    * The total number of [KeyRings][google.cloud.kms.v1.KeyRing] that matched
    * the query.
+   *
+   * This field is not populated if
+   * [ListKeyRingsRequest.filter][google.cloud.kms.v1.ListKeyRingsRequest.filter]
+   * is applied.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

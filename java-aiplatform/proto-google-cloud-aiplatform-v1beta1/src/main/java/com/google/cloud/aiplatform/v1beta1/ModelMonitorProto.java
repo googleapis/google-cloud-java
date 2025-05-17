@@ -57,60 +57,63 @@ public final class ModelMonitorProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n3google/cloud/aiplatform/v1beta1/model_"
-          + "monitor.proto\022\037google.cloud.aiplatform.v"
+      "\n"
+          + "3google/cloud/aiplatform/v1beta1/model_monitor.proto\022\037google.cloud.aiplatform.v"
           + "1beta1\032\037google/api/field_behavior.proto\032"
-          + "\031google/api/resource.proto\0321google/cloud"
-          + "/aiplatform/v1beta1/explanation.proto\032;g"
-          + "oogle/cloud/aiplatform/v1beta1/model_mon"
-          + "itoring_spec.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\322\t\n\014ModelMonitor\022k\n\021tabular_"
-          + "objective\030\013 \001(\0132N.google.cloud.aiplatfor"
-          + "m.v1beta1.ModelMonitoringObjectiveSpec.T"
-          + "abularObjectiveH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\014"
-          + "display_name\030\002 \001(\t\022d\n\027model_monitoring_t"
-          + "arget\030\003 \001(\0132C.google.cloud.aiplatform.v1"
-          + "beta1.ModelMonitor.ModelMonitoringTarget"
-          + "\022O\n\020training_dataset\030\n \001(\01325.google.clou"
-          + "d.aiplatform.v1beta1.ModelMonitoringInpu"
-          + "t\022[\n\021notification_spec\030\014 \001(\0132@.google.cl"
-          + "oud.aiplatform.v1beta1.ModelMonitoringNo"
-          + "tificationSpec\022O\n\013output_spec\030\r \001(\0132:.go"
-          + "ogle.cloud.aiplatform.v1beta1.ModelMonit"
-          + "oringOutputSpec\022J\n\020explanation_spec\030\020 \001("
-          + "\01320.google.cloud.aiplatform.v1beta1.Expl"
-          + "anationSpec\022W\n\027model_monitoring_schema\030\t"
-          + " \001(\01326.google.cloud.aiplatform.v1beta1.M"
-          + "odelMonitoringSchema\0224\n\013create_time\030\006 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up"
-          + "date_time\030\007 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\022\032\n\rsatisfies_pzs\030\021 \001(\010B\003\340A\003\022\032\n\r"
-          + "satisfies_pzi\030\022 \001(\010B\003\340A\003\032\364\001\n\025ModelMonito"
-          + "ringTarget\022m\n\014vertex_model\030\001 \001(\0132U.googl"
-          + "e.cloud.aiplatform.v1beta1.ModelMonitor."
-          + "ModelMonitoringTarget.VertexModelSourceH"
-          + "\000\032b\n\021VertexModelSource\0223\n\005model\030\001 \001(\tB$\372"
-          + "A!\n\037aiplatform.googleapis.com/Model\022\030\n\020m"
-          + "odel_version_id\030\002 \001(\tB\010\n\006source:r\352Ao\n&ai"
-          + "platform.googleapis.com/ModelMonitor\022Epr"
-          + "ojects/{project}/locations/{location}/mo"
-          + "delMonitors/{model_monitor}B\023\n\021default_o"
-          + "bjective\"\365\002\n\025ModelMonitoringSchema\022Z\n\016fe"
-          + "ature_fields\030\001 \003(\0132B.google.cloud.aiplat"
-          + "form.v1beta1.ModelMonitoringSchema.Field"
-          + "Schema\022]\n\021prediction_fields\030\002 \003(\0132B.goog"
-          + "le.cloud.aiplatform.v1beta1.ModelMonitor"
-          + "ingSchema.FieldSchema\022_\n\023ground_truth_fi"
-          + "elds\030\003 \003(\0132B.google.cloud.aiplatform.v1b"
-          + "eta1.ModelMonitoringSchema.FieldSchema\032@"
-          + "\n\013FieldSchema\022\014\n\004name\030\001 \001(\t\022\021\n\tdata_type"
-          + "\030\002 \001(\t\022\020\n\010repeated\030\003 \001(\010B\350\001\n#com.google."
-          + "cloud.aiplatform.v1beta1B\021ModelMonitorPr"
-          + "otoP\001ZCcloud.google.com/go/aiplatform/ap"
-          + "iv1beta1/aiplatformpb;aiplatformpb\252\002\037Goo"
-          + "gle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Cl"
-          + "oud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::"
-          + "AIPlatform::V1beta1b\006proto3"
+          + "\031google/api/resource.proto\0325google/cloud/aiplatform/v1beta1/encryption_spec.prot"
+          + "o\0321google/cloud/aiplatform/v1beta1/explanation.proto\032;google/cloud/aiplatform/v1"
+          + "beta1/model_monitoring_spec.proto\032\037google/protobuf/timestamp.proto\"\234\n\n"
+          + "\014ModelMonitor\022k\n"
+          + "\021tabular_objective\030\013 \001(\0132N.google."
+          + "cloud.aiplatform.v1beta1.ModelMonitoringObjectiveSpec.TabularObjectiveH\000\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\005\022\024\n"
+          + "\014display_name\030\002 \001(\t\022d\n"
+          + "\027model_monitoring_target\030\003 \001(\0132C.google.clou"
+          + "d.aiplatform.v1beta1.ModelMonitor.ModelMonitoringTarget\022O\n"
+          + "\020training_dataset\030\n"
+          + " \001(\01325.google.cloud.aiplatform.v1beta1.ModelMonitoringInput\022[\n"
+          + "\021notification_spec\030\014 "
+          + "\001(\0132@.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec\022O\n"
+          + "\013output_spec\030\r"
+          + " \001(\0132:.google.cloud.aiplatform.v1beta1.ModelMonitoringOutputSpec\022J\n"
+          + "\020explanation_spec\030\020"
+          + " \001(\01320.google.cloud.aiplatform.v1beta1.ExplanationSpec\022W\n"
+          + "\027model_monitoring_schema\030\t"
+          + " \001(\01326.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema\022H\n"
+          + "\017encryption_spec\030\005"
+          + " \001(\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpec\0224\n"
+          + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\007"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\r"
+          + "satisfies_pzs\030\021 \001(\010B\003\340A\003\022\032\n\r"
+          + "satisfies_pzi\030\022 \001(\010B\003\340A\003\032\364\001\n"
+          + "\025ModelMonitoringTarget\022m\n"
+          + "\014vertex_model\030\001 \001(\0132U.google.cloud.aiplatform.v1beta1.Mode"
+          + "lMonitor.ModelMonitoringTarget.VertexModelSourceH\000\032b\n"
+          + "\021VertexModelSource\0223\n"
+          + "\005model\030\001 \001(\tB$\372A!\n"
+          + "\037aiplatform.googleapis.com/Model\022\030\n"
+          + "\020model_version_id\030\002 \001(\tB\010\n"
+          + "\006source:r\352Ao\n"
+          + "&aiplatform.googleapis.com/ModelMo"
+          + "nitor\022Eprojects/{project}/locations/{location}/modelMonitors/{model_monitor}B\023\n"
+          + "\021default_objective\"\365\002\n"
+          + "\025ModelMonitoringSchema\022Z\n"
+          + "\016feature_fields\030\001 \003(\0132B.google.clo"
+          + "ud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchema\022]\n"
+          + "\021prediction_fields\030\002 \003"
+          + "(\0132B.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema.FieldSchema\022_\n"
+          + "\023ground_truth_fields\030\003 \003(\0132B.google.cloud.aipla"
+          + "tform.v1beta1.ModelMonitoringSchema.FieldSchema\032@\n"
+          + "\013FieldSchema\022\014\n"
+          + "\004name\030\001 \001(\t\022\021\n"
+          + "\tdata_type\030\002 \001(\t\022\020\n"
+          + "\010repeated\030\003 \001(\010B\350\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\021Model"
+          + "MonitorProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
+          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
+          + "::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -118,6 +121,7 @@ public final class ModelMonitorProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringSpecProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -137,6 +141,7 @@ public final class ModelMonitorProto {
               "OutputSpec",
               "ExplanationSpec",
               "ModelMonitoringSchema",
+              "EncryptionSpec",
               "CreateTime",
               "UpdateTime",
               "SatisfiesPzs",
@@ -190,6 +195,7 @@ public final class ModelMonitorProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ExplanationProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.ModelMonitoringSpecProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

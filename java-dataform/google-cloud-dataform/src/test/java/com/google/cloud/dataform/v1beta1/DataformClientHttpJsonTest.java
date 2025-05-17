@@ -3320,6 +3320,7 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
@@ -3380,6 +3381,7 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
@@ -3440,6 +3442,7 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
@@ -3503,6 +3506,7 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
@@ -3566,6 +3570,7 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
@@ -3586,6 +3591,7 @@ public class DataformClientHttpJsonTest {
             .setTimeZone("timeZone-2077180903")
             .addAllRecentScheduledExecutionRecords(
                 new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+            .setDisabled(true)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
@@ -3633,6 +3639,7 @@ public class DataformClientHttpJsonTest {
               .setTimeZone("timeZone-2077180903")
               .addAllRecentScheduledExecutionRecords(
                   new ArrayList<WorkflowConfig.ScheduledExecutionRecord>())
+              .setDisabled(true)
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setInternalMetadata("internalMetadata6789388")

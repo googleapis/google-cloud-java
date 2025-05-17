@@ -128,6 +128,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * The suffix following `HMAC_` corresponds to the hash algorithm being used
    * (eg. SHA256).
    *
+   * Algorithms beginning with `PQ_` are post-quantum.
    *
    * For more information, see [Key purposes and algorithms]
    * (https://cloud.google.com/kms/docs/algorithms).
@@ -1173,7 +1174,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This version is destroyed, and the key material is no longer stored.
+     * The key material of this version is destroyed and no longer stored.
      * This version may only become
      * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
      * again if this version is
@@ -1323,7 +1324,7 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This version is destroyed, and the key material is no longer stored.
+     * The key material of this version is destroyed and no longer stored.
      * This version may only become
      * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED]
      * again if this version is

@@ -72,7 +72,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cumulative bytes trasferred so far for the replication relatinonship.
+   * Cumulative bytes transferred so far for the replication relationship.
    * </pre>
    *
    * <code>optional int64 transfer_bytes = 1;</code>
@@ -88,7 +88,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cumulative bytes trasferred so far for the replication relatinonship.
+   * Cumulative bytes transferred so far for the replication relationship.
    * </pre>
    *
    * <code>optional int64 transfer_bytes = 1;</code>
@@ -1066,7 +1066,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cumulative bytes trasferred so far for the replication relatinonship.
+     * Cumulative bytes transferred so far for the replication relationship.
      * </pre>
      *
      * <code>optional int64 transfer_bytes = 1;</code>
@@ -1082,7 +1082,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cumulative bytes trasferred so far for the replication relatinonship.
+     * Cumulative bytes transferred so far for the replication relationship.
      * </pre>
      *
      * <code>optional int64 transfer_bytes = 1;</code>
@@ -1098,7 +1098,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cumulative bytes trasferred so far for the replication relatinonship.
+     * Cumulative bytes transferred so far for the replication relationship.
      * </pre>
      *
      * <code>optional int64 transfer_bytes = 1;</code>
@@ -1118,7 +1118,7 @@ public final class TransferStats extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cumulative bytes trasferred so far for the replication relatinonship.
+     * Cumulative bytes transferred so far for the replication relationship.
      * </pre>
      *
      * <code>optional int64 transfer_bytes = 1;</code>

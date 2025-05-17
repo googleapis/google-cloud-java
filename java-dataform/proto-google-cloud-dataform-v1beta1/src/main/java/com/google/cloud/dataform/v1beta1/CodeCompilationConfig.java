@@ -47,6 +47,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     databaseSuffix_ = "";
     schemaSuffix_ = "";
     tablePrefix_ = "";
+    builtinAssertionNamePrefix_ = "";
   }
 
   @java.lang.Override
@@ -573,6 +574,61 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int BUILTIN_ASSERTION_NAME_PREFIX_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object builtinAssertionNamePrefix_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The prefix to prepend to built-in assertion names.
+   * </pre>
+   *
+   * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The builtinAssertionNamePrefix.
+   */
+  @java.lang.Override
+  public java.lang.String getBuiltinAssertionNamePrefix() {
+    java.lang.Object ref = builtinAssertionNamePrefix_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      builtinAssertionNamePrefix_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The prefix to prepend to built-in assertion names.
+   * </pre>
+   *
+   * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for builtinAssertionNamePrefix.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBuiltinAssertionNamePrefixBytes() {
+    java.lang.Object ref = builtinAssertionNamePrefix_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      builtinAssertionNamePrefix_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DEFAULT_NOTEBOOK_RUNTIME_OPTIONS_FIELD_NUMBER = 9;
   private com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions defaultNotebookRuntimeOptions_;
 
@@ -674,6 +730,9 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(9, getDefaultNotebookRuntimeOptions());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(builtinAssertionNamePrefix_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, builtinAssertionNamePrefix_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -719,6 +778,10 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, getDefaultNotebookRuntimeOptions());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(builtinAssertionNamePrefix_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(10, builtinAssertionNamePrefix_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -743,6 +806,8 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     if (!getDatabaseSuffix().equals(other.getDatabaseSuffix())) return false;
     if (!getSchemaSuffix().equals(other.getSchemaSuffix())) return false;
     if (!getTablePrefix().equals(other.getTablePrefix())) return false;
+    if (!getBuiltinAssertionNamePrefix().equals(other.getBuiltinAssertionNamePrefix()))
+      return false;
     if (hasDefaultNotebookRuntimeOptions() != other.hasDefaultNotebookRuntimeOptions())
       return false;
     if (hasDefaultNotebookRuntimeOptions()) {
@@ -778,6 +843,8 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getSchemaSuffix().hashCode();
     hash = (37 * hash) + TABLE_PREFIX_FIELD_NUMBER;
     hash = (53 * hash) + getTablePrefix().hashCode();
+    hash = (37 * hash) + BUILTIN_ASSERTION_NAME_PREFIX_FIELD_NUMBER;
+    hash = (53 * hash) + getBuiltinAssertionNamePrefix().hashCode();
     if (hasDefaultNotebookRuntimeOptions()) {
       hash = (37 * hash) + DEFAULT_NOTEBOOK_RUNTIME_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultNotebookRuntimeOptions().hashCode();
@@ -962,6 +1029,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       databaseSuffix_ = "";
       schemaSuffix_ = "";
       tablePrefix_ = "";
+      builtinAssertionNamePrefix_ = "";
       defaultNotebookRuntimeOptions_ = null;
       if (defaultNotebookRuntimeOptionsBuilder_ != null) {
         defaultNotebookRuntimeOptionsBuilder_.dispose();
@@ -1028,8 +1096,11 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.tablePrefix_ = tablePrefix_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.builtinAssertionNamePrefix_ = builtinAssertionNamePrefix_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.defaultNotebookRuntimeOptions_ =
             defaultNotebookRuntimeOptionsBuilder_ == null
                 ? defaultNotebookRuntimeOptions_
@@ -1122,6 +1193,11 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (!other.getBuiltinAssertionNamePrefix().isEmpty()) {
+        builtinAssertionNamePrefix_ = other.builtinAssertionNamePrefix_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       if (other.hasDefaultNotebookRuntimeOptions()) {
         mergeDefaultNotebookRuntimeOptions(other.getDefaultNotebookRuntimeOptions());
       }
@@ -1206,9 +1282,15 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
               {
                 input.readMessage(
                     getDefaultNotebookRuntimeOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
+            case 82:
+              {
+                builtinAssertionNamePrefix_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2204,6 +2286,122 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private java.lang.Object builtinAssertionNamePrefix_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The prefix to prepend to built-in assertion names.
+     * </pre>
+     *
+     * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The builtinAssertionNamePrefix.
+     */
+    public java.lang.String getBuiltinAssertionNamePrefix() {
+      java.lang.Object ref = builtinAssertionNamePrefix_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        builtinAssertionNamePrefix_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The prefix to prepend to built-in assertion names.
+     * </pre>
+     *
+     * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for builtinAssertionNamePrefix.
+     */
+    public com.google.protobuf.ByteString getBuiltinAssertionNamePrefixBytes() {
+      java.lang.Object ref = builtinAssertionNamePrefix_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        builtinAssertionNamePrefix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The prefix to prepend to built-in assertion names.
+     * </pre>
+     *
+     * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The builtinAssertionNamePrefix to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuiltinAssertionNamePrefix(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      builtinAssertionNamePrefix_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The prefix to prepend to built-in assertion names.
+     * </pre>
+     *
+     * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBuiltinAssertionNamePrefix() {
+      builtinAssertionNamePrefix_ = getDefaultInstance().getBuiltinAssertionNamePrefix();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The prefix to prepend to built-in assertion names.
+     * </pre>
+     *
+     * <code>string builtin_assertion_name_prefix = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for builtinAssertionNamePrefix to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBuiltinAssertionNamePrefixBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      builtinAssertionNamePrefix_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions defaultNotebookRuntimeOptions_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions,
@@ -2225,7 +2423,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
      * @return Whether the defaultNotebookRuntimeOptions field is set.
      */
     public boolean hasDefaultNotebookRuntimeOptions() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2273,7 +2471,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       } else {
         defaultNotebookRuntimeOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2296,7 +2494,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       } else {
         defaultNotebookRuntimeOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2315,7 +2513,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     public Builder mergeDefaultNotebookRuntimeOptions(
         com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions value) {
       if (defaultNotebookRuntimeOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && defaultNotebookRuntimeOptions_ != null
             && defaultNotebookRuntimeOptions_
                 != com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.getDefaultInstance()) {
@@ -2327,7 +2525,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         defaultNotebookRuntimeOptionsBuilder_.mergeFrom(value);
       }
       if (defaultNotebookRuntimeOptions_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2345,7 +2543,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearDefaultNotebookRuntimeOptions() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       defaultNotebookRuntimeOptions_ = null;
       if (defaultNotebookRuntimeOptionsBuilder_ != null) {
         defaultNotebookRuntimeOptionsBuilder_.dispose();
@@ -2368,7 +2566,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.Builder
         getDefaultNotebookRuntimeOptionsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDefaultNotebookRuntimeOptionsFieldBuilder().getBuilder();
     }

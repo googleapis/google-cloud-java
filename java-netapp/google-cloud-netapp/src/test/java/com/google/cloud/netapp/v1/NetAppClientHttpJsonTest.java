@@ -222,6 +222,9 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -297,6 +300,9 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -372,6 +378,9 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -437,6 +446,9 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -502,6 +514,9 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -535,6 +550,9 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -589,6 +607,9 @@ public class NetAppClientHttpJsonTest {
               .setZone("zone3744684")
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
+              .setCustomPerformanceEnabled(true)
+              .setTotalThroughputMibps(-2085075953)
+              .setTotalIops(-705711676)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateStoragePoolAsync(storagePool, updateMask).get();
@@ -766,6 +787,9 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4236,6 +4260,7 @@ public class NetAppClientHttpJsonTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4299,6 +4324,7 @@ public class NetAppClientHttpJsonTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4362,6 +4388,7 @@ public class NetAppClientHttpJsonTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4415,6 +4442,7 @@ public class NetAppClientHttpJsonTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4568,6 +4596,7 @@ public class NetAppClientHttpJsonTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4589,6 +4618,7 @@ public class NetAppClientHttpJsonTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4630,6 +4660,7 @@ public class NetAppClientHttpJsonTest {
                   BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
               .setDestinationBackupVault(
                   BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+              .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupVaultAsync(backupVault, updateMask).get();
@@ -4746,6 +4777,7 @@ public class NetAppClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4812,6 +4844,7 @@ public class NetAppClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4878,6 +4911,7 @@ public class NetAppClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4935,6 +4969,7 @@ public class NetAppClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5186,6 +5221,7 @@ public class NetAppClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5211,6 +5247,7 @@ public class NetAppClientHttpJsonTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5256,6 +5293,7 @@ public class NetAppClientHttpJsonTest {
               .setSatisfiesPzi(true)
               .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();

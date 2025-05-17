@@ -231,7 +231,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Deprecated
@@ -251,7 +251,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
      * @return The tokenStatus.
      */
     @java.lang.Deprecated
@@ -1722,7 +1722,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Override
@@ -1745,7 +1745,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
      * @return The tokenStatus.
      */
     @java.lang.Override
@@ -2852,7 +2852,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
        * @return The enum numeric value on the wire for tokenStatus.
        */
       @java.lang.Override
@@ -2875,7 +2875,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
        * @param value The enum numeric value on the wire for tokenStatus to set.
        * @return This builder for chaining.
        */
@@ -2901,7 +2901,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
        * @return The tokenStatus.
        */
       @java.lang.Override
@@ -2931,7 +2931,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
        * @param value The tokenStatus to set.
        * @return This builder for chaining.
        */
@@ -2961,7 +2961,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=628
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=631
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

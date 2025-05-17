@@ -218,6 +218,9 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -292,6 +295,9 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -366,6 +372,9 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -425,6 +434,9 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -484,6 +496,9 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -690,6 +705,9 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setCustomPerformanceEnabled(true)
+            .setTotalThroughputMibps(-2085075953)
+            .setTotalIops(-705711676)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3761,6 +3779,7 @@ public class NetAppClientTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3823,6 +3842,7 @@ public class NetAppClientTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3885,6 +3905,7 @@ public class NetAppClientTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -3932,6 +3953,7 @@ public class NetAppClientTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4067,6 +4089,7 @@ public class NetAppClientTest {
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
             .setDestinationBackupVault(
                 BackupVaultName.of("[PROJECT]", "[LOCATION]", "[BACKUP_VAULT]").toString())
+            .setBackupRetentionPolicy(BackupVault.BackupRetentionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4213,6 +4236,7 @@ public class NetAppClientTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4278,6 +4302,7 @@ public class NetAppClientTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4343,6 +4368,7 @@ public class NetAppClientTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4394,6 +4420,7 @@ public class NetAppClientTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -4617,6 +4644,7 @@ public class NetAppClientTest {
             .setSatisfiesPzi(true)
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
