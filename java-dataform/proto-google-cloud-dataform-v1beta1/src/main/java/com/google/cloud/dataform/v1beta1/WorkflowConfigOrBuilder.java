@@ -272,6 +272,19 @@ public interface WorkflowConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Disables automatic creation of workflow invocations.
+   * </pre>
+   *
+   * <code>bool disabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The disabled.
+   */
+  boolean getDisabled();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The timestamp of when the WorkflowConfig was created.
    * </pre>
    *

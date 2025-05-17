@@ -1855,6 +1855,19 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
+     * Output only. Number of tokens present in thoughts output.
+     * </pre>
+     *
+     * <code>int32 thoughts_token_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The thoughtsTokenCount.
+     */
+    int getThoughtsTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
      * Total token count for prompt and response candidates.
      * </pre>
      *
@@ -2175,6 +2188,25 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public int getCandidatesTokenCount() {
       return candidatesTokenCount_;
+    }
+
+    public static final int THOUGHTS_TOKEN_COUNT_FIELD_NUMBER = 14;
+    private int thoughtsTokenCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of tokens present in thoughts output.
+     * </pre>
+     *
+     * <code>int32 thoughts_token_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The thoughtsTokenCount.
+     */
+    @java.lang.Override
+    public int getThoughtsTokenCount() {
+      return thoughtsTokenCount_;
     }
 
     public static final int TOTAL_TOKEN_COUNT_FIELD_NUMBER = 3;
@@ -2526,6 +2558,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       for (int i = 0; i < candidatesTokensDetails_.size(); i++) {
         output.writeMessage(11, candidatesTokensDetails_.get(i));
       }
+      if (thoughtsTokenCount_ != 0) {
+        output.writeInt32(14, thoughtsTokenCount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2562,6 +2597,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 11, candidatesTokensDetails_.get(i));
       }
+      if (thoughtsTokenCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(14, thoughtsTokenCount_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2581,6 +2619,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
 
       if (getPromptTokenCount() != other.getPromptTokenCount()) return false;
       if (getCandidatesTokenCount() != other.getCandidatesTokenCount()) return false;
+      if (getThoughtsTokenCount() != other.getThoughtsTokenCount()) return false;
       if (getTotalTokenCount() != other.getTotalTokenCount()) return false;
       if (getCachedContentTokenCount() != other.getCachedContentTokenCount()) return false;
       if (!getPromptTokensDetailsList().equals(other.getPromptTokensDetailsList())) return false;
@@ -2602,6 +2641,8 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       hash = (53 * hash) + getPromptTokenCount();
       hash = (37 * hash) + CANDIDATES_TOKEN_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCandidatesTokenCount();
+      hash = (37 * hash) + THOUGHTS_TOKEN_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getThoughtsTokenCount();
       hash = (37 * hash) + TOTAL_TOKEN_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalTokenCount();
       hash = (37 * hash) + CACHED_CONTENT_TOKEN_COUNT_FIELD_NUMBER;
@@ -2771,6 +2812,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         bitField0_ = 0;
         promptTokenCount_ = 0;
         candidatesTokenCount_ = 0;
+        thoughtsTokenCount_ = 0;
         totalTokenCount_ = 0;
         cachedContentTokenCount_ = 0;
         if (promptTokensDetailsBuilder_ == null) {
@@ -2779,21 +2821,21 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           promptTokensDetails_ = null;
           promptTokensDetailsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (cacheTokensDetailsBuilder_ == null) {
           cacheTokensDetails_ = java.util.Collections.emptyList();
         } else {
           cacheTokensDetails_ = null;
           cacheTokensDetailsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (candidatesTokensDetailsBuilder_ == null) {
           candidatesTokensDetails_ = java.util.Collections.emptyList();
         } else {
           candidatesTokensDetails_ = null;
           candidatesTokensDetailsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -2836,28 +2878,28 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       private void buildPartialRepeatedFields(
           com.google.cloud.aiplatform.v1beta1.GenerateContentResponse.UsageMetadata result) {
         if (promptTokensDetailsBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             promptTokensDetails_ = java.util.Collections.unmodifiableList(promptTokensDetails_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.promptTokensDetails_ = promptTokensDetails_;
         } else {
           result.promptTokensDetails_ = promptTokensDetailsBuilder_.build();
         }
         if (cacheTokensDetailsBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             cacheTokensDetails_ = java.util.Collections.unmodifiableList(cacheTokensDetails_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.cacheTokensDetails_ = cacheTokensDetails_;
         } else {
           result.cacheTokensDetails_ = cacheTokensDetailsBuilder_.build();
         }
         if (candidatesTokensDetailsBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             candidatesTokensDetails_ =
                 java.util.Collections.unmodifiableList(candidatesTokensDetails_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.candidatesTokensDetails_ = candidatesTokensDetails_;
         } else {
@@ -2875,9 +2917,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           result.candidatesTokenCount_ = candidatesTokenCount_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.totalTokenCount_ = totalTokenCount_;
+          result.thoughtsTokenCount_ = thoughtsTokenCount_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.totalTokenCount_ = totalTokenCount_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.cachedContentTokenCount_ = cachedContentTokenCount_;
         }
       }
@@ -2940,6 +2985,9 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         if (other.getCandidatesTokenCount() != 0) {
           setCandidatesTokenCount(other.getCandidatesTokenCount());
         }
+        if (other.getThoughtsTokenCount() != 0) {
+          setThoughtsTokenCount(other.getThoughtsTokenCount());
+        }
         if (other.getTotalTokenCount() != 0) {
           setTotalTokenCount(other.getTotalTokenCount());
         }
@@ -2950,7 +2998,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           if (!other.promptTokensDetails_.isEmpty()) {
             if (promptTokensDetails_.isEmpty()) {
               promptTokensDetails_ = other.promptTokensDetails_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensurePromptTokensDetailsIsMutable();
               promptTokensDetails_.addAll(other.promptTokensDetails_);
@@ -2963,7 +3011,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
               promptTokensDetailsBuilder_.dispose();
               promptTokensDetailsBuilder_ = null;
               promptTokensDetails_ = other.promptTokensDetails_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
               promptTokensDetailsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPromptTokensDetailsFieldBuilder()
@@ -2977,7 +3025,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           if (!other.cacheTokensDetails_.isEmpty()) {
             if (cacheTokensDetails_.isEmpty()) {
               cacheTokensDetails_ = other.cacheTokensDetails_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureCacheTokensDetailsIsMutable();
               cacheTokensDetails_.addAll(other.cacheTokensDetails_);
@@ -2990,7 +3038,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
               cacheTokensDetailsBuilder_.dispose();
               cacheTokensDetailsBuilder_ = null;
               cacheTokensDetails_ = other.cacheTokensDetails_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
               cacheTokensDetailsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getCacheTokensDetailsFieldBuilder()
@@ -3004,7 +3052,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           if (!other.candidatesTokensDetails_.isEmpty()) {
             if (candidatesTokensDetails_.isEmpty()) {
               candidatesTokensDetails_ = other.candidatesTokensDetails_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureCandidatesTokensDetailsIsMutable();
               candidatesTokensDetails_.addAll(other.candidatesTokensDetails_);
@@ -3017,7 +3065,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
               candidatesTokensDetailsBuilder_.dispose();
               candidatesTokensDetailsBuilder_ = null;
               candidatesTokensDetails_ = other.candidatesTokensDetails_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000080);
               candidatesTokensDetailsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getCandidatesTokensDetailsFieldBuilder()
@@ -3068,13 +3116,13 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
               case 24:
                 {
                   totalTokenCount_ = input.readInt32();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 24
               case 40:
                 {
                   cachedContentTokenCount_ = input.readInt32();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 74:
@@ -3119,6 +3167,12 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   }
                   break;
                 } // case 90
+              case 112:
+                {
+                  thoughtsTokenCount_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 112
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3256,6 +3310,62 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
         return this;
       }
 
+      private int thoughtsTokenCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens present in thoughts output.
+       * </pre>
+       *
+       * <code>int32 thoughts_token_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The thoughtsTokenCount.
+       */
+      @java.lang.Override
+      public int getThoughtsTokenCount() {
+        return thoughtsTokenCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens present in thoughts output.
+       * </pre>
+       *
+       * <code>int32 thoughts_token_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The thoughtsTokenCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThoughtsTokenCount(int value) {
+
+        thoughtsTokenCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of tokens present in thoughts output.
+       * </pre>
+       *
+       * <code>int32 thoughts_token_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearThoughtsTokenCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        thoughtsTokenCount_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int totalTokenCount_;
 
       /**
@@ -3289,7 +3399,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public Builder setTotalTokenCount(int value) {
 
         totalTokenCount_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3306,7 +3416,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearTotalTokenCount() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         totalTokenCount_ = 0;
         onChanged();
         return this;
@@ -3349,7 +3459,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public Builder setCachedContentTokenCount(int value) {
 
         cachedContentTokenCount_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3368,7 +3478,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearCachedContentTokenCount() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         cachedContentTokenCount_ = 0;
         onChanged();
         return this;
@@ -3378,11 +3488,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           promptTokensDetails_ = java.util.Collections.emptyList();
 
       private void ensurePromptTokensDetailsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           promptTokensDetails_ =
               new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.ModalityTokenCount>(
                   promptTokensDetails_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         }
       }
 
@@ -3638,7 +3748,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public Builder clearPromptTokensDetails() {
         if (promptTokensDetailsBuilder_ == null) {
           promptTokensDetails_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           promptTokensDetailsBuilder_.clear();
@@ -3789,7 +3899,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   com.google.cloud.aiplatform.v1beta1.ModalityTokenCount.Builder,
                   com.google.cloud.aiplatform.v1beta1.ModalityTokenCountOrBuilder>(
                   promptTokensDetails_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           promptTokensDetails_ = null;
@@ -3801,11 +3911,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           cacheTokensDetails_ = java.util.Collections.emptyList();
 
       private void ensureCacheTokensDetailsIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           cacheTokensDetails_ =
               new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.ModalityTokenCount>(
                   cacheTokensDetails_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
         }
       }
 
@@ -4072,7 +4182,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public Builder clearCacheTokensDetails() {
         if (cacheTokensDetailsBuilder_ == null) {
           cacheTokensDetails_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           cacheTokensDetailsBuilder_.clear();
@@ -4230,7 +4340,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   com.google.cloud.aiplatform.v1beta1.ModalityTokenCount.Builder,
                   com.google.cloud.aiplatform.v1beta1.ModalityTokenCountOrBuilder>(
                   cacheTokensDetails_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           cacheTokensDetails_ = null;
@@ -4242,11 +4352,11 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
           candidatesTokensDetails_ = java.util.Collections.emptyList();
 
       private void ensureCandidatesTokensDetailsIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           candidatesTokensDetails_ =
               new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.ModalityTokenCount>(
                   candidatesTokensDetails_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
         }
       }
 
@@ -4502,7 +4612,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
       public Builder clearCandidatesTokensDetails() {
         if (candidatesTokensDetailsBuilder_ == null) {
           candidatesTokensDetails_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           candidatesTokensDetailsBuilder_.clear();
@@ -4653,7 +4763,7 @@ public final class GenerateContentResponse extends com.google.protobuf.Generated
                   com.google.cloud.aiplatform.v1beta1.ModalityTokenCount.Builder,
                   com.google.cloud.aiplatform.v1beta1.ModalityTokenCountOrBuilder>(
                   candidatesTokensDetails_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           candidatesTokensDetails_ = null;

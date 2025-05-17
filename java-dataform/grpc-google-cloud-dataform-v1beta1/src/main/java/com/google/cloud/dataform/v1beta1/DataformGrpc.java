@@ -2661,6 +2661,8 @@ public final class DataformGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
+     * **Note:** *This method can return repositories not shown in the [Dataform
+     * UI](https://console.cloud.google.com/bigquery/dataform)*.
      * </pre>
      */
     default void listRepositories(
@@ -2706,11 +2708,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single Repository.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     default void updateRepository(
@@ -3194,11 +3195,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single ReleaseConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     default void updateReleaseConfig(
@@ -3335,11 +3335,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single WorkflowConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     default void updateWorkflowConfig(
@@ -3474,11 +3473,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Update default config for a given project and location.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     default void updateConfig(
@@ -3528,6 +3526,8 @@ public final class DataformGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
+     * **Note:** *This method can return repositories not shown in the [Dataform
+     * UI](https://console.cloud.google.com/bigquery/dataform)*.
      * </pre>
      */
     public void listRepositories(
@@ -3579,11 +3579,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single Repository.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public void updateRepository(
@@ -4127,11 +4126,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single ReleaseConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public void updateReleaseConfig(
@@ -4286,11 +4284,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single WorkflowConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public void updateWorkflowConfig(
@@ -4442,11 +4439,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Update default config for a given project and location.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public void updateConfig(
@@ -4484,6 +4480,8 @@ public final class DataformGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
+     * **Note:** *This method can return repositories not shown in the [Dataform
+     * UI](https://console.cloud.google.com/bigquery/dataform)*.
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ListRepositoriesResponse listRepositories(
@@ -4523,11 +4521,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single Repository.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Repository updateRepository(
@@ -4952,11 +4949,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single ReleaseConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ReleaseConfig updateReleaseConfig(
@@ -5075,11 +5071,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single WorkflowConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.WorkflowConfig updateWorkflowConfig(
@@ -5200,11 +5195,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Update default config for a given project and location.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Config updateConfig(
@@ -5238,6 +5232,8 @@ public final class DataformGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
+     * **Note:** *This method can return repositories not shown in the [Dataform
+     * UI](https://console.cloud.google.com/bigquery/dataform)*.
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ListRepositoriesResponse listRepositories(
@@ -5277,11 +5273,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single Repository.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Repository updateRepository(
@@ -5706,11 +5701,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single ReleaseConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.ReleaseConfig updateReleaseConfig(
@@ -5829,11 +5823,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single WorkflowConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.WorkflowConfig updateWorkflowConfig(
@@ -5954,11 +5947,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Update default config for a given project and location.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.cloud.dataform.v1beta1.Config updateConfig(
@@ -5992,6 +5984,8 @@ public final class DataformGrpc {
      *
      * <pre>
      * Lists Repositories in a given project and location.
+     * **Note:** *This method can return repositories not shown in the [Dataform
+     * UI](https://console.cloud.google.com/bigquery/dataform)*.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -6034,11 +6028,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single Repository.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -6500,11 +6493,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single ReleaseConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -6636,11 +6628,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Updates a single WorkflowConfig.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -6774,11 +6765,10 @@ public final class DataformGrpc {
      *
      * <pre>
      * Update default config for a given project and location.
-     * **Note:** This method does not fully implement
-     * [AIP-134](https://google.aip.dev/134); in particular:
-     * - The wildcard entry (**&#92;***) is treated as a bad request
-     * - When the **field_mask** is omitted, instead of only updating the set
-     *   fields, the request is treated as a full update on all modifiable fields
+     * **Note:** *This method does not fully implement
+     * [AIP/134](https://google.aip.dev/134). The wildcard entry (&#92;*) is treated
+     * as a bad request, and when the `field_mask` is omitted, the request is
+     * treated as a full update on all modifiable fields.*
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
