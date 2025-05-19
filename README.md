@@ -159,6 +159,36 @@ public class TestLogger {
 }
 ```
 
+### Controlling the batching settings
+When using asynchronous logging, the Logging API is called asynchronously.  This allows the appender 
+to combine multiple `write()` calls into a single, more efficient request to the Logging API. The 
+`logbackBatchingSettings` in the `logback.xml` file configures the batching behavior:
+
+```
+   <logbackBatchingSettings>
+     <elementCountThreshold>100</elementCountThreshold> <!-- Send a writeLogEntries request once the number of log entries in a batch is over 100 -->
+     <requestByteThreshold>1000</requestByteThreshold> <!-- Send a writeLogEntries request once the total size of log entries in a batch is over 1000 bytes -->
+     <delayThreshold>500</delayThreshold> <!-- Send a writeLogEntries request once the 500 ms duration has passed since the first log entry created the batch -->
+     <maxOutstandingElementCount>10000</maxOutstandingElementCount>
+     <maxOutstandingRequestBytes>100000</maxOutstandingRequestBytes>
+     <limitExceededBehavior>Ignore</limitExceededBehavior>
+   </logbackBatchingSettings> 
+```
+Here are some explanations for [BatchingSettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.batching.BatchingSettings):
+* `elementCountThreshold`: Triggers a `writeLogEntries` request when the number of batched log entries exceeds this threshold.
+* `requestByteThreshold`: Triggers a `writeLogEntries` request when the total size of batched log entries (in bytes) exceeds this threshold.
+* `delayThreshold`: Triggers a `writeLogEntries` request when the threshold in milliseconds has passed since the first log entry created the batch.
+
+Batching also supports [FlowControl](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.batching.FlowControlSettings), which can be used to 
+prevent the batching implementation from accumulating messages without limit, resulting eventually in an OutOfMemory exception. These settings in the configuration controls 
+flow control behavior:
+
+* `maxOutstandingElementCount`: When the total number of outstanding log events exceeds this threshold, flow control will be initiated.
+* `maxOutstandingRequestBytes`: When the total size of outstanding `writeLogEntries` requests exceeds this threshold, flow control will be initiated.
+* `limitExceededBehavior`: This value defines what action the appender should take when the configured limits (like `maxOutstandingRequestBytes` or `maxOutstandingElementCount`) are exceeded.
+
+For more information about batching configurations, see [BatchingSettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.batching.BatchingSettings).
+
 ### Populate log entries with metadata
 
 The library provides multiple ways to enrich log entries with additional information.
