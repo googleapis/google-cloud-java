@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.50.1](https://github.com/googleapis/java-bigquery/compare/v2.50.0...v2.50.1) (2025-05-16)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.48.0 ([#3790](https://github.com/googleapis/java-bigquery/issues/3790)) ([206f06d](https://github.com/googleapis/java-bigquery/commit/206f06de115ead53b26f09a5f4781efd279b5a73))
+* Update netty.version to v4.2.1.final ([#3780](https://github.com/googleapis/java-bigquery/issues/3780)) ([6dcd858](https://github.com/googleapis/java-bigquery/commit/6dcd858eca788a8cb571368e12b4925993e380c4))
+
+
+### Documentation
+
+* **bigquery:** Update TableResult.getTotalRows() docstring ([#3785](https://github.com/googleapis/java-bigquery/issues/3785)) ([6483588](https://github.com/googleapis/java-bigquery/commit/6483588a3c5785b95ea841f21aa38f50ecf4226d))
+
 ## [2.50.0](https://github.com/googleapis/java-bigquery/compare/v2.49.2...v2.50.0) (2025-05-06)
 
 
