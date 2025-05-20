@@ -30,14 +30,29 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <configuration>
+                        <!--
+                          When we use OSSRH with nexus-staging-maven-plugin, this "skip" configuration
+                          is overridden and ignored by nexus-staging-maven-plugin.
+                          Once we start publishing artifacts via Central Portal using maven-deploy-plugin
+                          (without nexus-staging-maven-plugin), we no longer rely on skipNexusStagingDeployMojo.
+                        -->
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <configuration>
+                        <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>

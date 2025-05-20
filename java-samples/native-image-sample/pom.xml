@@ -44,14 +44,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-
            <!-- This plugin enables building the application to a JAR *not* using native image compilation -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
