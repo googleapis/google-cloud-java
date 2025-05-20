@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storagebatchoperations</artifactId>
-  <version>0.3.0</version><!-- {x-version-update:google-cloud-storagebatchoperations:current} -->
+  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storagebatchoperations:current} -->
   <packaging>jar</packaging>
   <name>Google Storage Batch Operations API</name>
   <description>Storage Batch Operations API Storage batch operations is a Cloud Storage management feature that performs operations on billions of Cloud Storage objects in a serverless manner.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-storagebatchoperations-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-cloud-storagebatchoperations:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storagebatchoperations:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-storagebatchoperations</site.installationModule>
