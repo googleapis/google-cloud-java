@@ -85,6 +85,10 @@ public final class ToolProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_DataStoreSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_DataStoreSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_GoogleSearchRetrieval_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GoogleSearchRetrieval_fieldAccessorTable;
@@ -231,30 +235,37 @@ public final class ToolProto {
           + "#aiplatform.googleapis.com/RagCorpus\022\031\n"
           + "\014rag_file_ids\030\002 \003(\tB\003\340A\001B\023\n"
           + "\021_similarity_top_kB\034\n"
-          + "\032_vector_distance_threshold\"=\n"
+          + "\032_vector_distance_threshold\"\377\001\n"
           + "\016VertexAISearch\022\026\n"
           + "\tdatastore\030\001 \001(\tB\003\340A\001\022\023\n"
-          + "\006engine\030\002 \001(\tB\003\340A\001\"r\n"
+          + "\006engine\030\002 \001(\tB\003\340A\001\022\030\n"
+          + "\013max_results\030\003 \001(\005B\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022W\n"
+          + "\020data_store_specs\030\005 \003(\0132"
+          + "=.google.cloud.aiplatform.v1beta1.VertexAISearch.DataStoreSpec\0328\n\r"
+          + "DataStoreSpec\022\022\n\n"
+          + "data_store\030\001 \001(\t\022\023\n"
+          + "\006filter\030\002 \001(\tB\003\340A\001\"r\n"
           + "\025GoogleSearchRetrieval\022Y\n"
-          + "\030dynamic_retrieval_config\030\002 \001(\01327.google.cloud."
-          + "aiplatform.v1beta1.DynamicRetrievalConfig\"\025\n"
+          + "\030dynamic_retrieval_config\030\002"
+          + " \001(\01327.google.cloud.aiplatform.v1beta1.DynamicRetrievalConfig\"\025\n"
           + "\023EnterpriseWebSearch\"\317\001\n"
           + "\026DynamicRetrievalConfig\022J\n"
-          + "\004mode\030\001 \001(\0162<.google.cloud"
-          + ".aiplatform.v1beta1.DynamicRetrievalConfig.Mode\022#\n"
+          + "\004mode\030\001 \001(\0162<.google.cloud.aipl"
+          + "atform.v1beta1.DynamicRetrievalConfig.Mode\022#\n"
           + "\021dynamic_threshold\030\002 \001(\002B\003\340A\001H\000\210\001\001\".\n"
           + "\004Mode\022\024\n"
           + "\020MODE_UNSPECIFIED\020\000\022\020\n"
           + "\014MODE_DYNAMIC\020\001B\024\n"
           + "\022_dynamic_threshold\"\273\001\n\n"
           + "ToolConfig\022\\\n"
-          + "\027function_calling_config\030\001 \001"
-          + "(\01326.google.cloud.aiplatform.v1beta1.FunctionCallingConfigB\003\340A\001\022O\n"
+          + "\027function_calling_config\030\001 \001(\01326."
+          + "google.cloud.aiplatform.v1beta1.FunctionCallingConfigB\003\340A\001\022O\n"
           + "\020retrieval_config\030\002"
           + " \001(\01320.google.cloud.aiplatform.v1beta1.RetrievalConfigB\003\340A\001\"\307\001\n"
           + "\025FunctionCallingConfig\022N\n"
-          + "\004mode\030\001 \001(\0162;.google.cloud."
-          + "aiplatform.v1beta1.FunctionCallingConfig.ModeB\003\340A\001\022#\n"
+          + "\004mode\030\001 \001(\0162;.google.cloud.aipla"
+          + "tform.v1beta1.FunctionCallingConfig.ModeB\003\340A\001\022#\n"
           + "\026allowed_function_names\030\002 \003(\tB\003\340A\001\"9\n"
           + "\004Mode\022\024\n"
           + "\020MODE_UNSPECIFIED\020\000\022\010\n"
@@ -268,12 +279,12 @@ public final class ToolProto {
           + "\016_language_code\"\317\006\n"
           + "\022RagRetrievalConfig\022\022\n"
           + "\005top_k\030\001 \001(\005B\003\340A\001\022\\\n\r"
-          + "hybrid_search\030\002 \001(\0132@.google.cloud.aiplatform.v"
-          + "1beta1.RagRetrievalConfig.HybridSearchB\003\340A\001\022O\n"
-          + "\006filter\030\003 \001(\0132:.google.cloud.aipla"
-          + "tform.v1beta1.RagRetrievalConfig.FilterB\003\340A\001\022Q\n"
-          + "\007ranking\030\004 \001(\0132;.google.cloud.aip"
-          + "latform.v1beta1.RagRetrievalConfig.RankingB\003\340A\001\0321\n"
+          + "hybrid_search\030\002 \001(\0132@.google.cloud.aiplatform.v1beta"
+          + "1.RagRetrievalConfig.HybridSearchB\003\340A\001\022O\n"
+          + "\006filter\030\003 \001(\0132:.google.cloud.aiplatform"
+          + ".v1beta1.RagRetrievalConfig.FilterB\003\340A\001\022Q\n"
+          + "\007ranking\030\004 \001(\0132;.google.cloud.aiplatfo"
+          + "rm.v1beta1.RagRetrievalConfig.RankingB\003\340A\001\0321\n"
           + "\014HybridSearch\022\027\n"
           + "\005alpha\030\001 \001(\002B\003\340A\001H\000\210\001\001B\010\n"
           + "\006_alpha\032\223\001\n"
@@ -283,21 +294,24 @@ public final class ToolProto {
           + "\017metadata_filter\030\002 \001(\tB\003\340A\001B\025\n"
           + "\023vector_db_threshold\032\331\002\n"
           + "\007Ranking\022d\n"
-          + "\014rank_service\030\001 \001(\0132G.google.cloud.aiplatform.v1beta1.Rag"
-          + "RetrievalConfig.Ranking.RankServiceB\003\340A\001H\000\022`\n\n"
-          + "llm_ranker\030\003 \001(\0132E.google.cloud.ai"
-          + "platform.v1beta1.RagRetrievalConfig.Ranking.LlmRankerB\003\340A\001H\000\032:\n"
+          + "\014rank_service\030\001 \001(\0132G."
+          + "google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Ranking.RankServiceB\003\340A\001H\000\022`\n"
+          + "\n"
+          + "llm_ranker\030\003 \001(\0132E.google.cloud.aiplatf"
+          + "orm.v1beta1.RagRetrievalConfig.Ranking.LlmRankerB\003\340A\001H\000\032:\n"
           + "\013RankService\022\034\n\n"
           + "model_name\030\001 \001(\tB\003\340A\001H\000\210\001\001B\r\n"
           + "\013_model_name\0328\n"
           + "\tLlmRanker\022\034\n\n"
-          + "model_name\030\001 \001(\tB\003\340A\001H\000\210\001\001B\r\n"
+          + "model_name\030\001 \001(\tB\003\340A\001H\000\210\001\001B\r"
+          + "\n"
           + "\013_model_nameB\020\n"
           + "\016ranking_configB\340\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\tToolProtoP\001ZCcloud.google.com/go/aiplatfor"
-          + "m/apiv1beta1/aiplatformpb;aiplatformpb\252\002"
-          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
-          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\tToolPro"
+          + "toP\001ZCcloud.google.com/go/aiplatform/api"
+          + "v1beta1/aiplatformpb;aiplatformpb\252\002\037Goog"
+          + "le.Cloud.AIPlatform.V1Beta1\312\002\037Google\\Clo"
+          + "ud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -435,7 +449,17 @@ public final class ToolProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_descriptor,
             new java.lang.String[] {
-              "Datastore", "Engine",
+              "Datastore", "Engine", "MaxResults", "Filter", "DataStoreSpecs",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_DataStoreSpec_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_DataStoreSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_DataStoreSpec_descriptor,
+            new java.lang.String[] {
+              "DataStore", "Filter",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GoogleSearchRetrieval_descriptor =
         getDescriptor().getMessageTypes().get(10);
