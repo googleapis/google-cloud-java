@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [0.132.8-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.132.7-alpha...v0.132.8-alpha) (2025-05-20)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-logging to v3.22.4 ([#1477](https://github.com/googleapis/java-logging-logback/issues/1477)) ([d1852aa](https://github.com/googleapis/java-logging-logback/commit/d1852aa2ff5af397c52e9950a0fbcae3e6575122))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.48.0 ([#1474](https://github.com/googleapis/java-logging-logback/issues/1474)) ([ce8b356](https://github.com/googleapis/java-logging-logback/commit/ce8b3560c963dc5b96bd76ff0f86175b794b4332))
+* Update dependency org.easymock:easymock to v5.6.0 ([#1475](https://github.com/googleapis/java-logging-logback/issues/1475)) ([84827c3](https://github.com/googleapis/java-logging-logback/commit/84827c34e35a9e14b04e5c7223bd8bca5070893d))
+
 ## [0.132.7-alpha](https://github.com/googleapis/java-logging-logback/compare/v0.132.6-alpha...v0.132.7-alpha) (2025-05-06)
 
 
