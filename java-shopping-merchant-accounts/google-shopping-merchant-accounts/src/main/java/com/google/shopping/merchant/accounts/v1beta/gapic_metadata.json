@@ -218,7 +218,7 @@
           "libraryClient": "OnlineReturnPolicyServiceClient",
           "rpcs": {
             "CreateOnlineReturnPolicy": {
-              "methods": ["createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicyCallable"]
+              "methods": ["createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicy", "createOnlineReturnPolicyCallable"]
             },
             "DeleteOnlineReturnPolicy": {
               "methods": ["deleteOnlineReturnPolicy", "deleteOnlineReturnPolicy", "deleteOnlineReturnPolicy", "deleteOnlineReturnPolicyCallable"]
