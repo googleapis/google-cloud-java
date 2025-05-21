@@ -45,6 +45,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     modelVersionId_ = "";
     displayName_ = "";
     serviceAccount_ = "";
+    checkpointId_ = "";
   }
 
   @java.lang.Override
@@ -2283,6 +2284,59 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int CHECKPOINT_ID_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object checkpointId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The checkpoint id of the model.
+   * </pre>
+   *
+   * <code>string checkpoint_id = 29;</code>
+   *
+   * @return The checkpointId.
+   */
+  @java.lang.Override
+  public java.lang.String getCheckpointId() {
+    java.lang.Object ref = checkpointId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      checkpointId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The checkpoint id of the model.
+   * </pre>
+   *
+   * <code>string checkpoint_id = 29;</code>
+   *
+   * @return The bytes for checkpointId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCheckpointIdBytes() {
+    java.lang.Object ref = checkpointId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      checkpointId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SPECULATIVE_DECODING_SPEC_FIELD_NUMBER = 30;
   private com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculativeDecodingSpec_;
 
@@ -2409,6 +2463,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetSystemLabels(), SystemLabelsDefaultEntryHolder.defaultEntry, 28);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkpointId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, checkpointId_);
+    }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(30, getSpeculativeDecodingSpec());
     }
@@ -2484,6 +2541,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, systemLabels__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(checkpointId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, checkpointId_);
+    }
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2534,6 +2594,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       if (!getStatus().equals(other.getStatus())) return false;
     }
     if (!internalGetSystemLabels().equals(other.internalGetSystemLabels())) return false;
+    if (!getCheckpointId().equals(other.getCheckpointId())) return false;
     if (hasSpeculativeDecodingSpec() != other.hasSpeculativeDecodingSpec()) return false;
     if (hasSpeculativeDecodingSpec()) {
       if (!getSpeculativeDecodingSpec().equals(other.getSpeculativeDecodingSpec())) return false;
@@ -2603,6 +2664,8 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SYSTEM_LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetSystemLabels().hashCode();
     }
+    hash = (37 * hash) + CHECKPOINT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getCheckpointId().hashCode();
     if (hasSpeculativeDecodingSpec()) {
       hash = (37 * hash) + SPECULATIVE_DECODING_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getSpeculativeDecodingSpec().hashCode();
@@ -2839,6 +2902,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         statusBuilder_ = null;
       }
       internalGetMutableSystemLabels().clear();
+      checkpointId_ = "";
       speculativeDecodingSpec_ = null;
       if (speculativeDecodingSpecBuilder_ != null) {
         speculativeDecodingSpecBuilder_.dispose();
@@ -2938,6 +3002,9 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         result.systemLabels_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.checkpointId_ = checkpointId_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.speculativeDecodingSpec_ =
             speculativeDecodingSpecBuilder_ == null
                 ? speculativeDecodingSpec_
@@ -3054,6 +3121,11 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableSystemLabels().mergeFrom(other.internalGetSystemLabels());
       bitField0_ |= 0x00010000;
+      if (!other.getCheckpointId().isEmpty()) {
+        checkpointId_ = other.checkpointId_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       if (other.hasSpeculativeDecodingSpec()) {
         mergeSpeculativeDecodingSpec(other.getSpeculativeDecodingSpec());
       }
@@ -3219,11 +3291,17 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 226
+            case 234:
+              {
+                checkpointId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 234
             case 242:
               {
                 input.readMessage(
                     getSpeculativeDecodingSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 242
             default:
@@ -6151,6 +6229,117 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object checkpointId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @return The checkpointId.
+     */
+    public java.lang.String getCheckpointId() {
+      java.lang.Object ref = checkpointId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        checkpointId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @return The bytes for checkpointId.
+     */
+    public com.google.protobuf.ByteString getCheckpointIdBytes() {
+      java.lang.Object ref = checkpointId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        checkpointId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @param value The checkpointId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCheckpointId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkpointId_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCheckpointId() {
+      checkpointId_ = getDefaultInstance().getCheckpointId();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The checkpoint id of the model.
+     * </pre>
+     *
+     * <code>string checkpoint_id = 29;</code>
+     *
+     * @param value The bytes for checkpointId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCheckpointIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      checkpointId_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec speculativeDecodingSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec,
@@ -6172,7 +6361,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the speculativeDecodingSpec field is set.
      */
     public boolean hasSpeculativeDecodingSpec() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6219,7 +6408,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         speculativeDecodingSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6242,7 +6431,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
       } else {
         speculativeDecodingSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6261,7 +6450,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSpeculativeDecodingSpec(
         com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec value) {
       if (speculativeDecodingSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && speculativeDecodingSpec_ != null
             && speculativeDecodingSpec_
                 != com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.getDefaultInstance()) {
@@ -6273,7 +6462,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
         speculativeDecodingSpecBuilder_.mergeFrom(value);
       }
       if (speculativeDecodingSpec_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -6291,7 +6480,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpeculativeDecodingSpec() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       speculativeDecodingSpec_ = null;
       if (speculativeDecodingSpecBuilder_ != null) {
         speculativeDecodingSpecBuilder_.dispose();
@@ -6314,7 +6503,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1.SpeculativeDecodingSpec.Builder
         getSpeculativeDecodingSpecBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getSpeculativeDecodingSpecFieldBuilder().getBuilder();
     }

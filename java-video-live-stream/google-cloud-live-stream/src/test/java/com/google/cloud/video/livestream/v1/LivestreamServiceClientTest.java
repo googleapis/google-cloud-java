@@ -19,6 +19,7 @@ package com.google.cloud.video.livestream.v1;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListClipsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListDvrSessionsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
@@ -1914,6 +1915,453 @@ public class LivestreamServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteClipAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDvrSessionTest() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    DvrSession dvrSession = DvrSession.newBuilder().build();
+    String dvrSessionId = "dvrSessionId120568849";
+
+    DvrSession actualResponse =
+        client.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDvrSessionRequest actualRequest = ((CreateDvrSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(dvrSession, actualRequest.getDvrSession());
+    Assert.assertEquals(dvrSessionId, actualRequest.getDvrSessionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDvrSessionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      DvrSession dvrSession = DvrSession.newBuilder().build();
+      String dvrSessionId = "dvrSessionId120568849";
+      client.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDvrSessionTest2() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    DvrSession dvrSession = DvrSession.newBuilder().build();
+    String dvrSessionId = "dvrSessionId120568849";
+
+    DvrSession actualResponse =
+        client.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDvrSessionRequest actualRequest = ((CreateDvrSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(dvrSession, actualRequest.getDvrSession());
+    Assert.assertEquals(dvrSessionId, actualRequest.getDvrSessionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDvrSessionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DvrSession dvrSession = DvrSession.newBuilder().build();
+      String dvrSessionId = "dvrSessionId120568849";
+      client.createDvrSessionAsync(parent, dvrSession, dvrSessionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listDvrSessionsTest() throws Exception {
+    DvrSession responsesElement = DvrSession.newBuilder().build();
+    ListDvrSessionsResponse expectedResponse =
+        ListDvrSessionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDvrSessions(Arrays.asList(responsesElement))
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+
+    ListDvrSessionsPagedResponse pagedListResponse = client.listDvrSessions(parent);
+
+    List<DvrSession> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDvrSessionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDvrSessionsRequest actualRequest = ((ListDvrSessionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDvrSessionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      ChannelName parent = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      client.listDvrSessions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDvrSessionsTest2() throws Exception {
+    DvrSession responsesElement = DvrSession.newBuilder().build();
+    ListDvrSessionsResponse expectedResponse =
+        ListDvrSessionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDvrSessions(Arrays.asList(responsesElement))
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDvrSessionsPagedResponse pagedListResponse = client.listDvrSessions(parent);
+
+    List<DvrSession> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDvrSessionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDvrSessionsRequest actualRequest = ((ListDvrSessionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDvrSessionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDvrSessions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDvrSessionTest() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    DvrSessionName name =
+        DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+
+    DvrSession actualResponse = client.getDvrSession(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDvrSessionRequest actualRequest = ((GetDvrSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDvrSessionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      DvrSessionName name =
+          DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+      client.getDvrSession(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDvrSessionTest2() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DvrSession actualResponse = client.getDvrSession(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDvrSessionRequest actualRequest = ((GetDvrSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDvrSessionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDvrSession(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteDvrSessionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    DvrSessionName name =
+        DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+
+    client.deleteDvrSessionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDvrSessionRequest actualRequest = ((DeleteDvrSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDvrSessionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      DvrSessionName name =
+          DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]");
+      client.deleteDvrSessionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDvrSessionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteDvrSessionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDvrSessionRequest actualRequest = ((DeleteDvrSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDvrSessionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDvrSessionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateDvrSessionTest() throws Exception {
+    DvrSession expectedResponse =
+        DvrSession.newBuilder()
+            .setName(
+                DvrSessionName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]", "[DVR_SESSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setError(Status.newBuilder().build())
+            .addAllDvrManifests(new ArrayList<DvrSession.DvrManifest>())
+            .addAllDvrWindows(new ArrayList<DvrSession.DvrWindow>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDvrSessionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    DvrSession dvrSession = DvrSession.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DvrSession actualResponse = client.updateDvrSessionAsync(dvrSession, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDvrSessionRequest actualRequest = ((UpdateDvrSessionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dvrSession, actualRequest.getDvrSession());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDvrSessionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      DvrSession dvrSession = DvrSession.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDvrSessionAsync(dvrSession, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

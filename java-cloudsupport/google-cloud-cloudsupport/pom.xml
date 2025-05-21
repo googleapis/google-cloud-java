@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-cloudsupport</artifactId>
-  <version>0.47.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
+  <version>0.48.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
   <packaging>jar</packaging>
   <name>Google Google Cloud Support API</name>
   <description>Google Cloud Support API Manages Google Cloud technical support cases for Customer Care support offerings.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-cloudsupport-parent</artifactId>
-    <version>0.47.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
+    <version>0.48.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-cloudsupport</site.installationModule>
@@ -43,6 +43,10 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-cloudsupport-v2beta</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-cloudsupport-v2</artifactId>
     </dependency>
     <dependency>
@@ -64,6 +68,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-cloudsupport-v2beta</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

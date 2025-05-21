@@ -28,10 +28,12 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for the comment.
+   * Output only. Identifier. The resource name of the comment.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The name.
    */
@@ -41,10 +43,12 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for the comment.
+   * Output only. Identifier. The resource name of the comment.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -54,7 +58,7 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when this comment was created.
+   * Output only. The time when the comment was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -68,7 +72,7 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when this comment was created.
+   * Output only. The time when the comment was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -82,7 +86,7 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when this comment was created.
+   * Output only. The time when the comment was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -94,7 +98,7 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. The user or Google Support agent created this comment.
+   * Output only. The user or Google Support agent who created the comment.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Actor creator = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -108,7 +112,7 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. The user or Google Support agent created this comment.
+   * Output only. The user or Google Support agent who created the comment.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Actor creator = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -122,7 +126,7 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. The user or Google Support agent created this comment.
+   * Output only. The user or Google Support agent who created the comment.
    * </pre>
    *
    * <code>.google.cloud.support.v2.Actor creator = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -134,8 +138,9 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * The full comment body. Maximum of 12800 characters. This can contain rich
-   * text syntax.
+   * The full comment body.
+   *
+   * Maximum of 12800 characters.
    * </pre>
    *
    * <code>string body = 4;</code>
@@ -148,8 +153,9 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * The full comment body. Maximum of 12800 characters. This can contain rich
-   * text syntax.
+   * The full comment body.
+   *
+   * Maximum of 12800 characters.
    * </pre>
    *
    * <code>string body = 4;</code>
@@ -162,27 +168,43 @@ public interface CommentOrBuilder
    *
    *
    * <pre>
-   * Output only. DEPRECATED. An automatically generated plain text version of
-   * body with all rich text syntax stripped.
+   * Output only. DEPRECATED. DO NOT USE.
+   *
+   * A duplicate of the `body` field.
+   *
+   * This field is only present for legacy reasons.
    * </pre>
    *
-   * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+   *     google/cloud/support/v2/comment.proto;l=66
    * @return The plainTextBody.
    */
+  @java.lang.Deprecated
   java.lang.String getPlainTextBody();
 
   /**
    *
    *
    * <pre>
-   * Output only. DEPRECATED. An automatically generated plain text version of
-   * body with all rich text syntax stripped.
+   * Output only. DEPRECATED. DO NOT USE.
+   *
+   * A duplicate of the `body` field.
+   *
+   * This field is only present for legacy reasons.
    * </pre>
    *
-   * <code>string plain_text_body = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string plain_text_body = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.support.v2.Comment.plain_text_body is deprecated. See
+   *     google/cloud/support/v2/comment.proto;l=66
    * @return The bytes for plainTextBody.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getPlainTextBodyBytes();
 }

@@ -74,7 +74,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -89,7 +89,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -105,7 +105,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -120,7 +120,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -135,7 +135,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of cases associated with the Google Cloud Resource, after any
+   * The list of cases associated with the parent after any
    * filters have been applied.
    * </pre>
    *
@@ -155,9 +155,9 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of subsequent `SearchCaseRequest` message that is
-   * issued. If unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the
+   * `page_token` field of subsequent `cases.search` requests. If unspecified,
+   * there are no more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -181,9 +181,9 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of subsequent `SearchCaseRequest` message that is
-   * issued. If unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the
+   * `page_token` field of subsequent `cases.search` requests. If unspecified,
+   * there are no more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -637,7 +637,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -655,7 +655,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -673,7 +673,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -691,7 +691,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -715,7 +715,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -736,7 +736,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -760,7 +760,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -784,7 +784,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -805,7 +805,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -826,7 +826,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -848,7 +848,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -869,7 +869,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -890,7 +890,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -904,7 +904,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -922,7 +922,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -941,7 +941,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -956,7 +956,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -971,7 +971,7 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of cases associated with the Google Cloud Resource, after any
+     * The list of cases associated with the parent after any
      * filters have been applied.
      * </pre>
      *
@@ -1004,9 +1004,9 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the
+     * `page_token` field of subsequent `cases.search` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1029,9 +1029,9 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the
+     * `page_token` field of subsequent `cases.search` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1054,9 +1054,9 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the
+     * `page_token` field of subsequent `cases.search` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1078,9 +1078,9 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the
+     * `page_token` field of subsequent `cases.search` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1098,9 +1098,9 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A token to retrieve the next page of results. This should be set in the
-     * `page_token` field of subsequent `SearchCaseRequest` message that is
-     * issued. If unspecified, there are no more results to retrieve.
+     * A token to retrieve the next page of results. Set this in the
+     * `page_token` field of subsequent `cases.search` requests. If unspecified,
+     * there are no more results to retrieve.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

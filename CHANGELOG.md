@@ -1,5 +1,63 @@
 # Changelog
 
+## [1.57.0](https://github.com/googleapis/google-cloud-java/compare/v1.56.0...v1.57.0) (2025-05-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* [maps-places] An existing field `description` is removed from message `.google.maps.places.v1.Place`
+* [compute] Remove schemas.MachineType.scratchDisks.scratchDisk from config ([#1027](https://github.com/googleapis/google-cloud-java/issues/1027))
+* [workspaceevents] An existing oauth_scope https://www.googleapis.com/auth/chat.bot is removed from SubscriptionsService
+
+### Features
+
+* [aiplatform] A new value `NVIDIA_B200 & NVIDIA_H200_141GB` is added to enum `AcceleratorType` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] A new value `NVIDIA_B200 & NVIDIA_H200_141GB` is added to enum `AcceleratorType` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] add ANN feature for RagManagedDb ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] Add checkpoint ID to endpoint proto ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [aiplatform] Add checkpoint ID to endpoint proto ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [aiplatform] add EncryptionSpec for RagCorpus CMEK feature ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] new field `additional_properties` is added to message `.google.cloud.aiplatform.v1.Schema` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] new field `additional_properties` is added to message `.google.cloud.aiplatform.v1beta1.Schema` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] Tuning Checkpoints API ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [aiplatform] Tuning Checkpoints API ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [alloydb] Add CloudSQL support for RestoreCluster operation ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [alloydb] Sync AlloyDB API changes from HEAD to stable ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [analyticshub] Add support for Analytics Hub & Marketplace Integration ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [chronicle] new module for chronicle ([#11587](https://github.com/googleapis/google-cloud-java/issues/11587)) ([6645e51](https://github.com/googleapis/google-cloud-java/commit/6645e51e7972d24a82fd05bc9f4801033822f00f))
+* [gke-backup] Add BackupChannel field in BackupPlan ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [run] support GPU zonal redundancy setting in Cloud Run services ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [run] support node selector in Cloud Run jobs for GPU setting ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [shopping-merchant-accounts] updated comments for returns sub-API publication ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [storageinsights] Add Client Libraries for Datasets ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [video-live-stream] added OutputType field to the Clip resource to support MP4 clipping ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+
+
+### Bug Fixes
+
+* [compute] Remove schemas.MachineType.scratchDisks.scratchDisk from config ([#1027](https://github.com/googleapis/google-cloud-java/issues/1027)) ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [deploy] correct pattern of unused resource definition, Revision ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [maps-places] An existing field `description` is removed from message `.google.maps.places.v1.Place` ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [workspaceevents] An existing oauth_scope https://www.googleapis.com/auth/chat.bot is removed from SubscriptionsService ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.57.0 ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.58.0 ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.48.0 ([#11582](https://github.com/googleapis/google-cloud-java/issues/11582)) ([2059de9](https://github.com/googleapis/google-cloud-java/commit/2059de99ad5bbbcb82905ec9a733253c78e1624f))
+
+
+### Dependencies
+
+* update java-cloud-bom in java-samples to 26.59.0 ([#11573](https://github.com/googleapis/google-cloud-java/issues/11573)) ([49151ee](https://github.com/googleapis/google-cloud-java/commit/49151ee9ce0b8ae1f9b5a6422a6672dd8c128d9e))
+
+
+### Documentation
+
+* [aiplatform] Remove comments for a non public feature ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [alloydb] A comment for field `encryption_config` in message `.google.cloud.alloydb.v1alpha.AutomatedBackupPolicy` is changed ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [asset] fix typos in documentation ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [cloudsupport] Bring comments and metadata up to date ([b3fc697](https://github.com/googleapis/google-cloud-java/commit/b3fc697f9de99fe355cb0cf691df0836f8f3fb6a))
+* [dataplex] A comment for message `MetadataJob` is changed ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+* [storagebatchoperations] minor fixes to the reference documentation ([04011a3](https://github.com/googleapis/google-cloud-java/commit/04011a383641f0d11ecc00406abf0c024168b499))
+
 ## [1.56.0](https://github.com/googleapis/google-cloud-java/compare/v1.55.0...v1.56.0) (2025-05-06)
 
 

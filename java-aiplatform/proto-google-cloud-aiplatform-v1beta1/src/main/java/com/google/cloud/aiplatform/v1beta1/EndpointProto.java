@@ -132,7 +132,7 @@ public final class EndpointProto {
           + "\005value\030\002 \001(\t:\0028\001:\265\001\352A\261\001\n"
           + "\"aiplatform.googleapis.com/Endpoint\022<projects/{project}/locati"
           + "ons/{location}/endpoints/{endpoint}\022Mpro"
-          + "jects/{project}/locations/{location}/publishers/{publisher}/models/{model}\"\355\t\n\r"
+          + "jects/{project}/locations/{location}/publishers/{publisher}/models/{model}\"\204\n\n\r"
           + "DeployedModel\022R\n"
           + "\023dedicated_resources\030\007 \001("
           + "\01323.google.cloud.aiplatform.v1beta1.DedicatedResourcesH\000\022R\n"
@@ -162,14 +162,16 @@ public final class EndpointProto {
           + "\006status\030\032 \001(\01325.google.cloud.a"
           + "iplatform.v1beta1.DeployedModel.StatusB\003\340A\003\022W\n\r"
           + "system_labels\030\034 \003(\0132@.google.clou"
-          + "d.aiplatform.v1beta1.DeployedModel.SystemLabelsEntry\032\177\n"
+          + "d.aiplatform.v1beta1.DeployedModel.SystemLabelsEntry\022\025\n\r"
+          + "checkpoint_id\030\035 \001(\t\032\177\n"
           + "\006Status\022\024\n"
           + "\007message\030\001 \001(\tB\003\340A\003\0229\n"
           + "\020last_update_time\030\002"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022$\n"
           + "\027available_replica_count\030\003 \001(\005B\003\340A\003\0323\n"
           + "\021SystemLabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
+          + "\003key\030\001 \001(\t\022\r"
+          + "\n"
           + "\005value\030\002 \001(\t:\0028\001B\026\n"
           + "\024prediction_resources\"\217\001\n"
           + "\020PrivateEndpoints\022\035\n"
@@ -180,13 +182,13 @@ public final class EndpointProto {
           + "#PredictRequestResponseLoggingConfig\022\017\n"
           + "\007enabled\030\001 \001(\010\022\025\n\r"
           + "sampling_rate\030\002 \001(\001\022R\n"
-          + "\024bigquery_destination\030\003 \001(\01324.goo"
-          + "gle.cloud.aiplatform.v1beta1.BigQueryDestination\0224\n"
+          + "\024bigquery_destination\030\003"
+          + " \001(\01324.google.cloud.aiplatform.v1beta1.BigQueryDestination\0224\n"
           + "\'request_response_logging_schema_version\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\023enable_otel_logging\030\006 \001(\010\"t\n"
           + "\024PublisherModelConfig\022\\\n"
-          + "\016logging_config\030\003 \001(\0132D.google.cloud.aipla"
-          + "tform.v1beta1.PredictRequestResponseLoggingConfig\"N\n"
+          + "\016logging_config\030\003 \001"
+          + "(\0132D.google.cloud.aiplatform.v1beta1.PredictRequestResponseLoggingConfig\"N\n"
           + "\026ClientConnectionConfig\0224\n"
           + "\021inference_timeout\030\001 \001(\0132\031.google.protobuf.Duration\"5\n"
           + "\026FasterDeploymentConfig\022\033\n"
@@ -201,10 +203,10 @@ public final class EndpointProto {
           + "\017max_unavailableB\013\n"
           + "\tmax_surgeB\344\001\n"
           + "#com.google.cloud.aiplatform.v1beta1B\r"
-          + "EndpointProtoP\001ZCcloud.google.com/go/aiplatf"
-          + "orm/apiv1beta1/aiplatformpb;aiplatformpb"
-          + "\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goo"
-          + "gle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "EndpointProtoP\001ZCcloud.google.com/go/aiplatform/apiv1beta1/ai"
+          + "platformpb;aiplatformpb\252\002\037Google.Cloud.A"
+          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
+          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -287,6 +289,7 @@ public final class EndpointProto {
               "RolloutOptions",
               "Status",
               "SystemLabels",
+              "CheckpointId",
               "PredictionResources",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DeployedModel_Status_descriptor =

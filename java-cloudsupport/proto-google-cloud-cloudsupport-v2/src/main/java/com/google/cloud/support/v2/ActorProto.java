@@ -41,15 +41,19 @@ public final class ActorProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n#google/cloud/support/v2/actor.proto\022\027g"
-          + "oogle.cloud.support.v2\032\037google/api/field"
-          + "_behavior.proto\"I\n\005Actor\022\024\n\014display_name"
-          + "\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\022\033\n\016google_support\030"
-          + "\004 \001(\010B\003\340A\003B\263\001\n\033com.google.cloud.support."
-          + "v2B\nActorProtoP\001Z5cloud.google.com/go/su"
-          + "pport/apiv2/supportpb;supportpb\252\002\027Google"
-          + ".Cloud.Support.V2\312\002\027Google\\Cloud\\Support"
-          + "\\V2\352\002\032Google::Cloud::Support::V2b\006proto3"
+      "\n"
+          + "#google/cloud/support/v2/actor.proto\022\027g"
+          + "oogle.cloud.support.v2\032\037google/api/field_behavior.proto\"d\n"
+          + "\005Actor\022\024\n"
+          + "\014display_name\030\001 \001(\t\022\021\n"
+          + "\005email\030\002 \001(\tB\002\030\001\022\033\n"
+          + "\016google_support\030\004 \001(\010B\003\340A\003\022\025\n"
+          + "\010username\030\005 \001(\tB\003\340A\003B\263\001\n"
+          + "\033com.google.cloud.support.v2B\n"
+          + "ActorProtoP\001Z5cloud.google.com/go/support/apiv2/s"
+          + "upportpb;supportpb\252\002\027Google.Cloud.Suppor"
+          + "t.V2\312\002\027Google\\Cloud\\Support\\V2\352\002\032Google:"
+          + ":Cloud::Support::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -63,7 +67,7 @@ public final class ActorProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_support_v2_Actor_descriptor,
             new java.lang.String[] {
-              "DisplayName", "Email", "GoogleSupport",
+              "DisplayName", "Email", "GoogleSupport", "Username",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -1,5 +1,5 @@
-gapic_generator_version: 2.57.0
-googleapis_commitish: 295a170ba55e5241a85751cbf5b1e4b2011dfa96
+gapic_generator_version: 2.58.0
+googleapis_commitish: f319bbc88abd22cd8c39c349e776cf3dc2722214
 libraries_bom_version: 26.60.0
 
 # the libraries are ordered with respect to library name, which is
@@ -497,6 +497,23 @@ libraries:
   GAPICs:
   - proto_path: google/chat/v1
 
+- api_shortname: chronicle
+  name_pretty: Chronicle API
+  product_documentation: https://cloud.google.com/chronicle/docs/secops/secops-overview
+  api_description: The Google Cloud Security Operations API, popularly known as the
+    Chronicle API, serves endpoints that enable security analysts to analyze and mitigate
+    a security threat throughout its lifecycle
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-chronicle/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-chronicle
+  api_id: chronicle.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/chronicle/v1
+  requires_billing: true
 - api_shortname: cloudbuild
   name_pretty: Cloud Build
   product_documentation: https://cloud.google.com/cloud-build/
@@ -550,6 +567,7 @@ libraries:
     support offerings.
   GAPICs:
   - proto_path: google/cloud/support/v2
+  - proto_path: google/cloud/support/v2beta
 
 - api_shortname: compute
   name_pretty: Compute Engine
@@ -1204,7 +1222,7 @@ libraries:
   - proto_path: google/shopping/merchant/issueresolution/v1beta
   library_name: java-shopping-merchant-issue-resolution
   requires_billing: true
-  
+
 - api_shortname: merchantapi
   name_pretty: Merchant Order Tracking API
   product_documentation: https://developers.google.com/merchant/api
@@ -1221,7 +1239,7 @@ libraries:
   - proto_path: google/shopping/merchant/ordertracking/v1beta
   library_name: java-shopping-merchant-order-tracking
   requires_billing: true
-  
+
 - api_shortname: cloudkms
   name_pretty: Cloud Key Management Service
   product_documentation: https://cloud.google.com/kms

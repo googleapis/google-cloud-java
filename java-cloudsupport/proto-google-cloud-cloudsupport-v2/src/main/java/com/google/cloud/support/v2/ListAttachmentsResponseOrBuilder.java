@@ -28,7 +28,7 @@ public interface ListAttachmentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of attachments associated with the given case.
+   * The list of attachments associated with a case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Attachment attachments = 1;</code>
@@ -39,7 +39,7 @@ public interface ListAttachmentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of attachments associated with the given case.
+   * The list of attachments associated with a case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Attachment attachments = 1;</code>
@@ -50,7 +50,7 @@ public interface ListAttachmentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of attachments associated with the given case.
+   * The list of attachments associated with a case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Attachment attachments = 1;</code>
@@ -61,7 +61,7 @@ public interface ListAttachmentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of attachments associated with the given case.
+   * The list of attachments associated with a case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Attachment attachments = 1;</code>
@@ -73,7 +73,7 @@ public interface ListAttachmentsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of attachments associated with the given case.
+   * The list of attachments associated with a case.
    * </pre>
    *
    * <code>repeated .google.cloud.support.v2.Attachment attachments = 1;</code>
@@ -84,9 +84,9 @@ public interface ListAttachmentsResponseOrBuilder
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of subsequent `cases.attachments.list` requests. If
-   * unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the `page_token`
+   * field of subsequent `cases.attachments.list` requests. If unspecified,
+   * there are no more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -99,9 +99,9 @@ public interface ListAttachmentsResponseOrBuilder
    *
    *
    * <pre>
-   * A token to retrieve the next page of results. This should be set in the
-   * `page_token` field of subsequent `cases.attachments.list` requests. If
-   * unspecified, there are no more results to retrieve.
+   * A token to retrieve the next page of results. Set this in the `page_token`
+   * field of subsequent `cases.attachments.list` requests. If unspecified,
+   * there are no more results to retrieve.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
