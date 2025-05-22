@@ -49,7 +49,7 @@
     <dependency>
       <groupId>org.example</groupId>
       <artifactId>protobuf-api</artifactId>
-      <version>latest-1.0-SNAPSHOT</version>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
