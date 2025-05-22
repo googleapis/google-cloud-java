@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-kmsinventory-v1</artifactId>
-  <version>protobuf-shading-v1</version><!-- {x-version-update:proto-google-cloud-kmsinventory-v1:current} -->
+  <version>protobuf-shading-within-module</version><!-- {x-version-update:proto-google-cloud-kmsinventory-v1:current} -->
   <name>proto-google-cloud-kmsinventory-v1</name>
   <description>Proto library for google-cloud-kmsinventory</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-kmsinventory-parent</artifactId>
-    <version>protobuf-shading-v1</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
+    <version>protobuf-shading-within-module</version><!-- {x-version-update:google-cloud-kmsinventory:current} -->
   </parent>
   <dependencies>
 <!--    <dependency>-->
@@ -20,17 +20,17 @@
     <dependency>
       <groupId>org.example</groupId>
       <artifactId>protobuf-sdk</artifactId>
-      <version>latest-1.0-SNAPSHOT</version>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
-      <version>protobuf-shading-v1</version>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
-      <version>protobuf-shading-v1</version>
+      <version>protobuf-shading-within-module</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
@@ -43,7 +43,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-kms-v1</artifactId>
-      <version>protobuf-shading-v1</version>
+      <version>protobuf-shading-within-module</version>
     </dependency>
   </dependencies>
 
@@ -68,9 +68,8 @@
               <relocations>
                 <relocation>
                   <pattern>com.google.protobuf</pattern>
-                  <shadedPattern>com.shaded.google.protobuf.proto.${library.name}</shadedPattern>
+                  <shadedPattern>com.shaded.google.protobuf.proto</shadedPattern>
                   <excludes>
-                    <exclude>com.google.protobuf.AbstractMessage</exclude>
                     <exclude>com.google.protobuf.AbstractMessageLite</exclude>
                     <exclude>com.google.protobuf.AbstractParser</exclude>
                     <exclude>com.google.protobuf.AbstractProtobufList</exclude>
@@ -135,7 +134,6 @@
                     <exclude>com.google.protobuf.FloatArrayList</exclude>
                     <exclude>com.google.protobuf.FloatValue</exclude>
                     <exclude>com.google.protobuf.FloatValueOrBuilder</exclude>
-                    <exclude>com.google.protobuf.GeneratedMessage</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageInfoFactory</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageLite</exclude>
                     <exclude>com.google.protobuf.InlineMe</exclude>
@@ -153,6 +151,7 @@
                     <exclude>com.google.protobuf.LazyFieldLite</exclude>
                     <exclude>com.google.protobuf.LazyStringArrayList</exclude>
                     <exclude>com.google.protobuf.LazyStringList</exclude>
+                    <exclude>com.google.protobuf.LimitedInputStream</exclude>
                     <exclude>com.google.protobuf.ListFieldSchema</exclude>
                     <exclude>com.google.protobuf.ListValue</exclude>
                     <exclude>com.google.protobuf.ListValueOrBuilder</exclude>
@@ -204,6 +203,7 @@
                     <exclude>com.google.protobuf.Schema</exclude>
                     <exclude>com.google.protobuf.SchemaFactory</exclude>
                     <exclude>com.google.protobuf.SchemaUtil</exclude>
+                    <exclude>com.google.protobuf.SerializedForm</exclude>
                     <exclude>com.google.protobuf.SingleFieldBuilderV3</exclude>
                     <exclude>com.google.protobuf.SmallSortedMap</exclude>
                     <exclude>com.google.protobuf.SourceContext</exclude>
@@ -216,10 +216,8 @@
                     <exclude>com.google.protobuf.StructProto</exclude>
                     <exclude>com.google.protobuf.StructuralMessageInfo</exclude>
                     <exclude>com.google.protobuf.Syntax</exclude>
-                    <exclude>com.google.protobuf.TextFormat</exclude>
                     <exclude>com.google.protobuf.TextFormatEscaper</exclude>
-                    <exclude>com.google.protobuf.TextFormatParseInfoTree</exclude>
-                    <exclude>com.google.protobuf.TextFormatParseLocation</exclude>
+                    <exclude>com.google.protobuf.TextFormatInternal</exclude>
                     <exclude>com.google.protobuf.Timestamp</exclude>
                     <exclude>com.google.protobuf.TimestampOrBuilder</exclude>
                     <exclude>com.google.protobuf.TimestampProto</exclude>
@@ -237,7 +235,6 @@
                     <exclude>com.google.protobuf.UnknownFieldSetLite</exclude>
                     <exclude>com.google.protobuf.UnknownFieldSetLiteSchema</exclude>
                     <exclude>com.google.protobuf.UnmodifiableLazyStringList</exclude>
-                    <exclude>com.google.protobuf.UnsafeByteOperations</exclude>
                     <exclude>com.google.protobuf.UnsafeUtil</exclude>
                     <exclude>com.google.protobuf.Utf8</exclude>
                     <exclude>com.google.protobuf.Value</exclude>
@@ -246,7 +243,6 @@
                     <exclude>com.google.protobuf.WrappersProto</exclude>
                     <exclude>com.google.protobuf.Writer</exclude>
 
-                    <exclude>com.google.protobuf.AbstractMessage$*</exclude>
                     <exclude>com.google.protobuf.AbstractMessageLite$*</exclude>
                     <exclude>com.google.protobuf.AbstractParser$*</exclude>
                     <exclude>com.google.protobuf.AbstractProtobufList$*</exclude>
@@ -311,7 +307,6 @@
                     <exclude>com.google.protobuf.FloatArrayList$*</exclude>
                     <exclude>com.google.protobuf.FloatValue$*</exclude>
                     <exclude>com.google.protobuf.FloatValueOrBuilder$*</exclude>
-                    <exclude>com.google.protobuf.GeneratedMessage$*</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageInfoFactory$*</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageLite$*</exclude>
                     <exclude>com.google.protobuf.InlineMe$*</exclude>
@@ -329,6 +324,7 @@
                     <exclude>com.google.protobuf.LazyFieldLite$*</exclude>
                     <exclude>com.google.protobuf.LazyStringArrayList$*</exclude>
                     <exclude>com.google.protobuf.LazyStringList$*</exclude>
+                    <exclude>com.google.protobuf.LimitedInputStream$*</exclude>
                     <exclude>com.google.protobuf.ListFieldSchema$*</exclude>
                     <exclude>com.google.protobuf.ListValue$*</exclude>
                     <exclude>com.google.protobuf.ListValueOrBuilder$*</exclude>
@@ -380,6 +376,7 @@
                     <exclude>com.google.protobuf.Schema$*</exclude>
                     <exclude>com.google.protobuf.SchemaFactory$*</exclude>
                     <exclude>com.google.protobuf.SchemaUtil$*</exclude>
+                    <exclude>com.google.protobuf.SerializedForm$*</exclude>
                     <exclude>com.google.protobuf.SingleFieldBuilderV3$*</exclude>
                     <exclude>com.google.protobuf.SmallSortedMap$*</exclude>
                     <exclude>com.google.protobuf.SourceContext$*</exclude>
@@ -392,10 +389,8 @@
                     <exclude>com.google.protobuf.StructProto$*</exclude>
                     <exclude>com.google.protobuf.StructuralMessageInfo$*</exclude>
                     <exclude>com.google.protobuf.Syntax$*</exclude>
-                    <exclude>com.google.protobuf.TextFormat$*</exclude>
                     <exclude>com.google.protobuf.TextFormatEscaper$*</exclude>
-                    <exclude>com.google.protobuf.TextFormatParseInfoTree$*</exclude>
-                    <exclude>com.google.protobuf.TextFormatParseLocation$*</exclude>
+                    <exclude>com.google.protobuf.TextFormatInternal$*</exclude>
                     <exclude>com.google.protobuf.Timestamp$*</exclude>
                     <exclude>com.google.protobuf.TimestampOrBuilder$*</exclude>
                     <exclude>com.google.protobuf.TimestampProto$*</exclude>
@@ -413,7 +408,6 @@
                     <exclude>com.google.protobuf.UnknownFieldSetLite$*</exclude>
                     <exclude>com.google.protobuf.UnknownFieldSetLiteSchema$*</exclude>
                     <exclude>com.google.protobuf.UnmodifiableLazyStringList$*</exclude>
-                    <exclude>com.google.protobuf.UnsafeByteOperations$*</exclude>
                     <exclude>com.google.protobuf.UnsafeUtil$*</exclude>
                     <exclude>com.google.protobuf.Utf8$*</exclude>
                     <exclude>com.google.protobuf.Value$*</exclude>
