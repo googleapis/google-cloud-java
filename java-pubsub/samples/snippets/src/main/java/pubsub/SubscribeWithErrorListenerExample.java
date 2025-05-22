@@ -62,15 +62,11 @@ public class SubscribeWithErrorListenerExample {
               .setExecutorProvider(executorProvider)
               .build();
 
-      // Listen for unrecoverable failures. Rebuild a subscriber and restart subscribing
-      // when the current subscriber encounters permanent errors.
+      // Listen for unrecoverable failures.
       subscriber.addListener(
           new Subscriber.Listener() {
             public void failed(Subscriber.State from, Throwable failure) {
-              System.out.println(failure.getStackTrace());
-              if (!executorProvider.getExecutor().isShutdown()) {
-                subscribeWithErrorListenerExample(projectId, subscriptionId);
-              }
+              System.out.println("Unrecoverable subscriber failure:" + failure.getStackTrace());
             }
           },
           MoreExecutors.directExecutor());

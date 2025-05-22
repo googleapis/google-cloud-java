@@ -95,7 +95,14 @@ public class SubscribeWithExactlyOnceConsumerWithResponseExample {
 
     Subscriber subscriber = null;
     try {
-      subscriber = Subscriber.newBuilder(subscriptionName, receiverWithResponse).build();
+      // Pub/Sub's exactly once delivery guarantee only applies when subscribers connect to the
+      // service in the same region.
+      // For list of locational endpoints for Pub/Sub, see
+      // https://cloud.google.com/pubsub/docs/reference/service_apis_overview#list_of_locational_endpoints
+      subscriber =
+          Subscriber.newBuilder(subscriptionName, receiverWithResponse)
+              .setEndpoint("us-west1-pubsub.googleapis.com:443")
+              .build();
       // Start the subscriber.
       subscriber.startAsync().awaitRunning();
       System.out.printf("Listening for messages on %s:\n", subscriptionName.toString());
